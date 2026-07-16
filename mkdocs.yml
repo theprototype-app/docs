@@ -1,0 +1,110 @@
+site_name: ThePrototype Docs
+nav:
+  - Getting Started:
+    - Welcome: index.md
+    - Controls: controls.md
+  - Building:
+    - Explorer: explorer.md
+    - Packs: packs.md
+    - Prefabs: prefabs.md
+    - Saving & Sessions: saving.md
+  - Flow Graph:
+    - Node System: node-system.md
+    - Nodes:
+      - Slider: nodes/slider.md
+      - Color Picker: nodes/colorpicker.md
+      - Switcher: nodes/switcher.md
+      - Number: nodes/number.md
+      - Vector3: nodes/vector3.md
+      - Toggle: nodes/toggle.md
+      - Random: nodes/random.md
+      - Time: nodes/time.md
+      - Object Selector: nodes/objectselector.md
+      - Script: nodes/script.md
+      - Math: nodes/math.md
+      - Compare: nodes/compare.md
+      - Gate: nodes/gate.md
+      - Map Range: nodes/maprange.md
+      - Select: nodes/select.md
+      - Loop: nodes/loop.md
+      - Timer: nodes/timer.md
+      - Distance: nodes/distance.md
+      - Proximity: nodes/proximity.md
+      - Look At: nodes/lookat.md
+      - Set Color: nodes/setcolor.md
+      - Visibility: nodes/visibility.md
+      - On Click: nodes/onclick.md
+      - Counter: nodes/counter.md
+      - Shake: nodes/shake.md
+      - Spin: nodes/spin.md
+      - Bounce: nodes/bounce.md
+      - Orbit: nodes/orbit.md
+      - Path Patrol: nodes/pathpatrol.md
+      - Mass: nodes/mass.md
+      - Bounciness: nodes/bounciness.md
+      - Friction: nodes/friction.md
+      - Pulse: nodes/pulse.md
+      - Blink: nodes/blink.md
+      - Sound: nodes/sound.md
+      - Custom Node: nodes/customnode.md
+  - Extending:
+    - Modules: modules.md
+
+theme:
+  name: material
+  curstom_dir: overrides
+  name_overrides: {}
+  favicon: logo.svg
+  logo: logo.svg
+  palette:
+    primary: indigo
+    accent: green
+  font:
+    text: Roboto
+    code: Roboto Mono
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  features:
+    - content.action.edit
+    - navigation.sections
+    - navigation.expand
+    # - navigation.tabs
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+
+repo_url: https://github.com/theprototype-docs/docs
+edit_uri: edit/main/
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.magiclink
+  - pymdownx.tabbed
+  - pymdownx.details
+  - pymdownx.tilde
+
+plugins:
+  - search
+  - git-revision-date
