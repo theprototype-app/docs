@@ -47,6 +47,9 @@ nav:
       - Blink: nodes/blink.md
       - Sound: nodes/sound.md
       - Custom Node: nodes/customnode.md
+  - AI:
+    - Assistant: ai/assistant.md
+    - Providers: ai/providers.md
   - Extending:
     - Modules: modules.md
 
