@@ -50,6 +50,7 @@ nav:
   - AI:
     - Assistant: ai/assistant.md
     - Providers: ai/providers.md
+    - 3D Generation: ai/generation.md
     - Console Agent: ai/console-agent.md
   - Extending:
     - Modules: modules.md
