@@ -22,7 +22,10 @@ Inside an object flow, effect nodes (Spin, Bounce, Script, module nodes, Sound, 
 An object flow can declare an interface, like a function signature:
 
 - **Flow Input** — a named, typed value source (number / boolean / vector3 / color). Inside the graph it outputs whatever the Scene feeds it (or its fallback).
-- **Flow Output** — a named sink; whatever you wire into it becomes visible to the Scene.
+- **Flow Output** — a named sink; whatever you wire into it becomes visible to the Scene. Its gray socket accepts **any value type**.
+
+!!! warning "Outputs carry values, not effects"
+    Animation/effect nodes (Spin, Pulse, Wobble… — the **orange** sockets) are not values and cannot wire into a Flow Output. Output the *driving value* instead: the Time, Slider, Math or Loop node that feeds the effect.
 
 ## Embedding a flow in the Scene graph
 
@@ -38,8 +41,8 @@ The embedded node shows the declared sockets: Scene values wired into it feed th
 A breathing lamp whose intensity the Scene controls:
 
 1. Select the lamp object → **Create flow**.
-2. Add a **Flow Input** named `amount` (number) and a **Pulse** node; wire `amount → Pulse.amount`.
-3. Add a **Flow Output** named `phase` and wire the Pulse's driving Time node into it.
+2. Add a **Flow Input** named `amount` (number) and a **Pulse** node; wire `amount → Pulse.amount`. The Pulse drives the lamp itself (no Object Selector needed).
+3. Add a **Time** node (mode `sin`) and a **Flow Output** named `phase`; wire **Time → phase**. (The Time *value* is what leaves the flow — the Pulse effect itself stays inside.)
 4. Deselect (back in the Scene flow), right-click the lamp → **Add flow to Scene graph**.
 5. Wire a **Slider** into the embedded node's `amount` — the slider now breathes the lamp, and `phase` is available to drive anything else in the scene.
 
