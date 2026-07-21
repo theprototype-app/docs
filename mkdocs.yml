@@ -16,6 +16,7 @@ nav:
     - Notifications & Notes: notifications.md
   - Flow Graph:
     - Node System: node-system.md
+    - Object Flows: object-flows.md
     - Nodes:
       - Slider: nodes/slider.md
       - Color Picker: nodes/colorpicker.md
@@ -40,6 +41,7 @@ nav:
       - Set Color: nodes/setcolor.md
       - Visibility: nodes/visibility.md
       - On Click: nodes/onclick.md
+      - Key Press: nodes/keypress.md
       - Counter: nodes/counter.md
       - Shake: nodes/shake.md
       - Spin: nodes/spin.md
