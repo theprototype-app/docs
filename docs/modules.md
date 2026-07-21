@@ -58,6 +58,7 @@ The `register(api)` surface, in brief:
 | `registerNodeGroup(group, components?)` | Add a palette group of flow nodes (`defaults` seed node data; `params` auto-generate controls) |
 | `registerEffect(type, fn)` | Per-frame effect `(object, base, data, time)`, active when the node is wired into an Object Selector |
 | `registerNodeDefs(defs)` | Ship **code-editable** nodes: each `{key, name, params, code}` becomes a custom node users can open in the Node Designer and tweak (your edits win over module reloads). Pairs with [object flows](object-flows.md) — dropped into an object's flow, the node drives that object with no Object Selector |
+| `pointerRay()` | Where the user is **pointing**, as a world-space `THREE.Raycaster` — desktop mouse over the viewport or the VR pointer hand. Fresh instance per call; null before the first pointer event. The drag recipe: click to pick, follow `pointerRay()` in a frame task, click to drop |
 | `registerPrimitive(name, builder, opts)` | A replicated `/create` primitive + manager spawn button |
 | `registerClickHandler(fn)` | Intercept desktop clicks / VR triggers on scene meshes |
 | `registerInteractiveGroup(name)` | Make your own scene-root group clickable |
