@@ -16,10 +16,29 @@ You build scenes from primitives, imported models and packs, wire behavior with 
 
 ## Where to go next
 
-- [Controls](controls.md) — navigation, selection, the transform gizmo, shortcuts, right-click menus and VR basics.
+**Getting started**
+
+- [Controls](controls.md) — navigation, selection, the transform gizmo, shortcuts and right-click menus.
+- [Connection](connection.md) — invite links, approving peers, and choosing a signaling server.
+
+**Building**
+
 - [Explorer](explorer.md) — your local asset library: import files, organize folders, drag assets into the scene.
-- [Packs](packs.md) — ready-made model collections you can browse and import.
+- [Packs](packs.md) — ready-made model and audio collections you can browse and import.
 - [Prefabs](prefabs.md) — save any object as a reusable asset.
+- [Physics & Simulation](physics.md) — mass, joints, dropping and throwing objects.
+- [Terrain & Sculpting](terrain.md) — add ground and shape it with a brush.
 - [Saving & Sessions](saving.md) — the `.tpscene` bundle format, GLTF export, sessions and autosave.
+
+**The scene**
+
+- [Camera & View](camera.md) — lens presets, render modes, shadows, the grid and environment.
+- [Notifications & Notes](notifications.md) — the notification center, scene notes and pinging.
+- [Music & Sound](audio.md) — shared background music, spatial sound and voice chat.
+
+**Behavior, AI & more**
+
 - [Node System](node-system.md) — the Flow editor that drives animation, logic and interactivity, plus a [reference page for every node](nodes/slider.md).
+- [AI Assistant](ai/assistant.md) — build and edit the scene from a prompt.
+- [VR Guide](vr.md) — the full room-scale control and radial-menu map.
 - [Modules](modules.md) — enable playable content modules or write your own.

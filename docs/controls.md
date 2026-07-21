@@ -46,6 +46,8 @@ Shortcuts are inert while you type in a text field and while play mode owns the 
 | <kbd>N</kbd> | Toggle the node editor |
 | <kbd>C</kbd> | Toggle chat |
 | <kbd>Shift</kbd>+<kbd>A</kbd> | Open the Add menu |
+| <kbd>P</kbd> | Start / stop the physics [simulation](physics.md) |
+| <kbd>`</kbd> | Toggle the [AI](ai/assistant.md) quick-prompt bar |
 | <kbd>Ctrl</kbd>+<kbd>S</kbd> | Save a session |
 | <kbd>Ctrl</kbd>+<kbd>Z</kbd> | Undo |
 | <kbd>Ctrl</kbd>+<kbd>Y</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd> | Redo |
@@ -69,7 +71,7 @@ Shortcuts are inert while you type in a text field and while play mode owns the 
 
 ## VR basics
 
-Enter VR from the headset button (WebXR). The essentials:
+Enter VR from the headset button (WebXR). The essentials below get you started; the [VR Guide](vr.md) has the full control and radial-menu map.
 
 - **Radial menu** — press <kbd>B</kbd>/<kbd>Y</kbd> on your menu hand to toggle it (or, in hold mode, hold the button and release over a sector). It contains Objects, Add, Scene, Tools (Select / Box Select / Draw), Undo/Redo, Chat and System (grid, settings, mic, exit VR).
 - **Hand tracking** — hands have no <kbd>B</kbd>/<kbd>Y</kbd>, so **pinch and hold** (about half a second) on the menu hand to toggle the radial menu; a quick pinch stays a normal click.

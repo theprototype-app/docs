@@ -15,7 +15,7 @@ Everything it does is a normal edit: it **replicates live to everyone in the ses
 1. Open **Settings ▸ AI** and toggle **Enable assistant**.
 2. Add a provider (Grok, Gemini or a custom endpoint) and select it as active.
 
-Once enabled, there are two ways to talk to it.
+Once enabled, there are a few ways to reach it.
 
 ### The quick prompt bar
 
@@ -29,6 +29,12 @@ bar. It stays hidden until you summon it, so it never gets in the way.
 A floating, draggable window (it tabs and docks like Chat and the Explorer). It keeps the
 conversation, so you can refine across turns — "make them taller", "now paint the front
 one blue". Use **Stop** to cancel a run in progress.
+
+### The bottom-left button
+
+Once the assistant is enabled and a provider is set, a round **✨ button** appears at the
+bottom-left of the viewport (just below the **＋** add button). Click it to open or close
+the assistant window — the same window the quick prompt bar opens into.
 
 ## What you can ask for
 
@@ -57,8 +63,9 @@ cone flame"* works better than *"make something cozy"*.
 
 ## Limits (for now)
 
-- It composes the **existing** primitives and lights — it does not yet generate custom 3D
-  meshes or textures from a prompt.
+- Its scene-building composes the **existing** primitives and lights. With a mesh provider
+  configured it can also kick off a custom-model generation (see [3D Generation](generation.md)),
+  but it does not paint textures from a prompt.
 - It does not wire up node-graph behavior yet.
 - Results depend on the model you point it at; smaller models place things more crudely.
 
