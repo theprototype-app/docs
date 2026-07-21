@@ -57,19 +57,17 @@ nav:
 
 theme:
   name: material
-  curstom_dir: overrides
-  name_overrides: {}
+  custom_dir: overrides
   favicon: logo.svg
   logo: logo.svg
-  palette:
-    primary: indigo
-    accent: green
   font:
     text: Roboto
     code: Roboto Mono
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
+      primary: indigo
+      accent: green
       toggle:
         icon: material/brightness-auto
         name: Switch to light mode
@@ -77,6 +75,8 @@ theme:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
+      primary: indigo
+      accent: green
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -84,13 +84,17 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: indigo
+      accent: green
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
   features:
     - content.action.edit
-    - navigation.sections
-    - navigation.expand
+    - navigation.top
+    # Collapsible nav: navigation.sections + navigation.expand are intentionally
+    # omitted so nested groups (e.g. the 38 pages under Flow Graph > Nodes)
+    # collapse behind a chevron instead of rendering fully expanded.
     # - navigation.tabs
   icon:
     repo: fontawesome/brands/github
