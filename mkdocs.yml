@@ -3,11 +3,17 @@ nav:
   - Getting Started:
     - Welcome: index.md
     - Controls: controls.md
+    - Connection: connection.md
   - Building:
     - Explorer: explorer.md
     - Packs: packs.md
     - Prefabs: prefabs.md
+    - Physics & Simulation: physics.md
+    - Terrain & Sculpting: terrain.md
     - Saving & Sessions: saving.md
+  - Viewport:
+    - Camera & View: camera.md
+    - Notifications & Notes: notifications.md
   - Flow Graph:
     - Node System: node-system.md
     - Nodes:
@@ -47,6 +53,10 @@ nav:
       - Blink: nodes/blink.md
       - Sound: nodes/sound.md
       - Custom Node: nodes/customnode.md
+  - Audio:
+    - Music & Sound: audio.md
+  - VR:
+    - VR Guide: vr.md
   - AI:
     - Assistant: ai/assistant.md
     - Providers: ai/providers.md
