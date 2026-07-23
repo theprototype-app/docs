@@ -1,4 +1,5 @@
 site_name: ThePrototype Docs
+site_url: https://docs.theprototype.app/
 nav:
   - Getting Started:
     - Welcome: index.md
@@ -113,8 +114,8 @@ theme:
     edit: material/pencil
     view: material/eye
 
-repo_url: https://github.com/theprototype-docs/docs
-edit_uri: edit/main/
+repo_url: https://github.com/theprototype-app/docs
+edit_uri: edit/docs/
 
 markdown_extensions:
   - attr_list

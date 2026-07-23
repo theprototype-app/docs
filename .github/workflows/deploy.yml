@@ -1,0 +1,43 @@
+name: Deploy docs
+
+# Builds the MkDocs site and publishes it to the gh-pages branch.
+# GitHub Pages must be set (repo Settings > Pages) to "Deploy from a branch"
+# -> gh-pages / (root). The custom domain is carried by docs/CNAME.
+
+on:
+  push:
+    branches:
+      - docs
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy-docs
+  cancel-in-progress: false
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # git-revision-date reads the full history for per-page dates.
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Build and deploy to gh-pages
+        run: mkdocs gh-deploy --force --clean
