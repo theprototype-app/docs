@@ -67,6 +67,8 @@ nav:
     - Console Agent: ai/console-agent.md
   - Extending:
     - Modules: modules.md
+    - Module SDK: module-sdk.md
+    - Module Packages: module-package.md
 
 theme:
   name: material

@@ -70,4 +70,4 @@ The `register(api)` surface, in brief:
 
 Content added to `objectsGroup()` joins the shared scene (synced, listed, editable by anyone). Derived content (a generated level) belongs in your own scene-root group, rebuilt from module state.
 
-The full guide with walkthroughs (the hello and button modules), the package layout for zip/URL installs and a pre-ship checklist is **`MODULES.md` in the app repository**.
+Writing your own? Start with the **[Module SDK](module-sdk.md)** guide (the `register(api)` reference, replication rules, testing checklist) and the **[package layout](module-package.md)** for zip/URL installs. The in-repo `MODULES.md` additionally walks through the hello and button core modules.
