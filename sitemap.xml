@@ -2,230 +2,238 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.theprototype.app/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/audio/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/camera/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/connection/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/controls/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/explorer/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.theprototype.app/module-package/</loc>
+         <lastmod>2026-07-24</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.theprototype.app/module-sdk/</loc>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/modules/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/node-system/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/notifications/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/object-flows/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/packs/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/physics/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/prefabs/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/saving/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/terrain/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/vr/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/ai/assistant/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/ai/console-agent/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/ai/generation/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/ai/providers/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/blink/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/bounce/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/bounciness/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/colorpicker/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/compare/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/counter/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/customnode/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/distance/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/friction/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/gate/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/keypress/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/lookat/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/loop/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/maprange/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/mass/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/math/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/number/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/objectselector/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/onclick/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/orbit/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/pathpatrol/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/proximity/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/pulse/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/random/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/script/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/select/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/setcolor/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/shake/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/slider/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/sound/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/spin/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/switcher/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/time/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/timer/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/toggle/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/vector3/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/visibility/</loc>
-         <lastmod>2026-07-23</lastmod>
+         <lastmod>2026-07-24</lastmod>
     </url>
 </urlset>
