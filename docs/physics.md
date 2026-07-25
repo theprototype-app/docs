@@ -18,12 +18,15 @@ Select an object and open its **Physics** section in the Inspector:
 | **Mass** (Dynamic only) | 0.1 – 100 | 1 |
 | **Bounciness** | 0 – 1 | 0.3 |
 | **Friction** | 0 – 2 | 0.5 |
-| **Collider** | Box · Convex hull | Box |
+| **Collider** | Box · Sphere · Capsule · Cylinder · Convex hull | Box |
 
 - **Auto (scenery)** objects act as static obstacles the simulation can land on.
 - **Dynamic** objects fall and collide.
 - **Static** never moves.
-- **Convex hull** wraps the mesh more tightly than a box (useful for ramps and irregular shapes); very dense meshes fall back to a box automatically.
+- **Collider shapes** fit the object's own extents and **follow its rotation** — a tilted box collides as a tilted box, a rotated ramp is really a ramp. Pick **Sphere** for balls (they roll), **Capsule**/**Cylinder** for posts and characters, **Convex hull** for irregular shapes (very dense meshes fall back to a box automatically).
+
+!!! tip "Primitives are ready to play"
+    Newly added primitives (cube, sphere, stairs…) come with a **Dynamic** body (mass 1) out of the box — add a few, press <kbd>P</kbd>, and they fall, stack and throw immediately. Building scenery instead? Set **Body** back to *Auto* or *Static* in the Inspector. Terrain always spawns as scenery.
 
 ### With Mass / Bounciness / Friction nodes
 
