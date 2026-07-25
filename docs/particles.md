@@ -56,10 +56,14 @@ Open the Inspector's **Particles** section on an object with an emitter:
 | **Turbulence** | 0 – 1 | how much the paths wobble |
 | **Size start / end** | 0 – 1 | grows or shrinks over life |
 | **Opacity** | 0 – 1 | peak transparency |
+| **Emit from** | X / Y / Z | where particles spawn, relative to the object's center (local axes) — lift them to the top, a corner, an exhaust, etc. |
 | **Color** | two swatches | start → end gradient over life |
 | **Sprite** | dot · streak · puff · star · confetti | the particle shape |
 | **Blending** | additive · normal | *additive* glows (fire, sparks); *normal* for smoke/confetti |
 | **Space** | local · world | see below |
+
+!!! note
+    Glowing presets (Sparkles, Fire, Sparks — additive blending) render *through* the object they emit from, so they're visible even when the spawn point is inside a solid mesh. Smoke, Confetti and Dust use normal blending and are properly hidden behind geometry.
 
 ### Local vs world space
 
