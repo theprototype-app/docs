@@ -36,10 +36,14 @@ Right-click empty space ▸ **Add ▸ Effects ▸** places a small marker object
 
 A preset is just a starting point — every value below is editable afterwards.
 
-## Continuous vs burst
+## Continuous, burst, and on-impact
 
 - **Continuous** emitters (Sparkles, Fire, Smoke) emit forever.
-- **Burst** emitters (Dust puff, Confetti, Sparks) fire all their particles at once, then wait for the next trigger. They auto-fire once when you attach them so you get instant feedback; after that, replay them with **💥 Burst now**, wire an event into the [Particles node](nodes/particle.md), or — coming soon — let them fire automatically when an object hits the ground.
+- **Burst** emitters (Dust puff, Confetti, Sparks) fire all their particles at once, then wait for the next trigger. They auto-fire once when you attach them so you get instant feedback; after that, replay them with **💥 Burst now** or wire an event into the [Particles node](nodes/particle.md).
+- **On impact (physics)** emitters fire automatically when a [physics simulation](physics.md) lands the object on the ground or another object — a dust puff exactly when the crate hits the floor. Set the object's body to **Dynamic**, set the emitter's **Emission** to *On impact*, and press <kbd>P</kbd>. Every peer sees the same burst. Small settling bounces are filtered out (the object has to be actually falling), and a rolling object won't machine-gun bursts.
+
+!!! tip "Throwing things"
+    While a simulation runs you can **grab and throw** any dynamic object — drag it with the gizmo on desktop, or grip-grab it in VR — and it flies off with the velocity of your hand when you let go. Heavier objects (higher **Mass**) hit harder. Combine with an on-impact emitter for very satisfying crashes.
 
 ## Properties
 

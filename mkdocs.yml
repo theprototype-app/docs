@@ -44,6 +44,7 @@ nav:
       - Visibility: nodes/visibility.md
       - On Click: nodes/onclick.md
       - Key Press: nodes/keypress.md
+      - On Impact: nodes/onimpact.md
       - Counter: nodes/counter.md
       - Shake: nodes/shake.md
       - Spin: nodes/spin.md
