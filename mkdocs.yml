@@ -10,6 +10,7 @@ nav:
     - Packs: packs.md
     - Prefabs: prefabs.md
     - Physics & Simulation: physics.md
+    - Particle Effects: particles.md
     - Terrain & Sculpting: terrain.md
     - Saving & Sessions: saving.md
   - Viewport:
@@ -55,6 +56,7 @@ nav:
       - Pulse: nodes/pulse.md
       - Blink: nodes/blink.md
       - Sound: nodes/sound.md
+      - Particles: nodes/particle.md
       - Custom Node: nodes/customnode.md
   - Audio:
     - Music & Sound: audio.md
