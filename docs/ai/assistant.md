@@ -51,6 +51,23 @@ The assistant works with the building blocks the app already has:
 Good prompts are concrete: *"a small campfire — a ring of 6 grey rocks around an orange
 cone flame"* works better than *"make something cozy"*.
 
+## Behaviors and physics
+
+The assistant can also wire up **flow-node behavior** — the same nodes you'd drag into
+the node editor. Ask for motion and it adds the node to the right object's graph: *"make
+the crate spin"*, *"the drone should patrol between the towers"*, *"create a moving
+spider"* (body + legs from primitives, grouped, patrolling with bouncing legs). Follow-ups
+work too — *"make the spider faster"* edits the existing node instead of stacking a new
+one. Everything replicates and undoes like any other edit.
+
+**Physics** (bodies, welds/hinges with motors, and starting the simulation) is a
+per-provider opt-in — the **Physics tools (advanced)** checkbox in **Settings ▸ AI**.
+It's off by default because multi-step physics is hard for small local models; see
+[Local & Small Models](local-models.md) for what the checkbox gates, model-size guidance
+and recommended vLLM flags. With it enabled, the assistant may **start the simulation
+itself** after a physics build. Note: undo does not stop a running simulation — stop or
+reset it first, then one undo reverts the whole prompt.
+
 ## How edits behave
 
 - **Replicated.** Every object the assistant creates or changes appears for all connected
@@ -66,8 +83,10 @@ cone flame"* works better than *"make something cozy"*.
 - Its scene-building composes the **existing** primitives and lights. With a mesh provider
   configured it can also kick off a custom-model generation (see [3D Generation](generation.md)),
   but it does not paint textures from a prompt.
-- It does not wire up node-graph behavior yet.
-- Results depend on the model you point it at; smaller models place things more crudely.
+- Behavior nodes it creates come from the built-in catalog (plus validated path points and
+  script code); Object Flow composition and sound nodes stay editor-only.
+- Results depend on the model you point it at; smaller models place things more crudely —
+  see [Local & Small Models](local-models.md) for sizing guidance.
 
 ## Troubleshooting
 

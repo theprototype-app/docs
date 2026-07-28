@@ -66,6 +66,7 @@ nav:
   - AI:
     - Assistant: ai/assistant.md
     - Providers: ai/providers.md
+    - Local & Small Models: ai/local-models.md
     - 3D Generation: ai/generation.md
     - Console Agent: ai/console-agent.md
   - Extending:
