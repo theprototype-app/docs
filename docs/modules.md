@@ -23,6 +23,22 @@ The manager's **Install zip** / **Install URL** buttons load third-party modules
 
 - **Zip** — a package containing `manifest.json` + `module.js` (plus optional `assets/`, `prefabs/`, `config.json`). Keep zips under ~20 MB; they persist in your browser.
 - **URL** — a base URL serving the same layout (GitHub `tree` links are converted automatically; the host needs CORS). **Update** on the card re-fetches from the same URL.
+- **Browse** — a gallery of community modules from [github.com/theprototype-app/modules](https://github.com/theprototype-app/modules), installed with one click. Installed entries dim; an **Update** button appears when the gallery lists a newer version. The same trust model applies — gallery modules run unsandboxed.
+
+User modules install, update, disable and remove **live** — the manager genuinely unloads a module's menus, nodes, effects and handlers without a page reload. (Core modules still need a reload to disable.)
+
+### Dev mode — live reload while you build
+
+Every user-module card has a **Dev URL** row for module authors: point it at any
+server that serves your module folder (`manifest.json` + `module.js` — `npx serve`,
+a GitHub raw link, anything with CORS), then:
+
+- **Reload** fetches fresh code, tears the old instance down and re-registers it — no page reload.
+- **Auto** polls the URL (~2 s) and reloads whenever the served `module.js` changes.
+- A parse or registration error keeps the **previous version running** (you get a toast).
+- Connected peers toast a module **version mismatch** while you iterate — expected: your dev copy genuinely differs from theirs.
+
+Scene objects your module created stay (they are replicated user content); the module's own scene-root viewport groups are rebuilt by the fresh code.
 
 User modules must be **self-contained**: a single `module.js` with no `import` statements — three.js and packaged assets arrive through the API (`api.THREE`, `api.assetUrl(path)`). Custom Svelte node UIs are core-module-only; user modules get the generic parameter-driven node cards.
 
@@ -64,6 +80,10 @@ The `register(api)` surface, in brief:
 | `registerInteractiveGroup(name)` | Make your own scene-root group clickable |
 | `registerFrameTask(fn)` | Run every frame with synced time |
 | `registerMenu(label, fn)` / `registerVRMenuEntry({...})` | Buttons on the manager card / sectors in the VR radial menu |
+| `haptic(intensity, ms, hand?)` | Buzz the VR controllers (both, or `'left'`/`'right'`); no-op on desktop |
+| `isVR()` / `vrHand(hand)` | In a VR session? / one hand's world pose + `trigger`/`gripped` state (null when untracked) |
+| `fireObjectClick(uuid)` | Pulse **On Click** flow nodes targeting an object — lets user graphs react to your module's events (replicated) |
+| `possess(uuid, opts)` / `possessModes` | Drive an object (tank controls + follow camera). `possessModes` lists this build's camera modes — feature-detect `'first'` (first-person eye camera with optional pointer-lock mouse look) |
 | `send(msg)` / `onMessage(fn)` | Namespaced peer messages |
 | `registerStateSync({getState, applyState})` | Late-joiner catch-up |
 | `scene()`, `objectsGroup()`, `peerId()`, `toast()`, `now()`, `THREE`, `assetUrl(path)`, `sceneAssets()` | Utilities |

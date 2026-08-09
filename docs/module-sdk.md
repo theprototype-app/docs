@@ -124,11 +124,35 @@ api.THREE            // the app's three.js (user modules can't import it)
 api.assetUrl('assets/pling.mp3') // blob URL of a packaged file (user modules)
 ```
 
+### VR and control
+
+```js
+api.isVR()                    // true inside a VR session
+api.haptic(0.6, 60)           // buzz the VR controllers — no-op on desktop
+api.haptic(0.6, 60, 'right')  // one hand only
+api.vrHand('left')            // {position:[x,y,z], quaternion:[x,y,z,w],
+                              //  trigger, gripped, connected} — null when
+                              //  untracked / not in VR; poll from a frame task
+api.fireObjectClick(uuid)     // pulse On Click flow nodes targeting the object
+                              // (replicated) — user graphs react to your events
+api.possess(uuid, { camera: 'first', eyeHeight: 1.7, mouseLook: true });
+api.possessModes              // e.g. ['chase','orbit','none','first'] —
+                              // feature-detect 'first' here; unknown camera
+                              // values degrade silently on older builds
+```
+
+With `camera: 'first'` the eye sits at the object plus `eyeHeight`;
+`mouseLook: true` requests pointer lock — horizontal look turns the **object**
+(movement follows the view), vertical pitches the camera, and leaving pointer
+lock (Esc) releases the possession.
+
 ## Lifecycle
 
 - Core modules load at boot unless disabled in the manager; user modules load
-  after them. Enabling registers live; **disabling applies on reload** (the
-  registries are additive — there is no unregister).
+  after them. Enabling registers live. **User modules also disable, update and
+  dev-reload live** — everything `register(api)` added is genuinely torn down
+  and re-registered (see the manager page's *Dev mode*). Core modules still
+  need a reload to disable.
 - Peers exchange `{id, version}` lists on connect and toast on mismatch. The
   session still works, but that module's behavior may differ between peers —
   treat "same modules everywhere" as part of the session contract.
