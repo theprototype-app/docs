@@ -1,7 +1,15 @@
 # Module package layout
 
 The format the Modules manager installs (zip upload or URL) and exports
-("Download as example"). One folder or zip root per module:
+("Download as example"). One folder or zip root per module.
+
+!!! tip "Let a script build it"
+
+    [theprototype-app/modules](https://github.com/theprototype-app/modules) has
+    `npm run new -- <id>` (scaffold from a working template) and
+    `npm run pack -- <id>` (build the zip with `manifest.json` at the **root**,
+    refusing an entry file with a top-level `import`). `Compress-Archive` on the
+    folder nests it and the manager rejects the result.
 
 ```
 mymodule.zip

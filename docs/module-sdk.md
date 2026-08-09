@@ -17,6 +17,21 @@ Two ways to ship one:
 Start by downloading a core module from the manager ("Download as example") —
 `hello` is the smallest complete one.
 
+Writing a **user module**? The companion repo
+[theprototype-app/modules](https://github.com/theprototype-app/modules) carries
+the working end of this page:
+
+- **[AUTHORING.md](https://github.com/theprototype-app/modules/blob/main/AUTHORING.md)**
+  — one document covering the rules, the packaging contract and the test recipe,
+  written to be read straight through or pasted whole into an AI assistant.
+- **[modules/_template](https://github.com/theprototype-app/modules/tree/main/modules/_template)**
+  — a working scaffold (`npm run new -- my-module`), alongside example modules
+  from a keypad-and-door to a first-person walk mode, each with a Playwright
+  test-flight that installs the real zip through the real manager.
+- **[DEVX-REQUESTS.md](https://github.com/theprototype-app/modules/blob/main/DEVX-REQUESTS.md)**
+  — gaps external modules hit that core modules do not, and what has shipped for
+  them.
+
 ## The one rule that matters
 
 **A module runs on every peer. There is no server.** Whatever your module does
