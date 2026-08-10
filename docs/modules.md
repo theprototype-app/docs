@@ -6,8 +6,8 @@ Modules plug playable content into the app — instruments, mini-games, generato
 
 Open it from **Menu ▸ Modules**.
 
-- **Core modules** ship with the app (hello, button, dungeon, pong, VR sleeve). Toggle each on or off: **enabling is live**, disabling takes effect after a **reload**.
-- The piano, avatar controller, VR essentials and drivable car used to ship in the app; they now live in the **Browse** gallery, so install them there when you want them.
+- **Core modules** ship with the app (hello, button, pong, VR sleeve). Toggle each on or off: **enabling is live**, disabling takes effect after a **reload**.
+- The dungeon generator, piano, avatar controller, VR essentials and drivable car used to ship in the app; they now live in the **Browse** gallery, so install them there when you want them. Everyone in a session needs the same modules for shared behaviour to match — including anyone who joins later.
 - **⬇ Download as example** exports a core module as a zip — the best starting point for writing your own.
 - Peers exchange module lists when they connect and show a toast if a module is missing or a different version on the other side. The session still works, but that module's behavior may differ — treat *same modules everywhere* as part of the session contract.
 
