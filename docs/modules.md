@@ -6,7 +6,8 @@ Modules plug playable content into the app — instruments, mini-games, generato
 
 Open it from **Menu ▸ Modules**.
 
-- **Core modules** ship with the app (hello, button, dungeon, piano, pong…). Toggle each on or off: **enabling is live**, disabling takes effect after a **reload**.
+- **Core modules** ship with the app (hello, button, dungeon, pong, VR sleeve). Toggle each on or off: **enabling is live**, disabling takes effect after a **reload**.
+- The piano, avatar controller, VR essentials and drivable car used to ship in the app; they now live in the **Browse** gallery, so install them there when you want them.
 - **⬇ Download as example** exports a core module as a zip — the best starting point for writing your own.
 - Peers exchange module lists when they connect and show a toast if a module is missing or a different version on the other side. The session still works, but that module's behavior may differ — treat *same modules everywhere* as part of the session contract.
 
@@ -95,6 +96,10 @@ The `register(api)` surface, in brief:
 | `isVR()` / `vrHand(hand)` | In a VR session? / one hand's world pose + `trigger`/`gripped` state (null when untracked) |
 | `fireObjectClick(uuid)` | Pulse **On Click** flow nodes targeting an object — lets user graphs react to your module's events (replicated) |
 | `possess(uuid, opts)` / `possessModes` | Drive an object (tank controls + follow camera). `possessModes` lists this build's camera modes — feature-detect `'first'` (first-person eye camera with optional pointer-lock mouse look) |
+| `create(cmd, {at})` / `moveObject(uuid, to)` | Build in the **shared** scene: the replicated `/create` (returns the new uuids) and the editor's replicated move |
+| `physics.set(uuid, patch)` / `physics.createJoint(...)` / `physics.running()` | Replicated physics parameters, joints, and "is a simulation running" |
+| `isPlaying()` / `peerIds()` | Play mode active / the connected peer roster |
+| `flyTo(pos, lookAt)` / `playSound()` / `followCam(uuid)` | **Local** camera moves, spatial chimes and a chase camera (never replicated) |
 | `send(msg)` / `onMessage(fn)` | Namespaced peer messages |
 | `registerStateSync({getState, applyState})` | Late-joiner catch-up |
 | `scene()`, `objectsGroup()`, `peerId()`, `toast()`, `now()`, `THREE`, `assetUrl(path)`, `sceneAssets()` | Utilities |

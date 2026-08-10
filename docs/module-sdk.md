@@ -139,6 +139,29 @@ api.THREE            // the app's three.js (user modules can't import it)
 api.assetUrl('assets/pling.mp3') // blob URL of a packaged file (user modules)
 ```
 
+### Building in the shared scene
+
+```js
+// create through the SAME replicated path a user's /create takes, and get
+// back what appeared — so you can place it, physics it, or joint it
+const [uuid] = await api.create('/create Box 1 1 1');
+await api.create('/create Box 0.6 0.6 0.6', { at: [x, y, z] });  // placed too
+
+api.moveObject(uuid, { pos: [0, 1, 0], rot: [0, 0, 0], scale: [1, 1, 1] });
+api.physics.set(uuid, { mode: 'dynamic', mass: 30, friction: 0.3 });
+api.physics.createJoint('revolute', bodyUuid, wheelUuid, 'x', { vel: 0, maxForce: 120 });
+api.physics.running();   // a simulation runs somewhere in the session
+api.isPlaying();         // Play mode is active
+api.peerIds();           // connected peer ids — free state a departed peer left
+
+api.flyTo([x, y, z], [lx, ly, lz]);   // LOCAL camera move (never replicated)
+api.playSound('pluck', [x, y, z]);    // LOCAL spatial chime
+api.followCam(uuid); api.stopFollowCam();   // LOCAL chase camera
+```
+
+Everything on the first block replicates; everything on the last block is
+per-viewer and deliberately local — a peer's module must never yank your camera.
+
 ### VR and control
 
 ```js
