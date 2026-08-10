@@ -38,6 +38,17 @@ a GitHub raw link, anything with CORS), then:
 - A parse or registration error keeps the **previous version running** (you get a toast).
 - Connected peers toast a module **version mismatch** while you iterate — expected: your dev copy genuinely differs from theirs.
 
+Any static server with CORS will do:
+
+```bash
+cd my-module          # the folder holding manifest.json + module.js
+npx serve -l 8099 --cors .
+```
+
+then install `http://localhost:8099` from the field above. The full recipe,
+including what survives a reload and the gotchas, is in the modules repo's
+[AUTHORING.md](https://github.com/theprototype-app/modules/blob/main/AUTHORING.md).
+
 Scene objects your module created stay (they are replicated user content); the module's own scene-root viewport groups are rebuilt by the fresh code.
 
 User modules must be **self-contained**: a single `module.js` with no `import` statements — three.js and packaged assets arrive through the API (`api.THREE`, `api.assetUrl(path)`). Custom Svelte node UIs are core-module-only; user modules get the generic parameter-driven node cards.
