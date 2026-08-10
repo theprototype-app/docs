@@ -26,6 +26,8 @@ The manager's **Install zip** / **Install URL** buttons load third-party modules
 - **URL** — a base URL serving the same layout (GitHub `tree` links are converted automatically; the host needs CORS). **Update** on the card re-fetches from the same URL.
 - **Browse** — a gallery of community modules from [github.com/theprototype-app/modules](https://github.com/theprototype-app/modules), installed with one click. Installed entries dim; an **Update** button appears when the gallery lists a newer version. The same trust model applies — gallery modules run unsandboxed.
 
+Installing from Browse keeps you on Browse, so you can install several in a row. The **User** tab's count grows (and pulses) to show where they went; opening it scrolls to the newest card and flashes it. Every module's buttons, its Dev URL row and Remove live on that card.
+
 User modules install, update, disable and remove **live** — the manager genuinely unloads a module's menus, nodes, effects and handlers without a page reload. (Core modules still need a reload to disable.)
 
 ### Dev mode — live reload while you build
