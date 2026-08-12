@@ -34,7 +34,16 @@ Selecting an object **locks it** so two people can't fight over the same thing:
 - A locked object shows who holds it, tinted with that peer's color.
 - To take over, open the object's right-click menu and choose **Request control**; the holder gets an Approve/Deny prompt.
 
-If a peer disconnects, their locks are released and their avatar, cursor and hands are cleaned up automatically.
+If a peer disconnects, their locks are released and their avatar, cursor and hands are cleaned up automatically — only *their* locks; everyone else keeps theirs.
+
+## Bigger sessions
+
+Everyone in a session connects to everyone else, directly. A room of ten is the tested target: joining takes roughly a third of a second, and every peer really does end up linked to every other peer.
+
+A momentary network blip no longer throws you out, either. A peer that drops for a few seconds is given a window to come back and rejoin the same session; only when that window closes are they treated as gone.
+
+!!! note
+    How many peers work for you depends on your uplink, since each one sends to every other. Voice chat and live gestures are the bandwidth-hungry parts — a large scene is sent once per joiner, not continuously.
 
 ## Choosing a signaling server
 

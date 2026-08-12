@@ -106,6 +106,34 @@ api.registerFrameTask((time) => { /* every frame, synced seconds */ });
 api.registerMenu('Open my panel', () => { /* button on your manager card */ });
 ```
 
+#### registerUnwrapBackend
+
+The [UV editor](uv-editor.md)'s **Unwrap** menu is a registry, so a module can add
+an unwrapping algorithm — or replace a built-in one under the same key — without
+the app shipping it:
+
+```js
+api.registerUnwrapBackend('xatlas', 'xatlas (automatic)', async (faces, options) => {
+	// faces: triangles as plain data (positions, and the face they belong to)
+	// return { uvs, islands } — pure data; the app commits, replicates and undoes it
+	return { uvs, islands };
+});
+```
+
+A backend is a **pure function**: it maps triangles to UV coordinates and returns
+them. It never touches the scene, which is what lets the app treat your unwrap
+exactly like a built-in one — one undo step, shared with peers, saved with the
+scene. Backends may be `async`, so a heavy solver can do its work off the main
+thread or load WebAssembly first.
+
+!!! tip "WebAssembly works"
+    A packaged module can ship a `.wasm` next to its code and load it with
+    `WebAssembly.instantiateStreaming(fetch(api.assetUrl('lib/xatlas.wasm')))` —
+    `assetUrl` hands you a blob URL, so there is no network request and nothing to
+    allow-list.
+
+Your key is namespaced per module, so two modules registering `box` never collide.
+
 Content you add to `api.objectsGroup()` becomes part of the shared scene
 (object list, GLTF sync to late joiners, movable/deletable by anyone). Derived
 or regenerating content (a generated dungeon, a game board) belongs in your own

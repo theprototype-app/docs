@@ -4,6 +4,16 @@ How to save and load your work: the recommended `.tpscene` bundle, GLTF intercha
 
 The main menu (the logo button) has **Import** (bring 3D files into the scene), **Load** (open a saved file) and **Save**, with a format switch underneath: **GLTF | Scene** — and a **⚙** cog for export settings.
 
+## Starting from a template
+
+**Menu ▸ Templates** opens a picker of ready-made scenes, in three tabs:
+
+- **General** — starting points, including a **Blank** card that clears the scene (it asks first).
+- **Examples** — worked showcases to pull apart and learn from.
+- **Community** — scenes contributed by other people.
+
+Templates load through the same path as a `.tpscene` file, so with peers connected everyone gets the usual Accept/Decline proposal and your current scene is stashed as a backup first. The Welcome overlay has a shortcut into the same picker.
+
 ## Scene (`.tpscene`) — recommended
 
 A `.tpscene` file is a zip bundle containing everything a scene needs:
@@ -20,6 +30,8 @@ The **⚙ export settings** dialog (next to the format switch) controls what the
 | Assets (audio, textures, configs) | on |
 | Imported packs | off |
 | Flow graph (nodes + edges) | on |
+
+**Animated models** are carried as their **original file bytes** rather than as exported geometry: an animation clip lives beside the scene, not on the object, and no exporter can carry it. That means an imported rig comes back animated instead of as a dead static mesh, and animations you authored in the Animation window are stored too. There's a size cap per model, with a toast if one is skipped.
 
 **Loading** a `.tpscene` restores the bundle in the right order: assets are put back into your Explorer library first (deduplicated by hash, landing in *Shared*), packs are re-registered, then the scene and flow graph load — sound nodes and textures resolve immediately instead of waiting for a peer to push bytes. One file moves a whole project between machines.
 

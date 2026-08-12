@@ -31,6 +31,8 @@ Drag files from your computer anywhere onto the Explorer panel:
 
 Items are capped at **25 MB** each. Images and models get generated thumbnails; audio and text show icon cards.
 
+**Animations and materials come along.** A `.glb`/`.gltf` or `.fbx` keeps its animation clips — they play in the scene and are listed per object in the Animation window — and an `.obj` picks up its sibling `.mtl` so it arrives with its materials instead of plain grey. Because no exporter can carry an animation clip, an animated model is stored as its **original file** when you save a scene, so it comes back animated. See [Saving & Sessions](saving.md).
+
 ## Browsing and opening
 
 - **Single-click** selects an item and shows its details in the **ⓘ Properties** panel.

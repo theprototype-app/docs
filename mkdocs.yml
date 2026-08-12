@@ -9,6 +9,8 @@ nav:
     - Explorer: explorer.md
     - Packs: packs.md
     - Prefabs: prefabs.md
+    - Mesh Editing: mesh-editing.md
+    - UV & Textures: uv-editor.md
     - Physics & Simulation: physics.md
     - Particle Effects: particles.md
     - Terrain & Sculpting: terrain.md

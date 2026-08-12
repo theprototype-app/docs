@@ -26,6 +26,8 @@ You build scenes from primitives, imported models and packs, wire behavior with 
 - [Explorer](explorer.md) — your local asset library: import files, organize folders, drag assets into the scene.
 - [Packs](packs.md) — ready-made model and audio collections you can browse and import.
 - [Prefabs](prefabs.md) — save any object as a reusable asset.
+- [Mesh Editing](mesh-editing.md) — vertices, edges and faces: extrude, bevel, knife, loops and mirroring.
+- [UV & Textures](uv-editor.md) — unwrap a model, paint on it, and give parts of it their own materials.
 - [Physics & Simulation](physics.md) — mass, joints, dropping and throwing objects.
 - [Terrain & Sculpting](terrain.md) — add ground and shape it with a brush.
 - [Saving & Sessions](saving.md) — the `.tpscene` bundle format, GLTF export, sessions and autosave.
