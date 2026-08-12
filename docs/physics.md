@@ -16,14 +16,53 @@ Select an object and open its **Physics** section in the Inspector:
 |---|---|---|
 | **Body** | Auto (scenery) · Static · Dynamic | Auto (scenery) |
 | **Mass** (Dynamic only) | 0.1 – 100 | 1 |
+| **Material** | Custom · Ice · Rubber · Wood · Metal | Custom |
 | **Bounciness** | 0 – 1 | 0.3 |
 | **Friction** | 0 – 2 | 0.5 |
-| **Collider** | Box · Sphere · Capsule · Cylinder · Convex hull | Box |
+| **Collider** | Box · Sphere · Capsule · Cylinder · Cone · Convex hull · Custom | inferred from the shape |
+| **Sensor** | on / off | off |
+| **Lock rotation / position** (Dynamic only) | per axis X · Y · Z | off |
+| **Show collider** | on / off (**this device only**) | off |
 
 - **Auto (scenery)** objects act as static obstacles the simulation can land on.
 - **Dynamic** objects fall and collide.
 - **Static** never moves.
-- **Collider shapes** fit the object's own extents and **follow its rotation** — a tilted box collides as a tilted box, a rotated ramp is really a ramp. Pick **Sphere** for balls (they roll), **Capsule**/**Cylinder** for posts and characters, **Convex hull** for irregular shapes (very dense meshes fall back to a box automatically).
+- **Collider shapes** fit the object's own extents and **follow its rotation** — a tilted box collides as a tilted box, a rotated ramp is really a ramp. Pick **Sphere** for balls (they roll), **Capsule**/**Cylinder**/**Cone** for posts and characters, **Convex hull** for irregular shapes (very dense meshes fall back to a box automatically). The default is inferred from the object's own shape, so a sphere gets a sphere.
+
+### Materials
+
+The **Material** dropdown sets bounciness and friction together, so you can pick a feel instead of two numbers: **Ice** (slippery, dead), **Rubber** (grippy, bouncy), **Wood**, **Metal**. Move either slider afterwards and the dropdown reads *Custom*.
+
+### Sensors — trigger volumes
+
+Tick **Sensor** and the object stops colliding: things pass straight through it. Instead, overlaps fire [On Enter](nodes/onenter.md) and [On Exit](nodes/onexit.md) in the flow graph — a doorway that opens as you approach, a lava pit, a scoring zone, a checkpoint.
+
+A sensor is still a visible mesh, so give it a transparent material (or hide it) once it works.
+
+### Locking axes
+
+A dynamic body can be pinned per axis: **Lock rotation** X/Y/Z stops it tipping (a character capsule that should stay upright), **Lock position** X/Y/Z keeps it on rails (a lift that only goes up and down).
+
+### Seeing the collider
+
+**Show collider** draws the collision shape as a wireframe over the object — green, or amber for a sensor. It is **local to you**; peers don't see your debug wireframes. Turn it on when something rests oddly or falls through the floor: the collider is nearly always the answer. There's also a **Show colliders** switch in the scene settings for all of them at once.
+
+### Custom colliders
+
+For a shape none of the presets fit, pick **Collider ▸ Custom (edit…)**. That opens the [mesh editor](mesh-editing.md) on a stand-in copy of the object, where you build the collision shape by hand with the real mesh tools; **Done** stores it.
+
+A custom collider is **compound** — each disconnected piece becomes its own convex hull — so you can build an L-shape, a hollow frame or a chair out of several blocks, which a single convex hull can never represent. The toolbox has **add box** / **add sphere** buttons to merge a primitive piece straight in, and prints how many pieces you have.
+
+!!! tip
+    You are editing a stand-in, not the model: cancelling the collider edit leaves the visible mesh untouched.
+
+### Changing shapes mid-run
+
+Collider settings apply **live**. Change a shape, a material, a sensor flag or a locked axis while the simulation is running and it swaps in place — joints, velocity and momentum survive — so you can tune a contraption without restarting it.
+
+## Scene gravity
+
+Gravity is a scene-wide setting (Configure Scene ▸ Physics): slide it anywhere from −20 to 5, or **Reset gravity** to put it back to the default. It is shared with your peers and applies live, so you can drop the world into moon gravity mid-run, or invert it. Positive values make things fall *up*.
 
 !!! tip "Primitives are ready to play"
     Newly added primitives (cube, sphere, stairs…) come with a **Dynamic** body (mass 1) out of the box — add a few, press <kbd>P</kbd>, and they fall, stack and throw immediately. Building scenery instead? Set **Body** back to *Auto* or *Static* in the Inspector. Terrain always spawns as scenery.

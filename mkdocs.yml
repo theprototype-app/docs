@@ -9,6 +9,8 @@ nav:
     - Explorer: explorer.md
     - Packs: packs.md
     - Prefabs: prefabs.md
+    - Mesh Editing: mesh-editing.md
+    - UV & Textures: uv-editor.md
     - Physics & Simulation: physics.md
     - Particle Effects: particles.md
     - Terrain & Sculpting: terrain.md
@@ -29,6 +31,10 @@ nav:
       - Random: nodes/random.md
       - Time: nodes/time.md
       - Object Selector: nodes/objectselector.md
+      - Velocity: nodes/velocity.md
+      - Flow Input: nodes/flowinput.md
+      - Flow Output: nodes/flowoutput.md
+      - Object Flow: nodes/objectflow.md
       - Script: nodes/script.md
       - Math: nodes/math.md
       - Compare: nodes/compare.md
@@ -45,6 +51,8 @@ nav:
       - On Click: nodes/onclick.md
       - Key Press: nodes/keypress.md
       - On Impact: nodes/onimpact.md
+      - On Enter: nodes/onenter.md
+      - On Exit: nodes/onexit.md
       - Counter: nodes/counter.md
       - Shake: nodes/shake.md
       - Spin: nodes/spin.md
@@ -54,6 +62,9 @@ nav:
       - Mass: nodes/mass.md
       - Bounciness: nodes/bounciness.md
       - Friction: nodes/friction.md
+      - Angular Velocity: nodes/angularvelocity.md
+      - Collider: nodes/collider.md
+      - Motor: nodes/motor.md
       - Pulse: nodes/pulse.md
       - Blink: nodes/blink.md
       - Sound: nodes/sound.md
@@ -66,6 +77,7 @@ nav:
   - AI:
     - Assistant: ai/assistant.md
     - Providers: ai/providers.md
+    - Local & Small Models: ai/local-models.md
     - 3D Generation: ai/generation.md
     - Console Agent: ai/console-agent.md
   - Extending:

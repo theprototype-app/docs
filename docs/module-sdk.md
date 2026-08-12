@@ -17,6 +17,21 @@ Two ways to ship one:
 Start by downloading a core module from the manager ("Download as example") —
 `hello` is the smallest complete one.
 
+Writing a **user module**? The companion repo
+[theprototype-app/modules](https://github.com/theprototype-app/modules) carries
+the working end of this page:
+
+- **[AUTHORING.md](https://github.com/theprototype-app/modules/blob/main/AUTHORING.md)**
+  — one document covering the rules, the packaging contract and the test recipe,
+  written to be read straight through or pasted whole into an AI assistant.
+- **[modules/_template](https://github.com/theprototype-app/modules/tree/main/modules/_template)**
+  — a working scaffold (`npm run new -- my-module`), alongside example modules
+  from a keypad-and-door to a first-person walk mode, each with a Playwright
+  test-flight that installs the real zip through the real manager.
+- **[DEVX-REQUESTS.md](https://github.com/theprototype-app/modules/blob/main/DEVX-REQUESTS.md)**
+  — gaps external modules hit that core modules do not, and what has shipped for
+  them.
+
 ## The one rule that matters
 
 **A module runs on every peer. There is no server.** Whatever your module does
@@ -91,6 +106,34 @@ api.registerFrameTask((time) => { /* every frame, synced seconds */ });
 api.registerMenu('Open my panel', () => { /* button on your manager card */ });
 ```
 
+#### registerUnwrapBackend
+
+The [UV editor](uv-editor.md)'s **Unwrap** menu is a registry, so a module can add
+an unwrapping algorithm — or replace a built-in one under the same key — without
+the app shipping it:
+
+```js
+api.registerUnwrapBackend('xatlas', 'xatlas (automatic)', async (faces, options) => {
+	// faces: triangles as plain data (positions, and the face they belong to)
+	// return { uvs, islands } — pure data; the app commits, replicates and undoes it
+	return { uvs, islands };
+});
+```
+
+A backend is a **pure function**: it maps triangles to UV coordinates and returns
+them. It never touches the scene, which is what lets the app treat your unwrap
+exactly like a built-in one — one undo step, shared with peers, saved with the
+scene. Backends may be `async`, so a heavy solver can do its work off the main
+thread or load WebAssembly first.
+
+!!! tip "WebAssembly works"
+    A packaged module can ship a `.wasm` next to its code and load it with
+    `WebAssembly.instantiateStreaming(fetch(api.assetUrl('lib/xatlas.wasm')))` —
+    `assetUrl` hands you a blob URL, so there is no network request and nothing to
+    allow-list.
+
+Your key is namespaced per module, so two modules registering `box` never collide.
+
 Content you add to `api.objectsGroup()` becomes part of the shared scene
 (object list, GLTF sync to late joiners, movable/deletable by anyone). Derived
 or regenerating content (a generated dungeon, a game board) belongs in your own
@@ -124,11 +167,58 @@ api.THREE            // the app's three.js (user modules can't import it)
 api.assetUrl('assets/pling.mp3') // blob URL of a packaged file (user modules)
 ```
 
+### Building in the shared scene
+
+```js
+// create through the SAME replicated path a user's /create takes, and get
+// back what appeared — so you can place it, physics it, or joint it
+const [uuid] = await api.create('/create Box 1 1 1');
+await api.create('/create Box 0.6 0.6 0.6', { at: [x, y, z] });  // placed too
+
+api.moveObject(uuid, { pos: [0, 1, 0], rot: [0, 0, 0], scale: [1, 1, 1] });
+api.physics.set(uuid, { mode: 'dynamic', mass: 30, friction: 0.3 });
+api.physics.createJoint('revolute', bodyUuid, wheelUuid, 'x', { vel: 0, maxForce: 120 });
+api.physics.running();   // a simulation runs somewhere in the session
+api.isPlaying();         // Play mode is active
+api.peerIds();           // connected peer ids — free state a departed peer left
+
+api.flyTo([x, y, z], [lx, ly, lz]);   // LOCAL camera move (never replicated)
+api.playSound('pluck', [x, y, z]);    // LOCAL spatial chime
+api.followCam(uuid); api.stopFollowCam();   // LOCAL chase camera
+```
+
+Everything on the first block replicates; everything on the last block is
+per-viewer and deliberately local — a peer's module must never yank your camera.
+
+### VR and control
+
+```js
+api.isVR()                    // true inside a VR session
+api.haptic(0.6, 60)           // buzz the VR controllers — no-op on desktop
+api.haptic(0.6, 60, 'right')  // one hand only
+api.vrHand('left')            // {position:[x,y,z], quaternion:[x,y,z,w],
+                              //  trigger, gripped, connected} — null when
+                              //  untracked / not in VR; poll from a frame task
+api.fireObjectClick(uuid)     // pulse On Click flow nodes targeting the object
+                              // (replicated) — user graphs react to your events
+api.possess(uuid, { camera: 'first', eyeHeight: 1.7, mouseLook: true });
+api.possessModes              // e.g. ['chase','orbit','none','first'] —
+                              // feature-detect 'first' here; unknown camera
+                              // values degrade silently on older builds
+```
+
+With `camera: 'first'` the eye sits at the object plus `eyeHeight`;
+`mouseLook: true` requests pointer lock — horizontal look turns the **object**
+(movement follows the view), vertical pitches the camera, and leaving pointer
+lock (Esc) releases the possession.
+
 ## Lifecycle
 
 - Core modules load at boot unless disabled in the manager; user modules load
-  after them. Enabling registers live; **disabling applies on reload** (the
-  registries are additive — there is no unregister).
+  after them. Enabling registers live. **User modules also disable, update and
+  dev-reload live** — everything `register(api)` added is genuinely torn down
+  and re-registered (see the manager page's *Dev mode*). Core modules still
+  need a reload to disable.
 - Peers exchange `{id, version}` lists on connect and toast on mismatch. The
   session still works, but that module's behavior may differ between peers —
   treat "same modules everywhere" as part of the session contract.
