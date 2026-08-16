@@ -10,7 +10,9 @@ nav:
     - Packs: packs.md
     - Prefabs: prefabs.md
     - Mesh Editing: mesh-editing.md
+    - Snapping: snapping.md
     - UV & Textures: uv-editor.md
+    - Animation: animation.md
     - Physics & Simulation: physics.md
     - Particle Effects: particles.md
     - Terrain & Sculpting: terrain.md
@@ -53,6 +55,10 @@ nav:
       - On Impact: nodes/onimpact.md
       - On Enter: nodes/onenter.md
       - On Exit: nodes/onexit.md
+      - Play Animation: nodes/playanim.md
+      - Animation Finished: nodes/animfinished.md
+      - Animation Marker: nodes/animmarker.md
+      - Animation State: nodes/animstate.md
       - Counter: nodes/counter.md
       - Shake: nodes/shake.md
       - Spin: nodes/spin.md

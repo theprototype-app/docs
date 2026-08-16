@@ -58,5 +58,7 @@ A legacy scene format, hidden by default. Enable it via **⚙ ▸ Show JSON form
 
 A snapshot of the scene, node graph and camera is written to your browser automatically — about 30 seconds after any change, plus a periodic interval. If a snapshot exists when you open the app, a **restore** prompt offers to bring it back. Autosave can be turned off in **Settings**.
 
+**Restore automatically** (*Settings ▸ Scene*, off by default) skips the prompt: your last scene is simply there when the app opens, and a notice tells you it was restored so an empty canvas is still one click away.
+
 !!! tip
     Autosave protects against crashes; sessions are for milestones; `.tpscene` files are for backups and sharing outside the browser. Use all three.

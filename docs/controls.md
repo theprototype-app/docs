@@ -33,10 +33,10 @@ Transform rows on a multi-selection drive the selection's **origin** rather than
 | <kbd>2</kbd> | Rotate |
 | <kbd>3</kbd> | Scale |
 
-Snapping (grid step, rotate degrees, scale step, snap-to-surface) is configured from the right-click menu under **Snapping**.
+Snapping is configured from the right-click menu under **Snapping** — grid steps and snap-to-surface, plus snapping onto real geometry: vertices, edges, faces and other objects, optionally turning the object onto the surface it lands on. See [Snapping](snapping.md).
 
 !!! note "Inside mesh edit"
-    While an [Edit Mesh](mesh-editing.md) session is open, <kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd> switch between vertices, edges and faces instead.
+    <kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd> keep meaning Move / Rotate / Scale inside an [Edit Mesh](mesh-editing.md) session — they are what you reach for mid-edit. The element modes (vertices, edges, faces) are on <kbd>Tab</kbd> and <kbd>Shift</kbd>+<kbd>Tab</kbd>.
 
 ### Each object's origin
 
@@ -52,6 +52,10 @@ The origin travels with the object: it replicates, saves, undoes, and is baked i
 ### Numeric fields
 
 Every number in the app is the same control: **drag** it to scrub, or **type** into it for live updates. <kbd>↑</kbd>/<kbd>↓</kbd> step by one unit — hold <kbd>Ctrl</kbd> for ×10, <kbd>Shift</kbd> for ×100 — and <kbd>Esc</kbd> reverts what you typed.
+
+### Floating windows
+
+The toolboxes, the Explorer, the flow and animation windows and the panels all behave the same way: drag the header to move, drag the bottom-right corner to resize. A window can never be sized past the edge of the screen — the resize corner always stays reachable — and **double-clicking** the corner resets it to its default size while leaving it where you parked it. Size and position are remembered per window.
 
 ## Keyboard shortcuts
 

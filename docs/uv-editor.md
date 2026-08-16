@@ -36,6 +36,34 @@ Pick a selection tool from the toolbar:
 
 Drag any selected point to move it. Each drag is one undo step and replicates when you let go.
 
+### Move, rotate and scale
+
+The topbar arms one of three transform modes — press <kbd>1</kbd>, <kbd>2</kbd> or <kbd>3</kbd> — and every gesture below applies whichever is armed:
+
+| Gesture | Does |
+|---|---|
+| **Left-drag** a selected point | Transform with the pointer |
+| **Middle-click** a selected point | A *grab*: the selection follows the cursor with no button held. Click or <kbd>Enter</kbd> commits, <kbd>Esc</kbd> puts it back |
+| **Arrow keys** | Nudge by exactly **one texture pixel**, rotate by one degree, or scale by 1% — <kbd>Ctrl</kbd> ×10, <kbd>Shift</kbd> ×100 |
+
+Scaling with the arrows is **per axis** — left/right scales in U, up/down in V, and <kbd>Alt</kbd> makes it uniform. Shrinking is the exact reciprocal of growing, so a press one way and a press back leaves the map where it started. Every press is its own undo step.
+
+### The transform origin
+
+Rotation and scaling happen about a **placeable origin**. Press the ⌖ button (or use the right-click menu) and click where you want it; drag it around at any time. It snaps onto the nearest UV point unless you hold <kbd>Alt</kbd>.
+
+The origin is a local editing aid — it is never replicated and never saved.
+
+### Selecting from the keyboard
+
+| Keys | Does |
+|---|---|
+| <kbd>Ctrl</kbd>+<kbd>Space</kbd> | Enter cursor mode and drop a cursor; press again to take or drop the cursor's point |
+| **Arrows** (in cursor mode) | Walk the cursor to the nearest point in that direction |
+| <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+**arrow** | Grow the selection in that direction |
+| <kbd>Esc</kbd> | Leave cursor mode, keeping the picks; again clears them |
+| <kbd>Ctrl</kbd>+<kbd>A</kbd> / <kbd>Ctrl</kbd>+<kbd>I</kbd> / <kbd>L</kbd> | Select all / invert / grow to the linked island |
+
 ### Only the faces you picked
 
 A primitive's sides usually **share** the same UV space — a default cube has 24 UV entries but only four distinct coordinates, so dragging one side drags all six. The **Only selected faces** toggle scopes the editor to the faces you have picked in [Edit Mesh](mesh-editing.md), which is how you separate them.

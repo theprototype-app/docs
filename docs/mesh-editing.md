@@ -9,19 +9,37 @@ Select a mesh, then either press <kbd>Tab</kbd> or right-click it ▸ **Edit mes
 | Action | How |
 |---|---|
 | **Enter** | <kbd>Tab</kbd>, or right-click ▸ *Edit mesh* |
-| **Done** | <kbd>Esc</kbd>, <kbd>Tab</kbd>, or the ✓ button — keeps your work |
-| **Cancel** | the ↺ button — reverts **everything** since the session opened (it asks first) |
+| **Done** | <kbd>Esc</kbd> or the ✓ button — keeps your work |
+| **Cancel** | the ✕ button — reverts **everything** since the session opened (it asks first) |
+| **Undo / redo one step** | <kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Y</kbd>, or the ↶ ↷ buttons in the toolbox header |
+
+!!! note "Cancel is not a bigger undo"
+    ↶ steps back one operation. ✕ throws the **whole session** away and puts the mesh back as you found it — which is why it is marked as the destructive one and asks before it acts.
 
 While you edit, the object is locked for your peers, and the usual selection outline steps out of the way so it can't hide your work.
+
+### The toolbox
+
+| Part | What it holds |
+|---|---|
+| **Tabs** | Vertices / Edges / Faces — they stay pinned while the rest of the panel scrolls |
+| **Header** | Undo, redo, the key cheat sheet (**?**), Done and Cancel |
+| **Tools & operations** | The grid for the current mode, with the selected tool's parameters right below it |
+| **Sections** | Cleanup, Symmetry, Display, Collider — collapsible, and available from *every* element mode |
+
+Drag the header to move it, drag its right edge to change the width (the tool grid reflows), and double-click the grip to reset it. On a phone it becomes a **bottom sheet** you can drag taller or shorter instead of a floating window.
 
 !!! note "One undo step for the whole session"
     Individual operations undo one at a time while you work. When you press **Done**, the whole session collapses into a *single* undo entry — so <kbd>Ctrl</kbd>+<kbd>Z</kbd> afterwards puts the mesh back the way it was before you started, not one extrude at a time.
 
 ## The three element modes
 
-A mesh can be edited by **vertex**, **edge** or **face**. Switch with the **Mode** buttons or press <kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd> — inside a session those keys change the element mode instead of the transform gizmo.
+A mesh can be edited by **vertex**, **edge** or **face**. Switch with the **tabs** at the top of the toolbox, or press <kbd>Tab</kbd> to cycle forwards and <kbd>Shift</kbd>+<kbd>Tab</kbd> backwards.
 
 Each mode remembers its own selection, so you can hop between them without losing your pick.
+
+!!! note "<kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd> stay Move / Rotate / Scale"
+    Those keys mean the same thing inside a mesh session as everywhere else in the app — they switch the **gizmo**, which is what you reach for mid-edit. The element modes live on <kbd>Tab</kbd>.
 
 ### Selecting
 
@@ -55,9 +73,19 @@ In face mode, a **granularity** switch decides how much one click picks up:
 !!! tip
     **Quad** is what you want almost always. A model is made of triangles underneath, but you think in quads — and so do the loop tools.
 
-## Face tools
+## Apply, then adjust
 
-Arm a tool from the *Tools* row, then click a face to apply it (or press **Apply** to run it on the current selection). The **amount** field next to the row sets how far Extrude and Inset go, and **Auto-apply** decides whether a plain click commits the armed tool.
+Most operations run the moment you press them and then let you **tune the result**: the options pane becomes an *Adjusting* panel, and changing a value re-runs the operation from the original shape rather than piling a second one on top. Nudge the width until it looks right, then carry on — or press **✕** to take the whole thing back.
+
+- If an operation's **preconditions are met** (Bridge with two matching pieces selected, Bevel with a bordered selection), pressing it applies immediately.
+- If they are not, nothing happens to your mesh and the toolbox says **why**, with an **Apply** button once you have fixed it.
+- It is **one undo step** either way, however long you spend adjusting.
+
+## Tools and operations
+
+The face tab splits its grid in two. **Tools** are armed — they change what a viewport click does, and stay armed until you pick another. **Operations** act on the selection you already have, once.
+
+Icons are for tools; commands that act immediately read as words. Whichever tool you select, its parameters appear right underneath it.
 
 | Tool | Key | What it does |
 |---|---|---|
@@ -69,10 +97,22 @@ Arm a tool from the *Tools* row, then click a face to apply it (or press **Apply
 | **Loop cut** | <kbd>C</kbd> | Insert edge loops across the ring your selection lies on (the **cuts** field sets how many). |
 | **Knife** | <kbd>K</kbd> | Cut across the mesh on screen — see below. |
 | **Flip normals** | <kbd>F</kbd> | Reverse the winding, for a face that renders inside-out. |
+| **Duplicate** | | Copy the selected faces in place. They start exactly on top of the originals — drag them off with the gizmo. |
 | **Delete** | <kbd>X</kbd> | Remove the selection. |
 
 !!! note "Move is the default, deliberately"
     With auto-apply on, a plain click commits whatever is armed — so the armed tool starts as **Move**. Clicking a face to look at it should never extrude it.
+
+### Tool parameters
+
+| Tool | Parameters |
+|---|---|
+| **Extrude** | *distance*, and **individual** — extrude each face along its own normal instead of the selection's average |
+| **Inset** | *amount*, plus a *depth* that raises or lowers the cap as it goes in |
+| **Bevel** | *width* (in world units), *segments*, *profile* — and the direction, in or out |
+| **Loop cut** | *cuts*, *position* along the ring, and which of the two directions to run — **Along** or **Across** |
+| **Bridge** | *cuts* across the tunnel, *twist* to rotate one end against the other, and **invert faces** if the walls end up the wrong way round |
+| **Subdivide** | *levels* — each one splits every quad 2×2 again |
 
 ### Knife
 
@@ -91,8 +131,10 @@ Select **two** separate pieces and press Bridge. Their boundaries have to have t
 | **Move** | Seat the gizmo on the selected edges (X runs along the edge, Z out of the surface). The welded neighbours stretch with it. |
 | **Loop** | Select the whole edge loop through this edge. |
 | **Bevel** | Replace the edge with a chamfer strip (width, segments and profile below). |
+| **Extrude** | Pull a **border** edge out into a new strip of faces. A chain of edges extrudes as one piece; interior edges have nothing to extrude into, so they are refused. |
+| **Subdivide** | Split every face along the selected edge at its midpoint — both sides split at the same point, so no crack appears. |
 | **Dissolve** | Remove the edge and merge the two faces it joined. |
-| **Clear** | Deselect all edges. |
+| **Delete** | Remove every face touching the selected edges. |
 
 !!! warning "Bevel needs a clean corner"
     Each end of a bevelled edge needs exactly three faces around it. More than that needs a mitered corner, which the tool refuses rather than guessing — it would tear the mesh.
@@ -104,8 +146,9 @@ Select **two** separate pieces and press Bridge. Their boundaries have to have t
 | **Weld** | <kbd>W</kbd> | Merge the selected vertices into one, at their centroid. |
 | **Create face** | | Build a face from 3 or 4 selected vertices. |
 | **Bevel** | | Cut the corner off every selected vertex and cap it. Works on any number of vertices. |
-| **Proportional** | | Drag one vertex and its neighbourhood follows, weighted by distance — for smooth bulges and dips instead of a crease. The **radius** sets how far the influence reaches. |
-| **Slide** | | Constrain the drag to one of this vertex's own edges. Adjusts a profile without pulling the vertex off the surface. |
+| **Smooth** | | Relax the selected vertices toward their neighbours — *factor* sets how far each pass moves them, *iterations* how many passes. |
+| **Slide** | | Constrain the drag to one of this vertex's own edges. Adjusts a profile without pulling the vertex off the surface. A marker shows where it will land, and the clamp toggle decides whether it may run past the edge's end. |
+| **Delete** | | Remove every face touching the selected vertices. |
 | **Deselect** | | Clear the selection. |
 
 Vertices are drawn as dots sized in **screen** space, so they stay clickable whether you're zoomed into a cube or out of a whole terrain. The **dot size** slider multiplies that size, and turning the adaptive toggle off gives you a fixed world size instead.
@@ -116,9 +159,24 @@ Bevel works in all three modes and shares one set of options:
 
 | Option | What it does |
 |---|---|
-| **Width** | How far the chamfer reaches. Clamped per edge, so two bevels can never cross. |
+| **Width** | How far the chamfer reaches, in **world units** — the same 0.1 means the same size on a small prop and a large wall. Clamped per edge, so two bevels can never cross. |
 | **Segments** | More segments = a rounder edge. |
 | **Profile** | 0 is a flat chamfer, positive domes the cap out, negative dishes it in. |
+| **Direction** | Whether the chamfer eats **in** to the shape or grows **out** of it. |
+
+## Proportional editing
+
+Switch **Proportional** on and moving one element drags its neighbourhood along, fading off with distance — smooth bulges and dips instead of a single crease. It works in **all three modes**: vertices, edges and faces.
+
+A **ring** on the model shows how far the influence reaches. Roll the **wheel while dragging** to resize it and watch the shape respond; the ring always faces you, so it stays readable from any angle.
+
+## Pivot and gizmo
+
+The *Gizmo & pivot* section decides what the gizmo turns around:
+
+- With **several elements selected**, transforms happen about the **centre of the selection** — rotate a whole patch and it turns as one piece.
+- **Place the pivot** yourself by dragging the gizmo: the mesh stays put and only the pivot moves, so the next rotation or scale happens exactly where you want it.
+- The gizmo's **orientation** (local or world) and whether it is shown at all are session-wide, and apply to every element mode.
 
 ## Clean-up
 
@@ -129,6 +187,8 @@ The *Cleanup* row acts on the whole object, not on your selection:
 | **Recalculate normals** | Rewind every face to point outward — the cure for patches that render dark or inside-out. |
 | **Merge by distance** | Collapse vertices closer than the given distance into one and drop the faces that go degenerate. |
 | **Smooth / Flat** | Switch the mesh between smooth and faceted shading. |
+| **Triangulate** | Break every face down into plain triangles. |
+| **Tris to quads** | Pair triangles back up into quads — the loop tools work in quads, so this is how you make an imported triangle soup workable again. |
 | **Symmetrize** | Keep one half and replace the other with its mirror image, across an object-local **X / Y / Z** axis through the object's origin. Pick which half to keep. |
 
 !!! tip "Model half of it"
@@ -143,6 +203,12 @@ The *Cleanup* row acts on the whole object, not on your selection:
 | **Selection outline** | Bring the object outline back while editing (off by default). |
 | **Shortcuts** | Turn the single-key shortcuts off, if they get in the way. |
 | **?** | Open the key cheat sheet as its own little window you can park beside the viewport. |
+
+The overlay **colours** — wireframe, selection outline and the edit overlay — are yours to set in *Settings ▸ Appearance*; the edit overlay defaults to picking a colour that contrasts with the material you are editing.
+
+## Snapping while you edit
+
+Element [snapping](snapping.md) applies to the mesh gizmo too — switch on the **Vertex** target and a dragged vertex bites onto another one, which is how you close a seam by hand without nudging.
 
 ## Your mesh remembers its faces
 
@@ -169,10 +235,12 @@ The same list lives behind the **?** button in the toolbox.
 
 | Keys | Action |
 |---|---|
-| <kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd> | Switch to Vertices / Edges / Faces |
+| <kbd>Tab</kbd> / <kbd>Shift</kbd>+<kbd>Tab</kbd> | Next / previous element mode (Vertices → Edges → Faces) |
+| <kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd> | Gizmo: Move / Rotate / Scale |
 | <kbd>Ctrl</kbd>+<kbd>A</kbd> | Select all |
 | <kbd>Ctrl</kbd>+<kbd>I</kbd> | Invert the selection |
-| <kbd>Tab</kbd> | Toggle Edit Mesh |
+| <kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Y</kbd> | Undo / redo one step inside the session |
+| <kbd>Tab</kbd> (outside a session) | Enter Edit Mesh on the selected object |
 | <kbd>Esc</kbd> | Done — leave the session |
 | <kbd>E</kbd> / <kbd>I</kbd> / <kbd>G</kbd> | Faces: arm Extrude / Inset / Move |
 | <kbd>S</kbd> / <kbd>C</kbd> | Faces: Subdivide / Loop cut |
