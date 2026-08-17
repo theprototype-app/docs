@@ -258,4 +258,16 @@ Mesh editing works in VR too: the radial menu's **Edit** entries cover face sele
 
 - Editing an object **locks it** — your peers can see it but not edit it at the same time.
 - Live gestures stream a preview to peers several times a second; the final shape is committed when you let go.
-- A topology change travels as a full geometry snapshot, which is size-capped — very dense imported models can be viewed and painted but not topology-edited.
+- A topology change travels as a full geometry snapshot. That has a ceiling, but a generous one — roughly half a million vertices, which is about thirty times what earlier versions allowed.
+
+### How big a model can you edit?
+
+Three separate limits, and they are different questions:
+
+| Limit | What it governs |
+|---|---|
+| **Commit** (~500k vertices) | The finished edit that replicates and lands in undo. |
+| **Live preview** (~15k vertices) | What streams to peers *during* a gesture. Above it your edit still works and still replicates — peers just see the result when you let go instead of watching it move. |
+| **Edit Mesh entry** (2500 triangles) | How dense a mesh may be before the session refuses to open, so the interaction stays responsive. Raise it in **Settings ▸ VR** if your machine can take it. |
+
+All three come from measurement rather than caution: the numbers are what the wire, the frame budget and memory actually stood up to.

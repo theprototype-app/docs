@@ -17,7 +17,21 @@ How to move the camera, select and transform objects, and find every keyboard sh
 - **Click empty space** to deselect.
 - **Shift+click** adds or removes objects from a multi-selection (the last-picked object is the primary).
 - **Shift+drag** on empty space draws a box-select marquee.
+- **Ctrl+A** selects everything in the scene. Inside a mesh editing session it keeps its other meaning — select every face, edge or vertex — so the two never collide.
 - Selecting an object **locks it for other peers** (one lock per person); a locked object shows who holds it, and its right-click menu offers **Request control** to ask for a handover.
+
+### What double-click does
+
+Opening properties is the default, but it is a setting: **Settings ▸ Selection** lets double-click open properties, enter mesh editing, select everything of the same kind, or focus and isolate the object instead.
+
+**Isolate** hides everything else rather than fading it — fading would mean writing to materials that other people are sharing.
+
+### Very small objects
+
+An object scaled — or animated — down to almost nothing has no surface left to click. It gets a small dot drawn at its origin so there is something to aim at, and a click near that dot selects it.
+
+!!! note
+    At *exactly* zero scale the viewport click does not reach it yet; select it from the object list instead. That one is a known gap.
 
 ### Editing a multi-selection
 

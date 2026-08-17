@@ -25,20 +25,32 @@ A **clip** owns a length, a loop mode (*once*, *loop* or *ping-pong*) and any nu
 |---|---|
 | **Transform** | `pos.x/y/z`, `rot.x/y/z`, `scale` (uniform) or `scale.x/y/z` |
 | **Visibility** | `visible` — a *stepped* channel: it holds its value until the next key instead of fading |
-| **Look** | `opacity`, `color.r/g/b`, `metalness`, `roughness`, `emissive` |
+| **Look** | `opacity`, `color.r/g/b`, `metalness`, `roughness`, `Emission` |
 | **Lights** | `light.intensity` |
 
-A **key** is a value at a time. Click a channel row at the playhead to add one; drag it to move it; <kbd>Del</kbd> removes the selection.
+A **key** is a value at a time. Click a channel row at the playhead to add one; drag it to move it; <kbd>Del</kbd> removes the selection. Whatever you change — adding a channel, typing a value, retiming, moving a marker — the object re-poses straight away, so you see the result without touching the timeline.
 
 !!! tip "Rotation turns around the object's origin"
     A door swings on its hinge only if its **origin** sits on the hinge. Set it from the object's properties (*Transform ▸ Origin*) before you key the rotation — the animation follows it.
+
+!!! note "Emission needs a colour"
+    Emission is a *strength* multiplied by an emission colour, and a default material's is black — so turning the strength up alone would light nothing. The properties panel has one **Emission** block with both Strength and Colour; leave the colour alone and the object glows in its own.
+
+### Movements play from where the object is
+
+A position channel is stored as an **offset from its first key**, not as an absolute place in the world. Move an object after animating it and the clip runs from its new home: a door authored at the origin opens wherever you later put it, and a lift you drag up one floor still travels the same distance from there.
+
+Rotation, scale and the look channels are absolute — only position works this way, because it is the one people move.
+
+!!! warning "This changed in 1.5.0"
+    Clips saved before 1.5.0 are read the same way, so a movement authored in an older version now replays relative to the object's current position instead of snapping back to where it was keyed. For most scenes that is the behaviour you wanted. If a clip depended on returning to a fixed spot, re-key it where it belongs.
 
 ## The transport
 
 | Control | Does |
 |---|---|
 | ▶ / ⏸ | Play or pause **on every peer** |
-| ◀ | Play backwards from the playhead |
+| ◀ | Play backwards from the playhead — press it again to pause where you are |
 | ⏹ | Stop and return to where playback started |
 | ⏮ / ⏭ | Jump to the start / end of the clip |
 | **A** / **B** | Set the loop start / end — playback stays inside that window while you work on one part |
@@ -95,6 +107,10 @@ The clipboard is held **by channel** and relative to the earliest key copied, so
 
 Switch **Auto-key** on and posing the object records it: drag the gizmo or type a number in the properties panel and a key lands at the playhead, creating the channel if it does not exist yet. Switch it off and the object goes back to being just an object.
 
+Material edits count as posing. Pick a colour, drag Roughness or Metalness, change Emission — the key lands as you make the change, so you can work entirely in the properties panel and watch the channels appear.
+
+If **Auto-key** is on and the object has no clips at all, the first change you make creates one and tells you it did.
+
 ## Presets
 
 **Door**, **Drawer**, **Elevator**, **Turntable**, **Pulse** and **Blink out** drop a finished clip onto the selected object — a starting point you then retime and re-ease. Door and Drawer expect a sensible **origin** (see the tip above).
@@ -107,7 +123,7 @@ Markers ride with the clip, so they save, replicate and undo with it.
 
 ## Onion skin
 
-Switch **Onion skin** on to see faint ghosts of the object at the keys either side of the playhead — the classic way to judge spacing. It is a local view setting: your peers do not see your ghosts.
+Switch **Onion skin** on to see faint ghosts of the object at the keys either side of the playhead — the classic way to judge spacing. It is a local view setting: your peers do not see your ghosts. A ghost that would land exactly on the object hides itself, so a clip driving only colour or opacity does not read as a second solid copy.
 
 ## Everyone sees the same thing
 
