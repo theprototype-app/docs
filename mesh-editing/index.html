@@ -743,6 +743,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Collaboration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-big-a-model-can-you-edit" class="md-nav__link">
+    <span class="md-ellipsis">
+      How big a model can you edit?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2847,6 +2862,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Collaboration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-big-a-model-can-you-edit" class="md-nav__link">
+    <span class="md-ellipsis">
+      How big a model can you edit?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3438,8 +3468,33 @@
 <ul>
 <li>Editing an object <strong>locks it</strong> — your peers can see it but not edit it at the same time.</li>
 <li>Live gestures stream a preview to peers several times a second; the final shape is committed when you let go.</li>
-<li>A topology change travels as a full geometry snapshot, which is size-capped — very dense imported models can be viewed and painted but not topology-edited.</li>
+<li>A topology change travels as a full geometry snapshot. That has a ceiling, but a generous one — roughly half a million vertices, which is about thirty times what earlier versions allowed.</li>
 </ul>
+<h3 id="how-big-a-model-can-you-edit">How big a model can you edit?</h3>
+<p>Three separate limits, and they are different questions:</p>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>What it governs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Commit</strong> (~500k vertices)</td>
+<td>The finished edit that replicates and lands in undo.</td>
+</tr>
+<tr>
+<td><strong>Live preview</strong> (~15k vertices)</td>
+<td>What streams to peers <em>during</em> a gesture. Above it your edit still works and still replicates — peers just see the result when you let go instead of watching it move.</td>
+</tr>
+<tr>
+<td><strong>Edit Mesh entry</strong> (2500 triangles)</td>
+<td>How dense a mesh may be before the session refuses to open, so the interaction stays responsive. Raise it in <strong>Settings ▸ VR</strong> if your machine can take it.</td>
+</tr>
+</tbody>
+</table>
+<p>All three come from measurement rather than caution: the numbers are what the wire, the frame budget and memory actually stood up to.</p>
 
 
 

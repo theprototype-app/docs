@@ -384,6 +384,24 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#what-double-click-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      What double-click does
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#very-small-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Very small objects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#editing-a-multi-selection" class="md-nav__link">
     <span class="md-ellipsis">
       Editing a multi-selection
@@ -2503,6 +2521,24 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#what-double-click-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      What double-click does
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#very-small-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Very small objects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#editing-a-multi-selection" class="md-nav__link">
     <span class="md-ellipsis">
       Editing a multi-selection
@@ -2625,8 +2661,18 @@
 <li><strong>Click empty space</strong> to deselect.</li>
 <li><strong>Shift+click</strong> adds or removes objects from a multi-selection (the last-picked object is the primary).</li>
 <li><strong>Shift+drag</strong> on empty space draws a box-select marquee.</li>
+<li><strong>Ctrl+A</strong> selects everything in the scene. Inside a mesh editing session it keeps its other meaning — select every face, edge or vertex — so the two never collide.</li>
 <li>Selecting an object <strong>locks it for other peers</strong> (one lock per person); a locked object shows who holds it, and its right-click menu offers <strong>Request control</strong> to ask for a handover.</li>
 </ul>
+<h3 id="what-double-click-does">What double-click does</h3>
+<p>Opening properties is the default, but it is a setting: <strong>Settings ▸ Selection</strong> lets double-click open properties, enter mesh editing, select everything of the same kind, or focus and isolate the object instead.</p>
+<p><strong>Isolate</strong> hides everything else rather than fading it — fading would mean writing to materials that other people are sharing.</p>
+<h3 id="very-small-objects">Very small objects</h3>
+<p>An object scaled — or animated — down to almost nothing has no surface left to click. It gets a small dot drawn at its origin so there is something to aim at, and a click near that dot selects it.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>At <em>exactly</em> zero scale the viewport click does not reach it yet; select it from the object list instead. That one is a known gap.</p>
+</div>
 <h3 id="editing-a-multi-selection">Editing a multi-selection</h3>
 <p>The properties panel edits <strong>everything you have selected</strong>, not just the last object you clicked. Change a colour, a material, a shadow flag or a physics setting and it applies to the whole set as a <strong>single undo step</strong>; a row whose objects disagree shows a dash until you set it.</p>
 <p>Transform rows on a multi-selection drive the selection's <strong>origin</strong> rather than each object's absolute position — typing a value moves the set as a whole instead of collapsing it onto one plane. Name, uuid and geometry stay single-object: click the one object for those.</p>

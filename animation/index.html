@@ -590,6 +590,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Clips, channels and keys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#movements-play-from-where-the-object-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      Movements play from where the object is
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2523,6 +2538,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Clips, channels and keys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#movements-play-from-where-the-object-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      Movements play from where the object is
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2707,7 +2737,7 @@
 </tr>
 <tr>
 <td><strong>Look</strong></td>
-<td><code>opacity</code>, <code>color.r/g/b</code>, <code>metalness</code>, <code>roughness</code>, <code>emissive</code></td>
+<td><code>opacity</code>, <code>color.r/g/b</code>, <code>metalness</code>, <code>roughness</code>, <code>Emission</code></td>
 </tr>
 <tr>
 <td><strong>Lights</strong></td>
@@ -2715,10 +2745,21 @@
 </tr>
 </tbody>
 </table>
-<p>A <strong>key</strong> is a value at a time. Click a channel row at the playhead to add one; drag it to move it; <kbd>Del</kbd> removes the selection.</p>
+<p>A <strong>key</strong> is a value at a time. Click a channel row at the playhead to add one; drag it to move it; <kbd>Del</kbd> removes the selection. Whatever you change — adding a channel, typing a value, retiming, moving a marker — the object re-poses straight away, so you see the result without touching the timeline.</p>
 <div class="admonition tip">
 <p class="admonition-title">Rotation turns around the object's origin</p>
 <p>A door swings on its hinge only if its <strong>origin</strong> sits on the hinge. Set it from the object's properties (<em>Transform ▸ Origin</em>) before you key the rotation — the animation follows it.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Emission needs a colour</p>
+<p>Emission is a <em>strength</em> multiplied by an emission colour, and a default material's is black — so turning the strength up alone would light nothing. The properties panel has one <strong>Emission</strong> block with both Strength and Colour; leave the colour alone and the object glows in its own.</p>
+</div>
+<h3 id="movements-play-from-where-the-object-is">Movements play from where the object is</h3>
+<p>A position channel is stored as an <strong>offset from its first key</strong>, not as an absolute place in the world. Move an object after animating it and the clip runs from its new home: a door authored at the origin opens wherever you later put it, and a lift you drag up one floor still travels the same distance from there.</p>
+<p>Rotation, scale and the look channels are absolute — only position works this way, because it is the one people move.</p>
+<div class="admonition warning">
+<p class="admonition-title">This changed in 1.5.0</p>
+<p>Clips saved before 1.5.0 are read the same way, so a movement authored in an older version now replays relative to the object's current position instead of snapping back to where it was keyed. For most scenes that is the behaviour you wanted. If a clip depended on returning to a fixed spot, re-key it where it belongs.</p>
 </div>
 <h2 id="the-transport">The transport</h2>
 <table>
@@ -2735,7 +2776,7 @@
 </tr>
 <tr>
 <td>◀</td>
-<td>Play backwards from the playhead</td>
+<td>Play backwards from the playhead — press it again to pause where you are</td>
 </tr>
 <tr>
 <td>⏹</td>
@@ -2868,13 +2909,15 @@
 </table>
 <h2 id="auto-key">Auto-key</h2>
 <p>Switch <strong>Auto-key</strong> on and posing the object records it: drag the gizmo or type a number in the properties panel and a key lands at the playhead, creating the channel if it does not exist yet. Switch it off and the object goes back to being just an object.</p>
+<p>Material edits count as posing. Pick a colour, drag Roughness or Metalness, change Emission — the key lands as you make the change, so you can work entirely in the properties panel and watch the channels appear.</p>
+<p>If <strong>Auto-key</strong> is on and the object has no clips at all, the first change you make creates one and tells you it did.</p>
 <h2 id="presets">Presets</h2>
 <p><strong>Door</strong>, <strong>Drawer</strong>, <strong>Elevator</strong>, <strong>Turntable</strong>, <strong>Pulse</strong> and <strong>Blink out</strong> drop a finished clip onto the selected object — a starting point you then retime and re-ease. Door and Drawer expect a sensible <strong>origin</strong> (see the tip above).</p>
 <h2 id="markers">Markers</h2>
 <p>Name a moment inside a clip — <em>"footstep"</em>, <em>"latch"</em>, <em>"dust"</em> — and the <a href="../nodes/animmarker/">Animation Marker</a> node fires as the playhead crosses it, on every peer. Add one at the playhead from the marker row; double-click to rename; ✕ removes it.</p>
 <p>Markers ride with the clip, so they save, replicate and undo with it.</p>
 <h2 id="onion-skin">Onion skin</h2>
-<p>Switch <strong>Onion skin</strong> on to see faint ghosts of the object at the keys either side of the playhead — the classic way to judge spacing. It is a local view setting: your peers do not see your ghosts.</p>
+<p>Switch <strong>Onion skin</strong> on to see faint ghosts of the object at the keys either side of the playhead — the classic way to judge spacing. It is a local view setting: your peers do not see your ghosts. A ghost that would land exactly on the object hides itself, so a clip driving only colour or opacity does not read as a second solid copy.</p>
 <h2 id="everyone-sees-the-same-thing">Everyone sees the same thing</h2>
 <p>Both halves replicate. The <strong>data</strong> (clips, keys, markers) syncs latest-wins, and the <strong>transport</strong> (which clip is playing, from when, at what speed, inside which A/B window) rides the session's synced clock, so every peer evaluates the same pose at the same moment. Someone joining late receives all of it.</p>
 <p>Every gesture is <strong>one undo step</strong> — a drag of twelve keys undoes as one, not twelve.</p>
