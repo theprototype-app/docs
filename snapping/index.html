@@ -8,11 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.theprototype.app/module-package/">
+        <link rel="canonical" href="https://docs.theprototype.app/snapping/">
       
       
-        <link rel="prev" href="../module-sdk/">
+        <link rel="prev" href="../mesh-editing/">
       
+      
+        <link rel="next" href="../uv-editor/">
       
       
       <link rel="icon" href="../logo.svg">
@@ -20,7 +22,7 @@
     
     
       
-        <title>Module Packages - ThePrototype Docs</title>
+        <title>Snapping - ThePrototype Docs</title>
       
     
     
@@ -72,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#module-package-layout" class="md-skip">
+        <a href="#snapping" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Module Packages
+              Snapping
             
           </span>
         </div>
@@ -361,17 +363,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -385,7 +389,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Building
@@ -480,10 +484,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../snapping/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Snapping
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -492,6 +516,98 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#where-it-lives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where it lives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grid-snapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grid snapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#snap-to-surface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Snap to surface
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#element-snapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Element snapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#align-to-normal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Align to normal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pick-your-snap-origin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pick your snap origin
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inside-mesh-edit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inside mesh edit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-vr" class="md-nav__link">
+    <span class="md-ellipsis">
+      In VR
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2210,19 +2326,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -2236,7 +2350,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Extending
@@ -2289,30 +2403,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Module Packages
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../module-package/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2321,62 +2415,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#manifestjson" class="md-nav__link">
-    <span class="md-ellipsis">
-      manifest.json
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#url-installs" class="md-nav__link">
-    <span class="md-ellipsis">
-      URL installs
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#entry-constraints-user-modules" class="md-nav__link">
-    <span class="md-ellipsis">
-      Entry constraints (user modules)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#trust-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      Trust model
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2416,36 +2454,72 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#manifestjson" class="md-nav__link">
+  <a href="#where-it-lives" class="md-nav__link">
     <span class="md-ellipsis">
-      manifest.json
+      Where it lives
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#url-installs" class="md-nav__link">
+  <a href="#grid-snapping" class="md-nav__link">
     <span class="md-ellipsis">
-      URL installs
+      Grid snapping
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#entry-constraints-user-modules" class="md-nav__link">
+  <a href="#snap-to-surface" class="md-nav__link">
     <span class="md-ellipsis">
-      Entry constraints (user modules)
+      Snap to surface
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#trust-model" class="md-nav__link">
+  <a href="#element-snapping" class="md-nav__link">
     <span class="md-ellipsis">
-      Trust model
+      Element snapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#align-to-normal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Align to normal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pick-your-snap-origin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pick your snap origin
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inside-mesh-edit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inside mesh edit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-vr" class="md-nav__link">
+    <span class="md-ellipsis">
+      In VR
     </span>
   </a>
   
@@ -2466,7 +2540,7 @@
                   
 
   
-    <a href="https://github.com/theprototype-app/docs/edit/docs/module-package.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/theprototype-app/docs/edit/docs/snapping.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2474,78 +2548,83 @@
   
 
 
-<h1 id="module-package-layout">Module package layout</h1>
-<p>The format the Modules manager installs (zip upload or URL) and exports
-("Download as example"). One folder or zip root per module.</p>
+<h1 id="snapping">Snapping</h1>
+<p>Snapping makes things line up without you nudging them into place. There are two kinds, and they work together: a <strong>grid</strong> that quantises how far a drag moves, and <strong>element snapping</strong> that lands the object on real geometry that is already in the scene.</p>
+<p>Everything here is a <strong>local preference</strong> — your snapping setup is yours, and your peers see only the result of your drags.</p>
+<h2 id="where-it-lives">Where it lives</h2>
+<p>Right-click the viewport ▸ <strong>Snapping</strong>. The parent row shows your current setup at a glance (<code>0.25 · 15° · 0.1 · V F</code>), so you can read it without opening the menu. Custom step values live in <em>Configure Scene ▸ Snapping</em>, one click away at the bottom of the same submenu.</p>
+<h2 id="grid-snapping">Grid snapping</h2>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Snaps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Position</strong></td>
+<td>movement to a step — 0.1, 0.25, 0.5, 1, or your own</td>
+</tr>
+<tr>
+<td><strong>Rotation</strong></td>
+<td>turning to 5°, 15°, 45°, 90°, or your own</td>
+</tr>
+<tr>
+<td><strong>Scale</strong></td>
+<td>scaling to 0.05, 0.1, 0.25, or your own</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Enable / Disable snapping</strong> at the top of the submenu is the master switch for these three.</p>
+<h2 id="snap-to-surface">Snap to surface</h2>
+<p><strong>Surface</strong> ▸ <em>Snap to surface</em> drops a dragged object onto whatever is underneath it — the quickest way to keep furniture on the floor and props on tables.</p>
+<h2 id="element-snapping">Element snapping</h2>
+<p>Switch on any of the <strong>Elements</strong> targets and, while you drag with the gizmo, the app looks for a matching feature near the cursor. When one is in range it lights up, and releasing lands your object exactly on it — <strong>overriding the grid step</strong> for that drag, because you asked for that point specifically.</p>
+<table>
+<thead>
+<tr>
+<th>Target</th>
+<th>Lands on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Vertex</strong></td>
+<td>a corner of the mesh under the cursor</td>
+</tr>
+<tr>
+<td><strong>Edge</strong></td>
+<td>the nearest point along an edge</td>
+</tr>
+<tr>
+<td><strong>Face</strong></td>
+<td>the centre of a face</td>
+</tr>
+<tr>
+<td><strong>Surface</strong></td>
+<td>the exact point the cursor is over — a continuous slide across the surface rather than a discrete point</td>
+</tr>
+<tr>
+<td><strong>Object</strong></td>
+<td>another object's origin, its bounding-box centre, or the centre of one of its six sides</td>
+</tr>
+</tbody>
+</table>
+<p>You can have several on at once; the closest candidate to the cursor wins. The search radius is in <strong>screen</strong> pixels, so it behaves the same however far you have zoomed.</p>
 <div class="admonition tip">
-<p class="admonition-title">Let a script build it</p>
-<p><a href="https://github.com/theprototype-app/modules">theprototype-app/modules</a> has
-<code>npm run new -- &lt;id&gt;</code> (scaffold from a working template) and
-<code>npm run pack -- &lt;id&gt;</code> (build the zip with <code>manifest.json</code> at the <strong>root</strong>,
-refusing an entry file with a top-level <code>import</code>). <code>Compress-Archive</code> on the
-folder nests it and the manager rejects the result.</p>
+<p class="admonition-title">Vertex + Surface is a good default pair</p>
+<p>Surface gives you a smooth slide over a shape; Vertex bites onto its corners when you get close to one. Together they feel like the object is magnetic where it matters.</p>
 </div>
-<div class="highlight"><pre><span></span><code>mymodule.zip
-├── manifest.json        required — see below
-├── module.js            required — the entry (default export, self-contained)
-├── assets/              optional — sounds/, models/ (.glb), textures/ …
-│   ├── sounds/pling.mp3        → api.assetUrl(&#39;assets/sounds/pling.mp3&#39;)
-│   └── models/lever.glb
-├── prefabs/*.json       optional — object snapshots your module instantiates
-│                          (exported via &quot;Save as prefab&quot; → export)
-├── nodes/*.js|.svelte   optional — sources for reference; user-module entries
-│                          cannot import them (see limits below)
-└── config.json          optional — defaults your module fetches itself via
-                           api.assetUrl(&#39;config.json&#39;)
-</code></pre></div>
-<h2 id="manifestjson">manifest.json</h2>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mymodule&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Module&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;One line for the manager card.&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;entry&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;module.js&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;files&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;module.js&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;assets/sounds/pling.mp3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;config.json&quot;</span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
-<ul>
-<li><code>id</code> — stable, unique, kebab-case. Routes messages and the enable/disable
-  state; changing it is a new module.</li>
-<li><code>entry</code> — the module file, default <code>module.js</code>.</li>
-<li><code>files</code> — <strong>URL installs only</strong>: every file to fetch relative to the base
-  URL (zips just include the files). The entry is fetched regardless.</li>
-</ul>
-<h2 id="url-installs">URL installs</h2>
-<p>Paste a base URL that serves the layout above, e.g.</p>
-<div class="highlight"><pre><span></span><code>https://raw.githubusercontent.com/user/repo/main/mymodule
-</code></pre></div>
-<p><code>github.com/user/repo/tree/main/mymodule</code> links are converted automatically.
-Any static host works if it sends CORS headers (<code>Access-Control-Allow-Origin</code>).
-"Update" on the card re-fetches from the same base URL.</p>
-<h2 id="entry-constraints-user-modules">Entry constraints (user modules)</h2>
-<p>The entry loads as a blob ES module, so:</p>
-<ul>
-<li><strong>No <code>import</code> statements</strong> — bare specifiers (<code>three</code>, <code>svelte</code>) and relative
-  files cannot resolve. Everything arrives on the <code>api</code> object: <code>api.THREE</code>,
-  <code>api.assetUrl(path)</code>, stores/actions via the documented api surface.</li>
-<li>One file. If you develop with multiple files, bundle before zipping
-  (esbuild: <code>esbuild src/module.js --bundle --format=esm --external:none
-  --outfile=module.js</code> — but keep <code>three</code> OUT of the bundle and use
-  <code>api.THREE</code>, or the module ships a second copy of three).</li>
-<li>Custom Svelte node components only work for in-repo (core) modules; user
-  modules get the generic param-driven node UI (<code>params</code> in the catalog item).</li>
-<li>Assets: keep zips ≤ ~20 MB; they persist in the browser's IndexedDB.</li>
-</ul>
-<p>Core modules in <code>src/modules/</code> have none of these limits — they're part of the
-build. The downloaded examples therefore may need small edits (replace <code>import
-* as THREE from 'three'</code> with <code>const THREE = api.THREE</code>, inline component-based
-nodes as <code>params</code>) before they run as user modules; <code>hello</code> runs with just the
-THREE swap.</p>
-<h2 id="trust-model">Trust model</h2>
-<p>Installing a module = running its code in your session, with your peer
-connections. There is no sandbox in v1. Install only from sources you trust,
-and expect peers to need the same module (same id + version) for shared
-behavior to match — the connect handshake warns when lists differ.</p>
+<h2 id="align-to-normal">Align to normal</h2>
+<p>With <strong>Align to normal</strong> on, snapping to a face or a surface also <strong>turns</strong> the object onto that surface — drop a picture onto a slanted wall and it takes the wall's angle instead of staying upright.</p>
+<h2 id="pick-your-snap-origin">Pick your snap origin</h2>
+<p>By default an object snaps by its own origin. Often that is the wrong point: you want <em>this corner</em> of the shelf to meet <em>that corner</em> of the wall.</p>
+<p>With exactly one object selected, choose <strong>Pick snap origin</strong>, then click a point on it. That point becomes the anchor for your drags — snapping now moves <em>it</em> onto the target. The anchor is temporary and purely local: it is not part of the object, it is never replicated or saved, and it does not touch the object's real <a href="../controls/#each-objects-origin">origin</a>.</p>
+<h2 id="inside-mesh-edit">Inside mesh edit</h2>
+<p>Element snapping applies to the mesh tools' gizmo drags too, so a vertex can be dropped precisely onto another vertex — which is what you want when closing a seam by hand.</p>
+<h2 id="in-vr">In VR</h2>
+<p>VR has its own snap modes for grabbed objects (grid, surface, free) on the Edit ring — see the <a href="../vr/">VR guide</a>. Those are separate controls and switching them never disturbs your desktop element-snapping setup.</p>
 
 
 
@@ -2566,7 +2645,7 @@ behavior to match — the connect handshake warns when lists differ.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-08-09
+    2026-08-17
   </span>
 
     

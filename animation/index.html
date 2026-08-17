@@ -8,11 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.theprototype.app/module-package/">
+        <link rel="canonical" href="https://docs.theprototype.app/animation/">
       
       
-        <link rel="prev" href="../module-sdk/">
+        <link rel="prev" href="../uv-editor/">
       
+      
+        <link rel="next" href="../physics/">
       
       
       <link rel="icon" href="../logo.svg">
@@ -20,7 +22,7 @@
     
     
       
-        <title>Module Packages - ThePrototype Docs</title>
+        <title>Animation - ThePrototype Docs</title>
       
     
     
@@ -72,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#module-package-layout" class="md-skip">
+        <a href="#animation" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Module Packages
+              Animation
             
           </span>
         </div>
@@ -361,17 +363,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -385,7 +389,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Building
@@ -522,10 +526,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../animation/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Animation
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -534,6 +558,152 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#opening-the-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opening the timeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clips-channels-and-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clips, channels and keys
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      The transport
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timing-three-separate-things" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timing: three separate things
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-dope-sheet-and-the-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      The dope sheet and the graph
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-and-editing-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selecting and editing keys
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigating" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigating
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auto-key
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Presets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#markers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Markers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onion-skin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Onion skin
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#everyone-sees-the-same-thing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Everyone sees the same thing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#driving-clips-from-the-flow-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Driving clips from the flow graph
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-and-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saving and export
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2210,19 +2380,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -2236,7 +2404,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Extending
@@ -2289,30 +2457,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Module Packages
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../module-package/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2321,62 +2469,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#manifestjson" class="md-nav__link">
-    <span class="md-ellipsis">
-      manifest.json
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#url-installs" class="md-nav__link">
-    <span class="md-ellipsis">
-      URL installs
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#entry-constraints-user-modules" class="md-nav__link">
-    <span class="md-ellipsis">
-      Entry constraints (user modules)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#trust-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      Trust model
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2416,36 +2508,126 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#manifestjson" class="md-nav__link">
+  <a href="#opening-the-timeline" class="md-nav__link">
     <span class="md-ellipsis">
-      manifest.json
+      Opening the timeline
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#url-installs" class="md-nav__link">
+  <a href="#clips-channels-and-keys" class="md-nav__link">
     <span class="md-ellipsis">
-      URL installs
+      Clips, channels and keys
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#entry-constraints-user-modules" class="md-nav__link">
+  <a href="#the-transport" class="md-nav__link">
     <span class="md-ellipsis">
-      Entry constraints (user modules)
+      The transport
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#trust-model" class="md-nav__link">
+  <a href="#timing-three-separate-things" class="md-nav__link">
     <span class="md-ellipsis">
-      Trust model
+      Timing: three separate things
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-dope-sheet-and-the-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      The dope sheet and the graph
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selecting-and-editing-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selecting and editing keys
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigating" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navigating
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auto-key
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Presets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#markers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Markers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onion-skin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Onion skin
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#everyone-sees-the-same-thing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Everyone sees the same thing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#driving-clips-from-the-flow-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Driving clips from the flow graph
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-and-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saving and export
     </span>
   </a>
   
@@ -2466,7 +2648,7 @@
                   
 
   
-    <a href="https://github.com/theprototype-app/docs/edit/docs/module-package.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/theprototype-app/docs/edit/docs/animation.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2474,78 +2656,257 @@
   
 
 
-<h1 id="module-package-layout">Module package layout</h1>
-<p>The format the Modules manager installs (zip upload or URL) and exports
-("Download as example"). One folder or zip root per module.</p>
-<div class="admonition tip">
-<p class="admonition-title">Let a script build it</p>
-<p><a href="https://github.com/theprototype-app/modules">theprototype-app/modules</a> has
-<code>npm run new -- &lt;id&gt;</code> (scaffold from a working template) and
-<code>npm run pack -- &lt;id&gt;</code> (build the zip with <code>manifest.json</code> at the <strong>root</strong>,
-refusing an entry file with a top-level <code>import</code>). <code>Compress-Archive</code> on the
-folder nests it and the manager rejects the result.</p>
+<h1 id="animation">Animation</h1>
+<p>Give any object a <strong>clip</strong>: a named animation made of keyframes. Open a door, run a lift, spin a turntable, blink a light. Clips are stored with the object, replicate to everyone in the session, play on a shared clock, and export with your glTF.</p>
+<div class="admonition info">
+<p class="admonition-title">Two different things called animation</p>
+<p>This page is about animation <strong>you author</strong> — keys you place on a timeline. A model you <em>import</em> can also arrive with its own baked clips (a walk cycle from a rigged character); those play from the <strong>Animation</strong> section of the object's properties, and the <a href="../nodes/playanim/">Play Animation</a> node drives either kind.</p>
 </div>
-<div class="highlight"><pre><span></span><code>mymodule.zip
-├── manifest.json        required — see below
-├── module.js            required — the entry (default export, self-contained)
-├── assets/              optional — sounds/, models/ (.glb), textures/ …
-│   ├── sounds/pling.mp3        → api.assetUrl(&#39;assets/sounds/pling.mp3&#39;)
-│   └── models/lever.glb
-├── prefabs/*.json       optional — object snapshots your module instantiates
-│                          (exported via &quot;Save as prefab&quot; → export)
-├── nodes/*.js|.svelte   optional — sources for reference; user-module entries
-│                          cannot import them (see limits below)
-└── config.json          optional — defaults your module fetches itself via
-                           api.assetUrl(&#39;config.json&#39;)
-</code></pre></div>
-<h2 id="manifestjson">manifest.json</h2>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mymodule&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Module&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;One line for the manager card.&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;entry&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;module.js&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;files&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;module.js&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;assets/sounds/pling.mp3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;config.json&quot;</span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
+<h2 id="opening-the-timeline">Opening the timeline</h2>
+<p>Select an object, then open the <strong>＋ Animation</strong> tab — it sits with Flow and the UV editor in the bottom dock, and undocks into a floating window with the ⧉ button.</p>
+<p>The window has three parts:</p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Clip list</strong> (left)</td>
+<td>Every clip on the selected object. <strong>Add</strong> creates one; the ✎ renames; drag the divider to resize the list.</td>
+</tr>
+<tr>
+<td><strong>Timeline</strong> (centre)</td>
+<td>The keys themselves — a <em>dope sheet</em> of channel rows, or a <em>graph</em> of curves.</td>
+</tr>
+<tr>
+<td><strong>Navigator</strong> (above the timeline)</td>
+<td>The whole clip at a glance, with the visible window as a thumb — drag it to pan.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="clips-channels-and-keys">Clips, channels and keys</h2>
+<p>A <strong>clip</strong> owns a length, a loop mode (<em>once</em>, <em>loop</em> or <em>ping-pong</em>) and any number of <strong>channels</strong>. A channel is one animatable property; <strong>Add channel</strong> lists the ones that apply to the object you picked:</p>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Channels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Transform</strong></td>
+<td><code>pos.x/y/z</code>, <code>rot.x/y/z</code>, <code>scale</code> (uniform) or <code>scale.x/y/z</code></td>
+</tr>
+<tr>
+<td><strong>Visibility</strong></td>
+<td><code>visible</code> — a <em>stepped</em> channel: it holds its value until the next key instead of fading</td>
+</tr>
+<tr>
+<td><strong>Look</strong></td>
+<td><code>opacity</code>, <code>color.r/g/b</code>, <code>metalness</code>, <code>roughness</code>, <code>emissive</code></td>
+</tr>
+<tr>
+<td><strong>Lights</strong></td>
+<td><code>light.intensity</code></td>
+</tr>
+</tbody>
+</table>
+<p>A <strong>key</strong> is a value at a time. Click a channel row at the playhead to add one; drag it to move it; <kbd>Del</kbd> removes the selection.</p>
+<div class="admonition tip">
+<p class="admonition-title">Rotation turns around the object's origin</p>
+<p>A door swings on its hinge only if its <strong>origin</strong> sits on the hinge. Set it from the object's properties (<em>Transform ▸ Origin</em>) before you key the rotation — the animation follows it.</p>
+</div>
+<h2 id="the-transport">The transport</h2>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>▶ / ⏸</td>
+<td>Play or pause <strong>on every peer</strong></td>
+</tr>
+<tr>
+<td>◀</td>
+<td>Play backwards from the playhead</td>
+</tr>
+<tr>
+<td>⏹</td>
+<td>Stop and return to where playback started</td>
+</tr>
+<tr>
+<td>⏮ / ⏭</td>
+<td>Jump to the start / end of the clip</td>
+</tr>
+<tr>
+<td><strong>A</strong> / <strong>B</strong></td>
+<td>Set the loop start / end — playback stays inside that window while you work on one part</td>
+</tr>
+<tr>
+<td><strong>Speed</strong></td>
+<td>Playback rate. It changes nothing in the data</td>
+</tr>
+<tr>
+<td><strong>Fit</strong></td>
+<td>Frame the whole clip</td>
+</tr>
+</tbody>
+</table>
+<h2 id="timing-three-separate-things">Timing: three separate things</h2>
+<p>These are deliberately not the same control, because collapsing them means giving a door more room silently makes it slower:</p>
+<table>
+<thead>
+<tr>
+<th>You want</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The clip to be <strong>longer or shorter</strong> (keys stay where they are)</td>
+<td>the clip <strong>length</strong> field</td>
+</tr>
+<tr>
+<td>The movement itself <strong>stretched or squashed</strong></td>
+<td><strong>Retime</strong> — scales every key time</td>
+</tr>
+<tr>
+<td>It to <strong>play</strong> faster or slower, changing no data</td>
+<td>the <strong>speed</strong> control</td>
+</tr>
+</tbody>
+</table>
+<p>Each clip also has its <strong>fps</strong> — what its key times mean, and the grid the arrow keys step on — and an optional <strong>step</strong>, which samples the clip on a coarser grid for a deliberately stepped, "on twos" look.</p>
+<h2 id="the-dope-sheet-and-the-graph">The dope sheet and the graph</h2>
+<p>Switch with the sheet / graph toggle:</p>
 <ul>
-<li><code>id</code> — stable, unique, kebab-case. Routes messages and the enable/disable
-  state; changing it is a new module.</li>
-<li><code>entry</code> — the module file, default <code>module.js</code>.</li>
-<li><code>files</code> — <strong>URL installs only</strong>: every file to fetch relative to the base
-  URL (zips just include the files). The entry is fetched regardless.</li>
+<li><strong>Dope sheet</strong> — one row per channel, keys as diamonds. Best for timing.</li>
+<li><strong>Graph</strong> — the actual curves. Best for <em>how</em> a movement feels.</li>
 </ul>
-<h2 id="url-installs">URL installs</h2>
-<p>Paste a base URL that serves the layout above, e.g.</p>
-<div class="highlight"><pre><span></span><code>https://raw.githubusercontent.com/user/repo/main/mymodule
-</code></pre></div>
-<p><code>github.com/user/repo/tree/main/mymodule</code> links are converted automatically.
-Any static host works if it sends CORS headers (<code>Access-Control-Allow-Origin</code>).
-"Update" on the card re-fetches from the same base URL.</p>
-<h2 id="entry-constraints-user-modules">Entry constraints (user modules)</h2>
-<p>The entry loads as a blob ES module, so:</p>
-<ul>
-<li><strong>No <code>import</code> statements</strong> — bare specifiers (<code>three</code>, <code>svelte</code>) and relative
-  files cannot resolve. Everything arrives on the <code>api</code> object: <code>api.THREE</code>,
-  <code>api.assetUrl(path)</code>, stores/actions via the documented api surface.</li>
-<li>One file. If you develop with multiple files, bundle before zipping
-  (esbuild: <code>esbuild src/module.js --bundle --format=esm --external:none
-  --outfile=module.js</code> — but keep <code>three</code> OUT of the bundle and use
-  <code>api.THREE</code>, or the module ships a second copy of three).</li>
-<li>Custom Svelte node components only work for in-repo (core) modules; user
-  modules get the generic param-driven node UI (<code>params</code> in the catalog item).</li>
-<li>Assets: keep zips ≤ ~20 MB; they persist in the browser's IndexedDB.</li>
-</ul>
-<p>Core modules in <code>src/modules/</code> have none of these limits — they're part of the
-build. The downloaded examples therefore may need small edits (replace <code>import
-* as THREE from 'three'</code> with <code>const THREE = api.THREE</code>, inline component-based
-nodes as <code>params</code>) before they run as user modules; <code>hello</code> runs with just the
-THREE swap.</p>
-<h2 id="trust-model">Trust model</h2>
-<p>Installing a module = running its code in your session, with your peer
-connections. There is no sandbox in v1. Install only from sources you trust,
-and expect peers to need the same module (same id + version) for shared
-behavior to match — the connect handshake warns when lists differ.</p>
+<p>In the graph, each key carries the <strong>easing</strong> of the segment that follows it. Drag its tangent handles right on the curve, or type the numbers in the pad. Handles are allowed to overshoot past the value — that overshoot is what makes a bounce read as a bounce.</p>
+<h2 id="selecting-and-editing-keys">Selecting and editing keys</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Select</td>
+<td>Click a key; <strong>Shift+click</strong> adds</td>
+</tr>
+<tr>
+<td>Box / lasso select</td>
+<td>Drag on an empty part of the plot (the toolbar switches which)</td>
+</tr>
+<tr>
+<td>Add the key under the playhead</td>
+<td><kbd>Ctrl</kbd>+<kbd>Space</kbd></td>
+</tr>
+<tr>
+<td>Drop the selection</td>
+<td><kbd>Esc</kbd></td>
+</tr>
+<tr>
+<td>Move / scale the selection</td>
+<td><kbd>1</kbd> / <kbd>2</kbd>, then <kbd>Shift</kbd>+arrows (X = time, Y = value)</td>
+</tr>
+<tr>
+<td>Grab with the pointer</td>
+<td><strong>Middle-click</strong> — the keys follow the cursor, click or <kbd>Enter</kbd> commits, <kbd>Esc</kbd> puts them back</td>
+</tr>
+<tr>
+<td>Copy / paste / duplicate</td>
+<td><kbd>Ctrl</kbd>+<kbd>C</kbd> / <kbd>V</kbd> / <kbd>D</kbd></td>
+</tr>
+<tr>
+<td>Mirror in time</td>
+<td><kbd>M</kbd></td>
+</tr>
+<tr>
+<td>Delete</td>
+<td><kbd>Del</kbd></td>
+</tr>
+</tbody>
+</table>
+<p>The clipboard is held <strong>by channel</strong> and relative to the earliest key copied, so a paste works across clips and across objects, creating any channel the target is missing.</p>
+<h2 id="navigating">Navigating</h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Step the playhead by a frame</td>
+<td>← / → (<kbd>Ctrl</kbd> ×10, <kbd>Shift</kbd> ×100)</td>
+</tr>
+<tr>
+<td>Jump key to key</td>
+<td><kbd>Alt</kbd>+← / →</td>
+</tr>
+<tr>
+<td>Zoom</td>
+<td>Wheel (up = in), or the ± buttons</td>
+</tr>
+<tr>
+<td>Pan</td>
+<td>Right- or middle-drag, <kbd>Shift</kbd>+wheel, or the navigator thumb</td>
+</tr>
+</tbody>
+</table>
+<h2 id="auto-key">Auto-key</h2>
+<p>Switch <strong>Auto-key</strong> on and posing the object records it: drag the gizmo or type a number in the properties panel and a key lands at the playhead, creating the channel if it does not exist yet. Switch it off and the object goes back to being just an object.</p>
+<h2 id="presets">Presets</h2>
+<p><strong>Door</strong>, <strong>Drawer</strong>, <strong>Elevator</strong>, <strong>Turntable</strong>, <strong>Pulse</strong> and <strong>Blink out</strong> drop a finished clip onto the selected object — a starting point you then retime and re-ease. Door and Drawer expect a sensible <strong>origin</strong> (see the tip above).</p>
+<h2 id="markers">Markers</h2>
+<p>Name a moment inside a clip — <em>"footstep"</em>, <em>"latch"</em>, <em>"dust"</em> — and the <a href="../nodes/animmarker/">Animation Marker</a> node fires as the playhead crosses it, on every peer. Add one at the playhead from the marker row; double-click to rename; ✕ removes it.</p>
+<p>Markers ride with the clip, so they save, replicate and undo with it.</p>
+<h2 id="onion-skin">Onion skin</h2>
+<p>Switch <strong>Onion skin</strong> on to see faint ghosts of the object at the keys either side of the playhead — the classic way to judge spacing. It is a local view setting: your peers do not see your ghosts.</p>
+<h2 id="everyone-sees-the-same-thing">Everyone sees the same thing</h2>
+<p>Both halves replicate. The <strong>data</strong> (clips, keys, markers) syncs latest-wins, and the <strong>transport</strong> (which clip is playing, from when, at what speed, inside which A/B window) rides the session's synced clock, so every peer evaluates the same pose at the same moment. Someone joining late receives all of it.</p>
+<p>Every gesture is <strong>one undo step</strong> — a drag of twelve keys undoes as one, not twelve.</p>
+<h2 id="driving-clips-from-the-flow-graph">Driving clips from the flow graph</h2>
+<table>
+<thead>
+<tr>
+<th>Node</th>
+<th>Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../nodes/playanim/">Play Animation</a></td>
+<td>Play, stop, restart or toggle a clip — wire <em>On Click</em> to it and a door opens for everyone who sees it clicked</td>
+</tr>
+<tr>
+<td><a href="../nodes/animfinished/">Animation Finished</a></td>
+<td>Pulses when a <em>once</em> clip reaches its end — hand off to a sound, a counter, or the next door</td>
+</tr>
+<tr>
+<td><a href="../nodes/animmarker/">Animation Marker</a></td>
+<td>Pulses as a named marker passes</td>
+</tr>
+<tr>
+<td><a href="../nodes/animstate/">Animation State</a></td>
+<td>Reads progress, playing, position, duration or remaining as a number</td>
+</tr>
+</tbody>
+</table>
+<h2 id="saving-and-export">Saving and export</h2>
+<p>Clips are part of the object, so they travel in your <code>.tpscene</code> files and autosaves. Saving a <strong>glTF</strong> samples every clip into real keyframe tracks, so other tools play them back — with one exception: the <strong>look</strong> channels (opacity, colour, metalness, roughness, glow, light intensity) are not part of what glTF animation can carry, so they stay in the app.</p>
 
 
 
@@ -2566,7 +2927,7 @@ behavior to match — the connect handshake warns when lists differ.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-08-09
+    2026-08-17
   </span>
 
     

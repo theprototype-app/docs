@@ -11,10 +11,10 @@
         <link rel="canonical" href="https://docs.theprototype.app/uv-editor/">
       
       
-        <link rel="prev" href="../mesh-editing/">
+        <link rel="prev" href="../snapping/">
       
       
-        <link rel="next" href="../physics/">
+        <link rel="next" href="../animation/">
       
       
       <link rel="icon" href="../logo.svg">
@@ -484,6 +484,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../snapping/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snapping
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -559,6 +580,33 @@
   
     <nav class="md-nav" aria-label="Moving UVs">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#move-rotate-and-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Move, rotate and scale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-transform-origin" class="md-nav__link">
+    <span class="md-ellipsis">
+      The transform origin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecting-from-the-keyboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selecting from the keyboard
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#only-the-faces-you-picked" class="md-nav__link">
@@ -656,6 +704,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../animation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Animation
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1606,6 +1675,90 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/playanim/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Play Animation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/animfinished/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Animation Finished
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/animmarker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Animation Marker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/animstate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Animation State
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/counter/" class="md-nav__link">
         
   
@@ -2404,6 +2557,33 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#move-rotate-and-scale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Move, rotate and scale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-transform-origin" class="md-nav__link">
+    <span class="md-ellipsis">
+      The transform origin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecting-from-the-keyboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selecting from the keyboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#only-the-faces-you-picked" class="md-nav__link">
     <span class="md-ellipsis">
       Only the faces you picked
@@ -2567,6 +2747,65 @@
 </tbody>
 </table>
 <p>Drag any selected point to move it. Each drag is one undo step and replicates when you let go.</p>
+<h3 id="move-rotate-and-scale">Move, rotate and scale</h3>
+<p>The topbar arms one of three transform modes — press <kbd>1</kbd>, <kbd>2</kbd> or <kbd>3</kbd> — and every gesture below applies whichever is armed:</p>
+<table>
+<thead>
+<tr>
+<th>Gesture</th>
+<th>Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Left-drag</strong> a selected point</td>
+<td>Transform with the pointer</td>
+</tr>
+<tr>
+<td><strong>Middle-click</strong> a selected point</td>
+<td>A <em>grab</em>: the selection follows the cursor with no button held. Click or <kbd>Enter</kbd> commits, <kbd>Esc</kbd> puts it back</td>
+</tr>
+<tr>
+<td><strong>Arrow keys</strong></td>
+<td>Nudge by exactly <strong>one texture pixel</strong>, rotate by one degree, or scale by 1% — <kbd>Ctrl</kbd> ×10, <kbd>Shift</kbd> ×100</td>
+</tr>
+</tbody>
+</table>
+<p>Scaling with the arrows is <strong>per axis</strong> — left/right scales in U, up/down in V, and <kbd>Alt</kbd> makes it uniform. Shrinking is the exact reciprocal of growing, so a press one way and a press back leaves the map where it started. Every press is its own undo step.</p>
+<h3 id="the-transform-origin">The transform origin</h3>
+<p>Rotation and scaling happen about a <strong>placeable origin</strong>. Press the ⌖ button (or use the right-click menu) and click where you want it; drag it around at any time. It snaps onto the nearest UV point unless you hold <kbd>Alt</kbd>.</p>
+<p>The origin is a local editing aid — it is never replicated and never saved.</p>
+<h3 id="selecting-from-the-keyboard">Selecting from the keyboard</h3>
+<table>
+<thead>
+<tr>
+<th>Keys</th>
+<th>Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><kbd>Ctrl</kbd>+<kbd>Space</kbd></td>
+<td>Enter cursor mode and drop a cursor; press again to take or drop the cursor's point</td>
+</tr>
+<tr>
+<td><strong>Arrows</strong> (in cursor mode)</td>
+<td>Walk the cursor to the nearest point in that direction</td>
+</tr>
+<tr>
+<td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<strong>arrow</strong></td>
+<td>Grow the selection in that direction</td>
+</tr>
+<tr>
+<td><kbd>Esc</kbd></td>
+<td>Leave cursor mode, keeping the picks; again clears them</td>
+</tr>
+<tr>
+<td><kbd>Ctrl</kbd>+<kbd>A</kbd> / <kbd>Ctrl</kbd>+<kbd>I</kbd> / <kbd>L</kbd></td>
+<td>Select all / invert / grow to the linked island</td>
+</tr>
+</tbody>
+</table>
 <h3 id="only-the-faces-you-picked">Only the faces you picked</h3>
 <p>A primitive's sides usually <strong>share</strong> the same UV space — a default cube has 24 UV entries but only four distinct coordinates, so dragging one side drags all six. The <strong>Only selected faces</strong> toggle scopes the editor to the faces you have picked in <a href="../mesh-editing/">Edit Mesh</a>, which is how you separate them.</p>
 <h3 id="island-tools">Island tools</h3>
@@ -2713,7 +2952,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-08-12
+    2026-08-17
   </span>
 
     

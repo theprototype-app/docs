@@ -425,6 +425,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#floating-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Floating windows
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -620,11 +629,53 @@
   
   
     <li class="md-nav__item">
+      <a href="../snapping/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snapping
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../uv-editor/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     UV & Textures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../animation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Animation
   </span>
   
 
@@ -1579,6 +1630,90 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/playanim/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Play Animation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/animfinished/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Animation Finished
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/animmarker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Animation Marker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/animstate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Animation State
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/counter/" class="md-nav__link">
         
   
@@ -2409,6 +2544,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#floating-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Floating windows
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2509,10 +2653,10 @@
 </tr>
 </tbody>
 </table>
-<p>Snapping (grid step, rotate degrees, scale step, snap-to-surface) is configured from the right-click menu under <strong>Snapping</strong>.</p>
+<p>Snapping is configured from the right-click menu under <strong>Snapping</strong> — grid steps and snap-to-surface, plus snapping onto real geometry: vertices, edges, faces and other objects, optionally turning the object onto the surface it lands on. See <a href="../snapping/">Snapping</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Inside mesh edit</p>
-<p>While an <a href="../mesh-editing/">Edit Mesh</a> session is open, <kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd> switch between vertices, edges and faces instead.</p>
+<p><kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd> keep meaning Move / Rotate / Scale inside an <a href="../mesh-editing/">Edit Mesh</a> session — they are what you reach for mid-edit. The element modes (vertices, edges, faces) are on <kbd>Tab</kbd> and <kbd>Shift</kbd>+<kbd>Tab</kbd>.</p>
 </div>
 <h3 id="each-objects-origin">Each object's origin</h3>
 <p>Every object carries its own <strong>origin</strong> — the point it rotates, scales and hinges around. The properties panel's Transform section has one-click presets — <strong>Bottom</strong>, <strong>Centre</strong>, <strong>Median</strong>, <strong>World 0</strong>, and <strong>Children</strong> for a group — or you can place it by hand:</p>
@@ -2525,6 +2669,8 @@
 <p>The origin travels with the object: it replicates, saves, undoes, and is baked in on GLTF export.</p>
 <h3 id="numeric-fields">Numeric fields</h3>
 <p>Every number in the app is the same control: <strong>drag</strong> it to scrub, or <strong>type</strong> into it for live updates. <kbd>↑</kbd>/<kbd>↓</kbd> step by one unit — hold <kbd>Ctrl</kbd> for ×10, <kbd>Shift</kbd> for ×100 — and <kbd>Esc</kbd> reverts what you typed.</p>
+<h3 id="floating-windows">Floating windows</h3>
+<p>The toolboxes, the Explorer, the flow and animation windows and the panels all behave the same way: drag the header to move, drag the bottom-right corner to resize. A window can never be sized past the edge of the screen — the resize corner always stays reachable — and <strong>double-clicking</strong> the corner resets it to its default size while leaving it where you parked it. Size and position are remembered per window.</p>
 <h2 id="keyboard-shortcuts">Keyboard shortcuts</h2>
 <p>Shortcuts are inert while you type in a text field and while play mode owns the keyboard. The same list is shown in <strong>Settings ▸ Shortcuts</strong> (<kbd>Ctrl</kbd>+<kbd>/</kbd> opens it directly).</p>
 <div class="admonition tip">
@@ -2666,7 +2812,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-08-12
+    2026-08-17
   </span>
 
     
