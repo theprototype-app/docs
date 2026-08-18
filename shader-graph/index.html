@@ -338,6 +338,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../units/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Units
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../connection/" class="md-nav__link">
         
   
@@ -587,6 +608,15 @@
   <a href="#scope-this-object-or-the-whole-scene" class="md-nav__link">
     <span class="md-ellipsis">
       Scope: this object, or the whole scene
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-shaders-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Shaders list
     </span>
   </a>
   
@@ -2598,6 +2628,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-shaders-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Shaders list
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-surface-node" class="md-nav__link">
     <span class="md-ellipsis">
       The Surface node
@@ -2753,6 +2792,14 @@ editor and Animation:</p>
 </table>
 <p>The header always says which. An object with its own graph ignores the scene default,
 so the order is <em>own graph → scene default → the object's real material</em>.</p>
+<h2 id="the-shaders-list">The Shaders list</h2>
+<p>The left pane carries a collapsible <strong>Shaders</strong> section above the node palette. It lists
+<strong>Scene</strong> at the root, then every object that actually has a shader graph of its own — it is a way
+to get <em>to</em> a graph, not a second object list, so an object with none is not in it.</p>
+<p>Click a row to select that object and switch the editor to its graph; click <strong>Scene</strong> to
+deselect and edit the scene-wide one. Drag the bar under the list to give it more room, and
+click the section header to collapse it. An entry whose object has been deleted is shown
+greyed out until the next save drops it.</p>
 <h2 id="the-surface-node">The Surface node</h2>
 <p>Every graph ends at one <strong>Surface</strong> node. Each of its inputs replaces one part of the
 material, and <strong>anything you leave unconnected keeps the material's own value</strong> — so a

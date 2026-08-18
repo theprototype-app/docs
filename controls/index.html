@@ -14,7 +14,7 @@
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="../connection/">
+        <link rel="next" href="../units/">
       
       
       <link rel="icon" href="../logo.svg">
@@ -402,6 +402,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#selecting-without-a-keyboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selecting without a keyboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicating" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duplicating
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#editing-a-multi-selection" class="md-nav__link">
     <span class="md-ellipsis">
       Editing a multi-selection
@@ -488,6 +506,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../units/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Units
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2623,6 +2662,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#selecting-without-a-keyboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Selecting without a keyboard
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicating" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duplicating
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#editing-a-multi-selection" class="md-nav__link">
     <span class="md-ellipsis">
       Editing a multi-selection
@@ -2746,6 +2803,7 @@
 <li><strong>Shift+click</strong> adds or removes objects from a multi-selection (the last-picked object is the primary).</li>
 <li><strong>Shift+drag</strong> on empty space draws a box-select marquee.</li>
 <li><strong>Ctrl+A</strong> selects everything in the scene. Inside a mesh editing session it keeps its other meaning — select every face, edge or vertex — so the two never collide.</li>
+<li><strong>Ctrl+D</strong> duplicates the selection — see <a href="#duplicating">Duplicating</a> for what a copy brings with it.</li>
 <li>Selecting an object <strong>locks it for other peers</strong> (one lock per person); a locked object shows who holds it, and its right-click menu offers <strong>Request control</strong> to ask for a handover.</li>
 </ul>
 <h3 id="what-double-click-does">What double-click does</h3>
@@ -2757,6 +2815,61 @@
 <p class="admonition-title">Note</p>
 <p>At <em>exactly</em> zero scale the viewport click does not reach it yet; select it from the object list instead. That one is a known gap.</p>
 </div>
+<h3 id="selecting-without-a-keyboard">Selecting without a keyboard</h3>
+<p>On a phone or tablet there is no <kbd>Shift</kbd> to hold and no right-click, so the same
+two gestures are available as a <strong>mode</strong>. <em>Settings ▸ Interface ▸ Touch tools</em> puts round
+<strong>Undo</strong>, <strong>Redo</strong> and <strong>Multi-select</strong> buttons beside the logo — on by default on phones
+and narrow windows.</p>
+<p>With <strong>Multi-select</strong> on:</p>
+<ul>
+<li>a <strong>tap adds</strong> to the selection instead of replacing it, and</li>
+<li>a <strong>drag on empty space</strong> draws the box-select marquee.</li>
+</ul>
+<p>It works the same inside a mesh editing session, on vertices, edges and faces. Everything
+else already has a touch path: long-press the viewport for the right-click menu, and the
+<strong>+</strong> button opens the same create menu.</p>
+<h3 id="duplicating">Duplicating</h3>
+<p><strong>Ctrl+D</strong> (or right-click ▸ <em>Duplicate</em>) makes a working copy. A copy is a copy of
+everything that belongs to the object, not just its shape:</p>
+<table>
+<thead>
+<tr>
+<th>Comes along</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>geometry, transform, children</td>
+<td>always</td>
+</tr>
+<tr>
+<td>material and its texture slots</td>
+<td>always, as its own detached copy</td>
+</tr>
+<tr>
+<td>physics, origin, camera settings</td>
+<td>always</td>
+</tr>
+<tr>
+<td><strong>animation clips</strong></td>
+<td>yes — the copy plays its own</td>
+</tr>
+<tr>
+<td><strong>object flow graph</strong></td>
+<td>yes, with fresh node ids</td>
+</tr>
+<tr>
+<td><strong>shader graph</strong></td>
+<td>yes — otherwise the copy would render frozen</td>
+</tr>
+</tbody>
+</table>
+<p>An embedded <strong>Object Flow</strong> node inside a copied graph keeps pointing at the object it
+referenced. Re-aiming it at the copy is a decision only you can make, so it is left alone.</p>
+<p>Each of the last three can be switched off in <em>Settings ▸ Scene ▸ Duplicate</em> if you would
+rather a copy came out bare. An object that inherits the <strong>scene default</strong> shader keeps
+inheriting it — it does not get a private snapshot.</p>
 <h3 id="editing-a-multi-selection">Editing a multi-selection</h3>
 <p>The properties panel edits <strong>everything you have selected</strong>, not just the last object you clicked. Change a colour, a material, a shadow flag or a physics setting and it applies to the whole set as a <strong>single undo step</strong>; a row whose objects disagree shows a dash until you set it.</p>
 <p>Transform rows on a multi-selection drive the selection's <strong>origin</strong> rather than each object's absolute position — typing a value moves the set as a whole instead of collapsing it onto one plane. Name, uuid and geometry stay single-object: click the one object for those.</p>
@@ -2799,6 +2912,11 @@
 <p>The origin travels with the object: it replicates, saves, undoes, and is baked in on GLTF export.</p>
 <h3 id="numeric-fields">Numeric fields</h3>
 <p>Every number in the app is the same control: <strong>drag</strong> it to scrub, or <strong>type</strong> into it for live updates. <kbd>↑</kbd>/<kbd>↓</kbd> step by one unit — hold <kbd>Ctrl</kbd> for ×10, <kbd>Shift</kbd> for ×100 — and <kbd>Esc</kbd> reverts what you typed.</p>
+<p>That includes the numbers inside <strong>node editor cards</strong>, <strong>shader nodes</strong> and the
+<strong>animation window</strong> — dragging one of those scrubs the value without dragging the card.
+Scrubbing an animation key or a shader parameter is <strong>one undo step</strong>, not one per pixel.</p>
+<p>Fields that hold a distance or an angle also accept a typed <strong>unit</strong> (<code>12cm</code>, <code>4in</code>,
+<code>90deg</code>) — see <a href="../units/">Units</a>.</p>
 <h3 id="floating-windows">Floating windows</h3>
 <p>The toolboxes, the Explorer, the flow and animation windows and the panels all behave the same way: drag the header to move, drag the bottom-right corner to resize. A window can never be sized past the edge of the screen — the resize corner always stays reachable — and <strong>double-clicking</strong> the corner resets it to its default size while leaving it where you parked it. Size and position are remembered per window.</p>
 <h2 id="keyboard-shortcuts">Keyboard shortcuts</h2>
@@ -2942,7 +3060,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-08-17
+    2026-08-18
   </span>
 
     

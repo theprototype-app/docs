@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://docs.theprototype.app/nodes/loop/">
+        <link rel="canonical" href="https://docs.theprototype.app/units/">
       
       
-        <link rel="prev" href="../select/">
+        <link rel="prev" href="../controls/">
       
       
-        <link rel="next" href="../timer/">
+        <link rel="next" href="../connection/">
       
       
-      <link rel="icon" href="../../logo.svg">
+      <link rel="icon" href="../logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
-        <title>Loop - ThePrototype Docs</title>
+        <title>Units - ThePrototype Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#loop" class="md-skip">
+        <a href="#units" class="md-skip">
           Skip to content
         </a>
       
@@ -90,9 +90,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="ThePrototype Docs" class="md-header__button md-logo" aria-label="ThePrototype Docs" data-md-component="logo">
+    <a href=".." title="ThePrototype Docs" class="md-header__button md-logo" aria-label="ThePrototype Docs" data-md-component="logo">
       
-  <img src="../../logo.svg" alt="logo">
+  <img src="../logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Loop
+              Units
             
           </span>
         </div>
@@ -232,9 +232,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="ThePrototype Docs" class="md-nav__button md-logo" aria-label="ThePrototype Docs" data-md-component="logo">
+    <a href=".." title="ThePrototype Docs" class="md-nav__button md-logo" aria-label="ThePrototype Docs" data-md-component="logo">
       
-  <img src="../../logo.svg" alt="logo">
+  <img src="../logo.svg" alt="logo">
 
     </a>
     ThePrototype Docs
@@ -258,17 +258,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
@@ -282,7 +284,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             Getting Started
@@ -296,7 +298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -317,7 +319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../controls/" class="md-nav__link">
+      <a href="../controls/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -335,10 +337,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../units/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Units
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -347,6 +369,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-your-units" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing your units
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typing-a-unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Typing a unit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-does-not-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      What does not change
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Precision
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -359,7 +437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../connection/" class="md-nav__link">
+      <a href="../connection/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -422,7 +500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../explorer/" class="md-nav__link">
+      <a href="../explorer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -443,7 +521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../packs/" class="md-nav__link">
+      <a href="../packs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -464,7 +542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../prefabs/" class="md-nav__link">
+      <a href="../prefabs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -485,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mesh-editing/" class="md-nav__link">
+      <a href="../mesh-editing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -506,7 +584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../snapping/" class="md-nav__link">
+      <a href="../snapping/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -527,7 +605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../uv-editor/" class="md-nav__link">
+      <a href="../uv-editor/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -548,7 +626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../shader-graph/" class="md-nav__link">
+      <a href="../shader-graph/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -569,7 +647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../shader-nodes/" class="md-nav__link">
+      <a href="../shader-nodes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -590,7 +668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../post-processing/" class="md-nav__link">
+      <a href="../post-processing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -611,7 +689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../animation/" class="md-nav__link">
+      <a href="../animation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -632,7 +710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../physics/" class="md-nav__link">
+      <a href="../physics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -653,7 +731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../particles/" class="md-nav__link">
+      <a href="../particles/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -674,7 +752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terrain/" class="md-nav__link">
+      <a href="../terrain/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -695,7 +773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../saving/" class="md-nav__link">
+      <a href="../saving/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -758,7 +836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../camera/" class="md-nav__link">
+      <a href="../camera/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -779,7 +857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notifications/" class="md-nav__link">
+      <a href="../notifications/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -804,19 +882,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -830,7 +906,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Flow Graph
@@ -844,7 +920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../node-system/" class="md-nav__link">
+      <a href="../node-system/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -865,7 +941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../object-flows/" class="md-nav__link">
+      <a href="../object-flows/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -883,19 +959,17 @@
                 
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
         
           
           <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
@@ -909,7 +983,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             Nodes
@@ -923,7 +997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../slider/" class="md-nav__link">
+      <a href="../nodes/slider/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -944,7 +1018,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../colorpicker/" class="md-nav__link">
+      <a href="../nodes/colorpicker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -965,7 +1039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../switcher/" class="md-nav__link">
+      <a href="../nodes/switcher/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -986,7 +1060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../number/" class="md-nav__link">
+      <a href="../nodes/number/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1007,7 +1081,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vector3/" class="md-nav__link">
+      <a href="../nodes/vector3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1028,7 +1102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../toggle/" class="md-nav__link">
+      <a href="../nodes/toggle/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1049,7 +1123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../random/" class="md-nav__link">
+      <a href="../nodes/random/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1070,7 +1144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../time/" class="md-nav__link">
+      <a href="../nodes/time/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1091,7 +1165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../objectselector/" class="md-nav__link">
+      <a href="../nodes/objectselector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1112,7 +1186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../velocity/" class="md-nav__link">
+      <a href="../nodes/velocity/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1133,7 +1207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../flowinput/" class="md-nav__link">
+      <a href="../nodes/flowinput/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1154,7 +1228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../flowoutput/" class="md-nav__link">
+      <a href="../nodes/flowoutput/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1175,7 +1249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../objectflow/" class="md-nav__link">
+      <a href="../nodes/objectflow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1196,7 +1270,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../script/" class="md-nav__link">
+      <a href="../nodes/script/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1217,7 +1291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../math/" class="md-nav__link">
+      <a href="../nodes/math/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1238,7 +1312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../compare/" class="md-nav__link">
+      <a href="../nodes/compare/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1259,7 +1333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gate/" class="md-nav__link">
+      <a href="../nodes/gate/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1280,7 +1354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../maprange/" class="md-nav__link">
+      <a href="../nodes/maprange/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1301,7 +1375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../select/" class="md-nav__link">
+      <a href="../nodes/select/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1319,30 +1393,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Loop
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../nodes/loop/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1351,53 +1405,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#inputs" class="md-nav__link">
-    <span class="md-ellipsis">
-      Inputs
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      Parameters
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#practical-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      Practical example
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1410,7 +1417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../timer/" class="md-nav__link">
+      <a href="../nodes/timer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1431,7 +1438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../distance/" class="md-nav__link">
+      <a href="../nodes/distance/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1452,7 +1459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proximity/" class="md-nav__link">
+      <a href="../nodes/proximity/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1473,7 +1480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lookat/" class="md-nav__link">
+      <a href="../nodes/lookat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1494,7 +1501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../setcolor/" class="md-nav__link">
+      <a href="../nodes/setcolor/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1515,7 +1522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../setuniform/" class="md-nav__link">
+      <a href="../nodes/setuniform/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1536,7 +1543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../visibility/" class="md-nav__link">
+      <a href="../nodes/visibility/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1557,7 +1564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../onclick/" class="md-nav__link">
+      <a href="../nodes/onclick/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1578,7 +1585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../keypress/" class="md-nav__link">
+      <a href="../nodes/keypress/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1599,7 +1606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../onimpact/" class="md-nav__link">
+      <a href="../nodes/onimpact/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1620,7 +1627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../onenter/" class="md-nav__link">
+      <a href="../nodes/onenter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1641,7 +1648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../onexit/" class="md-nav__link">
+      <a href="../nodes/onexit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1662,7 +1669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../playanim/" class="md-nav__link">
+      <a href="../nodes/playanim/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1683,7 +1690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../animfinished/" class="md-nav__link">
+      <a href="../nodes/animfinished/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1704,7 +1711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../animmarker/" class="md-nav__link">
+      <a href="../nodes/animmarker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1725,7 +1732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../animstate/" class="md-nav__link">
+      <a href="../nodes/animstate/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1746,7 +1753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../counter/" class="md-nav__link">
+      <a href="../nodes/counter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1767,7 +1774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../shake/" class="md-nav__link">
+      <a href="../nodes/shake/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1788,7 +1795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../spin/" class="md-nav__link">
+      <a href="../nodes/spin/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1809,7 +1816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bounce/" class="md-nav__link">
+      <a href="../nodes/bounce/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1830,7 +1837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../orbit/" class="md-nav__link">
+      <a href="../nodes/orbit/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1851,7 +1858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pathpatrol/" class="md-nav__link">
+      <a href="../nodes/pathpatrol/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1872,7 +1879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mass/" class="md-nav__link">
+      <a href="../nodes/mass/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1893,7 +1900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bounciness/" class="md-nav__link">
+      <a href="../nodes/bounciness/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1914,7 +1921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../friction/" class="md-nav__link">
+      <a href="../nodes/friction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1935,7 +1942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../angularvelocity/" class="md-nav__link">
+      <a href="../nodes/angularvelocity/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1956,7 +1963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../collider/" class="md-nav__link">
+      <a href="../nodes/collider/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1977,7 +1984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../motor/" class="md-nav__link">
+      <a href="../nodes/motor/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1998,7 +2005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pulse/" class="md-nav__link">
+      <a href="../nodes/pulse/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2019,7 +2026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blink/" class="md-nav__link">
+      <a href="../nodes/blink/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2040,7 +2047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sound/" class="md-nav__link">
+      <a href="../nodes/sound/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2061,7 +2068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../particle/" class="md-nav__link">
+      <a href="../nodes/particle/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2082,7 +2089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../customnode/" class="md-nav__link">
+      <a href="../nodes/customnode/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2153,7 +2160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../audio/" class="md-nav__link">
+      <a href="../audio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2216,7 +2223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../vr/" class="md-nav__link">
+      <a href="../vr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2279,7 +2286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai/assistant/" class="md-nav__link">
+      <a href="../ai/assistant/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2300,7 +2307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai/providers/" class="md-nav__link">
+      <a href="../ai/providers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2321,7 +2328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai/local-models/" class="md-nav__link">
+      <a href="../ai/local-models/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2342,7 +2349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai/generation/" class="md-nav__link">
+      <a href="../ai/generation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2363,7 +2370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../ai/console-agent/" class="md-nav__link">
+      <a href="../ai/console-agent/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2426,7 +2433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/" class="md-nav__link">
+      <a href="../modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2447,7 +2454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../module-sdk/" class="md-nav__link">
+      <a href="../module-sdk/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2468,7 +2475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../module-package/" class="md-nav__link">
+      <a href="../module-package/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2516,27 +2523,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#inputs" class="md-nav__link">
+  <a href="#choosing-your-units" class="md-nav__link">
     <span class="md-ellipsis">
-      Inputs
+      Choosing your units
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
+  <a href="#typing-a-unit" class="md-nav__link">
     <span class="md-ellipsis">
-      Parameters
+      Typing a unit
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#practical-example" class="md-nav__link">
+  <a href="#what-does-not-change" class="md-nav__link">
     <span class="md-ellipsis">
-      Practical example
+      What does not change
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Precision
     </span>
   </a>
   
@@ -2557,7 +2573,7 @@
                   
 
   
-    <a href="https://github.com/theprototype-app/docs/edit/docs/nodes/loop.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/theprototype-app/docs/edit/docs/units.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2565,51 +2581,86 @@
   
 
 
-<h1 id="loop">Loop</h1>
-<p>Sweeps a number from one value to another over time, repeating — a ready-made animation ramp.</p>
-<p><strong>Output:</strong> number</p>
-<h2 id="inputs">Inputs</h2>
-<p>None.</p>
-<h2 id="parameters">Parameters</h2>
+<h1 id="units">Units</h1>
+<p>The scene is metres and radians underneath, always. Units change how numbers are <strong>shown to you and typed by you</strong> — nothing else. That makes them a <strong>local preference</strong>: you can work in inches while a peer works in centimetres, and you are both editing the same scene.</p>
+<h2 id="choosing-your-units">Choosing your units</h2>
+<p><em>Settings ▸ Scene ▸ Units</em>:</p>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Meaning</th>
+<th>Setting</th>
+<th>Choices</th>
+<th>Applies to</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>from / to</td>
-<td>0 / 1</td>
-<td>the swept range</td>
+<td><strong>Length</strong></td>
+<td>m, cm, mm, in, ft</td>
+<td>positions, the object origin, snapping steps, bevel width, merge distance</td>
 </tr>
 <tr>
-<td>rate</td>
-<td>1</td>
-<td>sweeps per second</td>
-</tr>
-<tr>
-<td>mode</td>
-<td>wrap</td>
-<td><code>wrap</code> (snap back and restart), <code>pingpong</code> (bounce back and forth), <code>once</code> (run to the end and stay)</td>
+<td><strong>Angle</strong></td>
+<td>degrees, radians</td>
+<td>rotations and the rotation snap step</td>
 </tr>
 </tbody>
 </table>
-<p>Driven by the synced clock, so the sweep is at the same point for every peer.</p>
-<h2 id="practical-example">Practical example</h2>
-<p>A searchlight that pans back and forth:</p>
-<ol>
-<li>Add a <strong>Loop</strong>: from 0, to 3, rate 0.3, mode <code>pingpong</code>.</li>
-<li>Add an <strong>Orbit</strong> node and an <strong>Object Selector</strong> targeting the light's visible housing.</li>
-<li>Wire Loop → Orbit's <strong>radius</strong> input, and Orbit → Object Selector.</li>
-<li>The object now swings out to radius 3 and back in a smooth cycle.</li>
-</ol>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Loop is like <a href="../time/">Time</a> with the range built in — reach for it when you'd otherwise chain Time → Map Range.</p>
-</div>
+<p>Fields that are not a distance or an angle are deliberately left alone — a roughness of 0.4, a duration in seconds, a texture pixel and a subdivision count are not measurements, and a unit picker on them would be noise.</p>
+<h2 id="typing-a-unit">Typing a unit</h2>
+<p>You do not have to change the setting to enter a value in another unit. Any of these fields accepts a <strong>suffix</strong>, whatever is currently on display, and converts it as you type:</p>
+<table>
+<thead>
+<tr>
+<th>You type</th>
+<th>You get</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>12cm</code></td>
+<td>0.12 m</td>
+</tr>
+<tr>
+<td><code>250mm</code></td>
+<td>0.25 m</td>
+</tr>
+<tr>
+<td><code>4in</code></td>
+<td>0.1016 m</td>
+</tr>
+<tr>
+<td><code>1.5ft</code></td>
+<td>0.4572 m</td>
+</tr>
+<tr>
+<td><code>2'</code></td>
+<td>0.6096 m</td>
+</tr>
+<tr>
+<td><code>6"</code></td>
+<td>0.1524 m</td>
+</tr>
+<tr>
+<td><code>90deg</code></td>
+<td>a quarter turn</td>
+</tr>
+<tr>
+<td><code>1.57rad</code></td>
+<td>the same quarter turn</td>
+</tr>
+</tbody>
+</table>
+<p>A <strong>bare number</strong> means the unit on display. So in a centimetre field, <code>250</code> is 2.5 m; in a metre field, <code>250</code> is 250 m.</p>
+<h2 id="what-does-not-change">What does not change</h2>
+<ul>
+<li><strong>Stored values.</strong> Switching from metres to centimetres re-renders the fields and moves nothing. A box at 1.5 m reads <code>150</code> in cm and is still at 1.5 m.</li>
+<li><strong>The feel of a drag.</strong> Scrubbing a field covers the same real distance in every unit — only the number under your cursor is written differently.</li>
+<li><strong>What your peers see.</strong> Units are never replicated and never saved into a scene, so opening someone's file does not change your setup, and yours does not change theirs.</li>
+</ul>
+<h2 id="precision">Precision</h2>
+<p>The number of decimals follows the unit, so the field keeps roughly the precision it had. A position showing <code>1.50</code> m shows <code>150</code> in centimetres — the same centimetre of control, just written without a fractional part. Inches and feet keep a decimal place for the same reason: a whole inch is a coarser step than a centimetre, so the field does not round that far.</p>
+<p>The arrow keys always step the <strong>last visible digit</strong>, with <kbd>Ctrl</kbd> for ten times that and <kbd>Shift</kbd> for a hundred — see <a href="../controls/#numeric-fields">Numeric fields</a>.</p>
 
 
 
@@ -2630,7 +2681,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-07-16
+    2026-08-18
   </span>
 
     
@@ -2683,10 +2734,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "navigation.top"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.action.edit", "navigation.top"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
     
   </body>
