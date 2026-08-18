@@ -60,9 +60,33 @@ A custom collider is **compound** — each disconnected piece becomes its own co
 
 Collider settings apply **live**. Change a shape, a material, a sensor flag or a locked axis while the simulation is running and it swaps in place — joints, velocity and momentum survive — so you can tune a contraption without restarting it.
 
-## Scene gravity
+## Scene settings
 
-Gravity is a scene-wide setting (Configure Scene ▸ Physics): slide it anywhere from −20 to 5, or **Reset gravity** to put it back to the default. It is shared with your peers and applies live, so you can drop the world into moon gravity mid-run, or invert it. Positive values make things fall *up*.
+Everything in **Configure Scene ▸ Physics** is shared with your peers, saved with the scene and applied live — you can change any of it mid-run.
+
+### World
+
+**Gravity** slides from −20 to 5 (**Reset gravity** puts it back). Drop the world into moon gravity mid-run, or invert it: positive values make things fall *up*.
+
+**Time scale** (0.1–2) runs the whole simulation in slow motion or fast forward. Slow-mo on a collapsing tower is the point of it. Above 1.5 the panel suggests turning on continuous collision, because faster bodies travel further between steps.
+
+### Ground & bounds
+
+A **ground plane** is on by default at height 0. You can move it, give it **grip** (friction) and **bounce** (restitution) — a slick floor and a rubber floor are one slider apart — or switch it off entirely to build a pit. With colliders shown (Configure Scene ▸ View ▸ *Show colliders*) it draws as a translucent sheet so you can see where it is.
+
+**Out of bounds below Y** catches anything that falls past a limit, and you choose what happens:
+
+| Action | What it does |
+|---|---|
+| Return to its start | teleports the object back to where it was when the simulation started — right for a crate knocked off a table |
+| Freeze in place | stops it dead where it is |
+| Delete the object | removes it, replicated and undoable |
+
+One toast reports a whole burst ("3 objects fell out of bounds — returned to spawn") rather than one per object.
+
+### Defaults (advanced)
+
+**Material** fills in friction and bounce for every object that does not set its own — the fastest way to make a whole scene icy, rubbery, wooden or metallic. **Drag** and **spin drag** (linear and angular damping) are what turn a jittery tower stable and stop crates sliding forever. **Continuous collision** is off by default and costs a little speed; thrown objects switch it on for themselves regardless, because a 20 m/s throw travels 0.33 m per step and would otherwise pass through a thin wall.
 
 !!! tip "Primitives are ready to play"
     Newly added primitives (cube, sphere, stairs…) come with a **Dynamic** body (mass 1) out of the box — add a few, press <kbd>P</kbd>, and they fall, stack and throw immediately. Building scenery instead? Set **Body** back to *Auto* or *Static* in the Inspector. Terrain always spawns as scenery.
@@ -94,10 +118,34 @@ The bottom-right transport (▶ / ⏸ / ⏹ / ↺) is **off by default** so it i
 
 While a simulation is running you can grab a dynamic object and throw it:
 
-- **Desktop** — drag it with the move gizmo. Releasing hands it back to the physics engine with the velocity of your throw.
+- **Play mode** — enter play mode, put the crosshair on the object and hold the left button. It comes to you and follows the camera; **scroll** to push it further away or pull it closer; let go to throw. See below.
+- **Desktop editor** — drag it with the move gizmo. Releasing hands it back to the physics engine with the velocity of your throw.
 - **VR** — grip-grab it and let go; the release imparts the throw.
 
-Grab velocity is capped so a fast flick can't fling an object across the scene at absurd speed.
+Throw speed is capped at 20 m/s, and the cap applies to the *magnitude*, so a hard diagonal throw goes where you aimed it rather than being bent toward an axis.
+
+## Play mode is interact mode
+
+In play mode the crosshair grows into a ring over anything you can pick up.
+
+- **Hold the left button** to carry. The object follows a smoothed target in front of the camera, so a heavy crate lags behind a light one — mass you can feel.
+- **Scroll** while carrying to push it out or pull it in (0.8–6 m). Your walking speed is untouched while you hold something.
+- **Let go** to throw it with the speed you were actually moving it at.
+- **A quick tap** — press and release without dragging — *clicks* the object instead, which fires [On Click](nodes/onclick.md) nodes and module buttons. Before this, play mode had no clicking at all.
+
+Only dynamic objects can be picked up, objects another peer has locked are refused, and nothing is grabbable unless a simulation is running — so scenery and level geometry can never be dragged out of place.
+
+**Configure Scene ▸ Physics ▸ Play mode** sets this for everyone in the scene:
+
+| Setting | Meaning |
+|---|---|
+| Pointer: *Grab and throw* | the full behaviour above (default) |
+| Pointer: *Click only* | taps fire On Click nodes, nothing can be picked up |
+| Pointer: *Look only* | neither |
+| Keep players on the ground | no <kbd>Q</kbd>/<kbd>E</kbd> flying; the camera stays at eye height |
+| Start the simulation when play mode opens | for scenes that are games rather than models |
+
+A module can override these for its own world by publishing them on its scene group.
 
 ## Joints
 
@@ -116,6 +164,8 @@ Joints replicate to everyone, undo as a single step, persist in saved scenes and
 Physics uses an **authoritative** model: the peer who starts the run is the only one stepping the simulation, and it broadcasts the resulting motion. Everyone else just watches.
 
 - **One run at a time** — if someone else is simulating, your play button is disabled and a toast names who's running it.
+- **Watching peers interpolate.** The simulating peer sends about ten poses a second per moving body; everyone else eases between them instead of snapping, so a fast throw looks smooth rather than stepped. It costs nothing on the wire and never changes *where* an object ends up — only how it gets there.
+- **A throw you make is applied exactly.** When you are not the peer running the simulation, releasing an object sends the release velocity itself, so the object leaves your hand immediately and in the direction you threw it rather than being reconstructed from position updates.
 - The sim uses a fixed timestep, so it runs at the same speed for everyone even when a browser tab is throttled in the background.
 - Kinematic platforms that are themselves animated by the flow graph need no extra traffic — every peer computes their motion identically.
 

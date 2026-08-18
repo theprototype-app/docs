@@ -38,6 +38,7 @@ nav:
       - Time: nodes/time.md
       - Object Selector: nodes/objectselector.md
       - Velocity: nodes/velocity.md
+      - Measure: nodes/measure.md
       - Flow Input: nodes/flowinput.md
       - Flow Output: nodes/flowoutput.md
       - Object Flow: nodes/objectflow.md
@@ -58,6 +59,7 @@ nav:
       - On Click: nodes/onclick.md
       - Key Press: nodes/keypress.md
       - On Impact: nodes/onimpact.md
+      - On Rest: nodes/onrest.md
       - On Enter: nodes/onenter.md
       - On Exit: nodes/onexit.md
       - Play Animation: nodes/playanim.md
@@ -76,6 +78,9 @@ nav:
       - Angular Velocity: nodes/angularvelocity.md
       - Collider: nodes/collider.md
       - Motor: nodes/motor.md
+      - Impulse: nodes/impulse.md
+      - Set Velocity: nodes/setvelocity.md
+      - Joint: nodes/joint.md
       - Pulse: nodes/pulse.md
       - Blink: nodes/blink.md
       - Sound: nodes/sound.md
