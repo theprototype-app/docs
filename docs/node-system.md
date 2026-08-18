@@ -6,6 +6,17 @@ The Flow editor is a visual node graph that drives scene behavior — animation,
 
 Press <kbd>N</kbd> or use the flow icon in the bottom hud. The editor docks at the bottom (tabbed with the [Explorer](explorer.md) when both are open) and can be undocked to float.
 
+## The Flows list
+
+The left pane carries a collapsible **Flows** section above the node palette. It lists
+**Scene** at the root, then every object that actually has a flow graph of its own — it is a way
+to get *to* a graph, not a second object list, so an object with none is not in it.
+
+Click a row to select that object and switch the editor to its graph; click **Scene** to
+deselect and edit the scene-wide one. Drag the bar under the list to give it more room, and
+click the section header to collapse it. An entry whose object has been deleted is shown
+greyed out until the next save drops it.
+
 ## Adding nodes
 
 - **Palette** — the left sidebar lists every node by group with a filter box; drag a node onto the canvas. The palette can be collapsed or moved to the other side with the tabs on its edge.

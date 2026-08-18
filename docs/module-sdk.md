@@ -106,6 +106,43 @@ api.registerFrameTask((time) => { /* every frame, synced seconds */ });
 api.registerMenu('Open my panel', () => { /* button on your manager card */ });
 ```
 
+#### registerPostEffect
+
+The [scene look](post-processing.md) stack is a registry too, so a module can add an
+effect a user can then add to the scene like any built-in one:
+
+```js
+api.registerPostEffect('bloomier', {
+	label: 'Bloomier',
+	group: 'camera',
+	params: [{ name: 'amount', type: 'number', default: 0.5, min: 0, max: 2 }],
+	make: (params, ctx) => new SomeEffect({ intensity: params.amount })
+});
+```
+
+Your kind is **namespaced** to your module, so two modules cannot collide. If your
+module is later disabled — or the scene is opened by someone who never installed it —
+the authored effect is **kept in the stack and skipped**, not deleted, and it starts
+working again the moment the module is back. That is deliberately the same behaviour in
+both cases: a peer without your module is in exactly the position of a user who turned
+it off.
+
+#### registerPostBackend
+
+For a whole *compiler* rather than a single effect — something that turns a shader
+description into an effect:
+
+```js
+api.registerPostBackend('fancy', 'Fancy compiler', (spec, ctx) => {
+	// spec: { fragment, uniforms, readsDepth, blend }  ->  return an Effect
+	return buildEffect(spec);
+});
+```
+
+This is separate from `registerShaderBackend` on purpose: a **shader** backend returns a
+*material* and a **post** backend returns an *effect*. An unknown key falls back to the
+built-in compiler rather than failing, and the document keeps the key it asked for.
+
 #### registerUnwrapBackend
 
 The [UV editor](uv-editor.md)'s **Unwrap** menu is a registry, so a module can add

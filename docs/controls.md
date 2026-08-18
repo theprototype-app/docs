@@ -18,6 +18,7 @@ How to move the camera, select and transform objects, and find every keyboard sh
 - **Shift+click** adds or removes objects from a multi-selection (the last-picked object is the primary).
 - **Shift+drag** on empty space draws a box-select marquee.
 - **Ctrl+A** selects everything in the scene. Inside a mesh editing session it keeps its other meaning — select every face, edge or vertex — so the two never collide.
+- **Ctrl+D** duplicates the selection — see [Duplicating](#duplicating) for what a copy brings with it.
 - Selecting an object **locks it for other peers** (one lock per person); a locked object shows who holds it, and its right-click menu offers **Request control** to ask for a handover.
 
 ### What double-click does
@@ -32,6 +33,43 @@ An object scaled — or animated — down to almost nothing has no surface left 
 
 !!! note
     At *exactly* zero scale the viewport click does not reach it yet; select it from the object list instead. That one is a known gap.
+
+### Selecting without a keyboard
+
+On a phone or tablet there is no <kbd>Shift</kbd> to hold and no right-click, so the same
+two gestures are available as a **mode**. *Settings ▸ Interface ▸ Touch tools* puts round
+**Undo**, **Redo** and **Multi-select** buttons beside the logo — on by default on phones
+and narrow windows.
+
+With **Multi-select** on:
+
+- a **tap adds** to the selection instead of replacing it, and
+- a **drag on empty space** draws the box-select marquee.
+
+It works the same inside a mesh editing session, on vertices, edges and faces. Everything
+else already has a touch path: long-press the viewport for the right-click menu, and the
+**+** button opens the same create menu.
+
+### Duplicating
+
+**Ctrl+D** (or right-click ▸ *Duplicate*) makes a working copy. A copy is a copy of
+everything that belongs to the object, not just its shape:
+
+| Comes along | |
+|---|---|
+| geometry, transform, children | always |
+| material and its texture slots | always, as its own detached copy |
+| physics, origin, camera settings | always |
+| **animation clips** | yes — the copy plays its own |
+| **object flow graph** | yes, with fresh node ids |
+| **shader graph** | yes — otherwise the copy would render frozen |
+
+An embedded **Object Flow** node inside a copied graph keeps pointing at the object it
+referenced. Re-aiming it at the copy is a decision only you can make, so it is left alone.
+
+Each of the last three can be switched off in *Settings ▸ Scene ▸ Duplicate* if you would
+rather a copy came out bare. An object that inherits the **scene default** shader keeps
+inheriting it — it does not get a private snapshot.
 
 ### Editing a multi-selection
 
@@ -66,6 +104,13 @@ The origin travels with the object: it replicates, saves, undoes, and is baked i
 ### Numeric fields
 
 Every number in the app is the same control: **drag** it to scrub, or **type** into it for live updates. <kbd>↑</kbd>/<kbd>↓</kbd> step by one unit — hold <kbd>Ctrl</kbd> for ×10, <kbd>Shift</kbd> for ×100 — and <kbd>Esc</kbd> reverts what you typed.
+
+That includes the numbers inside **node editor cards**, **shader nodes** and the
+**animation window** — dragging one of those scrubs the value without dragging the card.
+Scrubbing an animation key or a shader parameter is **one undo step**, not one per pixel.
+
+Fields that hold a distance or an angle also accept a typed **unit** (`12cm`, `4in`,
+`90deg`) — see [Units](units.md).
 
 ### Floating windows
 

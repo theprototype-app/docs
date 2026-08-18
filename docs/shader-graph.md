@@ -29,6 +29,17 @@ There is no scope control to get wrong — **the selection is the control**:
 The header always says which. An object with its own graph ignores the scene default,
 so the order is *own graph → scene default → the object's real material*.
 
+## The Shaders list
+
+The left pane carries a collapsible **Shaders** section above the node palette. It lists
+**Scene** at the root, then every object that actually has a shader graph of its own — it is a way
+to get *to* a graph, not a second object list, so an object with none is not in it.
+
+Click a row to select that object and switch the editor to its graph; click **Scene** to
+deselect and edit the scene-wide one. Drag the bar under the list to give it more room, and
+click the section header to collapse it. An entry whose object has been deleted is shown
+greyed out until the next save drops it.
+
 ## The Surface node
 
 Every graph ends at one **Surface** node. Each of its inputs replaces one part of the

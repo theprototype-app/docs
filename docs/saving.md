@@ -4,6 +4,20 @@ How to save and load your work: the recommended `.tpscene` bundle, GLTF intercha
 
 The main menu (the logo button) has **Import** (bring 3D files into the scene), **Load** (open a saved file) and **Save**, with a format switch underneath: **GLTF | Scene** — and a **⚙** cog for export settings.
 
+## Where you left off
+
+Restoring a session — from the **Restore** prompt, from *auto-restore* in
+*Settings ▸ Scene*, or by loading a scene file — brings back more than the objects:
+
+- the **panels and windows** you had open, and which dock tab was in front,
+- what you had **selected**, and
+- an open **Edit Mesh** or **Sculpt** session, with the faces, edges or vertices you had
+  picked.
+
+A **plain page reload starts clean**, with everything closed. The workspace comes back
+when you ask for your scene back, not every time you refresh — and a scene whose author
+had nothing open will not close the panels *you* have open.
+
 ## Starting from a template
 
 **Menu ▸ Templates** opens a picker of ready-made scenes, in three tabs:

@@ -4,6 +4,7 @@ nav:
   - Getting Started:
     - Welcome: index.md
     - Controls: controls.md
+    - Units: units.md
     - Connection: connection.md
   - Building:
     - Explorer: explorer.md

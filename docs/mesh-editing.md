@@ -44,6 +44,7 @@ Each mode remembers its own selection, so you can hop between them without losin
 ### Selecting
 
 - **Click** an element to select it; **Ctrl+click** adds to the selection.
+- **Shift+drag** or **Ctrl+drag** draws a **box** — every vertex, edge or face inside it joins the selection. Works in all three element modes, and a box always takes whole faces (never half a quad). An empty box changes nothing, so a stray drag cannot wipe your work.
 - Selection **commands** appear as words in the *Select* row — they change what is picked, never the geometry:
 
 | Command | Modes | What it picks |
