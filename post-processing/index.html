@@ -8,11 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.theprototype.app/module-package/">
+        <link rel="canonical" href="https://docs.theprototype.app/post-processing/">
       
       
-        <link rel="prev" href="../module-sdk/">
+        <link rel="prev" href="../shader-nodes/">
       
+      
+        <link rel="next" href="../animation/">
       
       
       <link rel="icon" href="../logo.svg">
@@ -20,7 +22,7 @@
     
     
       
-        <title>Module Packages - ThePrototype Docs</title>
+        <title>Scene Look (Post-processing) - ThePrototype Docs</title>
       
     
     
@@ -72,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#module-package-layout" class="md-skip">
+        <a href="#scene-look-post-processing" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Module Packages
+              Scene Look (Post-processing)
             
           </span>
         </div>
@@ -361,17 +363,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -385,7 +389,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Building
@@ -564,10 +568,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../post-processing/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Scene Look (Post-processing)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -576,6 +600,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#opening-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opening it
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-a-look" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building a look
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building a look">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-passes-line-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      What the "passes" line means
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ambient-occlusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ambient occlusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#colour-grading-with-a-lut" class="md-nav__link">
+    <span class="md-ellipsis">
+      Colour grading with a LUT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tone-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tone mapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seeing-it-or-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seeing it, or not
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limits-worth-knowing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limits worth knowing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#effects-that-come-from-a-newer-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Effects that come from a newer version
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2294,19 +2425,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -2320,7 +2449,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             Extending
@@ -2373,30 +2502,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Module Packages
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../module-package/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2405,62 +2514,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#manifestjson" class="md-nav__link">
-    <span class="md-ellipsis">
-      manifest.json
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#url-installs" class="md-nav__link">
-    <span class="md-ellipsis">
-      URL installs
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#entry-constraints-user-modules" class="md-nav__link">
-    <span class="md-ellipsis">
-      Entry constraints (user modules)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#trust-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      Trust model
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2500,36 +2553,87 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#manifestjson" class="md-nav__link">
+  <a href="#opening-it" class="md-nav__link">
     <span class="md-ellipsis">
-      manifest.json
+      Opening it
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#url-installs" class="md-nav__link">
+  <a href="#building-a-look" class="md-nav__link">
     <span class="md-ellipsis">
-      URL installs
+      Building a look
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building a look">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-passes-line-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      What the "passes" line means
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ambient-occlusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ambient occlusion
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#entry-constraints-user-modules" class="md-nav__link">
+  <a href="#colour-grading-with-a-lut" class="md-nav__link">
     <span class="md-ellipsis">
-      Entry constraints (user modules)
+      Colour grading with a LUT
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#trust-model" class="md-nav__link">
+  <a href="#tone-mapping" class="md-nav__link">
     <span class="md-ellipsis">
-      Trust model
+      Tone mapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seeing-it-or-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seeing it, or not
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limits-worth-knowing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limits worth knowing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#effects-that-come-from-a-newer-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Effects that come from a newer version
     </span>
   </a>
   
@@ -2550,7 +2654,7 @@
                   
 
   
-    <a href="https://github.com/theprototype-app/docs/edit/docs/module-package.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/theprototype-app/docs/edit/docs/post-processing.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2558,78 +2662,122 @@
   
 
 
-<h1 id="module-package-layout">Module package layout</h1>
-<p>The format the Modules manager installs (zip upload or URL) and exports
-("Download as example"). One folder or zip root per module.</p>
-<div class="admonition tip">
-<p class="admonition-title">Let a script build it</p>
-<p><a href="https://github.com/theprototype-app/modules">theprototype-app/modules</a> has
-<code>npm run new -- &lt;id&gt;</code> (scaffold from a working template) and
-<code>npm run pack -- &lt;id&gt;</code> (build the zip with <code>manifest.json</code> at the <strong>root</strong>,
-refusing an entry file with a top-level <code>import</code>). <code>Compress-Archive</code> on the
-folder nests it and the manager rejects the result.</p>
-</div>
-<div class="highlight"><pre><span></span><code>mymodule.zip
-├── manifest.json        required — see below
-├── module.js            required — the entry (default export, self-contained)
-├── assets/              optional — sounds/, models/ (.glb), textures/ …
-│   ├── sounds/pling.mp3        → api.assetUrl(&#39;assets/sounds/pling.mp3&#39;)
-│   └── models/lever.glb
-├── prefabs/*.json       optional — object snapshots your module instantiates
-│                          (exported via &quot;Save as prefab&quot; → export)
-├── nodes/*.js|.svelte   optional — sources for reference; user-module entries
-│                          cannot import them (see limits below)
-└── config.json          optional — defaults your module fetches itself via
-                           api.assetUrl(&#39;config.json&#39;)
-</code></pre></div>
-<h2 id="manifestjson">manifest.json</h2>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mymodule&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;My Module&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;One line for the manager card.&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;entry&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;module.js&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;files&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;module.js&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;assets/sounds/pling.mp3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;config.json&quot;</span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
+<h1 id="scene-look-post-processing">Scene Look (Post-processing)</h1>
+<p>Grade the finished frame. A <strong>scene look</strong> is a stack of screen-space effects — ambient
+occlusion, colour grading, bloom, vignette, film grain, pixelation — applied over the
+whole viewport after the scene is drawn.</p>
+<p>The look is <strong>part of the scene</strong>. It replicates to everyone in the session the moment you
+change it, it is saved with the file, and it undoes like any other edit. Nobody has to
+switch anything on to see what you made.</p>
+<h2 id="opening-it">Opening it</h2>
+<p><strong>Configure Scene ▸ Post-processing</strong> — or right-click the viewport and choose
+<strong>View ▸ Post-processing…</strong>, which opens the panel straight at that section.</p>
+<h2 id="building-a-look">Building a look</h2>
+<p>Press <strong>+ Add effect</strong> and pick one from its family:</p>
+<table>
+<thead>
+<tr>
+<th>Family</th>
+<th>Effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ambient occlusion</td>
+<td>Ambient occlusion</td>
+</tr>
+<tr>
+<td>Colour grading</td>
+<td>Tone mapping, Hue / saturation, Brightness / contrast, LUT</td>
+</tr>
+<tr>
+<td>Stylize</td>
+<td>Dot screen</td>
+</tr>
+<tr>
+<td>Camera FX</td>
+<td>Bloom, Vignette, Film grain, Chromatic aberration, Pixelation, Scanlines</td>
+</tr>
+<tr>
+<td>Anti-aliasing</td>
+<td>SMAA</td>
+</tr>
+</tbody>
+</table>
+<p>Each row has a grip to <strong>drag it up or down</strong>, a checkbox to switch it off without losing
+its settings, and a <strong>✕</strong> to remove it. Click a row's name to open its parameters.</p>
+<p><strong>The order matters.</strong> The stack runs top to bottom over the frame, so grading placed
+before a vignette darkens differently than grading placed after it. Drag to rearrange, or
+use the ↑ ↓ buttons.</p>
+<h3 id="what-the-passes-line-means">What the "passes" line means</h3>
+<p>Under the enable checkbox you will see something like:</p>
+<blockquote>
+<p>Effects: 4, passes: 2 (2 merged into a shared pass)</p>
+</blockquote>
+<p>Most effects are combined into a <strong>single fullscreen shader</strong>, so eight of them usually
+cost far less than eight times one. Ambient occlusion is the exception — it needs a pass of
+its own, and it splits the run wherever you place it. That line is there so you can see the
+cost of what you are building; if you care about performance, keep the AO entry at one end
+of the stack rather than the middle.</p>
+<h2 id="ambient-occlusion">Ambient occlusion</h2>
+<p>Soft contact shadows where surfaces meet. Its parameters had no controls at all before this
+release:</p>
 <ul>
-<li><code>id</code> — stable, unique, kebab-case. Routes messages and the enable/disable
-  state; changing it is a new module.</li>
-<li><code>entry</code> — the module file, default <code>module.js</code>.</li>
-<li><code>files</code> — <strong>URL installs only</strong>: every file to fetch relative to the base
-  URL (zips just include the files). The entry is fetched regardless.</li>
+<li><strong>Radius</strong> — how far a surface looks for things that occlude it, in world units.</li>
+<li><strong>Intensity</strong> — how dark the occlusion gets.</li>
+<li><strong>Falloff</strong> — how quickly the effect fades with distance.</li>
+<li><strong>Quality</strong> and <strong>Half resolution</strong> — both default to <strong>Auto</strong>, which follows each
+  viewer's own shadow-quality setting, so everyone keeps their own performance trade-off.
+  Pin them when the look matters more than the frame rate.</li>
 </ul>
-<h2 id="url-installs">URL installs</h2>
-<p>Paste a base URL that serves the layout above, e.g.</p>
-<div class="highlight"><pre><span></span><code>https://raw.githubusercontent.com/user/repo/main/mymodule
-</code></pre></div>
-<p><code>github.com/user/repo/tree/main/mymodule</code> links are converted automatically.
-Any static host works if it sends CORS headers (<code>Access-Control-Allow-Origin</code>).
-"Update" on the card re-fetches from the same base URL.</p>
-<h2 id="entry-constraints-user-modules">Entry constraints (user modules)</h2>
-<p>The entry loads as a blob ES module, so:</p>
+<p>If your scene sets its own ambient occlusion, the personal <strong>Shaded + AO</strong> button in
+<strong>View</strong> switches off and says so — the scene's setting is used instead. Two AO passes would
+double every contact shadow and cost twice as much.</p>
+<h2 id="colour-grading-with-a-lut">Colour grading with a LUT</h2>
+<p>A <strong>LUT</strong> (lookup table) is the standard way to move a grade between tools. Put a <code>.cube</code>
+file — or a LUT strip image — in the <a href="../explorer/">Explorer</a>, then pick it in the LUT
+effect's <strong>LUT file</strong> row.</p>
+<p>The file is shared with your peers automatically. Anyone who does not have it asks for it,
+so people who join later get the grade too, and it travels inside a saved
+<a href="../saving/"><code>.tpscene</code></a>.</p>
+<p><strong>Smooth interpolation</strong> (tetrahedral sampling) is slower but avoids banding on small LUTs.</p>
+<h2 id="tone-mapping">Tone mapping</h2>
+<p>Tone mapping decides how bright values are compressed into what your screen can show.
+While a <strong>Tone mapping</strong> effect is in the stack it takes over from the renderer's own
+curve, so the image is never mapped twice — pick the curve you want (AgX, ACES Filmic,
+Neutral, Reinhard, Cineon, Uncharted 2) and set its white point and middle grey.</p>
+<h2 id="seeing-it-or-not">Seeing it, or not</h2>
+<p>The look renders for everybody. What is local is your right to switch it off:</p>
 <ul>
-<li><strong>No <code>import</code> statements</strong> — bare specifiers (<code>three</code>, <code>svelte</code>) and relative
-  files cannot resolve. Everything arrives on the <code>api</code> object: <code>api.THREE</code>,
-  <code>api.assetUrl(path)</code>, stores/actions via the documented api surface.</li>
-<li>One file. If you develop with multiple files, bundle before zipping
-  (esbuild: <code>esbuild src/module.js --bundle --format=esm --external:none
-  --outfile=module.js</code> — but keep <code>three</code> OUT of the bundle and use
-  <code>api.THREE</code>, or the module ships a second copy of three).</li>
-<li>Custom Svelte node components only work for in-repo (core) modules; user
-  modules get the generic param-driven node UI (<code>params</code> in the catalog item).</li>
-<li>Assets: keep zips ≤ ~20 MB; they persist in the browser's IndexedDB.</li>
+<li><strong>View ▸ Overrides — this device</strong> has a <strong>Scene look (post-processing)</strong> checkbox. Turn
+  it off if your machine struggles, or if an effect is uncomfortable to look at. Your peers
+  still see the scene as its author made it.</li>
+<li><strong>Wireframe</strong> skips post-processing entirely — it is a diagnostic view.</li>
+<li>Turning an effect off in the stack, or unticking <strong>Scene look enabled</strong>, changes it <em>for
+  everyone</em> — that is scene data, not a personal setting.</li>
 </ul>
-<p>Core modules in <code>src/modules/</code> have none of these limits — they're part of the
-build. The downloaded examples therefore may need small edits (replace <code>import
-* as THREE from 'three'</code> with <code>const THREE = api.THREE</code>, inline component-based
-nodes as <code>params</code>) before they run as user modules; <code>hello</code> runs with just the
-THREE swap.</p>
-<h2 id="trust-model">Trust model</h2>
-<p>Installing a module = running its code in your session, with your peer
-connections. There is no sandbox in v1. Install only from sources you trust,
-and expect peers to need the same module (same id + version) for shared
-behavior to match — the connect handshake warns when lists differ.</p>
+<h2 id="limits-worth-knowing">Limits worth knowing</h2>
+<ul>
+<li><strong>Post-processing does not run in VR.</strong> The effects are skipped in a headset; objects
+  still look the same, and materials made with the <a href="../shader-graph/">Shader Graph</a> are
+  unaffected.</li>
+<li><strong>The camera preview inset (PiP) shows the plain image</strong>, without the look.</li>
+<li><strong>Sprites, billboarded avatar photo cards and particles</strong> do not write depth, so effects
+  that read depth do not affect them. A strong stylize effect makes that more visible than
+  ambient occlusion ever did.</li>
+<li><strong>A GLTF export does not carry the look</strong> — glTF has nowhere to put screen-space effects.
+  The app tells you when you export. Save a <strong>Scene (<code>.tpscene</code>)</strong> to keep it.</li>
+<li>On some mobile GPUs fullscreen effects are mis-rendered by the driver: the viewport can
+  freeze on a stale frame while you move. If that happens, switch the scene look off in
+  <strong>View ▸ Overrides</strong>.</li>
+<li>Very old browser builds have a shader bug with fullscreen effects; the app detects them,
+  skips the look and explains once.</li>
+</ul>
+<h2 id="effects-that-come-from-a-newer-version">Effects that come from a newer version</h2>
+<p>If someone using a newer build adds an effect this one does not know, it is shown in the
+list as <strong>unsupported</strong> and left completely alone — it is still saved, still shared, and
+still there for people whose version does understand it. Nothing you do to the rest of the
+stack deletes it.</p>
 
 
 
@@ -2650,7 +2798,7 @@ behavior to match — the connect handshake warns when lists differ.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-08-09
+    2026-08-18
   </span>
 
     
