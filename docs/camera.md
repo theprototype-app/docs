@@ -28,6 +28,12 @@ Three per-device render modes under **Viewport — this device**:
 
 Ambient occlusion and wireframe are **desktop-only** and never shown to peers. AO detail follows your shadow-quality setting (below), so lowering shadow quality also lightens the AO cost.
 
+These are SHADING modes — they are not how you see the scene's own look. A
+[scene look](post-processing.md) renders for everyone in every mode except Wireframe, and
+you switch it off for yourself under **Overrides — this device**. If the scene sets its own
+ambient occlusion, **Shaded + AO** switches off and says so: the scene's setting is used
+instead of yours.
+
 The **Show light helpers** toggle here draws icons for lights so you can see where they are.
 
 ## Camera lens

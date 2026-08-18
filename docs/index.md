@@ -29,6 +29,7 @@ You build scenes from primitives, imported models and packs, wire behavior with 
 - [Mesh Editing](mesh-editing.md) — vertices, edges and faces: extrude, bevel, knife, loops and mirroring.
 - [Snapping](snapping.md) — line things up: grid steps, surfaces, and snapping onto real geometry.
 - [UV & Textures](uv-editor.md) — unwrap a model, paint on it, and give parts of it their own materials.
+- [Scene Look (Post-processing)](post-processing.md) — grade the finished frame: ambient occlusion, colour, bloom, grain. Saved with the scene and shared with everyone.
 - [Animation](animation.md) — keyframe clips with a timeline, curves, markers and onion skin.
 - [Physics & Simulation](physics.md) — mass, joints, dropping and throwing objects.
 - [Terrain & Sculpting](terrain.md) — add ground and shape it with a brush.
