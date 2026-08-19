@@ -758,14 +758,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scene-gravity" class="md-nav__link">
+  <a href="#scene-settings" class="md-nav__link">
     <span class="md-ellipsis">
-      Scene gravity
+      Scene settings
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Scene gravity">
+    <nav class="md-nav" aria-label="Scene settings">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#world" class="md-nav__link">
+    <span class="md-ellipsis">
+      World
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ground-bounds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ground &amp; bounds
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defaults-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defaults (advanced)
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#with-mass-bounciness-friction-nodes" class="md-nav__link">
@@ -809,6 +836,15 @@
   <a href="#grab-and-throw-mid-simulation" class="md-nav__link">
     <span class="md-ellipsis">
       Grab and throw mid-simulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#play-mode-is-interact-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Play mode is interact mode
     </span>
   </a>
   
@@ -1324,6 +1360,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/measure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Measure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/flowinput/" class="md-nav__link">
         
   
@@ -1744,6 +1801,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/onrest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Rest
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/onenter/" class="md-nav__link">
         
   
@@ -2106,6 +2184,69 @@
   
   <span class="md-ellipsis">
     Motor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/impulse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Impulse
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/setvelocity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set Velocity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/joint/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Joint
   </span>
   
 
@@ -2718,14 +2859,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scene-gravity" class="md-nav__link">
+  <a href="#scene-settings" class="md-nav__link">
     <span class="md-ellipsis">
-      Scene gravity
+      Scene settings
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Scene gravity">
+    <nav class="md-nav" aria-label="Scene settings">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#world" class="md-nav__link">
+    <span class="md-ellipsis">
+      World
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ground-bounds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ground &amp; bounds
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defaults-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defaults (advanced)
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#with-mass-bounciness-friction-nodes" class="md-nav__link">
@@ -2769,6 +2937,15 @@
   <a href="#grab-and-throw-mid-simulation" class="md-nav__link">
     <span class="md-ellipsis">
       Grab and throw mid-simulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#play-mode-is-interact-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Play mode is interact mode
     </span>
   </a>
   
@@ -2902,8 +3079,39 @@
 </div>
 <h3 id="changing-shapes-mid-run">Changing shapes mid-run</h3>
 <p>Collider settings apply <strong>live</strong>. Change a shape, a material, a sensor flag or a locked axis while the simulation is running and it swaps in place — joints, velocity and momentum survive — so you can tune a contraption without restarting it.</p>
-<h2 id="scene-gravity">Scene gravity</h2>
-<p>Gravity is a scene-wide setting (Configure Scene ▸ Physics): slide it anywhere from −20 to 5, or <strong>Reset gravity</strong> to put it back to the default. It is shared with your peers and applies live, so you can drop the world into moon gravity mid-run, or invert it. Positive values make things fall <em>up</em>.</p>
+<h2 id="scene-settings">Scene settings</h2>
+<p>Everything in <strong>Configure Scene ▸ Physics</strong> is shared with your peers, saved with the scene and applied live — you can change any of it mid-run.</p>
+<h3 id="world">World</h3>
+<p><strong>Gravity</strong> slides from −20 to 5 (<strong>Reset gravity</strong> puts it back). Drop the world into moon gravity mid-run, or invert it: positive values make things fall <em>up</em>.</p>
+<p><strong>Time scale</strong> (0.1–2) runs the whole simulation in slow motion or fast forward. Slow-mo on a collapsing tower is the point of it. Above 1.5 the panel suggests turning on continuous collision, because faster bodies travel further between steps.</p>
+<h3 id="ground-bounds">Ground &amp; bounds</h3>
+<p>A <strong>ground plane</strong> is on by default at height 0. You can move it, give it <strong>grip</strong> (friction) and <strong>bounce</strong> (restitution) — a slick floor and a rubber floor are one slider apart — or switch it off entirely to build a pit. With colliders shown (Configure Scene ▸ View ▸ <em>Show colliders</em>) it draws as a translucent sheet so you can see where it is.</p>
+<p><strong>Out of bounds below Y</strong> catches anything that falls past a limit, and you choose what happens:</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Return to its start</td>
+<td>teleports the object back to where it was when the simulation started — right for a crate knocked off a table</td>
+</tr>
+<tr>
+<td>Freeze in place</td>
+<td>stops it dead where it is</td>
+</tr>
+<tr>
+<td>Delete the object</td>
+<td>removes it, replicated and undoable</td>
+</tr>
+</tbody>
+</table>
+<p>One toast reports a whole burst ("3 objects fell out of bounds — returned to spawn") rather than one per object.</p>
+<h3 id="defaults-advanced">Defaults (advanced)</h3>
+<p><strong>Material</strong> fills in friction and bounce for every object that does not set its own — the fastest way to make a whole scene icy, rubbery, wooden or metallic. <strong>Drag</strong> and <strong>spin drag</strong> (linear and angular damping) are what turn a jittery tower stable and stop crates sliding forever. <strong>Continuous collision</strong> is off by default and costs a little speed; thrown objects switch it on for themselves regardless, because a 20 m/s throw travels 0.33 m per step and would otherwise pass through a thin wall.</p>
 <div class="admonition tip">
 <p class="admonition-title">Primitives are ready to play</p>
 <p>Newly added primitives (cube, sphere, stairs…) come with a <strong>Dynamic</strong> body (mass 1) out of the box — add a few, press <kbd>P</kbd>, and they fall, stack and throw immediately. Building scenery instead? Set <strong>Body</strong> back to <em>Auto</em> or <em>Static</em> in the Inspector. Terrain always spawns as scenery.</p>
@@ -2928,10 +3136,52 @@
 <h2 id="grab-and-throw-mid-simulation">Grab and throw mid-simulation</h2>
 <p>While a simulation is running you can grab a dynamic object and throw it:</p>
 <ul>
-<li><strong>Desktop</strong> — drag it with the move gizmo. Releasing hands it back to the physics engine with the velocity of your throw.</li>
+<li><strong>Play mode</strong> — enter play mode, put the crosshair on the object and hold the left button. It comes to you and follows the camera; <strong>scroll</strong> to push it further away or pull it closer; let go to throw. See below.</li>
+<li><strong>Desktop editor</strong> — drag it with the move gizmo. Releasing hands it back to the physics engine with the velocity of your throw.</li>
 <li><strong>VR</strong> — grip-grab it and let go; the release imparts the throw.</li>
 </ul>
-<p>Grab velocity is capped so a fast flick can't fling an object across the scene at absurd speed.</p>
+<p>Throw speed is capped at 20 m/s, and the cap applies to the <em>magnitude</em>, so a hard diagonal throw goes where you aimed it rather than being bent toward an axis.</p>
+<h2 id="play-mode-is-interact-mode">Play mode is interact mode</h2>
+<p>In play mode the crosshair grows into a ring over anything you can pick up.</p>
+<ul>
+<li><strong>Hold the left button</strong> to carry. The object follows a smoothed target in front of the camera, so a heavy crate lags behind a light one — mass you can feel.</li>
+<li><strong>Scroll</strong> while carrying to push it out or pull it in (0.8–6 m). Your walking speed is untouched while you hold something.</li>
+<li><strong>Let go</strong> to throw it with the speed you were actually moving it at.</li>
+<li><strong>A quick tap</strong> — press and release without dragging — <em>clicks</em> the object instead, which fires <a href="../nodes/onclick/">On Click</a> nodes and module buttons. Before this, play mode had no clicking at all.</li>
+</ul>
+<p>Only dynamic objects can be picked up, objects another peer has locked are refused, and nothing is grabbable unless a simulation is running — so scenery and level geometry can never be dragged out of place.</p>
+<p><strong>Configure Scene ▸ Physics ▸ Play mode</strong> sets this for everyone in the scene:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pointer: <em>Grab and throw</em></td>
+<td>the full behaviour above (default)</td>
+</tr>
+<tr>
+<td>Pointer: <em>Click only</em></td>
+<td>taps fire On Click nodes, nothing can be picked up</td>
+</tr>
+<tr>
+<td>Pointer: <em>Look only</em></td>
+<td>neither</td>
+</tr>
+<tr>
+<td>Keep players on the ground</td>
+<td>no <kbd>Q</kbd>/<kbd>E</kbd> flying; the camera stays at eye height</td>
+</tr>
+<tr>
+<td>Start the simulation when play mode opens</td>
+<td>for scenes that are games rather than models</td>
+</tr>
+</tbody>
+</table>
+<p>A module can override these for its own world by publishing them on its scene group.</p>
 <h2 id="joints">Joints</h2>
 <p>Joints tie two objects together so they move as one, or hinge around an axis. Select <strong>exactly two objects</strong>, then use their right-click menu ▸ <strong>Physics</strong>:</p>
 <table>
@@ -2961,6 +3211,8 @@
 <p>Physics uses an <strong>authoritative</strong> model: the peer who starts the run is the only one stepping the simulation, and it broadcasts the resulting motion. Everyone else just watches.</p>
 <ul>
 <li><strong>One run at a time</strong> — if someone else is simulating, your play button is disabled and a toast names who's running it.</li>
+<li><strong>Watching peers interpolate.</strong> The simulating peer sends about ten poses a second per moving body; everyone else eases between them instead of snapping, so a fast throw looks smooth rather than stepped. It costs nothing on the wire and never changes <em>where</em> an object ends up — only how it gets there.</li>
+<li><strong>A throw you make is applied exactly.</strong> When you are not the peer running the simulation, releasing an object sends the release velocity itself, so the object leaves your hand immediately and in the direction you threw it rather than being reconstructed from position updates.</li>
 <li>The sim uses a fixed timestep, so it runs at the same speed for everyone even when a browser tab is throttled in the background.</li>
 <li>Kinematic platforms that are themselves animated by the flow graph need no extra traffic — every peer computes their motion identically.</li>
 </ul>
@@ -2988,7 +3240,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-08-12
+    2026-08-19
   </span>
 
     
