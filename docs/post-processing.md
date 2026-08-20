@@ -90,6 +90,58 @@ The look renders for everybody. What is local is your right to switch it off:
 - Turning an effect off in the stack, or unticking **Scene look enabled**, changes it *for
   everyone* — that is scene data, not a personal setting.
 
+## A look for one camera
+
+A look does not have to belong to the whole scene. Any [camera](camera.md) can carry
+its own, so switching cameras switches the grade — a hero camera with a heavy
+cinematic look, a security-monitor camera that is deliberately grey and grainy.
+
+In **Post-processing**, the **Look for** row picks which look you are editing: *The
+scene (everyone)*, or any camera in the scene. Pick a camera and you get a fresh,
+empty list — build it exactly the same way.
+
+A camera look only shows **while someone is looking through that camera**. So after
+you add effects to one, the viewport does not change until you look through it —
+select the camera and press **Preview**, or use a **Set Active Camera** node.
+
+### Add, or replace
+
+The **Combine** row decides how a camera look meets the scene look:
+
+| | |
+|---|---|
+| **Add to the scene look** | The scene look runs first, then this camera's. The usual choice: the house look plus a grade for this shot. |
+| **Replace the scene look** | Only this camera's look runs. For a camera that is deliberately not the house look. |
+
+Effects still merge across the join, so a scene grade plus a camera grade is usually
+still one fullscreen pass.
+
+Camera looks are scene data like everything else here: they replicate, they save with
+the file, and they undo.
+
+## Switching looks from a node graph
+
+The **Set Look** node (Game group) switches a look when something happens — a key
+press, a trigger, a game state.
+
+- **camera** — whose look. Leave it empty to target the scene look. Wire an Object
+  Selector, or pick from the list on the card.
+- **look** — on or off.
+- **look through it too** — on by default, and usually what you want: the node points
+  your view at that camera as well, which is what makes its look visible. Turn it off
+  when you only want to arm or disarm a look without moving anyone.
+
+So *Key Press R → Set Look (camera A)* and *Key Press U → Set Look (camera B)* gives
+you two grades on two keys.
+
+The switch is **per viewer and temporary**: it never edits the saved look, so turning
+one off in a game does not change what anyone has authored. Each peer acts on the
+same replicated trigger, so nobody's graph moves anybody else's view.
+
+If you turn *look through it too* off and nothing is looking through that camera, the
+node has nothing visible to do — the card says so while you build, and it tells you
+once if you fire it anyway.
+
 ## Limits worth knowing
 
 - **Post-processing does not run in VR.** The effects are skipped in a headset; objects
