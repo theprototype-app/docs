@@ -88,6 +88,8 @@ nav:
       - Custom Node: nodes/customnode.md
   - Audio:
     - Music & Sound: audio.md
+  - Games:
+    - Build a Game Loop: build-a-game.md
   - VR:
     - VR Guide: vr.md
   - AI:
