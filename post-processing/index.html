@@ -707,6 +707,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#a-look-for-one-camera" class="md-nav__link">
+    <span class="md-ellipsis">
+      A look for one camera
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A look for one camera">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-or-replace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add, or replace
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switching-looks-from-a-node-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switching looks from a node graph
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#limits-worth-knowing" class="md-nav__link">
     <span class="md-ellipsis">
       Limits worth knowing
@@ -2748,6 +2781,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#a-look-for-one-camera" class="md-nav__link">
+    <span class="md-ellipsis">
+      A look for one camera
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A look for one camera">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-or-replace" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add, or replace
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switching-looks-from-a-node-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switching looks from a node graph
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#limits-worth-knowing" class="md-nav__link">
     <span class="md-ellipsis">
       Limits worth knowing
@@ -2882,6 +2948,59 @@ Neutral, Reinhard, Cineon, Uncharted 2) and set its white point and middle grey.
 <li>Turning an effect off in the stack, or unticking <strong>Scene look enabled</strong>, changes it <em>for
   everyone</em> — that is scene data, not a personal setting.</li>
 </ul>
+<h2 id="a-look-for-one-camera">A look for one camera</h2>
+<p>A look does not have to belong to the whole scene. Any <a href="../camera/">camera</a> can carry
+its own, so switching cameras switches the grade — a hero camera with a heavy
+cinematic look, a security-monitor camera that is deliberately grey and grainy.</p>
+<p>In <strong>Post-processing</strong>, the <strong>Look for</strong> row picks which look you are editing: <em>The
+scene (everyone)</em>, or any camera in the scene. Pick a camera and you get a fresh,
+empty list — build it exactly the same way.</p>
+<p>A camera look only shows <strong>while someone is looking through that camera</strong>. So after
+you add effects to one, the viewport does not change until you look through it —
+select the camera and press <strong>Preview</strong>, or use a <strong>Set Active Camera</strong> node.</p>
+<h3 id="add-or-replace">Add, or replace</h3>
+<p>The <strong>Combine</strong> row decides how a camera look meets the scene look:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Add to the scene look</strong></td>
+<td>The scene look runs first, then this camera's. The usual choice: the house look plus a grade for this shot.</td>
+</tr>
+<tr>
+<td><strong>Replace the scene look</strong></td>
+<td>Only this camera's look runs. For a camera that is deliberately not the house look.</td>
+</tr>
+</tbody>
+</table>
+<p>Effects still merge across the join, so a scene grade plus a camera grade is usually
+still one fullscreen pass.</p>
+<p>Camera looks are scene data like everything else here: they replicate, they save with
+the file, and they undo.</p>
+<h2 id="switching-looks-from-a-node-graph">Switching looks from a node graph</h2>
+<p>The <strong>Set Look</strong> node (Game group) switches a look when something happens — a key
+press, a trigger, a game state.</p>
+<ul>
+<li><strong>camera</strong> — whose look. Leave it empty to target the scene look. Wire an Object
+  Selector, or pick from the list on the card.</li>
+<li><strong>look</strong> — on or off.</li>
+<li><strong>look through it too</strong> — on by default, and usually what you want: the node points
+  your view at that camera as well, which is what makes its look visible. Turn it off
+  when you only want to arm or disarm a look without moving anyone.</li>
+</ul>
+<p>So <em>Key Press R → Set Look (camera A)</em> and <em>Key Press U → Set Look (camera B)</em> gives
+you two grades on two keys.</p>
+<p>The switch is <strong>per viewer and temporary</strong>: it never edits the saved look, so turning
+one off in a game does not change what anyone has authored. Each peer acts on the
+same replicated trigger, so nobody's graph moves anybody else's view.</p>
+<p>If you turn <em>look through it too</em> off and nothing is looking through that camera, the
+node has nothing visible to do — the card says so while you build, and it tells you
+once if you fire it anyway.</p>
 <h2 id="limits-worth-knowing">Limits worth knowing</h2>
 <ul>
 <li><strong>Post-processing does not run in VR.</strong> The effects are skipped in a headset; objects
@@ -2924,7 +3043,7 @@ stack deletes it.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-08-18
+    2026-08-20
   </span>
 
     
