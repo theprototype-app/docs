@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.theprototype.app/snapping/">
+        <link rel="canonical" href="https://docs.theprototype.app/build-a-game/">
       
       
-        <link rel="prev" href="../mesh-editing/">
+        <link rel="prev" href="../audio/">
       
       
-        <link rel="next" href="../uv-editor/">
+        <link rel="next" href="../vr/">
       
       
       <link rel="icon" href="../logo.svg">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Snapping - ThePrototype Docs</title>
+        <title>Build a Game Loop - ThePrototype Docs</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#snapping" class="md-skip">
+        <a href="#example-build-a-game-loop" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Snapping
+              Build a Game Loop
             
           </span>
         </div>
@@ -384,19 +384,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -410,7 +408,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Building
@@ -505,30 +503,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Snapping
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../snapping/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -537,98 +515,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#where-it-lives" class="md-nav__link">
-    <span class="md-ellipsis">
-      Where it lives
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#grid-snapping" class="md-nav__link">
-    <span class="md-ellipsis">
-      Grid snapping
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#snap-to-surface" class="md-nav__link">
-    <span class="md-ellipsis">
-      Snap to surface
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#element-snapping" class="md-nav__link">
-    <span class="md-ellipsis">
-      Element snapping
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#align-to-normal" class="md-nav__link">
-    <span class="md-ellipsis">
-      Align to normal
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pick-your-snap-origin" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pick your snap origin
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inside-mesh-edit" class="md-nav__link">
-    <span class="md-ellipsis">
-      Inside mesh edit
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#in-vr" class="md-nav__link">
-    <span class="md-ellipsis">
-      In VR
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2326,17 +2212,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -2350,7 +2238,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Games
@@ -2361,10 +2249,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../build-a-game/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Build a Game Loop
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -2373,6 +2281,98 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-a-menu-on-its-own-camera" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. A menu on its own camera
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-make-start-do-something" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Make Start do something
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-a-character-that-walks" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. A character that walks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-collectibles-that-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Collectibles that count
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-hold-a-key-to-peek-at-a-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Hold a key to peek at a map
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-a-pause-menu-you-can-actually-click" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. A pause menu you can actually click
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ending-and-going-round-again" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Ending, and going round again
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where to go next
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2727,72 +2727,72 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#where-it-lives" class="md-nav__link">
+  <a href="#1-a-menu-on-its-own-camera" class="md-nav__link">
     <span class="md-ellipsis">
-      Where it lives
+      1. A menu on its own camera
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#grid-snapping" class="md-nav__link">
+  <a href="#2-make-start-do-something" class="md-nav__link">
     <span class="md-ellipsis">
-      Grid snapping
+      2. Make Start do something
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#snap-to-surface" class="md-nav__link">
+  <a href="#3-a-character-that-walks" class="md-nav__link">
     <span class="md-ellipsis">
-      Snap to surface
+      3. A character that walks
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#element-snapping" class="md-nav__link">
+  <a href="#4-collectibles-that-count" class="md-nav__link">
     <span class="md-ellipsis">
-      Element snapping
+      4. Collectibles that count
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#align-to-normal" class="md-nav__link">
+  <a href="#5-hold-a-key-to-peek-at-a-map" class="md-nav__link">
     <span class="md-ellipsis">
-      Align to normal
+      5. Hold a key to peek at a map
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pick-your-snap-origin" class="md-nav__link">
+  <a href="#6-a-pause-menu-you-can-actually-click" class="md-nav__link">
     <span class="md-ellipsis">
-      Pick your snap origin
+      6. A pause menu you can actually click
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inside-mesh-edit" class="md-nav__link">
+  <a href="#7-ending-and-going-round-again" class="md-nav__link">
     <span class="md-ellipsis">
-      Inside mesh edit
+      7. Ending, and going round again
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#in-vr" class="md-nav__link">
+  <a href="#where-to-go-next" class="md-nav__link">
     <span class="md-ellipsis">
-      In VR
+      Where to go next
     </span>
   </a>
   
@@ -2813,7 +2813,7 @@
                   
 
   
-    <a href="https://github.com/theprototype-app/docs/edit/docs/snapping.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/theprototype-app/docs/edit/docs/build-a-game.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2821,83 +2821,160 @@
   
 
 
-<h1 id="snapping">Snapping</h1>
-<p>Snapping makes things line up without you nudging them into place. There are two kinds, and they work together: a <strong>grid</strong> that quantises how far a drag moves, and <strong>element snapping</strong> that lands the object on real geometry that is already in the scene.</p>
-<p>Everything here is a <strong>local preference</strong> — your snapping setup is yours, and your peers see only the result of your drags.</p>
-<h2 id="where-it-lives">Where it lives</h2>
-<p>Right-click the viewport ▸ <strong>Snapping</strong>. The parent row shows your current setup at a glance (<code>0.25 · 15° · 0.1 · V F</code>), so you can read it without opening the menu. Custom step values live in <em>Configure Scene ▸ Snapping</em>, one click away at the bottom of the same submenu.</p>
-<h2 id="grid-snapping">Grid snapping</h2>
-<table>
-<thead>
-<tr>
-<th>Setting</th>
-<th>Snaps</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Position</strong></td>
-<td>movement to a step — 0.1, 0.25, 0.5, 1, or your own</td>
-</tr>
-<tr>
-<td><strong>Rotation</strong></td>
-<td>turning to 5°, 15°, 45°, 90°, or your own</td>
-</tr>
-<tr>
-<td><strong>Scale</strong></td>
-<td>scaling to 0.05, 0.1, 0.25, or your own</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Enable / Disable snapping</strong> at the top of the submenu is the master switch for these three.</p>
-<h2 id="snap-to-surface">Snap to surface</h2>
-<p><strong>Surface</strong> ▸ <em>Snap to surface</em> drops a dragged object onto whatever is underneath it — the quickest way to keep furniture on the floor and props on tables.</p>
-<h2 id="element-snapping">Element snapping</h2>
-<p>Switch on any of the <strong>Elements</strong> targets and, while you drag with the gizmo, the app looks for a matching feature near the cursor. When one is in range it lights up, and releasing lands your object exactly on it — <strong>overriding the grid step</strong> for that drag, because you asked for that point specifically.</p>
-<table>
-<thead>
-<tr>
-<th>Target</th>
-<th>Lands on</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Vertex</strong></td>
-<td>a corner of the mesh under the cursor</td>
-</tr>
-<tr>
-<td><strong>Edge</strong></td>
-<td>the nearest point along an edge</td>
-</tr>
-<tr>
-<td><strong>Face</strong></td>
-<td>the centre of a face</td>
-</tr>
-<tr>
-<td><strong>Surface</strong></td>
-<td>the exact point the cursor is over — a continuous slide across the surface rather than a discrete point</td>
-</tr>
-<tr>
-<td><strong>Object</strong></td>
-<td>another object's origin, its bounding-box centre, or the centre of one of its six sides</td>
-</tr>
-</tbody>
-</table>
-<p>You can have several on at once; the closest candidate to the cursor wins. The search radius is in <strong>screen</strong> pixels, so it behaves the same however far you have zoomed.</p>
+<h1 id="example-build-a-game-loop">Example: build a game loop</h1>
+<p>A complete worked example — a start menu, a walking character, collectibles that count
+into the HUD, a hold-to-peek map, and a pause menu you can click. Everything is authored
+in the app with the HUD editor and flow nodes. No code, no modules.</p>
+<p>Allow about twenty minutes. Each step works on its own, so you can stop anywhere and
+still have something playable, and every piece is visible to the people connected with
+you as you build it.</p>
 <div class="admonition tip">
-<p class="admonition-title">Vertex + Surface is a good default pair</p>
-<p>Surface gives you a smooth slide over a shape; Vertex bites onto its corners when you get close to one. Together they feel like the object is magnetic where it matters.</p>
+<p class="admonition-title">What you'll need</p>
+<p>A scene with some ground to walk on and a few objects to collect. A gamepad is
+optional — it works out of the box if you have one.</p>
 </div>
-<h2 id="align-to-normal">Align to normal</h2>
-<p>With <strong>Align to normal</strong> on, snapping to a face or a surface also <strong>turns</strong> the object onto that surface — drop a picture onto a slanted wall and it takes the wall's angle instead of staying upright.</p>
-<h2 id="pick-your-snap-origin">Pick your snap origin</h2>
-<p>By default an object snaps by its own origin. Often that is the wrong point: you want <em>this corner</em> of the shelf to meet <em>that corner</em> of the wall.</p>
-<p>With exactly one object selected, choose <strong>Pick snap origin</strong>, then click a point on it. That point becomes the anchor for your drags — snapping now moves <em>it</em> onto the target. The anchor is temporary and purely local: it is not part of the object, it is never replicated or saved, and it does not touch the object's real <a href="../controls/#each-objects-origin">origin</a>.</p>
-<h2 id="inside-mesh-edit">Inside mesh edit</h2>
-<p>Element snapping applies to the mesh tools' gizmo drags too, so a vertex can be dropped precisely onto another vertex — which is what you want when closing a seam by hand.</p>
-<h2 id="in-vr">In VR</h2>
-<p>VR has its own snap modes for grabbed objects (grid, surface, free) on the Edit ring — see the <a href="../vr/">VR guide</a>. Those are separate controls and switching them never disturbs your desktop element-snapping setup.</p>
+<hr />
+<h2 id="1-a-menu-on-its-own-camera">1. A menu on its own camera</h2>
+<p>A menu belongs to a viewpoint, so give it one.</p>
+<ol>
+<li><strong>Add ▸ Camera</strong>, and frame your scene from an angle that looks good as a title shot.
+   Rename it <code>Menu cam</code> in the object list.</li>
+<li>Open the HUD editor: in the bottom dock's tab strip, press <strong>＋</strong> and choose
+   <strong>HUD editor</strong>.</li>
+<li>In the topbar's document picker, choose <strong>Menu cam</strong>. This HUD now appears <em>only</em>
+   while you are looking through that camera — attach a HUD to a camera and it travels
+   with the shot.</li>
+<li>From the left palette, click <strong>Button</strong>. Drag it where you want it. In the properties
+   pane on the right, set its label to <code>Start</code>.</li>
+<li>On the screen row, set <strong>while</strong> to <code>menu</code>. That binds the screen to the game state:
+   it shows whenever the game is in its menu, including for someone who joins later and
+   never saw it appear.</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">The dashed outline</p>
+<p>The artboard is a fixed reference size; the dashed rectangle shows the shape of
+<em>your</em> window on it. Anything outside that outline is outside the frame you are
+actually looking at.</p>
+</div>
+<hr />
+<h2 id="2-make-start-do-something">2. Make Start do something</h2>
+<p>Select the Start button and open <strong>Actions ▸ ＋ Add action</strong> in the properties pane. Add
+three:</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Group</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Start the game</strong></td>
+<td>Game</td>
+<td>Moves every player's game state to <em>playing</em></td>
+</tr>
+<tr>
+<td><strong>Look through a camera</strong></td>
+<td>Camera</td>
+<td>Pick your gameplay camera</td>
+</tr>
+<tr>
+<td><strong>Show a HUD screen</strong></td>
+<td>HUD</td>
+<td>Pick your in-game screen (make one with <em>New screen…</em>)</td>
+</tr>
+</tbody>
+</table>
+<p>All three hang off a single press, and the Actions pane lists them back to you in plain
+language. The artboard marks the button as wired, so a button that does nothing is
+obvious at a glance.</p>
+<p>Press <strong>Play</strong> and click Start: everyone connected moves to the gameplay camera and the
+menu gives way to your in-game HUD.</p>
+<hr />
+<h2 id="3-a-character-that-walks">3. A character that walks</h2>
+<p>By default play mode flies. To walk instead:</p>
+<ol>
+<li>In the node editor, add <strong>Character ▸ Character Controller</strong>.</li>
+<li>Set <strong>mode</strong> to <code>walk</code>. Adjust jump height and eye height to taste.</li>
+</ol>
+<p>Now <strong>WASD</strong> walks, <strong>Space</strong> jumps, and gravity is real. If your scene has physics
+running you get proper collision against walls and slopes; without it you walk along the
+ground plane. A gamepad drives it too — left stick moves, right stick looks — and you can
+tune deadzone, sensitivity and invert-Y under <strong>Settings ▸ Input</strong>.</p>
+<p>Scrolling changes your speed, and because a controller node is present a <strong>Move Speed</strong>
+node can read or set that same value — so a sprint key is just a key press wired into it.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Delete the Character Controller node and movement is exactly the default fly again.
+The controller adds capability without taking the default away.</p>
+</div>
+<hr />
+<h2 id="4-collectibles-that-count">4. Collectibles that count</h2>
+<ol>
+<li>Select the objects you want to collect, right-click and choose
+   <strong>Game ▸ Make collectible</strong>.</li>
+<li>Each object gets a small graph: clicking it hides it, remembers that it was
+   collected, and adds <code>1</code> to a variable called <code>gems</code>.</li>
+<li>On your in-game HUD screen, add a <strong>Text</strong> element, then <strong>Actions ▸ Show a
+   variable</strong> and enter <code>gems</code>.</li>
+</ol>
+<p>Press Play, walk up to one and click it with the crosshair. It disappears for
+<strong>everyone</strong>, the counter goes up on every screen, and clicking the empty space where it
+was does nothing — it stays collected.</p>
+<hr />
+<h2 id="5-hold-a-key-to-peek-at-a-map">5. Hold a key to peek at a map</h2>
+<ol>
+<li>Add a screen called <code>Map</code> with a <strong>Minimap</strong> element on it.</li>
+<li>In the node editor, wire two key presses:<ul>
+<li><strong>Key Press</strong> (<code>Tab</code>, edge <code>down</code>) → <strong>HUD Screen</strong> (<code>show</code>, Map)</li>
+<li><strong>Key Press</strong> (<code>Tab</code>, edge <code>up</code>) → <strong>HUD Screen</strong> (<code>hide</code>, Map)</li>
+</ul>
+</li>
+</ol>
+<p>Hold Tab in play mode and the map appears; let go and it's gone. The <code>edge</code> setting is
+what makes this work — <code>down</code> fires when you press, <code>up</code> when you release, and <code>held</code>
+gives you a value that stays on for as long as the key is down.</p>
+<hr />
+<h2 id="6-a-pause-menu-you-can-actually-click">6. A pause menu you can actually click</h2>
+<p>Under pointer lock there is no mouse cursor, so a menu has to ask for one.</p>
+<ol>
+<li>Add a screen called <code>Pause</code> with a <strong>Resume</strong> button, a volume <strong>Slider</strong> and a
+   difficulty <strong>Dropdown</strong>.</li>
+<li>On the screen row, set <strong>input</strong> to <code>menu</code>.</li>
+<li>Wire <strong>Key Press</strong> (<code>KeyP</code>, edge <code>down</code>) → <strong>HUD Screen</strong> (<code>toggle</code>, Pause).</li>
+</ol>
+<p>Press P in play mode: the pointer is released, your character stops moving, and you can
+click and drag the controls. The world keeps running behind you — in a shared session
+your menu is yours alone. Give Resume the <strong>Hide a HUD screen</strong> action and the pointer
+locks again where you left off.</p>
+<p>Want the world to stop for everybody? Add the <strong>Pause</strong> action to a button. That freezes
+physics, animations and the round timer for the whole session, and Resume continues with
+no jump.</p>
+<div class="admonition info">
+<p class="admonition-title">Keyboard and gamepad</p>
+<p>Any menu is navigable without a mouse: arrows or D-pad move the highlight, Enter or
+<strong>A</strong> activates, and a highlighted slider or dropdown takes left/right. <strong>Esc</strong> always
+leaves play mode entirely — it is the guaranteed way out.</p>
+</div>
+<hr />
+<h2 id="7-ending-and-going-round-again">7. Ending, and going round again</h2>
+<p>Add <strong>End the game</strong> to a button (or drive it from your own logic) to finish with an
+outcome, and <strong>Back to the menu</strong> to return. Because the menu screen is bound to
+<code>while: menu</code> it comes back by itself — and a <strong>Game Start</strong> node naming your gameplay
+camera puts a late arrival on the right view even though they never saw the transition.</p>
+<p>That's the loop: menu → play → score → pause → end → menu.</p>
+<hr />
+<h2 id="where-to-go-next">Where to go next</h2>
+<ul>
+<li><strong><a href="../node-system/">Node System</a></strong> — the logic nodes this example leans on: Latch,
+  Delay, Sequence, Counter and the Game group.</li>
+<li><strong><a href="../physics/">Physics &amp; Simulation</a></strong> — grabbing, throwing and colliders for the
+  objects you just made collectible.</li>
+<li><strong><a href="../saving/">Saving &amp; Sessions</a></strong> — save the whole thing as a <code>.tpscene</code> and share it.</li>
+<li><strong><a href="../module-sdk/">Module SDK</a></strong> — when a game outgrows nodes, a module can register its
+  own HUD elements and nodes.</li>
+</ul>
 
 
 
@@ -2918,7 +2995,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-08-17
+    2026-08-21
   </span>
 
     
