@@ -1,8 +1,9 @@
 # Example: build a game loop
 
 A complete worked example — a start menu, a walking character, collectibles that count
-into the HUD, a hold-to-peek map, and a pause menu you can click. Everything is authored
-in the app with the HUD editor and flow nodes. No code, no modules.
+into the HUD, a hold-to-peek map, a pause menu you can click, and a second level to
+travel to. Everything is authored in the app with the HUD editor and flow nodes. No
+code, no modules.
 
 Allow about twenty minutes. Each step works on its own, so you can stop anywhere and
 still have something playable, and every piece is visible to the people connected with
@@ -92,6 +93,24 @@ Press Play, walk up to one and click it with the crosshair. It disappears for
 **everyone**, the counter goes up on every screen, and clicking the empty space where it
 was does nothing — it stays collected.
 
+A few dials, all optional:
+
+- **Make collectible into…** asks which variable it counts into (existing names are
+  offered as chips, or type a new one) and whether it **respawns** after a few seconds.
+  The respawn is built into the graph — a Delay off the click resets the Latch and
+  re-arms the Once — so you can see it and change it in the node editor.
+- Run it on a **Group** and every mesh inside becomes a collectible sharing the group's
+  variable, as one undo step. Add a new member later and run it again: the ones that are
+  already collectible are skipped ("2 added, 3 skipped").
+- Collectibles **reset when a new round starts** and when the game returns to its menu —
+  that is the "reset each round" checkbox the recipe sets on its Latch and Once, derived
+  from the shared round, so a Restart needs no extra wiring. And when you leave play
+  mode, collected objects come straight back on your own screen ("only while playing"
+  on the Visibility node), so the editor never loses an object to a running game.
+- **Collect Count** is the node that answers "how many are left" — it reads the
+  collectible chains in the graph, not the score, so it is right after a respawn and
+  after a round reset. **Actions ▸ Show collectibles left** wires it to a Text for you.
+
 ---
 
 ## 5. Hold a key to peek at a map
@@ -140,6 +159,33 @@ outcome, and **Back to the menu** to return. Because the menu screen is bound to
 camera puts a late arrival on the right view even though they never saw the transition.
 
 That's the loop: menu → play → score → pause → end → menu.
+
+---
+
+## 8. A second level
+
+One scene is one level; a game can have many.
+
+1. Build your first level, then in the **Explorer** right-click the file grid and
+   choose **Save scene as level…**. It lands in a `Levels` folder as an ordinary
+   `.tpscene` file. **New scene…** gives you an empty one to build the next level in.
+2. Where the first level should end — a door, a portal, a Finish button — add a
+   **Travel** node (Game group) and pick the destination level on its card. Wire any
+   trigger into it, or use **Actions ▸ Level complete — travel to a level** on a button.
+3. Press it and **everyone travels together**: each player loads the level themselves,
+   and anyone missing the file pulls it from whoever has it first. The game — state,
+   round, score variables — **carries across the hop**; the new level's own collectibles
+   start fresh, because their little graphs live in the level file.
+
+Two helpers that come with it:
+
+- **All Players** (Game group) is the group-travel gate: wire in a condition each player
+  answers for themselves ("I am standing at the portal") and it fires once **every**
+  player in play mode says yes — spectators in the editor don't count. Feed it into the
+  Travel node and nobody gets left behind.
+- The **Debug** HUD element (Display group) is a little pill for building: game state,
+  round, elapsed time, your variables, collectibles left, who is playing and fps. Click
+  it in-game to expand. Take it off the screen when you ship.
 
 ---
 
