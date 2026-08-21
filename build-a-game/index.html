@@ -2361,6 +2361,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#8-a-second-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. A second level
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#where-to-go-next" class="md-nav__link">
     <span class="md-ellipsis">
       Where to go next
@@ -2790,6 +2799,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#8-a-second-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. A second level
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#where-to-go-next" class="md-nav__link">
     <span class="md-ellipsis">
       Where to go next
@@ -2823,8 +2841,9 @@
 
 <h1 id="example-build-a-game-loop">Example: build a game loop</h1>
 <p>A complete worked example — a start menu, a walking character, collectibles that count
-into the HUD, a hold-to-peek map, and a pause menu you can click. Everything is authored
-in the app with the HUD editor and flow nodes. No code, no modules.</p>
+into the HUD, a hold-to-peek map, a pause menu you can click, and a second level to
+travel to. Everything is authored in the app with the HUD editor and flow nodes. No
+code, no modules.</p>
 <p>Allow about twenty minutes. Each step works on its own, so you can stop anywhere and
 still have something playable, and every piece is visible to the people connected with
 you as you build it.</p>
@@ -2922,6 +2941,24 @@ The controller adds capability without taking the default away.</p>
 <p>Press Play, walk up to one and click it with the crosshair. It disappears for
 <strong>everyone</strong>, the counter goes up on every screen, and clicking the empty space where it
 was does nothing — it stays collected.</p>
+<p>A few dials, all optional:</p>
+<ul>
+<li><strong>Make collectible into…</strong> asks which variable it counts into (existing names are
+  offered as chips, or type a new one) and whether it <strong>respawns</strong> after a few seconds.
+  The respawn is built into the graph — a Delay off the click resets the Latch and
+  re-arms the Once — so you can see it and change it in the node editor.</li>
+<li>Run it on a <strong>Group</strong> and every mesh inside becomes a collectible sharing the group's
+  variable, as one undo step. Add a new member later and run it again: the ones that are
+  already collectible are skipped ("2 added, 3 skipped").</li>
+<li>Collectibles <strong>reset when a new round starts</strong> and when the game returns to its menu —
+  that is the "reset each round" checkbox the recipe sets on its Latch and Once, derived
+  from the shared round, so a Restart needs no extra wiring. And when you leave play
+  mode, collected objects come straight back on your own screen ("only while playing"
+  on the Visibility node), so the editor never loses an object to a running game.</li>
+<li><strong>Collect Count</strong> is the node that answers "how many are left" — it reads the
+  collectible chains in the graph, not the score, so it is right after a respawn and
+  after a round reset. <strong>Actions ▸ Show collectibles left</strong> wires it to a Text for you.</li>
+</ul>
 <hr />
 <h2 id="5-hold-a-key-to-peek-at-a-map">5. Hold a key to peek at a map</h2>
 <ol>
@@ -2964,6 +3001,31 @@ outcome, and <strong>Back to the menu</strong> to return. Because the menu scree
 <code>while: menu</code> it comes back by itself — and a <strong>Game Start</strong> node naming your gameplay
 camera puts a late arrival on the right view even though they never saw the transition.</p>
 <p>That's the loop: menu → play → score → pause → end → menu.</p>
+<hr />
+<h2 id="8-a-second-level">8. A second level</h2>
+<p>One scene is one level; a game can have many.</p>
+<ol>
+<li>Build your first level, then in the <strong>Explorer</strong> right-click the file grid and
+   choose <strong>Save scene as level…</strong>. It lands in a <code>Levels</code> folder as an ordinary
+   <code>.tpscene</code> file. <strong>New scene…</strong> gives you an empty one to build the next level in.</li>
+<li>Where the first level should end — a door, a portal, a Finish button — add a
+   <strong>Travel</strong> node (Game group) and pick the destination level on its card. Wire any
+   trigger into it, or use <strong>Actions ▸ Level complete — travel to a level</strong> on a button.</li>
+<li>Press it and <strong>everyone travels together</strong>: each player loads the level themselves,
+   and anyone missing the file pulls it from whoever has it first. The game — state,
+   round, score variables — <strong>carries across the hop</strong>; the new level's own collectibles
+   start fresh, because their little graphs live in the level file.</li>
+</ol>
+<p>Two helpers that come with it:</p>
+<ul>
+<li><strong>All Players</strong> (Game group) is the group-travel gate: wire in a condition each player
+  answers for themselves ("I am standing at the portal") and it fires once <strong>every</strong>
+  player in play mode says yes — spectators in the editor don't count. Feed it into the
+  Travel node and nobody gets left behind.</li>
+<li>The <strong>Debug</strong> HUD element (Display group) is a little pill for building: game state,
+  round, elapsed time, your variables, collectibles left, who is playing and fps. Click
+  it in-game to expand. Take it off the screen when you ship.</li>
+</ul>
 <hr />
 <h2 id="where-to-go-next">Where to go next</h2>
 <ul>
