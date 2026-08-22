@@ -40,6 +40,7 @@ nav:
       - Object Selector: nodes/objectselector.md
       - Velocity: nodes/velocity.md
       - Measure: nodes/measure.md
+      - Spawn: nodes/spawn.md
       - Flow Input: nodes/flowinput.md
       - Flow Output: nodes/flowoutput.md
       - Object Flow: nodes/objectflow.md

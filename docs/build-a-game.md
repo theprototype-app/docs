@@ -2,8 +2,8 @@
 
 A complete worked example — a start menu, a walking character, collectibles that count
 into the HUD, a hold-to-peek map, a pause menu you can click, and a second level to
-travel to. Everything is authored in the app with the HUD editor and flow nodes. No
-code, no modules.
+travel to. Everything is authored in the app with the HUD editor and flow nodes — no
+code, and one optional module for the collectibles.
 
 Allow about twenty minutes. Each step works on its own, so you can stop anywhere and
 still have something playable, and every piece is visible to the people connected with
@@ -11,7 +11,10 @@ you as you build it.
 
 !!! tip "What you'll need"
     A scene with some ground to walk on and a few objects to collect. A gamepad is
-    optional — it works out of the box if you have one.
+    optional — it works out of the box if you have one. Step 4 uses the
+    **Collectibles** module: install it once from **Menu ▸ Modules ▸ Browse**, and have
+    everyone you are playing with install it too — modules do not travel over the
+    connection.
 
 ---
 
@@ -82,10 +85,12 @@ node can read or set that same value — so a sprint key is just a key press wir
 
 ## 4. Collectibles that count
 
-1. Select the objects you want to collect, right-click and choose
-   **Game ▸ Make collectible**.
-2. Each object gets a small graph: clicking it hides it, remembers that it was
-   collected, and adds `1` to a variable called `gems`.
+This step uses the **Collectibles** module — install it from **Menu ▸ Modules ▸ Browse**
+(and so does everyone playing with you).
+
+1. Select the objects you want to collect.
+2. Open the **Collectibles** window: the sidebar's **Modules** section, or the viewport
+   right-click menu. Leave the fields alone for now and press **Make collectible**.
 3. On your in-game HUD screen, add a **Text** element, then **Actions ▸ Show a
    variable** and enter `gems`.
 
@@ -93,23 +98,51 @@ Press Play, walk up to one and click it with the crosshair. It disappears for
 **everyone**, the counter goes up on every screen, and clicking the empty space where it
 was does nothing — it stays collected.
 
-A few dials, all optional:
+Each object got **one Collectible node** wired to an Object Selector naming it, in the
+scene graph, added as **one undo step**. Open the node editor and you can see it, change
+it, or wire something else off it — it is an ordinary graph, not a hidden feature.
 
-- **Make collectible into…** asks which variable it counts into (existing names are
-  offered as chips, or type a new one) and whether it **respawns** after a few seconds.
-  The respawn is built into the graph — a Delay off the click resets the Latch and
-  re-arms the Once — so you can see it and change it in the node editor.
-- Run it on a **Group** and every mesh inside becomes a collectible sharing the group's
-  variable, as one undo step. Add a new member later and run it again: the ones that are
-  already collectible are skipped ("2 added, 3 skipped").
-- Collectibles **reset when a new round starts** and when the game returns to its menu —
-  that is the "reset each round" checkbox the recipe sets on its Latch and Once, derived
-  from the shared round, so a Restart needs no extra wiring. And when you leave play
-  mode, collected objects come straight back on your own screen ("only while playing"
-  on the Visibility node), so the editor never loses an object to a running game.
-- **Collect Count** is the node that answers "how many are left" — it reads the
-  collectible chains in the graph, not the score, so it is right after a respawn and
-  after a round reset. **Actions ▸ Show collectibles left** wires it to a Text for you.
+The node's dials, all optional and all editable either on the card or in the Collectibles
+window's list:
+
+- **Counts into** — the variable, `gems` by default. Existing names are suggested; type a
+  new one for a second kind of pickup.
+- **Scope** — `shared` gives the room one score. `player` makes it **personal**: the
+  object vanishes only for whoever picked it up and counts into *their* number, which is
+  what you want for a race or a co-op scramble. Read a personal number back with the
+  **Player Variable** node, or show the standings with **Leaderboard**.
+- **Trigger** — `click` (mouse or VR trigger) or `touch`, which fires when a player walks
+  within **Radius** metres of it. Touch needs no physics: each player notices the pickup
+  for themselves.
+- **Hide** — turn it **off** and you get a *counting checkpoint*: it still collects and
+  still counts, but it never disappears. That is a lap gate or a pressure plate.
+- **Respawn** — seconds until it comes back. `0` means gone for good. A re-collect after a
+  respawn counts again.
+
+Two behaviours you get without wiring anything:
+
+- Collectibles **reset when a new round starts** and read un-collected while the game sits
+  in its menu, derived from the shared round — so a Restart needs no extra work.
+- When **you** leave play mode, your collected objects come straight back on your own
+  screen, so the editor never loses an object to a running game — and hiding one from the
+  object list works normally again.
+
+The **Collectibles** window also lists everything in the scene grouped by variable, with
+live *collected / left of total* counts; click a row to select that object in the
+viewport.
+
+**Collectibles** (the value node) answers "how many are left". It counts the nodes in the
+graph rather than the score — a score only goes up, so it would be wrong the first time
+something respawned. **Actions ▸ Show collectibles left** wires it to a Text for you.
+
+!!! note "Two things worth knowing"
+    A scene built with the older seven-node collectible recipe keeps working exactly as
+    it did, and the **Collectibles** count node counts both shapes together.
+
+    A player who joins **mid-round** sees already-collected objects back on the table:
+    pickups are events, and an event that happened before you connected is not replayed.
+    Everything from the moment they join is in sync. Start the round after everyone is in,
+    or use a Restart to put everybody on the same footing.
 
 ---
 
@@ -167,15 +200,20 @@ That's the loop: menu → play → score → pause → end → menu.
 One scene is one level; a game can have many.
 
 1. Build your first level, then in the **Explorer** right-click the file grid and
-   choose **Save scene as level…**. It lands in a `Levels` folder as an ordinary
-   `.tpscene` file. **New scene…** gives you an empty one to build the next level in.
+   choose **Save scene…** — type the name right there in the grid and press Enter. It
+   lands in a `Scenes` folder as an ordinary `.tpscene` file (a tidy default, nothing
+   more: scenes are found by kind wherever they live, and a save lands in whatever
+   library folder you have open). **New scene…** gives you an empty one to build the
+   next level in.
 2. Where the first level should end — a door, a portal, a Finish button — add a
    **Travel** node (Game group) and pick the destination level on its card. Wire any
    trigger into it, or use **Actions ▸ Level complete — travel to a level** on a button.
 3. Press it and **everyone travels together**: each player loads the level themselves,
    and anyone missing the file pulls it from whoever has it first. The game — state,
    round, score variables — **carries across the hop**; the new level's own collectibles
-   start fresh, because their little graphs live in the level file.
+   start fresh, because their nodes live in the level file. Edits survive the
+   round trip too: leaving an edited scene saves a new version of it automatically —
+   see [Projects](projects.md) for version history and the `.tp` project file.
 
 Two helpers that come with it:
 
@@ -184,8 +222,9 @@ Two helpers that come with it:
   player in play mode says yes — spectators in the editor don't count. Feed it into the
   Travel node and nobody gets left behind.
 - The **Debug** HUD element (Display group) is a little pill for building: game state,
-  round, elapsed time, your variables, collectibles left, who is playing and fps. Click
-  it in-game to expand. Take it off the screen when you ship.
+  round, elapsed time, your variables, who is playing and fps — plus a line per
+  collectible variable when the Collectibles module is installed. Click it in-game to
+  expand. Take it off the screen when you ship.
 
 ---
 
