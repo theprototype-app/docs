@@ -21,6 +21,7 @@ nav:
     - Particle Effects: particles.md
     - Terrain & Sculpting: terrain.md
     - Saving & Sessions: saving.md
+    - Projects: projects.md
   - Viewport:
     - Camera & View: camera.md
     - Notifications & Notes: notifications.md
