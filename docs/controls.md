@@ -153,7 +153,7 @@ Shortcuts are inert while you type in a text field and while play mode owns the 
 - **Add** — the full primitive catalog (meshes, building blocks, lights) plus empty groups; objects spawn at the clicked point.
 - **Undo / Redo**.
 - **‹Selected object› ▸** — Focus, Duplicate, Align to ground, Edit mesh, Add note, Delete (shown only while something is selected).
-- **Tools** — Draw mode (drag 3D strokes on surfaces), Measure distance, Simulate physics.
+- **Tools** — Draw mode (drag 3D strokes on surfaces, or click out an editable [spline](splines.md)), Measure distance, Simulate physics.
 - **Snapping** — enable/disable and step sizes.
 - **View** — grid on/off, Screenshot.
 - **Camera bookmarks** — save/recall/clear views.

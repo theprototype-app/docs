@@ -11,6 +11,7 @@ nav:
     - Packs: packs.md
     - Prefabs: prefabs.md
     - Mesh Editing: mesh-editing.md
+    - Splines: splines.md
     - Snapping: snapping.md
     - UV & Textures: uv-editor.md
     - Shader Graph: shader-graph.md
