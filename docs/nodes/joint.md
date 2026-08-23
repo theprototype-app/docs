@@ -32,7 +32,7 @@ That is the difference between this and the rest of the physics nodes — [Impul
 **A door that installs itself.**
 
 1. A thin box for the door with a **Dynamic** body, a wall with a **Static** one.
-2. Put the door's [origin](../object-origins.md) on its hinge edge — a revolute joint anchors on the origin, which is what makes it swing on the hinge rather than the middle.
+2. Put the door's [origin](../controls.md#each-objects-origin) on its hinge edge — a revolute joint anchors on the origin, which is what makes it swing on the hinge rather than the middle.
 3. **On Click** (the wall) → **Joint** `trigger`, `kind` = *revolute*, `axis` = `y`.
 4. **Object Selector** (wall) → `a`; **Object Selector** (door) → `b`.
 5. Press <kbd>P</kbd> and click the wall. The door is hinged for everyone, and it stays hinged in the saved scene.

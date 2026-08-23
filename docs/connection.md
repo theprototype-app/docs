@@ -36,6 +36,28 @@ Selecting an object **locks it** so two people can't fight over the same thing:
 
 If a peer disconnects, their locks are released and their avatar, cursor and hands are cleaned up automatically — only *their* locks; everyone else keeps theirs.
 
+## Rooms: one session, several scenes
+
+A **session** is the connection — the people you are linked to, and the project you
+share. A **room** is simply everyone standing in the same scene, and the peer list
+shows which scene each person is in.
+
+Because a peer in another scene is looking at a different world:
+
+- you will not see their avatar in your viewport,
+- **Watch** is disabled for them, with the reason on the button ("In Arena — open
+  that scene to watch them"),
+- and if they travel away while you are watching them, watching stops and says so.
+
+Open the same scene and all of it comes back. Nothing is lost by being apart — their
+work is in the project, and travelling to their scene picks it up.
+
+!!! note "Before anyone names a scene"
+    A fresh session has no named scene, so everybody is in one **Untitled scene** and
+    none of the above applies. The same goes for someone who has just joined: they
+    are standing in your content without knowing its name yet, so they are never
+    hidden on a guess.
+
 ## Bigger sessions
 
 Everyone in a session connects to everyone else, directly. A room of ten is the tested target: joining takes roughly a third of a second, and every peer really does end up linked to every other peer.
