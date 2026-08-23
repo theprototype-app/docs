@@ -508,6 +508,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../splines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Splines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../snapping/" class="md-nav__link">
         
   
@@ -731,23 +752,47 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sculpting" class="md-nav__link">
+  <a href="#procedural-hills" class="md-nav__link">
     <span class="md-ellipsis">
-      Sculpting
+      Procedural hills
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Sculpting">
+    <nav class="md-nav" aria-label="Procedural hills">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sculpting-any-mesh" class="md-nav__link">
+  <a href="#bigger-worlds" class="md-nav__link">
     <span class="md-ellipsis">
-      Sculpting any mesh
+      Bigger worlds
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#edges-making-a-ring-of-mountains" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edges: making a ring of mountains
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sculpting-by-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sculpting by hand
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sculpting by hand">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#the-sculpt-toolbar" class="md-nav__link">
@@ -758,8 +803,35 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sculpting-any-mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sculpting any mesh
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hand-edits-lock-the-parametric-rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hand edits lock the parametric rows
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roads-paths-and-rivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roads, paths and rivers
+    </span>
+  </a>
   
 </li>
       
@@ -2757,23 +2829,47 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sculpting" class="md-nav__link">
+  <a href="#procedural-hills" class="md-nav__link">
     <span class="md-ellipsis">
-      Sculpting
+      Procedural hills
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Sculpting">
+    <nav class="md-nav" aria-label="Procedural hills">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sculpting-any-mesh" class="md-nav__link">
+  <a href="#bigger-worlds" class="md-nav__link">
     <span class="md-ellipsis">
-      Sculpting any mesh
+      Bigger worlds
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#edges-making-a-ring-of-mountains" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edges: making a ring of mountains
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sculpting-by-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sculpting by hand
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sculpting by hand">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#the-sculpt-toolbar" class="md-nav__link">
@@ -2784,8 +2880,35 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sculpting-any-mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sculpting any mesh
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hand-edits-lock-the-parametric-rows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hand edits lock the parametric rows
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roads-paths-and-rivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Roads, paths and rivers
+    </span>
+  </a>
   
 </li>
       
@@ -2822,16 +2945,109 @@
 
 
 <h1 id="terrain-sculpting">Terrain &amp; Sculpting</h1>
-<p>Add a ground plane and shape it by hand — raise hills, carve valleys, smooth and flatten — with a brush that drags across the surface. Every stroke replicates to your peers.</p>
+<p>Add ground and shape it two ways: <strong>procedurally</strong>, by dialling in hills from a handful of numbers, and <strong>by hand</strong>, with a brush that raises, lowers, smooths and flattens. Every edit replicates to your peers.</p>
 <h2 id="adding-terrain">Adding terrain</h2>
-<p>Right-click the viewport ▸ <strong>Add ▸ Ground ▸ Terrain</strong> (or use the Add menu, <kbd>Shift</kbd>+<kbd>A</kbd>). This drops a flat <strong>24 m × 24 m plane</strong> at the point you click, subdivided into a 48×48 grid of segments and tinted a soft sage green.</p>
-<p>The 48-segment resolution is deliberate: it's the densest grid that still fits within the limit for syncing edited geometry, so a fully sculpted terrain always replicates cleanly.</p>
-<p>Terrain is a normal scene object — it replicates, selects and transforms like anything else.</p>
-<h2 id="sculpting">Sculpting</h2>
+<p>Right-click the viewport ▸ <strong>Add ▸ Ground ▸ Terrain</strong> (or the Add menu, <kbd>Shift</kbd>+<kbd>A</kbd>). This drops a flat <strong>24 m × 24 m plane</strong> at the point you click, subdivided into a 48×48 grid and tinted a soft sage green.</p>
+<p>The 48-segment resolution is deliberate: it's the densest grid that still fits the limit for streaming edited geometry, so a fully sculpted terrain always replicates cleanly. For bigger worlds, <strong>tile</strong> several terrains rather than asking for one huge one — see <a href="#bigger-worlds">Bigger worlds</a> below.</p>
+<p>Terrain is a normal scene object: it selects, transforms and replicates like anything else.</p>
+<h2 id="procedural-hills">Procedural hills</h2>
+<p>A fresh terrain starts flat, and its shape is <strong>parametric</strong> — select it and open Properties ▸ <strong>Geometry</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Row</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Size</strong></td>
+<td>The tile's extent in metres (1–200)</td>
+</tr>
+<tr>
+<td><strong>Segments</strong></td>
+<td>Grid resolution per side (2–48)</td>
+</tr>
+<tr>
+<td><strong>Seed</strong></td>
+<td>Which landscape you get. Same seed, same hills, on every peer and in every session</td>
+</tr>
+<tr>
+<td><strong>Height</strong></td>
+<td>How tall the hills are. <strong>0 is flat</strong> — the starting state</td>
+</tr>
+<tr>
+<td><strong>Detail</strong></td>
+<td>Feature size: low is broad rolling ground, high is tight and noisy</td>
+</tr>
+<tr>
+<td><strong>Octaves</strong></td>
+<td>Layers of detail (1–6). More octaves add finer texture <em>without</em> changing the height</td>
+</tr>
+<tr>
+<td><strong>Ridged</strong></td>
+<td>Turns smooth hills into creased ridges — mountainous rather than rolling</td>
+</tr>
+<tr>
+<td><strong>Warp</strong></td>
+<td>Bends the pattern so features stop looking regular</td>
+</tr>
+<tr>
+<td><strong>Edges</strong></td>
+<td><strong>flat</strong> (uniform), <strong>island</strong> (high in the middle, falling to the rim) or <strong>bowl</strong> (low in the middle, rising at the rim)</td>
+</tr>
+<tr>
+<td><strong>Tile X / Tile Z</strong></td>
+<td>Which part of the landscape this tile shows — see below</td>
+</tr>
+</tbody>
+</table>
+<p>Set <strong>Height</strong> above zero and hills appear. Every row is live: scrub <strong>Seed</strong> to shop for a landscape, then raise <strong>Octaves</strong> for detail.</p>
+<div class="admonition note">
+<p class="admonition-title">Why the numbers, not the mesh</p>
+<p>Only these ~11 numbers travel to your peers, and only they are stored in a saved scene — everyone rebuilds the same hills from the same values. It also means a terrain stays fully re-shapeable: change the seed a month later and the landscape re-rolls.</p>
+</div>
+<h3 id="bigger-worlds">Bigger worlds</h3>
+<p>Use several tiles with the <strong>same Seed</strong> and different <strong>Tile X / Tile Z</strong>, offset by exactly one <strong>Size</strong> each. All tiles then sample one continuous landscape, so their edges meet seamlessly.</p>
+<p>Use those two rows — never a <em>move</em> — to choose which part of the landscape a tile shows. Dragging a tile with the gizmo slides its mesh but not the landscape it was cut from, so the join stops matching.</p>
+<p>Four tiles of a 24 m world:</p>
+<table>
+<thead>
+<tr>
+<th>Tile</th>
+<th>Tile X</th>
+<th>Tile Z</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>north-west</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>north-east</td>
+<td>24</td>
+<td>0</td>
+</tr>
+<tr>
+<td>south-west</td>
+<td>0</td>
+<td>24</td>
+</tr>
+<tr>
+<td>south-east</td>
+<td>24</td>
+<td>24</td>
+</tr>
+</tbody>
+</table>
+<p>(Place each tile in the scene as usual — the offsets only decide which slice of the landscape it draws.)</p>
+<h3 id="edges-making-a-ring-of-mountains">Edges: making a ring of mountains</h3>
+<p><strong>Edges ▸ bowl</strong> raises each tile toward its rim, so a grid of bowl tiles gives a basin ringed by high ground — the classic arena. <strong>island</strong> does the opposite for a single tile meant to sit in water or void.</p>
+<h2 id="sculpting-by-hand">Sculpting by hand</h2>
 <p>Right-click the terrain ▸ <strong>Sculpt terrain</strong>. This selects the object (which locks it so peers can't edit it at the same time) and opens the <strong>Sculpt toolbar</strong> — a floating tool palette you can drag anywhere.</p>
 <p>Drag on the terrain surface to sculpt. A ring cursor follows your pointer, hugging the surface, to show the brush footprint.</p>
-<h3 id="sculpting-any-mesh">Sculpting any mesh</h3>
-<p>The same brush works on <strong>any</strong> mesh, not just terrain: right-click an object ▸ <strong>Sculpt mesh</strong>. The difference is which way the brush pushes — on terrain it moves the surface straight up and down, on a mesh it moves along the surface's own normals, so you can bulge and dent a shape from any angle. <strong>Flatten</strong> pulls toward the plane you first touched and <strong>Smooth</strong> relaxes the surface toward its local average, exactly as on terrain.</p>
 <h3 id="the-sculpt-toolbar">The Sculpt toolbar</h3>
 <table>
 <thead>
@@ -2872,10 +3088,22 @@
 </tbody>
 </table>
 <p>Each brush stroke — from pressing down to lifting the pointer — is <strong>one undo step</strong> (<kbd>Ctrl</kbd>+<kbd>Z</kbd>). While you drag, peers see a live preview several times a second; when you release, the final shape is committed and synced.</p>
+<h3 id="sculpting-any-mesh">Sculpting any mesh</h3>
+<p>The same brush works on <strong>any</strong> mesh, not just terrain: right-click an object ▸ <strong>Sculpt mesh</strong>. The difference is which way the brush pushes — on terrain it moves the surface straight up and down, on a mesh it moves along the surface's own normals, so you can bulge and dent a shape from any angle. <strong>Flatten</strong> pulls toward the plane you first touched and <strong>Smooth</strong> relaxes the surface toward its local average, exactly as on terrain.</p>
 <div class="admonition note">
 <p class="admonition-title">Under the hood</p>
 <p>Sculpting only moves the surface up and down, never sideways, so the grid stays watertight and normals are re-smoothed after every edit — no faceted seams. The result travels to peers as a geometry snapshot on the same channel used by mesh editing.</p>
 </div>
+<h2 id="hand-edits-lock-the-parametric-rows">Hand edits lock the parametric rows</h2>
+<p>The moment you sculpt a terrain — or carve a road into it, or edit it in mesh mode — the Geometry rows <strong>lock</strong>, and the panel says so.</p>
+<p>That's deliberate. Those rows rebuild the terrain from its numbers, which would throw the hand work away, and nudging a seed by accident should not cost you an afternoon of sculpting.</p>
+<p>When you <em>do</em> want the parametric shape back, press <strong>Regenerate (discards the sculpt)</strong> and confirm. The rows return and the ground goes back to what the numbers say.</p>
+<div class="admonition warning">
+<p class="admonition-title">Regenerate really does discard it</p>
+<p>The sculpted shape is still in your undo history, but it takes more than one <kbd>Ctrl</kbd>+<kbd>Z</kbd> to walk back to it. Treat Regenerate as deliberate.</p>
+</div>
+<h2 id="roads-paths-and-rivers">Roads, paths and rivers</h2>
+<p>To fit a <a href="../splines/">spline</a> and a terrain together, use <strong>Flatten</strong> on the spline's right-click menu: <em>Terrain to this spline</em> cuts a level bed for it, and <em>This spline onto a surface</em> drops the spline onto the ground instead. Both are one undo step, and both ask you to click the other object.</p>
 <h2 id="sculpting-vs-mesh-editing">Sculpting vs. mesh editing</h2>
 <p>Sculpting is its own mode, separate from the vertex/edge/face <strong>mesh edit</strong> mode (<kbd>Tab</kbd>):</p>
 <ul>
@@ -2907,7 +3135,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-08-12
+    2026-08-23
   </span>
 
     

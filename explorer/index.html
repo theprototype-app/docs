@@ -593,6 +593,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../splines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Splines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../snapping/" class="md-nav__link">
         
   
@@ -2815,6 +2836,7 @@
 <div class="admonition note">
 <p class="admonition-title">Local by design</p>
 <p>The library lives in your browser (IndexedDB) and is <strong>not</strong> synced to peers. An asset only replicates when you <em>use</em> it — place a model, assign a sound, drop a texture — at which point the bytes are pushed to everyone automatically.</p>
+<p><strong>Project scenes are the exception.</strong> The project knows every scene by name, so a scene somebody else saved appears for you as a dimmed card with a blue dot even though you hold none of its bytes — open it and it downloads from whoever has it. See <a href="../projects/">Projects</a>.</p>
 </div>
 <h2 id="the-tree">The tree</h2>
 <p>The left pane shows four sections:</p>
@@ -2854,6 +2876,7 @@
 </tbody>
 </table>
 <p>Items are capped at <strong>25 MB</strong> each. Images and models get generated thumbnails; audio and text show icon cards.</p>
+<p><strong>Importing something you already have.</strong> A file is identified by its contents, so re-importing the same bytes is not a new file. The app tells you what it already has and lets you skip it, reveal it, or — for a scene — take a real copy. The rule lives in <strong>Settings ▸ Files ▸ "When importing files already in your library"</strong> (Ask / Skip them / Import as copies); see <a href="../projects/#importing-something-you-already-have">Projects</a>.</p>
 <p><strong>Animations and materials come along.</strong> A <code>.glb</code>/<code>.gltf</code> or <code>.fbx</code> keeps its animation clips — they play in the scene and are listed per object in the Animation window — and an <code>.obj</code> picks up its sibling <code>.mtl</code> so it arrives with its materials instead of plain grey. Because no exporter can carry an animation clip, an animated model is stored as its <strong>original file</strong> when you save a scene, so it comes back animated. See <a href="../saving/">Saving &amp; Sessions</a>.</p>
 <h2 id="browsing-and-opening">Browsing and opening</h2>
 <ul>
@@ -2893,7 +2916,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-08-12
+    2026-08-23
   </span>
 
     

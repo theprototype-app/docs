@@ -508,6 +508,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../splines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Splines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../snapping/" class="md-nav__link">
         
   
@@ -778,6 +799,54 @@
       Version history
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#everyone-sees-the-same-scenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Everyone sees the same scenes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Everyone sees the same scenes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#who-is-where" class="md-nav__link">
+    <span class="md-ellipsis">
+      Who is where
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files-you-brought-yourself" class="md-nav__link">
+    <span class="md-ellipsis">
+      Files you brought yourself
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Files you brought yourself">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importing-something-you-already-have" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importing something you already have
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2751,6 +2820,54 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#everyone-sees-the-same-scenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Everyone sees the same scenes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Everyone sees the same scenes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#who-is-where" class="md-nav__link">
+    <span class="md-ellipsis">
+      Who is where
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files-you-brought-yourself" class="md-nav__link">
+    <span class="md-ellipsis">
+      Files you brought yourself
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Files you brought yourself">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importing-something-you-already-have" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importing something you already have
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#open-vs-import" class="md-nav__link">
     <span class="md-ellipsis">
       Open vs Import
@@ -2825,6 +2942,48 @@ item's <strong>Version history</strong> panel (the history icon in its propertie
 <li><strong>Settings ▸ Files ▸ "Keep versions per scene"</strong> (default 10, <code>0</code> turns
   auto-versioning off; explicit saves and "Save version…" always work).</li>
 </ul>
+<h2 id="everyone-sees-the-same-scenes">Everyone sees the same scenes</h2>
+<p>The manifest replicates, so <strong>every peer knows which scenes the project has</strong> — even
+before they hold a single byte of them. A scene you do not have shows in the Explorer
+as a dimmed card with a blue dot; open it and it downloads from whoever has it, and
+the card gives way to the real file.</p>
+<p>That is why creating a scene is enough for your peers to find it. You do not have to
+send anything.</p>
+<h3 id="who-is-where">Who is where</h3>
+<p>One session can have several scenes open at once. The peer list shows the scene each
+person is standing in, and everyone in one scene is a <strong>room</strong> — a session is the
+connection, a room is simply who is in which scene.</p>
+<p>A peer in another scene is somewhere you are not, so:</p>
+<ul>
+<li>their avatar is <strong>not drawn</strong> in your viewport,</li>
+<li><strong>Watch is disabled</strong>, with the reason on the button ("In Arena — open that scene
+  to watch them"), and watching stops by itself if they travel away while you watch,</li>
+<li>and their movement is not streamed at you until one of you travels.</li>
+</ul>
+<p>If nobody has named a scene yet, everyone is in the same <strong>Untitled scene</strong> — the
+ordinary state of a fresh session — and none of the above applies.</p>
+<h2 id="files-you-brought-yourself">Files you brought yourself</h2>
+<p>A <code>.tpscene</code> you dragged in is <strong>yours, not the project's</strong>. Opening one loads it and
+says so; your first edit offers <strong>Save into project</strong>, and until you take that offer
+the project never records it — leaving the scene will not quietly invent an entry
+under a name you did not choose.</p>
+<p>When you do save it in, the file you opened becomes <strong>version 1</strong> of that scene
+rather than a second card sitting beside it.</p>
+<h3 id="importing-something-you-already-have">Importing something you already have</h3>
+<p>A library item is identified by its <strong>contents</strong>, so re-importing the same bytes is
+not a new file. Rather than silently doing nothing, the app says what it already has
+and lets you choose. <strong>Settings ▸ Files ▸ "When importing files already in your
+library"</strong>:</p>
+<ul>
+<li><strong>Ask</strong> (default) — a list of what is already there, with <strong>Reveal</strong> to find each
+  one; skip them, or take copies.</li>
+<li><strong>Skip them</strong> — keep what you have, and be told how many were left out.</li>
+<li><strong>Import as copies</strong> — bring them in beside the originals.</li>
+</ul>
+<p>A <strong>scene</strong> can be copied for real: the copy gets a fresh identity and its own name
+(<code>Arena (copy)</code>), so it keeps a history of its own. For every other kind, identical
+files <em>are</em> one file, and the app says so instead of offering a copy that cannot
+exist.</p>
 <h2 id="open-vs-import">Open vs Import</h2>
 <p>Two different intents, two different behaviours — the Blender/Unity convention:</p>
 <table>
@@ -2874,7 +3033,7 @@ dropped. A project exported by a newer app version asks before importing.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-08-22
+    2026-08-23
   </span>
 
     
