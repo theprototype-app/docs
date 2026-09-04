@@ -28,6 +28,7 @@ nav:
     - Notifications & Notes: notifications.md
   - Flow Graph:
     - Node System: node-system.md
+    - Flow Nodes: nodes.md
     - Object Flows: object-flows.md
     - Nodes:
       - Slider: nodes/slider.md
@@ -89,8 +90,19 @@ nav:
       - Sound: nodes/sound.md
       - Particles: nodes/particle.md
       - Custom Node: nodes/customnode.md
+      - Set Active Camera: nodes/setcamera.md
+      - Set Look: nodes/setlook.md
+      - Game Start: nodes/gamestart.md
+      - Travel to scene: nodes/travel.md
+      - Move Input: nodes/moveinput.md
+      - HUD Button: nodes/hudbutton.md
+      - Device Param: nodes/deviceparam.md
+      - Device Level: nodes/devicelevel.md
+      - Transport: nodes/transportbeat.md
+      - Note Trigger: nodes/notetrigger.md
   - Audio:
     - Music & Sound: audio.md
+    - Music Playground: music.md
   - Games:
     - Build a Game Loop: build-a-game.md
   - VR:
