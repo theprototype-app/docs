@@ -20,10 +20,11 @@ had nothing open will not close the panels *you* have open.
 
 ## Starting from a template
 
-**Menu ▸ Templates** opens a picker of ready-made scenes, in three tabs:
+**Menu ▸ Templates** opens a picker of ready-made scenes, in four tabs:
 
 - **General** — starting points, including a **Blank** card that clears the scene (it asks first).
 - **Examples** — worked showcases to pull apart and learn from.
+- **Games** — playable scenes. A game is a scene plus, sometimes, a module: a card wears a *Needs …* badge when it depends on one, and loading it offers to install it — every player needs their own copy. **Towers**, the first one, is co-op crate stacking built from flow nodes, the HUD and the Collectibles module.
 - **Community** — scenes contributed by other people.
 
 Templates load through the same path as a `.tpscene` file, so with peers connected everyone gets the usual Accept/Decline proposal and your current scene is stashed as a backup first. The Welcome overlay has a shortcut into the same picker.

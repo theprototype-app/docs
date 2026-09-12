@@ -171,6 +171,103 @@ thread or load WebAssembly first.
 
 Your key is namespaced per module, so two modules registering `box` never collide.
 
+### Audio devices
+
+An instrument, an effect or a speaker is a **device**: an object carrying
+`userData.device = {kind, params}` with a WebAudio subgraph the engine builds for it.
+Your module supplies the *kind*; core supplies the object, replication, undo, saving,
+the cables and the clock (see the [Music Playground](music.md)).
+
+```js
+const kind = await api.registerAudioDevice({
+	kind: 'piano',                 // namespaced for you: 'mod-<moduleId>-piano'
+	label: 'Piano', icon: '🎹', group: 'Keys',   // Add ▸ Devices: Keys
+	ports: { in: [], out: [{ id: 'out', label: 'Out', kind: 'audio' }] },
+	params: [
+		{ key: 'level', label: 'Level', kind: 'range', min: 0, max: 1, step: 0.01, default: 0.8 },
+		{ key: 'wave',  label: 'Wave',  kind: 'select', default: 'sine',
+		  options: [{ value: 'sine', label: 'Sine' }, { value: 'saw', label: 'Saw' }] }
+	],
+	build(ctx, node, params) {     // ctx is the SHARED AudioContext — never make your own
+		const gain = ctx.createGain(); gain.gain.value = params.level;
+		return { input: null, output: gain, dispose: () => gain.disconnect() };
+	},
+	onParam(handle, key, value, node) { if (key === 'level') handle.output.gain.value = value; },
+	onNote(handle, { note, velocity, at }, node) { /* start a voice at `at` */ },
+	mesh: (THREE, spec) => new THREE.Mesh(...),          // optional; a box otherwise
+	assets: (params) => params.sample ? [{ hash: params.sample }] : []  // what the scene manifest must carry
+});
+api.audio.addDevice(kind, { position: [0, 1, 0] });
+```
+
+The kind appears in the viewport's **Add ▸ Devices** menu (or **Devices: ‹group›**), the
+params render in the Inspector's Device section and the Music toolbox, and every write
+replicates and undoes. A peer **without** your module holds the same object as an inert
+placeholder with its document intact, and the scene's module list names your module as a
+requirement, so loading it offers to install you. Keep `build` pure and `onParam` cheap.
+
+`api.audio` is the engine, the shared clock and the patch:
+
+```js
+api.audio.context()                    // the shared AudioContext
+api.audio.bus('instruments')           // a named bus: music / sfx / voice / instruments
+api.audio.voice({ buffer })            // an engine voice {output, start(at), stop(at), dispose()}
+api.audio.sample(hash, { timeoutMs })  // a decoded AudioBuffer for an Explorer content hash
+api.audio.timeFor(wallMs)              // audio-clock time of a replicated `at` stamp
+
+api.audio.transport()                  // {bpm, beat, bar, step, phase, playing, loopBeats, swing}
+api.audio.play(true); api.audio.setBpm(124);          // replicated
+api.audio.schedule(beat, ({ beat, at, bpm, bar }) => { /* start voices at `at` */ }, { every: 4 });
+
+api.audio.addDevice(kind, { position, params, name });
+api.audio.device(uuid)                 // {kind, params} or null
+api.audio.setParams(uuid, params, { before });        // replicated, one undo step
+api.audio.previewParams(uuid, params); // live gesture: replicated, NO history
+api.audio.note(uuid, { note, velocity, at });
+api.audio.cable({ from: { uuid, port }, to: { uuid, port } }); api.audio.uncable(id);
+
+api.audio.captureMic()                 // the RAW mic, separate from voice chat
+api.audio.record({ maxSeconds, name, stream }); api.audio.stopRecording();
+```
+
+**Live previews.** A knob is a gesture: capture the document when it starts, stream
+`previewParams` while it moves (throttle it — core sends every 66 ms), then commit once
+with `setParams(..., { before })`. That is the only way a scrub becomes a single undo
+step, and it is what the toolbox and the Inspector do themselves.
+
+```js
+const before = api.audio.device(uuid);           // gesture starts
+api.audio.previewParams(uuid, { level: v });     // while it moves
+api.audio.setParams(uuid, { level: v }, { before });  // release: one entry
+```
+
+**Scheduling is deterministic.** Everything on the transport runs on every peer from the
+same document, so `schedule`'s callback must be a pure function of its arguments — an
+impure one desyncs silently.
+
+#### registerDropHandler
+
+Core has no placement for an audio or text item dropped on an object, so a module can
+claim the drop — a sample onto a pad, a script onto a console:
+
+```js
+api.registerDropHandler((hit, item, target) => {
+	// hit: the exact mesh under the drop · item: {id, name, kind, hash} · target: the resolved object
+	if (item.kind !== 'audio' || !hit.userData.pad) return false;
+	api.audio.setParams(deviceOf(hit).uuid, { ['pad' + hit.userData.pad]: item.hash });
+	return true;                                  // consumed
+});
+```
+
+The first handler to return `true` owns the drop; when nobody does, the user is told the
+item is used where it plugs in. Feed `item.hash` to `api.audio.sample`.
+
+#### Content feeds
+
+The Templates, Modules gallery and Packs feeds each read a base URL that a build can
+redirect — `VITE_SCENES_BASE`, `VITE_MODULES_BASE`, `VITE_PACKS_BASE` — so content can be
+tested against a fork before it is published. Unset, each is the public jsDelivr feed.
+
 Content you add to `api.objectsGroup()` becomes part of the shared scene
 (object list, GLTF sync to late joiners, movable/deletable by anyone). Derived
 or regenerating content (a generated dungeon, a game board) belongs in your own

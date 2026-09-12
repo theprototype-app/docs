@@ -230,6 +230,10 @@ Two helpers that come with it:
 
 ## Where to go next
 
+- **Templates ▸ Games ▸ Towers** — a finished game made the same way: co-op crate
+  stacking on a glowing pad, with a Menu, HUD and Pause screen, Game Start and HUD Button
+  nodes, physics grabbing and the Collectibles module for the stars. Load it and pull it
+  apart; it is authored entirely as scene data, so everything in it is editable.
 - **[Node System](node-system.md)** — the logic nodes this example leans on: Latch,
   Delay, Sequence, Counter and the Game group.
 - **[Physics & Simulation](physics.md)** — grabbing, throwing and colliders for the
