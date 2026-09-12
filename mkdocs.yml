@@ -107,6 +107,7 @@ nav:
     - Build a Game Loop: build-a-game.md
   - VR:
     - VR Guide: vr.md
+    - Colocation (shared room): colocation.md
   - AI:
     - Assistant: ai/assistant.md
     - Providers: ai/providers.md
