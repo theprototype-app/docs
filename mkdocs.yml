@@ -105,6 +105,8 @@ nav:
     - Music Playground: music.md
   - Games:
     - Build a Game Loop: build-a-game.md
+  - Community:
+    - Publish, Play, Remix: community.md
   - VR:
     - VR Guide: vr.md
     - Colocation (shared room): colocation.md

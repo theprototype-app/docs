@@ -47,3 +47,4 @@ You build scenes from primitives, imported models and packs, wire behavior with 
 - [AI Assistant](ai/assistant.md) — build and edit the scene from a prompt.
 - [VR Guide](vr.md) — the full room-scale control and radial-menu map.
 - [Modules](modules.md) — enable playable content modules or write your own.
+- [Community](community.md) — publish a scene from the app, share its link, play and remix what others made, enter a contest.
