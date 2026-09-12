@@ -34,7 +34,7 @@ you switch it off for yourself under **Overrides — this device**. If the scene
 ambient occlusion, **Shaded + AO** switches off and says so: the scene's setting is used
 instead of yours.
 
-The **Show light helpers** toggle here draws icons for lights so you can see where they are.
+The **Show light helpers** toggle here draws icons for lights so you can see where they are — in the editor only; see [Helpers hide in Play](#helpers-hide-in-play).
 
 ## Camera lens
 
@@ -86,3 +86,21 @@ An **Exposure** slider tunes overall brightness. The lit presets add a sun that 
 Environment is a **shared, latest-wins** setting — the most recent change wins for everyone. You can also **save**, **export** and **import** custom presets (stored locally), and adopt presets other peers have shared.
 
 Below Environment, **Background** sets the clear color and **Fog** adds distance fog (color + near/far), both shared.
+
+## Lights
+
+A **directional** or **spot** light shines where it points. Turn it with the rotate gizmo — or type into the rotation rows — and the beam and its shadow follow, the way a light behaves in any 3D tool. Older scenes that aimed a spot at a saved point load aimed the same way.
+
+**Aim at**, in the Properties panel's Light section, points the light once at a spot: type a world **X / Y / Z**, or press **Pick in viewport** and click a surface (<kbd>Esc</kbd> cancels). It writes the rotation, so the gizmo and the rows agree afterwards.
+
+A directional light has a direction, not a distance. Its helper line reaches as far as **Settings ▸ Scene ▸ Light helper length** says — display only.
+
+### A light with an origin
+
+Lights have an [origin](controls.md#each-objects-origin) like any other object. Give a sun one — type it in the Transform section's Origin block, or press **World 0** — and **Rotate** swings the light around that point instead of turning it in place: a sun on an orbit, in one gesture. *Move* still moves the light and carries its origin along.
+
+### Helpers hide in Play
+
+Light helpers, camera frustums and camera markers are editor furniture. They disappear when Play starts, and camera previews and captures never show them, so a screenshot is the game and nothing else.
+
+**Show helpers in Play (debug)** — on the viewport menu under **View**, and in **Settings ▸ Controls** — brings them back while you debug a scene, with an amber **DEBUG · HELPERS** chip in the corner so a capture cannot be mistaken for the real thing. It is your setting alone.

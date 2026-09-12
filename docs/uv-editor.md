@@ -107,6 +107,16 @@ Pick the **Paint** tool and draw — on the UV map or straight on the model in t
 
 If the slot has no texture yet, painting creates one.
 
+### Pen pressure
+
+Paint with a **pen** and pressure shapes the stroke. The **Pen pressure** switch in the Brush panel picks what it changes:
+
+- **Size** (the default) — a light touch paints thin, a firm one paints the full brush size.
+- **Opacity** — the width stays put and a light touch paints faint.
+- **Off** — every dab is the same.
+
+A mouse or finger stroke is unchanged whichever you pick, and peers watching a live pen stroke see the same widths you do. Fast strokes are sampled between frames, so a quick curve comes out smooth rather than as a string of dots.
+
 ## Material slots
 
 One mesh can carry several materials. The **Materials** list in the sidebar shows the slots; the canvas shows the slot you have selected.

@@ -29,6 +29,8 @@ had nothing open will not close the panels *you* have open.
 
 Templates load through the same path as a `.tpscene` file, so with peers connected everyone gets the usual Accept/Decline proposal and your current scene is stashed as a backup first. The Welcome overlay has a shortcut into the same picker.
 
+Each card also has a small **save to Library** button in its corner (*Save "Towers" to your Library as a new scene*). It files the starter as a new scene in your [Explorer](explorer.md) without loading it — the scene you have open stays as it is — so you can collect a few and open them later.
+
 ## Scene (`.tpscene`) — recommended
 
 A `.tpscene` file is a zip bundle containing everything a scene needs:

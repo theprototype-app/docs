@@ -299,6 +299,10 @@ api.now()            // the runtime clock in SECONDS — stamp replicated
                      // timestamps with this, never Date.now() directly
 api.THREE            // the app's three.js (user modules can't import it)
 api.assetUrl('assets/pling.mp3') // blob URL of a packaged file (user modules)
+api.keyOf(event)     // 'G', 'Ctrl'-less key name, layout-independent — the app's own rule:
+                     // the printed ASCII letter when there is one, else the physical key
+api.letterOf(event)  // the same for a bare letter, or null — use it in your own keydown
+                     // handlers so a Cyrillic or Greek layout reaches your shortcuts too
 ```
 
 ### Building in the shared scene

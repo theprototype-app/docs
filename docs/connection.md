@@ -21,6 +21,17 @@ It has two halves:
 
 Or do it by ID: they paste your ID into their Connect field and press Connect; the same approval toast appears on your side.
 
+### A link in a tab that is already open
+
+You do not have to reload to follow an invite. Paste the link into the **address bar** of the tab that is already running the app and press <kbd>Enter</kbd>: the app dials that session on the spot, with your scene and your session id intact. (The Connect field takes a bare ID, not a link.)
+
+A few cases ask first, or refuse with a message:
+
+- **Already in a session** — *You're in a session with Ada (75F41). Leave it and join 3B0C2?* with **Leave & join** and **Stay**.
+- **Your own link** — *That's your own invite link — send it to somebody else to have them join you.*
+- **Someone you are already with** — *Already connected to Ada (75F41).*
+- **A link that names another signaling server** — *Join 3B0C2 on peerjs.example.com?* with **Join** and **Cancel**; joining switches server without a reload, exactly like **Apply** below.
+
 !!! note "Approving is one-directional"
     A connection request waits for the host to **approve** it — there is no separate "deny" button; simply not approving leaves the peer unconnected. The requester sees a countdown beside *Requesting*, and your card shows how long that person has been waiting. A request nobody answers within 90 seconds ends by itself and offers **Try again**, so neither side is left waiting on something that will never happen; an expired card can still be approved, and approving simply dials them back. If a connection is stuck, the panel offers a **Retry** that closes the stale link and reconnects.
 
@@ -77,7 +88,7 @@ Which signaling server you use decides *which world you can meet people in* — 
 |---|---|
 | **Default** | Uses the server the app was built with, and **falls back to the public PeerJS cloud** if that server is unreachable. If no server was baked in, Default simply *is* the public cloud. |
 | **Public PeerJS cloud** | Always the free public PeerJS cloud. No fallback. Fine for quick tests; not recommended for real sessions. |
-| **Custom server** | Pin your own PeerJS server. No fallback. Takes effect on reload. |
+| **Custom server** | Pin your own PeerJS server. No fallback. |
 
 **Custom server** reveals these fields:
 
@@ -87,7 +98,7 @@ Which signaling server you use decides *which world you can meet people in* — 
 - **TURN URLs / username / credential** — a TURN relay for peers behind strict NATs. Blank means STUN-only (direct connections only).
 - **STUN URLs** — optional extra STUN servers.
 
-Press **Apply & reload** — the peer connection is created at startup, so switching servers reloads the page.
+Press **Apply** (the **Apply changes** row) to switch now: the app leaves any open session, reconnects to the server you chose and **keeps your session id**, so an invite link you already sent stays valid. A toast confirms *Connected to … — your session id is unchanged.* If the new server cannot be reached within a few seconds you are put back on the previous one and told so; the **Reload** link beside the button is the fallback if anything looks stuck.
 
 !!! tip "The fallback"
     In Default mode, if your self-hosted server can't be reached the app switches to the public cloud on its own and tells you: *"Your peer server is unreachable — switching to the public PeerJS server."* Custom and Public modes never fall back.
@@ -108,5 +119,6 @@ It carries an **Open Settings** button that jumps straight to **Settings ▸ Con
 | *Your session ID is already in use* | Reload the page to claim a fresh ID. |
 | *AB12 did not answer in 90s* | Nobody approved your request in time, so it ended itself — press **Try again** to ask again. |
 | *This session is full (16 people)* | Everyone connects to everyone, so a session has a ceiling. Someone has to leave before another person can join. |
+| *Could not reach … — back on your previous peer server.* | **Apply** could not open the server you picked, so nothing changed — check the host, port and path. |
 | *Lost connection to the peer server, reconnecting…* | The link to the signaling server dropped; the app retries automatically. |
 | *Could not reach the peer server. Please reload.* | Reconnection gave up — reload, or switch servers in Settings ▸ Connection. |

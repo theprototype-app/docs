@@ -79,6 +79,21 @@ The header's **Thumbnails / List** toggle switches views. The list has sortable 
 
 **Keyboard navigation** in the grid: arrow keys move the selection, <kbd>Enter</kbd> opens, <kbd>Backspace</kbd> goes up a level, <kbd>Esc</kbd> closes the window.
 
+## Duplicate, Copy, Cut and Paste
+
+Right-click a file or a folder for **Duplicate** (**Duplicate folder**), **Copy** and **Cut**; right-click a folder or the grid background for **Paste** — the entry says what it holds (*Paste 2 files + 1 folder*). With the grid focused the keys are <kbd>Ctrl</kbd>+<kbd>D</kbd> / <kbd>C</kbd> / <kbd>X</kbd> / <kbd>V</kbd>, on one card or a whole selection (*Duplicate 3 items*).
+
+- A duplicate lands beside its source as **Tower copy.glb**, then *Tower copy 2.glb*; pasted into another folder it keeps its name unless that collides.
+- A **cut** row dims to half until you paste it, and a cut is spent by one paste; a copy can be pasted again.
+- A copy is local until you share it — unless it lands in a shared folder, which shares it like anything else you drop there.
+- **Prefabs** duplicate too (*Prefab copy*). **Packs** are read-only bundles: Duplicate is greyed out and says so.
+- **Duplicate folder** copies everything in it under a new folder beside it.
+
+**A scene** is different: its name lives inside the file, so Duplicate on a scene opens the naming card prefilled with *Arena copy* — type a name, <kbd>Enter</kbd> — and makes a scene of its own, with its own version history. A name that is already taken is refused with a toast. To duplicate a scene, select it on its own; in a bigger selection it is skipped and the toast says so.
+
+!!! note "A copy costs your peers no download"
+    A shared file travels as a row with its own identity beside its content hash. When you duplicate a shared file — or a whole shared folder — peers who already hold the bytes make the copy from their own disk: ten copies, zero transfers. Deleting a copy removes only that copy; editing one gives it new bytes, which are sent once. A scene copy is the exception, because its new name makes it a new file: it transfers once.
+
 ### The preview window
 
 Images open zoomable (**−** / **＋** / **1:1**, drag to pan), sounds open with a player, and 3D models open on a turntable with an **animation transport** — play, step a frame with <kbd>,</kbd> and <kbd>.</kbd>, scrub, pick a clip — and a mesh-stats line. The **←** / **→** buttons page through the folder without closing the window, and **⌐** goes up a level.
