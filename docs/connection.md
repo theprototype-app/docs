@@ -22,7 +22,7 @@ It has two halves:
 Or do it by ID: they paste your ID into their Connect field and press Connect; the same approval toast appears on your side.
 
 !!! note "Approving is one-directional"
-    A connection request stays pending until the host **approves** it — there is no separate "deny" button; simply not approving leaves the peer unconnected. The requester sees a *pending* status until you approve, then *approved*. If a connection is stuck, the panel offers a **Retry** that closes the stale link and reconnects.
+    A connection request waits for the host to **approve** it — there is no separate "deny" button; simply not approving leaves the peer unconnected. The requester sees a countdown beside *Requesting*, and your card shows how long that person has been waiting. A request nobody answers within 90 seconds ends by itself and offers **Try again**, so neither side is left waiting on something that will never happen; an expired card can still be approved, and approving simply dials them back. If a connection is stuck, the panel offers a **Retry** that closes the stale link and reconnects.
 
 Once connected, everything replicates automatically — objects, transforms, materials, the node graph, chat, pings, notes and voice.
 
@@ -64,6 +64,8 @@ Everyone in a session connects to everyone else, directly. A room of ten is the 
 
 A momentary network blip no longer throws you out, either. A peer that drops for a few seconds is given a window to come back and rejoin the same session; only when that window closes are they treated as gone.
 
+**Settings ▸ Connection ▸ Session size** is how many people you expect. Past that number an approval still works but warns you; at 16 the approve buttons say the session is full, because beyond that point the mesh degrades for everyone rather than only for whoever joined last.
+
 !!! note
     How many peers work for you depends on your uplink, since each one sends to every other. Voice chat and live gestures are the bandwidth-hungry parts — a large scene is sent once per joiner, not continuously.
 
@@ -104,5 +106,7 @@ It carries an **Open Settings** button that jumps straight to **Settings ▸ Con
 |---|---|
 | *Peer is unreachable* | The ID is wrong or that person is offline — check the ID and ask them to stay open. |
 | *Your session ID is already in use* | Reload the page to claim a fresh ID. |
+| *AB12 did not answer in 90s* | Nobody approved your request in time, so it ended itself — press **Try again** to ask again. |
+| *This session is full (16 people)* | Everyone connects to everyone, so a session has a ceiling. Someone has to leave before another person can join. |
 | *Lost connection to the peer server, reconnecting…* | The link to the signaling server dropped; the app retries automatically. |
 | *Could not reach the peer server. Please reload.* | Reconnection gave up — reload, or switch servers in Settings ▸ Connection. |
