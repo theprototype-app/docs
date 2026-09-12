@@ -32,7 +32,7 @@ item's **Version history** panel (the history icon in its properties):
 - **Delete** frees the local bytes only. The manifest keeps the hash, so a peer who
   still holds the version can serve it back.
 - **Pin** a version to keep it beyond the retention window.
-- **Settings ▸ Files ▸ "Keep versions per scene"** (default 10, `0` turns
+- **Settings ▸ Explorer ▸ "Keep versions per scene"** (default 10, `0` turns
   auto-versioning off; explicit saves and "Save version…" always work).
 
 ## Everyone sees the same scenes
@@ -59,7 +59,31 @@ A peer in another scene is somewhere you are not, so:
 - and their movement is not streamed at you until one of you travels.
 
 If nobody has named a scene yet, everyone is in the same **Untitled scene** — the
-ordinary state of a fresh session — and none of the above applies.
+ordinary state of a fresh session — and none of the above applies. The unnamed world is
+a room of its own all the same: nothing crosses into it from a private scene, and the
+peer list's **Join** button takes you back to it from wherever you are.
+
+**Saving names the room.** Save an untitled world while others stand in it and everyone
+there takes the name — a toast tells them who saved it as what.
+
+### Editing a scene privately
+
+Open a file the session has never seen and you are asked: *Share "Arena" with this
+session?* — **Share with the session** or **Edit privately**. A private scene stays on
+this machine. Its name never leaves; peers see you listed under **In a private scene**
+and nothing you edit crosses in either direction until you share it.
+
+They can ask: the **Request access** button on your row sends you a toast with **Share
+scene** and **Keep private**. On your own side the peer list reminds you — *Editing
+Arena privately — nobody here can see it* — with **Share with session** and **Rejoin
+session** beside it.
+
+### Joining is a decision, not a merge
+
+Connect with unsaved work and the approval brings a choice: peers tell worlds apart by
+scene name, so an unsaved scene cannot be a room of its own. **Save scene & connect**
+names it and joins clean, **Dismiss changes** drops it (a backup goes to Sessions first),
+and **Disconnect** leaves both your scene and the connection exactly as they were.
 
 ## Files you brought yourself
 
@@ -75,7 +99,7 @@ rather than a second card sitting beside it.
 
 A library item is identified by its **contents**, so re-importing the same bytes is
 not a new file. Rather than silently doing nothing, the app says what it already has
-and lets you choose. **Settings ▸ Files ▸ "When importing files already in your
+and lets you choose. **Settings ▸ Explorer ▸ "When importing files already in your
 library"**:
 
 - **Ask** (default) — a list of what is already there, with **Reveal** to find each
