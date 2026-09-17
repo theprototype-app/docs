@@ -84,7 +84,7 @@ everything that belongs to the object, not just its shape:
 | Comes along | |
 |---|---|
 | geometry, transform, children | always |
-| material and its texture slots | always, as its own detached copy |
+| material and its texture slots | its own detached copy — unless you ask them to be [shared](#sharing-one-material) |
 | physics, origin, camera settings | always |
 | **animation clips** | yes — the copy plays its own |
 | **object flow graph** | yes, with fresh node ids |
@@ -96,6 +96,26 @@ referenced. Re-aiming it at the copy is a decision only you can make, so it is l
 Each of the last three can be switched off in *Settings ▸ Scene ▸ Duplicate* if you would
 rather a copy came out bare. An object that inherits the **scene default** shader keeps
 inheriting it — it does not get a private snapshot.
+
+### Sharing one material
+
+*Settings ▸ Scene ▸ Duplicate ▸ **Share materials*** changes what a copy gets. Off — the
+default — a duplicate gets its own copy of the material, so editing one leaves the other
+alone. On, the copy and the original are **one material**: an edit to either changes both,
+for everyone in the session. Geometry is always copied either way.
+
+It is your setting, not the scene's: two people in one session can reasonably disagree
+about how *they* duplicate. What it produces — the link itself — is scene data, and
+replicates like anything else.
+
+An object whose material is shared says so in its **Material** section: *This material is
+shared with N other objects — editing it here changes them too, for everyone.* **Unlink**
+beside it gives that one object its own copy back and leaves the rest sharing.
+
+The link survives everything a copy normally survives: saving and reloading the scene,
+undo, a peer duplicating the object again, and a late joiner arriving afterwards. The one
+thing that cannot share is an object with **more than one material slot** — it is left
+copying, rather than half-linked.
 
 ### Editing a multi-selection
 
