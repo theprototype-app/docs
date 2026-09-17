@@ -185,6 +185,26 @@ The toolboxes, the Explorer, the flow and animation windows and the panels all b
 
 A window also **keeps its header**: it cannot be dragged so far down that the header hides under the Controls pill, the bottom band on a touch or narrow screen, the dock, or a browser overlay — there is always something left to grab. A tall toolbox parked near the bottom scrolls its body instead of losing its head.
 
+### Docking to a screen edge
+
+Drag a window's header to the **left or right edge** of the screen and a blue strip appears:
+let go and it becomes a full-height panel on that edge, out of the way of the viewport. Drag
+its header back into the middle and it floats again, where it was before. Drag the panel's
+inner edge to set its width.
+
+**Two windows fit on one edge.** Drop a second window onto a docked panel — or onto the same
+edge — and the column splits into two stacked panels. The half of the panel your pointer is
+over is highlighted with **⊟ Split panel**, so you choose which one ends up on top. A
+divider between them sets the share: drag it up or down, and that share is remembered **per
+side**, so the left and right edges keep their own. Undock either one and the other takes the
+whole column back.
+
+That is the ceiling: a third window dropped on a full edge is refused, and the panel it
+landed on wiggles to say so.
+
+Docking is **desktop only** — on a touch screen there is no room for a full-height side panel
+and it would fight scrolling, so windows there simply stay floating.
+
 ## Keyboard shortcuts
 
 Shortcuts are inert while you type in a text field and while play mode owns the keyboard. The same list is shown in **Settings ▸ Shortcuts** (<kbd>Ctrl</kbd>+<kbd>/</kbd> opens it directly), where a click on a shortcut's keys rebinds it and **Reset all** puts the defaults back.
@@ -192,7 +212,7 @@ Shortcuts are inert while you type in a text field and while play mode owns the 
 **Every keyboard layout works.** A letter shortcut is matched by the letter printed on the key when there is one — AZERTY, Dvorak and QWERTZ keep their own labels — and by the key's **physical position** otherwise, so <kbd>G</kbd>, <kbd>F</kbd>, <kbd>Ctrl</kbd>+<kbd>Z</kbd> and <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> work on Russian, Greek, Hebrew, Arabic and CJK layouts without switching. Where the browser can tell, **Settings ▸ Shortcuts** shows your layout's own label beside each letter (*п on your layout*); where it cannot, a note says letter shortcuts follow the QWERTY position.
 
 !!! tip "Finding a setting"
-    Settings is grouped into **Interface** (theme, notifications, windows, lists and menus), **Controls** (keyboard, mouse and trackpad), **Scene** (grid, shadows, autosave and everything about the scene itself), then **VR**, **AI**, **Connection**, **Shortcuts** and **About**. If you don't know which one holds what you want, type in the search box at the top — it filters every section at once, and the ✕ clears it.
+    Settings is grouped into **Interface** (theme, notifications, windows, lists and menus), **Controls** (keyboard, mouse and trackpad), **Input** (gamepad and the node editor's mouse bindings), **Scene** (grid, shadows, autosave and everything about the scene itself), **Explorer**, then **VR**, **AI**, **Connection**, **Shortcuts** and **About**. If you don't know which one holds what you want, type in the search box at the top — it filters every section at once, and the ✕ clears it.
 
 | Keys | Action |
 |---|---|
