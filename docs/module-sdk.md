@@ -350,6 +350,42 @@ With `camera: 'first'` the eye sits at the object plus `eyeHeight`;
 (movement follows the view), vertical pitches the camera, and leaving pointer
 lock (Esc) releases the possession.
 
+### The knock
+
+When [the knock](physics.md#the-knock) is on for the scene, every hit a hand or a
+player lands on a physics body is reported to every peer. A module can listen to
+that feed, or read the recent ones — which is what the football module's
+last-touch rule stands on.
+
+```js
+const off = api.onHit((hit) => { /* … */ });   // returns the unsubscribe
+off();                                          // …or let the teardown do it
+
+api.hitLog()   // { last: {uuid: hit, …}, recent: [hit, …] }
+```
+
+One hit looks like this:
+
+| Field | |
+|---|---|
+| `uuid` | the object that was hit |
+| `by` | the peer whose hand or camera hit it (empty when you are alone) |
+| `local` | `true` on the peer it *was* — the one whose probe landed the hit |
+| `speed` | how hard, in m/s |
+| `point` | `[x, y, z]`, where it was hit |
+| `linvel` / `angvel` | the velocity and spin the hit gave it |
+| `at` | the session timestamp — the same number on every peer |
+| `probe` | which probe it was: `'left'`, `'right'` or `'head'` (the desktop camera) |
+
+`onHit` fires for your own hits and for every peer's, as each `hit` message is
+applied, so a rule derived from it agrees everywhere without a message of your own.
+It returns an unsubscribe, and is torn down with the module either way.
+
+`hitLog()` hands back a **copy**: `last` is the most recent hit per object still in
+the scene, keyed by uuid, and `recent` is the last 32 hits in order. It is runtime
+state — a late joiner's log starts empty, so a module that needs history keeps its
+own through `registerStateSync`.
+
 ## Lifecycle
 
 - Core modules load at boot unless disabled in the manager; user modules load

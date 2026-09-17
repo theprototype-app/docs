@@ -234,6 +234,17 @@ Two helpers that come with it:
   stacking on a glowing pad, with a Menu, HUD and Pause screen, Game Start and HUD Button
   nodes, physics grabbing and the Collectibles module for the stars. Load it and pull it
   apart; it is authored entirely as scene data, so everything in it is editable.
+- **Templates ▸ Games ▸ Stars Room** — a smaller one to read: a zero-gravity room where
+  twenty-four stars and two planets are [knocked](physics.md#the-knock) about by hand.
+  It is a sandbox until you ask for a round, so the HUD carries a *Free play* screen and a
+  *Round* screen; the round is driven from the <kbd>P</kbd> menu (**Start round: light every
+  star**, **Restart round**, **More stars**) and from two physical pads on the floor, which
+  is how the same buttons work in VR where a screen HUD is not there to click. An
+  [On Hit](nodes/onhit.md) per star chimes, lights it and bursts particles in proportion to
+  `speed`; a second On Hit with **who** set to *me* counts that touch on the hitter's own row,
+  which is what the leaderboard reads. It needs no module at all.
+- **VR Football** — the same ideas with the rules in a module instead of loose nodes; see
+  [VR Football](football.md).
 - **[Node System](node-system.md)** — the logic nodes this example leans on: Latch,
   Delay, Sequence, Counter and the Game group.
 - **[Physics & Simulation](physics.md)** — grabbing, throwing and colliders for the
