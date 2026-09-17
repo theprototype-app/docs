@@ -2712,7 +2712,7 @@
             
   
   <span class="md-ellipsis">
-    VR
+    Community
   </span>
   
 
@@ -2721,6 +2721,69 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Community
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish, Play, Remix
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    VR
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             VR
           </label>
@@ -2789,10 +2852,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2803,8 +2866,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             AI
           </label>
@@ -2936,10 +2999,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2950,8 +3013,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             Extending
           </label>
@@ -3151,7 +3214,13 @@ modules. Install <strong>Music Lab</strong> (a Piano, a Speaker, a Transport, a 
 <strong>Music Voice</strong> (a mic, a looper, a synth, a theremin) from the Modules manager; every player
 in a room needs the module a scene uses, and a scene asks for them by name when you load it.
 The sidebar's module rows add demo rigs; the viewport's Add menu lists every device kind
-under <em>Devices</em>.</p>
+under <strong>Add ▸ Devices</strong> (a module that groups its kinds gets its own row, <em>Devices: Music
+Voice</em>).</p>
+<p>A scene remembers which module each device came from. Open one on a machine that lacks the
+module and a dialog, <strong>This scene uses modules</strong>, lists what is <em>Not installed</em> or
+<em>Switched off</em> and offers <strong>Install (n)</strong>, <strong>Enable (n)</strong> or <strong>Load anyway</strong> — installing is
+per machine, so every player does it once. Load anyway keeps the devices as silent
+placeholders with their settings intact; they wake up the moment the module is installed.</p>
 <h2 id="cables">Cables</h2>
 <p>Sound goes nowhere until it is <strong>cabled</strong>. Every device has plugs on its back; click an output
 plug, then an input plug (desktop, in Play mode or the editor) or drag with the trigger (VR)
@@ -3161,9 +3230,23 @@ Cables are part of the scene - they replicate, undo, save with the scene, and a 
 brings its cables with it.</p>
 <h2 id="knobs-the-toolbox-and-the-inspector">Knobs, the toolbox and the Inspector</h2>
 <p>Every device declares its parameters; they show as knobs in VR (grab and turn), in the
-<strong>Music</strong> toolbox (a settings pane, presets and a mixer strip) and in the Inspector's
-<em>Device</em> section (fanned over a multi-selection). A knob turn or a fader drag is one undo
-step, however long the gesture.</p>
+<strong>Music</strong> toolbox and in the Inspector's <strong>Device</strong> section. A knob turn or a fader drag is
+one undo step, however long the gesture, and peers hear it move while you turn it.</p>
+<p>The <strong>Music</strong> toolbox appears in the sidebar under <strong>Modules</strong> as soon as any device kind
+is registered (also on the viewport menu under <strong>Module tools</strong>). It has three parts:</p>
+<ul>
+<li><strong>Device</strong> — pick any device in the scene and edit its parameters.</li>
+<li><strong>Presets</strong> — <strong>Save as…</strong> the current settings under a name, <strong>Apply</strong> one later, <strong>✕</strong>
+  deletes. Presets are kept per device kind in <em>your</em> browser; applying one is what
+  replicates.</li>
+<li><strong>Mixer</strong> — one row per device with a level meter, a fader, <strong>M</strong> (mute) and <strong>S</strong>
+  (solo). A device with no level parameter and no outgoing cable shows a dash. Mute and
+  solo are yours alone; the level they set is shared.</li>
+</ul>
+<p>The Inspector's <strong>Device</strong> section shows the same parameters for the selection. With
+several devices selected it says <em>Applies to N selected devices</em> and a change fans across
+all of them as one undo step; a device that lacks that parameter is skipped. <strong>Open in
+Music toolbox</strong> jumps across — presets and the mixer live there.</p>
 <h2 id="the-shared-transport">The shared transport</h2>
 <p>One <strong>transport</strong> per scene - tempo, play/stop, swing, bars per loop - shared by every peer.
 The Transport device is its face; the drum machine, the looper and anything scheduled on it
@@ -3179,17 +3262,28 @@ or the transport schedules must be a <strong>pure</strong> function of its input
 computes it alone; an impure callback desyncs silently, with no error anywhere. See
 <a href="../nodes/">Flow Nodes</a> for the full list.</p>
 <h2 id="recording-and-samples">Recording and samples</h2>
-<p>The Mic device captures the raw microphone (a separate capture from voice chat, never gated
-by push-to-talk) and can <strong>record</strong> a take into the Explorer; the looper records whatever is
-patched into it, quantized to bar boundaries. A recording is an Explorer item by content
-hash, shared to every peer; drop any audio item from the Explorer onto a sampler pad or a
-deck to load it, and the Scene manifest carries what the room's devices reference, so an
-exported scene bundles its samples. The <strong>Music Lab Kit</strong> pack in Packs is a CC0 starting
-library of drum one-shots and loops.</p>
+<p><strong>Record.</strong> The Mic device (Music Voice) captures the raw microphone — a separate capture
+from voice chat, with no noise suppression and never gated by push-to-talk — so the browser
+asks for the microphone once more the first time (<em>Microphone permission denied</em> if you
+refuse). Click the red button on the Mic to record a take of its <strong>Take length</strong>; click again
+to stop early. The take lands at the root of your Explorer as an audio item (<code>mic-…</code>), shared
+to every peer by content hash, with a <em>Recorded …</em> toast. A take is at most 120 s, and one
+that would exceed the sharing limit is refused before it starts.</p>
+<p><strong>Sample.</strong> Drag any audio item from the Explorer — a take, a file you imported, a one-shot
+from the <strong>Music Lab Kit</strong> pack — onto a sampler pad or a DJ deck to load it there; the toast
+names the pad it landed on. The <strong>Music Lab Kit</strong> pack in Packs is a CC0 starting library of
+drum one-shots and loops.</p>
+<p><strong>Bounce.</strong> The Looper records whatever is cabled into it, quantized to bar boundaries: click
+its red button and the take starts on the next bar and runs for <strong>Bars</strong>. The loop is an
+audio item like a take (<code>loop-…</code>), and because the looper references it by hash the Scene
+manifest carries it — an exported <code>.tpscene</code> bundles its samples along with everything else.</p>
 <h2 id="building-a-room">Building a room</h2>
-<p>Load the <strong>Jam Room</strong> template from Games for a cabled room ready to play, or add devices
-from the module rows and cable them yourself. Save any rig as a <strong>prefab</strong> - it comes back
-cabled - and drop it into the next scene.</p>
+<p>The <strong>Jam Room</strong> starter — a piano into a speaker, a beat lab and a pedal chain into a
+mixer, all cabled — is authored for the <strong>Templates ▸ Games</strong> tab and offers to install
+Music Lab and Music FX when you load it (it is not in the published template feed yet, so
+the tab may not list it). Until then, add devices from the module rows and cable them
+yourself. Save any rig as a <strong>prefab</strong> - it comes back cabled - and drop it into the next
+scene.</p>
 
 
 
@@ -3210,7 +3304,7 @@ cabled - and drop it into the next scene.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-09-04
+    2026-09-12
   </span>
 
     

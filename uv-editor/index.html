@@ -689,6 +689,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Painting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pen-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pen pressure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2796,7 +2811,7 @@
             
   
   <span class="md-ellipsis">
-    VR
+    Community
   </span>
   
 
@@ -2805,6 +2820,69 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Community
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../community/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish, Play, Remix
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    VR
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             VR
           </label>
@@ -2873,10 +2951,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2887,8 +2965,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             AI
           </label>
@@ -3020,10 +3098,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -3034,8 +3112,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             Extending
           </label>
@@ -3230,6 +3308,21 @@
       Painting
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Painting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pen-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pen pressure
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3487,6 +3580,14 @@
 <li>The finished image is stored with the material, so it saves and loads like any other texture.</li>
 </ul>
 <p>If the slot has no texture yet, painting creates one.</p>
+<h3 id="pen-pressure">Pen pressure</h3>
+<p>Paint with a <strong>pen</strong> and pressure shapes the stroke. The <strong>Pen pressure</strong> switch in the Brush panel picks what it changes:</p>
+<ul>
+<li><strong>Size</strong> (the default) — a light touch paints thin, a firm one paints the full brush size.</li>
+<li><strong>Opacity</strong> — the width stays put and a light touch paints faint.</li>
+<li><strong>Off</strong> — every dab is the same.</li>
+</ul>
+<p>A mouse or finger stroke is unchanged whichever you pick, and peers watching a live pen stroke see the same widths you do. Fast strokes are sampled between frames, so a quick curve comes out smooth rather than as a string of dots.</p>
 <h2 id="material-slots">Material slots</h2>
 <p>One mesh can carry several materials. The <strong>Materials</strong> list in the sidebar shows the slots; the canvas shows the slot you have selected.</p>
 <table>
@@ -3561,7 +3662,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-08-17
+    2026-09-12
   </span>
 
     
