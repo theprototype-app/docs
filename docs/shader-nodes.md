@@ -20,7 +20,7 @@ colours gives a colour, of two numbers a number.
 | **Colour** | — | out *(vec3)* | value `#ffffff` | A colour you pick. Converted sRGB -> linear, so it matches what the picker shows. |
 | **Vector 2** | — | out *(vec2)* | value `[0, 0]` | Two numbers — usually a UV offset, a tiling amount or a 2D direction. |
 | **Vector 3** | — | out *(vec3)* | value `[0, 0, 0]` | Three numbers — a direction, a position offset, or a colour you want as numbers. |
-| **UV** | — | out *(vec2)* | — | The surface's texture coordinates: 0..1 across the mesh's UV layout. The starting point for anything that varies across a surface. |
+| **UV** | — | out *(vec2)* | — | The surface's texture coordinates: 0..1 across the mesh's UV layout — or, in a post graph, the screen position. The starting point for anything that varies across a surface. |
 | **Normal** | — | out *(vec3)* | — | Which way the surface faces. In the surface stage this is the shaded normal; wired into Position it is the object-space normal, which is what you displace along. |
 | **View direction** | — | out *(vec3)* | — | The direction from the surface towards the camera. Surface stage only — there is no camera vector while vertices are being placed. **(surface only)** |
 | **Time** | — | out *(float)* | speed `1` | Seconds from the SHARED clock, so anything animated is at the same point for every peer with no messages. Multiply by speed to go faster. |
@@ -82,10 +82,31 @@ colours gives a colour, of two numbers a number.
 | **Normal map** | map *(vec3)*, uv *(vec2)*, normal *(vec3)* | out *(vec3)* | strength `1` | Reads a normal map image and applies it as surface detail, building the tangent frame from screen-space derivatives so it works on meshes with no tangents. **(surface only)** |
 | **GLSL expression** | a *(float)*, b *(float)*, c *(float)* | out *(float)* | expression `a`, type `float` | The escape hatch: write a GLSL expression using a, b and c as the wired inputs, and declare what type it returns. |
 
+## Post
+
+These read the **finished frame** rather than a surface, so they appear only in a
+[post graph](shader-graph.md#surface-or-post). Depth and normals are extra buffers: the
+chain adds them when a graph asks for one, and not otherwise.
+
+| Node | In | Out | Parameters | What it does |
+|---|---|---|---|---|
+| **Scene colour** | — | rgb *(vec3)*, a *(float)*, rgba *(vec4)* | — | The frame as rendered so far, before this effect: the colour under this screen pixel. The starting point of every post graph. |
+| **Scene sample** | uv *(vec2)* | rgb *(vec3)*, a *(float)*, rgba *(vec4)* | — | The frame colour at ANY screen position you give it — offset the UV by a texel to read a neighbour, which is how blurs and edge detectors are built. |
+| **Scene depth** | uv *(vec2)* | linear *(float)*, raw *(float)* | — | How far away the thing under this pixel is: linear runs 0 (near plane) to 1 (far plane), raw is what the depth buffer holds. Fog, depth tints, edge detection. |
+| **Scene normal** | uv *(vec2)* | out *(vec3)* | — | Which way the surface under this pixel faces, from a normal pass the chain adds only when a graph asks for it. Creases and outlines that depth alone misses. |
+| **Resolution** | — | size *(vec2)*, texel *(vec2)* | — | The frame size in pixels, and one texel as a UV step — what you multiply a screen offset by so it stays one pixel wide at any window size. |
+| **Bayer pattern** | uv *(vec2)* | out *(float)* | scale `1` | An ordered-dither threshold pattern locked to the pixel grid, 0..1. Add it (minus a half) before Posterise for retro dithering; scale grows the cells. |
+| **Edge detect** | uv *(vec2)* | out *(float)* | depthWeight `4`, normalWeight `1` | A line strength, 0..1, where depth or normals change sharply — silhouettes and creases. Mix a line colour over the scene colour by it for an ink look. |
+| **Ambient occlusion (depth)** | uv *(vec2)* | out *(float)* | radius `6`, bias `0.002` | A cheap screen-space occlusion from depth alone, 0 open to 1 tucked into a corner. Darken the scene colour by it for contact shading you can tune in a graph. |
+
+Every `uv` input here defaults to the pixel being shaded, so leave it unwired unless you
+mean to read somewhere else.
+
 ## Output
 
 | Node | In | Out | Parameters | What it does |
 |---|---|---|---|---|
+| **Post output** | color *(vec3)*, alpha *(float)* | — | — | The post graph's output: the colour this effect writes for the pixel, with alpha left to the frame's own unless you wire it. Everything upstream of color is one fullscreen pass. |
 | **Surface** | albedo *(vec3)*, emissive *(vec3)*, roughness *(float)*, metalness *(float)*, normal *(vec3)*, opacity *(float)*, ao *(float)*, position *(vec3)* | — | — | The graph's output. Each input replaces one part of the material and anything left unconnected keeps the material's own value: albedo (base colour), emissive (glow), roughness, metalness, normal (surface detail), opacity (needs blending), ao (shades indirect light) and position (moves vertices — note it does not recompute normals or move the shadow). |
 
 ## Notes on the ones worth a second look

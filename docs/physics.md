@@ -147,6 +147,46 @@ Only dynamic objects can be picked up, objects another peer has locked are refus
 
 A module can override these for its own world by publishing them on its scene group.
 
+## The knock
+
+Hit a floating object with your hand and it flies off. In VR your two hands are the probes; on
+desktop it is the camera you walk with, so walking into something shoves it. The object leaves
+at the speed you hit it, and everybody sees the same result — the hit travels as one exact
+velocity message, the way a throw already does.
+
+It is **off in every scene that does not ask for it**. A scene with no Knock block behaves
+exactly as it always did: hands grip and grab, the crosshair carries and throws, and nothing
+is knocked by walking into it. Switch it on in **Configure Scene ▸ Physics ▸ Knock**:
+
+| Row | Range | What it does |
+|---|---|---|
+| **Hands and players knock dynamic objects** | off by default | arms the whole thing for the scene, for everyone |
+| **Gain** | 0 – 5 | multiplies the speed the object leaves at. 1 is "as hard as you hit it" |
+| **Max speed** | 0.5 – 20 m/s | the ceiling, whatever you do. Keep it low to keep a ball hittable rather than lost |
+| **Probe radius** | 0.02 – 1 m | how big the hand (or head) is as a ball. Wider is easier to connect with, and easier to hit by accident |
+| **Spin** | 0 – 2 | how much of the hit becomes rotation instead of travel |
+
+The panel says the rest out loud: *An open VR hand, or walking into an object on desktop,
+sends it off at the speed it was hit. Grip still grabs. Shared, and it needs a running
+simulation.*
+
+Three things have to be true before anything is knocked: the scene's Knock block is on, a
+simulation is running somewhere, and you are **in play** (pointer lock on desktop, or
+presenting in VR). Only **Dynamic** bodies can be knocked, and an object somebody is carrying
+is left alone rather than fought over. The settings are scene data: they replicate, save and
+undo like everything else in Configure Scene.
+
+In VR the hand that connects gets a short buzz, harder for a harder hit. That part is local —
+it is your hand, not a message.
+
+!!! tip "The knock as a game"
+    **Menu ▸ Templates ▸ Games ▸ Stars Room** is a zero-gravity room built on this: twenty-four
+    stars and two planets to knock about, a chime when one is hit, and an optional round —
+    light every star — on the <kbd>P</kbd> menu. Nothing to install.
+
+To react to a knock in a graph, use the [On Hit](nodes/onhit.md) node: it gives you how hard
+(`speed`) and whether it was you (`by me`).
+
 ## Joints
 
 Joints tie two objects together so they move as one, or hinge around an axis. Select **exactly two objects**, then use their right-click menu ▸ **Physics**:
@@ -164,6 +204,7 @@ Joints replicate to everyone, undo as a single step, persist in saved scenes and
 Physics uses an **authoritative** model: the peer who starts the run is the only one stepping the simulation, and it broadcasts the resulting motion. Everyone else just watches.
 
 - **One run at a time** — if someone else is simulating, your play button is disabled and a toast names who's running it.
+- **Someone joining mid-run is told the run is happening**, so their grab and their [knock](#the-knock) work from the first second instead of after the next restart.
 - **Watching peers interpolate.** The simulating peer sends about ten poses a second per moving body; everyone else eases between them instead of snapping, so a fast throw looks smooth rather than stepped. It costs nothing on the wire and never changes *where* an object ends up — only how it gets there.
 - **A throw you make is applied exactly.** When you are not the peer running the simulation, releasing an object sends the release velocity itself, so the object leaves your hand immediately and in the direction you threw it rather than being reconstructed from position updates.
 - The sim uses a fixed timestep, so it runs at the same speed for everyone even when a browser tab is throttled in the background.

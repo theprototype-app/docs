@@ -17,9 +17,37 @@ editor and Animation:
 - open the object's properties and press **Open in Shader editor** in the Material
   section.
 
+## Surface, or post
+
+The editor has two halves, and the pair of buttons in its header says which you are in:
+
+| | What a graph there is |
+|---|---|
+| **Surface** | a material: this object's, or the scene's default |
+| **Post** | a post effect: a fragment over the finished frame, added to the [scene look](post-processing.md) |
+
+They share the node palette and the canvas, and nothing else. A post pass only ever has
+**screen** buffers, so it can never know an object's material inputs, its UVs or how light
+fell on it; a surface graph only ever has its own fragment, so it can never read the pixel
+next to it. Anything that needs both is two graphs, on purpose. Each domain has its own
+terminal node — **Surface** one side, **Post output** the other — and the palette only offers
+the nodes that make sense where you are.
+
+The **Post** half has no selection to take its scope from, because a post effect belongs to
+no object. Instead the header carries a picker of the post graphs in the scene, and the list
+in the left pane is titled **Post effects** rather than **Shaders**. With none yet, the
+canvas offers **Create post effect** and a row of presets.
+
+Which half you are looking at is a local preference, like the rest of the editor's settings —
+it is remembered, and it is yours.
+
+See [Scene Look ▸ A post effect you build yourself](post-processing.md#a-post-effect-you-build-yourself)
+for getting one into a scene, and [Shader Nodes ▸ Post](shader-nodes.md#post) for the nodes.
+
 ## Scope: this object, or the whole scene
 
-There is no scope control to get wrong — **the selection is the control**:
+In the **Surface** half there is no scope control to get wrong — **the selection is the
+control**:
 
 | Selection | What you are editing |
 |---|---|

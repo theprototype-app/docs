@@ -171,6 +171,18 @@ Switch **Proportional** on and moving one element drags its neighbourhood along,
 
 A **ring** on the model shows how far the influence reaches. Roll the **wheel while dragging** to resize it and watch the shape respond; the ring always faces you, so it stays readable from any angle.
 
+It works for **rotate and scale** as well as move. The falloff blends the turn and the scale
+toward doing nothing as it fades out, so a rotation twists the surrounding surface instead of
+leaving it behind: a vertex halfway through the falloff turns halfway, which is what makes a
+straight edge through the radius come out as a spiral.
+
+**Your peers see the whole neighbourhood**, not just the vertices you had selected. A
+proportional drag lands on every other screen in **one step, when you let go** — the bulge and
+the crease arrive together, as a single geometry change that undoes as one. During the drag,
+peers see what they always saw: the live preview if the mesh is under the streaming limit,
+and otherwise the result at the end. (The commit obeys the same [size limits](#how-big-a-model-can-you-edit) as any
+other topology change; past them the drag stands.)
+
 ## Pivot and gizmo
 
 The *Gizmo & pivot* section decides what the gizmo turns around:
@@ -178,6 +190,18 @@ The *Gizmo & pivot* section decides what the gizmo turns around:
 - With **several elements selected**, transforms happen about the **centre of the selection** — rotate a whole patch and it turns as one piece.
 - **Place the pivot** yourself by dragging the gizmo: the mesh stays put and only the pivot moves, so the next rotation or scale happens exactly where you want it.
 - The gizmo's **orientation** (local or world) and whether it is shown at all are session-wide, and apply to every element mode.
+
+The Pivot row's commands are **Set here** (the centre of the current selection), **Pick…**
+(click a point on the mesh; a nearby vertex wins, <kbd>Esc</kbd> cancels), **Move** (drag the
+gizmo, the mesh stays put) and **Clear** (back to the selection's own centre). The line under
+them always says which one is in force.
+
+!!! note "Slide stands down while a pivot is placed"
+    **Slide** measures along the vertex's own edges *from the gizmo*, and a placed pivot has
+    moved the gizmo off the vertex — so with one in place slide would do nothing. It now says
+    so instead of going quiet: *Vertex slide is off while a custom pivot is placed — the slide
+    measures from the gizmo, and the pivot moved it off the vertex. Reset the pivot to slide.*
+    Press **Clear** in the Pivot row and slide comes back.
 
 ## Clean-up
 

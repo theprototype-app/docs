@@ -106,6 +106,7 @@ their own page link to it.
 | [**On Enter**](nodes/onenter.md) | Fires a pulse when something enters a trigger volume - the checkpoint, doorway and pressure-plate node. |
 | [**On Exit**](nodes/onexit.md) | Fires a pulse when something leaves a trigger volume - the other half of On Enter. |
 | [**On Rest**](nodes/onrest.md) | Fires a pulse when a physics body has finished moving - the counterpart to On Impact, which fires when it starts. |
+| [**On Hit**](nodes/onhit.md) | Fires a pulse when a hand or a player knocks the connected object, with how hard and whether it was you. |
 | **Gamepad Button** | Fires a pulse (or holds a level) while a gamepad button is pressed - the pad's counterpart of Key Press. |
 | **Gamepad Axis** | A gamepad stick or trigger axis as a number between -1 and 1, with a dead zone. |
 

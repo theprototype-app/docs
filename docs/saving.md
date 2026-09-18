@@ -24,7 +24,7 @@ had nothing open will not close the panels *you* have open.
 
 - **General** — starting points, including a **Blank** card that clears the scene (it asks first).
 - **Examples** — worked showcases to pull apart and learn from.
-- **Games** — playable scenes. A game is a scene plus, sometimes, a module: a card wears a *Needs …* badge when it depends on one, and loading it offers to install it — every player needs their own copy. **Towers**, the first one, is co-op crate stacking built from flow nodes, the HUD and the Collectibles module.
+- **Games** — playable scenes. A game is a scene plus, sometimes, a module: a card wears a *Needs …* badge when it depends on one, and loading it offers to install it — every player needs their own copy. **Towers**, the first one, is co-op crate stacking built from flow nodes, the HUD and the Collectibles module. **Stars Room** is the second: a zero-gravity room of glowing stars you [knock](physics.md#the-knock) about, with an optional round on the <kbd>P</kbd> menu — pure app, nothing to install.
 - **Community** — scenes other people published from the app; see [Community](community.md).
 
 Templates load through the same path as a `.tpscene` file, so with peers connected everyone gets the usual Accept/Decline proposal and your current scene is stashed as a backup first. The Welcome overlay has a shortcut into the same picker.

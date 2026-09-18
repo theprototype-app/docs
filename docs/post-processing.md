@@ -10,8 +10,26 @@ switch anything on to see what you made.
 
 ## Opening it
 
-**Configure Scene ▸ Post-processing** — or right-click the viewport and choose
-**View ▸ Post-processing…**, which opens the panel straight at that section.
+**Configure Scene ▸ Scene look** — or right-click the viewport and choose **View ▸ Scene
+look…**, which opens the panel straight at that section. (It used to be called
+*Post-processing*; the old name still finds it.)
+
+One section now holds the **whole** look, which is three layers, all of them scene data
+everyone sees:
+
+| Layer | Where |
+|---|---|
+| effects over the finished frame | the stack, in this section |
+| the scene's **default material** | the [Shader editor](shader-graph.md) with nothing selected |
+| a **material on one object** | the Shader editor with that object selected |
+
+Under the stack, a **Shader materials** line says what the second and third layers cost
+right now — whether there is a scene default, how many objects carry their own graph, how
+many objects are being driven, and how many shader **programs** that comes to. Objects
+sharing one graph compile one program, so the program count is the number worth watching.
+**Open the shader editor** beside it is the way in.
+
+Only the right to switch a layer off is local — that is [View ▸ Overrides](#seeing-it-or-not).
 
 ## Building a look
 
@@ -22,6 +40,7 @@ Press **+ Add effect** and pick one from its family:
 | Ambient occlusion | Ambient occlusion |
 | Colour grading | Tone mapping, Hue / saturation, Brightness / contrast, LUT |
 | Stylize | Dot screen |
+| Shader graph | a post effect you built as a node graph — see [below](#a-post-effect-you-build-yourself) |
 | Camera FX | Bloom, Vignette, Film grain, Chromatic aberration, Pixelation, Scanlines |
 | Anti-aliasing | SMAA |
 
@@ -60,6 +79,37 @@ If your scene sets its own ambient occlusion, the personal **Shaded + AO** butto
 **View** switches off and says so — the scene's setting is used instead. Two AO passes would
 double every contact shadow and cost twice as much.
 
+## A post effect you build yourself
+
+The shipped effects are not the whole vocabulary. The [Shader editor](shader-graph.md) has
+a **Post** domain: a graph whose inputs are the screen buffers — the frame as rendered so
+far, its depth, its normals, the pixel grid — and whose output is the colour that pixel
+ends up. Build one and it joins the stack as one more entry, so it replicates, saves,
+undoes and reorders like any other effect.
+
+Two ways in, and both land on something that renders:
+
+- **+ Add effect ▸ Shader graph** offers **New: Posterise**, **New: Ordered dither**,
+  **New: Edge detect (ink)**, **New: Ambient occlusion (graph)**, **New: empty graph**, and
+  then any post graph this scene already has, to add a second copy of.
+- In the Shader editor, switch the header from **Surface** to **Post** and press **Create
+  post effect**, or pick one of the same presets from the row beneath.
+
+The four presets are ordinary graphs, not sealed effects — that is the point of shipping
+them. Open one, delete a node, see what changes:
+
+| Preset | What it is |
+|---|---|
+| **Posterise** | Snaps the frame into a few brightness steps — a flat, printed look. |
+| **Ordered dither** | Posterise with a 4x4 Bayer pattern mixed in first, so the bands break into dots. |
+| **Edge detect (ink)** | Draws a line wherever depth or surface direction breaks — silhouettes and creases. |
+| **Ambient occlusion (graph)** | A depth-only contact shading you can retune, as an alternative to the built-in AO pass. |
+
+The stack row for one has a **Graph** picker, so you can point it at a different graph — or
+the same graph twice, at two places in the stack. The node reference for the domain is
+[Shader Nodes ▸ Post](shader-nodes.md#post); the editor's own half of the story is in
+[Shader Graph ▸ Surface, or post](shader-graph.md#surface-or-post).
+
 ## Colour grading with a LUT
 
 A **LUT** (lookup table) is the standard way to move a grade between tools. Put a `.cube`
@@ -81,14 +131,41 @@ Neutral, Reinhard, Cineon, Uncharted 2) and set its white point and middle grey.
 
 ## Seeing it, or not
 
-The look renders for everybody. What is local is your right to switch it off:
+The look renders for everybody. What is local is your right to switch it off. **Configure
+Scene ▸ View ▸ Overrides — this device** carries one checkbox per layer:
 
-- **View ▸ Overrides — this device** has a **Scene look (post-processing)** checkbox. Turn
-  it off if your machine struggles, or if an effect is uncomfortable to look at. Your peers
-  still see the scene as its author made it.
+| Override | Turns off |
+|---|---|
+| **Scene look (post-processing)** | the stack — grading, ambient occlusion and camera effects |
+| **Scene shaders** | materials driven by the scene's shader graphs: the scene default and any object with its own. Those objects show you their own material instead |
+| **Scene HUD** | on-screen panels, scores and menus the scene author built |
+
+Each one is yours alone. Nobody else's view changes, and nothing you switch off here is
+saved into the scene.
+
 - **Wireframe** skips post-processing entirely — it is a diagnostic view.
 - Turning an effect off in the stack, or unticking **Scene look enabled**, changes it *for
   everyone* — that is scene data, not a personal setting.
+
+The stack says so when one of these is hiding your own view of it: *You have switched the
+scene look off on this device (View ▸ Overrides). Peers still see it.*
+
+### Watching someone
+
+Watching a peer now shows you the scene **through their look**, not yours: the camera they
+are looking through and its grade, their view mode, and their own scene-look switches. So a
+hero camera with a `replace` look, or a peer whose [Set Look](#switching-looks-from-a-node-graph)
+node turned the scene look off, finally looks from outside the way it looks to them.
+
+It lasts exactly as long as the watch — your own view mode and your own Overrides are
+untouched, and come straight back when you stop.
+
+When it cannot be done the watch banner says so beside the name:
+
+- *showing your own look — they have not shared theirs* — they are on an older build, or you
+  have not heard from them yet.
+- *they have the scene look switched off* — what you are seeing through their eyes is
+  deliberately ungraded.
 
 ## A look for one camera
 

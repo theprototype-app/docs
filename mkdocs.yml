@@ -63,6 +63,7 @@ nav:
       - On Click: nodes/onclick.md
       - Key Press: nodes/keypress.md
       - On Impact: nodes/onimpact.md
+      - On Hit: nodes/onhit.md
       - On Rest: nodes/onrest.md
       - On Enter: nodes/onenter.md
       - On Exit: nodes/onexit.md
@@ -105,6 +106,7 @@ nav:
     - Music Playground: music.md
   - Games:
     - Build a Game Loop: build-a-game.md
+    - VR Football: football.md
   - Community:
     - Publish, Play, Remix: community.md
   - VR:

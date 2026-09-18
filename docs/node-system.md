@@ -24,6 +24,23 @@ greyed out until the next save drops it.
 
 Right-click a **node** for Duplicate / Disconnect all / Delete; right-click an **edge** to disconnect it. <kbd>Delete</kbd>/<kbd>Backspace</kbd> removes the selection.
 
+## Mouse bindings
+
+What the buttons do on the canvas is a choice — **Settings ▸ Input ▸ Node editor ▸ Mouse
+bindings**:
+
+| | Left drag on the canvas | Dragging a node | Pan |
+|---|---|---|---|
+| **Classic — left-drag pans** | pans the view; <kbd>Shift</kbd>+drag draws a selection box | moves that node | left drag |
+| **Select-first — left-drag selects, right-drag pans** | draws a selection rectangle | moves the **whole selection** if that node is in it | middle or right button |
+
+**Classic** is the default and is what every version so far has done, so nothing changes
+until you switch. **Select-first** is the convention most other 3D and node tools use.
+<kbd>Shift</kbd>+click adds to or removes from the selection there, and a right click that
+does not travel still opens the Add menu rather than being eaten by the pan.
+
+It is your own setting: it changes nothing for your peers and nothing in the graph.
+
 ## Connecting: typed sockets
 
 Drag from a node's output (right side) to another node's input (left side). Every socket is **color-coded by its value type**, and only compatible types connect — an incompatible pair shows **red** while you drag.
