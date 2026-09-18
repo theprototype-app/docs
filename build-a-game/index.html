@@ -14,7 +14,7 @@
         <link rel="prev" href="../music/">
       
       
-        <link rel="next" href="../community/">
+        <link rel="next" href="../football/">
       
       
       <link rel="icon" href="../logo.svg">
@@ -1654,6 +1654,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/onhit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Hit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/onrest/" class="md-nav__link">
         
   
@@ -2702,6 +2723,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../football/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VR Football
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3467,6 +3509,17 @@ camera puts a late arrival on the right view even though they never saw the tran
   stacking on a glowing pad, with a Menu, HUD and Pause screen, Game Start and HUD Button
   nodes, physics grabbing and the Collectibles module for the stars. Load it and pull it
   apart; it is authored entirely as scene data, so everything in it is editable.</li>
+<li><strong>Templates ▸ Games ▸ Stars Room</strong> — a smaller one to read: a zero-gravity room where
+  twenty-four stars and two planets are <a href="../physics/#the-knock">knocked</a> about by hand.
+  It is a sandbox until you ask for a round, so the HUD carries a <em>Free play</em> screen and a
+  <em>Round</em> screen; the round is driven from the <kbd>P</kbd> menu (<strong>Start round: light every
+  star</strong>, <strong>Restart round</strong>, <strong>More stars</strong>) and from two physical pads on the floor, which
+  is how the same buttons work in VR where a screen HUD is not there to click. An
+  <a href="../nodes/onhit/">On Hit</a> per star chimes, lights it and bursts particles in proportion to
+  <code>speed</code>; a second On Hit with <strong>who</strong> set to <em>me</em> counts that touch on the hitter's own row,
+  which is what the leaderboard reads. It needs no module at all.</li>
+<li><strong>Templates ▸ Games ▸ Football</strong> — the same ideas with the rules in a module instead of
+  loose nodes (loading it offers to install the module); see <a href="../football/">VR Football</a>.</li>
 <li><strong><a href="../node-system/">Node System</a></strong> — the logic nodes this example leans on: Latch,
   Delay, Sequence, Counter and the Game group.</li>
 <li><strong><a href="../physics/">Physics &amp; Simulation</a></strong> — grabbing, throwing and colliders for the
@@ -3495,7 +3548,7 @@ camera puts a late arrival on the right view even though they never saw the tran
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-09-12
+    2026-09-19
   </span>
 
     

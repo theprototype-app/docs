@@ -1654,6 +1654,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/onhit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Hit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/onrest/" class="md-nav__link">
         
   
@@ -2579,6 +2600,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../football/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VR Football
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3129,6 +3171,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#the-knock" class="md-nav__link">
+    <span class="md-ellipsis">
+      The knock
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3349,6 +3400,15 @@
   <a href="#vr-and-control" class="md-nav__link">
     <span class="md-ellipsis">
       VR and control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-knock" class="md-nav__link">
+    <span class="md-ellipsis">
+      The knock
     </span>
   </a>
   
@@ -3712,6 +3772,66 @@ per-viewer and deliberately local — a peer's module must never yank your camer
 <code>mouseLook: true</code> requests pointer lock — horizontal look turns the <strong>object</strong>
 (movement follows the view), vertical pitches the camera, and leaving pointer
 lock (Esc) releases the possession.</p>
+<h3 id="the-knock">The knock</h3>
+<p>When <a href="../physics/#the-knock">the knock</a> is on for the scene, every hit a hand or a
+player lands on a physics body is reported to every peer. A module can listen to
+that feed, or read the recent ones — which is what the football module's
+last-touch rule stands on.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">off</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">onHit</span><span class="p">((</span><span class="nx">hit</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* … */</span><span class="w"> </span><span class="p">});</span><span class="w">   </span><span class="c1">// returns the unsubscribe</span>
+<span class="nx">off</span><span class="p">();</span><span class="w">                                          </span><span class="c1">// …or let the teardown do it</span>
+
+<span class="nx">api</span><span class="p">.</span><span class="nx">hitLog</span><span class="p">()</span><span class="w">   </span><span class="c1">// { last: {uuid: hit, …}, recent: [hit, …] }</span>
+</code></pre></div>
+<p>One hit looks like this:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uuid</code></td>
+<td>the object that was hit</td>
+</tr>
+<tr>
+<td><code>by</code></td>
+<td>the peer whose hand or camera hit it (empty when you are alone)</td>
+</tr>
+<tr>
+<td><code>local</code></td>
+<td><code>true</code> on the peer it <em>was</em> — the one whose probe landed the hit</td>
+</tr>
+<tr>
+<td><code>speed</code></td>
+<td>how hard, in m/s</td>
+</tr>
+<tr>
+<td><code>point</code></td>
+<td><code>[x, y, z]</code>, where it was hit</td>
+</tr>
+<tr>
+<td><code>linvel</code> / <code>angvel</code></td>
+<td>the velocity and spin the hit gave it</td>
+</tr>
+<tr>
+<td><code>at</code></td>
+<td>the session timestamp — the same number on every peer</td>
+</tr>
+<tr>
+<td><code>probe</code></td>
+<td>which probe it was: <code>'left'</code>, <code>'right'</code> or <code>'head'</code> (the desktop camera)</td>
+</tr>
+</tbody>
+</table>
+<p><code>onHit</code> fires for your own hits and for every peer's, as each <code>hit</code> message is
+applied, so a rule derived from it agrees everywhere without a message of your own.
+It returns an unsubscribe, and is torn down with the module either way.</p>
+<p><code>hitLog()</code> hands back a <strong>copy</strong>: <code>last</code> is the most recent hit per object still in
+the scene, keyed by uuid, and <code>recent</code> is the last 32 hits in order. It is runtime
+state — a late joiner's log starts empty, so a module that needs history keeps its
+own through <code>registerStateSync</code>.</p>
 <h2 id="lifecycle">Lifecycle</h2>
 <ul>
 <li>Core modules load at boot unless disabled in the manager; user modules load
@@ -3759,7 +3879,7 @@ examples.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-09-12
+    2026-09-17
   </span>
 
     

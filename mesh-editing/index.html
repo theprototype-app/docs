@@ -1945,6 +1945,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/onhit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Hit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/onrest/" class="md-nav__link">
         
   
@@ -2861,6 +2882,27 @@
   
   <span class="md-ellipsis">
     Build a Game Loop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../football/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VR Football
   </span>
   
 
@@ -3974,6 +4016,16 @@
 <h2 id="proportional-editing">Proportional editing</h2>
 <p>Switch <strong>Proportional</strong> on and moving one element drags its neighbourhood along, fading off with distance — smooth bulges and dips instead of a single crease. It works in <strong>all three modes</strong>: vertices, edges and faces.</p>
 <p>A <strong>ring</strong> on the model shows how far the influence reaches. Roll the <strong>wheel while dragging</strong> to resize it and watch the shape respond; the ring always faces you, so it stays readable from any angle.</p>
+<p>It works for <strong>rotate and scale</strong> as well as move. The falloff blends the turn and the scale
+toward doing nothing as it fades out, so a rotation twists the surrounding surface instead of
+leaving it behind: a vertex halfway through the falloff turns halfway, which is what makes a
+straight edge through the radius come out as a spiral.</p>
+<p><strong>Your peers see the whole neighbourhood</strong>, not just the vertices you had selected. A
+proportional drag lands on every other screen in <strong>one step, when you let go</strong> — the bulge and
+the crease arrive together, as a single geometry change that undoes as one. During the drag,
+peers see what they always saw: the live preview if the mesh is under the streaming limit,
+and otherwise the result at the end. (The commit obeys the same <a href="#how-big-a-model-can-you-edit">size limits</a> as any
+other topology change; past them the drag stands.)</p>
 <h2 id="pivot-and-gizmo">Pivot and gizmo</h2>
 <p>The <em>Gizmo &amp; pivot</em> section decides what the gizmo turns around:</p>
 <ul>
@@ -3981,6 +4033,18 @@
 <li><strong>Place the pivot</strong> yourself by dragging the gizmo: the mesh stays put and only the pivot moves, so the next rotation or scale happens exactly where you want it.</li>
 <li>The gizmo's <strong>orientation</strong> (local or world) and whether it is shown at all are session-wide, and apply to every element mode.</li>
 </ul>
+<p>The Pivot row's commands are <strong>Set here</strong> (the centre of the current selection), <strong>Pick…</strong>
+(click a point on the mesh; a nearby vertex wins, <kbd>Esc</kbd> cancels), <strong>Move</strong> (drag the
+gizmo, the mesh stays put) and <strong>Clear</strong> (back to the selection's own centre). The line under
+them always says which one is in force.</p>
+<div class="admonition note">
+<p class="admonition-title">Slide stands down while a pivot is placed</p>
+<p><strong>Slide</strong> measures along the vertex's own edges <em>from the gizmo</em>, and a placed pivot has
+moved the gizmo off the vertex — so with one in place slide would do nothing. It now says
+so instead of going quiet: <em>Vertex slide is off while a custom pivot is placed — the slide
+measures from the gizmo, and the pivot moved it off the vertex. Reset the pivot to slide.</em>
+Press <strong>Clear</strong> in the Pivot row and slide comes back.</p>
+</div>
 <h2 id="clean-up">Clean-up</h2>
 <p>The <em>Cleanup</em> row acts on the whole object, not on your selection:</p>
 <table>
@@ -4188,7 +4252,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-08-18
+    2026-09-17
   </span>
 
     

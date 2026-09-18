@@ -872,6 +872,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-knock" class="md-nav__link">
+    <span class="md-ellipsis">
+      The knock
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#joints" class="md-nav__link">
     <span class="md-ellipsis">
       Joints
@@ -1885,6 +1894,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/onhit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Hit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/onrest/" class="md-nav__link">
         
   
@@ -2810,6 +2840,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../football/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VR Football
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3414,6 +3465,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-knock" class="md-nav__link">
+    <span class="md-ellipsis">
+      The knock
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#joints" class="md-nav__link">
     <span class="md-ellipsis">
       Joints
@@ -3644,6 +3704,68 @@
 </tbody>
 </table>
 <p>A module can override these for its own world by publishing them on its scene group.</p>
+<h2 id="the-knock">The knock</h2>
+<p>Hit a floating object with your hand and it flies off. In VR your two hands are the probes; on
+desktop it is the camera you walk with, so walking into something shoves it. The object leaves
+at the speed you hit it, and everybody sees the same result — the hit travels as one exact
+velocity message, the way a throw already does.</p>
+<p>It is <strong>off in every scene that does not ask for it</strong>. A scene with no Knock block behaves
+exactly as it always did: hands grip and grab, the crosshair carries and throws, and nothing
+is knocked by walking into it. Switch it on in <strong>Configure Scene ▸ Physics ▸ Knock</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Row</th>
+<th>Range</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hands and players knock dynamic objects</strong></td>
+<td>off by default</td>
+<td>arms the whole thing for the scene, for everyone</td>
+</tr>
+<tr>
+<td><strong>Gain</strong></td>
+<td>0 – 5</td>
+<td>multiplies the speed the object leaves at. 1 is "as hard as you hit it"</td>
+</tr>
+<tr>
+<td><strong>Max speed</strong></td>
+<td>0.5 – 20 m/s</td>
+<td>the ceiling, whatever you do. Keep it low to keep a ball hittable rather than lost</td>
+</tr>
+<tr>
+<td><strong>Probe radius</strong></td>
+<td>0.02 – 1 m</td>
+<td>how big the hand (or head) is as a ball. Wider is easier to connect with, and easier to hit by accident</td>
+</tr>
+<tr>
+<td><strong>Spin</strong></td>
+<td>0 – 2</td>
+<td>how much of the hit becomes rotation instead of travel</td>
+</tr>
+</tbody>
+</table>
+<p>The panel says the rest out loud: <em>An open VR hand, or walking into an object on desktop,
+sends it off at the speed it was hit. Grip still grabs. Shared, and it needs a running
+simulation.</em></p>
+<p>Three things have to be true before anything is knocked: the scene's Knock block is on, a
+simulation is running somewhere, and you are <strong>in play</strong> (pointer lock on desktop, or
+presenting in VR). Only <strong>Dynamic</strong> bodies can be knocked, and an object somebody is carrying
+is left alone rather than fought over. The settings are scene data: they replicate, save and
+undo like everything else in Configure Scene.</p>
+<p>In VR the hand that connects gets a short buzz, harder for a harder hit. That part is local —
+it is your hand, not a message.</p>
+<div class="admonition tip">
+<p class="admonition-title">The knock as a game</p>
+<p><strong>Menu ▸ Templates ▸ Games ▸ Stars Room</strong> is a zero-gravity room built on this: twenty-four
+stars and two planets to knock about, a chime when one is hit, and an optional round —
+light every star — on the <kbd>P</kbd> menu. Nothing to install.</p>
+</div>
+<p>To react to a knock in a graph, use the <a href="../nodes/onhit/">On Hit</a> node: it gives you how hard
+(<code>speed</code>) and whether it was you (<code>by me</code>).</p>
 <h2 id="joints">Joints</h2>
 <p>Joints tie two objects together so they move as one, or hinge around an axis. Select <strong>exactly two objects</strong>, then use their right-click menu ▸ <strong>Physics</strong>:</p>
 <table>
@@ -3673,6 +3795,7 @@
 <p>Physics uses an <strong>authoritative</strong> model: the peer who starts the run is the only one stepping the simulation, and it broadcasts the resulting motion. Everyone else just watches.</p>
 <ul>
 <li><strong>One run at a time</strong> — if someone else is simulating, your play button is disabled and a toast names who's running it.</li>
+<li><strong>Someone joining mid-run is told the run is happening</strong>, so their grab and their <a href="#the-knock">knock</a> work from the first second instead of after the next restart.</li>
 <li><strong>Watching peers interpolate.</strong> The simulating peer sends about ten poses a second per moving body; everyone else eases between them instead of snapping, so a fast throw looks smooth rather than stepped. It costs nothing on the wire and never changes <em>where</em> an object ends up — only how it gets there.</li>
 <li><strong>A throw you make is applied exactly.</strong> When you are not the peer running the simulation, releasing an object sends the release velocity itself, so the object leaves your hand immediately and in the direction you threw it rather than being reconstructed from position updates.</li>
 <li>The sim uses a fixed timestep, so it runs at the same speed for everyone even when a browser tab is throttled in the background.</li>
@@ -3702,7 +3825,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-08-19
+    2026-09-17
   </span>
 
     

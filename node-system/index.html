@@ -959,6 +959,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mouse-bindings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mouse bindings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#connecting-typed-sockets" class="md-nav__link">
     <span class="md-ellipsis">
       Connecting: typed sockets
@@ -1752,6 +1761,27 @@
   
   <span class="md-ellipsis">
     On Impact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/onhit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Hit
   </span>
   
 
@@ -2693,6 +2723,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../football/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VR Football
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3153,6 +3204,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mouse-bindings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mouse bindings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#connecting-typed-sockets" class="md-nav__link">
     <span class="md-ellipsis">
       Connecting: typed sockets
@@ -3238,6 +3298,38 @@ greyed out until the next save drops it.</p>
 <li><strong>Right-click the canvas</strong> — a grouped Add menu, plus <strong>🔍 Search nodes…</strong>; just start typing while the menu is open to jump into search (<kbd>Arrow</kbd> keys + <kbd>Enter</kbd> to place, <kbd>Esc</kbd> back to the menu).</li>
 </ul>
 <p>Right-click a <strong>node</strong> for Duplicate / Disconnect all / Delete; right-click an <strong>edge</strong> to disconnect it. <kbd>Delete</kbd>/<kbd>Backspace</kbd> removes the selection.</p>
+<h2 id="mouse-bindings">Mouse bindings</h2>
+<p>What the buttons do on the canvas is a choice — <strong>Settings ▸ Input ▸ Node editor ▸ Mouse
+bindings</strong>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Left drag on the canvas</th>
+<th>Dragging a node</th>
+<th>Pan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Classic — left-drag pans</strong></td>
+<td>pans the view; <kbd>Shift</kbd>+drag draws a selection box</td>
+<td>moves that node</td>
+<td>left drag</td>
+</tr>
+<tr>
+<td><strong>Select-first — left-drag selects, right-drag pans</strong></td>
+<td>draws a selection rectangle</td>
+<td>moves the <strong>whole selection</strong> if that node is in it</td>
+<td>middle or right button</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Classic</strong> is the default and is what every version so far has done, so nothing changes
+until you switch. <strong>Select-first</strong> is the convention most other 3D and node tools use.
+<kbd>Shift</kbd>+click adds to or removes from the selection there, and a right click that
+does not travel still opens the Add menu rather than being eaten by the pan.</p>
+<p>It is your own setting: it changes nothing for your peers and nothing in the graph.</p>
 <h2 id="connecting-typed-sockets">Connecting: typed sockets</h2>
 <p>Drag from a node's output (right side) to another node's input (left side). Every socket is <strong>color-coded by its value type</strong>, and only compatible types connect — an incompatible pair shows <strong>red</strong> while you drag.</p>
 <table>
@@ -3327,7 +3419,7 @@ greyed out until the next save drops it.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-08-18
+    2026-09-17
   </span>
 
     
