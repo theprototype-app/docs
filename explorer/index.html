@@ -485,6 +485,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Importing files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-a-model-is-too-heavy" class="md-nav__link">
+    <span class="md-ellipsis">
+      When a model is too heavy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1015,6 +1030,27 @@
   
   <span class="md-ellipsis">
     Notifications & Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../performance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Performance & Budgets
   </span>
   
 
@@ -3258,6 +3294,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Importing files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-a-model-is-too-heavy" class="md-nav__link">
+    <span class="md-ellipsis">
+      When a model is too heavy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3465,6 +3516,74 @@
 </table>
 <p>Items are capped at <strong>25 MB</strong> each. Images and models get generated thumbnails; audio and text show icon cards.</p>
 <p><strong>Importing something you already have.</strong> A file is identified by its contents, so re-importing the same bytes is not a new file. The app tells you what it already has and lets you skip it, reveal it, or — for a scene — take a real copy. The rule lives in <strong>Settings ▸ Explorer ▸ "When importing files already in your library"</strong> (Ask / Skip them / Import as copies); see <a href="../projects/#importing-something-you-already-have">Projects</a>.</p>
+<h3 id="when-a-model-is-too-heavy">When a model is too heavy</h3>
+<p>A model is <strong>weighed before it lands</strong>. Once the file is parsed but before anything reaches the
+scene, its real cost — triangles, meshes and texture size — is measured against what the scene
+already holds on <em>this</em> device. Anything within budget arrives without a word. Anything heavy
+enough to hurt asks first, instead of arriving and wedging the tab:</p>
+<blockquote>
+<p><strong>This model is heavy</strong> — "city.glb" is 2.4M triangles in 180 meshes. Imported as it is, the
+scene would draw 9.1M triangles a frame (this model adds 4.8M with its shadow pass), above the
+8M recommended for this device. It may be slow, and on a phone or headset the tab can be
+closed by the browser.</p>
+</blockquote>
+<p>There are three answers:</p>
+<table>
+<thead>
+<tr>
+<th>Answer</th>
+<th>What happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Reduce to ~400k triangles, 1024px textures</strong></td>
+<td>The mesh is simplified on a background worker. The label names the numbers it is aiming at <em>before</em> you commit to it, from the same planner that will do the work.</td>
+</tr>
+<tr>
+<td><strong>Load anyway</strong></td>
+<td>The model arrives at full detail, exactly as it is.</td>
+</tr>
+<tr>
+<td><strong>Cancel</strong></td>
+<td>Nothing is imported. The scene is byte-identical — no frame drew it, no peer was sent it, and there is no undo entry to clean up.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Reduce runs in the background.</strong> A card says <em>Reducing "city.glb"… you can keep working while
+it runs</em>, and the window keeps drawing throughout — that is the point of running it off the main
+thread. When it finishes you are told what was done and by how much:</p>
+<blockquote>
+<p>Reduced "city.glb": 2.4M → 380k triangles (−84%), no point moved more than 0.42% of its size;
+textures 4096px → 1024px.</p>
+</blockquote>
+<p>If the result is <em>still</em> above what the device is recommended to hold, the report says so rather
+than pretending otherwise. A reduction that fails imports nothing at all — it never quietly falls
+back to the heavy original, because avoiding that original is what you chose.</p>
+<p><strong>Restore original model.</strong> The original file is kept for the rest of your session, so the
+object's right-click menu carries <strong>Restore original model</strong> — one undoable step that puts the
+full-detail version back in place, with the same name, the same position and the same identity,
+so flows, notes and joints keep pointing at it. <kbd>Ctrl</kbd>+<kbd>Z</kbd> goes back to the
+reduced one.</p>
+<p>It can be unavailable, and it says why rather than being mysteriously greyed out:</p>
+<ul>
+<li><strong>On anyone else's screen.</strong> Only the machine that did the import holds the original file; a
+  peer sees the stamp and the reason, never a button that cannot work. The tooltip reads <em>The
+  original file is held only by whoever imported it, and only until they reload.</em></li>
+<li><strong>After a reload.</strong> The file is held for the session, not saved.</li>
+<li><strong>While the object is locked</strong> by another peer.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">An animated model is never reduced</p>
+<p>A rig reaches your peers as the <strong>original file's bytes</strong>, so decimating the tree would leave
+them reparsing something that no longer matches. The dialog says so in the same breath —
+<em>It is animated, so it cannot be reduced here: its rig reaches your peers as the original
+file</em> — and offers <strong>Load anyway</strong> and <strong>Cancel</strong> only.</p>
+</div>
+<p>A model the <a href="../ai/generation/">AI assistant generates</a> goes through exactly the same gate, with
+the same three answers: a generated mesh is as heavy as any other.</p>
+<p>Oversized <strong>scenes</strong> are held at the door too, with their own ask — see
+<a href="../performance/#the-overload-gateway">Performance &amp; Budgets</a>.</p>
 <p><strong>Animations and materials come along.</strong> A <code>.glb</code>/<code>.gltf</code> or <code>.fbx</code> keeps its animation clips — they play in the scene and are listed per object in the Animation window — and an <code>.obj</code> picks up its sibling <code>.mtl</code> so it arrives with its materials instead of plain grey. Because no exporter can carry an animation clip, an animated model is stored as its <strong>original file</strong> when you save a scene, so it comes back animated. See <a href="../saving/">Saving &amp; Sessions</a>.</p>
 <h2 id="sharing-with-the-session">Sharing with the session</h2>
 <p>Right-click a file ▸ <strong>Share with peers</strong>, or a folder ▸ <strong>Share folder</strong>, and everyone in the session gets it — in the same place in their tree. A shared folder shares whatever you drop into it later; <strong>Unshare</strong> on one file inside it takes that one back out, and the app remembers that decision over any rule. Unsharing never deletes anybody's copy.</p>
@@ -3549,7 +3668,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-09-12
+    2026-09-19
   </span>
 
     
