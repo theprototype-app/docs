@@ -38,6 +38,63 @@ Items are capped at **25 MB** each. Images and models get generated thumbnails; 
 
 **Importing something you already have.** A file is identified by its contents, so re-importing the same bytes is not a new file. The app tells you what it already has and lets you skip it, reveal it, or — for a scene — take a real copy. The rule lives in **Settings ▸ Explorer ▸ "When importing files already in your library"** (Ask / Skip them / Import as copies); see [Projects](projects.md#importing-something-you-already-have).
 
+### When a model is too heavy
+
+A model is **weighed before it lands**. Once the file is parsed but before anything reaches the
+scene, its real cost — triangles, meshes and texture size — is measured against what the scene
+already holds on *this* device. Anything within budget arrives without a word. Anything heavy
+enough to hurt asks first, instead of arriving and wedging the tab:
+
+> **This model is heavy** — "city.glb" is 2.4M triangles in 180 meshes. Imported as it is, the
+> scene would draw 9.1M triangles a frame (this model adds 4.8M with its shadow pass), above the
+> 8M recommended for this device. It may be slow, and on a phone or headset the tab can be
+> closed by the browser.
+
+There are three answers:
+
+| Answer | What happens |
+|---|---|
+| **Reduce to ~400k triangles, 1024px textures** | The mesh is simplified on a background worker. The label names the numbers it is aiming at *before* you commit to it, from the same planner that will do the work. |
+| **Load anyway** | The model arrives at full detail, exactly as it is. |
+| **Cancel** | Nothing is imported. The scene is byte-identical — no frame drew it, no peer was sent it, and there is no undo entry to clean up. |
+
+**Reduce runs in the background.** A card says *Reducing "city.glb"… you can keep working while
+it runs*, and the window keeps drawing throughout — that is the point of running it off the main
+thread. When it finishes you are told what was done and by how much:
+
+> Reduced "city.glb": 2.4M → 380k triangles (−84%), no point moved more than 0.42% of its size;
+> textures 4096px → 1024px.
+
+If the result is *still* above what the device is recommended to hold, the report says so rather
+than pretending otherwise. A reduction that fails imports nothing at all — it never quietly falls
+back to the heavy original, because avoiding that original is what you chose.
+
+**Restore original model.** The original file is kept for the rest of your session, so the
+object's right-click menu carries **Restore original model** — one undoable step that puts the
+full-detail version back in place, with the same name, the same position and the same identity,
+so flows, notes and joints keep pointing at it. <kbd>Ctrl</kbd>+<kbd>Z</kbd> goes back to the
+reduced one.
+
+It can be unavailable, and it says why rather than being mysteriously greyed out:
+
+- **On anyone else's screen.** Only the machine that did the import holds the original file; a
+  peer sees the stamp and the reason, never a button that cannot work. The tooltip reads *The
+  original file is held only by whoever imported it, and only until they reload.*
+- **After a reload.** The file is held for the session, not saved.
+- **While the object is locked** by another peer.
+
+!!! note "An animated model is never reduced"
+    A rig reaches your peers as the **original file's bytes**, so decimating the tree would leave
+    them reparsing something that no longer matches. The dialog says so in the same breath —
+    *It is animated, so it cannot be reduced here: its rig reaches your peers as the original
+    file* — and offers **Load anyway** and **Cancel** only.
+
+A model the [AI assistant generates](ai/generation.md) goes through exactly the same gate, with
+the same three answers: a generated mesh is as heavy as any other.
+
+Oversized **scenes** are held at the door too, with their own ask — see
+[Performance & Budgets](performance.md#the-overload-gateway).
+
 **Animations and materials come along.** A `.glb`/`.gltf` or `.fbx` keeps its animation clips — they play in the scene and are listed per object in the Animation window — and an `.obj` picks up its sibling `.mtl` so it arrives with its materials instead of plain grey. Because no exporter can carry an animation clip, an animated model is stored as its **original file** when you save a scene, so it comes back animated. See [Saving & Sessions](saving.md).
 
 ## Sharing with the session

@@ -243,6 +243,10 @@ Two helpers that come with it:
   [On Hit](nodes/onhit.md) per star chimes, lights it and bursts particles in proportion to
   `speed`; a second On Hit with **who** set to *me* counts that touch on the hitter's own row,
   which is what the leaderboard reads. It needs no module at all.
+- **Templates ▸ Games ▸ Football** — the third one, and the one that needs a module:
+  a ready-made pitch, two gates, a ball and the rules that score it. Its card lists the
+  **Football** module it requires and loading it offers to install that module for you.
+  See [VR Football](football.md).
 - **VR Football** — the same ideas with the rules in a module instead of loose nodes; see
   [VR Football](football.md).
 - **[Node System](node-system.md)** — the logic nodes this example leans on: Latch,
