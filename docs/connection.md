@@ -32,8 +32,18 @@ A few cases ask first, or refuse with a message:
 - **Someone you are already with** — *Already connected to Ada (75F41).*
 - **A link that names another signaling server** — *Join 3B0C2 on peerjs.example.com?* with **Join** and **Cancel**; joining switches server without a reload, exactly like **Apply** below.
 
-!!! note "Approving is one-directional"
-    A connection request waits for the host to **approve** it — there is no separate "deny" button; simply not approving leaves the peer unconnected. The requester sees a countdown beside *Requesting*, and your card shows how long that person has been waiting. A request nobody answers within 90 seconds ends by itself and offers **Try again**, so neither side is left waiting on something that will never happen; an expired card can still be approved, and approving simply dials them back. If a connection is stuck, the panel offers a **Retry** that closes the stale link and reconnects.
+### The request, and how it ends
+
+A connection request waits for the host. Three things can end it, and each one says so on both sides:
+
+- **Approve** — you are connected. The card offers **View only** and **Editor access** where roles are in use, and a plain **Approve** where they are not.
+- **Reject** — the request ends and the person is told: *AB12CD declined your connection request.* At the session's ceiling the card also offers **Tell them it's full**, which answers with *AB12CD's session is full (16 people). Try again when someone leaves.* and a **Try again** button.
+- **Nobody answers** — after **90 seconds** the request cancels itself on both sides and offers **Try again**, instead of sitting on *Requesting* for ever.
+
+While it is open the requester sees a countdown beside *Requesting*, and your card says how long that person has been waiting (*asked 34s ago*). An expired card can still be approved — approving simply dials them back. Dialling somebody who is not online ends the request too, rather than leaving it up beside a toast saying they are unreachable. If a connection is stuck, the panel offers a **Retry** that closes the stale link and reconnects.
+
+!!! note "Waiting requests are capped"
+    A rush of joiners folds into the Connect drawer rather than burying the screen, and when the queue is full the expired cards are dropped before the live ones.
 
 Once connected, everything replicates automatically — objects, transforms, materials, the node graph, chat, pings, notes and voice.
 
@@ -75,10 +85,26 @@ Everyone in a session connects to everyone else, directly. A room of ten is the 
 
 A momentary network blip no longer throws you out, either. A peer that drops for a few seconds is given a window to come back and rejoin the same session; only when that window closes are they treated as gone.
 
-**Settings ▸ Connection ▸ Session size** is how many people you expect. Past that number an approval still works but warns you; at 16 the approve buttons say the session is full, because beyond that point the mesh degrades for everyone rather than only for whoever joined last.
+### Session size
+
+**Settings ▸ Connection ▸ Session size** is how many people you expect. It is a number you type; the default is **8**, and **16** is the ceiling you cannot type past.
+
+- Below your number, nothing changes.
+- Past it, an approval still works but the card warns you first.
+- At 16 the **Approve** buttons are disabled and the card reads *this session is full (16)* — beyond that point the mesh degrades for everyone rather than only for whoever joined last.
 
 !!! note
     How many peers work for you depends on your uplink, since each one sends to every other. Voice chat and live gestures are the bandwidth-hungry parts — a large scene is sent once per joiner, not continuously.
+
+## When the signaling link drops
+
+The link to the signaling server is not the link to your peers — losing it does not end a session you are already in, it only stops new people finding you. When it drops the app reconnects on its own, backing off a little further between tries and **never giving up**, and the Connect pill carries a chip while it is retrying so a dead link does not read as a dead app. Coming back online, or returning to the tab, retries immediately instead of waiting out the backoff. A peer connection that closed is rebuilt rather than abandoned.
+
+## Diagnostics you can copy
+
+**Settings ▸ About ▸ Copy diagnostics** puts a bundle on your clipboard: the version, this session's peer and scene counts, the scene's [budget numbers](performance.md), the last uncaught error and the last 300 log lines. A toast confirms *Diagnostics copied to the clipboard*.
+
+It goes to your clipboard and nowhere else — paste it into a bug report, so a problem arrives with something in it.
 
 ## Choosing a signaling server
 
@@ -118,7 +144,8 @@ It carries an **Open Settings** button that jumps straight to **Settings ▸ Con
 | *Peer is unreachable* | The ID is wrong or that person is offline — check the ID and ask them to stay open. |
 | *Your session ID is already in use* | Reload the page to claim a fresh ID. |
 | *AB12 did not answer in 90s* | Nobody approved your request in time, so it ended itself — press **Try again** to ask again. |
-| *This session is full (16 people)* | Everyone connects to everyone, so a session has a ceiling. Someone has to leave before another person can join. |
+| *AB12 declined your connection request* | The host pressed **Reject**. Ask them before dialling again. |
+| *AB12's session is full (16 people)* | Everyone connects to everyone, so a session has a ceiling. Someone has to leave before another person can join — **Try again** on the toast re-asks. |
 | *Could not reach … — back on your previous peer server.* | **Apply** could not open the server you picked, so nothing changed — check the host, port and path. |
 | *Lost connection to the peer server, reconnecting…* | The link to the signaling server dropped; the app retries automatically. |
 | *Could not reach the peer server. Please reload.* | Reconnection gave up — reload, or switch servers in Settings ▸ Connection. |
