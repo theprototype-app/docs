@@ -14,6 +14,12 @@ are two ways in:
 - **Menu ▸ Modules ▸ Browse ▸ Football**, then the toolbox's **Build pitch** (below) — lays a
   pitch out in the scene you already have.
 
+The Games tab lists Football beside Towers and the Stars Room. A game there is a scene *plus* a
+module, so its card names what it needs — *Each player needs this module; loading will offer to
+install it*, and *Installed — every player needs their own copy* once you have it. The row is
+generated from the module's own definition rather than written out separately, so the scene and
+the module cannot drift apart between releases.
+
 !!! note "Zero gravity, and the knock"
     The pitch is a zero-g scene: **Configure Scene ▸ Physics** with gravity 0, **Ground**
     off and **Knock** on, and the simulation started when play opens. The **Build pitch**
@@ -22,8 +28,11 @@ are two ways in:
 
 ## Getting a pitch
 
-The quickest pitch is the **Football** template in **Templates ▸ Games**. To build one into a
-scene of your own instead: with the module installed, its own window is listed under **Modules** in the menu and under
+The quickest pitch is the **Football** template in **Templates ▸ Games** — a whole scene, with
+the pitch, the gates, the ball, the pads and the graph that wires them together already in it.
+
+To build one into a scene of your own instead: with the module installed, its own window is
+listed under **Modules** in the menu and under
 **Module tools** in the viewport's right-click menu, as **Football**. Open it from either. The
 bottom half builds the ground:
 

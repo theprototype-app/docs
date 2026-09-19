@@ -26,6 +26,7 @@ nav:
   - Viewport:
     - Camera & View: camera.md
     - Notifications & Notes: notifications.md
+    - Performance & Budgets: performance.md
   - Flow Graph:
     - Node System: node-system.md
     - Flow Nodes: nodes.md

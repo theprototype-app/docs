@@ -14,6 +14,25 @@ You build scenes from primitives, imported models and packs, wire behavior with 
 !!! tip
     Everything replicates automatically: objects, transforms, materials, the node graph, chat, pings and voice. There is no "sync" button — if you can see it, your peers can too.
 
+## What's new
+
+**1.14 — heavy models stop being a cliff.** A model is weighed before it lands, and one that
+would hurt asks first, with **Reduce** on a background worker as a third way out and
+**Restore original model** to take it back. See [Importing files](explorer.md#when-a-model-is-too-heavy).
+Football joins Towers and the Stars Room as a [Games-tab template](football.md).
+
+**1.13 — knock it about.** Hit a floating object with your hand and it flies off, with an
+[On Hit node](nodes/onhit.md) to react to it; the [Stars Room](build-a-game.md) and
+[VR Football](football.md) are built on it. [Scene look](post-processing.md) becomes one
+section with post-processing node graphs, materials can be shared between duplicates, and
+proportional editing reaches your peers.
+
+**1.12 — hold together.** A connection request now ends rather than hanging, a session has a
+[size](connection.md#session-size), the signaling link stops giving up, and a scene too heavy
+for your machine [reduces quality or pauses instead of freezing](performance.md) — with a
+[Statistics panel](performance.md#the-meter) and a
+[diagnostics bundle](connection.md#diagnostics-you-can-copy) you can copy into a bug report.
+
 ## Where to go next
 
 **Getting started**
