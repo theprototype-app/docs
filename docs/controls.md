@@ -29,6 +29,34 @@ If the guess is still wrong on your hardware, pick it yourself: right-click the 
 - **Ctrl+D** duplicates the selection — see [Duplicating](#duplicating) for what a copy brings with it.
 - Selecting an object **locks it for other peers** (one lock per person); a locked object shows who holds it, and its right-click menu offers **Request control** to ask for a handover.
 
+### Edit and Interact
+
+The editor has two click modes. Switch with the **Interact mode** cell at the end of the bottom
+bar, or press **I**:
+
+- **Edit** (the default) — every click selects, so every object, module pieces included, can
+  be picked and moved.
+- **Interact** — clicks and drags work the way they do in play, without starting the game:
+  piano keys play, buttons press, On Click nodes fire, and a press on a crate carries it while a
+  simulation runs. Nothing gets selected.
+
+**Play** is the third mode, entered with the play button as before.
+
+### Clicking through glass
+
+A see-through wall no longer steals the click from what is behind it: shells that are nearly
+transparent, or marked **Click-through in the viewport** (Properties ▸ Object), are skipped. To
+reach something that is still covered, **click the same spot again** (a moment after the first
+click, so it is not a double-click) — each repeat selects the next object down under the cursor,
+and wraps round.
+
+### Module content in the object list
+
+Things a module builds outside the scene (the Untangle board, a piano, a generated dungeon) are
+listed in the object list's **Module content** section. Click a row to frame it; its menu hides
+it on your screen or opens the module's toolbox. The rows are read-only — the module rebuilds
+that content itself.
+
 ### The object list from the keyboard
 
 Click anywhere in the object list (<kbd>O</kbd> opens it) to give it focus, and the tree walks from the keyboard:

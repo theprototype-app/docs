@@ -102,6 +102,14 @@ api.registerClickHandler((object) => {      // desktop click + VR trigger, exact
 api.registerInteractiveGroup('mymodule-stage'); // click handlers only see the replicated
 // objects root by default — register your scene-root group's NAME to make it clickable
 
+// 1.17: which editor modes a handler runs in — 'edit' | 'interact' | 'play'. ABSENT means
+// ['interact', 'play']: an Edit click selects your game piece like any object, and Interact
+// (the I key) and Play press it. An editor TOOL passes { modes: ['edit'] }.
+api.registerClickHandler(pressKey, { modes: ['interact', 'play'] });
+
+// 1.17: a readable row for your scene-root content in the object list's Module content section
+api.registerListedGroup('mymodule-stage', { label: 'My stage' });
+
 api.registerFrameTask((time) => { /* every frame, synced seconds */ });
 api.registerMenu('Open my panel', () => { /* button on your manager card */ });
 ```
@@ -287,6 +295,26 @@ api.registerStateSync({
 	applyState: (state) => state.pressed.forEach(markPressed)
 });
 ```
+
+### Storage (1.17)
+
+```js
+// JSON on THIS device, namespaced to your module (tp:mod:<id>:<key>), 256 KB per module.
+// Never sent to other players, never saved into a scene; survives disable and remove.
+if (api.storage) {
+	const p = api.storage.get('progress', { unlocked: 1 }); // fallback when nothing is saved
+	api.storage.set('progress', p);  // true, or false over the quota
+	api.storage.keys(); api.storage.bytes(); api.storage.remove('progress');
+	api.storage.clear();             // your "Reset progress"
+}
+```
+
+Feature-detect it. On an older app write the same key yourself
+(`localStorage['tp:mod:<id>:<key>'] = JSON.stringify(value)`) and progress carries over.
+
+A board, puzzle or instrument game can ask for the **free cursor** in Play (no pointer lock)
+by publishing `userData.play.cursor = 'free'` on its scene-root group. `api.pointerRay()` is
+then the cursor's ray; in a pointer-locked game it is the crosshair ray.
 
 ### Utilities
 
