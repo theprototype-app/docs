@@ -50,6 +50,8 @@ their own page link to it.
 | **Get Variable** | Reads a named scene variable as a value - the read side of Set Variable, live on every peer. |
 | **Game Time** | Seconds since the game (or the round) started, the same on every peer - a clock that pauses with the game. |
 | **Player Variable** | A value kept PER PLAYER (score, lives, team) - each peer reads its own row, or a named player's. |
+| [**Store Value**](nodes/storevalue.md) | Saves a value on THIS device when a pulse arrives (set, keep the max or min, or add) - a best score or a level reached that survives a reload; never sent to other players. |
+| [**Stored Value**](nodes/storedvalue.md) | Reads what Store Value saved on this device, as a number or text - the read side of a best score; each player sees their own. |
 
 ## Character
 

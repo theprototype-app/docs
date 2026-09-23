@@ -193,6 +193,33 @@ camera puts a late arrival on the right view even though they never saw the tran
 
 That's the loop: menu → play → score → pause → end → menu.
 
+### Test play
+
+Once a scene has a screen bound to a game state, the editor stops showing it: a game's menu
+does not sit over your work with live buttons. A small **Game · menu** chip says the scene is a
+game instead. Press **▶ Test play** on it (or right-click the play button ▸ *Test play*) to reset
+the game to its menu, enter Play and get the Start screen in front of you — exactly what a
+player sees. The HUD editor's eye still previews the screens while you lay them out; the preview
+is a picture, so it never eats a click.
+
+Leaving Play on your own puts the game back on its menu at once. With other people in the
+session, the round resets when the last player has been out of Play for ten seconds.
+
+### Remember a best score
+
+The **Store Value** and **Stored Value** nodes keep a number on the player's own device — a
+best score, the level reached. Wire **On Game State** (`over`) and your score into a
+[Store Value](nodes/storevalue.md) with mode `max` and a key of your own (`mygame-best`), and show
+it with a [Stored Value](nodes/storedvalue.md) → HUD Text on the menu. **Actions ▸ Save best
+score** on a HUD button builds the chain for you.
+
+### Games played with the mouse
+
+A board game, a puzzle or an instrument wants the real mouse cursor rather than a crosshair.
+Set the scene's play cursor to **free** (the physics block's `play.cursor: 'free'`): Play then
+takes no pointer lock, the cursor aims, clicks fire On Click and a press-drag carries. Untangle
+and the Jam Room play this way. The editor grid is hidden in Play either way.
+
 ---
 
 ## 8. A second level
@@ -247,6 +274,10 @@ Two helpers that come with it:
   loose nodes. It is the one of the three that needs a module, so its card lists the
   **Football** module it requires and loading it offers to install that module for you; see
   [VR Football](football.md).
+- **Templates ▸ Games ▸ Untangle** — a puzzle played with the mouse (a free-cursor game):
+  drag the dots until no edges cross, on a flat board or around a **3D globe**. Each mode has
+  30 levels that unlock as you solve them; your progress is kept on this device with
+  `api.storage` (the level grid's **Reset progress** clears it). Every peer sees the same board.
 - **[Node System](node-system.md)** — the logic nodes this example leans on: Latch,
   Delay, Sequence, Counter and the Game group.
 - **[Physics & Simulation](physics.md)** — grabbing, throwing and colliders for the

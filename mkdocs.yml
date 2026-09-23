@@ -95,6 +95,8 @@ nav:
       - Set Active Camera: nodes/setcamera.md
       - Set Look: nodes/setlook.md
       - Game Start: nodes/gamestart.md
+      - Store Value: nodes/storevalue.md
+      - Stored Value: nodes/storedvalue.md
       - Travel to scene: nodes/travel.md
       - Move Input: nodes/moveinput.md
       - HUD Button: nodes/hudbutton.md
