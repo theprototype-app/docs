@@ -29,6 +29,29 @@ If someone is in the room **with** you, see [Colocation](colocation.md) — a sh
 
 One hand is the **menu/pointer hand** (right by default; switchable), the other drives locomotion.
 
+## Playing games in VR: Edit and Interact
+
+A **game** (a scene with a menu screen, a start spot, or a game module) opens in **Interact** when
+you put the headset on:
+
+- your **grips grab and knock** things — they never move the world;
+- the **left stick walks** you: walls stop you, gravity keeps you on the floor, small steps climb.
+  No flying or teleporting unless the scene allows it;
+- editor helpers (the grid, light and collider wireframes, outlines) are hidden;
+- the game's menu, pause and results screens float in front of you — point the laser and pull the
+  trigger (or poke them); the score sits on your **left wrist** (turn it to read);
+- **hold the trigger and sweep** across piano keys, drum steps, pads, mixer mutes or pedal
+  footswitches — each one you pass fires once;
+- the controllers vibrate for touches, presses, grabs and knocks.
+
+Press **Y** on the left controller (B on the right if your radial menu is on the left hand) to
+switch to **Edit** — a tick in your hand and a small wrist label say which mode you are in. In
+Edit your grips move, turn and scale the world again, you can fly and teleport, and the helpers
+come back. Press it again to return to Interact; the game puts you back on its start spot. The
+menu board's **Edit mode** button does the same.
+
+On a desktop, press **Esc** to leave Play, then the bar's Edit/Interact cell (or **I**).
+
 ## The radial menu
 
 Press **B/Y on your menu hand** to open the radial menu. On hand-tracked hands (no buttons), **pinch and hold** for about half a second instead — a quick pinch stays a normal click.

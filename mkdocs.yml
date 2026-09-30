@@ -65,6 +65,7 @@ nav:
       - Key Press: nodes/keypress.md
       - On Impact: nodes/onimpact.md
       - On Hit: nodes/onhit.md
+      - On Grab: nodes/ongrab.md
       - On Rest: nodes/onrest.md
       - On Enter: nodes/onenter.md
       - On Exit: nodes/onexit.md
@@ -97,6 +98,11 @@ nav:
       - Game Start: nodes/gamestart.md
       - Store Value: nodes/storevalue.md
       - Stored Value: nodes/storedvalue.md
+      - Announce: nodes/announce.md
+      - Game Sound: nodes/gamesound.md
+      - Effect Burst: nodes/effectburst.md
+      - Controller Buzz: nodes/hapticpulse.md
+      - Game Music: nodes/gamemusic.md
       - Travel to scene: nodes/travel.md
       - Move Input: nodes/moveinput.md
       - HUD Button: nodes/hudbutton.md

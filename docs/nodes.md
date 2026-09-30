@@ -52,6 +52,11 @@ their own page link to it.
 | **Player Variable** | A value kept PER PLAYER (score, lives, team) - each peer reads its own row, or a named player's. |
 | [**Store Value**](nodes/storevalue.md) | Saves a value on THIS device when a pulse arrives (set, keep the max or min, or add) - a best score or a level reached that survives a reload; never sent to other players. |
 | [**Stored Value**](nodes/storedvalue.md) | Reads what Store Value saved on this device, as a number or text - the read side of a best score; each player sees their own. |
+| [**Announce**](nodes/announce.md) | A big centred banner ("GOAL!", "Floor {v}") on a desktop and in a headset — local to each player, fired from the shared trigger. |
+| [**Game Sound**](nodes/gamesound.md) | Plays one of 20 built-in game sounds (coin, goal, whistle, levelup…) at an object or everywhere; no audio files. |
+| [**Effect Burst**](nodes/effectburst.md) | A short sparkle / confetti / smoke / sparks burst at an object — pooled and local. |
+| [**Controller Buzz**](nodes/hapticpulse.md) | Vibrates the VR controllers with a named pattern — only in Interact and Play. |
+| [**Game Music**](nodes/gamemusic.md) | Declares the scene's looping music (seven built-in tracks), playing only while someone plays. |
 
 ## Character
 
@@ -109,6 +114,7 @@ their own page link to it.
 | [**On Exit**](nodes/onexit.md) | Fires a pulse when something leaves a trigger volume - the other half of On Enter. |
 | [**On Rest**](nodes/onrest.md) | Fires a pulse when a physics body has finished moving - the counterpart to On Impact, which fires when it starts. |
 | [**On Hit**](nodes/onhit.md) | Fires a pulse when a hand or a player knocks the connected object, with how hard and whether it was you. |
+| [**On Grab**](nodes/ongrab.md) | Fires a pulse when a player picks up the object — a desktop carry or a VR grip in Interact. |
 | **Gamepad Button** | Fires a pulse (or holds a level) while a gamepad button is pressed - the pad's counterpart of Key Press. |
 | **Gamepad Axis** | A gamepad stick or trigger axis as a number between -1 and 1, with a dead zone. |
 

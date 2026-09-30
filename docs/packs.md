@@ -31,6 +31,29 @@ The host must allow cross-origin requests (CORS); if a URL fails, try a direct `
 - **Imported packs** can be right-click ▸ **🗑 Delete**d (their item files stay in your library).
 - Right-click any pack ▸ **ⓘ Attribution / license** shows authors, sources and the license (also available from the pack's Properties panel). Licenses use SPDX ids (`CC-BY-4.0`, `CC0-1.0`, `MIT`, …) and per-item licenses can override the pack license.
 
+## The kits (1.17)
+
+Four built-in packs are made to **build worlds** from, all CC0 (made with Meshy.ai, post-processed
+for the app):
+
+| Pack | What is in it |
+|---|---|
+| **Modular Architecture Kit** | 32 walls, doors, windows, floors, roofs, stairs, a tower — stone, plaster, oak and slate |
+| **Nature & Terrain** | 31 trees, plants, rocks, cliff chunks, path tiles and a pond |
+| **Props & Interiors** | 33 furnishings and game pieces — tables, crates, a well, a market stall, torches, levers |
+| **Sci-fi & Modern** | 28 station walls, floors, doors, stairs, consoles and lights |
+
+Everything **snaps to the 1 m grid**: walls stand on grid lines (2 m long, 3 m to a storey),
+floor tiles fill the 2 × 2 m cells, and each pack's `kit.md` lists every piece's pivot and size.
+
+A kit piece in your scene is saved as a **reference to its pack**: a level of 150 pieces is about
+25 KB, every copy shares its textures, and a peer who joins refills the pieces from the pack
+server. A piece you edit (a mesh change, a new colour) is saved in full, as before. Placing a kit
+piece is undoable like any other object.
+
+Three walkable example levels built from the kits are in **Templates ▸ General**: *Castle
+Courtyard*, *Forest Clearing* and *Tavern Interior*. Press Play to walk them.
+
 ## For pack authors
 
 A pack is a folder or zip with a `manifest.json` at the root:
