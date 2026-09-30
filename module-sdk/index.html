@@ -1696,6 +1696,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/ongrab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Grab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/onrest/" class="md-nav__link">
         
   
@@ -2310,6 +2331,153 @@
   
   <span class="md-ellipsis">
     Game Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/storevalue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Store Value
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/storedvalue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stored Value
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/announce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Announce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/gamesound/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Sound
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/effectburst/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Effect Burst
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/hapticpulse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Controller Buzz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/gamemusic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Music
   </span>
   
 
@@ -3166,6 +3334,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#storage-117" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage (1.17)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#utilities" class="md-nav__link">
     <span class="md-ellipsis">
       Utilities
@@ -3400,6 +3577,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#storage-117" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage (1.17)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#utilities" class="md-nav__link">
     <span class="md-ellipsis">
       Utilities
@@ -3595,6 +3781,14 @@ anything replicated is a desync. Don't accumulate in effects
 <span class="nx">api</span><span class="p">.</span><span class="nx">registerInteractiveGroup</span><span class="p">(</span><span class="s1">&#39;mymodule-stage&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// click handlers only see the replicated</span>
 <span class="c1">// objects root by default — register your scene-root group&#39;s NAME to make it clickable</span>
 
+<span class="c1">// 1.17: which editor modes a handler runs in — &#39;edit&#39; | &#39;interact&#39; | &#39;play&#39;. ABSENT means</span>
+<span class="c1">// [&#39;interact&#39;, &#39;play&#39;]: an Edit click selects your game piece like any object, and Interact</span>
+<span class="c1">// (the I key) and Play press it. An editor TOOL passes { modes: [&#39;edit&#39;] }.</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">registerClickHandler</span><span class="p">(</span><span class="nx">pressKey</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">modes</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;interact&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;play&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">});</span>
+
+<span class="c1">// 1.17: a readable row for your scene-root content in the object list&#39;s Module content section</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">registerListedGroup</span><span class="p">(</span><span class="s1">&#39;mymodule-stage&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;My stage&#39;</span><span class="w"> </span><span class="p">});</span>
+
 <span class="nx">api</span><span class="p">.</span><span class="nx">registerFrameTask</span><span class="p">((</span><span class="nx">time</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* every frame, synced seconds */</span><span class="w"> </span><span class="p">});</span>
 <span class="nx">api</span><span class="p">.</span><span class="nx">registerMenu</span><span class="p">(</span><span class="s1">&#39;Open my panel&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* button on your manager card */</span><span class="w"> </span><span class="p">});</span>
 </code></pre></div>
@@ -3742,6 +3936,21 @@ never drift; pair it with <code>registerInteractiveGroup</code> if it must be cl
 <span class="w">    </span><span class="nx">applyState</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">state</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">state</span><span class="p">.</span><span class="nx">pressed</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">markPressed</span><span class="p">)</span>
 <span class="p">});</span>
 </code></pre></div>
+<h3 id="storage-117">Storage (1.17)</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// JSON on THIS device, namespaced to your module (tp:mod:&lt;id&gt;:&lt;key&gt;), 256 KB per module.</span>
+<span class="c1">// Never sent to other players, never saved into a scene; survives disable and remove.</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">api</span><span class="p">.</span><span class="nx">storage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">storage</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;progress&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">unlocked</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// fallback when nothing is saved</span>
+<span class="w">    </span><span class="nx">api</span><span class="p">.</span><span class="nx">storage</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;progress&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">p</span><span class="p">);</span><span class="w">  </span><span class="c1">// true, or false over the quota</span>
+<span class="w">    </span><span class="nx">api</span><span class="p">.</span><span class="nx">storage</span><span class="p">.</span><span class="nx">keys</span><span class="p">();</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">storage</span><span class="p">.</span><span class="nx">bytes</span><span class="p">();</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">storage</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;progress&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">api</span><span class="p">.</span><span class="nx">storage</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span><span class="w">             </span><span class="c1">// your &quot;Reset progress&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Feature-detect it. On an older app write the same key yourself
+(<code>localStorage['tp:mod:&lt;id&gt;:&lt;key&gt;'] = JSON.stringify(value)</code>) and progress carries over.</p>
+<p>A board, puzzle or instrument game can ask for the <strong>free cursor</strong> in Play (no pointer lock)
+by publishing <code>userData.play.cursor = 'free'</code> on its scene-root group. <code>api.pointerRay()</code> is
+then the cursor's ray; in a pointer-locked game it is the crosshair ray.</p>
 <h3 id="utilities">Utilities</h3>
 <div class="highlight"><pre><span></span><code><span class="nx">api</span><span class="p">.</span><span class="nx">scene</span><span class="p">()</span><span class="w">          </span><span class="c1">// THREE.Scene</span>
 <span class="nx">api</span><span class="p">.</span><span class="nx">objectsGroup</span><span class="p">()</span><span class="w">   </span><span class="c1">// the replicated objects root</span>
@@ -3900,7 +4109,7 @@ examples.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-09-17
+    2026-09-23
   </span>
 
     

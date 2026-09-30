@@ -1696,6 +1696,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/ongrab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Grab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/onrest/" class="md-nav__link">
         
   
@@ -2326,6 +2347,153 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/storevalue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Store Value
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/storedvalue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stored Value
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/announce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Announce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/gamesound/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Sound
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/effectburst/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Effect Burst
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/hapticpulse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Controller Buzz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/gamemusic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Music
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/travel/" class="md-nav__link">
         
   
@@ -2714,6 +2882,39 @@
       7. Ending, and going round again
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="7. Ending, and going round again">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-play" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test play
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remember-a-best-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remember a best score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#games-played-with-the-mouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Games played with the mouse
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3258,6 +3459,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="7. Ending, and going round again">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-play" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test play
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remember-a-best-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remember a best score
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#games-played-with-the-mouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Games played with the mouse
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3492,6 +3726,26 @@ outcome, and <strong>Back to the menu</strong> to return. Because the menu scree
 <code>while: menu</code> it comes back by itself — and a <strong>Game Start</strong> node naming your gameplay
 camera puts a late arrival on the right view even though they never saw the transition.</p>
 <p>That's the loop: menu → play → score → pause → end → menu.</p>
+<h3 id="test-play">Test play</h3>
+<p>Once a scene has a screen bound to a game state, the editor stops showing it: a game's menu
+does not sit over your work with live buttons. A small <strong>Game · menu</strong> chip says the scene is a
+game instead. Press <strong>▶ Test play</strong> on it (or right-click the play button ▸ <em>Test play</em>) to reset
+the game to its menu, enter Play and get the Start screen in front of you — exactly what a
+player sees. The HUD editor's eye still previews the screens while you lay them out; the preview
+is a picture, so it never eats a click.</p>
+<p>Leaving Play on your own puts the game back on its menu at once. With other people in the
+session, the round resets when the last player has been out of Play for ten seconds.</p>
+<h3 id="remember-a-best-score">Remember a best score</h3>
+<p>The <strong>Store Value</strong> and <strong>Stored Value</strong> nodes keep a number on the player's own device — a
+best score, the level reached. Wire <strong>On Game State</strong> (<code>over</code>) and your score into a
+<a href="../nodes/storevalue/">Store Value</a> with mode <code>max</code> and a key of your own (<code>mygame-best</code>), and show
+it with a <a href="../nodes/storedvalue/">Stored Value</a> → HUD Text on the menu. <strong>Actions ▸ Save best
+score</strong> on a HUD button builds the chain for you.</p>
+<h3 id="games-played-with-the-mouse">Games played with the mouse</h3>
+<p>A board game, a puzzle or an instrument wants the real mouse cursor rather than a crosshair.
+Set the scene's play cursor to <strong>free</strong> (the physics block's <code>play.cursor: 'free'</code>): Play then
+takes no pointer lock, the cursor aims, clicks fire On Click and a press-drag carries. Untangle
+and the Jam Room play this way. The editor grid is hidden in Play either way.</p>
 <hr />
 <h2 id="8-a-second-level">8. A second level</h2>
 <p>One scene is one level; a game can have many.</p>
@@ -3543,6 +3797,10 @@ camera puts a late arrival on the right view even though they never saw the tran
   loose nodes. It is the one of the three that needs a module, so its card lists the
   <strong>Football</strong> module it requires and loading it offers to install that module for you; see
   <a href="../football/">VR Football</a>.</li>
+<li><strong>Templates ▸ Games ▸ Untangle</strong> — a puzzle played with the mouse (a free-cursor game):
+  drag the dots until no edges cross, on a flat board or around a <strong>3D globe</strong>. Each mode has
+  30 levels that unlock as you solve them; your progress is kept on this device with
+  <code>api.storage</code> (the level grid's <strong>Reset progress</strong> clears it). Every peer sees the same board.</li>
 <li><strong><a href="../node-system/">Node System</a></strong> — the logic nodes this example leans on: Latch,
   Delay, Sequence, Counter and the Game group.</li>
 <li><strong><a href="../physics/">Physics &amp; Simulation</a></strong> — grabbing, throwing and colliders for the
@@ -3571,7 +3829,7 @@ camera puts a late arrival on the right view even though they never saw the tran
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-09-19
+    2026-09-23
   </span>
 
     

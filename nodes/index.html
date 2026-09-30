@@ -1846,6 +1846,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ongrab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Grab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="onrest/" class="md-nav__link">
         
   
@@ -2460,6 +2481,153 @@
   
   <span class="md-ellipsis">
     Game Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="storevalue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Store Value
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="storedvalue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stored Value
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="announce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Announce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gamesound/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Sound
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="effectburst/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Effect Burst
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hapticpulse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Controller Buzz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gamemusic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Music
   </span>
   
 
@@ -3506,6 +3674,34 @@ their own page link to it.</p>
 <td><strong>Player Variable</strong></td>
 <td>A value kept PER PLAYER (score, lives, team) - each peer reads its own row, or a named player's.</td>
 </tr>
+<tr>
+<td><a href="storevalue/"><strong>Store Value</strong></a></td>
+<td>Saves a value on THIS device when a pulse arrives (set, keep the max or min, or add) - a best score or a level reached that survives a reload; never sent to other players.</td>
+</tr>
+<tr>
+<td><a href="storedvalue/"><strong>Stored Value</strong></a></td>
+<td>Reads what Store Value saved on this device, as a number or text - the read side of a best score; each player sees their own.</td>
+</tr>
+<tr>
+<td><a href="announce/"><strong>Announce</strong></a></td>
+<td>A big centred banner ("GOAL!", "Floor {v}") on a desktop and in a headset — local to each player, fired from the shared trigger.</td>
+</tr>
+<tr>
+<td><a href="gamesound/"><strong>Game Sound</strong></a></td>
+<td>Plays one of 20 built-in game sounds (coin, goal, whistle, levelup…) at an object or everywhere; no audio files.</td>
+</tr>
+<tr>
+<td><a href="effectburst/"><strong>Effect Burst</strong></a></td>
+<td>A short sparkle / confetti / smoke / sparks burst at an object — pooled and local.</td>
+</tr>
+<tr>
+<td><a href="hapticpulse/"><strong>Controller Buzz</strong></a></td>
+<td>Vibrates the VR controllers with a named pattern — only in Interact and Play.</td>
+</tr>
+<tr>
+<td><a href="gamemusic/"><strong>Game Music</strong></a></td>
+<td>Declares the scene's looping music (seven built-in tracks), playing only while someone plays.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="character">Character</h2>
@@ -3699,6 +3895,10 @@ their own page link to it.</p>
 <td>Fires a pulse when a hand or a player knocks the connected object, with how hard and whether it was you.</td>
 </tr>
 <tr>
+<td><a href="ongrab/"><strong>On Grab</strong></a></td>
+<td>Fires a pulse when a player picks up the object — a desktop carry or a VR grip in Interact.</td>
+</tr>
+<tr>
 <td><strong>Gamepad Button</strong></td>
 <td>Fires a pulse (or holds a level) while a gamepad button is pressed - the pad's counterpart of Key Press.</td>
 </tr>
@@ -3876,7 +4076,7 @@ their own page link to it.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-09-17
+    2026-10-01
   </span>
 
     
