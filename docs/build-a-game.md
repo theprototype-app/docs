@@ -179,8 +179,17 @@ no jump.
 
 !!! info "Keyboard and gamepad"
     Any menu is navigable without a mouse: arrows or D-pad move the highlight, Enter or
-    **A** activates, and a highlighted slider or dropdown takes left/right. **Esc** always
-    leaves play mode entirely — it is the guaranteed way out.
+    **A** activates, and a highlighted slider or dropdown takes left/right.
+
+!!! tip "You also get the app's own game menu for free (1.18)"
+    In any game, **Esc** (or the **Menu** button in the corner) opens the shared game menu:
+    **Resume · Restart · Levels · Settings · How to play · Main menu**, plus *Back to editor*
+    on the desktop. In VR it opens with **X** on the left controller or the **Menu** button
+    on the game board and the wrist card. Its **Settings** are per game and per device —
+    music and sound effects on/off with their volumes, controller vibration, **Show FPS**,
+    VR turning (snap / smooth / off and the snap angle), a comfort vignette and a quality
+    preset (Auto / Low / Medium / High). Your own Pause screen keeps working beside it; a
+    scene that is not a game still leaves play on Esc.
 
 ---
 
