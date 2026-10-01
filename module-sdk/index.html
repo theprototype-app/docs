@@ -3343,6 +3343,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#the-game-shell-pause-menu-levels-per-game-settings-118" class="md-nav__link">
+    <span class="md-ellipsis">
+      The game shell: pause menu, levels, per-game settings (1.18)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#utilities" class="md-nav__link">
     <span class="md-ellipsis">
       Utilities
@@ -3580,6 +3589,15 @@
   <a href="#storage-117" class="md-nav__link">
     <span class="md-ellipsis">
       Storage (1.17)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-game-shell-pause-menu-levels-per-game-settings-118" class="md-nav__link">
+    <span class="md-ellipsis">
+      The game shell: pause menu, levels, per-game settings (1.18)
     </span>
   </a>
   
@@ -3951,6 +3969,64 @@ never drift; pair it with <code>registerInteractiveGroup</code> if it must be cl
 <p>A board, puzzle or instrument game can ask for the <strong>free cursor</strong> in Play (no pointer lock)
 by publishing <code>userData.play.cursor = 'free'</code> on its scene-root group. <code>api.pointerRay()</code> is
 then the cursor's ray; in a pointer-locked game it is the crosshair ray.</p>
+<h3 id="the-game-shell-pause-menu-levels-per-game-settings-118">The game shell: pause menu, levels, per-game settings (1.18)</h3>
+<p>Every game gets ONE pause menu from core — <strong>Resume · Restart · Levels · Settings · How to
+play · Main menu</strong> — on the desktop (Escape in Play, or the corner Menu button) and in VR
+(the left controller's <strong>X</strong>, or Menu on the game board / wrist card). You do not draw it;
+you feed it. A scene counts as a game when it has a state-bound HUD screen, a spawn, or a
+module publishing <code>userData.play</code> — or when your module registers levels. All of it is
+feature-detected (<code>api.game.levels?.(…)</code>), LOCAL, and torn down with your module.</p>
+<p><strong>Levels</strong> — the picker on the desktop and on the VR board. Re-call it whenever a level
+unlocks or earns stars; <code>onPick</code> never hears a locked level.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">refresh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span>
+<span class="w">    </span><span class="nx">api</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">levels</span><span class="o">?</span><span class="p">.({</span>
+<span class="w">        </span><span class="nx">list</span><span class="o">:</span><span class="w"> </span><span class="nx">LEVELS</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">l</span><span class="p">,</span><span class="w"> </span><span class="nx">i</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="nx">l</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Level &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="nx">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">),</span><span class="w"> </span><span class="nx">locked</span><span class="o">:</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">unlocked</span><span class="p">,</span><span class="w"> </span><span class="nx">stars</span><span class="o">:</span><span class="w"> </span><span class="nx">best</span><span class="p">[</span><span class="nx">l</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">})),</span>
+<span class="w">        </span><span class="nx">current</span><span class="o">:</span><span class="w"> </span><span class="nx">currentLevel</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">onPick</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">id</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">loadLevel</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="nx">refresh</span><span class="p">();</span>
+<span class="nx">onLevelWon</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">unlocked</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="nx">refresh</span><span class="p">();</span><span class="w"> </span><span class="p">});</span>
+</code></pre></div>
+<p><strong>Your own settings rows</strong> — shown under the core rows, persisted per game on this device
+(<code>tp:game:&lt;game&gt;:&lt;id&gt;</code>). <code>type</code> is <code>'toggle'</code>, <code>'choice'</code> (<code>options</code>, optional <code>optionLabels</code>)
+or <code>'range'</code> (<code>min</code>, <code>max</code>, <code>step</code>). A core id is refused.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">api</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">addSetting</span><span class="o">?</span><span class="p">.({</span>
+<span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;board&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Board&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;choice&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;globe&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2d&#39;</span><span class="p">],</span><span class="w"> </span><span class="nx">optionLabels</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Globe&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2D board&#39;</span><span class="p">],</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;globe&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">onChange</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">v</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setBoard</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span>
+<span class="p">});</span>
+<span class="nx">setBoard</span><span class="p">(</span><span class="nx">api</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">setting</span><span class="o">?</span><span class="p">.(</span><span class="s1">&#39;board&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s1">&#39;globe&#39;</span><span class="p">);</span><span class="w">            </span><span class="c1">// the stored choice at load</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">setSetting</span><span class="o">?</span><span class="p">.(</span><span class="s1">&#39;board&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2d&#39;</span><span class="p">);</span><span class="w">                        </span><span class="c1">// your in-game button writes the same row</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">onSettingsChange</span><span class="o">?</span><span class="p">.((</span><span class="nx">values</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">values</span><span class="p">.</span><span class="nx">board</span><span class="p">,</span><span class="w"> </span><span class="nx">values</span><span class="p">.</span><span class="nx">sfx</span><span class="p">));</span>
+</code></pre></div>
+<p><strong>The core rows every game has</strong> — <code>music</code>, <code>musicVolume</code> (0..100), <code>sfx</code>, <code>sfxVolume</code>,
+<code>haptics</code>, <code>showFps</code>, <code>turning</code> (<code>default</code> | <code>snap</code> | <code>smooth</code> | <code>off</code>), <code>turnAngle</code>
+(<code>default</code> | <code>15</code> | <code>30</code> | <code>45</code> | <code>90</code>), <code>vignette</code>, <code>quality</code> (<code>auto</code> | <code>low</code> | <code>medium</code> |
+<code>high</code>). Core obeys them itself: the per-game volumes land on the audio BUSES (so
+<code>api.playSound</code>, <code>api.music</code>, flow sound nodes and the scene's track all follow), haptics,
+VR turning, the comfort vignette and the quality governor read them live. A module that
+plays audio through its OWN WebAudio graph should read them:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">gain</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">createGain</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">apply</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="nx">gain</span><span class="p">.</span><span class="nx">gain</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">setting</span><span class="o">?</span><span class="p">.(</span><span class="s1">&#39;sfx&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">api</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">setting</span><span class="o">?</span><span class="p">.(</span><span class="s1">&#39;sfxVolume&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="mf">100</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span>
+<span class="nx">apply</span><span class="p">();</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">onSettingsChange</span><span class="o">?</span><span class="p">.(</span><span class="nx">apply</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>How to play</strong> — your words first, then the device's controls (keyboard or controllers).
+Without it the menu shows the game's Games-tab description.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">api</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">setHelp</span><span class="o">?</span><span class="p">.([</span>
+<span class="w">    </span><span class="s1">&#39;Drag the dots until no two lines cross.&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="s1">&#39;Finish a level to unlock the next — stars for fewer moves.&#39;</span>
+<span class="p">]);</span>
+</code></pre></div>
+<p><strong>Restart</strong> — the menu resets the game shell (host / alone; others carry on as it is),
+respawns the player and runs your hook:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">api</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">onRestart</span><span class="o">?</span><span class="p">.(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">resetBoard</span><span class="p">();</span><span class="w"> </span><span class="nx">spawnWave</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
+</code></pre></div>
+<p><strong>Your own Menu button</strong> (a module HUD, a VR board of yours):</p>
+<div class="highlight"><pre><span></span><code><span class="nx">api</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">openMenu</span><span class="o">?</span><span class="p">.();</span><span class="w">          </span><span class="c1">// only while playing a game; false otherwise</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">closeMenu</span><span class="o">?</span><span class="p">.();</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">api</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">menuOpen</span><span class="o">?</span><span class="p">.())</span><span class="w"> </span><span class="nx">pauseMyTimers</span><span class="p">();</span>
+</code></pre></div>
 <h3 id="utilities">Utilities</h3>
 <div class="highlight"><pre><span></span><code><span class="nx">api</span><span class="p">.</span><span class="nx">scene</span><span class="p">()</span><span class="w">          </span><span class="c1">// THREE.Scene</span>
 <span class="nx">api</span><span class="p">.</span><span class="nx">objectsGroup</span><span class="p">()</span><span class="w">   </span><span class="c1">// the replicated objects root</span>
@@ -4109,7 +4185,7 @@ examples.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-09-23
+    2026-10-01
   </span>
 
     
