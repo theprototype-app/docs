@@ -464,6 +464,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../lod/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Levels of Detail
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../prefabs/" class="md-nav__link">
         
   
@@ -3393,6 +3414,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#new-in-119" class="md-nav__link">
+    <span class="md-ellipsis">
+      New in 1.19
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#lifecycle" class="md-nav__link">
     <span class="md-ellipsis">
       Lifecycle
@@ -3641,6 +3671,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-in-119" class="md-nav__link">
+    <span class="md-ellipsis">
+      New in 1.19
+    </span>
+  </a>
   
 </li>
       
@@ -3996,7 +4035,10 @@ or <code>'range'</code> (<code>min</code>, <code>max</code>, <code>step</code>).
 <span class="w">    </span><span class="nx">onChange</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">v</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setBoard</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span>
 <span class="p">});</span>
 <span class="nx">setBoard</span><span class="p">(</span><span class="nx">api</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">setting</span><span class="o">?</span><span class="p">.(</span><span class="s1">&#39;board&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s1">&#39;globe&#39;</span><span class="p">);</span><span class="w">            </span><span class="c1">// the stored choice at load</span>
-<span class="nx">api</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">setSetting</span><span class="o">?</span><span class="p">.(</span><span class="s1">&#39;board&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2d&#39;</span><span class="p">);</span><span class="w">                        </span><span class="c1">// your in-game button writes the same row</span>
+</code></pre></div>
+<p>A choice row with <code>onLevels: true</code> (1.19) is ALSO drawn as tabs above the Levels page in the
+headset — Untangle's Globe / 2D board.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">api</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">setSetting</span><span class="o">?</span><span class="p">.(</span><span class="s1">&#39;board&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2d&#39;</span><span class="p">);</span><span class="w">                        </span><span class="c1">// your in-game button writes the same row</span>
 <span class="nx">api</span><span class="p">.</span><span class="nx">game</span><span class="p">.</span><span class="nx">onSettingsChange</span><span class="o">?</span><span class="p">.((</span><span class="nx">values</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">values</span><span class="p">.</span><span class="nx">board</span><span class="p">,</span><span class="w"> </span><span class="nx">values</span><span class="p">.</span><span class="nx">sfx</span><span class="p">));</span>
 </code></pre></div>
 <p><strong>The core rows every game has</strong> — <code>music</code>, <code>musicVolume</code> (0..100), <code>sfx</code>, <code>sfxVolume</code>,
@@ -4138,6 +4180,22 @@ It returns an unsubscribe, and is torn down with the module either way.</p>
 the scene, keyed by uuid, and <code>recent</code> is the last 32 hits in order. It is runtime
 state — a late joiner's log starts empty, so a module that needs history keeps its
 own through <code>registerStateSync</code>.</p>
+<h2 id="new-in-119">New in 1.19</h2>
+<ul>
+<li><strong><code>api.inScene()</code></strong> — false once a scene switch LEFT your module behind (the person chose <em>Keep</em>
+  when opening a scene that does not use you). Core already keeps your levels, help, settings rows,
+  Restart, music and spawn out of the new game; stand your own drawing and listening down while it
+  reads false (a gun in the hand, a HUD of your own).</li>
+<li><strong><code>api.behavior</code></strong> — <code>list()</code> (the functional pack items in the scene: doors, lids, levers, with
+  their type and whether they are open), <code>state(uuid)</code> and <code>trigger(uuid, open?)</code> (open, close or
+  toggle one — replicated like a click).</li>
+<li><strong><code>api.claimInput('sticks')</code></strong> — claim BOTH VR thumbsticks (move, turn, teleport stand down) to
+  read <code>input().axes</code> yourself; returns true on a core that knows the scope, so feature-detect it.</li>
+<li><strong><code>api.lod(object)</code></strong> handles gain <code>force(n)</code> (pin a level; <code>null</code> back to automatic) and
+  <code>levels()</code>.</li>
+<li><code>api.music</code> is owned by your module: <code>stop()</code> stops only your track, and unloading your module
+  stops it.</li>
+</ul>
 <h2 id="lifecycle">Lifecycle</h2>
 <ul>
 <li>Core modules load at boot unless disabled in the manager; user modules load
@@ -4185,7 +4243,7 @@ examples.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-01
+    2026-10-02
   </span>
 
     
