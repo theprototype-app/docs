@@ -22,7 +22,7 @@ had nothing open will not close the panels *you* have open.
 
 **Menu ▸ Templates** opens a picker of ready-made scenes, in four tabs:
 
-- **General** — starting points, including a **Blank** card that clears the scene (it asks first).
+- **General** — starting points and walkable kit levels, including a **Blank** card that clears the scene (it asks first).
 - **Examples** — worked showcases to pull apart and learn from.
 - **Games** — playable scenes. A game is a scene plus, sometimes, a module: a card wears a *Needs …* badge when it depends on one, and loading it offers to install it — every player needs their own copy. **Towers**, the first one, is co-op crate stacking built from flow nodes, the HUD and the Collectibles module. **Stars Room** is the second: a zero-gravity room of glowing stars you [knock](physics.md#the-knock) about, with an optional round on the <kbd>P</kbd> menu — pure app, nothing to install.
 - **Community** — scenes other people published from the app; see [Community](community.md).
@@ -30,6 +30,23 @@ had nothing open will not close the panels *you* have open.
 Templates load through the same path as a `.tpscene` file, so with peers connected everyone gets the usual Accept/Decline proposal and your current scene is stashed as a backup first. The Welcome overlay has a shortcut into the same picker.
 
 Each card also has a small **save to Library** button in its corner (*Save "Towers" to your Library as a new scene*). It files the starter as a new scene in your [Explorer](explorer.md) without loading it — the scene you have open stays as it is — so you can collect a few and open them later.
+
+## Opening another scene, and modules
+
+A game usually brings a module with it (Waves brings *Waves* and *Health*). When you open another
+scene that does not need them, the app **asks**: *Unload* (the default — the modules are switched
+off and the new scene starts clean), *Keep* (they stay loaded; their music, menus, levels and spawn
+stop counting until you go back to their scene), or *Cancel*. Tick *Remember my choice*, or set it
+in **Settings ▸ Scene ▸ When opening another scene** (Ask / Keep modules / Unload modules). Modules
+you installed as tools and no scene uses are never asked about. Opening a scene that needs a module
+you unloaded offers to turn it back on.
+
+**Clear scene** asks what to clear: *Clear objects* (the default), or tick *Also reset the game
+setup and unload its modules* to **Clear everything** — the game's menu, HUD, flow nodes, play and
+physics settings, sky and look go too, so no leftover Menu or Play button stays behind.
+
+Big scenes **load without freezing the app**: a progress bar shows what is loading and how far it
+has got, pieces stream in, and *Cancel* stops the load and takes back what it had added.
 
 ## Scene (`.tpscene`) — recommended
 

@@ -31,8 +31,9 @@ If the guess is still wrong on your hardware, pick it yourself: right-click the 
 
 ### Edit and Interact
 
-The editor has two click modes. Switch with the **Interact mode** cell at the end of the bottom
-bar, or press **I**:
+The editor has two click modes. Switch with the **Interact mode** cell on the bottom bar (it sits
+between the transform tools and Play — the default order is Move, Rotate, Scale, Interact, Play,
+Object list, Node editor, Explorer, Animation), or press **I**:
 
 - **Edit** (the default) — every click selects, so every object, module pieces included, can
   be picked and moved.
@@ -41,6 +42,13 @@ bar, or press **I**:
   simulation runs. Nothing gets selected.
 
 **Play** is the third mode, entered with the play button as before.
+
+In **Edit inside a running game**, every object can be moved: a body you drop stays where you put
+it (it is parked out of the simulation) until you leave Edit.
+
+**FPS and draw calls** — *Settings ▸ Interface ▸ Viewport* shows a small counter in any mode:
+frames per second, frame time, draw calls and triangles. Draw calls turn amber above 120 and red
+above 150, the budget of a Quest headset; in VR the same counter is a strip in front of you.
 
 ### Clicking through glass
 

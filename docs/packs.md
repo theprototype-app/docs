@@ -51,8 +51,33 @@ A kit piece in your scene is saved as a **reference to its pack**: a level of 15
 server. A piece you edit (a mesh change, a new colour) is saved in full, as before. Placing a kit
 piece is undoable like any other object.
 
-Three walkable example levels built from the kits are in **Templates ▸ General**: *Castle
-Courtyard*, *Forest Clearing* and *Tavern Interior*. Press Play to walk them.
+Walkable example levels built from the kits are in **Templates ▸ General**: *Castle Courtyard*,
+*Forest Clearing*, *Tavern Interior*, *Wizard's Tower*, *Market Town Square* and the *Architecture
+shell*. Press Play to walk them; their doors open.
+
+## The kits (1.19)
+
+| Pack | What is in it |
+|---|---|
+| **Interiors: Home, Tavern & Office** | 30 pieces of furniture, kitchen, bar, lights and decor, plus wall trims (skirting, wainscot, cornice) that snap to the architecture kit's walls |
+| **Town & Market** | 27 pieces — seamless street tiles (road, curb, corner, crossing, sidewalk), a fountain, market stalls, a well, lamps, a clock tower top and a garden gate that opens |
+| **Interactive Kit** | 19 pieces that **move when you use them**: doors with their frames, gates, a portcullis, a trapdoor, shutters, a chest, drawers, a cabinet, a lever, a pressure plate, a wall button, and an ambient torch, banner and ceiling fan |
+| **Arcane Study** | seven wizard's-study props — an alchemy table, a potion shelf, a crystal ball, a lectern, a telescope, an armillary sphere, a rune rug |
+
+**Doors, lids and levers.** A piece with a ▶ badge in the Explorer is *functional*. In Edit it
+rests (a door stays shut, nothing plays by itself — placing or loading it never starts an
+animation). In **Interact** or **Play**, click it (or point the VR laser at it, poke it, or knock
+on it) and it opens with a sound; click again and it closes. Everyone in the session sees the same
+door, and you can walk through an open one. A sliding door may open as you walk up to it. Only
+ambient pieces (a banner, a fan, a torch flame) move on their own, and only in Interact and Play.
+The Animation panel can preview a clip in Edit without changing your scene.
+
+**Levels of detail.** Every pack piece comes with lighter versions of itself that are drawn when
+it is far away. See [Levels of detail](lod.md) to force a level, edit one or tune the distances.
+
+**Draw calls.** Every copy of the same pack piece is drawn in one go (*Settings ▸ Performance ▸
+Draw repeated kit pieces together*, on by default) — a furnished tavern stays inside a headset's
+budget.
 
 ## For pack authors
 

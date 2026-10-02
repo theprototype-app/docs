@@ -87,12 +87,13 @@ Grid toggle, **World 1:1** (reset a scaled/rotated world grab), **Settings**, **
 - **Move** — push the left thumbstick. With **VR flying** on, forward follows where your controller aims; otherwise it stays level. Hold the **left grip** to switch the stick to panning and elevation.
 - **Teleport** — push the **right thumbstick up** to arc a beam, release to blink to the landing spot (on the ground or any upward-facing surface). Toggle teleport in Settings.
 - **Snap-turn** — flick the right thumbstick left/right to rotate in fixed steps. The **snap angle** is Off / 15° / 30° / 45° (default 45°), shown live in the Scene radial and VR Settings; **Mirror snap turn** flips the direction.
-- **World grab** — grip with **both hands in empty air** to grab the whole world: pull your hands apart/together to scale, twist to rotate, move to reposition. **System ▸ World 1:1** snaps it back to normal.
+- **World grab** — grip with **both hands in empty air** to grab the whole world: pull your hands apart/together to scale, twist to rotate, move to reposition. **System ▸ World 1:1** snaps it back to normal. Holding the world with **one** grip, push the stick **up/down** to send it away or bring it closer, as with an object.
 
 ## Grabbing, scaling and stretching
 
 - **Grip** an object to grab it. The default *rigid* grab treats the controller as a handle — the grabbing hand's thumbstick reels the object nearer/farther and scales it. (Other grab styles are available via **System ▸ Grab mode**.)
-- **Two hands** on the same object scales it uniformly by the distance between them.
+- **Two hands** on the same object scales it uniformly by the distance between them. Two hands on **two different** objects hold one each (Towers' blocks): letting go of one never freezes the other.
+- In **Edit**, walls and floors are scenery and a grip on them moves the world — **select** one first to grip it.
 - **VR Stretch** — non-uniform, per-axis scaling. From the Edit menu, grab the **W/H/D slider handles** and drag horizontally to stretch that axis; the result is baked when you confirm.
 - **Box Select** (Tools ▸ Box Select) — pull the trigger to anchor one corner, drag out a box, release to select everything inside it.
 
@@ -143,6 +144,7 @@ Reachable from **System ▸ Settings** in VR, and mirrored in the desktop **Sett
 | Hold to move vertex | on / off |
 | Refresh rate | Max / 90 / 120 Hz |
 | Peer hand style | Model / Hands / Spheres |
+| FPS and draw calls | on / off (a strip in front of you; draw calls red above 150) |
 | My hand model | any GLB in your library |
 | VR menu on left | on / off |
 | Passthrough (AR) | on / off (applies next entry) |

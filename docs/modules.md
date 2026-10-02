@@ -11,6 +11,9 @@ Open it from **Menu ▸ Modules**.
 - **⬇ Download as example** exports a core module as a zip — the best starting point for writing your own.
 - Peers exchange module lists when they connect and show a toast if a module is missing or a different version on the other side. The session still works, but that module's behavior may differ — treat *same modules everywhere* as part of the session contract.
 
+When you open another scene, the modules the last scene brought can be unloaded or kept — see
+[Opening another scene, and modules](saving.md#opening-another-scene-and-modules).
+
 ## What modules can add
 
 - **Flow nodes** — new node groups in the palette, driving per-frame effects through the Object Selector like built-in nodes.

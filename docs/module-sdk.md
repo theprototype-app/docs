@@ -350,6 +350,12 @@ api.game.addSetting?.({
 	onChange: (v) => setBoard(v)
 });
 setBoard(api.game.setting?.('board') ?? 'globe');            // the stored choice at load
+```
+
+A choice row with `onLevels: true` (1.19) is ALSO drawn as tabs above the Levels page in the
+headset — Untangle's Globe / 2D board.
+
+```js
 api.game.setSetting?.('board', '2d');                        // your in-game button writes the same row
 api.game.onSettingsChange?.((values) => console.log(values.board, values.sfx));
 ```
@@ -491,6 +497,22 @@ It returns an unsubscribe, and is torn down with the module either way.
 the scene, keyed by uuid, and `recent` is the last 32 hits in order. It is runtime
 state — a late joiner's log starts empty, so a module that needs history keeps its
 own through `registerStateSync`.
+
+## New in 1.19
+
+- **`api.inScene()`** — false once a scene switch LEFT your module behind (the person chose *Keep*
+  when opening a scene that does not use you). Core already keeps your levels, help, settings rows,
+  Restart, music and spawn out of the new game; stand your own drawing and listening down while it
+  reads false (a gun in the hand, a HUD of your own).
+- **`api.behavior`** — `list()` (the functional pack items in the scene: doors, lids, levers, with
+  their type and whether they are open), `state(uuid)` and `trigger(uuid, open?)` (open, close or
+  toggle one — replicated like a click).
+- **`api.claimInput('sticks')`** — claim BOTH VR thumbsticks (move, turn, teleport stand down) to
+  read `input().axes` yourself; returns true on a core that knows the scope, so feature-detect it.
+- **`api.lod(object)`** handles gain `force(n)` (pin a level; `null` back to automatic) and
+  `levels()`.
+- `api.music` is owned by your module: `stop()` stops only your track, and unloading your module
+  stops it.
 
 ## Lifecycle
 
