@@ -9,6 +9,7 @@ nav:
   - Building:
     - Explorer: explorer.md
     - Packs: packs.md
+    - Levels of Detail: lod.md
     - Prefabs: prefabs.md
     - Mesh Editing: mesh-editing.md
     - Splines: splines.md
