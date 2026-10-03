@@ -28,6 +28,7 @@ nav:
     - Camera & View: camera.md
     - Notifications & Notes: notifications.md
     - Performance & Budgets: performance.md
+    - Profiler & Recordings: profiler.md
   - Flow Graph:
     - Node System: node-system.md
     - Flow Nodes: nodes.md
@@ -116,6 +117,8 @@ nav:
     - Music Playground: music.md
   - Games:
     - Build a Game Loop: build-a-game.md
+    - Game Kit: game-kit.md
+    - Behaviours: behaviours.md
     - VR Football: football.md
   - Community:
     - Publish, Play, Remix: community.md

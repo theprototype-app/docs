@@ -6,7 +6,7 @@ Modules plug playable content into the app — instruments, mini-games, generato
 
 Open it from **Menu ▸ Modules**.
 
-- **Core modules** ship with the app (hello, button, pong, VR sleeve). Toggle each on or off: **enabling is live**, disabling takes effect after a **reload**.
+- **Core modules** ship with the app (hello, button, pong, VR sleeve). Toggle each on or off: both are **live** (since 1.20, disabling no longer needs a reload).
 - The dungeon generator, piano, avatar controller, VR essentials and drivable car used to ship in the app; they now live in the **Browse** gallery, so install them there when you want them. Everyone in a session needs the same modules for shared behaviour to match — including anyone who joins later.
 - **⬇ Download as example** exports a core module as a zip — the best starting point for writing your own.
 - Peers exchange module lists when they connect and show a toast if a module is missing or a different version on the other side. The session still works, but that module's behavior may differ — treat *same modules everywhere* as part of the session contract.
@@ -31,7 +31,9 @@ The manager's **Install zip** / **Install URL** buttons load third-party modules
 
 Installing from Browse keeps you on Browse, so you can install several in a row. The **User** tab's count grows (and pulses) to show where they went; opening it scrolls to the newest card and flashes it. Every module's buttons, its Dev URL row and Remove live on that card.
 
-User modules install, update, disable and remove **live** — the manager genuinely unloads a module's menus, nodes, effects and handlers without a page reload. (Core modules still need a reload to disable.)
+User modules install, update, disable and remove **live** — the manager genuinely unloads everything a module registered (menus, nodes, effects, handlers, timers, listeners) without a page reload, and so does switching a core module off.
+
+An installed module older than the version the current app release shipped with is flagged: a toast names it with **Update**, and its card shows an **Update** row. See [the stale-module warning](profiler.md#the-stale-module-warning).
 
 ### Dev mode — live reload while you build
 

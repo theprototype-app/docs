@@ -16,6 +16,16 @@ You build scenes from primitives, imported models and packs, wire behavior with 
 
 ## What's new
 
+**1.20 — measure on the device, build games from a kit.** The [Profiler](profiler.md) records
+frame time, draw calls and triangles — and, in detail, which objects draw most — against the
+Quest budget, compares two recordings, and watches a headset live from the desktop; **Report this
+moment** keeps the last 30 seconds when something stutters. Games get a [game kit](game-kit.md)
+(rules, rounds, levels, score, pickups, enemies with health and movers) as **Kit:** nodes and as
+code, and game logic can be written as a small [behaviour](behaviours.md) file with a live node
+view. The [Script node](nodes/script.md) gains typed inputs and outputs, Flow Code shows a graph
+as [compact text](node-system.md#flow-code-the-graph-as-text), and modules now
+[unload completely](module-sdk.md#new-in-120).
+
 **1.14 — heavy models stop being a cliff.** A model is weighed before it lands, and one that
 would hurt asks first, with **Reduce** on a background worker as a third way out and
 **Restore original model** to take it back. See [Importing files](explorer.md#when-a-model-is-too-heavy).
