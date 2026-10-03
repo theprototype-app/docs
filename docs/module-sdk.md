@@ -498,6 +498,134 @@ the scene, keyed by uuid, and `recent` is the last 32 hits in order. It is runti
 state — a late joiner's log starts empty, so a module that needs history keeps its
 own through `registerStateSync`.
 
+## New in 1.20
+
+### Unloading: everything you registered goes with you
+
+A module can now be unloaded and loaded again while the app runs — switched off in the Modules
+manager (**core modules too**, no reload any more), removed, updated, dev-reloaded, or left
+behind by a scene switch. Everything you registered through `api` is recorded per module and
+undone at unload, newest first: node groups, effects, handlers, frame tasks, menus, toolboxes,
+key bindings, input claims, possess, VR panels, your music, game levels / settings / help /
+restart hooks, LOD handles, listeners, backends, post effects, audio device kinds and voices,
+HUD rows… Every `off()` the api hands you still works, and a call that *replaces* (`api.game.levels`
+on every unlock, `addSetting` with the same id) replaces its entry rather than stacking.
+
+**What stays** is what you put into the *shared* scene — `api.create` objects, objects in
+`objectsGroup`, flow nodes you added, audio devices and cables, node data — because that is user
+content now. So do shared game variables and what you saved with `api.storage`.
+
+For what only your module knows about, four tools:
+
+```js
+// your own teardown — a DOM overlay, a worker, a raw WebAudio graph; returns cancel()
+api.onUnload(() => overlay.remove());
+
+// timers that die with the module
+const h = api.timers.setInterval(refresh, 500);
+api.timers.clearInterval(h);
+api.timers.setTimeout(fn, ms); api.timers.requestAnimationFrame(loop);
+api.timers.pending();   // {timeouts, intervals, frames}
+
+// a listener removed at unload — window, document, the canvas, anything; returns off()
+const off = api.listen(window, 'keydown', onKey, true);
+
+// a scene-root object that is YOURS: removed at unload, its GPU resources freed
+api.scene().add(api.own(group));   // never for content inside objectsGroup
+```
+
+**Installed (zip / URL) modules get this for free** for the common cases: their bare
+`setTimeout` / `setInterval` / `requestAnimationFrame` (and the clears) and the listeners they add
+to `window` or `document` are tracked and stopped at unload. Two edges: `window.setTimeout(...)`
+or a listener on any other target is not tracked — use `api.timers` / `api.listen`; and a module
+that declares one of those timer names itself at top level loads without the tracking.
+
+!!! tip "Keep state inside `register()`"
+    The browser never unloads an imported file's top-level scope, so module-level variables,
+    caches and DOM survive an unload and the next load starts from them. State declared inside
+    `register()` is fresh every time; module-level state you must reset belongs in
+    `api.onUnload`.
+
+### Models: `api.loadModel`
+
+Load a `.glb` / `.gltf` through the app's own loader instead of bundling one — the scene's
+`THREE`, with Draco, Meshopt and KTX2 decoding (the KTX2 transcoder is fetched only for a file
+that needs it), parsed **once per URL** and shared by every module that asks:
+
+```js
+const enemy = await api.loadModel('assets/enemy.glb', { castShadow: false }); // packaged file or any URL
+group.add(enemy.scene);                                // your own copy
+const next = enemy.instance({ ownMaterials: true });   // another copy: own bones when skinned, own materials
+group.add(next);
+const mixer = new api.THREE.AnimationMixer(next);
+mixer.clipAction(enemy.animations.find((c) => c.name === 'walk')).play();
+enemy.info;            // {meshes, triangles, materials, textures, skinned}
+enemy.release(next);   // forget one copy now
+enemy.dispose();       // forget them all — unloading your module does this for you
+```
+
+Options, all optional:
+
+| Option | |
+|---|---|
+| `lod` | absent / `'auto'` = [automatic levels](lod.md) (a pack item that ships `lods` uses those files); `false` = none; `{ratios, distances, minTriangles}` = tuned automatic levels; `[{file, ratio}]` = pre-built level files beside the model |
+| `castShadow` / `receiveShadow` | for every mesh (absent = as the file says) |
+| `collider` | `'box'` `'sphere'` `'capsule'` `'cylinder'` `'cone'` `'hull'` — the physics shape a copy takes once it is scene content with physics |
+| `ownMaterials` | every copy gets its own materials |
+
+Everything a module loaded is released when it is switched off or unloaded (a copy you put in
+`objectsGroup` stays — it is the scene's). A copy you drop without `release()` is noticed and
+collected. A load still in flight at unload rejects, and so does a missing or unreadable file —
+keep a fallback look. Feature-detect it (`typeof api.loadModel === 'function'`): 1.19 and older do
+not have it.
+
+### The game kit: `api.kit`
+
+The [game kit](game-kit.md) — rules, round, levels, score, pickups, spawner, health, mover — is
+the same for code as for the **Kit:** nodes. Call an action on any peer: the **authority** peer
+applies it exactly once. Reads are replicated values; `on<Event>(fn)` fires on every peer and
+returns `off`; registrations are torn down with your module.
+
+```js
+const { round, levels, score, pickups, rules } = api.kit;
+rules.set({ reach: 1.3, jump: 1.0 });
+rules.onGrabRequest((req) => { if (req.name === 'Star' && !starFree) req.refuse('Build to the ring first'); });
+levels.define({ id: 'mygame', list: [{ id: '1', label: 'Easy', par: { time: 60 } }, { id: '2', label: 'Hard' }] });
+round.configure(3, 120, 'lose', 2);                   // 3 s intro, 2 min limit, lose on time, 2 s outro
+round.onGo(() => api.announce('Go!'));
+pickups.register({ id: gem.uuid, score: 10, respawn: 8, grants: { time: 5 } });
+pickups.onCollected(({ by }) => api.playSound('coin'));
+round.onWon(() => levels.complete(true, score.total()));
+levels.select('1'); round.start();
+```
+
+| Piece | Actions | Reads | Events |
+|---|---|---|---|
+| `rules` | `setReach(m)` `setJump(m)` `setBounds(min, max)` `clearRules()` · `set({reach, jump, bounds})` | `reach()` `jump()` `current()` `inside(p)` `clamp(p)` `checkGrab(req)` | `refused` (local) · `onGrabRequest(fn)` veto |
+| `round` | `configure(intro, limit, 'lose'\|'win', outro)` `start()` `restart()` `pause()` `resume()` `win(reason)` `lose(reason)` `extend(s)` `toMenu()` | `phase()` `playing()` `elapsed()` `remaining()` `countdown()` `number()` `outcome()` `state()` `running()` | `started` `go` `paused` `resumed` `won` `lost` `results` `menu` |
+| `levels` | `select(id)` `next()` `complete(won, score, time, level?, detail?)` `setMode(m)` · `define({id, list, unlock?, stars?, store?, merge?})` | `current()` `currentLabel()` `index()` `starsOf(id)` `unlocked(id)` `totalStars()` `mode()` `table()` `progress()` `resumeLevel()` | `selected` `completed` `unlockedNext` |
+| `score` | `add(n, player?)` `set(n, player?)` `reset()` · `configure({autoReset})` `useGame(id)` | `total()` `mine()` `best()` `leader()` `of(id)` `leaderboard(n)` `results()` | `scored` `newBest` (local) |
+| `pickups` | `collect(id, score?, respawn?)` `resetPickups()` · `register({id, score, respawn, radius, grants})` | `available(id)` `taken()` `left()` `takenBy(id)` | `collected` `respawned` `allCollected` |
+| `spawner` | `spawn({kind, template, at, count, spread, hp, speed, removeAfter, tags, data, mover})` → ids · `despawn(id)` `clear(kind)` `setTags` `setData` | `count(kind)` `list(filter)` `get(id)` | `spawned` `despawned` `emptied` |
+| `health` | `damage(id, n)` `damageArea(at, r, n, kind)` `heal(id, n)` `revive(id)` | `hp(id)` `max(id)` `fraction(id)` `alive(id)` | `damaged` `healed` `died` `revived` |
+| `mover` | `chase(kind, target)` `seek(id, target, {speed, reach})` `arrive(…)` `patrol(id, path, loop)` `stop(id)` `halt(kind)` `knock(id, [vx, vy, vz])` `setSpeed(id, s)` | `state(id)` | `stuck` |
+
+- `levels` feeds the pause menu's level picker — do not also call `api.game.levels`. Progress is
+  per device; `store: {get, set}` keeps your own save key.
+- `score` credits the asking peer unless a player is named — a shared pulse is asked by every
+  peer, so name the player when it matters who.
+- A `chase` target is an object uuid, `'player'`, `'nearestPlayer'`, `'player:<id>'` or an entity
+  id. Health events carry `{entity, amount?, by?, authority}` — change game state only where
+  `authority` is true.
+- Entities you spawn leave with your module.
+
+### Behaviours
+
+Game logic can also live in the scene as a [behaviour](behaviours.md): one small file in a
+Behaviour node, run on the authority with replicated state, calling the same `kit`. Each
+behaviour is tracked like a module of its own, so deleting its node takes its listeners and
+entities with it.
+
 ## New in 1.19
 
 - **`api.inScene()`** — false once a scene switch LEFT your module behind (the person chose *Keep*
@@ -517,10 +645,11 @@ own through `registerStateSync`.
 ## Lifecycle
 
 - Core modules load at boot unless disabled in the manager; user modules load
-  after them. Enabling registers live. **User modules also disable, update and
-  dev-reload live** — everything `register(api)` added is genuinely torn down
-  and re-registered (see the manager page's *Dev mode*). Core modules still
-  need a reload to disable.
+  after them. Enabling registers live. **Modules disable, update and dev-reload
+  live** — everything `register(api)` added is genuinely torn down and
+  re-registered (see the manager page's *Dev mode*). Since 1.20 that includes
+  core modules, which no longer need a reload to disable; see
+  [Unloading](#unloading-everything-you-registered-goes-with-you).
 - Peers exchange `{id, version}` lists on connect and toast on mismatch. The
   session still works, but that module's behavior may differ between peers —
   treat "same modules everywhere" as part of the session contract.

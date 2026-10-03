@@ -81,6 +81,37 @@ The **⚙** tab button on the right edge opens the properties panel, which has t
 
 The graph itself is shared: every node, edge, parameter tweak and position replicates to all peers. Motion is **not** streamed — every peer computes the same animation from the same node data and a **synced clock**, so a Spin or a Sound loop is at the same phase for everyone. Random nodes are seeded, and click triggers ride tiny replicated messages. You can exempt one object from all flow effects via its right-click menu (*Disable flow effects*).
 
+## Flow Code: the graph as text
+
+**Flow Code** (the dock's **＋** menu, or <kbd>Alt</kbd>+<kbd>F</kbd>) shows the graph the editor is
+showing as text you can read, edit and **Apply**. A **Text | JSON** toggle above it picks the
+format; your choice is remembered on this device. Switching format drops edits you have not
+applied.
+
+**Text** (the default since 1.20) is the same data as the JSON, only written once instead of
+repeated — about 2.1 to 2.4 times shorter, and nothing is lost:
+
+```
+// a button that plays a sound and shows a screen
+click = gamesound "Button click" {sound: "click"} @520,40
+lvl1 = hudbutton "Level 1 button" {element: "lvl-1"} @40,40
+lvl1 -> click.trigger
+s1.show -> vis.on
+```
+
+- A **node** is one line: `id = type "label" {params} @x,y`. `type+` means the node's data
+  repeats its type; `class:"…"` or `noclass` appear only when a node's styling is unusual.
+- A **wire** is one line: `source.output -> target.input` (the handle is left out where the
+  socket has no name). A wire with a non-standard id carries `#id`.
+- `//` starts a comment.
+- Several graphs are sections under `@graph <key>` lines.
+- Anything that fits none of these is kept as a raw JSON line (`id := {…}` for a node, `~ {…}`
+  for a wire), which is why the round trip is exact.
+
+**Apply** replaces the graph with what the text says, for everybody. A line it cannot read is
+reported with its line and column, and nothing changes. A new node line without `@x,y` is placed
+below the graph.
+
 ## Custom nodes
 
 Right-click the canvas ▸ **Custom ▸ New custom node…** to open the **Node Designer**: name your node, add controls (`range` sliders with min/max/step, or `select` dropdowns), and write its code — a per-frame function of `object`, `base`, `data` (your controls + wired inputs) and `time`. **Save for everyone** replicates the definition, and instances appear in the palette's *Custom* group. See [Custom Node](nodes/customnode.md) and [Script](nodes/script.md).

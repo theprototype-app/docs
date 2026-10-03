@@ -7,6 +7,10 @@ Everything on this page is **local**. A budget is a fact about *your* graphics c
 tab: nothing here is saved with the scene, replicated to a peer or undoable, and two people on
 different hardware are allowed to disagree about all of it.
 
+To see *what happened* over time rather than where the scene stands now — which objects draw
+most, what a stall was doing, how a headset copes — record it with the
+[Profiler](profiler.md).
+
 ## The meter
 
 The object count in the status line carries a coloured dot:
@@ -130,3 +134,34 @@ toast, because the chip lives in the object list's footer and that window can be
 
 Nothing the governor does changes the scene for anybody else, and nothing it does is written to
 a preference: it is a fact about this device right now.
+
+## Budgets in CI
+
+For contributors to the core repo: every Games-tab game and every General-tab level is held to
+the Quest budget on every pull request and before every release.
+
+| Measure | Budget |
+|---|---|
+| Draw calls per frame | 150 |
+| Triangles per frame | 300,000 |
+| Real-time lights | 2 |
+| Texture memory | 64 MB (an uncompressed estimate of the visible textures) |
+
+The budgets live in `perf/budgets.json` and `node scripts/perf-games.cjs --check` is the gate. It
+measures **counts only** — draw calls, triangles, lights and texture size, taken in a
+headset-like view with the post stack, shadows and the quality governor off — because counts come
+out the same on a CI runner without a graphics card as on a desk. Frame time is deliberately *not*
+gated: no runner reproduces it. Measure milliseconds on the device, with the
+[Profiler](profiler.md) or [performance reports](profiler.md#send-performance-reports).
+
+A scene that is over budget *today* ships on an **allow-list** in the same file: each entry names
+the scene and measure, a ceiling close to what was measured, the date it was added, a review date,
+an owner and a note on what would fix it. Anything above its ceiling is red like any other
+regression. The core repo's `perf/README.md` explains how to run the check locally and add an
+entry.
+
+Alongside it, `scripts/scene-lint.cjs` checks saved scenes for what a scene can get silently
+wrong — unknown node types or environment presets, a spawn inside a wall or outside the bounds,
+nondeterministic scripts, pack items with behaviour or LOD issues. The template authoring
+scripts run it, and so does CI.
+
