@@ -877,6 +877,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../profiler/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Profiler & Recordings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1412,6 +1433,30 @@
       Practical example
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typed-sockets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Typed sockets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Typed sockets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-lint" class="md-nav__link">
+    <span class="md-ellipsis">
+      The lint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2867,11 +2912,74 @@
   
   
     <li class="md-nav__item">
+      <a href="../../games/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Games Tab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../build-a-game/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Build a Game Loop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-kit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Kit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../behaviours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Behaviours
   </span>
   
 
@@ -3361,6 +3469,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#typed-sockets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Typed sockets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Typed sockets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-lint" class="md-nav__link">
+    <span class="md-ellipsis">
+      The lint
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3385,8 +3517,15 @@
 
 
 <h1 id="script">Script</h1>
-<p>Write a small piece of code that runs every frame on the connected object — the escape hatch when no built-in node fits.</p>
-<p><strong>Output:</strong> effect (wire into an <a href="../objectselector/">Object Selector</a>)</p>
+<p>Write a small piece of code — the escape hatch when no built-in node fits. A Script node works
+two ways:</p>
+<ul>
+<li><strong>As an effect</strong> (the default): code that runs every frame on the connected object.</li>
+<li><strong>With typed sockets</strong> (since 1.20): a small function with named, typed inputs and outputs —
+  a value other nodes can read, like a Math or Compare node you wrote yourself.</li>
+</ul>
+<p><strong>Output:</strong> effect (wire into an <a href="../objectselector/">Object Selector</a>), or the outputs you
+declare.</p>
 <h2 id="inputs">Inputs</h2>
 <table>
 <thead>
@@ -3404,6 +3543,7 @@
 </tr>
 </tbody>
 </table>
+<p>A node with <a href="#typed-sockets">typed sockets</a> has the inputs you declare instead.</p>
 <h2 id="parameters">Parameters</h2>
 <table>
 <thead>
@@ -3416,6 +3556,10 @@
 <tr>
 <td>code</td>
 <td><strong>Edit code</strong> button on the card opens the side-panel editor</td>
+</tr>
+<tr>
+<td>inputs / outputs</td>
+<td><strong>Typed sockets…</strong> in the same panel</td>
 </tr>
 </tbody>
 </table>
@@ -3439,6 +3583,85 @@
 <p class="admonition-title">Warning</p>
 <p>Keep scripts deterministic: no <code>Math.random()</code>, no accumulating (<code>rotation.y += …</code>). Compute everything from <code>base</code>, <code>data</code> and <code>time</code>, or peers will drift apart.</p>
 </div>
+<h2 id="typed-sockets">Typed sockets</h2>
+<p>Press <strong>Typed sockets…</strong> in the Script panel to declare your own sockets. <strong>+ input</strong> and
+<strong>+ output</strong> add one; give each a name and a type.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Types</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inputs</td>
+<td>number, boolean, vector3, color, object, event</td>
+</tr>
+<tr>
+<td>Outputs</td>
+<td>number, boolean, vector3, color, object</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Read an input as <strong><code>inputs.&lt;name&gt;</code></strong>. Every input arrives in one shape for its type: a number,
+  <code>true</code>/<code>false</code>, <code>[x, y, z]</code>, a colour string; an <strong>object</strong> input is <code>{uuid, name, position}</code>.
+  An unwired input reads as its type's zero (<code>null</code> for an object).</li>
+<li>Fill the outputs by <strong>returning</strong> them: <code>return { allow: …, gap: … }</code>. A node with outputs is
+  a <strong>value node</strong> — other nodes read its sockets, and the card shows each output's live value.
+  It is a pure function of its inputs and <code>time</code>, so it gets no <code>object</code> to move.</li>
+<li>A node with inputs but no outputs is still an effect: it drives its object as before, with
+  <code>inputs</code> beside <code>data</code>.</li>
+<li>The helpers <code>dist(a, b)</code>, <code>lerp</code> and <code>clamp</code> are there for you.</li>
+<li>Renaming or removing a socket removes the wires that went into it. <strong>Back to a, b, c</strong> returns
+  the node to the plain effect.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">// inputs: hand (vector3), piece (object), reach (number) — outputs: allow (boolean), gap (number)</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">piece</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">allow</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nx">gap</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">gap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dist</span><span class="p">(</span><span class="nx">inputs</span><span class="p">.</span><span class="nx">hand</span><span class="p">,</span><span class="w"> </span><span class="nx">inputs</span><span class="p">.</span><span class="nx">piece</span><span class="p">.</span><span class="nx">position</span><span class="p">);</span>
+<span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">allow</span><span class="o">:</span><span class="w"> </span><span class="nx">gap</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nx">inputs</span><span class="p">.</span><span class="nx">reach</span><span class="p">,</span><span class="w"> </span><span class="nx">gap</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+<p>Outputs carry values only — a script cannot fire an event.</p>
+<h3 id="the-lint">The lint</h3>
+<p>A script with typed sockets runs on every peer and must give every peer the same answer, so code
+that cannot is <strong>refused</strong> with its line, before it runs:</p>
+<table>
+<thead>
+<tr>
+<th>Not allowed</th>
+<th>Instead</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Math.random</code>, <code>crypto</code> randomness</td>
+<td>wire a <a href="../random/">Random</a> node into an input</td>
+</tr>
+<tr>
+<td><code>Date.now</code>, <code>new Date()</code>, <code>performance.now</code></td>
+<td>read <code>time</code> (the synced clock)</td>
+</tr>
+<tr>
+<td>the page: <code>document</code>, <code>window</code>, <code>navigator</code>, <code>globalThis</code>, <code>fetch</code>, <code>eval</code>, <code>new Function</code>, <code>import()</code>…</td>
+<td>reach the scene through your inputs</td>
+</tr>
+<tr>
+<td>storage: <code>localStorage</code>, <code>sessionStorage</code>, <code>indexedDB</code></td>
+<td>— this device's state is not the game's</td>
+</tr>
+<tr>
+<td>timers: <code>setTimeout</code>, <code>setInterval</code>, <code>requestAnimationFrame</code>, <code>queueMicrotask</code></td>
+<td>compute from <code>time</code></td>
+</tr>
+<tr>
+<td>a loop with no way out (<code>while (true)</code> with no <code>break</code>, <code>return</code> or <code>throw</code>)</td>
+<td>give it an exit</td>
+</tr>
+</tbody>
+</table>
+<p>A plain a/b/c script is not held to the lint — it keeps running as it always did — but the panel
+shows the same findings as advice.</p>
 
 
 
@@ -3459,7 +3682,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-07-16
+    2026-10-03
   </span>
 
     

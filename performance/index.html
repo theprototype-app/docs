@@ -14,7 +14,7 @@
         <link rel="prev" href="../notifications/">
       
       
-        <link rel="next" href="../node-system/">
+        <link rel="next" href="../profiler/">
       
       
       <link rel="icon" href="../logo.svg">
@@ -988,10 +988,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#budgets-in-ci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Budgets in CI
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../profiler/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Profiler & Recordings
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2916,11 +2946,74 @@
   
   
     <li class="md-nav__item">
+      <a href="../games/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Games Tab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../build-a-game/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Build a Game Loop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-kit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Kit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../behaviours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Behaviours
   </span>
   
 
@@ -3461,6 +3554,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#budgets-in-ci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Budgets in CI
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3490,6 +3592,9 @@ scene is more than your machine can draw.</p>
 <p>Everything on this page is <strong>local</strong>. A budget is a fact about <em>your</em> graphics card and <em>your</em>
 tab: nothing here is saved with the scene, replicated to a peer or undoable, and two people on
 different hardware are allowed to disagree about all of it.</p>
+<p>To see <em>what happened</em> over time rather than where the scene stands now — which objects draw
+most, what a stall was doing, how a headset copes — record it with the
+<a href="../profiler/">Profiler</a>.</p>
 <h2 id="the-meter">The meter</h2>
 <p>The object count in the status line carries a coloured dot:</p>
 <table>
@@ -3638,6 +3743,50 @@ again to give full quality back. The first time it ever acts in a session it als
 toast, because the chip lives in the object list's footer and that window can be closed.</p>
 <p>Nothing the governor does changes the scene for anybody else, and nothing it does is written to
 a preference: it is a fact about this device right now.</p>
+<h2 id="budgets-in-ci">Budgets in CI</h2>
+<p>For contributors to the core repo: every Games-tab game and every General-tab level is held to
+the Quest budget on every pull request and before every release.</p>
+<table>
+<thead>
+<tr>
+<th>Measure</th>
+<th>Budget</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Draw calls per frame</td>
+<td>150</td>
+</tr>
+<tr>
+<td>Triangles per frame</td>
+<td>300,000</td>
+</tr>
+<tr>
+<td>Real-time lights</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Texture memory</td>
+<td>64 MB (an uncompressed estimate of the visible textures)</td>
+</tr>
+</tbody>
+</table>
+<p>The budgets live in <code>perf/budgets.json</code> and <code>node scripts/perf-games.cjs --check</code> is the gate. It
+measures <strong>counts only</strong> — draw calls, triangles, lights and texture size, taken in a
+headset-like view with the post stack, shadows and the quality governor off — because counts come
+out the same on a CI runner without a graphics card as on a desk. Frame time is deliberately <em>not</em>
+gated: no runner reproduces it. Measure milliseconds on the device, with the
+<a href="../profiler/">Profiler</a> or <a href="../profiler/#send-performance-reports">performance reports</a>.</p>
+<p>A scene that is over budget <em>today</em> ships on an <strong>allow-list</strong> in the same file: each entry names
+the scene and measure, a ceiling close to what was measured, the date it was added, a review date,
+an owner and a note on what would fix it. Anything above its ceiling is red like any other
+regression. The core repo's <code>perf/README.md</code> explains how to run the check locally and add an
+entry.</p>
+<p>Alongside it, <code>scripts/scene-lint.cjs</code> checks saved scenes for what a scene can get silently
+wrong — unknown node types or environment presets, a spawn inside a wall or outside the bounds,
+nondeterministic scripts, pack items with behaviour or LOD issues. The template authoring
+scripts run it, and so does CI.</p>
 
 
 
@@ -3658,7 +3807,7 @@ a preference: it is a fact about this device right now.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-09-19
+    2026-10-03
   </span>
 
     

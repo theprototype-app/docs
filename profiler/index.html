@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.theprototype.app/shader-nodes/">
+        <link rel="canonical" href="https://docs.theprototype.app/profiler/">
       
       
-        <link rel="prev" href="../shader-graph/">
+        <link rel="prev" href="../performance/">
       
       
-        <link rel="next" href="../post-processing/">
+        <link rel="next" href="../node-system/">
       
       
       <link rel="icon" href="../logo.svg">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Shader Nodes - ThePrototype Docs</title>
+        <title>Profiler & Recordings - ThePrototype Docs</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#shader-nodes" class="md-skip">
+        <a href="#profiler-performance-recordings" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Shader Nodes
+              Profiler & Recordings
             
           </span>
         </div>
@@ -384,19 +384,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -410,7 +408,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Building
@@ -610,30 +608,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Shader Nodes
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../shader-nodes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -642,185 +620,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#input" class="md-nav__link">
-    <span class="md-ellipsis">
-      Input
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#math" class="md-nav__link">
-    <span class="md-ellipsis">
-      Math
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#channel" class="md-nav__link">
-    <span class="md-ellipsis">
-      Channel
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#uv" class="md-nav__link">
-    <span class="md-ellipsis">
-      UV
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#utility" class="md-nav__link">
-    <span class="md-ellipsis">
-      Utility
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#post" class="md-nav__link">
-    <span class="md-ellipsis">
-      Post
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#output" class="md-nav__link">
-    <span class="md-ellipsis">
-      Output
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes-on-the-ones-worth-a-second-look" class="md-nav__link">
-    <span class="md-ellipsis">
-      Notes on the ones worth a second look
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Notes on the ones worth a second look">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#texture" class="md-nav__link">
-    <span class="md-ellipsis">
-      Texture
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#split-and-combine" class="md-nav__link">
-    <span class="md-ellipsis">
-      Split and Combine
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tiling-offset-and-panner" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tiling &amp; offset, and Panner
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gradient" class="md-nav__link">
-    <span class="md-ellipsis">
-      Gradient
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#normal-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      Normal map
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fresnel" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fresnel
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#noise" class="md-nav__link">
-    <span class="md-ellipsis">
-      Noise
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#glsl-expression" class="md-nav__link">
-    <span class="md-ellipsis">
-      GLSL expression
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#surface" class="md-nav__link">
-    <span class="md-ellipsis">
-      Surface
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -984,17 +783,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -1008,7 +809,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Viewport
@@ -1082,10 +883,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../profiler/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Profiler & Recordings
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1094,6 +915,188 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#opening-the-profiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opening the Profiler
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recording" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recording
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recording">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#markers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Markers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-recordings-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      The recordings list
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reading-a-recording" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading a recording
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reading a recording">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      The timeline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-selection-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      What the selection cost
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compare
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-and-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export and import
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report-this-moment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Report this moment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profiling-the-headset-from-the-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Profiling the headset from the desktop
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Profiling the headset from the desktop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recording-in-the-headset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recording in the headset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#watching-a-headset-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      Watching a headset live
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#send-performance-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Send performance reports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-stale-module-warning" class="md-nav__link">
+    <span class="md-ellipsis">
+      The stale-module warning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-tpprof-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      The .tpprof format
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3549,154 +3552,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#input" class="md-nav__link">
+  <a href="#opening-the-profiler" class="md-nav__link">
     <span class="md-ellipsis">
-      Input
+      Opening the Profiler
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#math" class="md-nav__link">
+  <a href="#recording" class="md-nav__link">
     <span class="md-ellipsis">
-      Math
+      Recording
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#channel" class="md-nav__link">
-    <span class="md-ellipsis">
-      Channel
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#uv" class="md-nav__link">
-    <span class="md-ellipsis">
-      UV
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#utility" class="md-nav__link">
-    <span class="md-ellipsis">
-      Utility
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#post" class="md-nav__link">
-    <span class="md-ellipsis">
-      Post
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#output" class="md-nav__link">
-    <span class="md-ellipsis">
-      Output
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes-on-the-ones-worth-a-second-look" class="md-nav__link">
-    <span class="md-ellipsis">
-      Notes on the ones worth a second look
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Notes on the ones worth a second look">
+    <nav class="md-nav" aria-label="Recording">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#texture" class="md-nav__link">
+  <a href="#markers" class="md-nav__link">
     <span class="md-ellipsis">
-      Texture
+      Markers
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#split-and-combine" class="md-nav__link">
+  <a href="#the-recordings-list" class="md-nav__link">
     <span class="md-ellipsis">
-      Split and Combine
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#tiling-offset-and-panner" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tiling &amp; offset, and Panner
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gradient" class="md-nav__link">
-    <span class="md-ellipsis">
-      Gradient
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#normal-map" class="md-nav__link">
-    <span class="md-ellipsis">
-      Normal map
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fresnel" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fresnel
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#noise" class="md-nav__link">
-    <span class="md-ellipsis">
-      Noise
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#glsl-expression" class="md-nav__link">
-    <span class="md-ellipsis">
-      GLSL expression
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#surface" class="md-nav__link">
-    <span class="md-ellipsis">
-      Surface
+      The recordings list
     </span>
   </a>
   
@@ -3704,6 +3590,126 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reading-a-recording" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading a recording
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reading a recording">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      The timeline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-selection-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      What the selection cost
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compare" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compare
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-and-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export and import
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report-this-moment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Report this moment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profiling-the-headset-from-the-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Profiling the headset from the desktop
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Profiling the headset from the desktop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recording-in-the-headset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recording in the headset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#watching-a-headset-live" class="md-nav__link">
+    <span class="md-ellipsis">
+      Watching a headset live
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#send-performance-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Send performance reports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-stale-module-warning" class="md-nav__link">
+    <span class="md-ellipsis">
+      The stale-module warning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-tpprof-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      The .tpprof format
+    </span>
+  </a>
   
 </li>
       
@@ -3722,7 +3728,7 @@
                   
 
   
-    <a href="https://github.com/theprototype-app/docs/edit/docs/shader-nodes.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/theprototype-app/docs/edit/docs/profiler.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -3730,550 +3736,237 @@
   
 
 
-<h1 id="shader-nodes">Shader Nodes</h1>
-<p>Every node the <a href="../shader-graph/">Shader editor</a> offers, grouped exactly as the palette and
-the right-click menu group them. Each node's one-line description is the same text the
-editor shows in its info pane when you select the node, so the two cannot disagree.</p>
-<p>Types are <code>float</code> (one number), <code>vec2</code>/<code>vec3</code>/<code>vec4</code> (two, three or four), and
-<code>sampler2D</code> (an image). Values convert automatically where it makes sense: a number
-feeding a colour input becomes grey, and a colour feeding a number input gives its red
-channel.</p>
-<p>&dagger; marks an input whose type <strong>follows whatever you wire into it</strong> — Multiply of two
-colours gives a colour, of two numbers a number.</p>
-<h2 id="input">Input</h2>
+<h1 id="profiler-performance-recordings">Profiler &amp; performance recordings</h1>
+<p>The <a href="../performance/#the-meter">Statistics window</a> tells you where a scene stands right now. The
+<strong>Profiler</strong> tells you <em>what happened</em>: it records frame time, draw calls, triangles and the
+quality level over time, and — in a detailed recording — which objects, materials and shadow
+casters the draws went to. Everything is measured on the device it runs on, so a recording made
+in a headset is a recording of the headset.</p>
+<p>Recordings are <strong>local</strong>. They are kept in this browser, nothing replicates to your peers, and
+nothing leaves the device unless you export a file or turn on
+<a href="#send-performance-reports">Send performance reports</a>.</p>
+<h2 id="opening-the-profiler">Opening the Profiler</h2>
+<p>The Profiler is a tab in the bottom dock, next to the Explorer: press <strong>＋</strong> in the dock's tab
+strip and choose <strong>Profiler</strong>. Like the other dock views, <strong>⧉</strong> undocks it into a floating window
+and <strong>⇩ Dock</strong> puts it back.</p>
+<h2 id="recording">Recording</h2>
+<p>Pick a mode, then press <strong>Record</strong>; <strong>Stop</strong> ends it and the recording joins the list.</p>
 <table>
 <thead>
 <tr>
-<th>Node</th>
-<th>In</th>
-<th>Out</th>
-<th>Parameters</th>
-<th>What it does</th>
+<th>Mode</th>
+<th>What it records</th>
+<th>Cost</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Float</strong></td>
-<td>—</td>
-<td>out <em>(float)</em></td>
-<td>value <code>0.5</code></td>
-<td>A single number you can dial, and drive from a Set Shader Uniform flow node.</td>
+<td><strong>Light</strong></td>
+<td>Frame time, draw calls, triangles and the quality level for every frame, plus the markers below.</td>
+<td>Next to nothing — the app keeps a light recording running all the time anyway.</td>
 </tr>
 <tr>
-<td><strong>Colour</strong></td>
-<td>—</td>
-<td>out <em>(vec3)</em></td>
-<td>value <code>#ffffff</code></td>
-<td>A colour you pick. Converted sRGB -&gt; linear, so it matches what the picker shows.</td>
-</tr>
-<tr>
-<td><strong>Vector 2</strong></td>
-<td>—</td>
-<td>out <em>(vec2)</em></td>
-<td>value <code>[0, 0]</code></td>
-<td>Two numbers — usually a UV offset, a tiling amount or a 2D direction.</td>
-</tr>
-<tr>
-<td><strong>Vector 3</strong></td>
-<td>—</td>
-<td>out <em>(vec3)</em></td>
-<td>value <code>[0, 0, 0]</code></td>
-<td>Three numbers — a direction, a position offset, or a colour you want as numbers.</td>
-</tr>
-<tr>
-<td><strong>UV</strong></td>
-<td>—</td>
-<td>out <em>(vec2)</em></td>
-<td>—</td>
-<td>The surface's texture coordinates: 0..1 across the mesh's UV layout — or, in a post graph, the screen position. The starting point for anything that varies across a surface.</td>
-</tr>
-<tr>
-<td><strong>Normal</strong></td>
-<td>—</td>
-<td>out <em>(vec3)</em></td>
-<td>—</td>
-<td>Which way the surface faces. In the surface stage this is the shaded normal; wired into Position it is the object-space normal, which is what you displace along.</td>
-</tr>
-<tr>
-<td><strong>View direction</strong></td>
-<td>—</td>
-<td>out <em>(vec3)</em></td>
-<td>—</td>
-<td>The direction from the surface towards the camera. Surface stage only — there is no camera vector while vertices are being placed. <strong>(surface only)</strong></td>
-</tr>
-<tr>
-<td><strong>Time</strong></td>
-<td>—</td>
-<td>out <em>(float)</em></td>
-<td>speed <code>1</code></td>
-<td>Seconds from the SHARED clock, so anything animated is at the same point for every peer with no messages. Multiply by speed to go faster.</td>
-</tr>
-<tr>
-<td><strong>Texture</strong></td>
-<td>uv <em>(vec2)</em></td>
-<td>rgb <em>(vec3)</em>, a <em>(float)</em>, rgba <em>(vec4)</em></td>
-<td>hash <em>(none)</em></td>
-<td>Samples an image from your Explorer library. The graph stores a content hash, so the picture travels to peers once and is reused, never re-sent on every edit.</td>
+<td><strong>Detailed</strong></td>
+<td>Everything Light records, plus once a second a <strong>capture</strong>: which objects, meshes and materials the draw calls went to, which were shadow-map passes, CPU time per phase (input, physics, modules, flow, render, other) and memory.</td>
+<td>It costs frame time, so the numbers you read are a little worse than the scene really is. Runs for <strong>5 s</strong>, <strong>10 s</strong>, <strong>30 s</strong> or <strong>until stopped</strong>.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="math">Math</h2>
+<p>While a detailed recording runs, <strong>Capture</strong> takes one extra per-object capture right now.</p>
+<p><strong>Last 30 s</strong> saves what the app has <em>already</em> recorded: a light recorder is always on and keeps
+about the last 30 seconds, so when something stutters you can save it after the fact instead of
+trying to make it happen again.</p>
+<div class="admonition note">
+<p class="admonition-title">GPU time</p>
+<p>Detailed captures include GPU milliseconds only where the browser offers the
+<code>EXT_disjoint_timer_query_webgl2</code> extension. Most mobile and headset browsers do not, and
+then the GPU column is simply absent.</p>
+</div>
+<h3 id="markers">Markers</h3>
+<p>Every recording — including the always-on one — carries markers for what was going on:
+scene loads, teleports, grabs, menus, quality changes from the
+<a href="../performance/#the-quality-governor">quality governor</a>, entering and leaving VR, and every
+<strong>stall</strong> over 100 ms together with what the app was doing at the time. They appear on the
+timeline and in the <strong>Events</strong> list.</p>
+<h3 id="the-recordings-list">The recordings list</h3>
+<p>Each recording keeps the build, the modules and their versions, the device, the scene and game,
+and whether it was made in VR. <strong>Rename</strong> it, <strong>pin</strong> it, <strong>export</strong> it, or delete it. Up to 40
+unpinned recordings are kept; past that the oldest unpinned ones make room for new ones, so pin
+the ones you want to keep.</p>
+<h2 id="reading-a-recording">Reading a recording</h2>
+<h3 id="the-timeline">The timeline</h3>
+<p>Five graphs share one time axis: <strong>fps</strong>, <strong>frame ms</strong>, <strong>draw calls</strong>, <strong>triangles</strong> and the
+<strong>quality</strong> level. The Quest budget is drawn as a red dashed line in each graph that has one —
+<strong>72 fps</strong>, <strong>13.9 ms</strong>, <strong>150 draw calls</strong> and <strong>300k triangles</strong> — and any column past it turns
+red, so the moments you crossed the budget stand out.</p>
 <table>
 <thead>
 <tr>
-<th>Node</th>
-<th>In</th>
-<th>Out</th>
-<th>Parameters</th>
-<th>What it does</th>
+<th>Do</th>
+<th>To</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Add</strong></td>
-<td>a <em>(float&dagger;)</em>, b <em>(float&dagger;)</em></td>
-<td>out <em>(float)</em></td>
-<td>—</td>
-<td>a + b. Brightening, offsetting, layering two patterns.</td>
+<td>Click</td>
+<td>select one frame</td>
 </tr>
 <tr>
-<td><strong>Subtract</strong></td>
-<td>a <em>(float&dagger;)</em>, b <em>(float&dagger;)</em></td>
-<td>out <em>(float)</em></td>
-<td>—</td>
-<td>a - b. Cutting one pattern out of another, or centring a 0..1 value on zero.</td>
+<td>Drag</td>
+<td>select a range</td>
 </tr>
 <tr>
-<td><strong>Multiply</strong></td>
-<td>a <em>(float&dagger;)</em>, b <em>(float&dagger;)</em></td>
-<td>out <em>(float)</em></td>
-<td>—</td>
-<td>a * b. Tinting, masking, scaling a pattern down.</td>
+<td>Wheel</td>
+<td>zoom about the pointer</td>
 </tr>
 <tr>
-<td><strong>Divide</strong></td>
-<td>a <em>(float&dagger;)</em>, b <em>(float&dagger;)</em></td>
-<td>out <em>(float)</em></td>
-<td>—</td>
-<td>a / b. Scaling a value down by an amount you can drive.</td>
+<td><kbd>Shift</kbd>+wheel, or a middle-button drag</td>
+<td>pan</td>
 </tr>
 <tr>
-<td><strong>Sin</strong></td>
-<td>a <em>(float)</em></td>
-<td>out <em>(float)</em></td>
-<td>—</td>
-<td>A smooth wave between -1 and 1. Feed it Time for a pulse, or UV for stripes.</td>
+<td>Double-click, or <kbd>0</kbd></td>
+<td>fit the whole recording</td>
 </tr>
 <tr>
-<td><strong>Cos</strong></td>
-<td>a <em>(float)</em></td>
-<td>out <em>(float)</em></td>
-<td>—</td>
-<td>Like Sin, a quarter-cycle ahead — the pair makes circular motion.</td>
+<td><kbd>←</kbd> / <kbd>→</kbd></td>
+<td>step one frame (<kbd>Ctrl</kbd> for ten)</td>
 </tr>
 <tr>
-<td><strong>Fract</strong></td>
-<td>a <em>(float)</em></td>
-<td>out <em>(float)</em></td>
-<td>—</td>
-<td>Keeps only the fractional part, so values wrap 0..1 repeatedly. The usual way to make something tile.</td>
+<td><kbd>Shift</kbd>+<kbd>←</kbd> / <kbd>→</kbd></td>
+<td>extend the range</td>
 </tr>
 <tr>
-<td><strong>Abs</strong></td>
-<td>a <em>(float)</em></td>
-<td>out <em>(float)</em></td>
-<td>—</td>
-<td>Drops the sign, mirroring a pattern about zero.</td>
+<td><kbd>Home</kbd> / <kbd>End</kbd></td>
+<td>first / last frame</td>
 </tr>
 <tr>
-<td><strong>One minus</strong></td>
-<td>a <em>(float&dagger;)</em></td>
-<td>out <em>(float)</em></td>
-<td>—</td>
-<td>1 - a. Inverts a 0..1 mask.</td>
+<td><kbd>+</kbd> / <kbd>−</kbd></td>
+<td>zoom in / out</td>
 </tr>
 <tr>
-<td><strong>Mix</strong></td>
-<td>a <em>(vec3&dagger;)</em>, b <em>(vec3&dagger;)</em>, t <em>(float)</em></td>
-<td>out <em>(vec3)</em></td>
-<td>—</td>
-<td>Blends a and b by t: 0 gives a, 1 gives b. The workhorse for combining two looks.</td>
+<td><kbd>Z</kbd></td>
+<td>zoom to the selection</td>
 </tr>
 <tr>
-<td><strong>Clamp</strong></td>
-<td>a <em>(float&dagger;)</em></td>
-<td>out <em>(float)</em></td>
-<td>min <code>0</code>, max <code>1</code></td>
-<td>Holds a value between min and max.</td>
-</tr>
-<tr>
-<td><strong>Dot</strong></td>
-<td>a <em>(vec3)</em>, b <em>(vec3)</em></td>
-<td>out <em>(float)</em></td>
-<td>—</td>
-<td>How much two directions agree: 1 aligned, 0 perpendicular, -1 opposed. Lighting-style falloffs.</td>
-</tr>
-<tr>
-<td><strong>Power</strong></td>
-<td>a <em>(float)</em></td>
-<td>out <em>(float)</em></td>
-<td>exponent <code>2</code></td>
-<td>Raises to an exponent, which sharpens a 0..1 falloff (higher = tighter).</td>
-</tr>
-<tr>
-<td><strong>Smoothstep</strong></td>
-<td>a <em>(float)</em></td>
-<td>out <em>(float)</em></td>
-<td>edge0 <code>0</code>, edge1 <code>1</code></td>
-<td>An eased 0..1 ramp between two edges — a soft-edged mask.</td>
-</tr>
-<tr>
-<td><strong>Remap</strong></td>
-<td>a <em>(float)</em></td>
-<td>out <em>(float)</em></td>
-<td>inMin <code>0</code>, inMax <code>1</code>, outMin <code>0</code>, outMax <code>1</code></td>
-<td>Rescales a range onto another, e.g. -1..1 into 0..1.</td>
-</tr>
-<tr>
-<td><strong>Floor</strong></td>
-<td>a <em>(float&dagger;)</em></td>
-<td>out <em>(float)</em></td>
-<td>—</td>
-<td>Rounds down. Quantises a smooth value into steps.</td>
-</tr>
-<tr>
-<td><strong>Ceil</strong></td>
-<td>a <em>(float&dagger;)</em></td>
-<td>out <em>(float)</em></td>
-<td>—</td>
-<td>Rounds up, so anything above zero becomes at least 1 — a quick "is this non-zero" mask.</td>
-</tr>
-<tr>
-<td><strong>Saturate</strong></td>
-<td>a <em>(float&dagger;)</em></td>
-<td>out <em>(float)</em></td>
-<td>—</td>
-<td>Clamps to 0..1 — a safety net before something is used as a mask.</td>
-</tr>
-<tr>
-<td><strong>Normalize</strong></td>
-<td>a <em>(vec3&dagger;)</em></td>
-<td>out <em>(vec3)</em></td>
-<td>—</td>
-<td>Rescales a direction to length 1. Do this before using a vector as a direction.</td>
-</tr>
-<tr>
-<td><strong>Min</strong></td>
-<td>a <em>(float&dagger;)</em>, b <em>(float&dagger;)</em></td>
-<td>out <em>(float)</em></td>
-<td>—</td>
-<td>The smaller of two values — an upper limit, or the intersection of two masks.</td>
-</tr>
-<tr>
-<td><strong>Max</strong></td>
-<td>a <em>(float&dagger;)</em>, b <em>(float&dagger;)</em></td>
-<td>out <em>(float)</em></td>
-<td>—</td>
-<td>The larger of two values — a lower limit, or the union of two masks.</td>
-</tr>
-<tr>
-<td><strong>Modulo</strong></td>
-<td>a <em>(float&dagger;)</em>, b <em>(float&dagger;)</em></td>
-<td>out <em>(float)</em></td>
-<td>—</td>
-<td>The remainder of a / b. Repeats a value every b, for bands and grids.</td>
-</tr>
-<tr>
-<td><strong>Step</strong></td>
-<td>a <em>(float)</em>, edge <em>(float)</em></td>
-<td>out <em>(float)</em></td>
-<td>—</td>
-<td>0 below the edge and 1 at or above it — a hard-edged mask.</td>
-</tr>
-<tr>
-<td><strong>Length</strong></td>
-<td>a <em>(vec3)</em></td>
-<td>out <em>(float)</em></td>
-<td>—</td>
-<td>How long a vector is. Distance from the origin, for radial patterns.</td>
-</tr>
-<tr>
-<td><strong>Distance</strong></td>
-<td>a <em>(vec3)</em>, b <em>(vec3)</em></td>
-<td>out <em>(float)</em></td>
-<td>—</td>
-<td>How far apart two points are — glows and radial falloffs.</td>
-</tr>
-<tr>
-<td><strong>Cross product</strong></td>
-<td>a <em>(vec3)</em>, b <em>(vec3)</em></td>
-<td>out <em>(vec3)</em></td>
-<td>—</td>
-<td>A direction perpendicular to two others. Building a basis from two directions.</td>
+<td><kbd>Esc</kbd></td>
+<td>select the whole recording again</td>
 </tr>
 </tbody>
 </table>
-<h2 id="channel">Channel</h2>
-<table>
-<thead>
-<tr>
-<th>Node</th>
-<th>In</th>
-<th>Out</th>
-<th>Parameters</th>
-<th>What it does</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Split</strong></td>
-<td>value <em>(vec4)</em></td>
-<td>x <em>(float)</em>, y <em>(float)</em>, z <em>(float)</em>, w <em>(float)</em></td>
-<td>—</td>
-<td>Breaks a colour or vector into its x, y, z and w parts, so one channel can drive something on its own.</td>
-</tr>
-<tr>
-<td><strong>Combine</strong></td>
-<td>x <em>(float)</em>, y <em>(float)</em>, z <em>(float)</em>, w <em>(float)</em></td>
-<td>xyz <em>(vec3)</em>, xyzw <em>(vec4)</em></td>
-<td>—</td>
-<td>Builds a colour or vector back up from separate numbers.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="uv">UV</h2>
-<table>
-<thead>
-<tr>
-<th>Node</th>
-<th>In</th>
-<th>Out</th>
-<th>Parameters</th>
-<th>What it does</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Tiling &amp; offset</strong></td>
-<td>uv <em>(vec2)</em></td>
-<td>out <em>(vec2)</em></td>
-<td>tiling <code>[1, 1]</code>, offset <code>[0, 0]</code></td>
-<td>Repeats and shifts texture coordinates: tiling 3 means the image fits three times, offset slides it.</td>
-</tr>
-<tr>
-<td><strong>Panner</strong></td>
-<td>uv <em>(vec2)</em></td>
-<td>out <em>(vec2)</em></td>
-<td>speed <code>[0.1, 0]</code></td>
-<td>Scrolls texture coordinates over time on the shared clock — flowing water, conveyor belts, moving clouds. Every peer sees the same offset.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="utility">Utility</h2>
-<table>
-<thead>
-<tr>
-<th>Node</th>
-<th>In</th>
-<th>Out</th>
-<th>Parameters</th>
-<th>What it does</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Fresnel</strong></td>
-<td>—</td>
-<td>out <em>(float)</em></td>
-<td>power <code>3</code></td>
-<td>Bright at grazing angles, dark face-on — the rim light that reads as glass, water or a force field. Power tightens the rim. <strong>(surface only)</strong></td>
-</tr>
-<tr>
-<td><strong>Noise</strong></td>
-<td>uv <em>(vec2)</em></td>
-<td>out <em>(float)</em></td>
-<td>scale <code>8</code></td>
-<td>A smooth random pattern from UV, identical on every peer (no texture needed). Clouds, grime, variation.</td>
-</tr>
-<tr>
-<td><strong>Posterise</strong></td>
-<td>a <em>(vec3&dagger;)</em></td>
-<td>out <em>(vec3)</em></td>
-<td>steps <code>4</code></td>
-<td>Snaps values into a number of steps, for a banded or cel-shaded look.</td>
-</tr>
-<tr>
-<td><strong>Gradient</strong></td>
-<td>t <em>(float)</em></td>
-<td>out <em>(vec3)</em></td>
-<td>colorA <code>#000000</code>, colorB <code>#808080</code>, colorC <code>#ffffff</code>, mid <code>0.5</code></td>
-<td>A three-colour ramp driven by one number. Feed it Noise, UV or Fresnel to colour-map anything; the midpoint biases where the middle colour sits.</td>
-</tr>
-<tr>
-<td><strong>Normal map</strong></td>
-<td>map <em>(vec3)</em>, uv <em>(vec2)</em>, normal <em>(vec3)</em></td>
-<td>out <em>(vec3)</em></td>
-<td>strength <code>1</code></td>
-<td>Reads a normal map image and applies it as surface detail, building the tangent frame from screen-space derivatives so it works on meshes with no tangents. <strong>(surface only)</strong></td>
-</tr>
-<tr>
-<td><strong>GLSL expression</strong></td>
-<td>a <em>(float)</em>, b <em>(float)</em>, c <em>(float)</em></td>
-<td>out <em>(float)</em></td>
-<td>expression <code>a</code>, type <code>float</code></td>
-<td>The escape hatch: write a GLSL expression using a, b and c as the wired inputs, and declare what type it returns.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="post">Post</h2>
-<p>These read the <strong>finished frame</strong> rather than a surface, so they appear only in a
-<a href="../shader-graph/#surface-or-post">post graph</a>. Depth and normals are extra buffers: the
-chain adds them when a graph asks for one, and not otherwise.</p>
-<table>
-<thead>
-<tr>
-<th>Node</th>
-<th>In</th>
-<th>Out</th>
-<th>Parameters</th>
-<th>What it does</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Scene colour</strong></td>
-<td>—</td>
-<td>rgb <em>(vec3)</em>, a <em>(float)</em>, rgba <em>(vec4)</em></td>
-<td>—</td>
-<td>The frame as rendered so far, before this effect: the colour under this screen pixel. The starting point of every post graph.</td>
-</tr>
-<tr>
-<td><strong>Scene sample</strong></td>
-<td>uv <em>(vec2)</em></td>
-<td>rgb <em>(vec3)</em>, a <em>(float)</em>, rgba <em>(vec4)</em></td>
-<td>—</td>
-<td>The frame colour at ANY screen position you give it — offset the UV by a texel to read a neighbour, which is how blurs and edge detectors are built.</td>
-</tr>
-<tr>
-<td><strong>Scene depth</strong></td>
-<td>uv <em>(vec2)</em></td>
-<td>linear <em>(float)</em>, raw <em>(float)</em></td>
-<td>—</td>
-<td>How far away the thing under this pixel is: linear runs 0 (near plane) to 1 (far plane), raw is what the depth buffer holds. Fog, depth tints, edge detection.</td>
-</tr>
-<tr>
-<td><strong>Scene normal</strong></td>
-<td>uv <em>(vec2)</em></td>
-<td>out <em>(vec3)</em></td>
-<td>—</td>
-<td>Which way the surface under this pixel faces, from a normal pass the chain adds only when a graph asks for it. Creases and outlines that depth alone misses.</td>
-</tr>
-<tr>
-<td><strong>Resolution</strong></td>
-<td>—</td>
-<td>size <em>(vec2)</em>, texel <em>(vec2)</em></td>
-<td>—</td>
-<td>The frame size in pixels, and one texel as a UV step — what you multiply a screen offset by so it stays one pixel wide at any window size.</td>
-</tr>
-<tr>
-<td><strong>Bayer pattern</strong></td>
-<td>uv <em>(vec2)</em></td>
-<td>out <em>(float)</em></td>
-<td>scale <code>1</code></td>
-<td>An ordered-dither threshold pattern locked to the pixel grid, 0..1. Add it (minus a half) before Posterise for retro dithering; scale grows the cells.</td>
-</tr>
-<tr>
-<td><strong>Edge detect</strong></td>
-<td>uv <em>(vec2)</em></td>
-<td>out <em>(float)</em></td>
-<td>depthWeight <code>4</code>, normalWeight <code>1</code></td>
-<td>A line strength, 0..1, where depth or normals change sharply — silhouettes and creases. Mix a line colour over the scene colour by it for an ink look.</td>
-</tr>
-<tr>
-<td><strong>Ambient occlusion (depth)</strong></td>
-<td>uv <em>(vec2)</em></td>
-<td>out <em>(float)</em></td>
-<td>radius <code>6</code>, bias <code>0.002</code></td>
-<td>A cheap screen-space occlusion from depth alone, 0 open to 1 tucked into a corner. Darken the scene colour by it for contact shading you can tune in a graph.</td>
-</tr>
-</tbody>
-</table>
-<p>Every <code>uv</code> input here defaults to the pixel being shaded, so leave it unwired unless you
-mean to read somewhere else.</p>
-<h2 id="output">Output</h2>
-<table>
-<thead>
-<tr>
-<th>Node</th>
-<th>In</th>
-<th>Out</th>
-<th>Parameters</th>
-<th>What it does</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Post output</strong></td>
-<td>color <em>(vec3)</em>, alpha <em>(float)</em></td>
-<td>—</td>
-<td>—</td>
-<td>The post graph's output: the colour this effect writes for the pixel, with alpha left to the frame's own unless you wire it. Everything upstream of color is one fullscreen pass.</td>
-</tr>
-<tr>
-<td><strong>Surface</strong></td>
-<td>albedo <em>(vec3)</em>, emissive <em>(vec3)</em>, roughness <em>(float)</em>, metalness <em>(float)</em>, normal <em>(vec3)</em>, opacity <em>(float)</em>, ao <em>(float)</em>, position <em>(vec3)</em></td>
-<td>—</td>
-<td>—</td>
-<td>The graph's output. Each input replaces one part of the material and anything left unconnected keeps the material's own value: albedo (base colour), emissive (glow), roughness, metalness, normal (surface detail), opacity (needs blending), ao (shades indirect light) and position (moves vertices — note it does not recompute normals or move the shadow).</td>
-</tr>
-</tbody>
-</table>
-<h2 id="notes-on-the-ones-worth-a-second-look">Notes on the ones worth a second look</h2>
-<h3 id="texture">Texture</h3>
-<p>Stores the image's <strong>content hash</strong>, so the picture reaches peers once and is never
-re-sent as you edit. Assign it by clicking the swatch or dropping an
-<a href="../explorer/">Explorer</a> image on it; hover for a preview with dimensions and file size.</p>
-<p>With no image chosen it is opaque <strong>white</strong>, which changes nothing when multiplied into
-albedo — so a fresh Texture node never blacks an object out. While an image is still
-arriving from a peer, the same neutral white stands in.</p>
-<p>Its three outputs share one sample: <code>rgb</code> for colour, <code>a</code> for the alpha channel (useful
-straight into <em>opacity</em>), and <code>rgba</code> for all four at once.</p>
-<h3 id="split-and-combine">Split and Combine</h3>
-<p>Together they let one channel do its own job: <strong>Split</strong> a texture and drive <em>roughness</em>
-from its red channel while <em>albedo</em> uses the whole colour. Split always gives you <code>w</code>
-even for a three-component input, where it reads 1.</p>
-<h3 id="tiling-offset-and-panner">Tiling &amp; offset, and Panner</h3>
-<p>Both rewrite texture coordinates, so wire them <strong>into</strong> a Texture node's <code>uv</code> input
-rather than into Surface. Chain them — Tiling then Panner — for a scrolling, repeating
-pattern.</p>
-<p>Panner uses the <strong>shared clock</strong>, so every peer sees the same offset without any network
-traffic. The same is true of anything driven by <strong>Time</strong>.</p>
-<h3 id="gradient">Gradient</h3>
-<p>A three-colour ramp driven by one number: feed it <strong>Noise</strong> for organic colour variation,
-<strong>UV</strong> (via Split) for a linear ramp, or <strong>Fresnel</strong> for a rim that shifts hue. <code>mid</code>
-biases where the middle colour sits.</p>
-<h3 id="normal-map">Normal map</h3>
-<p>Applies a normal-map image as surface detail. It builds the tangent frame from
-screen-space derivatives, so it works on primitives and imported meshes that carry no
-tangent data. Wire the Texture node's <code>rgb</code> into <code>map</code>, and the result into Surface's
-<code>normal</code>. Surface stage only.</p>
-<h3 id="fresnel">Fresnel</h3>
-<p>Bright at grazing angles, dark face-on: the rim that reads as glass, water or a shield.
-Into <em>emissive</em> it glows; into <em>albedo</em> it tints; as the <code>t</code> of a <strong>Mix</strong> it blends two
-whole looks by viewing angle. Surface stage only.</p>
-<h3 id="noise">Noise</h3>
-<p>A smooth random pattern computed from UV, with no texture needed and <strong>identical on every
-peer</strong>. Scale controls how fine it is. Good for grime, clouds, and — wired into <em>position</em>
-— a rippling surface.</p>
-<h3 id="glsl-expression">GLSL expression</h3>
-<p>The escape hatch when the curated set will not do it. Write an expression using <code>a</code>, <code>b</code>
-and <code>c</code> for the wired inputs and say which type it returns. It is inserted as written, so
-a mistake here shows up as a compile error in the tab's error strip.</p>
-<h3 id="surface">Surface</h3>
-<p>The output. Every input replaces one part of the material and anything unconnected keeps
-the material's own value. See <a href="../shader-graph/#the-surface-node">the Surface node</a> for what
-each tap does, and <a href="../shader-graph/#vertex-displacement">vertex displacement</a> for the one
-that moves geometry rather than shading it.</p>
+<h3 id="what-the-selection-cost">What the selection cost</h3>
+<p>Below the timeline, the selected frame or range is broken down four ways:</p>
+<ul>
+<li><strong>Tree</strong> — scene → module or game → object → mesh and material, with draw calls, triangles and
+  milliseconds on every row; click a column header to sort by it. The editor's own gizmo and
+  helpers are listed last as <strong>Editor (not in Play)</strong>: they cost while you edit, not in the game.</li>
+<li><strong>Who draws most</strong> — objects, materials, shadow casters and transparent surfaces, ranked by
+  their share of the budget.</li>
+<li><strong>CPU phases</strong> — the mean time per frame of each phase.</li>
+<li><strong>Events</strong> — the markers inside the selection.</li>
+</ul>
+<p>Tree, Who draws most and CPU phases need a <strong>Detailed</strong> recording; a light one counts the whole
+frame only, and says so. When no capture falls inside your selection, the nearest one is shown
+and labelled as such.</p>
+<p><strong>Click a row</strong> to select that object in the scene and open its settings — straight to its
+<a href="../lod/">LOD section</a> when it has a LOD group, which is often the fix.</p>
+<div class="admonition info">
+<p class="admonition-title">Triangles are what was drawn</p>
+<p>A capture counts the triangles that were actually drawn, <em>after</em>
+<a href="../lod/">automatic levels of detail</a> swapped in a lighter version. A far-away model can show
+far fewer triangles than it holds; hover the number to see both.</p>
+</div>
+<h3 id="compare">Compare</h3>
+<p><strong>Compare</strong> puts two recordings side by side: choose one as <strong>A</strong> (the baseline) and one as <strong>B</strong>.
+The headline numbers come first, then the differences <strong>by module or game</strong> and <strong>by object</strong>,
+biggest change first, and the CPU phases when both recordings have them. Per-object differences
+need two Detailed recordings. Use it for before/after: record, change something, record again.</p>
+<h2 id="export-and-import">Export and import</h2>
+<p><strong>Export</strong> writes a recording as a <code>.tpprof</code> file. <strong>Import</strong> — or dropping files on the panel —
+opens <code>.tpprof</code> files, several at once, including the exports the operators' performance-reports
+script writes from <a href="#send-performance-reports">sent reports</a>. An imported recording is an
+ordinary recording from then on: rename it, pin it, compare it.</p>
+<h2 id="report-this-moment">Report this moment</h2>
+<p>When something feels wrong — a hitch, a corner of a level where the frame rate drops, something
+drawn wrongly — one press keeps the evidence:</p>
+<ul>
+<li><strong>On the desktop</strong>: <strong>Menu ▸ Report this moment</strong>. A small dialog shows a picture of what the
+  viewport showed, the last few seconds' numbers (frames, median fps, stalls) and an optional
+  <strong>What happened?</strong> note. <strong>Save</strong> keeps it as a recording. When performance reports are
+  available in this build, a box offers to send it as well (<strong>Save and send</strong>).</li>
+<li><strong>In a headset</strong>: the radial menu's <strong>System ▸ Profile ▸ Report moment</strong> captures the moment
+  the same way, with an optional note.</li>
+</ul>
+<p>The data and the picture are of the moment you pressed, not of the time spent typing. You get the
+last 30 seconds of light data, what your eye saw and your note, saved as a recording the Profiler
+opens. It is sent only when you tick the box, or when
+<a href="#send-performance-reports">Send performance reports</a> is on.</p>
+<h2 id="profiling-the-headset-from-the-desktop">Profiling the headset from the desktop</h2>
+<p>A headset is where the budget matters and where the Profiler is hardest to read, so you can
+record it there and read it on a desktop.</p>
+<h3 id="recording-in-the-headset">Recording in the headset</h3>
+<p>The radial menu's <strong>System ▸ Profile</strong> holds <strong>Record</strong>, <strong>Record detailed</strong>, <strong>Stop recording</strong>
+and <strong>Report moment</strong>. While a recording runs, a small pill sits in your view:</p>
+<ul>
+<li><strong>● REC 0:12</strong> — a light recording,</li>
+<li><strong>● REC DETAILED 0:04</strong> — a detailed one (it costs frame time, so it says so),</li>
+<li><strong>◉ LIVE 1</strong> — someone is watching this headset live from a desktop (see below).</li>
+</ul>
+<p>A recording made in the headset is saved in the headset's browser; export it from there, or use
+the live view below to keep a copy on the desktop.</p>
+<h3 id="watching-a-headset-live">Watching a headset live</h3>
+<p>On the desktop, <strong>Menu ▸ Live profiler</strong> lists the other peers <strong>in your room</strong> — the same scene
+as you; a peer in another room is not offered. Press <strong>Watch</strong> and that peer's frame time, draw
+calls, triangles and quality level stream to you twice a second, drawn against the Quest budget
+lines. A light stream is small (about 2 KB a second).</p>
+<ul>
+<li><strong>Detailed</strong> asks the headset for a 10-second detailed recording: CPU phases and per-object
+  captures. That costs the <strong>headset</strong> frame time; the recording is saved on the headset too,
+  and its pill says <strong>REC DETAILED</strong> while it runs.</li>
+<li><strong>Capture now</strong> takes one per-object capture.</li>
+<li><strong>Save recording</strong> keeps the stream as one of <em>your</em> recordings, to read in the Profiler like
+  any other.</li>
+<li><strong>Stop</strong> stops watching; <strong>Clear</strong> forgets that peer's stream.</li>
+</ul>
+<h2 id="send-performance-reports">Send performance reports</h2>
+<p><strong>Settings ▸ Interface ▸ Send performance reports</strong> sends this device's numbers to the
+developers, so slow spots on real devices get found and fixed.</p>
+<ul>
+<li><strong>Off by default.</strong> A preview build offers it once; the production app never asks — you turn it
+  on yourself or not at all. If the row is not there, the build you are using does not send
+  reports at all.</li>
+<li><strong>What is sent</strong>: every 10 seconds a window of frame times, draw calls, triangles and the
+  quality level, with the markers above, the build and the versions of the modules in use. A
+  window containing a stall is flagged as one. There is <strong>no account</strong> and <strong>no scene content</strong>;
+  the session id is random for each run of the app.</li>
+<li>A <strong>dot on the FPS counter</strong> — on the desktop and in a headset — shows that reporting is on.</li>
+<li>Reports are <strong>kept for 30 days</strong> and are <strong>readable only by the operators</strong>. A moment you
+  <a href="#report-this-moment">report</a> and choose to send carries its screenshot; the picture is stored
+  with that report and deleted with it.</li>
+<li>A report that fails to send is dropped, never retried.</li>
+</ul>
+<h2 id="the-stale-module-warning">The stale-module warning</h2>
+<p>An installed module that never updates itself can quietly run an old version. When a module you
+installed is <strong>older than the version this release of the app shipped with</strong>, you get one toast
+naming it, with <strong>Update</strong> and <strong>Open Modules</strong>, and the module's card in the
+<a href="../modules/">Modules manager</a> shows an <strong>Update</strong> row. A module this release does not know (a
+third-party one) is never flagged, and a newer one is fine. The recorder notes stale modules as
+markers too, so a recording says which versions it ran with.</p>
+<h2 id="the-tpprof-format">The <code>.tpprof</code> format</h2>
+<p>A <code>.tpprof</code> file is a JSON document, normally gzip-compressed (plain JSON opens too). In outline:</p>
+<ul>
+<li><code>meta</code> — the build and version, the modules and their versions, the device and GPU, whether it
+  was in XR, the refresh rate, the scene and game, the start time and the mode (<code>light</code> or
+  <code>detailed</code>);</li>
+<li><code>frames</code> — one row per frame: its time, milliseconds, draw calls, triangles and quality level,
+  plus CPU phases and GPU ms where they were measured;</li>
+<li><code>events</code> — the markers, each with a time, a kind and details;</li>
+<li><code>captures</code> — in a detailed recording, the per-object captures (object, path, owning module,
+  draw calls, triangles, material, shadow pass, memory);</li>
+<li><code>notes</code> — a reported moment's note and screenshot.</li>
+</ul>
+<p>Unknown keys are kept, so a newer file still opens in an older app. The full definition is the
+JSON Schema in the core repo:
+<a href="https://github.com/theprototype-app/core/blob/main/src/lib/perf/tpprof.schema.json"><code>src/lib/perf/tpprof.schema.json</code></a>.</p>
 
 
 
@@ -4294,7 +3987,7 @@ that moves geometry rather than shading it.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-09-17
+    2026-10-03
   </span>
 
     

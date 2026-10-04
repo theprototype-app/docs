@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://docs.theprototype.app/node-system/">
       
       
-        <link rel="prev" href="../performance/">
+        <link rel="prev" href="../profiler/">
       
       
         <link rel="next" href="../nodes/">
@@ -877,6 +877,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../profiler/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Profiler & Recordings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1040,6 +1061,15 @@
   <a href="#determinism-and-replication" class="md-nav__link">
     <span class="md-ellipsis">
       Determinism and replication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flow-code-the-graph-as-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flow Code: the graph as text
     </span>
   </a>
   
@@ -2919,11 +2949,74 @@
   
   
     <li class="md-nav__item">
+      <a href="../games/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Games Tab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../build-a-game/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Build a Game Loop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-kit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Kit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../behaviours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Behaviours
   </span>
   
 
@@ -3459,6 +3552,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#flow-code-the-graph-as-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flow Code: the graph as text
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#custom-nodes" class="md-nav__link">
     <span class="md-ellipsis">
       Custom nodes
@@ -3607,6 +3709,32 @@ does not travel still opens the Add menu rather than being eaten by the pan.</p>
 </ul>
 <h2 id="determinism-and-replication">Determinism and replication</h2>
 <p>The graph itself is shared: every node, edge, parameter tweak and position replicates to all peers. Motion is <strong>not</strong> streamed — every peer computes the same animation from the same node data and a <strong>synced clock</strong>, so a Spin or a Sound loop is at the same phase for everyone. Random nodes are seeded, and click triggers ride tiny replicated messages. You can exempt one object from all flow effects via its right-click menu (<em>Disable flow effects</em>).</p>
+<h2 id="flow-code-the-graph-as-text">Flow Code: the graph as text</h2>
+<p><strong>Flow Code</strong> (the dock's <strong>＋</strong> menu, or <kbd>Alt</kbd>+<kbd>F</kbd>) shows the graph the editor is
+showing as text you can read, edit and <strong>Apply</strong>. A <strong>Text | JSON</strong> toggle above it picks the
+format; your choice is remembered on this device. Switching format drops edits you have not
+applied.</p>
+<p><strong>Text</strong> (the default since 1.20) is the same data as the JSON, only written once instead of
+repeated — about 2.1 to 2.4 times shorter, and nothing is lost:</p>
+<div class="highlight"><pre><span></span><code>// a button that plays a sound and shows a screen
+click = gamesound &quot;Button click&quot; {sound: &quot;click&quot;} @520,40
+lvl1 = hudbutton &quot;Level 1 button&quot; {element: &quot;lvl-1&quot;} @40,40
+lvl1 -&gt; click.trigger
+s1.show -&gt; vis.on
+</code></pre></div>
+<ul>
+<li>A <strong>node</strong> is one line: <code>id = type "label" {params} @x,y</code>. <code>type+</code> means the node's data
+  repeats its type; <code>class:"…"</code> or <code>noclass</code> appear only when a node's styling is unusual.</li>
+<li>A <strong>wire</strong> is one line: <code>source.output -&gt; target.input</code> (the handle is left out where the
+  socket has no name). A wire with a non-standard id carries <code>#id</code>.</li>
+<li><code>//</code> starts a comment.</li>
+<li>Several graphs are sections under <code>@graph &lt;key&gt;</code> lines.</li>
+<li>Anything that fits none of these is kept as a raw JSON line (<code>id := {…}</code> for a node, <code>~ {…}</code>
+  for a wire), which is why the round trip is exact.</li>
+</ul>
+<p><strong>Apply</strong> replaces the graph with what the text says, for everybody. A line it cannot read is
+reported with its line and column, and nothing changes. A new node line without <code>@x,y</code> is placed
+below the graph.</p>
 <h2 id="custom-nodes">Custom nodes</h2>
 <p>Right-click the canvas ▸ <strong>Custom ▸ New custom node…</strong> to open the <strong>Node Designer</strong>: name your node, add controls (<code>range</code> sliders with min/max/step, or <code>select</code> dropdowns), and write its code — a per-frame function of <code>object</code>, <code>base</code>, <code>data</code> (your controls + wired inputs) and <code>time</code>. <strong>Save for everyone</strong> replicates the definition, and instances appear in the palette's <em>Custom</em> group. See <a href="../nodes/customnode/">Custom Node</a> and <a href="../nodes/script/">Script</a>.</p>
 
@@ -3629,7 +3757,7 @@ does not travel still opens the Add menu rather than being eaten by the pan.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-09-17
+    2026-10-03
   </span>
 
     

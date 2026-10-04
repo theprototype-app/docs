@@ -877,6 +877,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../profiler/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Profiler & Recordings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2796,11 +2817,74 @@
   
   
     <li class="md-nav__item">
+      <a href="../games/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Games Tab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../build-a-game/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Build a Game Loop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-kit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Kit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../behaviours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Behaviours
   </span>
   
 
@@ -3414,6 +3498,57 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#new-in-120" class="md-nav__link">
+    <span class="md-ellipsis">
+      New in 1.20
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="New in 1.20">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unloading-everything-you-registered-goes-with-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unloading: everything you registered goes with you
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models-apiloadmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Models: api.loadModel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-game-kit-apikit" class="md-nav__link">
+    <span class="md-ellipsis">
+      The game kit: api.kit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#behaviours" class="md-nav__link">
+    <span class="md-ellipsis">
+      Behaviours
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#new-in-119" class="md-nav__link">
     <span class="md-ellipsis">
       New in 1.19
@@ -3664,6 +3799,57 @@
   <a href="#the-knock" class="md-nav__link">
     <span class="md-ellipsis">
       The knock
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-in-120" class="md-nav__link">
+    <span class="md-ellipsis">
+      New in 1.20
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="New in 1.20">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unloading-everything-you-registered-goes-with-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unloading: everything you registered goes with you
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#models-apiloadmodel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Models: api.loadModel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-game-kit-apikit" class="md-nav__link">
+    <span class="md-ellipsis">
+      The game kit: api.kit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#behaviours" class="md-nav__link">
+    <span class="md-ellipsis">
+      Behaviours
     </span>
   </a>
   
@@ -4180,6 +4366,184 @@ It returns an unsubscribe, and is torn down with the module either way.</p>
 the scene, keyed by uuid, and <code>recent</code> is the last 32 hits in order. It is runtime
 state — a late joiner's log starts empty, so a module that needs history keeps its
 own through <code>registerStateSync</code>.</p>
+<h2 id="new-in-120">New in 1.20</h2>
+<h3 id="unloading-everything-you-registered-goes-with-you">Unloading: everything you registered goes with you</h3>
+<p>A module can now be unloaded and loaded again while the app runs — switched off in the Modules
+manager (<strong>core modules too</strong>, no reload any more), removed, updated, dev-reloaded, or left
+behind by a scene switch. Everything you registered through <code>api</code> is recorded per module and
+undone at unload, newest first: node groups, effects, handlers, frame tasks, menus, toolboxes,
+key bindings, input claims, possess, VR panels, your music, game levels / settings / help /
+restart hooks, LOD handles, listeners, backends, post effects, audio device kinds and voices,
+HUD rows… Every <code>off()</code> the api hands you still works, and a call that <em>replaces</em> (<code>api.game.levels</code>
+on every unlock, <code>addSetting</code> with the same id) replaces its entry rather than stacking.</p>
+<p><strong>What stays</strong> is what you put into the <em>shared</em> scene — <code>api.create</code> objects, objects in
+<code>objectsGroup</code>, flow nodes you added, audio devices and cables, node data — because that is user
+content now. So do shared game variables and what you saved with <code>api.storage</code>.</p>
+<p>For what only your module knows about, four tools:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// your own teardown — a DOM overlay, a worker, a raw WebAudio graph; returns cancel()</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">onUnload</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">overlay</span><span class="p">.</span><span class="nx">remove</span><span class="p">());</span>
+
+<span class="c1">// timers that die with the module</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">timers</span><span class="p">.</span><span class="nx">setInterval</span><span class="p">(</span><span class="nx">refresh</span><span class="p">,</span><span class="w"> </span><span class="mf">500</span><span class="p">);</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">timers</span><span class="p">.</span><span class="nx">clearInterval</span><span class="p">(</span><span class="nx">h</span><span class="p">);</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">timers</span><span class="p">.</span><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span><span class="w"> </span><span class="nx">ms</span><span class="p">);</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">timers</span><span class="p">.</span><span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">loop</span><span class="p">);</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">timers</span><span class="p">.</span><span class="nx">pending</span><span class="p">();</span><span class="w">   </span><span class="c1">// {timeouts, intervals, frames}</span>
+
+<span class="c1">// a listener removed at unload — window, document, the canvas, anything; returns off()</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">off</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nb">window</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;keydown&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">onKey</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+
+<span class="c1">// a scene-root object that is YOURS: removed at unload, its GPU resources freed</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">scene</span><span class="p">().</span><span class="nx">add</span><span class="p">(</span><span class="nx">api</span><span class="p">.</span><span class="nx">own</span><span class="p">(</span><span class="nx">group</span><span class="p">));</span><span class="w">   </span><span class="c1">// never for content inside objectsGroup</span>
+</code></pre></div>
+<p><strong>Installed (zip / URL) modules get this for free</strong> for the common cases: their bare
+<code>setTimeout</code> / <code>setInterval</code> / <code>requestAnimationFrame</code> (and the clears) and the listeners they add
+to <code>window</code> or <code>document</code> are tracked and stopped at unload. Two edges: <code>window.setTimeout(...)</code>
+or a listener on any other target is not tracked — use <code>api.timers</code> / <code>api.listen</code>; and a module
+that declares one of those timer names itself at top level loads without the tracking.</p>
+<div class="admonition tip">
+<p class="admonition-title">Keep state inside <code>register()</code></p>
+<p>The browser never unloads an imported file's top-level scope, so module-level variables,
+caches and DOM survive an unload and the next load starts from them. State declared inside
+<code>register()</code> is fresh every time; module-level state you must reset belongs in
+<code>api.onUnload</code>.</p>
+</div>
+<h3 id="models-apiloadmodel">Models: <code>api.loadModel</code></h3>
+<p>Load a <code>.glb</code> / <code>.gltf</code> through the app's own loader instead of bundling one — the scene's
+<code>THREE</code>, with Draco, Meshopt and KTX2 decoding (the KTX2 transcoder is fetched only for a file
+that needs it), parsed <strong>once per URL</strong> and shared by every module that asks:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">enemy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">loadModel</span><span class="p">(</span><span class="s1">&#39;assets/enemy.glb&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">castShadow</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// packaged file or any URL</span>
+<span class="nx">group</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">enemy</span><span class="p">.</span><span class="nx">scene</span><span class="p">);</span><span class="w">                                </span><span class="c1">// your own copy</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">enemy</span><span class="p">.</span><span class="nx">instance</span><span class="p">({</span><span class="w"> </span><span class="nx">ownMaterials</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">});</span><span class="w">   </span><span class="c1">// another copy: own bones when skinned, own materials</span>
+<span class="nx">group</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">next</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">mixer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">THREE</span><span class="p">.</span><span class="nx">AnimationMixer</span><span class="p">(</span><span class="nx">next</span><span class="p">);</span>
+<span class="nx">mixer</span><span class="p">.</span><span class="nx">clipAction</span><span class="p">(</span><span class="nx">enemy</span><span class="p">.</span><span class="nx">animations</span><span class="p">.</span><span class="nx">find</span><span class="p">((</span><span class="nx">c</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;walk&#39;</span><span class="p">)).</span><span class="nx">play</span><span class="p">();</span>
+<span class="nx">enemy</span><span class="p">.</span><span class="nx">info</span><span class="p">;</span><span class="w">            </span><span class="c1">// {meshes, triangles, materials, textures, skinned}</span>
+<span class="nx">enemy</span><span class="p">.</span><span class="nx">release</span><span class="p">(</span><span class="nx">next</span><span class="p">);</span><span class="w">   </span><span class="c1">// forget one copy now</span>
+<span class="nx">enemy</span><span class="p">.</span><span class="nx">dispose</span><span class="p">();</span><span class="w">       </span><span class="c1">// forget them all — unloading your module does this for you</span>
+</code></pre></div>
+<p>Options, all optional:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>lod</code></td>
+<td>absent / <code>'auto'</code> = <a href="../lod/">automatic levels</a> (a pack item that ships <code>lods</code> uses those files); <code>false</code> = none; <code>{ratios, distances, minTriangles}</code> = tuned automatic levels; <code>[{file, ratio}]</code> = pre-built level files beside the model</td>
+</tr>
+<tr>
+<td><code>castShadow</code> / <code>receiveShadow</code></td>
+<td>for every mesh (absent = as the file says)</td>
+</tr>
+<tr>
+<td><code>collider</code></td>
+<td><code>'box'</code> <code>'sphere'</code> <code>'capsule'</code> <code>'cylinder'</code> <code>'cone'</code> <code>'hull'</code> — the physics shape a copy takes once it is scene content with physics</td>
+</tr>
+<tr>
+<td><code>ownMaterials</code></td>
+<td>every copy gets its own materials</td>
+</tr>
+</tbody>
+</table>
+<p>Everything a module loaded is released when it is switched off or unloaded (a copy you put in
+<code>objectsGroup</code> stays — it is the scene's). A copy you drop without <code>release()</code> is noticed and
+collected. A load still in flight at unload rejects, and so does a missing or unreadable file —
+keep a fallback look. Feature-detect it (<code>typeof api.loadModel === 'function'</code>): 1.19 and older do
+not have it.</p>
+<h3 id="the-game-kit-apikit">The game kit: <code>api.kit</code></h3>
+<p>The <a href="../game-kit/">game kit</a> — rules, round, levels, score, pickups, spawner, health, mover — is
+the same for code as for the <strong>Kit:</strong> nodes. Call an action on any peer: the <strong>authority</strong> peer
+applies it exactly once. Reads are replicated values; <code>on&lt;Event&gt;(fn)</code> fires on every peer and
+returns <code>off</code>; registrations are torn down with your module.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">round</span><span class="p">,</span><span class="w"> </span><span class="nx">levels</span><span class="p">,</span><span class="w"> </span><span class="nx">score</span><span class="p">,</span><span class="w"> </span><span class="nx">pickups</span><span class="p">,</span><span class="w"> </span><span class="nx">rules</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">kit</span><span class="p">;</span>
+<span class="nx">rules</span><span class="p">.</span><span class="nx">set</span><span class="p">({</span><span class="w"> </span><span class="nx">reach</span><span class="o">:</span><span class="w"> </span><span class="mf">1.3</span><span class="p">,</span><span class="w"> </span><span class="nx">jump</span><span class="o">:</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="p">});</span>
+<span class="nx">rules</span><span class="p">.</span><span class="nx">onGrabRequest</span><span class="p">((</span><span class="nx">req</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;Star&#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">!</span><span class="nx">starFree</span><span class="p">)</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">refuse</span><span class="p">(</span><span class="s1">&#39;Build to the ring first&#39;</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
+<span class="nx">levels</span><span class="p">.</span><span class="nx">define</span><span class="p">({</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;mygame&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">list</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Easy&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">par</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">time</span><span class="o">:</span><span class="w"> </span><span class="mf">60</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Hard&#39;</span><span class="w"> </span><span class="p">}]</span><span class="w"> </span><span class="p">});</span>
+<span class="nx">round</span><span class="p">.</span><span class="nx">configure</span><span class="p">(</span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">120</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;lose&#39;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w">                   </span><span class="c1">// 3 s intro, 2 min limit, lose on time, 2 s outro</span>
+<span class="nx">round</span><span class="p">.</span><span class="nx">onGo</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">announce</span><span class="p">(</span><span class="s1">&#39;Go!&#39;</span><span class="p">));</span>
+<span class="nx">pickups</span><span class="p">.</span><span class="nx">register</span><span class="p">({</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="nx">gem</span><span class="p">.</span><span class="nx">uuid</span><span class="p">,</span><span class="w"> </span><span class="nx">score</span><span class="o">:</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="nx">respawn</span><span class="o">:</span><span class="w"> </span><span class="mf">8</span><span class="p">,</span><span class="w"> </span><span class="nx">grants</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">time</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">});</span>
+<span class="nx">pickups</span><span class="p">.</span><span class="nx">onCollected</span><span class="p">(({</span><span class="w"> </span><span class="nx">by</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">playSound</span><span class="p">(</span><span class="s1">&#39;coin&#39;</span><span class="p">));</span>
+<span class="nx">round</span><span class="p">.</span><span class="nx">onWon</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">levels</span><span class="p">.</span><span class="nx">complete</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">score</span><span class="p">.</span><span class="nx">total</span><span class="p">()));</span>
+<span class="nx">levels</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">);</span><span class="w"> </span><span class="nx">round</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Piece</th>
+<th>Actions</th>
+<th>Reads</th>
+<th>Events</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rules</code></td>
+<td><code>setReach(m)</code> <code>setJump(m)</code> <code>setBounds(min, max)</code> <code>clearRules()</code> · <code>set({reach, jump, bounds})</code></td>
+<td><code>reach()</code> <code>jump()</code> <code>current()</code> <code>inside(p)</code> <code>clamp(p)</code> <code>checkGrab(req)</code></td>
+<td><code>refused</code> (local) · <code>onGrabRequest(fn)</code> veto</td>
+</tr>
+<tr>
+<td><code>round</code></td>
+<td><code>configure(intro, limit, 'lose'\|'win', outro)</code> <code>start()</code> <code>restart()</code> <code>pause()</code> <code>resume()</code> <code>win(reason)</code> <code>lose(reason)</code> <code>extend(s)</code> <code>toMenu()</code></td>
+<td><code>phase()</code> <code>playing()</code> <code>elapsed()</code> <code>remaining()</code> <code>countdown()</code> <code>number()</code> <code>outcome()</code> <code>state()</code> <code>running()</code></td>
+<td><code>started</code> <code>go</code> <code>paused</code> <code>resumed</code> <code>won</code> <code>lost</code> <code>results</code> <code>menu</code></td>
+</tr>
+<tr>
+<td><code>levels</code></td>
+<td><code>select(id)</code> <code>next()</code> <code>complete(won, score, time, level?, detail?)</code> <code>setMode(m)</code> · <code>define({id, list, unlock?, stars?, store?, merge?})</code></td>
+<td><code>current()</code> <code>currentLabel()</code> <code>index()</code> <code>starsOf(id)</code> <code>unlocked(id)</code> <code>totalStars()</code> <code>mode()</code> <code>table()</code> <code>progress()</code> <code>resumeLevel()</code></td>
+<td><code>selected</code> <code>completed</code> <code>unlockedNext</code></td>
+</tr>
+<tr>
+<td><code>score</code></td>
+<td><code>add(n, player?)</code> <code>set(n, player?)</code> <code>reset()</code> · <code>configure({autoReset})</code> <code>useGame(id)</code></td>
+<td><code>total()</code> <code>mine()</code> <code>best()</code> <code>leader()</code> <code>of(id)</code> <code>leaderboard(n)</code> <code>results()</code></td>
+<td><code>scored</code> <code>newBest</code> (local)</td>
+</tr>
+<tr>
+<td><code>pickups</code></td>
+<td><code>collect(id, score?, respawn?)</code> <code>resetPickups()</code> · <code>register({id, score, respawn, radius, grants})</code></td>
+<td><code>available(id)</code> <code>taken()</code> <code>left()</code> <code>takenBy(id)</code></td>
+<td><code>collected</code> <code>respawned</code> <code>allCollected</code></td>
+</tr>
+<tr>
+<td><code>spawner</code></td>
+<td><code>spawn({kind, template, at, count, spread, hp, speed, removeAfter, tags, data, mover})</code> → ids · <code>despawn(id)</code> <code>clear(kind)</code> <code>setTags</code> <code>setData</code></td>
+<td><code>count(kind)</code> <code>list(filter)</code> <code>get(id)</code></td>
+<td><code>spawned</code> <code>despawned</code> <code>emptied</code></td>
+</tr>
+<tr>
+<td><code>health</code></td>
+<td><code>damage(id, n)</code> <code>damageArea(at, r, n, kind)</code> <code>heal(id, n)</code> <code>revive(id)</code></td>
+<td><code>hp(id)</code> <code>max(id)</code> <code>fraction(id)</code> <code>alive(id)</code></td>
+<td><code>damaged</code> <code>healed</code> <code>died</code> <code>revived</code></td>
+</tr>
+<tr>
+<td><code>mover</code></td>
+<td><code>chase(kind, target)</code> <code>seek(id, target, {speed, reach})</code> <code>arrive(…)</code> <code>patrol(id, path, loop)</code> <code>stop(id)</code> <code>halt(kind)</code> <code>knock(id, [vx, vy, vz])</code> <code>setSpeed(id, s)</code></td>
+<td><code>state(id)</code></td>
+<td><code>stuck</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>levels</code> feeds the pause menu's level picker — do not also call <code>api.game.levels</code>. Progress is
+  per device; <code>store: {get, set}</code> keeps your own save key.</li>
+<li><code>score</code> credits the asking peer unless a player is named — a shared pulse is asked by every
+  peer, so name the player when it matters who.</li>
+<li>A <code>chase</code> target is an object uuid, <code>'player'</code>, <code>'nearestPlayer'</code>, <code>'player:&lt;id&gt;'</code> or an entity
+  id. Health events carry <code>{entity, amount?, by?, authority}</code> — change game state only where
+  <code>authority</code> is true.</li>
+<li>Entities you spawn leave with your module.</li>
+</ul>
+<h3 id="behaviours">Behaviours</h3>
+<p>Game logic can also live in the scene as a <a href="../behaviours/">behaviour</a>: one small file in a
+Behaviour node, run on the authority with replicated state, calling the same <code>kit</code>. Each
+behaviour is tracked like a module of its own, so deleting its node takes its listeners and
+entities with it.</p>
 <h2 id="new-in-119">New in 1.19</h2>
 <ul>
 <li><strong><code>api.inScene()</code></strong> — false once a scene switch LEFT your module behind (the person chose <em>Keep</em>
@@ -4199,10 +4563,11 @@ own through <code>registerStateSync</code>.</p>
 <h2 id="lifecycle">Lifecycle</h2>
 <ul>
 <li>Core modules load at boot unless disabled in the manager; user modules load
-  after them. Enabling registers live. <strong>User modules also disable, update and
-  dev-reload live</strong> — everything <code>register(api)</code> added is genuinely torn down
-  and re-registered (see the manager page's <em>Dev mode</em>). Core modules still
-  need a reload to disable.</li>
+  after them. Enabling registers live. <strong>Modules disable, update and dev-reload
+  live</strong> — everything <code>register(api)</code> added is genuinely torn down and
+  re-registered (see the manager page's <em>Dev mode</em>). Since 1.20 that includes
+  core modules, which no longer need a reload to disable; see
+  <a href="#unloading-everything-you-registered-goes-with-you">Unloading</a>.</li>
 <li>Peers exchange <code>{id, version}</code> lists on connect and toast on mismatch. The
   session still works, but that module's behavior may differ between peers —
   treat "same modules everywhere" as part of the session contract.</li>
@@ -4243,7 +4608,7 @@ examples.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-02
+    2026-10-03
   </span>
 
     

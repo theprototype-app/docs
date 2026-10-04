@@ -877,6 +877,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../profiler/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Profiler & Recordings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1097,6 +1118,15 @@
   <a href="#music" class="md-nav__link">
     <span class="md-ellipsis">
       Music
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kit
     </span>
   </a>
   
@@ -2946,11 +2976,74 @@
   
   
     <li class="md-nav__item">
+      <a href="../games/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Games Tab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../build-a-game/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Build a Game Loop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-kit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Kit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../behaviours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Behaviours
   </span>
   
 
@@ -3521,6 +3614,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#kit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kit
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3805,6 +3907,14 @@ their own page link to it.</p>
 </thead>
 <tbody>
 <tr>
+<td><a href="script/"><strong>Script</strong></a></td>
+<td>Your own JavaScript - an effect that moves its object every frame, or (with declared typed inputs and outputs) a small pure function whose return feeds other nodes.</td>
+</tr>
+<tr>
+<td><a href="../behaviours/"><strong>Behaviour</strong></a></td>
+<td>Game logic written as a small JavaScript file (params, replicated state, event handlers, kit calls) - run once on the authority peer, with a live node view of its events, state and knobs.</td>
+</tr>
+<tr>
 <td><a href="math/"><strong>Math</strong></a></td>
 <td>Combines two numbers with an arithmetic operation.</td>
 </tr>
@@ -4077,6 +4187,52 @@ their own page link to it.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="kit">Kit</h2>
+<p>The <a href="../game-kit/">game kit</a>'s nodes, one group per piece. Every node is generated from the same
+description as the kit's code interface, and one peer applies each change, so a press seen by
+every peer counts once. The <a href="../game-kit/#the-pieces">Game kit</a> page lists them all.</p>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>What it covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kit: Rules</strong></td>
+<td>Grab reach, jump height and play bounds that every grab path obeys; a pulse when a grab is refused.</td>
+</tr>
+<tr>
+<td><strong>Kit: Round</strong></td>
+<td>Round setup, start, restart, pause, win, lose and add time; the phase, time left and countdown; an event for each step.</td>
+</tr>
+<tr>
+<td><strong>Kit: Levels</strong></td>
+<td>Go to a level, next level, finish a level, game mode; stars, unlocks and progress saved per device.</td>
+</tr>
+<tr>
+<td><strong>Kit: Score</strong></td>
+<td>Add, set and reset the score, counted once; my score, best score and the leader.</td>
+</tr>
+<tr>
+<td><strong>Kit: Pickups</strong></td>
+<td>Collect a pickup once for everybody, with respawn; how many are left; a "collect them all" event.</td>
+</tr>
+<tr>
+<td><strong>Kit: Spawner</strong></td>
+<td>Spawn entities as copies of a template, remove or clear them, count the living; an event when the wave is over.</td>
+</tr>
+<tr>
+<td><strong>Kit: Health</strong></td>
+<td>Damage, area damage, heal and revive entities; their hit points; damaged, healed, died and revived events.</td>
+</tr>
+<tr>
+<td><strong>Kit: Mover</strong></td>
+<td>Make entities chase a target round walls and each other, stop them, knock them back; an event when one is stuck.</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -4097,7 +4253,7 @@ their own page link to it.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-01
+    2026-10-03
   </span>
 
     
