@@ -161,6 +161,7 @@ their own page link to it.
 | [**Blink**](nodes/blink.md) | Flashes the connected object on and off at a steady rate. |
 | [**Sound**](nodes/sound.md) | Plays an Explorer audio clip on the connected object when a pulse arrives - spatial, replicated, by content hash. |
 | [**Particles**](nodes/particle.md) | Emits a particle effect from the connected object - a preset burst, a stream, a trail. |
+| [**Jiggle**](nodes/jiggle.md) | Secondary motion: the object lags, overshoots, wobbles like jelly and sways — or a rigged model swings its bone chains. A look only; physics never sees it. |
 
 ## Music
 

@@ -22,6 +22,7 @@ Select an object and open **Properties ▸ Physics**:
 | **Sensor** | no collision, fires On Enter / On Exit | off |
 | **Lock rotation** (Dynamic only) | X · Y · Z | off |
 | **Lock position** (Dynamic only) | X · Y · Z | off |
+| **Floats** (Dynamic only, 1.22) | Auto · Foam · Cork · Wood · Ice · Rubber · Stone · Metal · From mass ÷ volume · Off, with Density and Buoyancy × | Auto — see [Things float](water.md#things-float) |
 | **Show collider — this device** | draws the collider as a wireframe | off |
 
 With several objects selected, every change applies to all of them as **one undo step**. Everything here replicates and

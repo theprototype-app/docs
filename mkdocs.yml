@@ -24,6 +24,7 @@ nav:
     - Physics & Simulation: physics.md
     - Colliders: colliders.md
     - Water: water.md
+    - Fluid Tank: fluid-tank.md
     - Particle Effects: particles.md
     - Terrain & Sculpting: terrain.md
     - Saving & Sessions: saving.md
@@ -99,6 +100,7 @@ nav:
       - Blink: nodes/blink.md
       - Sound: nodes/sound.md
       - Particles: nodes/particle.md
+      - Jiggle: nodes/jiggle.md
       - Custom Node: nodes/customnode.md
       - Set Active Camera: nodes/setcamera.md
       - Set Look: nodes/setlook.md

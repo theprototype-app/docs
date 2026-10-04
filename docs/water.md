@@ -18,7 +18,31 @@ the waves move in step on every screen.
   refraction, foam, caustics, bubbles, remove) for a water object.
 
 The water object stays an ordinary object: move, scale and rotate it with the gizmo. It is a pass-through physics
-[sensor](colliders.md#sensors-trigger-volumes), so things fall into it.
+[sensor](colliders.md#sensors-trigger-volumes), so things fall into it — and, with a simulation running, [float](#things-float).
+
+## Things float
+
+While a simulation runs, every **dynamic** object inside a water volume floats, sinks or drifts: it is pushed up by the
+water it displaces, slowed by the water, carried by the water's flow (rivers), and tips back upright. Hitting the surface
+makes a ripple.
+
+![Properties ▸ Physics ▸ Floats, with Wood chosen: a box floating in a pool](img/sim/floats.png)
+
+Choose how in **Properties ▸ Physics ▸ Floats** (Body: Dynamic):
+
+| Floats | Behaves like |
+|---|---|
+| **Auto** (default) | floats half under |
+| **Foam**, **Cork**, **Wood**, **Ice** | float, lightest first |
+| **Rubber** | sinks slowly |
+| **Stone**, **Metal** | sink |
+| **From mass ÷ volume** | worked out from the object's Mass and size |
+| **Off** | ignores water |
+
+**Density** (kg/m³ — water is 1000) and **Buoyancy ×** fine-tune it, and the hint under the sliders says how deep it will
+sit. How deep something floats depends on its **density**, not its mass, so a light and a heavy crate of the same wood
+float equally. The peer running the simulation computes it and everyone sees the same motion; each player draws their own
+ripples.
 
 ## Presets
 
@@ -55,7 +79,6 @@ Every edit replicates to the session and is one undo step per slider drag.
 - Refraction shows what the camera can see — something hidden behind another object will not appear through the water.
 - One planar mirror at a time: the nearest water that asks for it; the others use the sky reflection.
 - An imported model with water keeps its own look; the water draws inside its bounds.
-- Things sink rather than float unless the scene uses buoyancy (see [Physics & Simulation](physics.md)).
 
 ## For module authors
 
