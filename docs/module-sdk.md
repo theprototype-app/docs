@@ -296,6 +296,38 @@ api.registerStateSync({
 });
 ```
 
+### The flow graph: `api.flow` (1.15)
+
+For modules whose node needs its neighbours — a manager toolbox listing its instances, a count node reading its
+siblings, a recipe that builds a wired example. Reads are deterministic because the graph is replicated; treat them like
+replicated state.
+
+```js
+api.flow.nodes('collectible')   // [{id, type, graphId, x, y, data}] — graphId 'scene' or the owner's uuid;
+                                //   omit the type for every node. x/y are read-only
+api.flow.edges()                // [{id, source, target, sourceHandle, targetHandle, graphId}]
+api.flow.nodeValue(id)          // what the node's output carries this tick (undefined if none)
+api.flow.triggerStamp(id)       // {stamp, age} | null — a latch-style read, round-aware
+api.flow.freeRegion({ w: 600, h: 300, graphId: 'scene' })
+                                // {x, y, w, h}: where a block of new nodes fits without covering any
+api.flow.addNodes({ graphId: 'scene',
+	nodes: [{ type: 'onclick', x, y }, { type: 'counter', x: x + 220, y }],
+	edges: [{ from: 0, to: 1, handle: 'pulse' }] })   // from/to: indices into nodes, or existing ids
+                                // → the new ids. Replicated, and ONE undo step for the batch
+api.flow.setNodeData(id, { step: 2 })      // replicated merge, one undo step → found?
+api.flow.setNodesData([{ id, patch }, …])  // many writes, ONE undo step → how many were written
+const off = api.flow.onChange(() => refreshToolbox())
+                                // after any graph change or node firing, coalesced to once a frame;
+                                // torn down with the module, or call off()
+```
+
+`api.game.onChange(fn)` and `api.peerVars.onChange(fn)` work the same way for the game state (state, round, variables)
+and for any peer's row: coalesced to one call per frame, returning `off`, released with the module.
+
+`api.editorMode()` (1.17) returns `'edit'` or `'interact'` — this screen's click mode; `api.isPlaying()` says whether
+Play is on top of it. A module with its own pointer listeners should stand down while it reads `'edit'` and nothing is
+playing, so an Edit click selects its content like any object.
+
 ### Storage (1.17)
 
 ```js
@@ -625,6 +657,30 @@ Game logic can also live in the scene as a [behaviour](behaviours.md): one small
 Behaviour node, run on the authority with replicated state, calling the same `kit`. Each
 behaviour is tracked like a module of its own, so deleting its node takes its listeners and
 entities with it.
+
+## New in 1.18
+
+- **`api.quality`** — the quality governor's view of this machine: `level`, `max`, `labels` (the steps in force), `vr`,
+  and `onChange(fn)` → `off`, called as `fn(level, {max, labels, reason, vr})` on every change. LOCAL: drop your own
+  extras on a struggling device, never change shared state from it.
+- **`api.vrPanel(group)`** — make a group (your VR menu, level bar, buttons) a VR panel: drawn over the scene so a floor
+  or a wall never hides it, and a place the controller beam ends with its dot. Returns the undo (also run when your
+  module is disabled). Feature-detect: `api.vrPanel?.(group)`.
+- **`api.locomotion`** — `{boundedTeleport: true, worldGrab: true}` on a core that understands the two scene-data fields
+  below; an older core has no object.
+- **`api.lod(object, opts)`** — automatic levels of detail for meshes you build yourself: `opts` =
+  `{ratios, distances, minTriangles}` (ratios default `[0.5, 0.25, 0.1]` of the triangles; distances in world radii of
+  the mesh, default `[8, 20, 50]`). Returns `{meshes, ready, remove}`; local, never replicated, released with the module.
+  Skinned and morphing meshes are skipped; `mesh.userData.lod = false` keeps one out.
+
+**Scene data a game can publish on its scene group (`userData.play`)**, alongside the existing `interaction`, `grounded`
+and `simOnPlay`:
+
+| Field | Meaning |
+|---|---|
+| `reach` | grab reach in metres from the player's body (absent = no limit) — the *Limit grab reach* row |
+| `locomotion.worldGrab` | `true` gives VR grips Edit's world gestures (move, turn, scale the scene) in Interact and Play |
+| `locomotion.teleport` + `bounds` | teleport in Interact/Play lands only on walkable ground inside `bounds` (else the content's box), never through a wall |
 
 ## New in 1.19
 

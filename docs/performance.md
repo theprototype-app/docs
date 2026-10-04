@@ -132,6 +132,16 @@ when you would rather have steady frames than watch quality breathe in and out �
 again to give full quality back. The first time it ever acts in a session it also says so in a
 toast, because the chip lives in the object list's footer and that window can be closed.
 
+**A phone starts lighter.** A phone or small tablet is limited by how many pixels it can fill, not by how many objects
+it draws, so it opens every scene at step 4 — shadows off, resolution 72 %, ambient occlusion off — and climbs back up
+by the ordinary rule when it holds its frames. A toast offers **Use full quality** if you would rather start at full
+detail (no automatic step for a minute after that).
+
+**In a headset** the governor judges by the headset's own refresh rate (72, 90 or 120 Hz) instead of 30 fps. A VR
+session starts with **shadows off** and keeps them off for the session — the Quest budget — and never lowers the eye
+resolution, which would blur every panel's text; the quality you had on the desktop comes back when you leave VR. A
+game whose Settings pin a **Quality** preset (Low, Medium, High) overrides all of this.
+
 Nothing the governor does changes the scene for anybody else, and nothing it does is written to
 a preference: it is a fact about this device right now.
 

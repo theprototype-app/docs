@@ -25,7 +25,7 @@ While you edit, the object is locked for your peers, and the usual selection out
 | **Tabs** | Vertices / Edges / Faces — they stay pinned while the rest of the panel scrolls |
 | **Header** | Undo, redo, the key cheat sheet (**?**), Done and Cancel |
 | **Tools & operations** | The grid for the current mode, with the selected tool's parameters right below it |
-| **Sections** | Cleanup, Symmetry, Display, Collider — collapsible, and available from *every* element mode |
+| **Sections** | Gizmo & pivot, Cleanup, Symmetry, Display (and Collider while you edit a [custom collider](colliders.md#custom-compound-colliders)) — collapsible, and available from *every* element mode |
 
 Drag the header to move it, drag its right edge to change the width (the tool grid reflows), and double-click the grip to reset it. On a phone it becomes a **bottom sheet** you can drag taller or shorter instead of a floating window.
 
@@ -205,7 +205,7 @@ them always says which one is in force.
 
 ## Clean-up
 
-The *Cleanup* row acts on the whole object, not on your selection:
+The *Cleanup* and *Symmetry* sections act on the whole object, not on your selection (Cleanup's commands are icon buttons — hover one for its name):
 
 | Command | What it does |
 |---|---|
@@ -229,7 +229,7 @@ The *Cleanup* row acts on the whole object, not on your selection:
 | **Shortcuts** | Turn the single-key shortcuts off, if they get in the way. |
 | **?** | Open the key cheat sheet as its own little window you can park beside the viewport. |
 
-The overlay **colours** — wireframe, selection outline and the edit overlay — are yours to set in *Settings ▸ Appearance*; the edit overlay defaults to picking a colour that contrasts with the material you are editing.
+The overlay **colours** — wireframe, selection outline and the edit overlay — are yours to set in *Settings ▸ Scene ▸ Wireframe & outline* (**Wireframe color**, **Selection outline color**, **Edit Mesh wireframe** — *Auto* by default — and **Reset line colors**); the edit overlay defaults to picking a colour that contrasts with the material you are editing.
 
 ## Snapping while you edit
 

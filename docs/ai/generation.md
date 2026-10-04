@@ -14,7 +14,8 @@ replicated to everyone, undoable like any other object. You bring the generator:
 - **Input:** a short text description (“a weathered wooden treasure chest with iron bands”).
 - **Output:** a textured GLB placed at the origin (or the point you invoked it from),
   selected, and shared with peers. A progress card (top-right) shows status and lets you
-  cancel.
+  cancel. On the hosted service the card also shows your place in the queue while the job
+  waits (*"You are #3 in queue for the hosted AI"*).
 - **Time:** roughly **1–3 minutes** depending on your GPU / the hosted plan. Generation is
   asynchronous — you keep working while it runs.
 - **Provenance:** each generated object stores the prompt/provider/seed in its

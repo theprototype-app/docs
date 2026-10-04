@@ -21,6 +21,10 @@ uses one client for all of them.
 4. Use **Test connection** to confirm the endpoint and key work before you rely on them.
 5. Select the provider (the radio button) to make it active.
 
+**Signed in on theprototype.app?** The cloud plugin may add a **hosted** provider row for you — no key, URL or model to
+type. It is experimental and appears only while the hosted hardware is reachable. A provider you configured yourself
+always stays the selected one; the hosted row sits beside it for you to switch to.
+
 You can keep several providers side by side — for example Grok plus two self-hosted boxes —
 and switch the active one from the assistant window or Settings.
 

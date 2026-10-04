@@ -5,6 +5,8 @@ Give any object a **clip**: a named animation made of keyframes. Open a door, ru
 !!! info "Two different things called animation"
     This page is about animation **you author** — keys you place on a timeline. A model you *import* can also arrive with its own baked clips (a walk cycle from a rigged character); those play from the **Animation** section of the object's properties, and the [Play Animation](nodes/playanim.md) node drives either kind.
 
+    **Imported clips do not start by themselves.** Placing or loading an animated model leaves it still; previewing a clip from the Animation section in Edit plays it on your screen only, without changing the scene. Only ambient pieces from the packs (a banner, a fan, a torch) move on their own, and only in Interact and Play. Animated pack items carry a small ▶ badge in the Explorer.
+
 ## Opening the timeline
 
 Select an object, then open the **＋ Animation** tab — it sits with Flow and the UV editor in the bottom dock, and undocks into a floating window with the ⧉ button.

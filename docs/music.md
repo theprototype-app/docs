@@ -28,6 +28,11 @@ Sound goes nowhere until it is **cabled**. Every device has plugs on its back; c
 plug, then an input plug (desktop, in Play mode or the editor) or drag with the trigger (VR)
 to run a cable. A speaker is the only thing that reaches the room: cable an instrument into a
 speaker, or through a pedal chain and a mixer into a speaker. Unplug it and it is silent.
+
+**Moving or unplugging a cable.** On the desktop, click an input that already has a cable: you pick that cable up (a
+toast reminds you of the three ways out). Click another input to move it there, click the same input again to unplug
+it, or press <kbd>Esc</kbd> to put it back. In VR, press on a plugged input to pick its cable up; drop it on another
+input to move it, or on nothing to unplug it.
 Cables are part of the scene - they replicate, undo, save with the scene, and a prefab of a rig
 brings its cables with it.
 

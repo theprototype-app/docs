@@ -46,6 +46,17 @@ Errors show on the card.
 !!! warning
     Keep scripts deterministic: no `Math.random()`, no accumulating (`rotation.y += …`). Compute everything from `base`, `data` and `time`, or peers will drift apart.
 
+## Runaway and slow scripts
+
+A script cannot freeze the app:
+
+- **A loop that never ends** is stopped after a million iterations in one run, and the card shows a *Script loop limit*
+  error.
+- **A script that is slow every frame** — more than about 8 ms, for half a second in a row — is paused, with a
+  *paused: too slow* badge on the card, so the rest of the scene keeps its frame rate. Editing its code starts it again.
+
+If a scene's scripts hang so badly that the editor never gets a frame, open it in [safe mode](../node-system.md#safe-mode).
+
 ## Typed sockets
 
 Press **Typed sockets…** in the Script panel to declare your own sockets. **+ input** and

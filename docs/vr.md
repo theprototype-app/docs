@@ -24,7 +24,8 @@ If someone is in the room **with** you, see [Colocation](colocation.md) — a sh
 | **Right thumbstick up** | Aim & fire a teleport arc. |
 | **Right thumbstick left/right** | Snap-turn. |
 | **Menu-hand B / Y button** | Toggle the radial menu. |
-| **Right-hand A button (hold)** | Push-to-talk voice. |
+| **Right-hand A button (hold)** | Push-to-talk voice. In a game (Interact or Play) whose character can jump, **A** jumps instead. |
+| **Left-hand X button** | In a game, opens the game's pause menu (Resume, Restart, Levels, Settings, How to play, Main menu). |
 | **Right thumbstick click** | Ping where you're pointing. |
 
 One hand is the **menu/pointer hand** (right by default; switchable), the other drives locomotion.
@@ -34,12 +35,20 @@ One hand is the **menu/pointer hand** (right by default; switchable), the other 
 A **game** (a scene with a menu screen, a start spot, or a game module) opens in **Interact** when
 you put the headset on:
 
-- your **grips grab and knock** things — they never move the world;
+- your **grips grab and knock** things. They do not move the world — unless the game asks for it: Untangle and the
+  Jam Room let a grip in empty air move, turn and scale the whole scene, as in Edit (a grip on something you can hold
+  still holds it);
 - the **left stick walks** you: walls stop you, gravity keeps you on the floor, small steps climb.
-  No flying or teleporting unless the scene allows it;
+  No flying or teleporting unless the scene allows it. Where a game allows teleport it **keeps you inside**: you land
+  only on walkable ground inside the play area, never through a wall — a **red arc** means that spot is refused and
+  releasing does nothing;
 - editor helpers (the grid, light and collider wireframes, outlines) are hidden;
 - the game's menu, pause and results screens float in front of you — point the laser and pull the
-  trigger (or poke them); the score sits on your **left wrist** (turn it to read);
+  trigger (or poke them); the score sits on your **left wrist** (turn it to read) and on a
+  **top strip** across the top of your view. The board's **Top strip** button switches the strip off or on (remembered on
+  this device). The laser ends in a solid dot and the button under it lights up, and menus are drawn over the scene so
+  a floor or a wall never hides them;
+- the left **X** button opens the game's pause menu;
 - **hold the trigger and sweep** across piano keys, drum steps, pads, mixer mutes or pedal
   footswitches — each one you pass fires once;
 - the controllers vibrate for touches, presses, grabs and knocks.
@@ -80,12 +89,18 @@ The hub becomes **Edit**. It offers **Snap**, **Duplicate**, **Delete**, **Color
 
 ### System ▸
 
-Grid toggle, **World 1:1** (reset a scaled/rotated world grab), **Settings**, **Swap hand**, **Statistics**, **Grab mode** (cycle the grip style), **Mic ▸** (PTT / Open / Off) and **Exit VR**.
+Grid toggle, **World 1:1** (reset a scaled/rotated world grab), **Settings**, **Swap hand**, **Statistics**, **Profile ▸**
+(**Record**, **Record detailed**, **Stop recording**, **Report moment** — see
+[Profiling the headset](profiler.md#profiling-the-headset-from-the-desktop)), **Grab mode** (cycle the grip style),
+**Mic ▸** (PTT / Open / Off) and **Exit VR**.
+
+The radial menu follows the thumbstick too: the sector you push towards lights up, and the trigger or a stick click
+picks it.
 
 ## Getting around
 
 - **Move** — push the left thumbstick. With **VR flying** on, forward follows where your controller aims; otherwise it stays level. Hold the **left grip** to switch the stick to panning and elevation.
-- **Teleport** — push the **right thumbstick up** to arc a beam, release to blink to the landing spot (on the ground or any upward-facing surface). Toggle teleport in Settings.
+- **Teleport** — push the **right thumbstick up** to arc a beam, release to blink to the landing spot (in Edit: the ground or any upward-facing surface; in a game, only walkable ground inside the play area — a red arc is refused). Toggle teleport in Settings.
 - **Snap-turn** — flick the right thumbstick left/right to rotate in fixed steps. The **snap angle** is Off / 15° / 30° / 45° (default 45°), shown live in the Scene radial and VR Settings; **Mirror snap turn** flips the direction.
 - **World grab** — grip with **both hands in empty air** to grab the whole world: pull your hands apart/together to scale, twist to rotate, move to reposition. **System ▸ World 1:1** snaps it back to normal. Holding the world with **one** grip, push the stick **up/down** to send it away or bring it closer, as with an object.
 
@@ -105,13 +120,20 @@ VR supports both face and vertex editing:
 - **Vertices** — pick vertex handles with the ray, or grip-drag them. *Hold to move vertex* (Settings) chooses between hold-style and toggle-style dragging.
 
 !!! warning "Density caps"
-    To stay smooth in VR, mesh editing is limited to **300 triangles** for face editing and **500 vertices** for vertex editing. Denser meshes refuse with a toast. (The default sphere is above these caps — a lower-detail primitive or an imported low-poly mesh edits fine. The full-featured mesh editor is desktop-only.)
+    To stay smooth in VR, mesh editing is limited to **2500 triangles** for face editing and **800 vertices** for vertex editing by default; denser meshes refuse with a toast. Both limits are yours to change in **Settings ▸ VR ▸ Face edit limit / Vertex edit limit**. The full-featured mesh editor is desktop-only.
 
 ## Floating panels
 
 The menu opens follower panels that hang in space — Objects, Properties, Color palette, Prefabs, Keyboard, Chat, Stats, plus the Edit/Snap/Settings menus. Every panel is **grip-grabbable**: hold the grip on a panel to detach and reposition it, and the gripping hand's stick resizes it. Your layout is remembered; **Reset panel positions** (VR Settings, or the desktop Settings button) restores the defaults.
 
 Typing uses the **VR keyboard** — it pops up for renaming an object and for chat messages; point at keys and press with the trigger.
+
+## The sleeve palette
+
+**Settings ▸ VR ▸ VR sleeve palette** (experimental, off by default; also **VR sleeve palette** in VR Settings) puts a strip
+of ghost primitives along your menu-hand forearm, like a bracer. Point at one and **trigger-drag** it off: it follows your
+controller, the stick scales it and your wrist turns it; release the trigger to place it (one undo step). **Grip-drop** an
+object of yours onto the strip to keep it as a personal slot — those are saved on this device only.
 
 ## Hand models
 
@@ -141,7 +163,9 @@ Reachable from **System ▸ Settings** in VR, and mirrored in the desktop **Sett
 | Snap turn | Off / 15° / 30° / 45° |
 | Mirror snap turn | on / off |
 | VR flying | on / off |
+| VR sleeve palette | on / off (experimental) |
 | Hold to move vertex | on / off |
+| Face edit limit / Vertex edit limit | 2500 / 800 (desktop Settings only) |
 | Refresh rate | Max / 90 / 120 Hz |
 | Peer hand style | Model / Hands / Spheres |
 | FPS and draw calls | on / off (a strip in front of you; draw calls red above 150) |
