@@ -12,11 +12,16 @@
 
 ## Publish: the play link
 
-Publishing works as before (see [Community](community.md#publish)); when it is done, the last step now shows a **play
-link** with **Copy** and a **QR code** to scan with a phone. The link opens the app with the scene loaded and **Play
-already running** — the person you send it to lands in the game, not the editor, with no menus or panels around it.
+Publishing works as before — sign in, title, tags, license, visibility, contest (see [Community](community.md#publish)).
+When it is done you get two links:
 
-*TODO (36-export, Worker `/p/<id>` still owed at 17:00): the exact link form and how it differs from the scene page `/s/<id>`.*
+- **Play link** — `https://theprototype.app/p/‹id›`: opens straight into the game, with no editor around it. **Copy** it,
+  or scan its **QR code** with a phone or a headset. Unlisted scenes have a play link too; only people with the link can
+  open it.
+- **Scene page** — `https://theprototype.app/s/‹id›`: likes, comments, remix, download. Its **Play** button now uses the
+  play link.
+
+In a self-hosted copy of the app the Publish tab only says where publishing lives. **Export works everywhere.**
 
 ## What a player sees
 
@@ -27,13 +32,15 @@ A play link, an embed and an exported game all open the same **player**:
   pointer, goes fullscreen or enters VR after a real click.
 - A **fullscreen** button sits in the bottom-left corner where the page may go fullscreen.
 - A play link or embed also has *Open in theprototype.app ↗*, which opens the same scene in the full editor.
-- The **Made with ThePrototype** badge — a small, semi-transparent TP logo — sits in the bottom-right corner and opens
-  theprototype.app in a new tab. It moves up out of the way of a game's touch buttons.
+- The **Made with ThePrototype** badge — a small, semi-transparent TP logo — sits in the bottom-right corner; hovering
+  shows *Made with ThePrototype*, clicking opens theprototype.app in a new tab. It moves up out of the way of a game's
+  touch buttons and is not drawn inside a VR headset.
 
 ![Mini Golf exported for itch.io, playing in the itch.io frame: the game's own HUD, the fullscreen button bottom-left and the badge bottom-right](img/export/itch-mini-golf.png)
 
 The badge is **always on** in play links, embeds and exports. An exported file is yours to edit, so this is a request,
-not a lock — please keep it.
+not a lock — please keep it: it is how other people find the tool you made your game with. Clicks on the badge are
+counted per game, with no personal data, so we can see how many people arrive from games made here.
 
 ## Export: a game in a zip
 
@@ -45,10 +52,10 @@ not a lock — please keep it.
     | Preset | Use it for |
     |---|---|
     | **itch.io** | an HTML5 game page on itch.io: a zip with `index.html` at the root (guide below) |
-    | **Static host** | Netlify, Cloudflare Pages, GitHub Pages, your own server — unzip it into a folder and serve it |
+    | **Static host** | the same zip plus a `.nojekyll` file — Netlify, Cloudflare Pages, GitHub Pages, any web server |
     | **Embed** | an `<iframe>` snippet for a game that is already online (below) |
 
-3. Set the **Title** and the **Viewport size** (the size of the game's frame — for itch.io, the numbers you type into its
+3. Set the **Title** (the page title and the zip's name) and the **Viewport size** (the size of the game's frame — for itch.io, the numbers you type into its
    *Viewport dimensions*).
 4. Options: **Cover image** (a `thumbnail.png`, 630 × 500, taken from your current view) and **Use CDN for packs**
    (a smaller zip: kit pieces load from the packs CDN when the game starts, so it needs internet; off, every pack file the
@@ -56,12 +63,23 @@ not a lock — please keep it.
 5. The panel shows how big the engine is and estimates the zip. Press **Build & download zip**.
 
 The build is **checked before it downloads** (relative paths only, the file limits of the preset); the result line names
-the file, its size and its file count, and says *checked OK*. The zip holds `index.html`, the engine, the scene, its
-assets and — unless you chose the CDN — its packs and modules, so the game plays offline from any folder of any host.
+the file, its size and its file count, and says *checked OK*. The zip holds `index.html`, the engine (the same build the
+app runs), your scene, the installed modules it uses, the pack files it uses and a README. All paths are relative, there
+is no service worker, and nothing loads from another site unless you chose the packs CDN. The game starts in Play on its
+own. A typical game export is about 5 MB in about 365 files.
 
-!!! note
-    Exporting needs a built copy of the app (theprototype.app, or a self-hosted build). A development server cannot
-    export. Texture compression is not available yet: textures go into the zip exactly as authored.
+### Hosting it elsewhere
+
+Unzip it into any folder of any static host — a subfolder works too. It does **not** run from `file://` (browsers refuse
+module scripts there); for a quick local look, run `npx serve .` in the folder.
+
+### Limits
+
+- Exporting needs a built copy of the app (theprototype.app, a preview, or `npm run build`); a development server cannot
+  export.
+- An exported game is **single player** — multiplayer is off.
+- Models the scene loads from absolute web addresses (the Khronos sample models, for example) still load from there.
+- Texture compression is not available yet: textures go into the zip exactly as authored.
 
 ## Publishing on itch.io
 
@@ -74,8 +92,8 @@ assets and — unless you chose the CDN — its packs and modules, so the game p
    the engine does not use it.
 6. Save as a **Draft**, open the page and play it once; then set **Visibility** to *Public*.
 
-itch.io's limits — at most 1,000 files, 500 MB unzipped and 200 MB per file — are checked by the export before it
-downloads.
+itch.io's limits — at most 1,000 files, 500 MB unzipped, 200 MB per file and 240 characters per file path — are checked
+by the export before it downloads. From the command line, `butler push mygame-itch.zip ‹user›/‹game›:html5` uploads it.
 
 !!! tip "Updating the game"
     Upload the new zip and delete the old one (or use itch.io's `butler push`, which uploads only what changed). Keep the
@@ -85,7 +103,7 @@ downloads.
 
 Choose the **Embed** preset and paste the game's address into **Game URL** — a play link from the Publish tab (it is
 filled in for you once you have published), or the address where you host a static export. The panel shows the
-`<iframe>` snippet sized to your viewport; **Copy snippet** and paste it into your page.
+`<iframe>` snippet, sized from the **Viewport size**; **Copy snippet** and paste it into your page.
 
 A public community scene also has an **Embed** button on its page — see [Embedding a scene](community.md#embedding-a-scene).
 
