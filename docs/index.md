@@ -24,7 +24,7 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
-**1.21 — quick fixes, publish anywhere** *(draft)*. **Menu ▸ Publish / Export** gathers both ways out: publish to the
+**1.21 — quick fixes, publish anywhere**. **Menu ▸ Publish / Export** gathers both ways out: publish to the
 community with a play link and QR code that open straight into the game, or [export](publish-export.md) a zip of plain
 HTML that plays on itch.io or any static host, or an iframe snippet — every one with the *Made with ThePrototype* badge.
 On a phone, games get [touch action buttons](touch-controls.md) you can rearrange and re-skin. A new
