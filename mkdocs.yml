@@ -116,6 +116,7 @@ nav:
     - Music & Sound: audio.md
     - Music Playground: music.md
   - Games:
+    - The Games Tab: games.md
     - Build a Game Loop: build-a-game.md
     - Game Kit: game-kit.md
     - Behaviours: behaviours.md

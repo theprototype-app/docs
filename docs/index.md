@@ -16,7 +16,8 @@ You build scenes from primitives, imported models and packs, wire behavior with 
 
 ## What's new
 
-**1.20 — measure on the device, build games from a kit.** The [Profiler](profiler.md) records
+**1.20 — five new games, measure on the device, build games from a kit.** [Five new games](games.md)
+are in the Games tab with no download: The Alchemist's Escape, Marble Maze, Mini Golf, Sky Run and Target Toss. The [Profiler](profiler.md) records
 frame time, draw calls and triangles — and, in detail, which objects draw most — against the
 Quest budget, compares two recordings, and watches a headset live from the desktop; **Report this
 moment** keeps the last 30 seconds when something stutters. Games get a [game kit](game-kit.md)
