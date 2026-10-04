@@ -132,7 +132,6 @@ nav:
     - Publish, Play, Remix: community.md
   - VR:
     - VR Guide: vr.md
-    - VR Welcome Tour: tours.md#welcome-to-theprototype-vr
     - Colocation (shared room): colocation.md
   - AI:
     - Assistant: ai/assistant.md
