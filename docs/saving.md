@@ -97,7 +97,7 @@ A legacy scene format, hidden by default. Enable it via **⚙ ▸ Show JSON form
 
 ## Autosave
 
-A snapshot of the scene, node graph and camera is written to your browser automatically — 30 seconds after a change, plus every 3 minutes. On a **heavy scene** a snapshot takes longer to prepare, so the delay stretches (up to 5 minutes) to keep saving from stuttering the app; the [Storage panel](explorer.md#storage) (the Explorer's storage chip, or **Settings ▸ Storage used ▸ Show breakdown**) shows the current cadence and what the last snapshot cost. If a snapshot **cannot be written** — the disk is full, say — a toast stays up with **Manage storage**, and the Storage panel says *Autosave is failing*. Autosave can be turned off in **Settings**.
+A snapshot of the scene, node graph and camera is written to your browser automatically — 30 seconds after a change, plus every 3 minutes. On a **heavy scene** a snapshot takes longer to prepare, so the delay stretches (up to 5 minutes) to keep saving from stuttering the app; the [Storage panel](explorer.md#storage) (the Explorer's storage chip, or **Settings ▸ Explorer ▸ Storage used ▸ Show breakdown**) shows the current cadence and what the last snapshot cost. If a snapshot **cannot be written** — the disk is full, say — a toast stays up with **Manage storage**, and the Storage panel says *Autosave is failing*. Autosave can be turned off in **Settings**.
 
 If a snapshot exists when you open the app, a **restore** prompt offers to bring it back. If the last attempt to restore it never finished a frame, the prompt warns you — that snapshot may be what stopped the app, so think before pressing **Restore**.
 

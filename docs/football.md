@@ -53,7 +53,8 @@ The defaults are a living room: 5 m long, 3 m wide, gates centred at chest heigh
 2. Press the **Start match** pad, or **Start** in the toolbox — or just hit the ball, which
    kicks a match off when none is running.
 3. Hit the ball: **swing a controller through it** (the tip of the controller kicks; a trigger
-   click on the ball within 2.5 m kicks it too). On the desktop, walk into it or click it.
+   click on the ball kicks it too). On the desktop, walk into it or click it. A click, desktop
+   or VR, only kicks within 2.5 m.
    Score in the **other** team's gate — red attacks the blue gate. The gate lamps fill up as a
    team scores, so the score reads from across the room without a screen.
 

@@ -69,7 +69,7 @@ to a box. When a collider looks wrong, turn on *Show collider* first: a fallback
 | **Wood** | 0.55 | 0.25 | the everyday default feel |
 | **Metal** | 0.3 | 0.1 | slick and heavy |
 
-Move either slider afterwards and the dropdown reads *Custom*. **Configure Scene ▸ Physics ▸ Defaults ▸ Material** sets
+Move either slider afterwards and the dropdown reads *Custom*. **Configure Scene ▸ Physics ▸ Defaults (advanced) ▸ Material** sets
 the material of every object that does not set its own — the fastest way to make a whole scene icy.
 
 ## Sensors: trigger volumes
@@ -97,7 +97,7 @@ shared by every object. There is no per-object gravity scale; to make one object
 lighter material, or push it with an [Impulse](nodes/impulse.md) or [Set Velocity](nodes/setvelocity.md) node.
 
 **Drag** and **spin drag** (linear and angular damping) and **Continuous collision** are scene-wide too, under
-**Defaults (advanced)**. A body moving faster than about 5 m/s switches continuous collision on for itself, so a hard
+**Defaults (advanced)**. A body thrown or knocked faster than about 5 m/s switches continuous collision on for itself until it settles, so a hard
 throw does not pass through a thin wall.
 
 ## Seeing the collider
@@ -117,8 +117,8 @@ the ordinary mesh tools.
 
 - **Each separate piece becomes its own convex hull**, so an L-shape is two boxes, a hollow frame four, a chair five or
   six.
-- The **Collider** section of the toolbox has **add box** and **add sphere** buttons to drop a primitive piece straight in,
-  and shows how many pieces you have.
+- The **Collider** section of the toolbox has **add box** and **add sphere** buttons to drop a primitive piece straight in;
+  the status bar shows how many shells (pieces) you have.
 - **✓** stores it; **✕** or <kbd>Esc</kbd> cancels — the visible mesh is never touched either way.
 - A custom collider holds up to about **400 vertices** in all; a larger one is refused with a toast. Mass is shared evenly
   between its pieces.

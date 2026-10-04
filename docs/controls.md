@@ -306,7 +306,7 @@ Inside an Edit Mesh session the bare letters <kbd>E</kbd> <kbd>I</kbd> <kbd>G</k
 
 **Empty viewport** — a quick right-click opens the scene menu:
 
-- **Search objects…** — find an object in the scene by name.
+- **Search objects…** — find an object in the scene by name (off by default: **Settings ▸ Interface ▸ Lists & menus ▸ Object search in menu**).
 - **Add** — the full primitive catalog (meshes, building blocks, cameras, lights) plus empty groups; objects spawn at the clicked point.
 - **Undo / Redo**, **Ping here**.
 - **Selected ▸** — the selected object's own menu (shown only while something is selected).
@@ -316,7 +316,7 @@ Inside an Edit Mesh session the bare letters <kbd>E</kbd> <kbd>I</kbd> <kbd>G</k
 - **Module tools** — the toolboxes of installed modules.
 - **Camera bookmarks** — Save current view, the saved views, *Manage saved views…*, Clear bookmarks.
 
-**An object** (viewport or object list) — Focus camera, Duplicate, Group selection / Ungroup, Origin and Pivot point, Convert to mesh, Align to ground, Preview camera (on a [camera](camera.md#camera-objects)); **Edit**: Properties, Rename, Edit shader, [Edit mesh](mesh-editing.md), Edit spline, Sculpt mesh; **Physics & effects**: Physics ▸ Weld / Hinge, Effects; **Share**: Add note, [Save as…](prefabs.md); and Delete. <kbd>Alt</kbd>+click pings anywhere in the scene.
+**An object** (viewport or object list) — Focus camera, Duplicate, Group selection / Ungroup, Origin and Pivot point, Convert to mesh, Align to ground, Preview camera (on a [camera](camera.md#camera-objects)); **Edit**: Properties, Rename, Edit shader, [Edit mesh](mesh-editing.md), Edit spline, Sculpt mesh; **Physics & effects**: Physics ▸ Weld / Hinge, Effects, Enable / Disable flow effects; **Share**: Add note, Ping this object, [Save as…](prefabs.md); and Delete. <kbd>Alt</kbd>+click pings anywhere in the scene.
 
 **Every right-click menu can be typed into.** Start typing and the menu turns into a filtered list of every entry in it,
 submenus included; <kbd>↑</kbd>/<kbd>↓</kbd> walk the rows, <kbd>Enter</kbd> runs one, and with nothing typed

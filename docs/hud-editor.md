@@ -43,12 +43,13 @@ painting itself over the editor, and the play button's menu offers **Test play**
 
 ## Placing elements
 
-- **Click** an element to select it, **drag** to move, drag its edges to resize; <kbd>Shift</kbd> adds to the selection.
+- **Click** an element to select it, **drag** to move, drag the grip at its bottom-right corner to resize; <kbd>Shift</kbd> adds to the selection.
   The **Multi-select** tool drags a box that selects everything it touches.
 - Every element is **anchored** to one of nine points of the screen (the corners, the edge middles, the centre) plus a
   pixel offset, so it stays in its corner on any window size rather than stretching.
-- **Snapping** (right-click the stage) snaps to the grid, the stage centre lines and other elements' edges; you can set
-  the grid step and how close an edge must come.
+- **Snapping** (the **Snap** box in the toolbar, or right-click the stage) snaps to the grid, the stage centre lines and
+  other elements' edges. With nothing selected, the properties pane's **Snapping** section sets the grid step and how
+  close an edge must come.
 - The **arrange** buttons need two or more selected: **Align** left / centres / right / top / middle / bottom,
   **Distribute** horizontally or vertically (three or more), **Equalize size**.
 - <kbd>Ctrl</kbd>+<kbd>D</kbd> duplicates, <kbd>Del</kbd> deletes, <kbd>Ctrl</kbd>+<kbd>A</kbd> selects all.
@@ -92,7 +93,7 @@ A small mark on an element on the stage means something is wired to it — a but
 | **Tabs** | a segmented pager; its value is the selected index |
 | **Confirm** | a question and two buttons, which fire `‹id›-yes` and `‹id›-no` |
 
-Inputs are read with a **HUD Input** node. Each has a **shared** switch: off, the value is yours alone (a volume slider);
+Slider, Toggle, Dropdown, Text field and Tabs are read with a **HUD Input** node and have a **shared** switch: off, the value is yours alone (a volume slider);
 on, every player sees the same value (a host setting).
 
 **Layout**: **Panel** (a background box to group things on — draw it first) and **Scroll panel** (a scrollable box of
@@ -105,7 +106,7 @@ Modules can add element kinds of their own; they appear in the palette like the 
 Select a button and open **Actions ▸ ＋ Add action** in the properties pane. Actions are grouped — *Game* (start the
 game, pause, resume, end the game, back to the menu, reset the game, set a variable, save best score, travel to a level,
 reset a counter), *Camera* (look through a camera), *HUD* (show, hide or toggle a screen), *Scene* (count the presses,
-play an animation, play a sound, fire particles, apply an impulse) — and several can hang off one press. The
+play an animation, play a sound, fire particles, apply an impulse, toggle an object's visibility) — and several can hang off one press. The
 pane lists them back in plain language. Behind the scenes an action is ordinary flow nodes, so you can open the node
 editor and extend it.
 
@@ -113,7 +114,7 @@ editor and extend it.
 
 | Node | Does |
 |---|---|
-| **HUD Screen** | shows or hides a whole screen while its condition holds |
+| **HUD Screen** | shows, hides or toggles a screen each time it is triggered (for this player only) |
 | **HUD Text** | puts a value into a Text element — a live score |
 | **HUD Timer** | runs a Timer element's countdown on the shared clock — duration, display format, start automatically or on a pulse |
 | **HUD Bar** | drives a bar's (or radial's, icon row's, hotbar's) value from a number |

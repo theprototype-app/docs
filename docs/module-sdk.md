@@ -296,9 +296,9 @@ api.registerStateSync({
 });
 ```
 
-### The flow graph: `api.flow` (1.15)
+### The flow graph: `api.flow`
 
-For modules whose node needs its neighbours — a manager toolbox listing its instances, a count node reading its
+(Node positions, `freeRegion`, `onChange`, `setNodesData` and the undoable `setNodeData` are 1.15 additions.) For modules whose node needs its neighbours — a manager toolbox listing its instances, a count node reading its
 siblings, a recipe that builds a wired example. Reads are deterministic because the graph is replicated; treat them like
 replicated state.
 
@@ -680,7 +680,7 @@ and `simOnPlay`:
 |---|---|
 | `reach` | grab reach in metres from the player's body (absent = no limit) — the *Limit grab reach* row |
 | `locomotion.worldGrab` | `true` gives VR grips Edit's world gestures (move, turn, scale the scene) in Interact and Play |
-| `locomotion.teleport` + `bounds` | teleport in Interact/Play lands only on walkable ground inside `bounds` (else the content's box), never through a wall |
+| `locomotion.teleport` + `play.bounds {min, max}` | teleport in Interact/Play lands only on walkable ground inside `play.bounds` (else the content's box), never through a wall |
 
 ## New in 1.19
 

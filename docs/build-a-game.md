@@ -274,9 +274,9 @@ Two helpers that come with it:
   twenty-four stars and two planets are [knocked](physics.md#the-knock) about by hand.
   It opens on a start screen — **Start round** (light every star within two minutes; your
   best round is saved on this device) or **Free play** — so the HUD carries a *Free play*
-  screen and a *Round* screen; in free play the buttons (**Restart round**, **More stars**)
-  live on the <kbd>P</kbd> menu and on two physical pads on the floor, which is how the same
-  buttons work in VR where a screen HUD is not there to click. An
+  screen and a *Round* screen; in free play the <kbd>P</kbd> menu carries **Start round: light every
+  star**, **Restart round** and **More stars**, and two physical pads on the floor (*Start* and
+  *More stars*) do the same in VR, where a screen HUD is not there to click. An
   [On Hit](nodes/onhit.md) per star chimes, lights it and bursts particles in proportion to
   `speed`; a second On Hit with **who** set to *me* counts that touch on the hitter's own row,
   which is what the leaderboard reads. It needs no module at all.
