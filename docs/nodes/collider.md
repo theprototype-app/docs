@@ -12,11 +12,12 @@ Physics doesn't collide your triangles; it collides a simple stand-in. A box is 
 
 | Parameter | Default | Meaning |
 |---|---|---|
-| shape | box | `box`, `sphere`, `capsule`, `cylinder`, `cone`, `hull`, `custom`, `object` |
+| shape | box | `box`, `sphere`, `capsule`, `cylinder`, `cone`, `hull`, `trimesh`, `custom`, `object` |
 | scale | 1 | multiplies the whole shape (0.25–4) — a slightly smaller collider stops objects looking "held apart" |
 | sensor | off | makes the shape a **trigger volume**: nothing bounces off it, but overlaps fire [On Enter](onenter.md) / [On Exit](onexit.md) |
+| group | inherit | the [collision group](../colliders.md#collision-groups): `default`, `a` – `d`, `water`; `inherit` keeps the Properties choice |
 
-Shapes in short: **hull** shrink-wraps the mesh in a convex skin (exact for ramps and gems, seals concave openings); **custom** uses the compound collider you authored in *Edit collider…*; **object** hulls the geometry of a *different* object — wire that object's [Object Selector](objectselector.md) into the node's `source` input, e.g. give a detailed statue the collider of a simple crate.
+Shapes in short: **hull** shrink-wraps the mesh in a convex skin (exact for ramps and gems, seals concave openings); **trimesh** uses the object's own triangles ([exact mesh](../colliders.md#exact-mesh-colliders) — static and kinematic bodies only); **custom** uses the compound collider you authored in *Edit collider…*; **object** hulls the geometry of a *different* object — wire that object's [Object Selector](objectselector.md) into the node's `source` input, e.g. give a detailed statue the collider of a simple crate.
 
 ## Inputs
 

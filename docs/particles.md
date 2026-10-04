@@ -33,6 +33,11 @@ Right-click empty space ▸ **Add ▸ Effects ▸** places a small marker object
 | **Dust puff** | a low brown scatter | burst |
 | **Confetti** | tumbling coloured squares | burst |
 | **Sparks** | fast bright streaks that arc and die | burst |
+| **Rain** | streaks falling over an 8 × 8 m area, with a small splash ring where each one lands | continuous |
+| **Snow** | flakes drifting down over an 8 × 8 m area, settling and fading on the ground | continuous |
+
+**Rain** and **Snow** (1.22) are weather: **Add ▸ Effects ▸ Rain** places the emitter up at cloud height, and the drops fall
+about 6 m to the ground below it, drifting with a little wind. Pair them with [Water](water.md) for a storm over the sea.
 
 A preset is just a starting point — every value below is editable afterwards.
 

@@ -5,6 +5,7 @@ nav:
     - Welcome: index.md
     - Controls: controls.md
     - Touch Controls: touch-controls.md
+    - Tours: tours.md
     - Units: units.md
     - Themes & Appearance: appearance.md
     - Connection: connection.md
@@ -24,6 +25,8 @@ nav:
     - Physics & Simulation: physics.md
     - Colliders: colliders.md
     - Particle Effects: particles.md
+    - Water: water.md
+    - Fluid Tank & Jiggle: simulation.md
     - Terrain & Sculpting: terrain.md
     - Saving & Sessions: saving.md
     - Loading Placeholders: loading.md
@@ -84,6 +87,7 @@ nav:
       - Shake: nodes/shake.md
       - Spin: nodes/spin.md
       - Bounce: nodes/bounce.md
+      - Jiggle: nodes/jiggle.md
       - Orbit: nodes/orbit.md
       - Path Patrol: nodes/pathpatrol.md
       - Mass: nodes/mass.md

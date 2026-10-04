@@ -20,7 +20,7 @@ The rest of the section — the **collider** shape, the **material** (bounciness
 axes** and **Show collider** — is described on its own page: **[Colliders](colliders.md)**. In short: the collider shape
 is inferred from the object (a sphere rolls, a ramp is a ramp), a *Sensor* stops colliding and fires
 [On Enter](nodes/onenter.md) / [On Exit](nodes/onexit.md) instead, and every one of these settings can be changed while
-the simulation runs.
+the simulation runs. A dynamic object can also [float](#things-float) in water.
 
 To give a whole selection physics at once, **Configure Scene ▸ Physics** lists every object that will get a body
 (*dynamic · 1 kg*, *static*, *collider only*; click a row to select it) and has an **Enable physics on selection** button
@@ -156,6 +156,37 @@ it is your hand, not a message.
 
 To react to a knock in a graph, use the [On Hit](nodes/onhit.md) node: it gives you how hard
 (`speed`) and whether it was you (`by me`).
+
+## Things float (buoyancy) { #things-float }
+
+Drop a dynamic object into [water](water.md) while a simulation runs and it floats, sinks or drifts. The water pushes it
+up by as much water as it displaces, slows it down, carries it along in its flow (the River preset), and tips it back
+upright. Hitting the surface makes a ripple.
+
+![A wooden crate floating in a pool, with the Floats rows in its Physics properties](img/physics/floats.png)
+
+Select the object and open **Properties ▸ Physics** (Body: *Dynamic*) ▸ **Floats**:
+
+| Floats | Density (kg/m³) | Behaves like |
+|---|---|---|
+| **Auto** (default) | 500 | floats half under |
+| **Foam** | 150 | rides high on the surface |
+| **Cork** | 240 | floats, mostly above |
+| **Wood** | 600 | floats a little more than half under |
+| **Ice** | 917 | floats almost all under |
+| **Rubber** | 1100 | sinks slowly |
+| **Stone** · **Metal** | 2500 · 7800 | sinks |
+| **From mass ÷ volume** | from the object | works it out from the object's mass and size |
+| **Off** | — | ignores water |
+
+**Density** (kg/m³; water is 1000) and **Buoyancy ×** fine-tune it, and the hint under the sliders says how deep it will
+sit — *Floats about 60% under the surface*. How deep something floats depends on its density, not its mass, so a light and
+a heavy crate of the same wood float equally.
+
+The peer running the simulation computes the floating, and everyone sees the same motion; each player draws the ripples
+for themselves. Water volumes are in the *Water* [collision group](colliders.md#collision-groups), which is why things
+fall **into** them instead of landing on top. For a tank of particle fluid you can pour, see
+[Fluid tank](simulation.md#fluid-tank).
 
 ## Joints
 

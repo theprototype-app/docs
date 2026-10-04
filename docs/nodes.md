@@ -115,9 +115,6 @@ their own page link to it.
 |---|---|
 | [**On Click**](nodes/onclick.md) | Fires a short pulse when its object is clicked - the bridge from user input into the graph. |
 | [**Key Press**](nodes/keypress.md) | Fires a pulse while a keyboard key is pressed - the bridge from your keyboard into the graph. |
-| [**On Impact**](nodes/onimpact.md) | Fires a pulse when a physics simulation lands the connected object on the ground or another object. |
-| [**On Enter**](nodes/onenter.md) | Fires a pulse when something enters a trigger volume - the checkpoint, doorway and pressure-plate node. |
-| [**On Exit**](nodes/onexit.md) | Fires a pulse when something leaves a trigger volume - the other half of On Enter. |
 | [**On Rest**](nodes/onrest.md) | Fires a pulse when a physics body has finished moving - the counterpart to On Impact, which fires when it starts. |
 | [**On Hit**](nodes/onhit.md) | Fires a pulse when a hand or a player knocks the connected object, with how hard and whether it was you. |
 | [**On Grab**](nodes/ongrab.md) | Fires a pulse when a player picks up the object — a desktop carry or a VR grip in Interact. |
@@ -141,8 +138,14 @@ their own page link to it.
 
 ## Physics
 
+On Impact, On Enter and On Exit sit here since 1.22. Each has an **only with** input (fire only for one other
+object) and an **other** output (the body it touched) — see [Contact filters](colliders.md#contact-filters-only-with-and-other).
+
 | Node | What it does |
 |---|---|
+| [**On Impact**](nodes/onimpact.md) | Fires a pulse when a physics simulation lands the connected object on the ground or another object. |
+| [**On Enter**](nodes/onenter.md) | Fires a pulse when something enters a trigger volume - the checkpoint, doorway and pressure-plate node. |
+| [**On Exit**](nodes/onexit.md) | Fires a pulse when something leaves a trigger volume - the other half of On Enter. |
 | [**Mass**](nodes/mass.md) | Gives the connected object weight for the physics simulation - objects with a Mass fall and collide. |
 | [**Bounciness**](nodes/bounciness.md) | Sets how much the connected object rebounds in the physics simulation (restitution). |
 | [**Friction**](nodes/friction.md) | Sets how much the connected object grips surfaces in the physics simulation. |
@@ -161,6 +164,7 @@ their own page link to it.
 | [**Blink**](nodes/blink.md) | Flashes the connected object on and off at a steady rate. |
 | [**Sound**](nodes/sound.md) | Plays an Explorer audio clip on the connected object when a pulse arrives - spatial, replicated, by content hash. |
 | [**Particles**](nodes/particle.md) | Emits a particle effect from the connected object - a preset burst, a stream, a trail. |
+| [**Jiggle**](nodes/jiggle.md) | Makes the connected object jiggle - it lags behind when moved, wobbles like jelly on impact and sways in the wind; skinned models swing their bone chains. |
 
 ## Music
 

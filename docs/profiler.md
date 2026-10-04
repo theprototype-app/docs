@@ -121,7 +121,7 @@ drawn wrongly — one press keeps the evidence:
   viewport showed, the last few seconds' numbers (frames, median fps, stalls) and an optional
   **What happened?** note. **Save** keeps it as a recording. When performance reports are
   available in this build, a box offers to send it as well (**Save and send**).
-- **In a headset**: the radial menu's **System ▸ Profile ▸ Report moment** captures the moment
+- **In a headset**: the radial menu's **Tools ▸ Profile ▸ Report moment** captures the moment
   the same way, with an optional note.
 
 The data and the picture are of the moment you pressed, not of the time spent typing. You get the
@@ -136,8 +136,8 @@ record it there and read it on a desktop.
 
 ### Recording in the headset
 
-The radial menu's **System ▸ Profile** holds **Record**, **Record detailed**, **Stop recording**
-and **Report moment**. While a recording runs, a small pill sits in your view:
+The radial menu's **Tools ▸ Profile** holds **Record** and **Record detailed** (**Stop recording** while
+one runs) and **Report moment**. While a recording runs, a small pill sits in your view:
 
 - **● REC 0:12** — a light recording,
 - **● REC DETAILED 0:04** — a detailed one (it costs frame time, so it says so),

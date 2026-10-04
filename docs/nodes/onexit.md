@@ -18,6 +18,14 @@ Needs a **sensor** collider, exactly like [On Enter](onenter.md) (Inspector ▸ 
 
 Wire it into an [Object Selector](objectselector.md), or leave it unwired inside an object's own flow to target that object.
 
+## Only with, and other
+
+Wire an [Object Selector](objectselector.md) into **only with** and the node fires only when the *other* body is that
+object (or a spawned copy of it). The **other** output carries the body it touched — wire it into [Look At](lookat.md),
+[Distance](distance.md) and the like. The other body travels with the trigger, so every peer reads the same object. A
+contact with the ground plane reports an empty *other*. Since 1.22 the node sits in the palette's **Physics** group. See
+[Contact filters](../colliders.md#contact-filters-only-with-and-other).
+
 ## Practical example
 
 A door that closes behind you:

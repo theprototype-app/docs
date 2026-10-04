@@ -2,7 +2,9 @@
 
 Publish the scene you are looking at, hand somebody a link, and they can play it in their browser, open it in the editor, or remix it into something of their own. Contests give you a reason to publish every couple of weeks.
 
-Everything on this page lives on **theprototype.app** — the hosted app loads it as a cloud plugin. Browsing, playing and remixing never need an account; publishing, liking, commenting and entering a contest do.
+Everything on this page lives on **theprototype.app** — the hosted app loads it as a cloud plugin. **Community** in the
+profile (avatar) menu, right under **♥ Support the project**, opens [theprototype.app/community](https://theprototype.app/community)
+in a new tab: the published scenes and the contests. Browsing, playing and remixing never need an account; publishing, liking, commenting and entering a contest do.
 
 !!! note "Self-hosted and local builds"
     A copy you build yourself has none of this: no **Publish** row, and the Templates window's **Community** tab shows the open GitHub gallery with **Submit yours on GitHub** instead.

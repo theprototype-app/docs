@@ -277,7 +277,7 @@ The same list lives behind the **?** button in the toolbox.
 
 ## In VR
 
-Mesh editing works in VR too: the radial menu's **Edit** entries cover face select, extrude, inset, move and stretch, with the amount adjusted live by moving your controller. See the [VR Guide](vr.md).
+Mesh editing works in VR too: the radial menu's **Selected ▸ Edit mesh** covers face select, extrude, inset, move and stretch, with the amount adjusted live by moving your controller. See the [VR Guide](vr.md).
 
 ## Collaboration
 
