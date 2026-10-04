@@ -24,6 +24,12 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.21 — quick fixes, publish anywhere** *(draft)*. [Publish / Export](publish-export.md): a play link that starts the
+game, a *Made with TP* badge, and a zip that runs on itch.io or any host. On a phone, games get
+[touch action buttons](touch-controls.md); a new [loading placeholder](loading.md) style lets you work while models
+arrive. Every theme gets readable colours, menus fit short screens, Settings has a search box, and text in menus is no
+longer selected by accident. *TODO: final list from the 1.21 CHANGELOG.*
+
 **1.20 — five new games, measure on the device, build games from a kit.** [Five new games](games.md)
 are in the Games tab with no download: The Alchemist's Escape, Marble Maze, Mini Golf, Sky Run and Target Toss. The [Profiler](profiler.md) records
 frame time, draw calls and triangles — and, in detail, which objects draw most — against the
