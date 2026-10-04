@@ -7,7 +7,7 @@ keeps a big scene smooth on a phone or a Quest — and up close you still see ev
 theprototype.app does this two ways:
 
 - **Automatically** — any dense model you load (3000+ triangles) gets simplified levels in the
-  background, built once and shared by every copy. You can switch this off in **Settings ▸
+  background, built once and shared by every copy. You can switch this off in **Settings ▸ Scene ▸
   Simplify distant models** (this device only).
 - **A LOD group on an object**, edited in its properties like in a professional 3D package
   (Unity's *LOD Group*, Unreal's *LOD settings*). Pack items that ship LOD files come with one

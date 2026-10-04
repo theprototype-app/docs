@@ -81,6 +81,19 @@ The **⚙** tab button on the right edge opens the properties panel, which has t
 
 The graph itself is shared: every node, edge, parameter tweak and position replicates to all peers. Motion is **not** streamed — every peer computes the same animation from the same node data and a **synced clock**, so a Spin or a Sound loop is at the same phase for everyone. Random nodes are seeded, and click triggers ride tiny replicated messages. You can exempt one object from all flow effects via its right-click menu (*Disable flow effects*).
 
+## When the runtime fails
+
+A node that throws an error does not take the scene down with it. If the whole graph keeps failing frame after frame,
+the flow runtime **pauses itself** and says so: *"Flow runtime paused after repeated errors. Your scene is intact; fix
+the node and resume."* Fix or delete the node, then press **Resume** on that toast.
+
+### Safe mode
+
+If a scene's scripts hang as soon as it loads, there is never a frame in which to fix them. Open the app with
+**`#safe`** at the end of the address (`https://theprototype.app/#safe`): the scene and its graph load, but the flow
+runtime starts **paused**, so no script runs. Edit or delete the culprit, then press **Resume** on the *Safe mode*
+toast — or reload without `#safe`.
+
 ## Flow Code: the graph as text
 
 **Flow Code** (the dock's **＋** menu, or <kbd>Alt</kbd>+<kbd>F</kbd>) shows the graph the editor is

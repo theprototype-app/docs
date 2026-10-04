@@ -5,6 +5,7 @@ nav:
     - Welcome: index.md
     - Controls: controls.md
     - Units: units.md
+    - Themes & Appearance: appearance.md
     - Connection: connection.md
   - Building:
     - Explorer: explorer.md
@@ -20,6 +21,7 @@ nav:
     - Scene Look (Post-processing): post-processing.md
     - Animation: animation.md
     - Physics & Simulation: physics.md
+    - Colliders: colliders.md
     - Particle Effects: particles.md
     - Terrain & Sculpting: terrain.md
     - Saving & Sessions: saving.md
@@ -68,6 +70,7 @@ nav:
       - On Impact: nodes/onimpact.md
       - On Hit: nodes/onhit.md
       - On Grab: nodes/ongrab.md
+      - On Clap: nodes/onclap.md
       - On Rest: nodes/onrest.md
       - On Enter: nodes/onenter.md
       - On Exit: nodes/onexit.md
@@ -105,6 +108,8 @@ nav:
       - Effect Burst: nodes/effectburst.md
       - Controller Buzz: nodes/hapticpulse.md
       - Game Music: nodes/gamemusic.md
+      - Game Setting: nodes/gamesetting.md
+      - Point Grab: nodes/pointgrab.md
       - Travel to scene: nodes/travel.md
       - Move Input: nodes/moveinput.md
       - HUD Button: nodes/hudbutton.md
@@ -118,6 +123,7 @@ nav:
   - Games:
     - The Games Tab: games.md
     - Build a Game Loop: build-a-game.md
+    - HUD Editor: hud-editor.md
     - Game Kit: game-kit.md
     - Behaviours: behaviours.md
     - VR Football: football.md

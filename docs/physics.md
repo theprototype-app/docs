@@ -10,55 +10,21 @@ There are two ways to make an object participate, and they combine.
 
 ### From the Inspector
 
-Select an object and open its **Physics** section in the Inspector:
+Select an object and open its **Physics** section in the Inspector. **Body** is the first choice:
 
-| Control | Options / range | Default |
-|---|---|---|
-| **Body** | Auto (scenery) · Static · Dynamic | Auto (scenery) |
-| **Mass** (Dynamic only) | 0.1 – 100 | 1 |
-| **Material** | Custom · Ice · Rubber · Wood · Metal | Custom |
-| **Bounciness** | 0 – 1 | 0.3 |
-| **Friction** | 0 – 2 | 0.5 |
-| **Collider** | Box · Sphere · Capsule · Cylinder · Cone · Convex hull · Custom | inferred from the shape |
-| **Sensor** | on / off | off |
-| **Lock rotation / position** (Dynamic only) | per axis X · Y · Z | off |
-| **Show collider** | on / off (**this device only**) | off |
-
-- **Auto (scenery)** objects act as static obstacles the simulation can land on.
-- **Dynamic** objects fall and collide.
+- **Auto (scenery)** objects act as static obstacles the simulation can land on (the default).
+- **Dynamic** objects fall and collide; give them a **Mass** (0.1–100, default 1).
 - **Static** never moves.
-- **Collider shapes** fit the object's own extents and **follow its rotation** — a tilted box collides as a tilted box, a rotated ramp is really a ramp. Pick **Sphere** for balls (they roll), **Capsule**/**Cylinder**/**Cone** for posts and characters, **Convex hull** for irregular shapes (very dense meshes fall back to a box automatically). The default is inferred from the object's own shape, so a sphere gets a sphere.
 
-### Materials
+The rest of the section — the **collider** shape, the **material** (bounciness and friction), **sensors**, **locked
+axes** and **Show collider** — is described on its own page: **[Colliders](colliders.md)**. In short: the collider shape
+is inferred from the object (a sphere rolls, a ramp is a ramp), a *Sensor* stops colliding and fires
+[On Enter](nodes/onenter.md) / [On Exit](nodes/onexit.md) instead, and every one of these settings can be changed while
+the simulation runs.
 
-The **Material** dropdown sets bounciness and friction together, so you can pick a feel instead of two numbers: **Ice** (slippery, dead), **Rubber** (grippy, bouncy), **Wood**, **Metal**. Move either slider afterwards and the dropdown reads *Custom*.
-
-### Sensors — trigger volumes
-
-Tick **Sensor** and the object stops colliding: things pass straight through it. Instead, overlaps fire [On Enter](nodes/onenter.md) and [On Exit](nodes/onexit.md) in the flow graph — a doorway that opens as you approach, a lava pit, a scoring zone, a checkpoint.
-
-A sensor is still a visible mesh, so give it a transparent material (or hide it) once it works.
-
-### Locking axes
-
-A dynamic body can be pinned per axis: **Lock rotation** X/Y/Z stops it tipping (a character capsule that should stay upright), **Lock position** X/Y/Z keeps it on rails (a lift that only goes up and down).
-
-### Seeing the collider
-
-**Show collider** draws the collision shape as a wireframe over the object — green, or amber for a sensor. It is **local to you**; peers don't see your debug wireframes. Turn it on when something rests oddly or falls through the floor: the collider is nearly always the answer. There's also a **Show colliders** switch in the scene settings for all of them at once.
-
-### Custom colliders
-
-For a shape none of the presets fit, pick **Collider ▸ Custom (edit…)**. That opens the [mesh editor](mesh-editing.md) on a stand-in copy of the object, where you build the collision shape by hand with the real mesh tools; **Done** stores it.
-
-A custom collider is **compound** — each disconnected piece becomes its own convex hull — so you can build an L-shape, a hollow frame or a chair out of several blocks, which a single convex hull can never represent. The toolbox has **add box** / **add sphere** buttons to merge a primitive piece straight in, and prints how many pieces you have.
-
-!!! tip
-    You are editing a stand-in, not the model: cancelling the collider edit leaves the visible mesh untouched.
-
-### Changing shapes mid-run
-
-Collider settings apply **live**. Change a shape, a material, a sensor flag or a locked axis while the simulation is running and it swaps in place — joints, velocity and momentum survive — so you can tune a contraption without restarting it.
+To give a whole selection physics at once, **Configure Scene ▸ Physics** lists every object that will get a body
+(*dynamic · 1 kg*, *static*, *collider only*; click a row to select it) and has an **Enable physics on selection** button
+that makes the selected objects dynamic.
 
 ## Scene settings
 
@@ -96,7 +62,9 @@ One toast reports a whole burst ("3 objects fell out of bounds — returned to s
 The flow graph can drive the same properties: wire a [Mass](nodes/mass.md), [Bounciness](nodes/bounciness.md) or [Friction](nodes/friction.md) node into an [Object Selector](nodes/objectselector.md). A wired **Mass** node makes its object dynamic. Node values **override** the Inspector settings for that object.
 
 !!! note
-    Physics properties are read **once, when the simulation starts** — they don't animate per-frame like Spin or Bounce. Set them up first, then press play.
+    Physics properties are not animated per frame like Spin or Bounce: they are applied when the simulation starts, and
+    re-applied **live** whenever you change them mid-run — mass, material, collider, sensor and locked axes swap in place.
+    Only switching an object's **Body** (Auto / Static / Dynamic) waits for the next run.
 
 ## Running a simulation
 
@@ -112,7 +80,7 @@ If nothing has physics when you press play, the app helps you out: with an objec
 
 ### The simulation controls HUD
 
-The bottom-right transport (▶ / ⏸ / ⏹ / ↺) is **off by default** so it isn't confused with the main play button. Turn it on in **Settings ▸ Scene ▸ Show simulation controls**. The <kbd>P</kbd> shortcut works whether or not the HUD is visible; the first time you use <kbd>P</kbd> while it's hidden, a toast reminds you where to enable it.
+The bottom-right transport (▶ / ⏸ / ⏹ / ↺) is **off by default** so it isn't confused with the main play button. Turn it on in **Settings ▸ Scene ▸ Simulation controls**. The <kbd>P</kbd> shortcut works whether or not the HUD is visible; the first time you use <kbd>P</kbd> while it's hidden, a toast reminds you where to enable it.
 
 ## Grab and throw mid-simulation
 
@@ -142,8 +110,10 @@ Only dynamic objects can be picked up, objects another peer has locked are refus
 | Pointer: *Grab and throw* | the full behaviour above (default) |
 | Pointer: *Click only* | taps fire On Click nodes, nothing can be picked up |
 | Pointer: *Look only* | neither |
+| Limit grab reach · Reach (m) | off by default; when on, you can only pick up objects within this distance of your body (0.5–5 m, 1.3 when switched on) — [Towers](games.md#towers) uses it so high pieces need steps |
 | Keep players on the ground | no <kbd>Q</kbd>/<kbd>E</kbd> flying; the camera stays at eye height |
 | Start the simulation when play mode opens | for scenes that are games rather than models |
+| Spawn point | where desktop play starts. **Set to the view's focus** stores the point the view orbits around, facing the way the camera looks at it; **Clear** removes it |
 
 A module can override these for its own world by publishing them on its scene group.
 
@@ -181,8 +151,8 @@ it is your hand, not a message.
 
 !!! tip "The knock as a game"
     **Menu ▸ Templates ▸ Games ▸ Stars Room** is a zero-gravity room built on this: twenty-four
-    stars and two planets to knock about, a chime when one is hit, and an optional round —
-    light every star — on the <kbd>P</kbd> menu. Nothing to install.
+    stars and two planets to knock about, a chime when one is hit, and a start screen with
+    **Start round** (light every star in two minutes) or **Free play**. Nothing to install.
 
 To react to a knock in a graph, use the [On Hit](nodes/onhit.md) node: it gives you how hard
 (`speed`) and whether it was you (`by me`).
@@ -204,6 +174,7 @@ Joints replicate to everyone, undo as a single step, persist in saved scenes and
 Physics uses an **authoritative** model: the peer who starts the run is the only one stepping the simulation, and it broadcasts the resulting motion. Everyone else just watches.
 
 - **One run at a time** — if someone else is simulating, your play button is disabled and a toast names who's running it.
+- **Two people pressing play at the same moment** both start a run for an instant; the one with the lower peer id keeps it, and the other sees *"‹name› is simulating too — handing the physics over (lower id keeps it)"*.
 - **Someone joining mid-run is told the run is happening**, so their grab and their [knock](#the-knock) work from the first second instead of after the next restart.
 - **Watching peers interpolate.** The simulating peer sends about ten poses a second per moving body; everyone else eases between them instead of snapping, so a fast throw looks smooth rather than stepped. It costs nothing on the wire and never changes *where* an object ends up — only how it gets there.
 - **A throw you make is applied exactly.** When you are not the peer running the simulation, releasing an object sends the release velocity itself, so the object leaves your hand immediately and in the direction you threw it rather than being reconstructed from position updates.

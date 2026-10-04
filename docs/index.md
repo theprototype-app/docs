@@ -7,12 +7,20 @@ You build scenes from primitives, imported models and packs, wire behavior with 
 ## Quick start
 
 1. **Open the app** in a desktop browser (VR headset browsers work too).
-2. **Create something** — right-click the empty viewport and pick **Add ▸ Mesh ▸ Cube**, or press <kbd>Shift</kbd>+<kbd>A</kbd> to open the Add menu.
+2. **Create something** — right-click the empty viewport and pick **Add ▸ Mesh ▸ Cube**. (If you prefer <kbd>Shift</kbd>+<kbd>A</kbd> for the Add menu, switch on **Shift+A quick add** in **Settings ▸ Controls ▸ Keyboard & mouse**.)
 3. **Move it** — click the cube to select it, then use the gizmo (<kbd>1</kbd> move, <kbd>2</kbd> rotate, <kbd>3</kbd> scale).
 4. **Invite a friend** — open the Connect panel, copy your peer ID and send it to them. They paste it into their own Connect field and press **Connect**; you approve the request, and from then on you are editing the same scene together.
 
 !!! tip
     Everything replicates automatically: objects, transforms, materials, the node graph, chat, pings and voice. There is no "sync" button — if you can see it, your peers can too.
+
+**Install it as an app.** theprototype.app is a web app you can install: your browser's *Install app* (or *Add to Home
+screen* on a phone) puts it on your desktop or home screen, and it opens in its own window without the browser's bars —
+on a phone that gives the scene the whole height of the screen.
+
+**Open source.** The app itself is open source under the MIT licence:
+[github.com/theprototype-app/core](https://github.com/theprototype-app/core) (also **Settings ▸ About ▸ Source Code**),
+with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
@@ -26,6 +34,32 @@ code, and game logic can be written as a small [behaviour](behaviours.md) file w
 view. The [Script node](nodes/script.md) gains typed inputs and outputs, Flow Code shows a graph
 as [compact text](node-system.md#flow-code-the-graph-as-text), and modules now
 [unload completely](module-sdk.md#new-in-120).
+
+**1.19 — doors that open, scenes that load, games that switch.** Four new [packs](packs.md#the-kits-119)
+(Interiors, Town & Market, Interactive, Arcane Study) and two new example levels; doors, lids and levers work in
+Interact and Play, and nothing animates by itself any more. Every pack object has [levels of detail](lod.md). Big
+scenes load with a progress bar and **Cancel**, opening another scene [asks about the game's modules](saving.md#opening-another-scene-and-modules),
+and **Clear scene** can clear the game setup too. A frame counter shows FPS and draw calls.
+
+**1.18 — menus, levels and smooth frames in a headset.** Every game has the same pause menu with per-game Settings and
+Levels; in VR the left **X** opens it. The controller laser is easier to see, the radial menu follows the thumbstick,
+teleport keeps you inside the play area, and some games let your grips move the world. [Towers](games.md#towers) becomes
+twelve levels with stars, the [Stars Room](games.md#stars-room) makes stars with a clap, and three new nodes —
+[On Clap](nodes/onclap.md), [Point Grab](nodes/pointgrab.md) and [Game Setting](nodes/gamesetting.md) — build games out
+of settings and gestures. A headset starts with lighter quality and [simplifies distant models](lod.md).
+
+**1.17 — games that look finished.** [Edit and Interact](controls.md#edit-and-interact) (the **I** key), click-through
+glass, a *Module content* section in the object list, and [Test play](build-a-game.md#test-play) that starts a game from
+its menu. Every game got a start screen, best scores saved on the device ([Store Value](nodes/storevalue.md)), game
+sounds, music, banners and controller buzz; four kit packs and three walkable levels arrived.
+
+**1.16 — Waves, and one world to keep.** [Waves](games.md#waves) joins the Games tab, the tab shows every game again,
+and two people pressing play at once no longer fight over the simulation.
+
+**1.15 — where everyone is.** Every scene card in the Explorer shows [who is in it](explorer.md#the-project-and-the-scene-you-have-open),
+with **Join ‹name›**; scenes can be renamed and their files follow; copy and paste a scene to get a new one. Dungeon
+Realms and Untangle became games, `?embed=1` hides the editor for [embedding](community.md), and (1.15.1) public rooms
+take a [code or a knock](connection.md#public-rooms-theprototypeapp).
 
 **1.14 — heavy models stop being a cliff.** A model is weighed before it lands, and one that
 would hurt asks first, with **Reduce** on a background worker as a third way out and

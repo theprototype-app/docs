@@ -1,6 +1,6 @@
 # Collider
 
-Overrides the collision **shape** the [physics simulation](../physics.md) uses for the connected object — the flow equivalent of the Inspector's *Physics ▸ Collider* pick, and it wins over it.
+Overrides the collision **shape** (see [Colliders](../colliders.md)) the [physics simulation](../physics.md) uses for the connected object — the flow equivalent of the Inspector's *Physics ▸ Collider* pick, and it wins over it.
 
 **Output:** effect (wire into an [Object Selector](objectselector.md))
 

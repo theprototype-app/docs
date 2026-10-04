@@ -37,6 +37,12 @@ Walk (or fly) around and the sound pans and fades with the object's position.
 
 Audio files can be bundled and shared as [Packs](packs.md), just like models. An audio pack is a `.zip` containing sound items; import one from the Explorer's **Packs** section (right-click ▸ **Install pack**, or **＋ Import pack** for a local zip). Its sounds land in your library as ordinary audio items, ready to assign as scene music or wire into Sound nodes. Prefer CC0 loops and one-shots small enough to share with peers.
 
+## Game volumes
+
+**Settings ▸ Interface ▸ Sound** has two sliders of your own: **Game sounds** — the built-in effects games play with
+the [Game Sound](nodes/gamesound.md) node (coins, goals, whistles) — and **Music**, the looping tracks of
+[Game Music](nodes/gamemusic.md). They are per device; nobody else's volume changes.
+
 ## Voice chat
 
 Talk to your peers directly:

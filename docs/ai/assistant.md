@@ -60,6 +60,16 @@ spider"* (body + legs from primitives, grouped, patrolling with bouncing legs). 
 work too — *"make the spider faster"* edits the existing node instead of stacking a new
 one. Everything replicates and undoes like any other edit.
 
+**Game rules as code.** For anything bigger than a node or two — rules, waves, scoring, reach limits — the assistant can
+write a [behaviour](../behaviours.md) instead: a small JavaScript file it creates (*"make a behaviour that counts the
+stars lit and ends the round at 24"*) or edits later by name. Before anything is applied the source is checked by the
+same determinism lint you get when you write one yourself (no `Math.random`, no clock, no DOM, no timers, no loop without
+an exit); if it fails, the errors go back to the model with line numbers and it tries again — nothing broken reaches the
+scene.
+
+The assistant reads your graphs as the same [compact text](../node-system.md#flow-code-the-graph-as-text) Flow Code shows,
+which is several times shorter than JSON, and can add nodes by writing that text.
+
 **Physics** (bodies, welds/hinges with motors, and starting the simulation) is a
 per-provider opt-in — the **Physics tools (advanced)** checkbox in **Settings ▸ AI**.
 It's off by default because multi-step physics is hard for small local models; see

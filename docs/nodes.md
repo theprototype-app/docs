@@ -42,7 +42,7 @@ their own page link to it.
 | **Set Game State** | Switches the shared game state (menu, playing, paused, over) when a pulse arrives - every peer follows the same state. |
 | **On Game State** | Fires a pulse when the shared game state becomes the one you pick - the hook for "when the round starts". |
 | **Set Active Camera** | Makes a camera object the active view for every player when a pulse arrives. |
-| **Set Look** | Points the player's view at a target when a pulse arrives - a cutscene glance or a spawn orientation. |
+| [**Set Look**](nodes/setlook.md) | Switches a camera's look (its post-processing) on or off when a pulse arrives, and by default looks through that camera too. |
 | **Game Start** | Fires once when the game starts (Play, or a round reset) - the place to spawn, reset counters and arm timers. |
 | **Travel to scene** | Loads another saved scene by name when a pulse arrives - a door to the next level, replicated to everyone. |
 | **All Players** | Iterates the connected players so a per-player value can be read, or a HUD row shown, for each of them. |
@@ -57,6 +57,8 @@ their own page link to it.
 | [**Effect Burst**](nodes/effectburst.md) | A short sparkle / confetti / smoke / sparks burst at an object — pooled and local. |
 | [**Controller Buzz**](nodes/hapticpulse.md) | Vibrates the VR controllers with a named pattern — only in Interact and Play. |
 | [**Game Music**](nodes/gamemusic.md) | Declares the scene's looping music (seven built-in tracks), playing only while someone plays. |
+| [**Game Setting**](nodes/gamesetting.md) | Declares one row in the game's Settings (a toggle, a range or a choice) and outputs this player's value — saved on this device, never shared. |
+| [**Point Grab**](nodes/pointgrab.md) | While its `enabled` input reads off, players cannot pick objects up by pointing at them — only a touching hand moves them. |
 
 ## Character
 
@@ -73,6 +75,8 @@ their own page link to it.
 | Node | What it does |
 |---|---|
 | **HUD Screen** | Shows or hides a whole HUD screen (a named layer of elements) while its condition holds. |
+| **HUD Text** | Puts a value into a HUD text element - a live score, a name, a round number. |
+| **HUD Timer** | Runs a HUD timer element's countdown on the shared clock (duration, format, autostart), so every player sees the same time. |
 | **HUD Bar** | Drives a HUD bar element's fill from a number - health, fuel, progress. |
 | **HUD Button** | Fires a pulse when a HUD button is pressed - the on-screen counterpart of On Click. |
 | **HUD List** | Fills a HUD list element with the items a value provides - an inventory, objectives, players. |
@@ -90,7 +94,7 @@ their own page link to it.
 | [**Compare**](nodes/compare.md) | Compares two numbers and outputs true or false. |
 | [**Gate**](nodes/gate.md) | Boolean logic on two inputs - AND, OR, NOT, XOR. |
 | [**Map Range**](nodes/maprange.md) | Remaps a number from one range to another - the glue between free-range sources and bounded parameters. |
-| [**Select**](nodes/select.md) | Chooses between two values: outputs a when the index is low, b when it's high. |
+| [**Select**](nodes/select.md) | Picks one of up to four values (a, b, c, d) by a rounded index. |
 | **Latch** | Holds a boolean until told otherwise - set, reset and toggle pulses make it a memory bit. |
 | **Delay** | Passes a pulse on after a set number of seconds - the timing of a fuse, or a door that closes later. |
 | **Sequence** | Fires its outputs one after another, one per pulse, then wraps around - a step-by-step trigger. |
@@ -117,6 +121,7 @@ their own page link to it.
 | [**On Rest**](nodes/onrest.md) | Fires a pulse when a physics body has finished moving - the counterpart to On Impact, which fires when it starts. |
 | [**On Hit**](nodes/onhit.md) | Fires a pulse when a hand or a player knocks the connected object, with how hard and whether it was you. |
 | [**On Grab**](nodes/ongrab.md) | Fires a pulse when a player picks up the object — a desktop carry or a VR grip in Interact. |
+| [**On Clap**](nodes/onclap.md) | Fires when a VR player brings both hands together and holds them, with where they met (`point`) and whether it was you. |
 | **Gamepad Button** | Fires a pulse (or holds a level) while a gamepad button is pressed - the pad's counterpart of Key Press. |
 | **Gamepad Axis** | A gamepad stick or trigger axis as a number between -1 and 1, with a dead zone. |
 

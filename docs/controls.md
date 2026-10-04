@@ -85,7 +85,7 @@ Click anywhere in the object list (<kbd>O</kbd> opens it) to give it focus, and 
 
 ### What double-click does
 
-Opening properties is the default, but it is a setting: **Settings ▸ Selection** lets double-click open properties, enter mesh editing, select everything of the same kind, or focus and isolate the object instead.
+Opening properties is the default, but it is a setting: **Settings ▸ Scene ▸ Selection ▸ Double-click action** offers *Open properties*, *Edit mesh*, *Focus and isolate* and *Select same type*.
 
 **Isolate** hides everything else rather than fading it — fading would mean writing to materials that other people are sharing.
 
@@ -241,6 +241,25 @@ landed on wiggles to say so.
 Docking is **desktop only** — on a touch screen there is no room for a full-height side panel
 and it would fight scrolling, so windows there simply stay floating.
 
+## The toolbar
+
+The bar at the bottom of the screen is yours to arrange. **Right-click** (or long-press) any of its buttons:
+
+| Entry | What it does |
+|---|---|
+| **Swap with ▸** | exchange this button for one that is not on the bar |
+| **Move left / Move right** | one place along the bar — past the play button when it is next |
+| **Hide button** | take it off the bar (Customize toolbar brings it back) |
+| **Move toolbar** | slide the whole bar along the bottom: click to place it, the arrow keys nudge, <kbd>Esc</kbd> puts it back. Disabled on a screen too narrow to move it |
+| **Reset toolbar position** | back to the middle |
+| **Always on top** | paint the bar over the dock and floating windows (by default they cover it) |
+| **Collapse / Expand toolbar** | shrink the bar down to the play button, and back |
+| **Customize toolbar…** | a checklist of every tool: tick to show, untick to hide, ▲/▼ to reorder; **Reset toolbar** goes back to the default buttons and order |
+
+The **play button**'s right-click menu chooses how you play — **Play (desktop)**, **Enter VR**, **Enter AR passthrough**
+(greyed out where the device cannot) — and, in a scene that is a game, **Test play (start from the menu)**, which resets the
+game to its menu and starts from the Start screen. See [Build a Game Loop](build-a-game.md#test-play).
+
 ## Keyboard shortcuts
 
 Shortcuts are inert while you type in a text field and while play mode owns the keyboard. The same list is shown in **Settings ▸ Shortcuts** (<kbd>Ctrl</kbd>+<kbd>/</kbd> opens it directly), where a click on a shortcut's keys rebinds it and **Reset all** puts the defaults back.
@@ -262,7 +281,8 @@ Shortcuts are inert while you type in a text field and while play mode owns the 
 | <kbd>Ctrl</kbd>+<kbd>A</kbd> | Select all objects (inside Edit Mesh: every element) |
 | <kbd>Delete</kbd> / <kbd>Backspace</kbd> | Delete the selection (a group asks first) |
 | <kbd>Esc</kbd> | Leave isolation |
-| <kbd>Tab</kbd> | Toggle [mesh edit](mesh-editing.md) mode (<kbd>Esc</kbd> also exits) |
+| <kbd>Tab</kbd> | Enter [mesh edit](mesh-editing.md) mode — inside it <kbd>Tab</kbd> cycles Vertices / Edges / Faces; <kbd>Esc</kbd> exits |
+| <kbd>I</kbd> | [Edit / Interact](#edit-and-interact) mode — in Interact, clicks play with the scene instead of selecting |
 | <kbd>M</kbd> | Toggle element [snapping](snapping.md) |
 | <kbd>O</kbd> | Toggle the object list |
 | <kbd>N</kbd> | Toggle the node editor |
@@ -280,19 +300,30 @@ Shortcuts are inert while you type in a text field and while play mode owns the 
 | <kbd>V</kbd> (hold) | Push-to-talk while the mic toggle is off |
 | <kbd>Ctrl</kbd>+<kbd>/</kbd> | Show the shortcut list |
 
+Inside an Edit Mesh session the bare letters <kbd>E</kbd> <kbd>I</kbd> <kbd>G</kbd> <kbd>S</kbd> <kbd>B</kbd> <kbd>F</kbd> <kbd>X</kbd> / <kbd>W</kbd> and the loop keys (<kbd>L</kbd>, <kbd>Ctrl</kbd>+<kbd>+</kbd>/<kbd>-</kbd>, <kbd>Ctrl</kbd>+<kbd>I</kbd>) belong to the mesh tools — see [Mesh Editing](mesh-editing.md). That is why the panel shortcuts above use <kbd>Alt</kbd>: they keep working while a mesh session is open.
+
 ## Right-click menus
 
 **Empty viewport** — a quick right-click opens the scene menu:
 
-- **Add** — the full primitive catalog (meshes, building blocks, lights) plus empty groups; objects spawn at the clicked point.
-- **Undo / Redo**.
-- **‹Selected object› ▸** — Focus, Duplicate, Align to ground, Edit mesh, Add note, Delete (shown only while something is selected).
-- **Tools** — Draw mode (drag 3D strokes on surfaces, or click out an editable [spline](splines.md)), Measure distance, Simulate physics.
-- **Snapping** — enable/disable and step sizes.
-- **View** — grid on/off, Screenshot.
-- **Camera bookmarks** — save/recall/clear views.
+- **Search objects…** — find an object in the scene by name (off by default: **Settings ▸ Interface ▸ Lists & menus ▸ Object search in menu**).
+- **Add** — the full primitive catalog (meshes, building blocks, cameras, lights) plus empty groups; objects spawn at the clicked point.
+- **Undo / Redo**, **Ping here**.
+- **Selected ▸** — the selected object's own menu (shown only while something is selected).
+- **Tools** — Node editor, Draw mode (drag 3D strokes on surfaces, or click out an editable [spline](splines.md)), Measure distance, Simulate physics (and *Reset simulation* while one runs).
+- **Snapping** — position / rotation / scale steps, snap to surface, element snapping, *More snapping settings…* (see [Snapping](snapping.md)).
+- **View** — Show grid, Grid & axes settings…, Show helpers in Play (debug), the Mouse wheel mode, Scene look…, Screenshot.
+- **Module tools** — the toolboxes of installed modules.
+- **Camera bookmarks** — Save current view, the saved views, *Manage saved views…*, Clear bookmarks.
 
-**An object** (viewport or object list) — Focus camera, Properties, Duplicate, Save as prefab, [Edit mesh](mesh-editing.md), Sculpt mesh, Add note, Ping this object, Rename, Show/Hide, and Enable/Disable flow effects. <kbd>Alt</kbd>+click pings anywhere in the scene.
+**An object** (viewport or object list) — Focus camera, Duplicate, Group selection / Ungroup, Origin and Pivot point, Convert to mesh, Align to ground, Preview camera (on a [camera](camera.md#camera-objects)); **Edit**: Properties, Rename, Edit shader, [Edit mesh](mesh-editing.md), Edit spline, Sculpt mesh; **Physics & effects**: Physics ▸ Weld / Hinge, Effects, Enable / Disable flow effects; **Share**: Add note, Ping this object, [Save as…](prefabs.md); and Delete. <kbd>Alt</kbd>+click pings anywhere in the scene.
+
+**Every right-click menu can be typed into.** Start typing and the menu turns into a filtered list of every entry in it,
+submenus included; <kbd>↑</kbd>/<kbd>↓</kbd> walk the rows, <kbd>Enter</kbd> runs one, and with nothing typed
+<kbd>→</kbd> opens a submenu and <kbd>←</kbd> goes back. <kbd>Esc</kbd> unwinds one step at a time — the text, then
+the search, then the submenu, then the menu. Rows show their keyboard shortcut on the right. The search list's height
+can be dragged, and each kind of menu remembers it. On a touch screen nothing pops a keyboard up unless you tap the
+search row.
 
 With **several objects** selected, the menu acts on the whole set — the entries are counted ("Delete 4 objects") — and adds **Group selection**, **Convert to mesh** (merge them into one editable mesh, materials kept) and the Physics ▸ Weld / Hinge pair.
 

@@ -1,8 +1,14 @@
 # Saving & Sessions
 
-How to save and load your work: the recommended `.tpscene` bundle, GLTF interchange, named sessions, and autosave.
+How to save and load your work: the recommended `.tpscene` bundle, the whole-project `.tp`, GLTF interchange, named sessions, and autosave.
 
-The main menu (the logo button) has **Import** (bring 3D files into the scene), **Load** (open a saved file) and **Save**, with a format switch underneath: **GLTF | Scene** — and a **⚙** cog for export settings.
+The main menu (the logo button) has **Import** (bring 3D files into the scene), **Load** (open a saved file) and **Save**, with a format switch underneath: **Project | Scene | ⚙**.
+
+- **Project** saves the whole project as one `.tp` file — the Explorer library, every scene and its history (see [Projects](projects.md#the-tp-file)).
+- **Scene** saves the open scene as a `.tpscene` bundle (below).
+- **⚙** opens the export settings. Its last two switches, **Show GLTF format** and **Show JSON format** (both off by default), add a second row with those formats.
+
+<kbd>Ctrl</kbd>+<kbd>S</kbd> saves the **open scene** as a new version in the [Explorer](explorer.md); a scene that has never been named asks for a name first.
 
 ## Where you left off
 
@@ -24,7 +30,7 @@ had nothing open will not close the panels *you* have open.
 
 - **General** — starting points and walkable kit levels, including a **Blank** card that clears the scene (it asks first).
 - **Examples** — worked showcases to pull apart and learn from.
-- **Games** — playable scenes. A game is a scene plus, sometimes, a module: a card wears a *Needs …* badge when it depends on one, and loading it offers to install it — every player needs their own copy. **Towers**, the first one, is co-op crate stacking built from flow nodes, the HUD and the Collectibles module. **Stars Room** is the second: a zero-gravity room of glowing stars you [knock](physics.md#the-knock) about, with an optional round on the <kbd>P</kbd> menu — pure app, nothing to install.
+- **Games** — playable scenes. A game is a scene plus, sometimes, a module: a card wears a *Needs …* badge when it depends on one, and loading it offers to install it — every player needs their own copy. If you have the module but an **older version** than the scene asks for, the load prompt offers to **update** it (an installed module never updates by itself). [The Games tab](games.md) describes each one.
 - **Community** — scenes other people published from the app; see [Community](community.md).
 
 Templates load through the same path as a `.tpscene` file, so with peers connected everyone gets the usual Accept/Decline proposal and your current scene is stashed as a backup first. The Welcome overlay has a shortcut into the same picker.
@@ -64,6 +70,7 @@ The **⚙ export settings** dialog (next to the format switch) controls what the
 | Assets (audio, textures, configs) | on |
 | Imported packs | off |
 | Flow graph (nodes + edges) | on |
+| Project (.tp) includes: Scene version history | on — off exports each scene's current version only |
 
 **Animated models** are carried as their **original file bytes** rather than as exported geometry: an animation clip lives beside the scene, not on the object, and no exporter can carry it. That means an imported rig comes back animated instead of as a dead static mesh, and animations you authored in the Animation window are stored too. There's a size cap per model, with a toast if one is skipped.
 
@@ -71,7 +78,7 @@ The **⚙ export settings** dialog (next to the format switch) controls what the
 
 ## GLTF
 
-Saves the whole scene as standard GLTF — use this to take your work into other 3D tools. Loading accepts `.gltf` back. Animated flow effects are parked at their base pose during export so the file stores clean transforms.
+Turn it on first with **⚙ ▸ Show GLTF format**. Saves the whole scene as standard GLTF — use this to take your work into other 3D tools. Loading accepts `.gltf` back. Animated flow effects are parked at their base pose during export so the file stores clean transforms.
 
 ## JSON (legacy)
 
@@ -81,7 +88,7 @@ A legacy scene format, hidden by default. Enable it via **⚙ ▸ Show JSON form
 
 **Menu ▸ Sessions** manages named in-browser save slots:
 
-- **💾 Save current scene** stores a named snapshot with a thumbnail (also on <kbd>Ctrl</kbd>+<kbd>S</kbd>).
+- **💾 Save current scene** stores a named snapshot with a thumbnail. (<kbd>Ctrl</kbd>+<kbd>S</kbd> no longer does this — it saves the open scene to the Explorer.)
 - **Load** restores a slot. With peers connected, loading is a *proposal* — everyone gets an Accept/Decline toast and the load only applies when all peers accept.
 - **⤵ Import objects…** cherry-picks individual objects out of a session into the current scene.
 - **⬇ .json / ⬇ .zip** downloads a session — the `.zip` variant bundles the scene's assets, like a `.tpscene`.
@@ -90,9 +97,11 @@ A legacy scene format, hidden by default. Enable it via **⚙ ▸ Show JSON form
 
 ## Autosave
 
-A snapshot of the scene, node graph and camera is written to your browser automatically — about 30 seconds after any change, plus a periodic interval. If a snapshot exists when you open the app, a **restore** prompt offers to bring it back. Autosave can be turned off in **Settings**.
+A snapshot of the scene, node graph and camera is written to your browser automatically — 30 seconds after a change, plus every 3 minutes. On a **heavy scene** a snapshot takes longer to prepare, so the delay stretches (up to 5 minutes) to keep saving from stuttering the app; the [Storage panel](explorer.md#storage) (the Explorer's storage chip, or **Settings ▸ Explorer ▸ Storage used ▸ Show breakdown**) shows the current cadence and what the last snapshot cost. If a snapshot **cannot be written** — the disk is full, say — a toast stays up with **Manage storage**, and the Storage panel says *Autosave is failing*. Autosave can be turned off in **Settings**.
 
-**Restore automatically** (*Settings ▸ Scene*, off by default) skips the prompt: your last scene is simply there when the app opens, and a notice tells you it was restored so an empty canvas is still one click away.
+If a snapshot exists when you open the app, a **restore** prompt offers to bring it back. If the last attempt to restore it never finished a frame, the prompt warns you — that snapshot may be what stopped the app, so think before pressing **Restore**.
+
+**Auto-restore on load** (*Settings ▸ Scene*, off by default) skips the prompt: your last scene is simply there when the app opens, and a notice tells you it was restored so an empty canvas is still one click away.
 
 !!! tip
     Autosave protects against crashes; sessions are for milestones; `.tpscene` files are for backups and sharing outside the browser. Use all three.

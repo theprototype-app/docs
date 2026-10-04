@@ -266,22 +266,23 @@ Two helpers that come with it:
 
 ## Where to go next
 
-- **Templates ▸ Games ▸ Towers** — a finished game made the same way: co-op crate
-  stacking on a glowing pad, with a Menu, HUD and Pause screen, Game Start and HUD Button
-  nodes, physics grabbing and the Collectibles module for the stars. Load it and pull it
-  apart; it is authored entirely as scene data, so everything in it is editable.
+- **Templates ▸ Games ▸ Towers** — a finished game made the same way: twelve levels of
+  co-op stacking with a Menu, HUD and Pause screen, Game Start and HUD Button nodes, physics
+  grabbing, limited reach and 1-3 stars a level. Load it and pull it apart; it is authored
+  entirely as scene data, so everything in it is editable.
 - **Templates ▸ Games ▸ Stars Room** — a smaller one to read: a zero-gravity room where
   twenty-four stars and two planets are [knocked](physics.md#the-knock) about by hand.
-  It is a sandbox until you ask for a round, so the HUD carries a *Free play* screen and a
-  *Round* screen; the round is driven from the <kbd>P</kbd> menu (**Start round: light every
-  star**, **Restart round**, **More stars**) and from two physical pads on the floor, which
-  is how the same buttons work in VR where a screen HUD is not there to click. An
+  It opens on a start screen — **Start round** (light every star within two minutes; your
+  best round is saved on this device) or **Free play** — so the HUD carries a *Free play*
+  screen and a *Round* screen; in free play the <kbd>P</kbd> menu carries **Start round: light every
+  star**, **Restart round** and **More stars**, and two physical pads on the floor (*Start* and
+  *More stars*) do the same in VR, where a screen HUD is not there to click. An
   [On Hit](nodes/onhit.md) per star chimes, lights it and bursts particles in proportion to
   `speed`; a second On Hit with **who** set to *me* counts that touch on the hitter's own row,
   which is what the leaderboard reads. It needs no module at all.
 - **Templates ▸ Games ▸ Football** — the same ideas with the rules in a module instead of
-  loose nodes. It is the one of the three that needs a module, so its card lists the
-  **Football** module it requires and loading it offers to install that module for you; see
+  loose nodes. Like Waves, Untangle, Dungeon Realms and the Jam Room it needs a module, so its
+  card lists the **Football** module it requires and loading it offers to install that module for you; see
   [VR Football](football.md).
 - **Templates ▸ Games ▸ Untangle** — a puzzle played with the mouse (a free-cursor game):
   drag the dots until no edges cross, on a flat board or around a **3D globe**. Each mode has

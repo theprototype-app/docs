@@ -28,6 +28,11 @@ Sound goes nowhere until it is **cabled**. Every device has plugs on its back; c
 plug, then an input plug (desktop, in Play mode or the editor) or drag with the trigger (VR)
 to run a cable. A speaker is the only thing that reaches the room: cable an instrument into a
 speaker, or through a pedal chain and a mixer into a speaker. Unplug it and it is silent.
+
+**Moving or unplugging a cable.** On the desktop, click an input that already has a cable: you pick that cable up (a
+toast reminds you of the three ways out). Click another input to move it there, click the same input again to unplug
+it, or press <kbd>Esc</kbd> to put it back. In VR, press on a plugged input to pick its cable up; drop it on another
+input to move it, or on nothing to unplug it.
 Cables are part of the scene - they replicate, undo, save with the scene, and a prefab of a rig
 brings its cables with it.
 
@@ -93,9 +98,9 @@ manifest carries it — an exported `.tpscene` bundles its samples along with ev
 
 ## Building a room
 
-The **Jam Room** starter — a piano into a speaker, a beat lab and a pedal chain into a
-mixer, all cabled — is authored for the **Templates ▸ Games** tab and offers to install
-Music Lab and Music FX when you load it (it is not in the published template feed yet, so
-the tab may not list it). Until then, add devices from the module rows and cable them
-yourself. Save any rig as a **prefab** - it comes back cabled - and drop it into the next
+The **Jam Room** game in **Templates ▸ Games** — a piano into a speaker, a beat lab and a
+pedal chain into a mixer, all cabled — offers to install Music Lab and Music FX when you load
+it. Press **Start**, then ▶ on the Transport, and keep the band going for eight bars; your best
+tempo is saved on this device. To build your own, add devices from the module rows and cable
+them yourself. Save any rig as a **prefab** - it comes back cabled - and drop it into the next
 scene.

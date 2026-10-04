@@ -52,6 +52,8 @@ Every published scene has a page at `/s/‹id›`: the hero shot, the title, the
 - **Remix** — opens it in the editor and remembers where it came from, so your Publish credits the original.
 - **Download .tpscene** — the file itself, to keep or import anywhere.
 
+A public scene also has an **Embed** button — see [Embedding a scene](#embedding-a-scene).
+
 Below that: what the scene includes, its lineage (*Remix of … by @handle*, and how many remixes it has), and comments. **Report this scene** is at the bottom — see [Reporting](#reporting).
 
 `/community` is the browse page: **Featured**, **Recent** and **Top**, tag chips, and a strip for the contest that is open.
@@ -59,6 +61,16 @@ Below that: what the scene includes, its lineage (*Remix of … by @handle*, and
 ### Links that open the app
 
 A scene link is `https://theprototype.app/?s=‹id›`, and the app treats it like an invite: the first-run welcome stands down so the scene you were sent is the first thing you see. Two flags ride on it — `&play=1` starts in Play mode, `&remix=1` loads it for editing and toasts *Remixing "‹title›" by @handle — Publish when you're done.* If you are already in a session, your peers get the usual load proposal before anything changes. A scene that was hidden or never existed says *That scene is not available* and leaves you with an ordinary empty app.
+
+### Embedding a scene
+
+**Embed** on a public scene's page copies an `<iframe>` snippet for your own site or blog. The frame shows
+`/e/‹id›`, which opens the app with the scene already playing and with **no editor around it**: no menus, panels or
+toasts — just the viewport, the game's HUD and the touch controls. A small corner link, *Open in theprototype.app ↗*,
+opens the same scene in the full app in a new tab, and a ▶ button re-enters play after <kbd>Esc</kbd>.
+
+The same player is available on any scene link by adding **`&embed=1`**: `https://theprototype.app/?s=‹id›&play=1&embed=1`.
+The flag lasts for the life of the page.
 
 ## Play and remix
 

@@ -13,7 +13,8 @@ copy. One file, the **`.tp`**, carries the whole thing.
 - **The manifest** is the one mutable document: for each scene name, the full history
   of its version hashes; the asset list; the project name. It replicates
   latest-wins and survives reloads.
-- **The name** is editable in the Explorer's header row (click it, type, Enter).
+- **The name** is editable in the Explorer's header row (click it, type, Enter); the scene name beside it renames the
+  open scene ([details](explorer.md#the-project-and-the-scene-you-have-open)).
   It becomes the window title ("Scene\* – Project – theprototype" — the asterisk
   means the open scene differs from its saved version) and the default `.tp`
   filename.
@@ -23,9 +24,14 @@ copy. One file, the **`.tp`**, carries the whole thing.
 Every save cuts a version; travelling away from an edited scene cuts one
 automatically (an untouched scene never mints versions). Only the **latest** version
 shows in the Explorer — older ones live in hidden storage, browsed through the scene
-item's **Version history** panel (the history icon in its properties):
+item's **Version history** panel — right-click the scene card ▸ **Version history**, or the history icon in its
+properties:
 
-- Each row: date, name (auto, or the custom name from "Save version…"), thumbnail.
+- **Name this version…** + **Save version…** at the top saves what is open as a new, named version.
+- Each row: date, name (*Auto*, or the name you typed), thumbnail, and a download button for that one version
+  (`.tpscene`).
+- **Download all versions (.zip)** in the panel header bundles every version of the scene as `.tpscene` files;
+  versions whose bytes are no longer on this machine are reported.
 - **Restore** first checkpoints your current scene, then moves the pointer back to
   the old version and loads it — nothing is ever destroyed, and your peers see the
   update and can travel to it.
@@ -123,7 +129,7 @@ Two different intents, two different behaviours — the Blender/Unity convention
 
 ## The `.tp` file
 
-**Save** with the **TP** format selected (the default) downloads the whole project:
+**Save** with the **Project** format selected (the default) downloads the whole project:
 the manifest, every kept scene version, every library item with its folder
 placement, and the assets in use — bytes stored once per content hash. Anything
 whose bytes are no longer on your machine is counted and reported, never silently

@@ -75,7 +75,7 @@ The Animation panel can preview a clip in Edit without changing your scene.
 **Levels of detail.** Every pack piece comes with lighter versions of itself that are drawn when
 it is far away. See [Levels of detail](lod.md) to force a level, edit one or tune the distances.
 
-**Draw calls.** Every copy of the same pack piece is drawn in one go (*Settings ▸ Performance ▸
+**Draw calls.** Every copy of the same pack piece is drawn in one go (*Settings ▸ Scene ▸
 Draw repeated kit pieces together*, on by default) — a furnished tavern stays inside a headset's
 budget.
 
