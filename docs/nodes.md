@@ -84,6 +84,8 @@ their own page link to it.
 
 | Node | What it does |
 |---|---|
+| [**Script**](nodes/script.md) | Your own JavaScript - an effect that moves its object every frame, or (with declared typed inputs and outputs) a small pure function whose return feeds other nodes. |
+| [**Behaviour**](behaviours.md) | Game logic written as a small JavaScript file (params, replicated state, event handlers, kit calls) - run once on the authority peer, with a live node view of its events, state and knobs. |
 | [**Math**](nodes/math.md) | Combines two numbers with an arithmetic operation. |
 | [**Compare**](nodes/compare.md) | Compares two numbers and outputs true or false. |
 | [**Gate**](nodes/gate.md) | Boolean logic on two inputs - AND, OR, NOT, XOR. |
@@ -164,3 +166,19 @@ their own page link to it.
 | **Transport** | The shared music transport as a number - beat, bar, phase, bpm or playing - identical on every peer. |
 | **Note Trigger** | Plays a note on the connected audio device when a pulse arrives - a drum pad, a sampler pad, a synth key. |
 
+## Kit
+
+The [game kit](game-kit.md)'s nodes, one group per piece. Every node is generated from the same
+description as the kit's code interface, and one peer applies each change, so a press seen by
+every peer counts once. The [Game kit](game-kit.md#the-pieces) page lists them all.
+
+| Group | What it covers |
+|---|---|
+| **Kit: Rules** | Grab reach, jump height and play bounds that every grab path obeys; a pulse when a grab is refused. |
+| **Kit: Round** | Round setup, start, restart, pause, win, lose and add time; the phase, time left and countdown; an event for each step. |
+| **Kit: Levels** | Go to a level, next level, finish a level, game mode; stars, unlocks and progress saved per device. |
+| **Kit: Score** | Add, set and reset the score, counted once; my score, best score and the leader. |
+| **Kit: Pickups** | Collect a pickup once for everybody, with respawn; how many are left; a "collect them all" event. |
+| **Kit: Spawner** | Spawn entities as copies of a template, remove or clear them, count the living; an event when the wave is over. |
+| **Kit: Health** | Damage, area damage, heal and revive entities; their hit points; damaged, healed, died and revived events. |
+| **Kit: Mover** | Make entities chase a target round walls and each other, stop them, knock them back; an event when one is stuck. |
