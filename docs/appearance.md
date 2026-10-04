@@ -31,8 +31,7 @@ next visit, so it never flashes the default. Icons follow the theme's colours to
 1. **Export template** downloads the active theme as an editable `.theme.json` — every colour the interface uses, by
    name (surfaces, fields, text, muted text, borders, accents, menus, scrollbars…). Since 1.21 a theme also carries
    **state colours** — `--ink-bad`, `--ink-warn`, `--ink-good` for error, warning and good text, and `--accent-fill` /
-   `--on-accent` for a filled accent chip and the text on it; a custom theme may set them, and falls back to its base
-   theme's when it does not.
+   `--on-accent` for a filled accent chip and the text on it, and a custom theme may set them.
 2. Change the colours in any text editor.
 3. **Browse…** loads it back. It appears in the **Theme** list under its own name, and as a chip under *Custom theme*;
    the chip's **✕** removes it.
