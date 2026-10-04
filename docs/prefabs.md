@@ -24,8 +24,8 @@ that row to make one; it keeps its own format. Right-click a prefab for **Add to
 (<kbd>Ctrl</kbd>+<kbd>D</kbd>), **Export**, **Update from selection** (replace it with what you have selected), **Properties**,
 **Rename** and **Delete** (to the Deleted bin).
 
-Prefabs are stored in your browser. The ones saved as files (`.glb` / `.tpscene`) are ordinary Library files, so they can
-be [shared with the session](explorer.md#sharing-with-the-session) like any other file.
+Prefabs are stored in your browser. A prefab saved as `.glb` or `.tpscene` can be dragged onto a Library folder to become an
+ordinary file, which you can then [share with the session](explorer.md#sharing-with-the-session); a plain **Prefab** cannot.
 
 ## Placing a prefab
 

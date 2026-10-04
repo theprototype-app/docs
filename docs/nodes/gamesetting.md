@@ -13,7 +13,7 @@ Adds **one row to the game's Settings** — the page in the game's pause menu, o
 | label | My setting | the row's label in Settings |
 | kind | toggle | `toggle`, `range` or `choice` |
 | default (toggle) | on | the starting value of a toggle |
-| min / max (range) | — | the slider's ends |
+| min / max (range) | 0 / 1 | the slider's ends (step 0.1) |
 | options (choice) | — | comma-separated: `easy, normal, hard` |
 
 The row appears while the node is in the graph and goes when it is deleted. Until a player changes it, the node outputs

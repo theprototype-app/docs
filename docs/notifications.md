@@ -32,7 +32,7 @@ moves. The card that opens has:
 
 | Field | What it is |
 |---|---|
-| **Name** | optional — a short title shown in the drawer and on the pin |
+| **Name** | optional — a short title shown in the drawer, on the card and in the marker's hover tip |
 | **Description** | the note itself (<kbd>Enter</kbd> saves, <kbd>Shift</kbd>+<kbd>Enter</kbd> adds a line, <kbd>Esc</kbd> closes) |
 | **Pin color** | a swatch for the marker |
 | **Pin shape** | round, star or square — used by the pins in VR; on a desktop every note is a badge in its colour |
@@ -57,7 +57,7 @@ The **📝 notes** button in the top-right chrome (just left of the bell) opens 
 - Each row shows the note's name and text, which object it is on, and who wrote it. **Click a row** to fly to the note
   and open it; the pencil edits it and the bin deletes it.
 - The eye button in the header **shows or hides the note pins** in the viewport (on your screen only).
-- Drag the drawer's edge to resize it.
+- On a narrow screen, where the drawer is a bottom sheet, drag its top handle to resize it.
 
 **Settings ▸ Controls ▸ Double-click to open notes** makes a single click on a marker — and the ‹ › arrows — only fly the
 camera to the note, with the card opening on a double click: handy for walking through a scene full of notes without a

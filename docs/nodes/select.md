@@ -34,8 +34,8 @@ Sneak mode for a patrolling guard:
 3. Wire Select → a **Path patrol** node's **speed** input, and Path patrol → an **Object Selector** targeting the guard.
 4. Flip the toggle: the guard's walking speed switches instantly.
 
-Four spawn points: a [Random](random.md) node (0–3) into **index**, and four **Vector 3** values into **a**–**d**, feeding
-a [Spawn](spawn.md) node's `at`.
+One of four speeds at random: a [Random](random.md) node (min 0, max 3, **integer** on) into **index**, and four **Number**
+nodes into **a**–**d**.
 
 !!! tip
     Pairs perfectly with [Switcher](switcher.md) (its index output drives Select) and [Compare](compare.md). Need more

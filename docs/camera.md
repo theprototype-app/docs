@@ -59,8 +59,8 @@ camera marker you move and turn like any object; selecting it opens **Properties
 | **Preview window while selected** | the picture-in-picture window (below), on by default |
 | **Show camera frustums — this device** | draw every camera's viewing pyramid |
 
-The camera itself is shared with everyone; previewing, the picture-in-picture window and the frustum lines are yours
-alone. The object's right-click menu has **Preview camera** and **Set from current view** too.
+The camera itself — including its *Letterbox guide* and *Preview window while selected* switches — is shared with
+everyone; previewing and the frustum lines are yours alone. The object's right-click menu has **Preview camera** and **Set from current view** too.
 
 **Picture-in-picture.** While a camera is selected, a small window shows what it sees, live. **⤢** looks through it full
 screen, **✕** hides the window (the *Preview window while selected* row brings it back), and right-drag moves it.

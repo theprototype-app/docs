@@ -131,7 +131,7 @@ Typing uses the **VR keyboard** — it pops up for renaming an object and for ch
 ## The sleeve palette
 
 **Settings ▸ VR ▸ VR sleeve palette** (experimental, off by default; also **VR sleeve palette** in VR Settings) puts a strip
-of ghost primitives along your menu-hand forearm, like a bracer. Point at one and **trigger-drag** it off: it follows your
+of ghost primitives along the forearm of your other hand (not the menu hand), like a bracer. Point at one and **trigger-drag** it off: it follows your
 controller, the stick scales it and your wrist turns it; release the trigger to place it (one undo step). **Grip-drop** an
 object of yours onto the strip to keep it as a personal slot — those are saved on this device only.
 

@@ -92,7 +92,7 @@ Your room's panel has a **Room name**, a **Short description** and these switche
 | **Require approval to join** | **Join** becomes **Request to join**: the request lands on your approval card as *"‹name› wants to join ‹room›"*, and you approve or reject it as usual |
 | **Allow guests to join automatically (view-only)** | people who are not signed in may come in to watch. Off while approval is required or the room has a code |
 | **Enable room screenshot** | the list card shows a picture of your scene instead of a coloured initial |
-| **Room code** | type a code and **Set** it: someone who knows it gets in as a viewer **without** waiting for approval. A listed room with a code shows 🔒 |
+| **Room code** | list the room first, then type a code and **Set** it: someone who knows it gets in as a viewer **without** waiting for approval. A listed room with a code shows 🔒 |
 
 Joining a coded room asks for the code (*"🔒 ‹room› needs a code"*). The right code goes straight in; a wrong one is
 refused, and five wrong codes lock that person out for ten minutes. If the room also requires approval, **Ask the host

@@ -134,7 +134,7 @@ The header's **Thumbnails / List** toggle switches views. The list has sortable 
 - **Right-click** an item for Open, Download, Share, Rename, Delete, Properties (and *Copy contents* for text files).
 - The search box filters the whole library by name; the breadcrumb path bar (toggleable) shows where you are.
 
-**Keyboard navigation** in the grid: arrow keys move the selection, <kbd>Enter</kbd> opens, <kbd>Backspace</kbd> goes up a level, <kbd>Esc</kbd> clears the selection (with nothing selected it closes the window), <kbd>Delete</kbd> deletes the selection.
+**Keyboard navigation** in the grid: arrow keys move the selection, <kbd>Enter</kbd> opens, <kbd>Backspace</kbd> goes up a level, <kbd>Esc</kbd> clears the selection, <kbd>Delete</kbd> deletes the selection.
 
 ### Selecting several
 
