@@ -9,6 +9,8 @@ ThePrototype runs in a WebXR headset browser — build, edit and collaborate in 
 
 Open the app in your headset browser and press the on-screen **Play** button. When a headset is present the button wears a pair of goggles instead of the play triangle, so you can see where the press is about to take you — and with passthrough on it shows **A** and **R** in the lenses. Passthrough/mixed-reality is a Settings toggle that keeps your room visible behind the scene.
 
+The first time you enter VR on a device, the [VR welcome tour](tours.md#welcome-to-theprototype-vr) shows you the controls step by step (replay it from **System ▸ Welcome tour**). On a Quest, the browser may also offer its own **Enter VR** button for the page — see [Offer Enter VR](tours.md#settings).
+
 If someone is in the room **with** you, see [Colocation](colocation.md) — a short calibration puts the same objects on the same real table for both of you.
 
 **Refresh rate** — under **Settings ▸ VR** you can pick **Max / 90 / 120 Hz**. *Max* uses the highest your headset reports; 120 Hz needs the Quest 120 Hz system setting enabled and applies on VR entry.

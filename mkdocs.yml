@@ -4,6 +4,7 @@ nav:
   - Getting Started:
     - Welcome: index.md
     - Controls: controls.md
+    - Tours: tours.md
     - Units: units.md
     - Themes & Appearance: appearance.md
     - Connection: connection.md
@@ -131,6 +132,7 @@ nav:
     - Publish, Play, Remix: community.md
   - VR:
     - VR Guide: vr.md
+    - VR Welcome Tour: tours.md#welcome-to-theprototype-vr
     - Colocation (shared room): colocation.md
   - AI:
     - Assistant: ai/assistant.md
