@@ -340,6 +340,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../touch-controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Touch Controls
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../units/" class="md-nav__link">
         
   
@@ -853,6 +874,27 @@
   
   <span class="md-ellipsis">
     Saving & Sessions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../loading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Loading Placeholders
   </span>
   
 
@@ -3173,6 +3215,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publish-export/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish & Export
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3627,14 +3690,19 @@ viewport keeps following the scene's environment (sky, background, grid), whatev
 </tr>
 </tbody>
 </table>
-<p><img alt="The same panels in the Dark, Light, Green console, 8-bit and High contrast themes" src="../img/appearance/themes.png" /></p>
+<p><img alt="The Profiler in the Dark, Light, Green console, 8-bit and High contrast themes" src="../img/appearance/themes.png" /></p>
+<p>Since 1.21 every theme is checked for readable contrast: the Profiler's numbers, the number fields, the Explorer's
+sidebar, the shader and node editors and the light theme's drawers all keep their text legible (at least 4.5:1 for the
+Profiler's text).</p>
 <p>The theme applies at once and is remembered on this device; a built-in theme is painted before the first frame on the
 next visit, so it never flashes the default. Icons follow the theme's colours too.</p>
 <h2 id="making-your-own-theme">Making your own theme</h2>
 <p><strong>Settings ▸ Interface ▸ Appearance ▸ Custom theme</strong>:</p>
 <ol>
 <li><strong>Export template</strong> downloads the active theme as an editable <code>.theme.json</code> — every colour the interface uses, by
-   name (surfaces, fields, text, muted text, borders, accents, menus, scrollbars…).</li>
+   name (surfaces, fields, text, muted text, borders, accents, menus, scrollbars…). Since 1.21 a theme also carries
+   <strong>state colours</strong> — <code>--ink-bad</code>, <code>--ink-warn</code>, <code>--ink-good</code> for error, warning and good text, and <code>--accent-fill</code> /
+   <code>--on-accent</code> for a filled accent chip and the text on it, and a custom theme may set them.</li>
 <li>Change the colours in any text editor.</li>
 <li><strong>Browse…</strong> loads it back. It appears in the <strong>Theme</strong> list under its own name, and as a chip under <em>Custom theme</em>;
    the chip's <strong>✕</strong> removes it.</li>
@@ -3646,11 +3714,18 @@ next visit, so it never flashes the default. Icons follow the theme's colours to
   outline</strong> (see <a href="../mesh-editing/#display">Mesh Editing</a>).</li>
 <li><strong>Render mode</strong> — Shaded, Shaded + AO or Wireframe, per device: see <a href="../camera/#render-mode-view">Camera &amp; View</a>.</li>
 <li><strong>Toolbar</strong> — which buttons the bottom bar shows, in what order and where: see <a href="../controls/#the-toolbar">The toolbar</a>.</li>
-<li><strong>FPS and draw calls</strong> — a small counter in any mode: <strong>Settings ▸ Interface ▸ Viewport ▸ Show FPS + draw calls</strong>.</li>
+<li>
+<p><strong>FPS and draw calls</strong> — a small counter in any mode: <strong>Settings ▸ Interface ▸ Viewport ▸ Show FPS + draw calls</strong>.</p>
+</li>
+<li>
+<p><strong>Text selection</strong> — menus and panels do not select text when you drag across them;
+  <strong>Settings ▸ Interface ▸ Allow text selection everywhere</strong> turns it back on (see <a href="../controls/#text-selection">Text selection</a>).</p>
+</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Finding a setting</p>
-<p>The search box at the top of Settings filters every section as you type.</p>
+<p>The search box at the top of Settings matches row names, groups, sections and keywords — search <strong>dark</strong> for the
+theme. <kbd>Esc</kbd> clears it.</p>
 </div>
 
 

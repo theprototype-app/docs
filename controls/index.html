@@ -14,7 +14,7 @@
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="../units/">
+        <link rel="next" href="../touch-controls/">
       
       
       <link rel="icon" href="../logo.svg">
@@ -540,6 +540,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#text-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Text selection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-menu-on-a-phone" class="md-nav__link">
+    <span class="md-ellipsis">
+      The menu on a phone
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#floating-windows" class="md-nav__link">
     <span class="md-ellipsis">
       Floating windows
@@ -602,6 +620,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../touch-controls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Touch Controls
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1060,6 +1099,27 @@
   
   <span class="md-ellipsis">
     Saving & Sessions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../loading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Loading Placeholders
   </span>
   
 
@@ -3380,6 +3440,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publish-export/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish & Export
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3925,6 +4006,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#text-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Text selection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-menu-on-a-phone" class="md-nav__link">
+    <span class="md-ellipsis">
+      The menu on a phone
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#floating-windows" class="md-nav__link">
     <span class="md-ellipsis">
       Floating windows
@@ -4131,7 +4230,8 @@ and narrow windows.</p>
 else already has a touch path: long-press the viewport for the right-click menu, and the
 <strong>+</strong> button opens the same create menu.</p>
 <h3 id="duplicating">Duplicating</h3>
-<p><strong>Ctrl+D</strong> (or right-click ▸ <em>Duplicate</em>) makes a working copy. A copy is a copy of
+<p><strong>Ctrl+D</strong> (or right-click ▸ <em>Duplicate</em>) makes a working copy of what is selected — right after you create something,
+that is the new object. With nothing selected, Ctrl+D says so and creates nothing. A copy is a copy of
 everything that belongs to the object, not just its shape:</p>
 <table>
 <thead>
@@ -4267,6 +4367,14 @@ copying, rather than half-linked.</p>
 Scrubbing an animation key or a shader parameter is <strong>one undo step</strong>, not one per pixel.</p>
 <p>Fields that hold a distance or an angle also accept a typed <strong>unit</strong> (<code>12cm</code>, <code>4in</code>,
 <code>90deg</code>) — see <a href="../units/">Units</a>.</p>
+<h3 id="text-selection">Text selection</h3>
+<p>Dragging across a menu, a toolbar or a panel does not paint a text selection, and a drag that starts in the 3D view or
+the node editor never selects text. Text fields, code, chat, logs and help text stay selectable as usual.
+<strong>Settings ▸ Interface ▸ Allow text selection everywhere</strong> turns selection back on in all the interface (this device
+only).</p>
+<h3 id="the-menu-on-a-phone">The menu on a phone</h3>
+<p>The logo menu fits a short screen — a landscape phone, or a docked Connect bar — and scrolls with a finger, with no
+visible scrollbar. On a folding phone it stays right through folding and unfolding with the page open.</p>
 <h3 id="floating-windows">Floating windows</h3>
 <p>The toolboxes, the Explorer, the flow and animation windows and the panels all behave the same way: drag the header to move, drag the bottom-right corner to resize. A window can never be sized past the edge of the screen — the resize corner always stays reachable — and <strong>double-clicking</strong> the corner resets it to its default size while leaving it where you parked it. Size and position are remembered per window.</p>
 <p>A window also <strong>keeps its header</strong>: it cannot be dragged so far down that the header hides under the Controls pill, the bottom band on a touch or narrow screen, the dock, or a browser overlay — there is always something left to grab. A tall toolbox parked near the bottom scrolls its body instead of losing its head.</p>
@@ -4337,7 +4445,7 @@ game to its menu and starts from the Start screen. See <a href="../build-a-game/
 <p><strong>Every keyboard layout works.</strong> A letter shortcut is matched by the letter printed on the key when there is one — AZERTY, Dvorak and QWERTZ keep their own labels — and by the key's <strong>physical position</strong> otherwise, so <kbd>G</kbd>, <kbd>F</kbd>, <kbd>Ctrl</kbd>+<kbd>Z</kbd> and <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> work on Russian, Greek, Hebrew, Arabic and CJK layouts without switching. Where the browser can tell, <strong>Settings ▸ Shortcuts</strong> shows your layout's own label beside each letter (<em>п on your layout</em>); where it cannot, a note says letter shortcuts follow the QWERTY position.</p>
 <div class="admonition tip">
 <p class="admonition-title">Finding a setting</p>
-<p>Settings is grouped into <strong>Interface</strong> (theme, notifications, windows, lists and menus), <strong>Controls</strong> (keyboard, mouse and trackpad), <strong>Input</strong> (gamepad and the node editor's mouse bindings), <strong>Scene</strong> (grid, shadows, autosave and everything about the scene itself), <strong>Explorer</strong>, then <strong>VR</strong>, <strong>AI</strong>, <strong>Connection</strong>, <strong>Shortcuts</strong> and <strong>About</strong>. If you don't know which one holds what you want, type in the search box at the top — it filters every section at once, and the ✕ clears it.</p>
+<p>Settings is grouped into <strong>Interface</strong> (theme, notifications, windows, lists and menus), <strong>Controls</strong> (keyboard, mouse and trackpad), <strong>Input</strong> (gamepad and the node editor's mouse bindings), <strong>Scene</strong> (grid, shadows, autosave and everything about the scene itself), <strong>Explorer</strong>, then <strong>VR</strong>, <strong>AI</strong>, <strong>Connection</strong>, <strong>Shortcuts</strong> and <strong>About</strong>. If you don't know which one holds what you want, type in the search box at the top. Rows match by their name, their group (<em>Grid</em>), their section (<em>VR</em>) and by keywords the labels do not say — search <strong>dark</strong> to find the theme, <strong>quest</strong> for the VR rows — and matches are highlighted. <kbd>Esc</kbd> clears the search; a second <kbd>Esc</kbd> closes Settings.</p>
 </div>
 <table>
 <thead>
