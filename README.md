@@ -50,6 +50,9 @@ output.
 - One page per feature; the left-hand nav is defined explicitly in `mkdocs.yml`, so a new
   page needs an entry there to appear.
 - Node reference pages live under `docs/nodes/`, one per node type.
+- Screenshots live under `docs/img/<page>/<what>.png`: real captures from the production app
+  (theprototype.pages.dev), dark theme unless the page is about themes, palette-compressed PNG, referenced
+  as `![alt text](img/<page>/<what>.png)`.
 - When the app's SDK surface changes, the matching page changes in the same sitting — the
   authoring guides here are the public contract for
   [`MODULES.md`](https://github.com/theprototype-app/core/blob/main/MODULES.md).

@@ -23,7 +23,7 @@ Three per-device render modes under **Viewport — this device**:
 | Mode | Look |
 |---|---|
 | **Shaded** | Plain lit shading. |
-| **Shaded + AO** | Adds ambient occlusion — soft contact shadows in creases and corners (the default). |
+| **Shaded + AO** | Adds ambient occlusion — soft contact shadows in creases and corners (the default on a desktop; phones and tablets start in plain **Shaded**). |
 | **Wireframe** | Shows every edge. |
 
 Ambient occlusion and wireframe are **desktop-only** and never shown to peers. AO detail follows your shadow-quality setting (below), so lowering shadow quality also lightens the AO cost.
@@ -35,6 +35,38 @@ ambient occlusion, **Shaded + AO** switches off and says so: the scene's setting
 instead of yours.
 
 The **Show light helpers** toggle here draws icons for lights so you can see where they are — in the editor only; see [Helpers hide in Play](#helpers-hide-in-play).
+
+## Camera objects
+
+Besides your own view, a scene can hold **cameras** of its own — the shot a game starts from, a cutscene angle, a
+security monitor. Add one from **right-click ▸ Add ▸ Camera ▸ Perspective** (or **Orthographic**). It appears as a small
+camera marker you move and turn like any object; selecting it opens **Properties ▸ Camera**:
+
+![The Camera section of a camera object's properties, with its picture-in-picture preview](img/camera/camera-object.png)
+
+| Row | What it does |
+|---|---|
+| **Kind** | Perspective or Orthographic |
+| **FOV** (perspective) | field of view, 10–140° |
+| **Size** (orthographic) | how much of the scene fits, 0.5–50 |
+| **Near / Far** | the clip planes |
+| **Framing** | 16:9 · 4:3 · 1:1 · 2.39:1 · free (follows the viewport) |
+| **Letterbox guide while previewing** | bars that show the framing while you look through it |
+| **Preview** | look through the camera. A banner says *Previewing ‹camera›*; its **Control** button lets you fly the camera with <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> and the mouse (its new pose is kept, as one undo step) |
+| **Set from view** | move the camera to where your view is (and take its FOV) |
+| **Align view** | fly *your* view to look through this camera (it stays your camera) |
+| **Capture** | render one frame through this camera and download it as a PNG at the framing aspect |
+| **Preview window while selected** | the picture-in-picture window (below), on by default |
+| **Show camera frustums — this device** | draw every camera's viewing pyramid |
+
+The camera itself is shared with everyone; previewing, the picture-in-picture window and the frustum lines are yours
+alone. The object's right-click menu has **Preview camera** and **Set from current view** too.
+
+**Picture-in-picture.** While a camera is selected, a small window shows what it sees, live. **⤢** looks through it full
+screen, **✕** hides the window (the *Preview window while selected* row brings it back), and right-drag moves it.
+
+A game uses cameras through the [Set Active Camera](nodes/setcamera.md) node, the [Game Start](nodes/gamestart.md) node's
+camera, and [Set Look](nodes/setlook.md) for each camera's own [look](post-processing.md).
 
 ## Camera lens
 

@@ -30,7 +30,7 @@ had nothing open will not close the panels *you* have open.
 
 - **General** — starting points and walkable kit levels, including a **Blank** card that clears the scene (it asks first).
 - **Examples** — worked showcases to pull apart and learn from.
-- **Games** — playable scenes. A game is a scene plus, sometimes, a module: a card wears a *Needs …* badge when it depends on one, and loading it offers to install it — every player needs their own copy. [The Games tab](games.md) describes each one.
+- **Games** — playable scenes. A game is a scene plus, sometimes, a module: a card wears a *Needs …* badge when it depends on one, and loading it offers to install it — every player needs their own copy. If you have the module but an **older version** than the scene asks for, the load prompt offers to **update** it (an installed module never updates by itself). [The Games tab](games.md) describes each one.
 - **Community** — scenes other people published from the app; see [Community](community.md).
 
 Templates load through the same path as a `.tpscene` file, so with peers connected everyone gets the usual Accept/Decline proposal and your current scene is stashed as a backup first. The Welcome overlay has a shortcut into the same picker.

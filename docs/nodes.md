@@ -75,6 +75,8 @@ their own page link to it.
 | Node | What it does |
 |---|---|
 | **HUD Screen** | Shows or hides a whole HUD screen (a named layer of elements) while its condition holds. |
+| **HUD Text** | Puts a value into a HUD text element - a live score, a name, a round number. |
+| **HUD Timer** | Runs a HUD timer element's countdown on the shared clock (duration, format, autostart), so every player sees the same time. |
 | **HUD Bar** | Drives a HUD bar element's fill from a number - health, fuel, progress. |
 | **HUD Button** | Fires a pulse when a HUD button is pressed - the on-screen counterpart of On Click. |
 | **HUD List** | Fills a HUD list element with the items a value provides - an inventory, objectives, players. |

@@ -25,15 +25,43 @@ Notes are little pinned comments you can attach to any object — feedback, TODO
 
 ### Adding a note
 
-Right-click an object ▸ **Add note**, then type in the card that appears (<kbd>Enter</kbd> saves, <kbd>Shift</kbd>+<kbd>Enter</kbd> adds a line, <kbd>Esc</kbd> closes). The note is pinned **exactly where you clicked** on the object and follows it as it moves. Notes render in the scene as small numbered amber pins that always face the camera, and they replicate to every peer with your name attached.
+Right-click an object ▸ **Add note**. The note is pinned **exactly where you clicked** on the object and follows it as it
+moves. The card that opens has:
+
+![Editing a scene note, with the notes drawer grouping the scene's notes by label](img/notes/note-card.png)
+
+| Field | What it is |
+|---|---|
+| **Name** | optional — a short title shown in the drawer and on the pin |
+| **Description** | the note itself (<kbd>Enter</kbd> saves, <kbd>Shift</kbd>+<kbd>Enter</kbd> adds a line, <kbd>Esc</kbd> closes) |
+| **Pin color** | a swatch for the marker |
+| **Pin shape** | round, star or square — used by the pins in VR; on a desktop every note is a badge in its colour |
+| **Label** | a group name such as *mechanics* or *art* — suggestions come from the labels already in the scene; the drawer groups notes by it |
+| **Camera ▸ Save camera view** | stores your current view with the note; **Update saved view** replaces it, **✕** forgets it |
+| **Follow the pin when opened** | opening the note flies the camera to it and keeps following the pin as its object moves; <kbd>Esc</kbd> stops following |
+
+**Save** keeps it, **Delete** removes it. Notes replicate to every peer with your name attached.
+
+Clicking a saved note's marker opens it to read: its text, label, author and date, with **Delete**, **Follow** (fly to
+the pin and keep following it) and **Edit**, which brings back the card above.
+
+**Markers.** On a desktop a note is a small badge beside its exact spot, joined to it by a thin leader line. A note that
+is behind something stays visible but faded, with a dashed leader. When several notes crowd together they merge into one
+badge with a count — click it and they spread out.
 
 ### The scene-notes drawer
 
-The **📝 notes** button in the top-right chrome (just left of the bell) opens a right-docked drawer listing **every note in the scene** — the "all notes at a glance" view:
+The **📝 notes** button in the top-right chrome (just left of the bell) opens a right-docked drawer listing **every note in the scene**, grouped by **label**:
 
-- Each row shows the note text, which object it's on, and who wrote it.
-- **Click a row** to fly the camera to that note.
-- The **✕** on a row deletes the note.
+- Each group can be collapsed, and has **‹ ›** arrows to step through its notes one at a time — a review tour.
+- Each row shows the note's name and text, which object it is on, and who wrote it. **Click a row** to fly to the note
+  and open it; the pencil edits it and the bin deletes it.
+- The eye button in the header **shows or hides the note pins** in the viewport (on your screen only).
+- Drag the drawer's edge to resize it.
+
+**Settings ▸ Controls ▸ Double-click to open notes** makes a single click on a marker — and the ‹ › arrows — only fly the
+camera to the note, with the card opening on a double click: handy for walking through a scene full of notes without a
+card in the way.
 
 If there are no notes yet, the drawer tells you to select an object and add one from its context menu.
 
