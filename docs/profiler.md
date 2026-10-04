@@ -148,7 +148,7 @@ the live view below to keep a copy on the desktop.
 
 ### Watching a headset live
 
-On the desktop, **Menu ▸ Live profiler** lists the other peers **in your room** — the same scene
+On the desktop, the **Live** button in the Profiler tab's header (beside Import and Compare) opens the Live profiler. It lists the other peers **in your room** — the same scene
 as you; a peer in another room is not offered. Press **Watch** and that peer's frame time, draw
 calls, triangles and quality level stream to you twice a second, drawn against the Quest budget
 lines. A light stream is small (about 2 KB a second).

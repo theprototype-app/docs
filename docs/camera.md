@@ -117,7 +117,7 @@ An **Exposure** slider tunes overall brightness. The lit presets add a sun that 
 
 Environment is a **shared, latest-wins** setting — the most recent change wins for everyone. You can also **save**, **export** and **import** custom presets (stored locally), and adopt presets other peers have shared.
 
-Below Environment, **Background** sets the clear color and **Fog** adds distance fog (color + near/far), both shared.
+Below Environment, **Background** sets the clear color and **Fog** adds distance fog (color + near/far), both shared. A fog you set by hand keeps exactly the near and far you typed; a preset's fog still grows with a big scene.
 
 ## Lights
 

@@ -24,6 +24,17 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.21 — quick fixes, publish anywhere**. **Menu ▸ Publish / Export** gathers both ways out: publish to the
+community with a play link and QR code that open straight into the game, or [export](publish-export.md) a zip of plain
+HTML that plays on itch.io or any static host, or an iframe snippet — every one with the *Made with ThePrototype* badge.
+On a phone, games get [touch action buttons](touch-controls.md) you can rearrange and re-skin. A new
+[loading placeholder](loading.md) style fills up as each model downloads, can be moved while it waits, and turns red
+with **Retry** and **Replace model…** when a file fails. Every [theme](appearance.md) is readable now, Settings has a real
+[search](controls.md#keyboard-shortcuts) (names, groups and keywords), menus and panels no longer select text when you
+drag ([setting](controls.md#text-selection)), the logo menu fits and scrolls on short and folding phone screens, the
+Live profiler moved into the [Profiler tab](profiler.md#watching-a-headset-live), a phone's automatic quality follows its
+own refresh rate, hand-set fog keeps its near and far, and Ctrl+D with nothing selected creates nothing.
+
 **1.20 — five new games, measure on the device, build games from a kit.** [Five new games](games.md)
 are in the Games tab with no download: The Alchemist's Escape, Marble Maze, Mini Golf, Sky Run and Target Toss. The [Profiler](profiler.md) records
 frame time, draw calls and triangles — and, in detail, which objects draw most — against the

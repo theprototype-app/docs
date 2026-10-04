@@ -4,6 +4,7 @@ nav:
   - Getting Started:
     - Welcome: index.md
     - Controls: controls.md
+    - Touch Controls: touch-controls.md
     - Units: units.md
     - Themes & Appearance: appearance.md
     - Connection: connection.md
@@ -25,6 +26,7 @@ nav:
     - Particle Effects: particles.md
     - Terrain & Sculpting: terrain.md
     - Saving & Sessions: saving.md
+    - Loading Placeholders: loading.md
     - Projects: projects.md
   - Viewport:
     - Camera & View: camera.md
@@ -129,6 +131,7 @@ nav:
     - VR Football: football.md
   - Community:
     - Publish, Play, Remix: community.md
+    - Publish & Export: publish-export.md
   - VR:
     - VR Guide: vr.md
     - Colocation (shared room): colocation.md
