@@ -359,6 +359,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../appearance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Themes & Appearance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../connection/" class="md-nav__link">
         
   
@@ -679,6 +700,27 @@
   
   <span class="md-ellipsis">
     Physics & Simulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../colliders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Colliders
   </span>
   
 
@@ -1759,6 +1801,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/onclap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Clap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/onrest/" class="md-nav__link">
         
   
@@ -2536,6 +2599,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/gamesetting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Setting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/pointgrab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Point Grab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/travel/" class="md-nav__link">
         
   
@@ -2843,6 +2948,27 @@
   
   <span class="md-ellipsis">
     Build a Game Loop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hud-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HUD Editor
   </span>
   
 
@@ -3174,6 +3300,15 @@
   <a href="#floating-panels" class="md-nav__link">
     <span class="md-ellipsis">
       Floating panels
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-sleeve-palette" class="md-nav__link">
+    <span class="md-ellipsis">
+      The sleeve palette
     </span>
   </a>
   
@@ -3636,6 +3771,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-sleeve-palette" class="md-nav__link">
+    <span class="md-ellipsis">
+      The sleeve palette
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hand-models" class="md-nav__link">
     <span class="md-ellipsis">
       Hand models
@@ -3743,7 +3887,11 @@
 </tr>
 <tr>
 <td><strong>Right-hand A button (hold)</strong></td>
-<td>Push-to-talk voice.</td>
+<td>Push-to-talk voice. In a game (Interact or Play) whose character can jump, <strong>A</strong> jumps instead.</td>
+</tr>
+<tr>
+<td><strong>Left-hand X button</strong></td>
+<td>In a game, opens the game's pause menu (Resume, Restart, Levels, Settings, How to play, Main menu).</td>
 </tr>
 <tr>
 <td><strong>Right thumbstick click</strong></td>
@@ -3756,12 +3904,20 @@
 <p>A <strong>game</strong> (a scene with a menu screen, a start spot, or a game module) opens in <strong>Interact</strong> when
 you put the headset on:</p>
 <ul>
-<li>your <strong>grips grab and knock</strong> things — they never move the world;</li>
+<li>your <strong>grips grab and knock</strong> things. They do not move the world — unless the game asks for it: Untangle and the
+  Jam Room let a grip in empty air move, turn and scale the whole scene, as in Edit (a grip on something you can hold
+  still holds it);</li>
 <li>the <strong>left stick walks</strong> you: walls stop you, gravity keeps you on the floor, small steps climb.
-  No flying or teleporting unless the scene allows it;</li>
+  No flying or teleporting unless the scene allows it. Where a game allows teleport it <strong>keeps you inside</strong>: you land
+  only on walkable ground inside the play area, never through a wall — a <strong>red arc</strong> means that spot is refused and
+  releasing does nothing;</li>
 <li>editor helpers (the grid, light and collider wireframes, outlines) are hidden;</li>
 <li>the game's menu, pause and results screens float in front of you — point the laser and pull the
-  trigger (or poke them); the score sits on your <strong>left wrist</strong> (turn it to read);</li>
+  trigger (or poke them); the score sits on your <strong>left wrist</strong> (turn it to read) and on a
+  <strong>top strip</strong> across the top of your view. The board's <strong>Top strip</strong> button switches the strip off or on (remembered on
+  this device). The laser ends in a solid dot and the button under it lights up, and menus are drawn over the scene so
+  a floor or a wall never hides them;</li>
+<li>the left <strong>X</strong> button opens the game's pause menu;</li>
 <li><strong>hold the trigger and sweep</strong> across piano keys, drum steps, pads, mixer mutes or pedal
   footswitches — each one you pass fires once;</li>
 <li>the controllers vibrate for touches, presses, grabs and knocks.</li>
@@ -3822,11 +3978,16 @@ menu board's <strong>Edit mode</strong> button does the same.</p>
 <h3 id="edit-ring-with-an-object-selected">Edit ring (with an object selected)</h3>
 <p>The hub becomes <strong>Edit</strong>. It offers <strong>Snap</strong>, <strong>Duplicate</strong>, <strong>Delete</strong>, <strong>Color</strong> (a live palette), <strong>Wireframe</strong>, <strong>Properties</strong>, <strong>Save prefab</strong>, and <strong>Edit Mesh</strong> — which becomes <strong>Ungroup</strong> when the selection is a group. Mesh editing opens face/vertex tools (Extrude, Inset, Move, Delete).</p>
 <h3 id="system">System ▸</h3>
-<p>Grid toggle, <strong>World 1:1</strong> (reset a scaled/rotated world grab), <strong>Settings</strong>, <strong>Swap hand</strong>, <strong>Statistics</strong>, <strong>Grab mode</strong> (cycle the grip style), <strong>Mic ▸</strong> (PTT / Open / Off) and <strong>Exit VR</strong>.</p>
+<p>Grid toggle, <strong>World 1:1</strong> (reset a scaled/rotated world grab), <strong>Settings</strong>, <strong>Swap hand</strong>, <strong>Statistics</strong>, <strong>Profile ▸</strong>
+(<strong>Record</strong>, <strong>Record detailed</strong>, <strong>Stop recording</strong>, <strong>Report moment</strong> — see
+<a href="../profiler/#profiling-the-headset-from-the-desktop">Profiling the headset</a>), <strong>Grab mode</strong> (cycle the grip style),
+<strong>Mic ▸</strong> (PTT / Open / Off) and <strong>Exit VR</strong>.</p>
+<p>The radial menu follows the thumbstick too: the sector you push towards lights up, and the trigger or a stick click
+picks it.</p>
 <h2 id="getting-around">Getting around</h2>
 <ul>
 <li><strong>Move</strong> — push the left thumbstick. With <strong>VR flying</strong> on, forward follows where your controller aims; otherwise it stays level. Hold the <strong>left grip</strong> to switch the stick to panning and elevation.</li>
-<li><strong>Teleport</strong> — push the <strong>right thumbstick up</strong> to arc a beam, release to blink to the landing spot (on the ground or any upward-facing surface). Toggle teleport in Settings.</li>
+<li><strong>Teleport</strong> — push the <strong>right thumbstick up</strong> to arc a beam, release to blink to the landing spot (in Edit: the ground or any upward-facing surface; in a game, only walkable ground inside the play area — a red arc is refused). Toggle teleport in Settings.</li>
 <li><strong>Snap-turn</strong> — flick the right thumbstick left/right to rotate in fixed steps. The <strong>snap angle</strong> is Off / 15° / 30° / 45° (default 45°), shown live in the Scene radial and VR Settings; <strong>Mirror snap turn</strong> flips the direction.</li>
 <li><strong>World grab</strong> — grip with <strong>both hands in empty air</strong> to grab the whole world: pull your hands apart/together to scale, twist to rotate, move to reposition. <strong>System ▸ World 1:1</strong> snaps it back to normal. Holding the world with <strong>one</strong> grip, push the stick <strong>up/down</strong> to send it away or bring it closer, as with an object.</li>
 </ul>
@@ -3846,11 +4007,16 @@ menu board's <strong>Edit mode</strong> button does the same.</p>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Density caps</p>
-<p>To stay smooth in VR, mesh editing is limited to <strong>300 triangles</strong> for face editing and <strong>500 vertices</strong> for vertex editing. Denser meshes refuse with a toast. (The default sphere is above these caps — a lower-detail primitive or an imported low-poly mesh edits fine. The full-featured mesh editor is desktop-only.)</p>
+<p>To stay smooth in VR, mesh editing is limited to <strong>2500 triangles</strong> for face editing and <strong>800 vertices</strong> for vertex editing by default; denser meshes refuse with a toast. Both limits are yours to change in <strong>Settings ▸ VR ▸ Face edit limit / Vertex edit limit</strong>. The full-featured mesh editor is desktop-only.</p>
 </div>
 <h2 id="floating-panels">Floating panels</h2>
 <p>The menu opens follower panels that hang in space — Objects, Properties, Color palette, Prefabs, Keyboard, Chat, Stats, plus the Edit/Snap/Settings menus. Every panel is <strong>grip-grabbable</strong>: hold the grip on a panel to detach and reposition it, and the gripping hand's stick resizes it. Your layout is remembered; <strong>Reset panel positions</strong> (VR Settings, or the desktop Settings button) restores the defaults.</p>
 <p>Typing uses the <strong>VR keyboard</strong> — it pops up for renaming an object and for chat messages; point at keys and press with the trigger.</p>
+<h2 id="the-sleeve-palette">The sleeve palette</h2>
+<p><strong>Settings ▸ VR ▸ VR sleeve palette</strong> (experimental, off by default; also <strong>VR sleeve palette</strong> in VR Settings) puts a strip
+of ghost primitives along the forearm of your other hand (not the menu hand), like a bracer. Point at one and <strong>trigger-drag</strong> it off: it follows your
+controller, the stick scales it and your wrist turns it; release the trigger to place it (one undo step). <strong>Grip-drop</strong> an
+object of yours onto the strip to keep it as a personal slot — those are saved on this device only.</p>
 <h2 id="hand-models">Hand models</h2>
 <p>How you see hand-tracked <em>peers</em> is a local choice — <strong>Settings ▸ VR ▸ Peer hand style</strong> (also <strong>System ▸ Settings</strong> in VR):</p>
 <ul>
@@ -3890,8 +4056,16 @@ menu board's <strong>Edit mode</strong> button does the same.</p>
 <td>on / off</td>
 </tr>
 <tr>
+<td>VR sleeve palette</td>
+<td>on / off (experimental)</td>
+</tr>
+<tr>
 <td>Hold to move vertex</td>
 <td>on / off</td>
+</tr>
+<tr>
+<td>Face edit limit / Vertex edit limit</td>
+<td>2500 / 800 (desktop Settings only)</td>
 </tr>
 <tr>
 <td>Refresh rate</td>
@@ -3947,7 +4121,7 @@ menu board's <strong>Edit mode</strong> button does the same.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-02
+    2026-10-04
   </span>
 
     

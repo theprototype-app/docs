@@ -9,6 +9,10 @@
          <lastmod>2026-10-04</lastmod>
     </url>
     <url>
+         <loc>https://docs.theprototype.app/appearance/</loc>
+         <lastmod>2026-10-04</lastmod>
+    </url>
+    <url>
          <loc>https://docs.theprototype.app/audio/</loc>
          <lastmod>2026-10-04</lastmod>
     </url>
@@ -22,6 +26,10 @@
     </url>
     <url>
          <loc>https://docs.theprototype.app/camera/</loc>
+         <lastmod>2026-10-04</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.theprototype.app/colliders/</loc>
          <lastmod>2026-10-04</lastmod>
     </url>
     <url>
@@ -54,6 +62,10 @@
     </url>
     <url>
          <loc>https://docs.theprototype.app/games/</loc>
+         <lastmod>2026-10-04</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.theprototype.app/hud-editor/</loc>
          <lastmod>2026-10-04</lastmod>
     </url>
     <url>
@@ -269,6 +281,10 @@
          <lastmod>2026-10-04</lastmod>
     </url>
     <url>
+         <loc>https://docs.theprototype.app/nodes/gamesetting/</loc>
+         <lastmod>2026-10-04</lastmod>
+    </url>
+    <url>
          <loc>https://docs.theprototype.app/nodes/gamesound/</loc>
          <lastmod>2026-10-04</lastmod>
     </url>
@@ -349,6 +365,10 @@
          <lastmod>2026-10-04</lastmod>
     </url>
     <url>
+         <loc>https://docs.theprototype.app/nodes/onclap/</loc>
+         <lastmod>2026-10-04</lastmod>
+    </url>
+    <url>
          <loc>https://docs.theprototype.app/nodes/onclick/</loc>
          <lastmod>2026-10-04</lastmod>
     </url>
@@ -390,6 +410,10 @@
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/playanim/</loc>
+         <lastmod>2026-10-04</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.theprototype.app/nodes/pointgrab/</loc>
          <lastmod>2026-10-04</lastmod>
     </url>
     <url>

@@ -359,6 +359,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../appearance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Themes & Appearance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../connection/" class="md-nav__link">
         
   
@@ -695,6 +716,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../colliders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Colliders
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../particles/" class="md-nav__link">
         
   
@@ -881,6 +923,15 @@
   <a href="#render-mode-view" class="md-nav__link">
     <span class="md-ellipsis">
       Render mode (View)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camera-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Camera objects
     </span>
   </a>
   
@@ -1897,6 +1948,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/onclap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Clap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/onrest/" class="md-nav__link">
         
   
@@ -2674,6 +2746,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/gamesetting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Setting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/pointgrab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Point Grab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/travel/" class="md-nav__link">
         
   
@@ -2981,6 +3095,27 @@
   
   <span class="md-ellipsis">
     Build a Game Loop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hud-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HUD Editor
   </span>
   
 
@@ -3504,6 +3639,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#camera-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Camera objects
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#camera-lens" class="md-nav__link">
     <span class="md-ellipsis">
       Camera lens
@@ -3635,7 +3779,7 @@
 </tr>
 <tr>
 <td><strong>Shaded + AO</strong></td>
-<td>Adds ambient occlusion — soft contact shadows in creases and corners (the default).</td>
+<td>Adds ambient occlusion — soft contact shadows in creases and corners (the default on a desktop; phones and tablets start in plain <strong>Shaded</strong>).</td>
 </tr>
 <tr>
 <td><strong>Wireframe</strong></td>
@@ -3650,6 +3794,75 @@ you switch it off for yourself under <strong>Overrides — this device</strong>.
 ambient occlusion, <strong>Shaded + AO</strong> switches off and says so: the scene's setting is used
 instead of yours.</p>
 <p>The <strong>Show light helpers</strong> toggle here draws icons for lights so you can see where they are — in the editor only; see <a href="#helpers-hide-in-play">Helpers hide in Play</a>.</p>
+<h2 id="camera-objects">Camera objects</h2>
+<p>Besides your own view, a scene can hold <strong>cameras</strong> of its own — the shot a game starts from, a cutscene angle, a
+security monitor. Add one from <strong>right-click ▸ Add ▸ Camera ▸ Perspective</strong> (or <strong>Orthographic</strong>). It appears as a small
+camera marker you move and turn like any object; selecting it opens <strong>Properties ▸ Camera</strong>:</p>
+<p><img alt="The Camera section of a camera object's properties, with its picture-in-picture preview" src="../img/camera/camera-object.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Row</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kind</strong></td>
+<td>Perspective or Orthographic</td>
+</tr>
+<tr>
+<td><strong>FOV</strong> (perspective)</td>
+<td>field of view, 10–140°</td>
+</tr>
+<tr>
+<td><strong>Size</strong> (orthographic)</td>
+<td>how much of the scene fits, 0.5–50</td>
+</tr>
+<tr>
+<td><strong>Near / Far</strong></td>
+<td>the clip planes</td>
+</tr>
+<tr>
+<td><strong>Framing</strong></td>
+<td>16:9 · 4:3 · 1:1 · 2.39:1 · free (follows the viewport)</td>
+</tr>
+<tr>
+<td><strong>Letterbox guide while previewing</strong></td>
+<td>bars that show the framing while you look through it</td>
+</tr>
+<tr>
+<td><strong>Preview</strong></td>
+<td>look through the camera. A banner says <em>Previewing ‹camera›</em>; its <strong>Control</strong> button lets you fly the camera with <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> and the mouse (its new pose is kept, as one undo step)</td>
+</tr>
+<tr>
+<td><strong>Set from view</strong></td>
+<td>move the camera to where your view is (and take its FOV)</td>
+</tr>
+<tr>
+<td><strong>Align view</strong></td>
+<td>fly <em>your</em> view to look through this camera (it stays your camera)</td>
+</tr>
+<tr>
+<td><strong>Capture</strong></td>
+<td>render one frame through this camera and download it as a PNG at the framing aspect</td>
+</tr>
+<tr>
+<td><strong>Preview window while selected</strong></td>
+<td>the picture-in-picture window (below), on by default</td>
+</tr>
+<tr>
+<td><strong>Show camera frustums — this device</strong></td>
+<td>draw every camera's viewing pyramid</td>
+</tr>
+</tbody>
+</table>
+<p>The camera itself — including its <em>Letterbox guide</em> and <em>Preview window while selected</em> switches — is shared with
+everyone; previewing and the frustum lines are yours alone. The object's right-click menu has <strong>Preview camera</strong> and <strong>Set from current view</strong> too.</p>
+<p><strong>Picture-in-picture.</strong> While a camera is selected, a small window shows what it sees, live. <strong>⤢</strong> looks through it full
+screen, <strong>✕</strong> hides the window (the <em>Preview window while selected</em> row brings it back), and right-drag moves it.</p>
+<p>A game uses cameras through the <a href="../nodes/setcamera/">Set Active Camera</a> node, the <a href="../nodes/gamestart/">Game Start</a> node's
+camera, and <a href="../nodes/setlook/">Set Look</a> for each camera's own <a href="../post-processing/">look</a>.</p>
 <h2 id="camera-lens">Camera lens</h2>
 <p>The default camera is a <strong>40° field of view</strong> — a natural, product-viz look with real depth and little wide-angle distortion. You can change it under <strong>Camera lens</strong>:</p>
 <p><strong>Lens presets</strong> (labelled by their full-frame focal-length equivalent):</p>
@@ -3758,7 +3971,7 @@ instead of yours.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-09-12
+    2026-10-04
   </span>
 
     

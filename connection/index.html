@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://docs.theprototype.app/connection/">
       
       
-        <link rel="prev" href="../units/">
+        <link rel="prev" href="../appearance/">
       
       
         <link rel="next" href="../explorer/">
@@ -358,6 +358,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../appearance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Themes & Appearance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -461,6 +482,15 @@
   <a href="#rooms-one-session-several-scenes" class="md-nav__link">
     <span class="md-ellipsis">
       Rooms: one session, several scenes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-rooms-theprototypeapp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Public rooms (theprototype.app)
     </span>
   </a>
   
@@ -850,6 +880,27 @@
   
   <span class="md-ellipsis">
     Physics & Simulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../colliders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Colliders
   </span>
   
 
@@ -1930,6 +1981,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/onclap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Clap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/onrest/" class="md-nav__link">
         
   
@@ -2707,6 +2779,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/gamesetting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Setting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/pointgrab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Point Grab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/travel/" class="md-nav__link">
         
   
@@ -3014,6 +3128,27 @@
   
   <span class="md-ellipsis">
     Build a Game Loop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hud-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HUD Editor
   </span>
   
 
@@ -3579,6 +3714,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#public-rooms-theprototypeapp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Public rooms (theprototype.app)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bigger-sessions" class="md-nav__link">
     <span class="md-ellipsis">
       Bigger sessions
@@ -3737,6 +3881,44 @@ none of the above applies. The same goes for someone who has just joined: they
 are standing in your content without knowing its name yet, so they are never
 hidden on a guess.</p>
 </div>
+<h2 id="public-rooms-theprototypeapp">Public rooms (theprototype.app)</h2>
+<p>On theprototype.app, the <strong>Rooms</strong> button in the top bar lists <strong>public rooms</strong> — sessions their hosts chose to list —
+and lets you list your own. Browsing is open to everyone; listing a room needs you to be signed in (profile menu).</p>
+<p>Your room's panel has a <strong>Room name</strong>, a <strong>Short description</strong> and these switches:</p>
+<table>
+<thead>
+<tr>
+<th>Switch</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>List this room publicly</strong></td>
+<td>shows the room in everyone's Rooms list while you are online (a room whose host goes away drops off within about a minute and a half)</td>
+</tr>
+<tr>
+<td><strong>Require approval to join</strong></td>
+<td><strong>Join</strong> becomes <strong>Request to join</strong>: the request lands on your approval card as <em>"‹name› wants to join ‹room›"</em>, and you approve or reject it as usual</td>
+</tr>
+<tr>
+<td><strong>Allow guests to join automatically (view-only)</strong></td>
+<td>people who are not signed in may come in to watch. Off while approval is required or the room has a code</td>
+</tr>
+<tr>
+<td><strong>Enable room screenshot</strong></td>
+<td>the list card shows a picture of your scene instead of a coloured initial</td>
+</tr>
+<tr>
+<td><strong>Room code</strong></td>
+<td>list the room first, then type a code and <strong>Set</strong> it: someone who knows it gets in as a viewer <strong>without</strong> waiting for approval. A listed room with a code shows 🔒</td>
+</tr>
+</tbody>
+</table>
+<p>Joining a coded room asks for the code (<em>"🔒 ‹room› needs a code"</em>). The right code goes straight in; a wrong one is
+refused, and five wrong codes lock that person out for ten minutes. If the room also requires approval, <strong>Ask the host
+instead</strong> sends an ordinary request. The code itself is never stored on the server or sent in the clear — only your
+device can check it, so a code set on another device of yours has to be set again here.</p>
 <h2 id="bigger-sessions">Bigger sessions</h2>
 <p>Everyone in a session connects to everyone else, directly. A room of ten is the tested target: joining takes roughly a third of a second, and every peer really does end up linked to every other peer.</p>
 <p>A momentary network blip no longer throws you out, either. A peer that drops for a few seconds is given a window to come back and rejoin the same session; only when that window closes are they treated as gone.</p>
@@ -3833,12 +4015,12 @@ hidden on a guess.</p>
 <td><strong>Apply</strong> could not open the server you picked, so nothing changed — check the host, port and path.</td>
 </tr>
 <tr>
-<td><em>Lost connection to the peer server, reconnecting…</em></td>
-<td>The link to the signaling server dropped; the app retries automatically.</td>
+<td><em>Lost the peer server - reconnecting...</em> / <em>The peer server closed the link - reconnecting...</em></td>
+<td>The link to the signaling server dropped; the app retries on its own and never gives up. <em>Reconnected to the peer server.</em> confirms it is back. Your open session keeps going meanwhile.</td>
 </tr>
 <tr>
-<td><em>Could not reach the peer server. Please reload.</em></td>
-<td>Reconnection gave up — reload, or switch servers in Settings ▸ Connection.</td>
+<td><em>Cannot reach the signaling server - the connection request was not sent.</em></td>
+<td>You pressed <strong>Connect</strong> while the signaling link is down. Wait for the reconnect chip to clear, or switch servers in Settings ▸ Connection.</td>
 </tr>
 </tbody>
 </table>
@@ -3862,7 +4044,7 @@ hidden on a guess.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-09-19
+    2026-10-04
   </span>
 
     

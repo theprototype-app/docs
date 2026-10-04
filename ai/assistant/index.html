@@ -359,6 +359,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../appearance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Themes & Appearance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../connection/" class="md-nav__link">
         
   
@@ -679,6 +700,27 @@
   
   <span class="md-ellipsis">
     Physics & Simulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../colliders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Colliders
   </span>
   
 
@@ -1759,6 +1801,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../nodes/onclap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Clap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../nodes/onrest/" class="md-nav__link">
         
   
@@ -2536,6 +2599,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../../nodes/gamesetting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Setting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nodes/pointgrab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Point Grab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../nodes/travel/" class="md-nav__link">
         
   
@@ -2843,6 +2948,27 @@
   
   <span class="md-ellipsis">
     Build a Game Loop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hud-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HUD Editor
   </span>
   
 
@@ -3636,6 +3762,14 @@ the crate spin"</em>, <em>"the drone should patrol between the towers"</em>, <em
 spider"</em> (body + legs from primitives, grouped, patrolling with bouncing legs). Follow-ups
 work too — <em>"make the spider faster"</em> edits the existing node instead of stacking a new
 one. Everything replicates and undoes like any other edit.</p>
+<p><strong>Game rules as code.</strong> For anything bigger than a node or two — rules, waves, scoring, reach limits — the assistant can
+write a <a href="../../behaviours/">behaviour</a> instead: a small JavaScript file it creates (<em>"make a behaviour that counts the
+stars lit and ends the round at 24"</em>) or edits later by name. Before anything is applied the source is checked by the
+same determinism lint you get when you write one yourself (no <code>Math.random</code>, no clock, no DOM, no timers, no loop without
+an exit); if it fails, the errors go back to the model with line numbers and it tries again — nothing broken reaches the
+scene.</p>
+<p>The assistant reads your graphs as the same <a href="../../node-system/#flow-code-the-graph-as-text">compact text</a> Flow Code shows,
+which is several times shorter than JSON, and can add nodes by writing that text.</p>
 <p><strong>Physics</strong> (bodies, welds/hinges with motors, and starting the simulation) is a
 per-provider opt-in — the <strong>Physics tools (advanced)</strong> checkbox in <strong>Settings ▸ AI</strong>.
 It's off by default because multi-step physics is hard for small local models; see
@@ -3710,7 +3844,7 @@ reset it first, then one undo reverts the whole prompt.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-07-29
+    2026-10-04
   </span>
 
     

@@ -359,6 +359,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../appearance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Themes & Appearance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../connection/" class="md-nav__link">
         
   
@@ -679,6 +700,27 @@
   
   <span class="md-ellipsis">
     Physics & Simulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../colliders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Colliders
   </span>
   
 
@@ -1918,6 +1960,27 @@
   
   
     <li class="md-nav__item">
+      <a href="onclap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Clap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="onrest/" class="md-nav__link">
         
   
@@ -2695,6 +2758,48 @@
   
   
     <li class="md-nav__item">
+      <a href="gamesetting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Setting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pointgrab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Point Grab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="travel/" class="md-nav__link">
         
   
@@ -3002,6 +3107,27 @@
   
   <span class="md-ellipsis">
     Build a Game Loop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hud-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HUD Editor
   </span>
   
 
@@ -3766,8 +3892,8 @@ their own page link to it.</p>
 <td>Makes a camera object the active view for every player when a pulse arrives.</td>
 </tr>
 <tr>
-<td><strong>Set Look</strong></td>
-<td>Points the player's view at a target when a pulse arrives - a cutscene glance or a spawn orientation.</td>
+<td><a href="setlook/"><strong>Set Look</strong></a></td>
+<td>Switches a camera's look (its post-processing) on or off when a pulse arrives, and by default looks through that camera too.</td>
 </tr>
 <tr>
 <td><strong>Game Start</strong></td>
@@ -3825,6 +3951,14 @@ their own page link to it.</p>
 <td><a href="gamemusic/"><strong>Game Music</strong></a></td>
 <td>Declares the scene's looping music (seven built-in tracks), playing only while someone plays.</td>
 </tr>
+<tr>
+<td><a href="gamesetting/"><strong>Game Setting</strong></a></td>
+<td>Declares one row in the game's Settings (a toggle, a range or a choice) and outputs this player's value — saved on this device, never shared.</td>
+</tr>
+<tr>
+<td><a href="pointgrab/"><strong>Point Grab</strong></a></td>
+<td>While its <code>enabled</code> input reads off, players cannot pick objects up by pointing at them — only a touching hand moves them.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="character">Character</h2>
@@ -3870,6 +4004,14 @@ their own page link to it.</p>
 <tr>
 <td><strong>HUD Screen</strong></td>
 <td>Shows or hides a whole HUD screen (a named layer of elements) while its condition holds.</td>
+</tr>
+<tr>
+<td><strong>HUD Text</strong></td>
+<td>Puts a value into a HUD text element - a live score, a name, a round number.</td>
+</tr>
+<tr>
+<td><strong>HUD Timer</strong></td>
+<td>Runs a HUD timer element's countdown on the shared clock (duration, format, autostart), so every player sees the same time.</td>
 </tr>
 <tr>
 <td><strong>HUD Bar</strong></td>
@@ -3932,7 +4074,7 @@ their own page link to it.</p>
 </tr>
 <tr>
 <td><a href="select/"><strong>Select</strong></a></td>
-<td>Chooses between two values: outputs a when the index is low, b when it's high.</td>
+<td>Picks one of up to four values (a, b, c, d) by a rounded index.</td>
 </tr>
 <tr>
 <td><strong>Latch</strong></td>
@@ -4028,6 +4170,10 @@ their own page link to it.</p>
 <tr>
 <td><a href="ongrab/"><strong>On Grab</strong></a></td>
 <td>Fires a pulse when a player picks up the object — a desktop carry or a VR grip in Interact.</td>
+</tr>
+<tr>
+<td><a href="onclap/"><strong>On Clap</strong></a></td>
+<td>Fires when a VR player brings both hands together and holds them, with where they met (<code>point</code>) and whether it was you.</td>
 </tr>
 <tr>
 <td><strong>Gamepad Button</strong></td>
@@ -4253,7 +4399,7 @@ every peer counts once. The <a href="../game-kit/#the-pieces">Game kit</a> page 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-03
+    2026-10-04
   </span>
 
     

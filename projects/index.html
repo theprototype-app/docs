@@ -359,6 +359,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../appearance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Themes & Appearance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../connection/" class="md-nav__link">
         
   
@@ -681,6 +702,27 @@
   
   <span class="md-ellipsis">
     Physics & Simulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../colliders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Colliders
   </span>
   
 
@@ -1903,6 +1945,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/onclap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Clap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/onrest/" class="md-nav__link">
         
   
@@ -2680,6 +2743,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/gamesetting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Setting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/pointgrab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Point Grab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/travel/" class="md-nav__link">
         
   
@@ -2987,6 +3092,27 @@
   
   <span class="md-ellipsis">
     Build a Game Loop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hud-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HUD Editor
   </span>
   
 
@@ -3629,7 +3755,8 @@ copy. One file, the <strong><code>.tp</code></strong>, carries the whole thing.<
 <li><strong>The manifest</strong> is the one mutable document: for each scene name, the full history
   of its version hashes; the asset list; the project name. It replicates
   latest-wins and survives reloads.</li>
-<li><strong>The name</strong> is editable in the Explorer's header row (click it, type, Enter).
+<li><strong>The name</strong> is editable in the Explorer's header row (click it, type, Enter); the scene name beside it renames the
+  open scene (<a href="../explorer/#the-project-and-the-scene-you-have-open">details</a>).
   It becomes the window title ("Scene* – Project – theprototype" — the asterisk
   means the open scene differs from its saved version) and the default <code>.tp</code>
   filename.</li>
@@ -3638,9 +3765,14 @@ copy. One file, the <strong><code>.tp</code></strong>, carries the whole thing.<
 <p>Every save cuts a version; travelling away from an edited scene cuts one
 automatically (an untouched scene never mints versions). Only the <strong>latest</strong> version
 shows in the Explorer — older ones live in hidden storage, browsed through the scene
-item's <strong>Version history</strong> panel (the history icon in its properties):</p>
+item's <strong>Version history</strong> panel — right-click the scene card ▸ <strong>Version history</strong>, or the history icon in its
+properties:</p>
 <ul>
-<li>Each row: date, name (auto, or the custom name from "Save version…"), thumbnail.</li>
+<li><strong>Name this version…</strong> + <strong>Save version…</strong> at the top saves what is open as a new, named version.</li>
+<li>Each row: date, name (<em>Auto</em>, or the name you typed), thumbnail, and a download button for that one version
+  (<code>.tpscene</code>).</li>
+<li><strong>Download all versions (.zip)</strong> in the panel header bundles every version of the scene as <code>.tpscene</code> files;
+  versions whose bytes are no longer on this machine are reported.</li>
 <li><strong>Restore</strong> first checkpoints your current scene, then moves the pointer back to
   the old version and loads it — nothing is ever destroyed, and your peers see the
   update and can travel to it.</li>
@@ -3734,7 +3866,7 @@ exist.</p>
 </tbody>
 </table>
 <h2 id="the-tp-file">The <code>.tp</code> file</h2>
-<p><strong>Save</strong> with the <strong>TP</strong> format selected (the default) downloads the whole project:
+<p><strong>Save</strong> with the <strong>Project</strong> format selected (the default) downloads the whole project:
 the manifest, every kept scene version, every library item with its folder
 placement, and the assets in use — bytes stored once per content hash. Anything
 whose bytes are no longer on your machine is counted and reported, never silently
@@ -3759,7 +3891,7 @@ dropped. A project exported by a newer app version asks before importing.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-09-12
+    2026-10-04
   </span>
 
     

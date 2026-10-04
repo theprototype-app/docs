@@ -426,6 +426,27 @@
   
   
     <li class="md-nav__item">
+      <a href="appearance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Themes & Appearance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="connection/" class="md-nav__link">
         
   
@@ -746,6 +767,27 @@
   
   <span class="md-ellipsis">
     Physics & Simulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="colliders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Colliders
   </span>
   
 
@@ -1826,6 +1868,27 @@
   
   
     <li class="md-nav__item">
+      <a href="nodes/onclap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Clap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="nodes/onrest/" class="md-nav__link">
         
   
@@ -2603,6 +2666,48 @@
   
   
     <li class="md-nav__item">
+      <a href="nodes/gamesetting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Setting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nodes/pointgrab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Point Grab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="nodes/travel/" class="md-nav__link">
         
   
@@ -2910,6 +3015,27 @@
   
   <span class="md-ellipsis">
     Build a Game Loop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hud-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HUD Editor
   </span>
   
 
@@ -3470,7 +3596,7 @@
 <h2 id="quick-start">Quick start</h2>
 <ol>
 <li><strong>Open the app</strong> in a desktop browser (VR headset browsers work too).</li>
-<li><strong>Create something</strong> — right-click the empty viewport and pick <strong>Add ▸ Mesh ▸ Cube</strong>, or press <kbd>Shift</kbd>+<kbd>A</kbd> to open the Add menu.</li>
+<li><strong>Create something</strong> — right-click the empty viewport and pick <strong>Add ▸ Mesh ▸ Cube</strong>. (If you prefer <kbd>Shift</kbd>+<kbd>A</kbd> for the Add menu, switch on <strong>Shift+A quick add</strong> in <strong>Settings ▸ Controls ▸ Keyboard &amp; mouse</strong>.)</li>
 <li><strong>Move it</strong> — click the cube to select it, then use the gizmo (<kbd>1</kbd> move, <kbd>2</kbd> rotate, <kbd>3</kbd> scale).</li>
 <li><strong>Invite a friend</strong> — open the Connect panel, copy your peer ID and send it to them. They paste it into their own Connect field and press <strong>Connect</strong>; you approve the request, and from then on you are editing the same scene together.</li>
 </ol>
@@ -3478,6 +3604,12 @@
 <p class="admonition-title">Tip</p>
 <p>Everything replicates automatically: objects, transforms, materials, the node graph, chat, pings and voice. There is no "sync" button — if you can see it, your peers can too.</p>
 </div>
+<p><strong>Install it as an app.</strong> theprototype.app is a web app you can install: your browser's <em>Install app</em> (or <em>Add to Home
+screen</em> on a phone) puts it on your desktop or home screen, and it opens in its own window without the browser's bars —
+on a phone that gives the scene the whole height of the screen.</p>
+<p><strong>Open source.</strong> The app itself is open source under the MIT licence:
+<a href="https://github.com/theprototype-app/core">github.com/theprototype-app/core</a> (also <strong>Settings ▸ About ▸ Source Code</strong>),
+with a contributing guide and an <code>llms.txt</code> for coding agents.</p>
 <h2 id="whats-new">What's new</h2>
 <p><strong>1.20 — five new games, measure on the device, build games from a kit.</strong> <a href="games/">Five new games</a>
 are in the Games tab with no download: The Alchemist's Escape, Marble Maze, Mini Golf, Sky Run and Target Toss. The <a href="profiler/">Profiler</a> records
@@ -3489,6 +3621,27 @@ code, and game logic can be written as a small <a href="behaviours/">behaviour</
 view. The <a href="nodes/script/">Script node</a> gains typed inputs and outputs, Flow Code shows a graph
 as <a href="node-system/#flow-code-the-graph-as-text">compact text</a>, and modules now
 <a href="module-sdk/#new-in-120">unload completely</a>.</p>
+<p><strong>1.19 — doors that open, scenes that load, games that switch.</strong> Four new <a href="packs/#the-kits-119">packs</a>
+(Interiors, Town &amp; Market, Interactive, Arcane Study) and two new example levels; doors, lids and levers work in
+Interact and Play, and nothing animates by itself any more. Every pack object has <a href="lod/">levels of detail</a>. Big
+scenes load with a progress bar and <strong>Cancel</strong>, opening another scene <a href="saving/#opening-another-scene-and-modules">asks about the game's modules</a>,
+and <strong>Clear scene</strong> can clear the game setup too. A frame counter shows FPS and draw calls.</p>
+<p><strong>1.18 — menus, levels and smooth frames in a headset.</strong> Every game has the same pause menu with per-game Settings and
+Levels; in VR the left <strong>X</strong> opens it. The controller laser is easier to see, the radial menu follows the thumbstick,
+teleport keeps you inside the play area, and some games let your grips move the world. <a href="games/#towers">Towers</a> becomes
+twelve levels with stars, the <a href="games/#stars-room">Stars Room</a> makes stars with a clap, and three new nodes —
+<a href="nodes/onclap/">On Clap</a>, <a href="nodes/pointgrab/">Point Grab</a> and <a href="nodes/gamesetting/">Game Setting</a> — build games out
+of settings and gestures. A headset starts with lighter quality and <a href="lod/">simplifies distant models</a>.</p>
+<p><strong>1.17 — games that look finished.</strong> <a href="controls/#edit-and-interact">Edit and Interact</a> (the <strong>I</strong> key), click-through
+glass, a <em>Module content</em> section in the object list, and <a href="build-a-game/#test-play">Test play</a> that starts a game from
+its menu. Every game got a start screen, best scores saved on the device (<a href="nodes/storevalue/">Store Value</a>), game
+sounds, music, banners and controller buzz; four kit packs and three walkable levels arrived.</p>
+<p><strong>1.16 — Waves, and one world to keep.</strong> <a href="games/#waves">Waves</a> joins the Games tab, the tab shows every game again,
+and two people pressing play at once no longer fight over the simulation.</p>
+<p><strong>1.15 — where everyone is.</strong> Every scene card in the Explorer shows <a href="explorer/#the-project-and-the-scene-you-have-open">who is in it</a>,
+with <strong>Join ‹name›</strong>; scenes can be renamed and their files follow; copy and paste a scene to get a new one. Dungeon
+Realms and Untangle became games, <code>?embed=1</code> hides the editor for <a href="community/">embedding</a>, and (1.15.1) public rooms
+take a <a href="connection/#public-rooms-theprototypeapp">code or a knock</a>.</p>
 <p><strong>1.14 — heavy models stop being a cliff.</strong> A model is weighed before it lands, and one that
 would hurt asks first, with <strong>Reduce</strong> on a background worker as a third way out and
 <strong>Restore original model</strong> to take it back. See <a href="explorer/#when-a-model-is-too-heavy">Importing files</a>.

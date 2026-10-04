@@ -359,6 +359,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../appearance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Themes & Appearance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../connection/" class="md-nav__link">
         
   
@@ -679,6 +700,27 @@
   
   <span class="md-ellipsis">
     Physics & Simulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../colliders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Colliders
   </span>
   
 
@@ -1866,6 +1908,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../onclap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Clap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../onrest/" class="md-nav__link">
         
   
@@ -2643,6 +2706,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../gamesetting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Setting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pointgrab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Point Grab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../travel/" class="md-nav__link">
         
   
@@ -2950,6 +3055,27 @@
   
   <span class="md-ellipsis">
     Build a Game Loop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hud-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HUD Editor
   </span>
   
 
@@ -3542,11 +3668,13 @@
 
 <h1 id="spawn">Spawn</h1>
 <p>Makes copies of an object while the simulation runs — crates off a conveyor, targets, debris, ammo, waves of anything.</p>
-<p><strong>Inputs:</strong> <code>trigger</code> (event) · <code>at</code> (vector3) · <code>source</code> (object — the template)
+<p><strong>Inputs:</strong> <code>trigger</code> (event) · <code>at</code> (vector3 — an offset from the template) · <code>place</code> (vector3 — copies land exactly here; wins over <code>at</code>) · <code>source</code> (object — the template)
 <strong>Output:</strong> effect (or wire the template into <code>source</code>)</p>
 <h2 id="how-it-works">How it works</h2>
 <p>On the <strong>rising edge</strong> of whatever is wired into <code>trigger</code> — <a href="../keypress/">Key Press</a>, <a href="../onclick/">On Click</a>, <a href="../timer/">Timer</a>, <a href="../onenter/">On Enter</a> — the node copies its <strong>template</strong> object and drops the copy into the scene with a live physics body. The copy inherits the template's physics, material and geometry, so a dynamic template gives you something that falls.</p>
 <p>Copies are <strong>transient</strong>. They live for the run and nothing else: they are never written into a saved scene, they leave nothing on the undo stack however many times you fire, and they all disappear when the simulation stops. That is the whole design — a run's debris is not scene content.</p>
+<p><strong>A copy answers to its template's events.</strong> Event nodes that target the template — an <a href="../onhit/">On Hit</a>, an <a href="../onclick/">On Click</a>, an <a href="../onenter/">On Enter</a> through an Object Selector — fire for its copies too, so a star you spawn behaves like the stars you placed.</p>
+<p><strong><code>place</code></strong> takes a point in the world: wire an <a href="../onclap/">On Clap</a> <code>point</code> into it and the copy appears where the hands met.</p>
 <p>The peer running the simulation makes the copy and everybody else receives it through the ordinary object sync, so two peers never disagree about what exists. Nothing extra goes on the wire for this node.</p>
 <div class="admonition warning">
 <p class="admonition-title">It needs a running simulation</p>
@@ -3644,7 +3772,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-08-22
+    2026-10-04
   </span>
 
     

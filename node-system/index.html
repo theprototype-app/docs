@@ -359,6 +359,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../appearance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Themes & Appearance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../connection/" class="md-nav__link">
         
   
@@ -679,6 +700,27 @@
   
   <span class="md-ellipsis">
     Physics & Simulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../colliders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Colliders
   </span>
   
 
@@ -1063,6 +1105,30 @@
       Determinism and replication
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-the-runtime-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      When the runtime fails
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When the runtime fails">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#safe-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safe mode
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1891,6 +1957,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/onclap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Clap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/onrest/" class="md-nav__link">
         
   
@@ -2668,6 +2755,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/gamesetting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Setting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/pointgrab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Point Grab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/travel/" class="md-nav__link">
         
   
@@ -2975,6 +3104,27 @@
   
   <span class="md-ellipsis">
     Build a Game Loop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hud-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HUD Editor
   </span>
   
 
@@ -3552,6 +3702,30 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#when-the-runtime-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      When the runtime fails
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="When the runtime fails">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#safe-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Safe mode
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#flow-code-the-graph-as-text" class="md-nav__link">
     <span class="md-ellipsis">
       Flow Code: the graph as text
@@ -3709,6 +3883,15 @@ does not travel still opens the Add menu rather than being eaten by the pan.</p>
 </ul>
 <h2 id="determinism-and-replication">Determinism and replication</h2>
 <p>The graph itself is shared: every node, edge, parameter tweak and position replicates to all peers. Motion is <strong>not</strong> streamed — every peer computes the same animation from the same node data and a <strong>synced clock</strong>, so a Spin or a Sound loop is at the same phase for everyone. Random nodes are seeded, and click triggers ride tiny replicated messages. You can exempt one object from all flow effects via its right-click menu (<em>Disable flow effects</em>).</p>
+<h2 id="when-the-runtime-fails">When the runtime fails</h2>
+<p>A node that throws an error does not take the scene down with it. If the whole graph keeps failing frame after frame,
+the flow runtime <strong>pauses itself</strong> and says so: <em>"Flow runtime paused after repeated errors. Your scene is intact; fix
+the node and resume."</em> Fix or delete the node, then press <strong>Resume</strong> on that toast.</p>
+<h3 id="safe-mode">Safe mode</h3>
+<p>If a scene's scripts hang as soon as it loads, there is never a frame in which to fix them. Open the app with
+<strong><code>#safe</code></strong> at the end of the address (<code>https://theprototype.app/#safe</code>): the scene and its graph load, but the flow
+runtime starts <strong>paused</strong>, so no script runs. Edit or delete the culprit, then press <strong>Resume</strong> on the <em>Safe mode</em>
+toast — or reload without <code>#safe</code>.</p>
 <h2 id="flow-code-the-graph-as-text">Flow Code: the graph as text</h2>
 <p><strong>Flow Code</strong> (the dock's <strong>＋</strong> menu, or <kbd>Alt</kbd>+<kbd>F</kbd>) shows the graph the editor is
 showing as text you can read, edit and <strong>Apply</strong>. A <strong>Text | JSON</strong> toggle above it picks the
@@ -3757,7 +3940,7 @@ below the graph.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-03
+    2026-10-04
   </span>
 
     

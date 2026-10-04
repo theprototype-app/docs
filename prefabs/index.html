@@ -359,6 +359,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../appearance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Themes & Appearance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../connection/" class="md-nav__link">
         
   
@@ -560,9 +581,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sharing-prefabs" class="md-nav__link">
+  <a href="#exporting-a-prefab" class="md-nav__link">
     <span class="md-ellipsis">
-      Sharing prefabs
+      Exporting a prefab
     </span>
   </a>
   
@@ -757,6 +778,27 @@
   
   <span class="md-ellipsis">
     Physics & Simulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../colliders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Colliders
   </span>
   
 
@@ -1837,6 +1879,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/onclap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Clap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/onrest/" class="md-nav__link">
         
   
@@ -2614,6 +2677,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/gamesetting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Setting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/pointgrab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Point Grab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/travel/" class="md-nav__link">
         
   
@@ -2921,6 +3026,27 @@
   
   <span class="md-ellipsis">
     Build a Game Loop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hud-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HUD Editor
   </span>
   
 
@@ -3453,9 +3579,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sharing-prefabs" class="md-nav__link">
+  <a href="#exporting-a-prefab" class="md-nav__link">
     <span class="md-ellipsis">
-      Sharing prefabs
+      Exporting a prefab
     </span>
   </a>
   
@@ -3487,25 +3613,68 @@
 <h1 id="prefabs">Prefabs</h1>
 <p>Prefabs are objects (or whole groups) you save once and reuse anywhere — your personal building blocks.</p>
 <h2 id="saving-a-prefab">Saving a prefab</h2>
-<p>Right-click any object in the viewport or the object list and choose <strong>Save as prefab</strong>. The object is snapshotted with its materials and children, a thumbnail is rendered, and it lands in your library. Very large objects (over 5 MB serialized) are rejected with a toast.</p>
+<p>Right-click any object in the viewport or the object list and choose <strong>Save as…</strong>, then a format:</p>
+<table>
+<thead>
+<tr>
+<th>Entry</th>
+<th>What it makes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Prefab</strong></td>
+<td>the classic reusable copy in your Library — a snapshot of the object with its materials and children</td>
+</tr>
+<tr>
+<td><strong>Prefab (.glb)</strong></td>
+<td>a prefab that <em>is</em> a <code>.glb</code> file: geometry, materials and baked animation. Node shaders and object flow graphs are not part of glTF, so they stay behind</td>
+</tr>
+<tr>
+<td><strong>Prefab (.tpscene)</strong></td>
+<td>a prefab that <em>is</em> a <code>.tpscene</code>: the objects plus their animation clips, object flow graphs, shader graphs and the joints between them. The scene itself — sky, look, gravity, music, HUD — stays behind</td>
+</tr>
+<tr>
+<td><strong>glTF binary (.glb)</strong></td>
+<td>just downloads the selection. Nothing is stored in your Library</td>
+</tr>
+<tr>
+<td><strong>glTF (.gltf)</strong></td>
+<td>the same as text glTF</td>
+</tr>
+</tbody>
+</table>
+<p>With several objects selected, <strong>Save as…</strong> saves the whole selection as one prefab. A thumbnail is rendered for the
+card. Very large objects (over 5 MB serialized) are refused with a toast.</p>
 <h2 id="where-prefabs-live">Where prefabs live</h2>
-<p>Prefabs are stored <strong>locally in your browser</strong> — they are your library, not part of the shared scene, and they are not synced to peers. You'll find them in two places:</p>
-<ul>
-<li>the <strong>Prefabs</strong> section of the <a href="../explorer/">Explorer</a>, and</li>
-<li>the Library panel's prefab grid.</li>
-</ul>
-<p>Rename or delete them from either place.</p>
+<p>Prefabs live in the <strong>Prefabs</strong> section of the <a href="../explorer/">Explorer</a>. You can also drop a 3D model or a scene file on
+that row to make one; it keeps its own format. Right-click a prefab for <strong>Add to scene</strong>, <strong>Duplicate</strong>
+(<kbd>Ctrl</kbd>+<kbd>D</kbd>), <strong>Export</strong>, <strong>Update from selection</strong> (replace it with what you have selected), <strong>Properties</strong>,
+<strong>Rename</strong> and <strong>Delete</strong> (to the Deleted bin).</p>
+<p>Prefabs are stored in your browser. A prefab saved as <code>.glb</code> or <code>.tpscene</code> can be dragged onto a Library folder to become an
+ordinary file, which you can then <a href="../explorer/#sharing-with-the-session">share with the session</a>; a plain <strong>Prefab</strong> cannot.</p>
 <h2 id="placing-a-prefab">Placing a prefab</h2>
 <ul>
-<li><strong>Drag</strong> a prefab from the Explorer into the viewport — it is instantiated at the point you drop it.</li>
-<li>Or click it in the Library panel to add it to the scene.</li>
+<li><strong>Drag</strong> a prefab from the Explorer into the viewport — it is placed at the point you drop it, on the surface under the
+  cursor.</li>
+<li>Or right-click it ▸ <strong>Add to scene</strong>.</li>
 </ul>
-<p>Every placed instance gets fresh identities, replicates to all connected peers like any created object, and is undoable. Two instances of the same prefab are fully independent afterwards.</p>
-<h2 id="sharing-prefabs">Sharing prefabs</h2>
-<p>Prefabs can be exported and imported as <code>.json</code> files from the Library panel — handy for passing a building block to a teammate. (For moving whole scenes with assets, use a <a href="../saving/">Scene bundle</a> instead.)</p>
+<p>Every placed instance gets fresh identities, replicates to all connected peers like any created object, and is undoable.
+Two instances of the same prefab are fully independent afterwards.</p>
+<h2 id="exporting-a-prefab">Exporting a prefab</h2>
+<p>Right-click a prefab ▸ <strong>Export</strong>:</p>
+<ul>
+<li><strong>The original file</strong> — only for a prefab saved as <code>.glb</code> or <code>.tpscene</code>: the exact bytes it was saved as, nothing
+  converted.</li>
+<li><strong>GLTF</strong> — a <code>.gltf</code> model file other tools can open.</li>
+<li><strong>prefab (.json)</strong> — this prefab as a file; import it back on any machine.</li>
+<li><strong>scene (.tpscene)</strong> — a scene whose entire content is this prefab, which the app itself can open.</li>
+</ul>
+<p>For moving whole scenes with their assets, use a <a href="../saving/">Scene bundle</a> instead.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Save structured groups — a furnished room, a rigged button with its wall — not just single meshes. A prefab keeps the entire hierarchy.</p>
+<p>Save structured groups — a furnished room, a rigged button with its wall — not just single meshes. A prefab keeps the
+entire hierarchy, and <strong>Prefab (.tpscene)</strong> keeps its flow graphs and joints too.</p>
 </div>
 
 
@@ -3527,7 +3696,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-07-16
+    2026-10-04
   </span>
 
     

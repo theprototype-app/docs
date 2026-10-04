@@ -359,6 +359,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../appearance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Themes & Appearance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../connection/" class="md-nav__link">
         
   
@@ -679,6 +700,27 @@
   
   <span class="md-ellipsis">
     Physics & Simulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../colliders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Colliders
   </span>
   
 
@@ -1437,6 +1479,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#runaway-and-slow-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Runaway and slow scripts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#typed-sockets" class="md-nav__link">
     <span class="md-ellipsis">
       Typed sockets
@@ -1838,6 +1889,27 @@
   
   <span class="md-ellipsis">
     On Grab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../onclap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Clap
   </span>
   
 
@@ -2631,6 +2703,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../gamesetting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Setting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pointgrab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Point Grab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../travel/" class="md-nav__link">
         
   
@@ -2938,6 +3052,27 @@
   
   <span class="md-ellipsis">
     Build a Game Loop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hud-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HUD Editor
   </span>
   
 
@@ -3470,6 +3605,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#runaway-and-slow-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Runaway and slow scripts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#typed-sockets" class="md-nav__link">
     <span class="md-ellipsis">
       Typed sockets
@@ -3583,6 +3727,15 @@ declare.</p>
 <p class="admonition-title">Warning</p>
 <p>Keep scripts deterministic: no <code>Math.random()</code>, no accumulating (<code>rotation.y += …</code>). Compute everything from <code>base</code>, <code>data</code> and <code>time</code>, or peers will drift apart.</p>
 </div>
+<h2 id="runaway-and-slow-scripts">Runaway and slow scripts</h2>
+<p>A script cannot freeze the app:</p>
+<ul>
+<li><strong>A loop that never ends</strong> is stopped after a million iterations in one run, and the card shows a <em>Script loop limit</em>
+  error.</li>
+<li><strong>A script that is slow every frame</strong> — more than about 8 ms, for half a second in a row — is paused, with a
+  <em>paused: too slow</em> badge on the card, so the rest of the scene keeps its frame rate. Editing its code starts it again.</li>
+</ul>
+<p>If a scene's scripts hang so badly that the editor never gets a frame, open it in <a href="../../node-system/#safe-mode">safe mode</a>.</p>
 <h2 id="typed-sockets">Typed sockets</h2>
 <p>Press <strong>Typed sockets…</strong> in the Script panel to declare your own sockets. <strong>+ input</strong> and
 <strong>+ output</strong> add one; give each a name and a type.</p>
@@ -3682,7 +3835,7 @@ shows the same findings as advice.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-03
+    2026-10-04
   </span>
 
     

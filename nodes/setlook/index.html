@@ -359,6 +359,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../appearance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Themes & Appearance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../connection/" class="md-nav__link">
         
   
@@ -679,6 +700,27 @@
   
   <span class="md-ellipsis">
     Physics & Simulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../colliders/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Colliders
   </span>
   
 
@@ -1763,6 +1805,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../onclap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Clap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../onrest/" class="md-nav__link">
         
   
@@ -2607,6 +2670,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../gamesetting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Setting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pointgrab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Point Grab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../travel/" class="md-nav__link">
         
   
@@ -2914,6 +3019,27 @@
   
   <span class="md-ellipsis">
     Build a Game Loop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hud-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HUD Editor
   </span>
   
 
@@ -3469,7 +3595,8 @@
 
 
 <h1 id="set-look">Set Look</h1>
-<p>Points the player's view at a target when a pulse arrives - a cutscene glance or a spawn orientation.</p>
+<p>Switches a camera's <strong>look</strong> — its <a href="../../post-processing/">post-processing</a> — on or off when a pulse arrives, and by
+default also looks through that camera.</p>
 <p><strong>Output:</strong> effect</p>
 <h2 id="inputs">Inputs</h2>
 <table>
@@ -3484,17 +3611,17 @@
 <tr>
 <td>trigger</td>
 <td>event</td>
-<td>when to look</td>
+<td>when to apply it</td>
 </tr>
 <tr>
 <td>camera</td>
 <td>object</td>
-<td>the target to look at</td>
+<td>the camera whose look to switch. Unwired = the scene's own look</td>
 </tr>
 <tr>
 <td>on</td>
 <td>boolean</td>
-<td>hold the look while true</td>
+<td>true turns the look on, false turns it off</td>
 </tr>
 </tbody>
 </table>
@@ -3504,24 +3631,30 @@
 <tr>
 <th>Parameter</th>
 <th>Default</th>
-<th>Where</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>on</td>
 <td>true</td>
-<td>default hold</td>
+<td>the value used when <code>on</code> is not wired</td>
 </tr>
 <tr>
 <td>activate</td>
 <td>true</td>
-<td>also make that camera active</td>
+<td><strong>look through it too</strong> — also make that camera the active view, because a camera's look only shows while you look through it</td>
 </tr>
 </tbody>
 </table>
+<p>Each player applies it on their own screen when the (shared) trigger arrives, so every view ends up the same without a
+message of its own. It changes what you see, never the scene's saved look.</p>
+<p>If you switch <strong>activate</strong> off and nobody is looking through that camera, nothing changes on screen — the app says so
+once, and suggests a <a href="../setcamera/">Set Active Camera</a> node.</p>
 <h2 id="practical-example">Practical example</h2>
-<p>A <strong>Game Start</strong> pulse into <strong>Set Look</strong> at the arena camera orients every player at the same thing when the round begins.</p>
+<p>A dream sequence: a <strong>Game Start</strong> pulse into <strong>Set Look</strong> with the <em>Dream cam</em> wired into <code>camera</code> — every player cuts
+to that camera with its soft-focus look. A second Set Look with <strong>on</strong> false on the round's end turns it off again.
+See <a href="../../post-processing/#switching-looks-from-a-node-graph">Switching looks from a node graph</a>.</p>
 
 
 
@@ -3542,7 +3675,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-09-04
+    2026-10-04
   </span>
 
     
