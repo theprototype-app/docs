@@ -29,8 +29,11 @@ community with a play link and QR code that open straight into the game, or [exp
 HTML that plays on itch.io or any static host, or an iframe snippet — every one with the *Made with ThePrototype* badge.
 On a phone, games get [touch action buttons](touch-controls.md) you can rearrange and re-skin. A new
 [loading placeholder](loading.md) style fills up as each model downloads, can be moved while it waits, and turns red
-with **Retry** and **Replace model…** when a file fails. Every [theme](appearance.md) is readable now. *TODO (36-int-121):
-add the remaining 36-ui-polish items (menus, text selection, settings search, phone quality) from the 1.21 CHANGELOG.*
+with **Retry** and **Replace model…** when a file fails. Every [theme](appearance.md) is readable now, Settings has a real
+[search](controls.md#keyboard-shortcuts) (names, groups and keywords), menus and panels no longer select text when you
+drag ([setting](controls.md#text-selection)), the logo menu fits and scrolls on short and folding phone screens, the
+Live profiler moved into the [Profiler tab](profiler.md#watching-a-headset-live), a phone's automatic quality follows its
+own refresh rate, hand-set fog keeps its near and far, and Ctrl+D with nothing selected creates nothing.
 
 **1.20 — five new games, measure on the device, build games from a kit.** [Five new games](games.md)
 are in the Games tab with no download: The Alchemist's Escape, Marble Maze, Mini Golf, Sky Run and Target Toss. The [Profiler](profiler.md) records

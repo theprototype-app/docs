@@ -114,7 +114,8 @@ else already has a touch path: long-press the viewport for the right-click menu,
 
 ### Duplicating
 
-**Ctrl+D** (or right-click ▸ *Duplicate*) makes a working copy. A copy is a copy of
+**Ctrl+D** (or right-click ▸ *Duplicate*) makes a working copy of what is selected — right after you create something,
+that is the new object. With nothing selected, Ctrl+D says so and creates nothing. A copy is a copy of
 everything that belongs to the object, not just its shape:
 
 | Comes along | |
@@ -215,6 +216,18 @@ Scrubbing an animation key or a shader parameter is **one undo step**, not one p
 Fields that hold a distance or an angle also accept a typed **unit** (`12cm`, `4in`,
 `90deg`) — see [Units](units.md).
 
+### Text selection
+
+Dragging across a menu, a toolbar or a panel does not paint a text selection, and a drag that starts in the 3D view or
+the node editor never selects text. Text fields, code, chat, logs and help text stay selectable as usual.
+**Settings ▸ Interface ▸ Allow text selection everywhere** turns selection back on in all the interface (this device
+only).
+
+### The menu on a phone
+
+The logo menu fits a short screen — a landscape phone, or a docked Connect bar — and scrolls with a finger, with no
+visible scrollbar. On a folding phone it stays right through folding and unfolding with the page open.
+
 ### Floating windows
 
 The toolboxes, the Explorer, the flow and animation windows and the panels all behave the same way: drag the header to move, drag the bottom-right corner to resize. A window can never be sized past the edge of the screen — the resize corner always stays reachable — and **double-clicking** the corner resets it to its default size while leaving it where you parked it. Size and position are remembered per window.
@@ -267,7 +280,7 @@ Shortcuts are inert while you type in a text field and while play mode owns the 
 **Every keyboard layout works.** A letter shortcut is matched by the letter printed on the key when there is one — AZERTY, Dvorak and QWERTZ keep their own labels — and by the key's **physical position** otherwise, so <kbd>G</kbd>, <kbd>F</kbd>, <kbd>Ctrl</kbd>+<kbd>Z</kbd> and <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> work on Russian, Greek, Hebrew, Arabic and CJK layouts without switching. Where the browser can tell, **Settings ▸ Shortcuts** shows your layout's own label beside each letter (*п on your layout*); where it cannot, a note says letter shortcuts follow the QWERTY position.
 
 !!! tip "Finding a setting"
-    Settings is grouped into **Interface** (theme, notifications, windows, lists and menus), **Controls** (keyboard, mouse and trackpad), **Input** (gamepad and the node editor's mouse bindings), **Scene** (grid, shadows, autosave and everything about the scene itself), **Explorer**, then **VR**, **AI**, **Connection**, **Shortcuts** and **About**. If you don't know which one holds what you want, type in the search box at the top — it filters every section at once, and the ✕ clears it.
+    Settings is grouped into **Interface** (theme, notifications, windows, lists and menus), **Controls** (keyboard, mouse and trackpad), **Input** (gamepad and the node editor's mouse bindings), **Scene** (grid, shadows, autosave and everything about the scene itself), **Explorer**, then **VR**, **AI**, **Connection**, **Shortcuts** and **About**. If you don't know which one holds what you want, type in the search box at the top. Rows match by their name, their group (*Grid*), their section (*VR*) and by keywords the labels do not say — search **dark** to find the theme, **quest** for the VR rows — and matches are highlighted. <kbd>Esc</kbd> clears the search; a second <kbd>Esc</kbd> closes Settings.
 
 | Keys | Action |
 |---|---|

@@ -132,6 +132,9 @@ when you would rather have steady frames than watch quality breathe in and out �
 again to give full quality back. The first time it ever acts in a session it also says so in a
 toast, because the chip lives in the object list's footer and that window can be closed.
 
+**On a phone** the governor judges frames against the phone's own refresh rate (60, 90 or 120 Hz), and never lowers
+quality on a scene that is trivially light — a menu, an empty room.
+
 **A phone starts lighter.** A phone or small tablet is limited by how many pixels it can fill, not by how many objects
 it draws, so with automatic quality on it starts the app at step 4 — shadows off, resolution 72 %, ambient occlusion off — and climbs back up
 by the ordinary rule when it holds its frames. A toast offers **Use full quality** if you would rather start at full
