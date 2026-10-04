@@ -17,8 +17,8 @@ viewport keeps following the scene's environment (sky, background, grid), whatev
 
 ![The same panels in the Dark, Light, Green console, 8-bit and High contrast themes](img/appearance/themes.png)
 
-The theme applies at once and is remembered on this device; the app paints it before the first frame on the next visit,
-so it never flashes the default. Icons follow the theme's colours too.
+The theme applies at once and is remembered on this device; a built-in theme is painted before the first frame on the
+next visit, so it never flashes the default. Icons follow the theme's colours too.
 
 ## Making your own theme
 
