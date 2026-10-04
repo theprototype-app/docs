@@ -23,6 +23,7 @@ nav:
     - Animation: animation.md
     - Physics & Simulation: physics.md
     - Colliders: colliders.md
+    - Water: water.md
     - Particle Effects: particles.md
     - Terrain & Sculpting: terrain.md
     - Saving & Sessions: saving.md
