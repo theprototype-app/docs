@@ -32,7 +32,7 @@ A play link, an embed and an exported game all open the same **player**:
   pointer, goes fullscreen or enters VR after a real click.
 - A **fullscreen** button sits in the bottom-left corner where the page may go fullscreen.
 - A play link or embed also has *Open in theprototype.app ↗*, which opens the same scene in the full editor.
-- The **Made with ThePrototype** badge — a small, semi-transparent TP logo — sits in the bottom-right corner; hovering
+- The **Made with ThePrototype** badge — a small, semi-transparent TP logo with solid dark-grey accents, so a game's colours never tint it — sits in the bottom-right corner; hovering
   shows *Made with ThePrototype*, clicking opens theprototype.app in a new tab. It moves up out of the way of a game's
   touch buttons and is not drawn inside a VR headset.
 
@@ -67,6 +67,10 @@ the file, its size and its file count, and says *checked OK*. The zip holds `ind
 app runs), your scene, the installed modules it uses, the pack files it uses and a README. All paths are relative, there
 is no service worker, and nothing loads from another site unless you chose the packs CDN. The game starts in Play on its
 own. A typical game export is about 5 MB in about 365 files.
+
+Some web hosts add their own scripts to the pages they serve (Cloudflare's Web Analytics beacon, for example). The
+exporter copies the app from the site you are on, so it removes any such script or link that points at another site
+before the check, and lists each removal under the result line.
 
 ### Hosting it elsewhere
 
