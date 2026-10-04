@@ -18,7 +18,9 @@ Select an object and open **Properties ▸ Physics**:
 | **Material** | Custom · Ice · Rubber · Wood · Metal | Custom |
 | **Bounciness** | 0 – 1 | 0.3 |
 | **Friction** | 0 – 2 | 0.5 |
-| **Collider** | Box · Sphere · Capsule · Cylinder · Cone · Convex hull · Custom (edit…) | inferred from the shape (below) |
+| **Collider** | Box · Sphere · Capsule · Cylinder · Cone · Convex hull · Exact mesh (static) · Custom (edit…) | inferred from the shape (below) |
+| **Decompose** | max pieces 2–16 · **Run** | 1.22 — see [Decompose](#decompose-concave-dynamic-bodies) |
+| **Group** · **Collides with** | Default · A · B · C · D · Water (+ Player) | Default, collides with all — see [Collision groups](#collision-groups) |
 | **Sensor** | no collision, fires On Enter / On Exit | off |
 | **Lock rotation** (Dynamic only) | X · Y · Z | off |
 | **Lock position** (Dynamic only) | X · Y · Z | off |
@@ -43,7 +45,8 @@ standing on it is carried along.
 | **Cylinder** | barrels, columns, wheels |
 | **Cone** | cones and spikes |
 | **Convex hull** | irregular shapes: a skin shrink-wrapped around the mesh. Exact for ramps, gems and rocks; it seals over any opening (a bowl becomes a lump) |
-| **Custom** | anything concave — an L-shape, a frame, a chair: several convex pieces you build (below) |
+| **Exact mesh (static)** | concave **scenery**: the object's own triangles — a ball rolls through an arch's opening, falls into a pool, drives through a tunnel (1.22, below) |
+| **Custom** | anything concave — an L-shape, a frame, a chair: several convex pieces you build or [decompose](#decompose-concave-dynamic-bodies) (below) |
 
 Primitive colliders are sized from the object's own extents and **follow its rotation** — a tilted box collides as a
 tilted box, a rotated ramp is really a ramp.
@@ -53,11 +56,47 @@ tilted box, a rotated ramp is really a ramp.
 | Object | Default collider |
 |---|---|
 | Sphere · Cylinder · Capsule · Cone | the matching shape |
-| Torus, Torus knot, the polyhedra, Lathe, Tube, Wedge, Stairs, Arch, Corner | Convex hull |
+| Arch, Corner — when Auto or Static (1.22) | Exact mesh |
+| Torus, Torus knot, the polyhedra, Lathe, Tube, Wedge, Stairs, and a dynamic Arch or Corner | Convex hull (Stairs keep the ramp-like hull — pick Exact mesh for real steps) |
 | everything else (cubes, imported models, groups) | Box |
 
 **Limits.** A convex hull works on a single mesh of up to 5000 vertices; a denser mesh — and **any group** — falls back
 to a box. When a collider looks wrong, turn on *Show collider* first: a fallback box is nearly always the answer.
+
+## Exact mesh colliders (static scenery)
+
+**Collider ▸ Exact mesh (static)** — shown only while **Body** is *Auto* or *Static* — makes the object's own triangles its
+collider, so concave scenery behaves as it looks. A group (an imported model) is merged into one mesh.
+
+![An arch with an exact-mesh collider: the green wireframe follows the opening](img/colliders/exact-mesh-arch.png)
+
+- Static and kinematic bodies only. A **dynamic** body that asks for it gets its convex hull, and a toast says why —
+  use [Decompose](#decompose-concave-dynamic-bodies) instead.
+- Up to 20 000 triangles; more falls back to a box, with the reason.
+- Contacts against a mesh are one-sided, so a very fast, thin body can tunnel through a thin wall — switch on
+  **Configure Scene ▸ Physics ▸ Continuous collision**.
+- The [Collider](nodes/collider.md) node, the AI assistant and a pack item's collider hint accept it too (`trimesh`).
+
+## Decompose: concave dynamic bodies
+
+**Properties ▸ Physics ▸ Decompose**: set the maximum number of pieces (2–16, remembered on this device) and press **Run**.
+The mesh is split into convex pieces in the background (about a second) and saved as the object's **Custom** collider,
+so a *dynamic* arch, cup or U-shaped crate keeps its openings. One undo restores the previous collider; the result
+replicates to everyone. Fine-tune it afterwards with **Edit collider…**. The result must fit the custom-collider budget
+(about 400 points); pieces past it are dropped and the toast says so.
+
+## Collision groups
+
+**Properties ▸ Physics ▸ Group** puts the object in **Default**, **A**, **B**, **C**, **D** or **Water**; **Collides with**
+ticks which groups (and the **Player**) it collides with. Everything starts in Default, colliding with everything, so
+existing scenes behave exactly as before.
+
+- **Ghost wall** — Group A, untick *Player*: the player walks through it, crates do not.
+- **Projectile barrier** — Group B, collides with B only.
+- **Water / trigger** — anything in the **Water** group is a pass-through trigger that still fires On Enter / On Exit.
+  [Water](water.md) volumes are in it by default, so bodies fall **into** water instead of landing on it.
+
+The Collider node has a `group` parameter (`inherit` keeps the Properties choice).
 
 ## Materials: bounciness and friction
 
@@ -141,6 +180,17 @@ The [Collider](nodes/collider.md) node overrides the shape (and can make it a se
 object's** geometry); [Mass](nodes/mass.md), [Bounciness](nodes/bounciness.md) and [Friction](nodes/friction.md) override
 those rows. A node wired to an object **wins** over its Properties settings. A wired Mass node also makes its object
 dynamic.
+
+[On Impact](nodes/onimpact.md), [On Enter](nodes/onenter.md) and [On Exit](nodes/onexit.md) can be limited to one other
+body: wire an Object Selector into **only with** and the node fires only for that object (or a spawned copy of it). Their
+**other** output carries the body that was touched — wire it into Look At, Distance and the like. Every peer reads the
+same object; a ground contact reports an empty *other*.
+
+## Editing a collider in VR
+
+Select an object, then **radial menu ▸ Edit Collider**. The edit side-menu, titled *Edit Collider*, has **Vertices** and
+**Faces** tabs (they edit the collider shape, never the object), **+ Box piece**, **+ Sphere piece**, **Decompose (auto)**,
+**Done — save collider** and **Cancel** (✕ also cancels). Grip a face of the green collider to pull it.
 
 ## Doors and other moving pack items
 

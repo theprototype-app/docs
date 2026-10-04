@@ -12,7 +12,8 @@ Physics doesn't collide your triangles; it collides a simple stand-in. A box is 
 
 | Parameter | Default | Meaning |
 |---|---|---|
-| shape | box | `box`, `sphere`, `capsule`, `cylinder`, `cone`, `hull`, `custom`, `object` |
+| shape | box | `box`, `sphere`, `capsule`, `cylinder`, `cone`, `hull`, `trimesh` (exact mesh — static bodies only), `custom`, `object` |
+| group | inherit | a [collision group](../colliders.md#collision-groups); `inherit` keeps the Properties choice |
 | scale | 1 | multiplies the whole shape (0.25–4) — a slightly smaller collider stops objects looking "held apart" |
 | sensor | off | makes the shape a **trigger volume**: nothing bounces off it, but overlaps fire [On Enter](onenter.md) / [On Exit](onexit.md) |
 

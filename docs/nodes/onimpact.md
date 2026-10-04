@@ -18,6 +18,13 @@ While a simulation runs, the peer stepping the physics detects each real contact
 
 Like On Click, the node fires for the object it *reaches* in the graph: wire it into an [Object Selector](objectselector.md) (directly or through other nodes), or drop it unwired inside an object's own flow to target that object.
 
+## Only with, and other (1.22)
+
+Wire an [Object Selector](objectselector.md) into **only with** and the node fires only when the *other* body is that
+object (or a spawned copy of it). The **other** output carries the body it touched — wire it into [Look At](lookat.md) or
+[Distance](distance.md). Every peer reads the same object; a ground contact reports an empty *other*. See
+[Colliders](../colliders.md#from-the-flow-graph).
+
 ## Practical example
 
 Sparks + a thud when a crate lands:
