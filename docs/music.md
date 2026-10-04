@@ -93,9 +93,9 @@ manifest carries it — an exported `.tpscene` bundles its samples along with ev
 
 ## Building a room
 
-The **Jam Room** starter — a piano into a speaker, a beat lab and a pedal chain into a
-mixer, all cabled — is authored for the **Templates ▸ Games** tab and offers to install
-Music Lab and Music FX when you load it (it is not in the published template feed yet, so
-the tab may not list it). Until then, add devices from the module rows and cable them
-yourself. Save any rig as a **prefab** - it comes back cabled - and drop it into the next
+The **Jam Room** game in **Templates ▸ Games** — a piano into a speaker, a beat lab and a
+pedal chain into a mixer, all cabled — offers to install Music Lab and Music FX when you load
+it. Press **Start**, then ▶ on the Transport, and keep the band going for eight bars; your best
+tempo is saved on this device. To build your own, add devices from the module rows and cable
+them yourself. Save any rig as a **prefab** - it comes back cabled - and drop it into the next
 scene.

@@ -68,6 +68,7 @@ nav:
       - On Impact: nodes/onimpact.md
       - On Hit: nodes/onhit.md
       - On Grab: nodes/ongrab.md
+      - On Clap: nodes/onclap.md
       - On Rest: nodes/onrest.md
       - On Enter: nodes/onenter.md
       - On Exit: nodes/onexit.md
@@ -105,6 +106,8 @@ nav:
       - Effect Burst: nodes/effectburst.md
       - Controller Buzz: nodes/hapticpulse.md
       - Game Music: nodes/gamemusic.md
+      - Game Setting: nodes/gamesetting.md
+      - Point Grab: nodes/pointgrab.md
       - Travel to scene: nodes/travel.md
       - Move Input: nodes/moveinput.md
       - HUD Button: nodes/hudbutton.md

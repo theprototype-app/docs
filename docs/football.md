@@ -14,7 +14,7 @@ are two ways in:
 - **Menu ▸ Modules ▸ Browse ▸ Football**, then the toolbox's **Build pitch** (below) — lays a
   pitch out in the scene you already have.
 
-The Games tab lists Football beside Towers and the Stars Room. A game there is a scene *plus* a
+The Games tab lists Football beside the other games (see [The Games tab](games.md)). A game there is a scene *plus* a
 module, so its card names what it needs — *Each player needs this module; loading will offer to
 install it*, and *Installed — every player needs their own copy* once you have it. The row is
 generated from the module's own definition rather than written out separately, so the scene and
@@ -48,14 +48,24 @@ The defaults are a living room: 5 m long, 3 m wide, gates centred at chest heigh
 ## Playing
 
 1. Touch (or click) a **Join red** / **Join blue** pad — or press the toolbox's **Join red**,
-   **Join blue** or **Spectate**.
-2. Press the **Start match** pad, or **Start** in the toolbox.
-3. Hit the ball. The gate lamps fill up as a team scores, so the score reads from across the
-   room without a screen.
+   **Join blue** or **Spectate**. You do not have to: pressing **Start**, or simply hitting the
+   ball, seats an unseated player on the smaller team.
+2. Press the **Start match** pad, or **Start** in the toolbox — or just hit the ball, which
+   kicks a match off when none is running.
+3. Hit the ball: **swing a controller through it** (the tip of the controller kicks; a trigger
+   click on the ball within 2.5 m kicks it too). On the desktop, walk into it or click it.
+   Score in the **other** team's gate — red attacks the blue gate. The gate lamps fill up as a
+   team scores, so the score reads from across the room without a screen.
 
-The ball is served automatically a couple of seconds after each goal; set **Serve** to
-*button* if you would rather serve deliberately, then use the **Serve** button or a
-[Serve node](#the-football-nodes).
+**After a goal** the ball rests in the net for a moment — a **GOAL!** banner with the score,
+cheers, confetti in the scorers' colour and a buzz in their controllers — then goes back to the
+centre spot, a **3-2-1** countdown runs and the team that **conceded kicks off** with a slow
+nudge into its own half. The clock stops for celebrations and countdowns. A draw at the final
+whistle goes to a **golden goal**: the next goal wins. The results panel offers **Rematch**
+(same sides) or **Menu**.
+
+With **Serve** set to *button* the ball waits instead of kicking off by itself; use the
+**Serve** button or a [Serve node](#the-football-nodes).
 
 Desktop players join the same match: the camera you walk with is your probe, so you shoulder
 the ball rather than heading it, and grab-and-throw works as it does anywhere else.

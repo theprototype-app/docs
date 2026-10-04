@@ -112,7 +112,7 @@ If nothing has physics when you press play, the app helps you out: with an objec
 
 ### The simulation controls HUD
 
-The bottom-right transport (▶ / ⏸ / ⏹ / ↺) is **off by default** so it isn't confused with the main play button. Turn it on in **Settings ▸ Scene ▸ Show simulation controls**. The <kbd>P</kbd> shortcut works whether or not the HUD is visible; the first time you use <kbd>P</kbd> while it's hidden, a toast reminds you where to enable it.
+The bottom-right transport (▶ / ⏸ / ⏹ / ↺) is **off by default** so it isn't confused with the main play button. Turn it on in **Settings ▸ Scene ▸ Simulation controls**. The <kbd>P</kbd> shortcut works whether or not the HUD is visible; the first time you use <kbd>P</kbd> while it's hidden, a toast reminds you where to enable it.
 
 ## Grab and throw mid-simulation
 
@@ -142,8 +142,10 @@ Only dynamic objects can be picked up, objects another peer has locked are refus
 | Pointer: *Grab and throw* | the full behaviour above (default) |
 | Pointer: *Click only* | taps fire On Click nodes, nothing can be picked up |
 | Pointer: *Look only* | neither |
+| Limit grab reach · Reach (m) | off by default; when on, you can only pick up objects within this distance of your body (0.5–5 m, 1.3 when switched on) — [Towers](games.md#towers) uses it so high pieces need steps |
 | Keep players on the ground | no <kbd>Q</kbd>/<kbd>E</kbd> flying; the camera stays at eye height |
 | Start the simulation when play mode opens | for scenes that are games rather than models |
+| Spawn point | where desktop play starts. **Set to the view's focus** stores the point the view orbits around, facing the way the camera looks at it; **Clear** removes it |
 
 A module can override these for its own world by publishing them on its scene group.
 
@@ -181,8 +183,8 @@ it is your hand, not a message.
 
 !!! tip "The knock as a game"
     **Menu ▸ Templates ▸ Games ▸ Stars Room** is a zero-gravity room built on this: twenty-four
-    stars and two planets to knock about, a chime when one is hit, and an optional round —
-    light every star — on the <kbd>P</kbd> menu. Nothing to install.
+    stars and two planets to knock about, a chime when one is hit, and a start screen with
+    **Start round** (light every star in two minutes) or **Free play**. Nothing to install.
 
 To react to a knock in a graph, use the [On Hit](nodes/onhit.md) node: it gives you how hard
 (`speed`) and whether it was you (`by me`).
@@ -204,6 +206,7 @@ Joints replicate to everyone, undo as a single step, persist in saved scenes and
 Physics uses an **authoritative** model: the peer who starts the run is the only one stepping the simulation, and it broadcasts the resulting motion. Everyone else just watches.
 
 - **One run at a time** — if someone else is simulating, your play button is disabled and a toast names who's running it.
+- **Two people pressing play at the same moment** both start a run for an instant; the one with the lower peer id keeps it, and the other sees *"‹name› is simulating too — handing the physics over (lower id keeps it)"*.
 - **Someone joining mid-run is told the run is happening**, so their grab and their [knock](#the-knock) work from the first second instead of after the next restart.
 - **Watching peers interpolate.** The simulating peer sends about ten poses a second per moving body; everyone else eases between them instead of snapping, so a fast throw looks smooth rather than stepped. It costs nothing on the wire and never changes *where* an object ends up — only how it gets there.
 - **A throw you make is applied exactly.** When you are not the peer running the simulation, releasing an object sends the release velocity itself, so the object leaves your hand immediately and in the direction you threw it rather than being reconstructed from position updates.

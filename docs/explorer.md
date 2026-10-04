@@ -134,7 +134,36 @@ The header's **Thumbnails / List** toggle switches views. The list has sortable 
 - **Right-click** an item for Open, Download, Share, Rename, Delete, Properties (and *Copy contents* for text files).
 - The search box filters the whole library by name; the breadcrumb path bar (toggleable) shows where you are.
 
-**Keyboard navigation** in the grid: arrow keys move the selection, <kbd>Enter</kbd> opens, <kbd>Backspace</kbd> goes up a level, <kbd>Esc</kbd> closes the window.
+**Keyboard navigation** in the grid: arrow keys move the selection, <kbd>Enter</kbd> opens, <kbd>Backspace</kbd> goes up a level, <kbd>Esc</kbd> clears the selection (with nothing selected it closes the window), <kbd>Delete</kbd> deletes the selection.
+
+### Selecting several
+
+- <kbd>Ctrl</kbd>+click adds or removes a card; <kbd>Shift</kbd>+click selects the range from the last card you clicked (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+click adds the range).
+- <kbd>Ctrl</kbd>+<kbd>A</kbd> selects everything in the folder, <kbd>Ctrl</kbd>+<kbd>I</kbd> inverts the selection. With the grid focused these keys never reach the scene behind the panel.
+- **Drag on empty grid space** to draw a marquee (with the mouse — on a touch screen a drag scrolls the grid, and a long press picks a card up instead). Hold <kbd>Ctrl</kbd> to add to what is already selected.
+- Right-click a selection for the batch actions: **Download N files as .zip**, **Export N objects as GLTF**, **Share** / **Unshare N items**, Copy, Cut, Duplicate and Delete.
+- Drag a selection onto a folder to move all of it, or into the viewport to place every object.
+
+## The project and the scene you have open
+
+The Explorer header shows where you are: **‹Project› ▸ ‹Scene› [file.tpscene]**, a save button and a **●** while the
+scene has changes that are not in its latest version.
+
+- **Click the project name** to rename the project.
+- **Click the scene name** to find its file in the library. **Double-click** it — or right-click ▸ **Rename scene…** —
+  to rename the scene. Every version file is renamed with it, on every peer, and [Travel](nodes/travel.md) nodes that
+  point at it keep working.
+- **The save button** does what <kbd>Ctrl</kbd>+<kbd>S</kbd> does: it saves the open scene as a new version.
+
+**Who is in each scene.** A scene card shows small avatars for the people standing in that scene — you included — and a
+count. Its right-click menu has **Join ‹name›** for each of them: it travels you to that scene, where they are, even if
+you have not downloaded it yet (you leave the scene you are in). Unsaved changes are asked about first, as below.
+
+### Opening a scene over unsaved work
+
+Opening another scene — from its menu, by double-click, or with Join — replaces what is on screen. If the scene you have
+open has unsaved changes, or has never been saved at all, the app asks first: *Open "Arena"?* with **Save and open**
+(saves a version of the current scene, then opens) or **Open anyway**.
 
 ## Duplicate, Copy, Cut and Paste
 
@@ -146,7 +175,7 @@ Right-click a file or a folder for **Duplicate** (**Duplicate folder**), **Copy*
 - **Prefabs** duplicate too (*Prefab copy*). **Packs** are read-only bundles: Duplicate is greyed out and says so.
 - **Duplicate folder** copies everything in it under a new folder beside it.
 
-**A scene** is different: its name lives inside the file, so Duplicate on a scene opens the naming card prefilled with *Arena copy* — type a name, <kbd>Enter</kbd> — and makes a scene of its own, with its own version history. A name that is already taken is refused with a toast. To duplicate a scene, select it on its own; in a bigger selection it is skipped and the toast says so.
+**A scene** is different: its name lives inside the file, so Duplicate on a scene opens the naming card prefilled with *Arena copy* — type a name, <kbd>Enter</kbd> — and makes a scene of its own, with its own version history. Copy and Paste (<kbd>Ctrl</kbd>+<kbd>C</kbd>, <kbd>Ctrl</kbd>+<kbd>V</kbd>) on a scene pastes it straight away as *Arena copy* — a new scene with its own name and history, not a second card for the same file. A name that is already taken is refused with a toast. To duplicate a scene, select it on its own; in a bigger selection it is skipped and the toast says so.
 
 !!! note "A copy costs your peers no download"
     A shared file travels as a row with its own identity beside its content hash. When you duplicate a shared file — or a whole shared folder — peers who already hold the bytes make the copy from their own disk: ten copies, zero transfers. Deleting a copy removes only that copy; editing one gives it new bytes, which are sent once. A scene copy is the exception, because its new name makes it a new file: it transfers once.

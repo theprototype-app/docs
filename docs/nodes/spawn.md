@@ -2,7 +2,7 @@
 
 Makes copies of an object while the simulation runs — crates off a conveyor, targets, debris, ammo, waves of anything.
 
-**Inputs:** `trigger` (event) · `at` (vector3) · `source` (object — the template)
+**Inputs:** `trigger` (event) · `at` (vector3 — an offset from the template) · `place` (vector3 — copies land exactly here; wins over `at`) · `source` (object — the template)
 **Output:** effect (or wire the template into `source`)
 
 ## How it works
@@ -10,6 +10,10 @@ Makes copies of an object while the simulation runs — crates off a conveyor, t
 On the **rising edge** of whatever is wired into `trigger` — [Key Press](keypress.md), [On Click](onclick.md), [Timer](timer.md), [On Enter](onenter.md) — the node copies its **template** object and drops the copy into the scene with a live physics body. The copy inherits the template's physics, material and geometry, so a dynamic template gives you something that falls.
 
 Copies are **transient**. They live for the run and nothing else: they are never written into a saved scene, they leave nothing on the undo stack however many times you fire, and they all disappear when the simulation stops. That is the whole design — a run's debris is not scene content.
+
+**A copy answers to its template's events.** Event nodes that target the template — an [On Hit](onhit.md), an [On Click](onclick.md), an [On Enter](onenter.md) through an Object Selector — fire for its copies too, so a star you spawn behaves like the stars you placed.
+
+**`place`** takes a point in the world: wire an [On Clap](onclap.md) `point` into it and the copy appears where the hands met.
 
 The peer running the simulation makes the copy and everybody else receives it through the ordinary object sync, so two peers never disagree about what exists. Nothing extra goes on the wire for this node.
 

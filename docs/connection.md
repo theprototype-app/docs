@@ -79,6 +79,26 @@ work is in the project, and travelling to their scene picks it up.
     are standing in your content without knowing its name yet, so they are never
     hidden on a guess.
 
+## Public rooms (theprototype.app)
+
+On theprototype.app, the **Rooms** button in the top bar lists **public rooms** — sessions their hosts chose to list —
+and lets you list your own. Browsing is open to everyone; listing a room needs you to be signed in (profile menu).
+
+Your room's panel has a **Room name**, a **Short description** and these switches:
+
+| Switch | What it does |
+|---|---|
+| **List this room publicly** | shows the room in everyone's Rooms list while you are online (a room whose host goes away drops off within about a minute and a half) |
+| **Require approval to join** | **Join** becomes **Request to join**: the request lands on your approval card as *"‹name› wants to join ‹room›"*, and you approve or reject it as usual |
+| **Allow guests to join automatically (view-only)** | people who are not signed in may come in to watch. Off while approval is required or the room has a code |
+| **Enable room screenshot** | the list card shows a picture of your scene instead of a coloured initial |
+| **Room code** | type a code and **Set** it: someone who knows it gets in as a viewer **without** waiting for approval. A listed room with a code shows 🔒 |
+
+Joining a coded room asks for the code (*"🔒 ‹room› needs a code"*). The right code goes straight in; a wrong one is
+refused, and five wrong codes lock that person out for ten minutes. If the room also requires approval, **Ask the host
+instead** sends an ordinary request. The code itself is never stored on the server or sent in the clear — only your
+device can check it, so a code set on another device of yours has to be set again here.
+
 ## Bigger sessions
 
 Everyone in a session connects to everyone else, directly. A room of ten is the tested target: joining takes roughly a third of a second, and every peer really does end up linked to every other peer.
@@ -147,5 +167,5 @@ It carries an **Open Settings** button that jumps straight to **Settings ▸ Con
 | *AB12 declined your connection request* | The host pressed **Reject**. Ask them before dialling again. |
 | *AB12's session is full (16 people)* | Everyone connects to everyone, so a session has a ceiling. Someone has to leave before another person can join — **Try again** on the toast re-asks. |
 | *Could not reach … — back on your previous peer server.* | **Apply** could not open the server you picked, so nothing changed — check the host, port and path. |
-| *Lost connection to the peer server, reconnecting…* | The link to the signaling server dropped; the app retries automatically. |
-| *Could not reach the peer server. Please reload.* | Reconnection gave up — reload, or switch servers in Settings ▸ Connection. |
+| *Lost the peer server - reconnecting...* / *The peer server closed the link - reconnecting...* | The link to the signaling server dropped; the app retries on its own and never gives up. *Reconnected to the peer server.* confirms it is back. Your open session keeps going meanwhile. |
+| *Cannot reach the signaling server - the connection request was not sent.* | You pressed **Connect** while the signaling link is down. Wait for the reconnect chip to clear, or switch servers in Settings ▸ Connection. |

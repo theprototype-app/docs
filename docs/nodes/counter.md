@@ -9,6 +9,7 @@ Counts trigger pulses and outputs the running total.
 | Handle | Type | Meaning |
 |---|---|---|
 | pulse | event | each pulse applies the operation once — wire an [On Click](onclick.md) here |
+| reset | event | a pulse here sets the count back to 0, whatever `op` is — a new round, a restart button |
 
 ## Parameters
 
