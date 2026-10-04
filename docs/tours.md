@@ -20,7 +20,7 @@ The first time you enter VR on a device, an eight-step welcome plays in front of
   its buttons and pull the trigger.
 
 It starts by itself only the **first** time, after a short delay so your controllers can be recognised. After that,
-replay it from **radial menu ▸ System ▸ Welcome tour**, or from Settings (below).
+replay it from **radial menu ▸ Settings ▸ Welcome tour**, or from Settings (below).
 
 ## The editor tour
 
@@ -40,7 +40,7 @@ for the session.
 
 - **Settings ▸ Interface ▸ Tours**: **Start VR welcome**, **Start editor tour**, **Reset all**.
 - **Logo menu ▸ Tours** starts the editor tour.
-- In the headset: **radial menu ▸ System ▸ Welcome tour**.
+- In the headset: **radial menu ▸ Settings ▸ Welcome tour**.
 
 **Start VR welcome** on a desktop sets the welcome to play the next time you enter VR, and a toast offers
 **Preview it here**: the same steps and drawings on your screen, with a switch between the Quest 2 and Quest 3 / 3S
@@ -57,5 +57,6 @@ drawings. Previewing does not mark the welcome as seen.
 Search Settings for *tour*, *welcome*, *tutorial* or *enter vr* to find these rows.
 
 !!! note
-    The step text names the buttons for the default layout. Your radial menu is on the hand set in **Settings ▸ VR**.
-    The drawing cannot tell a Quest 3 from a Quest 3S — both use the same Touch Plus controllers.
+    The step text and drawings follow your button layout: if you [remap a button](vr.md#remapping-your-buttons), the tour
+    names and lights the new one. The drawing cannot tell a Quest 3 from a Quest 3S — both use the same Touch Plus
+    controllers.

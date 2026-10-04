@@ -9,7 +9,7 @@ ThePrototype runs in a WebXR headset browser — build, edit and collaborate in 
 
 Open the app in your headset browser and press the on-screen **Play** button. When a headset is present the button wears a pair of goggles instead of the play triangle, so you can see where the press is about to take you — and with passthrough on it shows **A** and **R** in the lenses. Passthrough/mixed-reality is a Settings toggle that keeps your room visible behind the scene.
 
-The first time you enter VR on a device, the [VR welcome tour](tours.md#welcome-to-theprototype-vr) shows you the controls step by step (replay it from **System ▸ Welcome tour**). On a Quest, the browser may also offer its own **Enter VR** button for the page — see [Offer Enter VR](tours.md#settings).
+The first time you enter VR on a device, the [VR welcome tour](tours.md#welcome-to-theprototype-vr) shows you the controls step by step (replay it from **Settings ▸ Welcome tour** in the radial menu). On a Quest, the browser may also offer its own **Enter VR** button for the page — see [Offer Enter VR](tours.md#settings).
 
 If someone is in the room **with** you, see [Colocation](colocation.md) — a short calibration puts the same objects on the same real table for both of you.
 
@@ -30,7 +30,8 @@ If someone is in the room **with** you, see [Colocation](colocation.md) — a sh
 | **Left-hand X button** | In a game, opens the game's pause menu (Resume, Restart, Levels, Settings, How to play, Main menu). |
 | **Right thumbstick click** | Ping where you're pointing. |
 
-One hand is the **menu/pointer hand** (right by default; switchable), the other drives locomotion.
+One hand is the **menu/pointer hand** (right by default; switchable), the other drives locomotion. These are the default
+buttons — every one except grab and select can be [remapped](#remapping-your-buttons).
 
 ## Playing games in VR: Edit and Interact
 
@@ -65,50 +66,56 @@ On a desktop, press **Esc** to leave Play, then the bar's Edit/Interact cell (or
 
 ## The radial menu
 
-Press **B/Y on your menu hand** to open the radial menu. On hand-tracked hands (no buttons), **pinch and hold** for about half a second instead — a quick pinch stays a normal click.
+Press **B** on the right controller (or the button you [mapped](#remapping-your-buttons) to it) to open the radial menu on
+that hand. On hand-tracked hands, **pinch and hold** for about half a second instead — a quick pinch stays a normal click.
 
-Point at a sector and pull the trigger (or nudge it with the thumbstick and click) to choose it. Sub-menus stack; the **center hub** is context-sensitive:
+Point at a sector with the other hand's laser, or push either thumbstick toward it, then pull the trigger or press the
+stick. The hovered sector lifts toward you and a picked one flashes; the ring you are in is named above the menu. No entry
+is more than two rings deep. The **centre hub** is **Close** on the first ring, **Selected** when something is selected
+(everything you can do to the selection), and **Back** in every other ring.
 
-- **✕ Close** at the root with nothing selected,
-- **Edit** at the root when an object is selected,
-- **← Back** inside a sub-menu.
+With **Hold to open menu** on, hold the menu button and let go over a sector; letting go over a sector that opens another
+ring opens that ring and keeps the menu up.
 
-### Root ring
+### The first ring
+
+**Objects · Add · Scene · Tools · Redo · Undo · Chat · Settings** — the names and icons match the desktop menus:
 
 | Sector | Opens |
 |---|---|
-| **Objects** | The scene object list panel. |
-| **Add ▸** | Spawn primitives (Box, Wedge, Stairs, Sphere, Cylinder, Torus) and open **Prefabs**. |
-| **Scene ▸** | Environment presets + the snap-turn angle. |
-| **Tools ▸** | Select · Box Select · Draw · Ping. |
-| **Undo / Redo** | Step history. |
-| **Chat** | The VR chat panel. |
-| **System ▸** | Grid, world reset, settings, hand swap, stats, grab mode, mic, exit VR. |
+| **Objects** | the scene object list panel |
+| **Add ▸** | the viewport menu's Add, and **Prefabs** |
+| **Scene ▸** | Environment presets, Grid, **World 1:1** (undo a scaled or rotated world grab) |
+| **Tools ▸** | Select, Box select, Draw mode, Ping, Simulate physics, **Profile ▸** (Record, Record detailed, Stop recording, Report moment — see [Profiling the headset](profiler.md#profiling-the-headset-from-the-desktop)) |
+| **Undo / Redo** | step history |
+| **Chat** | the VR chat panel |
+| **Settings ▸** | every VR setting, the microphone and Exit VR (below) |
 
-### Edit ring (with an object selected)
+### Selected
 
-The hub becomes **Edit**. It offers **Snap**, **Duplicate**, **Delete**, **Color** (a live palette), **Wireframe**, **Properties**, **Save prefab**, and **Edit Mesh** — which becomes **Ungroup** when the selection is a group. Mesh editing opens face/vertex tools (Extrude, Inset, Move, Delete).
+With an object selected the hub becomes **Selected**: Properties, Color (a live palette), Snapping, Wireframe, Edit mesh
+(face tools: Extrude, Inset, Move, Delete) and the rest, in the desktop object menu's order with **Delete** last.
 
-### System ▸
+### Settings ▸
 
-Grid toggle, **World 1:1** (reset a scaled/rotated world grab), **Settings**, **Swap hand**, **Statistics**, **Profile ▸**
-(**Record**, **Record detailed**, **Stop recording**, **Report moment** — see
-[Profiling the headset](profiler.md#profiling-the-headset-from-the-desktop)), **Grab mode** (cycle the grip style),
-**Mic ▸** (PTT / Open / Off) and **Exit VR**.
+A ring per page — **Comfort**, **Body**, **Controls**, **Display**, **Editing** — plus **Microphone** (press to cycle Push to
+talk / Open / Off), **Welcome tour** (see [Tours](tours.md)), **All settings** and **Exit VR**. Each sector shows the
+setting's current value; pressing it flips, cycles or steps the value, and the ring stays open so you see the change.
 
-The radial menu follows the thumbstick too: the sector you push towards lights up, and the trigger or a stick click
-picks it.
+**All settings** opens a panel with the same rows, one page per tab, plus a **Buttons** tab. Point and pull the trigger,
+or use a stick: up and down move between rows, left and right change a value (or the page, on the tab strip), and a stick
+press presses the row. **Back to menu** returns to the Settings ring.
 
 ## Getting around
 
 - **Move** — push the left thumbstick. With **VR flying** on, forward follows where your controller aims; otherwise it stays level. Hold the **left grip** to switch the stick to panning and elevation.
 - **Teleport** — push the **right thumbstick up** to arc a beam, release to blink to the landing spot (in Edit: the ground or any upward-facing surface; in a game, only walkable ground inside the play area — a red arc is refused). Toggle teleport in Settings.
 - **Snap-turn** — flick the right thumbstick left/right to rotate in fixed steps. The **snap angle** is Off / 15° / 30° / 45° (default 45°), shown live in the Scene radial and VR Settings; **Mirror snap turn** flips the direction.
-- **World grab** — grip with **both hands in empty air** to grab the whole world: pull your hands apart/together to scale, twist to rotate, move to reposition. **System ▸ World 1:1** snaps it back to normal. Holding the world with **one** grip, push the stick **up/down** to send it away or bring it closer, as with an object.
+- **World grab** — grip with **both hands in empty air** to grab the whole world: pull your hands apart/together to scale, twist to rotate, move to reposition. **Scene ▸ World 1:1** snaps it back to normal. Holding the world with **one** grip, push the stick **up/down** to send it away or bring it closer, as with an object.
 
 ## Grabbing, scaling and stretching
 
-- **Grip** an object to grab it. The default *rigid* grab treats the controller as a handle — the grabbing hand's thumbstick reels the object nearer/farther and scales it. (Other grab styles are available via **System ▸ Grab mode**.)
+- **Grip** an object to grab it. The default *rigid* grab treats the controller as a handle — the grabbing hand's thumbstick reels the object nearer/farther and scales it. (Other grab styles: **Settings ▸ Controls ▸ Grab style**.)
 - **Two hands** on the same object scales it uniformly by the distance between them. Two hands on **two different** objects hold one each (Towers' blocks): letting go of one never freezes the other.
 - In **Edit**, walls and floors are scenery and a grip on them moves the world — **select** one first to grip it.
 - **VR Stretch** — non-uniform, per-axis scaling. From the Edit menu, grab the **W/H/D slider handles** and drag horizontally to stretch that axis; the result is baked when you confirm.
@@ -139,7 +146,7 @@ object of yours onto the strip to keep it as a personal slot — those are saved
 
 ## Hand models
 
-How you see hand-tracked *peers* is a local choice — **Settings ▸ VR ▸ Peer hand style** (also **System ▸ Settings** in VR):
+How you see hand-tracked *peers* is a local choice — **Settings ▸ VR ▸ Peer hands** (also **Settings ▸ Display** in the radial menu):
 
 - **Model** — rounded capsule hands,
 - **Hands** — cuboid finger bones,
@@ -153,28 +160,43 @@ Click the **right thumbstick** (or **Tools ▸ Ping**) to ping where you're poin
 
 ## Voice in VR
 
-Hold the **right-hand A button** for push-to-talk, or set a mic mode (**PTT / Open / Off**) from **System ▸ Mic**. A mic dot in the corner glows green while you transmit. Voice is spatial — peers hear you from where your avatar stands.
+Hold the **right-hand A button** for push-to-talk, or set a mic mode (**Push to talk / Open / Off**) from **Settings ▸ Microphone** in the radial menu. A mic dot in the corner glows green while you transmit. Voice is spatial — peers hear you from where your avatar stands.
 
 ## VR settings reference
 
-Reachable from **System ▸ Settings** in VR, and mirrored in the desktop **Settings ▸ VR** section:
+The same settings, with the same names and order, are in the radial menu's **Settings ▸** rings, the headset's **All
+settings** panel and desktop **Settings ▸ VR** (search for *vr*, *seated*, *smooth turn*, *remap*…):
 
-| Setting | Values |
+| Page | Settings |
 |---|---|
-| Teleport | on / off |
-| Snap turn | Off / 15° / 30° / 45° |
-| Mirror snap turn | on / off |
-| VR flying | on / off |
-| VR sleeve palette | on / off (experimental) |
-| Hold to move vertex | on / off |
-| Face edit limit / Vertex edit limit | 2500 / 800 (desktop Settings only) |
-| Refresh rate | Max / 90 / 120 Hz |
-| Peer hand style | Model / Hands / Spheres |
-| FPS and draw calls | on / off (a strip in front of you; draw calls red above 150) |
-| My hand model | any GLB in your library |
-| VR menu on left | on / off |
-| Passthrough (AR) | on / off (applies next entry) |
-| Reset panel positions | button |
+| **Comfort** | Turning (Snap / Smooth / Off), Snap angle (15–90°), Smooth speed (45–180°/s), Mirror turn, Comfort vignette, Teleport, Flying |
+| **Body** | Stance (Standing / Seated), Height (±50 cm in 5 cm steps) |
+| **Controls** | Menu hand, Hold to open menu, Left-handed, Grab style, Remap buttons, Reset buttons |
+| **Display** | Refresh rate, FPS and draw calls, Statistics card, Peer hands, Passthrough, Selection wireframe, Reset panel positions |
+| **Editing** | Hold to move vertex, Sleeve palette, Face edit limit, Vertex edit limit |
+
+- **Smooth turning** and the **comfort vignette** (the edges darken while the stick moves or turns you) work everywhere,
+  not only inside games. A game whose own Turning setting is *Default* follows yours.
+- **Seated** lifts your view to a standing eye height, measured from your head when you switch to it; **Height** adds to
+  that. While walking in a game your feet stay on the floor.
+
+## Remapping your buttons
+
+**Settings ▸ VR ▸ Controls** on the desktop, or **Settings ▸ Controls ▸ Remap buttons** in the headset, lists every VR
+action with its hand and button: **Move**, **Turn**, **Teleport**, **Radial menu**, **Edit / Interact**, **Game menu**,
+**Talk / jump**, **Ping**, **Drag the world**. Grab and Select / use are always either grip and either trigger.
+
+- Pick a button another action already uses and you get a warning, and nothing changes. Choose **Swap them** (or press
+  the row again in the headset) to trade places — moving Move to the right hand, for example, takes Turn and Teleport over
+  to the left stick.
+- **Left-handed** mirrors every button to the other hand. **Reset buttons** brings back the defaults.
+- Remapping is saved on this device only; your peers keep their own buttons. The [welcome tour](tours.md) names and
+  lights your buttons, not the defaults.
 
 !!! note
-    On-device feel — comfort, reach, snap cadence — is best judged in the headset. Start with teleport on and 45° snap turns if motion bothers you.
+    The Quest's **≡ menu button** (left hand) is reserved by the system and not available to web apps, so the radial menu
+    uses **B / Y** instead.
+
+!!! note
+    On-device feel — comfort, reach, snap cadence — is best judged in the headset. Start with teleport on, snap turning and
+    the comfort vignette if motion bothers you.
