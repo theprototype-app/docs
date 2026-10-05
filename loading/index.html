@@ -359,6 +359,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../tours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../units/" class="md-nav__link">
         
   
@@ -781,6 +802,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../water/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Water
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluid Tank & Jiggle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../terrain/" class="md-nav__link">
         
   
@@ -892,6 +955,30 @@
       When a piece is stuck or fails
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start view
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Start view">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hold-camera-until-loaded" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hold camera until loaded
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2166,6 +2253,27 @@
   
   <span class="md-ellipsis">
     Bounce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/jiggle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jiggle
   </span>
   
 
@@ -3651,6 +3759,30 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#start-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start view
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Start view">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hold-camera-until-loaded" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hold camera until loaded
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#settings" class="md-nav__link">
     <span class="md-ellipsis">
       Settings
@@ -3694,7 +3826,8 @@
 <h1 id="loading-placeholders">Loading Placeholders</h1>
 <p>When you open a level built from kit pieces (Castle Courtyard, the Tavern, …) — or a peer sends you one — each piece
 first appears as a <strong>placeholder box</strong> where it will stand, and the real model replaces it as its file arrives. Since
-1.21 those boxes tell you what is happening, and you can work with them while you wait.</p>
+1.21 those boxes tell you what is happening, and you can work with them while you wait. Since 1.22 the camera starts on
+the scene's <a href="#start-view">start view</a> the moment the load begins, and you can look around while it builds.</p>
 <!-- 36-docs: these two images are crops of the lane's dev-server captures; re-shoot from the 1.21 preview before release -->
 
 <h2 id="two-looks">Two looks</h2>
@@ -3708,15 +3841,17 @@ first appears as a <strong>placeholder box</strong> where it will stand, and the
 </thead>
 <tbody>
 <tr>
-<td><strong>Colored boxes</strong> (default)</td>
-<td>solid grey blocks, as before</td>
+<td><strong>Modern</strong> (default)</td>
+<td>a translucent blue hologram box with a glowing rim, a slow pulse and a scan line sweeping up. It <strong>fills from the bottom as that object's file downloads</strong> — the fill level is the real download progress. An optional prototype <strong>grid texture</strong>, sized in world metres, shows the piece's scale</td>
 </tr>
 <tr>
-<td><strong>Modern</strong></td>
-<td>a translucent blue hologram box with a glowing rim, a slow pulse and a scan line sweeping up. It <strong>fills from the bottom as that object's file downloads</strong> — the fill level is the real download progress. An optional prototype <strong>grid texture</strong>, sized in world metres, shows the piece's scale</td>
+<td><strong>Colored boxes</strong></td>
+<td>solid grey blocks, as in 1.20</td>
 </tr>
 </tbody>
 </table>
+<p>Modern is the default since 1.22. If you never changed this setting, you now get Modern; if you picked <strong>Colored
+boxes</strong> in 1.21, you keep it.</p>
 <p><img alt="A Modern placeholder filling from the bottom as its model downloads" src="../img/loading/modern-loading.png" /></p>
 <p>Both styles turn <strong>amber</strong> when a piece is stuck and <strong>red with a “!”</strong> when it failed.</p>
 <h2 id="working-while-it-loads">Working while it loads</h2>
@@ -3743,6 +3878,36 @@ Properties panel, <kbd>Shift</kbd>-click to select several. When the model arriv
   object at the same position, rotation and scale.</li>
 </ul>
 <p>Retrying one box retries its <strong>file</strong>, so every copy of the same piece comes back together.</p>
+<h2 id="start-view">Start view</h2>
+<p>Every saved scene remembers the view it was saved with: where the camera stood and what it looked at. When you open the
+scene, the camera goes to that <strong>start view</strong> straight away, before the first object appears, so you watch the scene
+build up from the right place.</p>
+<p><strong>Moving while it loads.</strong> You can look around while a scene is still loading: orbit, pan, zoom, fly with
+<kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd>, use a trackpad or touch. Once you have moved the camera, loading
+never moves it back. (Before 1.22, larger scenes such as Tavern Interior and Market Square jumped the camera back to the
+start view a few seconds into the load.)</p>
+<p><strong>Back to start view.</strong> If you moved during the load, a small <strong>Back to start view</strong> button shows for about 6 seconds
+once the scene has finished loading. Click it to fly back. You can also press <kbd>Home</kbd> at any time to return to
+the start view of the scene you opened last.</p>
+<p><img alt="The Back to start view button under the connection bar after Tavern Interior has loaded" src="../img/loading/back-to-start-view.png" /></p>
+<p>To change a scene's start view, move the camera where you want it and save the scene again.</p>
+<h3 id="hold-camera-until-loaded">Hold camera until loaded</h3>
+<p><strong>Configure Scene ▸ Camera ▸ Start view ▸ Hold camera until loaded</strong> (off by default) keeps the camera on the start view
+until the scene is ready. It is saved with the scene and shared with everyone in the session.</p>
+<p><img alt="Configure Scene ▸ Camera with Hold camera until loaded ticked under Start view" src="../img/loading/hold-setting.png" /></p>
+<p>While the scene loads, the camera stays on the start view and ignores camera input, and a small <strong>Loading… camera is
+held</strong> note shows under the loading bar. In VR, teleport, turning, the walk stick and grabbing the world are paused the
+same way.</p>
+<p><strong>It never traps you.</strong> The hold ends at the first of:</p>
+<ul>
+<li>everything has loaded;</li>
+<li>every piece still missing is stuck (amber) or failed (red) — a broken piece never makes you wait longer;</li>
+<li>the <strong>Stuck after</strong> time passes (Settings ▸ Scene ▸ Loading, 10 seconds by default);</li>
+<li>you press <kbd>Esc</kbd>, or click <strong>Take control</strong> on the note (it appears after 1.5 seconds).</li>
+</ul>
+<p>After the hold ends, the camera is yours: the end of the load does not move it again.</p>
+<p><strong>Who it affects.</strong> Only the person loading the scene; other people in the session keep their own camera. Games are not
+affected: when you press Play, the player still starts at the game's spawn point.</p>
 <h2 id="settings">Settings</h2>
 <p>All in <strong>Settings ▸ Scene ▸ Loading</strong>, and all per device:</p>
 <table>
@@ -3756,8 +3921,8 @@ Properties panel, <kbd>Shift</kbd>-click to select several. When the model arriv
 <tbody>
 <tr>
 <td>Loading placeholders</td>
-<td>Colored boxes</td>
-<td>or Modern</td>
+<td>Modern</td>
+<td>or Colored boxes</td>
 </tr>
 <tr>
 <td>Placeholder grid texture</td>
@@ -3797,6 +3962,8 @@ Properties panel, <kbd>Shift</kbd>-click to select several. When the model arriv
   <a href="../explorer/">Explorer</a> still shows the loading toast while it downloads.</li>
 <li>Scenes saved before 1.19 don't record a piece's size, so their placeholders are 1 m boxes.</li>
 <li>An animated pack item (a door, a chest) can't be chosen in <strong>Replace model…</strong> — it travels as a file, not a reference.</li>
+<li>In VR the headset controls the view, so opening a scene does not move you to its start view. <strong>Hold camera until
+  loaded</strong> only pauses movement there.</li>
 </ul>
 
 
@@ -3818,7 +3985,7 @@ Properties panel, <kbd>Shift</kbd>-click to select several. When the model arriv
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-04
+    2026-10-05
   </span>
 
     

@@ -653,6 +653,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../tours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../units/" class="md-nav__link">
         
   
@@ -1057,6 +1078,48 @@
   
   <span class="md-ellipsis">
     Particle Effects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../water/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Water
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluid Tank & Jiggle
   </span>
   
 
@@ -2373,6 +2436,27 @@
   
   <span class="md-ellipsis">
     Bounce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/jiggle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jiggle
   </span>
   
 
@@ -4445,7 +4529,7 @@ game to its menu and starts from the Start screen. See <a href="../build-a-game/
 <p><strong>Every keyboard layout works.</strong> A letter shortcut is matched by the letter printed on the key when there is one — AZERTY, Dvorak and QWERTZ keep their own labels — and by the key's <strong>physical position</strong> otherwise, so <kbd>G</kbd>, <kbd>F</kbd>, <kbd>Ctrl</kbd>+<kbd>Z</kbd> and <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> work on Russian, Greek, Hebrew, Arabic and CJK layouts without switching. Where the browser can tell, <strong>Settings ▸ Shortcuts</strong> shows your layout's own label beside each letter (<em>п on your layout</em>); where it cannot, a note says letter shortcuts follow the QWERTY position.</p>
 <div class="admonition tip">
 <p class="admonition-title">Finding a setting</p>
-<p>Settings is grouped into <strong>Interface</strong> (theme, notifications, windows, lists and menus), <strong>Controls</strong> (keyboard, mouse and trackpad), <strong>Input</strong> (gamepad and the node editor's mouse bindings), <strong>Scene</strong> (grid, shadows, autosave and everything about the scene itself), <strong>Explorer</strong>, then <strong>VR</strong>, <strong>AI</strong>, <strong>Connection</strong>, <strong>Shortcuts</strong> and <strong>About</strong>. If you don't know which one holds what you want, type in the search box at the top. Rows match by their name, their group (<em>Grid</em>), their section (<em>VR</em>) and by keywords the labels do not say — search <strong>dark</strong> to find the theme, <strong>quest</strong> for the VR rows — and matches are highlighted. <kbd>Esc</kbd> clears the search; a second <kbd>Esc</kbd> closes Settings.</p>
+<p>Settings is grouped into <strong>Interface</strong> (theme, notifications, windows, lists and menus), <strong>Controls</strong> (keyboard, mouse and trackpad), <strong>Input</strong> (gamepad and the node editor's mouse bindings), <strong>Scene</strong> (grid, shadows, autosave and everything about the scene itself), <strong>Explorer</strong>, then <strong>VR</strong>, <strong>AI</strong>, <strong>Connection</strong>, <strong>Shortcuts</strong> and <strong>About</strong>. If you don't know which one holds what you want, type in the search box at the top. Rows match by their name, their group (<em>Grid</em>), their section (<em>VR</em>) and by keywords the labels do not say — search <strong>dark</strong> to find the theme, <strong>quest</strong> for the VR rows, <strong>caustics</strong> or <strong>refraction</strong> for Water quality, <strong>tutorial</strong> or <strong>welcome</strong> for the <a href="../tours/">Tours</a>, <strong>wheelchair</strong> for the VR Stance, <strong>remap</strong> for the VR buttons — and matches are highlighted. <kbd>Esc</kbd> clears the search; a second <kbd>Esc</kbd> closes Settings.</p>
 </div>
 <table>
 <thead>
@@ -4574,7 +4658,7 @@ game to its menu and starts from the Start screen. See <a href="../build-a-game/
 <p><strong>Empty viewport</strong> — a quick right-click opens the scene menu:</p>
 <ul>
 <li><strong>Search objects…</strong> — find an object in the scene by name (off by default: <strong>Settings ▸ Interface ▸ Lists &amp; menus ▸ Object search in menu</strong>).</li>
-<li><strong>Add</strong> — the full primitive catalog (meshes, building blocks, cameras, lights) plus empty groups; objects spawn at the clicked point.</li>
+<li><strong>Add</strong> — the full primitive catalog (meshes, building blocks, cameras, lights, <a href="../water/">water</a>, <a href="../particles/">effects</a>, a <a href="../simulation/#fluid-tank">fluid tank</a>) plus empty groups; objects spawn at the clicked point.</li>
 <li><strong>Undo / Redo</strong>, <strong>Ping here</strong>.</li>
 <li><strong>Selected ▸</strong> — the selected object's own menu (shown only while something is selected).</li>
 <li><strong>Tools</strong> — Node editor, Draw mode (drag 3D strokes on surfaces, or click out an editable <a href="../splines/">spline</a>), Measure distance, Simulate physics (and <em>Reset simulation</em> while one runs).</li>
@@ -4594,7 +4678,7 @@ search row.</p>
 <h2 id="vr-basics">VR basics</h2>
 <p>Enter VR from the headset button (WebXR). The essentials below get you started; the <a href="../vr/">VR Guide</a> has the full control and radial-menu map.</p>
 <ul>
-<li><strong>Radial menu</strong> — press <kbd>B</kbd>/<kbd>Y</kbd> on your menu hand to toggle it (or, in hold mode, hold the button and release over a sector). It contains Objects, Add, Scene, Tools (Select / Box Select / Draw), Undo/Redo, Chat and System (grid, settings, mic, exit VR).</li>
+<li><strong>Radial menu</strong> — press <kbd>B</kbd>/<kbd>Y</kbd> on your menu hand to toggle it (or, in hold mode, hold the button and release over a sector). Its first ring is Objects, Add, Scene, Tools, Redo, Undo, Chat and Settings (every VR setting, the microphone, exit VR); the hub is <strong>Selected</strong> when something is selected.</li>
 <li><strong>Hand tracking</strong> — hands have no <kbd>B</kbd>/<kbd>Y</kbd>, so <strong>pinch and hold</strong> (about half a second) on the menu hand to toggle the radial menu; a quick pinch stays a normal click.</li>
 <li><strong>Trigger</strong> points and selects; <strong>grip</strong> grabs and moves objects; gripping with <strong>both hands</strong> grabs the world itself to reposition yourself.</li>
 <li>Floating panels (menu, objects, properties, keyboard, chat…) can be grabbed and repositioned with the grip.</li>
@@ -4623,7 +4707,7 @@ search row.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-04
+    2026-10-05
   </span>
 
     

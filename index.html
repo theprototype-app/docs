@@ -426,6 +426,27 @@
   
   
     <li class="md-nav__item">
+      <a href="tours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="units/" class="md-nav__link">
         
   
@@ -830,6 +851,48 @@
   
   <span class="md-ellipsis">
     Particle Effects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="water/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Water
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="simulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluid Tank & Jiggle
   </span>
   
 
@@ -2146,6 +2209,27 @@
   
   <span class="md-ellipsis">
     Bounce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nodes/jiggle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jiggle
   </span>
   
 
@@ -3674,6 +3758,22 @@ on a phone that gives the scene the whole height of the screen.</p>
 <a href="https://github.com/theprototype-app/core">github.com/theprototype-app/core</a> (also <strong>Settings ▸ About ▸ Source Code</strong>),
 with a contributing guide and an <code>llms.txt</code> for coding agents.</p>
 <h2 id="whats-new">What's new</h2>
+<p><strong>1.22 — VR + water.</strong> Any object can be <a href="water/">water</a>: <strong>Add ▸ Water</strong> makes a tank, a pool or an ocean with waves,
+refraction, caustics, foam, underwater fog and bubbles, in nine presets from Pool to Lava and Ice, plus <strong>Rain</strong> and
+<strong>Snow</strong> <a href="particles/">particle presets</a>. <a href="physics/#things-float">Things float</a> — or sink, or drift with a river —
+and <strong>Add ▸ Simulation ▸ <a href="simulation/#fluid-tank">Fluid tank</a></strong> is a glass box of liquid you can slosh and pour. The
+<a href="nodes/jiggle/">Jiggle</a> node makes anything lag, wobble and sway. Concave scenery collides as it looks with
+<a href="colliders/#exact-mesh-colliders">exact mesh colliders</a>, <strong>Decompose</strong> keeps a moving arch's openings, and
+<a href="colliders/#collision-groups">collision groups</a> make ghost walls; On Impact / On Enter / On Exit get
+<a href="colliders/#contact-filters-only-with-and-other">only with and other</a>. In a headset the <a href="vr/#the-radial-menu">radial menu</a>
+has the desktop's names and icons, <a href="vr/#vr-settings-reference">every VR setting</a> is in it, every button can be
+<a href="vr/#remapping-your-buttons">remapped</a>, and seated mode, height, smooth turning and the comfort vignette work everywhere,
+not only in games. <strong>Welcome to ThePrototype VR</strong> and a six-step editor tour show newcomers around (<a href="tours/">Tours</a>),
+and the Quest browser offers <strong>Enter VR</strong> by itself. Opening a scene puts the camera on its <a href="loading/#start-view">start view</a>
+at once — with <strong>Hold camera until loaded</strong> if you want it kept there — and <a href="loading/#two-looks">Modern placeholders</a>
+are the default. <strong>Community</strong> joins the profile menu under <em>Support the project</em>
+(<a href="community/">Community</a>), and <strong>Templates ▸ Examples</strong> has five new scenes: Aquarium, Pool party, Island ocean, Jelly
+room and Fluid tank toy.</p>
 <p><strong>1.21 — quick fixes, publish anywhere</strong>. <strong>Menu ▸ Publish / Export</strong> gathers both ways out: publish to the
 community with a play link and QR code that open straight into the game, or <a href="publish-export/">export</a> a zip of plain
 HTML that plays on itch.io or any static host, or an iframe snippet — every one with the <em>Made with ThePrototype</em> badge.
@@ -3733,6 +3833,7 @@ for your machine <a href="performance/">reduces quality or pauses instead of fre
 <p><strong>Getting started</strong></p>
 <ul>
 <li><a href="controls/">Controls</a> — navigation, selection, the transform gizmo, shortcuts and right-click menus.</li>
+<li><a href="tours/">Tours</a> — the editor tour and the VR welcome, and how to replay them.</li>
 <li><a href="connection/">Connection</a> — invite links, approving peers, and choosing a signaling server.</li>
 </ul>
 <p><strong>Building</strong></p>
@@ -3746,6 +3847,10 @@ for your machine <a href="performance/">reduces quality or pauses instead of fre
 <li><a href="post-processing/">Scene Look (Post-processing)</a> — grade the finished frame: ambient occlusion, colour, bloom, grain. Saved with the scene and shared with everyone.</li>
 <li><a href="animation/">Animation</a> — keyframe clips with a timeline, curves, markers and onion skin.</li>
 <li><a href="physics/">Physics &amp; Simulation</a> — mass, joints, dropping and throwing objects.</li>
+<li><a href="colliders/">Colliders</a> — collider shapes, exact meshes, decomposition, collision groups and sensors.</li>
+<li><a href="particles/">Particle Effects</a> — dust, smoke, fire, sparkles, rain and snow.</li>
+<li><a href="water/">Water</a> — tanks, pools, oceans and lava with waves, refraction, caustics, foam and bubbles.</li>
+<li><a href="simulation/">Fluid Tank &amp; Jiggle</a> — particle liquid you can pour, and springy secondary motion.</li>
 <li><a href="terrain/">Terrain &amp; Sculpting</a> — add ground and shape it with a brush.</li>
 <li><a href="saving/">Saving &amp; Sessions</a> — the <code>.tpscene</code> bundle format, GLTF export, sessions and autosave.</li>
 </ul>
@@ -3783,7 +3888,7 @@ for your machine <a href="performance/">reduces quality or pauses instead of fre
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-04
+    2026-10-05
   </span>
 
     

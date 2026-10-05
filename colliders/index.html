@@ -359,6 +359,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../tours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../units/" class="md-nav__link">
         
   
@@ -803,6 +824,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#exact-mesh-colliders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exact mesh colliders
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decompose-concave-dynamic-bodies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decompose: concave dynamic bodies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collision-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Collision groups
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#materials-bounciness-and-friction" class="md-nav__link">
     <span class="md-ellipsis">
       Materials: bounciness and friction
@@ -875,6 +923,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#contact-filters-only-with-and-other" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contact filters: only with, and other
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editing-a-collider-in-vr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Editing a collider in VR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#doors-and-other-moving-pack-items" class="md-nav__link">
     <span class="md-ellipsis">
       Doors and other moving pack items
@@ -904,6 +970,48 @@
   
   <span class="md-ellipsis">
     Particle Effects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../water/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Water
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluid Tank & Jiggle
   </span>
   
 
@@ -2220,6 +2328,27 @@
   
   <span class="md-ellipsis">
     Bounce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/jiggle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jiggle
   </span>
   
 
@@ -3696,6 +3825,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#exact-mesh-colliders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exact mesh colliders
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decompose-concave-dynamic-bodies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decompose: concave dynamic bodies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collision-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Collision groups
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#materials-bounciness-and-friction" class="md-nav__link">
     <span class="md-ellipsis">
       Materials: bounciness and friction
@@ -3768,6 +3924,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#contact-filters-only-with-and-other" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contact filters: only with, and other
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editing-a-collider-in-vr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Editing a collider in VR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#doors-and-other-moving-pack-items" class="md-nav__link">
     <span class="md-ellipsis">
       Doors and other moving pack items
@@ -3801,7 +3975,8 @@
 
 <h1 id="colliders">Colliders</h1>
 <p>Physics never collides your triangles. It collides a simple stand-in — a <strong>collider</strong> — that is fast to test and
-forgiving: a box, a sphere, a capsule, a convex skin, or a handful of convex pieces you build yourself. Picking the right
+forgiving: a box, a sphere, a capsule, a convex skin, a handful of convex pieces you build yourself — or, for scenery
+that never moves, the object's own triangles. Picking the right
 one is the difference between a ball that rolls and a ball that slides like a crate. This page covers every collider
 setting; for running a simulation, gravity, joints and grabbing see <a href="../physics/">Physics &amp; Simulation</a>.</p>
 <h2 id="where-the-settings-are">Where the settings are</h2>
@@ -3843,8 +4018,23 @@ setting; for running a simulation, gravity, joints and grabbing see <a href="../
 </tr>
 <tr>
 <td><strong>Collider</strong></td>
-<td>Box · Sphere · Capsule · Cylinder · Cone · Convex hull · Custom (edit…)</td>
+<td>Box · Sphere · Capsule · Cylinder · Cone · Convex hull · Exact mesh (static) · Custom (edit…)</td>
 <td>inferred from the shape (below)</td>
+</tr>
+<tr>
+<td><strong>Decompose</strong></td>
+<td>max pieces 2 – 16 · <strong>Run</strong></td>
+<td>— see <a href="#decompose-concave-dynamic-bodies">Decompose</a></td>
+</tr>
+<tr>
+<td><strong>Group</strong></td>
+<td>Default · A · B · C · D · Water</td>
+<td>Default — see <a href="#collision-groups">Collision groups</a></td>
+</tr>
+<tr>
+<td><strong>Collides with</strong></td>
+<td>the same groups + Player</td>
+<td>all</td>
 </tr>
 <tr>
 <td><strong>Sensor</strong></td>
@@ -3860,6 +4050,11 @@ setting; for running a simulation, gravity, joints and grabbing see <a href="../
 <td><strong>Lock position</strong> (Dynamic only)</td>
 <td>X · Y · Z</td>
 <td>off</td>
+</tr>
+<tr>
+<td><strong>Floats</strong> (Dynamic only)</td>
+<td>Auto · Foam · Cork · Wood · Ice · Rubber · Stone · Metal · From mass ÷ volume · Off</td>
+<td>Auto — see <a href="../physics/#things-float">Things float</a></td>
 </tr>
 <tr>
 <td><strong>Show collider — this device</strong></td>
@@ -3908,8 +4103,12 @@ standing on it is carried along.</p>
 <td>irregular shapes: a skin shrink-wrapped around the mesh. Exact for ramps, gems and rocks; it seals over any opening (a bowl becomes a lump)</td>
 </tr>
 <tr>
+<td><strong>Exact mesh (static)</strong></td>
+<td>concave <strong>scenery</strong> — an arch, a pool, a tunnel: the object's own triangles (<a href="#exact-mesh-colliders">below</a>)</td>
+</tr>
+<tr>
 <td><strong>Custom</strong></td>
-<td>anything concave — an L-shape, a frame, a chair: several convex pieces you build (below)</td>
+<td>anything concave that moves — an L-shape, a frame, a chair: several convex pieces you build or <a href="#decompose-concave-dynamic-bodies">decompose</a> (below)</td>
 </tr>
 </tbody>
 </table>
@@ -3929,7 +4128,11 @@ tilted box, a rotated ramp is really a ramp.</p>
 <td>the matching shape</td>
 </tr>
 <tr>
-<td>Torus, Torus knot, the polyhedra, Lathe, Tube, Wedge, Stairs, Arch, Corner</td>
+<td>Arch, Corner (Auto or Static body)</td>
+<td>Exact mesh</td>
+</tr>
+<tr>
+<td>Torus, Torus knot, the polyhedra, Lathe, Tube, Wedge, Stairs, and a Dynamic Arch or Corner</td>
 <td>Convex hull</td>
 </tr>
 <tr>
@@ -3938,8 +4141,53 @@ tilted box, a rotated ramp is really a ramp.</p>
 </tr>
 </tbody>
 </table>
+<p>Stairs keep the ramp-like hull, so things slide up them smoothly; pick <strong>Exact mesh</strong> for real steps.</p>
 <p><strong>Limits.</strong> A convex hull works on a single mesh of up to 5000 vertices; a denser mesh — and <strong>any group</strong> — falls back
 to a box. When a collider looks wrong, turn on <em>Show collider</em> first: a fallback box is nearly always the answer.</p>
+<h2 id="exact-mesh-colliders">Exact mesh colliders</h2>
+<p><strong>Collider ▸ Exact mesh (static)</strong> makes the object's own triangles its collider, so concave scenery behaves as it looks:
+a ball rolls through an arch's opening, falls into a pool or a tank, drives through a tunnel. The choice is shown only
+while <strong>Body</strong> is <em>Auto (scenery)</em> or <em>Static</em>. A group (an imported model) is merged into one mesh. Static <strong>Arch</strong> and
+<strong>Corner</strong> blocks use it automatically.</p>
+<p><img alt="An arch with an exact mesh collider: the green wireframe follows the opening" src="../img/colliders/exact-mesh.png" /></p>
+<p><strong>Limits.</strong></p>
+<ul>
+<li>Static and kinematic bodies only. A <strong>Dynamic</strong> body that asks for it gets its convex hull instead, and a toast says
+  why — use <a href="#decompose-concave-dynamic-bodies">Decompose</a> for a concave object that moves.</li>
+<li>Up to 20 000 triangles. A denser mesh falls back to a box, and the toast gives the reason.</li>
+<li>Contacts against a mesh are one-sided, so a very fast, thin body can pass through a thin wall. Turn on
+  <strong>Configure Scene ▸ Physics ▸ Defaults (advanced) ▸ Continuous collision</strong> if that happens.</li>
+<li>The <a href="../nodes/collider/">Collider</a> node (<code>trimesh</code>), the <a href="../ai/assistant/">AI assistant</a> and a pack item's collider hint
+  accept it too.</li>
+</ul>
+<h2 id="decompose-concave-dynamic-bodies">Decompose: concave dynamic bodies</h2>
+<p>A dynamic object can't use an exact mesh, and its convex hull seals every opening. <strong>Decompose</strong> splits the mesh into
+convex pieces for it:</p>
+<ol>
+<li>Select the object and open <strong>Properties ▸ Physics ▸ Decompose</strong>.</li>
+<li>Set the <strong>maximum pieces</strong> (2 – 16; remembered on this device) and press <strong>Run</strong>.</li>
+<li>After about a second (it runs in the background) the pieces are saved as the object's <strong>Custom</strong> collider.</li>
+</ol>
+<p>A dynamic arch, cup or U-shaped crate now keeps its openings. One undo restores the previous collider, and the result
+replicates to everyone. Fine-tune it afterwards with <strong>Edit collider…</strong> (<a href="#custom-compound-colliders">below</a>). In VR it is
+<strong>Decompose (auto)</strong> in the <a href="#editing-a-collider-in-vr">collider editor</a>.</p>
+<p><img alt="The same arch decomposed into convex pieces" src="../img/colliders/decomposed.png" /></p>
+<p>The result has to fit the custom-collider budget (about 400 points). Pieces past it are dropped, and the toast says so.</p>
+<h2 id="collision-groups">Collision groups</h2>
+<p><strong>Properties ▸ Physics ▸ Group</strong> puts an object in <strong>Default</strong>, <strong>A</strong>, <strong>B</strong>, <strong>C</strong>, <strong>D</strong> or <strong>Water</strong>. <strong>Collides with</strong>
+ticks which groups, and whether the <strong>Player</strong>, it collides with. Everything starts in Default and collides with
+everything, so existing scenes behave exactly as before.</p>
+<p>Recipes:</p>
+<ul>
+<li><strong>Ghost wall</strong> — Group <strong>A</strong>, untick <strong>Player</strong>: the player walks through it, crates do not.</li>
+<li><strong>Projectile barrier</strong> — Group <strong>B</strong>, collides with <strong>B</strong> only. Put your projectiles in <strong>B</strong> too: they stop at the
+  barrier, and everything else passes through it.</li>
+<li><strong>Water / trigger</strong> — anything in the <strong>Water</strong> group is a pass-through trigger that still fires
+  <a href="../nodes/onenter/">On Enter</a> and <a href="../nodes/onexit/">On Exit</a>. <a href="../water/">Water</a> volumes are in it by default, so bodies
+  fall <strong>into</strong> water instead of landing on it; the floating comes from the water itself
+  (<a href="../physics/#things-float">Things float</a>).</li>
+</ul>
+<p>The <a href="../nodes/collider/">Collider</a> node has a <code>group</code> parameter; <code>inherit</code> keeps the Properties choice.</p>
 <h2 id="materials-bounciness-and-friction">Materials: bounciness and friction</h2>
 <p><strong>Material</strong> sets bounciness and friction together, so you pick a feel instead of two numbers:</p>
 <table>
@@ -3996,8 +4244,8 @@ a sensor draws <strong>amber</strong> instead of green.</p>
 </ul>
 <h2 id="gravity-and-damping">Gravity and damping</h2>
 <p>Gravity is a <strong>scene</strong> setting: <strong>Configure Scene ▸ Physics ▸ World ▸ Gravity</strong>, from −20 to 5 (positive falls <em>up</em>),
-shared by every object. There is no per-object gravity scale; to make one object float, lock its Y position, give it a
-lighter material, or push it with an <a href="../nodes/impulse/">Impulse</a> or <a href="../nodes/setvelocity/">Set Velocity</a> node.</p>
+shared by every object. There is no per-object gravity scale; to make one object float, put it in <a href="../physics/#things-float">water</a>, lock its Y
+position, or push it with an <a href="../nodes/impulse/">Impulse</a> or <a href="../nodes/setvelocity/">Set Velocity</a> node.</p>
 <p><strong>Drag</strong> and <strong>spin drag</strong> (linear and angular damping) and <strong>Continuous collision</strong> are scene-wide too, under
 <strong>Defaults (advanced)</strong>. A body thrown or knocked faster than about 5 m/s switches continuous collision on for itself until it settles, so a hard
 throw does not pass through a thin wall.</p>
@@ -4035,6 +4283,28 @@ time the simulation starts.</p>
 object's</strong> geometry); <a href="../nodes/mass/">Mass</a>, <a href="../nodes/bounciness/">Bounciness</a> and <a href="../nodes/friction/">Friction</a> override
 those rows. A node wired to an object <strong>wins</strong> over its Properties settings. A wired Mass node also makes its object
 dynamic.</p>
+<h2 id="contact-filters-only-with-and-other">Contact filters: only with, and other</h2>
+<p><a href="../nodes/onimpact/">On Impact</a>, <a href="../nodes/onenter/">On Enter</a> and <a href="../nodes/onexit/">On Exit</a> are in the palette's
+<strong>Physics</strong> group. Each can be limited to one other body, and each tells you what it touched:</p>
+<ul>
+<li>Wire an <a href="../nodes/objectselector/">Object Selector</a> into <strong>only with</strong> and the node fires only when the <em>other</em> body is
+  that object, or a spawned copy of it.</li>
+<li>The <strong>other</strong> output carries the body it touched. Wire it into <a href="../nodes/lookat/">Look At</a>,
+  <a href="../nodes/distance/">Distance</a> and the like.</li>
+</ul>
+<p>The other body travels with the trigger, so every peer reads the same object. A contact with the ground plane reports an
+empty <em>other</em>.</p>
+<p><img alt="On Impact and On Enter nodes with only with wired to Object Selectors, and other wired into Distance" src="../img/colliders/contact-filter.png" /></p>
+<h2 id="editing-a-collider-in-vr">Editing a collider in VR</h2>
+<p>Select an object, open the radial menu's <strong>Selected</strong> ring and pick <strong>Edit collider</strong>. The edit side-menu opens, titled
+<em>Edit Collider</em>:</p>
+<ul>
+<li><strong>Vertices</strong> and <strong>Faces</strong> tabs edit the collider shape, never the object.</li>
+<li><strong>+ Box piece</strong> and <strong>+ Sphere piece</strong> add a primitive piece.</li>
+<li><strong>Decompose (auto)</strong> runs <a href="#decompose-concave-dynamic-bodies">Decompose</a>.</li>
+<li><strong>Done — save collider</strong> stores it; <strong>Cancel</strong> (or ✕) throws the edit away.</li>
+</ul>
+<p>Grip a face of the green collider to pull it. See the <a href="../vr/#selected">VR Guide</a>.</p>
 <h2 id="doors-and-other-moving-pack-items">Doors and other moving pack items</h2>
 <p>The functional pack items — doors, gates, lids, trapdoors — come with colliders that do the right thing on their own. A
 door's frame becomes solid slabs with the doorway left open, and the moving leaf follows its animation while a
@@ -4060,7 +4330,7 @@ simulation runs, so you can walk through an open door and not through a shut one
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-04
+    2026-10-05
   </span>
 
     

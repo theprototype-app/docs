@@ -359,6 +359,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../tours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../units/" class="md-nav__link">
         
   
@@ -763,6 +784,48 @@
   
   <span class="md-ellipsis">
     Particle Effects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../water/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Water
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluid Tank & Jiggle
   </span>
   
 
@@ -2079,6 +2142,27 @@
   
   <span class="md-ellipsis">
     Bounce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/jiggle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jiggle
   </span>
   
 
@@ -3853,9 +3937,15 @@ the file, its size and its file count, and says <em>checked OK</em>. The zip hol
 app runs), your scene, the installed modules it uses, the pack files it uses and a README. All paths are relative, there
 is no service worker, and nothing loads from another site unless you chose the packs CDN. The game starts in Play on its
 own. A typical game export is about 5 MB in about 365 files.</p>
-<p>Some web hosts add their own scripts to the pages they serve (Cloudflare's Web Analytics beacon, for example). The
-exporter copies the app from the site you are on, so it removes any such script or link that points at another site
-before the check, and lists each removal under the result line.</p>
+<p>Some web hosts add their own scripts to the pages they serve. The exporter copies the app from the site you are on, so
+it removes any script or link that points at another site before the check — an exported game loads nothing from the
+internet:</p>
+<ul>
+<li>the host's own <strong>analytics script</strong> (Cloudflare Pages Web Analytics) is removed quietly, and listed under <strong>Details</strong>
+  (collapsed) in the export result;</li>
+<li>any <strong>other</strong> script from the internet is removed too, with a visible warning, because you may want to know about
+  that one.</li>
+</ul>
 <h3 id="hosting-it-elsewhere">Hosting it elsewhere</h3>
 <p>Unzip it into any folder of any static host — a subfolder works too. It does <strong>not</strong> run from <code>file://</code> (browsers refuse
 module scripts there); for a quick local look, run <code>npx serve .</code> in the folder.</p>
@@ -3958,7 +4048,7 @@ filled in for you once you have published), or the address where you host a stat
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-04
+    2026-10-05
   </span>
 
     
