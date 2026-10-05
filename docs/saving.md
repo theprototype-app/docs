@@ -104,5 +104,8 @@ If a snapshot exists when you open the app, a **restore** prompt offers to bring
 
 **Auto-restore on load** (*Settings ▸ Scene*, off by default) skips the prompt: your last scene is simply there when the app opens, and a notice tells you it was restored so an empty canvas is still one click away.
 
+To go back further than the last snapshot, autosave can also keep **automatic checkpoints** every few minutes, beside
+the ones you save by name — see [Checkpoints](checkpoints.md).
+
 !!! tip
-    Autosave protects against crashes; sessions are for milestones; `.tpscene` files are for backups and sharing outside the browser. Use all three.
+    Autosave protects against crashes; [checkpoints](checkpoints.md) and sessions are for milestones; `.tpscene` files are for backups and sharing outside the browser. Use them all.

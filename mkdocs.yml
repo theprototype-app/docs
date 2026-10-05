@@ -8,6 +8,7 @@ nav:
     - Tours: tours.md
     - Units: units.md
     - Themes & Appearance: appearance.md
+    - Your Character: avatars.md
     - Connection: connection.md
   - Building:
     - Explorer: explorer.md
@@ -29,10 +30,12 @@ nav:
     - Fluid Tank & Jiggle: simulation.md
     - Terrain & Sculpting: terrain.md
     - Saving & Sessions: saving.md
+    - Checkpoints: checkpoints.md
     - Loading Placeholders: loading.md
     - Projects: projects.md
   - Viewport:
     - Camera & View: camera.md
+    - Recording a Video: recording.md
     - Notifications & Notes: notifications.md
     - Performance & Budgets: performance.md
     - Profiler & Recordings: profiler.md
@@ -137,6 +140,7 @@ nav:
     - Game Kit: game-kit.md
     - Behaviours: behaviours.md
     - VR Football: football.md
+    - Race: race.md
   - Community:
     - Publish, Play, Remix: community.md
     - Publish & Export: publish-export.md

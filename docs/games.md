@@ -10,6 +10,8 @@ Since **1.23**, Mini Golf, VR Football, Dungeon Realms, The Alchemist's Escape, 
 their rules as one readable script on the game's Main graph: open the node editor to tune a number or change the code.
 See [Game rules on the Main graph](game-rules.md).
 
+**1.24** adds **Race**, built into the app.
+
 ## The Alchemist's Escape
 
 An escape room in three rooms. Open the drawer, find the key, unlock the chest, set the dials, pull the levers in the
@@ -28,6 +30,13 @@ drag; in VR grip both handles and twist. Holes send you back to the start; three
 Six holes — a ramp, a windmill, a bank shot, sand and a hump. On the desktop drag back from the ball and let go to
 putt; in VR swing the putter. Par for every hole, a scorecard, and your best round saved. Any hole can be played on its
 own from the Levels page.
+
+## Race
+
+Up to four players, four cars, three laps round a valley circuit: click a car, press **Start**, drive with **WASD**
+(**R** puts you back on the road). A lap counts only when you have driven all of it. Laps, speed and grip are on the
+**Race rules** node in the Main graph, and the road is a spline — move its points and the race follows. Your best race
+and best lap are saved on this device. See [Race](race.md).
 
 ## Sky Run
 

@@ -127,6 +127,8 @@ runtime. See the [HUD nodes](nodes.md#hud).
 
 ## In VR
 
-A headset cannot show the desktop HUD, so a game's menu-like screens (menu, pause, results) appear on a **game board**
-in front of you, and its small readouts (score, timer, level) on your **left wrist** and a **top strip** across the view —
-see [Playing games in VR](vr.md#playing-games-in-vr-edit-and-interact). Buttons there answer the laser and a poke.
+A game's menu-like screens (menu, pause, results) appear on a **game board** in front of you; buttons there answer the
+laser and a poke. Since 1.24 the playing screen you lay out here also shows in the headset, arranged as you placed it,
+on a curved band in front of the player (or on their wrist) — see
+[The game HUD in a headset](vr.md#the-game-hud-in-a-headset). The band is read-only; a crosshair, a minimap and a
+full-screen flash have no headset form.
