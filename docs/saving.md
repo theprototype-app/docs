@@ -29,7 +29,8 @@ had nothing open will not close the panels *you* have open.
 **Menu ▸ Templates** opens a picker of ready-made scenes, in four tabs:
 
 - **General** — starting points and walkable kit levels, including a **Blank** card that clears the scene (it asks first).
-- **Examples** — worked showcases to pull apart and learn from.
+- **Examples** — worked showcases to pull apart and learn from. 1.22 adds five: **Aquarium**, **Pool party** and
+  **Island ocean** ([Water](water.md)), **Jelly room** and **Fluid tank toy** ([Fluid Tank & Jiggle](simulation.md)).
 - **Games** — playable scenes. A game is a scene plus, sometimes, a module: a card wears a *Needs …* badge when it depends on one, and loading it offers to install it — every player needs their own copy. If you have the module but an **older version** than the scene asks for, the load prompt offers to **update** it (an installed module never updates by itself). [The Games tab](games.md) describes each one.
 - **Community** — scenes other people published from the app; see [Community](community.md).
 

@@ -24,6 +24,23 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.22 — VR + water.** Any object can be [water](water.md): **Add ▸ Water** makes a tank, a pool or an ocean with waves,
+refraction, caustics, foam, underwater fog and bubbles, in nine presets from Pool to Lava and Ice, plus **Rain** and
+**Snow** [particle presets](particles.md). [Things float](physics.md#things-float) — or sink, or drift with a river —
+and **Add ▸ Simulation ▸ [Fluid tank](simulation.md#fluid-tank)** is a glass box of liquid you can slosh and pour. The
+[Jiggle](nodes/jiggle.md) node makes anything lag, wobble and sway. Concave scenery collides as it looks with
+[exact mesh colliders](colliders.md#exact-mesh-colliders), **Decompose** keeps a moving arch's openings, and
+[collision groups](colliders.md#collision-groups) make ghost walls; On Impact / On Enter / On Exit get
+[only with and other](colliders.md#contact-filters-only-with-and-other). In a headset the [radial menu](vr.md#the-radial-menu)
+has the desktop's names and icons, [every VR setting](vr.md#vr-settings-reference) is in it, every button can be
+[remapped](vr.md#remapping-your-buttons), and seated mode, height, smooth turning and the comfort vignette work everywhere,
+not only in games. **Welcome to ThePrototype VR** and a six-step editor tour show newcomers around ([Tours](tours.md)),
+and the Quest browser offers **Enter VR** by itself. Opening a scene puts the camera on its [start view](loading.md#start-view)
+at once — with **Hold camera until loaded** if you want it kept there — and [Modern placeholders](loading.md#two-looks)
+are the default. **Community** joins the profile menu under *Support the project*
+([Community](community.md)), and **Templates ▸ Examples** has five new scenes: Aquarium, Pool party, Island ocean, Jelly
+room and Fluid tank toy.
+
 **1.21 — quick fixes, publish anywhere**. **Menu ▸ Publish / Export** gathers both ways out: publish to the
 community with a play link and QR code that open straight into the game, or [export](publish-export.md) a zip of plain
 HTML that plays on itch.io or any static host, or an iframe snippet — every one with the *Made with ThePrototype* badge.
@@ -94,6 +111,7 @@ for your machine [reduces quality or pauses instead of freezing](performance.md)
 **Getting started**
 
 - [Controls](controls.md) — navigation, selection, the transform gizmo, shortcuts and right-click menus.
+- [Tours](tours.md) — the editor tour and the VR welcome, and how to replay them.
 - [Connection](connection.md) — invite links, approving peers, and choosing a signaling server.
 
 **Building**
@@ -107,6 +125,10 @@ for your machine [reduces quality or pauses instead of freezing](performance.md)
 - [Scene Look (Post-processing)](post-processing.md) — grade the finished frame: ambient occlusion, colour, bloom, grain. Saved with the scene and shared with everyone.
 - [Animation](animation.md) — keyframe clips with a timeline, curves, markers and onion skin.
 - [Physics & Simulation](physics.md) — mass, joints, dropping and throwing objects.
+- [Colliders](colliders.md) — collider shapes, exact meshes, decomposition, collision groups and sensors.
+- [Particle Effects](particles.md) — dust, smoke, fire, sparkles, rain and snow.
+- [Water](water.md) — tanks, pools, oceans and lava with waves, refraction, caustics, foam and bubbles.
+- [Fluid Tank & Jiggle](simulation.md) — particle liquid you can pour, and springy secondary motion.
 - [Terrain & Sculpting](terrain.md) — add ground and shape it with a brush.
 - [Saving & Sessions](saving.md) — the `.tpscene` bundle format, GLTF export, sessions and autosave.
 

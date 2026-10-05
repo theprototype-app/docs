@@ -52,7 +52,7 @@ Talk to your peers directly:
 - Voice is **spatial** — a peer's voice comes from where their avatar is (toggle spatial voice in Settings).
 - You can mute individual peers.
 
-In VR the mic has three modes — **Push-to-talk / Open / Off** — set from the radial menu's **System ▸ Mic** submenu; the right-hand **A** button is push-to-talk, and a small mic dot in the corner shows when you're transmitting.
+In VR the mic has three modes — **Push-to-talk / Open / Off** — set from the radial menu's **Settings ▸ Microphone** (press it to cycle); the right-hand **A** button is push-to-talk, and a small mic dot in the corner shows when you're transmitting.
 
 ## Pings
 

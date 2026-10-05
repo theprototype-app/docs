@@ -68,9 +68,14 @@ app runs), your scene, the installed modules it uses, the pack files it uses and
 is no service worker, and nothing loads from another site unless you chose the packs CDN. The game starts in Play on its
 own. A typical game export is about 5 MB in about 365 files.
 
-Some web hosts add their own scripts to the pages they serve (Cloudflare's Web Analytics beacon, for example). The
-exporter copies the app from the site you are on, so it removes any such script or link that points at another site
-before the check, and lists each removal under the result line.
+Some web hosts add their own scripts to the pages they serve. The exporter copies the app from the site you are on, so
+it removes any script or link that points at another site before the check — an exported game loads nothing from the
+internet:
+
+- the host's own **analytics script** (Cloudflare Pages Web Analytics) is removed quietly, and listed under **Details**
+  (collapsed) in the export result;
+- any **other** script from the internet is removed too, with a visible warning, because you may want to know about
+  that one.
 
 ### Hosting it elsewhere
 

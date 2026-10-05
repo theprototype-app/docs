@@ -280,7 +280,7 @@ Shortcuts are inert while you type in a text field and while play mode owns the 
 **Every keyboard layout works.** A letter shortcut is matched by the letter printed on the key when there is one — AZERTY, Dvorak and QWERTZ keep their own labels — and by the key's **physical position** otherwise, so <kbd>G</kbd>, <kbd>F</kbd>, <kbd>Ctrl</kbd>+<kbd>Z</kbd> and <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> work on Russian, Greek, Hebrew, Arabic and CJK layouts without switching. Where the browser can tell, **Settings ▸ Shortcuts** shows your layout's own label beside each letter (*п on your layout*); where it cannot, a note says letter shortcuts follow the QWERTY position.
 
 !!! tip "Finding a setting"
-    Settings is grouped into **Interface** (theme, notifications, windows, lists and menus), **Controls** (keyboard, mouse and trackpad), **Input** (gamepad and the node editor's mouse bindings), **Scene** (grid, shadows, autosave and everything about the scene itself), **Explorer**, then **VR**, **AI**, **Connection**, **Shortcuts** and **About**. If you don't know which one holds what you want, type in the search box at the top. Rows match by their name, their group (*Grid*), their section (*VR*) and by keywords the labels do not say — search **dark** to find the theme, **quest** for the VR rows — and matches are highlighted. <kbd>Esc</kbd> clears the search; a second <kbd>Esc</kbd> closes Settings.
+    Settings is grouped into **Interface** (theme, notifications, windows, lists and menus), **Controls** (keyboard, mouse and trackpad), **Input** (gamepad and the node editor's mouse bindings), **Scene** (grid, shadows, autosave and everything about the scene itself), **Explorer**, then **VR**, **AI**, **Connection**, **Shortcuts** and **About**. If you don't know which one holds what you want, type in the search box at the top. Rows match by their name, their group (*Grid*), their section (*VR*) and by keywords the labels do not say — search **dark** to find the theme, **quest** for the VR rows, **caustics** or **refraction** for Water quality, **tutorial** or **welcome** for the [Tours](tours.md), **wheelchair** for the VR Stance, **remap** for the VR buttons — and matches are highlighted. <kbd>Esc</kbd> clears the search; a second <kbd>Esc</kbd> closes Settings.
 
 | Keys | Action |
 |---|---|
@@ -320,7 +320,7 @@ Inside an Edit Mesh session the bare letters <kbd>E</kbd> <kbd>I</kbd> <kbd>G</k
 **Empty viewport** — a quick right-click opens the scene menu:
 
 - **Search objects…** — find an object in the scene by name (off by default: **Settings ▸ Interface ▸ Lists & menus ▸ Object search in menu**).
-- **Add** — the full primitive catalog (meshes, building blocks, cameras, lights) plus empty groups; objects spawn at the clicked point.
+- **Add** — the full primitive catalog (meshes, building blocks, cameras, lights, [water](water.md), [effects](particles.md), a [fluid tank](simulation.md#fluid-tank)) plus empty groups; objects spawn at the clicked point.
 - **Undo / Redo**, **Ping here**.
 - **Selected ▸** — the selected object's own menu (shown only while something is selected).
 - **Tools** — Node editor, Draw mode (drag 3D strokes on surfaces, or click out an editable [spline](splines.md)), Measure distance, Simulate physics (and *Reset simulation* while one runs).
@@ -344,7 +344,7 @@ With **several objects** selected, the menu acts on the whole set — the entrie
 
 Enter VR from the headset button (WebXR). The essentials below get you started; the [VR Guide](vr.md) has the full control and radial-menu map.
 
-- **Radial menu** — press <kbd>B</kbd>/<kbd>Y</kbd> on your menu hand to toggle it (or, in hold mode, hold the button and release over a sector). It contains Objects, Add, Scene, Tools (Select / Box Select / Draw), Undo/Redo, Chat and System (grid, settings, mic, exit VR).
+- **Radial menu** — press <kbd>B</kbd>/<kbd>Y</kbd> on your menu hand to toggle it (or, in hold mode, hold the button and release over a sector). Its first ring is Objects, Add, Scene, Tools, Redo, Undo, Chat and Settings (every VR setting, the microphone, exit VR); the hub is **Selected** when something is selected.
 - **Hand tracking** — hands have no <kbd>B</kbd>/<kbd>Y</kbd>, so **pinch and hold** (about half a second) on the menu hand to toggle the radial menu; a quick pinch stays a normal click.
 - **Trigger** points and selects; **grip** grabs and moves objects; gripping with **both hands** grabs the world itself to reposition yourself.
 - Floating panels (menu, objects, properties, keyboard, chat…) can be grabbed and repositioned with the grip.
