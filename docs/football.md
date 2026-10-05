@@ -88,6 +88,10 @@ graph, so a pitch you author keeps its own rules:
 An own goal — your own last touch, into your own gate — lands on the right sheet rather than
 being handed to the other side as a goal of theirs.
 
+Since 1.23 the game's own rules — who scored, what a goal is worth (`GOAL_POINTS`), when a match is
+over — are the **Football rules** script on the scene's Main graph, beside the Match Rules node. See
+[Game rules on the Main graph](game-rules.md).
+
 ## What is recorded
 
 - **Per player, for the session** — `goals`, `touches` and `owngoals`, each written by the one

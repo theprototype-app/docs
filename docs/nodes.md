@@ -5,6 +5,10 @@ them. Each node's one-line description is the same text the editor shows in its 
 (and the palette's tooltip) when you select the node, so the two cannot disagree. Nodes with
 their own page link to it.
 
+Since 1.23 every node's properties are in the node editor's **ⓘ Params** tab, and a double-click on a
+node with code (Script, Behaviour, a module's node) opens that code — see
+[Main graph & node properties](main-graph.md).
+
 ## Input
 
 | Node | What it does |
@@ -90,7 +94,7 @@ their own page link to it.
 |---|---|
 | [**Script**](nodes/script.md) | Your own JavaScript - an effect that moves its object every frame, or (with declared typed inputs and outputs) a small pure function whose return feeds other nodes. |
 | [**Behaviour**](behaviours.md) | Game logic written as a small JavaScript file (params, replicated state, event handlers, kit calls) - run once on the authority peer, with a live node view of its events, state and knobs. |
-| [**Math**](nodes/math.md) | Combines two numbers with an arithmetic operation. |
+| [**Math**](nodes/math.md) | Combines two numbers (+ - * / min max mod pow) or shapes one: sin/cos (b scales them, 0 = 1), abs, round, floor, clamp to 0..b, negate. |
 | [**Compare**](nodes/compare.md) | Compares two numbers and outputs true or false. |
 | [**Gate**](nodes/gate.md) | Boolean logic on two inputs - AND, OR, NOT, XOR. |
 | [**Map Range**](nodes/maprange.md) | Remaps a number from one range to another - the glue between free-range sources and bounded parameters. |

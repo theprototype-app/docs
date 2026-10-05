@@ -6,6 +6,10 @@ has the same pause menu (Esc, or the menu button in VR): Resume, Restart, Levels
 The five games added in **1.20** are built into the app — they need no module download — and play on the desktop and in
 VR.
 
+Since **1.23**, Mini Golf, VR Football, Dungeon Realms, The Alchemist's Escape, Sky Run, Target Toss and Marble Maze keep
+their rules as one readable script on the game's Main graph: open the node editor to tune a number or change the code.
+See [Game rules on the Main graph](game-rules.md).
+
 ## The Alchemist's Escape
 
 An escape room in three rooms. Open the drawer, find the key, unlock the chest, set the dials, pull the levers in the

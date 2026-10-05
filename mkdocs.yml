@@ -38,6 +38,9 @@ nav:
     - Profiler & Recordings: profiler.md
   - Flow Graph:
     - Node System: node-system.md
+    - Main Graph & Node Properties: main-graph.md
+    - "Node Editor: Keyboard, Groups & Notes": node-editor.md
+    - Code Workspace: code-workspace.md
     - Flow Nodes: nodes.md
     - Object Flows: object-flows.md
     - Nodes:
@@ -128,6 +131,7 @@ nav:
     - Music Playground: music.md
   - Games:
     - The Games Tab: games.md
+    - Game Rules on the Main Graph: game-rules.md
     - Build a Game Loop: build-a-game.md
     - HUD Editor: hud-editor.md
     - Game Kit: game-kit.md
