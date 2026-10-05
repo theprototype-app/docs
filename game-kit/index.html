@@ -1115,6 +1115,69 @@
   
   
     <li class="md-nav__item">
+      <a href="../main-graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Main Graph & Node Properties
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../node-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Node Editor: Keyboard, Groups & Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-workspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code Workspace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/" class="md-nav__link">
         
   
@@ -1164,10 +1227,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
         
           
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1178,8 +1241,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
             <span class="md-nav__icon md-icon"></span>
             Nodes
           </label>
@@ -3071,6 +3134,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../game-rules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Rules on the Main Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../build-a-game/" class="md-nav__link">
         
   
@@ -4030,7 +4114,9 @@ the game's play bounds.</p>
 <h2 id="for-module-authors-and-developers">For module authors and developers</h2>
 <p>Every node above has a code twin under <code>api.kit</code>; the full table of actions, reads and events is
 on the <a href="../module-sdk/#the-game-kit-apikit">Module SDK</a> page. Logic written as a
-<a href="../behaviours/">behaviour</a> calls the same <code>kit</code>.</p>
+<a href="../behaviours/">behaviour</a> calls the same <code>kit</code>. Since 1.23 a module can add a piece of its own with
+<code>api.kit.provide</code> — the engine a game's <a href="../game-rules/">rules</a> call as <code>kit.golf.*</code>, <code>kit.football.*</code>… — see
+<a href="../module-sdk/#for-module-and-game-authors-123">For module and game authors</a>.</p>
 <p>Game rules can be proved without a browser: the core repo's <strong>headless logic sim</strong>
 (<code>tests/unit/sim</code>) runs several fake peers on a fake clock through the real message validation,
 so "two players press Start at once" or "the host leaves mid-wave" is a unit test that runs in
@@ -4055,7 +4141,7 @@ milliseconds. See <em>The game kit</em> in the core repo's <code>MODULES.md</cod
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-03
+    2026-10-05
   </span>
 
     

@@ -1117,6 +1117,69 @@
   
   
     <li class="md-nav__item">
+      <a href="../../main-graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Main Graph & Node Properties
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../node-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Node Editor: Keyboard, Groups & Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code-workspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code Workspace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../" class="md-nav__link">
         
   
@@ -1168,10 +1231,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1182,8 +1245,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_7">
             <span class="md-nav__icon md-icon"></span>
             Nodes
           </label>
@@ -1592,6 +1655,21 @@
       Parameters
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shaping-one-value-123" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shaping one value (1.23)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3140,6 +3218,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../game-rules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Rules on the Main Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../build-a-game/" class="md-nav__link">
         
   
@@ -3707,6 +3806,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shaping-one-value-123" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shaping one value (1.23)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3742,7 +3856,7 @@
 
 
 <h1 id="math">Math</h1>
-<p>Combines two numbers with an arithmetic operation.</p>
+<p>Combines two numbers with an arithmetic operation, or shapes one (sine, rounding, clamping…).</p>
 <p><strong>Output:</strong> number (live result on the card)</p>
 <h2 id="inputs">Inputs</h2>
 <table>
@@ -3780,7 +3894,7 @@
 <tr>
 <td>op</td>
 <td>add</td>
-<td><code>add</code>, <code>sub</code>, <code>mul</code>, <code>div</code>, <code>min</code>, <code>max</code>, <code>mod</code></td>
+<td><code>add</code>, <code>sub</code>, <code>mul</code>, <code>div</code>, <code>min</code>, <code>max</code>, <code>mod</code>, <code>pow</code>, <code>sin</code>, <code>cos</code>, <code>abs</code>, <code>round</code>, <code>floor</code>, <code>clamp</code>, <code>neg</code></td>
 </tr>
 <tr>
 <td>a, b</td>
@@ -3790,6 +3904,44 @@
 </tbody>
 </table>
 <p>Division and modulo by zero return 0 instead of exploding; <code>mod</code> always returns a positive result.</p>
+<h3 id="shaping-one-value-123">Shaping one value (1.23)</h3>
+<p>These operations work on <strong>a</strong>; <strong>b</strong> is a setting, or is not used:</p>
+<table>
+<thead>
+<tr>
+<th>op</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pow</code></td>
+<td>a to the power b (aᵇ)</td>
+</tr>
+<tr>
+<td><code>sin</code> / <code>cos</code></td>
+<td>sin(a) or cos(a), times b — b = 0 counts as 1, so a fresh node gives plain sin(a)</td>
+</tr>
+<tr>
+<td><code>abs</code></td>
+<td>|a|</td>
+</tr>
+<tr>
+<td><code>round</code> / <code>floor</code></td>
+<td>a rounded to the nearest whole number / down</td>
+</tr>
+<tr>
+<td><code>clamp</code></td>
+<td>a kept between 0 and b (b of 0 or less = between 0 and 1)</td>
+</tr>
+<tr>
+<td><code>neg</code></td>
+<td>−a</td>
+</tr>
+</tbody>
+</table>
+<p>A <a href="../hudbutton/">HUD Button</a>, <strong>On Game State</strong> or <strong>HUD Timer</strong> can be wired into <strong>a</strong> or <strong>b</strong> since 1.23 —
+see <a href="../../main-graph/#value-wires">Value wires</a>.</p>
 <h2 id="practical-example">Practical example</h2>
 <p>Scale a slider into degrees of travel:</p>
 <ol>
@@ -3799,7 +3951,8 @@
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p><code>min</code>/<code>max</code> double as clamps: wire a value into <strong>a</strong> and type the limit into <strong>b</strong>.</p>
+<p><code>min</code>/<code>max</code> double as one-sided clamps: wire a value into <strong>a</strong> and type the limit into <strong>b</strong>. For a
+swing back and forth, wire a <a href="../time/">Time</a> node into <strong>a</strong> of a <code>sin</code> node and set <strong>b</strong> to the size of the swing.</p>
 </div>
 
 
@@ -3821,7 +3974,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-07-16
+    2026-10-05
   </span>
 
     

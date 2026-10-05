@@ -1182,6 +1182,69 @@
   
   
     <li class="md-nav__item">
+      <a href="main-graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Main Graph & Node Properties
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="node-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Node Editor: Keyboard, Groups & Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="code-workspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code Workspace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="nodes/" class="md-nav__link">
         
   
@@ -1231,10 +1294,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
         
           
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1245,8 +1308,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
             <span class="md-nav__icon md-icon"></span>
             Nodes
           </label>
@@ -3136,6 +3199,27 @@
   
   
     <li class="md-nav__item">
+      <a href="game-rules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Rules on the Main Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="build-a-game/" class="md-nav__link">
         
   
@@ -3758,6 +3842,24 @@ on a phone that gives the scene the whole height of the screen.</p>
 <a href="https://github.com/theprototype-app/core">github.com/theprototype-app/core</a> (also <strong>Settings ▸ About ▸ Source Code</strong>),
 with a contributing guide and an <code>llms.txt</code> for coding agents.</p>
 <h2 id="whats-new">What's new</h2>
+<p><strong>1.23 — readable game logic.</strong> Every rebuilt game's rules are now <a href="game-rules/">one readable script on its Main
+graph</a> — Mini Golf, Football, Dungeon Realms, The Alchemist's Escape, Sky Run, Target Toss and Marble
+Maze — wired to its buttons, HUD, sounds and the kit: tune a number in the node's properties panel, or change the code
+and press <kbd>Ctrl</kbd>+<kbd>S</kbd>, and the game plays by your rules on every player's screen, saved with the scene.
+The scene's graph is the <a href="main-graph/">Main graph</a>, and opening an older game adds links to the code that runs it.
+Every node's properties are in the node editor's side panel (Script inputs, Behaviour params, module nodes), and a
+double-click opens any node's code — module code read-only, with <strong>Make editable copy</strong> for nodes bound to it. The
+<a href="code-workspace/">code workspace</a> puts scripts, behaviours, script files, module sources and the graph as JSON in
+tabs; <kbd>Ctrl</kbd>+<kbd>S</kbd> checks the code and reloads every node that runs it, on every peer, and broken code
+never applies. <a href="nodes/script/">Script</a> nodes grow the sockets their code uses and get <code>api.object</code>, <code>raycast</code>, <code>keys</code>
+and <code>spawn</code>; <a href="nodes/math/">Math</a> gains pow, sin, cos, abs, round, floor, clamp and negate; and HUD Button, On Game
+State and HUD Timer now give a value when wired into a number input. The <a href="node-editor/">node editor</a> has its own
+keys — shortcuts follow the panel you clicked, so <kbd>C</kbd> opens the chat only from the 3D view — plus groups you
+open like folders, markdown notes and frames, right-click menus for the canvas, a node and a selection, mute, collapse,
+align and nudge, undo for every edit, and a <kbd>?</kbd> cheat sheet. <strong>Settings ▸ Node types</strong> hides the node types you
+never use, groups save and load as <code>.tpnode</code> files, and the Edit Mesh keys can be rebound. For modules,
+<a href="module-sdk/#for-module-and-game-authors-123"><code>api.kit.provide</code></a> lends a game's rules its engine, behaviours get
+sockets, and <code>api.flow.seedGraph</code> seeds a wired example once.</p>
 <p><strong>1.22 — VR + water.</strong> Any object can be <a href="water/">water</a>: <strong>Add ▸ Water</strong> makes a tank, a pool or an ocean with waves,
 refraction, caustics, foam, underwater fog and bubbles, in nine presets from Pool to Lava and Ice, plus <strong>Rain</strong> and
 <strong>Snow</strong> <a href="particles/">particle presets</a>. <a href="physics/#things-float">Things float</a> — or sink, or drift with a river —

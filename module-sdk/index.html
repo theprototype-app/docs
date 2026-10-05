@@ -1115,6 +1115,69 @@
   
   
     <li class="md-nav__item">
+      <a href="../main-graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Main Graph & Node Properties
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../node-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Node Editor: Keyboard, Groups & Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-workspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code Workspace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/" class="md-nav__link">
         
   
@@ -1164,10 +1227,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
         
           
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1178,8 +1241,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
             <span class="md-nav__icon md-icon"></span>
             Nodes
           </label>
@@ -3069,6 +3132,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../game-rules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Rules on the Main Graph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../build-a-game/" class="md-nav__link">
         
   
@@ -3780,6 +3864,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#for-module-and-game-authors-123" class="md-nav__link">
+    <span class="md-ellipsis">
+      For module and game authors (1.23)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#new-in-120" class="md-nav__link">
     <span class="md-ellipsis">
       New in 1.20
@@ -4106,6 +4199,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-module-and-game-authors-123" class="md-nav__link">
+    <span class="md-ellipsis">
+      For module and game authors (1.23)
+    </span>
+  </a>
   
 </li>
       
@@ -4508,6 +4610,9 @@ replicated state.</p>
 <span class="kd">const</span><span class="w"> </span><span class="nx">off</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">flow</span><span class="p">.</span><span class="nx">onChange</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">refreshToolbox</span><span class="p">())</span>
 <span class="w">                                </span><span class="c1">// after any graph change or node firing, coalesced to once a frame;</span>
 <span class="w">                                </span><span class="c1">// torn down with the module, or call off()</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">flow</span><span class="p">.</span><span class="nx">seedGraph</span><span class="p">({</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;example&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">nodes</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="cm">/* … */</span><span class="p">],</span><span class="w"> </span><span class="nx">edges</span><span class="o">:</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">})</span>
+<span class="w">                                </span><span class="c1">// 1.23: addNodes, but only ONCE — nothing is added while any node</span>
+<span class="w">                                </span><span class="c1">//   carries this seed or is one of your module&#39;s node types</span>
 </code></pre></div>
 <p><code>api.game.onChange(fn)</code> and <code>api.peerVars.onChange(fn)</code> work the same way for the game state (state, round, variables)
 and for any peer's row: coalesced to one call per frame, returning <code>off</code>, released with the module.</p>
@@ -4701,6 +4806,54 @@ It returns an unsubscribe, and is torn down with the module either way.</p>
 the scene, keyed by uuid, and <code>recent</code> is the last 32 hits in order. It is runtime
 state — a late joiner's log starts empty, so a module that needs history keeps its
 own through <code>registerStateSync</code>.</p>
+<h2 id="for-module-and-game-authors-123">For module and game authors (1.23)</h2>
+<p>The games rebuilt in 1.23 keep their rules in a <a href="../game-rules/">behaviour on the Main graph</a> and leave
+only the engine in their module. Three things make that work, and every module can use them.</p>
+<p><strong>Behaviour sockets.</strong> A behaviour may declare sockets on its node:</p>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">behaviour</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Mini Golf rules&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">strokes</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">inputs</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;teeOff&#39;</span><span class="p">],</span><span class="w">                  </span><span class="c1">// event sockets in</span>
+<span class="w">    </span><span class="nx">outputs</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;holeSunk&#39;</span><span class="p">],</span><span class="w">      </span><span class="c1">// a state field, and an event</span>
+<span class="w">    </span><span class="nx">on</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">load</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">kit</span><span class="p">.</span><span class="nx">levels</span><span class="p">.</span><span class="nx">define</span><span class="p">({</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;mini-golf&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">list</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="cm">/* … */</span><span class="p">]</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nx">teeOff</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hole 1&#39;</span><span class="p">;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="s1">&#39;golf.stopped&#39;</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* … */</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;holeSunk&#39;</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<ul>
+<li><code>inputs: ['teeOff']</code> are <strong>event</strong> sockets. A trigger wired into one runs the handler of the same
+  name in <code>on</code>, on the authority, once per press — even if the press lands while the authority is
+  moving to another player.</li>
+<li><code>outputs</code> are sockets out. A name that is a <strong>state</strong> field is a value socket, typed by its initial
+  value. Any other name is an <strong>event</strong> socket, fired by <code>this.emit('holeSunk')</code>; it leaves after the
+  state update, so every player's banner reads the new state.</li>
+<li><code>on: { load() {…} }</code> runs once on <strong>every</strong> peer when the behaviour starts, read-only — for
+  per-device setup such as <code>kit.levels.define(…)</code> for the pause menu's level picker.</li>
+</ul>
+<p><strong>Engines: <code>api.kit.provide(spec, impl)</code>.</strong> A module lends rules what they cannot be (a physics body, a
+drag-to-aim arrow, a VR club) as a piece shaped like a <a href="#the-game-kit-apikit">kit</a> piece:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">golf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">kit</span><span class="p">.</span><span class="nx">provide</span><span class="p">(</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">piece</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;golf&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">group</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Mini golf (engine)&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">calls</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hit&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">kind</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;action&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Hit the ball&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ballSpeed&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">kind</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;value&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Ball speed&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;stopped&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">kind</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;event&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;On ball stopped&#39;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">hit</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* … */</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="nx">ballSpeed</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">speed</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<span class="p">);</span>
+<span class="nx">golf</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">&#39;stopped&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">pos</span><span class="w"> </span><span class="p">});</span><span class="w">   </span><span class="c1">// every behaviour&#39;s on: { &#39;golf.stopped&#39;(e) {…} } hears it</span>
+<span class="nx">golf</span><span class="p">.</span><span class="nx">listening</span><span class="p">(</span><span class="s1">&#39;stopped&#39;</span><span class="p">);</span><span class="w">       </span><span class="c1">// how many rules handle it (0 = none: your own default may decide)</span>
+<span class="nx">golf</span><span class="p">.</span><span class="nx">dispose</span><span class="p">();</span><span class="w">                  </span><span class="c1">// take the piece away (unloading the module does this too)</span>
+</code></pre></div>
+<p>Rules call <code>kit.golf.hit(…)</code> and handle <code>'golf.stopped'</code>; the live node view draws them like any kit
+call. The handler runs on the authority, so emit on every peer that saw the moment (or on the one that
+did). The piece is lifecycle-tracked: unloading the module removes it, and every behaviour that used it
+reloads without it.</p>
+<p><strong>A wired example: <code>api.flow.seedGraph</code>.</strong> Like <code>api.flow.addNodes</code>, but only once: nothing is added
+while any node carries the seed's key or is one of your module's node types (see
+<a href="#the-flow-graph-apiflow"><code>api.flow</code></a>).</p>
+<p>Also in 1.23: HUD Text draws its <code>format</code> socket (wire text into it), Announce takes a wired <code>sub</code> line,
+and a <a href="../nodes/script/#typed-sockets">Script</a> may declare an output of type <code>any</code> (text).</p>
 <h2 id="new-in-120">New in 1.20</h2>
 <h3 id="unloading-everything-you-registered-goes-with-you">Unloading: everything you registered goes with you</h3>
 <p>A module can now be unloaded and loaded again while the app runs — switched off in the Modules
@@ -4876,7 +5029,9 @@ returns <code>off</code>; registrations are torn down with your module.</p>
 </ul>
 <h3 id="behaviours">Behaviours</h3>
 <p>Game logic can also live in the scene as a <a href="../behaviours/">behaviour</a>: one small file in a
-Behaviour node, run on the authority with replicated state, calling the same <code>kit</code>. Each
+Behaviour node, run on the authority with replicated state, calling the same <code>kit</code>. Since 1.23 a
+behaviour can have sockets and call a module's engine — see
+<a href="#for-module-and-game-authors-123">For module and game authors</a>. Each
 behaviour is tracked like a module of its own, so deleting its node takes its listeners and
 entities with it.</p>
 <h2 id="new-in-118">New in 1.18</h2>
@@ -4982,7 +5137,7 @@ examples.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-04
+    2026-10-05
   </span>
 
     
