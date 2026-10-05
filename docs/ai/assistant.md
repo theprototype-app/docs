@@ -36,6 +36,35 @@ Once the assistant is enabled and a provider is set, a round **✨ button** appe
 bottom-left of the viewport (just below the **＋** add button). Click it to open or close
 the assistant window — the same window the quick prompt bar opens into.
 
+### In VR
+
+Radial menu ▸ **Tools ▸ AI** opens the same conversation on a panel in the headset, where you can type or hold a button
+and talk — see [The AI assistant in VR](../vr.md#the-ai-assistant-in-vr).
+
+## Voice typing
+
+Talk to the assistant instead of typing. Set up a speech-to-text provider in **Settings ▸ AI ▸ Voice typing provider**
+(search *voice*, *whisper* or *dictation*):
+
+| Setting | Default | Notes |
+|---|---|---|
+| **Provider** | OpenAI | **OpenAI** (`whisper-1`), **Groq** (`whisper-large-v3`), or **Self-hosted** — any OpenAI-compatible `/audio/transcriptions` server, such as faster-whisper |
+| **Base URL / API key / Model** | from the preset | OpenAI and Groq need a key; a self-hosted server only its URL |
+| **Language hint** | blank (detect) | for example `en` |
+| **Test connection** | — | sends half a second of silence; *Connected* means the server accepted it |
+
+![Voice typing set to Groq](../img/ai/voice-typing-settings.png)
+
+The assistant window then has a **mic** button next to **Send**: click to listen, click again to stop. The words land in
+the input, so you can fix them before sending. (In VR they are sent as soon as you let go.)
+
+![The assistant window with the mic button next to Send](../img/ai/assistant-mic.png)
+
+- The voice key is stored on this device only, like the AI provider key ([Where keys are stored](providers.md#where-keys-are-stored)).
+- If voice chat is on, the assistant uses the same microphone without opening a second one, and voice chat keeps
+  working.
+- Voice needs a browser that can record audio and microphone permission. A recording stops itself after 60 seconds.
+
 ## What you can ask for
 
 The assistant works with the building blocks the app already has:

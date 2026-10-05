@@ -24,6 +24,27 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.24 — characters that walk, a race, and your games' stats.** Everyone in a session is now a
+[rigged character](avatars.md) — nine CC0 KayKit adventurers and skeletons that walk, run, strafe and jump with their
+camera and reach for their VR controllers — and **Customize Character** (profile menu) is a side panel with a live
+preview on yourself: body, head (the character's own, a stylised one or your photo), hat, outfit colour and your ping;
+the classic floating head is one click away. **Templates ▸ Games** has a new game, [Race](race.md): up to four players,
+three laps round a valley, with laps, speed and grip on the **Race rules** node and a road you reshape by moving its
+points. [Edit Mesh](mesh-editing.md) gains slide edges, fill holes (<kbd>F</kbd>), connect (<kbd>J</kbd>) and dissolve
+vertices, solidify and separate, mitered bevel corners and rounded vertex bevels, and two meshes can be combined with a
+[Boolean](mesh-editing.md#boolean) union, subtract or intersect from the object menu. [Checkpoints](checkpoints.md)
+(<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>) keep named and automatic versions of your scene on this device, with a
+timeline that restores, compares, notes and pins them, and [Settings](controls.md#the-settings-window) is a window with a
+section sidebar. **Tools ▸ [Recording…](recording.md)** films a turntable or a flythrough as a webm, and
+[Publish / Export ▸ Community gallery](publish-export.md#the-community-gallery-tab) builds a gallery submission for GitHub.
+Every game keeps [one permanent id](community.md#one-game-one-count), so re-exports and the play link count as one game in
+**Your games & stats**; community cards, play links and the pause menu get [hearts](community.md#hearts), and the
+community browser a **Mine** filter. In a headset a game's HUD [floats in front of you](vr.md#the-game-hud-in-a-headset)
+as laid out on the desktop, **Tools ▸ AI** opens an [AI chat panel](vr.md#the-ai-assistant-in-vr) you can talk to, the
+assistant gets [voice typing](ai/assistant.md#voice-typing), and the VR keyboard and Settings panel gain punctuation and
+a Search tab. Modules can ask [`api.hud.vrHud()`](module-sdk.md#for-module-authors-124) and give their HUD elements a
+`vrText`.
+
 **1.23 — readable game logic.** Every rebuilt game's rules are now [one readable script on its Main
 graph](game-rules.md) — Mini Golf, Football, Dungeon Realms, The Alchemist's Escape, Sky Run, Target Toss and Marble
 Maze — wired to its buttons, HUD, sounds and the kit: tune a number in the node's properties panel, or change the code

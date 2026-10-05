@@ -1,6 +1,6 @@
 # Mesh Editing
 
-Reshape any mesh by hand: drag its vertices, slide its edges, extrude and bevel its faces, cut it with a knife, mirror one half onto the other. Every edit replicates to your peers and every step is undoable.
+Reshape any mesh by hand: drag its vertices, slide its edges, extrude and bevel its faces, fill holes, give a surface thickness, cut it with a knife, mirror one half onto the other — or combine two meshes with a [Boolean](#boolean). Every edit replicates to your peers and every step is undoable.
 
 ## Entering and leaving
 
@@ -99,6 +99,8 @@ Icons are for tools; commands that act immediately read as words. Whichever tool
 | **Knife** | <kbd>K</kbd> | Cut across the mesh on screen — see below. |
 | **Flip normals** | <kbd>F</kbd> | Reverse the winding, for a face that renders inside-out. |
 | **Duplicate** | | Copy the selected faces in place. They start exactly on top of the originals — drag them off with the gizmo. |
+| **Solidify** | | Give the selected surface thickness — see [below](#solidify). |
+| **Separate** | | Move the selected faces into a **new object** of their own, in the same place, with its own copy of the material. One <kbd>Ctrl</kbd>+<kbd>Z</kbd> puts them back. |
 | **Delete** | <kbd>X</kbd> | Remove the selection. |
 
 !!! note "Move is the default, deliberately"
@@ -114,6 +116,7 @@ Icons are for tools; commands that act immediately read as words. Whichever tool
 | **Loop cut** | *cuts*, *position* along the ring, and which of the two directions to run — **Along** or **Across** |
 | **Bridge** | *cuts* across the tunnel, *twist* to rotate one end against the other, and **invert faces** if the walls end up the wrong way round |
 | **Subdivide** | *levels* — each one splits every quad 2×2 again |
+| **Solidify** | *thickness*, in world units |
 
 ### Knife
 
@@ -121,24 +124,54 @@ Pick **Knife**, click one end of the cut and then the other. A dashed band follo
 
 The cut is a line *on screen*, so it slices straight through the model from your point of view — orbit first to line up the angle you want.
 
+### Solidify
+
+**Solidify** gives the selected surface thickness: a copy behind it plus a rim joining the two. A positive **thickness**
+goes *into* the surface, a negative one grows outward. It works on an **open** surface or on a whole piece — a closed box
+becomes hollow. A patch of a closed mesh is refused: select the whole piece (**Shell**) or delete a face first.
+
+![A box made hollow with Solidify, thickness 0.1](img/mesh-editing/solidify.png)
+
+Solidify uses averaged vertex normals, so sharp corners get slightly thinner walls.
+
 ### Bridge
 
 Select **two** separate pieces and press Bridge. Their boundaries have to have the **same number of edges** — the toolbox prints both counts next to the selection so you can check. Bridging two faces of one solid punches a hole through it; bridging two separate shells builds a tube between them, and the walls are wound correctly either way.
 
 ## Edge tools
 
-| Tool | What it does |
-|---|---|
-| **Move** | Seat the gizmo on the selected edges (X runs along the edge, Z out of the surface). The welded neighbours stretch with it. |
-| **Loop** | Select the whole edge loop through this edge. |
-| **Bevel** | Replace the edge with a chamfer strip (width, segments and profile below). |
-| **Extrude** | Pull a **border** edge out into a new strip of faces. A chain of edges extrudes as one piece; interior edges have nothing to extrude into, so they are refused. |
-| **Subdivide** | Split every face along the selected edge at its midpoint — both sides split at the same point, so no crack appears. |
-| **Dissolve** | Remove the edge and merge the two faces it joined. |
-| **Delete** | Remove every face touching the selected edges. |
+![The Edges tab with Slide armed and its factor option](img/mesh-editing/edge-tools-slide.png){ width=180 }
 
-!!! warning "Bevel needs a clean corner"
-    Each end of a bevelled edge needs exactly three faces around it. More than that needs a mitered corner, which the tool refuses rather than guessing — it would tear the mesh.
+| Tool | Key | What it does |
+|---|---|---|
+| **Move** | | Seat the gizmo on the selected edges (X runs along the edge, Z out of the surface). The welded neighbours stretch with it. |
+| **Loop** | <kbd>L</kbd> | Select the whole edge loop through this edge. |
+| **Slide** | | Move the selected edges along the faces on either side, keeping the shape — see [below](#slide-edges). |
+| **Fill** | <kbd>F</kbd> | Close the hole the selected border edges go around with one new face — see [below](#fill-a-hole). |
+| **Bevel** | | Replace the edge with a chamfer strip (width, segments and profile below). |
+| **Extrude** | | Pull a **border** edge out into a new strip of faces. A chain of edges extrudes as one piece; interior edges have nothing to extrude into, so they are refused. |
+| **Subdivide** | | Split every face along the selected edge at its midpoint — both sides split at the same point, so no crack appears. |
+| **Dissolve** | | Remove the edge and merge the two faces it joined. |
+| **Delete** | | Remove every face touching the selected edges. |
+
+### Slide edges
+
+Pick a whole line first (**Select ▸ Loop**), then press **Slide**. The options pane shows **factor**: 0 is where the
+edges are now, +1 and −1 are all the way onto the neighbouring line on either side. Scrub it and watch the edges move;
+**✕ Revert** undoes. A vertex with no single edge to run along (a box corner) stays put — the toast says how many.
+
+### Fill a hole
+
+Select a **border** edge and press **Fill** (<kbd>F</kbd>): the hole it goes around is closed with one new face. One edge
+of the rim is enough to fill the whole hole. The cap is wound to match the faces around it. A flat, convex hole becomes a
+clean polygon; any other outline is fanned from its centre. Fill closes one rim at a time.
+
+### Mitered corners
+
+Since 1.24 an end where **four or more** faces meet is bevelled with a **mitered corner** — a small cap joining the
+chamfer to every face there — instead of being refused. (Before, each end needed exactly three faces.)
+
+![An octahedron edge bevelled in 4 segments, mitered where four faces meet](img/mesh-editing/mitered-bevel.png)
 
 ## Vertex tools
 
@@ -146,11 +179,15 @@ Select **two** separate pieces and press Bridge. Their boundaries have to have t
 |---|---|---|
 | **Weld** | <kbd>W</kbd> | Merge the selected vertices into one, at their centroid. |
 | **Create face** | | Build a face from 3 or 4 selected vertices. |
-| **Bevel** | | Cut the corner off every selected vertex and cap it. Works on any number of vertices. |
+| **Connect** | <kbd>J</kbd> | Select two corners of the same face (<kbd>Ctrl</kbd>+click adds the second): the face is cut in two along the line between them. The two must not already share an edge. |
+| **Dissolve** | | Remove each selected vertex and merge the faces around it into one. A vertex in the middle of an edge just leaves that edge. Unlike Delete, the surface stays closed. |
+| **Bevel** | | Cut the corner off every selected vertex and cap it. Works on any number of vertices. Since 1.24 it has **segments** (1 – 8): more segments round the corner off, and **profile** sets how far it bulges (0 is a flat, subdivided cap). |
 | **Smooth** | | Relax the selected vertices toward their neighbours — *factor* sets how far each pass moves them, *iterations* how many passes. |
 | **Slide** | | Constrain the drag to one of this vertex's own edges. Adjusts a profile without pulling the vertex off the surface. A marker shows where it will land, and the clamp toggle decides whether it may run past the edge's end. |
 | **Delete** | | Remove every face touching the selected vertices. |
 | **Deselect** | | Clear the selection. |
+
+![The Vertices tab with Bevel armed: width, segments, Out / In and profile](img/mesh-editing/vertex-tools-bevel.png){ width=180 }
 
 Vertices are drawn as dots sized in **screen** space, so they stay clickable whether you're zoomed into a cube or out of a whole terrain. The **dot size** slider multiplies that size, and turning the adaptive toggle off gives you a fixed world size instead.
 
@@ -164,6 +201,31 @@ Bevel works in all three modes and shares one set of options:
 | **Segments** | More segments = a rounder edge. |
 | **Profile** | 0 is a flat chamfer, positive domes the cap out, negative dishes it in. |
 | **Direction** | Whether the chamfer eats **in** to the shape or grows **out** of it. |
+
+Tool values — the slide factor, the solidify thickness, the bevel segments — are remembered for the session, like the
+other tool options.
+
+## Boolean
+
+Combine two meshes into one. Select exactly **two** meshes (<kbd>Ctrl</kbd>+click), then right-click the **first** one ▸
+**Boolean**:
+
+| Operation | Result |
+|---|---|
+| **Union** | merge them into one solid |
+| **Subtract** | cut the second out of the first |
+| **Intersect** | keep only the overlap |
+| **Subtract, keep the cutter** | as Subtract, but the second object stays |
+
+The first object takes the result and the second is removed (except in the *keep the cutter* variant). One
+<kbd>Ctrl</kbd>+<kbd>Z</kbd> restores both. Like every mesh edit, it is one undo step and reaches everyone in the session.
+
+![A cylinder subtracted from a box](img/mesh-editing/boolean-subtract.png)
+
+!!! note "Limits"
+    - The result uses the **first** object's first material.
+    - The inputs should be closed meshes: a mesh with holes gives a result with holes (the toast counts them).
+    - Very large results are refused by the usual [size limit](#how-big-a-model-can-you-edit).
 
 ## Proportional editing
 
@@ -270,10 +332,16 @@ The same list lives behind the **?** button in the toolbox.
 | <kbd>E</kbd> / <kbd>I</kbd> / <kbd>G</kbd> | Faces: arm Extrude / Inset / Move |
 | <kbd>S</kbd> / <kbd>C</kbd> | Faces: Subdivide / Loop cut |
 | <kbd>B</kbd> / <kbd>F</kbd> / <kbd>X</kbd> | Faces: Bridge / Flip normals / Delete |
+| <kbd>F</kbd> | Edges: Fill the hole |
 | <kbd>K</kbd> | Faces: Knife |
 | <kbd>L</kbd> | Loop select (faces: again = perpendicular) |
 | <kbd>Ctrl</kbd>+<kbd>+</kbd> / <kbd>-</kbd> | Faces: grow / shrink the selection |
 | <kbd>W</kbd> | Vertices: weld the selected vertices |
+| <kbd>J</kbd> | Vertices: connect two corners of a face |
+
+These keys can be rebound in the *Mesh edit* group of **Settings ▸ Shortcuts**. Some rows serve two modes, so rebinding
+one moves both: **L** is Loop in every mode, and **F** is Flip normals in Faces *and* Fill in Edges. **J** (Connect) has
+its own row.
 
 ## In VR
 
@@ -283,6 +351,8 @@ Mesh editing works in VR too: the radial menu's **Selected ▸ Edit mesh** cover
 
 - Editing an object **locks it** — your peers can see it but not edit it at the same time.
 - Live gestures stream a preview to peers several times a second; the final shape is committed when you let go.
+- **Separate** keeps the new object's face grouping (quads and n-gons) for everyone in the session, but a peer who joins
+  *later* re-derives it — the same rule as for every edited mesh.
 - A topology change travels as a full geometry snapshot. That has a ceiling, but a generous one — roughly half a million vertices, which is about thirty times what earlier versions allowed.
 
 ### How big a model can you edit?

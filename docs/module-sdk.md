@@ -533,6 +533,42 @@ the scene, keyed by uuid, and `recent` is the last 32 hits in order. It is runti
 state — a late joiner's log starts empty, so a module that needs history keeps its
 own through `registerStateSync`.
 
+## For module authors (1.24)
+
+Since 1.24 the app draws a game's playing HUD in a headset itself — a curved band in front of the player, or the wrist
+card, whichever the player chose ([The game HUD in a headset](vr.md#the-game-hud-in-a-headset)). A module that feeds the
+core HUD no longer needs a VR readout of its own.
+
+**`api.hud.vrHud()`** tells you what the headset is doing:
+
+```js
+const vr = api.hud.vrHud?.();     // feature-detect: undefined on an app older than 1.24
+// vr = { placement: 'head' | 'world' | 'wrist', visible: true | false }
+if (vr) {
+	// the app shows the HUD in the headset: drop your own VR-only readout
+}
+```
+
+`placement` is the player's **Game HUD** setting (Follow head, Fixed in world, Wrist only); `visible` says whether the
+band is up right now.
+
+**`vrText` for your own HUD element.** An element kind you register with `api.registerHudElement(kind, def)` is DOM, and
+the headset cannot show DOM. Give its def a `vrText` and the headset shows that line of text in its place:
+
+```js
+api.registerHudElement('crossings', {
+	// …your mount, fields and defaults, as before…
+	vrText(element, runtime) {
+		return `${crossings} crossings`;   // one line of text, from your module's own state
+	}
+});
+```
+
+An element kind without `vrText` does not show in the headset. Untangle 2.4.1 does this for its clock and drops its old
+floating VR sprite on 1.24.
+
+Also in 1.24: VR game cards draw in one pass (they took two).
+
 ## For module and game authors (1.23)
 
 The games rebuilt in 1.23 keep their rules in a [behaviour on the Main graph](game-rules.md) and leave

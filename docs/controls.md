@@ -273,6 +273,22 @@ The **play button**'s right-click menu chooses how you play — **Play (desktop)
 (greyed out where the device cannot) — and, in a scene that is a game, **Test play (start from the menu)**, which resets the
 game to its menu and starts from the Start screen. See [Build a Game Loop](build-a-game.md#test-play).
 
+## The Settings window
+
+Since 1.24 **Settings** opens as a window with its **sections listed in a sidebar**: Interface, Controls, Input, Touch
+controls, Scene, Explorer, VR, AI, Export, Connection, Shortcuts and About (plus any section a newer version adds).
+Click a section to show it; <kbd>↑</kbd> / <kbd>↓</kbd> move between sections, and the window reopens on the section you
+used last. Links that open Settings at a section — *File settings*, *Connection settings*, the AI button — land on that
+section.
+
+![Settings as a window: the section sidebar on the left, the search box above the rows](img/controls/settings-window.png)
+
+**Search** still looks through *every* section: while you type, all matching rows are shown together, the sidebar lists
+only the sections that have matches, and clicking one jumps to it. <kbd>Esc</kbd> clears the search; a second
+<kbd>Esc</kbd> closes Settings.
+
+On a phone the sidebar becomes a row of section chips above the settings.
+
 ## Keyboard shortcuts
 
 Shortcuts are inert while you type in a text field and while play mode owns the keyboard. The same list is shown in **Settings ▸ Shortcuts** (<kbd>Ctrl</kbd>+<kbd>/</kbd> opens it directly), where a click on a shortcut's keys rebinds it and **Reset all** puts the defaults back.
@@ -282,7 +298,7 @@ Shortcuts are inert while you type in a text field and while play mode owns the 
 **Every keyboard layout works.** A letter shortcut is matched by the letter printed on the key when there is one — AZERTY, Dvorak and QWERTZ keep their own labels — and by the key's **physical position** otherwise, so <kbd>G</kbd>, <kbd>F</kbd>, <kbd>Ctrl</kbd>+<kbd>Z</kbd> and <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> work on Russian, Greek, Hebrew, Arabic and CJK layouts without switching. Where the browser can tell, **Settings ▸ Shortcuts** shows your layout's own label beside each letter (*п on your layout*); where it cannot, a note says letter shortcuts follow the QWERTY position.
 
 !!! tip "Finding a setting"
-    Settings is grouped into **Interface** (theme, notifications, windows, lists and menus), **Controls** (keyboard, mouse and trackpad), **Input** (gamepad and the node editor's mouse bindings), **Scene** (grid, shadows, autosave and everything about the scene itself), **Explorer**, then **VR**, **AI**, **Connection**, **Shortcuts** and **About**. If you don't know which one holds what you want, type in the search box at the top. Rows match by their name, their group (*Grid*), their section (*VR*) and by keywords the labels do not say — search **dark** to find the theme, **quest** for the VR rows, **caustics** or **refraction** for Water quality, **tutorial** or **welcome** for the [Tours](tours.md), **wheelchair** for the VR Stance, **remap** for the VR buttons — and matches are highlighted. <kbd>Esc</kbd> clears the search; a second <kbd>Esc</kbd> closes Settings.
+    Settings is grouped into **Interface** (theme, [your character](avatars.md), notifications, windows, lists and menus), **Controls** (keyboard, mouse and trackpad), **Input** (gamepad and the node editor's mouse bindings), **Touch controls**, **Scene** (grid, shadows, autosave, [checkpoints](checkpoints.md) and everything about the scene itself), **Explorer**, then **VR**, **AI**, **Export**, **Connection**, **Shortcuts** and **About** — one sidebar entry each ([above](#the-settings-window)). If you don't know which one holds what you want, type in the search box at the top. Rows match by their name, their group (*Grid*), their section (*VR*) and by keywords the labels do not say — search **dark** to find the theme, **quest** for the VR rows, **caustics** or **refraction** for Water quality, **tutorial** or **welcome** for the [Tours](tours.md), **wheelchair** for the VR Stance, **remap** for the VR buttons — and matches are highlighted. <kbd>Esc</kbd> clears the search; a second <kbd>Esc</kbd> closes Settings.
 
 | Keys | Action |
 |---|---|
@@ -309,6 +325,7 @@ Shortcuts are inert while you type in a text field and while play mode owns the 
 | <kbd>Ctrl</kbd>+<kbd>Enter</kbd> | Play / enter VR (right-click the play button for modes) |
 | <kbd>`</kbd> | Toggle the [AI](ai/assistant.md) quick-prompt bar |
 | <kbd>Ctrl</kbd>+<kbd>S</kbd> | Save the scene |
+| <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd> | Save a [checkpoint](checkpoints.md) |
 | <kbd>Ctrl</kbd>+<kbd>Z</kbd> | Undo |
 | <kbd>Ctrl</kbd>+<kbd>Y</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd> | Redo |
 | <kbd>Shift</kbd>+<kbd>1</kbd>…<kbd>5</kbd> | Recall camera bookmark 1–5 |
@@ -316,7 +333,7 @@ Shortcuts are inert while you type in a text field and while play mode owns the 
 | <kbd>Ctrl</kbd>+<kbd>/</kbd> | Show the shortcut list |
 | <kbd>?</kbd> | Keyboard cheat sheet (every panel, the focused one first) |
 
-Inside an Edit Mesh session the bare letters <kbd>E</kbd> <kbd>I</kbd> <kbd>G</kbd> <kbd>S</kbd> <kbd>B</kbd> <kbd>F</kbd> <kbd>X</kbd> / <kbd>W</kbd> and the loop keys (<kbd>L</kbd>, <kbd>Ctrl</kbd>+<kbd>+</kbd>/<kbd>-</kbd>, <kbd>Ctrl</kbd>+<kbd>I</kbd>) belong to the mesh tools — see [Mesh Editing](mesh-editing.md). That is why the panel shortcuts above use <kbd>Alt</kbd>: they keep working while a mesh session is open. Since 1.23 the mesh tools' keys can be rebound too, in their own *Mesh edit* group of **Settings ▸ Shortcuts**.
+Inside an Edit Mesh session the bare letters <kbd>E</kbd> <kbd>I</kbd> <kbd>G</kbd> <kbd>S</kbd> <kbd>B</kbd> <kbd>F</kbd> <kbd>X</kbd> / <kbd>W</kbd> <kbd>J</kbd> and the loop keys (<kbd>L</kbd>, <kbd>Ctrl</kbd>+<kbd>+</kbd>/<kbd>-</kbd>, <kbd>Ctrl</kbd>+<kbd>I</kbd>) belong to the mesh tools — see [Mesh Editing](mesh-editing.md). That is why the panel shortcuts above use <kbd>Alt</kbd>: they keep working while a mesh session is open. Since 1.23 the mesh tools' keys can be rebound too, in their own *Mesh edit* group of **Settings ▸ Shortcuts**.
 
 ## Right-click menus
 
@@ -326,7 +343,7 @@ Inside an Edit Mesh session the bare letters <kbd>E</kbd> <kbd>I</kbd> <kbd>G</k
 - **Add** — the full primitive catalog (meshes, building blocks, cameras, lights, [water](water.md), [effects](particles.md), a [fluid tank](simulation.md#fluid-tank)) plus empty groups; objects spawn at the clicked point.
 - **Undo / Redo**, **Ping here**.
 - **Selected ▸** — the selected object's own menu (shown only while something is selected).
-- **Tools** — Node editor, Draw mode (drag 3D strokes on surfaces, or click out an editable [spline](splines.md)), Measure distance, Simulate physics (and *Reset simulation* while one runs).
+- **Tools** — Node editor, Draw mode (drag 3D strokes on surfaces, or click out an editable [spline](splines.md)), Measure distance, Simulate physics (and *Reset simulation* while one runs), [Recording…](recording.md) (a turntable or flythrough video).
 - **Snapping** — position / rotation / scale steps, snap to surface, element snapping, *More snapping settings…* (see [Snapping](snapping.md)).
 - **View** — Show grid, Grid & axes settings…, Show helpers in Play (debug), the Mouse wheel mode, Scene look…, Screenshot.
 - **Module tools** — the toolboxes of installed modules.
@@ -341,7 +358,7 @@ the search, then the submenu, then the menu. Rows show their keyboard shortcut o
 can be dragged, and each kind of menu remembers it. On a touch screen nothing pops a keyboard up unless you tap the
 search row.
 
-With **several objects** selected, the menu acts on the whole set — the entries are counted ("Delete 4 objects") — and adds **Group selection**, **Convert to mesh** (merge them into one editable mesh, materials kept) and the Physics ▸ Weld / Hinge pair.
+With **several objects** selected, the menu acts on the whole set — the entries are counted ("Delete 4 objects") — and adds **Group selection**, **Convert to mesh** (merge them into one editable mesh, materials kept) and the Physics ▸ Weld / Hinge pair. With exactly two meshes selected, right-click the first one for **Boolean** (union, subtract, intersect — see [Mesh Editing](mesh-editing.md#boolean)).
 
 ## VR basics
 

@@ -50,9 +50,8 @@ you put the headset on:
   releasing does nothing;
 - editor helpers (the grid, light and collider wireframes, outlines) are hidden;
 - the game's menu, pause and results screens float in front of you — point the laser and pull the
-  trigger (or poke them); the score sits on your **left wrist** (turn it to read) and on a
-  **top strip** across the top of your view. The board's **Top strip** button switches the strip off or on (remembered on
-  this device). The laser ends in a solid dot and the button under it lights up, and menus are drawn over the scene so
+  trigger (or poke them); what you read *while* playing — the score, the timer, the hints — floats in front of you on the
+  [game HUD](#the-game-hud-in-a-headset) and sits on your **left wrist** (turn it to read). The laser ends in a solid dot and the button under it lights up, and menus are drawn over the scene so
   a floor or a wall never hides them;
 - the left **X** button opens the game's pause menu;
 - **hold the trigger and sweep** across piano keys, drum steps, pads, mixer mutes or pedal
@@ -66,6 +65,43 @@ come back. Press it again to return to Interact; the game puts you back on its s
 menu board's **Edit mode** button does the same.
 
 On a desktop, press **Esc** to leave Play, then the bar's Edit/Interact cell (or **I**).
+
+## The game HUD in a headset
+
+Since 1.24, when you play a game in VR its HUD — the score, the timer, the level, the hints its author laid out — floats
+in front of you on a gently curved band, arranged the way the author arranged it on the desktop: the score card up and
+to the left, the clock up and to the right, the hint along the bottom. It replaces the single strip of short text lines
+earlier versions showed.
+
+![Waves in a headset: the score up left, the wave in the middle, more readouts below](img/vr/game-hud-waves.png)
+
+It appears by itself whenever a game is running and you are in Interact or Play; there is nothing to set up. Menus (the
+start screen, pause, results) still appear on the board in front of you — the band carries what you read while playing.
+
+- Small motions of your head leave the band still, so it doesn't jitter; when you turn, it follows you smoothly.
+- If you walk up to a wall or a game board, the band moves in front of it, so it never looks as if it is behind
+  something it is drawn over. Its apparent size stays the same.
+- The card on your **left wrist** is still there (turn your wrist to read it), with the **Edit mode** button, **Menu**,
+  and a **HUD** button that switches where the band goes.
+
+**Settings ▸ VR ▸ Display** (also the headset's Settings panel and the radial menu's **Settings ▸ Display**):
+
+| Setting | Choices |
+|---|---|
+| **Game HUD** | **Follow head** (the default: follows with a little lag), **Fixed in world** (stays put until you turn about 50° away or walk off, then moves in front of you again), **Wrist only** (no band; the wrist card carries the readouts, as before 1.24). The wrist card's **HUD** button cycles the same three |
+| **Game HUD size** | Small / Medium / Large |
+| **Button hints** | a row under the HUD saying which controller button does what in this game — for example *Trigger Fire · X Menu*. It lists only what you can actually press in a headset |
+
+!!! note "Limits"
+    - The band is read-only: you can't point at it or press it. Anything pressable (a menu, a settings screen) goes on
+      the board.
+    - A crosshair, a minimap, the debug pill and a full-screen damage flash have no headset form (you aim with a
+      controller).
+    - A module's own HUD element shows in the headset only if the module says what it reads there (see the
+      [Module SDK](module-sdk.md#for-module-authors-124)). Untangle's clock does from Untangle 2.4.1; its old floating
+      *Level · crossings* sprite is gone on 1.24, because the app shows the template's HUD now.
+    - Keyboard hints written into a game's HUD (*WASD to move*) show as written. The **Button hints** row is the
+      headset's own.
 
 ## The radial menu
 
@@ -97,7 +133,7 @@ The names and icons match the desktop menus:
 | **Objects** | opens the scene object list panel |
 | **Add ▸** | the viewport menu's Add: Cube, Wedge, Stairs, Sphere, Cylinder, Torus, and **Prefabs** |
 | **Scene ▸** | **Environment ▸** (Studio, Daylight, Sunset, Night, Classic), **Colocate ▸** (see [Colocation](colocation.md)), **Grid**, **World 1:1** (undo a scaled or rotated world grab) |
-| **Tools ▸** | Select, Box select, Draw mode, Ping, Simulate physics, **Profile ▸** |
+| **Tools ▸** | Select, Box select, Draw mode, Ping, Simulate physics, **Profile ▸**, **AI** ([below](#the-ai-assistant-in-vr)) |
 | **Redo** · **Undo** | step through history |
 | **Chat** | opens the VR chat panel |
 | **Settings ▸** | every VR setting, the microphone, the welcome tour and Exit VR ([below](#settings)) |
@@ -142,6 +178,12 @@ to the Settings ring.
 
 ![The All settings panel on its Comfort tab](img/vr/settings-panel.png)
 
+**Search** — the last tab of the panel. Press the query row and type on the VR keyboard: the results follow every key
+(*turn* lists Turning, Snap angle, Smooth speed and Mirror turn). Press a result to change it right there. <kbd>Esc</kbd>
+on the keyboard puts the previous search back.
+
+![The Search tab: "turn" finds four rows](img/vr/settings-search.png)
+
 ## Getting around
 
 - **Move** — push the left thumbstick. With **VR flying** on, forward follows where your controller aims; otherwise it stays level. Hold the **left grip** to switch the stick to panning and elevation.
@@ -171,7 +213,36 @@ VR supports both face and vertex editing:
 
 The menu opens follower panels that hang in space — Objects, Properties, Color palette, Prefabs, Keyboard, Chat, Stats, plus the Edit/Snap/Settings menus. Every panel is **grip-grabbable**: hold the grip on a panel to detach and reposition it, and the gripping hand's stick resizes it. Your layout is remembered; **Reset panel positions** (VR Settings, or the desktop Settings button) restores the defaults.
 
-Typing uses the **VR keyboard** — it pops up for renaming an object and for chat messages; point at keys and press with the trigger.
+Typing uses the **VR keyboard** — it pops up for renaming an object, for chat messages and for **Ask AI**; point at keys
+with the laser and press with the trigger, or walk the keys with the stick. Since 1.24 it has
+<kbd>-</kbd> <kbd>'</kbd> <kbd>;</kbd> <kbd>,</kbd> <kbd>.</kbd> <kbd>?</kbd> (with Shift: <kbd>_</kbd> <kbd>"</kbd>
+<kbd>:</kbd> <kbd><</kbd> <kbd>></kbd> <kbd>/</kbd>) and a **clear** key.
+
+## The AI assistant in VR
+
+Radial menu ▸ **Tools ▸ AI** (the sparkles icon) opens a panel above your menu hand with the **same conversation as the
+desktop [AI Assistant](ai/assistant.md) window** — what you asked on the desktop is there in VR, and the other way
+round. Your messages show as violet chips on the right, the assistant's answers below them; grey lines are what it is
+doing (*Creating 3 object(s)*).
+
+![The AI Assistant panel in the headset](img/vr/ai-panel.png)
+
+- **Ask** — point at **＋ Ask AI…** and pull the trigger (or press the stick): the VR keyboard opens; type and press ⏎.
+  Everything the assistant builds replicates to your peers and undoes as one step.
+- **Talk** — hold the **mic** button (keep the trigger held on it), or hold your **talk button** (A on the right
+  controller by default — whichever button you [mapped](#remapping-your-buttons) to **Talk / jump**) while the panel is up; let go to send. A red dot and
+  *Listening…* show while it records. Peers do not hear you while you talk to the assistant.
+- **Stop** — press it while the assistant is working.
+- Grip the panel and drag to move it (it remembers where you put it); ✕ closes it.
+
+There are **no AI settings in VR**: the provider and [voice typing](ai/assistant.md#voice-typing) are set up in desktop
+**Settings ▸ AI**. Until a provider is set up, the panel says so and the input row stays shut.
+
+!!! note "Limits"
+    - The panel shows the last 7 turns, two lines each; long answers are shortened — read them in full in the desktop
+      window.
+    - Voice needs a browser that can record audio (Quest Browser, Chrome, Edge, Safari) and microphone permission. A
+      recording stops itself after 60 seconds.
 
 ## The sleeve palette
 
@@ -209,7 +280,7 @@ headset's **All settings** panel, and desktop **Settings ▸ VR**. Search deskto
 | **Comfort** | **Turning** (Snap / Smooth / Off), **Snap angle** (15 – 90°, default 45°), **Smooth speed** (45 – 180°/s, default 90°/s), **Mirror turn**, **Comfort vignette**, **Teleport**, **Flying** |
 | **Body** | **Stance** (Standing / Seated), **Height** (±50 cm in 5 cm steps) |
 | **Controls** | **Menu hand** (Right / Left), **Hold to open menu**, **Left-handed**, **Grab style**, **Remap buttons**, **Reset buttons** |
-| **Display** | **Refresh rate** (Max / 90 / 120 Hz), **FPS and draw calls**, **Statistics card**, **Peer hands**, **Passthrough** (applies the next time you enter), **Selection wireframe**, **Reset panel positions** |
+| **Display** | **Refresh rate** (Max / 90 / 120 Hz), **FPS and draw calls**, **Statistics card**, **Peer hands**, **Passthrough** (applies the next time you enter), **Selection wireframe**, **Reset panel positions**, **Game HUD** (Follow head / Fixed in world / Wrist only), **Game HUD size** (Small / Medium / Large), **Button hints** ([game HUD](#the-game-hud-in-a-headset)) |
 | **Editing** | **Hold to move vertex**, **Sleeve palette** (experimental), **Face edit limit** (2500), **Vertex edit limit** (800) |
 
 - **Smooth turning** and the **comfort vignette** (the edges of your view darken while the stick moves or turns you) work

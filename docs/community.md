@@ -41,13 +41,18 @@ Publish again from the same scene and the dialog offers **Update "‹title›" �
 
 There is no unpublish button in the app yet.
 
+When you publish or update a game, the dialog also shows a **This game: …** line with its visits — see
+[Your games & stats](#your-games-stats).
+
 ### The GitHub gallery destination
 
-Choosing **GitHub gallery** downloads `‹slug›-gallery-entry.zip` (the scene, a thumbnail and an `entry.json`) and opens the gallery repository: fork it, add the folder and a row to `gallery.json`, open a pull request. Contest entries need the Community destination, and the dialog says so if you pick both.
+Choosing **GitHub gallery** builds the same submission zip as the **Community gallery** tab of Publish / Export, with
+the same two GitHub steps — see [The Community gallery tab](publish-export.md#the-community-gallery-tab). Contest entries
+need the Community destination, and the dialog says so if you pick both.
 
 ## A scene's page
 
-Every published scene has a page at `/s/‹id›`: the hero shot, the title, the author's `@handle`, the license, a **♥** like button (sign in to use it), the summary, the tags, and four actions:
+Every published scene has a page at `/s/‹id›`: the hero shot, the title, the author's `@handle`, the license, a **♥** like button (sign in to use it; the same like as the [hearts in the app](#hearts)), the summary, the tags, and four actions:
 
 - **▶ Play** — opens the app with the scene loaded and Play mode already running.
 - **Open in ThePrototype** — the same, in the editor.
@@ -58,7 +63,8 @@ A public scene also has an **Embed** button — see [Embedding a scene](#embeddi
 
 Below that: what the scene includes, its lineage (*Remix of … by @handle*, and how many remixes it has), and comments. **Report this scene** is at the bottom — see [Reporting](#reporting).
 
-`/community` is the browse page: **Featured**, **Recent** and **Top**, tag chips, and a strip for the contest that is open.
+`/community` is the browse page: **Featured**, **Recent** and **Top**, tag chips, a **Mine** chip while you are signed in
+(see [below](#mine)), and a strip for the contest that is open.
 
 ### Links that open the app
 
@@ -78,13 +84,54 @@ The flag lasts for the life of the page.
 
 **The editor is the player.** Play opens the real app with the full scene, not a preview: the game's HUD, its flow graph, its physics and its sound all run, and a click on the viewport takes the pointer.
 
-**Remix is a local load.** Nothing is created on the server until you publish. When you do, the dialog shows a ticked *Remix of "‹title›" by @handle* line and the new scene carries that lineage on its page. Every license in the picker allows this; a remix of your own scene is simply a new scene, with no lineage line.
+**Remix is a local load.** Nothing is created on the server until you publish. When you do, the dialog shows a ticked *Remix of "‹title›" by @handle* line and the new scene carries that lineage on its page. Every license in the picker allows this; a remix of your own scene is simply a new scene, with no lineage line. A remix is also a **new game** with its own [game id](#one-game-one-count).
 
 ## The Community tab in Templates
 
 **Menu ▸ Templates ▸ Community** lists published scenes inside the app — featured ones first, then the most recent — with the author's handle, the license, the size and the like count on each card. Tag chips narrow the list; **Clear** resets it. Clicking a card loads the scene through the ordinary template path: a backup of your current scene is stashed first, and connected peers are asked before anything changes. The small button in a card's corner saves the scene to your Library instead, without loading it.
 
 When a contest is open a notice row says so (*Contest: Make a mirror — 9 days left*) with a **More** link to its page, and the tab's **Publish yours** link opens the Publish dialog.
+
+### Hearts
+
+Like a published scene without leaving the app: the **heart** button sits on every card in **Templates ▸ Community**, on
+the start card of a **play link** (`/p/‹id›`) and in a published game's **pause menu** (<kbd>Esc</kbd>, top right).
+Press it and the count updates at once (and goes back if the like could not be saved). Signed out, it asks you to sign in
+(profile menu, top right). It is the same like as the ♥ on the scene's page — one like per person per scene.
+
+![The heart on a play link's start card, beside Play](img/community/play-link-heart.png)
+
+![The heart in a published game's pause menu](img/community/pause-menu-heart.png)
+
+### Mine
+
+While you are signed in, the **Mine** chip in **Templates ▸ Community** (and on theprototype.app/community) shows only
+your own published scenes — unlisted ones too. A scene staff hid shows *Hidden by moderation: ‹reason›*, so you know why.
+
+## Your games & stats
+
+Profile menu ▸ **📈 Your games & stats** shows how many people arrived from the **Made with ThePrototype** badge in your
+play links, embeds and exported builds — for the last **7 days**, **30 days** or **all time**, split by source (play
+link, itch.io, static host, embed). The [Publish](#publish) dialog shows the same count for the game you are publishing
+or updating.
+
+![Your games: visits over 30 days, one row per game, with a moderation notice](img/community/your-games.png)
+
+### One game, one count
+
+Every scene gets a permanent **game id** the first time you save, export or publish it. Re-exporting, a new itch.io build
+and the play link all count toward the **same game** — including visits from before you published it. A **copy**
+(Explorer ▸ Duplicate, Save to Library) or a **remix** of someone else's scene becomes a **new game**.
+
+- Visits are counted per game, never per visitor: no cookies, no IP addresses.
+- Builds exported before 1.24 count under their own old id.
+- Exports made while signed out still count, but show in your stats only once the game is published or exported again
+  while you are signed in.
+
+### If a scene of yours is hidden
+
+If staff hide or remove one of your scenes, **Your games** (and the Publish dialog, when you update it) says *Hidden by
+moderation: ‹reason›*. Press **Ask for a review** — once a day, with an optional note — and staff get it in their queue.
 
 ## Contests
 
@@ -106,4 +153,7 @@ The site and the app share one sign-in. **Sign in** in the site header offers th
 
 ## Reporting
 
-Every scene page ends with **Report this scene**: pick a reason — **Spam**, **Not safe for work**, **Stolen work**, **Illegal content** or **Other** — add a note if you like, and send it (this needs a sign-in, and counts once per person per scene). A scene reported by three different people is hidden from every list and page until a maintainer has looked at it. Assets an author had no right to license are exactly what *Stolen work* is for: the license picker cannot express "all rights reserved", so a report and a takedown are how that is handled.
+Every scene page ends with **Report this scene**: pick a reason — **Spam**, **Not safe for work**, **Stolen work**, **Illegal content** or **Other** — add a note if you like, and send it (this needs a sign-in, and counts once per person per scene). A scene reported by three different people — counting only accounts older than three days — is hidden from every list and page until a maintainer has looked at it.
+
+Staff accounts have a **Staff · Insights & moderation** entry in the profile menu for the report queue and the visit
+totals; it is not shown to anyone else. Assets an author had no right to license are exactly what *Stolen work* is for: the license picker cannot express "all rights reserved", so a report and a takedown are how that is handled.

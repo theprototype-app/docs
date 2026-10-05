@@ -1,11 +1,12 @@
 # Publish & Export
 
-**Menu ▸ Publish / Export** puts a scene somewhere other people can play it. The window has three tabs:
+**Menu ▸ Publish / Export** puts a scene somewhere other people can play it. The window has four tabs:
 
 | Tab | What it does |
 |---|---|
 | **Publish** | puts the scene on theprototype.app's community, with its own page and a **play link** that opens straight into the game. Needs you signed in on theprototype.app (a self-hosted build says where publishing lives) |
 | **Export** | builds the game as a **zip of plain HTML** you can host anywhere — itch.io, your own site, any static host — or an `<iframe>` snippet |
+| **Community gallery** | builds a submission for the open [community gallery](#the-community-gallery-tab) on GitHub — no sign-in needed |
 | **Settings** | how an exported or embedded game starts: fullscreen, FPS counter, quality, VR button (also in **Settings ▸ Export**) |
 
 <!-- 36-docs: images are the 36-export lane's e2e captures; re-shoot from the 1.21 preview before release -->
@@ -40,7 +41,8 @@ A play link, an embed and an exported game all open the same **player**:
 
 The badge is **always on** in play links, embeds and exports. An exported file is yours to edit, so this is a request,
 not a lock — please keep it: it is how other people find the tool you made your game with. Clicks on the badge are
-counted per game, with no personal data, so we can see how many people arrive from games made here.
+counted per game, with no personal data, so we can see how many people arrive from games made here — and you can see
+yours in [Your games & stats](community.md#your-games-stats).
 
 ## Export: a game in a zip
 
@@ -115,6 +117,28 @@ filled in for you once you have published), or the address where you host a stat
 `<iframe>` snippet, sized from the **Viewport size**; **Copy snippet** and paste it into your page.
 
 A public community scene also has an **Embed** button on its page — see [Embedding a scene](community.md#embedding-a-scene).
+
+## The Community gallery tab
+
+The community gallery (shown in **Templates ▸ Community**) is a public GitHub repository, and a submission is a pull
+request a maintainer reviews before anyone sees it. **Publish / Export ▸ Community gallery** builds
+the submission for you, and works without signing in:
+
+1. Fill in the **Title**, your **GitHub handle**, the **License** (CC0, CC BY or MIT), a short description and up to six
+   tags. The thumbnail is taken from your current view (**Retake from this view** to change it).
+2. Tick **Everything in this scene is mine to license this way**.
+3. **Build submission zip** downloads `‹slug›-gallery-submission.zip`: the `‹slug›/` folder (`scene.tpscene`, the
+   thumbnail, `entry.json`), `gallery-row.json` and `HOW-TO-SUBMIT.txt`.
+4. **Upload the folder on GitHub** opens GitHub's upload page for that folder: drop the three files in. GitHub forks the
+   repository for you and offers **Propose changes**.
+5. **Copy the gallery.json row** copies the row and opens `gallery.json` for editing: add it to the `entries` list on the
+   same pull request.
+
+![The Community gallery tab after Build submission zip: the two GitHub steps](img/export/gallery-tab.png)
+
+The app never sends anything itself; every step on GitHub is your click. Before you start, the tab checks the same rules
+as the gallery's own checks: the scene at most 25 MB, the thumbnail at most 512 KB, a license, a title of at most 80
+characters and a description of at most 300.
 
 ## Export settings
 

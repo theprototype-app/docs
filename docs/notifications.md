@@ -73,4 +73,4 @@ A ping is a momentary "look here!" pulse everyone sees at once — great for poi
 - Right-click an object ▸ **Ping this object** (or **Ping selection** for several) — this flashes a highlight box around the object as well as the pulse.
 - In VR, click the right thumbstick (or **Tools ▸ Ping** in the radial menu) to ping where you're pointing.
 
-Each ping carries a color and a chime. You can set your own **ping color** and **ping sound** (Ding, Chime, Pluck, Pop or Bell) so your pings are recognizably yours; leaving the color blank uses your peer color. The chime is spatial when spatial voice is on — it sounds like it's coming from the pinged spot.
+Each ping carries a color and a chime. You can set your own **ping color** and **ping sound** (Ding, Chime, Pluck, Pop or Bell) so your pings are recognizably yours — profile menu ▸ **Customize Character ▸ Ping**, where **Preview** tries it out (see [Your Character](avatars.md)); leaving the color blank uses your peer color. The chime is spatial when spatial voice is on — it sounds like it's coming from the pinged spot.

@@ -79,6 +79,12 @@ it is far away. See [Levels of detail](lod.md) to force a level, edit one or tun
 Draw repeated kit pieces together*, on by default) — a furnished tavern stays inside a headset's
 budget.
 
+## Adventurers (1.24)
+
+**Packs ▸ Adventurers** holds the nine rigged, animated characters people appear as in a session — Knight, Mage, Rogue,
+Hooded rogue, Barbarian and four skeletons, from Kay Lousberg's CC0 KayKit packs — to place in a scene as animated
+models. See [Your Character](avatars.md).
+
 ## For pack authors
 
 A pack is a folder or zip with a `manifest.json` at the root:
