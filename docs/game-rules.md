@@ -90,3 +90,6 @@ The behaviour format grew the sockets these games use, and a module can lend its
 - The rules run on one player's machine — the session's [authority](game-kit.md#one-peer-decides). A rules node edited
   while you are offline from the others applies when they reconnect; it is ordinary node data.
 - The live node view is read-only: change the code or the knobs.
+- **A copy saved before 1.23** of Mini Golf, The Alchemist's Escape, Sky Run, Target Toss or Marble Maze has no rules
+  node, and its game does not start in 1.23. Opening one says so and offers **Open Games**: open the game from the
+  Games tab to play or remix the new version. Football and Dungeon Realms copies keep working as before.
