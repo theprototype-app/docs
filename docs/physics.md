@@ -40,6 +40,9 @@ Everything in **Configure Scene ▸ Physics** is shared with your peers, saved w
 
 A **ground plane** is on by default at height 0. You can move it, give it **grip** (friction) and **bounce** (restitution) — a slick floor and a rubber floor are one slider apart — or switch it off entirely to build a pit. With colliders shown (Configure Scene ▸ View ▸ *Show colliders*) it draws as a translucent sheet so you can see where it is.
 
+Since 1.25 the ground has a **hole wherever [water](water.md) goes below it**, with a floor at the bottom of the pool or
+tank — so a pool sunk into the ground works, and nothing rests on an invisible lid at the water's surface.
+
 **Out of bounds below Y** catches anything that falls past a limit, and you choose what happens:
 
 | Action | What it does |
@@ -81,6 +84,21 @@ If nothing has physics when you press play, the app helps you out: with an objec
 ### The simulation controls HUD
 
 The bottom-right transport (▶ / ⏸ / ⏹ / ↺) is **off by default** so it isn't confused with the main play button. Turn it on in **Settings ▸ Scene ▸ Simulation controls**. The <kbd>P</kbd> shortcut works whether or not the HUD is visible; the first time you use <kbd>P</kbd> while it's hidden, a toast reminds you where to enable it.
+
+In a scene that has [Start simulation on load](#start-simulation-on-load) on, the transport is always there. Since 1.25
+it drives **the whole simulation**: **Pause** holds everything still — the bodies, the [fluid tanks](simulation.md#fluid-tank),
+[fluid emitters](fluids.md) and the pouring and spilling drops — on every player's screen, and **Reset** puts the whole
+scene back to how it opened (bodies, tanks refilled, drops gone) and plays it again.
+
+### Start simulation on load
+
+**Configure Scene ▸ Camera ▸ Start view ▸ Start simulation on load** is for scenes that *are* a simulation — things
+falling, floating, jiggling or pouring. It is saved with the scene: when the scene opens, physics starts by itself once
+everything has loaded. The person who opens the scene runs it; everyone else sees it move. It also applies to exported
+games and play links, and undo / redo work on it like on any edit. *Jelly room*, *Fluid tank toy*, *Pool party* and
+*Island ocean* have it on.
+
+![Configure Scene ▸ Camera ▸ Start view with Start simulation on load ticked](img/physics/sim-on-load-setting.png)
 
 ## Grab and throw mid-simulation
 
@@ -162,6 +180,13 @@ To react to a knock in a graph, use the [On Hit](nodes/onhit.md) node: it gives 
 Drop a dynamic object into [water](water.md) while a simulation runs and it floats, sinks or drifts. The water pushes it
 up by as much water as it displaces, slows it down, carries it along in its flow (the River preset), and tips it back
 upright. Hitting the surface makes a ripple.
+
+Since 1.25 that works wherever the object starts: put it anywhere in a pool, a tank or the ocean and press <kbd>P</kbd>
+(or open a scene with [Start simulation on load](#start-simulation-on-load)) — a light thing (foam, a beach ball)
+shoots up and bobs at the surface, wood floats lower, a stone sinks to the bottom. **Properties ▸ Water ▸ Flow &
+physics** on the water adds **Flow up** (an upward current) and **Bob damping** (lower = things keep bobbing longer).
+
+![Toys floating in a pool sunk into the ground](img/physics/sunken-pool.png)
 
 ![A wooden crate floating in a pool, with the Floats rows in its Physics properties](img/physics/floats.png)
 

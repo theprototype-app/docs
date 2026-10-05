@@ -28,6 +28,7 @@ nav:
     - Particle Effects: particles.md
     - Water: water.md
     - Fluid Tank & Jiggle: simulation.md
+    - "Fluids: Emitters & Flow Paths": fluids.md
     - Terrain & Sculpting: terrain.md
     - Saving & Sessions: saving.md
     - Checkpoints: checkpoints.md

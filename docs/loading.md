@@ -93,6 +93,9 @@ After the hold ends, the camera is yours: the end of the load does not move it a
 **Who it affects.** Only the person loading the scene; other people in the session keep their own camera. Games are not
 affected: when you press Play, the player still starts at the game's spawn point.
 
+The same Start view group has **Start simulation on load** (since 1.25), which starts physics by itself once the scene
+has loaded — see [Physics & Simulation](physics.md#start-simulation-on-load).
+
 ## Settings
 
 All in **Settings ▸ Scene ▸ Loading**, and all per device:

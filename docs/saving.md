@@ -52,8 +52,13 @@ you unloaded offers to turn it back on.
 setup and unload its modules* to **Clear everything** — the game's menu, HUD, flow nodes, play and
 physics settings, sky and look go too, so no leftover Menu or Play button stays behind.
 
-Big scenes **load without freezing the app**: a progress bar shows what is loading and how far it
-has got, pieces stream in, and *Cancel* stops the load and takes back what it had added.
+Big scenes **load without freezing the app**: pieces stream in, and since 1.25 a scene draws its shapes first and its
+water a moment later.
+
+**The scene you open last is the one you get.** Open Island Ocean and then, while it is still downloading, another
+level: Island Ocean is abandoned at once and never replaces the level later. From the moment you click, a bar at the top
+says what is happening — **Loading *scene* — downloading…**, then **getting ready…**, then **N / M objects**. There is
+no Cancel button: to stop a load, open something else (or **Clear scene** once it is in).
 
 ## Scene (`.tpscene`) — recommended
 

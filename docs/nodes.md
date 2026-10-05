@@ -135,6 +135,8 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**Bounce**](nodes/bounce.md) | Bounces the connected object up and down off its resting height, like a dribbled ball. |
 | [**Orbit**](nodes/orbit.md) | Circles the connected object around its resting position on the horizontal plane. |
 | [**Path patrol**](nodes/pathpatrol.md) | Walks the connected object along a series of waypoints you click into the scene, facing along the path. |
+| [**Rotate / Motor**](fluids.md#nodes) | Turns its object about one of its own axes at an rpm with a spin-up; on a dynamic body during a simulation, a motor of a given torque. Paddles it turns push fluid (1.25). |
+| [**Float Along Flow**](fluids.md#nodes) | Carries its object along the nearest (or wired) flow path at the path's speed, bobbing and facing the current (1.25). |
 | [**Animation Finished**](nodes/animfinished.md) | Fires a pulse when the connected object's animation clip reaches its end. |
 | [**Animation Marker**](nodes/animmarker.md) | Fires a pulse when the connected object's animation passes a named marker. |
 | [**Animation State**](nodes/animstate.md) | Reads the connected object's animation transport as a number - playing, position or progress. |

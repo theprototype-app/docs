@@ -12,6 +12,21 @@ See [Game rules on the Main graph](game-rules.md).
 
 **1.24** adds **Race**, built into the app.
 
+## Tidy Main graphs { #tidy-main-graphs }
+
+Since **1.25** all twelve games open on a Main graph where no card overlaps another and no wire passes through a card
+(a test checks every game).
+
+- **Football, Dungeon Realms, The Alchemist's Escape, Marble Maze, Sky Run, Target Toss, Mini Golf** keep the layout
+  they had; only cards that overlapped or sat on a wire moved (Mini Golf's *Hole feedback* group no longer covers
+  wires).
+- **Waves** is rebuilt: Main shows the run's rules (the Waves node, the crystal, won / lost) and three group cards —
+  *Enemies* (one group per enemy inside), *Menus & buttons* and *HUD readouts* — each with a note.
+- **Stars Room** (six groups), **Towers** (four), **Jam Room** (four) and **Untangle** (two) put their repetitive parts
+  in group cards with notes. Double-click a card to open it.
+
+To lay out a graph of your own, use [Tidy graph](node-editor.md#tidy-graph).
+
 ## The Alchemist's Escape
 
 An escape room in three rooms. Open the drawer, find the key, unlock the chest, set the dials, pull the levers in the

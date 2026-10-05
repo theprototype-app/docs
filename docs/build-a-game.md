@@ -77,6 +77,9 @@ tune deadzone, sensitivity and invert-Y under **Settings ▸ Input**.
 Scrolling changes your speed, and because a controller node is present a **Move Speed**
 node can read or set that same value — so a sprint key is just a key press wired into it.
 
+Since 1.25 the controller card also has **code**: double-click it to steer speed, jump height, eye height, gravity or
+walk/fly every frame from this player's keys — see [The Player's code](code-workspace.md#the-players-code).
+
 !!! note
     Delete the Character Controller node and movement is exactly the default fly again.
     The controller adds capability without taking the default away.

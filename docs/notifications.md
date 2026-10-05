@@ -69,7 +69,9 @@ If there are no notes yet, the drawer tells you to select an object and add one 
 
 A ping is a momentary "look here!" pulse everyone sees at once — great for pointing during a call.
 
-- **<kbd>Alt</kbd>+click** anywhere in the scene to ping that exact spot.
+- **<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+click** anywhere in the scene to ping that exact spot. (Before 1.25 this was
+  <kbd>Alt</kbd>+click, which now [cycles the selection](controls.md#inside-and-behind-water).)
+- Right-click the viewport ▸ **Ping here**.
 - Right-click an object ▸ **Ping this object** (or **Ping selection** for several) — this flashes a highlight box around the object as well as the pulse.
 - In VR, click the right thumbstick (or **Tools ▸ Ping** in the radial menu) to ping where you're pointing.
 
