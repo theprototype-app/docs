@@ -277,6 +277,8 @@ game to its menu and starts from the Start screen. See [Build a Game Loop](build
 
 Shortcuts are inert while you type in a text field and while play mode owns the keyboard. The same list is shown in **Settings ▸ Shortcuts** (<kbd>Ctrl</kbd>+<kbd>/</kbd> opens it directly), where a click on a shortcut's keys rebinds it and **Reset all** puts the defaults back.
 
+**Keys follow the panel you are using** (since 1.23). A shortcut fires only in the panel that has focus — the one you last clicked — so the keys below are the 3D view's, and the node editor has its own set: see [Node editor: keyboard, groups and notes](node-editor.md). Press <kbd>?</kbd> anywhere for a cheat sheet of every panel's keys, the focused panel first.
+
 **Every keyboard layout works.** A letter shortcut is matched by the letter printed on the key when there is one — AZERTY, Dvorak and QWERTZ keep their own labels — and by the key's **physical position** otherwise, so <kbd>G</kbd>, <kbd>F</kbd>, <kbd>Ctrl</kbd>+<kbd>Z</kbd> and <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> work on Russian, Greek, Hebrew, Arabic and CJK layouts without switching. Where the browser can tell, **Settings ▸ Shortcuts** shows your layout's own label beside each letter (*п on your layout*); where it cannot, a note says letter shortcuts follow the QWERTY position.
 
 !!! tip "Finding a setting"
@@ -301,7 +303,7 @@ Shortcuts are inert while you type in a text field and while play mode owns the 
 | <kbd>N</kbd> | Toggle the node editor |
 | <kbd>T</kbd> | Show / hide the tool dock |
 | <kbd>Alt</kbd>+<kbd>E</kbd> / <kbd>F</kbd> / <kbd>A</kbd> / <kbd>U</kbd> / <kbd>S</kbd> / <kbd>H</kbd> | Explorer / Flow Code / Animation / UV editor / Shader editor / HUD editor |
-| <kbd>C</kbd> | Toggle chat |
+| <kbd>C</kbd> | Toggle chat (from the 3D view only) |
 | <kbd>Shift</kbd>+<kbd>A</kbd> | Add an object at the cursor (enable in Settings) |
 | <kbd>P</kbd> | Start / stop the physics [simulation](physics.md) |
 | <kbd>Ctrl</kbd>+<kbd>Enter</kbd> | Play / enter VR (right-click the play button for modes) |
@@ -312,8 +314,9 @@ Shortcuts are inert while you type in a text field and while play mode owns the 
 | <kbd>Shift</kbd>+<kbd>1</kbd>…<kbd>5</kbd> | Recall camera bookmark 1–5 |
 | <kbd>V</kbd> (hold) | Push-to-talk while the mic toggle is off |
 | <kbd>Ctrl</kbd>+<kbd>/</kbd> | Show the shortcut list |
+| <kbd>?</kbd> | Keyboard cheat sheet (every panel, the focused one first) |
 
-Inside an Edit Mesh session the bare letters <kbd>E</kbd> <kbd>I</kbd> <kbd>G</kbd> <kbd>S</kbd> <kbd>B</kbd> <kbd>F</kbd> <kbd>X</kbd> / <kbd>W</kbd> and the loop keys (<kbd>L</kbd>, <kbd>Ctrl</kbd>+<kbd>+</kbd>/<kbd>-</kbd>, <kbd>Ctrl</kbd>+<kbd>I</kbd>) belong to the mesh tools — see [Mesh Editing](mesh-editing.md). That is why the panel shortcuts above use <kbd>Alt</kbd>: they keep working while a mesh session is open.
+Inside an Edit Mesh session the bare letters <kbd>E</kbd> <kbd>I</kbd> <kbd>G</kbd> <kbd>S</kbd> <kbd>B</kbd> <kbd>F</kbd> <kbd>X</kbd> / <kbd>W</kbd> and the loop keys (<kbd>L</kbd>, <kbd>Ctrl</kbd>+<kbd>+</kbd>/<kbd>-</kbd>, <kbd>Ctrl</kbd>+<kbd>I</kbd>) belong to the mesh tools — see [Mesh Editing](mesh-editing.md). That is why the panel shortcuts above use <kbd>Alt</kbd>: they keep working while a mesh session is open. Since 1.23 the mesh tools' keys can be rebound too, in their own *Mesh edit* group of **Settings ▸ Shortcuts**.
 
 ## Right-click menus
 

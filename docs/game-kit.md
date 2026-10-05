@@ -152,7 +152,9 @@ the game's play bounds.
 
 Every node above has a code twin under `api.kit`; the full table of actions, reads and events is
 on the [Module SDK](module-sdk.md#the-game-kit-apikit) page. Logic written as a
-[behaviour](behaviours.md) calls the same `kit`.
+[behaviour](behaviours.md) calls the same `kit`. Since 1.23 a module can add a piece of its own with
+`api.kit.provide` — the engine a game's [rules](game-rules.md) call as `kit.golf.*`, `kit.football.*`… — see
+[For module and game authors](module-sdk.md#for-module-and-game-authors-123).
 
 Game rules can be proved without a browser: the core repo's **headless logic sim**
 (`tests/unit/sim`) runs several fake peers on a fake clock through the real message validation,

@@ -9,10 +9,11 @@ Press <kbd>N</kbd> or use the flow icon in the bottom hud. The editor docks at t
 ## The Flows list
 
 The left pane carries a collapsible **Flows** section above the node palette. It lists
-**Scene** at the root, then every object that actually has a flow graph of its own — it is a way
+**Main** at the root — the scene-wide graph, called *Scene* before 1.23 (see
+[Main graph & node properties](main-graph.md)) — then every object that actually has a flow graph of its own. It is a way
 to get *to* a graph, not a second object list, so an object with none is not in it.
 
-Click a row to select that object and switch the editor to its graph; click **Scene** to
+Click a row to select that object and switch the editor to its graph; click **Main** to
 deselect and edit the scene-wide one. Drag the bar under the list to give it more room, and
 click the section header to collapse it. An entry whose object has been deleted is shown
 greyed out until the next save drops it.
@@ -22,7 +23,7 @@ greyed out until the next save drops it.
 - **Palette** — the left sidebar lists every node by group with a filter box; drag a node onto the canvas. The palette can be collapsed or moved to the other side with the tabs on its edge.
 - **Right-click the canvas** — a grouped Add menu, plus **🔍 Search nodes…**; just start typing while the menu is open to jump into search (<kbd>Arrow</kbd> keys + <kbd>Enter</kbd> to place, <kbd>Esc</kbd> back to the menu).
 
-Right-click a **node** for Duplicate / Disconnect all / Delete; right-click an **edge** to disconnect it. <kbd>Delete</kbd>/<kbd>Backspace</kbd> removes the selection.
+Right-click a **node** for Open code, Group, Duplicate, Mute, Disconnect all, Delete and more; right-click an **edge** to disconnect it. <kbd>Delete</kbd>/<kbd>Backspace</kbd> removes the selection. Groups, notes, the node editor's own shortcuts and the full menus are on [Node editor: keyboard, groups and notes](node-editor.md).
 
 ## Mouse bindings
 
@@ -74,7 +75,7 @@ Cards show live value readouts, updated several times a second.
 
 The **⚙** tab button on the right edge opens the properties panel, which has two tabs:
 
-- **ⓘ Params** — the *selected node's* extra parameters: a Slider's **Min/Max**, a Switcher's **items list** (add/remove entries), a Number's **step**. Most nodes keep their parameters directly on the card.
+- **ⓘ Params** — the *selected node's* properties: since 1.23 every node lists them all here, including a Script's input values, a Behaviour's params and a module node's options, alongside extras such as a Slider's **Min/Max**, a Switcher's **items list** (add/remove entries) and a Number's **step**. A property with a wire into it shows the incoming value instead. See [Properties panel](main-graph.md#properties-panel).
 - **⚙ Settings** — with a node selected: its **Name** and a free-text **Note**. With nothing selected: graph settings — edge style (Bezier/Step/Straight), background (dots/lines/none), minimap, snap-to-grid + grid size, Fit / Reset view, and the socket color legend.
 
 ## Determinism and replication
@@ -97,7 +98,8 @@ toast — or reload without `#safe`.
 ## Flow Code: the graph as text
 
 **Flow Code** (the dock's **＋** menu, or <kbd>Alt</kbd>+<kbd>F</kbd>) shows the graph the editor is
-showing as text you can read, edit and **Apply**. A **Text | JSON** toggle above it picks the
+showing as text you can read, edit and **Apply**. (The [code workspace](code-workspace.md#graph-json) can also open it as
+JSON in a tab, beside the graph's scripts.) A **Text | JSON** toggle above it picks the
 format; your choice is remembered on this device. Switching format drops edits you have not
 applied.
 

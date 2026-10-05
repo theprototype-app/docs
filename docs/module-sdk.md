@@ -319,6 +319,9 @@ api.flow.setNodesData([{ id, patch }, …])  // many writes, ONE undo step → h
 const off = api.flow.onChange(() => refreshToolbox())
                                 // after any graph change or node firing, coalesced to once a frame;
                                 // torn down with the module, or call off()
+api.flow.seedGraph({ key: 'example', nodes: [/* … */], edges: [] })
+                                // 1.23: addNodes, but only ONCE — nothing is added while any node
+                                //   carries this seed or is one of your module's node types
 ```
 
 `api.game.onChange(fn)` and `api.peerVars.onChange(fn)` work the same way for the game state (state, round, variables)
@@ -530,6 +533,64 @@ the scene, keyed by uuid, and `recent` is the last 32 hits in order. It is runti
 state — a late joiner's log starts empty, so a module that needs history keeps its
 own through `registerStateSync`.
 
+## For module and game authors (1.23)
+
+The games rebuilt in 1.23 keep their rules in a [behaviour on the Main graph](game-rules.md) and leave
+only the engine in their module. Three things make that work, and every module can use them.
+
+**Behaviour sockets.** A behaviour may declare sockets on its node:
+
+```js
+export default behaviour({
+	name: 'Mini Golf rules',
+	state: { title: '', strokes: 0 },
+	inputs: ['teeOff'],                  // event sockets in
+	outputs: ['title', 'holeSunk'],      // a state field, and an event
+	on: {
+		load() { kit.levels.define({ id: 'mini-golf', list: [/* … */] }); },
+		teeOff() { this.state.title = 'Hole 1'; },
+		'golf.stopped'(e) { /* … */ this.emit('holeSunk'); }
+	}
+});
+```
+
+- `inputs: ['teeOff']` are **event** sockets. A trigger wired into one runs the handler of the same
+  name in `on`, on the authority, once per press — even if the press lands while the authority is
+  moving to another player.
+- `outputs` are sockets out. A name that is a **state** field is a value socket, typed by its initial
+  value. Any other name is an **event** socket, fired by `this.emit('holeSunk')`; it leaves after the
+  state update, so every player's banner reads the new state.
+- `on: { load() {…} }` runs once on **every** peer when the behaviour starts, read-only — for
+  per-device setup such as `kit.levels.define(…)` for the pause menu's level picker.
+
+**Engines: `api.kit.provide(spec, impl)`.** A module lends rules what they cannot be (a physics body, a
+drag-to-aim arrow, a VR club) as a piece shaped like a [kit](#the-game-kit-apikit) piece:
+
+```js
+const golf = api.kit.provide(
+	{ piece: 'golf', group: 'Mini golf (engine)', calls: [
+		{ name: 'hit', kind: 'action', label: 'Hit the ball' },
+		{ name: 'ballSpeed', kind: 'value', label: 'Ball speed' },
+		{ name: 'stopped', kind: 'event', label: 'On ball stopped' } ] },
+	{ hit(v) { /* … */ }, ballSpeed() { return speed; } }
+);
+golf.emit('stopped', { pos });   // every behaviour's on: { 'golf.stopped'(e) {…} } hears it
+golf.listening('stopped');       // how many rules handle it (0 = none: your own default may decide)
+golf.dispose();                  // take the piece away (unloading the module does this too)
+```
+
+Rules call `kit.golf.hit(…)` and handle `'golf.stopped'`; the live node view draws them like any kit
+call. The handler runs on the authority, so emit on every peer that saw the moment (or on the one that
+did). The piece is lifecycle-tracked: unloading the module removes it, and every behaviour that used it
+reloads without it.
+
+**A wired example: `api.flow.seedGraph`.** Like `api.flow.addNodes`, but only once: nothing is added
+while any node carries the seed's key or is one of your module's node types (see
+[`api.flow`](#the-flow-graph-apiflow)).
+
+Also in 1.23: HUD Text draws its `format` socket (wire text into it), Announce takes a wired `sub` line,
+and a [Script](nodes/script.md#typed-sockets) may declare an output of type `any` (text).
+
 ## New in 1.20
 
 ### Unloading: everything you registered goes with you
@@ -654,7 +715,9 @@ levels.select('1'); round.start();
 ### Behaviours
 
 Game logic can also live in the scene as a [behaviour](behaviours.md): one small file in a
-Behaviour node, run on the authority with replicated state, calling the same `kit`. Each
+Behaviour node, run on the authority with replicated state, calling the same `kit`. Since 1.23 a
+behaviour can have sockets and call a module's engine — see
+[For module and game authors](#for-module-and-game-authors-123). Each
 behaviour is tracked like a module of its own, so deleting its node takes its listeners and
 entities with it.
 

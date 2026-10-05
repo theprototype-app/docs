@@ -11,13 +11,20 @@ an entity dying, a pickup taken) and acts through the same `kit` calls the **Kit
 ## The Behaviour node
 
 Add a **Behaviour** node from the palette's **Logic** group, to the Scene flow or to an object's
-own flow (then the behaviour knows that object as `this.object`). It has no sockets. Its card
-shows the behaviour's name and whether it is **running** (and with how many handlers), still
-loading, stopped, or in error — an error names the line.
+own flow (then the behaviour knows that object as `this.object`). It has no sockets unless the
+file declares some (1.23, see [For module and game authors](module-sdk.md#for-module-and-game-authors-123)).
+Its card shows the behaviour's name and whether it is **running** (and with how many handlers),
+still loading, stopped, or in error — an error names the line.
 
-- **Open view** opens the [live node view](#the-live-node-view); its **Code** panel is where the
-  file is edited.
+- **Open view** opens the [live node view](#the-live-node-view).
+- **Code** — or a double-click on the node — opens the file in the [code workspace](code-workspace.md);
+  <kbd>Ctrl</kbd>+<kbd>S</kbd> reloads it, and code that does not parse is not applied.
 - **Stop** / **Run** switches the behaviour off and on; its state is kept.
+- Its `params` are also in the node editor's **ⓘ Params** tab: changing one there rewrites the number
+  in the code, as one undo step.
+
+Every game rebuilt in 1.23 keeps its rules in one of these — see
+[Game rules on the Main graph](game-rules.md).
 
 A new Behaviour node starts with a small working example (a countdown that loses the round when
 it reaches zero), so the format is there to copy from.
@@ -68,7 +75,8 @@ is won. (Adapted from `static/behaviours/waves-spawner.js` in the core repo; its
 |---|---|
 | `params` | Numbers you want to tune: a literal (`waves: 5`) or `{value, min, max, step, unit}`. Read as `this.params.waves`. Each one becomes a knob in the node view. |
 | `state` | Plain JSON the game keeps — every peer can read it. |
-| `on` | Event handlers: `start` (once per session), every kit event (`go`, `won`, `lost`, `died`, `damaged`, `spawned`, `emptied`, `scored`, `collected`, `stuck`, `grabRefused`…, or the full `'piece.event'` name), and `grabRequest` — the grab veto, see below. |
+| `on` | Event handlers: `start` (once per session), `load` (1.23: once on every peer, read-only), every kit event (`go`, `won`, `lost`, `died`, `damaged`, `spawned`, `emptied`, `scored`, `collected`, `stuck`, `grabRefused`…, or the full `'piece.event'` name), and `grabRequest` — the grab veto, see below. |
+| `inputs` / `outputs` | (1.23, optional) Sockets on the node: event inputs that run the handler of the same name, and outputs that carry a state field or an event fired by `this.emit(name)`. |
 | methods | Any other function in the file (`startWave` above), called as `this.startWave(…)`. |
 
 Inside the file, `this` offers:
@@ -128,8 +136,8 @@ handlers and methods → ▣ state, with ⊕ kit calls (named exactly like the *
 - **Knobs** on the params: dragging one previews the value on your device; releasing it rewrites
   the number in the code — one edit, **one undo step** — and everybody's copy reloads with it.
 
-Anything else is changed in the code (the view's **Code** panel); **← Graph** goes back to the
-flow.
+Anything else is changed in the code (the view's **Code** panel, or the
+[code workspace](code-workspace.md)); **← Graph** goes back to the flow.
 
 ## Writing behaviours with the AI assistant
 

@@ -24,6 +24,25 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.23 — readable game logic.** Every rebuilt game's rules are now [one readable script on its Main
+graph](game-rules.md) — Mini Golf, Football, Dungeon Realms, The Alchemist's Escape, Sky Run, Target Toss and Marble
+Maze — wired to its buttons, HUD, sounds and the kit: tune a number in the node's properties panel, or change the code
+and press <kbd>Ctrl</kbd>+<kbd>S</kbd>, and the game plays by your rules on every player's screen, saved with the scene.
+The scene's graph is the [Main graph](main-graph.md), and opening an older game adds links to the code that runs it.
+Every node's properties are in the node editor's side panel (Script inputs, Behaviour params, module nodes), and a
+double-click opens any node's code — module code read-only, with **Make editable copy** for nodes bound to it. The
+[code workspace](code-workspace.md) puts scripts, behaviours, script files, module sources and the graph as JSON in
+tabs; <kbd>Ctrl</kbd>+<kbd>S</kbd> checks the code and reloads every node that runs it, on every peer, and broken code
+never applies. [Script](nodes/script.md) nodes grow the sockets their code uses and get `api.object`, `raycast`, `keys`
+and `spawn`; [Math](nodes/math.md) gains pow, sin, cos, abs, round, floor, clamp and negate; and HUD Button, On Game
+State and HUD Timer now give a value when wired into a number input. The [node editor](node-editor.md) has its own
+keys — shortcuts follow the panel you clicked, so <kbd>C</kbd> opens the chat only from the 3D view — plus groups you
+open like folders, markdown notes and frames, right-click menus for the canvas, a node and a selection, mute, collapse,
+align and nudge, undo for every edit, and a <kbd>?</kbd> cheat sheet. **Settings ▸ Node types** hides the node types you
+never use, groups save and load as `.tpnode` files, and the Edit Mesh keys can be rebound. For modules,
+[`api.kit.provide`](module-sdk.md#for-module-and-game-authors-123) lends a game's rules its engine, behaviours get
+sockets, and `api.flow.seedGraph` seeds a wired example once.
+
 **1.22 — VR + water.** Any object can be [water](water.md): **Add ▸ Water** makes a tank, a pool or an ocean with waves,
 refraction, caustics, foam, underwater fog and bubbles, in nine presets from Pool to Lava and Ice, plus **Rain** and
 **Snow** [particle presets](particles.md). [Things float](physics.md#things-float) — or sink, or drift with a river —
