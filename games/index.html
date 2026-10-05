@@ -863,6 +863,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../fluids/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluids: Emitters & Flow Paths
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../terrain/" class="md-nav__link">
         
   
@@ -3222,6 +3243,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#tidy-main-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tidy Main graphs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-alchemists-escape" class="md-nav__link">
     <span class="md-ellipsis">
       The Alchemist's Escape
@@ -3957,6 +3987,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#tidy-main-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tidy Main graphs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-alchemists-escape" class="md-nav__link">
     <span class="md-ellipsis">
       The Alchemist's Escape
@@ -4114,6 +4153,19 @@ VR.</p>
 their rules as one readable script on the game's Main graph: open the node editor to tune a number or change the code.
 See <a href="../game-rules/">Game rules on the Main graph</a>.</p>
 <p><strong>1.24</strong> adds <strong>Race</strong>, built into the app.</p>
+<h2 id="tidy-main-graphs">Tidy Main graphs</h2>
+<p>Since <strong>1.25</strong> all twelve games open on a Main graph where no card overlaps another and no wire passes through a card
+(a test checks every game).</p>
+<ul>
+<li><strong>Football, Dungeon Realms, The Alchemist's Escape, Marble Maze, Sky Run, Target Toss, Mini Golf</strong> keep the layout
+  they had; only cards that overlapped or sat on a wire moved (Mini Golf's <em>Hole feedback</em> group no longer covers
+  wires).</li>
+<li><strong>Waves</strong> is rebuilt: Main shows the run's rules (the Waves node, the crystal, won / lost) and three group cards —
+  <em>Enemies</em> (one group per enemy inside), <em>Menus &amp; buttons</em> and <em>HUD readouts</em> — each with a note.</li>
+<li><strong>Stars Room</strong> (six groups), <strong>Towers</strong> (four), <strong>Jam Room</strong> (four) and <strong>Untangle</strong> (two) put their repetitive parts
+  in group cards with notes. Double-click a card to open it.</li>
+</ul>
+<p>To lay out a graph of your own, use <a href="../node-editor/#tidy-graph">Tidy graph</a>.</p>
 <h2 id="the-alchemists-escape">The Alchemist's Escape</h2>
 <p>An escape room in three rooms. Open the drawer, find the key, unlock the chest, set the dials, pull the levers in the
 right order and twist the crank to raise the gate, then place three gems to open the vault. If you are stuck for a

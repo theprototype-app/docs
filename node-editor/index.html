@@ -863,6 +863,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../fluids/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluids: Emitters & Flow Paths
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../terrain/" class="md-nav__link">
         
   
@@ -1268,6 +1289,24 @@
   <a href="#node-editor-shortcuts" class="md-nav__link">
     <span class="md-ellipsis">
       Node editor shortcuts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-it-opens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where it opens
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tidy-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tidy graph
     </span>
   </a>
   
@@ -3945,6 +3984,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#where-it-opens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where it opens
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tidy-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tidy graph
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#groups" class="md-nav__link">
     <span class="md-ellipsis">
       Groups
@@ -4043,7 +4100,10 @@ nodes; click the 3D view and the same letters mean what they always meant there.
   has focus.</li>
 <li>Text fields and code editors keep every key for themselves.</li>
 </ul>
-<p>The node editor draws a thin accent outline while it has the keyboard.</p>
+<p>The node editor draws a thin accent outline while it has the keyboard. Since 1.25 every other panel and tool window
+owns its keys the same way — see <a href="../controls/#keys-follow-the-panel-you-are-in">Keys follow the panel you are in</a>.
+Sliders and number fields inside a node (and the knobs in a behaviour's <strong>Open view</strong>) drag their value, never the node
+and never the whole graph.</p>
 <h2 id="the-cheat-sheet">The <code>?</code> cheat sheet</h2>
 <p>Press <kbd>?</kbd> anywhere to see every shortcut, grouped by panel, with the panel that has focus first. It is built
 from the live keymap, so a key you rebind in <strong>Settings ▸ Shortcuts</strong> shows up there straight away. Type to filter;
@@ -4119,6 +4179,14 @@ from the live keymap, so a key you rebind in <strong>Settings ▸ Shortcuts</str
 <td>Distribute evenly top to bottom / left to right</td>
 </tr>
 <tr>
+<td><kbd>L</kbd></td>
+<td><a href="#tidy-graph">Tidy graph</a>: lay the whole graph out</td>
+</tr>
+<tr>
+<td><kbd>Shift</kbd>+<kbd>L</kbd></td>
+<td><a href="#tidy-graph">Fix overlaps and crossings</a>: move only the cards in the way</td>
+</tr>
+<tr>
 <td>Arrow keys (<kbd>Shift</kbd>: ×5)</td>
 <td>Nudge by one grid step</td>
 </tr>
@@ -4130,6 +4198,36 @@ from the live keymap, so a key you rebind in <strong>Settings ▸ Shortcuts</str
 </table>
 <p>All of them can be rebound in <strong>Settings ▸ Shortcuts</strong>. So can the <a href="../mesh-editing/">Edit Mesh</a> keys, which have their
 own <em>Mesh edit</em> group there since 1.23.</p>
+<h2 id="where-it-opens">Where it opens</h2>
+<p>Since 1.25, opening the node editor (<kbd>N</kbd>) — or switching to another graph, or loading a scene while it is open —
+shows the <strong>whole graph framed</strong>, the same as pressing <kbd>A</kbd>, unless somebody left that graph at a particular
+view.</p>
+<ul>
+<li><strong>Where it was left.</strong> Pan or zoom a graph by hand and that view is remembered for it. Switch to another graph and
+  back, or close and reopen the editor: it comes back where you left it.</li>
+<li><strong>Saved with the scene.</strong> The views travel inside the <code>.tpscene</code>, so a scene you share opens on the view you left it
+  at. Templates and examples carry no view, so they always open framed.</li>
+<li>Only a pan or zoom made by hand counts: <strong>Frame all</strong> (<kbd>A</kbd>), <strong>Frame selection</strong> (<kbd>F</kbd>) and the zoom
+  buttons do not change the remembered view.</li>
+<li>Views are yours: they are not sent to other players and do not mark the scene changed.</li>
+</ul>
+<p><strong>Settings ▸ Input ▸ Node editor ▸ Node editor opens</strong> chooses <em>Where it was left (framed when new)</em> (the default) or
+<em>Framed — every node in view</em>, which ignores saved views and always frames. Search <strong>framed</strong> in Settings to find it.</p>
+<h2 id="tidy-graph">Tidy graph</h2>
+<p>The node editor can lay a graph out for you.</p>
+<ul>
+<li><strong>Tidy graph</strong> — the button with the network icon in the editor's corner controls, the right-click menu on the
+  canvas, or <kbd>L</kbd>. It lays the graph out left to right in the direction the wires flow: nothing overlaps, no
+  wire runs through a card, notes sit above the card they describe, notes about nothing nearby and unconnected cards get
+  a column on the left, and group cards are moved as single blocks.</li>
+<li><strong>Fix overlaps and crossings</strong> — right-click menu or <kbd>Shift</kbd>+<kbd>L</kbd>. It keeps your layout and only
+  moves the cards that overlap something or sit on a wire, the shortest distance it can.</li>
+<li>Both are <strong>one undo step</strong> (<kbd>Ctrl</kbd>+<kbd>Z</kbd> puts every card back), and everyone in the session sees the
+  result.</li>
+<li>Inside a group (double-click a group card), Tidy arranges that group's contents.</li>
+</ul>
+<p><img alt="Waves' Main graph after 1.25: the run's rules, three group cards with notes, and the Tidy button in the corner controls" src="../img/node-editor/tidy-waves-main.png" /></p>
+<p>Every game's Main graph ships tidied — see <a href="../games/#tidy-main-graphs">The Games tab</a>.</p>
 <h2 id="groups">Groups</h2>
 <p>Select some nodes and press <kbd>Ctrl</kbd>+<kbd>G</kbd> (or right-click ▸ <strong>Group</strong>). They collapse into one card whose
 sockets are the wires that cross the group's edge. Nothing about what the graph does changes: the nodes inside still run
@@ -4157,7 +4255,8 @@ note. Pick one of six colours, and drag a corner to resize it.</p>
 dragging the frame carries them, and moving a framed node stretches the frame to fit.</p>
 <h2 id="right-click-menus">Right-click menus</h2>
 <ul>
-<li><strong>The canvas:</strong> search nodes, add a note, paste, select all, frame all, import a node group — and the full Add list.</li>
+<li><strong>The canvas:</strong> search nodes, add a note, paste, select all, frame all, <strong>Tidy graph</strong>, <strong>Fix overlaps and
+  crossings</strong>, import a node group — and the full Add list.</li>
 <li><strong>A node:</strong> open its code (see <a href="../main-graph/#open-code">Open code</a>), group, add a note around, duplicate, copy, cut,
   paste, mute, collapse, frame, disconnect, delete.</li>
 <li><strong>A selection:</strong> the same for the whole set, plus <strong>Align</strong> (column, row, distribute).</li>
@@ -4173,6 +4272,8 @@ already in a graph keep working. <strong>Turn all on</strong> brings them all ba
   socket is wired outside the group.</li>
 <li>A muted node behaves as if it were not there (its value reads as unwired downstream); there is no pass-through.</li>
 <li>Older versions of the app draw a group's members as ordinary nodes. The logic still runs.</li>
+<li>Tidy judges wires as the default curved style; with the <em>step</em> or <em>straight</em> wire styles a tidied graph can still look
+  different. Cards are measured as drawn, so tidy after you finish editing a big node's settings.</li>
 </ul>
 
 

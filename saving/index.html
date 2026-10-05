@@ -865,6 +865,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../fluids/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluids: Emitters & Flow Paths
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../terrain/" class="md-nav__link">
         
   
@@ -4040,8 +4061,12 @@ you unloaded offers to turn it back on.</p>
 <p><strong>Clear scene</strong> asks what to clear: <em>Clear objects</em> (the default), or tick <em>Also reset the game
 setup and unload its modules</em> to <strong>Clear everything</strong> — the game's menu, HUD, flow nodes, play and
 physics settings, sky and look go too, so no leftover Menu or Play button stays behind.</p>
-<p>Big scenes <strong>load without freezing the app</strong>: a progress bar shows what is loading and how far it
-has got, pieces stream in, and <em>Cancel</em> stops the load and takes back what it had added.</p>
+<p>Big scenes <strong>load without freezing the app</strong>: pieces stream in, and since 1.25 a scene draws its shapes first and its
+water a moment later.</p>
+<p><strong>The scene you open last is the one you get.</strong> Open Island Ocean and then, while it is still downloading, another
+level: Island Ocean is abandoned at once and never replaces the level later. From the moment you click, a bar at the top
+says what is happening — <strong>Loading <em>scene</em> — downloading…</strong>, then <strong>getting ready…</strong>, then <strong>N / M objects</strong>. There is
+no Cancel button: to stop a load, open something else (or <strong>Clear scene</strong> once it is in).</p>
 <h2 id="scene-tpscene-recommended">Scene (<code>.tpscene</code>) — recommended</h2>
 <p>A <code>.tpscene</code> file is a zip bundle containing everything a scene needs:</p>
 <ul>

@@ -899,6 +899,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#start-simulation-on-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start simulation on load
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1042,6 +1051,27 @@
   
   <span class="md-ellipsis">
     Fluid Tank & Jiggle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fluids/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluids: Emitters & Flow Paths
   </span>
   
 
@@ -4077,6 +4107,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#start-simulation-on-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      Start simulation on load
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4186,6 +4225,8 @@ that makes the selected objects dynamic.</p>
 <p><strong>Time scale</strong> (0.1–2) runs the whole simulation in slow motion or fast forward. Slow-mo on a collapsing tower is the point of it. Above 1.5 the panel suggests turning on continuous collision, because faster bodies travel further between steps.</p>
 <h3 id="ground-bounds">Ground &amp; bounds</h3>
 <p>A <strong>ground plane</strong> is on by default at height 0. You can move it, give it <strong>grip</strong> (friction) and <strong>bounce</strong> (restitution) — a slick floor and a rubber floor are one slider apart — or switch it off entirely to build a pit. With colliders shown (Configure Scene ▸ View ▸ <em>Show colliders</em>) it draws as a translucent sheet so you can see where it is.</p>
+<p>Since 1.25 the ground has a <strong>hole wherever <a href="../water/">water</a> goes below it</strong>, with a floor at the bottom of the pool or
+tank — so a pool sunk into the ground works, and nothing rests on an invisible lid at the water's surface.</p>
 <p><strong>Out of bounds below Y</strong> catches anything that falls past a limit, and you choose what happens:</p>
 <table>
 <thead>
@@ -4235,6 +4276,17 @@ Only switching an object's <strong>Body</strong> (Auto / Static / Dynamic) waits
 <p>If nothing has physics when you press play, the app helps you out: with an object selected it simulates just that object at mass 1 and tells you <em>"No Mass nodes wired — simulating the selected object with mass 1"</em>; with nothing selected it prompts you to wire a Mass node or select something first.</p>
 <h3 id="the-simulation-controls-hud">The simulation controls HUD</h3>
 <p>The bottom-right transport (▶ / ⏸ / ⏹ / ↺) is <strong>off by default</strong> so it isn't confused with the main play button. Turn it on in <strong>Settings ▸ Scene ▸ Simulation controls</strong>. The <kbd>P</kbd> shortcut works whether or not the HUD is visible; the first time you use <kbd>P</kbd> while it's hidden, a toast reminds you where to enable it.</p>
+<p>In a scene that has <a href="#start-simulation-on-load">Start simulation on load</a> on, the transport is always there. Since 1.25
+it drives <strong>the whole simulation</strong>: <strong>Pause</strong> holds everything still — the bodies, the <a href="../simulation/#fluid-tank">fluid tanks</a>,
+<a href="../fluids/">fluid emitters</a> and the pouring and spilling drops — on every player's screen, and <strong>Reset</strong> puts the whole
+scene back to how it opened (bodies, tanks refilled, drops gone) and plays it again.</p>
+<h3 id="start-simulation-on-load">Start simulation on load</h3>
+<p><strong>Configure Scene ▸ Camera ▸ Start view ▸ Start simulation on load</strong> is for scenes that <em>are</em> a simulation — things
+falling, floating, jiggling or pouring. It is saved with the scene: when the scene opens, physics starts by itself once
+everything has loaded. The person who opens the scene runs it; everyone else sees it move. It also applies to exported
+games and play links, and undo / redo work on it like on any edit. <em>Jelly room</em>, <em>Fluid tank toy</em>, <em>Pool party</em> and
+<em>Island ocean</em> have it on.</p>
+<p><img alt="Configure Scene ▸ Camera ▸ Start view with Start simulation on load ticked" src="../img/physics/sim-on-load-setting.png" /></p>
 <h2 id="grab-and-throw-mid-simulation">Grab and throw mid-simulation</h2>
 <p>While a simulation is running you can grab a dynamic object and throw it:</p>
 <ul>
@@ -4358,6 +4410,11 @@ stars and two planets to knock about, a chime when one is hit, and a start scree
 <p>Drop a dynamic object into <a href="../water/">water</a> while a simulation runs and it floats, sinks or drifts. The water pushes it
 up by as much water as it displaces, slows it down, carries it along in its flow (the River preset), and tips it back
 upright. Hitting the surface makes a ripple.</p>
+<p>Since 1.25 that works wherever the object starts: put it anywhere in a pool, a tank or the ocean and press <kbd>P</kbd>
+(or open a scene with <a href="#start-simulation-on-load">Start simulation on load</a>) — a light thing (foam, a beach ball)
+shoots up and bobs at the surface, wood floats lower, a stone sinks to the bottom. <strong>Properties ▸ Water ▸ Flow &amp;
+physics</strong> on the water adds <strong>Flow up</strong> (an upward current) and <strong>Bob damping</strong> (lower = things keep bobbing longer).</p>
+<p><img alt="Toys floating in a pool sunk into the ground" src="../img/physics/sunken-pool.png" /></p>
 <p><img alt="A wooden crate floating in a pool, with the Floats rows in its Physics properties" src="../img/physics/floats.png" /></p>
 <p>Select the object and open <strong>Properties ▸ Physics</strong> (Body: <em>Dynamic</em>) ▸ <strong>Floats</strong>:</p>
 <table>

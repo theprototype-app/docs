@@ -14,7 +14,7 @@
         <link rel="prev" href="../water/">
       
       
-        <link rel="next" href="../terrain/">
+        <link rel="next" href="../fluids/">
       
       
       <link rel="icon" href="../logo.svg">
@@ -918,6 +918,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#spilling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spilling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#limits" class="md-nav__link">
     <span class="md-ellipsis">
       Limits
@@ -953,6 +962,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fluids/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluids: Emitters & Flow Paths
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -3919,6 +3949,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#spilling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spilling
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#limits" class="md-nav__link">
     <span class="md-ellipsis">
       Limits
@@ -3976,7 +4015,8 @@
 <h1 id="fluid-tank-jiggle">Fluid Tank &amp; Jiggle</h1>
 <p>Two kinds of motion that are about the look more than the rules: a <strong>fluid tank</strong> of particle liquid you can slosh,
 pour and drain, and the <strong>Jiggle</strong> node, which makes any object lag, wobble and sway. For water you can swim through and
-things that float, see <a href="../water/">Water</a> and <a href="../physics/#things-float">Things float</a>.</p>
+things that float, see <a href="../water/">Water</a> and <a href="../physics/#things-float">Things float</a>; for particle water poured into
+the open scene, rivers and pipes, see <a href="../fluids/">Fluids</a>.</p>
 <h2 id="fluid-tank">Fluid tank</h2>
 <p>A glass tank of particle fluid. Move or tilt the tank and the fluid sloshes; pour more in, drain it out; toys dropped in
 float and are pushed around.</p>
@@ -4033,18 +4073,35 @@ float and are pushed around.</p>
 <td>tick it to let fluid out, at a <strong>Drain rate</strong></td>
 </tr>
 <tr>
+<td><strong>Spill when tipped</strong></td>
+<td>on by default: tip the tank and the fluid pours out over the rim (see below)</td>
+</tr>
+<tr>
+<td><strong>Max spilled drops</strong> · <strong>Drop lifetime</strong></td>
+<td>the limits on spilled fluid, so it never builds up</td>
+</tr>
+<tr>
 <td><strong>Refill</strong></td>
 <td>starts the tank again, filled to its <strong>Fill</strong> level</td>
 </tr>
 </tbody>
 </table>
 <p><img alt="The Drops look, with a ball pushed around by the fluid" src="../img/simulation/fluid-tank-drops.png" /></p>
+<h3 id="spilling">Spilling</h3>
+<p>Since 1.25 a tank <strong>spills when tipped</strong>: rotate it (the Water or Honey tank in <em>Fluid tank toy</em>) and the fluid pours out
+over the rim, falls, splashes into any water below and settles. The tank holds less afterwards — <strong>Refill</strong> fills it
+again. The simulation transport's <strong>Pause</strong> holds the tank and its spilled drops still, and <strong>Reset</strong> refills it (see
+<a href="../physics/#the-simulation-controls-hud">The simulation controls HUD</a>).</p>
+<p><img alt="Fluid tank toy: the Honey tank tipped, its honey spilled onto the table" src="../img/simulation/tank-spill.png" /></p>
 <h3 id="limits">Limits</h3>
 <ul>
 <li>Each player simulates their own fluid; only the settings are shared. Splashes differ slightly between players. The push
   on floating toys comes from the player running the <a href="../physics/#how-it-stays-in-sync">physics simulation</a>.</li>
 <li>A tank pauses while it is off-screen.</li>
-<li>On a Quest, and on slow devices, the fluid draws as drops, with at most 1500 particles.</li>
+<li>On a Quest, and on slow devices, the fluid draws as drops, with at most 1500 particles. On a phone the tank follows
+  the device's quality level live: a phone that keeps its frames steps up to the smooth surface after the scene has
+  loaded (see <a href="../water/#quality">Water ▸ Quality</a>).</li>
+<li>Spilled drops settle on the ground and on the tops of objects' bounding boxes, not on slopes.</li>
 <li>Scaling the tank resizes the fluid box.</li>
 </ul>
 <h2 id="jiggle">Jiggle</h2>
@@ -4058,7 +4115,9 @@ antennae.</p>
 unaffected. The settings are shared, and each player sees their own jiggle from the motion they see.</p>
 <h2 id="examples">Examples</h2>
 <p><strong>Menu ▸ Templates ▸ Examples</strong> has <strong>Jelly room</strong> (Jiggle on a room of jelly blocks) and <strong>Fluid tank toy</strong> (a tank to
-pour into and drop toys in). <strong>Pool party</strong> shows floating toys in a pool.</p>
+pour into and drop toys in). <strong>Pool party</strong> shows floating toys in a pool. Since 1.25 Jelly room renders its jellies again
+(they were black), and all three start moving as soon as they open
+(<a href="../physics/#start-simulation-on-load">Start simulation on load</a>).</p>
 
 
 

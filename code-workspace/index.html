@@ -863,6 +863,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../fluids/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluids: Emitters & Flow Paths
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../terrain/" class="md-nav__link">
         
   
@@ -1280,6 +1301,57 @@
   <a href="#editing-and-saving" class="md-nav__link">
     <span class="md-ellipsis">
       Editing and saving
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sidebars" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sidebars
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sidebars">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#left-open-editors-and-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Left: Open editors and Project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#right-outline-problems-bound-nodes-find" class="md-nav__link">
+    <span class="md-ellipsis">
+      Right: Outline, Problems, Bound nodes, Find
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabs-quick-open-and-the-keyboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabs, quick open and the keyboard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-players-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Player's code
     </span>
   </a>
   
@@ -3912,6 +3984,57 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sidebars" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sidebars
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sidebars">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#left-open-editors-and-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Left: Open editors and Project
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#right-outline-problems-bound-nodes-find" class="md-nav__link">
+    <span class="md-ellipsis">
+      Right: Outline, Problems, Bound nodes, Find
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabs-quick-open-and-the-keyboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabs, quick open and the keyboard
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-players-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Player's code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#code-and-files" class="md-nav__link">
     <span class="md-ellipsis">
       Code and files
@@ -3988,13 +4111,17 @@ itself as JSON. Each source is a <strong>tab</strong>, and your edits stay in th
 <p>It opens by itself when you ask for code:</p>
 <ul>
 <li><strong>Edit code</strong> on a Script node, <strong>Code</strong> on a Behaviour node, or a double-click on any node that has code (see
-  <a href="../main-graph/#open-code">Open code</a>);</li>
+  <a href="../main-graph/#open-code">Open code</a>) — since 1.25 that includes a game's <a href="#the-players-code">Player</a>;</li>
 <li>a double-click on a <code>.js</code> file in the <a href="../explorer/">Explorer</a>, or right-click it ▸ <strong>Open in code editor</strong>;</li>
 <li>the dock's <strong>＋</strong> menu ▸ <strong>Code</strong>, or the optional <code>{}</code> toolbar button (add it with <em>Customize the toolbar</em>);</li>
 <li><strong>Graph JSON</strong> in the workspace's header opens the graph the Node editor is showing.</li>
 </ul>
 <p>It docks as a tab at the bottom, beside the Node editor and the Explorer, or floats as a window (<strong>⧉</strong> to float,
-<strong>⇩ Dock</strong> to put it back).</p>
+<strong>⇩ Dock</strong> to put it back). Everything on this page works in both. In a narrow window or on a phone the
+<a href="#sidebars">sidebars</a> open <strong>over</strong> the editor, one at a time (toggle buttons in the header).</p>
+<p>When the workspace has the keyboard, it keeps it: <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> never fly the camera
+from here (see <a href="../controls/#keys-follow-the-panel-you-are-in">Keys follow the panel you are in</a>). In the undocked
+window the tabs sit in the title bar and can be clicked; the title bar around them still drags the window.</p>
 <h2 id="editing-and-saving">Editing and saving</h2>
 <p>Type, then press <kbd>Ctrl</kbd>+<kbd>S</kbd> (<kbd>Cmd</kbd>+<kbd>S</kbd> on a Mac) or <strong>Save</strong>. A <strong>●</strong> on a tab
 means it has unsaved edits; <strong>Revert</strong> throws them away.</p>
@@ -4003,6 +4130,71 @@ the line (click it to jump there), and every node the code feeds shows an amber 
 running the last good version.</p>
 <p><img alt="A save refused: the banner names the line, and the nodes keep the last good version" src="../img/code-workspace/parse-error.png" /></p>
 <p>When the code is good, everything that runs it reloads — on every player's screen.</p>
+<p><strong>Unsaved changes are guarded.</strong> Closing a tab with unsaved edits asks first. Closing the whole workspace with unsaved
+files asks <strong>Save all / Don't save / Cancel</strong> — a file whose code has an error is not saved, and the dialog says so.
+Leaving the page with unsaved code shows the browser's warning.</p>
+<p><strong>Undo and redo</strong> (<kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Y</kbd>) step through saved code edits, on every
+peer; an open tab follows them.</p>
+<h2 id="sidebars">Sidebars</h2>
+<p><img alt="The code workspace in 1.25: Open editors and the Project tree on the left, the tab strip, and the Outline on the right" src="../img/code-workspace/sidebars.png" /></p>
+<h3 id="left-open-editors-and-project">Left: Open editors and Project</h3>
+<p><kbd>Ctrl</kbd>+<kbd>B</kbd> shows or hides the left sidebar.</p>
+<ul>
+<li><strong>Open editors</strong> lists every open tab, in the same order as the tab strip. Drag a row to reorder (the strip follows);
+  <strong>✕</strong> closes it (unsaved files ask first).</li>
+<li><strong>Project</strong> lists every script in the scene as a tree, with a search box:<ul>
+<li><strong>Graphs</strong> — per graph (Main first, then each object's), its Script nodes, Behaviour nodes and the
+  <a href="#the-players-code">Player's code</a>, plus <code>graph.json</code> (the whole graph as editable <a href="#graph-json">JSON</a>).</li>
+<li><strong>Script files</strong> — the <code>.js</code> files in your Library, with how many nodes run each.</li>
+<li><strong>Module sources</strong> — the module and kit files the game uses, <strong>read-only</strong> (see <a href="#module-code">Module code</a>).</li>
+</ul>
+</li>
+<li>The search also matches folder names (<em>minigolf rules</em>).</li>
+<li>Drag the line between the two sections to share the height; double-click it to reset. Drag the sidebar's edge to
+  resize it — the width is remembered.</li>
+</ul>
+<h3 id="right-outline-problems-bound-nodes-find">Right: Outline, Problems, Bound nodes, Find</h3>
+<p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd> shows or hides the right sidebar. It has four tool tabs:</p>
+<ul>
+<li><strong>Outline</strong> — the active file's params, state, handlers, methods and functions, a script's inputs and returned
+  outputs, a graph's nodes. Click one to jump to its line.</li>
+<li><strong>Problems</strong> — syntax errors and lint advice (for example, <code>Math.random</code> breaks peer sync) for every open file <em>as you
+  type</em>, plus anything a node reported while running. The tab shows a count; click a problem to jump to it.</li>
+<li><strong>Bound nodes</strong> — which graph nodes run this file. Click one to select it in the Node editor (entering its group if
+  it is inside one).</li>
+<li><strong>Find in files</strong> (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd>) — searches every script in the project, open files'
+  unsaved text first. Toggles: match case, whole word, regular expression, include module sources. Click a result to
+  open it at its line.</li>
+</ul>
+<h2 id="tabs-quick-open-and-the-keyboard">Tabs, quick open and the keyboard</h2>
+<ul>
+<li>With many tabs the <strong>tab strip</strong> scrolls: the mouse wheel scrolls it sideways and a thin scrollbar shows. The active
+  tab is always scrolled into view. Drag a tab to reorder it.</li>
+<li><kbd>Ctrl</kbd>+<kbd>P</kbd> — <strong>quick open</strong>: open any script in the project by typing part of its name (letters in
+  order: <code>plwa</code> finds <em>Player: walk</em>). <kbd>↑</kbd>/<kbd>↓</kbd> and <kbd>Enter</kbd>.</li>
+<li><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd> — <strong>go to symbol</strong>: jump to a function, handler, param or state key of
+  the current file.</li>
+<li>The tab strip, Open editors, the Project tree and the tool tabs are each one <kbd>Tab</kbd> stop. <kbd>←</kbd>/<kbd>→</kbd>
+  (strip, tools) and <kbd>↑</kbd>/<kbd>↓</kbd> (lists) move, <kbd>←</kbd>/<kbd>→</kbd> in the tree close and open
+  folders, <kbd>Enter</kbd> opens, <kbd>Delete</kbd> closes a tab.</li>
+</ul>
+<h2 id="the-players-code">The Player's code</h2>
+<p>Since 1.25 the <strong>Player</strong> card in a game's graph (a <em>Character Controller</em>, such as <em>Player: walk</em> in Mini Golf, Escape
+Room, Sky Run and Towers) opens its code like any other code node: <strong>double-click it</strong>, or right-click ▸ <strong>Open code</strong>.
+The code runs every frame on each player's own machine and decides how <em>that</em> player moves:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// settings = the card&#39;s values { mode, speed, jumpHeight, eyeHeight, gravity }</span>
+<span class="c1">// input    = this player&#39;s keys { x, z, jump, sprint (Shift), crouch (Ctrl) }</span>
+<span class="c1">// time     = seconds since Play started</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">input</span><span class="p">.</span><span class="nx">sprint</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">speed</span><span class="o">:</span><span class="w"> </span><span class="nx">settings</span><span class="p">.</span><span class="nx">speed</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1.8</span><span class="w"> </span><span class="p">};</span><span class="w">   </span><span class="c1">// hold Shift to run</span>
+<span class="k">return</span><span class="w"> </span><span class="p">{};</span><span class="w">                                                  </span><span class="c1">// anything left out keeps the card&#39;s value</span>
+</code></pre></div>
+<ul>
+<li><kbd>Ctrl</kbd>+<kbd>S</kbd> saves it — checked first (broken code never applies), sent to everyone, one undo step.</li>
+<li>A wrong key or type in what you return shows on the node's red error badge.</li>
+<li><strong>Engine source</strong> (toolbar) shows the built-in walker code it steers, read-only.</li>
+<li>With no code saved, the Player behaves exactly as before.</li>
+</ul>
+<p><img alt="Player: walk open in the code workspace, with Engine source in the toolbar and the Player code row in the Project tree" src="../img/code-workspace/player-code.png" /></p>
 <h2 id="code-and-files">Code and files</h2>
 <ul>
 <li><strong>Save as file</strong> turns a node's inline code into a script file in your Explorer and binds the node to it.</li>
@@ -4017,6 +4209,9 @@ version, <strong>Keep mine</strong> keeps yours (your next save wins).</p>
 <p>A module's source opens <strong>read-only</strong> (a lock on its tab): it runs the same for everyone. A Script or Behaviour node that
 a module binds to its own file offers <strong>Make editable copy</strong>, which copies the code into a script the scene owns and
 points the node at it — see <a href="../main-graph/#make-editable-copy">Make editable copy</a>.</p>
+<p>A file opened from <strong>Module sources</strong> in the <a href="#left-open-editors-and-project">Project tree</a> has a copy button (or
+<strong>Make editable copy</strong> in the toolbar) that puts a copy in your Library for you to edit. The module keeps running its own
+code, so use <strong>Use file…</strong> on a Script node to run your copy.</p>
 <h2 id="graph-json">Graph JSON</h2>
 <p><strong>Graph JSON</strong> opens the graph as JSON. Edit the nodes and edges and press <strong>Apply</strong> (<kbd>Ctrl</kbd>+<kbd>S</kbd>).
 Invalid JSON, two nodes with the same id or a wire to a node that does not exist are refused with the line; a good apply
@@ -4027,8 +4222,17 @@ compact text.)</p>
 <kbd>Ctrl</kbd>+<kbd>S</kbd> — how the Script panel felt before 1.23. It is a setting of this browser, off by default.</p>
 <h2 id="limits">Limits</h2>
 <ul>
-<li>A node bound to a file still carries its code, so a scene runs the same whether or not the file is in anyone's
-  Library.</li>
+<li>The Player's code can change speed, jump height, eye height, gravity and walk/fly each frame; it cannot replace the
+  walker itself (collisions, steps) — that is the engine source.</li>
+<li>Other built-in nodes have parameters only (edited in the ⓘ panel); Script, Behaviour, Custom nodes and the Player are
+  the nodes with code.</li>
+<li>
+<p>Find in files stops at 400 results.</p>
+</li>
+<li>
+<p>A node bound to a file still carries its code, so a scene runs the same whether or not the file is in anyone's
+  Library.</p>
+</li>
 <li>Files are addressed by their content: two files with byte-identical content are the same file.</li>
 <li>The second-monitor window (<strong>⧉ Window</strong>) is an experiment, switched on with
   <code>localStorage['code:popout'] = 'true'</code> in the browser console.</li>

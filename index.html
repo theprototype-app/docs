@@ -930,6 +930,27 @@
   
   
     <li class="md-nav__item">
+      <a href="fluids/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluids: Emitters & Flow Paths
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="terrain/" class="md-nav__link">
         
   
@@ -3926,6 +3947,29 @@ on a phone that gives the scene the whole height of the screen.</p>
 <a href="https://github.com/theprototype-app/core">github.com/theprototype-app/core</a> (also <strong>Settings ▸ About ▸ Source Code</strong>),
 with a contributing guide and an <code>llms.txt</code> for coding agents.</p>
 <h2 id="whats-new">What's new</h2>
+<p><strong>1.25 — your feedback, fixed: panels that keep their keys, water that behaves.</strong> <a href="controls/#keys-follow-the-panel-you-are-in">Keys follow the panel you are
+in</a>: <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> no longer fly the
+camera from the Explorer, the Inspector, a node's graph view, the HUD editor or any tool window, the panel with the keys
+shows an outline, the object list keeps <kbd>Delete</kbd> / <kbd>F</kbd> / <kbd>Ctrl</kbd>+<kbd>D</kbd>, and sliders in
+nodes never drag the graph. The <a href="code-workspace/">code workspace</a> gains sidebars — Open editors and a searchable
+Project tree (<kbd>Ctrl</kbd>+<kbd>B</kbd>); Outline, Problems, Bound nodes and Find in files
+(<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd>, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd>) — plus a scrolling tab
+strip, <kbd>Ctrl</kbd>+<kbd>P</kbd> quick open, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd> go to symbol and a guard
+before closing unsaved code, and a game's <a href="code-workspace/#the-players-code">Player has code</a> you can open and save.
+The <a href="node-editor/#where-it-opens">node editor</a> opens with the whole graph in view, or where you left it (saved with
+the scene); <a href="node-editor/#tidy-graph">Tidy graph</a> (<kbd>L</kbd>, <kbd>Shift</kbd>+<kbd>L</kbd>) lays a graph out in one
+undo step, and <a href="games/#tidy-main-graphs">every game's Main graph</a> is tidied. A click now selects <a href="controls/#inside-and-behind-water">what is inside or
+behind water</a>, <kbd>Alt</kbd>+click cycles everything under the cursor, and
+<strong>ping moved to <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+click</strong>; opening a scene while another is loading <a href="saving/#opening-another-scene-and-modules">always gives you the
+newest one</a>. Things under water <a href="physics/#things-float">rise or sink by their
+density</a>, every <a href="water/#making-water">water setting</a> works on every preset, scenes can <a href="physics/#start-simulation-on-load">start
+their simulation on load</a> with one Reset / Pause for everything, and water gains
+visible bubble emitters, <a href="water/#pour-emitters">pour emitters</a>, <a href="simulation/#spilling">spilling fluid tanks</a> and a
+lighter look on phones that still bends the light. New: <a href="fluids/">Fluids</a> — <strong>Add ▸ Water ▸ Fluid</strong> pours real particle
+water, <strong>Flow path</strong> makes rivers, chutes and pipes, the <strong>Rotate / Motor</strong> and <strong>Float Along Flow</strong> nodes turn wheels
+and float boats, and the <strong>Water works</strong> example runs a closed water loop. Also fixed: an old game scene with two
+modules no longer opens with its two Code link cards on top of each other, and particle fluid no longer tunnels through
+thin walls under pressure.</p>
 <p><strong>1.24 — characters that walk, a race, and your games' stats.</strong> Everyone in a session is now a
 <a href="avatars/">rigged character</a> — nine CC0 KayKit adventurers and skeletons that walk, run, strafe and jump with their
 camera and reach for their VR controllers — and <strong>Customize Character</strong> (profile menu) is a side panel with a live
@@ -4057,6 +4101,7 @@ for your machine <a href="performance/">reduces quality or pauses instead of fre
 <li><a href="particles/">Particle Effects</a> — dust, smoke, fire, sparkles, rain and snow.</li>
 <li><a href="water/">Water</a> — tanks, pools, oceans and lava with waves, refraction, caustics, foam and bubbles.</li>
 <li><a href="simulation/">Fluid Tank &amp; Jiggle</a> — particle liquid you can pour, and springy secondary motion.</li>
+<li><a href="fluids/">Fluids</a> — particle water poured into the scene, rivers, chutes and pipes, and wheels that turn it.</li>
 <li><a href="terrain/">Terrain &amp; Sculpting</a> — add ground and shape it with a brush.</li>
 <li><a href="saving/">Saving &amp; Sessions</a> — the <code>.tpscene</code> bundle format, GLTF export, sessions and autosave.</li>
 </ul>
