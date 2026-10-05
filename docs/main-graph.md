@@ -48,6 +48,7 @@ Double-click a node (or right-click ▸ **Open code**) to see the code behind it
 | **Script** | its code in the [code workspace](code-workspace.md) |
 | **Behaviour** | its file in the code workspace (**Open view** on the card still shows the [live node view](behaviours.md#the-live-node-view)) |
 | **Custom node** | the Node Designer |
+| **Player** (a *Character Controller*) | its code in the code workspace, with the engine source beside it, read-only — see [The Player's code](code-workspace.md#the-players-code) (1.25) |
 | a **module's node**, a **kit node**, a **Code link** | the module's own source, **read-only** |
 
 A module's files run the same for everyone, so they cannot be edited where they are. You can still read them, select

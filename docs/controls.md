@@ -6,7 +6,7 @@ How to move the camera, select and transform objects, and find every keyboard sh
 
 - **Orbit** — drag with the left mouse button (right-drag also orbits; a quick right-click *tap* opens the context menu instead).
 - **Zoom** — mouse wheel. A two-finger swipe on a trackpad pans instead; see [The mouse wheel](#the-mouse-wheel) if yours does the wrong thing.
-- **Fly** — hold <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to pan on the camera's horizontal plane, <kbd>Q</kbd>/<kbd>E</kbd> to fly down/up, hold <kbd>Shift</kbd> for 3× speed.
+- **Fly** — hold <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to pan on the camera's horizontal plane, <kbd>Q</kbd>/<kbd>E</kbd> to fly down/up, hold <kbd>Shift</kbd> for 3× speed. These keys fly only while the 3D view has the keyboard — if a panel has it, click the 3D view first (see [Keys follow the panel you are in](#keys-follow-the-panel-you-are-in)).
 - **Focus** — <kbd>F</kbd> frames the selected object.
 - **Camera bookmarks** — save the current view from the right-click menu (**Camera bookmarks ▸ Save current view**), recall with <kbd>Shift</kbd>+<kbd>1</kbd>…<kbd>5</kbd>.
 
@@ -25,6 +25,7 @@ If the guess is still wrong on your hardware, pick it yourself: right-click the 
 - **Click empty space** to deselect.
 - **Shift+click** adds or removes objects from a multi-selection (the last-picked object is the primary).
 - **Shift+drag** on empty space draws a box-select marquee.
+- **Alt+click** cycles through everything under the cursor, front to back — see [Inside and behind water](#inside-and-behind-water).
 - **Ctrl+A** selects everything in the scene. Inside a mesh editing session it keeps its other meaning — select every face, edge or vertex — so the two never collide.
 - **Ctrl+D** duplicates the selection — see [Duplicating](#duplicating) for what a copy brings with it.
 - Selecting an object **locks it for other peers** (one lock per person); a locked object shows who holds it, and its right-click menu offers **Request control** to ask for a handover.
@@ -58,6 +59,44 @@ reach something that is still covered, **click the same spot again** (a moment a
 click, so it is not a double-click) — each repeat selects the next object down under the cursor,
 and wraps round.
 
+### Inside and behind water
+
+Since 1.25 a click selects what is **inside or behind** a water volume — the fish in the Aquarium, the duck in the Fluid
+tank toy, the stones on the seabed. With nothing behind it (the open ocean, the very edge of a surface) the click takes
+the water itself.
+
+- **<kbd>Alt</kbd>+click cycles** through everything under the cursor, front to back: the first <kbd>Alt</kbd>+click
+  takes the frontmost (often the water), the next one on the same spot the object behind it, and so on, wrapping round.
+  A small chip by the cursor says **"2 of 4 · Fish orange"**; screen readers hear *"Selected 2 of 4: Fish orange"*.
+- **Hold <kbd>Alt</kbd>** to preview: a box marks what an <kbd>Alt</kbd>+click would select, with the same chip. Let go
+  of <kbd>Alt</kbd> and the preview disappears.
+- The object list always reaches every object, whatever is in front of it.
+
+![Alt+click in the Aquarium: the chip by the cursor says 2 of 3 · Fish orange](img/controls/alt-click-cycle.png)
+
+**Configure Scene ▸ Advanced ▸ Selection passes through** chooses what clicks go through:
+
+| Option | Default | What it does |
+|---|---|---|
+| **Water** | on | water volumes and particle-fluid tanks let clicks through |
+| **Transparent surfaces** | off | any see-through material (glass, a 0.5-opacity panel) lets clicks through |
+| **Triggers** | off | trigger volumes (physics sensors, the *Water/trigger* collision group) let clicks through |
+
+It is saved with the scene and shared with everyone in it. Surfaces below 25 % opacity and objects marked
+**Click-through in the viewport** always let clicks through, as before.
+
+**In games**, clicking, carrying and the VR laser skip water and trigger volumes: the laser ends on the fish, not on the
+water in front of it, and a press reaches what it ends on. A lone trigger with nothing behind it can still be clicked. A
+game that wants its rays to stop at water or triggers sets `play.rayHits: {water: true, triggers: true}` in its scene's
+play block.
+
+!!! note "Ping moved"
+    Since 1.25 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+click pings a spot for everyone (it used to be <kbd>Alt</kbd>+click).
+    **Ping here** in the right-click menus is unchanged.
+
+The <kbd>Alt</kbd> preview and the chip are desktop-only; in VR the laser itself shows the target. The cycle order is by
+distance along the ray, and objects nested inside a group are picked as the group.
+
 ### Module content in the object list
 
 Things a module builds outside the scene (the Untangle board, a piano, a generated dungeon) are
@@ -79,7 +118,13 @@ Click anywhere in the object list (<kbd>O</kbd> opens it) to give it focus, and 
 | <kbd>Enter</kbd> | Open the object's Properties |
 | <kbd>F2</kbd> | Rename inline (<kbd>Enter</kbd> commits, <kbd>Esc</kbd> cancels) |
 | type a name | Jump to the first object starting with those letters; one letter pressed again cycles |
+| <kbd>Delete</kbd> / <kbd>Backspace</kbd> | Delete the selection |
+| <kbd>F</kbd> | Frame the selection in the 3D view |
+| <kbd>Ctrl</kbd>+<kbd>D</kbd> / <kbd>Ctrl</kbd>+<kbd>A</kbd> | Duplicate the selection / select all |
 | <kbd>Esc</kbd> | Hand the keyboard back to the viewport |
+
+The list never flies the camera: <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> and <kbd>Q</kbd>/<kbd>E</kbd> do
+nothing while it has the keys.
 
 <kbd>↓</kbd> in the list's **Search objects…** box drops you into the results. Type-ahead matches what you typed first, so a Cyrillic name is reachable by its own letters, and falls back to the physical key so a Latin name is still reachable on a non-Latin layout.
 
@@ -213,6 +258,12 @@ That includes the numbers inside **node editor cards**, **shader nodes** and the
 **animation window** — dragging one of those scrubs the value without dragging the card.
 Scrubbing an animation key or a shader parameter is **one undo step**, not one per pixel.
 
+Since 1.25 that holds for **every slider and number field inside a node** — every node type, and the knobs in a
+behaviour's [Open view](behaviours.md#the-live-node-view): a drag changes the value, never the node and never the whole
+graph, and the behaviour view no longer flickers the cursor.
+
+![A behaviour's Open view in the node editor: the params' knobs on the left drag their value, not the graph](img/controls/behaviour-view-knobs.png)
+
 Fields that hold a distance or an angle also accept a typed **unit** (`12cm`, `4in`,
 `90deg`) — see [Units](units.md).
 
@@ -233,6 +284,10 @@ visible scrollbar. On a folding phone it stays right through folding and unfoldi
 The toolboxes, the Explorer, the flow and animation windows and the panels all behave the same way: drag the header to move, drag the bottom-right corner to resize. A window can never be sized past the edge of the screen — the resize corner always stays reachable — and **double-clicking** the corner resets it to its default size while leaving it where you parked it. Size and position are remembered per window.
 
 A window also **keeps its header**: it cannot be dragged so far down that the header hides under the Controls pill, the bottom band on a touch or narrow screen, the dock, or a browser overlay — there is always something left to grab. A tall toolbox parked near the bottom scrolls its body instead of losing its head.
+
+A **right-click while you drag a window** — by its title bar, a resize corner or a tab — no longer pops up the browser's
+menu; a normal right-click elsewhere behaves as before. Tabs that sit in a window's title bar, like the undocked
+[Code](code-workspace.md) window's, can be clicked, while the title bar around them still drags the window.
 
 ### Docking to a screen edge
 
@@ -255,6 +310,10 @@ Docking is **desktop only** — on a touch screen there is no room for a full-he
 and it would fight scrolling, so windows there simply stay floating.
 
 ## The toolbar
+
+Pressing a toolbar button never takes the keyboard: the keys stay with whatever had them — this holds for the bottom
+toolbar, the Connect bar, the touch tools, the draw, sculpt, spline and mesh-edit toolboxes and module toolboxes. So
+"press Move, then <kbd>F</kbd>" still frames the selection from the 3D view.
 
 The bar at the bottom of the screen is yours to arrange. **Right-click** (or long-press) any of its buttons:
 
@@ -293,7 +352,7 @@ On a phone the sidebar becomes a row of section chips above the settings.
 
 Shortcuts are inert while you type in a text field and while play mode owns the keyboard. The same list is shown in **Settings ▸ Shortcuts** (<kbd>Ctrl</kbd>+<kbd>/</kbd> opens it directly), where a click on a shortcut's keys rebinds it and **Reset all** puts the defaults back.
 
-**Keys follow the panel you are using** (since 1.23). A shortcut fires only in the panel that has focus — the one you last clicked — so the keys below are the 3D view's, and the node editor has its own set: see [Node editor: keyboard, groups and notes](node-editor.md). Press <kbd>?</kbd> anywhere for a cheat sheet of every panel's keys, the focused panel first.
+The keys in the table are the **3D view's**: they fire while the 3D view has focus. A panel you click in gets its own keys — see [Keys follow the panel you are in](#keys-follow-the-panel-you-are-in).
 
 **Every keyboard layout works.** A letter shortcut is matched by the letter printed on the key when there is one — AZERTY, Dvorak and QWERTZ keep their own labels — and by the key's **physical position** otherwise, so <kbd>G</kbd>, <kbd>F</kbd>, <kbd>Ctrl</kbd>+<kbd>Z</kbd> and <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> work on Russian, Greek, Hebrew, Arabic and CJK layouts without switching. Where the browser can tell, **Settings ▸ Shortcuts** shows your layout's own label beside each letter (*п on your layout*); where it cannot, a note says letter shortcuts follow the QWERTY position.
 
@@ -311,6 +370,8 @@ Shortcuts are inert while you type in a text field and while play mode owns the 
 | <kbd>Ctrl</kbd>+<kbd>D</kbd> | Duplicate the selection (whole set) |
 | <kbd>Ctrl</kbd>+<kbd>A</kbd> | Select all objects (inside Edit Mesh: every element) |
 | <kbd>Delete</kbd> / <kbd>Backspace</kbd> | Delete the selection (a group asks first) |
+| <kbd>Alt</kbd>+click | Cycle the selection through everything under the cursor ([inside and behind water](#inside-and-behind-water)) |
+| <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+click | [Ping](notifications.md#pinging) a spot for everyone |
 | <kbd>Esc</kbd> | Leave isolation |
 | <kbd>Tab</kbd> | Enter [mesh edit](mesh-editing.md) mode — inside it <kbd>Tab</kbd> cycles Vertices / Edges / Faces; <kbd>Esc</kbd> exits |
 | <kbd>I</kbd> | [Edit / Interact](#edit-and-interact) mode — in Interact, clicks play with the scene instead of selecting |
@@ -335,6 +396,33 @@ Shortcuts are inert while you type in a text field and while play mode owns the 
 
 Inside an Edit Mesh session the bare letters <kbd>E</kbd> <kbd>I</kbd> <kbd>G</kbd> <kbd>S</kbd> <kbd>B</kbd> <kbd>F</kbd> <kbd>X</kbd> / <kbd>W</kbd> <kbd>J</kbd> and the loop keys (<kbd>L</kbd>, <kbd>Ctrl</kbd>+<kbd>+</kbd>/<kbd>-</kbd>, <kbd>Ctrl</kbd>+<kbd>I</kbd>) belong to the mesh tools — see [Mesh Editing](mesh-editing.md). That is why the panel shortcuts above use <kbd>Alt</kbd>: they keep working while a mesh session is open. Since 1.23 the mesh tools' keys can be rebound too, in their own *Mesh edit* group of **Settings ▸ Shortcuts**.
 
+### Keys follow the panel you are in
+
+A shortcut fires only in the panel that has focus — the one you last clicked. The table above is the 3D view's, and the
+node editor has its own set: see [Node editor: keyboard, groups and notes](node-editor.md). Press <kbd>?</kbd> anywhere
+for a cheat sheet of every panel's keys, the focused panel first.
+
+Since 1.25 this covers **every panel and tool window**, docked or floating: the Explorer, the Inspector, the node
+editor's chrome, a behaviour's graph view, the [code workspace](code-workspace.md), the HUD editor, Animation, UV,
+Shader, Flow Code, the Profiler, previews, chat… Clicking in one gives it the keyboard, and the panel that has the keys
+shows an outline.
+
+- **<kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> / <kbd>Q</kbd> <kbd>E</kbd> never fly the camera from a panel**,
+  and the 3D view's own letters (<kbd>C</kbd> chat, <kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd>, <kbd>P</kbd>, <kbd>M</kbd>…)
+  do nothing there. Click the 3D view to give it the keys back.
+- **<kbd>T</kbd>, <kbd>N</kbd> and <kbd>O</kbd>** (the tool dock, the node editor, the object list) are window management,
+  so they also work from a panel.
+- **Global keys work everywhere**: <kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Y</kbd> (also with a checkbox
+  or slider focused, and inside the Profiler timeline), <kbd>Ctrl</kbd>+<kbd>S</kbd>, <kbd>Ctrl</kbd>+<kbd>Enter</kbd>,
+  the <kbd>Alt</kbd>+letter panel toggles, <kbd>?</kbd> and <kbd>V</kbd> (push to talk).
+- **The object list** keeps its own keys and the scene's selection keys — see
+  [The object list from the keyboard](#the-object-list-from-the-keyboard).
+- A panel that has no keys of its own simply ignores the 3D view's letters: click the 3D view first to fly. Inside a
+  text field or the code editor, typing is always typing.
+
+The <kbd>?</kbd> cheat sheet and **Settings ▸ Shortcuts** list *Panels and tool windows* and *Object list* among the
+places keys belong to.
+
 ## Right-click menus
 
 **Empty viewport** — a quick right-click opens the scene menu:
@@ -349,7 +437,7 @@ Inside an Edit Mesh session the bare letters <kbd>E</kbd> <kbd>I</kbd> <kbd>G</k
 - **Module tools** — the toolboxes of installed modules.
 - **Camera bookmarks** — Save current view, the saved views, *Manage saved views…*, Clear bookmarks.
 
-**An object** (viewport or object list) — Focus camera, Duplicate, Group selection / Ungroup, Origin and Pivot point, Convert to mesh, Align to ground, Preview camera (on a [camera](camera.md#camera-objects)); **Edit**: Properties, Rename, Edit shader, [Edit mesh](mesh-editing.md), Edit spline, Sculpt mesh; **Physics & effects**: Physics ▸ Weld / Hinge, Effects, Enable / Disable flow effects; **Share**: Add note, Ping this object, [Save as…](prefabs.md); and Delete. <kbd>Alt</kbd>+click pings anywhere in the scene.
+**An object** (viewport or object list) — Focus camera, Duplicate, Group selection / Ungroup, Origin and Pivot point, Convert to mesh, Align to ground, Preview camera (on a [camera](camera.md#camera-objects)); **Edit**: Properties, Rename, Edit shader, [Edit mesh](mesh-editing.md), Edit spline, Sculpt mesh; **Physics & effects**: Physics ▸ Weld / Hinge, Effects, Enable / Disable flow effects; **Share**: Add note, Ping this object, [Save as…](prefabs.md); and Delete. <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+click pings anywhere in the scene (since 1.25; <kbd>Alt</kbd>+click now [cycles the selection](#inside-and-behind-water)).
 
 **Every right-click menu can be typed into.** Start typing and the menu turns into a filtered list of every entry in it,
 submenus included; <kbd>↑</kbd>/<kbd>↓</kbd> walk the rows, <kbd>Enter</kbd> runs one, and with nothing typed

@@ -24,6 +24,30 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.25 — your feedback, fixed: panels that keep their keys, water that behaves.** [Keys follow the panel you are
+in](controls.md#keys-follow-the-panel-you-are-in): <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> no longer fly the
+camera from the Explorer, the Inspector, a node's graph view, the HUD editor or any tool window, the panel with the keys
+shows an outline, the object list keeps <kbd>Delete</kbd> / <kbd>F</kbd> / <kbd>Ctrl</kbd>+<kbd>D</kbd>, and sliders in
+nodes never drag the graph. The [code workspace](code-workspace.md) gains sidebars — Open editors and a searchable
+Project tree (<kbd>Ctrl</kbd>+<kbd>B</kbd>); Outline, Problems, Bound nodes and Find in files
+(<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd>, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd>) — plus a scrolling tab
+strip, <kbd>Ctrl</kbd>+<kbd>P</kbd> quick open, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd> go to symbol and a guard
+before closing unsaved code, and a game's [Player has code](code-workspace.md#the-players-code) you can open and save.
+The [node editor](node-editor.md#where-it-opens) opens with the whole graph in view, or where you left it (saved with
+the scene); [Tidy graph](node-editor.md#tidy-graph) (<kbd>L</kbd>, <kbd>Shift</kbd>+<kbd>L</kbd>) lays a graph out in one
+undo step, and [every game's Main graph](games.md#tidy-main-graphs) is tidied. A click now selects [what is inside or
+behind water](controls.md#inside-and-behind-water), <kbd>Alt</kbd>+click cycles everything under the cursor, and
+**ping moved to <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+click**; opening a scene while another is loading [always gives you the
+newest one](saving.md#opening-another-scene-and-modules). Things under water [rise or sink by their
+density](physics.md#things-float), every [water setting](water.md#making-water) works on every preset, scenes can [start
+their simulation on load](physics.md#start-simulation-on-load) with one Reset / Pause for everything, and water gains
+visible bubble emitters, [pour emitters](water.md#pour-emitters), [spilling fluid tanks](simulation.md#spilling) and a
+lighter look on phones that still bends the light. New: [Fluids](fluids.md) — **Add ▸ Water ▸ Fluid** pours real particle
+water, **Flow path** makes rivers, chutes and pipes, the **Rotate / Motor** and **Float Along Flow** nodes turn wheels
+and float boats, and the **Water works** example runs a closed water loop. Also fixed: an old game scene with two
+modules no longer opens with its two Code link cards on top of each other, and particle fluid no longer tunnels through
+thin walls under pressure.
+
 **1.24 — characters that walk, a race, and your games' stats.** Everyone in a session is now a
 [rigged character](avatars.md) — nine CC0 KayKit adventurers and skeletons that walk, run, strafe and jump with their
 camera and reach for their VR controllers — and **Customize Character** (profile menu) is a side panel with a live
@@ -169,6 +193,7 @@ for your machine [reduces quality or pauses instead of freezing](performance.md)
 - [Particle Effects](particles.md) — dust, smoke, fire, sparkles, rain and snow.
 - [Water](water.md) — tanks, pools, oceans and lava with waves, refraction, caustics, foam and bubbles.
 - [Fluid Tank & Jiggle](simulation.md) — particle liquid you can pour, and springy secondary motion.
+- [Fluids](fluids.md) — particle water poured into the scene, rivers, chutes and pipes, and wheels that turn it.
 - [Terrain & Sculpting](terrain.md) — add ground and shape it with a brush.
 - [Saving & Sessions](saving.md) — the `.tpscene` bundle format, GLTF export, sessions and autosave.
 
