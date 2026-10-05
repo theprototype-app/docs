@@ -422,6 +422,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../avatars/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Your Character
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../connection/" class="md-nav__link">
         
   
@@ -884,6 +905,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../checkpoints/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Checkpoints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../loading/" class="md-nav__link">
         
   
@@ -973,6 +1015,27 @@
   
   <span class="md-ellipsis">
     Camera & View
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recording/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recording a Video
   </span>
   
 
@@ -3251,6 +3314,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../race/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Race
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3459,6 +3543,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-game-hud-in-a-headset" class="md-nav__link">
+    <span class="md-ellipsis">
+      The game HUD in a headset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-radial-menu" class="md-nav__link">
     <span class="md-ellipsis">
       The radial menu
@@ -3531,6 +3624,15 @@
   <a href="#floating-panels" class="md-nav__link">
     <span class="md-ellipsis">
       Floating panels
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-ai-assistant-in-vr" class="md-nav__link">
+    <span class="md-ellipsis">
+      The AI assistant in VR
     </span>
   </a>
   
@@ -3942,6 +4044,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-game-hud-in-a-headset" class="md-nav__link">
+    <span class="md-ellipsis">
+      The game HUD in a headset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-radial-menu" class="md-nav__link">
     <span class="md-ellipsis">
       The radial menu
@@ -4014,6 +4125,15 @@
   <a href="#floating-panels" class="md-nav__link">
     <span class="md-ellipsis">
       Floating panels
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-ai-assistant-in-vr" class="md-nav__link">
+    <span class="md-ellipsis">
+      The AI assistant in VR
     </span>
   </a>
   
@@ -4185,9 +4305,8 @@ you put the headset on:</p>
   releasing does nothing;</li>
 <li>editor helpers (the grid, light and collider wireframes, outlines) are hidden;</li>
 <li>the game's menu, pause and results screens float in front of you — point the laser and pull the
-  trigger (or poke them); the score sits on your <strong>left wrist</strong> (turn it to read) and on a
-  <strong>top strip</strong> across the top of your view. The board's <strong>Top strip</strong> button switches the strip off or on (remembered on
-  this device). The laser ends in a solid dot and the button under it lights up, and menus are drawn over the scene so
+  trigger (or poke them); what you read <em>while</em> playing — the score, the timer, the hints — floats in front of you on the
+  <a href="#the-game-hud-in-a-headset">game HUD</a> and sits on your <strong>left wrist</strong> (turn it to read). The laser ends in a solid dot and the button under it lights up, and menus are drawn over the scene so
   a floor or a wall never hides them;</li>
 <li>the left <strong>X</strong> button opens the game's pause menu;</li>
 <li><strong>hold the trigger and sweep</strong> across piano keys, drum steps, pads, mixer mutes or pedal
@@ -4200,6 +4319,58 @@ Edit your grips move, turn and scale the world again, you can fly and teleport, 
 come back. Press it again to return to Interact; the game puts you back on its start spot. The
 menu board's <strong>Edit mode</strong> button does the same.</p>
 <p>On a desktop, press <strong>Esc</strong> to leave Play, then the bar's Edit/Interact cell (or <strong>I</strong>).</p>
+<h2 id="the-game-hud-in-a-headset">The game HUD in a headset</h2>
+<p>Since 1.24, when you play a game in VR its HUD — the score, the timer, the level, the hints its author laid out — floats
+in front of you on a gently curved band, arranged the way the author arranged it on the desktop: the score card up and
+to the left, the clock up and to the right, the hint along the bottom. It replaces the single strip of short text lines
+earlier versions showed.</p>
+<p><img alt="Waves in a headset: the score up left, the wave in the middle, more readouts below" src="../img/vr/game-hud-waves.png" /></p>
+<p>It appears by itself whenever a game is running and you are in Interact or Play; there is nothing to set up. Menus (the
+start screen, pause, results) still appear on the board in front of you — the band carries what you read while playing.</p>
+<ul>
+<li>Small motions of your head leave the band still, so it doesn't jitter; when you turn, it follows you smoothly.</li>
+<li>If you walk up to a wall or a game board, the band moves in front of it, so it never looks as if it is behind
+  something it is drawn over. Its apparent size stays the same.</li>
+<li>The card on your <strong>left wrist</strong> is still there (turn your wrist to read it), with the <strong>Edit mode</strong> button, <strong>Menu</strong>,
+  and a <strong>HUD</strong> button that switches where the band goes.</li>
+</ul>
+<p><strong>Settings ▸ VR ▸ Display</strong> (also the headset's Settings panel and the radial menu's <strong>Settings ▸ Display</strong>):</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Game HUD</strong></td>
+<td><strong>Follow head</strong> (the default: follows with a little lag), <strong>Fixed in world</strong> (stays put until you turn about 50° away or walk off, then moves in front of you again), <strong>Wrist only</strong> (no band; the wrist card carries the readouts, as before 1.24). The wrist card's <strong>HUD</strong> button cycles the same three</td>
+</tr>
+<tr>
+<td><strong>Game HUD size</strong></td>
+<td>Small / Medium / Large</td>
+</tr>
+<tr>
+<td><strong>Button hints</strong></td>
+<td>a row under the HUD saying which controller button does what in this game — for example <em>Trigger Fire · X Menu</em>. It lists only what you can actually press in a headset</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Limits</p>
+<ul>
+<li>The band is read-only: you can't point at it or press it. Anything pressable (a menu, a settings screen) goes on
+  the board.</li>
+<li>A crosshair, a minimap, the debug pill and a full-screen damage flash have no headset form (you aim with a
+  controller).</li>
+<li>A module's own HUD element shows in the headset only if the module says what it reads there (see the
+  <a href="../module-sdk/#for-module-authors-124">Module SDK</a>). Untangle's clock does from Untangle 2.4.1; its old floating
+  <em>Level · crossings</em> sprite is gone on 1.24, because the app shows the template's HUD now.</li>
+<li>Keyboard hints written into a game's HUD (<em>WASD to move</em>) show as written. The <strong>Button hints</strong> row is the
+  headset's own.</li>
+</ul>
+</div>
 <h2 id="the-radial-menu">The radial menu</h2>
 <p>Press <strong>B</strong> on the right controller (or the button you <a href="#remapping-your-buttons">mapped</a> to it) to open the radial menu on
 that hand. On hand-tracked hands, which have no buttons, <strong>pinch and hold</strong> for about half a second instead; a quick pinch
@@ -4240,7 +4411,7 @@ sector that opens another ring opens that ring and keeps the menu up.</p>
 </tr>
 <tr>
 <td><strong>Tools ▸</strong></td>
-<td>Select, Box select, Draw mode, Ping, Simulate physics, <strong>Profile ▸</strong></td>
+<td>Select, Box select, Draw mode, Ping, Simulate physics, <strong>Profile ▸</strong>, <strong>AI</strong> (<a href="#the-ai-assistant-in-vr">below</a>)</td>
 </tr>
 <tr>
 <td><strong>Redo</strong> · <strong>Undo</strong></td>
@@ -4288,6 +4459,10 @@ stays open so you can see the change.</p>
 and right change a value (or the page, on the tab strip), and a stick press presses the row. <strong>Back to menu</strong> returns you
 to the Settings ring.</p>
 <p><img alt="The All settings panel on its Comfort tab" src="../img/vr/settings-panel.png" /></p>
+<p><strong>Search</strong> — the last tab of the panel. Press the query row and type on the VR keyboard: the results follow every key
+(<em>turn</em> lists Turning, Snap angle, Smooth speed and Mirror turn). Press a result to change it right there. <kbd>Esc</kbd>
+on the keyboard puts the previous search back.</p>
+<p><img alt="The Search tab: &quot;turn&quot; finds four rows" src="../img/vr/settings-search.png" /></p>
 <h2 id="getting-around">Getting around</h2>
 <ul>
 <li><strong>Move</strong> — push the left thumbstick. With <strong>VR flying</strong> on, forward follows where your controller aims; otherwise it stays level. Hold the <strong>left grip</strong> to switch the stick to panning and elevation.</li>
@@ -4315,7 +4490,36 @@ to the Settings ring.</p>
 </div>
 <h2 id="floating-panels">Floating panels</h2>
 <p>The menu opens follower panels that hang in space — Objects, Properties, Color palette, Prefabs, Keyboard, Chat, Stats, plus the Edit/Snap/Settings menus. Every panel is <strong>grip-grabbable</strong>: hold the grip on a panel to detach and reposition it, and the gripping hand's stick resizes it. Your layout is remembered; <strong>Reset panel positions</strong> (VR Settings, or the desktop Settings button) restores the defaults.</p>
-<p>Typing uses the <strong>VR keyboard</strong> — it pops up for renaming an object and for chat messages; point at keys and press with the trigger.</p>
+<p>Typing uses the <strong>VR keyboard</strong> — it pops up for renaming an object, for chat messages and for <strong>Ask AI</strong>; point at keys
+with the laser and press with the trigger, or walk the keys with the stick. Since 1.24 it has
+<kbd>-</kbd> <kbd>'</kbd> <kbd>;</kbd> <kbd>,</kbd> <kbd>.</kbd> <kbd>?</kbd> (with Shift: <kbd>_</kbd> <kbd>"</kbd>
+<kbd>:</kbd> <kbd>&lt;</kbd> <kbd>&gt;</kbd> <kbd>/</kbd>) and a <strong>clear</strong> key.</p>
+<h2 id="the-ai-assistant-in-vr">The AI assistant in VR</h2>
+<p>Radial menu ▸ <strong>Tools ▸ AI</strong> (the sparkles icon) opens a panel above your menu hand with the <strong>same conversation as the
+desktop <a href="../ai/assistant/">AI Assistant</a> window</strong> — what you asked on the desktop is there in VR, and the other way
+round. Your messages show as violet chips on the right, the assistant's answers below them; grey lines are what it is
+doing (<em>Creating 3 object(s)</em>).</p>
+<p><img alt="The AI Assistant panel in the headset" src="../img/vr/ai-panel.png" /></p>
+<ul>
+<li><strong>Ask</strong> — point at <strong>＋ Ask AI…</strong> and pull the trigger (or press the stick): the VR keyboard opens; type and press ⏎.
+  Everything the assistant builds replicates to your peers and undoes as one step.</li>
+<li><strong>Talk</strong> — hold the <strong>mic</strong> button (keep the trigger held on it), or hold your <strong>talk button</strong> (A on the right
+  controller by default — whichever button you <a href="#remapping-your-buttons">mapped</a> to <strong>Talk / jump</strong>) while the panel is up; let go to send. A red dot and
+  <em>Listening…</em> show while it records. Peers do not hear you while you talk to the assistant.</li>
+<li><strong>Stop</strong> — press it while the assistant is working.</li>
+<li>Grip the panel and drag to move it (it remembers where you put it); ✕ closes it.</li>
+</ul>
+<p>There are <strong>no AI settings in VR</strong>: the provider and <a href="../ai/assistant/#voice-typing">voice typing</a> are set up in desktop
+<strong>Settings ▸ AI</strong>. Until a provider is set up, the panel says so and the input row stays shut.</p>
+<div class="admonition note">
+<p class="admonition-title">Limits</p>
+<ul>
+<li>The panel shows the last 7 turns, two lines each; long answers are shortened — read them in full in the desktop
+  window.</li>
+<li>Voice needs a browser that can record audio (Quest Browser, Chrome, Edge, Safari) and microphone permission. A
+  recording stops itself after 60 seconds.</li>
+</ul>
+</div>
 <h2 id="the-sleeve-palette">The sleeve palette</h2>
 <p><strong>Settings ▸ VR ▸ Editing ▸ Sleeve palette</strong> (experimental, off by default; also radial <strong>Settings ▸ Editing</strong>) puts a strip
 of ghost primitives along the forearm of your other hand (not the menu hand), like a bracer. Point at one and <strong>trigger-drag</strong> it off: it follows your
@@ -4359,7 +4563,7 @@ headset's <strong>All settings</strong> panel, and desktop <strong>Settings ▸ 
 </tr>
 <tr>
 <td><strong>Display</strong></td>
-<td><strong>Refresh rate</strong> (Max / 90 / 120 Hz), <strong>FPS and draw calls</strong>, <strong>Statistics card</strong>, <strong>Peer hands</strong>, <strong>Passthrough</strong> (applies the next time you enter), <strong>Selection wireframe</strong>, <strong>Reset panel positions</strong></td>
+<td><strong>Refresh rate</strong> (Max / 90 / 120 Hz), <strong>FPS and draw calls</strong>, <strong>Statistics card</strong>, <strong>Peer hands</strong>, <strong>Passthrough</strong> (applies the next time you enter), <strong>Selection wireframe</strong>, <strong>Reset panel positions</strong>, <strong>Game HUD</strong> (Follow head / Fixed in world / Wrist only), <strong>Game HUD size</strong> (Small / Medium / Large), <strong>Button hints</strong> (<a href="#the-game-hud-in-a-headset">game HUD</a>)</td>
 </tr>
 <tr>
 <td><strong>Editing</strong></td>

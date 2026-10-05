@@ -422,6 +422,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../avatars/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Your Character
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../connection/" class="md-nav__link">
         
   
@@ -884,6 +905,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../checkpoints/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Checkpoints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../loading/" class="md-nav__link">
         
   
@@ -973,6 +1015,27 @@
   
   <span class="md-ellipsis">
     Camera & View
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recording/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recording a Video
   </span>
   
 
@@ -3251,6 +3314,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../race/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Race
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3864,6 +3948,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#for-module-authors-124" class="md-nav__link">
+    <span class="md-ellipsis">
+      For module authors (1.24)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#for-module-and-game-authors-123" class="md-nav__link">
     <span class="md-ellipsis">
       For module and game authors (1.23)
@@ -4199,6 +4292,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-module-authors-124" class="md-nav__link">
+    <span class="md-ellipsis">
+      For module authors (1.24)
+    </span>
+  </a>
   
 </li>
       
@@ -4806,6 +4908,31 @@ It returns an unsubscribe, and is torn down with the module either way.</p>
 the scene, keyed by uuid, and <code>recent</code> is the last 32 hits in order. It is runtime
 state — a late joiner's log starts empty, so a module that needs history keeps its
 own through <code>registerStateSync</code>.</p>
+<h2 id="for-module-authors-124">For module authors (1.24)</h2>
+<p>Since 1.24 the app draws a game's playing HUD in a headset itself — a curved band in front of the player, or the wrist
+card, whichever the player chose (<a href="../vr/#the-game-hud-in-a-headset">The game HUD in a headset</a>). A module that feeds the
+core HUD no longer needs a VR readout of its own.</p>
+<p><strong><code>api.hud.vrHud()</code></strong> tells you what the headset is doing:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">vr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">hud</span><span class="p">.</span><span class="nx">vrHud</span><span class="o">?</span><span class="p">.();</span><span class="w">     </span><span class="c1">// feature-detect: undefined on an app older than 1.24</span>
+<span class="c1">// vr = { placement: &#39;head&#39; | &#39;world&#39; | &#39;wrist&#39;, visible: true | false }</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">vr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// the app shows the HUD in the headset: drop your own VR-only readout</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>placement</code> is the player's <strong>Game HUD</strong> setting (Follow head, Fixed in world, Wrist only); <code>visible</code> says whether the
+band is up right now.</p>
+<p><strong><code>vrText</code> for your own HUD element.</strong> An element kind you register with <code>api.registerHudElement(kind, def)</code> is DOM, and
+the headset cannot show DOM. Give its def a <code>vrText</code> and the headset shows that line of text in its place:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">api</span><span class="p">.</span><span class="nx">registerHudElement</span><span class="p">(</span><span class="s1">&#39;crossings&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// …your mount, fields and defaults, as before…</span>
+<span class="w">    </span><span class="nx">vrText</span><span class="p">(</span><span class="nx">element</span><span class="p">,</span><span class="w"> </span><span class="nx">runtime</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">crossings</span><span class="si">}</span><span class="sb"> crossings`</span><span class="p">;</span><span class="w">   </span><span class="c1">// one line of text, from your module&#39;s own state</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>An element kind without <code>vrText</code> does not show in the headset. Untangle 2.4.1 does this for its clock and drops its old
+floating VR sprite on 1.24.</p>
+<p>Also in 1.24: VR game cards draw in one pass (they took two).</p>
 <h2 id="for-module-and-game-authors-123">For module and game authors (1.23)</h2>
 <p>The games rebuilt in 1.23 keep their rules in a <a href="../game-rules/">behaviour on the Main graph</a> and leave
 only the engine in their module. Three things make that work, and every module can use them.</p>

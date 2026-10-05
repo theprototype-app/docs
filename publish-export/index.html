@@ -422,6 +422,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../avatars/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Your Character
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../connection/" class="md-nav__link">
         
   
@@ -884,6 +905,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../checkpoints/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Checkpoints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../loading/" class="md-nav__link">
         
   
@@ -973,6 +1015,27 @@
   
   <span class="md-ellipsis">
     Camera & View
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recording/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recording a Video
   </span>
   
 
@@ -3251,6 +3314,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../race/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Race
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3432,6 +3516,15 @@
   <a href="#embedding-on-your-own-site" class="md-nav__link">
     <span class="md-ellipsis">
       Embedding on your own site
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-community-gallery-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Community gallery tab
     </span>
   </a>
   
@@ -3894,6 +3987,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-community-gallery-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Community gallery tab
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#export-settings" class="md-nav__link">
     <span class="md-ellipsis">
       Export settings
@@ -3926,7 +4028,7 @@
 
 
 <h1 id="publish-export">Publish &amp; Export</h1>
-<p><strong>Menu ▸ Publish / Export</strong> puts a scene somewhere other people can play it. The window has three tabs:</p>
+<p><strong>Menu ▸ Publish / Export</strong> puts a scene somewhere other people can play it. The window has four tabs:</p>
 <table>
 <thead>
 <tr>
@@ -3942,6 +4044,10 @@
 <tr>
 <td><strong>Export</strong></td>
 <td>builds the game as a <strong>zip of plain HTML</strong> you can host anywhere — itch.io, your own site, any static host — or an <code>&lt;iframe&gt;</code> snippet</td>
+</tr>
+<tr>
+<td><strong>Community gallery</strong></td>
+<td>builds a submission for the open <a href="#the-community-gallery-tab">community gallery</a> on GitHub — no sign-in needed</td>
 </tr>
 <tr>
 <td><strong>Settings</strong></td>
@@ -3977,7 +4083,8 @@ When it is done you get two links:</p>
 <p><img alt="Mini Golf exported for itch.io, playing in the itch.io frame: the game's own HUD, the fullscreen button bottom-left and the badge bottom-right" src="../img/export/itch-mini-golf.png" /></p>
 <p>The badge is <strong>always on</strong> in play links, embeds and exports. An exported file is yours to edit, so this is a request,
 not a lock — please keep it: it is how other people find the tool you made your game with. Clicks on the badge are
-counted per game, with no personal data, so we can see how many people arrive from games made here.</p>
+counted per game, with no personal data, so we can see how many people arrive from games made here — and you can see
+yours in <a href="../community/#your-games-stats">Your games &amp; stats</a>.</p>
 <h2 id="export-a-game-in-a-zip">Export: a game in a zip</h2>
 <p><img alt="The Export tab with the itch.io preset selected" src="../img/export/export-tab.png" /></p>
 <ol>
@@ -4064,6 +4171,25 @@ same project page, so the link people have keeps working.</p>
 filled in for you once you have published), or the address where you host a static export. The panel shows the
 <code>&lt;iframe&gt;</code> snippet, sized from the <strong>Viewport size</strong>; <strong>Copy snippet</strong> and paste it into your page.</p>
 <p>A public community scene also has an <strong>Embed</strong> button on its page — see <a href="../community/#embedding-a-scene">Embedding a scene</a>.</p>
+<h2 id="the-community-gallery-tab">The Community gallery tab</h2>
+<p>The community gallery (shown in <strong>Templates ▸ Community</strong>) is a public GitHub repository, and a submission is a pull
+request a maintainer reviews before anyone sees it. <strong>Publish / Export ▸ Community gallery</strong> builds
+the submission for you, and works without signing in:</p>
+<ol>
+<li>Fill in the <strong>Title</strong>, your <strong>GitHub handle</strong>, the <strong>License</strong> (CC0, CC BY or MIT), a short description and up to six
+   tags. The thumbnail is taken from your current view (<strong>Retake from this view</strong> to change it).</li>
+<li>Tick <strong>Everything in this scene is mine to license this way</strong>.</li>
+<li><strong>Build submission zip</strong> downloads <code>‹slug›-gallery-submission.zip</code>: the <code>‹slug›/</code> folder (<code>scene.tpscene</code>, the
+   thumbnail, <code>entry.json</code>), <code>gallery-row.json</code> and <code>HOW-TO-SUBMIT.txt</code>.</li>
+<li><strong>Upload the folder on GitHub</strong> opens GitHub's upload page for that folder: drop the three files in. GitHub forks the
+   repository for you and offers <strong>Propose changes</strong>.</li>
+<li><strong>Copy the gallery.json row</strong> copies the row and opens <code>gallery.json</code> for editing: add it to the <code>entries</code> list on the
+   same pull request.</li>
+</ol>
+<p><img alt="The Community gallery tab after Build submission zip: the two GitHub steps" src="../img/export/gallery-tab.png" /></p>
+<p>The app never sends anything itself; every step on GitHub is your click. Before you start, the tab checks the same rules
+as the gallery's own checks: the scene at most 25 MB, the thumbnail at most 512 KB, a license, a title of at most 80
+characters and a description of at most 300.</p>
 <h2 id="export-settings">Export settings</h2>
 <p><strong>Publish / Export ▸ Settings</strong>, also in <strong>Settings ▸ Export</strong> (all per device, used by the next export):</p>
 <table>

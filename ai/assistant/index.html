@@ -422,6 +422,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../avatars/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Your Character
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../connection/" class="md-nav__link">
         
   
@@ -884,6 +905,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../checkpoints/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Checkpoints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../loading/" class="md-nav__link">
         
   
@@ -973,6 +1015,27 @@
   
   <span class="md-ellipsis">
     Camera & View
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recording/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recording a Video
   </span>
   
 
@@ -3251,6 +3314,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../race/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Race
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3552,8 +3636,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#in-vr" class="md-nav__link">
+    <span class="md-ellipsis">
+      In VR
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voice-typing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Voice typing
+    </span>
+  </a>
   
 </li>
       
@@ -3870,8 +3972,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#in-vr" class="md-nav__link">
+    <span class="md-ellipsis">
+      In VR
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voice-typing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Voice typing
+    </span>
+  </a>
   
 </li>
       
@@ -3973,6 +4093,53 @@ one blue". Use <strong>Stop</strong> to cancel a run in progress.</p>
 <p>Once the assistant is enabled and a provider is set, a round <strong>✨ button</strong> appears at the
 bottom-left of the viewport (just below the <strong>＋</strong> add button). Click it to open or close
 the assistant window — the same window the quick prompt bar opens into.</p>
+<h3 id="in-vr">In VR</h3>
+<p>Radial menu ▸ <strong>Tools ▸ AI</strong> opens the same conversation on a panel in the headset, where you can type or hold a button
+and talk — see <a href="../../vr/#the-ai-assistant-in-vr">The AI assistant in VR</a>.</p>
+<h2 id="voice-typing">Voice typing</h2>
+<p>Talk to the assistant instead of typing. Set up a speech-to-text provider in <strong>Settings ▸ AI ▸ Voice typing provider</strong>
+(search <em>voice</em>, <em>whisper</em> or <em>dictation</em>):</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Provider</strong></td>
+<td>OpenAI</td>
+<td><strong>OpenAI</strong> (<code>whisper-1</code>), <strong>Groq</strong> (<code>whisper-large-v3</code>), or <strong>Self-hosted</strong> — any OpenAI-compatible <code>/audio/transcriptions</code> server, such as faster-whisper</td>
+</tr>
+<tr>
+<td><strong>Base URL / API key / Model</strong></td>
+<td>from the preset</td>
+<td>OpenAI and Groq need a key; a self-hosted server only its URL</td>
+</tr>
+<tr>
+<td><strong>Language hint</strong></td>
+<td>blank (detect)</td>
+<td>for example <code>en</code></td>
+</tr>
+<tr>
+<td><strong>Test connection</strong></td>
+<td>—</td>
+<td>sends half a second of silence; <em>Connected</em> means the server accepted it</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Voice typing set to Groq" src="../../img/ai/voice-typing-settings.png" /></p>
+<p>The assistant window then has a <strong>mic</strong> button next to <strong>Send</strong>: click to listen, click again to stop. The words land in
+the input, so you can fix them before sending. (In VR they are sent as soon as you let go.)</p>
+<p><img alt="The assistant window with the mic button next to Send" src="../../img/ai/assistant-mic.png" /></p>
+<ul>
+<li>The voice key is stored on this device only, like the AI provider key (<a href="../providers/#where-keys-are-stored">Where keys are stored</a>).</li>
+<li>If voice chat is on, the assistant uses the same microphone without opening a second one, and voice chat keeps
+  working.</li>
+<li>Voice needs a browser that can record audio and microphone permission. A recording stops itself after 60 seconds.</li>
+</ul>
 <h2 id="what-you-can-ask-for">What you can ask for</h2>
 <p>The assistant works with the building blocks the app already has:</p>
 <ul>
@@ -4075,7 +4242,7 @@ reset it first, then one undo reverts the whole prompt.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-04
+    2026-10-05
   </span>
 
     

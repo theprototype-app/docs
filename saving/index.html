@@ -14,7 +14,7 @@
         <link rel="prev" href="../terrain/">
       
       
-        <link rel="next" href="../loading/">
+        <link rel="next" href="../checkpoints/">
       
       
       <link rel="icon" href="../logo.svg">
@@ -406,6 +406,27 @@
   
   <span class="md-ellipsis">
     Themes & Appearance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../avatars/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Your Character
   </span>
   
 
@@ -998,6 +1019,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../checkpoints/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Checkpoints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../loading/" class="md-nav__link">
         
   
@@ -1087,6 +1129,27 @@
   
   <span class="md-ellipsis">
     Camera & View
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recording/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recording a Video
   </span>
   
 
@@ -3365,6 +3428,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../race/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Race
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -4013,9 +4097,11 @@ has got, pieces stream in, and <em>Cancel</em> stops the load and takes back wha
 <p>A snapshot of the scene, node graph and camera is written to your browser automatically — 30 seconds after a change, plus every 3 minutes. On a <strong>heavy scene</strong> a snapshot takes longer to prepare, so the delay stretches (up to 5 minutes) to keep saving from stuttering the app; the <a href="../explorer/#storage">Storage panel</a> (the Explorer's storage chip, or <strong>Settings ▸ Explorer ▸ Storage used ▸ Show breakdown</strong>) shows the current cadence and what the last snapshot cost. If a snapshot <strong>cannot be written</strong> — the disk is full, say — a toast stays up with <strong>Manage storage</strong>, and the Storage panel says <em>Autosave is failing</em>. Autosave can be turned off in <strong>Settings</strong>.</p>
 <p>If a snapshot exists when you open the app, a <strong>restore</strong> prompt offers to bring it back. If the last attempt to restore it never finished a frame, the prompt warns you — that snapshot may be what stopped the app, so think before pressing <strong>Restore</strong>.</p>
 <p><strong>Auto-restore on load</strong> (<em>Settings ▸ Scene</em>, off by default) skips the prompt: your last scene is simply there when the app opens, and a notice tells you it was restored so an empty canvas is still one click away.</p>
+<p>To go back further than the last snapshot, autosave can also keep <strong>automatic checkpoints</strong> every few minutes, beside
+the ones you save by name — see <a href="../checkpoints/">Checkpoints</a>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Autosave protects against crashes; sessions are for milestones; <code>.tpscene</code> files are for backups and sharing outside the browser. Use all three.</p>
+<p>Autosave protects against crashes; <a href="../checkpoints/">checkpoints</a> and sessions are for milestones; <code>.tpscene</code> files are for backups and sharing outside the browser. Use them all.</p>
 </div>
 
 

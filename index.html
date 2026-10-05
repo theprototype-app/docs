@@ -489,6 +489,27 @@
   
   
     <li class="md-nav__item">
+      <a href="avatars/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Your Character
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="connection/" class="md-nav__link">
         
   
@@ -951,6 +972,27 @@
   
   
     <li class="md-nav__item">
+      <a href="checkpoints/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Checkpoints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="loading/" class="md-nav__link">
         
   
@@ -1040,6 +1082,27 @@
   
   <span class="md-ellipsis">
     Camera & View
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="recording/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recording a Video
   </span>
   
 
@@ -3318,6 +3381,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="race/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Race
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3842,6 +3926,26 @@ on a phone that gives the scene the whole height of the screen.</p>
 <a href="https://github.com/theprototype-app/core">github.com/theprototype-app/core</a> (also <strong>Settings ▸ About ▸ Source Code</strong>),
 with a contributing guide and an <code>llms.txt</code> for coding agents.</p>
 <h2 id="whats-new">What's new</h2>
+<p><strong>1.24 — characters that walk, a race, and your games' stats.</strong> Everyone in a session is now a
+<a href="avatars/">rigged character</a> — nine CC0 KayKit adventurers and skeletons that walk, run, strafe and jump with their
+camera and reach for their VR controllers — and <strong>Customize Character</strong> (profile menu) is a side panel with a live
+preview on yourself: body, head (the character's own, a stylised one or your photo), hat, outfit colour and your ping;
+the classic floating head is one click away. <strong>Templates ▸ Games</strong> has a new game, <a href="race/">Race</a>: up to four players,
+three laps round a valley, with laps, speed and grip on the <strong>Race rules</strong> node and a road you reshape by moving its
+points. <a href="mesh-editing/">Edit Mesh</a> gains slide edges, fill holes (<kbd>F</kbd>), connect (<kbd>J</kbd>) and dissolve
+vertices, solidify and separate, mitered bevel corners and rounded vertex bevels, and two meshes can be combined with a
+<a href="mesh-editing/#boolean">Boolean</a> union, subtract or intersect from the object menu. <a href="checkpoints/">Checkpoints</a>
+(<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>) keep named and automatic versions of your scene on this device, with a
+timeline that restores, compares, notes and pins them, and <a href="controls/#the-settings-window">Settings</a> is a window with a
+section sidebar. <strong>Tools ▸ <a href="recording/">Recording…</a></strong> films a turntable or a flythrough as a webm, and
+<a href="publish-export/#the-community-gallery-tab">Publish / Export ▸ Community gallery</a> builds a gallery submission for GitHub.
+Every game keeps <a href="community/#one-game-one-count">one permanent id</a>, so re-exports and the play link count as one game in
+<strong>Your games &amp; stats</strong>; community cards, play links and the pause menu get <a href="community/#hearts">hearts</a>, and the
+community browser a <strong>Mine</strong> filter. In a headset a game's HUD <a href="vr/#the-game-hud-in-a-headset">floats in front of you</a>
+as laid out on the desktop, <strong>Tools ▸ AI</strong> opens an <a href="vr/#the-ai-assistant-in-vr">AI chat panel</a> you can talk to, the
+assistant gets <a href="ai/assistant/#voice-typing">voice typing</a>, and the VR keyboard and Settings panel gain punctuation and
+a Search tab. Modules can ask <a href="module-sdk/#for-module-authors-124"><code>api.hud.vrHud()</code></a> and give their HUD elements a
+<code>vrText</code>.</p>
 <p><strong>1.23 — readable game logic.</strong> Every rebuilt game's rules are now <a href="game-rules/">one readable script on its Main
 graph</a> — Mini Golf, Football, Dungeon Realms, The Alchemist's Escape, Sky Run, Target Toss and Marble
 Maze — wired to its buttons, HUD, sounds and the kit: tune a number in the node's properties panel, or change the code
