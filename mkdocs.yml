@@ -158,6 +158,7 @@ nav:
     - Modules: modules.md
     - Module SDK: module-sdk.md
     - Module Packages: module-package.md
+    - UI kit for modules: ui-kit.md
 
 theme:
   name: material
