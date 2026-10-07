@@ -10,13 +10,13 @@ Boolean logic — AND, OR, NOT, XOR — on two inputs, or up to eight.
 |---|---|---|
 | a | boolean | first condition |
 | b | boolean | second condition (ignored by `not`) |
-| c … h | boolean | extra conditions, added with **+ input** (since @@VER@@) |
+| c … h | boolean | extra conditions, added with **+ input** (since 1.27) |
 
 Unwired **a** and **b** use the card values.
 
 ### More than two inputs
 
-Since @@VER@@ Gate takes up to eight inputs, named **a** to **h**. Press **+ input** on the card to add a socket, and
+Since 1.27 Gate takes up to eight inputs, named **a** to **h**. Press **+ input** on the card to add a socket, and
 **−** on a row to remove that socket.
 
 | op | With more than two inputs |

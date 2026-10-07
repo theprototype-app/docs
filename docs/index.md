@@ -24,7 +24,7 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
-**@@VER@@ — world + nodes: sky images, architecture, smarter nodes, particles that trail.** A [sky
+**1.27 — world + nodes: sky images, architecture, smarter nodes, particles that trail.** A [sky
 image](camera.md#sky-images-hdri) (an HDRI) can now be the scene's sky and its light: objects take its colours, shiny
 ones reflect it, water mirrors its clouds and the sun sits where the photo's sun is. Pick **Clear sky**, **Meadow**,
 **Sunrise**, **Starlight** or **Photo studio**, or upload your own `.hdr` / `.exr`, with Rotation, Image light, Sky blur

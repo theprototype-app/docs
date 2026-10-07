@@ -10,13 +10,13 @@ Combines numbers with an arithmetic operation — two, or up to eight — or sha
 |---|---|---|
 | a | number | first operand |
 | b | number | second operand |
-| c … h | number | extra operands, added with **+ input** (since @@VER@@) |
+| c … h | number | extra operands, added with **+ input** (since 1.27) |
 
 Unwired **a** and **b** use the values typed on the card.
 
 ### More than two inputs
 
-Since @@VER@@ Math takes up to eight inputs, named **a** to **h**. Press **+ input** on the card to add a socket, and
+Since 1.27 Math takes up to eight inputs, named **a** to **h**. Press **+ input** on the card to add a socket, and
 **−** on a row to remove that socket.
 
 - With `add`, `sub`, `mul`, `div`, `min` or `max`, Math combines every wired input left to right: 1 + 2 + 3 + 4 = 10,

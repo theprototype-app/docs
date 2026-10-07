@@ -246,13 +246,13 @@ Joints replicate to everyone, undo as a single step, persist in saved scenes and
 
 ### Duplicating jointed objects
 
-Since @@VER@@, duplicating **both** objects of a joint (select both, <kbd>Ctrl</kbd>+<kbd>D</kbd>) copies the joint onto
+Since 1.27, duplicating **both** objects of a joint (select both, <kbd>Ctrl</kbd>+<kbd>D</kbd>) copies the joint onto
 the copies too. Duplicating only one end does not: the copy is a free object, as before. One <kbd>Ctrl</kbd>+<kbd>Z</kbd>
 removes the copied joint, the next one the copies.
 
 ### Breaking a joint during a simulation
 
-Since @@VER@@ **Detach joints** while a simulation runs breaks the joint for real: the objects come apart at once (before,
+Since 1.27 **Detach joints** while a simulation runs breaks the joint for real: the objects come apart at once (before,
 the joint held until you restarted the simulation), sparks fly from where it was attached, and any
 [particle emitter](particles.md#continuous-burst-and-on-impact) set to **On impact** on either object fires. Every
 player sees it. Detaching while no simulation runs is quiet.

@@ -32,16 +32,16 @@ Right-click empty space ▸ **Add ▸ Effects ▸** places a small marker object
 | **Smoke** | soft grey plume that trails and fades | continuous |
 | **Dust puff** | a low brown scatter | burst |
 | **Confetti** | tumbling coloured squares | burst |
-| **Sparks** | fast bright streaks that arc and die — since @@VER@@ drawn [stretched along their motion](#how-particles-are-drawn), and thrown along by a moving emitter | burst |
+| **Sparks** | fast bright streaks that arc and die — since 1.27 drawn [stretched along their motion](#how-particles-are-drawn), and thrown along by a moving emitter | burst |
 | **Rain** | streaks falling over an 8 × 8 m area, with a small splash ring where each one lands | continuous |
 | **Snow** | flakes drifting down over an 8 × 8 m area, settling and fading on the ground | continuous |
-| **Ribbon trail** | one glowing band behind a moving object — a sword swish, a comet tail (since @@VER@@) | continuous |
-| **Magic wisps** | trails that curl off a moving object (since @@VER@@) | continuous |
+| **Ribbon trail** | one glowing band behind a moving object — a sword swish, a comet tail (since 1.27) | continuous |
+| **Magic wisps** | trails that curl off a moving object (since 1.27) | continuous |
 
 **Rain** and **Snow** (1.22) are weather: **Add ▸ Effects ▸ Rain** places the emitter up at cloud height, and the drops fall
 about 6 m to the ground below it, drifting with a little wind. Pair them with [Water](water.md) for a storm over the sea.
 
-A preset is just a starting point — every value below is editable afterwards. A Sparks emitter added before @@VER@@ keeps
+A preset is just a starting point — every value below is editable afterwards. A Sparks emitter added before 1.27 keeps
 its old look.
 
 ## Continuous, burst, and on-impact
@@ -92,7 +92,7 @@ car, sparks off a swung sword.
 
 ## How particles are drawn
 
-Since @@VER@@ **Inspector ▸ Particles ▸ Draw as** draws the particles one of four ways. The particles move exactly the
+Since 1.27 **Inspector ▸ Particles ▸ Draw as** draws the particles one of four ways. The particles move exactly the
 same in every mode; only the shape on screen changes.
 
 ![Draw as set to Trails, with the Trail length, Segments and Inherit velocity rows](img/particles/draw-as.png)

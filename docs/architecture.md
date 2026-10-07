@@ -1,6 +1,6 @@
 # Architecture
 
-Since @@VER@@ you can build rooms and houses from parametric pieces: walls with doorways and window openings, doors and
+Since 1.27 you can build rooms and houses from parametric pieces: walls with doorways and window openings, doors and
 windows that open, and four kinds of stairs. Every piece is a set of numbers you can change at any time, and doors swing
 open for everyone in the session.
 

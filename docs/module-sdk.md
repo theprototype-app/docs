@@ -535,7 +535,7 @@ own through `registerStateSync`.
 
 ## For module authors: joints and your own physics world
 
-New in @@VER@@ — what the [Drivable Car](modules.md#drivable-car) uses to steer with its front wheels, and
+New in 1.27 — what the [Drivable Car](modules.md#drivable-car) uses to steer with its front wheels, and
 [Blocks](modules.md#blocks) to run a pile of its own. Feature-detect each (`api.physics.rapier?.()`) to stay compatible
 with older apps.
 
@@ -555,11 +555,11 @@ const RAPIER = await api.physics.rapier();
 
 | Call | What it does |
 |---|---|
-| `createJoint(kind, a, b, axis, motor, opts)` | `motor` may be `{vel, maxForce}` (a speed, as before) or, since @@VER@@, `{pos, stiffness, damping}` — an angle in radians the hinge is driven to (stiffness 400 and damping 40 by default). `opts`: `limits: [min, max]` in radians (hinges only), `contacts: false` so the two objects pass through each other, `sparks: false` so [a break during a run](physics.md#breaking-a-joint-during-a-simulation) throws no sparks |
+| `createJoint(kind, a, b, axis, motor, opts)` | `motor` may be `{vel, maxForce}` (a speed, as before) or, since 1.27, `{pos, stiffness, damping}` — an angle in radians the hinge is driven to (stiffness 400 and damping 40 by default). `opts`: `limits: [min, max]` in radians (hinges only), `contacts: false` so the two objects pass through each other, `sparks: false` so [a break during a run](physics.md#breaking-a-joint-during-a-simulation) throws no sparks |
 | `setJointMotorPosition(jointId, angle, stiffness?, damping?)` | drives a hinge to `angle` (radians) mid-run. Like `setJointMotor`, it works only on the peer running the simulation and returns `false` elsewhere — forward your input to that peer |
 | `rapier()` | a promise of the Rapier module (`rapier3d-compat`, already initialised) the app runs. A world you build with it is **yours and local** — never synced, never stepped by the app; free it in `api.onUnload` |
 
-Since @@VER@@ duplicating both objects of a joint copies the joint, and detaching one during a run breaks it — see
+Since 1.27 duplicating both objects of a joint copies the joint, and detaching one during a run breaks it — see
 [Joints](physics.md#joints).
 
 ### For cloud plugin authors: a What's New section

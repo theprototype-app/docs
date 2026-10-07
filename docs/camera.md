@@ -69,7 +69,7 @@ everyone; previewing and the frustum lines are yours alone. The object's right-c
 screen, **✕** hides the window (the *Preview window while selected* row brings it back), and right-drag moves it.
 
 A game uses cameras through the [Set Active Camera](nodes/setcamera.md) node, the [Game Start](nodes/gamestart.md) node's
-camera, [Set Look](nodes/setlook.md) for each camera's own [look](post-processing.md), and since @@VER@@ the
+camera, [Set Look](nodes/setlook.md) for each camera's own [look](post-processing.md), and since 1.27 the
 [Camera Rig](nodes/camerarig.md) node, which makes a camera follow or watch an object.
 
 ## Camera lens
@@ -117,7 +117,7 @@ The **Environment** section sets the scene's lighting and sky. Pick a preset chi
 | **Night** | Dim and cool. |
 | **Classic** | The pre-lighting look with the rig **off** — bring your own lights. |
 
-Since @@VER@@ five more chips — **Clear sky**, **Meadow**, **Sunrise**, **Starlight** and **Photo studio** — use a real sky
+Since 1.27 five more chips — **Clear sky**, **Meadow**, **Sunrise**, **Starlight** and **Photo studio** — use a real sky
 photo; see [Sky images](#sky-images-hdri).
 
 An **Exposure** slider tunes overall brightness. The lit presets add a sun that casts shadows, with a shadow-catcher disc under the scene so shadows land even on the infinite grid.
@@ -128,7 +128,7 @@ Below Environment, **Background** sets the clear color and **Fog** adds distance
 
 ## Sky images (HDRI)
 
-Since @@VER@@ a sky image — an HDRI, a 360° photo that keeps the real brightness of the sun and the sky — can be the
+Since 1.27 a sky image — an HDRI, a 360° photo that keeps the real brightness of the sun and the sky — can be the
 scene's sky **and** its light. Every object picks up the image's colours and brightness, shiny objects reflect it, and
 [water](water.md) mirrors the real clouds. The scene's sun is placed where the photo's sun is, so shadows agree with the
 sky.
@@ -186,7 +186,7 @@ The scene and your peers are unaffected.
 - Only equirectangular images (twice as wide as they are tall); cube-map files are not supported. An `.exr` must be RGB
   or RGBA.
 - Files over 25 MB are refused — your peers could not receive them.
-- Someone on an app older than @@VER@@ in the same session sees the preset's flat colours instead of the image.
+- Someone on an app older than 1.27 in the same session sees the preset's flat colours instead of the image.
 - A [scene look](post-processing.md) with its own [Tone mapping](post-processing.md#tone-mapping) effect keeps its own curve.
 
 ## Lights

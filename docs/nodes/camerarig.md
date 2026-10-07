@@ -1,7 +1,7 @@
 # Camera Rig
 
 Moves a scene [camera object](../camera.md#camera-objects) so it follows a target, looks at it, or both — a chase
-camera behind a car, a camera that keeps a player in frame. New in @@VER@@; find it in the palette under **Game**.
+camera behind a car, a camera that keeps a player in frame. New in 1.27; find it in the palette under **Game**.
 
 **Output:** effect (wire into an [Object Selector](objectselector.md) that picks a camera)
 

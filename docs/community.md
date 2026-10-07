@@ -160,6 +160,6 @@ totals; it is not shown to anyone else. Assets an author had no right to license
 
 ## What's new on theprototype.app
 
-Since @@VER@@ the **What's New** window (logo menu) on theprototype.app starts with a **theprototype.app cloud** section:
+Since 1.27 the **What's New** window (logo menu) on theprototype.app starts with a **theprototype.app cloud** section:
 what changed in the hosted service — publishing, community, rooms, hosted AI — above the app's own release notes. A
 self-hosted or local build shows no such section.

@@ -303,7 +303,7 @@ Fields that hold a distance or an angle also accept a typed **unit** (`12cm`, `4
 
 #### Number fields and undo
 
-Since @@VER@@ every number field you can drag — the Inspector's **Position** / **Rotation** / **Scale** and its other
+Since 1.27 every number field you can drag — the Inspector's **Position** / **Rotation** / **Scale** and its other
 values, shader-node vectors, and the [Animation window](animation.md)'s length, speed, fps, step and key fields — works
 the same way with undo:
 
