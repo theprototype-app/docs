@@ -202,7 +202,7 @@ Right-click an object in the viewport ▸ **Save as…** and choose the format. 
 
 ## Storage
 
-The chip in the Explorer header reads *used / granted* for everything this app keeps in your browser. Click it — or **Storage used…** under **Disk** in the right-click menu, or **Settings ▸ Explorer ▸ Storage used** — for the **Storage** breakdown: library files, old scene versions, deleted files, saved scenes and projects, autosave, prefabs, installed modules and the rest, each with a size. Tick what you want gone and press **Reclaim**; nothing is removed until you do, and it asks once more.
+The chip in the Explorer header reads *used / granted* for everything this app keeps in your browser. Click it — or **Storage used…** under **Disk** in the right-click menu, or **Settings ▸ Explorer ▸ Storage used** — for the **Storage** breakdown: library files, old scene versions, deleted files, saved scenes and projects, autosave, prefabs, [material presets](materials.md), installed modules and the rest, each with a size. Tick what you want gone and press **Reclaim**; nothing is removed until you do, and it asks once more.
 
 ## Files in and out
 

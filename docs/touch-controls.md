@@ -43,9 +43,11 @@ Games that declare their actions show exactly those:
 | **Marble Maze** | no stick — drag on the board to tilt it |
 | **Towers** | **Grab** — hold it to carry a block |
 | **The Alchemist's Escape** | **Use** + **Hint** |
+| **Race** | on foot: walk controls; in a car: stick steers, **Gas**, **Brake**, **Reset** — see [Race on a phone](race.md#on-a-phone) |
 
 Any other scene gets buttons from what it already has: a walking
-[Character Controller](build-a-game.md#3-a-character-that-walks) gives **Jump**, a flying one **Up** / **Down**, and every
+[Character Controller](build-a-game.md#3-a-character-that-walks) gives **Jump**, a flying one **Up** / **Down** (only
+where the scene [allows flying](physics.md#flying)), and every
 key a [Key Press](nodes/keypress.md) node listens for (other than WASD and the arrows) becomes a labelled button — up to
 six. The games that come as modules (Dungeon Realms, Football, Untangle, Waves) get these automatic buttons until they
 declare their own.
@@ -100,7 +102,7 @@ register(api) {
       { id: 'boost', label: 'Boost', keys: ['ShiftLeft'] },             // presses a key while held
       { id: 'fire', label: 'Throw', onPress: charge, onRelease: release } // your own handlers
     ],
-    { preset: 'shooter' }  // platformer | shooter | toss | golf | fly | explore | custom
+    { preset: 'shooter' }  // platformer | shooter | toss | golf | fly | explore | drive | custom
                            // optional: stick: false, look: false
   );
 }
@@ -111,6 +113,9 @@ register(api) {
 - `pointer: 'press' | 'tap'` makes a button a primary click at the crosshair (held, or a single tap).
 - `onPress` / `onRelease` run **on this peer only**; send your own message if others must know.
 - A second call replaces your set; everything is removed when the module unloads.
+- `preset: 'drive'` (since @@VER@@) is the vehicle layout: the stick steers, there is no look drag, and the pedals sit
+  under the right thumb. A stick the module declared stays live under its own `claimInput('keys')`.
+- `api.input().touch` reads the on-screen move stick as `{x, y}` from -1 to 1 (up is -y).
 - Feature-detect (`api.input?.actions?.(…)`) to stay compatible with older cores.
 
 See the [Module SDK](module-sdk.md).

@@ -64,7 +64,8 @@ menu gives way to your in-game HUD.
 
 ## 3. A character that walks
 
-By default play mode flies. To walk instead:
+By default play mode keeps you on the ground at eye height (since @@VER@@ flying is
+[opt-in](physics.md#flying)). For a character that walks, jumps and falls:
 
 1. In the node editor, add **Character ▸ Character Controller**.
 2. Set **mode** to `walk`. Adjust jump height and eye height to taste.
@@ -81,7 +82,7 @@ Since 1.25 the controller card also has **code**: double-click it to steer speed
 walk/fly every frame from this player's keys — see [The Player's code](code-workspace.md#the-players-code).
 
 !!! note
-    Delete the Character Controller node and movement is exactly the default fly again.
+    Delete the Character Controller node and movement is exactly the default again.
     The controller adds capability without taking the default away.
 
 ---

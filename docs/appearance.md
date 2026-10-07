@@ -42,7 +42,9 @@ Custom themes are saved in this browser. To use one on another device, copy the 
 
 - **Line colours** — the wireframe, the selection outline and the Edit Mesh overlay: **Settings ▸ Scene ▸ Wireframe &
   outline** (see [Mesh Editing](mesh-editing.md#display)).
-- **Render mode** — Shaded, Shaded + AO or Wireframe, per device: see [Camera & View](camera.md#render-mode-view).
+- **Density** — **Settings ▸ Interface ▸ Density**: *Comfortable* (the default) or *Compact*, tighter rows and controls
+  on a computer screen; see [Settings](settings.md#density).
+- **Render mode** — Shaded, Shaded + AO or Wireframe, per device (<kbd>Z</kbd> cycles them): see [Camera & View](camera.md#render-mode-view).
 - **Toolbar** — which buttons the bottom bar shows, in what order and where: see [The toolbar](controls.md#the-toolbar).
 - **FPS and draw calls** — a small counter in any mode: **Settings ▸ Interface ▸ Viewport ▸ Show FPS + draw calls**.
 
@@ -50,5 +52,5 @@ Custom themes are saved in this browser. To use one on another device, copy the 
   **Settings ▸ Interface ▸ Allow text selection everywhere** turns it back on (see [Text selection](controls.md#text-selection)).
 
 !!! tip "Finding a setting"
-    The search box at the top of Settings matches row names, groups, sections and keywords — search **dark** for the
-    theme. <kbd>Esc</kbd> clears it.
+    The search box at the top of Settings matches names, descriptions and keywords — search **dark** for the theme.
+    <kbd>Esc</kbd> clears it. See [Settings](settings.md#search).

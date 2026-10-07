@@ -1,6 +1,6 @@
 # Notifications & Notes
 
-The top-right cluster next to your avatar holds two history surfaces — the **notification center** and the **scene-notes drawer** — plus the tools for leaving notes on objects and pinging things for everyone to see.
+The top-right cluster next to your avatar holds two history surfaces — the **notification center** and the **scene-notes drawer** — plus the tools for leaving notes on objects, chatting and pinging things for everyone to see.
 
 ## Notification center
 
@@ -18,6 +18,16 @@ Toasts pop up briefly for feedback. Two things are worth knowing:
 - **Connection requests and approvals stay on top** — a peer asking to join is always visible, even over a modal.
 
 Plain messages auto-dismiss after a few seconds; ones with a button (like a connection request) linger longer. At most four toasts stack at once; when more arrive, a **"+N more…"** line shows how many are hidden — find them in the notification center via the bell.
+
+### Undo after Clear, Delete, Remove
+
+**Clear scene**, **deleting the selection**, **removing a module** and **Reset all settings** happen at once, and a
+toast offers **Undo** for about 8 seconds — a thin bar shows the time left. Undo puts back exactly what was there: for
+everyone in the session (the scene and its objects), or on this device (modules, settings).
+
+![The toast after clearing the scene, with Undo](img/notes/undo-toast.png)
+
+After the 8 seconds, <kbd>Ctrl</kbd>+<kbd>Z</kbd> still undoes a delete; a **Clear scene** can no longer be undone.
 
 ## Scene notes
 
@@ -42,12 +52,19 @@ moves. The card that opens has:
 
 **Save** keeps it, **Delete** removes it. Notes replicate to every peer with your name attached.
 
+**Replies.** An open note has a **Reply** box under it; replies show as a thread, each with its author and time, and
+you can delete your own reply (**×**). Adding, editing or deleting a note and replying are each one
+<kbd>Ctrl</kbd>+<kbd>Z</kbd> — and the undo reaches everyone in the session.
+
+![A note with a thread of replies and the Reply box](img/notes/note-thread.png)
+
 Clicking a saved note's marker opens it to read: its text, label, author and date, with **Delete**, **Follow** (fly to
 the pin and keep following it) and **Edit**, which brings back the card above.
 
 **Markers.** On a desktop a note is a small badge beside its exact spot, joined to it by a thin leader line. A note that
 is behind something stays visible but faded, with a dashed leader. When several notes crowd together they merge into one
-badge with a count — click it and they spread out.
+badge with a count — click it and they spread out. In VR, note pins stay on their objects while you grab and move the
+world.
 
 ### The scene-notes drawer
 
@@ -64,6 +81,20 @@ camera to the note, with the card opening on a double click: handy for walking t
 card in the way.
 
 If there are no notes yet, the drawer tells you to select an object and add one from its context menu.
+
+## Chat
+
+<kbd>C</kbd> (from the 3D view) or the chat button opens the session's text chat.
+
+- **@mentions** — type `@` and a name; <kbd>Tab</kbd> takes the first suggestion. The name shows in that person's
+  colour, a line that mentions *you* is ringed, and the chat button's badge turns to the accent colour.
+- **Emoji shortcodes** — `:tada:`, `:+1:`, `:fire:` … turn into emoji when you send. Type `:` and a few letters for
+  suggestions (<kbd>Tab</kbd> picks one); unknown codes are left as typed.
+- **Unread badge** — the chat button counts the messages that arrived while the chat was closed.
+- **History** — someone who joins the session sees the conversation so far. A session saved in the
+  [Sessions manager](saving.md#sessions-manager) keeps its chat; an exported `.tpscene` never contains it.
+
+![The chat: a line that mentions you is ringed, and :+1: became an emoji](img/notes/chat-mentions.png)
 
 ## Pinging
 

@@ -33,7 +33,7 @@ If the guess is still wrong on your hardware, pick it yourself: right-click the 
 ### Edit and Interact
 
 The editor has two click modes. Switch with the **Interact mode** cell on the bottom bar (it sits
-between the transform tools and Play — the default order is Move, Rotate, Scale, Interact, Play,
+between the transform tools and Play — the default order is Move, Rotate, Scale, Pivot, Interact, Play,
 Object list, Node editor, Explorer, Animation), or press **I**:
 
 - **Edit** (the default) — every click selects, so every object, module pieces included, can
@@ -128,6 +128,17 @@ nothing while it has the keys.
 
 <kbd>↓</kbd> in the list's **Search objects…** box drops you into the results. Type-ahead matches what you typed first, so a Cyrillic name is reachable by its own letters, and falls back to the physical key so a Latin name is still reachable on a non-Latin layout.
 
+### Dragging a selection in the object list
+
+Drag any **selected** row in the object list and the whole selection comes along:
+
+- drop it on a **group** and they move into it;
+- drop it on **any other object** and they become its children;
+- drop it on the list's empty area or its header and they go back to the top level.
+
+World positions are kept and a drop is one undo step. An object cannot be dropped into its own child. Local-only objects
+(ones not shared with the session) dropped onto a shared parent become shared, as before.
+
 ### What double-click does
 
 Opening properties is the default, but it is a setting: **Settings ▸ Scene ▸ Selection ▸ Double-click action** offers *Open properties*, *Edit mesh*, *Focus and isolate* and *Select same type*.
@@ -201,9 +212,26 @@ copying, rather than half-linked.
 
 ### Editing a multi-selection
 
-The properties panel edits **everything you have selected**, not just the last object you clicked. Change a colour, a material, a shadow flag or a physics setting and it applies to the whole set as a **single undo step**; a row whose objects disagree shows a dash until you set it.
+Select several objects (<kbd>Shift</kbd>+click, box select, <kbd>Ctrl</kbd>+<kbd>A</kbd>) and open **Properties**: the
+panel says **Editing N objects**, and every row applies to all of them.
 
-Transform rows on a multi-selection drive the selection's **origin** rather than each object's absolute position — typing a value moves the set as a whole instead of collapsing it onto one plane. Name, uuid and geometry stay single-object: click the one object for those.
+![Properties with three objects selected: Editing 3 objects, the Pivot row, and a Geometry section that reaches only the two boxes](img/controls/multi-edit.png)
+
+- **Shared values show; differing values show a dash.** A slider, number or list whose objects disagree reads **—**, a
+  checkbox shows the in-between state, and a material or emission colour says *(mixed)* under the picker.
+- **Setting a dashed row sets every object** to the new value — type into a dashed Roughness, tick an in-between
+  **Cast shadow**, pick any entry in a dashed list.
+- **One edit is one undo step** for the whole selection, and <kbd>Ctrl</kbd>+<kbd>Z</kbd> puts each object back to
+  *its own* previous value. Since @@VER@@ **Visible**, **Cast / Receive shadow**, **Render order**, **Frustum culled** and
+  every **Light** row (colour, intensity, distance, decay, angle, penumbra, shadow bias / softness / map size) undo too.
+- **Several lights** selected together are edited together; a row only some light types have (a spot light's
+  **Angle**) reaches the lights that have it.
+- Your peers see the change **in one step**: the whole selection's edit travels as one message.
+
+Name, uuid, LOD, Water and particle emitters stay single-object, and **Geometry** reaches only the objects of one shape
+type (the panel says which) — click the one object for those. Transform rows on a multi-selection move, turn and scale
+the **set** about its [pivot](#the-pivot-of-a-multi-selection) rather than each object's own numbers: typing a value
+moves the set as a whole instead of collapsing it onto one plane.
 
 ## Transform gizmo
 
@@ -239,16 +267,22 @@ The origin travels with the object: it replicates, saves, undoes, and is baked i
 
 ### The pivot of a multi-selection
 
-With several objects selected, what the set rotates and scales about is a choice. The **Pivot** dropdown in the Transform section — or right-click ▸ **Pivot point** — offers:
+With several objects selected, what the set rotates and scales about is a choice — one setting, in three places:
+
+- the **Pivot** button on the [toolbar](#the-toolbar), next to Scale: its icon and tooltip name the current mode, and a
+  click steps to the next one;
+- the **Pivot** dropdown in the properties panel's Transform section, or right-click ▸ **Pivot point**;
+- in VR, **Settings ▸ Editing ▸ Pivot point** (see [Grabbing a selection](vr.md#grabbing-a-selection)).
 
 | Mode | Turns about |
 |---|---|
 | **Median point** | the centre of the selection (the default) |
-| **Active object** | the origin of the object you picked last |
-| **Parent origin** | the origin of the parent they all share — greyed out when they do not share one |
+| **Active object** | the origin of the object you picked last — in VR, the one you grip |
 | **Individual origins** | each object's own origin, so a row of doors all swing on their own hinges |
+| **Parent origin** | the origin of the parent they all share — offered only when they share one |
 
-The gizmo drag and the typed rows both obey it. Moving is never per-object: a translation moves the set as one. An origin you placed by hand with **Move origin** overrides the mode while it stands.
+The gizmo drag, the typed rows and a VR grip all obey it. Moving is never per-object: a translation moves the set as
+one. An origin you placed by hand with **Move origin** overrides the mode until you select again.
 
 ### Numeric fields
 
@@ -309,6 +343,18 @@ landed on wiggles to say so.
 Docking is **desktop only** — on a touch screen there is no room for a full-height side panel
 and it would fight scrolling, so windows there simply stay floating.
 
+### Workspace layouts
+
+Save the windows you have open — which panels, docked or floating, their sizes, the side and bottom docks, tab groups —
+under a name, and switch between arrangements in one click.
+
+- **Where:** **Menu ▸ Layouts**, or **Settings ▸ Interface ▸ Windows & chrome ▸ Workspace layouts**.
+- **Save:** arrange the windows, type a name, press **Save**. Saving under a name you already have (in any case)
+  updates that layout.
+- **Use:** click a saved layout to apply it. Rename or delete it from the same list.
+
+Layouts are kept on this device. A reload still starts with a clean slate: a layout is applied only when you pick one.
+
 ## The toolbar
 
 Pressing a toolbar button never takes the keyboard: the keys stay with whatever had them — this holds for the bottom
@@ -334,19 +380,9 @@ game to its menu and starts from the Start screen. See [Build a Game Loop](build
 
 ## The Settings window
 
-Since 1.24 **Settings** opens as a window with its **sections listed in a sidebar**: Interface, Controls, Input, Touch
-controls, Scene, Explorer, VR, AI, Export, Connection, Shortcuts and About (plus any section a newer version adds).
-Click a section to show it; <kbd>↑</kbd> / <kbd>↓</kbd> move between sections, and the window reopens on the section you
-used last. Links that open Settings at a section — *File settings*, *Connection settings*, the AI button — land on that
-section.
-
-![Settings as a window: the section sidebar on the left, the search box above the rows](img/controls/settings-window.png)
-
-**Search** still looks through *every* section: while you type, all matching rows are shown together, the sidebar lists
-only the sections that have matches, and clicking one jumps to it. <kbd>Esc</kbd> clears the search; a second
-<kbd>Esc</kbd> closes Settings.
-
-On a phone the sidebar becomes a row of section chips above the settings.
+**Settings** (logo menu ▸ Settings) is a window with a grouped menu of categories on the left — on a phone, a list you
+tap into — a search box in the header, and one row per setting. Changes save as you make them. Since @@VER@@ it has its
+own page: see [Settings](settings.md).
 
 ## Keyboard shortcuts
 
@@ -357,7 +393,11 @@ The keys in the table are the **3D view's**: they fire while the 3D view has foc
 **Every keyboard layout works.** A letter shortcut is matched by the letter printed on the key when there is one — AZERTY, Dvorak and QWERTZ keep their own labels — and by the key's **physical position** otherwise, so <kbd>G</kbd>, <kbd>F</kbd>, <kbd>Ctrl</kbd>+<kbd>Z</kbd> and <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> work on Russian, Greek, Hebrew, Arabic and CJK layouts without switching. Where the browser can tell, **Settings ▸ Shortcuts** shows your layout's own label beside each letter (*п on your layout*); where it cannot, a note says letter shortcuts follow the QWERTY position.
 
 !!! tip "Finding a setting"
-    Settings is grouped into **Interface** (theme, [your character](avatars.md), notifications, windows, lists and menus), **Controls** (keyboard, mouse and trackpad), **Input** (gamepad and the node editor's mouse bindings), **Touch controls**, **Scene** (grid, shadows, autosave, [checkpoints](checkpoints.md) and everything about the scene itself), **Explorer**, then **VR**, **AI**, **Export**, **Connection**, **Shortcuts** and **About** — one sidebar entry each ([above](#the-settings-window)). If you don't know which one holds what you want, type in the search box at the top. Rows match by their name, their group (*Grid*), their section (*VR*) and by keywords the labels do not say — search **dark** to find the theme, **quest** for the VR rows, **caustics** or **refraction** for Water quality, **tutorial** or **welcome** for the [Tours](tours.md), **wheelchair** for the VR Stance, **remap** for the VR buttons — and matches are highlighted. <kbd>Esc</kbd> clears the search; a second <kbd>Esc</kbd> closes Settings.
+    Settings is grouped into **General** (Interface, Controls, Input, Touch controls, Shortcuts), **Workspace** (Scene,
+    Explorer, Node types, Export) and **Devices & services** (VR, AI, Connection), with **About & what's new** at the
+    bottom. If you don't know which one holds what you want, type in the search box: it matches names, descriptions and
+    the words people use — **dark** finds the theme, **southpaw** finds Swap sticks. See
+    [Finding your way](settings.md#finding-your-way).
 
 | Keys | Action |
 |---|---|
@@ -373,6 +413,7 @@ The keys in the table are the **3D view's**: they fire while the 3D view has foc
 | <kbd>Alt</kbd>+click | Cycle the selection through everything under the cursor ([inside and behind water](#inside-and-behind-water)) |
 | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+click | [Ping](notifications.md#pinging) a spot for everyone |
 | <kbd>Esc</kbd> | Leave isolation |
+| <kbd>Z</kbd> | Cycle the [render mode](camera.md#render-mode-view): Shaded → Shaded + AO → Wireframe |
 | <kbd>Tab</kbd> | Enter [mesh edit](mesh-editing.md) mode — inside it <kbd>Tab</kbd> cycles Vertices / Edges / Faces; <kbd>Esc</kbd> exits |
 | <kbd>I</kbd> | [Edit / Interact](#edit-and-interact) mode — in Interact, clicks play with the scene instead of selecting |
 | <kbd>M</kbd> | Toggle element [snapping](snapping.md) |

@@ -291,7 +291,8 @@ The *Cleanup* and *Symmetry* sections act on the whole object, not on your selec
 | **Shortcuts** | Turn the single-key shortcuts off, if they get in the way. |
 | **?** | Open the key cheat sheet as its own little window you can park beside the viewport. |
 
-The overlay **colours** — wireframe, selection outline and the edit overlay — are yours to set in *Settings ▸ Scene ▸ Wireframe & outline* (**Wireframe color**, **Selection outline color**, **Edit Mesh wireframe** — *Auto* by default — and **Reset line colors**); the edit overlay defaults to picking a colour that contrasts with the material you are editing.
+The overlay **colours** — wireframe, selection outline and the edit overlay — are yours to set in *Settings ▸ Scene ▸ Wireframe & outline* (**Wireframe color**, **Selection outline color**, **Edit Mesh wireframe** — *Auto* by default — and **Reset line colors**); the edit overlay defaults to picking a colour that contrasts with the material you are editing. Since @@VER@@ it
+re-tints the moment the object's colour changes, so faces and vertices never disappear into a new material colour.
 
 ## Snapping while you edit
 

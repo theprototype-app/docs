@@ -26,6 +26,9 @@ Three per-device render modes under **Viewport — this device**:
 | **Shaded + AO** | Adds ambient occlusion — soft contact shadows in creases and corners (the default on a desktop; phones and tablets start in plain **Shaded**). |
 | **Wireframe** | Shows every edge. |
 
+<kbd>Z</kbd> in the 3D view cycles them: Shaded → Shaded + AO → Wireframe (Shaded + AO is skipped when the scene's own
+look already sets ambient occlusion). Rebind it in **Settings ▸ Shortcuts**.
+
 Ambient occlusion and wireframe are **desktop-only** and never shown to peers. AO detail follows your shadow-quality setting (below), so lowering shadow quality also lightens the AO cost.
 
 These are SHADING modes — they are not how you see the scene's own look. A

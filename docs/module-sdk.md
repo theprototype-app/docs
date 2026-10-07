@@ -533,6 +533,43 @@ the scene, keyed by uuid, and `recent` is the last 32 hits in order. It is runti
 state — a late joiner's log starts empty, so a module that needs history keeps its
 own through `registerStateSync`.
 
+## For module authors: pointer, camera, play mode and VR seat
+
+New in @@VER@@ — the hooks [Race](race.md) uses to drive on a phone and in a headset, open to every module. Each is torn
+down with the module; feature-detect each one (`api.vrSeat?.(…)`) to stay compatible with older apps.
+
+```js
+// hear a press, its drag and its release — desktop and touch (VR keeps its trigger hooks)
+const off = api.registerPointerHandler(
+	{
+		down(hit, ctx) { return true; },   // true OWNS the gesture
+		move(hit, ctx) {},
+		up(hit, ctx) {}
+	},
+	{ modes: ['interact', 'play'] }        // the default
+);
+
+api.onClickMiss(() => { /* a viewport click that hit nothing: drop a carried piece, disarm a tool */ });
+
+const cam = api.camera();                  // the camera the player looks through (the XR camera in a headset), read-only
+
+api.onPlayMode((playing) => { /* … */ });
+api.inGame();                              // true in Play, or in a headset's game
+
+api.vrSeat(carUuid, { seat: [0, 0.8, 0.3] });   // seat the VR player in an object
+api.vrUnseat();
+```
+
+| Hook | What it does |
+|---|---|
+| `registerPointerHandler({down, move, up}, {modes})` | `hit` is `{object, point, uuid, distance}` or `null`; `ctx` is `{mode, ray, clientX, clientY, pointerType}`. When `down` returns `true` the module owns the gesture: the camera stops orbiting, nothing is selected, and Play does not carry or tap |
+| `onClickMiss(fn)` | a viewport click that hit nothing. It never consumes the click |
+| `camera()` | the camera the player is looking through, read-only |
+| `onPlayMode(fn)` / `inGame()` | true in Play, or in a headset's game (VR play is Interact with no pointer lock). `api.isPlaying()` alone reads `false` in a headset |
+| `vrSeat(uuid, {seat})` / `vrUnseat()` | seats the VR player in an object; `seat` is the object-local eye point (default `[0, 0.8, 0.3]`). The tracking space is carried with the object, and the sticks stay readable through `api.input()` |
+| `input().touch` | the on-screen move stick, `{x, y}` from -1 to 1 (up is -y) |
+| `input.actions(list, {preset: 'drive'})` | the vehicle layout for [touch controls](touch-controls.md#for-module-authors-declaring-actions): the stick steers, no look drag, pedals under the right thumb. A stick the module declared stays live under its own `claimInput('keys')` |
+
 ## For module authors (1.24)
 
 Since 1.24 the app draws a game's playing HUD in a headset itself — a curved band in front of the player, or the wrist
