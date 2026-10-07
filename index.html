@@ -4031,6 +4031,17 @@ on a phone that gives the scene the whole height of the screen.</p>
 <a href="https://github.com/theprototype-app/core">github.com/theprototype-app/core</a> (also <strong>Settings ▸ About ▸ Source Code</strong>),
 with a contributing guide and an <code>llms.txt</code> for coding agents.</p>
 <h2 id="whats-new">What's new</h2>
+<p><strong>1.28 — VR + mesh: sculpt and snap the world from the headset, polyline knife, live symmetry, smart unwrap.</strong> In a
+headset, radial menu ▸ <strong>Add ▸ Terrain</strong> drops a terrain in front of you and you <a href="vr/#sculpting-terrain-in-vr">sculpt it</a>
+with the trigger — Raise, Lower, Smooth and Flatten, the brush sized and weighted on the thumbstick. Grabbing the world
+with both grips now <a href="vr/#snapping-the-world-while-you-grab-it">turns it in 15° steps and sticks at 1×, 2×, 5× and 10×</a>
+(<strong>World grab snapping</strong>, on by default), <strong>Scene ▸ Dollhouse</strong> shows the scene as a model on a table so you can
+<a href="vr/#dollhouse-teleport">point into it and stand anywhere</a>, and <strong>Add ▸ Architecture ▸</strong> has the desktop's twelve
+<a href="architecture/#in-vr">walls, doors, windows and stairs</a>. In <a href="mesh-editing/">Edit Mesh</a> the knife cuts along a
+<a href="mesh-editing/#polyline-cuts">polyline</a> — <kbd>Shift</kbd>+click for each corner, <kbd>Enter</kbd> to finish — and
+<a href="mesh-editing/#live-symmetry">live symmetry</a> mirrors every edit across X, Y or Z as you make it, in one undo step. The
+new <a href="modules/#smart-unwrap-xatlas">Smart unwrap (xatlas)</a> module adds <strong>Unwrap ▸ Smart (xatlas)</strong> to the
+<a href="uv-editor/#smart-unwrap-xatlas">UV editor</a>: automatic seams, packed with no overlaps.</p>
 <p><strong>1.27 — world + nodes: sky images, architecture, smarter nodes, particles that trail.</strong> A <a href="camera/#sky-images-hdri">sky
 image</a> (an HDRI) can now be the scene's sky and its light: objects take its colours, shiny
 ones reflect it, water mirrors its clouds and the sun sits where the photo's sun is. Pick <strong>Clear sky</strong>, <strong>Meadow</strong>,
@@ -4218,7 +4229,7 @@ for your machine <a href="performance/">reduces quality or pauses instead of fre
 <li><a href="prefabs/">Prefabs</a> — save any object as a reusable asset, update every placed copy, sort them into folders and tags.</li>
 <li><a href="materials/">Material Presets</a> — named surface looks, seven built in, saved and shared with your session.</li>
 <li><a href="architecture/">Architecture</a> — walls with doorways and windows, doors that open, and stairs, all from numbers you can change.</li>
-<li><a href="mesh-editing/">Mesh Editing</a> — vertices, edges and faces: extrude, bevel, knife, loops and mirroring.</li>
+<li><a href="mesh-editing/">Mesh Editing</a> — vertices, edges and faces: extrude, bevel, polyline knife, loops, and mirroring live or in one go.</li>
 <li><a href="snapping/">Snapping</a> — line things up: grid steps, surfaces, and snapping onto real geometry.</li>
 <li><a href="uv-editor/">UV &amp; Textures</a> — unwrap a model, paint on it, and give parts of it their own materials.</li>
 <li><a href="post-processing/">Scene Look (Post-processing)</a> — grade the finished frame: ambient occlusion, colour, bloom, grain. Saved with the scene and shared with everyone.</li>
@@ -4229,7 +4240,7 @@ for your machine <a href="performance/">reduces quality or pauses instead of fre
 <li><a href="water/">Water</a> — tanks, pools, oceans and lava with waves, refraction, caustics, foam and bubbles.</li>
 <li><a href="simulation/">Fluid Tank &amp; Jiggle</a> — particle liquid you can pour, and springy secondary motion.</li>
 <li><a href="fluids/">Fluids</a> — particle water poured into the scene, rivers, chutes and pipes, and wheels that turn it.</li>
-<li><a href="terrain/">Terrain &amp; Sculpting</a> — add ground and shape it with a brush.</li>
+<li><a href="terrain/">Terrain &amp; Sculpting</a> — add ground and shape it with a brush, on the desktop or in a headset.</li>
 <li><a href="saving/">Saving &amp; Sessions</a> — the <code>.tpscene</code> bundle format, GLTF export, sessions and autosave.</li>
 </ul>
 <p><strong>The scene</strong></p>

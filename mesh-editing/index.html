@@ -792,6 +792,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Knife">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#polyline-cuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polyline cuts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -910,6 +925,21 @@
       Clean-up
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Clean-up">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#live-symmetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Live symmetry
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4327,6 +4357,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Knife">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#polyline-cuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Polyline cuts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -4445,6 +4490,21 @@
       Clean-up
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Clean-up">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#live-symmetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Live symmetry
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4773,7 +4833,7 @@
 <tr>
 <td><strong>Knife</strong></td>
 <td><kbd>K</kbd></td>
-<td>Cut across the mesh on screen — see below.</td>
+<td>Cut across the mesh on screen, in a straight line or a polyline — see <a href="#knife">below</a>.</td>
 </tr>
 <tr>
 <td><strong>Flip normals</strong></td>
@@ -4847,7 +4907,28 @@
 </table>
 <h3 id="knife">Knife</h3>
 <p>Pick <strong>Knife</strong>, click one end of the cut and then the other. A dashed band follows your cursor between the two clicks so you can see where the blade will land; every face the line crosses is split. <kbd>Esc</kbd> drops a cut in progress without leaving the session.</p>
-<p>The cut is a line <em>on screen</em>, so it slices straight through the model from your point of view — orbit first to line up the angle you want.</p>
+<p>The cut is a line <em>on screen</em>, so it slices straight through the model from your point of view — every layer under the line, front and back — and the result is always watertight. Orbit first to line up the angle you want.</p>
+<h4 id="polyline-cuts">Polyline cuts</h4>
+<p>Since 1.28 the knife cuts along a <strong>polyline</strong>, not only a straight line:</p>
+<ul>
+<li>Click where the cut starts.</li>
+<li><strong>Shift+click</strong> places each corner (so does <kbd>Ctrl</kbd>+click, or a tap with the touch
+  <a href="../controls/#selecting-without-a-keyboard">Multi-select</a> button on). Corners you place on the mesh become real
+  vertices, and the cut runs along mesh edges between them.</li>
+<li>A plain click on the last point ends the cut. <kbd>Enter</kbd> ends it at the last corner you placed.</li>
+<li><kbd>Backspace</kbd> takes the last corner back; <kbd>Esc</kbd> drops the whole cut.</li>
+<li>While a cut is pending, the toolbox's <strong>Knife options</strong> show how many points you have placed, with <strong>Back</strong> and
+  <strong>Cut</strong> buttons — the way to finish a cut on a touch screen.</li>
+</ul>
+<p><img alt="A polyline knife cut across the top of a cube: two corners placed, the dashed last leg following the cursor, and Knife options showing 3 points with Back and Cut" src="../img/mesh-editing/knife-polyline.png" /></p>
+<p>A point within a few pixels of a corner of the face under it snaps onto that corner, and one within a pixel or two of an
+edge snaps onto the edge, so a cut does not leave needle-thin triangles. The whole polyline is <strong>one undo step</strong>, and
+your peers see the cut as it is committed.</p>
+<div class="admonition note">
+<p class="admonition-title">Changed in 1.28</p>
+<p>A two-click cut that ends <strong>inside</strong> the mesh now ends exactly where you clicked. Before, it ran on to the far corner
+of that triangle.</p>
+</div>
 <h3 id="solidify">Solidify</h3>
 <p><strong>Solidify</strong> gives the selected surface thickness: a copy behind it plus a rim joining the two. A positive <strong>thickness</strong>
 goes <em>into</em> the surface, a negative one grows outward. It works on an <strong>open</strong> surface or on a whole piece — a closed box
@@ -5127,6 +5208,33 @@ Press <strong>Clear</strong> in the Pivot row and slide comes back.</p>
 <p class="admonition-title">Model half of it</p>
 <p>Symmetrize is a one-shot: shape the left side however you like, then mirror it. Faces that straddle the plane are cut cleanly on it, so the two halves join watertight.</p>
 </div>
+<h3 id="live-symmetry">Live symmetry</h3>
+<p>Since 1.28 the <strong>Symmetry</strong> section has a <strong>live symmetry</strong> switch. While it is on, every edit you make is mirrored
+across the chosen axis — the same <strong>X / Y / Z</strong> buttons as Symmetrize — from the side you edited:</p>
+<ul>
+<li>Extrude a face on the left and the right gets the same extrusion.</li>
+<li>In <strong>Vertices</strong> mode, dragging a vertex moves its mirror twin with it, live. A vertex on the mirror plane slides along
+  the plane and never leaves it, so the seam stays closed.</li>
+<li>The side your edit changed wins; <strong>keep + / −</strong> only decides when the edit sits on the plane itself.</li>
+<li>The edit and its mirror are <strong>one undo step</strong>.</li>
+</ul>
+<p><img alt="Live symmetry on across X: one face selected on the left with the gizmo on it, and the Symmetry section's mirror, keep, Symmetrize and live symmetry controls" src="../img/mesh-editing/live-symmetry.png" /></p>
+<p>Turning it on does not change the mesh. If the mesh is not symmetric yet, press <strong>Symmetrize</strong> first — a vertex with no
+twin moves alone.</p>
+<ul>
+<li>Only your own edits are mirrored, and only while the switch is on. Undo, redo, <strong>Cancel</strong> and edits that arrive from
+  peers are applied exactly as they were made.</li>
+<li>The switch is yours alone and is not saved: it is off again the next time you open the app. Peers get the mirrored
+  geometry like any other edit.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Limits</p>
+<ul>
+<li>Face and edge gizmo drags are mirrored when you let go, not continuously while you drag.</li>
+<li>There is no live symmetry switch in VR yet. Edits you make in the headset are mirrored if the switch was turned on
+  at the desktop.</li>
+</ul>
+</div>
 <h2 id="display">Display</h2>
 <table>
 <thead>
@@ -5231,6 +5339,10 @@ re-tints the moment the object's colour changes, so faces and vertices never dis
 <tr>
 <td><kbd>K</kbd></td>
 <td>Faces: Knife</td>
+</tr>
+<tr>
+<td><kbd>Shift</kbd>+click / <kbd>Enter</kbd> / <kbd>Backspace</kbd></td>
+<td>Knife: place a corner / end the cut at the last corner / take the last corner back</td>
 </tr>
 <tr>
 <td><kbd>L</kbd></td>

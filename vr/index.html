@@ -3705,6 +3705,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Getting around">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#snapping-the-world-while-you-grab-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Snapping the world while you grab it
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dollhouse-teleport" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dollhouse teleport
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3735,6 +3759,15 @@
   <a href="#editing-meshes-in-vr" class="md-nav__link">
     <span class="md-ellipsis">
       Editing meshes in VR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sculpting-terrain-in-vr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sculpting terrain in VR
     </span>
   </a>
   
@@ -4221,6 +4254,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Getting around">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#snapping-the-world-while-you-grab-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Snapping the world while you grab it
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dollhouse-teleport" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dollhouse teleport
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4251,6 +4308,15 @@
   <a href="#editing-meshes-in-vr" class="md-nav__link">
     <span class="md-ellipsis">
       Editing meshes in VR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sculpting-terrain-in-vr" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sculpting terrain in VR
     </span>
   </a>
   
@@ -4540,11 +4606,11 @@ sector that opens another ring opens that ring and keeps the menu up.</p>
 </tr>
 <tr>
 <td><strong>Add ▸</strong></td>
-<td>the viewport menu's Add: Cube, Wedge, Stairs, Sphere, Cylinder, Torus, and <strong>Prefabs</strong></td>
+<td>the viewport menu's Add: Cube, Wedge, Stairs, Sphere, Cylinder, Torus, <strong>Terrain</strong>, <strong>Architecture ▸</strong> and <strong>Prefabs</strong></td>
 </tr>
 <tr>
 <td><strong>Scene ▸</strong></td>
-<td><strong>Environment ▸</strong> (Studio, Daylight, Sunset, Night, Classic), <strong>Colocate ▸</strong> (see <a href="../colocation/">Colocation</a>), <strong>Grid</strong>, <strong>World 1:1</strong> (undo a scaled or rotated world grab)</td>
+<td><strong>Environment ▸</strong> (Studio, Daylight, Sunset, Night, Classic), <strong>Colocate ▸</strong> (see <a href="../colocation/">Colocation</a>), <strong>Grid</strong>, <strong>World 1:1</strong> (undo a scaled or rotated world grab), <strong>Dollhouse</strong> (<a href="#dollhouse-teleport">below</a>)</td>
 </tr>
 <tr>
 <td><strong>Tools ▸</strong></td>
@@ -4564,6 +4630,11 @@ sector that opens another ring opens that ring and keeps the menu up.</p>
 </tr>
 </tbody>
 </table>
+<p>Since 1.28 <strong>Add ▸ Terrain</strong> puts a terrain in front of you and starts <a href="#sculpting-terrain-in-vr">sculpting</a> it, and
+<strong>Add ▸ Architecture ▸</strong> lists the same twelve pieces as the desktop's
+<a href="../architecture/#adding-a-piece">Add ▸ Architecture</a>: <strong>Wall</strong>, <strong>Wall with door</strong>, <strong>Wall with windows</strong>, <strong>Wall with
+door and windows</strong>, <strong>Door</strong>, <strong>Double door</strong>, <strong>Window</strong>, <strong>Casement window</strong>, <strong>Stairs (straight)</strong>, <strong>Stairs (L)</strong>,
+<strong>Stairs (U)</strong> and <strong>Stairs (spiral)</strong>. Each one lands 3 m in front of you.</p>
 <p><strong>Tools ▸ Profile ▸</strong> holds <strong>Record</strong> and <strong>Record detailed</strong> (<strong>Stop recording</strong> while one runs) and <strong>Report moment</strong> —
 see <a href="../profiler/#profiling-the-headset-from-the-desktop">Profiling the headset</a>.</p>
 <h3 id="selected">Selected</h3>
@@ -4573,8 +4644,8 @@ last:</p>
 <strong>Edit collider</strong> · <strong>Delete</strong></p>
 <ul>
 <li><strong>Edit mesh</strong> opens the face and vertex tools (Extrude, Inset, Move, Delete — see <a href="#editing-meshes-in-vr">below</a>). Its
-  slot shows <strong>Ungroup</strong> for a group, <strong>Edit spline</strong> for a spline, and <strong>Group selection</strong> when several objects are
-  selected.</li>
+  slot shows <strong>Ungroup</strong> for a group, <strong>Edit spline</strong> for a spline, <strong>Sculpt terrain</strong> for a terrain
+  (<a href="#sculpting-terrain-in-vr">below</a>), and <strong>Group selection</strong> when several objects are selected.</li>
 <li><strong>Color</strong> opens a live palette, <strong>Snapping</strong> its side-menu.</li>
 <li><strong>Edit collider</strong> shapes the object's collider in the headset — see
   <a href="../colliders/#editing-a-collider-in-vr">Colliders</a>.</li>
@@ -4605,7 +4676,24 @@ on the keyboard puts the previous search back.</p>
 <li><strong>Move</strong> — push the left thumbstick. With <strong>VR flying</strong> on, forward follows where your controller aims; otherwise it stays level. Hold the <strong>left grip</strong> to switch the stick to panning and elevation.</li>
 <li><strong>Teleport</strong> — push the <strong>right thumbstick up</strong> to arc a beam, release to blink to the landing spot (in Edit: the ground or any upward-facing surface; in a game, only walkable ground inside the play area — a red arc is refused). Toggle teleport in Settings.</li>
 <li><strong>Turn</strong> — push the right thumbstick left/right. <strong>Turning</strong> is <em>Snap</em> (fixed steps of the <strong>Snap angle</strong>, 15–90°, default 45°), <em>Smooth</em> (a steady turn at the <strong>Smooth speed</strong>) or <em>Off</em>, in <strong>Settings ▸ Comfort</strong>; <strong>Mirror turn</strong> flips the direction, and the <strong>Comfort vignette</strong> darkens the edges of your view while you turn or move. This works in Edit and in games alike.</li>
-<li><strong>World grab</strong> — grip with <strong>both hands in empty air</strong> to grab the whole world: pull your hands apart/together to scale, twist to rotate, move to reposition. <strong>Scene ▸ World 1:1</strong> snaps it back to normal. Holding the world with <strong>one</strong> grip, push the stick <strong>up/down</strong> to send it away or bring it closer, as with an object.</li>
+<li><strong>World grab</strong> — grip with <strong>both hands in empty air</strong> to grab the whole world: pull your hands apart/together to scale, twist to rotate, move to reposition. The turn and the scale <a href="#snapping-the-world-while-you-grab-it">snap to steps</a>. <strong>Scene ▸ World 1:1</strong> snaps it back to normal. Holding the world with <strong>one</strong> grip, push the stick <strong>up/down</strong> to send it away or bring it closer, as with an object.</li>
+<li><strong>Dollhouse</strong> — <strong>Scene ▸ Dollhouse</strong> shows the whole scene as a model in front of you; point into it to <a href="#dollhouse-teleport">stand anywhere</a>.</li>
+</ul>
+<h3 id="snapping-the-world-while-you-grab-it">Snapping the world while you grab it</h3>
+<p>Since 1.28, when you hold <strong>both grips in empty air</strong> and pull your hands apart or together, or twist them, the world
+<strong>turns in 15° steps</strong> and <strong>sticks at 1×, 2×, 5× and 10×</strong> (and at ½, ⅕ and ⅒). Each step gives a light tick in your
+hands, and a readout between your hands says where you are — for example <em>2× · 45°</em>.</p>
+<p>To move the world freely again, turn off <strong>Settings ▸ VR ▸ Controls ▸ World grab snapping</strong> (also radial <strong>Settings ▸
+Controls</strong>). It is on by default.</p>
+<h3 id="dollhouse-teleport">Dollhouse teleport</h3>
+<p>Radial menu ▸ <strong>Scene ▸ Dollhouse</strong> (since 1.28) shows the whole scene as a model on a table in front of you, with an
+amber pin where you stand.</p>
+<ul>
+<li>Point into the model: a green ring marks where you would land. <strong>Pull the trigger</strong> to stand there, at full size.</li>
+<li>Pull the trigger at nothing, or pick <strong>Dollhouse</strong> or <strong>World 1:1</strong> again, to leave without moving.</li>
+<li>Grab the model with both grips to turn or scale it, as you would the world.</li>
+<li>In a game (Interact) the dollhouse works only when the game allows teleporting, and a <strong>red ring</strong> means you cannot
+  land there.</li>
 </ul>
 <h2 id="grabbing-scaling-and-stretching">Grabbing, scaling and stretching</h2>
 <ul>
@@ -4630,6 +4718,29 @@ to move them all, twist your wrist to turn them, push the thumbstick left / righ
 <div class="admonition warning">
 <p class="admonition-title">Density caps</p>
 <p>To stay smooth in VR, mesh editing is limited to <strong>2500 triangles</strong> for face editing and <strong>800 vertices</strong> for vertex editing by default; denser meshes refuse with a toast. Both limits are yours to change in <strong>Settings ▸ VR ▸ Editing ▸ Face edit limit / Vertex edit limit</strong> (also radial <strong>Settings ▸ Editing</strong>). The full-featured mesh editor is desktop-only.</p>
+</div>
+<h2 id="sculpting-terrain-in-vr">Sculpting terrain in VR</h2>
+<p>Since 1.28 you can shape <a href="../terrain/#sculpting-by-hand">terrain</a> from the headset with the desktop's Raise, Lower,
+Smooth and Flatten brush.</p>
+<ul>
+<li><strong>Start</strong> — radial menu ▸ <strong>Add ▸ Terrain</strong> puts a 24 m terrain in front of you (its middle about 6 m ahead) and starts
+  sculpting it. For a terrain that is already there, select it, then <strong>Selected ▸ Sculpt terrain</strong>.</li>
+<li><strong>Sculpt</strong> — point at the terrain with your pointing hand (the one that does not open the menu — the left one by
+  default): a blue ring shows the brush. <strong>Hold the trigger</strong> to sculpt. Every stroke is one undo step, and everyone in
+  the session sees it.</li>
+<li><strong>Brush size and strength</strong> — on the pointing hand's thumbstick: <strong>left / right</strong> sets the size (0.25 – 20 m), <strong>up /
+  down</strong> the strength (5 – 100 %). A label on that hand shows the tool and both numbers. While you sculpt, that stick
+  does not walk or turn you; the other stick still does.</li>
+<li><strong>Tools</strong> — while you sculpt, the radial menu opens on the <strong>Sculpt</strong> ring: <strong>Raise</strong>, <strong>Lower</strong>, <strong>Smooth</strong>,
+  <strong>Flatten</strong> and <strong>Done</strong>. <strong>Back</strong> goes to the usual menu.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Limits</p>
+<ul>
+<li>Only terrain can be sculpted in the headset — <a href="../terrain/#sculpting-any-mesh">sculpting other meshes</a> is a desktop
+  tool.</li>
+<li>Sculpting is an Edit tool: switching to Interact ends it.</li>
+</ul>
 </div>
 <h2 id="floating-panels">Floating panels</h2>
 <p>The menu opens follower panels that hang in space — Objects, Properties, Color palette, Prefabs, Keyboard, Chat, Stats, plus the Edit/Snap/Settings menus. Every panel is <strong>grip-grabbable</strong>: hold the grip on a panel to detach and reposition it, and the gripping hand's stick resizes it. Your layout is remembered; <strong>Reset panel positions</strong> (VR Settings, or the desktop Settings button) restores the defaults.</p>
@@ -4702,7 +4813,7 @@ headset's <strong>All settings</strong> panel, and desktop <strong>Settings ▸ 
 </tr>
 <tr>
 <td><strong>Controls</strong></td>
-<td><strong>Menu hand</strong> (Right / Left), <strong>Hold to open menu</strong>, <strong>Left-handed</strong>, <strong>Grab style</strong>, <strong>Remap buttons</strong>, <strong>Reset buttons</strong></td>
+<td><strong>Menu hand</strong> (Right / Left), <strong>Hold to open menu</strong>, <strong>Left-handed</strong>, <strong>Grab style</strong>, <strong>World grab snapping</strong> (<a href="#snapping-the-world-while-you-grab-it">world grab</a>), <strong>Remap buttons</strong>, <strong>Reset buttons</strong></td>
 </tr>
 <tr>
 <td><strong>Display</strong></td>
