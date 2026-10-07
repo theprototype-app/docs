@@ -422,6 +422,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../avatars/" class="md-nav__link">
         
   
@@ -574,6 +595,27 @@
   
   <span class="md-ellipsis">
     Prefabs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../materials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Material Presets
   </span>
   
 
@@ -3399,6 +3441,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#on-a-phone" class="md-nav__link">
+    <span class="md-ellipsis">
+      On a phone
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-vr" class="md-nav__link">
+    <span class="md-ellipsis">
+      In VR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#make-it-yours" class="md-nav__link">
     <span class="md-ellipsis">
       Make it yours
@@ -3888,6 +3948,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#on-a-phone" class="md-nav__link">
+    <span class="md-ellipsis">
+      On a phone
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-vr" class="md-nav__link">
+    <span class="md-ellipsis">
+      In VR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#make-it-yours" class="md-nav__link">
     <span class="md-ellipsis">
       Make it yours
@@ -3972,6 +4050,23 @@ everyone's laps; your best race and best lap are saved on this device.</p>
 <p>Cutting across the infield, or reversing back and forth over the line, counts nothing: the game follows your
 progress along the road, not the line alone.</p>
 </div>
+<h2 id="on-a-phone">On a phone</h2>
+<p>Race plays on a touch screen: once you are in a car, the <a href="../touch-controls/">touch controls</a> change to <strong>pedals</strong>.</p>
+<ul>
+<li>The <strong>stick</strong> (bottom left) steers; push it up to drive.</li>
+<li><strong>Gas</strong> is the big button under your right thumb, <strong>Brake</strong> sits beside it, and <strong>Reset</strong> puts you back on the road
+  (the <kbd>R</kbd> key).</li>
+<li>On foot you get the normal walk controls; tap a car (or press <strong>Start</strong>) to take the wheel.</li>
+</ul>
+<p>The usual <strong>Settings ▸ Touch controls</strong> apply (visibility, haptics), and you can move the pedals from the pause menu ▸
+<strong>Touch controls</strong>. The pedals are on / off, like keys, so the throttle is not analogue on a phone.</p>
+<p><img alt="Race on a phone: the steering stick bottom left, Reset, Brake and Gas bottom right" src="../img/race/phone-pedals.png" width="320" /></p>
+<h2 id="in-vr">In VR</h2>
+<p>In a headset you sit <strong>in</strong> the car. Your view rides with it, turning with the car but never tilting the horizon, and
+the <strong>left stick</strong> drives and steers. Walking, snap turn and teleport are off while you drive. When the race ends (or
+you leave Interact) you step out beside the driver's door.</p>
+<p>The game's comfort vignette (<strong>Game settings ▸ Comfort</strong>) also applies while driving.</p>
+<p><img alt="The view from the driver's seat in a headset" src="../img/race/vr-seat.png" /></p>
 <h2 id="make-it-yours">Make it yours</h2>
 <p>Everything the race runs on is on the <strong>Main graph</strong> (node editor, <kbd>N</kbd> — see <a href="../main-graph/">Main graph</a>):</p>
 <ul>
@@ -3982,14 +4077,14 @@ progress along the road, not the line alone.</p>
 <li><strong>Finish line</strong> is a sensor: its <strong>On Enter</strong> node beeps; wire it to anything — particles, a sound.</li>
 <li><strong>Race info</strong> nodes feed the HUD texts (lap, clock, lap clock, position, best, countdown, status, standings, result);
   the <strong>Leaderboard</strong> node shows the laps on the results screen.</li>
-<li>The mountains are one parametric <a href="../terrain/">Terrain</a> (Inspector ▸ Geometry: seed, height, detail…).</li>
+<li>The mountains are one parametric <a href="../terrain/">Terrain</a> (Inspector ▸ Geometry: seed, height, detail…), painted grass,
+  rock and snow.</li>
 </ul>
 <h2 id="limits">Limits</h2>
 <ul>
 <li>The cars are arcade cars (one body, they cannot flip). They drive on the flat valley floor and can climb the mountain
   slopes a little.</li>
-<li>The desktop is the tested way to drive. Touch screens and VR headsets are not tuned yet: the left stick is read for
-  throttle and steering, there is no pedal button and no in-car view in VR.</li>
+<li>On a phone the throttle is on / off. In a headset the eye point is fixed just above the cabin roof.</li>
 </ul>
 
 
@@ -4011,7 +4106,7 @@ progress along the road, not the line alone.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-05
+    2026-10-07
   </span>
 
     

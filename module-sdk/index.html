@@ -422,6 +422,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../avatars/" class="md-nav__link">
         
   
@@ -574,6 +595,27 @@
   
   <span class="md-ellipsis">
     Prefabs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../materials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Material Presets
   </span>
   
 
@@ -3969,6 +4011,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#for-module-authors-pointer-camera-play-mode-and-vr-seat" class="md-nav__link">
+    <span class="md-ellipsis">
+      For module authors: pointer, camera, play mode and VR seat
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#for-module-authors-124" class="md-nav__link">
     <span class="md-ellipsis">
       For module authors (1.24)
@@ -4313,6 +4364,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-module-authors-pointer-camera-play-mode-and-vr-seat" class="md-nav__link">
+    <span class="md-ellipsis">
+      For module authors: pointer, camera, play mode and VR seat
+    </span>
+  </a>
   
 </li>
       
@@ -4929,6 +4989,67 @@ It returns an unsubscribe, and is torn down with the module either way.</p>
 the scene, keyed by uuid, and <code>recent</code> is the last 32 hits in order. It is runtime
 state — a late joiner's log starts empty, so a module that needs history keeps its
 own through <code>registerStateSync</code>.</p>
+<h2 id="for-module-authors-pointer-camera-play-mode-and-vr-seat">For module authors: pointer, camera, play mode and VR seat</h2>
+<p>New in 1.26 — the hooks <a href="../race/">Race</a> uses to drive on a phone and in a headset, open to every module. Each is torn
+down with the module; feature-detect each one (<code>api.vrSeat?.(…)</code>) to stay compatible with older apps.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// hear a press, its drag and its release — desktop and touch (VR keeps its trigger hooks)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">off</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">registerPointerHandler</span><span class="p">(</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">down</span><span class="p">(</span><span class="nx">hit</span><span class="p">,</span><span class="w"> </span><span class="nx">ctx</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"> </span><span class="p">},</span><span class="w">   </span><span class="c1">// true OWNS the gesture</span>
+<span class="w">        </span><span class="nx">move</span><span class="p">(</span><span class="nx">hit</span><span class="p">,</span><span class="w"> </span><span class="nx">ctx</span><span class="p">)</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">        </span><span class="nx">up</span><span class="p">(</span><span class="nx">hit</span><span class="p">,</span><span class="w"> </span><span class="nx">ctx</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">modes</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;interact&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;play&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w">        </span><span class="c1">// the default</span>
+<span class="p">);</span>
+
+<span class="nx">api</span><span class="p">.</span><span class="nx">onClickMiss</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* a viewport click that hit nothing: drop a carried piece, disarm a tool */</span><span class="w"> </span><span class="p">});</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">cam</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">camera</span><span class="p">();</span><span class="w">                  </span><span class="c1">// the camera the player looks through (the XR camera in a headset), read-only</span>
+
+<span class="nx">api</span><span class="p">.</span><span class="nx">onPlayMode</span><span class="p">((</span><span class="nx">playing</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* … */</span><span class="w"> </span><span class="p">});</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">inGame</span><span class="p">();</span><span class="w">                              </span><span class="c1">// true in Play, or in a headset&#39;s game</span>
+
+<span class="nx">api</span><span class="p">.</span><span class="nx">vrSeat</span><span class="p">(</span><span class="nx">carUuid</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">seat</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="mf">0.3</span><span class="p">]</span><span class="w"> </span><span class="p">});</span><span class="w">   </span><span class="c1">// seat the VR player in an object</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">vrUnseat</span><span class="p">();</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Hook</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>registerPointerHandler({down, move, up}, {modes})</code></td>
+<td><code>hit</code> is <code>{object, point, uuid, distance}</code> or <code>null</code>; <code>ctx</code> is <code>{mode, ray, clientX, clientY, pointerType}</code>. When <code>down</code> returns <code>true</code> the module owns the gesture: the camera stops orbiting, nothing is selected, and Play does not carry or tap</td>
+</tr>
+<tr>
+<td><code>onClickMiss(fn)</code></td>
+<td>a viewport click that hit nothing. It never consumes the click</td>
+</tr>
+<tr>
+<td><code>camera()</code></td>
+<td>the camera the player is looking through, read-only</td>
+</tr>
+<tr>
+<td><code>onPlayMode(fn)</code> / <code>inGame()</code></td>
+<td>true in Play, or in a headset's game (VR play is Interact with no pointer lock). <code>api.isPlaying()</code> alone reads <code>false</code> in a headset</td>
+</tr>
+<tr>
+<td><code>vrSeat(uuid, {seat})</code> / <code>vrUnseat()</code></td>
+<td>seats the VR player in an object; <code>seat</code> is the object-local eye point (default <code>[0, 0.8, 0.3]</code>). The tracking space is carried with the object, and the sticks stay readable through <code>api.input()</code></td>
+</tr>
+<tr>
+<td><code>input().touch</code></td>
+<td>the on-screen move stick, <code>{x, y}</code> from -1 to 1 (up is -y)</td>
+</tr>
+<tr>
+<td><code>input.actions(list, {preset: 'drive'})</code></td>
+<td>the vehicle layout for <a href="../touch-controls/#for-module-authors-declaring-actions">touch controls</a>: the stick steers, no look drag, pedals under the right thumb. A stick the module declared stays live under its own <code>claimInput('keys')</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="for-module-authors-124">For module authors (1.24)</h2>
 <p>Since 1.24 the app draws a game's playing HUD in a headset itself — a curved band in front of the player, or the wrist
 card, whichever the player chose (<a href="../vr/#the-game-hud-in-a-headset">The game HUD in a headset</a>). A module that feeds the
@@ -5285,7 +5406,7 @@ examples.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-05
+    2026-10-07
   </span>
 
     

@@ -422,6 +422,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../avatars/" class="md-nav__link">
         
   
@@ -574,6 +595,27 @@
   
   <span class="md-ellipsis">
     Prefabs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../materials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Material Presets
   </span>
   
 
@@ -1136,6 +1178,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Toasts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#undo-after-clear-delete-remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      Undo after Clear, Delete, Remove
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1168,6 +1225,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chat
+    </span>
+  </a>
   
 </li>
       
@@ -3927,6 +3993,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Toasts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#undo-after-clear-delete-remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      Undo after Clear, Delete, Remove
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3963,6 +4044,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chat
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pinging" class="md-nav__link">
     <span class="md-ellipsis">
       Pinging
@@ -3995,7 +4085,7 @@
 
 
 <h1 id="notifications-notes">Notifications &amp; Notes</h1>
-<p>The top-right cluster next to your avatar holds two history surfaces — the <strong>notification center</strong> and the <strong>scene-notes drawer</strong> — plus the tools for leaving notes on objects and pinging things for everyone to see.</p>
+<p>The top-right cluster next to your avatar holds two history surfaces — the <strong>notification center</strong> and the <strong>scene-notes drawer</strong> — plus the tools for leaving notes on objects, chatting and pinging things for everyone to see.</p>
 <h2 id="notification-center">Notification center</h2>
 <p>A <strong>🔔 bell</strong> button sits in the top-right chrome. Click it to open a dropdown listing recent notifications, newest first. When it's collapsed, a red badge shows the unread count (<code>9+</code> above nine).</p>
 <p>Every toast the app shows — connection events, simulation start/stop, imports, warnings — is recorded here with a relative timestamp (<em>just now</em>, <em>5m ago</em>, <em>2h ago</em>, <em>1d ago</em>), so a message you missed while it was on screen is never lost. The list keeps the most recent <strong>50</strong> entries and survives reloads. Opening the panel clears the unread badge; <strong>Clear all</strong> empties the history.</p>
@@ -4007,6 +4097,12 @@
 <li><strong>Connection requests and approvals stay on top</strong> — a peer asking to join is always visible, even over a modal.</li>
 </ul>
 <p>Plain messages auto-dismiss after a few seconds; ones with a button (like a connection request) linger longer. At most four toasts stack at once; when more arrive, a <strong>"+N more…"</strong> line shows how many are hidden — find them in the notification center via the bell.</p>
+<h3 id="undo-after-clear-delete-remove">Undo after Clear, Delete, Remove</h3>
+<p><strong>Clear scene</strong>, <strong>deleting the selection</strong>, <strong>removing a module</strong> and <strong>Reset all settings</strong> happen at once, and a
+toast offers <strong>Undo</strong> for about 8 seconds — a thin bar shows the time left. Undo puts back exactly what was there: for
+everyone in the session (the scene and its objects), or on this device (modules, settings).</p>
+<p><img alt="The toast after clearing the scene, with Undo" src="../img/notes/undo-toast.png" /></p>
+<p>After the 8 seconds, <kbd>Ctrl</kbd>+<kbd>Z</kbd> still undoes a delete; a <strong>Clear scene</strong> can no longer be undone.</p>
 <h2 id="scene-notes">Scene notes</h2>
 <p>Notes are little pinned comments you can attach to any object — feedback, TODOs, labels — and they're visible to everyone in the session.</p>
 <h3 id="adding-a-note">Adding a note</h3>
@@ -4052,11 +4148,16 @@ moves. The card that opens has:</p>
 </tbody>
 </table>
 <p><strong>Save</strong> keeps it, <strong>Delete</strong> removes it. Notes replicate to every peer with your name attached.</p>
+<p><strong>Replies.</strong> An open note has a <strong>Reply</strong> box under it; replies show as a thread, each with its author and time, and
+you can delete your own reply (<strong>×</strong>). Adding, editing or deleting a note and replying are each one
+<kbd>Ctrl</kbd>+<kbd>Z</kbd> — and the undo reaches everyone in the session.</p>
+<p><img alt="A note with a thread of replies and the Reply box" src="../img/notes/note-thread.png" /></p>
 <p>Clicking a saved note's marker opens it to read: its text, label, author and date, with <strong>Delete</strong>, <strong>Follow</strong> (fly to
 the pin and keep following it) and <strong>Edit</strong>, which brings back the card above.</p>
 <p><strong>Markers.</strong> On a desktop a note is a small badge beside its exact spot, joined to it by a thin leader line. A note that
 is behind something stays visible but faded, with a dashed leader. When several notes crowd together they merge into one
-badge with a count — click it and they spread out.</p>
+badge with a count — click it and they spread out. In VR, note pins stay on their objects while you grab and move the
+world.</p>
 <h3 id="the-scene-notes-drawer">The scene-notes drawer</h3>
 <p>The <strong>📝 notes</strong> button in the top-right chrome (just left of the bell) opens a right-docked drawer listing <strong>every note in the scene</strong>, grouped by <strong>label</strong>:</p>
 <ul>
@@ -4070,6 +4171,18 @@ badge with a count — click it and they spread out.</p>
 camera to the note, with the card opening on a double click: handy for walking through a scene full of notes without a
 card in the way.</p>
 <p>If there are no notes yet, the drawer tells you to select an object and add one from its context menu.</p>
+<h2 id="chat">Chat</h2>
+<p><kbd>C</kbd> (from the 3D view) or the chat button opens the session's text chat.</p>
+<ul>
+<li><strong>@mentions</strong> — type <code>@</code> and a name; <kbd>Tab</kbd> takes the first suggestion. The name shows in that person's
+  colour, a line that mentions <em>you</em> is ringed, and the chat button's badge turns to the accent colour.</li>
+<li><strong>Emoji shortcodes</strong> — <code>:tada:</code>, <code>:+1:</code>, <code>:fire:</code> … turn into emoji when you send. Type <code>:</code> and a few letters for
+  suggestions (<kbd>Tab</kbd> picks one); unknown codes are left as typed.</li>
+<li><strong>Unread badge</strong> — the chat button counts the messages that arrived while the chat was closed.</li>
+<li><strong>History</strong> — someone who joins the session sees the conversation so far. A session saved in the
+  <a href="../saving/#sessions-manager">Sessions manager</a> keeps its chat; an exported <code>.tpscene</code> never contains it.</li>
+</ul>
+<p><img alt="The chat: a line that mentions you is ringed, and :+1: became an emoji" src="../img/notes/chat-mentions.png" /></p>
 <h2 id="pinging">Pinging</h2>
 <p>A ping is a momentary "look here!" pulse everyone sees at once — great for pointing during a call.</p>
 <ul>
@@ -4100,7 +4213,7 @@ card in the way.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-05
+    2026-10-07
   </span>
 
     

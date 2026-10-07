@@ -14,7 +14,7 @@
         <link rel="prev" href="../lod/">
       
       
-        <link rel="next" href="../mesh-editing/">
+        <link rel="next" href="../materials/">
       
       
       <link rel="icon" href="../logo.svg">
@@ -422,6 +422,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../avatars/" class="md-nav__link">
         
   
@@ -644,6 +665,57 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#updating-every-copy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating every copy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Updating every copy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-prefab-submenu" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Prefab submenu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-prefab-carries-its-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      A prefab carries its logic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limits
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#folders-and-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Folders and tags
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exporting-a-prefab" class="md-nav__link">
     <span class="md-ellipsis">
       Exporting a prefab
@@ -656,6 +728,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../materials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Material Presets
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -3915,6 +4008,57 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#updating-every-copy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Updating every copy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Updating every copy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-prefab-submenu" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Prefab submenu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-prefab-carries-its-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      A prefab carries its logic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limits
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#folders-and-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Folders and tags
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exporting-a-prefab" class="md-nav__link">
     <span class="md-ellipsis">
       Exporting a prefab
@@ -3995,8 +4139,101 @@ ordinary file, which you can then <a href="../explorer/#sharing-with-the-session
   cursor.</li>
 <li>Or right-click it ▸ <strong>Add to scene</strong>.</li>
 </ul>
-<p>Every placed instance gets fresh identities, replicates to all connected peers like any created object, and is undoable.
-Two instances of the same prefab are fully independent afterwards.</p>
+<p>Every placed copy gets fresh identities, replicates to all connected peers like any created object, and is undoable.
+Since 1.26 a copy placed from your prefab library — dragged from the Explorer's Prefabs tab, <strong>Add to scene</strong>, or the VR
+prefab panel — also <strong>remembers which prefab it came from</strong>, so a later edit of the prefab can reach it (see
+<a href="#updating-every-copy">Updating every copy</a>). A copy is still yours to change: what you change on it is kept.</p>
+<h2 id="updating-every-copy">Updating every copy</h2>
+<p>Edit a prefab either way below and the app offers to update the copies already in the scene:</p>
+<ul>
+<li>in the Explorer, right-click the prefab ▸ <strong>Update from selection</strong> (replace the prefab with the objects selected in
+  the scene), or</li>
+<li>right-click a placed copy in the scene ▸ <strong>Prefab: ‹name› ▸ Apply changes to prefab</strong>.</li>
+</ul>
+<p>A toast says how many other copies use it and offers:</p>
+<table>
+<thead>
+<tr>
+<th>Choice</th>
+<th>What happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Update N instances</strong></td>
+<td>each copy takes the new version but <strong>keeps its own changes</strong> — a colour you changed on just that copy, a moved part, a deleted part, objects you added under it</td>
+</tr>
+<tr>
+<td><strong>Update, reset overrides</strong></td>
+<td>each copy matches the prefab exactly</td>
+</tr>
+<tr>
+<td><strong>Undo</strong></td>
+<td>puts the prefab's previous version back in your library</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="After editing the Lamp prefab, a toast offers to update the other instance in the scene" src="../img/prefabs/update-toast.png" /></p>
+<p>Where each copy stands is always kept. The update is <strong>one undo step</strong> (<kbd>Ctrl</kbd>+<kbd>Z</kbd> puts every copy
+back) and everyone in the session sees it. Your peers do not need the prefab — only you do.</p>
+<h3 id="the-prefab-submenu">The Prefab submenu</h3>
+<p>Right-click a placed copy ▸ <strong>Prefab: ‹name›</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Entry</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Update from prefab</strong></td>
+<td>shown when the prefab has a newer version — updates this copy only, keeping its changes</td>
+</tr>
+<tr>
+<td><strong>Apply changes to prefab</strong></td>
+<td>this copy becomes the prefab's new version</td>
+</tr>
+<tr>
+<td><strong>Reset overrides</strong></td>
+<td>back to the prefab, where it stands kept</td>
+</tr>
+<tr>
+<td><strong>Select all instances</strong></td>
+<td>selects every copy of this prefab in the scene</td>
+</tr>
+<tr>
+<td><strong>Unlink from prefab</strong></td>
+<td>an ordinary object from now on; updates no longer reach it</td>
+</tr>
+</tbody>
+</table>
+<p>A copy of someone else's prefab shows only <strong>Unlink</strong>. A prefab card's own menu in the Explorer has <strong>Instances in scene
+(N) ▸ Update / Update, reset overrides / Select</strong>.</p>
+<h3 id="a-prefab-carries-its-logic">A prefab carries its logic</h3>
+<p>Saving an object that has a flow graph as a prefab keeps the graph: every placed copy gets its own copy of it, and an
+update brings graph changes along (a copy whose graph you edited keeps yours). In the prefab's <strong>Properties ▸ Logic</strong>,
+<strong>Export .tpnode</strong> saves that logic as a node group file.</p>
+<h3 id="limits">Limits</h3>
+<ul>
+<li>A material counts as one change: if you recoloured a copy, an update keeps that copy's whole material.</li>
+<li>A copy placed before 1.26 is not linked — place it again to link it.</li>
+<li>If a copy was placed from a version older than the last 8 the library keeps, its own changes cannot be told apart,
+  and the update keeps nothing as an override.</li>
+</ul>
+<h2 id="folders-and-tags">Folders and tags</h2>
+<p>The Explorer's <strong>Prefabs</strong> tab can be sorted into folders and tagged.</p>
+<ul>
+<li><strong>Folders</strong> — right-click empty space in the tab ▸ <strong>New folder</strong>. Right-click a prefab ▸ <strong>Move to folder</strong>, or drag
+  it onto a folder card. The breadcrumb shows where you are (<em>Prefabs / Folder / Sub-folder</em>). Right-click a folder card
+  ▸ <strong>Rename</strong> or <strong>Delete folder</strong> — what it held moves up a level; nothing is deleted.</li>
+<li><strong>Tags</strong> — select a prefab, type tags in its <strong>Properties</strong> (commas separate several) and press <kbd>Enter</kbd>; or
+  right-click it ▸ <strong>Edit tags…</strong>.</li>
+<li><strong>Filter</strong> — the tag chips under the breadcrumb filter the tab, and pressed chips combine (<em>seat</em> + <em>wood</em>). The
+  search box matches names and tags. Both reach into folders; <strong>Clear</strong> resets the filter.</li>
+</ul>
+<p><img alt="The Prefabs tab filtered by the seat tag" src="../img/prefabs/tag-filter.png" /></p>
+<p>Folders and tags are part of your own library, on this device, like the prefabs themselves.</p>
 <h2 id="exporting-a-prefab">Exporting a prefab</h2>
 <p>Right-click a prefab ▸ <strong>Export</strong>:</p>
 <ul>
@@ -4032,7 +4269,7 @@ entire hierarchy, and <strong>Prefab (.tpscene)</strong> keeps its flow graphs a
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-04
+    2026-10-07
   </span>
 
     

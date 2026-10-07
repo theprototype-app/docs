@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://docs.theprototype.app/avatars/">
       
       
-        <link rel="prev" href="../appearance/">
+        <link rel="prev" href="../settings/">
       
       
         <link rel="next" href="../connection/">
@@ -421,6 +421,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -491,6 +512,24 @@
   <a href="#showing-everyone-as-classic-heads" class="md-nav__link">
     <span class="md-ellipsis">
       Showing everyone as classic heads
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#knocked-off-idle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Knocked-off idle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feet-on-the-ground" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feet on the ground
     </span>
   </a>
   
@@ -661,6 +700,27 @@
   
   <span class="md-ellipsis">
     Prefabs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../materials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Material Presets
   </span>
   
 
@@ -3924,6 +3984,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#knocked-off-idle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Knocked-off idle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feet-on-the-ground" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feet on the ground
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#in-vr" class="md-nav__link">
     <span class="md-ellipsis">
       In VR
@@ -4023,6 +4101,25 @@ you were.</p>
 <p><strong>Settings ▸ Interface ▸ Avatars ▸ Show everyone as classic heads</strong> draws other people as the floating head instead of
 their character — on <strong>this device only</strong>, and lighter on a headset with many people in the room. They still see your
 character.</p>
+<h2 id="knocked-off-idle">Knocked-off idle</h2>
+<p>When someone gives no input for a while, everyone sees their character <strong>knocked off</strong>: little stars circle its head,
+the head sways in a slow figure-8, and its eyes turn into spinning stars. Any key, click, mouse move or head move wakes
+them, and it fades out smoothly.</p>
+<p><img alt="Eight characters knocked off, stars circling their heads and in their eyes" src="../img/avatars/knocked-off.png" /></p>
+<p><strong>Settings ▸ Interface ▸ Avatars ▸ Knocked-off idle</strong> chooses when <em>you</em> count as idle: <strong>Off</strong>, <strong>10 s</strong>, <strong>20 s</strong> (the
+default) or <strong>60 s</strong>. It is a setting for this device.</p>
+<p>It works on every head — the character's own, the stylised ones, a photo card and the classic floating head — and costs
+one extra draw call per idle character, none while awake.</p>
+<h2 id="feet-on-the-ground">Feet on the ground</h2>
+<p>Since 1.26 characters stand on the floor in Play. (Before, a walking player sank about 0.9 m into the ground on everyone
+else's screen.)</p>
+<ul>
+<li>A walking player tells the others where their feet are, so the character stands on the same floor — steps and raised
+  floors included — in desktop Play, with a <a href="../build-a-game/#3-a-character-that-walks">Character Controller</a> node in walk
+  mode, and walking in VR Interact.</li>
+<li>Each foot stays planted while walking or running: the animation's heel roll no longer pushes a foot through the floor.</li>
+<li>A player who is flying or editing is still drawn with the body hanging under the head, as before.</li>
+</ul>
 <h2 id="in-vr">In VR</h2>
 <p>A VR user's character follows their head, and its arms reach for their controllers; a hand held out of the arm's reach
 falls back to the floating controller marker. Pointing at an object puts the character's hand on it.</p>
@@ -4030,6 +4127,8 @@ falls back to the floating controller marker. Pointing at an object puts the cha
 <ul>
 <li>The bodies are stylised (big heads): a character is about 2.2 m tall so its eyes sit where the person's are.</li>
 <li>In the editor, a character follows the editor camera — flying the camera makes the body float.</li>
+<li>On a steep slope (20–30°) the feet follow the walker's capsule and can float a couple of centimetres above the slope;
+  there is no foot IK yet.</li>
 <li>Characters add no network traffic: each screen works the bodies out from the position and hand data already shared.</li>
 <li>Each character is at most about 6,000 triangles with one material, so eight people stay inside a Quest's budget.</li>
 </ul>
@@ -4053,7 +4152,7 @@ falls back to the floating controller marker. Pointing at an object puts the cha
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-05
+    2026-10-07
   </span>
 
     

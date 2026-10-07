@@ -536,6 +536,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../avatars/" class="md-nav__link">
         
   
@@ -688,6 +709,27 @@
   
   <span class="md-ellipsis">
     Prefabs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../materials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Material Presets
   </span>
   
 
@@ -4080,10 +4122,15 @@ drag only exist in Play. Touch controls are screen controls, so they never show 
 <td><strong>The Alchemist's Escape</strong></td>
 <td><strong>Use</strong> + <strong>Hint</strong></td>
 </tr>
+<tr>
+<td><strong>Race</strong></td>
+<td>on foot: walk controls; in a car: stick steers, <strong>Gas</strong>, <strong>Brake</strong>, <strong>Reset</strong> — see <a href="../race/#on-a-phone">Race on a phone</a></td>
+</tr>
 </tbody>
 </table>
 <p>Any other scene gets buttons from what it already has: a walking
-<a href="../build-a-game/#3-a-character-that-walks">Character Controller</a> gives <strong>Jump</strong>, a flying one <strong>Up</strong> / <strong>Down</strong>, and every
+<a href="../build-a-game/#3-a-character-that-walks">Character Controller</a> gives <strong>Jump</strong>, a flying one <strong>Up</strong> / <strong>Down</strong> (only
+where the scene <a href="../physics/#flying">allows flying</a>), and every
 key a <a href="../nodes/keypress/">Key Press</a> node listens for (other than WASD and the arrows) becomes a labelled button — up to
 six. The games that come as modules (Dungeon Realms, Football, Untangle, Waves) get these automatic buttons until they
 declare their own.</p>
@@ -4159,7 +4206,7 @@ Mac included — while a mouse wheel keeps zooming as before. <strong>Settings �
 <span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;boost&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Boost&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">keys</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;ShiftLeft&#39;</span><span class="p">]</span><span class="w"> </span><span class="p">},</span><span class="w">             </span><span class="c1">// presses a key while held</span>
 <span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;fire&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Throw&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">onPress</span><span class="o">:</span><span class="w"> </span><span class="nx">charge</span><span class="p">,</span><span class="w"> </span><span class="nx">onRelease</span><span class="o">:</span><span class="w"> </span><span class="nx">release</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// your own handlers</span>
 <span class="w">    </span><span class="p">],</span>
-<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">preset</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;shooter&#39;</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// platformer | shooter | toss | golf | fly | explore | custom</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">preset</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;shooter&#39;</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// platformer | shooter | toss | golf | fly | explore | drive | custom</span>
 <span class="w">                           </span><span class="c1">// optional: stick: false, look: false</span>
 <span class="w">  </span><span class="p">);</span>
 <span class="p">}</span>
@@ -4170,6 +4217,9 @@ Mac included — while a mouse wheel keeps zooming as before. <strong>Settings �
 <li><code>pointer: 'press' | 'tap'</code> makes a button a primary click at the crosshair (held, or a single tap).</li>
 <li><code>onPress</code> / <code>onRelease</code> run <strong>on this peer only</strong>; send your own message if others must know.</li>
 <li>A second call replaces your set; everything is removed when the module unloads.</li>
+<li><code>preset: 'drive'</code> (since 1.26) is the vehicle layout: the stick steers, there is no look drag, and the pedals sit
+  under the right thumb. A stick the module declared stays live under its own <code>claimInput('keys')</code>.</li>
+<li><code>api.input().touch</code> reads the on-screen move stick as <code>{x, y}</code> from -1 to 1 (up is -y).</li>
 <li>Feature-detect (<code>api.input?.actions?.(…)</code>) to stay compatible with older cores.</li>
 </ul>
 <p>See the <a href="../module-sdk/">Module SDK</a>.</p>
@@ -4193,7 +4243,7 @@ Mac included — while a mouse wheel keeps zooming as before. <strong>Settings �
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-04
+    2026-10-07
   </span>
 
     

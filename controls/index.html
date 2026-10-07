@@ -444,6 +444,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#dragging-a-selection-in-the-object-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dragging a selection in the object list
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#what-double-click-does" class="md-nav__link">
     <span class="md-ellipsis">
       What double-click does
@@ -579,6 +588,15 @@
   <a href="#docking-to-a-screen-edge" class="md-nav__link">
     <span class="md-ellipsis">
       Docking to a screen edge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workspace-layouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workspace layouts
     </span>
   </a>
   
@@ -749,6 +767,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../avatars/" class="md-nav__link">
         
   
@@ -901,6 +940,27 @@
   
   <span class="md-ellipsis">
     Prefabs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../materials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Material Presets
   </span>
   
 
@@ -4216,6 +4276,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#dragging-a-selection-in-the-object-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dragging a selection in the object list
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#what-double-click-does" class="md-nav__link">
     <span class="md-ellipsis">
       What double-click does
@@ -4356,6 +4425,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#workspace-layouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workspace layouts
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4472,7 +4550,7 @@
 </ul>
 <h3 id="edit-and-interact">Edit and Interact</h3>
 <p>The editor has two click modes. Switch with the <strong>Interact mode</strong> cell on the bottom bar (it sits
-between the transform tools and Play — the default order is Move, Rotate, Scale, Interact, Play,
+between the transform tools and Play — the default order is Move, Rotate, Scale, Pivot, Interact, Play,
 Object list, Node editor, Explorer, Animation), or press <strong>I</strong>:</p>
 <ul>
 <li><strong>Edit</strong> (the default) — every click selects, so every object, module pieces included, can
@@ -4614,6 +4692,15 @@ that content itself.</p>
 <p>The list never flies the camera: <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> and <kbd>Q</kbd>/<kbd>E</kbd> do
 nothing while it has the keys.</p>
 <p><kbd>↓</kbd> in the list's <strong>Search objects…</strong> box drops you into the results. Type-ahead matches what you typed first, so a Cyrillic name is reachable by its own letters, and falls back to the physical key so a Latin name is still reachable on a non-Latin layout.</p>
+<h3 id="dragging-a-selection-in-the-object-list">Dragging a selection in the object list</h3>
+<p>Drag any <strong>selected</strong> row in the object list and the whole selection comes along:</p>
+<ul>
+<li>drop it on a <strong>group</strong> and they move into it;</li>
+<li>drop it on <strong>any other object</strong> and they become its children;</li>
+<li>drop it on the list's empty area or its header and they go back to the top level.</li>
+</ul>
+<p>World positions are kept and a drop is one undo step. An object cannot be dropped into its own child. Local-only objects
+(ones not shared with the session) dropped onto a shared parent become shared, as before.</p>
 <h3 id="what-double-click-does">What double-click does</h3>
 <p>Opening properties is the default, but it is a setting: <strong>Settings ▸ Scene ▸ Selection ▸ Double-click action</strong> offers <em>Open properties</em>, <em>Edit mesh</em>, <em>Focus and isolate</em> and <em>Select same type</em>.</p>
 <p><strong>Isolate</strong> hides everything else rather than fading it — fading would mean writing to materials that other people are sharing.</p>
@@ -4695,8 +4782,25 @@ undo, a peer duplicating the object again, and a late joiner arriving afterwards
 thing that cannot share is an object with <strong>more than one material slot</strong> — it is left
 copying, rather than half-linked.</p>
 <h3 id="editing-a-multi-selection">Editing a multi-selection</h3>
-<p>The properties panel edits <strong>everything you have selected</strong>, not just the last object you clicked. Change a colour, a material, a shadow flag or a physics setting and it applies to the whole set as a <strong>single undo step</strong>; a row whose objects disagree shows a dash until you set it.</p>
-<p>Transform rows on a multi-selection drive the selection's <strong>origin</strong> rather than each object's absolute position — typing a value moves the set as a whole instead of collapsing it onto one plane. Name, uuid and geometry stay single-object: click the one object for those.</p>
+<p>Select several objects (<kbd>Shift</kbd>+click, box select, <kbd>Ctrl</kbd>+<kbd>A</kbd>) and open <strong>Properties</strong>: the
+panel says <strong>Editing N objects</strong>, and every row applies to all of them.</p>
+<p><img alt="Properties with three objects selected: Editing 3 objects, the Pivot row, and a Geometry section that reaches only the two boxes" src="../img/controls/multi-edit.png" /></p>
+<ul>
+<li><strong>Shared values show; differing values show a dash.</strong> A slider, number or list whose objects disagree reads <strong>—</strong>, a
+  checkbox shows the in-between state, and a material or emission colour says <em>(mixed)</em> under the picker.</li>
+<li><strong>Setting a dashed row sets every object</strong> to the new value — type into a dashed Roughness, tick an in-between
+  <strong>Cast shadow</strong>, pick any entry in a dashed list.</li>
+<li><strong>One edit is one undo step</strong> for the whole selection, and <kbd>Ctrl</kbd>+<kbd>Z</kbd> puts each object back to
+  <em>its own</em> previous value. Since 1.26 <strong>Visible</strong>, <strong>Cast / Receive shadow</strong>, <strong>Render order</strong>, <strong>Frustum culled</strong> and
+  every <strong>Light</strong> row (colour, intensity, distance, decay, angle, penumbra, shadow bias / softness / map size) undo too.</li>
+<li><strong>Several lights</strong> selected together are edited together; a row only some light types have (a spot light's
+  <strong>Angle</strong>) reaches the lights that have it.</li>
+<li>Your peers see the change <strong>in one step</strong>: the whole selection's edit travels as one message.</li>
+</ul>
+<p>Name, uuid, LOD, Water and particle emitters stay single-object, and <strong>Geometry</strong> reaches only the objects of one shape
+type (the panel says which) — click the one object for those. Transform rows on a multi-selection move, turn and scale
+the <strong>set</strong> about its <a href="#the-pivot-of-a-multi-selection">pivot</a> rather than each object's own numbers: typing a value
+moves the set as a whole instead of collapsing it onto one plane.</p>
 <h2 id="transform-gizmo">Transform gizmo</h2>
 <table>
 <thead>
@@ -4739,7 +4843,13 @@ copying, rather than half-linked.</p>
 <p>The origin travels with the object: it replicates, saves, undoes, and is baked in on GLTF export.</p>
 <p><strong>Typing a rotation honours it.</strong> Once an object has an origin, a rotation or scale typed into the Transform rows turns it about that origin — the same thing a gizmo drag does — instead of about its own local zero. That matters most for a <strong>group</strong>: a group made by dragging objects together, or with <code>/group</code>, sits at world zero, so its origin is one right-click away — <strong>Origin ▸ Centre of children</strong>, <strong>World zero</strong> or <strong>Reset origin</strong> on the group's right-click menu. Lights have an origin too: give a sun one and Rotate swings it around that point (see <a href="../camera/#lights">Lights</a>).</p>
 <h3 id="the-pivot-of-a-multi-selection">The pivot of a multi-selection</h3>
-<p>With several objects selected, what the set rotates and scales about is a choice. The <strong>Pivot</strong> dropdown in the Transform section — or right-click ▸ <strong>Pivot point</strong> — offers:</p>
+<p>With several objects selected, what the set rotates and scales about is a choice — one setting, in three places:</p>
+<ul>
+<li>the <strong>Pivot</strong> button on the <a href="#the-toolbar">toolbar</a>, next to Scale: its icon and tooltip name the current mode, and a
+  click steps to the next one;</li>
+<li>the <strong>Pivot</strong> dropdown in the properties panel's Transform section, or right-click ▸ <strong>Pivot point</strong>;</li>
+<li>in VR, <strong>Settings ▸ Editing ▸ Pivot point</strong> (see <a href="../vr/#grabbing-a-selection">Grabbing a selection</a>).</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -4754,19 +4864,20 @@ copying, rather than half-linked.</p>
 </tr>
 <tr>
 <td><strong>Active object</strong></td>
-<td>the origin of the object you picked last</td>
-</tr>
-<tr>
-<td><strong>Parent origin</strong></td>
-<td>the origin of the parent they all share — greyed out when they do not share one</td>
+<td>the origin of the object you picked last — in VR, the one you grip</td>
 </tr>
 <tr>
 <td><strong>Individual origins</strong></td>
 <td>each object's own origin, so a row of doors all swing on their own hinges</td>
 </tr>
+<tr>
+<td><strong>Parent origin</strong></td>
+<td>the origin of the parent they all share — offered only when they share one</td>
+</tr>
 </tbody>
 </table>
-<p>The gizmo drag and the typed rows both obey it. Moving is never per-object: a translation moves the set as one. An origin you placed by hand with <strong>Move origin</strong> overrides the mode while it stands.</p>
+<p>The gizmo drag, the typed rows and a VR grip all obey it. Moving is never per-object: a translation moves the set as
+one. An origin you placed by hand with <strong>Move origin</strong> overrides the mode until you select again.</p>
 <h3 id="numeric-fields">Numeric fields</h3>
 <p>Every number in the app is the same control: <strong>drag</strong> it to scrub, or <strong>type</strong> into it for live updates. <kbd>↑</kbd>/<kbd>↓</kbd> step by one unit — hold <kbd>Ctrl</kbd> for ×10, <kbd>Shift</kbd> for ×100 — and <kbd>Esc</kbd> reverts what you typed.</p>
 <p>That includes the numbers inside <strong>node editor cards</strong>, <strong>shader nodes</strong> and the
@@ -4807,6 +4918,16 @@ whole column back.</p>
 landed on wiggles to say so.</p>
 <p>Docking is <strong>desktop only</strong> — on a touch screen there is no room for a full-height side panel
 and it would fight scrolling, so windows there simply stay floating.</p>
+<h3 id="workspace-layouts">Workspace layouts</h3>
+<p>Save the windows you have open — which panels, docked or floating, their sizes, the side and bottom docks, tab groups —
+under a name, and switch between arrangements in one click.</p>
+<ul>
+<li><strong>Where:</strong> <strong>Menu ▸ Layouts</strong>, or <strong>Settings ▸ Interface ▸ Windows &amp; chrome ▸ Workspace layouts</strong>.</li>
+<li><strong>Save:</strong> arrange the windows, type a name, press <strong>Save</strong>. Saving under a name you already have (in any case)
+  updates that layout.</li>
+<li><strong>Use:</strong> click a saved layout to apply it. Rename or delete it from the same list.</li>
+</ul>
+<p>Layouts are kept on this device. A reload still starts with a clean slate: a layout is applied only when you pick one.</p>
 <h2 id="the-toolbar">The toolbar</h2>
 <p>Pressing a toolbar button never takes the keyboard: the keys stay with whatever had them — this holds for the bottom
 toolbar, the Connect bar, the touch tools, the draw, sculpt, spline and mesh-edit toolboxes and module toolboxes. So
@@ -4858,23 +4979,20 @@ toolbar, the Connect bar, the touch tools, the draw, sculpt, spline and mesh-edi
 (greyed out where the device cannot) — and, in a scene that is a game, <strong>Test play (start from the menu)</strong>, which resets the
 game to its menu and starts from the Start screen. See <a href="../build-a-game/#test-play">Build a Game Loop</a>.</p>
 <h2 id="the-settings-window">The Settings window</h2>
-<p>Since 1.24 <strong>Settings</strong> opens as a window with its <strong>sections listed in a sidebar</strong>: Interface, Controls, Input, Touch
-controls, Scene, Explorer, VR, AI, Export, Connection, Shortcuts and About (plus any section a newer version adds).
-Click a section to show it; <kbd>↑</kbd> / <kbd>↓</kbd> move between sections, and the window reopens on the section you
-used last. Links that open Settings at a section — <em>File settings</em>, <em>Connection settings</em>, the AI button — land on that
-section.</p>
-<p><img alt="Settings as a window: the section sidebar on the left, the search box above the rows" src="../img/controls/settings-window.png" /></p>
-<p><strong>Search</strong> still looks through <em>every</em> section: while you type, all matching rows are shown together, the sidebar lists
-only the sections that have matches, and clicking one jumps to it. <kbd>Esc</kbd> clears the search; a second
-<kbd>Esc</kbd> closes Settings.</p>
-<p>On a phone the sidebar becomes a row of section chips above the settings.</p>
+<p><strong>Settings</strong> (logo menu ▸ Settings) is a window with a grouped menu of categories on the left — on a phone, a list you
+tap into — a search box in the header, and one row per setting. Changes save as you make them. Since 1.26 it has its
+own page: see <a href="../settings/">Settings</a>.</p>
 <h2 id="keyboard-shortcuts">Keyboard shortcuts</h2>
 <p>Shortcuts are inert while you type in a text field and while play mode owns the keyboard. The same list is shown in <strong>Settings ▸ Shortcuts</strong> (<kbd>Ctrl</kbd>+<kbd>/</kbd> opens it directly), where a click on a shortcut's keys rebinds it and <strong>Reset all</strong> puts the defaults back.</p>
 <p>The keys in the table are the <strong>3D view's</strong>: they fire while the 3D view has focus. A panel you click in gets its own keys — see <a href="#keys-follow-the-panel-you-are-in">Keys follow the panel you are in</a>.</p>
 <p><strong>Every keyboard layout works.</strong> A letter shortcut is matched by the letter printed on the key when there is one — AZERTY, Dvorak and QWERTZ keep their own labels — and by the key's <strong>physical position</strong> otherwise, so <kbd>G</kbd>, <kbd>F</kbd>, <kbd>Ctrl</kbd>+<kbd>Z</kbd> and <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> work on Russian, Greek, Hebrew, Arabic and CJK layouts without switching. Where the browser can tell, <strong>Settings ▸ Shortcuts</strong> shows your layout's own label beside each letter (<em>п on your layout</em>); where it cannot, a note says letter shortcuts follow the QWERTY position.</p>
 <div class="admonition tip">
 <p class="admonition-title">Finding a setting</p>
-<p>Settings is grouped into <strong>Interface</strong> (theme, <a href="../avatars/">your character</a>, notifications, windows, lists and menus), <strong>Controls</strong> (keyboard, mouse and trackpad), <strong>Input</strong> (gamepad and the node editor's mouse bindings), <strong>Touch controls</strong>, <strong>Scene</strong> (grid, shadows, autosave, <a href="../checkpoints/">checkpoints</a> and everything about the scene itself), <strong>Explorer</strong>, then <strong>VR</strong>, <strong>AI</strong>, <strong>Export</strong>, <strong>Connection</strong>, <strong>Shortcuts</strong> and <strong>About</strong> — one sidebar entry each (<a href="#the-settings-window">above</a>). If you don't know which one holds what you want, type in the search box at the top. Rows match by their name, their group (<em>Grid</em>), their section (<em>VR</em>) and by keywords the labels do not say — search <strong>dark</strong> to find the theme, <strong>quest</strong> for the VR rows, <strong>caustics</strong> or <strong>refraction</strong> for Water quality, <strong>tutorial</strong> or <strong>welcome</strong> for the <a href="../tours/">Tours</a>, <strong>wheelchair</strong> for the VR Stance, <strong>remap</strong> for the VR buttons — and matches are highlighted. <kbd>Esc</kbd> clears the search; a second <kbd>Esc</kbd> closes Settings.</p>
+<p>Settings is grouped into <strong>General</strong> (Interface, Controls, Input, Touch controls, Shortcuts), <strong>Workspace</strong> (Scene,
+Explorer, Node types, Export) and <strong>Devices &amp; services</strong> (VR, AI, Connection), with <strong>About &amp; what's new</strong> at the
+bottom. If you don't know which one holds what you want, type in the search box: it matches names, descriptions and
+the words people use — <strong>dark</strong> finds the theme, <strong>southpaw</strong> finds Swap sticks. See
+<a href="../settings/#finding-your-way">Finding your way</a>.</p>
 </div>
 <table>
 <thead>
@@ -4931,6 +5049,10 @@ only the sections that have matches, and clicking one jumps to it. <kbd>Esc</kbd
 <tr>
 <td><kbd>Esc</kbd></td>
 <td>Leave isolation</td>
+</tr>
+<tr>
+<td><kbd>Z</kbd></td>
+<td>Cycle the <a href="../camera/#render-mode-view">render mode</a>: Shaded → Shaded + AO → Wireframe</td>
 </tr>
 <tr>
 <td><kbd>Tab</kbd></td>
@@ -5092,7 +5214,7 @@ search row.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-05
+    2026-10-07
   </span>
 
     

@@ -489,6 +489,27 @@
   
   
     <li class="md-nav__item">
+      <a href="settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="avatars/" class="md-nav__link">
         
   
@@ -641,6 +662,27 @@
   
   <span class="md-ellipsis">
     Prefabs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="materials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Material Presets
   </span>
   
 
@@ -3947,6 +3989,28 @@ on a phone that gives the scene the whole height of the screen.</p>
 <a href="https://github.com/theprototype-app/core">github.com/theprototype-app/core</a> (also <strong>Settings ▸ About ▸ Source Code</strong>),
 with a contributing guide and an <code>llms.txt</code> for coding agents.</p>
 <h2 id="whats-new">What's new</h2>
+<p><strong>1.26 — editor productivity: edit many at once, prefabs that update, material presets, a new Settings.</strong> With
+several objects selected, the <a href="controls/#editing-a-multi-selection">Inspector edits them all</a>: rows that differ show a
+dash, setting one sets every object, and one <kbd>Ctrl</kbd>+<kbd>Z</kbd> puts each back to its own value — lights and
+the visibility and shadow flags included. The <a href="controls/#the-pivot-of-a-multi-selection">pivot point</a> (Median, Active,
+Individual, Parent) has a toolbar button, in VR a grip <a href="vr/#grabbing-a-selection">carries the whole selection</a>, and
+<a href="controls/#dragging-a-selection-in-the-object-list">dragging a selection</a> in the object list drops it into a group or
+under a parent. Placed <a href="prefabs/#updating-every-copy">prefab copies stay linked</a>: editing the prefab offers to update
+every copy, each keeping its own changes, in one undo step for everyone; copies carry their flow graphs, and the
+Prefabs tab gets <a href="prefabs/#folders-and-tags">folders and tags</a>. <a href="materials/">Material presets</a> put Wood, Metal,
+Plastic, Glass, Stone, Rubber and Neon one click away in the Inspector, and you can save, import and share your own.
+<a href="settings/">Settings</a> is redesigned — a grouped menu, sub-pages with a breadcrumb, search that shows where each match
+lives, a reset per category, <strong>About ▸ Danger zone</strong> and a <a href="settings/#density">Compact density</a>. Also new:
+<a href="controls/#workspace-layouts">workspace layouts</a> (<strong>Menu ▸ Layouts</strong>), <a href="notifications/#chat">chat</a> with @mentions,
+emoji shortcodes, an unread badge and history for people who join, <a href="notifications/#adding-a-note">threaded replies on
+notes</a>, <a href="profiler/#report-a-problem">Report a problem</a> with a picture you can mark up,
+an <a href="notifications/#undo-after-clear-delete-remove">Undo toast</a> after Clear scene, Delete, removing a module and
+resetting settings, and <kbd>Z</kbd> to <a href="camera/#render-mode-view">cycle the render mode</a>. <a href="race/">Race</a> plays <a href="race/#on-a-phone">on a
+phone</a> with pedals and <a href="race/#in-vr">in VR</a> from the driver's seat, and modules get
+<a href="module-sdk/#for-module-authors-pointer-camera-play-mode-and-vr-seat">pointer, camera, play-mode and VR-seat hooks</a>.
+Characters <a href="avatars/#feet-on-the-ground">stand on the floor</a> with planted feet, an idle one gets <a href="avatars/#knocked-off-idle">knocked
+off</a> (stars, a woozy sway, star eyes), and <a href="physics/#flying">flying in Play is opt-in</a>
+per game — a scene can also remove it.</p>
 <p><strong>1.25 — your feedback, fixed: panels that keep their keys, water that behaves.</strong> <a href="controls/#keys-follow-the-panel-you-are-in">Keys follow the panel you are
 in</a>: <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> no longer fly the
 camera from the Explorer, the Inspector, a node's graph view, the HUD editor or any tool window, the panel with the keys
@@ -4084,13 +4148,15 @@ for your machine <a href="performance/">reduces quality or pauses instead of fre
 <ul>
 <li><a href="controls/">Controls</a> — navigation, selection, the transform gizmo, shortcuts and right-click menus.</li>
 <li><a href="tours/">Tours</a> — the editor tour and the VR welcome, and how to replay them.</li>
+<li><a href="settings/">Settings</a> — the grouped menu, search, sub-pages, resetting a category or everything.</li>
 <li><a href="connection/">Connection</a> — invite links, approving peers, and choosing a signaling server.</li>
 </ul>
 <p><strong>Building</strong></p>
 <ul>
 <li><a href="explorer/">Explorer</a> — your local asset library: import files, organize folders, drag assets into the scene.</li>
 <li><a href="packs/">Packs</a> — ready-made model and audio collections you can browse and import.</li>
-<li><a href="prefabs/">Prefabs</a> — save any object as a reusable asset.</li>
+<li><a href="prefabs/">Prefabs</a> — save any object as a reusable asset, update every placed copy, sort them into folders and tags.</li>
+<li><a href="materials/">Material Presets</a> — named surface looks, seven built in, saved and shared with your session.</li>
 <li><a href="mesh-editing/">Mesh Editing</a> — vertices, edges and faces: extrude, bevel, knife, loops and mirroring.</li>
 <li><a href="snapping/">Snapping</a> — line things up: grid steps, surfaces, and snapping onto real geometry.</li>
 <li><a href="uv-editor/">UV &amp; Textures</a> — unwrap a model, paint on it, and give parts of it their own materials.</li>
@@ -4139,7 +4205,7 @@ for your machine <a href="performance/">reduces quality or pauses instead of fre
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-05
+    2026-10-07
   </span>
 
     
