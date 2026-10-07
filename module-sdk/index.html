@@ -632,6 +632,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../mesh-editing/" class="md-nav__link">
         
   
@@ -2725,6 +2746,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/camerarig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Camera Rig
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/setlook/" class="md-nav__link">
         
   
@@ -4011,6 +4053,30 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#for-module-authors-joints-and-your-own-physics-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      For module authors: joints and your own physics world
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="For module authors: joints and your own physics world">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-cloud-plugin-authors-a-whats-new-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      For cloud plugin authors: a What's New section
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#for-module-authors-pointer-camera-play-mode-and-vr-seat" class="md-nav__link">
     <span class="md-ellipsis">
       For module authors: pointer, camera, play mode and VR seat
@@ -4357,6 +4423,30 @@
   <a href="#the-knock" class="md-nav__link">
     <span class="md-ellipsis">
       The knock
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-module-authors-joints-and-your-own-physics-world" class="md-nav__link">
+    <span class="md-ellipsis">
+      For module authors: joints and your own physics world
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="For module authors: joints and your own physics world">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-cloud-plugin-authors-a-whats-new-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      For cloud plugin authors: a What's New section
     </span>
   </a>
   
@@ -4989,6 +5079,54 @@ It returns an unsubscribe, and is torn down with the module either way.</p>
 the scene, keyed by uuid, and <code>recent</code> is the last 32 hits in order. It is runtime
 state — a late joiner's log starts empty, so a module that needs history keeps its
 own through <code>registerStateSync</code>.</p>
+<h2 id="for-module-authors-joints-and-your-own-physics-world">For module authors: joints and your own physics world</h2>
+<p>New in 1.27 — what the <a href="../modules/#drivable-car">Drivable Car</a> uses to steer with its front wheels, and
+<a href="../modules/#blocks">Blocks</a> to run a pile of its own. Feature-detect each (<code>api.physics.rapier?.()</code>) to stay compatible
+with older apps.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// a hinge that only turns ±0.55 rad, whose two objects don&#39;t collide with each other,</span>
+<span class="c1">// driven to an ANGLE instead of a speed, and that breaks quietly</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">knuckle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">createJoint</span><span class="p">(</span><span class="s1">&#39;revolute&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">bodyUuid</span><span class="p">,</span><span class="w"> </span><span class="nx">wheelUuid</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;y&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">pos</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">stiffness</span><span class="o">:</span><span class="w"> </span><span class="mf">400</span><span class="p">,</span><span class="w"> </span><span class="nx">damping</span><span class="o">:</span><span class="w"> </span><span class="mf">40</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">limits</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mf">0.55</span><span class="p">,</span><span class="w"> </span><span class="mf">0.55</span><span class="p">],</span><span class="w"> </span><span class="nx">contacts</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nx">sparks</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">});</span>
+
+<span class="c1">// mid-run, on the peer running the simulation: steer</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">setJointMotorPosition</span><span class="p">(</span><span class="nx">knuckle</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span><span class="w"> </span><span class="mf">0.3</span><span class="p">);</span>
+
+<span class="c1">// the physics engine itself, for a world of your own</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">RAPIER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">api</span><span class="p">.</span><span class="nx">physics</span><span class="p">.</span><span class="nx">rapier</span><span class="p">();</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Call</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>createJoint(kind, a, b, axis, motor, opts)</code></td>
+<td><code>motor</code> may be <code>{vel, maxForce}</code> (a speed, as before) or, since 1.27, <code>{pos, stiffness, damping}</code> — an angle in radians the hinge is driven to (stiffness 400 and damping 40 by default). <code>opts</code>: <code>limits: [min, max]</code> in radians (hinges only), <code>contacts: false</code> so the two objects pass through each other, <code>sparks: false</code> so <a href="../physics/#breaking-a-joint-during-a-simulation">a break during a run</a> throws no sparks</td>
+</tr>
+<tr>
+<td><code>setJointMotorPosition(jointId, angle, stiffness?, damping?)</code></td>
+<td>drives a hinge to <code>angle</code> (radians) mid-run. Like <code>setJointMotor</code>, it works only on the peer running the simulation and returns <code>false</code> elsewhere — forward your input to that peer</td>
+</tr>
+<tr>
+<td><code>rapier()</code></td>
+<td>a promise of the Rapier module (<code>rapier3d-compat</code>, already initialised) the app runs. A world you build with it is <strong>yours and local</strong> — never synced, never stepped by the app; free it in <code>api.onUnload</code></td>
+</tr>
+</tbody>
+</table>
+<p>Since 1.27 duplicating both objects of a joint copies the joint, and detaching one during a run breaks it — see
+<a href="../physics/#joints">Joints</a>.</p>
+<h3 id="for-cloud-plugin-authors-a-whats-new-section">For cloud plugin authors: a What's New section</h3>
+<p>The hosted app's plugin can put a section at the top of the What's New window (see
+<a href="../community/#whats-new-on-theprototypeapp">What's new on theprototype.app</a>):</p>
+<div class="highlight"><pre><span></span><code><span class="nx">cloudApi</span><span class="p">.</span><span class="nx">setWhatsNewSection</span><span class="p">({</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;theprototype.app cloud&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">markdown</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;### Rooms\n- **Faster** joins&#39;</span><span class="w"> </span><span class="p">});</span>
+<span class="nx">cloudApi</span><span class="p">.</span><span class="nx">setWhatsNewSection</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span><span class="w">   </span><span class="c1">// removes it</span>
+</code></pre></div>
+<p>The markdown is a safe subset: headings, bullets, <strong>bold</strong>, <code>`code`</code> and https links; anything else is shown as
+text.</p>
 <h2 id="for-module-authors-pointer-camera-play-mode-and-vr-seat">For module authors: pointer, camera, play mode and VR seat</h2>
 <p>New in 1.26 — the hooks <a href="../race/">Race</a> uses to drive on a phone and in a headset, open to every module. Each is torn
 down with the module; feature-detect each one (<code>api.vrSeat?.(…)</code>) to stay compatible with older apps.</p>

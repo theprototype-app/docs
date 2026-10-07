@@ -555,6 +555,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Numeric fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#number-fields-and-undo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Number fields and undo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -961,6 +976,27 @@
   
   <span class="md-ellipsis">
     Material Presets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
   </span>
   
 
@@ -3070,6 +3106,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/camerarig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Camera Rig
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/setlook/" class="md-nav__link">
         
   
@@ -4387,6 +4444,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Numeric fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#number-fields-and-undo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Number fields and undo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -4889,6 +4961,25 @@ graph, and the behaviour view no longer flickers the cursor.</p>
 <p><img alt="A behaviour's Open view in the node editor: the params' knobs on the left drag their value, not the graph" src="../img/controls/behaviour-view-knobs.png" /></p>
 <p>Fields that hold a distance or an angle also accept a typed <strong>unit</strong> (<code>12cm</code>, <code>4in</code>,
 <code>90deg</code>) — see <a href="../units/">Units</a>.</p>
+<h4 id="number-fields-and-undo">Number fields and undo</h4>
+<p>Since 1.27 every number field you can drag — the Inspector's <strong>Position</strong> / <strong>Rotation</strong> / <strong>Scale</strong> and its other
+values, shader-node vectors, and the <a href="../animation/">Animation window</a>'s length, speed, fps, step and key fields — works
+the same way with undo:</p>
+<ul>
+<li><strong>One drag is one undo step.</strong> However far you scrub, one <kbd>Ctrl</kbd>+<kbd>Z</kbd> puts the value back where the
+  drag started. (Before, a shader vector took two, and the Animation window's length, fps and step took one per pixel
+  moved.)</li>
+<li><strong>One typed edit is one undo step.</strong> Click a field, type a value (it applies as you type) and press <kbd>Enter</kbd>:
+  that is one step, even if you paused between keys.</li>
+<li><strong><kbd>Esc</kbd> cancels typing.</strong> It puts back the value the field had before you started, as it already did for
+  arrow-key steps, and leaves nothing on the undo stack.</li>
+<li><strong>Undo shows at once.</strong> After <kbd>Ctrl</kbd>+<kbd>Z</kbd> the Position / Rotation / Scale rows show the restored
+  numbers straight away — before, they kept the old number until you clicked something, and dragging from it made the
+  object jump.</li>
+<li>The Animation window's playback <strong>Speed</strong> is undoable now too.</li>
+<li><strong>Selecting a shader node is not an edit.</strong> Clicking a node in the <a href="../shader-graph/">Shader editor</a> selects it on your
+  screen only: it adds no undo step and is not sent to the other people in the session.</li>
+</ul>
 <h3 id="text-selection">Text selection</h3>
 <p>Dragging across a menu, a toolbar or a panel does not paint a text selection, and a drag that starts in the 3D view or
 the node editor never selects text. Text fields, code, chat, logs and help text stay selectable as usual.
@@ -5165,7 +5256,7 @@ places keys belong to.</p>
 <p><strong>Empty viewport</strong> — a quick right-click opens the scene menu:</p>
 <ul>
 <li><strong>Search objects…</strong> — find an object in the scene by name (off by default: <strong>Settings ▸ Interface ▸ Lists &amp; menus ▸ Object search in menu</strong>).</li>
-<li><strong>Add</strong> — the full primitive catalog (meshes, building blocks, cameras, lights, <a href="../water/">water</a>, <a href="../particles/">effects</a>, a <a href="../simulation/#fluid-tank">fluid tank</a>) plus empty groups; objects spawn at the clicked point.</li>
+<li><strong>Add</strong> — the full primitive catalog (meshes, building blocks, <a href="../architecture/">architecture</a> — walls, doors, windows and stairs — cameras, lights, <a href="../water/">water</a>, <a href="../particles/">effects</a>, a <a href="../simulation/#fluid-tank">fluid tank</a>) plus empty groups; objects spawn at the clicked point.</li>
 <li><strong>Undo / Redo</strong>, <strong>Ping here</strong>.</li>
 <li><strong>Selected ▸</strong> — the selected object's own menu (shown only while something is selected).</li>
 <li><strong>Tools</strong> — Node editor, Draw mode (drag 3D strokes on surfaces, or click out an editable <a href="../splines/">spline</a>), Measure distance, Simulate physics (and <em>Reset simulation</em> while one runs), <a href="../recording/">Recording…</a> (a turntable or flythrough video).</li>

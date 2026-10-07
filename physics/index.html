@@ -634,6 +634,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../mesh-editing/" class="md-nav__link">
         
   
@@ -1012,6 +1033,30 @@
       Joints
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Joints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#duplicating-jointed-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duplicating jointed objects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breaking-a-joint-during-a-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breaking a joint during a simulation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2944,6 +2989,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/camerarig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Camera Rig
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/setlook/" class="md-nav__link">
         
   
@@ -4236,6 +4302,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Joints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#duplicating-jointed-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duplicating jointed objects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breaking-a-joint-during-a-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breaking a joint during a simulation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4607,7 +4697,16 @@ fall <strong>into</strong> them instead of landing on top. For a tank of particl
 </tr>
 </tbody>
 </table>
-<p>Joints replicate to everyone, undo as a single step, persist in saved scenes and <code>.tpscene</code> files, and are removed automatically if one of their objects is deleted. Hinges can also be motorized programmatically (for example by the drivable-car module) to spin under power.</p>
+<p>Joints replicate to everyone, undo as a single step, persist in saved scenes and <code>.tpscene</code> files, and are removed automatically if one of their objects is deleted. Hinges can also be motorized programmatically (for example by the drivable-car module) to spin under power, or <a href="../module-sdk/#for-module-authors-joints-and-your-own-physics-world">driven to an angle</a> to steer.</p>
+<h3 id="duplicating-jointed-objects">Duplicating jointed objects</h3>
+<p>Since 1.27, duplicating <strong>both</strong> objects of a joint (select both, <kbd>Ctrl</kbd>+<kbd>D</kbd>) copies the joint onto
+the copies too. Duplicating only one end does not: the copy is a free object, as before. One <kbd>Ctrl</kbd>+<kbd>Z</kbd>
+removes the copied joint, the next one the copies.</p>
+<h3 id="breaking-a-joint-during-a-simulation">Breaking a joint during a simulation</h3>
+<p>Since 1.27 <strong>Detach joints</strong> while a simulation runs breaks the joint for real: the objects come apart at once (before,
+the joint held until you restarted the simulation), sparks fly from where it was attached, and any
+<a href="../particles/#continuous-burst-and-on-impact">particle emitter</a> set to <strong>On impact</strong> on either object fires. Every
+player sees it. Detaching while no simulation runs is quiet.</p>
 <h2 id="how-it-stays-in-sync">How it stays in sync</h2>
 <p>Physics uses an <strong>authoritative</strong> model: the peer who starts the run is the only one stepping the simulation, and it broadcasts the resulting motion. Everyone else just watches.</p>
 <ul>

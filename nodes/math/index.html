@@ -632,6 +632,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../mesh-editing/" class="md-nav__link">
         
   
@@ -1773,6 +1794,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Inputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#more-than-two-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      More than two inputs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2795,6 +2831,27 @@
   
   <span class="md-ellipsis">
     Set Active Camera
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../camerarig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Camera Rig
   </span>
   
 
@@ -3944,6 +4001,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Inputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#more-than-two-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      More than two inputs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4003,7 +4075,7 @@
 
 
 <h1 id="math">Math</h1>
-<p>Combines two numbers with an arithmetic operation, or shapes one (sine, rounding, clamping…).</p>
+<p>Combines numbers with an arithmetic operation — two, or up to eight — or shapes one (sine, rounding, clamping…).</p>
 <p><strong>Output:</strong> number (live result on the card)</p>
 <h2 id="inputs">Inputs</h2>
 <table>
@@ -4025,9 +4097,26 @@
 <td>number</td>
 <td>second operand</td>
 </tr>
+<tr>
+<td>c … h</td>
+<td>number</td>
+<td>extra operands, added with <strong>+ input</strong> (since 1.27)</td>
+</tr>
 </tbody>
 </table>
-<p>Unwired inputs use the values typed on the card.</p>
+<p>Unwired <strong>a</strong> and <strong>b</strong> use the values typed on the card.</p>
+<h3 id="more-than-two-inputs">More than two inputs</h3>
+<p>Since 1.27 Math takes up to eight inputs, named <strong>a</strong> to <strong>h</strong>. Press <strong>+ input</strong> on the card to add a socket, and
+<strong>−</strong> on a row to remove that socket.</p>
+<ul>
+<li>With <code>add</code>, <code>sub</code>, <code>mul</code>, <code>div</code>, <code>min</code> or <code>max</code>, Math combines every wired input left to right: 1 + 2 + 3 + 4 = 10,
+  and 10 − 1 − 2 = 7. The other operations use only <strong>a</strong> and <strong>b</strong>, and the card greys the extra inputs out.</li>
+<li>The extra inputs <strong>c</strong> to <strong>h</strong> have no typed-in value. An input with no wire is skipped, so an empty socket never
+  multiplies your result by zero.</li>
+<li>Removing a socket moves the wires after it down one name: removing <strong>b</strong> turns <strong>c</strong> into <strong>b</strong>, so each wire stays on
+  the same value. One <kbd>Ctrl</kbd>+<kbd>Z</kbd> puts it all back, and <a href="../../node-editor/#groups">groups</a> around the node
+  update their sockets too.</li>
+</ul>
 <h2 id="parameters">Parameters</h2>
 <table>
 <thead>
@@ -4121,7 +4210,7 @@ swing back and forth, wire a <a href="../time/">Time</a> node into <strong>a</st
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-05
+    2026-10-07
   </span>
 
     

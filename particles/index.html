@@ -634,6 +634,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../mesh-editing/" class="md-nav__link">
         
   
@@ -968,8 +989,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#inherit-velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherit velocity
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-particles-are-drawn" class="md-nav__link">
+    <span class="md-ellipsis">
+      How particles are drawn
+    </span>
+  </a>
   
 </li>
       
@@ -2860,6 +2899,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/camerarig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Camera Rig
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/setlook/" class="md-nav__link">
         
   
@@ -4065,8 +4125,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#inherit-velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inherit velocity
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-particles-are-drawn" class="md-nav__link">
+    <span class="md-ellipsis">
+      How particles are drawn
+    </span>
+  </a>
   
 </li>
       
@@ -4154,7 +4232,7 @@
 </tr>
 <tr>
 <td><strong>Sparks</strong></td>
-<td>fast bright streaks that arc and die</td>
+<td>fast bright streaks that arc and die — since 1.27 drawn <a href="#how-particles-are-drawn">stretched along their motion</a>, and thrown along by a moving emitter</td>
 <td>burst</td>
 </tr>
 <tr>
@@ -4167,11 +4245,22 @@
 <td>flakes drifting down over an 8 × 8 m area, settling and fading on the ground</td>
 <td>continuous</td>
 </tr>
+<tr>
+<td><strong>Ribbon trail</strong></td>
+<td>one glowing band behind a moving object — a sword swish, a comet tail (since 1.27)</td>
+<td>continuous</td>
+</tr>
+<tr>
+<td><strong>Magic wisps</strong></td>
+<td>trails that curl off a moving object (since 1.27)</td>
+<td>continuous</td>
+</tr>
 </tbody>
 </table>
 <p><strong>Rain</strong> and <strong>Snow</strong> (1.22) are weather: <strong>Add ▸ Effects ▸ Rain</strong> places the emitter up at cloud height, and the drops fall
 about 6 m to the ground below it, drifting with a little wind. Pair them with <a href="../water/">Water</a> for a storm over the sea.</p>
-<p>A preset is just a starting point — every value below is editable afterwards.</p>
+<p>A preset is just a starting point — every value below is editable afterwards. A Sparks emitter added before 1.27 keeps
+its old look.</p>
 <h2 id="continuous-burst-and-on-impact">Continuous, burst, and on-impact</h2>
 <ul>
 <li><strong>Continuous</strong> emitters (Sparkles, Fire, Smoke) emit forever.</li>
@@ -4249,6 +4338,11 @@ about 6 m to the ground below it, drifting with a little wind. Pair them with <a
 <td>start → end gradient over life</td>
 </tr>
 <tr>
+<td><strong>Draw as</strong></td>
+<td>Sprites · Stretch · Trails · Ribbon</td>
+<td>how each particle is drawn — see <a href="#how-particles-are-drawn">below</a></td>
+</tr>
+<tr>
 <td><strong>Sprite</strong></td>
 <td>dot · streak · puff · star · confetti</td>
 <td>the particle shape</td>
@@ -4263,6 +4357,11 @@ about 6 m to the ground below it, drifting with a little wind. Pair them with <a
 <td>local · world</td>
 <td>see below</td>
 </tr>
+<tr>
+<td><strong>Inherit velocity</strong></td>
+<td>0 – 1</td>
+<td>World space only — see <a href="#inherit-velocity">below</a></td>
+</tr>
 </tbody>
 </table>
 <div class="admonition note">
@@ -4274,8 +4373,54 @@ about 6 m to the ground below it, drifting with a little wind. Pair them with <a
 <li><strong>Local</strong> — particles ride along with the object. Best for auras, fire on a moving torch, sparkles on a pickup.</li>
 <li><strong>World</strong> — particles keep the spot they were born and the object trails away from them. Best for smoke plumes and debris.</li>
 </ul>
+<h3 id="inherit-velocity">Inherit velocity</h3>
+<p>In <strong>World</strong> space, <strong>Inherit velocity</strong> sets how much of the emitter's own speed a particle keeps when it is born. At 0
+(the default) particles stay where they were born; at 1 they are thrown along with the moving object — exhaust off a
+car, sparks off a swung sword.</p>
+<h2 id="how-particles-are-drawn">How particles are drawn</h2>
+<p>Since 1.27 <strong>Inspector ▸ Particles ▸ Draw as</strong> draws the particles one of four ways. The particles move exactly the
+same in every mode; only the shape on screen changes.</p>
+<p><img alt="Draw as set to Trails, with the Trail length, Segments and Inherit velocity rows" src="../img/particles/draw-as.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Draw as</th>
+<th>What you see</th>
+<th>Its rows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sprites</strong> (the default)</td>
+<td>one image per particle, as before</td>
+<td><strong>Sprite</strong></td>
+</tr>
+<tr>
+<td><strong>Stretch</strong></td>
+<td>each particle is a streak pointing the way it moves: fast particles are long, slow ones round. The <strong>Sparks</strong> preset uses it</td>
+<td><strong>Stretch</strong> — the seconds of motion each streak covers (0.005–0.3)</td>
+</tr>
+<tr>
+<td><strong>Trails</strong></td>
+<td>every particle leaves a fading band behind it</td>
+<td><strong>Trail length</strong> (seconds), <strong>Segments</strong> (2–16; more give smoother curves)</td>
+</tr>
+<tr>
+<td><strong>Ribbon</strong></td>
+<td><strong>one</strong> band joining the particles in the order they were born. In <strong>World</strong> space that is the path the emitter took — a sword swish, a comet tail, a car's tail light. The <strong>Ribbon trail</strong> preset is set up for it</td>
+<td>none: the width runs from <strong>Size start</strong> to <strong>Size end</strong>, and the band fades out as its particles do</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>A ribbon needs <strong>Continuous</strong> emission: a burst is born all at once, so it has no order. On a burst emitter a ribbon is
+  drawn as trails, and the Inspector says so.</li>
+<li>In <strong>Local</strong> space a ribbon rides along with the object; switch <strong>Space</strong> to <strong>World</strong> for a trail that stays behind it.</li>
+</ul>
+<p><img alt="The Magic wisps preset: purple trails curling off a moving cube" src="../img/particles/wisps-trails.png" /></p>
 <h2 id="caps">Caps</h2>
-<p>To keep framerates high, up to <strong>8 emitters</strong> render at once (500 particles each; fewer in VR). Extra emitters beyond the cap are skipped with a toast. Particles are hidden in <strong>Wireframe</strong> view mode.</p>
+<p>To keep framerates high, up to <strong>8 emitters</strong> render at once (500 particles each; in VR at most 200 per emitter in every
+<strong>Draw as</strong> mode, trails and ribbons included). Extra emitters beyond the cap are skipped with a toast. Particles are hidden in <strong>Wireframe</strong> view mode.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>For fully flow-driven effects — emission wired to a slider, colour from a picker, or a burst fired by a click or key — use the <a href="../nodes/particle/">Particles node</a> in the node editor instead of the Inspector.</p>
@@ -4300,7 +4445,7 @@ about 6 m to the ground below it, drifting with a little wind. Pair them with <a
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-05
+    2026-10-07
   </span>
 
     

@@ -632,6 +632,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../mesh-editing/" class="md-nav__link">
         
   
@@ -2725,6 +2746,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/camerarig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Camera Rig
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/setlook/" class="md-nav__link">
         
   
@@ -3852,6 +3894,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#from-the-browse-gallery" class="md-nav__link">
+    <span class="md-ellipsis">
+      From the Browse gallery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="From the Browse gallery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#drivable-car" class="md-nav__link">
+    <span class="md-ellipsis">
+      Drivable Car
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blocks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sdk-writing-a-module" class="md-nav__link">
     <span class="md-ellipsis">
       SDK — writing a module
@@ -3987,6 +4062,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#from-the-browse-gallery" class="md-nav__link">
+    <span class="md-ellipsis">
+      From the Browse gallery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="From the Browse gallery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#drivable-car" class="md-nav__link">
+    <span class="md-ellipsis">
+      Drivable Car
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blocks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sdk-writing-a-module" class="md-nav__link">
     <span class="md-ellipsis">
       SDK — writing a module
@@ -4070,6 +4178,19 @@ including what survives a reload and the gotchas, is in the modules repo's
 <p class="admonition-title">Trust model</p>
 <p>Installing a module means running its code in your session, with your peer connections. There is no sandbox. Install only from sources you trust.</p>
 </div>
+<h2 id="from-the-browse-gallery">From the Browse gallery</h2>
+<p>A few of the gallery's modules, in <strong>Menu ▸ Modules ▸ Browse</strong>:</p>
+<h3 id="drivable-car">Drivable Car</h3>
+<p>A demo car you spawn from its card. Click its body in <strong>Interact</strong> (<kbd>I</kbd>) to claim it, then drive with
+<kbd>W</kbd>/<kbd>S</kbd> and <kbd>A</kbd>/<kbd>D</kbd> in <strong>Play</strong> while a <a href="../physics/">simulation</a> runs. Since version
+1.3.0 it <strong>steers with its front wheels</strong> like a real car — each front wheel turns on a knuckle, about 31° each way —
+instead of tank-steering by spinning one side faster. On an app older than 1.27 it keeps the old tank steering.</p>
+<h3 id="blocks">Blocks</h3>
+<p>A performance showcase, new in 1.27 (it needs app 1.27). <strong>Blocks: drop 100 blocks</strong>, a button on the module's card,
+drops a hundred blocks that tumble and pile up on the ground and on whatever is in your scene — select an object first to
+drop them on it. All 100 are drawn in <strong>one draw call</strong>. <strong>Blocks: clear</strong> removes them for everyone.</p>
+<p>Every player sees the same drop, but each computer simulates the pile itself, so the piles agree closely but not to the
+millimetre: the blocks are decoration, not game pieces.</p>
 <h2 id="sdk-writing-a-module">SDK — writing a module</h2>
 <p>A module is one default export with a <code>register(api)</code> call:</p>
 <div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="p">{</span>
@@ -4200,7 +4321,7 @@ including what survives a reload and the gotchas, is in the modules repo's
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-03
+    2026-10-07
   </span>
 
     

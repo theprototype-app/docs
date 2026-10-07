@@ -699,6 +699,27 @@
   
   
     <li class="md-nav__item">
+      <a href="architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="mesh-editing/" class="md-nav__link">
         
   
@@ -2792,6 +2813,27 @@
   
   
     <li class="md-nav__item">
+      <a href="nodes/camerarig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Camera Rig
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="nodes/setlook/" class="md-nav__link">
         
   
@@ -3989,6 +4031,24 @@ on a phone that gives the scene the whole height of the screen.</p>
 <a href="https://github.com/theprototype-app/core">github.com/theprototype-app/core</a> (also <strong>Settings ▸ About ▸ Source Code</strong>),
 with a contributing guide and an <code>llms.txt</code> for coding agents.</p>
 <h2 id="whats-new">What's new</h2>
+<p><strong>1.27 — world + nodes: sky images, architecture, smarter nodes, particles that trail.</strong> A <a href="camera/#sky-images-hdri">sky
+image</a> (an HDRI) can now be the scene's sky and its light: objects take its colours, shiny
+ones reflect it, water mirrors its clouds and the sun sits where the photo's sun is. Pick <strong>Clear sky</strong>, <strong>Meadow</strong>,
+<strong>Sunrise</strong>, <strong>Starlight</strong> or <strong>Photo studio</strong>, or upload your own <code>.hdr</code> / <code>.exr</code>, with Rotation, Image light, Sky blur
+and Tone mapping, and a <a href="camera/#sky-image-quality">quality setting</a> for headsets. <strong>Add ▸
+<a href="architecture/">Architecture</a></strong> builds walls with doorways and windows, doors and casement windows that open in
+Interact and Play for everyone, and straight, L, U and spiral stairs, every number editable in the Inspector.
+<a href="nodes/math/#more-than-two-inputs">Math</a> and <a href="nodes/gate/#more-than-two-inputs">Gate</a> take up to eight inputs, the
+<a href="nodes/switcher/#switching-values">Switcher</a> passes on the value wired into the selected item, and the new <a href="nodes/camerarig/">Camera
+Rig</a> node makes a camera object follow or watch something. Particles can be <a href="particles/#how-particles-are-drawn">drawn as streaks,
+trails or a ribbon</a> and <a href="particles/#inherit-velocity">inherit the emitter's
+speed</a>, with new <strong>Ribbon trail</strong> and <strong>Magic wisps</strong> presets. <a href="physics/#duplicating-jointed-objects">Duplicating both
+ends of a joint</a> copies the joint, and <a href="physics/#breaking-a-joint-during-a-simulation">detaching one during a
+run</a> breaks it with sparks. The <a href="modules/#drivable-car">Drivable Car</a>
+steers with its front wheels, <a href="modules/#blocks">Blocks</a> drops a hundred blocks in one draw call, and modules get
+<a href="module-sdk/#for-module-authors-joints-and-your-own-physics-world">angle motors, joint limits and their own physics world</a>.
+Every <a href="controls/#number-fields-and-undo">number field</a> is one undo step per drag or typed edit, <kbd>Esc</kbd> cancels
+typing, and on theprototype.app <a href="community/#whats-new-on-theprototypeapp">What's New</a> opens with the cloud's own news.</p>
 <p><strong>1.26 — editor productivity: edit many at once, prefabs that update, material presets, a new Settings.</strong> With
 several objects selected, the <a href="controls/#editing-a-multi-selection">Inspector edits them all</a>: rows that differ show a
 dash, setting one sets every object, and one <kbd>Ctrl</kbd>+<kbd>Z</kbd> puts each back to its own value — lights and
@@ -4157,6 +4217,7 @@ for your machine <a href="performance/">reduces quality or pauses instead of fre
 <li><a href="packs/">Packs</a> — ready-made model and audio collections you can browse and import.</li>
 <li><a href="prefabs/">Prefabs</a> — save any object as a reusable asset, update every placed copy, sort them into folders and tags.</li>
 <li><a href="materials/">Material Presets</a> — named surface looks, seven built in, saved and shared with your session.</li>
+<li><a href="architecture/">Architecture</a> — walls with doorways and windows, doors that open, and stairs, all from numbers you can change.</li>
 <li><a href="mesh-editing/">Mesh Editing</a> — vertices, edges and faces: extrude, bevel, knife, loops and mirroring.</li>
 <li><a href="snapping/">Snapping</a> — line things up: grid steps, surfaces, and snapping onto real geometry.</li>
 <li><a href="uv-editor/">UV &amp; Textures</a> — unwrap a model, paint on it, and give parts of it their own materials.</li>
@@ -4164,7 +4225,7 @@ for your machine <a href="performance/">reduces quality or pauses instead of fre
 <li><a href="animation/">Animation</a> — keyframe clips with a timeline, curves, markers and onion skin.</li>
 <li><a href="physics/">Physics &amp; Simulation</a> — mass, joints, dropping and throwing objects.</li>
 <li><a href="colliders/">Colliders</a> — collider shapes, exact meshes, decomposition, collision groups and sensors.</li>
-<li><a href="particles/">Particle Effects</a> — dust, smoke, fire, sparkles, rain and snow.</li>
+<li><a href="particles/">Particle Effects</a> — dust, smoke, fire, sparkles, rain and snow, drawn as sprites, streaks, trails or ribbons.</li>
 <li><a href="water/">Water</a> — tanks, pools, oceans and lava with waves, refraction, caustics, foam and bubbles.</li>
 <li><a href="simulation/">Fluid Tank &amp; Jiggle</a> — particle liquid you can pour, and springy secondary motion.</li>
 <li><a href="fluids/">Fluids</a> — particle water poured into the scene, rivers, chutes and pipes, and wheels that turn it.</li>
@@ -4173,7 +4234,7 @@ for your machine <a href="performance/">reduces quality or pauses instead of fre
 </ul>
 <p><strong>The scene</strong></p>
 <ul>
-<li><a href="camera/">Camera &amp; View</a> — lens presets, render modes, shadows, the grid and environment.</li>
+<li><a href="camera/">Camera &amp; View</a> — lens presets, render modes, shadows, the grid, the environment and sky images.</li>
 <li><a href="notifications/">Notifications &amp; Notes</a> — the notification center, scene notes and pinging.</li>
 <li><a href="audio/">Music &amp; Sound</a> — shared background music, spatial sound and voice chat.</li>
 </ul>

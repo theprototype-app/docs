@@ -632,6 +632,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../mesh-editing/" class="md-nav__link">
         
   
@@ -1189,6 +1210,39 @@
       Environment presets
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sky-images-hdri" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sky images (HDRI)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sky images (HDRI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sky-image-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sky image quality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limits
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2872,6 +2926,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/camerarig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Camera Rig
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/setlook/" class="md-nav__link">
         
   
@@ -4071,6 +4146,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sky-images-hdri" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sky images (HDRI)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sky images (HDRI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sky-image-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sky image quality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limits
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#lights" class="md-nav__link">
     <span class="md-ellipsis">
       Lights
@@ -4131,7 +4239,7 @@
 <h2 id="opening-configure-scene">Opening Configure Scene</h2>
 <p>Click <strong>🎛️ Configure Scene</strong> in the sidebar menu. It opens a panel on the right with these sections:</p>
 <ul>
-<li><strong>Environment</strong> — lighting preset, exposure, saved presets (shared).</li>
+<li><strong>Environment</strong> — lighting preset, exposure, <a href="#sky-images-hdri">sky image</a>, saved presets (shared).</li>
 <li><strong>Music</strong> — the shared background track and your local volume (see <a href="../audio/">Music &amp; Sound</a>).</li>
 <li><strong>View</strong> — render mode, camera lens, clip planes (your device only).</li>
 <li><strong>Background</strong> and <strong>Fog</strong> (shared).</li>
@@ -4242,7 +4350,8 @@ everyone; previewing and the frustum lines are yours alone. The object's right-c
 <p><strong>Picture-in-picture.</strong> While a camera is selected, a small window shows what it sees, live. <strong>⤢</strong> looks through it full
 screen, <strong>✕</strong> hides the window (the <em>Preview window while selected</em> row brings it back), and right-drag moves it.</p>
 <p>A game uses cameras through the <a href="../nodes/setcamera/">Set Active Camera</a> node, the <a href="../nodes/gamestart/">Game Start</a> node's
-camera, and <a href="../nodes/setlook/">Set Look</a> for each camera's own <a href="../post-processing/">look</a>.</p>
+camera, <a href="../nodes/setlook/">Set Look</a> for each camera's own <a href="../post-processing/">look</a>, and since 1.27 the
+<a href="../nodes/camerarig/">Camera Rig</a> node, which makes a camera follow or watch an object.</p>
 <h2 id="camera-lens">Camera lens</h2>
 <p>The default camera is a <strong>40° field of view</strong> — a natural, product-viz look with real depth and little wide-angle distortion. You can change it under <strong>Camera lens</strong>:</p>
 <p><strong>Lens presets</strong> (labelled by their full-frame focal-length equivalent):</p>
@@ -4319,9 +4428,129 @@ camera, and <a href="../nodes/setlook/">Set Look</a> for each camera's own <a hr
 </tr>
 </tbody>
 </table>
+<p>Since 1.27 five more chips — <strong>Clear sky</strong>, <strong>Meadow</strong>, <strong>Sunrise</strong>, <strong>Starlight</strong> and <strong>Photo studio</strong> — use a real sky
+photo; see <a href="#sky-images-hdri">Sky images</a>.</p>
 <p>An <strong>Exposure</strong> slider tunes overall brightness. The lit presets add a sun that casts shadows, with a shadow-catcher disc under the scene so shadows land even on the infinite grid.</p>
 <p>Environment is a <strong>shared, latest-wins</strong> setting — the most recent change wins for everyone. You can also <strong>save</strong>, <strong>export</strong> and <strong>import</strong> custom presets (stored locally), and adopt presets other peers have shared.</p>
 <p>Below Environment, <strong>Background</strong> sets the clear color and <strong>Fog</strong> adds distance fog (color + near/far), both shared. A fog you set by hand keeps exactly the near and far you typed; a preset's fog still grows with a big scene.</p>
+<h2 id="sky-images-hdri">Sky images (HDRI)</h2>
+<p>Since 1.27 a sky image — an HDRI, a 360° photo that keeps the real brightness of the sun and the sky — can be the
+scene's sky <strong>and</strong> its light. Every object picks up the image's colours and brightness, shiny objects reflect it, and
+<a href="../water/">water</a> mirrors the real clouds. The scene's sun is placed where the photo's sun is, so shadows agree with the
+sky.</p>
+<p><img alt="A mirror sphere and a box lit by the Meadow sky image" src="../img/camera/sky-meadow.png" /></p>
+<p>It lives in <strong>Configure Scene ▸ Environment ▸ Sky image (HDRI)</strong>, under the preset chips and the Exposure slider. Click
+a card to switch to that sky; like every Environment setting, everyone in the session sees it.</p>
+<table>
+<thead>
+<tr>
+<th>Sky</th>
+<th>What it looks like</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Clear sky</strong></td>
+<td>open blue sky with clouds, haze on the horizon</td>
+</tr>
+<tr>
+<td><strong>Meadow</strong></td>
+<td>a sunny meadow with trees</td>
+</tr>
+<tr>
+<td><strong>Sunrise</strong></td>
+<td>a low warm sun and long shadows</td>
+</tr>
+<tr>
+<td><strong>Starlight</strong></td>
+<td>dusk under the stars</td>
+</tr>
+<tr>
+<td><strong>Photo studio</strong></td>
+<td>softbox lighting over a plain grey backdrop — light only; reflections show the studio</td>
+</tr>
+</tbody>
+</table>
+<p>The five skies are also preset chips, and in VR they are in the radial menu's <strong>Scene ▸ Environment</strong>. All five are CC0
+images from <a href="https://polyhaven.com">Poly Haven</a>.</p>
+<p><img alt="Configure Scene ▸ Environment with the Sky image section: the sky cards, Upload HDRI…, Rotation, Image light, Show as sky, Sky blur and Tone mapping" src="../img/camera/sky-image-section.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Row</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Upload HDRI…</strong></td>
+<td>use your own equirectangular <code>.hdr</code> or <code>.exr</code> file (up to 25 MB; 1k–2k is plenty). It is added to the <a href="../explorer/">Explorer</a>, your peers download it from you automatically, and it is saved inside <code>.tpscene</code> files and exports</td>
+</tr>
+<tr>
+<td><strong>Rotation</strong></td>
+<td>turns the sky; the sun and its shadows turn with it</td>
+</tr>
+<tr>
+<td><strong>Image light</strong></td>
+<td>how strongly the image lights objects (the sky itself is unchanged)</td>
+</tr>
+<tr>
+<td><strong>Show as sky</strong></td>
+<td>off keeps the image's light and reflections but shows the colour sky instead</td>
+</tr>
+<tr>
+<td><strong>Sky blur</strong></td>
+<td>softens the background — handy behind a product shot</td>
+</tr>
+<tr>
+<td><strong>Tone mapping</strong></td>
+<td><strong>ACES Filmic</strong> (the default), <strong>AgX</strong> or <strong>Neutral</strong>: how the bright image is fitted to the screen</td>
+</tr>
+<tr>
+<td><strong>None</strong> (the first card)</td>
+<td>back to the colour sky and the light rig</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exposure</strong>, above the cards, brightens or darkens the whole picture, and while a sky image shows it works on the
+desktop whatever else is on. Editing any of these turns the preset into <em>Custom</em>, like any other sky edit; <strong>Save
+preset</strong> keeps it.</p>
+<p>A short tour points at the cards the first time you see them (<strong>Settings ▸ Interface ▸ Tours ▸ Reset all</strong> shows it
+again).</p>
+<h3 id="sky-image-quality">Sky image quality</h3>
+<p>How sharp the sky and its reflections are is a setting for <strong>this device only</strong> — <strong>Settings ▸ Scene ▸ Performance ▸
+Sky image quality</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Choice</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Auto</strong> (the default)</td>
+<td><strong>Low</strong> in a headset, in VR, or once the scene is too heavy for effects; <strong>Full</strong> otherwise</td>
+</tr>
+<tr>
+<td><strong>Full (1k)</strong></td>
+<td>prepares the image at 1024 px</td>
+</tr>
+<tr>
+<td><strong>Low (headset)</strong></td>
+<td>prepares it at 512 px — a quarter of the memory</td>
+</tr>
+</tbody>
+</table>
+<p>The scene and your peers are unaffected.</p>
+<h3 id="limits">Limits</h3>
+<ul>
+<li>Only equirectangular images (twice as wide as they are tall); cube-map files are not supported. An <code>.exr</code> must be RGB
+  or RGBA.</li>
+<li>Files over 25 MB are refused — your peers could not receive them.</li>
+<li>Someone on an app older than 1.27 in the same session sees the preset's flat colours instead of the image.</li>
+<li>A <a href="../post-processing/">scene look</a> with its own <a href="../post-processing/#tone-mapping">Tone mapping</a> effect keeps its own curve.</li>
+</ul>
 <h2 id="lights">Lights</h2>
 <p>A <strong>directional</strong> or <strong>spot</strong> light shines where it points. Turn it with the rotate gizmo — or type into the rotation rows — and the beam and its shadow follow, the way a light behaves in any 3D tool. Older scenes that aimed a spot at a saved point load aimed the same way.</p>
 <p><strong>Aim at</strong>, in the Properties panel's Light section, points the light once at a spot: type a world <strong>X / Y / Z</strong>, or press <strong>Pick in viewport</strong> and click a surface (<kbd>Esc</kbd> cancels). It writes the rotation, so the gizmo and the rows agree afterwards.</p>

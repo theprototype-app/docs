@@ -632,6 +632,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../mesh-editing/" class="md-nav__link">
         
   
@@ -1485,6 +1506,15 @@
   <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
       Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switching-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switching values
     </span>
   </a>
   
@@ -2796,6 +2826,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../camerarig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Camera Rig
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../setlook/" class="md-nav__link">
         
   
@@ -3941,6 +3992,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#switching-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switching values
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#practical-example" class="md-nav__link">
     <span class="md-ellipsis">
       Practical example
@@ -3973,10 +4033,53 @@
 
 
 <h1 id="switcher">Switcher</h1>
-<p>A radio-button list that outputs the <strong>index</strong> of the selected item — a hand-operated multi-way switch.</p>
-<p><strong>Output:</strong> number (the selected item's index: 0, 1, 2…)</p>
+<p>A radio-button list that outputs the <strong>index</strong> of the selected item — a hand-operated multi-way switch. Since 1.27
+it is also a multi-way switch for <strong>values</strong>: each item has its own input, and the <strong>value</strong> output passes on whatever is
+wired into the selected item.</p>
+<p><strong>Outputs:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Output</th>
+<th>Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(plain)</td>
+<td>number</td>
+<td>the selected item's index: 0, 1, 2…</td>
+</tr>
+<tr>
+<td>value</td>
+<td>the <strong>Inputs carry</strong> type</td>
+<td>whatever is wired into the selected item's input</td>
+</tr>
+</tbody>
+</table>
 <h2 id="inputs">Inputs</h2>
-<p>None.</p>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index</td>
+<td>number</td>
+<td>chooses the item from the graph; a wired index overrides the radio buttons</td>
+</tr>
+<tr>
+<td>one per item</td>
+<td>the <strong>Inputs carry</strong> type</td>
+<td>the value passed on while that item is selected</td>
+</tr>
+</tbody>
+</table>
 <h2 id="parameters">Parameters</h2>
 <table>
 <thead>
@@ -3993,14 +4096,30 @@
 <td>ⓘ Params tab — edit, add (<strong>＋ Add item</strong>) or remove entries</td>
 </tr>
 <tr>
+<td>Inputs carry</td>
+<td>number</td>
+<td>ⓘ Params tab — number, boolean, vector3, color or object</td>
+</tr>
+<tr>
 <td>selection</td>
 <td>first item</td>
 <td>radio buttons on the card</td>
 </tr>
 </tbody>
 </table>
+<h2 id="switching-values">Switching values</h2>
+<p>Pick an item with its radio button, or wire a number into <strong>index</strong> to choose from the graph. The <strong>value</strong> output then
+passes on the selected item's input — a speed, a colour, a target object.</p>
+<ul>
+<li>The plain output is still the selected index, so graphs made before 1.27 keep working unchanged.</li>
+<li>Removing an item in the ⓘ tab keeps the other wires on their items.</li>
+<li>Changing <strong>Inputs carry</strong> removes the wires the new type cannot accept, and a toast says how many.
+  <kbd>Ctrl</kbd>+<kbd>Z</kbd> brings them back.</li>
+</ul>
 <h2 id="practical-example">Practical example</h2>
-<p>Build a two-speed fan switch:</p>
+<p>Build a two-speed fan switch. Since 1.27 the shortest way is the <strong>value</strong> output: rename the items to <code>slow</code> and
+<code>fast</code>, wire a <strong>Number</strong> of 0.5 into the <code>slow</code> input and one of 4 into <code>fast</code>, and wire <strong>value</strong> → a <strong>Spin</strong> node's
+<strong>speed</strong> (Spin → an <strong>Object Selector</strong> targeting the fan, as below). The classic way, with the index and a <a href="../select/">Select</a> node, still works:</p>
 <ol>
 <li>Add a <strong>Switcher</strong> and rename its items to <code>slow</code>, <code>fast</code> (ⓘ tab).</li>
 <li>Add a <strong>Select</strong> node; wire Switcher → Select's <strong>index</strong> input.</li>
@@ -4032,7 +4151,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-07-16
+    2026-10-07
   </span>
 
     
