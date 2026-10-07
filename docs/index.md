@@ -24,7 +24,7 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
-**@@VER@@ — editor productivity: edit many at once, prefabs that update, material presets, a new Settings.** With
+**1.26 — editor productivity: edit many at once, prefabs that update, material presets, a new Settings.** With
 several objects selected, the [Inspector edits them all](controls.md#editing-a-multi-selection): rows that differ show a
 dash, setting one sets every object, and one <kbd>Ctrl</kbd>+<kbd>Z</kbd> puts each back to its own value — lights and
 the visibility and shadow flags included. The [pivot point](controls.md#the-pivot-of-a-multi-selection) (Median, Active,

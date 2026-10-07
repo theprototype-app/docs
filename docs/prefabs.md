@@ -34,7 +34,7 @@ ordinary file, which you can then [share with the session](explorer.md#sharing-w
 - Or right-click it ▸ **Add to scene**.
 
 Every placed copy gets fresh identities, replicates to all connected peers like any created object, and is undoable.
-Since @@VER@@ a copy placed from your prefab library — dragged from the Explorer's Prefabs tab, **Add to scene**, or the VR
+Since 1.26 a copy placed from your prefab library — dragged from the Explorer's Prefabs tab, **Add to scene**, or the VR
 prefab panel — also **remembers which prefab it came from**, so a later edit of the prefab can reach it (see
 [Updating every copy](#updating-every-copy)). A copy is still yours to change: what you change on it is kept.
 
@@ -83,7 +83,7 @@ update brings graph changes along (a copy whose graph you edited keeps yours). I
 ### Limits
 
 - A material counts as one change: if you recoloured a copy, an update keeps that copy's whole material.
-- A copy placed before @@VER@@ is not linked — place it again to link it.
+- A copy placed before 1.26 is not linked — place it again to link it.
 - If a copy was placed from a version older than the last 8 the library keeps, its own changes cannot be told apart,
   and the update keeps nothing as an override.
 

@@ -535,7 +535,7 @@ own through `registerStateSync`.
 
 ## For module authors: pointer, camera, play mode and VR seat
 
-New in @@VER@@ — the hooks [Race](race.md) uses to drive on a phone and in a headset, open to every module. Each is torn
+New in 1.26 — the hooks [Race](race.md) uses to drive on a phone and in a headset, open to every module. Each is torn
 down with the module; feature-detect each one (`api.vrSeat?.(…)`) to stay compatible with older apps.
 
 ```js

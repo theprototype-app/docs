@@ -61,7 +61,7 @@ one extra draw call per idle character, none while awake.
 
 ## Feet on the ground
 
-Since @@VER@@ characters stand on the floor in Play. (Before, a walking player sank about 0.9 m into the ground on everyone
+Since 1.26 characters stand on the floor in Play. (Before, a walking player sank about 0.9 m into the ground on everyone
 else's screen.)
 
 - A walking player tells the others where their feet are, so the character stands on the same floor — steps and raised

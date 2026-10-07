@@ -113,7 +113,7 @@ register(api) {
 - `pointer: 'press' | 'tap'` makes a button a primary click at the crosshair (held, or a single tap).
 - `onPress` / `onRelease` run **on this peer only**; send your own message if others must know.
 - A second call replaces your set; everything is removed when the module unloads.
-- `preset: 'drive'` (since @@VER@@) is the vehicle layout: the stick steers, there is no look drag, and the pedals sit
+- `preset: 'drive'` (since 1.26) is the vehicle layout: the stick steers, there is no look drag, and the pedals sit
   under the right thumb. A stick the module declared stays live under its own `claimInput('keys')`.
 - `api.input().touch` reads the on-screen move stick as `{x, y}` from -1 to 1 (up is -y).
 - Feature-detect (`api.input?.actions?.(…)`) to stay compatible with older cores.

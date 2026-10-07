@@ -222,7 +222,7 @@ panel says **Editing N objects**, and every row applies to all of them.
 - **Setting a dashed row sets every object** to the new value — type into a dashed Roughness, tick an in-between
   **Cast shadow**, pick any entry in a dashed list.
 - **One edit is one undo step** for the whole selection, and <kbd>Ctrl</kbd>+<kbd>Z</kbd> puts each object back to
-  *its own* previous value. Since @@VER@@ **Visible**, **Cast / Receive shadow**, **Render order**, **Frustum culled** and
+  *its own* previous value. Since 1.26 **Visible**, **Cast / Receive shadow**, **Render order**, **Frustum culled** and
   every **Light** row (colour, intensity, distance, decay, angle, penumbra, shadow bias / softness / map size) undo too.
 - **Several lights** selected together are edited together; a row only some light types have (a spot light's
   **Angle**) reaches the lights that have it.
@@ -381,7 +381,7 @@ game to its menu and starts from the Start screen. See [Build a Game Loop](build
 ## The Settings window
 
 **Settings** (logo menu ▸ Settings) is a window with a grouped menu of categories on the left — on a phone, a list you
-tap into — a search box in the header, and one row per setting. Changes save as you make them. Since @@VER@@ it has its
+tap into — a search box in the header, and one row per setting. Changes save as you make them. Since 1.26 it has its
 own page: see [Settings](settings.md).
 
 ## Keyboard shortcuts

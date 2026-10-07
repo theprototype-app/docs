@@ -137,7 +137,7 @@ A module can override these for its own world by publishing them on its scene gr
 
 ### Flying
 
-Since @@VER@@ players **walk** in Play unless the game allows flying. (Before, every scene without *Keep players on the
+Since 1.26 players **walk** in Play unless the game allows flying. (Before, every scene without *Keep players on the
 ground* ticked flew on a desktop.) **Configure Scene ▸ Physics ▸ Play mode ▸ Flying**:
 
 | Choice | What it means |

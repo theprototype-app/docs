@@ -4,7 +4,7 @@
 VR, AI and the connection. Open it from the **logo menu ▸ Settings**, or follow a link that names a page — the Connect
 drawer's *Connection settings*, the HUD's AI button, a VR edit-limit toast — and it opens on that page.
 
-Since @@VER@@ Settings has a new layout. No setting was lost or changed meaning: every switch keeps the value it had.
+Since 1.26 Settings has a new layout. No setting was lost or changed meaning: every switch keeps the value it had.
 
 ![Settings on a computer: the grouped menu on the left, the Interface page with its Appearance rows](img/settings/interface-desktop.png)
 

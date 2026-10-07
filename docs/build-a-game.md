@@ -64,7 +64,7 @@ menu gives way to your in-game HUD.
 
 ## 3. A character that walks
 
-By default play mode keeps you on the ground at eye height (since @@VER@@ flying is
+By default play mode keeps you on the ground at eye height (since 1.26 flying is
 [opt-in](physics.md#flying)). For a character that walks, jumps and falls:
 
 1. In the node editor, add **Character ▸ Character Controller**.
