@@ -533,6 +533,48 @@ the scene, keyed by uuid, and `recent` is the last 32 hits in order. It is runti
 state — a late joiner's log starts empty, so a module that needs history keeps its
 own through `registerStateSync`.
 
+## For module authors: joints and your own physics world
+
+New in 1.27 — what the [Drivable Car](modules.md#drivable-car) uses to steer with its front wheels, and
+[Blocks](modules.md#blocks) to run a pile of its own. Feature-detect each (`api.physics.rapier?.()`) to stay compatible
+with older apps.
+
+```js
+// a hinge that only turns ±0.55 rad, whose two objects don't collide with each other,
+// driven to an ANGLE instead of a speed, and that breaks quietly
+const knuckle = api.physics.createJoint('revolute', bodyUuid, wheelUuid, 'y',
+	{ pos: 0, stiffness: 400, damping: 40 },
+	{ limits: [-0.55, 0.55], contacts: false, sparks: false });
+
+// mid-run, on the peer running the simulation: steer
+api.physics.setJointMotorPosition(knuckle.id, 0.3);
+
+// the physics engine itself, for a world of your own
+const RAPIER = await api.physics.rapier();
+```
+
+| Call | What it does |
+|---|---|
+| `createJoint(kind, a, b, axis, motor, opts)` | `motor` may be `{vel, maxForce}` (a speed, as before) or, since 1.27, `{pos, stiffness, damping}` — an angle in radians the hinge is driven to (stiffness 400 and damping 40 by default). `opts`: `limits: [min, max]` in radians (hinges only), `contacts: false` so the two objects pass through each other, `sparks: false` so [a break during a run](physics.md#breaking-a-joint-during-a-simulation) throws no sparks |
+| `setJointMotorPosition(jointId, angle, stiffness?, damping?)` | drives a hinge to `angle` (radians) mid-run. Like `setJointMotor`, it works only on the peer running the simulation and returns `false` elsewhere — forward your input to that peer |
+| `rapier()` | a promise of the Rapier module (`rapier3d-compat`, already initialised) the app runs. A world you build with it is **yours and local** — never synced, never stepped by the app; free it in `api.onUnload` |
+
+Since 1.27 duplicating both objects of a joint copies the joint, and detaching one during a run breaks it — see
+[Joints](physics.md#joints).
+
+### For cloud plugin authors: a What's New section
+
+The hosted app's plugin can put a section at the top of the What's New window (see
+[What's new on theprototype.app](community.md#whats-new-on-theprototypeapp)):
+
+```js
+cloudApi.setWhatsNewSection({ title: 'theprototype.app cloud', markdown: '### Rooms\n- **Faster** joins' });
+cloudApi.setWhatsNewSection(null);   // removes it
+```
+
+The markdown is a safe subset: headings, bullets, **bold**, `` `code` `` and https links; anything else is shown as
+text.
+
 ## For module authors: pointer, camera, play mode and VR seat
 
 New in 1.26 — the hooks [Race](race.md) uses to drive on a phone and in a headset, open to every module. Each is torn

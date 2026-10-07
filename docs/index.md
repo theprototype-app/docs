@@ -24,6 +24,25 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.27 — world + nodes: sky images, architecture, smarter nodes, particles that trail.** A [sky
+image](camera.md#sky-images-hdri) (an HDRI) can now be the scene's sky and its light: objects take its colours, shiny
+ones reflect it, water mirrors its clouds and the sun sits where the photo's sun is. Pick **Clear sky**, **Meadow**,
+**Sunrise**, **Starlight** or **Photo studio**, or upload your own `.hdr` / `.exr`, with Rotation, Image light, Sky blur
+and Tone mapping, and a [quality setting](camera.md#sky-image-quality) for headsets. **Add ▸
+[Architecture](architecture.md)** builds walls with doorways and windows, doors and casement windows that open in
+Interact and Play for everyone, and straight, L, U and spiral stairs, every number editable in the Inspector.
+[Math](nodes/math.md#more-than-two-inputs) and [Gate](nodes/gate.md#more-than-two-inputs) take up to eight inputs, the
+[Switcher](nodes/switcher.md#switching-values) passes on the value wired into the selected item, and the new [Camera
+Rig](nodes/camerarig.md) node makes a camera object follow or watch something. Particles can be [drawn as streaks,
+trails or a ribbon](particles.md#how-particles-are-drawn) and [inherit the emitter's
+speed](particles.md#inherit-velocity), with new **Ribbon trail** and **Magic wisps** presets. [Duplicating both
+ends of a joint](physics.md#duplicating-jointed-objects) copies the joint, and [detaching one during a
+run](physics.md#breaking-a-joint-during-a-simulation) breaks it with sparks. The [Drivable Car](modules.md#drivable-car)
+steers with its front wheels, [Blocks](modules.md#blocks) drops a hundred blocks in one draw call, and modules get
+[angle motors, joint limits and their own physics world](module-sdk.md#for-module-authors-joints-and-your-own-physics-world).
+Every [number field](controls.md#number-fields-and-undo) is one undo step per drag or typed edit, <kbd>Esc</kbd> cancels
+typing, and on theprototype.app [What's New](community.md#whats-new-on-theprototypeapp) opens with the cloud's own news.
+
 **1.26 — editor productivity: edit many at once, prefabs that update, material presets, a new Settings.** With
 several objects selected, the [Inspector edits them all](controls.md#editing-a-multi-selection): rows that differ show a
 dash, setting one sets every object, and one <kbd>Ctrl</kbd>+<kbd>Z</kbd> puts each back to its own value — lights and
@@ -208,6 +227,7 @@ for your machine [reduces quality or pauses instead of freezing](performance.md)
 - [Packs](packs.md) — ready-made model and audio collections you can browse and import.
 - [Prefabs](prefabs.md) — save any object as a reusable asset, update every placed copy, sort them into folders and tags.
 - [Material Presets](materials.md) — named surface looks, seven built in, saved and shared with your session.
+- [Architecture](architecture.md) — walls with doorways and windows, doors that open, and stairs, all from numbers you can change.
 - [Mesh Editing](mesh-editing.md) — vertices, edges and faces: extrude, bevel, knife, loops and mirroring.
 - [Snapping](snapping.md) — line things up: grid steps, surfaces, and snapping onto real geometry.
 - [UV & Textures](uv-editor.md) — unwrap a model, paint on it, and give parts of it their own materials.
@@ -215,7 +235,7 @@ for your machine [reduces quality or pauses instead of freezing](performance.md)
 - [Animation](animation.md) — keyframe clips with a timeline, curves, markers and onion skin.
 - [Physics & Simulation](physics.md) — mass, joints, dropping and throwing objects.
 - [Colliders](colliders.md) — collider shapes, exact meshes, decomposition, collision groups and sensors.
-- [Particle Effects](particles.md) — dust, smoke, fire, sparkles, rain and snow.
+- [Particle Effects](particles.md) — dust, smoke, fire, sparkles, rain and snow, drawn as sprites, streaks, trails or ribbons.
 - [Water](water.md) — tanks, pools, oceans and lava with waves, refraction, caustics, foam and bubbles.
 - [Fluid Tank & Jiggle](simulation.md) — particle liquid you can pour, and springy secondary motion.
 - [Fluids](fluids.md) — particle water poured into the scene, rivers, chutes and pipes, and wheels that turn it.
@@ -224,7 +244,7 @@ for your machine [reduces quality or pauses instead of freezing](performance.md)
 
 **The scene**
 
-- [Camera & View](camera.md) — lens presets, render modes, shadows, the grid and environment.
+- [Camera & View](camera.md) — lens presets, render modes, shadows, the grid, the environment and sky images.
 - [Notifications & Notes](notifications.md) — the notification center, scene notes and pinging.
 - [Music & Sound](audio.md) — shared background music, spatial sound and voice chat.
 

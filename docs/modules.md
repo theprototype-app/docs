@@ -64,6 +64,26 @@ User modules must be **self-contained**: a single `module.js` with no `import` s
 !!! warning "Trust model"
     Installing a module means running its code in your session, with your peer connections. There is no sandbox. Install only from sources you trust.
 
+## From the Browse gallery
+
+A few of the gallery's modules, in **Menu ▸ Modules ▸ Browse**:
+
+### Drivable Car
+
+A demo car you spawn from its card. Click its body in **Interact** (<kbd>I</kbd>) to claim it, then drive with
+<kbd>W</kbd>/<kbd>S</kbd> and <kbd>A</kbd>/<kbd>D</kbd> in **Play** while a [simulation](physics.md) runs. Since version
+1.3.0 it **steers with its front wheels** like a real car — each front wheel turns on a knuckle, about 31° each way —
+instead of tank-steering by spinning one side faster. On an app older than 1.27 it keeps the old tank steering.
+
+### Blocks
+
+A performance showcase, new in 1.27 (it needs app 1.27). **Blocks: drop 100 blocks**, a button on the module's card,
+drops a hundred blocks that tumble and pile up on the ground and on whatever is in your scene — select an object first to
+drop them on it. All 100 are drawn in **one draw call**. **Blocks: clear** removes them for everyone.
+
+Every player sees the same drop, but each computer simulates the pile itself, so the piles agree closely but not to the
+millimetre: the blocks are decoration, not game pieces.
+
 ## SDK — writing a module
 
 A module is one default export with a `register(api)` call:

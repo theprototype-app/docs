@@ -32,14 +32,17 @@ Right-click empty space ▸ **Add ▸ Effects ▸** places a small marker object
 | **Smoke** | soft grey plume that trails and fades | continuous |
 | **Dust puff** | a low brown scatter | burst |
 | **Confetti** | tumbling coloured squares | burst |
-| **Sparks** | fast bright streaks that arc and die | burst |
+| **Sparks** | fast bright streaks that arc and die — since 1.27 drawn [stretched along their motion](#how-particles-are-drawn), and thrown along by a moving emitter | burst |
 | **Rain** | streaks falling over an 8 × 8 m area, with a small splash ring where each one lands | continuous |
 | **Snow** | flakes drifting down over an 8 × 8 m area, settling and fading on the ground | continuous |
+| **Ribbon trail** | one glowing band behind a moving object — a sword swish, a comet tail (since 1.27) | continuous |
+| **Magic wisps** | trails that curl off a moving object (since 1.27) | continuous |
 
 **Rain** and **Snow** (1.22) are weather: **Add ▸ Effects ▸ Rain** places the emitter up at cloud height, and the drops fall
 about 6 m to the ground below it, drifting with a little wind. Pair them with [Water](water.md) for a storm over the sea.
 
-A preset is just a starting point — every value below is editable afterwards.
+A preset is just a starting point — every value below is editable afterwards. A Sparks emitter added before 1.27 keeps
+its old look.
 
 ## Continuous, burst, and on-impact
 
@@ -67,9 +70,11 @@ Open the Inspector's **Particles** section on an object with an emitter:
 | **Opacity** | 0 – 1 | peak transparency |
 | **Emit from** | X / Y / Z | where particles spawn, relative to the object's center (local axes) — lift them to the top, a corner, an exhaust, etc. |
 | **Color** | two swatches | start → end gradient over life |
+| **Draw as** | Sprites · Stretch · Trails · Ribbon | how each particle is drawn — see [below](#how-particles-are-drawn) |
 | **Sprite** | dot · streak · puff · star · confetti | the particle shape |
 | **Blending** | additive · normal | *additive* glows (fire, sparks); *normal* for smoke/confetti |
 | **Space** | local · world | see below |
+| **Inherit velocity** | 0 – 1 | World space only — see [below](#inherit-velocity) |
 
 !!! note
     Glowing presets (Sparkles, Fire, Sparks — additive blending) render *through* the object they emit from, so they're visible even when the spawn point is inside a solid mesh. Smoke, Confetti and Dust use normal blending and are properly hidden behind geometry.
@@ -79,9 +84,36 @@ Open the Inspector's **Particles** section on an object with an emitter:
 - **Local** — particles ride along with the object. Best for auras, fire on a moving torch, sparkles on a pickup.
 - **World** — particles keep the spot they were born and the object trails away from them. Best for smoke plumes and debris.
 
+### Inherit velocity
+
+In **World** space, **Inherit velocity** sets how much of the emitter's own speed a particle keeps when it is born. At 0
+(the default) particles stay where they were born; at 1 they are thrown along with the moving object — exhaust off a
+car, sparks off a swung sword.
+
+## How particles are drawn
+
+Since 1.27 **Inspector ▸ Particles ▸ Draw as** draws the particles one of four ways. The particles move exactly the
+same in every mode; only the shape on screen changes.
+
+![Draw as set to Trails, with the Trail length, Segments and Inherit velocity rows](img/particles/draw-as.png)
+
+| Draw as | What you see | Its rows |
+|---|---|---|
+| **Sprites** (the default) | one image per particle, as before | **Sprite** |
+| **Stretch** | each particle is a streak pointing the way it moves: fast particles are long, slow ones round. The **Sparks** preset uses it | **Stretch** — the seconds of motion each streak covers (0.005–0.3) |
+| **Trails** | every particle leaves a fading band behind it | **Trail length** (seconds), **Segments** (2–16; more give smoother curves) |
+| **Ribbon** | **one** band joining the particles in the order they were born. In **World** space that is the path the emitter took — a sword swish, a comet tail, a car's tail light. The **Ribbon trail** preset is set up for it | none: the width runs from **Size start** to **Size end**, and the band fades out as its particles do |
+
+- A ribbon needs **Continuous** emission: a burst is born all at once, so it has no order. On a burst emitter a ribbon is
+  drawn as trails, and the Inspector says so.
+- In **Local** space a ribbon rides along with the object; switch **Space** to **World** for a trail that stays behind it.
+
+![The Magic wisps preset: purple trails curling off a moving cube](img/particles/wisps-trails.png)
+
 ## Caps
 
-To keep framerates high, up to **8 emitters** render at once (500 particles each; fewer in VR). Extra emitters beyond the cap are skipped with a toast. Particles are hidden in **Wireframe** view mode.
+To keep framerates high, up to **8 emitters** render at once (500 particles each; in VR at most 200 per emitter in every
+**Draw as** mode, trails and ribbons included). Extra emitters beyond the cap are skipped with a toast. Particles are hidden in **Wireframe** view mode.
 
 !!! tip
     For fully flow-driven effects — emission wired to a slider, colour from a picker, or a burst fired by a click or key — use the [Particles node](nodes/particle.md) in the node editor instead of the Inspector.
