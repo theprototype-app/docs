@@ -84,6 +84,19 @@ drop them on it. All 100 are drawn in **one draw call**. **Blocks: clear** remov
 Every player sees the same drop, but each computer simulates the pile itself, so the piles agree closely but not to the
 millimetre: the blocks are decoration, not game pieces.
 
+### Smart unwrap (xatlas)
+
+New in 1.28. It adds **Smart (xatlas)** to the [UV editor](uv-editor.md#smart-unwrap-xatlas)'s **Unwrap** menu:
+automatic seams, each piece flattened, and everything packed into one 0–1 atlas with no overlaps. It is built on
+[xatlas](https://github.com/jpcy/xatlas) compiled to WebAssembly, and the `.wasm` ships inside the module's zip, so it
+makes no network calls.
+
+It runs on the main thread — about 1–1.5 s for a 10,000-triangle mesh. For module authors calling the backend, it takes
+`margin` (the UV editor passes 0.02), `resolution` (the packing raster, 512 by default) and `padding` (in texels,
+overriding `margin`); see [registerUnwrapBackend](module-sdk.md#registerunwrapbackend).
+
+xatlas (MIT, Jonathan Young) and xatlas-wasm are credited in the module's `THIRD_PARTY_LICENSES.txt`.
+
 ## SDK — writing a module
 
 A module is one default export with a `register(api)` call:
