@@ -75,3 +75,4 @@ Changes save as you make them — there is no Save button; **Done** closes the w
 | Workspace layouts | new | **Interface ▸ Windows & chrome ▸ Workspace layouts** — see [Workspace layouts](controls.md#workspace-layouts) |
 | Knocked-off idle | new | **Interface ▸ Avatars ▸ Knocked-off idle** — see [Knocked-off idle](avatars.md#knocked-off-idle) |
 | Density | new | **Interface ▸ Density** — see [above](#density) |
+| Sky image quality | new in @@VER@@ | **Scene ▸ Performance ▸ Sky image quality** — **Auto** / **Full (1k)** / **Low (headset)**, this device only; see [Sky image quality](camera.md#sky-image-quality) |

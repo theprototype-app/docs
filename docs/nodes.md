@@ -15,7 +15,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 |---|---|
 | [**Slider**](nodes/slider.md) | An interactive slider that outputs a number - the quickest way to hand-tune any numeric input live. |
 | [**Color Picker**](nodes/colorpicker.md) | Outputs a color chosen with a swatch - the color source for anything that paints. |
-| [**Switcher**](nodes/switcher.md) | A radio-button list that outputs the index of the selected item - a hand-operated multi-way switch. |
+| [**Switcher**](nodes/switcher.md) | A radio-button list that outputs the index of the selected item. Each item also has an input: the value output passes on whatever is wired into the selected item (a multi-way switch). Wire a number into index to choose by graph instead of by hand. |
 | [**Number**](nodes/number.md) | A constant numeric value - the simplest source node. |
 | [**Vector3**](nodes/vector3.md) | An x/y/z triple - used as a direction, an offset, or most often a fixed point in the world. |
 | [**Toggle**](nodes/toggle.md) | A checkbox that outputs true or false - a hand-operated on/off switch. |
@@ -45,7 +45,8 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 |---|---|
 | **Set Game State** | Switches the shared game state (menu, playing, paused, over) when a pulse arrives - every peer follows the same state. |
 | **On Game State** | Fires a pulse when the shared game state becomes the one you pick - the hook for "when the round starts". |
-| **Set Active Camera** | Makes a camera object the active view for every player when a pulse arrives. |
+| [**Set Active Camera**](nodes/setcamera.md) | Makes a camera object the active view for every player when a pulse arrives. |
+| [**Camera Rig**](nodes/camerarig.md) | Moves a camera object: it follows the target at an offset and/or turns to look at it, with damping (seconds of lag). Wire it into an Object Selector that picks a camera. It never moves the editor view or another player's view - look through the camera (Set Active Camera) to see it. |
 | [**Set Look**](nodes/setlook.md) | Switches a camera's look (its post-processing) on or off when a pulse arrives, and by default looks through that camera too. |
 | **Game Start** | Fires once when the game starts (Play, or a round reset) - the place to spawn, reset counters and arm timers. |
 | **Travel to scene** | Loads another saved scene by name when a pulse arrives - a door to the next level, replicated to everyone. |
@@ -94,9 +95,9 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 |---|---|
 | [**Script**](nodes/script.md) | Your own JavaScript - an effect that moves its object every frame, or (with declared typed inputs and outputs) a small pure function whose return feeds other nodes. |
 | [**Behaviour**](behaviours.md) | Game logic written as a small JavaScript file (params, replicated state, event handlers, kit calls) - run once on the authority peer, with a live node view of its events, state and knobs. |
-| [**Math**](nodes/math.md) | Combines two numbers (+ - * / min max mod pow) or shapes one: sin/cos (b scales them, 0 = 1), abs, round, floor, clamp to 0..b, negate. |
+| [**Math**](nodes/math.md) | Combines numbers (+ - * / min max mod pow) or shapes one: sin/cos (b scales them, 0 = 1), abs, round, floor, clamp to 0..b, negate. + input adds sockets (up to 8) for + - * / min max. |
 | [**Compare**](nodes/compare.md) | Compares two numbers and outputs true or false. |
-| [**Gate**](nodes/gate.md) | Boolean logic on two inputs - AND, OR, NOT, XOR. |
+| [**Gate**](nodes/gate.md) | Boolean logic - AND, OR, NOT, XOR. + input adds sockets (up to 8): AND = all true, OR = any true, XOR = an odd number true. |
 | [**Map Range**](nodes/maprange.md) | Remaps a number from one range to another - the glue between free-range sources and bounded parameters. |
 | [**Select**](nodes/select.md) | Picks one of up to four values (a, b, c, d) by a rounded index. |
 | **Latch** | Holds a boolean until told otherwise - set, reset and toggle pulses make it a memory bit. |

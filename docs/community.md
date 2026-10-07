@@ -157,3 +157,9 @@ Every scene page ends with **Report this scene**: pick a reason — **Spam**, **
 
 Staff accounts have a **Staff · Insights & moderation** entry in the profile menu for the report queue and the visit
 totals; it is not shown to anyone else. Assets an author had no right to license are exactly what *Stolen work* is for: the license picker cannot express "all rights reserved", so a report and a takedown are how that is handled.
+
+## What's new on theprototype.app
+
+Since @@VER@@ the **What's New** window (logo menu) on theprototype.app starts with a **theprototype.app cloud** section:
+what changed in the hosted service — publishing, community, rooms, hosted AI — above the app's own release notes. A
+self-hosted or local build shows no such section.

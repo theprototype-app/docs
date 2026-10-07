@@ -1,6 +1,6 @@
 # Math
 
-Combines two numbers with an arithmetic operation, or shapes one (sine, rounding, clamping…).
+Combines numbers with an arithmetic operation — two, or up to eight — or shapes one (sine, rounding, clamping…).
 
 **Output:** number (live result on the card)
 
@@ -10,8 +10,22 @@ Combines two numbers with an arithmetic operation, or shapes one (sine, rounding
 |---|---|---|
 | a | number | first operand |
 | b | number | second operand |
+| c … h | number | extra operands, added with **+ input** (since @@VER@@) |
 
-Unwired inputs use the values typed on the card.
+Unwired **a** and **b** use the values typed on the card.
+
+### More than two inputs
+
+Since @@VER@@ Math takes up to eight inputs, named **a** to **h**. Press **+ input** on the card to add a socket, and
+**−** on a row to remove that socket.
+
+- With `add`, `sub`, `mul`, `div`, `min` or `max`, Math combines every wired input left to right: 1 + 2 + 3 + 4 = 10,
+  and 10 − 1 − 2 = 7. The other operations use only **a** and **b**, and the card greys the extra inputs out.
+- The extra inputs **c** to **h** have no typed-in value. An input with no wire is skipped, so an empty socket never
+  multiplies your result by zero.
+- Removing a socket moves the wires after it down one name: removing **b** turns **c** into **b**, so each wire stays on
+  the same value. One <kbd>Ctrl</kbd>+<kbd>Z</kbd> puts it all back, and [groups](../node-editor.md#groups) around the node
+  update their sockets too.
 
 ## Parameters
 

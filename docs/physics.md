@@ -242,7 +242,20 @@ Joints tie two objects together so they move as one, or hinge around an axis. Se
 | **Hinge (X / Y / Z axis)** | A revolute joint about the first object's local axis, anchored at the second object — a door, a lever, a wheel. |
 | **Detach joints (N)** | Removes joints touching the selection. |
 
-Joints replicate to everyone, undo as a single step, persist in saved scenes and `.tpscene` files, and are removed automatically if one of their objects is deleted. Hinges can also be motorized programmatically (for example by the drivable-car module) to spin under power.
+Joints replicate to everyone, undo as a single step, persist in saved scenes and `.tpscene` files, and are removed automatically if one of their objects is deleted. Hinges can also be motorized programmatically (for example by the drivable-car module) to spin under power, or [driven to an angle](module-sdk.md#for-module-authors-joints-and-your-own-physics-world) to steer.
+
+### Duplicating jointed objects
+
+Since @@VER@@, duplicating **both** objects of a joint (select both, <kbd>Ctrl</kbd>+<kbd>D</kbd>) copies the joint onto
+the copies too. Duplicating only one end does not: the copy is a free object, as before. One <kbd>Ctrl</kbd>+<kbd>Z</kbd>
+removes the copied joint, the next one the copies.
+
+### Breaking a joint during a simulation
+
+Since @@VER@@ **Detach joints** while a simulation runs breaks the joint for real: the objects come apart at once (before,
+the joint held until you restarted the simulation), sparks fly from where it was attached, and any
+[particle emitter](particles.md#continuous-burst-and-on-impact) set to **On impact** on either object fires. Every
+player sees it. Detaching while no simulation runs is quiet.
 
 ## How it stays in sync
 

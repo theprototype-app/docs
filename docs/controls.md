@@ -301,6 +301,26 @@ graph, and the behaviour view no longer flickers the cursor.
 Fields that hold a distance or an angle also accept a typed **unit** (`12cm`, `4in`,
 `90deg`) — see [Units](units.md).
 
+#### Number fields and undo
+
+Since @@VER@@ every number field you can drag — the Inspector's **Position** / **Rotation** / **Scale** and its other
+values, shader-node vectors, and the [Animation window](animation.md)'s length, speed, fps, step and key fields — works
+the same way with undo:
+
+- **One drag is one undo step.** However far you scrub, one <kbd>Ctrl</kbd>+<kbd>Z</kbd> puts the value back where the
+  drag started. (Before, a shader vector took two, and the Animation window's length, fps and step took one per pixel
+  moved.)
+- **One typed edit is one undo step.** Click a field, type a value (it applies as you type) and press <kbd>Enter</kbd>:
+  that is one step, even if you paused between keys.
+- **<kbd>Esc</kbd> cancels typing.** It puts back the value the field had before you started, as it already did for
+  arrow-key steps, and leaves nothing on the undo stack.
+- **Undo shows at once.** After <kbd>Ctrl</kbd>+<kbd>Z</kbd> the Position / Rotation / Scale rows show the restored
+  numbers straight away — before, they kept the old number until you clicked something, and dragging from it made the
+  object jump.
+- The Animation window's playback **Speed** is undoable now too.
+- **Selecting a shader node is not an edit.** Clicking a node in the [Shader editor](shader-graph.md) selects it on your
+  screen only: it adds no undo step and is not sent to the other people in the session.
+
 ### Text selection
 
 Dragging across a menu, a toolbar or a panel does not paint a text selection, and a drag that starts in the 3D view or
@@ -469,7 +489,7 @@ places keys belong to.
 **Empty viewport** — a quick right-click opens the scene menu:
 
 - **Search objects…** — find an object in the scene by name (off by default: **Settings ▸ Interface ▸ Lists & menus ▸ Object search in menu**).
-- **Add** — the full primitive catalog (meshes, building blocks, cameras, lights, [water](water.md), [effects](particles.md), a [fluid tank](simulation.md#fluid-tank)) plus empty groups; objects spawn at the clicked point.
+- **Add** — the full primitive catalog (meshes, building blocks, [architecture](architecture.md) — walls, doors, windows and stairs — cameras, lights, [water](water.md), [effects](particles.md), a [fluid tank](simulation.md#fluid-tank)) plus empty groups; objects spawn at the clicked point.
 - **Undo / Redo**, **Ping here**.
 - **Selected ▸** — the selected object's own menu (shown only while something is selected).
 - **Tools** — Node editor, Draw mode (drag 3D strokes on surfaces, or click out an editable [spline](splines.md)), Measure distance, Simulate physics (and *Reset simulation* while one runs), [Recording…](recording.md) (a turntable or flythrough video).

@@ -6,7 +6,7 @@ Everything about how the scene *looks on your screen* — the camera lens, rende
 
 Click **🎛️ Configure Scene** in the sidebar menu. It opens a panel on the right with these sections:
 
-- **Environment** — lighting preset, exposure, saved presets (shared).
+- **Environment** — lighting preset, exposure, [sky image](#sky-images-hdri), saved presets (shared).
 - **Music** — the shared background track and your local volume (see [Music & Sound](audio.md)).
 - **View** — render mode, camera lens, clip planes (your device only).
 - **Background** and **Fog** (shared).
@@ -69,7 +69,8 @@ everyone; previewing and the frustum lines are yours alone. The object's right-c
 screen, **✕** hides the window (the *Preview window while selected* row brings it back), and right-drag moves it.
 
 A game uses cameras through the [Set Active Camera](nodes/setcamera.md) node, the [Game Start](nodes/gamestart.md) node's
-camera, and [Set Look](nodes/setlook.md) for each camera's own [look](post-processing.md).
+camera, [Set Look](nodes/setlook.md) for each camera's own [look](post-processing.md), and since @@VER@@ the
+[Camera Rig](nodes/camerarig.md) node, which makes a camera follow or watch an object.
 
 ## Camera lens
 
@@ -116,11 +117,77 @@ The **Environment** section sets the scene's lighting and sky. Pick a preset chi
 | **Night** | Dim and cool. |
 | **Classic** | The pre-lighting look with the rig **off** — bring your own lights. |
 
+Since @@VER@@ five more chips — **Clear sky**, **Meadow**, **Sunrise**, **Starlight** and **Photo studio** — use a real sky
+photo; see [Sky images](#sky-images-hdri).
+
 An **Exposure** slider tunes overall brightness. The lit presets add a sun that casts shadows, with a shadow-catcher disc under the scene so shadows land even on the infinite grid.
 
 Environment is a **shared, latest-wins** setting — the most recent change wins for everyone. You can also **save**, **export** and **import** custom presets (stored locally), and adopt presets other peers have shared.
 
 Below Environment, **Background** sets the clear color and **Fog** adds distance fog (color + near/far), both shared. A fog you set by hand keeps exactly the near and far you typed; a preset's fog still grows with a big scene.
+
+## Sky images (HDRI)
+
+Since @@VER@@ a sky image — an HDRI, a 360° photo that keeps the real brightness of the sun and the sky — can be the
+scene's sky **and** its light. Every object picks up the image's colours and brightness, shiny objects reflect it, and
+[water](water.md) mirrors the real clouds. The scene's sun is placed where the photo's sun is, so shadows agree with the
+sky.
+
+![A mirror sphere and a box lit by the Meadow sky image](img/camera/sky-meadow.png)
+
+It lives in **Configure Scene ▸ Environment ▸ Sky image (HDRI)**, under the preset chips and the Exposure slider. Click
+a card to switch to that sky; like every Environment setting, everyone in the session sees it.
+
+| Sky | What it looks like |
+|---|---|
+| **Clear sky** | open blue sky with clouds, haze on the horizon |
+| **Meadow** | a sunny meadow with trees |
+| **Sunrise** | a low warm sun and long shadows |
+| **Starlight** | dusk under the stars |
+| **Photo studio** | softbox lighting over a plain grey backdrop — light only; reflections show the studio |
+
+The five skies are also preset chips, and in VR they are in the radial menu's **Scene ▸ Environment**. All five are CC0
+images from [Poly Haven](https://polyhaven.com).
+
+![Configure Scene ▸ Environment with the Sky image section: the sky cards, Upload HDRI…, Rotation, Image light, Show as sky, Sky blur and Tone mapping](img/camera/sky-image-section.png)
+
+| Row | What it does |
+|---|---|
+| **Upload HDRI…** | use your own equirectangular `.hdr` or `.exr` file (up to 25 MB; 1k–2k is plenty). It is added to the [Explorer](explorer.md), your peers download it from you automatically, and it is saved inside `.tpscene` files and exports |
+| **Rotation** | turns the sky; the sun and its shadows turn with it |
+| **Image light** | how strongly the image lights objects (the sky itself is unchanged) |
+| **Show as sky** | off keeps the image's light and reflections but shows the colour sky instead |
+| **Sky blur** | softens the background — handy behind a product shot |
+| **Tone mapping** | **ACES Filmic** (the default), **AgX** or **Neutral**: how the bright image is fitted to the screen |
+| **None** (the first card) | back to the colour sky and the light rig |
+
+**Exposure**, above the cards, brightens or darkens the whole picture, and while a sky image shows it works on the
+desktop whatever else is on. Editing any of these turns the preset into *Custom*, like any other sky edit; **Save
+preset** keeps it.
+
+A short tour points at the cards the first time you see them (**Settings ▸ Interface ▸ Tours ▸ Reset all** shows it
+again).
+
+### Sky image quality
+
+How sharp the sky and its reflections are is a setting for **this device only** — **Settings ▸ Scene ▸ Performance ▸
+Sky image quality**:
+
+| Choice | What it does |
+|---|---|
+| **Auto** (the default) | **Low** in a headset, in VR, or once the scene is too heavy for effects; **Full** otherwise |
+| **Full (1k)** | prepares the image at 1024 px |
+| **Low (headset)** | prepares it at 512 px — a quarter of the memory |
+
+The scene and your peers are unaffected.
+
+### Limits
+
+- Only equirectangular images (twice as wide as they are tall); cube-map files are not supported. An `.exr` must be RGB
+  or RGBA.
+- Files over 25 MB are refused — your peers could not receive them.
+- Someone on an app older than @@VER@@ in the same session sees the preset's flat colours instead of the image.
+- A [scene look](post-processing.md) with its own [Tone mapping](post-processing.md#tone-mapping) effect keeps its own curve.
 
 ## Lights
 
