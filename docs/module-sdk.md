@@ -17,6 +17,10 @@ Two ways to ship one:
 Start by downloading a core module from the manager ("Download as example") —
 `hello` is the smallest complete one.
 
+Giving your module a panel or settings? Build it from the app's own parts and design
+tokens so it matches every theme: see [UI kit for module authors](ui-kit.md) and the live
+[kit page](https://theprototype.app/kit).
+
 Writing a **user module**? The companion repo
 [theprototype-app/modules](https://github.com/theprototype-app/modules) carries
 the working end of this page:
