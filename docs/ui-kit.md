@@ -102,3 +102,9 @@ current theme and checks the text contrast of each pair.
 - Toggles for on/off; checkboxes only to pick items from a list.
 - No raw colours: a hex value in your UI will not follow the user's theme.
 - One short sentence per description, in sentence case.
+
+## ScrollStrip — rows that can run out of width
+
+`ui/ScrollStrip.svelte` (since @@VER@@) is the row for a toolbar or a tab strip that may not fit: it scrolls sideways
+with a finger drag or the mouse wheel, shows no scrollbar and fades the edge that still hides something. Keep pinned
+controls (a **+**, a close button) outside it. It is on the **/kit** page with the other parts.

@@ -89,6 +89,10 @@ Below 640 px wide the app switches to a phone layout with less on screen and not
   can pick an object in Objects and move or undo without closing it. Each sheet reopens at the height you left it, on
   this device. The menus you open by long-pressing the scene are short-lived action sheets that may cover the bar
   until you pick something or tap outside.
+- **Editors fit a phone**: the [Animation](animation.md#on-a-phone) window shows one pane at a time, the [Shader
+  editor](shader-graph.md#on-a-phone) gives the canvas the whole screen with the palette and properties as sheets,
+  and every toolbar that does not fit — UV editor tools, Profiler controls — scrolls sideways (with a fade where
+  more is hidden); nothing is out of reach.
 - **Settings** is a list you tap into, with ‹ Back on every page; Settings and dialogs open full-screen and cover the
   logo while they are open.
 

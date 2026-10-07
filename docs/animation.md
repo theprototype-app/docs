@@ -105,6 +105,13 @@ The clipboard is held **by channel** and relative to the earliest key copied, so
 | Zoom | Wheel (up = in), or the ± buttons |
 | Pan | Right- or middle-drag, <kbd>Shift</kbd>+wheel, or the navigator thumb |
 
+## On a phone
+
+Since @@VER@@ the Animation window fits a phone (and any window narrower than 640 px): it shows one pane at a time —
+**Channels**, **Timeline**, **Key** or **Clip** — from a switch in its header. Drag keys and easing handles with a
+finger, two fingers pan and pinch-zoom the timeline, and a long press opens the key or plot menu (the right-click
+menu on a desktop). Tool rows that do not fit scroll sideways.
+
 ## Auto-key
 
 Switch **Auto-key** on and posing the object records it: drag the gizmo or type a number in the properties panel and a key lands at the playhead, creating the channel if it does not exist yet. Switch it off and the object goes back to being just an object.
