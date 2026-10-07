@@ -35,9 +35,13 @@ yourself the way other people do.
 | **Show my name above me** | your name label |
 | **Ping** | the colour and chime of *your* [pings](notifications.md#pinging); **Preview** pings beside your character (only you see and hear it) |
 
+Since @@VER@@ the panel is a **drawer** on the right (a bottom sheet on a phone): drag its inner edge to make it wider or
+narrower — the keyboard works too (focus the edge, then the arrow keys; <kbd>Shift</kbd> for bigger steps) — and the
+camera keeps your character in the part of the screen the drawer leaves free. The size is remembered on this device.
+
 Every change shows on your character at once; nothing reaches other people until you press **Apply**, which saves it and
-shows it to everyone. **Cancel**, <kbd>Esc</kbd> or ✕ throw the changes away. Either way the camera flies back to where
-you were.
+shows it to everyone. **Cancel**, <kbd>Esc</kbd> or ✕ throw the changes away. Either way the camera returns exactly to
+where your view was before you opened it.
 
 ## Showing everyone as classic heads
 

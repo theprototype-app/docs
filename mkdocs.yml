@@ -4,6 +4,7 @@ nav:
   - Getting Started:
     - Welcome: index.md
     - Controls: controls.md
+    - The Interface: interface.md
     - Touch Controls: touch-controls.md
     - Tours: tours.md
     - Units: units.md

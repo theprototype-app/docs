@@ -4,7 +4,9 @@ Modules plug playable content into the app — instruments, mini-games, generato
 
 ## The Modules manager
 
-Open it from **Menu ▸ Modules**.
+Open it from **Menu ▸ Modules**. Since @@VER@@ **Install from file…** sits in the header, the **Core / User / Browse** tabs
+show counts, a **Filter modules** field narrows whatever the tab lists (name, description, author, tags), and each module
+is one row — name, version, description, its actions, the download-as-example icon and its on/off switch.
 
 - **Core modules** ship with the app (hello, button, pong, VR sleeve). Toggle each on or off: both are **live** (since 1.20, disabling no longer needs a reload).
 - The dungeon generator, piano, avatar controller, VR essentials and drivable car used to ship in the app; they now live in the **Browse** gallery, so install them there when you want them. Everyone in a session needs the same modules for shared behaviour to match — including anyone who joins later.

@@ -31,6 +31,8 @@ Two filters narrow the list: show only **This scene**'s checkpoints, or hide the
 While you work, autosave also adds an **automatic** checkpoint every few minutes — only when the scene actually changed
 since the last one, and never while a scene is loading or a simulation is running.
 
+In the Checkpoints window the **Automatic** switch shows or hides the automatic checkpoints in the timeline.
+
 ## Settings
 
 **Settings ▸ Scene ▸ Checkpoints**:

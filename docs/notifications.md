@@ -8,6 +8,9 @@ A **🔔 bell** button sits in the top-right chrome. Click it to open a dropdown
 
 Every toast the app shows — connection events, simulation start/stop, imports, warnings — is recorded here with a relative timestamp (*just now*, *5m ago*, *2h ago*, *1d ago*), so a message you missed while it was on screen is never lost. The list keeps the most recent **50** entries and survives reloads. Opening the panel clears the unread badge; **Clear all** empties the history.
 
+Since @@VER@@ a message that repeats — *Cannot reach the peer server. Retrying…* every few seconds — is **one entry with
+×N** and the latest time; click it to see each time it arrived.
+
 The center is a read-only log — connection requests are actioned from the toast itself (see below), not from here.
 
 ## Toasts
@@ -17,7 +20,9 @@ Toasts pop up briefly for feedback. Two things are worth knowing:
 - **Ordinary toasts sit *below* modals**, so an open Settings or Modules dialog is never blocked by a transient message.
 - **Connection requests and approvals stay on top** — a peer asking to join is always visible, even over a modal.
 
-Plain messages auto-dismiss after a few seconds; ones with a button (like a connection request) linger longer. At most four toasts stack at once; when more arrive, a **"+N more…"** line shows how many are hidden — find them in the notification center via the bell.
+Plain messages auto-dismiss after a few seconds; ones with a button (like a connection request) linger longer. At most **three** toasts stack at once (four before @@VER@@); when more arrive, a **+N more…** button under the stack
+shows how many are hidden and opens them in the Connect drawer's **Toasts** tab — they are in the notification center
+too.
 
 ### Undo after Clear, Delete, Remove
 

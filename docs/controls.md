@@ -357,6 +357,9 @@ Layouts are kept on this device. A reload still starts with a clean slate: a lay
 
 ## The toolbar
 
+Since @@VER@@ the toolbar is one glass bar where the accent marks the armed tool or an open window and **Play** is the
+only orange button; on a touch screen its buttons are 44 px. See [The Interface](interface.md#the-main-hud).
+
 Pressing a toolbar button never takes the keyboard: the keys stay with whatever had them — this holds for the bottom
 toolbar, the Connect bar, the touch tools, the draw, sculpt, spline and mesh-edit toolboxes and module toolboxes. So
 "press Move, then <kbd>F</kbd>" still frames the selection from the 3D view.
@@ -385,6 +388,9 @@ tap into — a search box in the header, and one row per setting. Changes save a
 own page: see [Settings](settings.md).
 
 ## Keyboard shortcuts
+
+<kbd>Ctrl</kbd>+<kbd>K</kbd> opens the [command palette](interface.md#the-command-palette-ctrlk): one search over tools,
+windows, menus and every setting.
 
 Shortcuts are inert while you type in a text field and while play mode owns the keyboard. The same list is shown in **Settings ▸ Shortcuts** (<kbd>Ctrl</kbd>+<kbd>/</kbd> opens it directly), where a click on a shortcut's keys rebinds it and **Reset all** puts the defaults back.
 
