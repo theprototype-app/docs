@@ -24,6 +24,29 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.26 — editor productivity: edit many at once, prefabs that update, material presets, a new Settings.** With
+several objects selected, the [Inspector edits them all](controls.md#editing-a-multi-selection): rows that differ show a
+dash, setting one sets every object, and one <kbd>Ctrl</kbd>+<kbd>Z</kbd> puts each back to its own value — lights and
+the visibility and shadow flags included. The [pivot point](controls.md#the-pivot-of-a-multi-selection) (Median, Active,
+Individual, Parent) has a toolbar button, in VR a grip [carries the whole selection](vr.md#grabbing-a-selection), and
+[dragging a selection](controls.md#dragging-a-selection-in-the-object-list) in the object list drops it into a group or
+under a parent. Placed [prefab copies stay linked](prefabs.md#updating-every-copy): editing the prefab offers to update
+every copy, each keeping its own changes, in one undo step for everyone; copies carry their flow graphs, and the
+Prefabs tab gets [folders and tags](prefabs.md#folders-and-tags). [Material presets](materials.md) put Wood, Metal,
+Plastic, Glass, Stone, Rubber and Neon one click away in the Inspector, and you can save, import and share your own.
+[Settings](settings.md) is redesigned — a grouped menu, sub-pages with a breadcrumb, search that shows where each match
+lives, a reset per category, **About ▸ Danger zone** and a [Compact density](settings.md#density). Also new:
+[workspace layouts](controls.md#workspace-layouts) (**Menu ▸ Layouts**), [chat](notifications.md#chat) with @mentions,
+emoji shortcodes, an unread badge and history for people who join, [threaded replies on
+notes](notifications.md#adding-a-note), [Report a problem](profiler.md#report-a-problem) with a picture you can mark up,
+an [Undo toast](notifications.md#undo-after-clear-delete-remove) after Clear scene, Delete, removing a module and
+resetting settings, and <kbd>Z</kbd> to [cycle the render mode](camera.md#render-mode-view). [Race](race.md) plays [on a
+phone](race.md#on-a-phone) with pedals and [in VR](race.md#in-vr) from the driver's seat, and modules get
+[pointer, camera, play-mode and VR-seat hooks](module-sdk.md#for-module-authors-pointer-camera-play-mode-and-vr-seat).
+Characters [stand on the floor](avatars.md#feet-on-the-ground) with planted feet, an idle one gets [knocked
+off](avatars.md#knocked-off-idle) (stars, a woozy sway, star eyes), and [flying in Play is opt-in](physics.md#flying)
+per game — a scene can also remove it.
+
 **1.25 — your feedback, fixed: panels that keep their keys, water that behaves.** [Keys follow the panel you are
 in](controls.md#keys-follow-the-panel-you-are-in): <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> no longer fly the
 camera from the Explorer, the Inspector, a node's graph view, the HUD editor or any tool window, the panel with the keys
@@ -176,13 +199,15 @@ for your machine [reduces quality or pauses instead of freezing](performance.md)
 
 - [Controls](controls.md) — navigation, selection, the transform gizmo, shortcuts and right-click menus.
 - [Tours](tours.md) — the editor tour and the VR welcome, and how to replay them.
+- [Settings](settings.md) — the grouped menu, search, sub-pages, resetting a category or everything.
 - [Connection](connection.md) — invite links, approving peers, and choosing a signaling server.
 
 **Building**
 
 - [Explorer](explorer.md) — your local asset library: import files, organize folders, drag assets into the scene.
 - [Packs](packs.md) — ready-made model and audio collections you can browse and import.
-- [Prefabs](prefabs.md) — save any object as a reusable asset.
+- [Prefabs](prefabs.md) — save any object as a reusable asset, update every placed copy, sort them into folders and tags.
+- [Material Presets](materials.md) — named surface looks, seven built in, saved and shared with your session.
 - [Mesh Editing](mesh-editing.md) — vertices, edges and faces: extrude, bevel, knife, loops and mirroring.
 - [Snapping](snapping.md) — line things up: grid steps, surfaces, and snapping onto real geometry.
 - [UV & Textures](uv-editor.md) — unwrap a model, paint on it, and give parts of it their own materials.

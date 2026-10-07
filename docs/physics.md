@@ -129,11 +129,30 @@ Only dynamic objects can be picked up, objects another peer has locked are refus
 | Pointer: *Click only* | taps fire On Click nodes, nothing can be picked up |
 | Pointer: *Look only* | neither |
 | Limit grab reach · Reach (m) | off by default; when on, you can only pick up objects within this distance of your body (0.5–5 m, 1.3 when switched on) — [Towers](games.md#towers) uses it so high pieces need steps |
-| Keep players on the ground | no <kbd>Q</kbd>/<kbd>E</kbd> flying; the camera stays at eye height |
+| Flying | **Off** (default) / **Allowed** / **Removed** — see [Flying](#flying) |
 | Start the simulation when play mode opens | for scenes that are games rather than models |
 | Spawn point | where desktop play starts. **Set to the view's focus** stores the point the view orbits around, facing the way the camera looks at it; **Clear** removes it |
 
 A module can override these for its own world by publishing them on its scene group.
+
+### Flying
+
+Since 1.26 players **walk** in Play unless the game allows flying. (Before, every scene without *Keep players on the
+ground* ticked flew on a desktop.) **Configure Scene ▸ Physics ▸ Play mode ▸ Flying**:
+
+| Choice | What it means |
+|---|---|
+| **Off** (default) | players walk; the camera stays at eye height. A game module may still allow flying |
+| **Allowed** | <kbd>Q</kbd> / <kbd>E</kbd> on a desktop, the **Up** / **Down** touch buttons, and in VR Interact, flying with the stick along where the controller points |
+| **Removed** | nobody flies in this scene, even if a game module or a Character Controller node in fly mode asks for it |
+
+![Configure Scene ▸ Physics ▸ Play mode, with Flying set to Allowed](img/physics/flying-setting.png)
+
+Of the bundled games, the Jam Room flies (it is designed for VR flying), and Dungeon Realms does when its **Game Rules ▸
+disableFlight** is off; every other game walks. A module allows flying with `userData.play.locomotion.fly = true` (or by
+un-grounding play), and a [Character Controller](build-a-game.md#3-a-character-that-walks) node in fly mode counts as
+allowing it. The editor's free-fly — <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> + <kbd>Q</kbd>/<kbd>E</kbd>, and
+flying in VR Edit — is unchanged.
 
 ## The knock
 

@@ -7,8 +7,8 @@ casters the draws went to. Everything is measured on the device it runs on, so a
 in a headset is a recording of the headset.
 
 Recordings are **local**. They are kept in this browser, nothing replicates to your peers, and
-nothing leaves the device unless you export a file or turn on
-[Send performance reports](#send-performance-reports).
+nothing leaves the device unless you export a file, turn on
+[Send performance reports](#send-performance-reports) or [send a problem report](#report-a-problem).
 
 ## Opening the Profiler
 
@@ -111,6 +111,28 @@ need two Detailed recordings. Use it for before/after: record, change something,
 opens `.tpprof` files, several at once, including the exports the operators' performance-reports
 script writes from [sent reports](#send-performance-reports). An imported recording is an
 ordinary recording from then on: rename it, pin it, compare it.
+
+## Report a problem
+
+When something is wrong, **Menu ▸ Report a problem** sends it to the theprototype team with a
+picture of what you saw. In a headset it is the radial menu's **Tools ▸ Profile ▸ Report a problem**.
+
+**On a desktop or the Quest browser** the picture is taken the moment you press it. Then:
+
+1. **Drag on the picture** to box what is wrong (**×** removes a box).
+2. Say **what happened**.
+3. Choose whether to **include the last 30 s of frame data**.
+4. Tick **Send this to the theprototype team** and press **Send** — or press **Save on this device** instead, and it
+   lands in the Profiler's [recordings](#the-recordings-list).
+
+![Report a problem: a box drawn on the picture, a note, and the Send box ticked](img/profiler/report-a-problem.png)
+
+**In a headset** the VR keyboard asks what is wrong — say where on the screen. When you are signed in, its title says
+that <kbd>Enter</kbd> sends it.
+
+**What is sent:** the picture, your note and boxes, the app version and your device (and the frame data, if ticked),
+with your account so the team can reply. Nothing is sent without the box ticked, and sending needs you to be signed in
+(profile menu, top right).
 
 ## Report this moment
 

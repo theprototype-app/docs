@@ -45,6 +45,31 @@ you were.
 their character — on **this device only**, and lighter on a headset with many people in the room. They still see your
 character.
 
+## Knocked-off idle
+
+When someone gives no input for a while, everyone sees their character **knocked off**: little stars circle its head,
+the head sways in a slow figure-8, and its eyes turn into spinning stars. Any key, click, mouse move or head move wakes
+them, and it fades out smoothly.
+
+![Eight characters knocked off, stars circling their heads and in their eyes](img/avatars/knocked-off.png)
+
+**Settings ▸ Interface ▸ Avatars ▸ Knocked-off idle** chooses when *you* count as idle: **Off**, **10 s**, **20 s** (the
+default) or **60 s**. It is a setting for this device.
+
+It works on every head — the character's own, the stylised ones, a photo card and the classic floating head — and costs
+one extra draw call per idle character, none while awake.
+
+## Feet on the ground
+
+Since 1.26 characters stand on the floor in Play. (Before, a walking player sank about 0.9 m into the ground on everyone
+else's screen.)
+
+- A walking player tells the others where their feet are, so the character stands on the same floor — steps and raised
+  floors included — in desktop Play, with a [Character Controller](build-a-game.md#3-a-character-that-walks) node in walk
+  mode, and walking in VR Interact.
+- Each foot stays planted while walking or running: the animation's heel roll no longer pushes a foot through the floor.
+- A player who is flying or editing is still drawn with the body hanging under the head, as before.
+
 ## In VR
 
 A VR user's character follows their head, and its arms reach for their controllers; a hand held out of the arm's reach
@@ -54,5 +79,7 @@ falls back to the floating controller marker. Pointing at an object puts the cha
 
 - The bodies are stylised (big heads): a character is about 2.2 m tall so its eyes sit where the person's are.
 - In the editor, a character follows the editor camera — flying the camera makes the body float.
+- On a steep slope (20–30°) the feet follow the walker's capsule and can float a couple of centimetres above the slope;
+  there is no foot IK yet.
 - Characters add no network traffic: each screen works the bodies out from the position and hand data already shared.
 - Each character is at most about 6,000 triangles with one material, so eight people stay inside a Quest's budget.

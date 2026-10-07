@@ -8,6 +8,7 @@ nav:
     - Tours: tours.md
     - Units: units.md
     - Themes & Appearance: appearance.md
+    - Settings: settings.md
     - Your Character: avatars.md
     - Connection: connection.md
   - Building:
@@ -15,6 +16,7 @@ nav:
     - Packs: packs.md
     - Levels of Detail: lod.md
     - Prefabs: prefabs.md
+    - Material Presets: materials.md
     - Mesh Editing: mesh-editing.md
     - Splines: splines.md
     - Snapping: snapping.md

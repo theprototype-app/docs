@@ -45,7 +45,7 @@ you put the headset on:
   Jam Room let a grip in empty air move, turn and scale the whole scene, as in Edit (a grip on something you can hold
   still holds it);
 - the **left stick walks** you: walls stop you, gravity keeps you on the floor, small steps climb.
-  No flying or teleporting unless the scene allows it. Where a game allows teleport it **keeps you inside**: you land
+  No flying or teleporting unless the scene allows it (see [Flying](physics.md#flying)). Where a game allows teleport it **keeps you inside**: you land
   only on walkable ground inside the play area, never through a wall — a **red arc** means that spot is refused and
   releasing does nothing;
 - editor helpers (the grid, light and collider wireframes, outlines) are hidden;
@@ -65,6 +65,9 @@ come back. Press it again to return to Interact; the game puts you back on its s
 menu board's **Edit mode** button does the same.
 
 On a desktop, press **Esc** to leave Play, then the bar's Edit/Interact cell (or **I**).
+
+In [Race](race.md#in-vr) you sit in the car: the left stick drives and steers, and you step out beside the driver's door
+when the race ends.
 
 ## The game HUD in a headset
 
@@ -199,6 +202,15 @@ on the keyboard puts the previous search back.
 - **VR Stretch** — non-uniform, per-axis scaling. From the Edit menu, grab the **W/H/D slider handles** and drag horizontally to stretch that axis; the result is baked when you confirm.
 - **Box select** (Tools ▸ Box select) — pull the trigger to anchor one corner, drag out a box, release to select everything inside it.
 
+### Grabbing a selection
+
+In Edit, gripping any object that is part of a selection of two or more carries the **whole selection**: move your hand
+to move them all, twist your wrist to turn them, push the thumbstick left / right to scale them — about the
+[pivot point](controls.md#the-pivot-of-a-multi-selection), which you set in **Settings ▸ Editing ▸ Pivot point**
+(*Active object* is the one you grip). Letting go is one undo step.
+
+Grid and surface snapping, and the stick's push / pull reel, apply to single-object grabs only.
+
 ## Editing meshes in VR
 
 VR supports both face and vertex editing:
@@ -281,7 +293,7 @@ headset's **All settings** panel, and desktop **Settings ▸ VR**. Search deskto
 | **Body** | **Stance** (Standing / Seated), **Height** (±50 cm in 5 cm steps) |
 | **Controls** | **Menu hand** (Right / Left), **Hold to open menu**, **Left-handed**, **Grab style**, **Remap buttons**, **Reset buttons** |
 | **Display** | **Refresh rate** (Max / 90 / 120 Hz), **FPS and draw calls**, **Statistics card**, **Peer hands**, **Passthrough** (applies the next time you enter), **Selection wireframe**, **Reset panel positions**, **Game HUD** (Follow head / Fixed in world / Wrist only), **Game HUD size** (Small / Medium / Large), **Button hints** ([game HUD](#the-game-hud-in-a-headset)) |
-| **Editing** | **Hold to move vertex**, **Sleeve palette** (experimental), **Face edit limit** (2500), **Vertex edit limit** (800) |
+| **Editing** | **Hold to move vertex**, **Sleeve palette** (experimental), **Face edit limit** (2500), **Vertex edit limit** (800), **Pivot point** |
 
 - **Smooth turning** and the **comfort vignette** (the edges of your view darken while the stick moves or turns you) work
   everywhere — in Edit as well as in games. Before 1.22 they only worked inside games. A game whose own Turning setting is
