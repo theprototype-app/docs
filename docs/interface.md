@@ -44,7 +44,9 @@ can be rebound there like any shortcut.
 Every docked or floating window — Explorer, Objects, Chat, AI assistant, Notes, the Notification centre, the node
 editor, Flow code, Animation, UV, Shader, HUD editor, Profiler, the Code workspace — has the same header: icon, title,
 the window's own actions, then pin and close in the same places. Windows in one group, and the views in the bottom dock,
-share **one tab strip**: pill tabs with the view's icon; a docked view no longer repeats its name under its tab.
+share **one tab strip**: pill tabs with the view's icon and their own **✕** to close that view (it shows on the
+active tab and when you point at one); a docked view no longer repeats its name under its tab. More tabs than fit
+scroll sideways (the wheel or a swipe; the strip fades where more tabs are hidden) while **+** stays in place.
 Moving, docking, splitting and tabbing work exactly as before — see [Floating windows](controls.md#floating-windows).
 
 Lists scroll with a thin scrollbar that appears only while you scroll or point at them; there are no chunky native
@@ -78,12 +80,17 @@ Below 640 px wide the app switches to a phone layout with less on screen and not
   rest: Chat, the AI assistant, Notes, the node editor and every other window, the viewport tools and stats.
 - **Make the bar yours**: **More ▸ Edit bar…**, or a long press on any tab, picks which views take the four slots
   (More always stays). The choice is kept on this device; **Reset** goes back to the default.
-- **A context strip** above the bar follows what you are doing: with nothing selected it offers Undo, Redo, Select
-  multiple and Interact; once something is selected, Move, Rotate, Scale, Inspect, Undo and Redo.
-- **Windows and menus open as bottom sheets** with a handle: drag (or tap the handle) between peek, half and full
-  height, and down to close. Each sheet reopens at the height you left it, on this device. Menus drill in place with a
-  **Back** row instead of opening side panels.
-- **Settings** is a list you tap into, with ‹ Back on every page; dialogs open full-screen.
+- **The selection toolbar** appears only while something is selected: Move, Rotate, Scale, Inspect, Undo and Redo.
+  With nothing selected — just looking around — there is no toolbar; **More ▸ Edit** has Undo, Redo, Select multiple
+  and Interact mode.
+- **Sheets sit above the bottom bar.** Objects, Explorer and the other docked views, the Inspector, Notifications, Add
+  and More open as bottom sheets with a handle — drag (or tap the handle) between peek, half and full height — and
+  the bar with Play stays visible and tappable. The selection toolbar rides on top of whatever sheet is open, so you
+  can pick an object in Objects and move or undo without closing it. Each sheet reopens at the height you left it, on
+  this device. The menus you open by long-pressing the scene are short-lived action sheets that may cover the bar
+  until you pick something or tap outside.
+- **Settings** is a list you tap into, with ‹ Back on every page; Settings and dialogs open full-screen and cover the
+  logo while they are open.
 
 Touch targets are at least 44 px, switches 51 × 31, and text fields use 16 px text so the browser never zooms.
 

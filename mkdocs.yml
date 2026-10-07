@@ -18,6 +18,7 @@ nav:
     - Levels of Detail: lod.md
     - Prefabs: prefabs.md
     - Material Presets: materials.md
+    - Architecture: architecture.md
     - Mesh Editing: mesh-editing.md
     - Splines: splines.md
     - Snapping: snapping.md
@@ -115,6 +116,7 @@ nav:
       - Particles: nodes/particle.md
       - Custom Node: nodes/customnode.md
       - Set Active Camera: nodes/setcamera.md
+      - Camera Rig: nodes/camerarig.md
       - Set Look: nodes/setlook.md
       - Game Start: nodes/gamestart.md
       - Store Value: nodes/storevalue.md
