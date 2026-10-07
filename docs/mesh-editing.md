@@ -96,7 +96,7 @@ Icons are for tools; commands that act immediately read as words. Whichever tool
 | **Subdivide** | <kbd>S</kbd> | Split the selection into a finer grid, 2×2 per quad. |
 | **Bridge** | <kbd>B</kbd> | Build a tunnel between two selected pieces. |
 | **Loop cut** | <kbd>C</kbd> | Insert edge loops across the ring your selection lies on (the **cuts** field sets how many). |
-| **Knife** | <kbd>K</kbd> | Cut across the mesh on screen — see below. |
+| **Knife** | <kbd>K</kbd> | Cut across the mesh on screen, in a straight line or a polyline — see [below](#knife). |
 | **Flip normals** | <kbd>F</kbd> | Reverse the winding, for a face that renders inside-out. |
 | **Duplicate** | | Copy the selected faces in place. They start exactly on top of the originals — drag them off with the gizmo. |
 | **Solidify** | | Give the selected surface thickness — see [below](#solidify). |
@@ -122,7 +122,30 @@ Icons are for tools; commands that act immediately read as words. Whichever tool
 
 Pick **Knife**, click one end of the cut and then the other. A dashed band follows your cursor between the two clicks so you can see where the blade will land; every face the line crosses is split. <kbd>Esc</kbd> drops a cut in progress without leaving the session.
 
-The cut is a line *on screen*, so it slices straight through the model from your point of view — orbit first to line up the angle you want.
+The cut is a line *on screen*, so it slices straight through the model from your point of view — every layer under the line, front and back — and the result is always watertight. Orbit first to line up the angle you want.
+
+#### Polyline cuts
+
+Since @@VER@@ the knife cuts along a **polyline**, not only a straight line:
+
+- Click where the cut starts.
+- **Shift+click** places each corner (so does <kbd>Ctrl</kbd>+click, or a tap with the touch
+  [Multi-select](controls.md#selecting-without-a-keyboard) button on). Corners you place on the mesh become real
+  vertices, and the cut runs along mesh edges between them.
+- A plain click on the last point ends the cut. <kbd>Enter</kbd> ends it at the last corner you placed.
+- <kbd>Backspace</kbd> takes the last corner back; <kbd>Esc</kbd> drops the whole cut.
+- While a cut is pending, the toolbox's **Knife options** show how many points you have placed, with **Back** and
+  **Cut** buttons — the way to finish a cut on a touch screen.
+
+![A polyline knife cut across the top of a cube: two corners placed, the dashed last leg following the cursor, and Knife options showing 3 points with Back and Cut](img/mesh-editing/knife-polyline.png)
+
+A point within a few pixels of a corner of the face under it snaps onto that corner, and one within a pixel or two of an
+edge snaps onto the edge, so a cut does not leave needle-thin triangles. The whole polyline is **one undo step**, and
+your peers see the cut as it is committed.
+
+!!! note "Changed in @@VER@@"
+    A two-click cut that ends **inside** the mesh now ends exactly where you clicked. Before, it ran on to the far corner
+    of that triangle.
 
 ### Solidify
 
@@ -281,6 +304,32 @@ The *Cleanup* and *Symmetry* sections act on the whole object, not on your selec
 !!! tip "Model half of it"
     Symmetrize is a one-shot: shape the left side however you like, then mirror it. Faces that straddle the plane are cut cleanly on it, so the two halves join watertight.
 
+### Live symmetry
+
+Since @@VER@@ the **Symmetry** section has a **live symmetry** switch. While it is on, every edit you make is mirrored
+across the chosen axis — the same **X / Y / Z** buttons as Symmetrize — from the side you edited:
+
+- Extrude a face on the left and the right gets the same extrusion.
+- In **Vertices** mode, dragging a vertex moves its mirror twin with it, live. A vertex on the mirror plane slides along
+  the plane and never leaves it, so the seam stays closed.
+- The side your edit changed wins; **keep + / −** only decides when the edit sits on the plane itself.
+- The edit and its mirror are **one undo step**.
+
+![Live symmetry on across X: one face selected on the left with the gizmo on it, and the Symmetry section's mirror, keep, Symmetrize and live symmetry controls](img/mesh-editing/live-symmetry.png)
+
+Turning it on does not change the mesh. If the mesh is not symmetric yet, press **Symmetrize** first — a vertex with no
+twin moves alone.
+
+- Only your own edits are mirrored, and only while the switch is on. Undo, redo, **Cancel** and edits that arrive from
+  peers are applied exactly as they were made.
+- The switch is yours alone and is not saved: it is off again the next time you open the app. Peers get the mirrored
+  geometry like any other edit.
+
+!!! note "Limits"
+    - Face and edge gizmo drags are mirrored when you let go, not continuously while you drag.
+    - There is no live symmetry switch in VR yet. Edits you make in the headset are mirrored if the switch was turned on
+      at the desktop.
+
 ## Display
 
 | Toggle | What it does |
@@ -335,6 +384,7 @@ The same list lives behind the **?** button in the toolbox.
 | <kbd>B</kbd> / <kbd>F</kbd> / <kbd>X</kbd> | Faces: Bridge / Flip normals / Delete |
 | <kbd>F</kbd> | Edges: Fill the hole |
 | <kbd>K</kbd> | Faces: Knife |
+| <kbd>Shift</kbd>+click / <kbd>Enter</kbd> / <kbd>Backspace</kbd> | Knife: place a corner / end the cut at the last corner / take the last corner back |
 | <kbd>L</kbd> | Loop select (faces: again = perpendicular) |
 | <kbd>Ctrl</kbd>+<kbd>+</kbd> / <kbd>-</kbd> | Faces: grow / shrink the selection |
 | <kbd>W</kbd> | Vertices: weld the selected vertices |

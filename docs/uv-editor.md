@@ -97,6 +97,25 @@ The result is packed into the square with a small margin, and never stretched un
 
 Unwrap is a registry, not a fixed list: a [module](modules.md) can add a heavier automatic unwrapper — or replace a built-in — and it appears in this menu like the rest. See [Module SDK](module-sdk.md#registerunwrapbackend).
 
+### Smart unwrap (xatlas)
+
+Since @@VER@@ the [Smart unwrap (xatlas)](modules.md#smart-unwrap-xatlas) module adds **Smart (xatlas)** to the Unwrap
+menu. Instead of projecting from a direction, it places the seams itself, flattens each piece and packs them all into
+the 0–1 square with no overlaps.
+
+1. Install it from **Menu ▸ Modules ▸ Browse ▸ Smart unwrap (xatlas)**. The Unwrap menu picks it up the next time you
+   open it — no need to reopen the editor.
+2. Select a mesh, open the UV editor and pick **Unwrap ▸ Smart (xatlas)**.
+
+![A sphere unwrapped with Smart (xatlas): seams placed automatically, pieces packed without overlaps](img/uv-editor/smart-unwrap.png)
+
+Like the built-in projections, it unwraps only the faces you picked in Edit Mesh if you picked any. It is one undo step,
+and your peers get the new mapping.
+
+!!! note "Limits"
+    - It takes about 0.1 s for a few hundred triangles and about 1–1.5 s for 10,000; the app waits while it works.
+    - Pieces are never rotated: xatlas turns a piece by mirroring it, and painted text would then read backwards.
+
 ## Painting
 
 Pick the **Paint** tool and draw — on the UV map or straight on the model in the viewport. Set the brush **colour** and **size** in the panel.

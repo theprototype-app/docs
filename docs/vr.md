@@ -134,12 +134,18 @@ The names and icons match the desktop menus:
 | Sector | Does |
 |---|---|
 | **Objects** | opens the scene object list panel |
-| **Add ▸** | the viewport menu's Add: Cube, Wedge, Stairs, Sphere, Cylinder, Torus, and **Prefabs** |
-| **Scene ▸** | **Environment ▸** (Studio, Daylight, Sunset, Night, Classic), **Colocate ▸** (see [Colocation](colocation.md)), **Grid**, **World 1:1** (undo a scaled or rotated world grab) |
+| **Add ▸** | the viewport menu's Add: Cube, Wedge, Stairs, Sphere, Cylinder, Torus, **Terrain**, **Architecture ▸** and **Prefabs** |
+| **Scene ▸** | **Environment ▸** (Studio, Daylight, Sunset, Night, Classic), **Colocate ▸** (see [Colocation](colocation.md)), **Grid**, **World 1:1** (undo a scaled or rotated world grab), **Dollhouse** ([below](#dollhouse-teleport)) |
 | **Tools ▸** | Select, Box select, Draw mode, Ping, Simulate physics, **Profile ▸**, **AI** ([below](#the-ai-assistant-in-vr)) |
 | **Redo** · **Undo** | step through history |
 | **Chat** | opens the VR chat panel |
 | **Settings ▸** | every VR setting, the microphone, the welcome tour and Exit VR ([below](#settings)) |
+
+Since @@VER@@ **Add ▸ Terrain** puts a terrain in front of you and starts [sculpting](#sculpting-terrain-in-vr) it, and
+**Add ▸ Architecture ▸** lists the same twelve pieces as the desktop's
+[Add ▸ Architecture](architecture.md#adding-a-piece): **Wall**, **Wall with door**, **Wall with windows**, **Wall with
+door and windows**, **Door**, **Double door**, **Window**, **Casement window**, **Stairs (straight)**, **Stairs (L)**,
+**Stairs (U)** and **Stairs (spiral)**. Each one lands 3 m in front of you.
 
 **Tools ▸ Profile ▸** holds **Record** and **Record detailed** (**Stop recording** while one runs) and **Report moment** —
 see [Profiling the headset](profiler.md#profiling-the-headset-from-the-desktop).
@@ -153,8 +159,8 @@ last:
 **Edit collider** · **Delete**
 
 - **Edit mesh** opens the face and vertex tools (Extrude, Inset, Move, Delete — see [below](#editing-meshes-in-vr)). Its
-  slot shows **Ungroup** for a group, **Edit spline** for a spline, and **Group selection** when several objects are
-  selected.
+  slot shows **Ungroup** for a group, **Edit spline** for a spline, **Sculpt terrain** for a terrain
+  ([below](#sculpting-terrain-in-vr)), and **Group selection** when several objects are selected.
 - **Color** opens a live palette, **Snapping** its side-menu.
 - **Edit collider** shapes the object's collider in the headset — see
   [Colliders](colliders.md#editing-a-collider-in-vr).
@@ -192,7 +198,28 @@ on the keyboard puts the previous search back.
 - **Move** — push the left thumbstick. With **VR flying** on, forward follows where your controller aims; otherwise it stays level. Hold the **left grip** to switch the stick to panning and elevation.
 - **Teleport** — push the **right thumbstick up** to arc a beam, release to blink to the landing spot (in Edit: the ground or any upward-facing surface; in a game, only walkable ground inside the play area — a red arc is refused). Toggle teleport in Settings.
 - **Turn** — push the right thumbstick left/right. **Turning** is *Snap* (fixed steps of the **Snap angle**, 15–90°, default 45°), *Smooth* (a steady turn at the **Smooth speed**) or *Off*, in **Settings ▸ Comfort**; **Mirror turn** flips the direction, and the **Comfort vignette** darkens the edges of your view while you turn or move. This works in Edit and in games alike.
-- **World grab** — grip with **both hands in empty air** to grab the whole world: pull your hands apart/together to scale, twist to rotate, move to reposition. **Scene ▸ World 1:1** snaps it back to normal. Holding the world with **one** grip, push the stick **up/down** to send it away or bring it closer, as with an object.
+- **World grab** — grip with **both hands in empty air** to grab the whole world: pull your hands apart/together to scale, twist to rotate, move to reposition. The turn and the scale [snap to steps](#snapping-the-world-while-you-grab-it). **Scene ▸ World 1:1** snaps it back to normal. Holding the world with **one** grip, push the stick **up/down** to send it away or bring it closer, as with an object.
+- **Dollhouse** — **Scene ▸ Dollhouse** shows the whole scene as a model in front of you; point into it to [stand anywhere](#dollhouse-teleport).
+
+### Snapping the world while you grab it
+
+Since @@VER@@, when you hold **both grips in empty air** and pull your hands apart or together, or twist them, the world
+**turns in 15° steps** and **sticks at 1×, 2×, 5× and 10×** (and at ½, ⅕ and ⅒). Each step gives a light tick in your
+hands, and a readout between your hands says where you are — for example *2× · 45°*.
+
+To move the world freely again, turn off **Settings ▸ VR ▸ Controls ▸ World grab snapping** (also radial **Settings ▸
+Controls**). It is on by default.
+
+### Dollhouse teleport
+
+Radial menu ▸ **Scene ▸ Dollhouse** (since @@VER@@) shows the whole scene as a model on a table in front of you, with an
+amber pin where you stand.
+
+- Point into the model: a green ring marks where you would land. **Pull the trigger** to stand there, at full size.
+- Pull the trigger at nothing, or pick **Dollhouse** or **World 1:1** again, to leave without moving.
+- Grab the model with both grips to turn or scale it, as you would the world.
+- In a game (Interact) the dollhouse works only when the game allows teleporting, and a **red ring** means you cannot
+  land there.
 
 ## Grabbing, scaling and stretching
 
@@ -220,6 +247,27 @@ VR supports both face and vertex editing:
 
 !!! warning "Density caps"
     To stay smooth in VR, mesh editing is limited to **2500 triangles** for face editing and **800 vertices** for vertex editing by default; denser meshes refuse with a toast. Both limits are yours to change in **Settings ▸ VR ▸ Editing ▸ Face edit limit / Vertex edit limit** (also radial **Settings ▸ Editing**). The full-featured mesh editor is desktop-only.
+
+## Sculpting terrain in VR
+
+Since @@VER@@ you can shape [terrain](terrain.md#sculpting-by-hand) from the headset with the desktop's Raise, Lower,
+Smooth and Flatten brush.
+
+- **Start** — radial menu ▸ **Add ▸ Terrain** puts a 24 m terrain in front of you (its middle about 6 m ahead) and starts
+  sculpting it. For a terrain that is already there, select it, then **Selected ▸ Sculpt terrain**.
+- **Sculpt** — point at the terrain with your pointing hand (the one that does not open the menu — the left one by
+  default): a blue ring shows the brush. **Hold the trigger** to sculpt. Every stroke is one undo step, and everyone in
+  the session sees it.
+- **Brush size and strength** — on the pointing hand's thumbstick: **left / right** sets the size (0.25 – 20 m), **up /
+  down** the strength (5 – 100 %). A label on that hand shows the tool and both numbers. While you sculpt, that stick
+  does not walk or turn you; the other stick still does.
+- **Tools** — while you sculpt, the radial menu opens on the **Sculpt** ring: **Raise**, **Lower**, **Smooth**,
+  **Flatten** and **Done**. **Back** goes to the usual menu.
+
+!!! note "Limits"
+    - Only terrain can be sculpted in the headset — [sculpting other meshes](terrain.md#sculpting-any-mesh) is a desktop
+      tool.
+    - Sculpting is an Edit tool: switching to Interact ends it.
 
 ## Floating panels
 
@@ -291,7 +339,7 @@ headset's **All settings** panel, and desktop **Settings ▸ VR**. Search deskto
 |---|---|
 | **Comfort** | **Turning** (Snap / Smooth / Off), **Snap angle** (15 – 90°, default 45°), **Smooth speed** (45 – 180°/s, default 90°/s), **Mirror turn**, **Comfort vignette**, **Teleport**, **Flying** |
 | **Body** | **Stance** (Standing / Seated), **Height** (±50 cm in 5 cm steps) |
-| **Controls** | **Menu hand** (Right / Left), **Hold to open menu**, **Left-handed**, **Grab style**, **Remap buttons**, **Reset buttons** |
+| **Controls** | **Menu hand** (Right / Left), **Hold to open menu**, **Left-handed**, **Grab style**, **World grab snapping** ([world grab](#snapping-the-world-while-you-grab-it)), **Remap buttons**, **Reset buttons** |
 | **Display** | **Refresh rate** (Max / 90 / 120 Hz), **FPS and draw calls**, **Statistics card**, **Peer hands**, **Passthrough** (applies the next time you enter), **Selection wireframe**, **Reset panel positions**, **Game HUD** (Follow head / Fixed in world / Wrist only), **Game HUD size** (Small / Medium / Large), **Button hints** ([game HUD](#the-game-hud-in-a-headset)) |
 | **Editing** | **Hold to move vertex**, **Sleeve palette** (experimental), **Face edit limit** (2500), **Vertex edit limit** (800), **Pivot point** |
 
