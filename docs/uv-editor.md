@@ -99,7 +99,7 @@ Unwrap is a registry, not a fixed list: a [module](modules.md) can add a heavier
 
 ### Smart unwrap (xatlas)
 
-Since @@VER@@ the [Smart unwrap (xatlas)](modules.md#smart-unwrap-xatlas) module adds **Smart (xatlas)** to the Unwrap
+Since 1.28 the [Smart unwrap (xatlas)](modules.md#smart-unwrap-xatlas) module adds **Smart (xatlas)** to the Unwrap
 menu. Instead of projecting from a direction, it places the seams itself, flattens each piece and packs them all into
 the 0–1 square with no overlaps.
 

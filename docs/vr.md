@@ -141,7 +141,7 @@ The names and icons match the desktop menus:
 | **Chat** | opens the VR chat panel |
 | **Settings ▸** | every VR setting, the microphone, the welcome tour and Exit VR ([below](#settings)) |
 
-Since @@VER@@ **Add ▸ Terrain** puts a terrain in front of you and starts [sculpting](#sculpting-terrain-in-vr) it, and
+Since 1.28 **Add ▸ Terrain** puts a terrain in front of you and starts [sculpting](#sculpting-terrain-in-vr) it, and
 **Add ▸ Architecture ▸** lists the same twelve pieces as the desktop's
 [Add ▸ Architecture](architecture.md#adding-a-piece): **Wall**, **Wall with door**, **Wall with windows**, **Wall with
 door and windows**, **Door**, **Double door**, **Window**, **Casement window**, **Stairs (straight)**, **Stairs (L)**,
@@ -203,7 +203,7 @@ on the keyboard puts the previous search back.
 
 ### Snapping the world while you grab it
 
-Since @@VER@@, when you hold **both grips in empty air** and pull your hands apart or together, or twist them, the world
+Since 1.28, when you hold **both grips in empty air** and pull your hands apart or together, or twist them, the world
 **turns in 15° steps** and **sticks at 1×, 2×, 5× and 10×** (and at ½, ⅕ and ⅒). Each step gives a light tick in your
 hands, and a readout between your hands says where you are — for example *2× · 45°*.
 
@@ -212,7 +212,7 @@ Controls**). It is on by default.
 
 ### Dollhouse teleport
 
-Radial menu ▸ **Scene ▸ Dollhouse** (since @@VER@@) shows the whole scene as a model on a table in front of you, with an
+Radial menu ▸ **Scene ▸ Dollhouse** (since 1.28) shows the whole scene as a model on a table in front of you, with an
 amber pin where you stand.
 
 - Point into the model: a green ring marks where you would land. **Pull the trigger** to stand there, at full size.
@@ -250,7 +250,7 @@ VR supports both face and vertex editing:
 
 ## Sculpting terrain in VR
 
-Since @@VER@@ you can shape [terrain](terrain.md#sculpting-by-hand) from the headset with the desktop's Raise, Lower,
+Since 1.28 you can shape [terrain](terrain.md#sculpting-by-hand) from the headset with the desktop's Raise, Lower,
 Smooth and Flatten brush.
 
 - **Start** — radial menu ▸ **Add ▸ Terrain** puts a 24 m terrain in front of you (its middle about 6 m ahead) and starts

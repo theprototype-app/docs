@@ -21,7 +21,7 @@ Pieces from the Add menu land on the 1 m grid.
 
 ### In VR
 
-Since @@VER@@ the headset's radial menu has the same twelve pieces under **Add ▸ Architecture ▸**, with the same names.
+Since 1.28 the headset's radial menu has the same twelve pieces under **Add ▸ Architecture ▸**, with the same names.
 Each one lands 3 m in front of you. See [The first ring](vr.md#the-first-ring).
 
 ## Editing a piece

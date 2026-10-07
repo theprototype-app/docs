@@ -126,7 +126,7 @@ The cut is a line *on screen*, so it slices straight through the model from your
 
 #### Polyline cuts
 
-Since @@VER@@ the knife cuts along a **polyline**, not only a straight line:
+Since 1.28 the knife cuts along a **polyline**, not only a straight line:
 
 - Click where the cut starts.
 - **Shift+click** places each corner (so does <kbd>Ctrl</kbd>+click, or a tap with the touch
@@ -143,7 +143,7 @@ A point within a few pixels of a corner of the face under it snaps onto that cor
 edge snaps onto the edge, so a cut does not leave needle-thin triangles. The whole polyline is **one undo step**, and
 your peers see the cut as it is committed.
 
-!!! note "Changed in @@VER@@"
+!!! note "Changed in 1.28"
     A two-click cut that ends **inside** the mesh now ends exactly where you clicked. Before, it ran on to the far corner
     of that triangle.
 
@@ -306,7 +306,7 @@ The *Cleanup* and *Symmetry* sections act on the whole object, not on your selec
 
 ### Live symmetry
 
-Since @@VER@@ the **Symmetry** section has a **live symmetry** switch. While it is on, every edit you make is mirrored
+Since 1.28 the **Symmetry** section has a **live symmetry** switch. While it is on, every edit you make is mirrored
 across the chosen axis — the same **X / Y / Z** buttons as Symmetrize — from the side you edited:
 
 - Extrude a face on the left and the right gets the same extrusion.

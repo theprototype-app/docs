@@ -73,7 +73,7 @@ Drag on the terrain surface to sculpt. A ring cursor follows your pointer, huggi
 
 Each brush stroke — from pressing down to lifting the pointer — is **one undo step** (<kbd>Ctrl</kbd>+<kbd>Z</kbd>). While you drag, peers see a live preview several times a second; when you release, the final shape is committed and synced.
 
-Since @@VER@@ you can sculpt terrain from a VR headset too: radial menu ▸ **Add ▸ Terrain**, or select a terrain and
+Since 1.28 you can sculpt terrain from a VR headset too: radial menu ▸ **Add ▸ Terrain**, or select a terrain and
 pick **Selected ▸ Sculpt terrain** — see [Sculpting terrain in VR](vr.md#sculpting-terrain-in-vr).
 
 ### Sculpting any mesh

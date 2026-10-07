@@ -86,7 +86,7 @@ millimetre: the blocks are decoration, not game pieces.
 
 ### Smart unwrap (xatlas)
 
-New in @@VER@@. It adds **Smart (xatlas)** to the [UV editor](uv-editor.md#smart-unwrap-xatlas)'s **Unwrap** menu:
+New in 1.28. It adds **Smart (xatlas)** to the [UV editor](uv-editor.md#smart-unwrap-xatlas)'s **Unwrap** menu:
 automatic seams, each piece flattened, and everything packed into one 0–1 atlas with no overlaps. It is built on
 [xatlas](https://github.com/jpcy/xatlas) compiled to WebAssembly, and the `.wasm` ships inside the module's zip, so it
 makes no network calls.

@@ -76,4 +76,4 @@ Changes save as you make them — there is no Save button; **Done** closes the w
 | Knocked-off idle | new | **Interface ▸ Avatars ▸ Knocked-off idle** — see [Knocked-off idle](avatars.md#knocked-off-idle) |
 | Density | new | **Interface ▸ Density** — see [above](#density) |
 | Sky image quality | new in 1.27 | **Scene ▸ Performance ▸ Sky image quality** — **Auto** / **Full (1k)** / **Low (headset)**, this device only; see [Sky image quality](camera.md#sky-image-quality) |
-| World grab snapping | new in @@VER@@ | **VR ▸ Controls ▸ World grab snapping** — on by default, this device only; see [Snapping the world while you grab it](vr.md#snapping-the-world-while-you-grab-it) |
+| World grab snapping | new in 1.28 | **VR ▸ Controls ▸ World grab snapping** — on by default, this device only; see [Snapping the world while you grab it](vr.md#snapping-the-world-while-you-grab-it) |

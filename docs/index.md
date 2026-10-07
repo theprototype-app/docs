@@ -24,7 +24,7 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
-**@@VER@@ — VR + mesh: sculpt and snap the world from the headset, polyline knife, live symmetry, smart unwrap.** In a
+**1.28 — VR + mesh: sculpt and snap the world from the headset, polyline knife, live symmetry, smart unwrap.** In a
 headset, radial menu ▸ **Add ▸ Terrain** drops a terrain in front of you and you [sculpt it](vr.md#sculpting-terrain-in-vr)
 with the trigger — Raise, Lower, Smooth and Flatten, the brush sized and weighted on the thumbstick. Grabbing the world
 with both grips now [turns it in 15° steps and sticks at 1×, 2×, 5× and 10×](vr.md#snapping-the-world-while-you-grab-it)
