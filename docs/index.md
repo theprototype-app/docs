@@ -37,6 +37,18 @@ chip and a bottom bar you can rearrange — Add · Objects · Play · Explorer �
 remember their height. Light and custom [themes](appearance.md) restyle everything. Every shortcut, setting, scrub field
 and panel works as before.
 
+**1.28 — VR + mesh: sculpt and snap the world from the headset, polyline knife, live symmetry, smart unwrap.** In a
+headset, radial menu ▸ **Add ▸ Terrain** drops a terrain in front of you and you [sculpt it](vr.md#sculpting-terrain-in-vr)
+with the trigger — Raise, Lower, Smooth and Flatten, the brush sized and weighted on the thumbstick. Grabbing the world
+with both grips now [turns it in 15° steps and sticks at 1×, 2×, 5× and 10×](vr.md#snapping-the-world-while-you-grab-it)
+(**World grab snapping**, on by default), **Scene ▸ Dollhouse** shows the scene as a model on a table so you can
+[point into it and stand anywhere](vr.md#dollhouse-teleport), and **Add ▸ Architecture ▸** has the desktop's twelve
+[walls, doors, windows and stairs](architecture.md#in-vr). In [Edit Mesh](mesh-editing.md) the knife cuts along a
+[polyline](mesh-editing.md#polyline-cuts) — <kbd>Shift</kbd>+click for each corner, <kbd>Enter</kbd> to finish — and
+[live symmetry](mesh-editing.md#live-symmetry) mirrors every edit across X, Y or Z as you make it, in one undo step. The
+new [Smart unwrap (xatlas)](modules.md#smart-unwrap-xatlas) module adds **Unwrap ▸ Smart (xatlas)** to the
+[UV editor](uv-editor.md#smart-unwrap-xatlas): automatic seams, packed with no overlaps.
+
 **1.27 — world + nodes: sky images, architecture, smarter nodes, particles that trail.** A [sky
 image](camera.md#sky-images-hdri) (an HDRI) can now be the scene's sky and its light: objects take its colours, shiny
 ones reflect it, water mirrors its clouds and the sun sits where the photo's sun is. Pick **Clear sky**, **Meadow**,
@@ -241,7 +253,7 @@ for your machine [reduces quality or pauses instead of freezing](performance.md)
 - [Prefabs](prefabs.md) — save any object as a reusable asset, update every placed copy, sort them into folders and tags.
 - [Material Presets](materials.md) — named surface looks, seven built in, saved and shared with your session.
 - [Architecture](architecture.md) — walls with doorways and windows, doors that open, and stairs, all from numbers you can change.
-- [Mesh Editing](mesh-editing.md) — vertices, edges and faces: extrude, bevel, knife, loops and mirroring.
+- [Mesh Editing](mesh-editing.md) — vertices, edges and faces: extrude, bevel, polyline knife, loops, and mirroring live or in one go.
 - [Snapping](snapping.md) — line things up: grid steps, surfaces, and snapping onto real geometry.
 - [UV & Textures](uv-editor.md) — unwrap a model, paint on it, and give parts of it their own materials.
 - [Scene Look (Post-processing)](post-processing.md) — grade the finished frame: ambient occlusion, colour, bloom, grain. Saved with the scene and shared with everyone.
@@ -252,7 +264,7 @@ for your machine [reduces quality or pauses instead of freezing](performance.md)
 - [Water](water.md) — tanks, pools, oceans and lava with waves, refraction, caustics, foam and bubbles.
 - [Fluid Tank & Jiggle](simulation.md) — particle liquid you can pour, and springy secondary motion.
 - [Fluids](fluids.md) — particle water poured into the scene, rivers, chutes and pipes, and wheels that turn it.
-- [Terrain & Sculpting](terrain.md) — add ground and shape it with a brush.
+- [Terrain & Sculpting](terrain.md) — add ground and shape it with a brush, on the desktop or in a headset.
 - [Saving & Sessions](saving.md) — the `.tpscene` bundle format, GLTF export, sessions and autosave.
 
 **The scene**

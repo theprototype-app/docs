@@ -73,6 +73,9 @@ Drag on the terrain surface to sculpt. A ring cursor follows your pointer, huggi
 
 Each brush stroke — from pressing down to lifting the pointer — is **one undo step** (<kbd>Ctrl</kbd>+<kbd>Z</kbd>). While you drag, peers see a live preview several times a second; when you release, the final shape is committed and synced.
 
+Since 1.28 you can sculpt terrain from a VR headset too: radial menu ▸ **Add ▸ Terrain**, or select a terrain and
+pick **Selected ▸ Sculpt terrain** — see [Sculpting terrain in VR](vr.md#sculpting-terrain-in-vr).
+
 ### Sculpting any mesh
 
 The same brush works on **any** mesh, not just terrain: right-click an object ▸ **Sculpt mesh**. The difference is which way the brush pushes — on terrain it moves the surface straight up and down, on a mesh it moves along the surface's own normals, so you can bulge and dent a shape from any angle. **Flatten** pulls toward the plane you first touched and **Smooth** relaxes the surface toward its local average, exactly as on terrain.

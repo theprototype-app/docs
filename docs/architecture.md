@@ -19,6 +19,11 @@ Right-click the viewport ▸ **Add ▸ Architecture** (or type the name into the
 
 Pieces from the Add menu land on the 1 m grid.
 
+### In VR
+
+Since 1.28 the headset's radial menu has the same twelve pieces under **Add ▸ Architecture ▸**, with the same names.
+Each one lands 3 m in front of you. See [The first ring](vr.md#the-first-ring).
+
 ## Editing a piece
 
 Select the piece and open its **Properties**: the **Geometry** section holds every number. Rows that do not apply are
