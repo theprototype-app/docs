@@ -158,6 +158,57 @@ Every scene page ends with **Report this scene**: pick a reason — **Spam**, **
 Staff accounts have a **Staff · Insights & moderation** entry in the profile menu for the report queue and the visit
 totals; it is not shown to anyone else. Assets an author had no right to license are exactly what *Stolen work* is for: the license picker cannot express "all rights reserved", so a report and a takedown are how that is handled.
 
+## Cloud saves and kept rooms
+
+Signed in on theprototype.app, your scenes, projects and rooms can live in your account. The open-source app has
+neither; it works exactly as before without the cloud.
+
+### Cloud saves
+
+**Where:** logo menu ▸ **Cloud saves** (the row under Save), or profile menu ▸ Cloud saves ▸ Open.
+
+**What it does:** keeps your scenes and whole projects in your account, with versions, so you can open them on
+another device or go back to an earlier state.
+
+- **Save this scene** saves the open scene. The first save makes a new entry. Later saves of the *same scene*
+  (the same scene file, even after a reload) go into that entry as a new **version**. Add an optional note.
+- **Save the whole project** saves the project (`.tp`): every scene and the Explorer library.
+- Each entry shows a thumbnail, its newest version, its size and when it was last saved.
+  - **Open** loads the newest version. A scene goes through the usual "Backup before…" safety copy; a project asks
+    before replacing your current project.
+  - **Versions** lists every kept version (newest, autosave, conflict); **Open** any of them. Saving after opening
+    an older version makes your save the newest; the others stay in the list.
+  - **Rename**, **Delete** (press twice; it removes every version).
+  - **Keepers**: add people by their community **@handle**. Keepers can open the save and add versions; only you
+    can rename or delete it.
+- **Two devices, one save:** if the save changed somewhere else since you opened it, your save is still kept, as
+  a *conflict* version, and you choose **Make mine the newest** or **Open theirs**. Nothing is overwritten
+  silently.
+- **Storage:** the meter shows what you use: 250 MB per account, up to 30 saves, the newest 20 versions of each
+  kept, 50 MB per file.
+
+### Kept rooms (persistent rooms)
+
+**Where:** Connect ▸ Rooms ▸ your room settings ▸ **Keep this room when everyone leaves**. List the room once to
+create it. A kept room stays kept if you unlist it later; it just becomes private.
+
+- While the room is open, one person in it (you, or one of your keepers when you are not there) saves it
+  automatically about every 90 seconds after a change, and when the tab is hidden. **Save room now** saves at
+  once.
+- Nothing is saved while someone is playing a game in the room; play-mode state is not saved.
+- **When you leave**, a keeper still in the room takes over and the room stays open. **When everyone has left**, the
+  room is **asleep** with its last save.
+- **Your kept rooms** (in the Rooms tab) lists the kept rooms you own or keep: **Join** a live one, **Wake** an
+  asleep one. Wake loads its last save and you host it. When you open the app, it offers your own asleep room.
+- Name keepers in Cloud saves ▸ the room's entry ▸ **Keepers**.
+- If the same room ends up open in two sessions, one session hands over and tells you, with a button to join the
+  other.
+
+**Limits:** up to about 90 seconds of changes can be lost if the last person's browser crashes. Only you and your
+keepers can wake a room; others join it while it is live, as before.
+
+**Privacy:** saves are private to you and your keepers (see the [privacy page](https://theprototype.app/privacy), "Cloud saves and kept rooms").
+
 ## What's new on theprototype.app
 
 Since 1.27 the **What's New** window (logo menu) on theprototype.app starts with a **theprototype.app cloud** section:
