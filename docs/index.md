@@ -37,6 +37,12 @@ chip and a bottom bar you can rearrange — Add · Objects · Play · Explorer �
 remember their height. Light and custom [themes](appearance.md) restyle everything. Every shortcut, setting, scrub field
 and panel works as before.
 
+**1.29 — groundwork for cloud saves and kept rooms.** Under the hood, the app can now tell the
+theprototype.app cloud plugin when the scene changes, fingerprint what is in it, and hand over or open a whole
+project — what [cloud saves and rooms that stay open when everyone leaves](community.md) are built on. They switch on
+on theprototype.app separately; the open-source app is unchanged. Plugin authors: the new calls are in the
+[module SDK](module-sdk.md#for-cloud-plugin-authors-scene-changes-and-whole-projects).
+
 **1.28 — VR + mesh: sculpt and snap the world from the headset, polyline knife, live symmetry, smart unwrap.** In a
 headset, radial menu ▸ **Add ▸ Terrain** drops a terrain in front of you and you [sculpt it](vr.md#sculpting-terrain-in-vr)
 with the trigger — Raise, Lower, Smooth and Flatten, the brush sized and weighted on the thumbstick. Grabbing the world

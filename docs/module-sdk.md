@@ -579,6 +579,30 @@ cloudApi.setWhatsNewSection(null);   // removes it
 The markdown is a safe subset: headings, bullets, **bold**, `` `code` `` and https links; anything else is shown as
 text.
 
+### For cloud plugin authors: scene changes and whole projects
+
+New in 1.29 — what a plugin needs to keep a scene or a project somewhere else (theprototype.app's cloud saves and
+kept rooms use them). All are additive: feature-detect each one (`typeof api.onSceneChange === 'function'`), and
+nothing listens until a plugin calls them, so an app without a plugin behaves exactly as before.
+
+```js
+const rev = cloudApi.sceneRevision();          // a counter that moves on EVERY scene change, local or from a peer
+const off = cloudApi.onSceneChange((rev) => { /* something changed — debounce, then save */ });
+const sig = await cloudApi.sceneSignature();   // the CONTENT identity of the open scene (a short hash)
+const { blob, meta } = await cloudApi.buildSceneBundle({ signature: true });   // meta.signature = the same hash
+const project = await cloudApi.buildProjectBundle();                          // the whole project as a .tp
+await cloudApi.openRemoteProject({ url, title: 'My project' });               // asks before replacing the project
+```
+
+| Call | What it does |
+|---|---|
+| `sceneRevision()` | a number that moves on every change to the scene — objects, graphs, animation, looks, sky, physics, music, HUD, game state. Compare two reads to know whether anything changed in between. `0` before the app has booted |
+| `onSceneChange(fn)` | calls `fn(revision)` after every change from now on (never for the current value); returns `off` |
+| `sceneSignature()` | a short hash of what the scene *is* (no ids, timestamps, thumbnail or game state). The revision also moves on internal refreshes, so "did the scene really change since I saved it?" is answered by comparing two signatures |
+| `buildSceneBundle({signature: true})` | as before, plus `meta.signature`. Opt-in, because it is one more pass over the whole scene |
+| `buildProjectBundle({versions?})` | the Explorer's own **Export project** bytes as `{blob, meta: {name, scenes, assets, items, bytes, appVersion}}`; downloads and changes nothing |
+| `openRemoteProject({url, title?})` | fetches a `.tp` and opens it through the app's own path (format check, "This replaces your current project" confirm). View-only users are refused. Resolves the counts, or `null` when refused, declined or failed (the user saw why) |
+
 ## For module authors: pointer, camera, play mode and VR seat
 
 New in 1.26 — the hooks [Race](race.md) uses to drive on a phone and in a headset, open to every module. Each is torn
