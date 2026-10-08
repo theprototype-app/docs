@@ -24,7 +24,7 @@ Profiler's text).
 The theme applies at once and is remembered on this device; a built-in theme is painted before the first frame on the
 next visit, so it never flashes the default. Icons follow the theme's colours too.
 
-Since @@VER@@ every theme follows the **one-accent rule**: blue marks what you can act on or have selected, and orange is
+Since 1.30 every theme follows the **one-accent rule**: blue marks what you can act on or have selected, and orange is
 kept for Play, recording and live states. The light theme and custom themes now restyle **every** surface — windows,
 menus, dialogs, the HUD and the node editor — because every colour comes from the design tokens.
 
@@ -35,7 +35,7 @@ menus, dialogs, the HUD and the node editor — because every colour comes from 
 1. **Export template** downloads the active theme as an editable `.theme.json` — every colour the interface uses, by
    name (surfaces, fields, text, muted text, borders, accents, menus, scrollbars…). Since 1.21 a theme also carries
    **state colours** — `--ink-bad`, `--ink-warn`, `--ink-good` for error, warning and good text, and `--accent-fill` /
-   `--on-accent` for a filled accent chip and the text on it, and a custom theme may set them. Since @@VER@@ it may also
+   `--on-accent` for a filled accent chip and the text on it, and a custom theme may set them. Since 1.30 it may also
    set the redesign's tokens — `--bg-app`, `--surface-1`, `--surface-2`, `--surface-inset`, `--border`,
    `--border-strong`, `--text`, `--text-2`, `--text-muted`, `--text-faint`, `--accent`, `--accent-soft`,
    `--accent-text`, `--live`, `--warn-text`, `--danger`, `--badge-bg`, `--badge-text`; any it leaves out are derived

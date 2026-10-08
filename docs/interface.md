@@ -1,6 +1,6 @@
 # The Interface
 
-Since @@VER@@ every window, menu, dialog, the main HUD and the phone layout are built from one small kit of parts and
+Since 1.30 every window, menu, dialog, the main HUD and the phone layout are built from one small kit of parts and
 one set of colours. This page is the map: where things are and what the shapes mean. Nothing you can *do* changed —
 every shortcut, setting, scrub field and panel works as before; only the look and a few placements moved.
 

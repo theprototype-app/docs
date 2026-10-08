@@ -121,7 +121,7 @@ In play mode the crosshair grows into a ring over anything you can pick up.
 
 Only dynamic objects can be picked up, objects another peer has locked are refused, and nothing is grabbable unless a simulation is running — so scenery and level geometry can never be dragged out of place.
 
-**Configure Scene ▸ Play** sets this for everyone in the scene (since @@VER@@ it is its own section; before, it was *Physics ▸ Play mode*):
+**Configure Scene ▸ Play** sets this for everyone in the scene (since 1.30 it is its own section; before, it was *Physics ▸ Play mode*):
 
 | Setting | Meaning |
 |---|---|
@@ -131,7 +131,7 @@ Only dynamic objects can be picked up, objects another peer has locked are refus
 | Limit grab reach · Reach (m) | off by default; when on, you can only pick up objects within this distance of your body (0.5–5 m, 1.3 when switched on) — [Towers](games.md#towers) uses it so high pieces need steps |
 | Flying | **Off** (default) / **Allowed** / **Removed** — see [Flying](#flying) |
 | Start the simulation when play mode opens | for scenes that are games rather than models |
-| Playing banner | while you play, a small bar at the top says *Playing · Press Esc to stop* (with a Stop button). **Show** (default), **Hide** (also on a phone), or **Custom** — your own words, up to 80 characters. In a game it says *Press Esc for the menu* and the game's **Menu · Esc** button stays. Since @@VER@@ |
+| Playing banner | while you play, a small bar at the top says *Playing · Press Esc to stop* (with a Stop button). **Show** (default), **Hide** (also on a phone), or **Custom** — your own words, up to 80 characters. In a game it says *Press Esc for the menu* and the game's **Menu · Esc** button stays. Since 1.30 |
 | Spawn point | where desktop play starts. **Set to the view's focus** stores the point the view orbits around, facing the way the camera looks at it; **Clear** removes it |
 
 A module can override these for its own world by publishing them on its scene group.

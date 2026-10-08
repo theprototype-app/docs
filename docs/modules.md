@@ -4,7 +4,7 @@ Modules plug playable content into the app — instruments, mini-games, generato
 
 ## The Modules manager
 
-Open it from **Menu ▸ Modules**. Since @@VER@@ **Install from file…** sits in the header, the **Core / User / Browse** tabs
+Open it from **Menu ▸ Modules**. Since 1.30 **Install from file…** sits in the header, the **Core / User / Browse** tabs
 show counts, a **Filter modules** field narrows whatever the tab lists (name, description, author, tags), and each module
 is one row — name, version, description, its actions, the download-as-example icon and its on/off switch.
 

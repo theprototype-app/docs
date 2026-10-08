@@ -19,7 +19,7 @@ editor and Animation:
 
 ## On a phone
 
-Since @@VER@@ the Shader editor gives a phone (or any window narrower than 640 px) the whole canvas: the node palette
+Since 1.30 the Shader editor gives a phone (or any window narrower than 640 px) the whole canvas: the node palette
 and the properties open as sheets from the **Nodes** and **Properties** buttons, and you drag a wire from socket to
 socket with a finger. The tool row scrolls sideways when it does not fit.
 

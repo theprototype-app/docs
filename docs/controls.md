@@ -377,7 +377,7 @@ Layouts are kept on this device. A reload still starts with a clean slate: a lay
 
 ## The toolbar
 
-Since @@VER@@ the toolbar is one glass bar where the accent marks the armed tool or an open window and **Play** is the
+Since 1.30 the toolbar is one glass bar where the accent marks the armed tool or an open window and **Play** is the
 only orange button; on a touch screen its buttons are 44 px. See [The Interface](interface.md#the-main-hud).
 
 Pressing a toolbar button never takes the keyboard: the keys stay with whatever had them — this holds for the bottom

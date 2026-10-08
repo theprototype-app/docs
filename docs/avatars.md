@@ -35,7 +35,7 @@ yourself the way other people do.
 | **Show my name above me** | your name label |
 | **Ping** | the colour and chime of *your* [pings](notifications.md#pinging); **Preview** pings beside your character (only you see and hear it) |
 
-Since @@VER@@ the panel is a **drawer** on the right (a bottom sheet on a phone): drag its inner edge to make it wider or
+Since 1.30 the panel is a **drawer** on the right (a bottom sheet on a phone): drag its inner edge to make it wider or
 narrower — the keyboard works too (focus the edge, then the arrow keys; <kbd>Shift</kbd> for bigger steps) — and the
 camera keeps your character in the part of the screen the drawer leaves free. The size is remembered on this device.
 

@@ -107,7 +107,7 @@ The clipboard is held **by channel** and relative to the earliest key copied, so
 
 ## On a phone
 
-Since @@VER@@ the Animation window fits a phone (and any window narrower than 640 px): it shows one pane at a time —
+Since 1.30 the Animation window fits a phone (and any window narrower than 640 px): it shows one pane at a time —
 **Channels**, **Timeline**, **Key** or **Clip** — from a switch in its header. Drag keys and easing handles with a
 finger, two fingers pan and pinch-zoom the timeline, and a long press opens the key or plot menu (the right-click
 menu on a desktop). Tool rows that do not fit scroll sideways.

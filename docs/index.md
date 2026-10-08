@@ -24,7 +24,7 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
-**@@VER@@ — a calm new look, on a desk and in a pocket.** Every window, menu, dialog, the main HUD and the phone layout
+**1.30 — a calm new look, on a desk and in a pocket.** Every window, menu, dialog, the main HUD and the phone layout
 now share [one interface](interface.md): one window header and [one tab strip](interface.md#windows-and-tabs), one menu
 style with a [shorter object menu](interface.md#menus) (rare actions one level down, nothing removed), calmer dialogs,
 and one accent colour — blue for what you can act on, orange only for Play and live states. The HUD is one glass

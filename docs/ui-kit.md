@@ -105,6 +105,6 @@ current theme and checks the text contrast of each pair.
 
 ## ScrollStrip — rows that can run out of width
 
-`ui/ScrollStrip.svelte` (since @@VER@@) is the row for a toolbar or a tab strip that may not fit: it scrolls sideways
+`ui/ScrollStrip.svelte` (since 1.30) is the row for a toolbar or a tab strip that may not fit: it scrolls sideways
 with a finger drag or the mouse wheel, shows no scrollbar and fades the edge that still hides something. Keep pinned
 controls (a **+**, a close button) outside it. It is on the **/kit** page with the other parts.

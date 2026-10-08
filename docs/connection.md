@@ -13,7 +13,7 @@ It has two halves:
 - **📋 Your ID** — the button on the left shows your own peer ID. Click it to **copy your invite link** (your app URL with your ID attached, e.g. `https://theprototype.app/#AB12CD`) to the clipboard. Until the connection to the signaling server is ready it reads *Generating…*.
 - **Connect field** — paste a peer's ID into *Enter peer ID to connect* and press **Connect** to request a connection.
 
-Since @@VER@@, once you are connected the bar **collapses to a compact chip** — a status dot, the session, the avatars
+Since 1.30, once you are connected the bar **collapses to a compact chip** — a status dot, the session, the avatars
 of who is here and your mic; click it to open the full bar again (its collapse button folds it back). While the signaling link
 is down the status badge says how long it has been trying (*Reconnecting · 2 min*); the attempt count is in the drawer's
 **Info** tab. On a phone the bar is always the chip — tap it for your ID, the join field, Info and Toasts.
