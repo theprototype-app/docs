@@ -24,7 +24,7 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
-**@@VER@@ — groundwork for cloud saves and kept rooms.** Under the hood, the app can now tell the
+**1.29 — groundwork for cloud saves and kept rooms.** Under the hood, the app can now tell the
 theprototype.app cloud plugin when the scene changes, fingerprint what is in it, and hand over or open a whole
 project — what [cloud saves and rooms that stay open when everyone leaves](community.md) are built on. They switch on
 on theprototype.app separately; the open-source app is unchanged. Plugin authors: the new calls are in the

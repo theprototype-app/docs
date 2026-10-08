@@ -577,7 +577,7 @@ text.
 
 ### For cloud plugin authors: scene changes and whole projects
 
-New in @@VER@@ — what a plugin needs to keep a scene or a project somewhere else (theprototype.app's cloud saves and
+New in 1.29 — what a plugin needs to keep a scene or a project somewhere else (theprototype.app's cloud saves and
 kept rooms use them). All are additive: feature-detect each one (`typeof api.onSceneChange === 'function'`), and
 nothing listens until a plugin calls them, so an app without a plugin behaves exactly as before.
 
