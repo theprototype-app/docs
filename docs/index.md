@@ -24,6 +24,19 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.30 — a calm new look, on a desk and in a pocket.** Every window, menu, dialog, the main HUD and the phone layout
+now share [one interface](interface.md): one window header and [one tab strip](interface.md#windows-and-tabs), one menu
+style with a [shorter object menu](interface.md#menus) (rare actions one level down, nothing removed), calmer dialogs,
+and one accent colour — blue for what you can act on, orange only for Play and live states. The HUD is one glass
+toolbar, the [Connect bar collapses to a chip](connection.md#the-connect-panel) once you are connected, toasts stack three
+at a time, and <kbd>Ctrl</kbd>+<kbd>K</kbd> opens a [command palette](interface.md#the-command-palette-ctrlk) over every
+tool, window, menu and setting. While you play a small [banner](physics.md#play-mode-is-interact-mode) says how to stop
+(a scene can hide it or use its own words). [Customize character](avatars.md#customize-character) is a resizable drawer
+that puts your view back exactly. On a phone, a [decluttered layout](interface.md#on-a-phone) keeps the logo, a Connect
+chip and a bottom bar you can rearrange — Add · Objects · Play · Explorer · More — with windows as bottom sheets that
+remember their height. Light and custom [themes](appearance.md) restyle everything. Every shortcut, setting, scrub field
+and panel works as before.
+
 **1.29 — groundwork for cloud saves and kept rooms.** Under the hood, the app can now tell the
 theprototype.app cloud plugin when the scene changes, fingerprint what is in it, and hand over or open a whole
 project — what [cloud saves and rooms that stay open when everyone leaves](community.md) are built on. They switch on

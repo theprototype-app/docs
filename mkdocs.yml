@@ -4,6 +4,7 @@ nav:
   - Getting Started:
     - Welcome: index.md
     - Controls: controls.md
+    - The Interface: interface.md
     - Touch Controls: touch-controls.md
     - Tours: tours.md
     - Units: units.md
@@ -162,6 +163,7 @@ nav:
     - Modules: modules.md
     - Module SDK: module-sdk.md
     - Module Packages: module-package.md
+    - UI kit for modules: ui-kit.md
 
 theme:
   name: material

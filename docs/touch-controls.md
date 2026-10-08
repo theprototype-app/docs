@@ -11,6 +11,9 @@ and any button can wear your own pressed and released images.
 ![The touch controls layout editor, with the Jump button selected](img/touch/layout-editor.png)
 </div>
 
+For the phone layout itself — the bottom bar, the context strip and bottom sheets — see
+[The Interface: On a phone](interface.md#on-a-phone).
+
 ## When they show
 
 **Settings ▸ Touch controls ▸ Show touch controls**:

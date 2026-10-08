@@ -17,6 +17,12 @@ editor and Animation:
 - open the object's properties and press **Open in Shader editor** in the Material
   section.
 
+## On a phone
+
+Since 1.30 the Shader editor gives a phone (or any window narrower than 640 px) the whole canvas: the node palette
+and the properties open as sheets from the **Nodes** and **Properties** buttons, and you drag a wire from socket to
+socket with a finger. The tool row scrolls sideways when it does not fit.
+
 ## Surface, or post
 
 The editor has two halves, and the pair of buttons in its header says which you are in:
