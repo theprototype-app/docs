@@ -29,6 +29,9 @@ The host must allow cross-origin requests (CORS); if a URL fails, try a direct `
 
 - **Built-in packs** can't be deleted (they're bundled), but right-click ▸ **🙈 Hide pack** removes one from view — reversible via *Show N hidden packs* in the ⚙ tab, which also has a *Hide built-in packs* toggle.
 - **Imported packs** can be right-click ▸ **🗑 Delete**d (their item files stay in your library).
+- New in 1.31: a pack **item**'s menu has **Delete cache (size)** in place of Delete — it frees that item's download on
+  this device and the item stays in the pack; a pack's menu has **Delete downloads**. Downloaded items carry a ✓ and the
+  Packs filter has **Downloaded**. See [Placing objects](explorer.md#downloaded-pack-items-and-delete-cache).
 - Right-click any pack ▸ **ⓘ Attribution / license** shows authors, sources and the license (also available from the pack's Properties panel). Licenses use SPDX ids (`CC-BY-4.0`, `CC0-1.0`, `MIT`, …) and per-item licenses can override the pack license.
 
 ## The kits (1.17)
@@ -103,3 +106,12 @@ mypack/
 `manifest.json` declares `id`, `name`, `version`, `author`, `homepage`, a SPDX `license`, and an `items` array — each item with `id`, `kind` (`object` | `texture` | `audio` | `material`, inferred from the extension if omitted), `file`, `thumb`, `name`, and optional per-item `license` / `author` / `source`. Ship pre-rendered `thumb.webp` files so the grid fills in before models load; the app renders a thumbnail itself if none is present.
 
 The full format reference is `PACKS.md` in the app repository.
+
+### Item dimensions (1.31)
+
+Each item row may carry its size so the [placement ghost](explorer.md#ghost-tiers-the-real-model-or-its-box) is right
+before anything downloads: `size` `[w, h, d]` in metres (after the pack's own scale), `box`
+`[minX, minY, minZ, maxX, maxY, maxZ]`, `tris`, `bytes` and `animated: true` for files with clips. In the packs repo
+`node tools/kit-build/kit-build.mjs dims <pack> --write` computes them and the packs CI checks them. A row without them
+still works: the app measures the item the first time it loads and remembers the size. (An old manifest's numeric
+`size` is read as bytes.)

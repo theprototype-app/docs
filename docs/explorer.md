@@ -202,18 +202,75 @@ Right-click an object in the viewport ▸ **Save as…** and choose the format. 
 
 ## Storage
 
-The chip in the Explorer header reads *used / granted* for everything this app keeps in your browser. Click it — or **Storage used…** under **Disk** in the right-click menu, or **Settings ▸ Explorer ▸ Storage used** — for the **Storage** breakdown: library files, old scene versions, deleted files, saved scenes and projects, autosave, prefabs, [material presets](materials.md), installed modules and the rest, each with a size. Tick what you want gone and press **Reclaim**; nothing is removed until you do, and it asks once more.
+The chip in the Explorer header reads *used / granted* for everything this app keeps in your browser. Click it — or **Storage used…** under **Disk** in the right-click menu, or **Settings ▸ Explorer ▸ Storage used** — for the **Storage** breakdown: library files, old scene versions, deleted files, saved scenes and projects, autosave, prefabs, [material presets](materials.md), installed modules and the rest, each with a size — and, since 1.31, **Pack downloads** per pack with **Clear all pack downloads**. Tick what you want gone and press **Reclaim**; nothing is removed until you do, and it asks once more.
 
 ## Files in and out
 
 A session downloads as a **`.tpscene`**, a whole project as a **`.tp`**, and both import back — from the logo menu's **Load**, from the Sessions manager, or by dropping them on the Explorer. Right-click a scene ▸ **Download (.tpscene)**; the Library root's menu has **Export project (.tp)** and a folder's has **Export folder as .tp**; **Import project as folder (.tp)…** adds a `.tp` file's contents to your library as one folder without opening anything. See [Projects](projects.md#the-tp-file).
 
-## Drag into the scene
+## Placing objects
 
-Drag any item out of the Explorer and drop it in the viewport:
+New in 1.31: drag any object — a pack item, one of your Library models, a prefab — from **Explorer ▸ Packs** or
+**Explorer ▸ Library** onto the viewport, and a **ghost** shows where it will land and how big it is before you let go.
 
-- **Objects, pack items and prefabs** are placed at the point you drop them (on the surface under the cursor, or the ground plane).
+![Dragging the Duck from the starter pack: a box ghost with its size beside the pointer](img/explorer/place-box-ghost.png)
+
+- **Drag.** Press on a card and drag it over the 3D view. The ghost sits **on** whatever is under the pointer — the
+  floor, a table, the side of a wall — and follows the grid when [grid snapping](snapping.md) is on; hold
+  <kbd>Shift</kbd> to move it freely. "Align to surface" (snapping options) tilts it onto slopes and walls.
+- **Turn it.** <kbd>R</kbd> turns it 15° (<kbd>Shift</kbd>+<kbd>R</kbd> back); the **mouse wheel** turns it too while
+  you drag.
+- **Drop.** Let go and it is placed exactly where the ghost stood — **one undo step**, and everyone in the session
+  sees it. Hold <kbd>Alt</kbd> as you let go to place it at the camera's focus point instead. Drag several selected
+  cards at once to drop them side by side in a row. A click without a drag still places the item in front of the
+  camera, as before.
+- **Cancel.** <kbd>Esc</kbd>, dropping back on the Explorer, or letting go anywhere else places nothing and leaves
+  nothing in the undo history.
+- **Colours.** The ghost turns **amber** when it would sit mostly inside another object (you can still place it — a
+  cup in a cabinet is fine) and **red** where there is nothing to place it on (letting go there does nothing).
+- **On a phone or tablet**, press and hold a card until it lifts, then drag; the Explorer tucks itself away so you can
+  see where you are dropping. Items drop upright (or aligned to the surface) — the rotation keys need a keyboard.
+
+### Ghost tiers: the real model or its box
+
+Beside the pointer you see the item's **width × depth × height in metres**, its triangle count and its download size.
+
+- An item that is **already loaded** and under the preview budget shows as a see-through copy of the **real model**.
+- Anything else — not downloaded yet, or heavier than the budget — shows as its **box**: a wire box with its footprint
+  on the ground, sized from the pack's own numbers. An item whose size is not known yet (an old or imported pack)
+  shows a 1 m box labelled "size unknown" until it has been loaded once; after that its size is remembered.
+- Hovering the viewport during a drag **starts the download**, so the drop is quick. A placed pack item shows your
+  [Placeholder Style](loading.md) until its file arrives. The ghost is yours alone — nobody else sees it.
+
+![Once loaded, the ghost is a see-through copy of the real model](img/explorer/place-model-ghost.png)
+
+### The Placement preview setting
+
+**Settings ▸ Scene ▸ Performance** (this device only):
+
+- **Placement preview** — **Full model** (always the real model once loaded), **Within budget** (the default) or
+  **Box only**.
+- **Preview triangle budget** — with *Within budget*, a loaded model above this many triangles previews as its box
+  (50,000 on a computer, 15,000 on a phone or headset).
+- **Show dimensions** — the size, triangles and download size beside the pointer.
+
+![Settings ▸ Scene ▸ Performance ▸ Placement preview](img/explorer/place-settings.png)
+
+### Downloaded pack items and Delete cache
+
+Explorer ▸ Packs marks the items this device has already downloaded with a **✓** (its size in the tooltip), and the
+filter menu inside the Packs has **Downloaded** to show only those. Right-click a pack item ▸ **Delete cache (size)**
+frees its download — the item **stays in the pack** and downloads again the next time you place it. Right-click a pack
+▸ **Delete downloads** frees the whole pack's, and [Storage](#storage) lists **Pack downloads** per pack with **Clear
+all pack downloads**.
+
+![A pack item's menu: Delete cache with its size](img/explorer/place-delete-cache.png)
+
+### Images, audio and text
+
 - **Images** dropped onto an object become its **texture**.
-- **Audio and text** are used where they plug in — sound nodes, scripts, and any module that claims the drop (a sample onto a pad).
+- **Audio and text** are used where they plug in — sound nodes, scripts, and any module that claims the drop (a sample
+  onto a pad).
 
-Placement and texturing go through the normal replicated paths, so peers see the result immediately.
+Placement and texturing go through the normal replicated paths, so peers see the result immediately. In VR the radial
+Add menu still places in front of you; drag-to-place in VR comes later.
