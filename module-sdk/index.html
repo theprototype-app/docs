@@ -4071,6 +4071,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#for-cloud-plugin-authors-scene-changes-and-whole-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      For cloud plugin authors: scene changes and whole projects
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4447,6 +4456,15 @@
   <a href="#for-cloud-plugin-authors-a-whats-new-section" class="md-nav__link">
     <span class="md-ellipsis">
       For cloud plugin authors: a What's New section
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-cloud-plugin-authors-scene-changes-and-whole-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      For cloud plugin authors: scene changes and whole projects
     </span>
   </a>
   
@@ -5127,6 +5145,51 @@ with older apps.</p>
 </code></pre></div>
 <p>The markdown is a safe subset: headings, bullets, <strong>bold</strong>, <code>`code`</code> and https links; anything else is shown as
 text.</p>
+<h3 id="for-cloud-plugin-authors-scene-changes-and-whole-projects">For cloud plugin authors: scene changes and whole projects</h3>
+<p>New in 1.29 — what a plugin needs to keep a scene or a project somewhere else (theprototype.app's cloud saves and
+kept rooms use them). All are additive: feature-detect each one (<code>typeof api.onSceneChange === 'function'</code>), and
+nothing listens until a plugin calls them, so an app without a plugin behaves exactly as before.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">rev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cloudApi</span><span class="p">.</span><span class="nx">sceneRevision</span><span class="p">();</span><span class="w">          </span><span class="c1">// a counter that moves on EVERY scene change, local or from a peer</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">off</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cloudApi</span><span class="p">.</span><span class="nx">onSceneChange</span><span class="p">((</span><span class="nx">rev</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* something changed — debounce, then save */</span><span class="w"> </span><span class="p">});</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">sig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">cloudApi</span><span class="p">.</span><span class="nx">sceneSignature</span><span class="p">();</span><span class="w">   </span><span class="c1">// the CONTENT identity of the open scene (a short hash)</span>
+<span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">blob</span><span class="p">,</span><span class="w"> </span><span class="nx">meta</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">cloudApi</span><span class="p">.</span><span class="nx">buildSceneBundle</span><span class="p">({</span><span class="w"> </span><span class="nx">signature</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">});</span><span class="w">   </span><span class="c1">// meta.signature = the same hash</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">project</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">cloudApi</span><span class="p">.</span><span class="nx">buildProjectBundle</span><span class="p">();</span><span class="w">                          </span><span class="c1">// the whole project as a .tp</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">cloudApi</span><span class="p">.</span><span class="nx">openRemoteProject</span><span class="p">({</span><span class="w"> </span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;My project&#39;</span><span class="w"> </span><span class="p">});</span><span class="w">               </span><span class="c1">// asks before replacing the project</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Call</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sceneRevision()</code></td>
+<td>a number that moves on every change to the scene — objects, graphs, animation, looks, sky, physics, music, HUD, game state. Compare two reads to know whether anything changed in between. <code>0</code> before the app has booted</td>
+</tr>
+<tr>
+<td><code>onSceneChange(fn)</code></td>
+<td>calls <code>fn(revision)</code> after every change from now on (never for the current value); returns <code>off</code></td>
+</tr>
+<tr>
+<td><code>sceneSignature()</code></td>
+<td>a short hash of what the scene <em>is</em> (no ids, timestamps, thumbnail or game state). The revision also moves on internal refreshes, so "did the scene really change since I saved it?" is answered by comparing two signatures</td>
+</tr>
+<tr>
+<td><code>buildSceneBundle({signature: true})</code></td>
+<td>as before, plus <code>meta.signature</code>. Opt-in, because it is one more pass over the whole scene</td>
+</tr>
+<tr>
+<td><code>buildProjectBundle({versions?})</code></td>
+<td>the Explorer's own <strong>Export project</strong> bytes as <code>{blob, meta: {name, scenes, assets, items, bytes, appVersion}}</code>; downloads and changes nothing</td>
+</tr>
+<tr>
+<td><code>openRemoteProject({url, title?})</code></td>
+<td>fetches a <code>.tp</code> and opens it through the app's own path (format check, "This replaces your current project" confirm). View-only users are refused. Resolves the counts, or <code>null</code> when refused, declined or failed (the user saw why)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="for-module-authors-pointer-camera-play-mode-and-vr-seat">For module authors: pointer, camera, play mode and VR seat</h2>
 <p>New in 1.26 — the hooks <a href="../race/">Race</a> uses to drive on a phone and in a headset, open to every module. Each is torn
 down with the module; feature-detect each one (<code>api.vrSeat?.(…)</code>) to stay compatible with older apps.</p>
@@ -5544,7 +5607,7 @@ examples.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-07
+    2026-10-08
   </span>
 
     
