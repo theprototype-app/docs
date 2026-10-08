@@ -24,6 +24,15 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.31 — drag to place.** Drag any object from [Explorer ▸ Packs or ▸ Library](explorer.md#placing-objects) onto the
+viewport and a ghost shows where it will land and how big it is — width × depth × height in metres beside the
+pointer, the real model when it is already loaded and light enough, its box otherwise. <kbd>R</kbd> or the wheel turns
+it, <kbd>Alt</kbd> drops it at the camera's focus, <kbd>Esc</kbd> or dropping back on the Explorer places nothing, and
+a drop is one undo step that everyone sees. On a phone, press and hold a card to drag it. **Settings ▸ Scene ▸
+Performance ▸ [Placement preview](explorer.md#the-placement-preview-setting)** picks how detailed the ghost may be. Packs
+mark what is downloaded, and a pack item's Delete is now
+[Delete cache](explorer.md#downloaded-pack-items-and-delete-cache) — the item stays in the pack.
+
 **1.30 — a calm new look, on a desk and in a pocket.** Every window, menu, dialog, the main HUD and the phone layout
 now share [one interface](interface.md): one window header and [one tab strip](interface.md#windows-and-tabs), one menu
 style with a [shorter object menu](interface.md#menus) (rare actions one level down, nothing removed), calmer dialogs,

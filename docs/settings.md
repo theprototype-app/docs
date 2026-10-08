@@ -77,3 +77,4 @@ Changes save as you make them — there is no Save button; **Done** closes the w
 | Density | new | **Interface ▸ Density** — see [above](#density) |
 | Sky image quality | new in 1.27 | **Scene ▸ Performance ▸ Sky image quality** — **Auto** / **Full (1k)** / **Low (headset)**, this device only; see [Sky image quality](camera.md#sky-image-quality) |
 | World grab snapping | new in 1.28 | **VR ▸ Controls ▸ World grab snapping** — on by default, this device only; see [Snapping the world while you grab it](vr.md#snapping-the-world-while-you-grab-it) |
+| Placement preview | new in 1.31 | **Scene ▸ Performance ▸ Placement preview** — **Full model** / **Within budget** / **Box only**, plus the preview triangle budget and **Show dimensions**, this device only; see [The Placement preview setting](explorer.md#the-placement-preview-setting) |
