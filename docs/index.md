@@ -24,6 +24,23 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.32 — your 1.31 review, fixed.** On a phone every sheet has [one grab bar](interface.md#sheets-on-a-phone): drag
+it to resize the sheet, swipe it down to close it, and no sheet covers **Play**. **Customize character** and **Profile
+settings** open again from the profile menu, and in the Explorer you [press and hold](explorer.md#on-a-phone) a file
+or folder for its actions. [Docked windows](interface.md#docked-windows) close from their tab; **Undock** sits beside
+*Minimize the dock* (**Settings ▸ Interface ▸ Windows & chrome ▸ Undock button** can take every tab out as one
+window), a floating window with tabs can **Dock all tabs**, a tab dragged onto a floating window joins it, and the
+phone's **+** opens a **Windows** sheet. Long names stay on one line, and **Layouts** is a regular dialog. Automatic
+quality no longer switches water refraction and the rest off and on, and says what it lowered
+[once, with **Keep full quality**](performance.md#when-quality-is-lowered-for-you). A big photo now
+[becomes a texture](image-editor.md#big-photos-as-textures) instead of being refused, and the new
+[Image editor](image-editor.md) crops, rotates, resizes and adjusts a picture and updates its textures for everyone.
+**Templates ▸ Examples ▸ Aquarium** is a reef from the new [Aquarium Kit](packs.md#aquarium-kit-132), swimming with
+four new motion nodes — [Follow Path](nodes/followpath.md), [Wander](nodes/wander.md),
+[Orient to Velocity](nodes/orientvelocity.md) and [Body Wave](nodes/bodywave.md) — with a
+[Fish scales](materials.md#fish-scales-and-the-look-tier) preset. LOD groups no longer stay on their first level in
+scenes with water.
+
 **1.31 — drag to place.** Drag any object from [Explorer ▸ Packs or ▸ Library](explorer.md#placing-objects) onto the
 viewport and a ghost shows where it will land and how big it is — width × depth × height in metres beside the
 pointer, the real model when it is already loaded and light enough, its box otherwise. <kbd>R</kbd> or the wheel turns

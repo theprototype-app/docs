@@ -23,6 +23,7 @@ nav:
     - Splines: splines.md
     - Snapping: snapping.md
     - UV & Textures: uv-editor.md
+    - Image Editor: image-editor.md
     - Shader Graph: shader-graph.md
     - Shader Nodes: shader-nodes.md
     - Scene Look (Post-processing): post-processing.md

@@ -343,6 +343,9 @@ A **right-click while you drag a window** — by its title bar, a resize corner 
 menu; a normal right-click elsewhere behaves as before. Tabs that sit in a window's title bar, like the undocked
 [Code](code-workspace.md) window's, can be clicked, while the title bar around them still drags the window.
 
+For the bottom dock's own buttons — **Undock**, closing a view from its tab, **Dock all tabs** on a floating window —
+see [Windows and tabs](interface.md#windows-and-tabs).
+
 ### Docking to a screen edge
 
 Drag a window's header to the **left or right edge** of the screen and a blue strip appears:
@@ -372,6 +375,9 @@ under a name, and switch between arrangements in one click.
 - **Save:** arrange the windows, type a name, press **Save**. Saving under a name you already have (in any case)
   updates that layout.
 - **Use:** click a saved layout to apply it. Rename or delete it from the same list.
+
+**Menu ▸ Layouts** opens the list as a regular dialog (full screen on a phone); <kbd>Esc</kbd>, its **✕** or a click
+outside closes it.
 
 Layouts are kept on this device. A reload still starts with a clean slate: a layout is applied only when you pick one.
 

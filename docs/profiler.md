@@ -13,8 +13,8 @@ nothing leaves the device unless you export a file, turn on
 ## Opening the Profiler
 
 The Profiler is a tab in the bottom dock, next to the Explorer: press **＋** in the dock's tab
-strip and choose **Profiler**. Like the other dock views, **⧉** undocks it into a floating window
-and **⇩ Dock** puts it back.
+strip and choose **Profiler**. Like the other dock views, the dock's **Undock** button takes it out
+as a floating window and the window's **Dock** puts it back.
 
 ## Recording
 
