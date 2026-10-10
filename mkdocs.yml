@@ -101,6 +101,10 @@ nav:
       - Jiggle: nodes/jiggle.md
       - Orbit: nodes/orbit.md
       - Path Patrol: nodes/pathpatrol.md
+      - Follow Path: nodes/followpath.md
+      - Wander: nodes/wander.md
+      - Orient to Velocity: nodes/orientvelocity.md
+      - Body Wave: nodes/bodywave.md
       - Mass: nodes/mass.md
       - Bounciness: nodes/bounciness.md
       - Friction: nodes/friction.md

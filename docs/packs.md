@@ -88,6 +88,14 @@ budget.
 Hooded rogue, Barbarian and four skeletons, from Kay Lousberg's CC0 KayKit packs — to place in a scene as animated
 models. See [Your Character](avatars.md).
 
+## Aquarium Kit (1.32)
+
+**Packs ▸ Aquarium Kit** holds three realistic reef fish (clownfish, regal blue tang, emperor angelfish), a reef rock
+arch a fish can swim through, a staghorn coral and two aquatic plants (Amazon sword, eelgrass). The fish turn about their
+**middle** with their nose along **+Z** — what [Follow Path](nodes/followpath.md), [Orient to Velocity](nodes/orientvelocity.md)
+and [Body Wave](nodes/bodywave.md) expect — and carry a thin-film iridescence (see [Fish scales](materials.md#fish-scales-and-the-look-tier)).
+The **Aquarium** example (Templates ▸ Examples) uses all of them.
+
 ## For pack authors
 
 A pack is a folder or zip with a `manifest.json` at the root:

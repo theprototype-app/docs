@@ -136,6 +136,10 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**Bounce**](nodes/bounce.md) | Bounces the connected object up and down off its resting height, like a dribbled ball. |
 | [**Orbit**](nodes/orbit.md) | Circles the connected object around its resting position on the horizontal plane. |
 | [**Path patrol**](nodes/pathpatrol.md) | Walks the connected object along a series of waypoints you click into the scene, facing along the path. |
+| [**Follow Path**](nodes/followpath.md) | Moves the connected object along a smooth path - a drawn Spline, a Flow path or its own waypoints - at a speed, looping, ping-ponging or once, facing along it and leaning into the turns. |
+| [**Wander**](nodes/wander.md) | Drifts the connected object around a smooth, never-repeating target inside an area object (a water volume, a room) or a box around where it was placed. |
+| [**Orient to Velocity**](nodes/orientvelocity.md) | Turns the connected object to face the way it is moving, smoothly, leaning into turns - put it after Wander, Orbit or any mover. |
+| [**Body Wave**](nodes/bodywave.md) | Bends the connected object with a wave travelling along its body - a swimming fish, a snake, a flag, a tail - stronger and faster the faster it moves. |
 | [**Rotate / Motor**](fluids.md#nodes) | Turns its object about one of its own axes at an rpm with a spin-up; on a dynamic body during a simulation, a motor of a given torque. Paddles it turns push fluid (1.25). |
 | [**Float Along Flow**](fluids.md#nodes) | Carries its object along the nearest (or wired) flow path at the path's speed, bobbing and facing the current (1.25). |
 | [**Animation Finished**](nodes/animfinished.md) | Fires a pulse when the connected object's animation clip reaches its end. |
