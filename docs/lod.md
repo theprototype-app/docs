@@ -61,6 +61,19 @@ group to the object; the level files are only downloaded when the object is firs
 need one, and once for every copy in the scene. Pieces placed before their pack had LOD files pick
 them up automatically. Pack authors: see the `lods` field in the core repo's `PACKS.md`.
 
+## A simple stand-in until the model arrives (fallback groups)
+
+A group can say that the object ITSELF is only a **stand-in**: `userData.lod.fallback = true`. Its own meshes (a few
+primitives — a box-and-cone fish) are then LOD0 and draw only while the real model is not there yet (its pack file is
+still loading) or cannot be reached (offline, a blocked CDN). Level 1 is the real model — a pack item or any GLB, which
+does not need to share a single node name with the stand-in — and levels 2 onward are its own LOD files, picked by
+screen size as usual.
+
+The **Aquarium** example is built this way: every fish, coral and plant is a primitive stand-in whose fallback group
+names an [Aquarium Kit](packs.md) model. The scene file stays small (the models are references), it opens instantly with
+its stand-ins, and anyone who cannot reach the pack still sees a working tank. Selection, physics and saving always use
+the stand-in; motion nodes like [Body Wave](nodes/bodywave.md) bend the drawn model too.
+
 ## In VR
 
 The VR **Properties** panel has a **LOD** row: it reads the level being drawn (`Auto · LOD1`, or
