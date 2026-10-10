@@ -240,7 +240,7 @@ New in 1.31: drag any object — a pack item, one of your Library models, a pref
   nothing in the undo history.
 - **Colours.** The ghost turns **amber** when it would sit mostly inside another object (you can still place it — a
   cup in a cabinet is fine) and **red** where there is nothing to place it on (letting go there does nothing).
-- **On a phone or tablet**, press and hold a card until it lifts, then drag; the Explorer tucks itself away so you can
+- **On a phone or tablet**, press and hold a card and move your finger to drag it (holding still opens its actions instead); the Explorer tucks itself away so you can
   see where you are dropping. Items drop upright (or aligned to the surface) — the rotation keys need a keyboard.
 
 ### Ghost tiers: the real model or its box
