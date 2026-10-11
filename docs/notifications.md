@@ -85,13 +85,12 @@ The **📝 notes** button in the top-right chrome (just left of the bell) opens 
 - Each row shows the note's name and text, which object it is on, and who wrote it. **Click a row** to fly to the note
   and open it; the pencil edits it and the bin deletes it.
 - The eye button in the header **shows or hides the note pins** in the viewport (on your screen only).
-- On a narrow screen, where the drawer is a bottom sheet, drag its top handle to resize it.
+**On a phone** the notes are the **Notes** tab of the bottom dock (**More ▸ Notes**; see
+[The dock on a phone](interface.md#the-dock-on-a-phone)), and the dock's grab bar resizes it. Opening a note shows it as a
+**page of the Notes tab**: its ‹ › step through the notes, and closing it — ✕, or swiping it down — returns to the list
+exactly where you left it. The note page and the list share one height, and neither covers **Play**.
 
-**On a phone**, opening a note from the drawer shows it as a **page of the drawer**: its ‹ › step through the notes, and
-closing it — ✕, or swiping it down — returns to the list exactly where you left it. The note page and the list share one
-height, so the grab bar resizes both.
-
-![A note open as a page of the notes sheet on a folded phone: ‹ 5/14 › in its header, Reply, then Delete, Follow and Edit above the bottom bar](img/notes/note-page-phone.png){ width="300" }
+![A note open as a page of the notes on a folded phone: ‹ 5/14 › in its header, Reply, then Delete, Follow and Edit above the bottom bar](img/notes/note-page-phone.png){ width="300" }
 
 **Settings ▸ Controls ▸ Double-click to open notes** makes a single click on a marker — and the ‹ › arrows — only fly the
 camera to the note, with the card opening on a double click: handy for walking through a scene full of notes without a

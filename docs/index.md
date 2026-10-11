@@ -30,7 +30,7 @@ settings** open again from the profile menu, and in the Explorer you [press and 
 or folder for its actions. [Docked windows](interface.md#docked-windows) close from their tab; **Undock** sits beside
 *Minimize the dock* (**Settings ▸ Interface ▸ Windows & chrome ▸ Undock button** can take every tab out as one
 window), a floating window with tabs can **Dock all tabs**, a tab dragged onto a floating window joins it, and the
-phone's **+** opens a **Windows** sheet. Long names stay on one line, and **Layouts** is a regular dialog. Automatic
+phone's **+** opens a **Windows** sheet. Long names stay on one line, and **Layouts** is a regular dialog (a dock tab on a phone). Automatic
 quality no longer switches water refraction and the rest off and on, and says what it lowered
 [once, with **Keep full quality**](performance.md#when-quality-is-lowered-for-you). A big photo now
 [becomes a texture](image-editor.md#big-photos-as-textures) instead of being refused, and the new
@@ -53,10 +53,32 @@ can [drop a window onto the dock's tab bar](interface.md#docked-windows) exactly
 lists every window, the [Image editor](image-editor.md#in-the-dock) included. **Customize character** opens a
 [studio](avatars.md#the-studio) around your character, and **Surprise me** deals a new look on every press.
 [Dialogs](interface.md#dialogs) cover the whole screen, and questions — *Delete flow*, *Restore previous session?* —
-are dialogs instead of toasts. The connection pill is a [coloured dot](connection.md#the-status-dot), and
+are dialogs instead of toasts. The connection pill shows a [coloured dot](connection.md#the-status-dot), and
 reconnecting after a tab switch no longer toasts. The node editor has a one-line
 [breadcrumb bar](node-editor.md#the-breadcrumb-bar), and the Profiler a [Details and Settings](profiler.md#details-and-settings)
-sidebar and a resizable split.
+sidebar and a resizable split. And from the second look at the preview:
+
+- On a phone, **Properties, Objects, Notes, Configure Scene and Layouts** are [tabs of the bottom dock](interface.md#the-dock-on-a-phone)
+  beside the Explorer, instead of drawers behind it. **Inspect** brings Properties to the front, nothing covers **Play**,
+  and unfolding the phone puts each panel back in its sidebar or window — folding brings the tabs back.
+- Tapping the bottom-bar button of the view on screen [minimizes the dock](interface.md#on-a-phone); the main menu closes
+  as Configure Scene opens on a phone (on a computer it stays open).
+- **More** can come off the phone's bottom bar, and **Play** can move along it. Play starts as plain Play on a phone;
+  pick VR or AR from its press-and-hold menu and its icon follows.
+- The selection toolbar follows a sheet as you resize it, without lagging behind, and the profile sheet no longer repeats
+  your picture.
+- The phone's Connect chip says **Connected**, **Connecting…** or **Offline** beside the [dot](connection.md#the-status-dot)
+  when there is room.
+- The [peers panel](connection.md#who-is-here-the-peers-panel) is wider, one row per person; on a phone it is a sheet like
+  the notifications.
+- The main menu's [Project section](interface.md#the-main-menus-project-actions) has a compact two-column layout —
+  **New from template…**, **Load** | **Save ▾**, **Import** | **Export…** — and **▾** opens one
+  [Save options](saving.md#save-options) dialog. A phone keeps the list; **Settings ▸ Interface ▸ Project actions** switches.
+- [Settings rows](settings.md#reading-a-row) keep a switch, a short list, a colour or a button beside their name again, and
+  stack only what cannot fit.
+- [Modules](modules.md#the-modules-manager) on a phone keep their buttons to the right and expand a long description on a
+  tap. In Browse, install several at once: each card says **Installing…** until it is done, and a failed one says why with
+  **Retry**.
 
 **1.31 — drag to place.** Drag any object from [Explorer ▸ Packs or ▸ Library](explorer.md#placing-objects) onto the
 viewport and a ghost shows where it will land and how big it is — width × depth × height in metres beside the

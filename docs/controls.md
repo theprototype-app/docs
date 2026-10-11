@@ -392,8 +392,9 @@ under a name, and switch between arrangements in one click.
   updates that layout.
 - **Use:** click a saved layout to apply it. Rename or delete it from the same list.
 
-**Menu ▸ Layouts** opens the list as a regular dialog (full screen on a phone); <kbd>Esc</kbd>, its **✕** or a click
-outside closes it.
+**Menu ▸ Layouts** opens the list as a regular dialog; <kbd>Esc</kbd>, its **✕** or a click outside closes it. On a folded
+phone it is the **Layouts** tab of the bottom dock instead (also on the dock's **+**) — see
+[The dock on a phone](interface.md#the-dock-on-a-phone).
 
 Layouts are kept on this device. A reload still starts with a clean slate: a layout is applied only when you pick one.
 
@@ -442,11 +443,13 @@ toolbar and the two corner stacks switch to edit mode:
 The layout is saved on this device, like *Customize toolbar…*. **Reset toolbar** (in Customize) or **Settings ▸ Reset
 window positions** puts everything back. A custom button order no longer shows the wrong icons after a reload. On a
 folded phone the app shows its own phone bar instead — edit that one from **More ▸ Edit bar…**, or hold one of its
-buttons (see [On a phone](interface.md#on-a-phone)).
+buttons; there **More** can come off the bar and **Play** can move along it (see [On a phone](interface.md#on-a-phone)).
 
 The **play button**'s right-click menu chooses how you play — **Play (desktop)**, **Enter VR**, **Enter AR passthrough**
 (greyed out where the device cannot) — and, in a scene that is a game, **Test play (start from the menu)**, which resets the
-game to its menu and starts from the Start screen. See [Build a Game Loop](build-a-game.md#test-play).
+game to its menu and starts from the Start screen. See [Build a Game Loop](build-a-game.md#test-play). On a folded phone,
+press and hold Play for the phone's version of this menu — *Play as*, *Test play*, **Move left / Move right** and
+**Edit bar…**; see [On a phone](interface.md#on-a-phone).
 
 ## The Settings window
 

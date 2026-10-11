@@ -146,7 +146,7 @@ The header's **Thumbnails / List** toggle switches views. The list has sortable 
 - While you **rename** an item, the selected text is readable in every theme.
 - The Explorer's toolbar **scrolls sideways** when it does not fit, so the project name is always reachable.
 
-The Explorer opens as a sheet like every other window on a phone — see [Sheets on a phone](interface.md#sheets-on-a-phone).
+On a phone the Explorer is a tab of the bottom dock, like Properties, Objects and the other windows — see [The dock on a phone](interface.md#the-dock-on-a-phone).
 Its sidebar starts hidden so the files get the screen; open it with its edge button and it stays open next time.
 
 ### Selecting several

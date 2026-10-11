@@ -20,9 +20,11 @@ chip — tap it for your ID, the join field, Info and Toasts. The signaling link
 
 ### The status dot
 
-Since 1.32 the connection status is a **coloured dot** with no text, so the pill fits beside the other buttons at any
-width. On a phone the pill is the dot and a ▾ (and a microphone while you are in a call); on a computer the full bar keeps
-your invite ID and the peer-ID field, with the dot at its left end.
+Since 1.32 the connection status is a **coloured dot**. On a computer the full bar keeps your invite ID and the peer-ID
+field, with the dot at its left end. On a phone the chip at the top of the screen says the state beside the dot —
+**Connected**, **Connecting…** or **Offline** — whenever the top bar has room. When the bar is crowded (people are
+connected and you are in a call, so the peers button and the microphone take the space) it shrinks back to the dot and
+a ▾ (and the microphone while you are in a call).
 
 | Dot | Means |
 |---|---|
@@ -31,10 +33,21 @@ your invite ID and the peer-ID field, with the dot at its left end.
 | green | connected |
 | red | the peer server cannot be reached (the app keeps retrying) |
 
-Point at the dot — or press and hold it on a touch screen — for the words, such as *Connected to 2 peers*; while the
-signaling link is down they also say how long it has been trying.
+Point at the dot — or press and hold it on a touch screen — for the full sentence, such as *Connected to 2 peers*;
+while the signaling link is down it also says how long it has been trying. On a phone a tap on the chip opens the full
+connection details.
 
-![The phone's top bar: the logo, the connection pill with a green dot, ▾ and the microphone, then the bell and the peers](img/connection/status-dot-phone.png){ width="420" }
+![The phone's top bar when it is crowded: the logo, the connection chip with a green dot, ▾ and the microphone, then the bell and the peers](img/connection/status-dot-phone.png){ width="420" }
+
+### Who is here: the peers panel
+
+The peers button in the top bar (beside the bell, with the number of people) opens the **Connected** panel. Its header
+matches the notification centre's, and each person is **one row**: their avatar, their name (shortened with … — point
+at it for the full name), a second line with where they are and their role, and their actions on the right — **Watch**,
+**Go to** or the role list. On a computer the panel is 320–420 px wide and grows with long names, so nothing wraps or
+breaks. On a phone it opens as a sheet like the notifications: a grab bar on top, and a swipe down closes it.
+
+![The Connected panel on a computer: five people, one row each — avatar, name, the scene they are in and their p-number underneath, and Editor or Viewer with Go to or Watch on the right](img/connection/peers-panel-desktop.png){ width="515" }
 
 ### Inviting someone
 

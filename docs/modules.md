@@ -8,6 +8,14 @@ Open it from **Menu ▸ Modules**. Since 1.30 **Install from file…** sits in t
 show counts, a **Filter modules** field narrows whatever the tab lists (name, description, author, tags), and each module
 is one row — name, version, description, its actions, the download-as-example icon and its on/off switch.
 
+Since 1.32 every row is laid out the same way at any width, a phone included: the name and description on the left, the
+controls on the **right** — on **Core**, the download icon and the switch; on **User**, **Remove** and the switch; on
+**Browse**, **Install** (or **Retry**). A module's own actions — Button & door's **+ Button**, Pong's **spawn / remove**,
+**Update** — sit under its name and description. A description that is cut short ends in a chevron: tap the text to read
+all of it, tap again to fold it. The dev-URL row fits a phone's width too.
+
+![Modules ▸ Core on a folded phone: each module's download icon and switch on the right, + Button and Pong: spawn / remove under their descriptions, and VR Sleeve Palette's description tapped open in full](img/modules/core-phone.png){ width="300" }
+
 - **Core modules** ship with the app (hello, button, pong, VR sleeve). Toggle each on or off: both are **live** (since 1.20, disabling no longer needs a reload).
 - The dungeon generator, piano, avatar controller, VR essentials and drivable car used to ship in the app; they now live in the **Browse** gallery, so install them there when you want them. Everyone in a session needs the same modules for shared behaviour to match — including anyone who joins later.
 - **⬇ Download as example** exports a core module as a zip — the best starting point for writing your own.
@@ -31,7 +39,9 @@ The manager's **Install zip** / **Install URL** buttons load third-party modules
 - **URL** — a base URL serving the same layout (GitHub `tree` links are converted automatically; the host needs CORS). **Update** on the card re-fetches from the same URL.
 - **Browse** — a gallery of community modules from [github.com/theprototype-app/modules](https://github.com/theprototype-app/modules), installed with one click. Installed entries dim; an **Update** button appears when the gallery lists a newer version. The same trust model applies — gallery modules run unsandboxed.
 
-Installing from Browse keeps you on Browse, so you can install several in a row. The **User** tab's count grows (and pulses) to show where they went; opening it scrolls to the newest card and flashes it. Every module's buttons, its Dev URL row and Remove live on that card.
+Installing from Browse keeps you on Browse, so you can install several in a row. Click **Install** on as many modules as
+you like — each installs on its own, none cancels another, and its card shows **Installing…** until it finishes. If one
+fails, its card says why (for example a download error) with **Retry**; **Details** shows the full message. The **User** tab's count grows (and pulses) to show where they went; opening it scrolls to the newest card and flashes it. Every module's buttons, its Dev URL row and Remove live on that card.
 
 User modules install, update, disable and remove **live** — the manager genuinely unloads everything a module registered (menus, nodes, effects, handlers, timers, listeners) without a page reload, and so does switching a core module off.
 
