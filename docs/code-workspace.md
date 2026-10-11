@@ -18,7 +18,8 @@ It opens by itself when you ask for code:
 
 It docks as a tab at the bottom, beside the Node editor and the Explorer, or floats as a window (the dock's **Undock** button to float,
 the window's **Dock** to put it back). Everything on this page works in both. In a narrow window or on a phone the
-[sidebars](#sidebars) open **over** the editor, one at a time (toggle buttons in the header).
+[sidebars](#sidebars) open **over** the editor, one at a time (toggle buttons in the header); on a phone they start
+hidden, and one you open stays open next time.
 
 When the workspace has the keyboard, it keeps it: <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> never fly the camera
 from here (see [Keys follow the panel you are in](controls.md#keys-follow-the-panel-you-are-in)). In the undocked

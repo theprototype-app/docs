@@ -9,8 +9,8 @@ screen.
 
 ## Where it is
 
-- **Node editor** (<kbd>N</kbd>) ▸ **Flows** ▸ **Main** — the first row of the list. The chip at the top of the canvas
-  says *Main graph*. It is the same scene-wide graph that was called *Scene* before 1.23.
+- **Node editor** (<kbd>N</kbd>) ▸ **Flows** ▸ **Main** — the first row of the list. The breadcrumb bar at the top of
+  the canvas reads **⌂ Scene** (point at it for *Scene — the Main graph*). It is the same scene-wide graph that was called *Scene* before 1.23.
 - **⚙** on the right edge of the node editor opens the side panel; its **ⓘ Params** tab shows the selected node's
   properties.
 - Double-click a node, or right-click it ▸ **Open code**, to see its code.

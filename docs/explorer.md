@@ -140,12 +140,14 @@ The header's **Thumbnails / List** toggle switches views. The list has sortable 
 ### On a phone
 
 - **Press and hold** a file or folder to open its actions as a sheet: Rename, Duplicate, Copy, Download, Share,
-  Properties, Delete and the rest. The browser's own long-press menu and text callout do not appear on Explorer items.
+  Properties, Delete and the rest. The sheet stays open when you lift your finger (Android's own long-press signal used
+  to close it straight away), and the browser's own long-press menu and text callout do not appear on Explorer items.
 - **Hold, then move** to pick the item up and drop it into a folder.
 - While you **rename** an item, the selected text is readable in every theme.
 - The Explorer's toolbar **scrolls sideways** when it does not fit, so the project name is always reachable.
 
 The Explorer opens as a sheet like every other window on a phone — see [Sheets on a phone](interface.md#sheets-on-a-phone).
+Its sidebar starts hidden so the files get the screen; open it with its edge button and it stays open next time.
 
 ### Selecting several
 

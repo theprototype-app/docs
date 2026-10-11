@@ -41,6 +41,23 @@ four new motion nodes — [Follow Path](nodes/followpath.md), [Wander](nodes/wan
 [Fish scales](materials.md#fish-scales-and-the-look-tier) preset. LOD groups no longer stay on their first level in
 scenes with water.
 
+**…and from your review of the 1.32 preview.** Right-click (or press and hold) a toolbar button ▸
+[Edit positions](controls.md#edit-positions) to drag the toolbar and corner buttons into place — **−** removes, **+**
+adds, **✓** applies. On a phone the [selection toolbar](interface.md#the-selection-toolbar)'s **Inspect** opens *and
+closes* the properties, a tap on a selected object deselects it, adding an object no longer opens the properties, and
+[Interact](controls.md#edit-and-interact) gives your selection back when you leave it and
+[carries things](physics.md#carrying-things-in-interact) from the point you grabbed. Phone sheets
+[pull down to close](interface.md#sheets-on-a-phone) from their list, the main menu closes on a press outside it, and a
+note steps through [all the notes](notifications.md#adding-a-note). Tabbed windows drag by touch, and on a computer you
+can [drop a window onto the dock's tab bar](interface.md#docked-windows) exactly where you want it; the dock's **+**
+lists every window, the [Image editor](image-editor.md#in-the-dock) included. **Customize character** opens a
+[studio](avatars.md#the-studio) around your character, and **Surprise me** deals a new look on every press.
+[Dialogs](interface.md#dialogs) cover the whole screen, and questions — *Delete flow*, *Restore previous session?* —
+are dialogs instead of toasts. The connection pill is a [coloured dot](connection.md#the-status-dot), and
+reconnecting after a tab switch no longer toasts. The node editor has a one-line
+[breadcrumb bar](node-editor.md#the-breadcrumb-bar), and the Profiler a [Details and Settings](profiler.md#details-and-settings)
+sidebar and a resizable split.
+
 **1.31 — drag to place.** Drag any object from [Explorer ▸ Packs or ▸ Library](explorer.md#placing-objects) onto the
 viewport and a ghost shows where it will land and how big it is — width × depth × height in metres beside the
 pointer, the real model when it is already loaded and light enough, its box otherwise. <kbd>R</kbd> or the wheel turns

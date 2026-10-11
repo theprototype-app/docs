@@ -90,13 +90,37 @@ Tree, Who draws most and CPU phases need a **Detailed** recording; a light one c
 frame only, and says so. When no capture falls inside your selection, the nearest one is shown
 and labelled as such.
 
-**Click a row** to select that object in the scene and open its settings — straight to its
-[LOD section](lod.md) when it has a LOD group, which is often the fix.
+**Click a row** (in the Tree or *Who draws most*) to pick that object: its numbers fill the
+[Details](#details-and-settings) sidebar, and it is selected in the scene with its settings open — straight to its
+[LOD section](lod.md) when it has a LOD group, which is often the fix. Switch off **⚙ Settings ▸ Select picked objects
+in the scene** and a row only fills Details.
 
 !!! info "Triangles are what was drawn"
     A capture counts the triangles that were actually drawn, *after*
     [automatic levels of detail](lod.md) swapped in a lighter version. A far-away model can show
     far fewer triangles than it holds; hover the number to see both.
+
+### Details and Settings
+
+Since 1.32 the Profiler has a sidebar on each side. The **left** one lists the recordings; it hides and comes back with
+its edge button, like the Explorer's. The **right** one has two tabs:
+
+- **ⓘ Details** — what the selection cost. With nothing selected it is the whole recording, after a click on the graph
+  that one frame, after a drag the range: frame time (p50 / p95 / max), FPS, draw calls and triangles against the Quest
+  budget (150 / 300k), GPU time when the device measures it, the quality level, stalls and the heaviest CPU phases. From
+  a **Detailed** recording it also shows how many materials were drawn, what each module or game cost, and the **picked
+  object** — its draw calls, triangles, meshes, materials and CPU time.
+- **⚙ Settings** — *Timeline graphs* (FPS, Frame ms, Draw calls, Triangles, Quality; one always stays), *Quest budget
+  lines*, *Follow a live stream*, *Select picked objects in the scene* (on by default) and *FPS and draw calls overlay*
+  (the same switch as **Settings ▸ Interface**).
+
+**The splitter** between the graph and the list resizes them: drag it, or focus it and use the arrow keys;
+double-click resets it. On a very wide screen the graph and the list sit side by side and the bar resizes the columns.
+The sidebars, the tab and the split are remembered on this device.
+
+![The Profiler docked on a computer: the recordings on the left, the timeline and the Tree in the middle with Heavy crate picked, and Details on the right for the frame at 2.1 s](img/profiler/details-sidebar.png)
+
+On a phone the Profiler opens with both sidebars hidden, so the graph gets the screen.
 
 ### Compare
 

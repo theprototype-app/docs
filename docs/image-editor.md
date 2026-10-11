@@ -11,6 +11,7 @@ session.
 - Right-click an image in the Explorer ▸ **Edit image…**
 - The **pencil** button in an image's [preview window](explorer.md#the-preview-window).
 - **Edit** beside a texture in the Inspector (**Material ▸ Texture**).
+- The dock's **+** ▸ **Image editor** opens it as a dock tab — see [In the dock](#in-the-dock).
 
 ## Looking at the picture
 
@@ -64,10 +65,24 @@ Pick any photo as a texture — **Inspector ▸ Material ▸ Texture ▸ Set tex
 object — and it is scaled down to fit 1024 px on its longest side and applied. Since 1.32 nothing is refused for being
 large. Only a file over 64 MB is turned away, because a phone cannot decode it.
 
+## In the dock
+
+The Image editor can live in the bottom dock like the other editors: pick **Image editor** from the dock's **+** menu
+(on a phone, the **Windows** sheet), press its header's **Dock** button, or drag it onto the dock's tab bar. The dock's
+**Undock** button floats it again; floating stays the default.
+
+- Opened from the **+** with no image, it tells you to open one from the Explorer (right-click an image ▸ **Edit
+  image…**). Opening an image while it is docked brings the dock tab forward.
+- Closing the tab with unsaved edits asks first, as the window does.
+
+![The Image editor as a tab in the bottom dock, beside Animation, Node editor, Explorer, Flow Code and UV editor](img/image-editor/docked.png)
+
 ## On a phone
 
 The editor is a full-width sheet between the top bar and the bottom bar, so **Play** stays tappable. The Edit and
 Versions pages sit under the picture instead of beside it, and **Crop…** scrolls its **Apply crop** button into view.
+Since 1.32 they start **closed**, so the picture gets the screen: tap ✎ (Edit) or ⟲ (Versions) under the picture to
+open one, and it stays open next time.
 
 ![The Image editor on a phone: the picture at the top, the Edit page under it, the bottom bar with Play below](img/image-editor/editor-phone.png){ width="300" }
 

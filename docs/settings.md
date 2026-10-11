@@ -41,6 +41,10 @@ second <kbd>Esc</kbd> closes Settings.
 Every setting is one row: its name and a one-line description on the left, the control on the right. Switches are
 on / off; two to four choices are a segmented control; a value with a range is a slider with its number beside it.
 
+Since 1.32 a row arranges itself by the room the **Settings window** has, not by the size of the screen: when a row is
+narrow, the name and description sit above and the control spans the full width below. It works the same on a folded or
+unfolded phone and in a narrow window on a computer.
+
 | Badge | Means |
 |---|---|
 | **This device** | the setting is kept only on this computer or headset |
