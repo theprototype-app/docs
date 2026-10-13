@@ -13,10 +13,41 @@ It has two halves:
 - **📋 Your ID** — the button on the left shows your own peer ID. Click it to **copy your invite link** (your app URL with your ID attached, e.g. `https://theprototype.app/#AB12CD`) to the clipboard. Until the connection to the signaling server is ready it reads *Generating…*.
 - **Connect field** — paste a peer's ID into *Enter peer ID to connect* and press **Connect** to request a connection.
 
-Since 1.30, once you are connected the bar **collapses to a compact chip** — a status dot, the session, the avatars
-of who is here and your mic; click it to open the full bar again (its collapse button folds it back). While the signaling link
-is down the status badge says how long it has been trying (*Reconnecting · 2 min*); the attempt count is in the drawer's
-**Info** tab. On a phone the bar is always the chip — tap it for your ID, the join field, Info and Toasts.
+Since 1.30, once you are connected the bar **collapses to a compact chip** — the status dot, the avatars of who is here
+and your mic; click it to open the full bar again (its collapse button folds it back). On a phone the bar is always the
+chip — tap it for your ID, the join field, Info and Toasts. The signaling link's attempt count is in the drawer's
+**Info** tab.
+
+### The status dot
+
+Since 1.32 the connection status is a **coloured dot**. On a computer the full bar keeps your invite ID and the peer-ID
+field, with the dot at its left end. On a phone the chip at the top of the screen says the state beside the dot —
+**Connected**, **Connecting…** or **Offline** — whenever the top bar has room. When the bar is crowded (people are
+connected and you are in a call, so the peers button and the microphone take the space) it shrinks back to the dot and
+a ▾ (and the microphone while you are in a call).
+
+| Dot | Means |
+|---|---|
+| grey | not connected |
+| yellow, pulsing | connecting, waiting for someone to approve, or reconnecting to the peer server |
+| green | connected |
+| red | the peer server cannot be reached (the app keeps retrying) |
+
+Point at the dot — or press and hold it on a touch screen — for the full sentence, such as *Connected to 2 peers*;
+while the signaling link is down it also says how long it has been trying. On a phone a tap on the chip opens the full
+connection details.
+
+![The phone's top bar when it is crowded: the logo, the connection chip with a green dot, ▾ and the microphone, then the bell and the peers](img/connection/status-dot-phone.png){ width="420" }
+
+### Who is here: the peers panel
+
+The peers button in the top bar (beside the bell, with the number of people) opens the **Connected** panel. Its header
+matches the notification centre's, and each person is **one row**: their avatar, their name (shortened with … — point
+at it for the full name), a second line with where they are and their role, and their actions on the right — **Watch**,
+**Go to** or the role list. On a computer the panel is 320–420 px wide and grows with long names, so nothing wraps or
+breaks. On a phone it opens as a sheet like the notifications: a grab bar on top, and a swipe down closes it.
+
+![The Connected panel on a computer: five people, one row each — avatar, name, the scene they are in and their p-number underneath, and Editor or Viewer with Go to or Watch on the right](img/connection/peers-panel-desktop.png){ width="515" }
 
 ### Inviting someone
 
@@ -123,7 +154,7 @@ A momentary network blip no longer throws you out, either. A peer that drops for
 
 ## When the signaling link drops
 
-The link to the signaling server is not the link to your peers — losing it does not end a session you are already in, it only stops new people finding you. When it drops the app reconnects on its own, backing off a little further between tries and **never giving up**, and the Connect pill carries a chip while it is retrying so a dead link does not read as a dead app. Coming back online, or returning to the tab, retries immediately instead of waiting out the backoff. A peer connection that closed is rebuilt rather than abandoned.
+The link to the signaling server is not the link to your peers — losing it does not end a session you are already in, it only stops new people finding you. When it drops the app reconnects on its own, backing off a little further between tries and **never giving up**, and the [status dot](#the-status-dot) pulses yellow while it is retrying so a dead link does not read as a dead app. Coming back online, or returning to the tab, retries immediately instead of waiting out the backoff — and since 1.32 it does so **silently**: switching apps on a phone and coming back no longer toasts. If the server stays unreachable for about a minute, the dot turns red and **one** entry appears in the notification centre; the retries carry on. A peer connection that closed is rebuilt rather than abandoned.
 
 ## Diagnostics you can copy
 
@@ -172,5 +203,5 @@ It carries an **Open Settings** button that jumps straight to **Settings ▸ Con
 | *AB12 declined your connection request* | The host pressed **Reject**. Ask them before dialling again. |
 | *AB12's session is full (16 people)* | Everyone connects to everyone, so a session has a ceiling. Someone has to leave before another person can join — **Try again** on the toast re-asks. |
 | *Could not reach … — back on your previous peer server.* | **Apply** could not open the server you picked, so nothing changed — check the host, port and path. |
-| *Lost the peer server - reconnecting...* / *The peer server closed the link - reconnecting...* | The link to the signaling server dropped; the app retries on its own and never gives up. *Reconnected to the peer server.* confirms it is back. Your open session keeps going meanwhile. |
-| *Cannot reach the signaling server - the connection request was not sent.* | You pressed **Connect** while the signaling link is down. Wait for the reconnect chip to clear, or switch servers in Settings ▸ Connection. |
+| A **red** status dot, and one *Can't reach the peer server — still retrying.* entry in the notification centre | The link to the signaling server has been down for about a minute; the app keeps retrying on its own and never gives up, and the dot turns green or grey again once it is back. Shorter drops — a tab switch, a moment offline — reconnect silently. Your open session keeps going meanwhile. |
+| *Cannot reach the signaling server - the connection request was not sent.* | You pressed **Connect** while the signaling link is down. Wait for the status dot to stop pulsing, or switch servers in Settings ▸ Connection. |

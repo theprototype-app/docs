@@ -108,8 +108,8 @@ and a panel explains it rather than leaving you looking at a tab that appears to
 
 ## The quality governor
 
-Before any of the stops above, the app tries to keep the frames. **Settings ▸ Scene ▸ Reduce
-quality when the scene is heavy** (on by default): when a heavy scene cannot hold 30 frames a
+Before any of the stops above, the app tries to keep the frames. **Settings ▸ Scene ▸ Performance ▸
+Reduce quality when the scene is heavy** (on by default): when a heavy scene cannot hold 30 frames a
 second on this machine, quality comes down one step at a time, and each step is given back as
 soon as frames recover.
 
@@ -129,16 +129,15 @@ shadow pass draws every mesh a second time and so is where the cost actually is:
 While it is acting, a **Reduced quality (scene is heavy)** chip sits beside the object count, and
 its tooltip names exactly which steps are in force. Click the chip to **hold** it there — useful
 when you would rather have steady frames than watch quality breathe in and out — and click it
-again to give full quality back. The first time it ever acts in a session it also says so in a
-toast, because the chip lives in the object list's footer and that window can be closed.
+again to give full quality back.
 
 **On a phone** the governor judges frames against the phone's own refresh rate (60, 90 or 120 Hz), and never lowers
 quality on a scene that is trivially light — a menu, an empty room.
 
 **A phone starts lighter.** A phone or small tablet is limited by how many pixels it can fill, not by how many objects
 it draws, so with automatic quality on it starts the app at step 4 — shadows off, resolution 72 %, ambient occlusion off — and climbs back up
-by the ordinary rule when it holds its frames. A toast offers **Use full quality** if you would rather start at full
-detail (no automatic step for a minute after that).
+by the ordinary rule when it holds its frames. The [notice](#when-quality-is-lowered-for-you) says what was lowered;
+its **Keep full quality** starts you at full detail for the rest of the visit.
 
 **In a headset** the governor judges by the headset's own refresh rate (72, 90 or 120 Hz) instead of 30 fps. With automatic quality on, a VR
 session starts with **shadows off** and keeps them off for the session — the Quest budget — and never lowers the eye
@@ -147,6 +146,21 @@ game whose Settings pin a **Quality** preset (Low, Medium, High) overrides all o
 
 Nothing the governor does changes the scene for anybody else, and nothing it does is written to
 a preference: it is a fact about this device right now.
+
+### When quality is lowered for you
+
+When this device lowers quality on its own to keep frames smooth — shadows, resolution, ambient occlusion, the scene
+look, particles, [water](water.md#quality) and fluid quality — it tells you with a small toast, once per session
+for each thing it lowers: *Lowered water quality to keep it smooth · **Keep full quality***. The notice shows on any
+device, whether or not the object list is open. It never shows in Play or in a headset; a drop there is announced when
+you are back.
+
+**Keep full quality** gives full quality back and keeps it for the rest of this visit. Your
+**Reduce quality when the scene is heavy** switch is unchanged, so the next visit is protected again.
+
+**No switching back and forth.** Since 1.32, if a step came back once and the frames dropped again, it stays lowered for
+the rest of the scene instead of switching off and on. The chip's tooltip says so. Opening another scene, **Keep full
+quality**, or turning automatic quality off and on gives it a fresh start.
 
 ## Budgets in CI
 

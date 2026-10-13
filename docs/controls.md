@@ -22,6 +22,7 @@ If the guess is still wrong on your hardware, pick it yourself: right-click the 
 
 - **Click** an object to select it — the transform gizmo attaches.
 - **Double-click** it to open its properties (right-click ▸ *Properties* and the object list do the same). Pin the properties panel if you'd rather it followed every selection.
+- **New objects do not open the properties.** Adding a primitive, placing a pack item or prefab, or pasting selects the new object but leaves the properties panel closed; if the panel is already open, it switches to the new object.
 - **Click empty space** to deselect.
 - **Shift+click** adds or removes objects from a multi-selection (the last-picked object is the primary).
 - **Shift+drag** on empty space draws a box-select marquee.
@@ -39,8 +40,13 @@ Object list, Node editor, Explorer, Animation), or press **I**:
 - **Edit** (the default) — every click selects, so every object, module pieces included, can
   be picked and moved.
 - **Interact** — clicks and drags work the way they do in play, without starting the game:
-  piano keys play, buttons press, On Click nodes fire, and a press on a crate carries it while a
-  simulation runs. Nothing gets selected.
+  piano keys play, buttons press, On Click nodes fire, and a press on a crate
+  [carries it](physics.md#carrying-things-in-interact) while a simulation runs. Nothing gets selected.
+
+**Interact keeps your selection for later.** Turning Interact on clears the selection — no outline, no gizmo: you are
+playing, not editing — and turning it off brings back what was selected, minus anything deleted meanwhile. If you
+picked something else while in Interact (from the Objects list, say), that newer choice is kept instead. On a phone the
+[selection toolbar](interface.md#the-selection-toolbar) stays up while Interact is on, so you can turn it off again.
 
 **Play** is the third mode, entered with the play button as before.
 
@@ -166,7 +172,16 @@ With **Multi-select** on:
 
 It works the same inside a mesh editing session, on vertices, edges and faces. Everything
 else already has a touch path: long-press the viewport for the right-click menu, and the
-**+** button opens the same create menu.
+**+** button opens the same create menu. On a phone the same toggle is **Select multiple** on the
+[selection toolbar](interface.md#the-selection-toolbar).
+
+### Tapping to select on a touch screen
+
+- Tap an object to select it; **tap it again to deselect it**.
+- With **Select multiple** on, each tap toggles that object in or out of the selection.
+- A double-tap still does your [double-click action](#what-double-click-does) (by default: open its properties).
+- To reach an object hidden behind another, use the Objects list. (A mouse can still click the same spot again, or
+  <kbd>Alt</kbd>+click, to select what is behind.)
 
 ### Duplicating
 
@@ -343,6 +358,10 @@ A **right-click while you drag a window** — by its title bar, a resize corner 
 menu; a normal right-click elsewhere behaves as before. Tabs that sit in a window's title bar, like the undocked
 [Code](code-workspace.md) window's, can be clicked, while the title bar around them still drags the window.
 
+For the bottom dock's own buttons — **Undock**, closing a view from its tab, **Dock all tabs** on a floating window —
+and for docking a window into an exact slot by dropping it on the dock's tab bar, see
+[Windows and tabs](interface.md#windows-and-tabs).
+
 ### Docking to a screen edge
 
 Drag a window's header to the **left or right edge** of the screen and a blue strip appears:
@@ -373,6 +392,10 @@ under a name, and switch between arrangements in one click.
   updates that layout.
 - **Use:** click a saved layout to apply it. Rename or delete it from the same list.
 
+**Menu ▸ Layouts** opens the list as a regular dialog; <kbd>Esc</kbd>, its **✕** or a click outside closes it. On a folded
+phone it is the **Layouts** tab of the bottom dock instead (also on the dock's **+**) — see
+[The dock on a phone](interface.md#the-dock-on-a-phone).
+
 Layouts are kept on this device. A reload still starts with a clean slate: a layout is applied only when you pick one.
 
 ## The toolbar
@@ -389,17 +412,44 @@ The bar at the bottom of the screen is yours to arrange. **Right-click** (or lon
 | Entry | What it does |
 |---|---|
 | **Swap with ▸** | exchange this button for one that is not on the bar |
+| **Edit positions** | drag every button into place on the bar itself — see [Edit positions](#edit-positions) |
 | **Move left / Move right** | one place along the bar — past the play button when it is next |
 | **Hide button** | take it off the bar (Customize toolbar brings it back) |
 | **Move toolbar** | slide the whole bar along the bottom: click to place it, the arrow keys nudge, <kbd>Esc</kbd> puts it back. Disabled on a screen too narrow to move it |
 | **Reset toolbar position** | back to the middle |
 | **Always on top** | paint the bar over the dock and floating windows (by default they cover it) |
 | **Collapse / Expand toolbar** | shrink the bar down to the play button, and back |
-| **Customize toolbar…** | a checklist of every tool: tick to show, untick to hide, ▲/▼ to reorder; **Reset toolbar** goes back to the default buttons and order |
+| **Customize toolbar…** | a checklist of every tool, the two corner stacks included: tick to show, untick to hide, ▲/▼ to reorder; **Edit positions…** at the top; **Reset toolbar** goes back to the default buttons and order |
+
+### Edit positions
+
+Right-click any button on the bottom toolbar — or press and hold it on a touch screen — and pick **Edit positions**. The
+toolbar and the two corner stacks switch to edit mode:
+
+- **Drag** any button to a new place: along the bar, or into the bottom-left or bottom-right corner stack. **Play** can
+  move along the bar but always stays on it.
+- The small red **−** on a button removes it; its place shows a small green **+**.
+- A green **+** opens a list of every button from *Customize toolbar…* that is not placed yet (Play is never in it).
+  Pick one to put it in that place.
+- Each corner holds up to **three** buttons, stacked bottom to top. By default the left corner has the AI assistant and
+  the **+** (add) button, the right corner Chat and the microphone.
+- With the keyboard: <kbd>Tab</kbd> to a button, then the **arrow keys** move it (<kbd>←</kbd> / <kbd>→</kbd> along the
+  bar and into the corners, <kbd>↑</kbd> / <kbd>↓</kbd> inside a corner) and <kbd>Delete</kbd> removes it.
+- The round green **✓** at the top right of the toolbar **applies** the new layout. <kbd>Esc</kbd>, or a click anywhere
+  else, cancels it.
+
+![Edit positions on a computer: every button has a red −, green + slots sit at the ends of the bar and on top of each corner stack, and the green ✓ applies](img/controls/edit-positions.png)
+
+The layout is saved on this device, like *Customize toolbar…*. **Reset toolbar** (in Customize) or **Settings ▸ Reset
+window positions** puts everything back. A custom button order no longer shows the wrong icons after a reload. On a
+folded phone the app shows its own phone bar instead — edit that one from **More ▸ Edit bar…**, or hold one of its
+buttons; there **More** can come off the bar and **Play** can move along it (see [On a phone](interface.md#on-a-phone)).
 
 The **play button**'s right-click menu chooses how you play — **Play (desktop)**, **Enter VR**, **Enter AR passthrough**
 (greyed out where the device cannot) — and, in a scene that is a game, **Test play (start from the menu)**, which resets the
-game to its menu and starts from the Start screen. See [Build a Game Loop](build-a-game.md#test-play).
+game to its menu and starts from the Start screen. See [Build a Game Loop](build-a-game.md#test-play). On a folded phone,
+press and hold Play for the phone's version of this menu — *Play as*, *Test play*, **Move left / Move right** and
+**Edit bar…**; see [On a phone](interface.md#on-a-phone).
 
 ## The Settings window
 

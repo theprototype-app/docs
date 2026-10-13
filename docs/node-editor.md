@@ -74,6 +74,23 @@ view.
 **Settings ▸ Input ▸ Node editor ▸ Node editor opens** chooses *Where it was left (framed when new)* (the default) or
 *Framed — every node in view*, which ignores saved views and always frames. Search **framed** in Settings to find it.
 
+## The breadcrumb bar
+
+Since 1.32 one line across the top of the node editor says where you are — **⌂ Scene › Angelfish 1 › ⧉ Movement**. It
+sits above the graph, so it never covers a node. Tap or click a crumb to see what sits beside it and jump there:
+
+- **Scene** or the **object** crumb lists every flow in the scene: *Main — the Scene graph* and each object that has its
+  own flow. The one you are on is ticked; picking it takes you back to the top of that flow.
+- A **group** crumb (⧉) lists the other groups at the same level.
+
+Long names end in "…": point at a crumb (or **press and hold** it on a phone) to read the whole name. The ⤴ button at the
+right end — or <kbd>Esc</kbd> — leaves a group, and the bin deletes the object's flow (it asks first, in a dialog).
+Jumping between the Scene and an object's flow is two taps: the crumb, then the row.
+
+![The breadcrumb bar in the docked node editor: ⌂ Scene › Angelfish 1…, with the object crumb's list open — Main, the Scene graph, then the object flows, the current one ticked](img/node-editor/breadcrumb-siblings.png)
+
+On a phone the minimap is off by default; **⚙ Settings ▸ Minimap** turns it on.
+
 ## Tidy graph
 
 The node editor can lay a graph out for you.
@@ -98,8 +115,8 @@ Select some nodes and press <kbd>Ctrl</kbd>+<kbd>G</kbd> (or right-click ▸ **G
 sockets are the wires that cross the group's edge. Nothing about what the graph does changes: the nodes inside still run
 exactly as before.
 
-- **Double-click** the group (or press <kbd>Tab</kbd>) to open it. A breadcrumb at the top shows where you are;
-  <kbd>Esc</kbd>, <kbd>Tab</kbd> or the breadcrumb take you back out.
+- **Double-click** the group (or press <kbd>Tab</kbd>) to open it. The [breadcrumb bar](#the-breadcrumb-bar) at the top
+  shows where you are; <kbd>Esc</kbd>, <kbd>Tab</kbd>, ⤴ or a crumb take you back out.
 - Inside, **Group inputs** and **Group outputs** stand for the outside. Drag an inner socket onto their **＋ new** row to
   expose it as a group socket.
 - Draw a wire onto a group's socket from outside and it connects to the real socket inside.

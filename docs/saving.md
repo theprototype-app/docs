@@ -2,17 +2,36 @@
 
 How to save and load your work: the recommended `.tpscene` bundle, the whole-project `.tp`, GLTF interchange, named sessions, and autosave.
 
-The main menu (the logo button) has **Import** (bring 3D files into the scene), **Load** (open a saved file) and **Save**, with a format switch underneath: **Project | Scene | ⚙**.
+The main menu (the logo button) has **Import** (bring 3D files into the scene), **Load** (open a saved file) and **Save** in its **Project** section. Since 1.32 that section has two layouts (see [The main menu's Project actions](interface.md#the-main-menus-project-actions)):
+
+- **Compact** (a computer or an unfolded phone): **New from template…**, then **Load** | **Save ▾**, then **Import** | **Export…**. **Save** saves straight away with your last-used options; **▾** opens [Save options](#save-options).
+- **List** (a folded phone): one row per action, with a format switch under **Save**: **Project | Scene | ⚙**. The **⚙** opens the same Save options.
+
+Either way you save one of two things:
 
 - **Project** saves the whole project as one `.tp` file — the Explorer library, every scene and its history (see [Projects](projects.md#the-tp-file)).
 - **Scene** saves the open scene as a `.tpscene` bundle (below).
-- **⚙** opens the export settings. Its last two switches, **Show GLTF format** and **Show JSON format** (both off by default), add a second row with those formats.
+
+GLTF and JSON join them once you offer them in Save options.
+
+### Save options
+
+**Save options** puts every save setting in one dialog:
+
+- **Save as** — **Project** (`.tp`) or **Scene** (`.tpscene`), plus GLTF and JSON once you offer them.
+- **A scene (.tpscene) includes** — Assets, Imported packs, Flow graph (see [below](#scene-tpscene-recommended)).
+- **A project (.tp) includes** — Scene version history.
+- **More formats** — **Offer GLTF** and **Offer JSON** (both off by default) add those formats.
+
+Its **Save** remembers the options and saves; **Cancel** forgets the changes.
+
+![Save options on a computer: Save as Project or Scene, what a scene and a project include, and More formats, with Cancel and Save at the bottom](img/saving/save-options.png){ width="400" }
 
 <kbd>Ctrl</kbd>+<kbd>S</kbd> saves the **open scene** as a new version in the [Explorer](explorer.md); a scene that has never been named asks for a name first.
 
 ## Where you left off
 
-Restoring a session — from the **Restore** prompt, from *auto-restore* in
+Restoring a session — from the **Restore previous session?** dialog, from *auto-restore* in
 *Settings ▸ Scene*, or by loading a scene file — brings back more than the objects:
 
 - the **panels and windows** you had open, and which dock tab was in front,
@@ -26,7 +45,7 @@ had nothing open will not close the panels *you* have open.
 
 ## Starting from a template
 
-**Menu ▸ Templates** opens a picker of ready-made scenes, in four tabs:
+**Menu ▸ Templates** (**New from template…** in the Compact layout) opens a picker of ready-made scenes, in four tabs:
 
 - **General** — starting points and walkable kit levels, including a **Blank** card that clears the scene (it asks first).
 - **Examples** — worked showcases to pull apart and learn from. 1.22 adds five: **Aquarium**, **Pool party** and
@@ -69,9 +88,9 @@ A `.tpscene` file is a zip bundle containing everything a scene needs:
 - **imported packs** (optional),
 - **the flow graph** — nodes and edges (optional).
 
-The **⚙ export settings** dialog (next to the format switch) controls what the bundle includes:
+[Save options](#save-options) control what the bundle includes:
 
-| Checkbox | Default |
+| Switch | Default |
 |---|---|
 | Assets (audio, textures, configs) | on |
 | Imported packs | off |
@@ -84,11 +103,11 @@ The **⚙ export settings** dialog (next to the format switch) controls what the
 
 ## GLTF
 
-Turn it on first with **⚙ ▸ Show GLTF format**. Saves the whole scene as standard GLTF — use this to take your work into other 3D tools. Loading accepts `.gltf` back. Animated flow effects are parked at their base pose during export so the file stores clean transforms.
+Turn it on first with **Save options ▸ Offer GLTF**. Exports the **selected objects** as standard GLTF — use this to take your work into other 3D tools. With nothing selected it asks first and offers **Export all** for the whole scene. Loading accepts `.gltf` back. Animated flow effects are parked at their base pose during export so the file stores clean transforms.
 
 ## JSON (legacy)
 
-A legacy scene format, hidden by default. Enable it via **⚙ ▸ Show JSON format** if you need it; otherwise prefer Scene.
+A legacy scene format, hidden by default. Enable it via **Save options ▸ Offer JSON** if you need it; otherwise prefer Scene.
 
 ## Sessions manager
 
@@ -105,7 +124,7 @@ A legacy scene format, hidden by default. Enable it via **⚙ ▸ Show JSON form
 
 A snapshot of the scene, node graph and camera is written to your browser automatically — 30 seconds after a change, plus every 3 minutes. On a **heavy scene** a snapshot takes longer to prepare, so the delay stretches (up to 5 minutes) to keep saving from stuttering the app; the [Storage panel](explorer.md#storage) (the Explorer's storage chip, or **Settings ▸ Explorer ▸ Storage used ▸ Show breakdown**) shows the current cadence and what the last snapshot cost. If a snapshot **cannot be written** — the disk is full, say — a toast stays up with **Manage storage**, and the Storage panel says *Autosave is failing*. Autosave can be turned off in **Settings**.
 
-If a snapshot exists when you open the app, a **restore** prompt offers to bring it back. If the last attempt to restore it never finished a frame, the prompt warns you — that snapshot may be what stopped the app, so think before pressing **Restore**.
+If a snapshot exists when you open the app, a **Restore previous session?** dialog offers to bring it back. If the last attempt to restore it never finished a frame, the prompt warns you — that snapshot may be what stopped the app, so think before pressing **Restore**.
 
 **Auto-restore on load** (*Settings ▸ Scene*, off by default) skips the prompt: your last scene is simply there when the app opens, and a notice tells you it was restored so an empty canvas is still one click away.
 

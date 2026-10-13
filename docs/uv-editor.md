@@ -6,7 +6,7 @@ Everything here is shared: a peer sees your unwrap, your brush strokes and your 
 
 ## Opening it
 
-The UV editor is a tab in the bottom dock, next to the node editor. Open it from the dock's **＋** menu ▸ **UV editor**. Select a mesh in the viewport and its UV map appears; **⧉** undocks it into a floating window, **⇩ Dock** puts it back.
+The UV editor is a tab in the bottom dock, next to the node editor. Open it from the dock's **＋** menu ▸ **UV editor**. Select a mesh in the viewport and its UV map appears; the dock's **Undock** button takes it out as a floating window, and the window's **Dock** puts it back.
 
 The editor follows your **selection**. If you have an Edit Mesh session open it targets that object, and if you select a group it finds the textured mesh inside it.
 
@@ -125,6 +125,9 @@ Pick the **Paint** tool and draw — on the UV map or straight on the model in t
 - The finished image is stored with the material, so it saves and loads like any other texture.
 
 If the slot has no texture yet, painting creates one.
+
+Painting over a texture ends its link to the library image it was made from, so a later save in the
+[Image editor](image-editor.md#textures-and-their-images) will not paint over your strokes.
 
 ### Pen pressure
 

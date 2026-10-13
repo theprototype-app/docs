@@ -41,6 +41,15 @@ second <kbd>Esc</kbd> closes Settings.
 Every setting is one row: its name and a one-line description on the left, the control on the right. Switches are
 on / off; two to four choices are a segmented control; a value with a range is a slider with its number beside it.
 
+Since 1.32 each row decides its own layout from the room it really has in the **Settings window**, not from the size
+of the screen. A small control — a switch, a colour swatch, a key box, a short dropdown, a single button, a number, a
+segmented choice that fits — stays on the same line as its name. Only a control that cannot fit beside the name and its
+description — a wide segmented choice, a text field, a slider on a narrow phone — moves onto its own line underneath. So
+the same row can sit on one line on an unfolded phone or a computer and stack on a folded phone. A segmented choice too
+wide even for its own line (**Scene ▸ Editing ▸ Double-click action** on a phone) shows its options in two columns.
+
+![Settings ▸ Scene on a folded phone: Double-click action's four choices in two columns under its name, while Length's dropdown, Angle's Degrees | Radians and the Duplicates switches stay beside their names](img/settings/rows-phone.png){ width="300" }
+
 | Badge | Means |
 |---|---|
 | **This device** | the setting is kept only on this computer or headset |
@@ -78,3 +87,5 @@ Changes save as you make them — there is no Save button; **Done** closes the w
 | Sky image quality | new in 1.27 | **Scene ▸ Performance ▸ Sky image quality** — **Auto** / **Full (1k)** / **Low (headset)**, this device only; see [Sky image quality](camera.md#sky-image-quality) |
 | World grab snapping | new in 1.28 | **VR ▸ Controls ▸ World grab snapping** — on by default, this device only; see [Snapping the world while you grab it](vr.md#snapping-the-world-while-you-grab-it) |
 | Placement preview | new in 1.31 | **Scene ▸ Performance ▸ Placement preview** — **Full model** / **Within budget** / **Box only**, plus the preview triangle budget and **Show dimensions**, this device only; see [The Placement preview setting](explorer.md#the-placement-preview-setting) |
+| Undock button | new in 1.32 | **Interface ▸ Windows & chrome ▸ Undock button** — **Active window** / **All as one tabbed group**, this device only; see [Docked windows](interface.md#docked-windows) |
+| Project actions | new in 1.32 | **Interface ▸ Lists & menus ▸ Project actions** — **Auto** / **Compact** / **List**, this device only: how the main menu lays out New from template, Load, Save, Import and Export; Auto is List on a phone and Compact elsewhere. See [The main menu's Project actions](interface.md#the-main-menus-project-actions) |

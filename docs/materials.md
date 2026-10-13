@@ -1,8 +1,8 @@
 # Material Presets
 
 A **material preset** is a named look for an object's surface — colour, roughness, metalness, glow, transparency and up
-to two image maps (a texture and a normal map) — that you apply with one click. Seven come built in: **Wood**, **Metal**,
-**Plastic**, **Glass**, **Stone**, **Rubber** and **Neon**. You can save your own, rename and delete them, and everyone
+to two image maps (a texture and a normal map) — that you apply with one click. Eight come built in: **Wood**, **Metal**,
+**Plastic**, **Glass**, **Stone**, **Rubber**, **Fish scales** and **Neon**. You can save your own, rename and delete them, and everyone
 in your session sees your presets and can use them.
 
 **Where:** select an object and open its properties (double-click it, or right-click ▸ **Properties**). In the
@@ -24,6 +24,25 @@ in your session sees your presets and can use them.
   to apply it; while editing (pencil), the copy button saves it into your own library.
 
 ![Editing your presets: rename, download and delete on your own swatches](img/materials/presets-edit.png)
+
+## Fish scales and the look tier
+
+**Fish scales** is an iridescent look: a thin film over the surface shifts its colour with the viewing angle (the
+silver-blue flash of a turning fish), over a procedural relief of overlapping scales, with a light clear coat and a hint
+of see-through (transmission) so a fin reads thin. Recolour it in the Inspector for any fish, snake, dragon or beetle
+shell. The Aquarium's fish wear it.
+
+Some of that costs more than every device can pay, so each device draws a material at its own **look tier** — decided
+the way water quality is (from the headset and the automatic quality level), never written into the scene:
+
+| Device | Draws |
+|---|---|
+| Desktop, full quality | everything |
+| Phone (or a lowered quality level) | everything but transmission — it renders the whole scene a second time |
+| Headset (or the lowest levels) | no transmission, no thin film, no sheen — the plain lit surface |
+
+The look you chose is what is saved and what your peers receive; a device drawing less keeps the full numbers beside the
+material, so saving on a headset and opening on a desktop shows the full look again.
 
 ## What gets saved, and where
 

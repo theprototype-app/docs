@@ -131,16 +131,29 @@ The header's **Thumbnails / List** toggle switches views. The list has sortable 
 
 - **Single-click** selects an item and shows its details in the **ⓘ Properties** panel.
 - **Double-click** opens it in a **preview window** (below); text files open in a floating code editor (<kbd>Ctrl</kbd>+<kbd>S</kbd> saves back to the item).
-- **Right-click** an item for Open, Download, Share, Rename, Delete, Properties (and *Copy contents* for text files).
+- **Right-click** an item for Open, Download, Share, Rename, Delete, Properties (and *Copy contents* for text files,
+  **Edit image…** for images — see [The Image editor](image-editor.md)).
 - The search box filters the whole library by name; the breadcrumb path bar (toggleable) shows where you are.
 
 **Keyboard navigation** in the grid: arrow keys move the selection, <kbd>Enter</kbd> opens, <kbd>Backspace</kbd> goes up a level, <kbd>Esc</kbd> clears the selection, <kbd>Delete</kbd> deletes the selection.
+
+### On a phone
+
+- **Press and hold** a file or folder to open its actions as a sheet: Rename, Duplicate, Copy, Download, Share,
+  Properties, Delete and the rest. The sheet stays open when you lift your finger (Android's own long-press signal used
+  to close it straight away), and the browser's own long-press menu and text callout do not appear on Explorer items.
+- **Hold, then move** to pick the item up and drop it into a folder.
+- While you **rename** an item, the selected text is readable in every theme.
+- The Explorer's toolbar **scrolls sideways** when it does not fit, so the project name is always reachable.
+
+On a phone the Explorer is a tab of the bottom dock, like Properties, Objects and the other windows — see [The dock on a phone](interface.md#the-dock-on-a-phone).
+Its sidebar starts hidden so the files get the screen; open it with its edge button and it stays open next time.
 
 ### Selecting several
 
 - <kbd>Ctrl</kbd>+click adds or removes a card; <kbd>Shift</kbd>+click selects the range from the last card you clicked (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+click adds the range).
 - <kbd>Ctrl</kbd>+<kbd>A</kbd> selects everything in the folder, <kbd>Ctrl</kbd>+<kbd>I</kbd> inverts the selection. With the grid focused these keys never reach the scene behind the panel.
-- **Drag on empty grid space** to draw a marquee (with the mouse — on a touch screen a drag scrolls the grid, and a long press picks a card up instead). Hold <kbd>Ctrl</kbd> to add to what is already selected.
+- **Drag on empty grid space** to draw a marquee (with the mouse — on a touch screen a drag scrolls the grid, and holding a card, then moving, picks it up instead). Hold <kbd>Ctrl</kbd> to add to what is already selected.
 - Right-click a selection for the batch actions: **Download N files as .zip**, **Export N objects as GLTF**, **Share** / **Unshare N items**, Copy, Cut, Duplicate and Delete.
 - Drag a selection onto a folder to move all of it, or into the viewport to place every object.
 
@@ -182,7 +195,8 @@ Right-click a file or a folder for **Duplicate** (**Duplicate folder**), **Copy*
 
 ### The preview window
 
-Images open zoomable (**−** / **＋** / **1:1**, drag to pan), sounds open with a player, and 3D models open on a turntable with an **animation transport** — play, step a frame with <kbd>,</kbd> and <kbd>.</kbd>, scrub, pick a clip — and a mesh-stats line. The **←** / **→** buttons page through the folder without closing the window, and **⌐** goes up a level.
+Images open zoomable (**−** / **＋** / **1:1**, drag to pan) with a pencil button that opens the
+[Image editor](image-editor.md), sounds open with a player, and 3D models open on a turntable with an **animation transport** — play, step a frame with <kbd>,</kbd> and <kbd>.</kbd>, scrub, pick a clip — and a mesh-stats line. The **←** / **→** buttons page through the folder without closing the window, and **⌐** goes up a level.
 
 The window's **⚙** holds two things worth knowing: **Opacity** fades the window so you can model against a reference picture, and **Passthrough** lets clicks reach the scene underneath while the header stays live to move it or switch it back. **Allow multiple windows** opens each file in a window of its own instead of re-pointing the one you have.
 
@@ -228,7 +242,7 @@ New in 1.31: drag any object — a pack item, one of your Library models, a pref
   nothing in the undo history.
 - **Colours.** The ghost turns **amber** when it would sit mostly inside another object (you can still place it — a
   cup in a cabinet is fine) and **red** where there is nothing to place it on (letting go there does nothing).
-- **On a phone or tablet**, press and hold a card until it lifts, then drag; the Explorer tucks itself away so you can
+- **On a phone or tablet**, press and hold a card and move your finger to drag it (holding still opens its actions instead); the Explorer tucks itself away so you can
   see where you are dropping. Items drop upright (or aligned to the surface) — the rotation keys need a keyboard.
 
 ### Ghost tiers: the real model or its box
@@ -268,7 +282,8 @@ all pack downloads**.
 
 ### Images, audio and text
 
-- **Images** dropped onto an object become its **texture**.
+- **Images** dropped onto an object become its **texture**. A big photo is scaled down to 1024 px on its longest side
+  instead of being refused — see [Big photos as textures](image-editor.md#big-photos-as-textures).
 - **Audio and text** are used where they plug in — sound nodes, scripts, and any module that claims the drop (a sample
   onto a pad).
 

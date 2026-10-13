@@ -9,7 +9,7 @@ Give any object a **clip**: a named animation made of keyframes. Open a door, ru
 
 ## Opening the timeline
 
-Select an object, then open the **＋ Animation** tab — it sits with Flow and the UV editor in the bottom dock, and undocks into a floating window with the ⧉ button.
+Select an object, then open the **＋ Animation** tab — it sits with Flow and the UV editor in the bottom dock, and the dock's **Undock** button (right end of the tab strip) takes it out as a floating window.
 
 The window has three parts:
 

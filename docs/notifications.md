@@ -8,14 +8,17 @@ A **🔔 bell** button sits in the top-right chrome. Click it to open a dropdown
 
 Every toast the app shows — connection events, simulation start/stop, imports, warnings — is recorded here with a relative timestamp (*just now*, *5m ago*, *2h ago*, *1d ago*), so a message you missed while it was on screen is never lost. The list keeps the most recent **50** entries and survives reloads. Opening the panel clears the unread badge; **Clear all** empties the history.
 
-Since 1.30 a message that repeats — *Cannot reach the peer server. Retrying…* every few seconds — is **one entry with
-×N** and the latest time; click it to see each time it arrived.
+Since 1.30 a message that repeats is **one entry with ×N** and the latest time; click it to see each time it arrived.
+Since 1.32 reconnecting to the peer server says nothing at all — only a link that stays down for about a minute leaves
+one entry here (see [The status dot](connection.md#the-status-dot)).
 
 The center is a read-only log — connection requests are actioned from the toast itself (see below), not from here.
 
 ## Toasts
 
-Toasts pop up briefly for feedback. Two things are worth knowing:
+Toasts pop up briefly for feedback — the outcome of something you did (*Saved*, *Copied*, *Exported…*). Since 1.32 a
+question that needs your decision, such as *Delete flow* or *Restore previous session?*, is a
+[dialog](interface.md#dialogs) instead of a toast. Two things are worth knowing:
 
 - **Ordinary toasts sit *below* modals**, so an open Settings or Modules dialog is never blocked by a transient message.
 - **Connection requests and approvals stay on top** — a peer asking to join is always visible, even over a modal.
@@ -66,6 +69,9 @@ you can delete your own reply (**×**). Adding, editing or deleting a note and r
 Clicking a saved note's marker opens it to read: its text, label, author and date, with **Delete**, **Follow** (fly to
 the pin and keep following it) and **Edit**, which brings back the card above.
 
+Since 1.32 an open note has **‹ ›** in its header that step through **all** the scene's notes in pin order (wrapping
+round), with *n/N* showing where you are — on a computer and on a phone.
+
 **Markers.** On a desktop a note is a small badge beside its exact spot, joined to it by a thin leader line. A note that
 is behind something stays visible but faded, with a dashed leader. When several notes crowd together they merge into one
 badge with a count — click it and they spread out. In VR, note pins stay on their objects while you grab and move the
@@ -79,7 +85,12 @@ The **📝 notes** button in the top-right chrome (just left of the bell) opens 
 - Each row shows the note's name and text, which object it is on, and who wrote it. **Click a row** to fly to the note
   and open it; the pencil edits it and the bin deletes it.
 - The eye button in the header **shows or hides the note pins** in the viewport (on your screen only).
-- On a narrow screen, where the drawer is a bottom sheet, drag its top handle to resize it.
+**On a phone** the notes are the **Notes** tab of the bottom dock (**More ▸ Notes**; see
+[The dock on a phone](interface.md#the-dock-on-a-phone)), and the dock's grab bar resizes it. Opening a note shows it as a
+**page of the Notes tab**: its ‹ › step through the notes, and closing it — ✕, or swiping it down — returns to the list
+exactly where you left it. The note page and the list share one height, and neither covers **Play**.
+
+![A note open as a page of the notes on a folded phone: ‹ 5/14 › in its header, Reply, then Delete, Follow and Edit above the bottom bar](img/notes/note-page-phone.png){ width="300" }
 
 **Settings ▸ Controls ▸ Double-click to open notes** makes a single click on a marker — and the ‹ › arrows — only fly the
 camera to the note, with the card opening on a double click: handy for walking through a scene full of notes without a

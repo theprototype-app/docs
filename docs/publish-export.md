@@ -1,6 +1,6 @@
 # Publish & Export
 
-**Menu ▸ Publish / Export** puts a scene somewhere other people can play it. The window has four tabs:
+**Menu ▸ Publish / Export** (**Export…** in the main menu's Compact layout) puts a scene somewhere other people can play it. The window has four tabs:
 
 | Tab | What it does |
 |---|---|

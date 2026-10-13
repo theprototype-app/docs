@@ -106,9 +106,18 @@ While a simulation is running you can grab a dynamic object and throw it:
 
 - **Play mode** — enter play mode, put the crosshair on the object and hold the left button. It comes to you and follows the camera; **scroll** to push it further away or pull it closer; let go to throw. See below.
 - **Desktop editor** — drag it with the move gizmo. Releasing hands it back to the physics engine with the velocity of your throw.
+- **Interact mode** — press on it and drag, with a finger or the mouse; see [Carrying things in Interact](#carrying-things-in-interact).
 - **VR** — grip-grab it and let go; the release imparts the throw.
 
 Throw speed is capped at 20 m/s, and the cap applies to the *magnitude*, so a hard diagonal throw goes where you aimed it rather than being bent toward an axis.
+
+### Carrying things in Interact
+
+With a simulation running, press on a dynamic object in [Interact mode](controls.md#edit-and-interact) and drag: the
+object is held at the **exact point you touched** and moves with your finger or cursor, at the same distance from the
+camera — near or far — so it no longer jumps toward the camera when you take it. Let go while still moving to throw it;
+a slow release puts it down. Throws from Interact are capped at **8 m/s**. With a mouse, the wheel pushes the held object
+away or pulls it closer. A second finger never drags the held object.
 
 ## Play mode is interact mode
 

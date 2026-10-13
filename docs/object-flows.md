@@ -7,11 +7,11 @@ Every object can now carry **its own node graph**, alongside the shared **Scene 
 - The **Scene flow** is the shared, world-level graph you have always had.
 - An **object flow** is a private graph document owned by one object. All graphs replicate live to every peer and are saved with sessions, autosave and `.tpscene` exports.
 
-The editor's scope **follows your selection**: select an object and the Flow editor shows *that object's* flow (the chip at the top says which); deselect and you are back in the Scene flow. Flow Code shows whichever graph the editor is showing.
+The editor's scope **follows your selection**: select an object and the Flow editor shows *that object's* flow (the [breadcrumb bar](node-editor.md#the-breadcrumb-bar) at the top says which — tap its crumb to jump to another flow); deselect and you are back in the Scene flow. Flow Code shows whichever graph the editor is showing.
 
 ## Creating and deleting a flow
 
-Select an object that has no flow yet — the editor shows **"<name> has no flow yet"** with a one-click **Create flow** button (adding a node from the palette creates it too). To remove one, open the object's flow and press the 🗑 next to the scope chip; a confirmation lists how many nodes will be removed for everyone. Deleting a flow is undoable — <kbd>Ctrl+Z</kbd> restores the whole graph.
+Select an object that has no flow yet — the editor shows **"<name> has no flow yet"** with a one-click **Create flow** button (adding a node from the palette creates it too). To remove one, open the object's flow and press the 🗑 at the right end of the breadcrumb bar; a **Delete this flow?** dialog says how many nodes will be removed for everyone. Deleting a flow is undoable — <kbd>Ctrl+Z</kbd> restores the whole graph.
 
 ## No Object Selector needed
 

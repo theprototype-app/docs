@@ -14,21 +14,44 @@ Nine characters ship with the app: **Knight**, **Mage**, **Rogue**, **Hooded rog
 
 ![The nine characters](img/avatars/characters.png)
 
-If you never pick one, you get **Surprise me**: a character chosen from your id, so everyone sees the same one for you.
+If you never pick one, you get **Auto**: a character chosen from your id, so everyone sees the same one for you.
 The same characters are also an Explorer pack, **Packs ▸ Adventurers**, that you can place in a scene as animated
 models (see [Packs](packs.md#adventurers-124)).
 
 ## Customize Character
 
 Profile menu (your picture, top right) ▸ **Customize Character** — also **Settings ▸ Interface ▸ Avatars ▸ Customize
-character…**. A side panel opens and the camera moves to **your own character**, standing where you are, so you see
-yourself the way other people do.
+character…**. A drawer opens (a bottom sheet on a phone) and puts **your own character** in a plain **studio**: a
+neutral backdrop in your theme's colours, a floor disc and a soft key light.
 
-![The Customize character panel with the camera on your own character](img/avatars/customize-panel.png)
+![Customize character on a computer: your character in the studio on the left, the drawer with Show in scene, Surprise me and the presets on the right](img/avatars/studio-desktop.png)
+
+### The studio
+
+The scene is hidden from *your* view only while you customise — nothing in it changes, and other people in the session
+keep seeing the scene (and you) as before.
+
+- **Orbit** — drag in the free part of the view to turn the camera around your character like a turntable; the wheel or
+  a pinch zooms.
+- **Show in scene** — the switch at the top of the panel previews your character in the current scene instead, handy to
+  check how a colour reads against the world. The choice is remembered for next time.
+- Your whole character **stays in view** whatever the screen does: resize the drawer or the window, rotate a phone, or
+  fold or unfold a foldable — the camera re-frames on every layout change.
+
+### Choosing a look
+
+- **Presets** — **Auto** (picked from your id), the nine rigged characters (step through them with ‹ ›) and the
+  **Classic head**. Picking one shows *its* defaults: its own head, no hat, its own outfit colours.
+- **Custom** — change any part (head, hat, outfit or head colour) and a **Custom** entry appears and is selected.
+  Picking a preset again resets to that preset; picking **Custom** brings your edits back.
+- **Surprise me** — a new random character on every press: body, head, hat and colours, never the same one twice in a
+  row. A surprise you like is your Custom look; press **Apply** to keep it.
+
+The name label and your ping colour and sound are your own preferences: presets and Surprise me leave them alone.
 
 | Section | What you choose |
 |---|---|
-| **Character** | one of the nine — step through them with ‹ › — or **Surprise me** or **Classic head** |
+| **Character** | a preset — **Auto**, one of the nine, or **Classic head** — or **Surprise me**; your own edits are **Custom** |
 | **Head** | the character's own head, a stylised **Sphere**, **Box**, **Capsule** or **Cone** in your colour, or **My photo** (your profile picture on a card; needs a profile photo) |
 | **Hat** | None, Cap, Top hat or Crown — it sits on whatever head you chose |
 | **Colours** | **Outfit** recolours the character's clothes (skin and face keep theirs; **Original** puts them back); **Head** colours a stylised head or the classic avatar |
@@ -40,8 +63,8 @@ narrower — the keyboard works too (focus the edge, then the arrow keys; <kbd>S
 camera keeps your character in the part of the screen the drawer leaves free. The size is remembered on this device.
 
 Every change shows on your character at once; nothing reaches other people until you press **Apply**, which saves it and
-shows it to everyone. **Cancel**, <kbd>Esc</kbd> or ✕ throw the changes away. Either way the camera returns exactly to
-where your view was before you opened it.
+shows it to everyone. **Cancel**, <kbd>Esc</kbd>, ✕ or swiping the sheet away throw the changes away. Either way the
+camera and the scene come back exactly as they were before you opened it.
 
 ## Showing everyone as classic heads
 

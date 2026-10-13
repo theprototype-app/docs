@@ -133,11 +133,10 @@ back up by itself in the seconds after a scene has loaded — full refraction on
 tanks; one that cannot keep up gets the lighter look. On the lighter look, **Refraction**, **Ripples** and **Caustics**
 control the lensing bands and glints.
 
-When the quality level simplifies the water, a small notice says so once per session: *Simplified water for this device
-— Settings ▸ Scene ▸ Water quality ▸ High shows refraction*. Tap the path to open the setting, **✕** to dismiss. It never
-shows in Play or in VR.
-
-![On a phone: the Simplified water notice under the Aquarium, with its link to Water quality ▸ High](img/water/phone-simplified-notice.png)
+When the device lowers the water on its own, the one [quality notice](performance.md#when-quality-is-lowered-for-you)
+says so once per session — *Lowered water quality to keep it smooth* — with **Keep full quality** to have full water
+back for the rest of the visit. Since 1.32 the water no longer switches its refraction off and on by itself: if full
+quality came back once and the frames dropped again, it stays lowered for the rest of the scene.
 
 Search Settings for *water*, *caustics* or *refraction* to find the row.
 
@@ -145,7 +144,8 @@ Search Settings for *water*, *caustics* or *refraction* to find the row.
 
 **Menu ▸ Templates ▸ Examples** has three water scenes: **Aquarium**, **Pool party** and **Island ocean** (its boat
 floats and rides the swell). Pool party and Island ocean have
-[Start simulation on load](physics.md#start-simulation-on-load) on, so they move as soon as they open. For particle
+[Start simulation on load](physics.md#start-simulation-on-load) on, so they move as soon as they open. Since 1.32
+the Aquarium is a reef, with fish from the [Aquarium Kit](packs.md#aquarium-kit-132) pack. For particle
 water, see **Water works** on the [Fluids](fluids.md#example-water-works) page.
 
 ## For module authors
