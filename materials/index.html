@@ -689,6 +689,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#fish-scales-and-the-look-tier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fish scales and the look tier
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#what-gets-saved-and-where" class="md-nav__link">
     <span class="md-ellipsis">
       What gets saved, and where
@@ -811,6 +820,27 @@
   
   <span class="md-ellipsis">
     UV & Textures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../image-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Editor
   </span>
   
 
@@ -2521,6 +2551,90 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/followpath/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Follow Path
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/wander/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wander
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/orientvelocity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Orient to Velocity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/bodywave/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Body Wave
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/mass/" class="md-nav__link">
         
   
@@ -4014,6 +4128,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#fish-scales-and-the-look-tier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fish scales and the look tier
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#what-gets-saved-and-where" class="md-nav__link">
     <span class="md-ellipsis">
       What gets saved, and where
@@ -4056,8 +4179,8 @@
 
 <h1 id="material-presets">Material Presets</h1>
 <p>A <strong>material preset</strong> is a named look for an object's surface — colour, roughness, metalness, glow, transparency and up
-to two image maps (a texture and a normal map) — that you apply with one click. Seven come built in: <strong>Wood</strong>, <strong>Metal</strong>,
-<strong>Plastic</strong>, <strong>Glass</strong>, <strong>Stone</strong>, <strong>Rubber</strong> and <strong>Neon</strong>. You can save your own, rename and delete them, and everyone
+to two image maps (a texture and a normal map) — that you apply with one click. Eight come built in: <strong>Wood</strong>, <strong>Metal</strong>,
+<strong>Plastic</strong>, <strong>Glass</strong>, <strong>Stone</strong>, <strong>Rubber</strong>, <strong>Fish scales</strong> and <strong>Neon</strong>. You can save your own, rename and delete them, and everyone
 in your session sees your presets and can use them.</p>
 <p><strong>Where:</strong> select an object and open its properties (double-click it, or right-click ▸ <strong>Properties</strong>). In the
 <strong>Material</strong> section, the <strong>Presets</strong> row sits at the top, above the material type.</p>
@@ -4076,6 +4199,37 @@ in your session sees your presets and can use them.</p>
   to apply it; while editing (pencil), the copy button saves it into your own library.</li>
 </ul>
 <p><img alt="Editing your presets: rename, download and delete on your own swatches" src="../img/materials/presets-edit.png" /></p>
+<h2 id="fish-scales-and-the-look-tier">Fish scales and the look tier</h2>
+<p><strong>Fish scales</strong> is an iridescent look: a thin film over the surface shifts its colour with the viewing angle (the
+silver-blue flash of a turning fish), over a procedural relief of overlapping scales, with a light clear coat and a hint
+of see-through (transmission) so a fin reads thin. Recolour it in the Inspector for any fish, snake, dragon or beetle
+shell. The Aquarium's fish wear it.</p>
+<p>Some of that costs more than every device can pay, so each device draws a material at its own <strong>look tier</strong> — decided
+the way water quality is (from the headset and the automatic quality level), never written into the scene:</p>
+<table>
+<thead>
+<tr>
+<th>Device</th>
+<th>Draws</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Desktop, full quality</td>
+<td>everything</td>
+</tr>
+<tr>
+<td>Phone (or a lowered quality level)</td>
+<td>everything but transmission — it renders the whole scene a second time</td>
+</tr>
+<tr>
+<td>Headset (or the lowest levels)</td>
+<td>no transmission, no thin film, no sheen — the plain lit surface</td>
+</tr>
+</tbody>
+</table>
+<p>The look you chose is what is saved and what your peers receive; a device drawing less keeps the full numbers beside the
+material, so saving on a headset and opening on a desktop shows the full look again.</p>
 <h2 id="what-gets-saved-and-where">What gets saved, and where</h2>
 <ul>
 <li>Your presets live <strong>on this device</strong> (browser storage). They are not part of the scene file. An object that wears a
@@ -4117,7 +4271,7 @@ in your session sees your presets and can use them.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-07
+    2026-10-08
   </span>
 
     

@@ -758,6 +758,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../image-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../shader-graph/" class="md-nav__link">
         
   
@@ -1382,6 +1403,15 @@
   <a href="#where-it-opens" class="md-nav__link">
     <span class="md-ellipsis">
       Where it opens
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-breadcrumb-bar" class="md-nav__link">
+    <span class="md-ellipsis">
+      The breadcrumb bar
     </span>
   </a>
   
@@ -2583,6 +2613,90 @@
   
   <span class="md-ellipsis">
     Path Patrol
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/followpath/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Follow Path
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/wander/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wander
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/orientvelocity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Orient to Velocity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/bodywave/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Body Wave
   </span>
   
 
@@ -4119,6 +4233,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-breadcrumb-bar" class="md-nav__link">
+    <span class="md-ellipsis">
+      The breadcrumb bar
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tidy-graph" class="md-nav__link">
     <span class="md-ellipsis">
       Tidy graph
@@ -4339,6 +4462,19 @@ view.</p>
 </ul>
 <p><strong>Settings ▸ Input ▸ Node editor ▸ Node editor opens</strong> chooses <em>Where it was left (framed when new)</em> (the default) or
 <em>Framed — every node in view</em>, which ignores saved views and always frames. Search <strong>framed</strong> in Settings to find it.</p>
+<h2 id="the-breadcrumb-bar">The breadcrumb bar</h2>
+<p>Since 1.32 one line across the top of the node editor says where you are — <strong>⌂ Scene › Angelfish 1 › ⧉ Movement</strong>. It
+sits above the graph, so it never covers a node. Tap or click a crumb to see what sits beside it and jump there:</p>
+<ul>
+<li><strong>Scene</strong> or the <strong>object</strong> crumb lists every flow in the scene: <em>Main — the Scene graph</em> and each object that has its
+  own flow. The one you are on is ticked; picking it takes you back to the top of that flow.</li>
+<li>A <strong>group</strong> crumb (⧉) lists the other groups at the same level.</li>
+</ul>
+<p>Long names end in "…": point at a crumb (or <strong>press and hold</strong> it on a phone) to read the whole name. The ⤴ button at the
+right end — or <kbd>Esc</kbd> — leaves a group, and the bin deletes the object's flow (it asks first, in a dialog).
+Jumping between the Scene and an object's flow is two taps: the crumb, then the row.</p>
+<p><img alt="The breadcrumb bar in the docked node editor: ⌂ Scene › Angelfish 1…, with the object crumb's list open — Main, the Scene graph, then the object flows, the current one ticked" src="../img/node-editor/breadcrumb-siblings.png" /></p>
+<p>On a phone the minimap is off by default; <strong>⚙ Settings ▸ Minimap</strong> turns it on.</p>
 <h2 id="tidy-graph">Tidy graph</h2>
 <p>The node editor can lay a graph out for you.</p>
 <ul>
@@ -4359,8 +4495,8 @@ view.</p>
 sockets are the wires that cross the group's edge. Nothing about what the graph does changes: the nodes inside still run
 exactly as before.</p>
 <ul>
-<li><strong>Double-click</strong> the group (or press <kbd>Tab</kbd>) to open it. A breadcrumb at the top shows where you are;
-  <kbd>Esc</kbd>, <kbd>Tab</kbd> or the breadcrumb take you back out.</li>
+<li><strong>Double-click</strong> the group (or press <kbd>Tab</kbd>) to open it. The <a href="#the-breadcrumb-bar">breadcrumb bar</a> at the top
+  shows where you are; <kbd>Esc</kbd>, <kbd>Tab</kbd>, ⤴ or a crumb take you back out.</li>
 <li>Inside, <strong>Group inputs</strong> and <strong>Group outputs</strong> stand for the outside. Drag an inner socket onto their <strong>＋ new</strong> row to
   expose it as a group socket.</li>
 <li>Draw a wire onto a group's socket from outside and it connects to the real socket inside.</li>
@@ -4421,7 +4557,7 @@ already in a graph keep working. <strong>Turn all on</strong> brings them all ba
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-05
+    2026-10-11
   </span>
 
     

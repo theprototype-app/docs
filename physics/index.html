@@ -760,6 +760,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../image-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../shader-graph/" class="md-nav__link">
         
   
@@ -1003,6 +1024,21 @@
       Grab and throw mid-simulation
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Grab and throw mid-simulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#carrying-things-in-interact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carrying things in Interact
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2695,6 +2731,90 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/followpath/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Follow Path
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/wander/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wander
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/orientvelocity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Orient to Velocity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/bodywave/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Body Wave
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/mass/" class="md-nav__link">
         
   
@@ -4293,6 +4413,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Grab and throw mid-simulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#carrying-things-in-interact" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carrying things in Interact
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4496,9 +4631,16 @@ games and play links, and undo / redo work on it like on any edit. <em>Jelly roo
 <ul>
 <li><strong>Play mode</strong> — enter play mode, put the crosshair on the object and hold the left button. It comes to you and follows the camera; <strong>scroll</strong> to push it further away or pull it closer; let go to throw. See below.</li>
 <li><strong>Desktop editor</strong> — drag it with the move gizmo. Releasing hands it back to the physics engine with the velocity of your throw.</li>
+<li><strong>Interact mode</strong> — press on it and drag, with a finger or the mouse; see <a href="#carrying-things-in-interact">Carrying things in Interact</a>.</li>
 <li><strong>VR</strong> — grip-grab it and let go; the release imparts the throw.</li>
 </ul>
 <p>Throw speed is capped at 20 m/s, and the cap applies to the <em>magnitude</em>, so a hard diagonal throw goes where you aimed it rather than being bent toward an axis.</p>
+<h3 id="carrying-things-in-interact">Carrying things in Interact</h3>
+<p>With a simulation running, press on a dynamic object in <a href="../controls/#edit-and-interact">Interact mode</a> and drag: the
+object is held at the <strong>exact point you touched</strong> and moves with your finger or cursor, at the same distance from the
+camera — near or far — so it no longer jumps toward the camera when you take it. Let go while still moving to throw it;
+a slow release puts it down. Throws from Interact are capped at <strong>8 m/s</strong>. With a mouse, the wheel pushes the held object
+away or pulls it closer. A second finger never drags the held object.</p>
 <h2 id="play-mode-is-interact-mode">Play mode is interact mode</h2>
 <p>In play mode the crosshair grows into a ring over anything you can pick up.</p>
 <ul>
@@ -4788,7 +4930,7 @@ player sees it. Detaching while no simulation runs is quiet.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-08
+    2026-10-11
   </span>
 
     

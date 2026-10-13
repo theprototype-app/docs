@@ -480,6 +480,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#tapping-to-select-on-a-touch-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tapping to select on a touch screen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#duplicating" class="md-nav__link">
     <span class="md-ellipsis">
       Duplicating
@@ -628,6 +637,21 @@
       The toolbar
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="The toolbar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edit-positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit positions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1102,6 +1126,27 @@
   
   <span class="md-ellipsis">
     UV & Textures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../image-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Editor
   </span>
   
 
@@ -2812,6 +2857,90 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/followpath/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Follow Path
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/wander/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wander
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/orientvelocity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Orient to Velocity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/bodywave/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Body Wave
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/mass/" class="md-nav__link">
         
   
@@ -4411,6 +4540,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#tapping-to-select-on-a-touch-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tapping to select on a touch screen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#duplicating" class="md-nav__link">
     <span class="md-ellipsis">
       Duplicating
@@ -4560,6 +4698,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="The toolbar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edit-positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Edit positions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4654,6 +4807,7 @@
 <ul>
 <li><strong>Click</strong> an object to select it — the transform gizmo attaches.</li>
 <li><strong>Double-click</strong> it to open its properties (right-click ▸ <em>Properties</em> and the object list do the same). Pin the properties panel if you'd rather it followed every selection.</li>
+<li><strong>New objects do not open the properties.</strong> Adding a primitive, placing a pack item or prefab, or pasting selects the new object but leaves the properties panel closed; if the panel is already open, it switches to the new object.</li>
 <li><strong>Click empty space</strong> to deselect.</li>
 <li><strong>Shift+click</strong> adds or removes objects from a multi-selection (the last-picked object is the primary).</li>
 <li><strong>Shift+drag</strong> on empty space draws a box-select marquee.</li>
@@ -4670,9 +4824,13 @@ Object list, Node editor, Explorer, Animation), or press <strong>I</strong>:</p>
 <li><strong>Edit</strong> (the default) — every click selects, so every object, module pieces included, can
   be picked and moved.</li>
 <li><strong>Interact</strong> — clicks and drags work the way they do in play, without starting the game:
-  piano keys play, buttons press, On Click nodes fire, and a press on a crate carries it while a
-  simulation runs. Nothing gets selected.</li>
+  piano keys play, buttons press, On Click nodes fire, and a press on a crate
+  <a href="../physics/#carrying-things-in-interact">carries it</a> while a simulation runs. Nothing gets selected.</li>
 </ul>
+<p><strong>Interact keeps your selection for later.</strong> Turning Interact on clears the selection — no outline, no gizmo: you are
+playing, not editing — and turning it off brings back what was selected, minus anything deleted meanwhile. If you
+picked something else while in Interact (from the Objects list, say), that newer choice is kept instead. On a phone the
+<a href="../interface/#the-selection-toolbar">selection toolbar</a> stays up while Interact is on, so you can turn it off again.</p>
 <p><strong>Play</strong> is the third mode, entered with the play button as before.</p>
 <p>In <strong>Edit inside a running game</strong>, every object can be moved: a body you drop stays where you put
 it (it is parked out of the simulation) until you leave Edit.</p>
@@ -4836,7 +4994,16 @@ and narrow windows.</p>
 </ul>
 <p>It works the same inside a mesh editing session, on vertices, edges and faces. Everything
 else already has a touch path: long-press the viewport for the right-click menu, and the
-<strong>+</strong> button opens the same create menu.</p>
+<strong>+</strong> button opens the same create menu. On a phone the same toggle is <strong>Select multiple</strong> on the
+<a href="../interface/#the-selection-toolbar">selection toolbar</a>.</p>
+<h3 id="tapping-to-select-on-a-touch-screen">Tapping to select on a touch screen</h3>
+<ul>
+<li>Tap an object to select it; <strong>tap it again to deselect it</strong>.</li>
+<li>With <strong>Select multiple</strong> on, each tap toggles that object in or out of the selection.</li>
+<li>A double-tap still does your <a href="#what-double-click-does">double-click action</a> (by default: open its properties).</li>
+<li>To reach an object hidden behind another, use the Objects list. (A mouse can still click the same spot again, or
+  <kbd>Alt</kbd>+click, to select what is behind.)</li>
+</ul>
 <h3 id="duplicating">Duplicating</h3>
 <p><strong>Ctrl+D</strong> (or right-click ▸ <em>Duplicate</em>) makes a working copy of what is selected — right after you create something,
 that is the new object. With nothing selected, Ctrl+D says so and creates nothing. A copy is a copy of
@@ -4881,9 +5048,9 @@ referenced. Re-aiming it at the copy is a decision only you can make, so it is l
 rather a copy came out bare. An object that inherits the <strong>scene default</strong> shader keeps
 inheriting it — it does not get a private snapshot.</p>
 <h3 id="sharing-one-material">Sharing one material</h3>
-<p><em>Settings ▸ Scene ▸ Duplicate ▸ </em><em>Share materials</em><strong> changes what a copy gets. Off — the
+<p><em>Settings ▸ Scene ▸ Duplicate ▸ <strong>Share materials</strong></em> changes what a copy gets. Off — the
 default — a duplicate gets its own copy of the material, so editing one leaves the other
-alone. On, the copy and the original are </strong>one material**: an edit to either changes both,
+alone. On, the copy and the original are <strong>one material</strong>: an edit to either changes both,
 for everyone in the session. Geometry is always copied either way.</p>
 <p>It is your setting, not the scene's: two people in one session can reasonably disagree
 about how <em>they</em> duplicate. What it produces — the link itself — is scene data, and
@@ -5036,6 +5203,9 @@ visible scrollbar. On a folding phone it stays right through folding and unfoldi
 <p>A <strong>right-click while you drag a window</strong> — by its title bar, a resize corner or a tab — no longer pops up the browser's
 menu; a normal right-click elsewhere behaves as before. Tabs that sit in a window's title bar, like the undocked
 <a href="../code-workspace/">Code</a> window's, can be clicked, while the title bar around them still drags the window.</p>
+<p>For the bottom dock's own buttons — <strong>Undock</strong>, closing a view from its tab, <strong>Dock all tabs</strong> on a floating window —
+and for docking a window into an exact slot by dropping it on the dock's tab bar, see
+<a href="../interface/#windows-and-tabs">Windows and tabs</a>.</p>
 <h3 id="docking-to-a-screen-edge">Docking to a screen edge</h3>
 <p>Drag a window's header to the <strong>left or right edge</strong> of the screen and a blue strip appears:
 let go and it becomes a full-height panel on that edge, out of the way of the viewport. Drag
@@ -5060,6 +5230,9 @@ under a name, and switch between arrangements in one click.</p>
   updates that layout.</li>
 <li><strong>Use:</strong> click a saved layout to apply it. Rename or delete it from the same list.</li>
 </ul>
+<p><strong>Menu ▸ Layouts</strong> opens the list as a regular dialog; <kbd>Esc</kbd>, its <strong>✕</strong> or a click outside closes it. On a folded
+phone it is the <strong>Layouts</strong> tab of the bottom dock instead (also on the dock's <strong>+</strong>) — see
+<a href="../interface/#the-dock-on-a-phone">The dock on a phone</a>.</p>
 <p>Layouts are kept on this device. A reload still starts with a clean slate: a layout is applied only when you pick one.</p>
 <h2 id="the-toolbar">The toolbar</h2>
 <p>Since 1.30 the toolbar is one glass bar where the accent marks the armed tool or an open window and <strong>Play</strong> is the
@@ -5079,6 +5252,10 @@ toolbar, the Connect bar, the touch tools, the draw, sculpt, spline and mesh-edi
 <tr>
 <td><strong>Swap with ▸</strong></td>
 <td>exchange this button for one that is not on the bar</td>
+</tr>
+<tr>
+<td><strong>Edit positions</strong></td>
+<td>drag every button into place on the bar itself — see <a href="#edit-positions">Edit positions</a></td>
 </tr>
 <tr>
 <td><strong>Move left / Move right</strong></td>
@@ -5106,13 +5283,36 @@ toolbar, the Connect bar, the touch tools, the draw, sculpt, spline and mesh-edi
 </tr>
 <tr>
 <td><strong>Customize toolbar…</strong></td>
-<td>a checklist of every tool: tick to show, untick to hide, ▲/▼ to reorder; <strong>Reset toolbar</strong> goes back to the default buttons and order</td>
+<td>a checklist of every tool, the two corner stacks included: tick to show, untick to hide, ▲/▼ to reorder; <strong>Edit positions…</strong> at the top; <strong>Reset toolbar</strong> goes back to the default buttons and order</td>
 </tr>
 </tbody>
 </table>
+<h3 id="edit-positions">Edit positions</h3>
+<p>Right-click any button on the bottom toolbar — or press and hold it on a touch screen — and pick <strong>Edit positions</strong>. The
+toolbar and the two corner stacks switch to edit mode:</p>
+<ul>
+<li><strong>Drag</strong> any button to a new place: along the bar, or into the bottom-left or bottom-right corner stack. <strong>Play</strong> can
+  move along the bar but always stays on it.</li>
+<li>The small red <strong>−</strong> on a button removes it; its place shows a small green <strong>+</strong>.</li>
+<li>A green <strong>+</strong> opens a list of every button from <em>Customize toolbar…</em> that is not placed yet (Play is never in it).
+  Pick one to put it in that place.</li>
+<li>Each corner holds up to <strong>three</strong> buttons, stacked bottom to top. By default the left corner has the AI assistant and
+  the <strong>+</strong> (add) button, the right corner Chat and the microphone.</li>
+<li>With the keyboard: <kbd>Tab</kbd> to a button, then the <strong>arrow keys</strong> move it (<kbd>←</kbd> / <kbd>→</kbd> along the
+  bar and into the corners, <kbd>↑</kbd> / <kbd>↓</kbd> inside a corner) and <kbd>Delete</kbd> removes it.</li>
+<li>The round green <strong>✓</strong> at the top right of the toolbar <strong>applies</strong> the new layout. <kbd>Esc</kbd>, or a click anywhere
+  else, cancels it.</li>
+</ul>
+<p><img alt="Edit positions on a computer: every button has a red −, green + slots sit at the ends of the bar and on top of each corner stack, and the green ✓ applies" src="../img/controls/edit-positions.png" /></p>
+<p>The layout is saved on this device, like <em>Customize toolbar…</em>. <strong>Reset toolbar</strong> (in Customize) or <strong>Settings ▸ Reset
+window positions</strong> puts everything back. A custom button order no longer shows the wrong icons after a reload. On a
+folded phone the app shows its own phone bar instead — edit that one from <strong>More ▸ Edit bar…</strong>, or hold one of its
+buttons; there <strong>More</strong> can come off the bar and <strong>Play</strong> can move along it (see <a href="../interface/#on-a-phone">On a phone</a>).</p>
 <p>The <strong>play button</strong>'s right-click menu chooses how you play — <strong>Play (desktop)</strong>, <strong>Enter VR</strong>, <strong>Enter AR passthrough</strong>
 (greyed out where the device cannot) — and, in a scene that is a game, <strong>Test play (start from the menu)</strong>, which resets the
-game to its menu and starts from the Start screen. See <a href="../build-a-game/#test-play">Build a Game Loop</a>.</p>
+game to its menu and starts from the Start screen. See <a href="../build-a-game/#test-play">Build a Game Loop</a>. On a folded phone,
+press and hold Play for the phone's version of this menu — <em>Play as</em>, <em>Test play</em>, <strong>Move left / Move right</strong> and
+<strong>Edit bar…</strong>; see <a href="../interface/#on-a-phone">On a phone</a>.</p>
 <h2 id="the-settings-window">The Settings window</h2>
 <p><strong>Settings</strong> (logo menu ▸ Settings) is a window with a grouped menu of categories on the left — on a phone, a list you
 tap into — a search box in the header, and one row per setting. Changes save as you make them. Since 1.26 it has its
@@ -5351,7 +5551,7 @@ search row.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-08
+    2026-10-11
   </span>
 
     

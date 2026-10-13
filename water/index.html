@@ -760,6 +760,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../image-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../shader-graph/" class="md-nav__link">
         
   
@@ -2617,6 +2638,90 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/followpath/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Follow Path
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/wander/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wander
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/orientvelocity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Orient to Velocity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/bodywave/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Body Wave
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/mass/" class="md-nav__link">
         
   
@@ -4437,15 +4542,16 @@ live. At a phone's start level the water refracts at half resolution. A phone th
 back up by itself in the seconds after a scene has loaded — full refraction on the water, a smooth surface on the fluid
 tanks; one that cannot keep up gets the lighter look. On the lighter look, <strong>Refraction</strong>, <strong>Ripples</strong> and <strong>Caustics</strong>
 control the lensing bands and glints.</p>
-<p>When the quality level simplifies the water, a small notice says so once per session: <em>Simplified water for this device
-— Settings ▸ Scene ▸ Water quality ▸ High shows refraction</em>. Tap the path to open the setting, <strong>✕</strong> to dismiss. It never
-shows in Play or in VR.</p>
-<p><img alt="On a phone: the Simplified water notice under the Aquarium, with its link to Water quality ▸ High" src="../img/water/phone-simplified-notice.png" /></p>
+<p>When the device lowers the water on its own, the one <a href="../performance/#when-quality-is-lowered-for-you">quality notice</a>
+says so once per session — <em>Lowered water quality to keep it smooth</em> — with <strong>Keep full quality</strong> to have full water
+back for the rest of the visit. Since 1.32 the water no longer switches its refraction off and on by itself: if full
+quality came back once and the frames dropped again, it stays lowered for the rest of the scene.</p>
 <p>Search Settings for <em>water</em>, <em>caustics</em> or <em>refraction</em> to find the row.</p>
 <h2 id="examples">Examples</h2>
 <p><strong>Menu ▸ Templates ▸ Examples</strong> has three water scenes: <strong>Aquarium</strong>, <strong>Pool party</strong> and <strong>Island ocean</strong> (its boat
 floats and rides the swell). Pool party and Island ocean have
-<a href="../physics/#start-simulation-on-load">Start simulation on load</a> on, so they move as soon as they open. For particle
+<a href="../physics/#start-simulation-on-load">Start simulation on load</a> on, so they move as soon as they open. Since 1.32
+the Aquarium is a reef, with fish from the <a href="../packs/#aquarium-kit-132">Aquarium Kit</a> pack. For particle
 water, see <strong>Water works</strong> on the <a href="../fluids/#example-water-works">Fluids</a> page.</p>
 <h2 id="for-module-authors">For module authors</h2>
 <p>Modules get <code>api.water</code>: create and configure water, apply a preset, query depth, surface height and flow at a point,
@@ -4484,7 +4590,7 @@ disturb the surface with ripples, burst bubbles, and listen for changes. See <a 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-05
+    2026-10-10
   </span>
 
     

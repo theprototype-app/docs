@@ -860,6 +860,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../image-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../shader-graph/" class="md-nav__link">
         
   
@@ -2554,6 +2575,90 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/followpath/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Follow Path
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/wander/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wander
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/orientvelocity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Orient to Velocity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/bodywave/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Body Wave
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/mass/" class="md-nav__link">
         
   
@@ -4173,6 +4278,13 @@ second <kbd>Esc</kbd> closes Settings.</p>
 <h2 id="reading-a-row">Reading a row</h2>
 <p>Every setting is one row: its name and a one-line description on the left, the control on the right. Switches are
 on / off; two to four choices are a segmented control; a value with a range is a slider with its number beside it.</p>
+<p>Since 1.32 each row decides its own layout from the room it really has in the <strong>Settings window</strong>, not from the size
+of the screen. A small control — a switch, a colour swatch, a key box, a short dropdown, a single button, a number, a
+segmented choice that fits — stays on the same line as its name. Only a control that cannot fit beside the name and its
+description — a wide segmented choice, a text field, a slider on a narrow phone — moves onto its own line underneath. So
+the same row can sit on one line on an unfolded phone or a computer and stack on a folded phone. A segmented choice too
+wide even for its own line (<strong>Scene ▸ Editing ▸ Double-click action</strong> on a phone) shows its options in two columns.</p>
+<p><img alt="Settings ▸ Scene on a folded phone: Double-click action's four choices in two columns under its name, while Length's dropdown, Angle's Degrees | Radians and the Duplicates switches stay beside their names" src="../img/settings/rows-phone.png" width="300" /></p>
 <table>
 <thead>
 <tr>
@@ -4265,6 +4377,16 @@ on / off; two to four choices are a segmented control; a value with a range is a
 <td>new in 1.31</td>
 <td><strong>Scene ▸ Performance ▸ Placement preview</strong> — <strong>Full model</strong> / <strong>Within budget</strong> / <strong>Box only</strong>, plus the preview triangle budget and <strong>Show dimensions</strong>, this device only; see <a href="../explorer/#the-placement-preview-setting">The Placement preview setting</a></td>
 </tr>
+<tr>
+<td>Undock button</td>
+<td>new in 1.32</td>
+<td><strong>Interface ▸ Windows &amp; chrome ▸ Undock button</strong> — <strong>Active window</strong> / <strong>All as one tabbed group</strong>, this device only; see <a href="../interface/#docked-windows">Docked windows</a></td>
+</tr>
+<tr>
+<td>Project actions</td>
+<td>new in 1.32</td>
+<td><strong>Interface ▸ Lists &amp; menus ▸ Project actions</strong> — <strong>Auto</strong> / <strong>Compact</strong> / <strong>List</strong>, this device only: how the main menu lays out New from template, Load, Save, Import and Export; Auto is List on a phone and Compact elsewhere. See <a href="../interface/#the-main-menus-project-actions">The main menu's Project actions</a></td>
+</tr>
 </tbody>
 </table>
 
@@ -4287,7 +4409,7 @@ on / off; two to four choices are a segmented control; a value with a range is a
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-08
+    2026-10-11
   </span>
 
     

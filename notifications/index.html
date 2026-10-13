@@ -758,6 +758,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../image-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../shader-graph/" class="md-nav__link">
         
   
@@ -2578,6 +2599,90 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/followpath/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Follow Path
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/wander/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wander
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/orientvelocity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Orient to Velocity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/bodywave/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Body Wave
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/mass/" class="md-nav__link">
         
   
@@ -4173,11 +4278,14 @@
 <h2 id="notification-center">Notification center</h2>
 <p>A <strong>🔔 bell</strong> button sits in the top-right chrome. Click it to open a dropdown listing recent notifications, newest first. When it's collapsed, a red badge shows the unread count (<code>9+</code> above nine).</p>
 <p>Every toast the app shows — connection events, simulation start/stop, imports, warnings — is recorded here with a relative timestamp (<em>just now</em>, <em>5m ago</em>, <em>2h ago</em>, <em>1d ago</em>), so a message you missed while it was on screen is never lost. The list keeps the most recent <strong>50</strong> entries and survives reloads. Opening the panel clears the unread badge; <strong>Clear all</strong> empties the history.</p>
-<p>Since 1.30 a message that repeats — <em>Cannot reach the peer server. Retrying…</em> every few seconds — is <strong>one entry with
-×N</strong> and the latest time; click it to see each time it arrived.</p>
+<p>Since 1.30 a message that repeats is <strong>one entry with ×N</strong> and the latest time; click it to see each time it arrived.
+Since 1.32 reconnecting to the peer server says nothing at all — only a link that stays down for about a minute leaves
+one entry here (see <a href="../connection/#the-status-dot">The status dot</a>).</p>
 <p>The center is a read-only log — connection requests are actioned from the toast itself (see below), not from here.</p>
 <h2 id="toasts">Toasts</h2>
-<p>Toasts pop up briefly for feedback. Two things are worth knowing:</p>
+<p>Toasts pop up briefly for feedback — the outcome of something you did (<em>Saved</em>, <em>Copied</em>, <em>Exported…</em>). Since 1.32 a
+question that needs your decision, such as <em>Delete flow</em> or <em>Restore previous session?</em>, is a
+<a href="../interface/#dialogs">dialog</a> instead of a toast. Two things are worth knowing:</p>
 <ul>
 <li><strong>Ordinary toasts sit <em>below</em> modals</strong>, so an open Settings or Modules dialog is never blocked by a transient message.</li>
 <li><strong>Connection requests and approvals stay on top</strong> — a peer asking to join is always visible, even over a modal.</li>
@@ -4242,6 +4350,8 @@ you can delete your own reply (<strong>×</strong>). Adding, editing or deleting
 <p><img alt="A note with a thread of replies and the Reply box" src="../img/notes/note-thread.png" /></p>
 <p>Clicking a saved note's marker opens it to read: its text, label, author and date, with <strong>Delete</strong>, <strong>Follow</strong> (fly to
 the pin and keep following it) and <strong>Edit</strong>, which brings back the card above.</p>
+<p>Since 1.32 an open note has <strong>‹ ›</strong> in its header that step through <strong>all</strong> the scene's notes in pin order (wrapping
+round), with <em>n/N</em> showing where you are — on a computer and on a phone.</p>
 <p><strong>Markers.</strong> On a desktop a note is a small badge beside its exact spot, joined to it by a thin leader line. A note that
 is behind something stays visible but faded, with a dashed leader. When several notes crowd together they merge into one
 badge with a count — click it and they spread out. In VR, note pins stay on their objects while you grab and move the
@@ -4252,9 +4362,13 @@ world.</p>
 <li>Each group can be collapsed, and has <strong>‹ ›</strong> arrows to step through its notes one at a time — a review tour.</li>
 <li>Each row shows the note's name and text, which object it is on, and who wrote it. <strong>Click a row</strong> to fly to the note
   and open it; the pencil edits it and the bin deletes it.</li>
-<li>The eye button in the header <strong>shows or hides the note pins</strong> in the viewport (on your screen only).</li>
-<li>On a narrow screen, where the drawer is a bottom sheet, drag its top handle to resize it.</li>
+<li>The eye button in the header <strong>shows or hides the note pins</strong> in the viewport (on your screen only).
+<strong>On a phone</strong> the notes are the <strong>Notes</strong> tab of the bottom dock (<strong>More ▸ Notes</strong>; see
+<a href="../interface/#the-dock-on-a-phone">The dock on a phone</a>), and the dock's grab bar resizes it. Opening a note shows it as a
+<strong>page of the Notes tab</strong>: its ‹ › step through the notes, and closing it — ✕, or swiping it down — returns to the list
+exactly where you left it. The note page and the list share one height, and neither covers <strong>Play</strong>.</li>
 </ul>
+<p><img alt="A note open as a page of the notes on a folded phone: ‹ 5/14 › in its header, Reply, then Delete, Follow and Edit above the bottom bar" src="../img/notes/note-page-phone.png" width="300" /></p>
 <p><strong>Settings ▸ Controls ▸ Double-click to open notes</strong> makes a single click on a marker — and the ‹ › arrows — only fly the
 camera to the note, with the card opening on a double click: handy for walking through a scene full of notes without a
 card in the way.</p>
@@ -4301,7 +4415,7 @@ card in the way.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-08
+    2026-10-11
   </span>
 
     

@@ -681,6 +681,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#on-a-phone" class="md-nav__link">
+    <span class="md-ellipsis">
+      On a phone
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#selecting-several" class="md-nav__link">
     <span class="md-ellipsis">
       Selecting several
@@ -1027,6 +1036,27 @@
   
   <span class="md-ellipsis">
     UV & Textures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../image-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Editor
   </span>
   
 
@@ -2737,6 +2767,90 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/followpath/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Follow Path
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/wander/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wander
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/orientvelocity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Orient to Velocity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/bodywave/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Body Wave
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/mass/" class="md-nav__link">
         
   
@@ -4306,6 +4420,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#on-a-phone" class="md-nav__link">
+    <span class="md-ellipsis">
+      On a phone
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#selecting-several" class="md-nav__link">
     <span class="md-ellipsis">
       Selecting several
@@ -4631,15 +4754,27 @@ the same three answers: a generated mesh is as heavy as any other.</p>
 <ul>
 <li><strong>Single-click</strong> selects an item and shows its details in the <strong>ⓘ Properties</strong> panel.</li>
 <li><strong>Double-click</strong> opens it in a <strong>preview window</strong> (below); text files open in a floating code editor (<kbd>Ctrl</kbd>+<kbd>S</kbd> saves back to the item).</li>
-<li><strong>Right-click</strong> an item for Open, Download, Share, Rename, Delete, Properties (and <em>Copy contents</em> for text files).</li>
+<li><strong>Right-click</strong> an item for Open, Download, Share, Rename, Delete, Properties (and <em>Copy contents</em> for text files,
+  <strong>Edit image…</strong> for images — see <a href="../image-editor/">The Image editor</a>).</li>
 <li>The search box filters the whole library by name; the breadcrumb path bar (toggleable) shows where you are.</li>
 </ul>
 <p><strong>Keyboard navigation</strong> in the grid: arrow keys move the selection, <kbd>Enter</kbd> opens, <kbd>Backspace</kbd> goes up a level, <kbd>Esc</kbd> clears the selection, <kbd>Delete</kbd> deletes the selection.</p>
+<h3 id="on-a-phone">On a phone</h3>
+<ul>
+<li><strong>Press and hold</strong> a file or folder to open its actions as a sheet: Rename, Duplicate, Copy, Download, Share,
+  Properties, Delete and the rest. The sheet stays open when you lift your finger (Android's own long-press signal used
+  to close it straight away), and the browser's own long-press menu and text callout do not appear on Explorer items.</li>
+<li><strong>Hold, then move</strong> to pick the item up and drop it into a folder.</li>
+<li>While you <strong>rename</strong> an item, the selected text is readable in every theme.</li>
+<li>The Explorer's toolbar <strong>scrolls sideways</strong> when it does not fit, so the project name is always reachable.</li>
+</ul>
+<p>On a phone the Explorer is a tab of the bottom dock, like Properties, Objects and the other windows — see <a href="../interface/#the-dock-on-a-phone">The dock on a phone</a>.
+Its sidebar starts hidden so the files get the screen; open it with its edge button and it stays open next time.</p>
 <h3 id="selecting-several">Selecting several</h3>
 <ul>
 <li><kbd>Ctrl</kbd>+click adds or removes a card; <kbd>Shift</kbd>+click selects the range from the last card you clicked (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+click adds the range).</li>
 <li><kbd>Ctrl</kbd>+<kbd>A</kbd> selects everything in the folder, <kbd>Ctrl</kbd>+<kbd>I</kbd> inverts the selection. With the grid focused these keys never reach the scene behind the panel.</li>
-<li><strong>Drag on empty grid space</strong> to draw a marquee (with the mouse — on a touch screen a drag scrolls the grid, and a long press picks a card up instead). Hold <kbd>Ctrl</kbd> to add to what is already selected.</li>
+<li><strong>Drag on empty grid space</strong> to draw a marquee (with the mouse — on a touch screen a drag scrolls the grid, and holding a card, then moving, picks it up instead). Hold <kbd>Ctrl</kbd> to add to what is already selected.</li>
 <li>Right-click a selection for the batch actions: <strong>Download N files as .zip</strong>, <strong>Export N objects as GLTF</strong>, <strong>Share</strong> / <strong>Unshare N items</strong>, Copy, Cut, Duplicate and Delete.</li>
 <li>Drag a selection onto a folder to move all of it, or into the viewport to place every object.</li>
 </ul>
@@ -4675,7 +4810,8 @@ open has unsaved changes, or has never been saved at all, the app asks first: <e
 <p>A shared file travels as a row with its own identity beside its content hash. When you duplicate a shared file — or a whole shared folder — peers who already hold the bytes make the copy from their own disk: ten copies, zero transfers. Deleting a copy removes only that copy; editing one gives it new bytes, which are sent once. A scene copy is the exception, because its new name makes it a new file: it transfers once.</p>
 </div>
 <h3 id="the-preview-window">The preview window</h3>
-<p>Images open zoomable (<strong>−</strong> / <strong>＋</strong> / <strong>1:1</strong>, drag to pan), sounds open with a player, and 3D models open on a turntable with an <strong>animation transport</strong> — play, step a frame with <kbd>,</kbd> and <kbd>.</kbd>, scrub, pick a clip — and a mesh-stats line. The <strong>←</strong> / <strong>→</strong> buttons page through the folder without closing the window, and <strong>⌐</strong> goes up a level.</p>
+<p>Images open zoomable (<strong>−</strong> / <strong>＋</strong> / <strong>1:1</strong>, drag to pan) with a pencil button that opens the
+<a href="../image-editor/">Image editor</a>, sounds open with a player, and 3D models open on a turntable with an <strong>animation transport</strong> — play, step a frame with <kbd>,</kbd> and <kbd>.</kbd>, scrub, pick a clip — and a mesh-stats line. The <strong>←</strong> / <strong>→</strong> buttons page through the folder without closing the window, and <strong>⌐</strong> goes up a level.</p>
 <p>The window's <strong>⚙</strong> holds two things worth knowing: <strong>Opacity</strong> fades the window so you can model against a reference picture, and <strong>Passthrough</strong> lets clicks reach the scene underneath while the header stays live to move it or switch it back. <strong>Allow multiple windows</strong> opens each file in a window of its own instead of re-pointing the one you have.</p>
 <h2 id="item-properties-i">Item properties (ⓘ)</h2>
 <p>The ⓘ panel shows name, kind, size, folder path, added date and the content hash (copyable), plus per-kind details — image dimensions, audio duration and channels, text line count. For 3D objects it can embed a <strong>rotatable inline 3D preview</strong> with mesh stats (triangles / vertices / meshes) — enabled by the <em>3D model preview</em> toggle in the ⚙ tab. Double-clicking an object always opens the larger preview regardless of that toggle.</p>
@@ -4706,7 +4842,7 @@ open has unsaved changes, or has never been saved at all, the app asks first: <e
   nothing in the undo history.</li>
 <li><strong>Colours.</strong> The ghost turns <strong>amber</strong> when it would sit mostly inside another object (you can still place it — a
   cup in a cabinet is fine) and <strong>red</strong> where there is nothing to place it on (letting go there does nothing).</li>
-<li><strong>On a phone or tablet</strong>, press and hold a card until it lifts, then drag; the Explorer tucks itself away so you can
+<li><strong>On a phone or tablet</strong>, press and hold a card and move your finger to drag it (holding still opens its actions instead); the Explorer tucks itself away so you can
   see where you are dropping. Items drop upright (or aligned to the surface) — the rotation keys need a keyboard.</li>
 </ul>
 <h3 id="ghost-tiers-the-real-model-or-its-box">Ghost tiers: the real model or its box</h3>
@@ -4739,7 +4875,8 @@ all pack downloads</strong>.</p>
 <p><img alt="A pack item's menu: Delete cache with its size" src="../img/explorer/place-delete-cache.png" /></p>
 <h3 id="images-audio-and-text">Images, audio and text</h3>
 <ul>
-<li><strong>Images</strong> dropped onto an object become its <strong>texture</strong>.</li>
+<li><strong>Images</strong> dropped onto an object become its <strong>texture</strong>. A big photo is scaled down to 1024 px on its longest side
+  instead of being refused — see <a href="../image-editor/#big-photos-as-textures">Big photos as textures</a>.</li>
 <li><strong>Audio and text</strong> are used where they plug in — sound nodes, scripts, and any module that claims the drop (a sample
   onto a pad).</li>
 </ul>
@@ -4765,7 +4902,7 @@ Add menu still places in front of you; drag-to-place in VR comes later.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-08
+    2026-10-11
   </span>
 
     

@@ -758,6 +758,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../image-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../shader-graph/" class="md-nav__link">
         
   
@@ -2548,6 +2569,90 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/followpath/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Follow Path
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/wander/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wander
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/orientvelocity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Orient to Velocity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/bodywave/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Body Wave
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/mass/" class="md-nav__link">
         
   
@@ -4115,9 +4220,9 @@
 <li>The <strong>Scene flow</strong> is the shared, world-level graph you have always had.</li>
 <li>An <strong>object flow</strong> is a private graph document owned by one object. All graphs replicate live to every peer and are saved with sessions, autosave and <code>.tpscene</code> exports.</li>
 </ul>
-<p>The editor's scope <strong>follows your selection</strong>: select an object and the Flow editor shows <em>that object's</em> flow (the chip at the top says which); deselect and you are back in the Scene flow. Flow Code shows whichever graph the editor is showing.</p>
+<p>The editor's scope <strong>follows your selection</strong>: select an object and the Flow editor shows <em>that object's</em> flow (the <a href="../node-editor/#the-breadcrumb-bar">breadcrumb bar</a> at the top says which — tap its crumb to jump to another flow); deselect and you are back in the Scene flow. Flow Code shows whichever graph the editor is showing.</p>
 <h2 id="creating-and-deleting-a-flow">Creating and deleting a flow</h2>
-<p>Select an object that has no flow yet — the editor shows <strong>"<name> has no flow yet"</strong> with a one-click <strong>Create flow</strong> button (adding a node from the palette creates it too). To remove one, open the object's flow and press the 🗑 next to the scope chip; a confirmation lists how many nodes will be removed for everyone. Deleting a flow is undoable — <kbd>Ctrl+Z</kbd> restores the whole graph.</p>
+<p>Select an object that has no flow yet — the editor shows <strong>"<name> has no flow yet"</strong> with a one-click <strong>Create flow</strong> button (adding a node from the palette creates it too). To remove one, open the object's flow and press the 🗑 at the right end of the breadcrumb bar; a <strong>Delete this flow?</strong> dialog says how many nodes will be removed for everyone. Deleting a flow is undoable — <kbd>Ctrl+Z</kbd> restores the whole graph.</p>
 <h2 id="no-object-selector-needed">No Object Selector needed</h2>
 <p>Inside an object flow, effect nodes (Spin, Bounce, Script, module nodes, Sound, physics params, On Click…) target <strong>the owner object implicitly</strong> — just drop a Spin node in a box's flow and the box spins. Wiring into an Object Selector still works and always wins, so an object's flow may also drive <em>other</em> objects.</p>
 <h2 id="public-sockets-flow-input-flow-output">Public sockets: Flow Input / Flow Output</h2>
@@ -4170,7 +4275,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-07-22
+    2026-10-11
   </span>
 
     

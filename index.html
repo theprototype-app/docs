@@ -825,6 +825,27 @@
   
   
     <li class="md-nav__item">
+      <a href="image-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="shader-graph/" class="md-nav__link">
         
   
@@ -2519,6 +2540,90 @@
   
   
     <li class="md-nav__item">
+      <a href="nodes/followpath/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Follow Path
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nodes/wander/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wander
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nodes/orientvelocity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Orient to Velocity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nodes/bodywave/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Body Wave
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="nodes/mass/" class="md-nav__link">
         
   
@@ -4073,6 +4178,61 @@ on a phone that gives the scene the whole height of the screen.</p>
 <a href="https://github.com/theprototype-app/core">github.com/theprototype-app/core</a> (also <strong>Settings ▸ About ▸ Source Code</strong>),
 with a contributing guide and an <code>llms.txt</code> for coding agents.</p>
 <h2 id="whats-new">What's new</h2>
+<p><strong>1.32 — your 1.31 review, fixed.</strong> On a phone every sheet has <a href="interface/#sheets-on-a-phone">one grab bar</a>: drag
+it to resize the sheet, swipe it down to close it, and no sheet covers <strong>Play</strong>. <strong>Customize character</strong> and <strong>Profile
+settings</strong> open again from the profile menu, and in the Explorer you <a href="explorer/#on-a-phone">press and hold</a> a file
+or folder for its actions. <a href="interface/#docked-windows">Docked windows</a> close from their tab; <strong>Undock</strong> sits beside
+<em>Minimize the dock</em> (<strong>Settings ▸ Interface ▸ Windows &amp; chrome ▸ Undock button</strong> can take every tab out as one
+window), a floating window with tabs can <strong>Dock all tabs</strong>, a tab dragged onto a floating window joins it, and the
+phone's <strong>+</strong> opens a <strong>Windows</strong> sheet. Long names stay on one line, and <strong>Layouts</strong> is a regular dialog (a dock tab on a phone). Automatic
+quality no longer switches water refraction and the rest off and on, and says what it lowered
+<a href="performance/#when-quality-is-lowered-for-you">once, with <strong>Keep full quality</strong></a>. A big photo now
+<a href="image-editor/#big-photos-as-textures">becomes a texture</a> instead of being refused, and the new
+<a href="image-editor/">Image editor</a> crops, rotates, resizes and adjusts a picture and updates its textures for everyone.
+<strong>Templates ▸ Examples ▸ Aquarium</strong> is a reef from the new <a href="packs/#aquarium-kit-132">Aquarium Kit</a>, swimming with
+four new motion nodes — <a href="nodes/followpath/">Follow Path</a>, <a href="nodes/wander/">Wander</a>,
+<a href="nodes/orientvelocity/">Orient to Velocity</a> and <a href="nodes/bodywave/">Body Wave</a> — with a
+<a href="materials/#fish-scales-and-the-look-tier">Fish scales</a> preset. LOD groups no longer stay on their first level in
+scenes with water.</p>
+<p><strong>…and from your review of the 1.32 preview.</strong> Right-click (or press and hold) a toolbar button ▸
+<a href="controls/#edit-positions">Edit positions</a> to drag the toolbar and corner buttons into place — <strong>−</strong> removes, <strong>+</strong>
+adds, <strong>✓</strong> applies. On a phone the <a href="interface/#the-selection-toolbar">selection toolbar</a>'s <strong>Inspect</strong> opens <em>and
+closes</em> the properties, a tap on a selected object deselects it, adding an object no longer opens the properties, and
+<a href="controls/#edit-and-interact">Interact</a> gives your selection back when you leave it and
+<a href="physics/#carrying-things-in-interact">carries things</a> from the point you grabbed. Phone sheets
+<a href="interface/#sheets-on-a-phone">pull down to close</a> from their list, the main menu closes on a press outside it, and a
+note steps through <a href="notifications/#adding-a-note">all the notes</a>. Tabbed windows drag by touch, and on a computer you
+can <a href="interface/#docked-windows">drop a window onto the dock's tab bar</a> exactly where you want it; the dock's <strong>+</strong>
+lists every window, the <a href="image-editor/#in-the-dock">Image editor</a> included. <strong>Customize character</strong> opens a
+<a href="avatars/#the-studio">studio</a> around your character, and <strong>Surprise me</strong> deals a new look on every press.
+<a href="interface/#dialogs">Dialogs</a> cover the whole screen, and questions — <em>Delete flow</em>, <em>Restore previous session?</em> —
+are dialogs instead of toasts. The connection pill shows a <a href="connection/#the-status-dot">coloured dot</a>, and
+reconnecting after a tab switch no longer toasts. The node editor has a one-line
+<a href="node-editor/#the-breadcrumb-bar">breadcrumb bar</a>, and the Profiler a <a href="profiler/#details-and-settings">Details and Settings</a>
+sidebar and a resizable split. And from the second look at the preview:</p>
+<ul>
+<li>On a phone, <strong>Properties, Objects, Notes, Configure Scene and Layouts</strong> are <a href="interface/#the-dock-on-a-phone">tabs of the bottom dock</a>
+  beside the Explorer, instead of drawers behind it. <strong>Inspect</strong> brings Properties to the front, nothing covers <strong>Play</strong>,
+  and unfolding the phone puts each panel back in its sidebar or window — folding brings the tabs back.</li>
+<li>Tapping the bottom-bar button of the view on screen <a href="interface/#on-a-phone">minimizes the dock</a>; the main menu closes
+  as Configure Scene opens on a phone (on a computer it stays open).</li>
+<li><strong>More</strong> can come off the phone's bottom bar, and <strong>Play</strong> can move along it. Play starts as plain Play on a phone;
+  pick VR or AR from its press-and-hold menu and its icon follows.</li>
+<li>The selection toolbar follows a sheet as you resize it, without lagging behind, and the profile sheet no longer repeats
+  your picture.</li>
+<li>The phone's Connect chip says <strong>Connected</strong>, <strong>Connecting…</strong> or <strong>Offline</strong> beside the <a href="connection/#the-status-dot">dot</a>
+  when there is room.</li>
+<li>The <a href="connection/#who-is-here-the-peers-panel">peers panel</a> is wider, one row per person; on a phone it is a sheet like
+  the notifications.</li>
+<li>The main menu's <a href="interface/#the-main-menus-project-actions">Project section</a> has a compact two-column layout —
+  <strong>New from template…</strong>, <strong>Load</strong> | <strong>Save ▾</strong>, <strong>Import</strong> | <strong>Export…</strong> — and <strong>▾</strong> opens one
+  <a href="saving/#save-options">Save options</a> dialog. A phone keeps the list; <strong>Settings ▸ Interface ▸ Project actions</strong> switches.</li>
+<li><a href="settings/#reading-a-row">Settings rows</a> keep a switch, a short list, a colour or a button beside their name again, and
+  stack only what cannot fit.</li>
+<li><a href="modules/#the-modules-manager">Modules</a> on a phone keep their buttons to the right and expand a long description on a
+  tap. In Browse, install several at once: each card says <strong>Installing…</strong> until it is done, and a failed one says why with
+  <strong>Retry</strong>.</li>
+</ul>
 <p><strong>1.31 — drag to place.</strong> Drag any object from <a href="explorer/#placing-objects">Explorer ▸ Packs or ▸ Library</a> onto the
 viewport and a ghost shows where it will land and how big it is — width × depth × height in metres beside the
 pointer, the real model when it is already loaded and light enough, its box otherwise. <kbd>R</kbd> or the wheel turns
@@ -4344,7 +4504,7 @@ for your machine <a href="performance/">reduces quality or pauses instead of fre
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-08
+    2026-10-11
   </span>
 
     

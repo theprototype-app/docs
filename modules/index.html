@@ -758,6 +758,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../image-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Editor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../shader-graph/" class="md-nav__link">
         
   
@@ -2436,6 +2457,90 @@
   
   <span class="md-ellipsis">
     Path Patrol
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/followpath/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Follow Path
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/wander/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wander
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/orientvelocity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Orient to Velocity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/bodywave/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Body Wave
   </span>
   
 
@@ -4192,6 +4297,12 @@
 <p>Open it from <strong>Menu ▸ Modules</strong>. Since 1.30 <strong>Install from file…</strong> sits in the header, the <strong>Core / User / Browse</strong> tabs
 show counts, a <strong>Filter modules</strong> field narrows whatever the tab lists (name, description, author, tags), and each module
 is one row — name, version, description, its actions, the download-as-example icon and its on/off switch.</p>
+<p>Since 1.32 every row is laid out the same way at any width, a phone included: the name and description on the left, the
+controls on the <strong>right</strong> — on <strong>Core</strong>, the download icon and the switch; on <strong>User</strong>, <strong>Remove</strong> and the switch; on
+<strong>Browse</strong>, <strong>Install</strong> (or <strong>Retry</strong>). A module's own actions — Button &amp; door's <strong>+ Button</strong>, Pong's <strong>spawn / remove</strong>,
+<strong>Update</strong> — sit under its name and description. A description that is cut short ends in a chevron: tap the text to read
+all of it, tap again to fold it. The dev-URL row fits a phone's width too.</p>
+<p><img alt="Modules ▸ Core on a folded phone: each module's download icon and switch on the right, + Button and Pong: spawn / remove under their descriptions, and VR Sleeve Palette's description tapped open in full" src="../img/modules/core-phone.png" width="300" /></p>
 <ul>
 <li><strong>Core modules</strong> ship with the app (hello, button, pong, VR sleeve). Toggle each on or off: both are <strong>live</strong> (since 1.20, disabling no longer needs a reload).</li>
 <li>The dungeon generator, piano, avatar controller, VR essentials and drivable car used to ship in the app; they now live in the <strong>Browse</strong> gallery, so install them there when you want them. Everyone in a session needs the same modules for shared behaviour to match — including anyone who joins later.</li>
@@ -4214,7 +4325,9 @@ is one row — name, version, description, its actions, the download-as-example 
 <li><strong>URL</strong> — a base URL serving the same layout (GitHub <code>tree</code> links are converted automatically; the host needs CORS). <strong>Update</strong> on the card re-fetches from the same URL.</li>
 <li><strong>Browse</strong> — a gallery of community modules from <a href="https://github.com/theprototype-app/modules">github.com/theprototype-app/modules</a>, installed with one click. Installed entries dim; an <strong>Update</strong> button appears when the gallery lists a newer version. The same trust model applies — gallery modules run unsandboxed.</li>
 </ul>
-<p>Installing from Browse keeps you on Browse, so you can install several in a row. The <strong>User</strong> tab's count grows (and pulses) to show where they went; opening it scrolls to the newest card and flashes it. Every module's buttons, its Dev URL row and Remove live on that card.</p>
+<p>Installing from Browse keeps you on Browse, so you can install several in a row. Click <strong>Install</strong> on as many modules as
+you like — each installs on its own, none cancels another, and its card shows <strong>Installing…</strong> until it finishes. If one
+fails, its card says why (for example a download error) with <strong>Retry</strong>; <strong>Details</strong> shows the full message. The <strong>User</strong> tab's count grows (and pulses) to show where they went; opening it scrolls to the newest card and flashes it. Every module's buttons, its Dev URL row and Remove live on that card.</p>
 <p>User modules install, update, disable and remove <strong>live</strong> — the manager genuinely unloads everything a module registered (menus, nodes, effects, handlers, timers, listeners) without a page reload, and so does switching a core module off.</p>
 <p>An installed module older than the version the current app release shipped with is flagged: a toast names it with <strong>Update</strong>, and its card shows an <strong>Update</strong> row. See <a href="../profiler/#the-stale-module-warning">the stale-module warning</a>.</p>
 <h3 id="dev-mode-live-reload-while-you-build">Dev mode — live reload while you build</h3>
@@ -4392,7 +4505,7 @@ overriding <code>margin</code>); see <a href="../module-sdk/#registerunwrapbacke
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-08
+    2026-10-11
   </span>
 
     

@@ -543,6 +543,24 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#the-status-dot" class="md-nav__link">
+    <span class="md-ellipsis">
+      The status dot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#who-is-here-the-peers-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Who is here: the peers panel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#inviting-someone" class="md-nav__link">
     <span class="md-ellipsis">
       Inviting someone
@@ -922,6 +940,27 @@
   
   <span class="md-ellipsis">
     UV & Textures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../image-editor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Editor
   </span>
   
 
@@ -2632,6 +2671,90 @@
   
   
     <li class="md-nav__item">
+      <a href="../nodes/followpath/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Follow Path
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/wander/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wander
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/orientvelocity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Orient to Velocity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/bodywave/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Body Wave
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../nodes/mass/" class="md-nav__link">
         
   
@@ -4126,6 +4249,24 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#the-status-dot" class="md-nav__link">
+    <span class="md-ellipsis">
+      The status dot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#who-is-here-the-peers-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Who is here: the peers panel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#inviting-someone" class="md-nav__link">
     <span class="md-ellipsis">
       Inviting someone
@@ -4286,10 +4427,53 @@
 <li><strong>📋 Your ID</strong> — the button on the left shows your own peer ID. Click it to <strong>copy your invite link</strong> (your app URL with your ID attached, e.g. <code>https://theprototype.app/#AB12CD</code>) to the clipboard. Until the connection to the signaling server is ready it reads <em>Generating…</em>.</li>
 <li><strong>Connect field</strong> — paste a peer's ID into <em>Enter peer ID to connect</em> and press <strong>Connect</strong> to request a connection.</li>
 </ul>
-<p>Since 1.30, once you are connected the bar <strong>collapses to a compact chip</strong> — a status dot, the session, the avatars
-of who is here and your mic; click it to open the full bar again (its collapse button folds it back). While the signaling link
-is down the status badge says how long it has been trying (<em>Reconnecting · 2 min</em>); the attempt count is in the drawer's
-<strong>Info</strong> tab. On a phone the bar is always the chip — tap it for your ID, the join field, Info and Toasts.</p>
+<p>Since 1.30, once you are connected the bar <strong>collapses to a compact chip</strong> — the status dot, the avatars of who is here
+and your mic; click it to open the full bar again (its collapse button folds it back). On a phone the bar is always the
+chip — tap it for your ID, the join field, Info and Toasts. The signaling link's attempt count is in the drawer's
+<strong>Info</strong> tab.</p>
+<h3 id="the-status-dot">The status dot</h3>
+<p>Since 1.32 the connection status is a <strong>coloured dot</strong>. On a computer the full bar keeps your invite ID and the peer-ID
+field, with the dot at its left end. On a phone the chip at the top of the screen says the state beside the dot —
+<strong>Connected</strong>, <strong>Connecting…</strong> or <strong>Offline</strong> — whenever the top bar has room. When the bar is crowded (people are
+connected and you are in a call, so the peers button and the microphone take the space) it shrinks back to the dot and
+a ▾ (and the microphone while you are in a call).</p>
+<table>
+<thead>
+<tr>
+<th>Dot</th>
+<th>Means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>grey</td>
+<td>not connected</td>
+</tr>
+<tr>
+<td>yellow, pulsing</td>
+<td>connecting, waiting for someone to approve, or reconnecting to the peer server</td>
+</tr>
+<tr>
+<td>green</td>
+<td>connected</td>
+</tr>
+<tr>
+<td>red</td>
+<td>the peer server cannot be reached (the app keeps retrying)</td>
+</tr>
+</tbody>
+</table>
+<p>Point at the dot — or press and hold it on a touch screen — for the full sentence, such as <em>Connected to 2 peers</em>;
+while the signaling link is down it also says how long it has been trying. On a phone a tap on the chip opens the full
+connection details.</p>
+<p><img alt="The phone's top bar when it is crowded: the logo, the connection chip with a green dot, ▾ and the microphone, then the bell and the peers" src="../img/connection/status-dot-phone.png" width="420" /></p>
+<h3 id="who-is-here-the-peers-panel">Who is here: the peers panel</h3>
+<p>The peers button in the top bar (beside the bell, with the number of people) opens the <strong>Connected</strong> panel. Its header
+matches the notification centre's, and each person is <strong>one row</strong>: their avatar, their name (shortened with … — point
+at it for the full name), a second line with where they are and their role, and their actions on the right — <strong>Watch</strong>,
+<strong>Go to</strong> or the role list. On a computer the panel is 320–420 px wide and grows with long names, so nothing wraps or
+breaks. On a phone it opens as a sheet like the notifications: a grab bar on top, and a swipe down closes it.</p>
+<p><img alt="The Connected panel on a computer: five people, one row each — avatar, name, the scene they are in and their p-number underneath, and Editor or Viewer with Go to or Watch on the right" src="../img/connection/peers-panel-desktop.png" width="515" /></p>
 <h3 id="inviting-someone">Inviting someone</h3>
 <ol>
 <li><strong>Copy your invite link</strong> (the 📋 button) and send it to a friend.</li>
@@ -4400,7 +4584,7 @@ device can check it, so a code set on another device of yours has to be set agai
 <p>How many peers work for you depends on your uplink, since each one sends to every other. Voice chat and live gestures are the bandwidth-hungry parts — a large scene is sent once per joiner, not continuously.</p>
 </div>
 <h2 id="when-the-signaling-link-drops">When the signaling link drops</h2>
-<p>The link to the signaling server is not the link to your peers — losing it does not end a session you are already in, it only stops new people finding you. When it drops the app reconnects on its own, backing off a little further between tries and <strong>never giving up</strong>, and the Connect pill carries a chip while it is retrying so a dead link does not read as a dead app. Coming back online, or returning to the tab, retries immediately instead of waiting out the backoff. A peer connection that closed is rebuilt rather than abandoned.</p>
+<p>The link to the signaling server is not the link to your peers — losing it does not end a session you are already in, it only stops new people finding you. When it drops the app reconnects on its own, backing off a little further between tries and <strong>never giving up</strong>, and the <a href="#the-status-dot">status dot</a> pulses yellow while it is retrying so a dead link does not read as a dead app. Coming back online, or returning to the tab, retries immediately instead of waiting out the backoff — and since 1.32 it does so <strong>silently</strong>: switching apps on a phone and coming back no longer toasts. If the server stays unreachable for about a minute, the dot turns red and <strong>one</strong> entry appears in the notification centre; the retries carry on. A peer connection that closed is rebuilt rather than abandoned.</p>
 <h2 id="diagnostics-you-can-copy">Diagnostics you can copy</h2>
 <p><strong>Settings ▸ About ▸ Copy diagnostics</strong> puts a bundle on your clipboard: the version, this session's peer and scene counts, the scene's <a href="../performance/">budget numbers</a>, the last uncaught error and the last 300 log lines. A toast confirms <em>Diagnostics copied to the clipboard</em>.</p>
 <p>It goes to your clipboard and nowhere else — paste it into a bug report, so a problem arrives with something in it.</p>
@@ -4481,12 +4665,12 @@ device can check it, so a code set on another device of yours has to be set agai
 <td><strong>Apply</strong> could not open the server you picked, so nothing changed — check the host, port and path.</td>
 </tr>
 <tr>
-<td><em>Lost the peer server - reconnecting...</em> / <em>The peer server closed the link - reconnecting...</em></td>
-<td>The link to the signaling server dropped; the app retries on its own and never gives up. <em>Reconnected to the peer server.</em> confirms it is back. Your open session keeps going meanwhile.</td>
+<td>A <strong>red</strong> status dot, and one <em>Can't reach the peer server — still retrying.</em> entry in the notification centre</td>
+<td>The link to the signaling server has been down for about a minute; the app keeps retrying on its own and never gives up, and the dot turns green or grey again once it is back. Shorter drops — a tab switch, a moment offline — reconnect silently. Your open session keeps going meanwhile.</td>
 </tr>
 <tr>
 <td><em>Cannot reach the signaling server - the connection request was not sent.</em></td>
-<td>You pressed <strong>Connect</strong> while the signaling link is down. Wait for the reconnect chip to clear, or switch servers in Settings ▸ Connection.</td>
+<td>You pressed <strong>Connect</strong> while the signaling link is down. Wait for the status dot to stop pulsing, or switch servers in Settings ▸ Connection.</td>
 </tr>
 </tbody>
 </table>
@@ -4510,7 +4694,7 @@ device can check it, so a code set on another device of yours has to be set agai
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-08
+    2026-10-11
   </span>
 
     
