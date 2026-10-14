@@ -163,7 +163,7 @@ An object scaled — or animated — down to almost nothing has no surface left 
 On a phone or tablet there is no <kbd>Shift</kbd> to hold and no right-click, so the same
 two gestures are available as a **mode**. *Settings ▸ Interface ▸ Touch tools* puts round
 **Undo**, **Redo** and **Multi-select** buttons beside the logo — on by default on phones
-and narrow windows.
+and narrow windows. With a mouse, [Edit positions](#edit-positions) arranges that row too.
 
 With **Multi-select** on:
 
@@ -336,6 +336,58 @@ the same way with undo:
 - **Selecting a shader node is not an edit.** Clicking a node in the [Shader editor](shader-graph.md) selects it on your
   screen only: it adds no undo step and is not sent to the other people in the session.
 
+### Copy, paste and reset values
+
+Since 1.34 every value in the **Properties** panel and in **Configure Scene** can be copied, pasted and reset — one
+number, a whole vector (Position / Rotation / Scale), a colour, a choice, an on/off switch, or a whole section (all of
+Transform, all of Material…). What you copy is plain text, so you can paste it into a notepad or a code editor, edit it
+there, and paste it back.
+
+**Where:**
+
+- **Right-click a value** (desktop) or **press and hold it** (phone or tablet): **Copy**, **Paste**, **Reset to
+  default**.
+- **Right-click a vector's name** (*Position*): **Copy vector**, **Paste vector**, **Reset**, and **Paste X / Y / Z
+  only**. Right-click one of its X / Y / Z boxes for that single number.
+- **Right-click a section header** (*TRANSFORM*): **Copy section**, **Copy as JSON** (indented, for a code editor),
+  **Paste section**, **Reset section**. With several objects selected: **Paste to all selected (N)**.
+- **Keyboard** (as in Blender): point at a field or a section header and press <kbd>Ctrl</kbd>+<kbd>C</kbd> /
+  <kbd>Ctrl</kbd>+<kbd>V</kbd> (<kbd>⌘</kbd><kbd>C</kbd> / <kbd>⌘</kbd><kbd>V</kbd> on a Mac). While you are typing in a
+  box, <kbd>Ctrl</kbd>+<kbd>C</kbd> / <kbd>Ctrl</kbd>+<kbd>V</kbd> copy text as usual.
+
+![Properties of a Box with Position right-clicked: Copy vector (Ctrl+C), Paste vector (Ctrl+V), Reset, and under One axis Paste X only, Paste Y only, Paste Z only](img/controls/copy-paste-vector-menu.png)
+
+![The TRANSFORM section header right-clicked: Copy section, Copy as JSON, Paste section and Reset section](img/controls/copy-paste-section-menu.png)
+
+**What the clipboard holds:**
+
+| Copied | Text |
+|---|---|
+| one value | `1.25` |
+| a vector | `position: 1.25, 0, -3` |
+| a colour | `#ff8800` |
+| a choice | `Median point` (the label you see) |
+| a section | `{"transform":{"position":[1.25,0,-3],"rotation":[0,90,0],"scale":[1,1,1]}}` |
+
+Numbers are in the units the panel shows ([Settings ▸ Units](units.md)) — metres, centimetres… — and rotations in
+degrees.
+
+**What you can paste:** a number; `1, 2, 3`; `1 2 3`; `Vector3(1, 2, 3)`; `new THREE.Vector3(1, 2, 3)`; `[1, 2, 3]`;
+`(1, 2, 3)`; `position: 1, 2, 3`; `{"x": 1, "y": 2, "z": 3}`; `{ x: 1, y: 2, z: 3 }`; the JSON blocks above; several
+`name: value` lines (a section); a unit suffix (`12cm, 0, 4in`, `90deg`); colours as `#f80`, `#ff8800`, `0xff8800`,
+`rgb(255, 128, 0)` or `[1, 0.5, 0]`; `true` / `off`.
+
+- A vector pastes into any vector: copy a Position and paste it as a Scale.
+- A section paste applies only the keys that section has.
+- If the clipboard holds the wrong kind of thing, the paste is refused with a short reason (*Expected x, y, z — the
+  clipboard holds one number*) and nothing changes.
+- **Every paste is one undo step** — one value, a vector, a section or a paste to all selected; one
+  <kbd>Ctrl</kbd>+<kbd>Z</kbd> puts it back.
+
+*Reset to default* is greyed out where a row has no known default. The first **Paste** from a menu may ask the browser
+for clipboard permission; <kbd>Ctrl</kbd>+<kbd>V</kbd> over a field never asks. Text boxes (names, banner text) keep the
+browser's own text menu.
+
 ### Text selection
 
 Dragging across a menu, a toolbar or a panel does not paint a text selection, and a drag that starts in the 3D view or
@@ -372,7 +424,9 @@ Since 1.33 each side has **one sidebar**, and every window docked there is a **t
 to Configure Scene / Properties and the Objects list. Drop a window on a side that already has a
 sidebar (*Add as tab* lights up) and it joins as a tab; a second window on an edge no longer
 splits the column. A layout saved with two windows stacked on one edge comes back as two tabs.
-Switching tabs, moving a tab to the other side, the width and **Full height** are described in
+Since 1.34 **every** window that docks at the bottom can be a sidebar tab, with no second header,
+and every drop is highlighted first (*Float here*, *Move to dock*, *Add as tab*). Switching tabs,
+the tab menu, dragging a tab, the width and **Full height** are described in
 [Sidebars](interface.md#sidebars).
 
 Docking is **desktop only** — on a touch screen there is no room for a full-height side panel
@@ -411,7 +465,10 @@ Pressing a toolbar button never takes the keyboard: the keys stay with whatever 
 toolbar, the Connect bar, the touch tools, the draw, sculpt, spline and mesh-edit toolboxes and module toolboxes. So
 "press Move, then <kbd>F</kbd>" still frames the selection from the 3D view.
 
-The bar at the bottom of the screen is yours to arrange. **Right-click** (or long-press) any of its buttons:
+The bar at the bottom of the screen is yours to arrange. **Right-click** (or long-press) any of its buttons. Since 1.34
+a right-click **anywhere** on the toolbar — between two buttons, on its edge — opens the toolbar's menu (Edit
+positions, Move toolbar, Always on top, Customize toolbar…), never the browser's; so do the round corner buttons. A
+button's own menu has:
 
 | Entry | What it does |
 |---|---|
@@ -430,6 +487,31 @@ The bar at the bottom of the screen is yours to arrange. **Right-click** (or lon
 The two **Lift** switches are also in a corner button's right-click menu, next to *Always on top*, and in **Settings ▸
 Interface ▸ Windows & chrome**.
 
+### The "…" button
+
+The **…** at the right end of the bar opens *Customize toolbar…*. Since 1.34 it is a button like any other: right-click
+it for the toolbar menu, choose **Hide button** to take it off the bar, or untick **… (Customize toolbar)** in
+*Customize toolbar…*. In **Edit positions** it carries a red **−**, and the bar's green **+** offers it back. It always
+sits at the end of the bar. With it hidden, *Customize toolbar…* is still the last row of every toolbar button's
+right-click menu.
+
+### When the buttons do not fit
+
+When there is not room for every button — you switched them all on, or a pinned sidebar takes part of the bottom edge —
+the buttons that do not fit move into a **»** button at the end of the bar. They leave from the right end first (in the
+order you arranged them), and **Play never moves**. Click **»** for the hidden buttons: they work exactly as on the bar,
+and the list ends with *Customize toolbar…*. Make the sidebar narrower (or unpin it) and the buttons come back by
+themselves — nothing is switched off, and *Customize toolbar…* still lists them as on the bar. **Edit positions** always
+shows every button, wrapping onto more rows when it needs to.
+
+### The toolbar and sidebars
+
+- **Full-height sidebars**: the toolbar never slides under one. Dragging it, or *Move toolbar*, stops at the sidebar's
+  edge, and leaves room for the corner buttons beside it.
+- **Edit positions** lays its bar beside any open sidebar, full height or not, moving the bar only as far as it has to.
+- **Lift corner buttons above docked panels**, when on, also moves the corner buttons beside a full-height sidebar on
+  their side, and back down to the bottom edge when the dock is hidden.
+
 ### Edit positions
 
 Right-click any button on the bottom toolbar — or press and hold it on a touch screen — and pick **Edit positions**.
@@ -439,21 +521,25 @@ Every place you can arrange switches to edit mode at once:
 - **The top-right group** — Scene notes, Notifications and Connected peers, left of your profile picture. Notifications
   and Connected peers always stay in this group, because their panels open from that corner; Scene notes can go
   anywhere. Connected peers only shows while someone is connected, but in edit mode its place is always drawn so you
-  can move it.
-- **The touch tools** — Undo, Redo and Multi-select beside the logo on a touch screen, when **Settings ▸ Interface ▸
-  Touch tools** is on. Reorder them, or drag one onto the bar or into a corner.
+  can move it. Remove every button from this group and it disappears completely — no empty box; in **Edit positions**
+  it shows again, with a **+** to put buttons back.
+- **The row beside the logo** (the touch tools: Undo, Redo and Multi-select) — since 1.34 with a mouse too, not only on
+  a touch screen. Reorder them, drag one onto the bottom toolbar or into a corner, remove them, or put other buttons
+  beside the logo. Once you change that row it stays shown (this switches on **Settings ▸ Interface ▸ Touch tools**); an
+  empty row shows nothing. Workspace layouts keep it.
+- **The Connect bar** at the top carries a red **−** to hide it — see [The Connect bar](#the-connect-bar).
 - The main menu button and your **profile** picture stay where they are.
 
 Then:
 
-- **Drag** any button to a new place: along the bar, into a corner, the top-right group or the touch tools. **Play** can
-  move along the bar but always stays on it.
+- **Drag** any button to a new place: along the bar, into a corner, the top-right group or the row beside the logo.
+  **Play** can move along the bar but always stays on it.
 - The small red **−** on a button removes it.
 - A stack shows **one** green **+** for its next place; it opens a list of every button from *Customize toolbar…* that is
   not placed yet (Play is never in it). Pick one to put it there.
-- Each corner — and the top-right group and the touch tools — holds up to **four** buttons; once a stack holds four, its
-  **+** is gone. By default the left corner has the AI assistant and the **+** (add) button, the right corner Chat and
-  the microphone.
+- Each corner — and the top-right group and the row beside the logo — holds up to **four** buttons; once a stack holds
+  four, its **+** is gone. By default the left corner has the AI assistant and the **+** (add) button, the right corner
+  Chat and the microphone.
 - With the keyboard: <kbd>Tab</kbd> to a button, then the **arrow keys** move it (<kbd>←</kbd> / <kbd>→</kbd> along the
   bar and into the corners, <kbd>↑</kbd> / <kbd>↓</kbd> inside a corner) and <kbd>Delete</kbd> removes it.
 - The round green **✓** at the top right of the toolbar **applies** the new layout. <kbd>Esc</kbd>, or a click anywhere
@@ -462,6 +548,8 @@ Then:
 ![Edit positions on a computer: every button has a red −, green + slots sit at the ends of the bar and on top of each corner stack, and the green ✓ applies](img/controls/edit-positions.png)
 
 ![Edit positions reaching the top right: the notifications and Explorer buttons in the top-right group carry a red − with a green + for its next place, the left corner holds four buttons and no +, and the right corner shows one +](img/controls/edit-positions-top-right.png)
+
+![Edit positions with a mouse in 1.34: Undo, Redo and Multi-select beside the logo carry a red − with a + for the next place, the Connect bar has its own red −, and the … button at the end of the bottom bar has a − too](img/controls/edit-positions-connect-bar.png)
 
 The menus name buttons by their short name — **Pivot**, **Microphone**; the toolbar's own tooltips still tell you the
 pivot mode and how to talk.
@@ -476,6 +564,19 @@ The **play button**'s right-click menu chooses how you play — **Play (desktop)
 game to its menu and starts from the Start screen. See [Build a Game Loop](build-a-game.md#test-play). On a folded phone,
 press and hold Play for the phone's version of this menu — *Play as*, *Test play*, **Move left / Move right** and
 **Arrange the bar…**; see [On a phone](interface.md#on-a-phone).
+
+### The Connect bar
+
+- **Hide or show it**: in **Edit positions** the Connect bar at the top has a red **−**; press it to hide the bar. A
+  **+ Connect** stays in its place until you press **✓**, and brings it back whenever you edit again. Or untick
+  **Connect bar** in *Customize toolbar…* (section *Top*). On a folded phone the Connect chip stays.
+- **Hidden stays hidden**: buttons you hide (for example **Notifications**) stay hidden everywhere — after a reload and
+  on the folded phone as well.
+- **Its own row**: when the top edge has no room for the Connect bar between the logo (and the buttons beside it) and the
+  buttons left of your profile picture, it moves to a full-width row of its own along the top, and the corner buttons
+  drop below it. Remove a button or widen the window and it goes back to the middle of the top row by itself.
+
+See also [The Connect panel](connection.md#the-connect-panel).
 
 ## The Settings window
 
@@ -515,7 +616,7 @@ The keys in the table are the **3D view's**: they fire while the 3D view has foc
 | <kbd>Alt</kbd>+click | Cycle the selection through everything under the cursor ([inside and behind water](#inside-and-behind-water)) |
 | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+click | [Ping](notifications.md#pinging) a spot for everyone |
 | <kbd>Esc</kbd> | Leave isolation; leave [focus mode](interface.md#focus-mode) while it is on |
-| <kbd>Ctrl</kbd>+<kbd>Space</kbd> | [Focus mode](interface.md#focus-mode) — maximize the area under the pointer (the 3D view alone, or a docked window filling the screen); again to restore |
+| <kbd>Ctrl</kbd>+<kbd>Space</kbd> | [Focus mode](interface.md#focus-mode) — maximize the area under the pointer (the 3D view alone, or a docked window filling the whole window with the [viewport picture-in-picture](interface.md#the-viewport-picture-in-picture)); again to restore |
 | <kbd>Z</kbd> | Cycle the [render mode](camera.md#render-mode-view): Shaded → Shaded + AO → Wireframe |
 | <kbd>Tab</kbd> | Enter [mesh edit](mesh-editing.md) mode — inside it <kbd>Tab</kbd> cycles Vertices / Edges / Faces; <kbd>Esc</kbd> exits |
 | <kbd>I</kbd> | [Edit / Interact](#edit-and-interact) mode — in Interact, clicks play with the scene instead of selecting |
@@ -539,6 +640,19 @@ The keys in the table are the **3D view's**: they fire while the 3D view has foc
 | <kbd>?</kbd> | Keyboard cheat sheet (every panel, the focused one first) |
 
 Inside an Edit Mesh session the bare letters <kbd>E</kbd> <kbd>I</kbd> <kbd>G</kbd> <kbd>S</kbd> <kbd>B</kbd> <kbd>F</kbd> <kbd>X</kbd> / <kbd>W</kbd> <kbd>J</kbd> and the loop keys (<kbd>L</kbd>, <kbd>Ctrl</kbd>+<kbd>+</kbd>/<kbd>-</kbd>, <kbd>Ctrl</kbd>+<kbd>I</kbd>) belong to the mesh tools — see [Mesh Editing](mesh-editing.md). That is why the panel shortcuts above use <kbd>Alt</kbd>: they keep working while a mesh session is open. Since 1.23 the mesh tools' keys can be rebound too, in their own *Mesh edit* group of **Settings ▸ Shortcuts**.
+
+**In the viewport picture-in-picture** — the small 3D view shown while a docked window is maximized (see
+[The viewport picture-in-picture](interface.md#the-viewport-picture-in-picture)) — these keys work while the pointer is
+over it. They have their own *Viewport picture-in-picture* group in **Settings ▸ Shortcuts**:
+
+| Keys | In the viewport picture-in-picture |
+|---|---|
+| <kbd>W</kbd> / <kbd>E</kbd> / <kbd>R</kbd> | Move / Rotate / Scale |
+| <kbd>F</kbd> | Frame the selection with the picture-in-picture's own camera |
+| <kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd>, <kbd>G</kbd>, <kbd>Delete</kbd>, <kbd>Ctrl</kbd>+<kbd>D</kbd>… | as in the 3D view |
+
+**Over a field in Properties or Configure Scene**, <kbd>Ctrl</kbd>+<kbd>C</kbd> / <kbd>Ctrl</kbd>+<kbd>V</kbd> copy and
+paste that value (or a whole section over its header) — see [Copy, paste and reset values](#copy-paste-and-reset-values).
 
 ### Keys follow the panel you are in
 

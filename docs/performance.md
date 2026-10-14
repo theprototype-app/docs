@@ -23,7 +23,9 @@ The object count in the status line carries a coloured dot:
 
 Hover it and it names what is over (*Scene budget: over on draw calls / frame, triangles /
 frame*). Click it and the **Statistics** window opens — the same window as the burger
-menu ▸ **Statistics**.
+menu ▸ **Statistics**. On a folded phone, **More ▸ Statistics** opens it as a tab of the bottom
+dock (see [The dock on a phone](interface.md#the-dock-on-a-phone)), and on a computer it can be
+a [sidebar tab](interface.md#any-window-in-a-sidebar) too.
 
 ## What the Statistics window counts
 
