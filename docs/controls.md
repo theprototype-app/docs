@@ -365,27 +365,23 @@ and for docking a window into an exact slot by dropping it on the dock's tab bar
 ### Docking to a screen edge
 
 Drag a window's header to the **left or right edge** of the screen and a blue strip appears:
-let go and it becomes a full-height panel on that edge, out of the way of the viewport. Drag
-its header back into the middle and it floats again, where it was before. Drag the panel's
-inner edge to set its width.
+let go and it docks on that side, out of the way of the viewport. Drag its header back into the
+middle and it floats again, where it was before.
 
-**Two windows fit on one edge.** Drop a second window onto a docked panel — or onto the same
-edge — and the column splits into two stacked panels. The half of the panel your pointer is
-over is highlighted with **⊟ Split panel**, so you choose which one ends up on top. A
-divider between them sets the share: drag it up or down, and that share is remembered **per
-side**, so the left and right edges keep their own. Undock either one and the other takes the
-whole column back.
-
-That is the ceiling: a third window dropped on a full edge is refused, and the panel it
-landed on wiggles to say so.
+Since 1.33 each side has **one sidebar**, and every window docked there is a **tab** of it — next
+to Configure Scene / Properties and the Objects list. Drop a window on a side that already has a
+sidebar (*Add as tab* lights up) and it joins as a tab; a second window on an edge no longer
+splits the column. A layout saved with two windows stacked on one edge comes back as two tabs.
+Switching tabs, moving a tab to the other side, the width and **Full height** are described in
+[Sidebars](interface.md#sidebars).
 
 Docking is **desktop only** — on a touch screen there is no room for a full-height side panel
 and it would fight scrolling, so windows there simply stay floating.
 
 ### Workspace layouts
 
-Save the windows you have open — which panels, docked or floating, their sizes, the side and bottom docks, tab groups —
-under a name, and switch between arrangements in one click.
+Save the windows you have open — which panels, docked or floating, their sizes, the sidebars and the bottom dock, tab
+groups — and **the toolbar** under a name, and switch between arrangements in one click.
 
 - **Where:** **Menu ▸ Layouts**, or **Settings ▸ Interface ▸ Windows & chrome ▸ Workspace layouts**.
 - **Save:** arrange the windows, type a name, press **Save**. Saving under a name you already have (in any case)
@@ -397,6 +393,14 @@ phone it is the **Layouts** tab of the bottom dock instead (also on the dock's *
 [The dock on a phone](interface.md#the-dock-on-a-phone).
 
 Layouts are kept on this device. A reload still starts with a clean slate: a layout is applied only when you pick one.
+
+**A layout keeps the toolbar too** (since 1.33): which buttons are on it and where it sits, the corner buttons, the
+top-right group, the touch tools, and the lift and *Always on top* switches. The desktop and the phone are kept
+**separately in the same layout**: saving on a computer (or an unfolded phone) stores the desktop toolbar, saving on a
+folded phone stores the [phone bar](interface.md#the-phone-bar-and-more), and saving the same name on the other one adds
+its part without touching the first. Applying a layout brings back both. The list marks each layout with a monitor
+and/or a phone icon for the parts it holds. Layouts saved before 1.33 restore the windows only and leave the toolbar as
+it is.
 
 ## The toolbar
 
@@ -418,21 +422,38 @@ The bar at the bottom of the screen is yours to arrange. **Right-click** (or lon
 | **Move toolbar** | slide the whole bar along the bottom: click to place it, the arrow keys nudge, <kbd>Esc</kbd> puts it back. Disabled on a screen too narrow to move it |
 | **Reset toolbar position** | back to the middle |
 | **Always on top** | paint the bar over the dock and floating windows (by default they cover it) |
+| **Lift toolbar above docked panels** | on by default: while the Node editor or the Explorer is docked at the bottom, the toolbar moves up above the dock |
+| **Lift corner buttons above docked panels** | off by default: the round corner buttons (chat, microphone, AI assistant, add…) move up above the dock too; off, the dock covers them |
 | **Collapse / Expand toolbar** | shrink the bar down to the play button, and back |
 | **Customize toolbar…** | a checklist of every tool, the two corner stacks included: tick to show, untick to hide, ▲/▼ to reorder; **Edit positions…** at the top; **Reset toolbar** goes back to the default buttons and order |
 
+The two **Lift** switches are also in a corner button's right-click menu, next to *Always on top*, and in **Settings ▸
+Interface ▸ Windows & chrome**.
+
 ### Edit positions
 
-Right-click any button on the bottom toolbar — or press and hold it on a touch screen — and pick **Edit positions**. The
-toolbar and the two corner stacks switch to edit mode:
+Right-click any button on the bottom toolbar — or press and hold it on a touch screen — and pick **Edit positions**.
+Every place you can arrange switches to edit mode at once:
 
-- **Drag** any button to a new place: along the bar, or into the bottom-left or bottom-right corner stack. **Play** can
+- **The bottom toolbar** and **the two bottom corners**.
+- **The top-right group** — Scene notes, Notifications and Connected peers, left of your profile picture. Notifications
+  and Connected peers always stay in this group, because their panels open from that corner; Scene notes can go
+  anywhere. Connected peers only shows while someone is connected, but in edit mode its place is always drawn so you
+  can move it.
+- **The touch tools** — Undo, Redo and Multi-select beside the logo on a touch screen, when **Settings ▸ Interface ▸
+  Touch tools** is on. Reorder them, or drag one onto the bar or into a corner.
+- The main menu button and your **profile** picture stay where they are.
+
+Then:
+
+- **Drag** any button to a new place: along the bar, into a corner, the top-right group or the touch tools. **Play** can
   move along the bar but always stays on it.
-- The small red **−** on a button removes it; its place shows a small green **+**.
-- A green **+** opens a list of every button from *Customize toolbar…* that is not placed yet (Play is never in it).
-  Pick one to put it in that place.
-- Each corner holds up to **three** buttons, stacked bottom to top. By default the left corner has the AI assistant and
-  the **+** (add) button, the right corner Chat and the microphone.
+- The small red **−** on a button removes it.
+- A stack shows **one** green **+** for its next place; it opens a list of every button from *Customize toolbar…* that is
+  not placed yet (Play is never in it). Pick one to put it there.
+- Each corner — and the top-right group and the touch tools — holds up to **four** buttons; once a stack holds four, its
+  **+** is gone. By default the left corner has the AI assistant and the **+** (add) button, the right corner Chat and
+  the microphone.
 - With the keyboard: <kbd>Tab</kbd> to a button, then the **arrow keys** move it (<kbd>←</kbd> / <kbd>→</kbd> along the
   bar and into the corners, <kbd>↑</kbd> / <kbd>↓</kbd> inside a corner) and <kbd>Delete</kbd> removes it.
 - The round green **✓** at the top right of the toolbar **applies** the new layout. <kbd>Esc</kbd>, or a click anywhere
@@ -440,16 +461,21 @@ toolbar and the two corner stacks switch to edit mode:
 
 ![Edit positions on a computer: every button has a red −, green + slots sit at the ends of the bar and on top of each corner stack, and the green ✓ applies](img/controls/edit-positions.png)
 
+![Edit positions reaching the top right: the notifications and Explorer buttons in the top-right group carry a red − with a green + for its next place, the left corner holds four buttons and no +, and the right corner shows one +](img/controls/edit-positions-top-right.png)
+
+The menus name buttons by their short name — **Pivot**, **Microphone**; the toolbar's own tooltips still tell you the
+pivot mode and how to talk.
+
 The layout is saved on this device, like *Customize toolbar…*. **Reset toolbar** (in Customize) or **Settings ▸ Reset
 window positions** puts everything back. A custom button order no longer shows the wrong icons after a reload. On a
-folded phone the app shows its own phone bar instead — edit that one from **More ▸ Edit bar…**, or hold one of its
-buttons; there **More** can come off the bar and **Play** can move along it (see [On a phone](interface.md#on-a-phone)).
+folded phone the app shows its own phone bar instead — arrange it by dragging items between **More** and the bar; there
+**More** can come off the bar and **Play** can move along it (see [The phone bar and More](interface.md#the-phone-bar-and-more)).
 
 The **play button**'s right-click menu chooses how you play — **Play (desktop)**, **Enter VR**, **Enter AR passthrough**
 (greyed out where the device cannot) — and, in a scene that is a game, **Test play (start from the menu)**, which resets the
 game to its menu and starts from the Start screen. See [Build a Game Loop](build-a-game.md#test-play). On a folded phone,
 press and hold Play for the phone's version of this menu — *Play as*, *Test play*, **Move left / Move right** and
-**Edit bar…**; see [On a phone](interface.md#on-a-phone).
+**Arrange the bar…**; see [On a phone](interface.md#on-a-phone).
 
 ## The Settings window
 
@@ -488,7 +514,8 @@ The keys in the table are the **3D view's**: they fire while the 3D view has foc
 | <kbd>Delete</kbd> / <kbd>Backspace</kbd> | Delete the selection (a group asks first) |
 | <kbd>Alt</kbd>+click | Cycle the selection through everything under the cursor ([inside and behind water](#inside-and-behind-water)) |
 | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+click | [Ping](notifications.md#pinging) a spot for everyone |
-| <kbd>Esc</kbd> | Leave isolation |
+| <kbd>Esc</kbd> | Leave isolation; leave [focus mode](interface.md#focus-mode) while it is on |
+| <kbd>Ctrl</kbd>+<kbd>Space</kbd> | [Focus mode](interface.md#focus-mode) — maximize the area under the pointer (the 3D view alone, or a docked window filling the screen); again to restore |
 | <kbd>Z</kbd> | Cycle the [render mode](camera.md#render-mode-view): Shaded → Shaded + AO → Wireframe |
 | <kbd>Tab</kbd> | Enter [mesh edit](mesh-editing.md) mode — inside it <kbd>Tab</kbd> cycles Vertices / Edges / Faces; <kbd>Esc</kbd> exits |
 | <kbd>I</kbd> | [Edit / Interact](#edit-and-interact) mode — in Interact, clicks play with the scene instead of selecting |

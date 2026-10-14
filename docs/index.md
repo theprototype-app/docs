@@ -24,6 +24,25 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.33 — your 1.32 review.** On a computer each side of the screen has [one sidebar](interface.md#sidebars), and
+Configure Scene, Properties, Objects and any window you dock to an edge are its **tabs** — opening one brings its tab
+forward instead of a second column. Drag a tab to the other side to dock it there, and the **↕** button runs a sidebar
+from the top edge to the bottom. A lock in the Properties and Configure Scene headers lets the name and *Filter
+properties* [scroll away](interface.md#panel-headers). On a phone you [arrange the bottom bar from More](interface.md#the-phone-bar-and-more):
+press and hold any item and drag it onto the bar, along it or off it — Play too — up to seven items, with Inspect, Move,
+Rotate, Scale, Statistics, Tools & View and Focus mode all placeable, and **Show** switches for the selection toolbar,
+the dock's tab row and the grab handle; *Edit bar…* is gone and a 1.32 bar carries over. [Every floating
+window docks](interface.md#docked-windows) by dropping it on the dock's tab row — Objects, Statistics, the Live profiler,
+Chat and the AI assistant too — and floating windows can overlap the dock. [Focus mode](interface.md#focus-mode)
+(<kbd>Ctrl</kbd>+<kbd>Space</kbd>) gives the screen to the 3D view or to the docked window under the pointer;
+<kbd>Esc</kbd> brings everything back. [Edit positions](controls.md#edit-positions) now reaches the top-right icons
+and the touch tools, with up to four buttons a corner; **Lift corner buttons above docked panels** joins the
+[toolbar's menu](controls.md#the-toolbar), and [workspace layouts](controls.md#workspace-layouts) keep the toolbar —
+the desktop one and the phone bar separately. Configure Scene starts with a [Quality preset](performance.md#the-quality-preset)
+(Auto / High / Medium / Low, this device), the auto-quality notice is [one card](performance.md#when-quality-is-lowered-for-you)
+instead of a stack, the unsaved-scene notice no longer flickers while a peer edits, and
+[Save options](saving.md#save-options) open full screen on a phone.
+
 **1.32 — your 1.31 review, fixed.** On a phone every sheet has [one grab bar](interface.md#sheets-on-a-phone): drag
 it to resize the sheet, swipe it down to close it, and no sheet covers **Play**. **Customize character** and **Profile
 settings** open again from the profile menu, and in the Explorer you [press and hold](explorer.md#on-a-phone) a file
