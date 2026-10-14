@@ -75,8 +75,8 @@ the **Full height** button (↕).
 - **Full height**: press **↕** and the sidebar runs from the top edge to the bottom edge. The buttons in that top corner
   (the logo and menu on the left; notes, notifications and your profile on the right) slide inward, and the bottom dock
   gets narrower so it sits beside the sidebar, never under it. Press it again to fit the sidebar under the top buttons.
-  The main menu always opens above sidebars. On a narrow window the Connect bar becomes a full-width strip and a
-  full-height sidebar starts just under it.
+  The main menu always opens above sidebars. With one or both sides at full height the Connect bar stays a pill,
+  centred between the logo and the corner buttons.
 - **A pinned Properties** (the pin in its header) follows your selection without pulling its tab over the Objects list
   when the two share a side; double-click an object (or pick **Properties** in its menu) to bring it forward.
 
