@@ -23,7 +23,8 @@ GLTF and JSON join them once you offer them in Save options.
 - **A project (.tp) includes** — Scene version history.
 - **More formats** — **Offer GLTF** and **Offer JSON** (both off by default) add those formats.
 
-Its **Save** remembers the options and saves; **Cancel** forgets the changes.
+Its **Save** remembers the options and saves; **Cancel** forgets the changes. On a folded phone the dialog opens full
+screen.
 
 ![Save options on a computer: Save as Project or Scene, what a scene and a project include, and More formats, with Cancel and Save at the bottom](img/saving/save-options.png){ width="400" }
 

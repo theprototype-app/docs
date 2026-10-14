@@ -106,6 +106,21 @@ and a panel explains it rather than leaving you looking at a tab that appears to
     memory pressure — you get its own panel instead, with a button to save the scene. The view
     restores itself when the browser hands the context back.
 
+## The Quality preset
+
+**Configure Scene ▸ Quality** is the first section of Configure Scene (*This device*):
+
+- **Preset** — **Auto** (full quality, lowered on its own when the scene is heavy — see
+  [the quality governor](#the-quality-governor)), **High**, **Medium** (shadows off, 72 % resolution) or **Low**
+  (shadows, ambient occlusion and the scene look off, 50 % resolution). These are the same levels a game's own
+  **Quality** setting uses; a game's setting wins while you play it.
+- **Reduce quality when the scene is heavy**, **Shadows**, **Simplify distant models** and **Draw repeated kit pieces
+  together** — the same switches as **Settings ▸ Scene ▸ Performance**, which has the **Quality preset** row too.
+
+The preset is saved on this device only; it is never sent to peers or saved in a scene.
+
+![Configure Scene with Quality first: Preset Auto / High / Medium / Low, Reduce quality when the scene is heavy, Shadows, Simplify distant models and Draw repeated kit pieces together, above Environment; one Lowered resolution to keep it smooth notice with Keep full quality at the top](img/performance/configure-scene-quality.png)
+
 ## The quality governor
 
 Before any of the stops above, the app tries to keep the frames. **Settings ▸ Scene ▸ Performance ▸
@@ -154,6 +169,9 @@ look, particles, [water](water.md#quality) and fluid quality — it tells you wi
 for each thing it lowers: *Lowered water quality to keep it smooth · **Keep full quality***. The notice shows on any
 device, whether or not the object list is open. It never shows in Play or in a headset; a drop there is announced when
 you are back.
+
+Since 1.33 there is only ever **one** such card: when quality drops further, the card you already have is reworded to
+say what is lowered now, instead of a second card stacking under it.
 
 **Keep full quality** gives full quality back and keeps it for the rest of this visit. Your
 **Reduce quality when the scene is heavy** switch is unchanged, so the next visit is protected again.
