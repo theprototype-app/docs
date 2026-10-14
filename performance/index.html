@@ -1316,6 +1316,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-quality-preset" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Quality preset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-quality-governor" class="md-nav__link">
     <span class="md-ellipsis">
       The quality governor
@@ -4254,6 +4263,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-quality-preset" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Quality preset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#the-quality-governor" class="md-nav__link">
     <span class="md-ellipsis">
       The quality governor
@@ -4441,6 +4459,18 @@ and a panel explains it rather than leaving you looking at a tab that appears to
 memory pressure — you get its own panel instead, with a button to save the scene. The view
 restores itself when the browser hands the context back.</p>
 </div>
+<h2 id="the-quality-preset">The Quality preset</h2>
+<p><strong>Configure Scene ▸ Quality</strong> is the first section of Configure Scene (<em>This device</em>):</p>
+<ul>
+<li><strong>Preset</strong> — <strong>Auto</strong> (full quality, lowered on its own when the scene is heavy — see
+  <a href="#the-quality-governor">the quality governor</a>), <strong>High</strong>, <strong>Medium</strong> (shadows off, 72 % resolution) or <strong>Low</strong>
+  (shadows, ambient occlusion and the scene look off, 50 % resolution). These are the same levels a game's own
+  <strong>Quality</strong> setting uses; a game's setting wins while you play it.</li>
+<li><strong>Reduce quality when the scene is heavy</strong>, <strong>Shadows</strong>, <strong>Simplify distant models</strong> and <strong>Draw repeated kit pieces
+  together</strong> — the same switches as <strong>Settings ▸ Scene ▸ Performance</strong>, which has the <strong>Quality preset</strong> row too.</li>
+</ul>
+<p>The preset is saved on this device only; it is never sent to peers or saved in a scene.</p>
+<p><img alt="Configure Scene with Quality first: Preset Auto / High / Medium / Low, Reduce quality when the scene is heavy, Shadows, Simplify distant models and Draw repeated kit pieces together, above Environment; one Lowered resolution to keep it smooth notice with Keep full quality at the top" src="../img/performance/configure-scene-quality.png" /></p>
 <h2 id="the-quality-governor">The quality governor</h2>
 <p>Before any of the stops above, the app tries to keep the frames. <strong>Settings ▸ Scene ▸ Performance ▸
 Reduce quality when the scene is heavy</strong> (on by default): when a heavy scene cannot hold 30 frames a
@@ -4481,6 +4511,8 @@ look, particles, <a href="../water/#quality">water</a> and fluid quality — it 
 for each thing it lowers: <em>Lowered water quality to keep it smooth · <strong>Keep full quality</strong></em>. The notice shows on any
 device, whether or not the object list is open. It never shows in Play or in a headset; a drop there is announced when
 you are back.</p>
+<p>Since 1.33 there is only ever <strong>one</strong> such card: when quality drops further, the card you already have is reworded to
+say what is lowered now, instead of a second card stacking under it.</p>
 <p><strong>Keep full quality</strong> gives full quality back and keeps it for the rest of this visit. Your
 <strong>Reduce quality when the scene is heavy</strong> switch is unchanged, so the next visit is protected again.</p>
 <p><strong>No switching back and forth.</strong> Since 1.32, if a step came back once and the frames dropped again, it stays lowered for
@@ -4550,7 +4582,7 @@ scripts run it, and so does CI.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-10
+    2026-10-14
   </span>
 
     
