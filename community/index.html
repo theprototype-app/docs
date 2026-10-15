@@ -3831,6 +3831,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cloud-saves-and-kept-rooms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloud saves and kept rooms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cloud saves and kept rooms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cloud-saves" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloud saves
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kept-rooms-persistent-rooms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kept rooms (persistent rooms)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#whats-new-on-theprototypeapp" class="md-nav__link">
     <span class="md-ellipsis">
       What's new on theprototype.app
@@ -4428,6 +4461,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#cloud-saves-and-kept-rooms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloud saves and kept rooms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cloud saves and kept rooms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cloud-saves" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cloud saves
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kept-rooms-persistent-rooms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kept rooms (persistent rooms)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#whats-new-on-theprototypeapp" class="md-nav__link">
     <span class="md-ellipsis">
       What's new on theprototype.app
@@ -4601,6 +4667,50 @@ moderation: ‹reason›</em>. Press <strong>Ask for a review</strong> — once 
 <p>Every scene page ends with <strong>Report this scene</strong>: pick a reason — <strong>Spam</strong>, <strong>Not safe for work</strong>, <strong>Stolen work</strong>, <strong>Illegal content</strong> or <strong>Other</strong> — add a note if you like, and send it (this needs a sign-in, and counts once per person per scene). A scene reported by three different people — counting only accounts older than three days — is hidden from every list and page until a maintainer has looked at it.</p>
 <p>Staff accounts have a <strong>Staff · Insights &amp; moderation</strong> entry in the profile menu for the report queue and the visit
 totals; it is not shown to anyone else. Assets an author had no right to license are exactly what <em>Stolen work</em> is for: the license picker cannot express "all rights reserved", so a report and a takedown are how that is handled.</p>
+<h2 id="cloud-saves-and-kept-rooms">Cloud saves and kept rooms</h2>
+<p>Signed in on theprototype.app, your scenes, projects and rooms can live in your account. The open-source app has
+neither; it works exactly as before without the cloud.</p>
+<h3 id="cloud-saves">Cloud saves</h3>
+<p><strong>Where:</strong> logo menu ▸ <strong>Cloud saves</strong> (the row under Save), or profile menu ▸ Cloud saves ▸ Open.</p>
+<p><strong>What it does:</strong> keeps your scenes and whole projects in your account, with versions, so you can open them on
+another device or go back to an earlier state.</p>
+<ul>
+<li><strong>Save this scene</strong> saves the open scene. The first save makes a new entry. Later saves of the <em>same scene</em>
+  (the same scene file, even after a reload) go into that entry as a new <strong>version</strong>. Add an optional note.</li>
+<li><strong>Save the whole project</strong> saves the project (<code>.tp</code>): every scene and the Explorer library.</li>
+<li>Each entry shows a thumbnail, its newest version, its size and when it was last saved.</li>
+<li><strong>Open</strong> loads the newest version. A scene goes through the usual "Backup before…" safety copy; a project asks
+    before replacing your current project.</li>
+<li><strong>Versions</strong> lists every kept version (newest, autosave, conflict); <strong>Open</strong> any of them. Saving after opening
+    an older version makes your save the newest; the others stay in the list.</li>
+<li><strong>Rename</strong>, <strong>Delete</strong> (press twice; it removes every version).</li>
+<li><strong>Keepers</strong>: add people by their community <strong>@handle</strong>. Keepers can open the save and add versions; only you
+    can rename or delete it.</li>
+<li><strong>Two devices, one save:</strong> if the save changed somewhere else since you opened it, your save is still kept, as
+  a <em>conflict</em> version, and you choose <strong>Make mine the newest</strong> or <strong>Open theirs</strong>. Nothing is overwritten
+  silently.</li>
+<li><strong>Storage:</strong> the meter shows what you use: 250 MB per account, up to 30 saves, the newest 20 versions of each
+  kept, 50 MB per file.</li>
+</ul>
+<h3 id="kept-rooms-persistent-rooms">Kept rooms (persistent rooms)</h3>
+<p><strong>Where:</strong> Connect ▸ Rooms ▸ your room settings ▸ <strong>Keep this room when everyone leaves</strong>. List the room once to
+create it. A kept room stays kept if you unlist it later; it just becomes private.</p>
+<ul>
+<li>While the room is open, one person in it (you, or one of your keepers when you are not there) saves it
+  automatically about every 90 seconds after a change, and when the tab is hidden. <strong>Save room now</strong> saves at
+  once.</li>
+<li>Nothing is saved while someone is playing a game in the room; play-mode state is not saved.</li>
+<li><strong>When you leave</strong>, a keeper still in the room takes over and the room stays open. <strong>When everyone has left</strong>, the
+  room is <strong>asleep</strong> with its last save.</li>
+<li><strong>Your kept rooms</strong> (in the Rooms tab) lists the kept rooms you own or keep: <strong>Join</strong> a live one, <strong>Wake</strong> an
+  asleep one. Wake loads its last save and you host it. When you open the app, it offers your own asleep room.</li>
+<li>Name keepers in Cloud saves ▸ the room's entry ▸ <strong>Keepers</strong>.</li>
+<li>If the same room ends up open in two sessions, one session hands over and tells you, with a button to join the
+  other.</li>
+</ul>
+<p><strong>Limits:</strong> up to about 90 seconds of changes can be lost if the last person's browser crashes. Only you and your
+keepers can wake a room; others join it while it is live, as before.</p>
+<p><strong>Privacy:</strong> saves are private to you and your keepers (see the <a href="https://theprototype.app/privacy">privacy page</a>, "Cloud saves and kept rooms").</p>
 <h2 id="whats-new-on-theprototypeapp">What's new on theprototype.app</h2>
 <p>Since 1.27 the <strong>What's New</strong> window (logo menu) on theprototype.app starts with a <strong>theprototype.app cloud</strong> section:
 what changed in the hosted service — publishing, community, rooms, hosted AI — above the app's own release notes. A
@@ -4625,7 +4735,7 @@ self-hosted or local build shows no such section.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-07
+    2026-10-08
   </span>
 
     
