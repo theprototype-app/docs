@@ -24,6 +24,26 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.34 — your 1.33 review.** Right-click any value in Properties or Configure Scene (press and hold on a touch screen)
+to [copy, paste or reset it](controls.md#copy-paste-and-reset-values) — one number, a whole vector or just its X, Y or
+Z, a colour, a choice, or a whole section from its header (also *Copy as JSON*); <kbd>Ctrl</kbd>+<kbd>C</kbd> /
+<kbd>Ctrl</kbd>+<kbd>V</kbd> over a field skips the menu, a section pastes to every selected object, and every paste is
+one undo. It is plain text, so `1, 2, 3`, `Vector3(1, 2, 3)`, `#ff8800` and JSON all paste back. Sidebar tabs get an
+**×**, a [right-click menu](interface.md#sidebars) and sideways scrolling; [drag a tab](interface.md#dragging-a-tab)
+into the 3D view to float it, onto the dock or onto the other side, with every drop highlighted first. [Any
+window](interface.md#any-window-in-a-sidebar) — Node editor, Code, Explorer, Statistics… — can live in a sidebar, with
+no second header, and the [header lock](interface.md#panel-headers) sits beside Full height. Toolbar buttons that do not
+fit fold into a [**»** menu](controls.md#when-the-buttons-do-not-fit) and come back by themselves; a right-click
+anywhere on the toolbar opens its menu; the [**…** button](controls.md#the-button) and the
+[Connect bar](controls.md#the-connect-bar) can be hidden, and the Connect bar takes its own row only when the top is
+full. The toolbar [keeps clear of full-height sidebars](controls.md#the-toolbar-and-sidebars), and with a mouse
+[Edit positions](controls.md#edit-positions) arranges the row beside the logo too. [Focus mode](interface.md#focus-mode)
+on a docked window now fills the whole window while the sidebars step aside, and the 3D view stays with you as a live,
+resizable [picture-in-picture](interface.md#the-viewport-picture-in-picture) you can orbit, select in and transform
+with <kbd>W</kbd> / <kbd>E</kbd> / <kbd>R</kbd>. The [camera preview](camera.md#camera-objects) resizes too. On a phone
+[Statistics is a dock tab](interface.md#the-dock-on-a-phone), and the tip in More goes away once you have arranged the
+bar (**Settings ▸ Interface ▸ Reset tips** brings it back).
+
 **1.33 — your 1.32 review.** On a computer each side of the screen has [one sidebar](interface.md#sidebars), and
 Configure Scene, Properties, Objects and any window you dock to an edge are its **tabs** — opening one brings its tab
 forward instead of a second column. Drag a tab to the other side to dock it there, and the **↕** button runs a sidebar

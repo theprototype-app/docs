@@ -69,7 +69,9 @@ The camera itself — including its *Letterbox guide* and *Preview window while 
 everyone; previewing and the frustum lines are yours alone. The object's right-click menu has **Preview camera** and **Set from current view** too.
 
 **Picture-in-picture.** While a camera is selected, a small window shows what it sees, live. **⤢** looks through it full
-screen, **✕** hides the window (the *Preview window while selected* row brings it back), and right-drag moves it.
+screen, **✕** hides the window (the *Preview window while selected* row brings it back), and right-drag moves it. Since
+1.34 it resizes too: drag the grip in its top-left corner (the picture keeps the camera's framing), or double-click the
+grip for the default size. The size is remembered.
 
 A game uses cameras through the [Set Active Camera](nodes/setcamera.md) node, the [Game Start](nodes/gamestart.md) node's
 camera, [Set Look](nodes/setlook.md) for each camera's own [look](post-processing.md), and since 1.27 the

@@ -6,7 +6,7 @@ ThePrototype is peer-to-peer: once two browsers connect they talk **directly** o
 
 ## The Connect panel
 
-The Connect panel is the pill at the top of the screen. On a wide window it is a centered pill; on a narrow/touch screen it becomes a full-width bar pinned to the top edge.
+The Connect panel is the pill at the top of the screen. On a wide window it is a centered pill; on a narrow/touch screen it becomes a full-width bar pinned to the top edge. Since 1.34 it also takes a full-width row of its own whenever the top row has no room for it between the logo's buttons and the buttons left of your profile picture, and goes back to the middle when room returns. You can hide it in [Edit positions](controls.md#the-connect-bar) or by unticking **Connect bar** in *Customize toolbar…*; on a folded phone the Connect chip stays.
 
 It has two halves:
 
