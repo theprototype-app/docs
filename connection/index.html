@@ -4421,7 +4421,7 @@
 <p>How peers find each other, how to invite someone into your scene, and how to point the app at a signaling server you trust.</p>
 <p>ThePrototype is peer-to-peer: once two browsers connect they talk <strong>directly</strong> over WebRTC, and the whole scene replicates between them. The only shared infrastructure is a small <strong>signaling server</strong> (PeerJS) used to introduce peers to each other — it never sees your scene data.</p>
 <h2 id="the-connect-panel">The Connect panel</h2>
-<p>The Connect panel is the pill at the top of the screen. On a wide window it is a centered pill; on a narrow/touch screen it becomes a full-width bar pinned to the top edge.</p>
+<p>The Connect panel is the pill at the top of the screen. On a wide window it is a centered pill; on a narrow/touch screen it becomes a full-width bar pinned to the top edge. Since 1.34 it also takes a full-width row of its own whenever the top row has no room for it between the logo's buttons and the buttons left of your profile picture, and goes back to the middle when room returns. You can hide it in <a href="../controls/#the-connect-bar">Edit positions</a> or by unticking <strong>Connect bar</strong> in <em>Customize toolbar…</em>; on a folded phone the Connect chip stays.</p>
 <p>It has two halves:</p>
 <ul>
 <li><strong>📋 Your ID</strong> — the button on the left shows your own peer ID. Click it to <strong>copy your invite link</strong> (your app URL with your ID attached, e.g. <code>https://theprototype.app/#AB12CD</code>) to the clipboard. Until the connection to the signaling server is ready it reads <em>Generating…</em>.</li>
@@ -4694,7 +4694,7 @@ device can check it, so a code set on another device of yours has to be set agai
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-11
+    2026-10-14
   </span>
 
     

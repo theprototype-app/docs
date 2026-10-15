@@ -433,6 +433,24 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#dragging-a-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dragging a tab
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#any-window-in-a-sidebar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Any window in a sidebar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#panel-headers" class="md-nav__link">
     <span class="md-ellipsis">
       Panel headers
@@ -475,6 +493,21 @@
       Focus mode
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Focus mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-viewport-picture-in-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      The viewport picture-in-picture
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4316,6 +4349,24 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#dragging-a-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dragging a tab
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#any-window-in-a-sidebar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Any window in a sidebar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#panel-headers" class="md-nav__link">
     <span class="md-ellipsis">
       Panel headers
@@ -4358,6 +4409,21 @@
       Focus mode
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Focus mode">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-viewport-picture-in-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      The viewport picture-in-picture
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4493,7 +4559,8 @@ paragraph explaining it.</p>
   the windows you keep there (Objects, Node editor, Explorer, Animation…). The accent fill marks the armed tool or an open
   window. It is still yours to arrange — right-click any button (or press and hold it) ▸ <strong>Edit positions</strong> to drag the
   buttons into place; see <a href="../controls/#the-toolbar">The toolbar</a>. The two <strong>corner stacks</strong> — bottom-left (the AI
-  assistant and <strong>+</strong>) and bottom-right (Chat and the microphone) — are arranged the same way.</li>
+  assistant and <strong>+</strong>) and bottom-right (Chat and the microphone) — are arranged the same way. Buttons that do not fit
+  fold into a <strong>»</strong> button at the end of the bar — see <a href="../controls/#when-the-buttons-do-not-fit">When the buttons do not fit</a>.</li>
 <li><strong>The logo</strong> (top-left) opens the main menu, grouped as Project · Scene · Collaborate · App — see
   <a href="#the-main-menus-project-actions">The main menu's Project actions</a>. A press anywhere outside the menu closes it;
   pressing another button (a bottom-bar tab, the bell, Play) closes it and does that button's job in the same press,
@@ -4501,10 +4568,12 @@ paragraph explaining it.</p>
 <li><strong>The Connect bar</strong> (top centre) shows your ID — click it to copy your invite link — and the field to join someone,
   with the <strong>status dot</strong> at its left end. Once you are connected it <strong>collapses to a chip</strong>: the dot, the avatars of who
   is here and your mic. Click the chip to open the full bar again. On a computer the dot has no words beside it — point
-  at it to read them; see <a href="../connection/#the-status-dot">The status dot</a>.</li>
+  at it to read them; see <a href="../connection/#the-status-dot">The status dot</a>. When the top row is too full it takes a row
+  of its own, and you can hide it — see <a href="../controls/#the-connect-bar">The Connect bar</a>.</li>
 <li><strong>Top right</strong>: scene notes, the notification bell (with a count) and the <a href="../connection/#who-is-here-the-peers-panel">peers panel</a>
   sit in one group beside your picture, which opens your profile menu (<strong>Customize character</strong>, <strong>Profile settings</strong>).
-  Since 1.33 that group is arranged with <a href="../controls/#edit-positions">Edit positions</a> too.</li>
+  Since 1.33 that group is arranged with <a href="../controls/#edit-positions">Edit positions</a> too; emptied, it leaves no box
+  behind.</li>
 <li><strong>Toasts</strong> are calm cards under the Connect bar, at most three at a time; more collect behind <strong>+N more</strong>. See
   <a href="../notifications/#toasts">Toasts</a>.</li>
 <li>Someone who is <strong>speaking</strong> in voice chat gets a soft green ring on their avatar.</li>
@@ -4535,20 +4604,82 @@ forward instead of opening a second column. The sidebar's header strip holds one
 the <strong>Full height</strong> button (↕).</p>
 <ul>
 <li><strong>Switch</strong> by clicking a tab (or <kbd>←</kbd> / <kbd>→</kbd> with a tab focused).</li>
-<li><strong>Move a panel to the other side</strong>: drag its tab to the other half of the screen. The column it will land in lights
-  up (<em>Move to the left side</em>); let go to dock it there. Configure Scene and Properties can live on the left this way.</li>
+<li><strong>Close</strong> a panel with the <strong>×</strong> on its tab. It leaves the sidebar, and its side is remembered for next time.</li>
+<li><strong>Right-click a tab</strong> (press and hold on a touch screen) for its menu: <strong>Close</strong>, <strong>Close others</strong>, <strong>Undock into a
+  floating window</strong>, <strong>Move to the other side</strong> and <strong>Move to the bottom dock</strong>. Configure Scene and Properties live only
+  in a sidebar, so their <em>Undock</em> and <em>bottom dock</em> rows are greyed out with the reason.</li>
+<li><strong>More tabs than fit</strong> scroll sideways (the mouse wheel or a swipe), like the bottom dock's tabs; the tab in front is
+  kept in view.</li>
+<li><strong>Drag a tab anywhere</strong> — see <a href="#dragging-a-tab">Dragging a tab</a> below.</li>
 <li><strong>Dock a floating window</strong>: drag its header to a screen edge, or onto a sidebar (<em>Add as tab</em> lights up) — it becomes a
-  tab of that side. Drag a docked window's header away from the edge to float it again.</li>
-<li><strong>Resize</strong> by dragging the sidebar's inner edge; a double-click resets it. All tabs of a side share the width.</li>
+  tab of that side.</li>
+<li><strong>Resize</strong> by dragging the sidebar's inner edge; a double-click resets it. All tabs of a side share the width. The
+  logo and the profile button move with the edge as you drag. On a touch screen the edge is easy to grab, the sidebar
+  stops at its minimum width (250 px), and its content never scrolls sideways — rows that do not fit wrap onto a second
+  line.</li>
 <li><strong>Full height</strong>: press <strong>↕</strong> and the sidebar runs from the top edge to the bottom edge. The buttons in that top corner
   (the logo and menu on the left; notes, notifications and your profile on the right) slide inward, and the bottom dock
   gets narrower so it sits beside the sidebar, never under it. Press it again to fit the sidebar under the top buttons.
   The main menu always opens above sidebars. With one or both sides at full height the Connect bar stays a pill,
-  centred between the logo and the corner buttons.</li>
+  centred between the logo and the corner buttons. The toolbar never slides under a full-height sidebar — see
+  <a href="../controls/#the-toolbar-and-sidebars">The toolbar and sidebars</a>.</li>
+<li><strong>The header lock</strong> of Configure Scene and Properties sits beside <strong>Full height</strong> in the tab row while that panel is
+  the tab in front — see <a href="#panel-headers">Panel headers</a>.</li>
 <li><strong>A pinned Properties</strong> (the pin in its header) follows your selection without pulling its tab over the Objects list
   when the two share a side; double-click an object (or pick <strong>Properties</strong> in its menu) to bring it forward.</li>
 </ul>
 <p><img alt="A sidebar on the right with two tabs, Objects and Configure Scene (in front), and the Full height button at the end of its tab strip" src="../img/interface/sidebar-tabs.png" /></p>
+<p><img alt="The Objects tab of a sidebar right-clicked: Close, Close others (greyed, it is the only tab), Undock into a floating window, Move to the left side and Move to the bottom dock" src="../img/interface/sidebar-tab-menu.png" width="360" /></p>
+<h4 id="dragging-a-tab">Dragging a tab</h4>
+<p>Drag a sidebar tab and a highlight shows what will happen before you let go — there is never a silent drop:</p>
+<table>
+<thead>
+<tr>
+<th>Let go over</th>
+<th>Highlight</th>
+<th>What happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>the <strong>other side</strong></td>
+<td><em>Move to the left / right side</em>, or <em>Add as tab</em> when a sidebar is already open there</td>
+<td>the panel docks on that side</td>
+</tr>
+<tr>
+<td>the <strong>bottom dock</strong> or the bottom edge</td>
+<td><em>Move to dock</em> (on the dock's tab bar a marker shows the spot)</td>
+<td>the panel becomes a dock tab</td>
+</tr>
+<tr>
+<td>anywhere else in the <strong>3D view</strong></td>
+<td><em>Float here</em></td>
+<td>the panel becomes a floating window where you dropped it</td>
+</tr>
+<tr>
+<td>its <strong>own sidebar</strong></td>
+<td><em>Stays here</em></td>
+<td>nothing</td>
+</tr>
+</tbody>
+</table>
+<p>Dragging a floating window onto a sidebar (or a screen edge), or a bottom-dock tab onto a sidebar, shows the same
+highlights, painted above every panel; the window you drag turns see-through so the highlight stays readable.</p>
+<p><img alt="An Objects tab dragged out of the right sidebar into the 3D view: a dashed blue box reads Float here" src="../img/interface/sidebar-drag-float-here.png" /></p>
+<h4 id="any-window-in-a-sidebar">Any window in a sidebar</h4>
+<p>Every window that can be docked at the bottom can also be a sidebar tab — the Node editor, Flow Code, Animation, UV,
+Shader and HUD editors, the Explorer, the Profiler, Code, the Image editor, Objects, Statistics, the Live profiler, Chat
+and the AI assistant:</p>
+<ul>
+<li><strong>Into a sidebar</strong>: drag its header to the left or right edge (or onto an open sidebar), drag its bottom-dock tab onto
+  a sidebar, or right-click its dock tab ▸ <strong>Move to the left / right sidebar</strong>.</li>
+<li><strong>Back to the bottom</strong>: right-click its sidebar tab ▸ <strong>Move to the bottom dock</strong>, or drag the tab onto the dock.</li>
+</ul>
+<p><strong>No second header.</strong> A window in a sidebar shows no window header of its own: the sidebar tab is its header (name, ×,
+menu). Windows whose header carries tools keep a slim tools row without the title, ×, Dock or <strong>+</strong>: Objects (search),
+the Explorer (search and filters; its search hides when the sidebar is narrower than about 520 px, as in a narrow
+floating window), the Shader editor, Code, the Profiler, the Image editor (the file name) and Statistics (the budget dot
+and re-read).</p>
 <p><img alt="The same sidebar at full height: it runs from the top edge to the bottom, the notes, bell and profile buttons slid left of it, and the docked Node editor ends beside it" src="../img/interface/sidebar-full-height.png" /></p>
 <p>Which side Configure Scene and Properties dock to, each side's width and Full height, the tab order and the tab in front
 are kept on this device and saved in <a href="../controls/#workspace-layouts">workspace layouts</a>. A phone keeps its
@@ -4556,7 +4687,8 @@ are kept on this device and saved in <a href="../controls/#workspace-layouts">wo
 <p><img alt="Light theme: the Objects list as a sidebar on the left and Configure Scene as a sidebar on the right" src="../img/interface/sidebars-both-sides-light.png" /></p>
 <h4 id="panel-headers">Panel headers</h4>
 <p>The Properties and Configure Scene headers — the panel's name and the <strong>Filter properties</strong> box — have a <strong>lock</strong>
-button beside the pin:</p>
+button. On a computer or an unfolded phone it sits in the sidebar's tab row, next to <strong>Full height</strong>, while that panel
+is the tab in front; on a phone it stays in the panel header, beside the pin.</p>
 <ul>
 <li><strong>Locked</strong> (the default): the header stays on top while you scroll the properties.</li>
 <li><strong>Unlocked</strong>: the header scrolls away with the properties, giving the whole panel to them — handy on a phone.</li>
@@ -4564,6 +4696,8 @@ button beside the pin:</p>
 <p>Each of the two panels remembers its own choice on this device, in a sidebar and in the phone's dock alike.
 <strong>Settings ▸ Interface ▸ Windows &amp; chrome ▸ Sticky panel headers</strong> sets both at once (it shows a mixed state while they
 differ); searching Settings for <em>sticky header</em> finds it.</p>
+<p>Every value in these two panels can be copied, pasted and reset from a right-click — see
+<a href="../controls/#copy-paste-and-reset-values">Copy, paste and reset values</a>.</p>
 <h3 id="docked-windows">Docked windows</h3>
 <p>Since 1.32 a window in the bottom dock has no <strong>✕</strong> or undock button of its own:</p>
 <ul>
@@ -4573,7 +4707,8 @@ differ); searching Settings for <em>sticky header</em> finds it.</p>
   window with tabs instead, set <strong>Settings ▸ Interface ▸ Windows &amp; chrome ▸ Undock button</strong> to <em>All as one tabbed
   group</em> (the default is <em>Active window</em>).</li>
 <li>You can also drag a tab out of the strip — or right-click it ▸ <strong>Undock into a floating window</strong> — to undock that one
-  window. A docked window moves by its tab, not by its header.</li>
+  window. A docked window moves by its tab, not by its header. The same menu has <strong>Move to the left / right sidebar</strong>
+  (see <a href="#any-window-in-a-sidebar">Any window in a sidebar</a>).</li>
 <li><strong>The dock's +</strong> lists every window that can live in the dock — the <a href="../node-editor/">Node editor</a> and the
   <a href="../image-editor/#in-the-dock">Image editor</a> included, and since 1.33 also <strong>Objects</strong>, <strong>Statistics</strong>, the <strong>Live
   profiler</strong>, <strong>Chat</strong> and the <strong>AI assistant</strong> — the same list as the phone's <strong>Windows</strong> sheet. Windows already in the
@@ -4613,16 +4748,39 @@ scrollbars anywhere.</p>
 <ul>
 <li>over the <strong>3D view</strong> (or a toolbar or a floating window): every panel, window and dock is hidden and the 3D view fills
   the screen;</li>
-<li>over a <strong>docked window</strong>: that window fills the screen. Its tab row stays, so you can still switch tabs.</li>
+<li>over a <strong>docked window</strong> (the Code window, the Node editor, the Explorer…): since 1.34 that window fills the <strong>whole
+  browser window</strong>. Its tab row runs along the top edge, so you can still switch tabs, and the window reaches every
+  edge. The <strong>sidebars step aside</strong> while it lasts and come back exactly as they were — open, pinned, width and side —
+  when you leave. You can still drag the window's top edge down to see the 3D view behind it.</li>
 </ul>
-<p>Press <kbd>Esc</kbd> or <kbd>Ctrl</kbd>+<kbd>Space</kbd> again — or click <strong>Exit focus</strong> at the top — and everything
-comes back exactly as it was; nothing is closed. Focus mode also ends when a dialog opens or you press Play.</p>
+<p>Press <kbd>Esc</kbd> or <kbd>Ctrl</kbd>+<kbd>Space</kbd> again — or click <strong>Exit focus</strong> (in the tab row for a docked
+window, at the top for the 3D view) — and everything comes back exactly as it was; nothing is closed. Focus mode also
+ends when a dialog opens or you press Play.</p>
 <p>Without a keyboard: <strong>View ▸ Focus mode</strong> in the 3D view's right-click menu, right-click a dock tab ▸ <strong>Maximize (focus
 mode)</strong>, or on a phone <strong>More ▸ Tools &amp; View ▸ Focus mode</strong> (which you can also drag onto the
 <a href="#the-phone-bar-and-more">phone bar</a>).</p>
 <p>Inside the UV editor and the Animation timeline <kbd>Ctrl</kbd>+<kbd>Space</kbd> keeps its own meaning (keyboard
 selection) while you work there; use the menu entries, or rebind focus mode in <strong>Settings ▸ Shortcuts</strong>.</p>
-<p><img alt="Focus mode over the dock: the Explorer tab fills the screen with its tab row (Node editor, Explorer) at the top and Exit focus above it" src="../img/interface/focus-mode-docked.png" /></p>
+<h3 id="the-viewport-picture-in-picture">The viewport picture-in-picture</h3>
+<p>While a docked window fills the whole window, the 3D view shows as a small <strong>picture-in-picture</strong> (PiP) in the
+bottom-right corner, on top of the docked window. It is a live second view of the scene with <strong>its own camera</strong> —
+moving it never moves your main view.</p>
+<ul>
+<li><strong>Navigate</strong>: left-drag orbits, right-drag pans, the wheel zooms; on a touch screen one finger orbits and two fingers
+  pinch and pan.</li>
+<li><strong>Edit</strong>: click (or tap) an object to select it (<kbd>Shift</kbd> adds). With the pointer over the PiP,
+  <kbd>W</kbd> / <kbd>E</kbd> / <kbd>R</kbd> pick Move / Rotate / Scale (<kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd> and
+  <kbd>G</kbd> work too), drag the gizmo to transform, <kbd>F</kbd> frames the selection in the PiP, <kbd>Delete</kbd>
+  deletes and <kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes.</li>
+<li><strong>Move</strong> it by its title bar and <strong>resize</strong> it by the grip in its top-left corner; double-click the grip for the
+  default size (the size is remembered). <strong>⌖</strong> puts its camera back on your main view, and <strong>×</strong> closes it until the
+  next time you maximize.</li>
+<li>It shows only while the docked window covers the whole window: drag the window down and the real 3D view is back.</li>
+<li>While the 3D view is covered it is not drawn at all, so a maximized window with the PiP costs less than the normal
+  editor.</li>
+</ul>
+<p>The PiP's keys are listed in <strong>Settings ▸ Shortcuts ▸ Viewport picture-in-picture</strong>, where they can be rebound.</p>
+<p><img alt="Focus mode on the docked Flow Code window: it fills the whole window with its tab row and Exit focus along the top edge, and the Viewport picture-in-picture shows the scene in the bottom-right corner" src="../img/interface/focus-mode-pip.png" /></p>
 <h2 id="menus">Menus</h2>
 <p>The right-click, Add (<kbd>Shift</kbd>+<kbd>A</kbd>) and viewport menus share one style: 32 px rows, an icon per row,
 shortcuts right-aligned, quiet section labels.</p>
@@ -4686,8 +4844,8 @@ unfolded phone and a computer share the desktop layout.</p>
   <a href="#the-selection-toolbar">The selection toolbar</a>. With nothing selected — just looking around — there is no toolbar;
   <strong>More ▸ Edit</strong> has Inspect, Move, Rotate, Scale, Undo, Redo, Select multiple and Interact mode, and any of them can go
   on the bar.</li>
-<li><strong>Panels are tabs of the bottom dock.</strong> Properties, Objects, Notes, Configure Scene and Layouts sit in the dock beside
-  the Explorer and the node editor — see <a href="#the-dock-on-a-phone">The dock on a phone</a>.</li>
+<li><strong>Panels are tabs of the bottom dock.</strong> Properties, Objects, Notes, Configure Scene, Layouts and Statistics sit in the
+  dock beside the Explorer and the node editor — see <a href="#the-dock-on-a-phone">The dock on a phone</a>.</li>
 <li><strong>Menus are sheets</strong> that open over the dock from the bottom: the main menu, More, the profile menu, notifications, the
   peers panel, the Connection sheet, Add and the press-and-hold action sheets, Chat, the AI assistant, the tool palettes
   (mesh edit, sculpt, spline) and Customize character — see <a href="#sheets-on-a-phone">Sheets on a phone</a>. The bar with Play
@@ -4699,7 +4857,7 @@ unfolded phone and a computer share the desktop layout.</p>
 <li><strong>Docked windows open with their sidebars hidden</strong>: the Explorer, Node editor, UV editor, HUD editor, Profiler, Image
   editor and Code workspace give the screen to their work area (folded or unfolded). Open a side panel with its edge
   button or tab; it stays open next time, for that window.</li>
-<li><strong>The dock's +</strong> at the end of its tab strip opens a <strong>Windows</strong> sheet: every window — the five dock panels included —
+<li><strong>The dock's +</strong> at the end of its tab strip opens a <strong>Windows</strong> sheet: every window — the six dock panels included —
   with a show/hide switch. With floating windows allowed on the phone (<strong>Settings ▸ Interface ▸ Windows &amp; chrome ▸ Allow
   undocking on touch screens</strong>), <strong>+</strong> works as on a computer — a menu that adds a window to the dock.</li>
 <li><strong>Editors fit a phone</strong>: the <a href="../animation/#on-a-phone">Animation</a> window shows one pane at a time, the <a href="../shader-graph/#on-a-phone">Shader
@@ -4718,8 +4876,9 @@ unfolded phone and a computer share the desktop layout.</p>
 <li><strong>Play</strong> works the same way: drag it anywhere on the bar, or into More. While Play is off the bar it waits at the
   start of <strong>More ▸ Windows</strong>, ready to be dragged back.</li>
 </ul>
-<p>The line at the bottom of More says it: <em>Hold and drag items to or from the bar.</em> A dot on an item in More means it is
-already on the bar, and <strong>Reset bar</strong> (at the end of More) brings back the default. With More closed nothing moves by
+<p>The tip at the bottom of More says it: <em>Hold and drag items to or from the bar.</em> It goes away by itself once you have
+added, moved or removed an item on the bar, and stays away; <strong>Settings ▸ Interface ▸ Reset tips</strong> brings it back. A dot
+on an item in More means it is already on the bar, and <strong>Reset bar</strong> (at the end of More) brings back the default. With More closed nothing moves by
 accident: a long press on a bar item opens More and picks that item up in one gesture.</p>
 <p><img alt="More open on a folded phone, with Move being dragged from More ▸ Edit down onto the bottom bar; a blue line marks where it will land between Add and Objects" src="../img/interface/phone-bar-drag-in.png" width="320" /></p>
 <p><strong>What can go on the bar</strong> — everything in More:</p>
@@ -4799,11 +4958,19 @@ editor and the other editors:</p>
 <td>save and switch <a href="../controls/#workspace-layouts">workspace layouts</a></td>
 <td>the main menu's <strong>Layouts</strong>, or the dock's <strong>+</strong></td>
 </tr>
+<tr>
+<td><strong>Statistics</strong></td>
+<td>the scene's <a href="../performance/#what-the-statistics-window-counts">budgets</a></td>
+<td><strong>More ▸ Statistics</strong> (since 1.34; before, a floating window)</td>
+</tr>
 </tbody>
 </table>
 <ul>
 <li><strong>All tabs share one height.</strong> Drag the dock's grab bar to resize it; swipe it down to minimize the dock.</li>
-<li><strong>A tab's ✕</strong> closes that panel. The dock's <strong>+</strong> lists every window, these five included, with a show/hide switch.</li>
+<li><strong>A tab's ✕</strong> closes that panel. The dock's <strong>+</strong> lists every window, these six included, with a show/hide switch.</li>
+<li><strong>More ▸ Statistics</strong> (or Statistics on your bar) toggles like any bar button: tapped while its tab is in front, it
+  minimizes the dock. With <strong>Settings ▸ Interface ▸ Windows &amp; chrome ▸ Allow undocking on touch screens</strong> on, Statistics
+  floats as before.</li>
 <li><strong>Several can be open at once</strong> — the properties no longer close when you open the notes.</li>
 <li><strong>Play stays on top</strong> of whatever is open.</li>
 <li><strong>The main menu closes</strong> as Configure Scene opens, since its tab is underneath the menu. On a computer the menu stays
