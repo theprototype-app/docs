@@ -4,6 +4,10 @@
 VR, AI and the connection. Open it from the **logo menu ▸ Settings**, or follow a link that names a page — the Connect
 drawer's *Connection settings*, the HUD's AI button, a VR edit-limit toast — and it opens on that page.
 
+Since 1.35 Settings opens **beside** your work: an open sidebar, the docked windows and the Node editor stay where they
+are on a computer and an unfolded phone. On a folded phone Settings is a full-screen sheet, and the dock comes back when
+you close it.
+
 Since 1.26 Settings has a new layout. No setting was lost or changed meaning: every switch keeps the value it had.
 
 ![Settings on a computer: the grouped menu on the left, the Interface page with its Appearance rows](img/settings/interface-desktop.png)
@@ -94,4 +98,5 @@ Changes save as you make them — there is no Save button; **Done** closes the w
 | Selection toolbar · Dock tab row · Grab handle | new in 1.33 | **Interface** — the phone's Show switches, all on by default, this device only; also at the bottom of **More** on a phone. See [The phone bar and More](interface.md#the-phone-bar-and-more) |
 | Quality preset | new in 1.33 | **Scene ▸ Performance ▸ Quality preset** — **Auto** / **High** / **Medium** / **Low**, this device only; the same as **Configure Scene ▸ Quality ▸ Preset**. See [The Quality preset](performance.md#the-quality-preset) |
 | Reset tips | new in 1.34 | **Interface ▸ Reset tips** — brings back tips that have gone away — on a phone, the *Hold and drag items to or from the bar* line at the bottom of More, which hides itself once you have arranged the bar. See [The phone bar and More](interface.md#the-phone-bar-and-more) |
+| Show / hide left sidebar · Show / hide right sidebar | new in 1.35 | **Shortcuts ▸ Panels** — <kbd>Ctrl</kbd>+<kbd>B</kbd> and <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd> (<kbd>⌘</kbd> on a Mac), rebindable like any shortcut; hiding keeps every tab open. See [Sidebars](interface.md#sidebars) |
 | Viewport picture-in-picture | new in 1.34 | **Shortcuts ▸ Viewport picture-in-picture** — the keys of the small 3D view shown while a docked window is maximized (<kbd>W</kbd> / <kbd>E</kbd> / <kbd>R</kbd>, <kbd>F</kbd>), rebindable like any shortcut. See [The viewport picture-in-picture](interface.md#the-viewport-picture-in-picture) |

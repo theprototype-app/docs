@@ -51,7 +51,8 @@ peer; an open tab follows them.
 
 ### Left: Open editors and Project
 
-<kbd>Ctrl</kbd>+<kbd>B</kbd> shows or hides the left sidebar.
+<kbd>Ctrl</kbd>+<kbd>B</kbd> shows or hides the left sidebar. (Outside the code workspace the same keys, and
+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd>, show and hide the app's own [sidebars](interface.md#sidebars).)
 
 - **Open editors** lists every open tab, in the same order as the tab strip. Drag a row to reorder (the strip follows);
   **✕** closes it (unsaved files ask first).

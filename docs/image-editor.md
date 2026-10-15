@@ -68,7 +68,7 @@ large. Only a file over 64 MB is turned away, because a phone cannot decode it.
 ## In the dock
 
 The Image editor can live in the bottom dock like the other editors: pick **Image editor** from the dock's **+** menu
-(on a phone, the **Windows** sheet), press its header's **Dock** button, or drag it onto the dock's tab bar. The dock's
+while it is closed (on a phone, the **Windows** sheet), press its header's **Dock** button, or drag it onto the dock's tab bar. The dock's
 **Undock** button floats it again; floating stays the default.
 
 - Opened from the **+** with no image, it tells you to open one from the Explorer (right-click an image ▸ **Edit

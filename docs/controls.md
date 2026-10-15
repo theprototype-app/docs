@@ -402,7 +402,7 @@ visible scrollbar. On a folding phone it stays right through folding and unfoldi
 
 ### Floating windows
 
-The toolboxes, the Explorer, the flow and animation windows and the panels all behave the same way: drag the header to move, drag the bottom-right corner to resize. A window can never be sized past the edge of the screen — the resize corner always stays reachable — and **double-clicking** the corner resets it to its default size while leaving it where you parked it. Size and position are remembered per window.
+The toolboxes, the Explorer, the flow and animation windows and the panels all behave the same way: drag the header (or, since 1.35, any empty part of the window) to move, drag the bottom-right corner to resize. A window can never be sized past the edge of the screen — the resize corner always stays reachable — and **double-clicking** the corner resets it to its default size while leaving it where you parked it. Size and position are remembered per window.
 
 A window also **keeps its header**: it cannot be dragged so far down that the header hides under the Controls pill, the bottom band on a touch or narrow screen, the dock, or a browser overlay — there is always something left to grab. A tall toolbox parked near the bottom scrolls its body instead of losing its head.
 
@@ -410,8 +410,36 @@ A **right-click while you drag a window** — by its title bar, a resize corner 
 menu; a normal right-click elsewhere behaves as before. Tabs that sit in a window's title bar, like the undocked
 [Code](code-workspace.md) window's, can be clicked, while the title bar around them still drags the window.
 
-For the bottom dock's own buttons — **Undock**, closing a view from its tab, **Dock all tabs** on a floating window —
-and for docking a window into an exact slot by dropping it on the dock's tab bar, see
+**Move a window by any empty part of it** (since 1.35): press and drag anywhere on a floating window that is not a
+control — the filter row's padding, the empty space under a list, the space around a table — and the window moves,
+with a mouse or a finger. A plain click or tap still does what it always did: buttons press, filters toggle, rows
+select. Lists that scroll, text fields, sliders, graphs and 3D views keep their own drag. A window that is a tab of a
+group moves by its tab strip, as before.
+
+**Dock it by dragging.** Drag a floating window (by its header or its body) onto the dock's tab strip to make it a dock
+tab at that spot, onto the bottom edge to add it at the end, or to the left or right edge (or over an open sidebar) to
+make it a sidebar tab. A highlight shows where it will land before you let go. This works on a touch screen too — on an
+unfolded phone or a tablet the same targets are there.
+
+#### The window menu
+
+Right-click a floating window's header — or press and hold it on a touch screen — for:
+
+| Entry | What it does |
+|---|---|
+| **Dock to bottom** | the window becomes a tab of the bottom dock |
+| **Move to left sidebar** / **Move to right sidebar** | the window becomes a tab of that [sidebar](interface.md#sidebars) |
+| **Float (undock)** | on a tab of a window group: takes that window out of the group |
+| **Group with…** | lists the other open windows that can share tabs (Statistics and the toolbox cannot) |
+| **Bring to front** | puts it above the other floating windows |
+| **Reset size** | back to its default size, where it is |
+| **Close** | closes it |
+
+The same menu opens on a tab of a [floating window with tabs](interface.md#floating-windows-with-tabs). The header itself
+is unchanged.
+
+For the bottom dock's own buttons — **Undock**, **Split**, closing a view from its tab, **Dock all tabs** on a floating
+window — and for docking a window into an exact slot by dropping it on the dock's tab bar, see
 [Windows and tabs](interface.md#windows-and-tabs).
 
 ### Docking to a screen edge
@@ -429,8 +457,9 @@ and every drop is highlighted first (*Float here*, *Move to dock*, *Add as tab*)
 the tab menu, dragging a tab, the width and **Full height** are described in
 [Sidebars](interface.md#sidebars).
 
-Docking is **desktop only** — on a touch screen there is no room for a full-height side panel
-and it would fight scrolling, so windows there simply stay floating.
+Docking needs the wider layout: a computer, a tablet or an unfolded phone, where since 1.35 a
+finger drags a window onto the same targets. On a folded phone the panels are tabs of the
+[bottom dock](interface.md#the-dock-on-a-phone) instead.
 
 ### Workspace layouts
 
@@ -449,7 +478,9 @@ phone it is the **Layouts** tab of the bottom dock instead (also on the dock's *
 Layouts are kept on this device. A reload still starts with a clean slate: a layout is applied only when you pick one.
 
 **A layout keeps the toolbar too** (since 1.33): which buttons are on it and where it sits, the corner buttons, the
-top-right group, the touch tools, and the lift and *Always on top* switches. The desktop and the phone are kept
+top-right group, the touch tools, and the lift and *Always on top* switches. Since 1.35 it also keeps where every
+[button cluster](#edit-positions) sits and whether it is rotated, the Connect bar's *Pinned* / *Float* choice, and the
+dock's [splits](interface.md#splitting-the-dock). The desktop and the phone are kept
 **separately in the same layout**: saving on a computer (or an unfolded phone) stores the desktop toolbar, saving on a
 folded phone stores the [phone bar](interface.md#the-phone-bar-and-more), and saving the same name on the other one adds
 its part without touching the first. Applying a layout brings back both. The list marks each layout with a monitor
@@ -476,7 +507,7 @@ button's own menu has:
 | **Edit positions** | drag every button into place on the bar itself — see [Edit positions](#edit-positions) |
 | **Move left / Move right** | one place along the bar — past the play button when it is next |
 | **Hide button** | take it off the bar (Customize toolbar brings it back) |
-| **Move toolbar** | slide the whole bar along the bottom: click to place it, the arrow keys nudge, <kbd>Esc</kbd> puts it back. Disabled on a screen too narrow to move it |
+| **Move toolbar** | move the whole bar: with a mouse it follows the pointer — click to place it, the arrow keys nudge, <kbd>Esc</kbd> puts it back; on a touch screen drag the bar with your finger and lift to place it, or press **Cancel** above the bar. Disabled on a screen too narrow to move it |
 | **Reset toolbar position** | back to the middle |
 | **Always on top** | paint the bar over the dock and floating windows (by default they cover it) |
 | **Lift toolbar above docked panels** | on by default: while the Node editor or the Explorer is docked at the bottom, the toolbar moves up above the dock |
@@ -508,14 +539,37 @@ shows every button, wrapping onto more rows when it needs to.
 
 - **Full-height sidebars**: the toolbar never slides under one. Dragging it, or *Move toolbar*, stops at the sidebar's
   edge, and leaves room for the corner buttons beside it.
-- **Edit positions** lays its bar beside any open sidebar, full height or not, moving the bar only as far as it has to.
+- **Edit positions** lays its bar beside any open sidebar, full height or not, moving the bar only as far as it has to;
+  while it runs, the corner buttons and the buttons beside the logo sit beside any open sidebar too. Outside it, the
+  buttons beside the logo follow a pinned (full-height) left sidebar, like the logo.
 - **Lift corner buttons above docked panels**, when on, also moves the corner buttons beside a full-height sidebar on
   their side, and back down to the bottom edge when the dock is hidden.
 
 ### Edit positions
 
 Right-click any button on the bottom toolbar — or press and hold it on a touch screen — and pick **Edit positions**.
-Every place you can arrange switches to edit mode at once:
+Every place you can arrange switches to edit mode at once.
+
+#### Moving the clusters
+
+Since 1.35 the screen has six **clusters** you can place anywhere: the **toolbar**, the **bottom-left** and
+**bottom-right** corner buttons, the **buttons beside the logo**, the **top-right buttons** and the **Connect bar**. (The
+logo and your profile picture stay where they are.) In **Edit positions** every cluster has a small **grip**:
+
+- **Drag the grip** to move the whole cluster anywhere. It snaps to the screen's edges and centre lines, the sidebar
+  edges and the other clusters — a dashed guide line shows what it snapped to. Clusters never overlap each other, the
+  logo or the profile: dropped on top of something, a cluster moves to the nearest free spot.
+- **Tap the grip** (or right-click / long-press any button of the cluster) for its menu: **Move**, **Rotate to
+  vertical** / **Rotate to horizontal** (the toolbar stands on the left edge; corner buttons lie in a row), **Reset
+  position**, **Reset all positions**, **Hide cluster** / **Show all** (the toolbar cannot be hidden — Play lives
+  there). The Connect bar does not rotate; its menu has **Pin to top row** / **Float** instead.
+- **✓** applies, <kbd>Esc</kbd> cancels. A cluster keeps its *relative* place: on a smaller window, after folding or
+  unfolding a phone, beside a pinned sidebar or above the dock. [Workspace layouts](#workspace-layouts) carry the places
+  and rotations.
+
+#### Arranging the buttons
+
+Single buttons move between the clusters as before. The places that take buttons:
 
 - **The bottom toolbar** and **the two bottom corners**.
 - **The top-right group** — Scene notes, Notifications and Connected peers, left of your profile picture. Notifications
@@ -567,14 +621,23 @@ press and hold Play for the phone's version of this menu — *Play as*, *Test pl
 
 ### The Connect bar
 
+Since 1.35 the Connect bar is either **pinned** or **floating**. Open its drawer (the chevron) and use the **Pinned /
+Float** button (the lock in the drawer's header), or a cluster menu in [Edit positions](#moving-the-clusters):
+
+- **Pinned to the top row** — a full-width bar along the top; the corner buttons drop below it. The default on a touch
+  screen (an unfolded phone). With a sidebar open below it, the bar's corner on that side is square.
+- **Float** — the centred pill, the default with a mouse. When the top row is too full for it, it shrinks to its
+  **compact** form (the status dot and the chevron); tap the dot for the full bar, and it grows back by itself when room
+  returns.
+
+Each kind of screen (touch or mouse) remembers its own choice, and layouts carry it. On a folded phone Connect is the
+chip in the phone's top bar, unchanged.
+
 - **Hide or show it**: in **Edit positions** the Connect bar at the top has a red **−**; press it to hide the bar. A
   **+ Connect** stays in its place until you press **✓**, and brings it back whenever you edit again. Or untick
   **Connect bar** in *Customize toolbar…* (section *Top*). On a folded phone the Connect chip stays.
 - **Hidden stays hidden**: buttons you hide (for example **Notifications**) stay hidden everywhere — after a reload and
   on the folded phone as well.
-- **Its own row**: when the top edge has no room for the Connect bar between the logo (and the buttons beside it) and the
-  buttons left of your profile picture, it moves to a full-width row of its own along the top, and the corner buttons
-  drop below it. Remove a button or widen the window and it goes back to the middle of the top row by itself.
 
 See also [The Connect panel](connection.md#the-connect-panel).
 
@@ -623,7 +686,9 @@ The keys in the table are the **3D view's**: they fire while the 3D view has foc
 | <kbd>M</kbd> | Toggle element [snapping](snapping.md) |
 | <kbd>O</kbd> | Toggle the object list |
 | <kbd>N</kbd> | Toggle the node editor |
-| <kbd>T</kbd> | Show / hide the tool dock |
+| <kbd>T</kbd> | Show / hide the tool dock (with nothing docked it opens [empty](interface.md#docked-windows), ready for a drop) |
+| <kbd>Ctrl</kbd>+<kbd>B</kbd> | Show / hide the left [sidebar](interface.md#sidebars) (its tabs stay open) |
+| <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd> | Show / hide the right sidebar |
 | <kbd>Alt</kbd>+<kbd>E</kbd> / <kbd>F</kbd> / <kbd>A</kbd> / <kbd>U</kbd> / <kbd>S</kbd> / <kbd>H</kbd> | Explorer / Flow Code / Animation / UV editor / Shader editor / HUD editor |
 | <kbd>C</kbd> | Toggle chat (from the 3D view only) |
 | <kbd>Shift</kbd>+<kbd>A</kbd> | Add an object at the cursor (enable in Settings) |
@@ -669,7 +734,8 @@ shows an outline.
   and the 3D view's own letters (<kbd>C</kbd> chat, <kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd>, <kbd>P</kbd>, <kbd>M</kbd>…)
   do nothing there. Click the 3D view to give it the keys back.
 - **<kbd>T</kbd>, <kbd>N</kbd> and <kbd>O</kbd>** (the tool dock, the node editor, the object list) are window management,
-  so they also work from a panel.
+  so they also work from a panel. So do <kbd>Ctrl</kbd>+<kbd>B</kbd> / <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd> —
+  except inside the [code workspace](code-workspace.md#sidebars), where they toggle its own sidebars.
 - **Global keys work everywhere**: <kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Y</kbd> (also with a checkbox
   or slider focused, and inside the Profiler timeline), <kbd>Ctrl</kbd>+<kbd>S</kbd>, <kbd>Ctrl</kbd>+<kbd>Enter</kbd>,
   the <kbd>Alt</kbd>+letter panel toggles, <kbd>?</kbd> and <kbd>V</kbd> (push to talk).
