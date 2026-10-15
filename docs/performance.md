@@ -65,7 +65,8 @@ reversible.
 Objects are created in slices rather than all at once, the viewport is refreshed once a frame
 instead of once per object, and an object list of thousands of rows draws only the rows you can
 actually see. A scene that used to take minutes to land while the tab sat frozen now arrives
-while you watch it.
+while you watch it. Since 1.35 opening or restoring a big scene on a phone no longer freezes the window in steps
+longer than about 200 ms — the object list's icons cost far less to draw.
 
 ### 2. Something oversized asks before it lands
 

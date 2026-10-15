@@ -6,7 +6,7 @@ ThePrototype is peer-to-peer: once two browsers connect they talk **directly** o
 
 ## The Connect panel
 
-The Connect panel is the pill at the top of the screen. On a wide window it is a centered pill; on a narrow/touch screen it becomes a full-width bar pinned to the top edge. Since 1.34 it also takes a full-width row of its own whenever the top row has no room for it between the logo's buttons and the buttons left of your profile picture, and goes back to the middle when room returns. You can hide it in [Edit positions](controls.md#the-connect-bar) or by unticking **Connect bar** in *Customize toolbar…*; on a folded phone the Connect chip stays.
+The Connect panel is the bar at the top of the screen. Since 1.35 it is either **pinned** — a full-width bar along the top edge, the default on a touch screen — or **floating** — the centred pill, the default with a mouse; switch with the **Pinned / Float** button in its drawer's header (see [The Connect bar](controls.md#the-connect-bar)). A floating bar with no room on the top row shrinks to a compact dot and chevron, and grows back when room returns. You can move it anywhere and hide it in [Edit positions](controls.md#the-connect-bar) or by unticking **Connect bar** in *Customize toolbar…*; on a folded phone the Connect chip stays.
 
 It has two halves:
 
@@ -66,7 +66,7 @@ A few cases ask first, or refuse with a message:
 - **Already in a session** — *You're in a session with Ada (75F41). Leave it and join 3B0C2?* with **Leave & join** and **Stay**.
 - **Your own link** — *That's your own invite link — send it to somebody else to have them join you.*
 - **Someone you are already with** — *Already connected to Ada (75F41).*
-- **A link that names another signaling server** — *Join 3B0C2 on peerjs.example.com?* with **Join** and **Cancel**; joining switches server without a reload, exactly like **Apply** below.
+- **A link that names another signaling server** — *Join 3B0C2 on peerjs.example.com?* with **Join** and **Cancel**; joining switches server without a reload, exactly like **Apply** below. If that server cannot be reached you are back online on your previous server within a second, with the same session id, so the invite link you shared keeps working.
 
 ### The request, and how it ends
 
@@ -160,6 +160,8 @@ The link to the signaling server is not the link to your peers — losing it doe
 
 **Settings ▸ About ▸ Copy diagnostics** puts a bundle on your clipboard: the version, this session's peer and scene counts, the scene's [budget numbers](performance.md), the last uncaught error and the last 300 log lines. A toast confirms *Diagnostics copied to the clipboard*.
 
+Since 1.35 a line that repeats back-to-back is written **once with a count** — `WARN [console] … (×180, last 10:42:07.311)` — so a burst of one warning can no longer push the useful lines out of the log.
+
 It goes to your clipboard and nowhere else — paste it into a bug report, so a problem arrives with something in it.
 
 ## Choosing a signaling server
@@ -202,6 +204,6 @@ It carries an **Open Settings** button that jumps straight to **Settings ▸ Con
 | *AB12 did not answer in 90s* | Nobody approved your request in time, so it ended itself — press **Try again** to ask again. |
 | *AB12 declined your connection request* | The host pressed **Reject**. Ask them before dialling again. |
 | *AB12's session is full (16 people)* | Everyone connects to everyone, so a session has a ceiling. Someone has to leave before another person can join — **Try again** on the toast re-asks. |
-| *Could not reach … — back on your previous peer server.* | **Apply** could not open the server you picked, so nothing changed — check the host, port and path. |
+| *Could not reach … — back on your previous peer server.* | **Apply** (or an invite link that names another server) could not open that server, so nothing changed: you are back online on your previous server with the same session id, and your invite link still works — check the host, port and path. |
 | A **red** status dot, and one *Can't reach the peer server — still retrying.* entry in the notification centre | The link to the signaling server has been down for about a minute; the app keeps retrying on its own and never gives up, and the dot turns green or grey again once it is back. Shorter drops — a tab switch, a moment offline — reconnect silently. Your open session keeps going meanwhile. |
 | *Cannot reach the signaling server - the connection request was not sent.* | You pressed **Connect** while the signaling link is down. Wait for the status dot to stop pulsing, or switch servers in Settings ▸ Connection. |

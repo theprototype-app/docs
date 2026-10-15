@@ -68,11 +68,14 @@ red, so the moments you crossed the budget stand out.
 | <kbd>Shift</kbd>+wheel, or a middle-button drag | pan |
 | Double-click, or <kbd>0</kbd> | fit the whole recording |
 | <kbd>←</kbd> / <kbd>→</kbd> | step one frame (<kbd>Ctrl</kbd> for ten) |
-| <kbd>Shift</kbd>+<kbd>←</kbd> / <kbd>→</kbd> | extend the range |
+| <kbd>Shift</kbd>+<kbd>←</kbd> / <kbd>→</kbd> | extend the range by one frame |
 | <kbd>Home</kbd> / <kbd>End</kbd> | first / last frame |
 | <kbd>+</kbd> / <kbd>−</kbd> | zoom in / out |
 | <kbd>Z</kbd> | zoom to the selection |
 | <kbd>Esc</kbd> | select the whole recording again |
+
+A selection counts exactly the frames you picked — the range's frame count is what you selected. (Before 1.35, on a
+busy machine a selection could take in the neighbouring frame and read *5 frames* for four.)
 
 ### What the selection cost
 

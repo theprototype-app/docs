@@ -24,6 +24,28 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.35 — your 1.34 review.** A floating window now [moves by any empty part of it](controls.md#floating-windows), not
+only its header, and **docks by drag** — onto the dock's tab strip, the bottom edge or either sidebar, with the mouse
+and on an unfolded phone by touch; right-click (or press and hold) its header or a group tab for the
+[window menu](controls.md#the-window-menu): Dock to bottom, Move to the left / right sidebar, Float, Group with…,
+Bring to front, Reset size, Close. <kbd>T</kbd> opens an [empty dock](interface.md#docked-windows) that takes a drop,
+and [every **+**](interface.md#the-menus) lists every window: one that is already open is ticked, says where it is and
+comes to the front there — no second copy — and <kbd>Ctrl</kbd>- or <kbd>Shift</kbd>-click picks several.
+[Sidebars](interface.md#sidebars) get a **+** too, stay open when you empty them, and <kbd>Ctrl</kbd>+<kbd>B</kbd> /
+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd> show and hide the left and right sidebar with their tabs kept open. The
+[dock splits side by side](interface.md#splitting-the-dock): **Split** puts two windows in one *A / B* tab with a
+draggable divider, and splits are remembered. Every docked window — Statistics, Chat and the AI assistant too — stops
+at a Full-height sidebar. [Edit positions](controls.md#moving-the-clusters) arranges every button cluster — the toolbar,
+both corner stacks, the buttons beside the logo, the top-right group and the Connect bar: drag one anywhere, it snaps
+and never overlaps, and **Rotate to vertical** stands the toolbar on the left edge; **Move toolbar** works by touch.
+The [Connect bar](controls.md#the-connect-bar) is **Pinned** or **Float**, and a floating one with no room turns
+compact. In [focus mode](interface.md#the-viewport-picture-in-picture) a **Viewport** button beside Exit focus shows or
+hides the 3D preview, and the choice is remembered; [Settings](settings.md) no longer closes your sidebars or docked
+windows. Fixed: a [Profiler](profiler.md) selection counts exactly the frames you picked, an invite link to a server
+that cannot be reached [puts you back online](connection.md#when-things-go-wrong) on your previous server, a big scene
+no longer stalls a phone while it opens, and repeated lines in [Copy diagnostics](connection.md#diagnostics-you-can-copy)
+are counted (×N).
+
 **1.34 — your 1.33 review.** Right-click any value in Properties or Configure Scene (press and hold on a touch screen)
 to [copy, paste or reset it](controls.md#copy-paste-and-reset-values) — one number, a whole vector or just its X, Y or
 Z, a colour, a choice, or a whole section from its header (also *Copy as JSON*); <kbd>Ctrl</kbd>+<kbd>C</kbd> /
