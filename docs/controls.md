@@ -607,7 +607,7 @@ Then:
 
 ![Edit positions on a computer: every button has a red −, green + slots sit at the ends of the bar and on top of each corner stack, a grip sits beside the bar and each corner stack, and the green ✓ applies](img/controls/edit-positions.png)
 
-![Edit positions reaching the top right: the notifications and Explorer buttons in the top-right group carry a red − with a green + for its next place, the left corner holds four buttons and no +, and the right corner shows one +](img/controls/edit-positions-top-right.png)
+![Edit positions reaching the top right: the notifications and Explorer buttons in the top-right group carry a red − with a green + for its next place, the left corner holds four buttons and no +, the right corner shows one +, and every cluster has its grip](img/controls/edit-positions-top-right.png)
 
 ![The top of the screen in Edit positions with a mouse: Undo, Redo and Multi-select beside the logo carry a red − with a + for the next place, the Connect bar has its own red −, the top-right group shows a + for its next place, and each of the three clusters has its grip underneath](img/controls/edit-positions-connect-bar.png)
 
