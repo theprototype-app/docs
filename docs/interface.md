@@ -208,6 +208,8 @@ second copy:
 To close a docked window use its tab's **×**; to bring a floating window into the dock, drag it onto the dock or use its
 [window menu](controls.md#the-window-menu) (**Dock to bottom**).
 
+![The dock's + menu open: Node editor and Explorer are ticked In dock, Objects is ticked Floating, Statistics is ticked Right sidebar, and every closed window says Open](img/interface/dock-plus-menu.png)
+
 **Dock any window exactly where you want it**: drag a floating window by its header or any empty part of it — or tear
 a tab out of a tabbed window, or drag a whole tabbed window by its tab bar — onto the **dock's tab bar**. The window turns
 see-through, the tab bar is outlined and a **caret** shows the slot between the docked tabs where it will land; let go
@@ -247,6 +249,8 @@ the app closes one window of a pair for a while, the other fills the dock until 
 screen — a computer or an unfolded phone; on a folded phone the dock is one column and a pair shows as its two ordinary
 tabs.
 
+![The dock split side by side: one tab reads Node editor / Explorer, the Node editor with three nodes on the left, the Explorer's Library on the right, the divider between them and the Split button pressed at the right end of the strip](img/interface/dock-split.png)
+
 ### Floating windows with tabs
 
 - **Join a window as a tab:** drag a tab out of the dock and drop it onto a floating window. It joins that window as a
@@ -282,6 +286,8 @@ window, at the top for the 3D view) — and everything comes back exactly as it 
 focus** on a docked window, a **Viewport** button shows or hides the
 [viewport picture-in-picture](#the-viewport-picture-in-picture) without leaving focus mode. Focus mode also
 ends when a dialog opens or you press Play.
+
+![Focus mode on the docked Explorer: it fills the whole window, the Viewport button (pressed) sits just left of Exit focus in the tab row, and the viewport picture-in-picture shows the scene in the bottom-right corner](img/interface/focus-mode-viewport-toggle.png)
 
 Without a keyboard: **View ▸ Focus mode** in the 3D view's right-click menu, right-click a dock tab ▸ **Maximize (focus
 mode)**, or on a phone **More ▸ Tools & View ▸ Focus mode** (which you can also drag onto the

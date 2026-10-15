@@ -438,6 +438,8 @@ Right-click a floating window's header — or press and hold it on a touch scree
 The same menu opens on a tab of a [floating window with tabs](interface.md#floating-windows-with-tabs). The header itself
 is unchanged.
 
+![The floating Objects window's header right-clicked: Dock to bottom, Move to left sidebar, Move to right sidebar, Float (undock) greyed because it already floats, Group with… open on Chat, Bring to front, Reset size and Close](img/controls/window-menu.png){ width="437" }
+
 For the bottom dock's own buttons — **Undock**, **Split**, closing a view from its tab, **Dock all tabs** on a floating
 window — and for docking a window into an exact slot by dropping it on the dock's tab bar, see
 [Windows and tabs](interface.md#windows-and-tabs).
@@ -567,6 +569,10 @@ logo and your profile picture stay where they are.) In **Edit positions** every 
   unfolding a phone, beside a pinned sidebar or above the dock. [Workspace layouts](#workspace-layouts) carry the places
   and rotations.
 
+![Edit positions with Touch tools on: every cluster has a small grip under it — the Undo, Redo and Multi-select row beside the logo, the Connect bar, the top-right group, the bottom toolbar and both corner stacks — and every button still carries its red − with green + slots](img/controls/edit-positions-clusters.png)
+
+![After Rotate to vertical and Rotate to horizontal: the toolbar stands on the left edge with Play in its middle, and the bottom-left corner buttons lie in a row](img/controls/clusters-rotated.png)
+
 #### Arranging the buttons
 
 Single buttons move between the clusters as before. The places that take buttons:
@@ -599,11 +605,11 @@ Then:
 - The round green **✓** at the top right of the toolbar **applies** the new layout. <kbd>Esc</kbd>, or a click anywhere
   else, cancels it.
 
-![Edit positions on a computer: every button has a red −, green + slots sit at the ends of the bar and on top of each corner stack, and the green ✓ applies](img/controls/edit-positions.png)
+![Edit positions on a computer: every button has a red −, green + slots sit at the ends of the bar and on top of each corner stack, a grip sits beside the bar and each corner stack, and the green ✓ applies](img/controls/edit-positions.png)
 
 ![Edit positions reaching the top right: the notifications and Explorer buttons in the top-right group carry a red − with a green + for its next place, the left corner holds four buttons and no +, and the right corner shows one +](img/controls/edit-positions-top-right.png)
 
-![Edit positions with a mouse in 1.34: Undo, Redo and Multi-select beside the logo carry a red − with a + for the next place, the Connect bar has its own red −, and the … button at the end of the bottom bar has a − too](img/controls/edit-positions-connect-bar.png)
+![The top of the screen in Edit positions with a mouse: Undo, Redo and Multi-select beside the logo carry a red − with a + for the next place, the Connect bar has its own red −, the top-right group shows a + for its next place, and each of the three clusters has its grip underneath](img/controls/edit-positions-connect-bar.png)
 
 The menus name buttons by their short name — **Pivot**, **Microphone**; the toolbar's own tooltips still tell you the
 pivot mode and how to talk.
