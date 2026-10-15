@@ -4421,7 +4421,7 @@
 <p>How peers find each other, how to invite someone into your scene, and how to point the app at a signaling server you trust.</p>
 <p>ThePrototype is peer-to-peer: once two browsers connect they talk <strong>directly</strong> over WebRTC, and the whole scene replicates between them. The only shared infrastructure is a small <strong>signaling server</strong> (PeerJS) used to introduce peers to each other — it never sees your scene data.</p>
 <h2 id="the-connect-panel">The Connect panel</h2>
-<p>The Connect panel is the pill at the top of the screen. On a wide window it is a centered pill; on a narrow/touch screen it becomes a full-width bar pinned to the top edge. Since 1.34 it also takes a full-width row of its own whenever the top row has no room for it between the logo's buttons and the buttons left of your profile picture, and goes back to the middle when room returns. You can hide it in <a href="../controls/#the-connect-bar">Edit positions</a> or by unticking <strong>Connect bar</strong> in <em>Customize toolbar…</em>; on a folded phone the Connect chip stays.</p>
+<p>The Connect panel is the bar at the top of the screen. Since 1.35 it is either <strong>pinned</strong> — a full-width bar along the top edge, the default on a touch screen — or <strong>floating</strong> — the centred pill, the default with a mouse; switch with the <strong>Pinned / Float</strong> button in its drawer's header (see <a href="../controls/#the-connect-bar">The Connect bar</a>). A floating bar with no room on the top row shrinks to a compact dot and chevron, and grows back when room returns. You can move it anywhere and hide it in <a href="../controls/#the-connect-bar">Edit positions</a> or by unticking <strong>Connect bar</strong> in <em>Customize toolbar…</em>; on a folded phone the Connect chip stays.</p>
 <p>It has two halves:</p>
 <ul>
 <li><strong>📋 Your ID</strong> — the button on the left shows your own peer ID. Click it to <strong>copy your invite link</strong> (your app URL with your ID attached, e.g. <code>https://theprototype.app/#AB12CD</code>) to the clipboard. Until the connection to the signaling server is ready it reads <em>Generating…</em>.</li>
@@ -4488,7 +4488,7 @@ breaks. On a phone it opens as a sheet like the notifications: a grab bar on top
 <li><strong>Already in a session</strong> — <em>You're in a session with Ada (75F41). Leave it and join 3B0C2?</em> with <strong>Leave &amp; join</strong> and <strong>Stay</strong>.</li>
 <li><strong>Your own link</strong> — <em>That's your own invite link — send it to somebody else to have them join you.</em></li>
 <li><strong>Someone you are already with</strong> — <em>Already connected to Ada (75F41).</em></li>
-<li><strong>A link that names another signaling server</strong> — <em>Join 3B0C2 on peerjs.example.com?</em> with <strong>Join</strong> and <strong>Cancel</strong>; joining switches server without a reload, exactly like <strong>Apply</strong> below.</li>
+<li><strong>A link that names another signaling server</strong> — <em>Join 3B0C2 on peerjs.example.com?</em> with <strong>Join</strong> and <strong>Cancel</strong>; joining switches server without a reload, exactly like <strong>Apply</strong> below. If that server cannot be reached you are back online on your previous server within a second, with the same session id, so the invite link you shared keeps working.</li>
 </ul>
 <h3 id="the-request-and-how-it-ends">The request, and how it ends</h3>
 <p>A connection request waits for the host. Three things can end it, and each one says so on both sides:</p>
@@ -4587,6 +4587,7 @@ device can check it, so a code set on another device of yours has to be set agai
 <p>The link to the signaling server is not the link to your peers — losing it does not end a session you are already in, it only stops new people finding you. When it drops the app reconnects on its own, backing off a little further between tries and <strong>never giving up</strong>, and the <a href="#the-status-dot">status dot</a> pulses yellow while it is retrying so a dead link does not read as a dead app. Coming back online, or returning to the tab, retries immediately instead of waiting out the backoff — and since 1.32 it does so <strong>silently</strong>: switching apps on a phone and coming back no longer toasts. If the server stays unreachable for about a minute, the dot turns red and <strong>one</strong> entry appears in the notification centre; the retries carry on. A peer connection that closed is rebuilt rather than abandoned.</p>
 <h2 id="diagnostics-you-can-copy">Diagnostics you can copy</h2>
 <p><strong>Settings ▸ About ▸ Copy diagnostics</strong> puts a bundle on your clipboard: the version, this session's peer and scene counts, the scene's <a href="../performance/">budget numbers</a>, the last uncaught error and the last 300 log lines. A toast confirms <em>Diagnostics copied to the clipboard</em>.</p>
+<p>Since 1.35 a line that repeats back-to-back is written <strong>once with a count</strong> — <code>WARN [console] … (×180, last 10:42:07.311)</code> — so a burst of one warning can no longer push the useful lines out of the log.</p>
 <p>It goes to your clipboard and nowhere else — paste it into a bug report, so a problem arrives with something in it.</p>
 <h2 id="choosing-a-signaling-server">Choosing a signaling server</h2>
 <p>Which signaling server you use decides <em>which world you can meet people in</em> — two people must be on the same server for their invite links to connect. Set this in <strong>Settings ▸ Connection</strong>.</p>
@@ -4662,7 +4663,7 @@ device can check it, so a code set on another device of yours has to be set agai
 </tr>
 <tr>
 <td><em>Could not reach … — back on your previous peer server.</em></td>
-<td><strong>Apply</strong> could not open the server you picked, so nothing changed — check the host, port and path.</td>
+<td><strong>Apply</strong> (or an invite link that names another server) could not open that server, so nothing changed: you are back online on your previous server with the same session id, and your invite link still works — check the host, port and path.</td>
 </tr>
 <tr>
 <td>A <strong>red</strong> status dot, and one <em>Can't reach the peer server — still retrying.</em> entry in the notification centre</td>
@@ -4694,7 +4695,7 @@ device can check it, so a code set on another device of yours has to be set agai
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-14
+    2026-10-15
   </span>
 
     

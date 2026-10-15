@@ -471,6 +471,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Docked windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-menus" class="md-nav__link">
+    <span class="md-ellipsis">
+      The "+" menus
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splitting-the-dock" class="md-nav__link">
+    <span class="md-ellipsis">
+      Splitting the dock
+    </span>
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
@@ -4387,6 +4411,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Docked windows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-menus" class="md-nav__link">
+    <span class="md-ellipsis">
+      The "+" menus
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splitting-the-dock" class="md-nav__link">
+    <span class="md-ellipsis">
+      Splitting the dock
+    </span>
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
@@ -4560,7 +4608,9 @@ paragraph explaining it.</p>
   window. It is still yours to arrange — right-click any button (or press and hold it) ▸ <strong>Edit positions</strong> to drag the
   buttons into place; see <a href="../controls/#the-toolbar">The toolbar</a>. The two <strong>corner stacks</strong> — bottom-left (the AI
   assistant and <strong>+</strong>) and bottom-right (Chat and the microphone) — are arranged the same way. Buttons that do not fit
-  fold into a <strong>»</strong> button at the end of the bar — see <a href="../controls/#when-the-buttons-do-not-fit">When the buttons do not fit</a>.</li>
+  fold into a <strong>»</strong> button at the end of the bar — see <a href="../controls/#when-the-buttons-do-not-fit">When the buttons do not fit</a>.
+  Since 1.35 the whole bar, each corner stack, the buttons beside the logo, the top-right group and the Connect bar can
+  be dragged anywhere on the screen, and the bar turned vertical — see <a href="../controls/#edit-positions">Edit positions</a>.</li>
 <li><strong>The logo</strong> (top-left) opens the main menu, grouped as Project · Scene · Collaborate · App — see
   <a href="#the-main-menus-project-actions">The main menu's Project actions</a>. A press anywhere outside the menu closes it;
   pressing another button (a bottom-bar tab, the bell, Play) closes it and does that button's job in the same press,
@@ -4568,8 +4618,9 @@ paragraph explaining it.</p>
 <li><strong>The Connect bar</strong> (top centre) shows your ID — click it to copy your invite link — and the field to join someone,
   with the <strong>status dot</strong> at its left end. Once you are connected it <strong>collapses to a chip</strong>: the dot, the avatars of who
   is here and your mic. Click the chip to open the full bar again. On a computer the dot has no words beside it — point
-  at it to read them; see <a href="../connection/#the-status-dot">The status dot</a>. When the top row is too full it takes a row
-  of its own, and you can hide it — see <a href="../controls/#the-connect-bar">The Connect bar</a>.</li>
+  at it to read them; see <a href="../connection/#the-status-dot">The status dot</a>. It is either <strong>pinned</strong> along the top row or
+  <strong>floats</strong> as a pill (its drawer chooses); a floating bar with no room turns compact, and you can move or hide it —
+  see <a href="../controls/#the-connect-bar">The Connect bar</a>.</li>
 <li><strong>Top right</strong>: scene notes, the notification bell (with a count) and the <a href="../connection/#who-is-here-the-peers-panel">peers panel</a>
   sit in one group beside your picture, which opens your profile menu (<strong>Customize character</strong>, <strong>Profile settings</strong>).
   Since 1.33 that group is arranged with <a href="../controls/#edit-positions">Edit positions</a> too; emptied, it leaves no box
@@ -4600,26 +4651,40 @@ phone the <a href="../animation/">Animation</a> window puts the name on its own 
 <p>On a computer or a tablet-width window, each side of the screen holds <strong>one sidebar</strong>. Every panel docked to that side
 is a <strong>tab</strong> of it: Configure Scene / Properties, the Objects list and any window you dock to the edge (the Node editor,
 the Explorer…). Only the tab in front is shown, so opening a panel on a side that already has a sidebar brings its tab
-forward instead of opening a second column. The sidebar's header strip holds one tab per panel and, at its far end,
-the <strong>Full height</strong> button (↕).</p>
+forward instead of opening a second column. The sidebar's header strip holds one tab per panel, a <strong>+</strong> after the tabs
+and, at its far end, the <strong>Full height</strong> button (↕) and the <strong>hide</strong> button.</p>
 <ul>
 <li><strong>Switch</strong> by clicking a tab (or <kbd>←</kbd> / <kbd>→</kbd> with a tab focused).</li>
-<li><strong>Close</strong> a panel with the <strong>×</strong> on its tab. It leaves the sidebar, and its side is remembered for next time.</li>
+<li><strong>Close</strong> a panel with the <strong>×</strong> on its tab. It leaves the sidebar, and its side is remembered for next time. Since
+  1.35 closing (or moving away) the <strong>last</strong> tab leaves the sidebar <strong>open and empty</strong>, with its <strong>+</strong> and <em>Press + or
+  drag a tab here</em> — drag a tab or a floating window onto it, or hide it.</li>
+<li><strong>Add a window</strong> with the sidebar's <strong>+</strong>: it lists every window. One that is closed opens as a tab of this sidebar;
+  one that is already open is ticked, says where it is and comes to the front there (see
+  <a href="#the-menus">The "+" menus</a>). On a touch screen windows do not join the side columns yet, so there the <strong>+</strong> opens the
+  window as it would anywhere.</li>
+<li><strong>Show or hide</strong> a sidebar with <kbd>Ctrl</kbd>+<kbd>B</kbd> (left) and <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd>
+  (right) — <kbd>⌘</kbd> on a Mac, the same keys as VS Code — or its hide button. Hiding keeps every tab open: showing
+  it again brings them back, and opening a panel onto a hidden sidebar shows it again. A sidebar that had nothing in
+  it opens empty with its <strong>+</strong>. Rebind both in <strong>Settings ▸ Shortcuts</strong> (<em>Panels</em>); inside the
+  <a href="../code-workspace/#sidebars">code workspace</a> the same keys toggle its own sidebars. A hidden sidebar comes back after
+  a reload; an emptied one stays empty.</li>
 <li><strong>Right-click a tab</strong> (press and hold on a touch screen) for its menu: <strong>Close</strong>, <strong>Close others</strong>, <strong>Undock into a
   floating window</strong>, <strong>Move to the other side</strong> and <strong>Move to the bottom dock</strong>. Configure Scene and Properties live only
   in a sidebar, so their <em>Undock</em> and <em>bottom dock</em> rows are greyed out with the reason.</li>
 <li><strong>More tabs than fit</strong> scroll sideways (the mouse wheel or a swipe), like the bottom dock's tabs; the tab in front is
   kept in view.</li>
 <li><strong>Drag a tab anywhere</strong> — see <a href="#dragging-a-tab">Dragging a tab</a> below.</li>
-<li><strong>Dock a floating window</strong>: drag its header to a screen edge, or onto a sidebar (<em>Add as tab</em> lights up) — it becomes a
-  tab of that side.</li>
+<li><strong>Dock a floating window</strong>: drag it — by its header or any empty part of it — to a screen edge, or onto a sidebar
+  (<em>Add as tab</em> lights up), or right-click its header ▸ <strong>Move to the left / right sidebar</strong> — it becomes a tab of that
+  side.</li>
 <li><strong>Resize</strong> by dragging the sidebar's inner edge; a double-click resets it. All tabs of a side share the width. The
   logo and the profile button move with the edge as you drag. On a touch screen the edge is easy to grab, the sidebar
   stops at its minimum width (250 px), and its content never scrolls sideways — rows that do not fit wrap onto a second
   line.</li>
 <li><strong>Full height</strong>: press <strong>↕</strong> and the sidebar runs from the top edge to the bottom edge. The buttons in that top corner
   (the logo and menu on the left; notes, notifications and your profile on the right) slide inward, and the bottom dock
-  gets narrower so it sits beside the sidebar, never under it. Press it again to fit the sidebar under the top buttons.
+  gets narrower so it sits beside the sidebar, never under it — every docked view, Statistics, Chat, Objects, the Live
+  profiler, the AI assistant and the Shader editor included. Press it again to fit the sidebar under the top buttons.
   The main menu always opens above sidebars. With one or both sides at full height the Connect bar stays a pill,
   centred between the logo and the corner buttons. The toolbar never slides under a full-height sidebar — see
   <a href="../controls/#the-toolbar-and-sidebars">The toolbar and sidebars</a>.</li>
@@ -4671,8 +4736,9 @@ highlights, painted above every panel; the window you drag turns see-through so 
 Shader and HUD editors, the Explorer, the Profiler, Code, the Image editor, Objects, Statistics, the Live profiler, Chat
 and the AI assistant:</p>
 <ul>
-<li><strong>Into a sidebar</strong>: drag its header to the left or right edge (or onto an open sidebar), drag its bottom-dock tab onto
-  a sidebar, or right-click its dock tab ▸ <strong>Move to the left / right sidebar</strong>.</li>
+<li><strong>Into a sidebar</strong>: drag the floating window (by its header or any empty part) to the left or right edge or onto an
+  open sidebar, drag its bottom-dock tab onto a sidebar, right-click its dock tab or its floating header ▸ <strong>Move to the
+  left / right sidebar</strong>, or pick it in the sidebar's <strong>+</strong> while it is closed.</li>
 <li><strong>Back to the bottom</strong>: right-click its sidebar tab ▸ <strong>Move to the bottom dock</strong>, or drag the tab onto the dock.</li>
 </ul>
 <p><strong>No second header.</strong> A window in a sidebar shows no window header of its own: the sidebar tab is its header (name, ×,
@@ -4711,22 +4777,62 @@ differ); searching Settings for <em>sticky header</em> finds it.</p>
   (see <a href="#any-window-in-a-sidebar">Any window in a sidebar</a>).</li>
 <li><strong>The dock's +</strong> lists every window that can live in the dock — the <a href="../node-editor/">Node editor</a> and the
   <a href="../image-editor/#in-the-dock">Image editor</a> included, and since 1.33 also <strong>Objects</strong>, <strong>Statistics</strong>, the <strong>Live
-  profiler</strong>, <strong>Chat</strong> and the <strong>AI assistant</strong> — the same list as the phone's <strong>Windows</strong> sheet. Windows already in the
-  dock are highlighted, and each row says what a click does: <strong>Remove</strong> (closes it), <strong>Dock</strong> (brings a floating window
-  in) or <strong>Open</strong> (opens it as a dock tab).</li>
+  profiler</strong>, <strong>Chat</strong> and the <strong>AI assistant</strong> — the same list as the phone's <strong>Windows</strong> sheet. See
+  <a href="#the-menus">The "+" menus</a> for what a pick does.</li>
+<li><strong>An empty dock</strong>: with nothing docked, <kbd>T</kbd> opens the dock <strong>empty</strong> — its tab strip with only <strong>+</strong> and the
+  line <em>Press + or drag a tab here</em>. Drop a floating window on its strip or its body to dock it there; <kbd>T</kbd>
+  again closes it.</li>
 </ul>
-<p><strong>Dock any window exactly where you want it</strong> (desktop): drag a floating window by its header — or tear a tab out of a
-tabbed window, or drag a whole tabbed window by its tab bar — onto the <strong>dock's tab bar</strong>. The window turns
+<h4 id="the-menus">The "+" menus</h4>
+<p>Every <strong>+</strong> — the dock's, a sidebar's, the floating Node editor's — lists every window, and since 1.35 it never makes a
+second copy:</p>
+<ul>
+<li>A window that is <strong>already open</strong> — in the dock, in a sidebar or floating — is <strong>ticked</strong> and says where it is (<em>In
+  dock</em>, <em>Left sidebar</em>, <em>Right sidebar</em>, <em>Floating</em>). Picking it brings it to the front <strong>where it is</strong>: it is not
+  moved, docked or closed.</li>
+<li>Only a <strong>closed</strong> window opens, into the <strong>+</strong> you pressed.</li>
+<li><strong>Pick several at once</strong>: hold <kbd>Ctrl</kbd> (<kbd>⌘</kbd> on a Mac) or <kbd>Shift</kbd> while you click rows — each
+  window opens and the menu stays open for the next pick. From the keyboard, type to filter and press
+  <kbd>Ctrl</kbd>+<kbd>Enter</kbd>. A plain click opens one window and closes the menu.</li>
+</ul>
+<p>To close a docked window use its tab's <strong>×</strong>; to bring a floating window into the dock, drag it onto the dock or use its
+<a href="../controls/#the-window-menu">window menu</a> (<strong>Dock to bottom</strong>).</p>
+<p><img alt="The dock's + menu open: Node editor and Explorer are ticked In dock, Objects is ticked Floating, Statistics is ticked Right sidebar, and every closed window says Open" src="../img/interface/dock-plus-menu.png" /></p>
+<p><strong>Dock any window exactly where you want it</strong>: drag a floating window by its header or any empty part of it — or tear
+a tab out of a tabbed window, or drag a whole tabbed window by its tab bar — onto the <strong>dock's tab bar</strong>. The window turns
 see-through, the tab bar is outlined and a <strong>caret</strong> shows the slot between the docked tabs where it will land; let go
 and it docks exactly there. This works for every editor and for Objects, Statistics, the Live profiler, Chat and the AI
 assistant; file and model previews, the text viewer, What's new and the tool palettes stay floating. The bottom edge of
-the screen still docks a window at the end of the tabs (and is the only target while the dock is empty or minimized).
+the screen still docks a window at the end of the tabs (and is the only target while the dock is minimized; an
+<a href="#docked-windows">empty dock</a> opened with <kbd>T</kbd> takes a drop anywhere on it). Since 1.35 this works by touch too,
+on an unfolded phone or a tablet.
 Everywhere else a floating window simply moves — over the open dock, over the sidebars, partly off screen — and stays
 under the cursor the whole way; a header that ends up under the Controls bar is nudged above it when you let go.</p>
 <p><img alt="The Objects window dragged over the dock's tab bar: it is see-through, the tab bar is outlined and a caret marks the slot after the Node editor tab" src="../img/interface/dock-drop-objects.png" /></p>
 <p><strong>Floating windows can overlap the dock</strong>: move them over it and resize them past its top edge — only the screen edge
 stops the resize corner. The Objects list remembers whether you last had it docked, and the toolbar button and
 <kbd>O</kbd> open it there.</p>
+<h3 id="splitting-the-dock">Splitting the dock</h3>
+<p>The bottom dock can show <strong>two windows side by side</strong> — the Node editor beside the Explorer, the Shader editor beside
+Statistics — with a divider between them. The pair is one tab in the dock's strip, named with a slash: <strong>Node editor /
+Explorer</strong>.</p>
+<ul>
+<li>Press <strong>Split</strong> (the two-columns button left of <em>Undock</em> and <em>Minimize</em>): the tab in front is shown beside the next
+  tab in the strip. If it is the last tab, the right pane starts empty — press its <strong>+</strong> (or drag a tab onto it) to
+  choose its window. Press <strong>Split</strong> again (it shows pressed) to <strong>unsplit</strong>: the two windows become two tabs again.</li>
+<li><strong>Drag the divider</strong> to give one side more room (mouse, pen or touch); double-click it to centre it. With the divider
+  focused, the arrow keys move it (<kbd>Shift</kbd> for bigger steps). Each pane keeps at least 15 % of the dock's width.</li>
+<li><strong>Click inside a pane</strong> to work in it — its name is bold in the pair's tab, and <em>Undock</em>, the tab menu and the
+  shortcuts act on it.</li>
+<li><strong>Drag a tab onto a pane</strong> to show it there instead; the window it replaces stays a tab.</li>
+<li><strong>The tab menu</strong> (right-click or long-press a dock tab) has <strong>Split right</strong> and <strong>Split with ▸</strong> (pick the partner),
+  and on a pair <strong>Swap sides</strong> and <strong>Unsplit</strong>. Closing the pair's tab (<strong>×</strong>) closes both windows.</li>
+</ul>
+<p>Splits and the divider's position are kept on this device and in <a href="../controls/#workspace-layouts">workspace layouts</a>. If
+the app closes one window of a pair for a while, the other fills the dock until it comes back. Splitting needs a wider
+screen — a computer or an unfolded phone; on a folded phone the dock is one column and a pair shows as its two ordinary
+tabs.</p>
+<p><img alt="The dock split side by side: one tab reads Node editor / Explorer, the Node editor with three nodes on the left, the Explorer's Library on the right, the divider between them and the Split button pressed at the right end of the strip" src="../img/interface/dock-split.png" /></p>
 <h3 id="floating-windows-with-tabs">Floating windows with tabs</h3>
 <ul>
 <li><strong>Join a window as a tab:</strong> drag a tab out of the dock and drop it onto a floating window. It joins that window as a
@@ -4735,9 +4841,10 @@ stops the resize corner. The Objects list remembers whether you last had it dock
   back in the dock. For a window with one tab, drag its tab to the dock, or use the window's <strong>Dock</strong> button.</li>
 <li><strong>Move it by touch:</strong> drag its tab bar — or any of its tab names — and the whole window follows your finger, on a phone
   or an unfolded foldable alike. A tap on a tab still switches to it.</li>
-<li><strong>Hold a tab</strong> (press and hold; right-click with a mouse) for its menu: <strong>Ungroup this tab</strong> (it floats on its own
-  again, just beside the group), <strong>Dock this tab</strong> (only that view goes into the bottom dock — greyed out for windows
-  that always float, such as a file preview) and <strong>Close</strong> (closes that view; the rest of the group stays).</li>
+<li><strong>Hold a tab</strong> (press and hold; right-click with a mouse) for that window's <a href="../controls/#the-window-menu">window menu</a>:
+  <strong>Float (undock)</strong> takes it out of the group, just beside it; <strong>Dock to bottom</strong> and <strong>Move to the left / right
+  sidebar</strong> move only that view (greyed out for windows that always float, such as a file preview); <strong>Close</strong> closes
+  that view and the rest of the group stays.</li>
 </ul>
 <p><strong>Layouts…</strong> (<strong>Menu ▸ Layouts</strong>) opens a regular dialog for your saved arrangements — on a folded phone, a
 <a href="#the-dock-on-a-phone">tab of the bottom dock</a> — see <a href="../controls/#workspace-layouts">Workspace layouts</a>.</p>
@@ -4754,8 +4861,11 @@ scrollbars anywhere.</p>
   when you leave. You can still drag the window's top edge down to see the 3D view behind it.</li>
 </ul>
 <p>Press <kbd>Esc</kbd> or <kbd>Ctrl</kbd>+<kbd>Space</kbd> again — or click <strong>Exit focus</strong> (in the tab row for a docked
-window, at the top for the 3D view) — and everything comes back exactly as it was; nothing is closed. Focus mode also
+window, at the top for the 3D view) — and everything comes back exactly as it was; nothing is closed. Beside <strong>Exit
+focus</strong> on a docked window, a <strong>Viewport</strong> button shows or hides the
+<a href="#the-viewport-picture-in-picture">viewport picture-in-picture</a> without leaving focus mode. Focus mode also
 ends when a dialog opens or you press Play.</p>
+<p><img alt="Focus mode on the docked Explorer: it fills the whole window, the Viewport button (pressed) sits just left of Exit focus in the tab row, and the viewport picture-in-picture shows the scene in the bottom-right corner" src="../img/interface/focus-mode-viewport-toggle.png" /></p>
 <p>Without a keyboard: <strong>View ▸ Focus mode</strong> in the 3D view's right-click menu, right-click a dock tab ▸ <strong>Maximize (focus
 mode)</strong>, or on a phone <strong>More ▸ Tools &amp; View ▸ Focus mode</strong> (which you can also drag onto the
 <a href="#the-phone-bar-and-more">phone bar</a>).</p>
@@ -4773,8 +4883,12 @@ moving it never moves your main view.</p>
   <kbd>G</kbd> work too), drag the gizmo to transform, <kbd>F</kbd> frames the selection in the PiP, <kbd>Delete</kbd>
   deletes and <kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes.</li>
 <li><strong>Move</strong> it by its title bar and <strong>resize</strong> it by the grip in its top-left corner; double-click the grip for the
-  default size (the size is remembered). <strong>⌖</strong> puts its camera back on your main view, and <strong>×</strong> closes it until the
-  next time you maximize.</li>
+  default size (the size is remembered); it starts in the bottom-right corner each time. <strong>⌖</strong> puts its camera back on
+  your main view.</li>
+<li><strong>Show or hide it</strong> with the <strong>Viewport</strong> button beside <strong>Exit focus</strong> — filled while the picture-in-picture shows,
+  outlined while it is hidden. Its <strong>×</strong> hides it the same way. Since 1.35 the choice is <strong>remembered</strong> for the next
+  time you enter focus mode, and after a reload; it starts shown. The button is there only while the picture-in-picture
+  can show — not once you have dragged the window down, and not on a folded phone.</li>
 <li>It shows only while the docked window covers the whole window: drag the window down and the real 3D view is back.</li>
 <li>While the 3D view is covered it is not drawn at all, so a maximized window with the PiP costs less than the normal
   editor.</li>
@@ -4807,8 +4921,10 @@ style: a header with the title and close, tabs directly under it where a dialog 
 answers bottom-right. Each view has <strong>one</strong> emphasised action; a destructive answer is red. Escape, a click outside and
 the close button behave as before. <strong>Customize character</strong> is a drawer you can resize by its edge — see
 <a href="../avatars/#customize-character">Your Character</a>.</p>
-<p>Since 1.32 every dialog — Settings, Modules, Sessions, Templates, confirmations — <strong>covers the whole screen</strong>, the logo
-and its menu button included; close it with its own ✕, <strong>Done</strong>, <kbd>Esc</kbd> or a click outside. <strong>What's new</strong>
+<p>Since 1.32 every dialog — Modules, Sessions, Templates, confirmations — <strong>covers the whole screen</strong>, the logo and its
+menu button included; close it with its own ✕, <strong>Done</strong>, <kbd>Esc</kbd> or a click outside. <strong>Settings</strong> is a window
+beside your work: since 1.35 opening it no longer closes an open sidebar, the docked windows or the Node editor (on a
+folded phone it is a full-screen sheet, and the dock comes back when you close it). <strong>What's new</strong>
 opens above everything else: the logo, undo and redo, the connection pill, notifications, your profile and the bottom
 bar.</p>
 <p><strong>Questions are dialogs, outcomes are toasts.</strong> Anything that asks you to decide something destructive or blocking is a
@@ -5070,7 +5186,7 @@ with its top edge in the same frame while you resize it:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-14
+    2026-10-15
   </span>
 
     
