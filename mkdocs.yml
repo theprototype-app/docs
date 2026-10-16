@@ -15,6 +15,7 @@ nav:
   - Building:
     - Explorer: explorer.md
     - Importing Big Models: import-optimize.md
+    - "Free Assets (CC0)": free-assets.md
     - Packs: packs.md
     - Levels of Detail: lod.md
     - Prefabs: prefabs.md
@@ -23,6 +24,7 @@ nav:
     - Mesh Editing: mesh-editing.md
     - Splines: splines.md
     - Snapping: snapping.md
+    - Measure, Align & Distribute: measure-align.md
     - UV & Textures: uv-editor.md
     - Image Editor: image-editor.md
     - Shader Graph: shader-graph.md

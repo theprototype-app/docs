@@ -83,6 +83,52 @@ The same brush works on **any** mesh, not just terrain: right-click an object �
 !!! note "Under the hood"
     Sculpting only moves the surface up and down, never sideways, so the grid stays watertight and normals are re-smoothed after every edit — no faceted seams. The result travels to peers as a geometry snapshot on the same channel used by mesh editing.
 
+## Painting layers
+
+Since 1.38 a Terrain can be **painted with four texture layers**. Select it ▸ right-click ▸ **Sculpt terrain** (or
+Inspector ▸ **Terrain paint ▸ Paint…**) and pick the **Paint** brush after Raise / Lower / Smooth / Flatten.
+
+![A painted layer on a terrain](img/terrain/paint-layer.png)
+
+- Pick a **layer (1–4)** in the toolbox, then drag on the terrain. Radius and Strength are the sculpt brush's.
+- Inspector ▸ **Terrain paint** sets, per layer, a **colour**, a **texture** (import a file or drop an Explorer image)
+  and **tiling** (how often the texture repeats across the terrain). Layer 1 *is* the terrain's own material until you
+  give it a colour or texture (*Use the material for layer 1* goes back), so the first stroke on a fresh terrain only
+  changes where you paint.
+- The coverage line shows how much of the terrain each layer covers; **Clear paint** removes all of it.
+- One drag = **one undo step**. Peers see the stroke while you paint and exactly your result when you let go; the
+  paint is saved with the scene.
+
+![The Inspector's Terrain paint section](img/terrain/inspector-paint.png)
+
+## Scatter
+
+The **Scatter** brush paints instances of a **primitive or any 3D model in your Library** — trees, rocks, grass
+tufts — onto the terrain.
+
+![The Scatter brush in the Sculpt toolbox, with cones scattered over a painted terrain](img/terrain/scatter-toolbox.png)
+
+| Control | What it does |
+|---|---|
+| **Source** | A primitive, or any model in your Library. |
+| **Paint / erase** | Paint adds instances; the eraser removes *that model's* instances under the brush. |
+| **Density** | Instances per m² — painting over a patch fills it up to that density and never past it. |
+| **Scale min – max** | A random size per instance. |
+| **Random rotation** | Turns each instance around its vertical axis. |
+| **Align to slope** | Tilts instances to the ground. |
+
+Instances follow the ground — sculpting the terrain later moves them with it. Inspector ▸ **Scatter** lists each
+scattered model with its count, an Align toggle and **Remove**. Scatter is counted by the
+[budget chip](performance.md#the-budget-chip-will-it-fit-on-a-quest) on the terrain's row, and a dense model (300
+triangles or more) switches to lighter [levels of detail](lod.md) with distance — instances far away draw fewer
+triangles.
+
+!!! note "Limits"
+    Up to 8,000 instances and 8 scattered models per terrain. For a Quest, keep it near 2,000 instances of a low-poly
+    model (≤ 150 triangles each): each scattered model is one draw call (a dense one, a few — it is drawn in patches so
+    its levels of detail can switch), plus one per shadow-casting light. Instances have no physics colliders and cannot
+    be selected one by one. Older versions open a painted or scattered terrain as the plain terrain.
+
 ## Hand edits lock the parametric rows
 
 The moment you sculpt a terrain — or carve a road into it, or edit it in mesh mode — the Geometry rows **lock**, and the panel says so.

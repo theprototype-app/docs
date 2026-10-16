@@ -24,6 +24,14 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.38 — build precisely.** [Measure](measure-align.md#measure) snaps to corners, edges and faces, chains segments
+with a running total and the angle between them, and pins dimension labels only you see; [Align, Distribute and Drop to
+ground](measure-align.md#align-distribute-and-drop-to-ground) line up a selection from the Properties **Arrange**
+section or the object menu's **Transform ▸**, one undo each. The [Asset Browser](free-assets.md) brings free CC0 models,
+skies and textures from Poly Haven and materials from ambientCG into your Library, sky and material presets — every
+asset keeps its credit. And a Terrain can be [painted with four texture layers](terrain.md#painting-layers) and
+[scattered](terrain.md#scatter) with trees, rocks or any Library model.
+
 **1.37 — fast on every device.** [Big models are optimized as they come in](import-optimize.md): over 50k triangles or
 with a texture over 2048 px, an import gets a level-of-detail chain and its textures are resized and GPU-compressed
 (KTX2/Basis — about an eighth of the texture memory on a Quest), while the original stays in the Library and the toast
