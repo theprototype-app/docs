@@ -14,7 +14,7 @@
         <link rel="prev" href="../connection/">
       
       
-        <link rel="next" href="../packs/">
+        <link rel="next" href="../import-optimize/">
       
       
       <link rel="icon" href="../logo.svg">
@@ -615,6 +615,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#heic-heif-photos" class="md-nav__link">
+    <span class="md-ellipsis">
+      HEIC / HEIF photos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#when-a-model-is-too-heavy" class="md-nav__link">
     <span class="md-ellipsis">
       When a model is too heavy
@@ -851,6 +860,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../import-optimize/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Importing Big Models
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -4354,6 +4384,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#heic-heif-photos" class="md-nav__link">
+    <span class="md-ellipsis">
+      HEIC / HEIF photos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#when-a-model-is-too-heavy" class="md-nav__link">
     <span class="md-ellipsis">
       When a model is too heavy
@@ -4640,7 +4679,7 @@
 <tbody>
 <tr>
 <td>Images</td>
-<td>png, jpg, webp</td>
+<td>png, jpg, webp, heic, heif (see <a href="#heic-heif-photos">below</a>)</td>
 </tr>
 <tr>
 <td>Audio</td>
@@ -4662,6 +4701,19 @@
 </table>
 <p>Items are capped at <strong>25 MB</strong> each. Images and models get generated thumbnails; audio and text show icon cards.</p>
 <p><strong>Importing something you already have.</strong> A file is identified by its contents, so re-importing the same bytes is not a new file. The app tells you what it already has and lets you skip it, reveal it, or — for a scene — take a real copy. The rule lives in <strong>Settings ▸ Explorer ▸ "When importing files already in your library"</strong> (Ask / Skip them / Import as copies); see <a href="../projects/#importing-something-you-already-have">Projects</a>.</p>
+<p><strong>Big models are optimized as they come in</strong> (1.37): over 50k triangles or with a texture over 2048 px, an import gets
+an LOD chain and compressed textures, and the original stays beside it — see <a href="../import-optimize/">Importing Big Models</a>.
+A model's <strong>Properties</strong> (ⓘ) hold its own <strong>Import settings</strong> and <strong>Reimport</strong>.</p>
+<h3 id="heic-heif-photos">HEIC / HEIF photos</h3>
+<p><em>New in 1.37.</em> Photos from an iPhone or a modern Android (<code>.heic</code>, <code>.heif</code>, Canon <code>.hif</code>) import like any image: drop
+them on the Explorer, or pick one in a texture slot (Properties ▸ Material ▸ Texture, the UV editor's material slots, a
+Shader Texture node, a HUD image).</p>
+<p>The photo is decoded <strong>once</strong>, on the device it was dropped on, into a JPEG named after it (<em>IMG_0042.HEIC</em> →
+<em>IMG_0042.jpg</em>). From then on it is an ordinary image: it has a thumbnail, opens in the preview window, textures objects,
+and peers receive the JPEG — they never need the decoder. The decoder (about 1.5 MB) downloads only the first time
+someone imports a HEIC, and runs off the main thread.</p>
+<p>Limits: the longest side is capped at 8192 px; only the primary image of a burst or Live Photo is kept; a damaged file
+is refused with <em>Could not read <name>: …</em>. The original <code>.heic</code> is not kept in the Library.</p>
 <h3 id="when-a-model-is-too-heavy">When a model is too heavy</h3>
 <p>A model is <strong>weighed before it lands</strong>. Once the file is parsed but before anything reaches the
 scene, its real cost — triangles, meshes and texture size — is measured against what the scene
@@ -4902,7 +4954,7 @@ Add menu still places in front of you; drag-to-place in VR comes later.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-11
+    2026-10-16
   </span>
 
     

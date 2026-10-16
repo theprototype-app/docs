@@ -569,6 +569,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../import-optimize/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Importing Big Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../packs/" class="md-nav__link">
         
   
@@ -1252,6 +1273,30 @@
       The meter
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-budget-chip-will-it-fit-on-a-quest" class="md-nav__link">
+    <span class="md-ellipsis">
+      The budget chip: will it fit on a Quest?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The budget chip: will it fit on a Quest?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#statistics-budget" class="md-nav__link">
+    <span class="md-ellipsis">
+      Statistics ▸ Budget
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4203,6 +4248,30 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-budget-chip-will-it-fit-on-a-quest" class="md-nav__link">
+    <span class="md-ellipsis">
+      The budget chip: will it fit on a Quest?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The budget chip: will it fit on a Quest?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#statistics-budget" class="md-nav__link">
+    <span class="md-ellipsis">
+      Statistics ▸ Budget
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#what-the-statistics-window-counts" class="md-nav__link">
     <span class="md-ellipsis">
       What the Statistics window counts
@@ -4365,6 +4434,58 @@ frame</em>). Click it and the <strong>Statistics</strong> window opens — the s
 menu ▸ <strong>Statistics</strong>. On a folded phone, <strong>More ▸ Statistics</strong> opens it as a tab of the bottom
 dock (see <a href="../interface/#the-dock-on-a-phone">The dock on a phone</a>), and on a computer it can be
 a <a href="../interface/#any-window-in-a-sidebar">sidebar tab</a> too.</p>
+<h2 id="the-budget-chip-will-it-fit-on-a-quest">The budget chip: will it fit on a Quest?</h2>
+<p><em>New in 1.37.</em> The meter above judges what <em>this</em> device draws right now. The <strong>budget chip</strong> answers a different
+question while you build: <strong>does this scene fit the device you mean to ship to</strong> — <strong>Quest / VR</strong>, <strong>Phone</strong> or
+<strong>Desktop</strong>? The numbers are the ones the <a href="#budgets-in-ci">perf gate</a> holds every Games-tab game and General-tab level
+to (Quest: 150 draw calls, 300k triangles, 2 lights, 64 MB of textures); phone and desktop have starting values beside
+them.</p>
+<p><strong>Where it is.</strong> On a computer and an unfolded phone: right of the toolbar (or left of it, or just above, when the right
+side is taken). It is hidden in Play, and where there is no free spot next to the toolbar. On a folded phone: <strong>More ▸
+Tools &amp; View ▸ Budget</strong> — the tile shows the device, the percentage and a coloured dot; hold and drag it onto the bottom
+bar if you want it there.</p>
+<p><img alt="The budget chip beside the toolbar, reading Quest 200% in red for the Race scene" src="../img/performance/budget-chip.png" /></p>
+<p><strong>Reading it.</strong> The chip shows the device and how much of its tightest budget the scene uses (<em>Quest 87%</em>):</p>
+<table>
+<thead>
+<tr>
+<th>Colour</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🟢 Green</td>
+<td>under 80 % of every budget</td>
+</tr>
+<tr>
+<td>🟡 Amber</td>
+<td>80–100 % of at least one</td>
+</tr>
+<tr>
+<td>🔴 Red</td>
+<td>over a budget</td>
+</tr>
+</tbody>
+</table>
+<p>Lights and shadow-casting lights are small counts: at the budget is fine, over it is red. Pick the device from the
+chip's <strong>▾</strong> (or right-click / long-press the chip), or with the Quest / Phone / Desktop switch at the top of the Budget
+section. The choice is per device and remembered.</p>
+<h3 id="statistics-budget">Statistics ▸ Budget</h3>
+<p>Click the chip and <strong>Statistics</strong> opens on its <strong>Budget</strong> section: draw calls, triangles, texture memory, lights,
+shadow-casting lights and shadow draws, each against the device, and <strong>Heaviest objects</strong> — the objects taking the
+largest share of a budget, with their triangles, calls and texture memory, and what
+<a href="../import-optimize/">optimizing them on import</a> would save (≈, by your <strong>Settings ▸ Import</strong> numbers). Click a row to
+select that object.</p>
+<p><img alt="Statistics ▸ Budget for the Race scene on Quest: draw calls, triangles, texture memory, lights, shadow-casting lights and shadow draws against the budget, and the heaviest objects with what optimizing them on import would save" src="../img/performance/statistics-budget.png" width="400" /></p>
+<p><strong>What is counted.</strong> The scene's <em>content</em> as that device would draw it: every visible object, the environment (sky,
+sun, ground) and module content — not the editor's grid, gizmos or helpers — at full detail (the closest view), so the
+reading does not change as you orbit. Kit pieces that instance count one call. Texture memory is counted the way the
+perf gate counts it (uncompressed, one upload per image). Shadow draws = shadow casters × shadow-casting lights (every
+mesh casts by default; switch <strong>Cast shadow</strong> off on small props). Under the section, <em>This device, this view</em> is what
+this editor draws right now, overlays and post included.</p>
+<p><strong>Limits.</strong> An estimate, not a frame-time measurement: the perf gate measures from the spawn point with culling and LOD,
+so a big level can read red here and pass there. The phone and desktop numbers are starting values.</p>
 <h2 id="what-the-statistics-window-counts">What the Statistics window counts</h2>
 <p>Seven budgets, each with its own dot, its value, and its two ceilings beside it:</p>
 <table>
@@ -4585,7 +4706,7 @@ scripts run it, and so does CI.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-15
+    2026-10-16
   </span>
 
     

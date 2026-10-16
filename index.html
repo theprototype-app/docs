@@ -636,6 +636,27 @@
   
   
     <li class="md-nav__item">
+      <a href="import-optimize/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Importing Big Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="packs/" class="md-nav__link">
         
   
@@ -4178,6 +4199,17 @@ on a phone that gives the scene the whole height of the screen.</p>
 <a href="https://github.com/theprototype-app/core">github.com/theprototype-app/core</a> (also <strong>Settings ▸ About ▸ Source Code</strong>),
 with a contributing guide and an <code>llms.txt</code> for coding agents.</p>
 <h2 id="whats-new">What's new</h2>
+<p><strong>1.37 — fast on every device.</strong> <a href="import-optimize/">Big models are optimized as they come in</a>: over 50k triangles or
+with a texture over 2048 px, an import gets a level-of-detail chain and its textures are resized and GPU-compressed
+(KTX2/Basis — about an eighth of the texture memory on a Quest), while the original stays in the Library and the toast
+offers <strong>Keep original only</strong>. <strong>Settings ▸ Import</strong> holds the defaults, a file's Properties has its own <strong>Import
+settings</strong> and <strong>Reimport</strong>, and <strong>Configure Scene ▸ Level of detail</strong> sets one <a href="lod/#the-scenes-lod-distance">LOD distance</a>
+for the whole scene. Exports get <a href="publish-export/#optimize-for-quest-web"><strong>Optimize for: For Quest / web</strong></a> — a GLTF
+becomes a compact <code>.glb</code>, a Scene keeps its format with compressed textures and LOD chains. A
+<a href="performance/#the-budget-chip-will-it-fit-on-a-quest">budget chip</a> beside the toolbar says whether the scene fits a
+Quest, a phone or a desktop, and <strong>Statistics ▸ Budget</strong> lists the heaviest objects with what optimizing them would save.
+<a href="explorer/#heic-heif-photos">HEIC / HEIF photos</a> import as images and textures, and <a href="race/#in-vr">Race</a> keeps its
+shadows in VR — inside the Quest budget.</p>
 <p><strong>1.36 — your 1.35 review.</strong> Right-click the <a href="controls/#the-connect-bar">Connect bar</a> — or press and hold it on a
 touch screen — for <strong>Move</strong>, <strong>Pin to top row</strong> / <strong>Float</strong>, <strong>Reset position</strong> and <strong>Reset all</strong>, in or out of Edit
 positions; a moved Connect bar stays where you put it. The buttons beside the logo, hidden by default on a computer,
