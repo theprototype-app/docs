@@ -619,6 +619,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#moving-a-floating-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      Moving a floating window
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#the-window-menu" class="md-nav__link">
     <span class="md-ellipsis">
       The window menu
@@ -4763,6 +4772,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#moving-a-floating-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      Moving a floating window
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#the-window-menu" class="md-nav__link">
     <span class="md-ellipsis">
       The window menu
@@ -5154,7 +5172,8 @@ nothing while it has the keys.</p>
 <p>On a phone or tablet there is no <kbd>Shift</kbd> to hold and no right-click, so the same
 two gestures are available as a <strong>mode</strong>. <em>Settings ▸ Interface ▸ Touch tools</em> puts round
 <strong>Undo</strong>, <strong>Redo</strong> and <strong>Multi-select</strong> buttons beside the logo — on by default on phones
-and narrow windows. With a mouse, <a href="#edit-positions">Edit positions</a> arranges that row too.</p>
+and narrow windows, off by default with a mouse. With a mouse, <a href="#edit-positions">Edit positions</a> arranges that row too,
+and its menu's <strong>Show cluster</strong> turns it on.</p>
 <p>With <strong>Multi-select</strong> on:</p>
 <ul>
 <li>a <strong>tap adds</strong> to the selection instead of replacing it, and</li>
@@ -5447,6 +5466,20 @@ group moves by its tab strip, as before.</p>
 tab at that spot, onto the bottom edge to add it at the end, or to the left or right edge (or over an open sidebar) to
 make it a sidebar tab. A highlight shows where it will land before you let go. This works on a touch screen too — on an
 unfolded phone or a tablet the same targets are there.</p>
+<h4 id="moving-a-floating-window">Moving a floating window</h4>
+<p>A floating window dragged by its header over a sidebar, the dock's tab strip, the bottom edge or another window's header
+<strong>docks there by default</strong> — the target lights up and says what will happen (<em>Add as tab</em>, <em>Move to dock</em>, a marker
+between dock tabs, a highlighted header). Under the target a second line reads <strong>Hold Ctrl to place without docking</strong>
+(<kbd>Cmd</kbd> on a Mac).</p>
+<p><strong>Hold <kbd>Ctrl</kbd> (<kbd>Cmd</kbd>) while you drag</strong> to place the window <em>floating</em> exactly where you drop it, even
+on top of a sidebar or the dock: every dock target stands down, and a small label beside the pointer reads <em>Placing
+without docking — release Ctrl to dock</em>. You can press or release the key at any moment during the drag; the target
+follows the key at once. It works for a single window, a window group dragged by its tab strip, and a tab torn out of
+a group.</p>
+<p><img alt="The floating Objects window dragged over the right sidebar: it turns see-through, the sidebar column is outlined and the target reads Add as tab, with Hold Ctrl to place without docking underneath" src="../img/controls/window-over-sidebar-hint.png" width="620" /></p>
+<p><img alt="The same drag with Ctrl held: the outline and the target are gone, the Objects window lies over the sidebar as it will be dropped, and a label beside the pointer reads Placing without docking — release Ctrl to dock" src="../img/controls/window-place-without-docking.png" width="620" /></p>
+<p>On a touch screen there is no key to hold: drop the window anywhere it is not over a target, or press and hold a docked
+window's tab and pick <strong>Undock into a floating window</strong> to take it out as a floating one.</p>
 <h4 id="the-window-menu">The window menu</h4>
 <p>Right-click a floating window's header — or press and hold it on a touch screen — for:</p>
 <table>
@@ -5616,6 +5649,8 @@ shows every button, wrapping onto more rows when it needs to.</p>
 <li><strong>Edit positions</strong> lays its bar beside any open sidebar, full height or not, moving the bar only as far as it has to;
   while it runs, the corner buttons and the buttons beside the logo sit beside any open sidebar too. Outside it, the
   buttons beside the logo follow a pinned (full-height) left sidebar, like the logo.</li>
+<li><strong>The top of the screen jumps, it does not slide</strong> (since 1.36): when a sidebar is pinned, unpinned or closed, the
+  logo, the buttons beside it, the corner buttons, the profile and the Connect bar move to their new place at once.</li>
 <li><strong>Lift corner buttons above docked panels</strong>, when on, also moves the corner buttons beside a full-height sidebar on
   their side, and back down to the bottom edge when the dock is hidden.</li>
 </ul>
@@ -5634,12 +5669,19 @@ logo and your profile picture stay where they are.) In <strong>Edit positions</s
   vertical</strong> / <strong>Rotate to horizontal</strong> (the toolbar stands on the left edge; corner buttons lie in a row), <strong>Reset
   position</strong>, <strong>Reset all positions</strong>, <strong>Hide cluster</strong> / <strong>Show all</strong> (the toolbar cannot be hidden — Play lives
   there). The Connect bar does not rotate; its menu has <strong>Pin to top row</strong> / <strong>Float</strong> instead.</li>
+<li><strong>The Connect bar's menu works outside Edit positions too</strong> (since 1.36): right-click the Connect bar — or press and
+  hold it on a touch screen — for <strong>Move</strong>, <strong>Pin to top row</strong> / <strong>Float</strong>, <strong>Reset position</strong> and <strong>Reset all</strong>. A moved
+  Connect bar stays where you put it.</li>
+<li><strong>The buttons beside the logo</strong> are hidden by default on a computer. In <strong>Edit positions</strong> their menu's <strong>Show
+  cluster</strong> turns them on (it switches on <strong>Settings ▸ Interface ▸ Touch tools</strong>), and their grip moves them like every
+  other cluster.</li>
 <li><strong>✓</strong> applies, <kbd>Esc</kbd> cancels. A cluster keeps its <em>relative</em> place: on a smaller window, after folding or
   unfolding a phone, beside a pinned sidebar or above the dock. <a href="#workspace-layouts">Workspace layouts</a> carry the places
   and rotations.</li>
 </ul>
 <p><img alt="Edit positions with Touch tools on: every cluster has a small grip under it — the Undo, Redo and Multi-select row beside the logo, the Connect bar, the top-right group, the bottom toolbar and both corner stacks — and every button still carries its red − with green + slots" src="../img/controls/edit-positions-clusters.png" /></p>
 <p><img alt="After Rotate to vertical and Rotate to horizontal: the toolbar stands on the left edge with Play in its middle, and the bottom-left corner buttons lie in a row" src="../img/controls/clusters-rotated.png" /></p>
+<p><img alt="Edit positions with a mouse: the buttons beside the logo are drawn faint (hidden by default on a computer) and their grip menu is open — Move, Rotate to vertical, Reset position, Reset all positions, Show cluster and Show all" src="../img/controls/touch-tools-show-cluster.png" width="390" /></p>
 <h4 id="arranging-the-buttons">Arranging the buttons</h4>
 <p>Single buttons move between the clusters as before. The places that take buttons:</p>
 <ul>
@@ -5687,7 +5729,9 @@ press and hold Play for the phone's version of this menu — <em>Play as</em>, <
 <strong>Arrange the bar…</strong>; see <a href="../interface/#on-a-phone">On a phone</a>.</p>
 <h3 id="the-connect-bar">The Connect bar</h3>
 <p>Since 1.35 the Connect bar is either <strong>pinned</strong> or <strong>floating</strong>. Open its drawer (the chevron) and use the <strong>Pinned /
-Float</strong> button (the lock in the drawer's header), or a cluster menu in <a href="#moving-the-clusters">Edit positions</a>:</p>
+Float</strong> button (the lock in the drawer's header), or right-click the Connect bar (press and hold it on a touch screen)
+— since 1.36 in or out of <a href="#moving-the-clusters">Edit positions</a> — for <strong>Move</strong>, <strong>Pin to top row</strong> / <strong>Float</strong>,
+<strong>Reset position</strong> and <strong>Reset all</strong>:</p>
 <ul>
 <li><strong>Pinned to the top row</strong> — a full-width bar along the top; the corner buttons drop below it. The default on a touch
   screen (an unfolded phone). With a sidebar open below it, the bar's corner on that side is square.</li>
@@ -5695,6 +5739,7 @@ Float</strong> button (the lock in the drawer's header), or a cluster menu in <a
   <strong>compact</strong> form (the status dot and the chevron); tap the dot for the full bar, and it grows back by itself when room
   returns.</li>
 </ul>
+<p><img alt="The floating Connect bar right-clicked outside Edit positions: its menu reads Move, Pin to top row, Reset position and Reset all positions (the last two greyed while the bar is in its default place)" src="../img/controls/connect-bar-menu.png" width="510" /></p>
 <p>Each kind of screen (touch or mouse) remembers its own choice, and layouts carry it. On a folded phone Connect is the
 chip in the phone's top bar, unchanged.</p>
 <ul>
@@ -5983,7 +6028,7 @@ search row.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-15
+    2026-10-16
   </span>
 
     
