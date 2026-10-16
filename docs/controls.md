@@ -435,8 +435,12 @@ without docking — release Ctrl to dock*. You can press or release the key at a
 follows the key at once. It works for a single window, a window group dragged by its tab strip, and a tab torn out of
 a group.
 
-On a touch screen there is no key to hold: drop the window anywhere it is not over a target, or use the window menu's
-**Float** (press and hold its header or tab) to take a docked window out as a floating one.
+![The floating Objects window dragged over the right sidebar: it turns see-through, the sidebar column is outlined and the target reads Add as tab, with Hold Ctrl to place without docking underneath](img/controls/window-over-sidebar-hint.png){ width="620" }
+
+![The same drag with Ctrl held: the outline and the target are gone, the Objects window lies over the sidebar as it will be dropped, and a label beside the pointer reads Placing without docking — release Ctrl to dock](img/controls/window-place-without-docking.png){ width="620" }
+
+On a touch screen there is no key to hold: drop the window anywhere it is not over a target, or press and hold a docked
+window's tab and pick **Undock into a floating window** to take it out as a floating one.
 
 #### The window menu
 
@@ -598,6 +602,8 @@ logo and your profile picture stay where they are.) In **Edit positions** every 
 
 ![After Rotate to vertical and Rotate to horizontal: the toolbar stands on the left edge with Play in its middle, and the bottom-left corner buttons lie in a row](img/controls/clusters-rotated.png)
 
+![Edit positions with a mouse: the buttons beside the logo are drawn faint (hidden by default on a computer) and their grip menu is open — Move, Rotate to vertical, Reset position, Reset all positions, Show cluster and Show all](img/controls/touch-tools-show-cluster.png){ width="390" }
+
 #### Arranging the buttons
 
 Single buttons move between the clusters as before. The places that take buttons:
@@ -662,6 +668,8 @@ Float** button (the lock in the drawer's header), or right-click the Connect bar
 - **Float** — the centred pill, the default with a mouse. When the top row is too full for it, it shrinks to its
   **compact** form (the status dot and the chevron); tap the dot for the full bar, and it grows back by itself when room
   returns.
+
+![The floating Connect bar right-clicked outside Edit positions: its menu reads Move, Pin to top row, Reset position and Reset all positions (the last two greyed while the bar is in its default place)](img/controls/connect-bar-menu.png){ width="510" }
 
 Each kind of screen (touch or mouse) remembers its own choice, and layouts carry it. On a folded phone Connect is the
 chip in the phone's top bar, unchanged.

@@ -43,6 +43,8 @@ The light theme and every custom `.theme.json` restyle all of it; see [Themes & 
 - Someone who is **speaking** in voice chat gets a soft green ring on their avatar.
 - Buttons are 36–38 px with a mouse and grow to **44 px on a touch screen**.
 
+![The right sidebar pinned at full height with Configure Scene open: the profile button has moved left of it and its menu — Customize character, Profile settings, Sign in to cloud — opens right under it, beside the sidebar](img/interface/profile-menu-pinned-sidebar.png){ width="700" }
+
 ## The command palette (Ctrl+K)
 
 <kbd>Ctrl</kbd>+<kbd>K</kbd> opens one search box over everything: **tools** (Move, Scale, Interact…), **windows**
