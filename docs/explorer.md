@@ -28,7 +28,7 @@ Drag files from your computer anywhere onto the Explorer panel:
 
 | Kind | Extensions |
 |---|---|
-| Images | png, jpg, webp |
+| Images | png, jpg, webp, heic, heif (see [below](#heic-heif-photos)) |
 | Audio | mp3, wav, ogg |
 | Text / config | txt, json |
 | 3D objects | glb, gltf, obj, stl, fbx |
@@ -37,6 +37,24 @@ Drag files from your computer anywhere onto the Explorer panel:
 Items are capped at **25 MB** each. Images and models get generated thumbnails; audio and text show icon cards.
 
 **Importing something you already have.** A file is identified by its contents, so re-importing the same bytes is not a new file. The app tells you what it already has and lets you skip it, reveal it, or — for a scene — take a real copy. The rule lives in **Settings ▸ Explorer ▸ "When importing files already in your library"** (Ask / Skip them / Import as copies); see [Projects](projects.md#importing-something-you-already-have).
+
+**Big models are optimized as they come in** (1.37): over 50k triangles or with a texture over 2048 px, an import gets
+an LOD chain and compressed textures, and the original stays beside it — see [Importing Big Models](import-optimize.md).
+A model's **Properties** (ⓘ) hold its own **Import settings** and **Reimport**.
+
+### HEIC / HEIF photos
+
+*New in 1.37.* Photos from an iPhone or a modern Android (`.heic`, `.heif`, Canon `.hif`) import like any image: drop
+them on the Explorer, or pick one in a texture slot (Properties ▸ Material ▸ Texture, the UV editor's material slots, a
+Shader Texture node, a HUD image).
+
+The photo is decoded **once**, on the device it was dropped on, into a JPEG named after it (*IMG_0042.HEIC* →
+*IMG_0042.jpg*). From then on it is an ordinary image: it has a thumbnail, opens in the preview window, textures objects,
+and peers receive the JPEG — they never need the decoder. The decoder (about 1.5 MB) downloads only the first time
+someone imports a HEIC, and runs off the main thread.
+
+Limits: the longest side is capped at 8192 px; only the primary image of a burst or Live Photo is kept; a damaged file
+is refused with *Could not read <name>: …*. The original `.heic` is not kept in the Library.
 
 ### When a model is too heavy
 

@@ -864,6 +864,15 @@ behaviour can have sockets and call a module's engine — see
 behaviour is tracked like a module of its own, so deleting its node takes its listeners and
 entities with it.
 
+## New in 1.37
+
+- **`api.quality.keepShadowsInVR({radius})`** → `off()` — your game budgets its shadow, so a headset keeps it: while the
+  claim is held, the headset enters at full quality instead of the shadows-off floor, ONE directional light casts (the
+  environment preset's rig sun stands down for your scene's own sun), and the shadow camera is fitted to a square of
+  `radius` metres (8–150, default 40) around the viewer. Adaptive quality still drops shadows if frames cannot hold.
+  LOCAL; released when your module is disabled. Race holds it at 45 m. Feature-detect:
+  `api.quality.keepShadowsInVR?.({radius: 45})`.
+
 ## New in 1.18
 
 - **`api.quality`** — the quality governor's view of this machine: `level`, `max`, `labels` (the steps in force), `vr`,

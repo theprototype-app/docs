@@ -27,6 +27,53 @@ menu ▸ **Statistics**. On a folded phone, **More ▸ Statistics** opens it as 
 dock (see [The dock on a phone](interface.md#the-dock-on-a-phone)), and on a computer it can be
 a [sidebar tab](interface.md#any-window-in-a-sidebar) too.
 
+## The budget chip: will it fit on a Quest?
+
+*New in 1.37.* The meter above judges what *this* device draws right now. The **budget chip** answers a different
+question while you build: **does this scene fit the device you mean to ship to** — **Quest / VR**, **Phone** or
+**Desktop**? The numbers are the ones the [perf gate](#budgets-in-ci) holds every Games-tab game and General-tab level
+to (Quest: 150 draw calls, 300k triangles, 2 lights, 64 MB of textures); phone and desktop have starting values beside
+them.
+
+**Where it is.** On a computer and an unfolded phone: right of the toolbar (or left of it, or just above, when the right
+side is taken). It is hidden in Play, and where there is no free spot next to the toolbar. On a folded phone: **More ▸
+Tools & View ▸ Budget** — the tile shows the device, the percentage and a coloured dot; hold and drag it onto the bottom
+bar if you want it there.
+
+![The budget chip beside the toolbar, reading Quest 200% in red for the Race scene](img/performance/budget-chip.png)
+
+**Reading it.** The chip shows the device and how much of its tightest budget the scene uses (*Quest 87%*):
+
+| Colour | Meaning |
+|---|---|
+| 🟢 Green | under 80 % of every budget |
+| 🟡 Amber | 80–100 % of at least one |
+| 🔴 Red | over a budget |
+
+Lights and shadow-casting lights are small counts: at the budget is fine, over it is red. Pick the device from the
+chip's **▾** (or right-click / long-press the chip), or with the Quest / Phone / Desktop switch at the top of the Budget
+section. The choice is per device and remembered.
+
+### Statistics ▸ Budget
+
+Click the chip and **Statistics** opens on its **Budget** section: draw calls, triangles, texture memory, lights,
+shadow-casting lights and shadow draws, each against the device, and **Heaviest objects** — the objects taking the
+largest share of a budget, with their triangles, calls and texture memory, and what
+[optimizing them on import](import-optimize.md) would save (≈, by your **Settings ▸ Import** numbers). Click a row to
+select that object.
+
+![Statistics ▸ Budget for the Race scene on Quest: draw calls, triangles, texture memory, lights, shadow-casting lights and shadow draws against the budget, and the heaviest objects with what optimizing them on import would save](img/performance/statistics-budget.png){ width="400" }
+
+**What is counted.** The scene's *content* as that device would draw it: every visible object, the environment (sky,
+sun, ground) and module content — not the editor's grid, gizmos or helpers — at full detail (the closest view), so the
+reading does not change as you orbit. Kit pieces that instance count one call. Texture memory is counted the way the
+perf gate counts it (uncompressed, one upload per image). Shadow draws = shadow casters × shadow-casting lights (every
+mesh casts by default; switch **Cast shadow** off on small props). Under the section, *This device, this view* is what
+this editor draws right now, overlays and post included.
+
+**Limits.** An estimate, not a frame-time measurement: the perf gate measures from the spawn point with culling and LOD,
+so a big level can read red here and pass there. The phone and desktop numbers are starting values.
+
 ## What the Statistics window counts
 
 Seven budgets, each with its own dot, its value, and its two ceilings beside it:

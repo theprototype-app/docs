@@ -22,6 +22,8 @@ GLTF and JSON join them once you offer them in Save options.
 - **A scene (.tpscene) includes** — Assets, Imported packs, Flow graph (see [below](#scene-tpscene-recommended)).
 - **A project (.tp) includes** — Scene version history.
 - **More formats** — **Offer GLTF** and **Offer JSON** (both off by default) add those formats.
+- **Optimize for** — **Full quality** or **For Quest / web** (1.37): compressed textures and LOD chains in a GLTF or
+  Scene export — see [Publish & Export](publish-export.md#optimize-for-quest-web).
 
 Its **Save** remembers the options and saves; **Cancel** forgets the changes. On a folded phone the dialog opens full
 screen.
