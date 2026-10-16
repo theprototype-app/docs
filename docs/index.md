@@ -24,6 +24,19 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.36 — your 1.35 review.** Right-click the [Connect bar](controls.md#the-connect-bar) — or press and hold it on a
+touch screen — for **Move**, **Pin to top row** / **Float**, **Reset position** and **Reset all**, in or out of Edit
+positions; a moved Connect bar stays where you put it. The buttons beside the logo, hidden by default on a computer,
+come back from [Edit positions](controls.md#moving-the-clusters): their menu's **Show cluster** turns them on and their
+grip moves them like every other cluster. When a sidebar is pinned, unpinned or closed, the logo, the buttons beside
+it, the corner buttons, the profile and the Connect bar jump to their new place at once instead of sliding, and the
+[profile menu](interface.md#the-main-hud) opens under the profile button wherever it is. Hold <kbd>Ctrl</kbd>
+(<kbd>Cmd</kbd> on a Mac) while dragging a floating window to [place it without docking](controls.md#moving-a-floating-window)
+— over a sidebar or the dock; docking stays the default, and on touch the window menu's **Float** does the same.
+Fixed: switching dock tabs no longer flashes a docked Statistics, Objects, Chat or AI assistant window full screen for
+a frame, and the empty dock's tab strip no longer shows a sliver of a tab bar left of its **+**. Under the hood: the
+open security alerts are cleared, Node is pinned, and every release ships an SBOM.
+
 **1.35 — your 1.34 review.** A floating window now [moves by any empty part of it](controls.md#floating-windows), not
 only its header, and **docks by drag** — onto the dock's tab strip, the bottom edge or either sidebar, with the mouse
 and on an unfolded phone by touch; right-click (or press and hold) its header or a group tab for the

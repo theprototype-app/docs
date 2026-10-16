@@ -31,12 +31,13 @@ The light theme and every custom `.theme.json` restyle all of it; see [Themes & 
   with the **status dot** at its left end. Once you are connected it **collapses to a chip**: the dot, the avatars of who
   is here and your mic. Click the chip to open the full bar again. On a computer the dot has no words beside it — point
   at it to read them; see [The status dot](connection.md#the-status-dot). It is either **pinned** along the top row or
-  **floats** as a pill (its drawer chooses); a floating bar with no room turns compact, and you can move or hide it —
+  **floats** as a pill (its drawer chooses, or right-click it — press and hold on a touch screen — for Move, Pin to top
+  row / Float, Reset position and Reset all); a floating bar with no room turns compact, and you can move or hide it —
   see [The Connect bar](controls.md#the-connect-bar).
 - **Top right**: scene notes, the notification bell (with a count) and the [peers panel](connection.md#who-is-here-the-peers-panel)
   sit in one group beside your picture, which opens your profile menu (**Customize character**, **Profile settings**).
   Since 1.33 that group is arranged with [Edit positions](controls.md#edit-positions) too; emptied, it leaves no box
-  behind.
+  behind. Since 1.36 the profile menu opens under the profile button wherever it is, beside a pinned right sidebar too.
 - **Toasts** are calm cards under the Connect bar, at most three at a time; more collect behind **+N more**. See
   [Toasts](notifications.md#toasts).
 - Someone who is **speaking** in voice chat gets a soft green ring on their avatar.
@@ -94,13 +95,15 @@ and, at its far end, the **Full height** button (↕) and the **hide** button.
 - **Drag a tab anywhere** — see [Dragging a tab](#dragging-a-tab) below.
 - **Dock a floating window**: drag it — by its header or any empty part of it — to a screen edge, or onto a sidebar
   (*Add as tab* lights up), or right-click its header ▸ **Move to the left / right sidebar** — it becomes a tab of that
-  side.
+  side. Hold <kbd>Ctrl</kbd> (<kbd>Cmd</kbd> on a Mac) while you drag to place it floating over the sidebar instead —
+  see [Moving a floating window](controls.md#moving-a-floating-window).
 - **Resize** by dragging the sidebar's inner edge; a double-click resets it. All tabs of a side share the width. The
   logo and the profile button move with the edge as you drag. On a touch screen the edge is easy to grab, the sidebar
   stops at its minimum width (250 px), and its content never scrolls sideways — rows that do not fit wrap onto a second
   line.
 - **Full height**: press **↕** and the sidebar runs from the top edge to the bottom edge. The buttons in that top corner
-  (the logo and menu on the left; notes, notifications and your profile on the right) slide inward, and the bottom dock
+  (the logo and menu on the left; notes, notifications and your profile on the right) move inward at once — since 1.36
+  they jump to their new place instead of sliding, the Connect bar too — and the bottom dock
   gets narrower so it sits beside the sidebar, never under it — every docked view, Statistics, Chat, Objects, the Live
   profiler, the AI assistant and the Shader editor included. Press it again to fit the sidebar under the top buttons.
   The main menu always opens above sidebars. With one or both sides at full height the Connect bar stays a pill,
