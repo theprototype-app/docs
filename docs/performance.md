@@ -40,6 +40,8 @@ side is taken). It is hidden in Play, and where there is no free spot next to th
 Tools & View ▸ Budget** — the tile shows the device, the percentage and a coloured dot; hold and drag it onto the bottom
 bar if you want it there.
 
+![The budget chip beside the toolbar, reading Quest 200% in red for the Race scene](img/performance/budget-chip.png)
+
 **Reading it.** The chip shows the device and how much of its tightest budget the scene uses (*Quest 87%*):
 
 | Colour | Meaning |
@@ -59,6 +61,8 @@ shadow-casting lights and shadow draws, each against the device, and **Heaviest 
 largest share of a budget, with their triangles, calls and texture memory, and what
 [optimizing them on import](import-optimize.md) would save (≈, by your **Settings ▸ Import** numbers). Click a row to
 select that object.
+
+![Statistics ▸ Budget for the Race scene on Quest: draw calls, triangles, texture memory, lights, shadow-casting lights and shadow draws against the budget, and the heaviest objects with what optimizing them on import would save](img/performance/statistics-budget.png){ width="400" }
 
 **What is counted.** The scene's *content* as that device would draw it: every visible object, the environment (sky,
 sun, ground) and module content — not the editor's grid, gizmos or helpers — at full detail (the closest view), so the

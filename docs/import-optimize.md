@@ -50,6 +50,8 @@ The defaults for every new import, under **Settings ▸ Import ▸ Import defaul
 
 **Reset** puts the shipped defaults back.
 
+![Settings ▸ Import: Optimize big models automatically, the triangle and texture thresholds, max texture size, Compress textures (KTX2) and LOD levels](img/import-optimize/settings-import.png)
+
 ## Per file: Import settings and Reimport
 
 Select the **original** file in the [Explorer](explorer.md) and open its **Properties** (ⓘ): **Import settings** has

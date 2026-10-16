@@ -171,6 +171,8 @@ for: Full quality / For Quest / web**. Your last choice is remembered on this de
 
 The full-quality file is never overwritten by accident: the Quest file has its own name.
 
+![Save options with Optimize for: Full quality or For Quest / web](img/saving/save-options-optimize-for.png){ width="400" }
+
 Measured on a 65,024-triangle model with a 4096 px texture:
 
 | | Full quality | For Quest / web |
