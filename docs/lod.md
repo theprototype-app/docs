@@ -54,6 +54,18 @@ For a selected level you can:
 meshoptimizer, off the main thread. **+ Level** adds one more; **Remove group** goes back to the
 automatic behaviour.
 
+## Generated on import
+
+*New in 1.37.* A model over 50,000 triangles gets its LOD chain **when you import it** — by default three lighter
+levels at 50 %, 25 % and 10 % of the triangles. The levels are built on each device from the same numbers, so nothing
+extra travels to your peers. The thresholds and ratios are in **Settings ▸ Import**, and a file's own **Import
+settings** override them — see [Importing Big Models](import-optimize.md).
+
+### The scene's LOD distance
+
+**Configure Scene ▸ Level of detail ▸ LOD distance** moves every chain in the scene at once and is shared with everyone
+in it: above 1 keeps full detail further away, below 1 switches to the lighter levels sooner.
+
 ## Pack items with LODs
 
 Pack items can ship their own LOD files (made offline by the pack tools). Placing one adds its LOD

@@ -24,6 +24,18 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.37 — fast on every device.** [Big models are optimized as they come in](import-optimize.md): over 50k triangles or
+with a texture over 2048 px, an import gets a level-of-detail chain and its textures are resized and GPU-compressed
+(KTX2/Basis — about an eighth of the texture memory on a Quest), while the original stays in the Library and the toast
+offers **Keep original only**. **Settings ▸ Import** holds the defaults, a file's Properties has its own **Import
+settings** and **Reimport**, and **Configure Scene ▸ Level of detail** sets one [LOD distance](lod.md#the-scenes-lod-distance)
+for the whole scene. Exports get [**Optimize for: For Quest / web**](publish-export.md#optimize-for-quest-web) — a GLTF
+becomes a compact `.glb`, a Scene keeps its format with compressed textures and LOD chains. A
+[budget chip](performance.md#the-budget-chip-will-it-fit-on-a-quest) beside the toolbar says whether the scene fits a
+Quest, a phone or a desktop, and **Statistics ▸ Budget** lists the heaviest objects with what optimizing them would save.
+[HEIC / HEIF photos](explorer.md#heic-heif-photos) import as images and textures, and [Race](race.md#in-vr) keeps its
+shadows in VR — inside the Quest budget.
+
 **1.36 — your 1.35 review.** Right-click the [Connect bar](controls.md#the-connect-bar) — or press and hold it on a
 touch screen — for **Move**, **Pin to top row** / **Float**, **Reset position** and **Reset all**, in or out of Edit
 positions; a moved Connect bar stays where you put it. The buttons beside the logo, hidden by default on a computer,

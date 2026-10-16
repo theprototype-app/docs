@@ -14,6 +14,7 @@ nav:
     - Connection: connection.md
   - Building:
     - Explorer: explorer.md
+    - Importing Big Models: import-optimize.md
     - Packs: packs.md
     - Levels of Detail: lod.md
     - Prefabs: prefabs.md

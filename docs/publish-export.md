@@ -152,4 +152,31 @@ characters and a description of at most 300.
 | Quality | Auto | the quality a player starts at — Auto, High, Medium, Low. Auto steps down by itself when frames run slow |
 | Include VR button | on | on a headset browser the start card offers **Enter VR**; off, the game always plays on the screen |
 | Use CDN for packs | off | as in the Export tab |
-| Compress textures | — | not in this release |
+| Optimize for | Full quality | **For Quest / web** compresses textures and adds LOD chains to the exported scene — [below](#optimize-for-quest-web) |
+
+## Optimize for Quest / web
+
+*New in 1.37.* [Save options](saving.md#save-options) (the cog next to Save) and **Settings ▸ Export** have **Optimize
+for: Full quality / For Quest / web**. Your last choice is remembered on this device, and every export uses it.
+
+- **Full quality** is the export you know: everything as it is.
+- **For Quest / web**:
+    - **GLTF** becomes one **`<name>-quest.glb`** with KTX2/Basis textures (at most 2048 px), compressed geometry
+      (meshopt) and the LOD chain (MSFT_lod). Viewers need KTX2 + meshopt support (three.js, Babylon.js,
+      model-viewer); ThePrototype loads it back with the textures compressed on the GPU.
+    - **Scene** (`<name>-quest.tpscene`) keeps its format: textures are resized and a KTX2 copy of each rides in the
+      file, and heavy objects get an LOD chain. ThePrototype puts the compressed textures on the GPU when it opens it;
+      an older version opens it with the (resized) pictures.
+    - **Publish / Export** game bundles (itch.io, static host, embed) use the same choice for their scene.
+
+The full-quality file is never overwritten by accident: the Quest file has its own name.
+
+Measured on a 65,024-triangle model with a 4096 px texture:
+
+| | Full quality | For Quest / web |
+|---|---|---|
+| GLTF | 3.59 MB `.gltf` (2.69 MB as a plain `.glb`) | 0.97 MB `.glb` (−64 %), texture 2048 px KTX2, LOD chain inside |
+| Scene (`.tpscene`) | 17.4 MB | 7.8 MB (−55 %), texture 2048 px + KTX2 copy, LOD chain |
+| Texture memory after loading | 85.3 MB | 5.6 MB on a desktop GPU; ≈ 2.8 MB on a Quest |
+
+Imports get the same treatment on the way in: see [Importing Big Models](import-optimize.md).

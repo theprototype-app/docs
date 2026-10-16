@@ -51,6 +51,12 @@ you leave Interact) you step out beside the driver's door.
 
 The game's comfort vignette (**Game settings ▸ Comfort**) also applies while driving.
 
+**Shadows in the headset** (1.37). Race keeps its sun's shadows in VR: one sun casts (the scene's own — the sky
+preset's sun stops casting), and its shadow covers the 45 m around you instead of the whole valley — sharper shadows
+near you, none far away. That brings the start line from 142 to 89 draw calls and from 306k to 153k triangles, inside
+the Quest budget. If the headset cannot hold its frame rate, [adaptive quality](performance.md#the-quality-governor)
+still turns shadows off.
+
 ![The view from the driver's seat in a headset](img/race/vr-seat.png)
 
 ## Make it yours
