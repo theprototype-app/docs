@@ -592,6 +592,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../free-assets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Free Assets (CC0)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../packs/" class="md-nav__link">
         
   
@@ -744,6 +765,27 @@
   
   <span class="md-ellipsis">
     Snapping
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../measure-align/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Measure, Align & Distribute
   </span>
   
 
@@ -1129,6 +1171,24 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#painting-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Painting layers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scatter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scatter
+    </span>
+  </a>
   
 </li>
       
@@ -4281,6 +4341,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#painting-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Painting layers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scatter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scatter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hand-edits-lock-the-parametric-rows" class="md-nav__link">
     <span class="md-ellipsis">
       Hand edits lock the parametric rows
@@ -4482,6 +4560,71 @@ pick <strong>Selected ▸ Sculpt terrain</strong> — see <a href="../vr/#sculpt
 <p class="admonition-title">Under the hood</p>
 <p>Sculpting only moves the surface up and down, never sideways, so the grid stays watertight and normals are re-smoothed after every edit — no faceted seams. The result travels to peers as a geometry snapshot on the same channel used by mesh editing.</p>
 </div>
+<h2 id="painting-layers">Painting layers</h2>
+<p>Since 1.38 a Terrain can be <strong>painted with four texture layers</strong>. Select it ▸ right-click ▸ <strong>Sculpt terrain</strong> (or
+Inspector ▸ <strong>Terrain paint ▸ Paint…</strong>) and pick the <strong>Paint</strong> brush after Raise / Lower / Smooth / Flatten.</p>
+<p><img alt="A painted layer on a terrain" src="../img/terrain/paint-layer.png" /></p>
+<ul>
+<li>Pick a <strong>layer (1–4)</strong> in the toolbox, then drag on the terrain. Radius and Strength are the sculpt brush's.</li>
+<li>Inspector ▸ <strong>Terrain paint</strong> sets, per layer, a <strong>colour</strong>, a <strong>texture</strong> (import a file or drop an Explorer image)
+  and <strong>tiling</strong> (how often the texture repeats across the terrain). Layer 1 <em>is</em> the terrain's own material until you
+  give it a colour or texture (<em>Use the material for layer 1</em> goes back), so the first stroke on a fresh terrain only
+  changes where you paint.</li>
+<li>The coverage line shows how much of the terrain each layer covers; <strong>Clear paint</strong> removes all of it.</li>
+<li>One drag = <strong>one undo step</strong>. Peers see the stroke while you paint and exactly your result when you let go; the
+  paint is saved with the scene.</li>
+</ul>
+<p><img alt="The Inspector's Terrain paint section" src="../img/terrain/inspector-paint.png" /></p>
+<h2 id="scatter">Scatter</h2>
+<p>The <strong>Scatter</strong> brush paints instances of a <strong>primitive or any 3D model in your Library</strong> — trees, rocks, grass
+tufts — onto the terrain.</p>
+<p><img alt="The Scatter brush in the Sculpt toolbox, with cones scattered over a painted terrain" src="../img/terrain/scatter-toolbox.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Source</strong></td>
+<td>A primitive, or any model in your Library.</td>
+</tr>
+<tr>
+<td><strong>Paint / erase</strong></td>
+<td>Paint adds instances; the eraser removes <em>that model's</em> instances under the brush.</td>
+</tr>
+<tr>
+<td><strong>Density</strong></td>
+<td>Instances per m² — painting over a patch fills it up to that density and never past it.</td>
+</tr>
+<tr>
+<td><strong>Scale min – max</strong></td>
+<td>A random size per instance.</td>
+</tr>
+<tr>
+<td><strong>Random rotation</strong></td>
+<td>Turns each instance around its vertical axis.</td>
+</tr>
+<tr>
+<td><strong>Align to slope</strong></td>
+<td>Tilts instances to the ground.</td>
+</tr>
+</tbody>
+</table>
+<p>Instances follow the ground — sculpting the terrain later moves them with it. Inspector ▸ <strong>Scatter</strong> lists each
+scattered model with its count, an Align toggle and <strong>Remove</strong>. Scatter is counted by the
+<a href="../performance/#the-budget-chip-will-it-fit-on-a-quest">budget chip</a> on the terrain's row, and a dense model (300
+triangles or more) switches to lighter <a href="../lod/">levels of detail</a> with distance — instances far away draw fewer
+triangles.</p>
+<div class="admonition note">
+<p class="admonition-title">Limits</p>
+<p>Up to 8,000 instances and 8 scattered models per terrain. For a Quest, keep it near 2,000 instances of a low-poly
+model (≤ 150 triangles each): each scattered model is one draw call (a dense one, a few — it is drawn in patches so
+its levels of detail can switch), plus one per shadow-casting light. Instances have no physics colliders and cannot
+be selected one by one. Older versions open a painted or scattered terrain as the plain terrain.</p>
+</div>
 <h2 id="hand-edits-lock-the-parametric-rows">Hand edits lock the parametric rows</h2>
 <p>The moment you sculpt a terrain — or carve a road into it, or edit it in mesh mode — the Geometry rows <strong>lock</strong>, and the panel says so.</p>
 <p>That's deliberate. Those rows rebuild the terrain from its numbers, which would throw the hand work away, and nudging a seed by accident should not cost you an afternoon of sculpting.</p>
@@ -4523,7 +4666,7 @@ pick <strong>Selected ▸ Sculpt terrain</strong> — see <a href="../vr/#sculpt
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-07
+    2026-10-17
   </span>
 
     
