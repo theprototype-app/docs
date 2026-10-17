@@ -9,7 +9,7 @@ credit for you.
 **dock** like Statistics or Chat (drag it onto the dock, or the dock's **+** ▸ Free assets). On a phone it opens as a
 bottom sheet.
 
-![The Asset Browser's Models tab filtered to a category](img/free-assets/models.png)
+![The Asset Browser's Materials tab searching ambientCG for clay](img/free-assets/browser-materials.png)
 
 ## Finding an asset
 
