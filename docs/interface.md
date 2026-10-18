@@ -246,6 +246,8 @@ Explorer**.
 - **Click inside a pane** to work in it — its name is bold in the pair's tab, and *Undock*, the tab menu and the
   shortcuts act on it.
 - **Drag a tab onto a pane** to show it there instead; the window it replaces stays a tab.
+- **Drop a floating window onto a pane** (since 1.39): drag it over one of the two panes — the pane lights up with
+  *Show in this pane* — and release. The window docks and shows in that pane; the view it replaced stays a tab.
 - **The tab menu** (right-click or long-press a dock tab) has **Split right** and **Split with ▸** (pick the partner),
   and on a pair **Swap sides** and **Unsplit**. Closing the pair's tab (**×**) closes both windows.
 
@@ -256,8 +258,12 @@ tabs.
 
 ![The dock split side by side: one tab reads Node editor / Explorer, the Node editor with three nodes on the left, the Explorer's Library on the right, the divider between them and the Split button pressed at the right end of the strip](img/interface/dock-split.png)
 
+![A floating Explorer dragged over the right pane of a split dock: the pane is outlined and says Show in this pane](img/interface/drop-into-split-pane.png)
+
 ### Floating windows with tabs
 
+- **Statistics groups too** (since 1.39): its header menu ▸ **Group with…**, another window's **Group with…** ▸
+  Statistics, or drag its header onto another window's header.
 - **Join a window as a tab:** drag a tab out of the dock and drop it onto a floating window. It joins that window as a
   tab instead of opening a second window.
 - **Dock all tabs:** a floating window with tabs has a dock button just left of **Close all tabs**. It puts every tab

@@ -207,3 +207,21 @@ It carries an **Open Settings** button that jumps straight to **Settings ▸ Con
 | *Could not reach … — back on your previous peer server.* | **Apply** (or an invite link that names another server) could not open that server, so nothing changed: you are back online on your previous server with the same session id, and your invite link still works — check the host, port and path. |
 | A **red** status dot, and one *Can't reach the peer server — still retrying.* entry in the notification centre | The link to the signaling server has been down for about a minute; the app keeps retrying on its own and never gives up, and the dot turns green or grey again once it is back. Shorter drops — a tab switch, a moment offline — reconnect silently. Your open session keeps going meanwhile. |
 | *Cannot reach the signaling server - the connection request was not sent.* | You pressed **Connect** while the signaling link is down. Wait for the status dot to stop pulsing, or switch servers in Settings ▸ Connection. |
+
+## The status page
+
+**[status.theprototype.app](https://status.theprototype.app)** answers *is the service up?* It is checked from outside
+every five minutes:
+
+| Check | What it covers |
+|---|---|
+| **The app** | theprototype.app itself |
+| **Accounts, saves and community** | sign-in, cloud saves, community scenes |
+| **Signaling** | connecting people to each other |
+| **TURN relay** | the relay used on networks that block direct connections |
+| **Community pages and error reports** | the community pages and the [error reports](privacy.md#anonymous-error-reports) (since 1.39) |
+
+Most of the app is peer-to-peer and keeps working while a service is down — a session you are in carries on. Sign-in,
+cloud saves and the community need the service. An outage opens an issue in
+[github.com/theprototype-app/status](https://github.com/theprototype-app/status) and closes it on recovery. The checks
+never count as visits or errors.

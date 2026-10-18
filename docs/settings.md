@@ -20,7 +20,7 @@ Since 1.26 Settings has a new layout. No setting was lost or changed meaning: ev
     |---|---|
     | **General** | Interface, Controls, Input, Touch controls, Shortcuts |
     | **Workspace** | Scene, Explorer, Node types, Export |
-    | **Devices & services** | VR, AI, Connection |
+    | **Devices & services** | VR, AI, Connection, Privacy |
 
     A dot on **About & what's new** means there is an update you have not read. <kbd>↑</kbd> / <kbd>↓</kbd> walk the menu.
 
@@ -71,6 +71,13 @@ Changes save as you make them — there is no Save button; **Done** closes the w
     - **Reset all settings** — every setting on this device, in every category at once. A toast then offers **Undo**
       for about 8 seconds (see [Undo after Clear, Delete, Remove](notifications.md#undo-after-clear-delete-remove)).
 
+## Third-party licences
+
+*New in 1.39.* **Settings ▸ About ▸ Third-party licences** opens a page listing every open-source library the app is
+built with, its licence and a link to its source, with the full licence text under each one. The page is generated when
+the app is built, so it always matches the version you are running; an exported game carries it too. The HEIC / HEIF
+photo decoder (libheif-js) is LGPL-3.0: it ships unmodified as its own file, loaded only when such a photo is opened.
+
 ## Density
 
 **Settings ▸ Interface ▸ Density** chooses how tightly the interface is packed:
@@ -102,3 +109,5 @@ Changes save as you make them — there is no Save button; **Done** closes the w
 | Viewport picture-in-picture | new in 1.34 | **Shortcuts ▸ Viewport picture-in-picture** — the keys of the small 3D view shown while a docked window is maximized (<kbd>W</kbd> / <kbd>E</kbd> / <kbd>R</kbd>, <kbd>F</kbd>), rebindable like any shortcut. See [The viewport picture-in-picture](interface.md#the-viewport-picture-in-picture) |
 | Import | new in 1.37 | **Import ▸ Import defaults** — optimize big models automatically, the triangle and texture thresholds, max texture size, KTX2 compression and the LOD levels, this device only. See [Importing Big Models](import-optimize.md#settings-import-this-device) |
 | Optimize for | new in 1.37 | **Export ▸ Optimize for** — **Full quality** / **For Quest / web** (replaces the *Compress textures — not in this release* row), this device only; the same as **Save options ▸ Optimize for**. See [Optimize for Quest / web](publish-export.md#optimize-for-quest-web) |
+| Send anonymous error reports | new in 1.39 | **Privacy ▸ Send anonymous error reports** — on by default; see [Privacy & Error Reports](privacy.md#anonymous-error-reports) |
+| Third-party licences | new in 1.39 | **About ▸ Third-party licences** — see [above](#third-party-licences) |

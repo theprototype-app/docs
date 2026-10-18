@@ -149,6 +149,9 @@ Every gesture is **one undo step** — a drag of twelve keys undoes as one, not 
 | [Animation Marker](nodes/animmarker.md) | Pulses as a named marker passes |
 | [Animation State](nodes/animstate.md) | Reads progress, playing, position, duration or remaining as a number |
 
+To put several clips, camera shots and sounds into one cutscene, arrange them on the [Timeline](timeline.md) and
+start it with [Play Sequence](nodes/playseq.md).
+
 ## Saving and export
 
 Clips are part of the object, so they travel in your `.tpscene` files and autosaves. Saving a **glTF** samples every clip into real keyframe tracks, so other tools play them back — with one exception: the **look** channels (opacity, colour, metalness, roughness, glow, light intensity) are not part of what glTF animation can carry, so they stay in the app.

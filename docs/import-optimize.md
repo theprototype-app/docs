@@ -20,6 +20,9 @@ When you import a model with **more than 50,000 triangles** or a **texture large
 
 The work runs in the background (a few seconds for a big model); the window stays usable meanwhile.
 
+A model **under both thresholds** is placed straight away (since 1.39): the optimizer is not even loaded. An asset
+whose [Import settings](#per-file-import-settings-and-reimport) say **Always** is still optimized whatever its size.
+
 Measured on a test model (65,024 triangles, one 4096 px JPEG texture):
 
 | | Original | Optimized |

@@ -24,6 +24,22 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.39 — logic you can see.** The [Node Graph Debugger](debugger.md) pauses your game when an event reaches a node
+with a breakpoint (<kbd>F9</kbd>), steps event by event (<kbd>F10</kbd>), shows the live value on every wire and keeps a
+watch list — all local to you, while the other players keep playing. The [Timeline](timeline.md) lays camera shots
+(with a glide between two cameras), animation clips, sounds and events into a sequence that the
+[Play Sequence](nodes/playseq.md) node or **Autoplay** starts — in exported games too — and
+[On Sequence Event](nodes/onseqevent.md) wires back into your graph. [Measurements](measure-align.md#kept-measurements)
+are now kept in the scene: in the object list, shared and saved, and <kbd>Tab</kbd> edits their points. Scattered rocks
+and trees can be [solid](terrain.md#scatter-collider) for every player. The app sends
+[anonymous error reports](privacy.md#anonymous-error-reports) — no account, no IP, no scene content; **Settings ▸
+Privacy** turns them off — and [status.theprototype.app](connection.md#the-status-page) says whether the service is up.
+Also: the [budget chip](controls.md#moving-the-clusters) moves and hides in Edit positions,
+[large CC0 materials](materials.md#what-gets-saved-and-where) reach every peer,
+[Settings ▸ About ▸ Third-party licences](settings.md#third-party-licences) lists every library the app uses, small
+models [skip the optimizer](import-optimize.md#what-happens-on-import), Statistics groups with other windows and a
+floating window [drops into a split dock pane](interface.md#splitting-the-dock).
+
 **1.38 — build precisely.** [Measure](measure-align.md#measure) snaps to corners, edges and faces, chains segments
 with a running total and the angle between them, and pins dimension labels only you see; [Align, Distribute and Drop to
 ground](measure-align.md#align-distribute-and-drop-to-ground) line up a selection from the Properties **Arrange**

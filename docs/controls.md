@@ -451,7 +451,7 @@ Right-click a floating window's header — or press and hold it on a touch scree
 | **Dock to bottom** | the window becomes a tab of the bottom dock |
 | **Move to left sidebar** / **Move to right sidebar** | the window becomes a tab of that [sidebar](interface.md#sidebars) |
 | **Float (undock)** | on a tab of a window group: takes that window out of the group |
-| **Group with…** | lists the other open windows that can share tabs (Statistics and the toolbox cannot) |
+| **Group with…** | lists the other open windows that can share tabs (the toolbox cannot; Statistics can since 1.39) |
 | **Bring to front** | puts it above the other floating windows |
 | **Reset size** | back to its default size, where it is |
 | **Close** | closes it |
@@ -594,11 +594,18 @@ logo and your profile picture stay where they are.) In **Edit positions** every 
 - **The buttons beside the logo** are hidden by default on a computer. In **Edit positions** their menu's **Show
   cluster** turns them on (it switches on **Settings ▸ Interface ▸ Touch tools**), and their grip moves them like every
   other cluster.
+- **The budget chip** (*Quest 3%* beside the toolbar) is a cluster too since 1.39. Drag its grip — or the chip itself —
+  anywhere; it snaps like the others and keeps its place in your layouts. Its menu (tap its grip, or right-click it)
+  ▸ **Reset position** puts it back beside the toolbar (or left of it, or above it, when there is no room). Its red
+  **−** hides it — a hidden chip is drawn faint in Edit positions with a green **+** to bring it back — and so does
+  unticking **Budget chip** in *Customize toolbar…* (on by default).
 - **✓** applies, <kbd>Esc</kbd> cancels. A cluster keeps its *relative* place: on a smaller window, after folding or
   unfolding a phone, beside a pinned sidebar or above the dock. [Workspace layouts](#workspace-layouts) carry the places
   and rotations.
 
 ![Edit positions with Touch tools on: every cluster has a small grip under it — the Undo, Redo and Multi-select row beside the logo, the Connect bar, the top-right group, the bottom toolbar and both corner stacks — and every button still carries its red − with green + slots](img/controls/edit-positions-clusters.png)
+
+![Edit positions: the budget chip has its own grip and red − right of the toolbar](img/controls/budget-chip-edit-positions.png)
 
 ![After Rotate to vertical and Rotate to horizontal: the toolbar stands on the left edge with Play in its middle, and the bottom-left corner buttons lie in a row](img/controls/clusters-rotated.png)
 
@@ -701,7 +708,7 @@ The keys in the table are the **3D view's**: they fire while the 3D view has foc
 
 !!! tip "Finding a setting"
     Settings is grouped into **General** (Interface, Controls, Input, Touch controls, Shortcuts), **Workspace** (Scene,
-    Explorer, Node types, Export) and **Devices & services** (VR, AI, Connection), with **About & what's new** at the
+    Explorer, Node types, Export) and **Devices & services** (VR, AI, Connection, Privacy), with **About & what's new** at the
     bottom. If you don't know which one holds what you want, type in the search box: it matches names, descriptions and
     the words people use — **dark** finds the theme, **southpaw** finds Swap sticks. See
     [Finding your way](settings.md#finding-your-way).
