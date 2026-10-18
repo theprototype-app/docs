@@ -48,7 +48,10 @@ material, so saving on a headset and opening on a desktop shows the full look ag
 
 - Your presets live **on this device** (browser storage). They are not part of the scene file. An object that wears a
   preset keeps that look in the scene, for everyone, like any other material edit.
-- Your library is shared with the people in your session while you are connected, and leaves with you.
+- Your library is shared with the people in your session while you are connected, and leaves with you. Since 1.39 that
+  includes large presets — a [free CC0 material](free-assets.md) with megabytes of maps arrives in their **From ‹name›**
+  row in the background a few seconds after they connect, in the same order as your own row, and is sent only once.
+  Saving a preset is quicker too when your library already holds big ones.
 - The [Storage breakdown](explorer.md#storage) — the disk chip in the Explorer header, the Explorer's background menu, or
   **Settings ▸ Explorer** — lists your saved presets under **Material presets**, and can delete them.
 

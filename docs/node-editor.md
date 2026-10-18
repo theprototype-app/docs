@@ -53,6 +53,7 @@ from the live keymap, so a key you rebind in **Settings ▸ Shortcuts** shows up
 | <kbd>Shift</kbd>+<kbd>L</kbd> | [Fix overlaps and crossings](#tidy-graph): move only the cards in the way |
 | Arrow keys (<kbd>Shift</kbd>: ×5) | Nudge by one grid step |
 | <kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Y</kbd> | Undo / redo — every node editor edit can be undone |
+| <kbd>F9</kbd> | Breakpoint on / off for the selected nodes — see the [Debugger](debugger.md) (<kbd>F10</kbd> steps, <kbd>F8</kbd> resumes) |
 
 All of them can be rebound in **Settings ▸ Shortcuts**. So can the [Edit Mesh](mesh-editing.md) keys, which have their
 own *Mesh edit* group there since 1.23.
@@ -146,7 +147,7 @@ dragging the frame carries them, and moving a framed node stretches the frame to
 - **The canvas:** search nodes, add a note, paste, select all, frame all, **Tidy graph**, **Fix overlaps and
   crossings**, import a node group — and the full Add list.
 - **A node:** open its code (see [Open code](main-graph.md#open-code)), group, add a note around, duplicate, copy, cut,
-  paste, mute, collapse, frame, disconnect, delete.
+  paste, mute, collapse, frame, disconnect, delete, and **Breakpoint (pause Play here)** for the [Debugger](debugger.md).
 - **A selection:** the same for the whole set, plus **Align** (column, row, distribute).
 - **A group:** open it, ungroup, export it.
 

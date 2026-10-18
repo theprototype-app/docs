@@ -52,7 +52,8 @@ window says so in plain words and offers *Try again*.
   refused with "Pick 1k".
 - ambientCG is reached through theprototype.app's own relay (its site does not let browsers read it directly); Poly
   Haven is reached directly.
-- A large material preset may not appear in a *peer's* swatch list (the preset library broadcast is capped at 2 MB) —
-  the material you apply always reaches everyone.
+- Since 1.39 a large CC0 material preset (its colour and normal maps can be several megabytes) reaches every connected
+  person's **From ‹name›** swatch row too: it arrives in the background a few seconds after they connect (or after you
+  save it), and travels only once.
 
 ![The Asset Browser as a bottom sheet on a folded phone](img/free-assets/phone.png)

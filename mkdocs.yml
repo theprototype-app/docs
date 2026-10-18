@@ -10,6 +10,7 @@ nav:
     - Units: units.md
     - Themes & Appearance: appearance.md
     - Settings: settings.md
+    - Privacy & Error Reports: privacy.md
     - Your Character: avatars.md
     - Connection: connection.md
   - Building:
@@ -31,6 +32,7 @@ nav:
     - Shader Nodes: shader-nodes.md
     - Scene Look (Post-processing): post-processing.md
     - Animation: animation.md
+    - Timeline (Cutscenes): timeline.md
     - Physics & Simulation: physics.md
     - Colliders: colliders.md
     - Particle Effects: particles.md
@@ -52,6 +54,7 @@ nav:
     - Node System: node-system.md
     - Main Graph & Node Properties: main-graph.md
     - "Node Editor: Keyboard, Groups & Notes": node-editor.md
+    - Node Graph Debugger: debugger.md
     - Code Workspace: code-workspace.md
     - Flow Nodes: nodes.md
     - Object Flows: object-flows.md
@@ -98,6 +101,8 @@ nav:
       - Animation Finished: nodes/animfinished.md
       - Animation Marker: nodes/animmarker.md
       - Animation State: nodes/animstate.md
+      - Play Sequence: nodes/playseq.md
+      - On Sequence Event: nodes/onseqevent.md
       - Counter: nodes/counter.md
       - Shake: nodes/shake.md
       - Spin: nodes/spin.md

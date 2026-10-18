@@ -126,8 +126,38 @@ triangles.
 !!! note "Limits"
     Up to 8,000 instances and 8 scattered models per terrain. For a Quest, keep it near 2,000 instances of a low-poly
     model (≤ 150 triangles each): each scattered model is one draw call (a dense one, a few — it is drawn in patches so
-    its levels of detail can switch), plus one per shadow-casting light. Instances have no physics colliders and cannot
-    be selected one by one. Older versions open a painted or scattered terrain as the plain terrain.
+    its levels of detail can switch), plus one per shadow-casting light. Instances cannot be selected one by one, and
+    are solid only when their model has a [Collider](#scatter-collider). Older versions open a painted or scattered terrain as the plain terrain.
+
+### Scatter ▸ Collider
+
+*New in 1.39.* A scattered model — a rock, a tree trunk, a primitive — can be **solid** in a simulation. Each scattered
+model has a **Collider**:
+
+| Collider | Shape |
+|---|---|
+| **None** (the default) | No collider — the instances are scenery you pass through. |
+| **Box** | The model's bounding box. |
+| **Sphere** | A ball reaching the model's farthest point. |
+| **Mesh hull** | The model's convex hull — the closest fit for a rock (a flat model falls back to its box). |
+
+**Where:** select the terrain ▸ Properties ▸ **Scatter** ▸ the model's row ▸ **Collider**. The Sculpt toolbox's
+Scatter brush has a **Collider** pick too: it is what a *newly* scattered model starts with — painting more rocks into
+an existing set never changes that set's collider.
+
+![Properties ▸ Scatter: the Dodecahedron rocks set to Mesh hull, the cones left at None](img/terrain/scatter-collider.png)
+
+- While a [simulation](physics.md) runs, every instance of that model is a **static** collider — a thrown ball bounces
+  off the rocks and stops on top of one. The colliders follow each instance's position, rotation, scale and *Align to
+  slope* tilt, and the terrain's own transform; a terrain moving mid-run does not drag them along.
+- The choice is part of the scene: saved, one undo step per change, and **every player** gets the same colliders,
+  whoever runs the simulation.
+- A hit on a scattered rock counts as a hit on the terrain — [On Impact](nodes/onimpact.md) and friends name the
+  terrain.
+
+!!! tip "Only what a player can reach"
+    2,000 instances build their colliders in 10–40 ms when the simulation starts and add about 0.1 ms per physics step.
+    Give colliders to the rocks and trunks a player can actually touch, not to grass.
 
 ## Hand edits lock the parametric rows
 

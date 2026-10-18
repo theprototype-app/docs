@@ -38,7 +38,9 @@ them.
 **Where it is.** On a computer and an unfolded phone: right of the toolbar (or left of it, or just above, when the right
 side is taken). It is hidden in Play, and where there is no free spot next to the toolbar. On a folded phone: **More ▸
 Tools & View ▸ Budget** — the tile shows the device, the percentage and a coloured dot; hold and drag it onto the bottom
-bar if you want it there.
+bar if you want it there. Since 1.39 you can move the chip anywhere, or hide it, in
+[Edit positions](controls.md#moving-the-clusters); **Customize toolbar… ▸ Budget chip** shows it again. Opening its
+**▾** menu no longer makes it vanish.
 
 ![The budget chip beside the toolbar, reading Quest 200% in red for the Race scene](img/performance/budget-chip.png)
 

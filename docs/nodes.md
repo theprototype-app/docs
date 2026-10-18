@@ -146,6 +146,8 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**Animation Marker**](nodes/animmarker.md) | Fires a pulse when the connected object's animation passes a named marker. |
 | [**Animation State**](nodes/animstate.md) | Reads the connected object's animation transport as a number - playing, position or progress. |
 | [**Play Animation**](nodes/playanim.md) | Starts, stops or restarts an animation clip on the connected object when a pulse arrives. |
+| [**Play Sequence**](nodes/playseq.md) | Plays, stops, toggles or restarts a Timeline sequence (camera shots, clips, audio, events) for every player when a pulse arrives. |
+| [**On Sequence Event**](nodes/onseqevent.md) | Fires a pulse when a running Timeline sequence passes a named event, or reaches its end ('end'). |
 
 ## Physics
 
