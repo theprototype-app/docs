@@ -464,6 +464,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../privacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Privacy & Error Reports
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../avatars/" class="md-nav__link">
         
   
@@ -833,6 +854,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Measure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kept-measurements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kept measurements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -970,6 +1006,27 @@
   
   <span class="md-ellipsis">
     Animation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../timeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Timeline (Cutscenes)
   </span>
   
 
@@ -1469,6 +1526,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../debugger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Node Graph Debugger
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../code-workspace/" class="md-nav__link">
         
   
@@ -1539,10 +1617,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1553,8 +1631,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
             <span class="md-nav__icon md-icon"></span>
             Nodes
           </label>
@@ -2433,6 +2511,48 @@
   
   <span class="md-ellipsis">
     Animation State
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/playseq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Play Sequence
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/onseqevent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Sequence Event
   </span>
   
 
@@ -4170,6 +4290,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Measure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kept-measurements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kept measurements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4206,29 +4341,49 @@
 
 <h1 id="measure-align-distribute">Measure, Align &amp; Distribute</h1>
 <p>Since 1.38 the Measure tool snaps to the geometry and chains segments, and a selection can be lined up, spaced out
-and dropped onto the ground in one click.</p>
+and dropped onto the ground in one click. Since 1.39 the measurements you keep are scene items everyone sees.</p>
 <h2 id="measure">Measure</h2>
 <p><strong>Where:</strong> right-click the viewport ▸ <strong>Measure distance</strong> (the row reads <em>Stop measuring</em> while it is on). A small
 <strong>Measure</strong> window opens — a bottom sheet on a phone.</p>
+<div class="admonition note">
+<p class="admonition-title">Changed in 1.39</p>
+<p>A measurement you keep is now an <strong>object in the scene</strong>, like a drawn stroke: it is in the object list, every
+person in the session sees it, it is saved with the scene and it undoes like any object. This replaces 1.38's
+pinned measurements, which only you could see and a reload cleared.</p>
+</div>
 <p><img alt="A chain of three measured segments with lengths, the angle between them and the total" src="../img/measure-align/measure-chain.png" /></p>
 <ul>
 <li><strong>Click (or tap) points.</strong> Each point <strong>snaps</strong> to the corner, edge or face under the pointer — a small orange dot
   shows where the next click will land, and a dashed line runs to it from the last point.</li>
 <li><strong>Keep clicking to chain segments.</strong> Every segment shows its length, every corner the <strong>angle</strong> between its two
   segments, and the end of the chain the <strong>total</strong>. The window also shows the last segment's Δ x / y / z.</li>
-<li><strong>Pin it:</strong> <kbd>Enter</kbd>, the <strong>Pin</strong> button, or clicking the last point again keeps the measurement on screen
-  as dimension labels after you stop measuring; they follow the camera.</li>
-<li><kbd>Backspace</kbd> / <strong>Undo point</strong> removes the last point. <kbd>Esc</kbd> / <strong>Done</strong> stops measuring (pinned
-  ones stay).</li>
-<li><strong>Clear measurements</strong> — in the Measure window, or in the viewport menu while any are pinned — removes them all.</li>
+<li><strong>Keep it:</strong> <strong>✓</strong> (Done) or <kbd>Enter</kbd> keeps the measurement; <strong>Keep</strong> in the window keeps it and starts the
+  next one; a quick second click on the last point does the same.</li>
+<li><kbd>Backspace</kbd> removes the last point. <kbd>Esc</kbd> cancels the one being drawn; <strong>Discard</strong> drops it.</li>
 </ul>
-<p><img alt="Pinned dimension labels staying in the viewport" src="../img/measure-align/measure-pinned.png" /></p>
 <p><strong>Snap to vertices, edges, faces</strong> (in the Measure window, remembered on this device) can be switched off to measure
 the exact point under the pointer.</p>
+<h3 id="kept-measurements">Kept measurements</h3>
+<p>A kept measurement appears in the <a href="../controls/#selection">object list</a> with a ruler icon, named <strong>Measurement</strong>. Move,
+rename, hide, delete and undo it like any object.</p>
+<p><img alt="Two kept measurements: a 2 m + 1 m chain along a box with its 90° corner and a 3 m total, and a chain of short 6 cm segments whose labels step aside" src="../img/measure-align/measure-items.png" /></p>
+<ul>
+<li><strong>Select</strong> one by clicking its line (or its row in the object list). Properties shows a <strong>Measurement</strong> section with
+  each segment's length, the angle at each joint and the total.</li>
+<li><strong>Edit its points:</strong> select it and press <kbd>Tab</kbd> (or Properties ▸ <em>Edit points</em>, or the object menu ▸ <em>Edit
+  measurement</em>). Click a point to pick it up, click again to put it down — it snaps exactly like drawing. Click
+  anywhere else to add a point at the end. <kbd>Backspace</kbd> / <kbd>Delete</kbd> removes the picked (or last)
+  point. <kbd>Tab</kbd>, <kbd>Esc</kbd> or ✓ finishes. Each placed point is one undo step.</li>
+<li><strong>Delete them all:</strong> viewport menu ▸ <strong>Delete measurements (N)</strong> removes every measurement in the scene in one undo
+  step.</li>
+</ul>
+<p><img alt="Editing a measurement: the Edit measurement window says point 2 is picked up, the points are drawn in yellow and Properties shows the Measurement object" src="../img/measure-align/measure-edit.png" /></p>
+<p><strong>Labels do not pile up.</strong> On short segments, the lengths, angles and total step aside; a label with no room left is
+not drawn. The Measure window and the Properties section still show every number.</p>
 <div class="admonition note">
-<p class="admonition-title">Measurements are yours</p>
-<p>Measurements are not sent to other people, not saved in the scene and not part of undo — a reload clears them.
-They are drawn as screen labels, so they do not show in a VR headset yet.</p>
+<p class="admonition-title">Limits</p>
+<p>Measurements are an editing aid: they are hidden in Play and in VR (their labels are drawn on the screen), they have
+no physics body and an export draws nothing for them.</p>
 </div>
 <h2 id="align-distribute-and-drop-to-ground">Align, distribute and drop to ground</h2>
 <p><strong>Where:</strong> select two or more objects ▸ Properties ▸ <strong>Arrange</strong>; or right-click a selected object ▸ <strong>Transform ▸</strong>
@@ -4286,7 +4441,7 @@ another person is editing are left where they are. (<em>Drop to ground</em> repl
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-17
+    2026-10-18
   </span>
 
     

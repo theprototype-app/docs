@@ -531,6 +531,27 @@
   
   
     <li class="md-nav__item">
+      <a href="privacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Privacy & Error Reports
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="avatars/" class="md-nav__link">
         
   
@@ -977,6 +998,27 @@
   
   <span class="md-ellipsis">
     Animation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="timeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Timeline (Cutscenes)
   </span>
   
 
@@ -1476,6 +1518,27 @@
   
   
     <li class="md-nav__item">
+      <a href="debugger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Node Graph Debugger
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="code-workspace/" class="md-nav__link">
         
   
@@ -1546,10 +1609,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1560,8 +1623,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
             <span class="md-nav__icon md-icon"></span>
             Nodes
           </label>
@@ -2440,6 +2503,48 @@
   
   <span class="md-ellipsis">
     Animation State
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nodes/playseq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Play Sequence
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nodes/onseqevent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Sequence Event
   </span>
   
 
@@ -4241,6 +4346,21 @@ on a phone that gives the scene the whole height of the screen.</p>
 <a href="https://github.com/theprototype-app/core">github.com/theprototype-app/core</a> (also <strong>Settings ▸ About ▸ Source Code</strong>),
 with a contributing guide and an <code>llms.txt</code> for coding agents.</p>
 <h2 id="whats-new">What's new</h2>
+<p><strong>1.39 — logic you can see.</strong> The <a href="debugger/">Node Graph Debugger</a> pauses your game when an event reaches a node
+with a breakpoint (<kbd>F9</kbd>), steps event by event (<kbd>F10</kbd>), shows the live value on every wire and keeps a
+watch list — all local to you, while the other players keep playing. The <a href="timeline/">Timeline</a> lays camera shots
+(with a glide between two cameras), animation clips, sounds and events into a sequence that the
+<a href="nodes/playseq/">Play Sequence</a> node or <strong>Autoplay</strong> starts — in exported games too — and
+<a href="nodes/onseqevent/">On Sequence Event</a> wires back into your graph. <a href="measure-align/#kept-measurements">Measurements</a>
+are now kept in the scene: in the object list, shared and saved, and <kbd>Tab</kbd> edits their points. Scattered rocks
+and trees can be <a href="terrain/#scatter-collider">solid</a> for every player. The app sends
+<a href="privacy/#anonymous-error-reports">anonymous error reports</a> — no account, no IP, no scene content; <strong>Settings ▸
+Privacy</strong> turns them off — and <a href="connection/#the-status-page">status.theprototype.app</a> says whether the service is up.
+Also: the <a href="controls/#moving-the-clusters">budget chip</a> moves and hides in Edit positions,
+<a href="materials/#what-gets-saved-and-where">large CC0 materials</a> reach every peer,
+<a href="settings/#third-party-licences">Settings ▸ About ▸ Third-party licences</a> lists every library the app uses, small
+models <a href="import-optimize/#what-happens-on-import">skip the optimizer</a>, Statistics groups with other windows and a
+floating window <a href="interface/#splitting-the-dock">drops into a split dock pane</a>.</p>
 <p><strong>1.38 — build precisely.</strong> <a href="measure-align/#measure">Measure</a> snaps to corners, edges and faces, chains segments
 with a running total and the angle between them, and pins dimension labels only you see; <a href="measure-align/#align-distribute-and-drop-to-ground">Align, Distribute and Drop to
 ground</a> line up a selection from the Properties <strong>Arrange</strong>
@@ -4655,7 +4775,7 @@ for your machine <a href="performance/">reduces quality or pauses instead of fre
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-17
+    2026-10-18
   </span>
 
     

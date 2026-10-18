@@ -14,7 +14,7 @@
         <link rel="prev" href="../main-graph/">
       
       
-        <link rel="next" href="../code-workspace/">
+        <link rel="next" href="../debugger/">
       
       
       <link rel="icon" href="../logo.svg">
@@ -448,6 +448,27 @@
   
   <span class="md-ellipsis">
     Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../privacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Privacy & Error Reports
   </span>
   
 
@@ -910,6 +931,27 @@
   
   <span class="md-ellipsis">
     Animation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../timeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Timeline (Cutscenes)
   </span>
   
 
@@ -1565,6 +1607,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../debugger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Node Graph Debugger
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../code-workspace/" class="md-nav__link">
         
   
@@ -1635,10 +1698,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1649,8 +1712,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
             <span class="md-nav__icon md-icon"></span>
             Nodes
           </label>
@@ -2529,6 +2592,48 @@
   
   <span class="md-ellipsis">
     Animation State
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/playseq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Play Sequence
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/onseqevent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Sequence Event
   </span>
   
 
@@ -4506,6 +4611,10 @@ from the live keymap, so a key you rebind in <strong>Settings ▸ Shortcuts</str
 <td><kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Y</kbd></td>
 <td>Undo / redo — every node editor edit can be undone</td>
 </tr>
+<tr>
+<td><kbd>F9</kbd></td>
+<td>Breakpoint on / off for the selected nodes — see the <a href="../debugger/">Debugger</a> (<kbd>F10</kbd> steps, <kbd>F8</kbd> resumes)</td>
+</tr>
 </tbody>
 </table>
 <p>All of them can be rebound in <strong>Settings ▸ Shortcuts</strong>. So can the <a href="../mesh-editing/">Edit Mesh</a> keys, which have their
@@ -4583,7 +4692,7 @@ dragging the frame carries them, and moving a framed node stretches the frame to
 <li><strong>The canvas:</strong> search nodes, add a note, paste, select all, frame all, <strong>Tidy graph</strong>, <strong>Fix overlaps and
   crossings</strong>, import a node group — and the full Add list.</li>
 <li><strong>A node:</strong> open its code (see <a href="../main-graph/#open-code">Open code</a>), group, add a note around, duplicate, copy, cut,
-  paste, mute, collapse, frame, disconnect, delete.</li>
+  paste, mute, collapse, frame, disconnect, delete, and <strong>Breakpoint (pause Play here)</strong> for the <a href="../debugger/">Debugger</a>.</li>
 <li><strong>A selection:</strong> the same for the whole set, plus <strong>Align</strong> (column, row, distribute).</li>
 <li><strong>A group:</strong> open it, ungroup, export it.</li>
 </ul>
@@ -4620,7 +4729,7 @@ already in a graph keep working. <strong>Turn all on</strong> brings them all ba
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-11
+    2026-10-18
   </span>
 
     

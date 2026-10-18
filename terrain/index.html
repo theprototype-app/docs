@@ -464,6 +464,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../privacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Privacy & Error Reports
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../avatars/" class="md-nav__link">
         
   
@@ -928,6 +949,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../timeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Timeline (Cutscenes)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../physics/" class="md-nav__link">
         
   
@@ -1189,6 +1231,21 @@
       Scatter
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Scatter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scatter-collider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scatter ▸ Collider
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1571,6 +1628,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../debugger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Node Graph Debugger
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../code-workspace/" class="md-nav__link">
         
   
@@ -1641,10 +1719,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1655,8 +1733,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
             <span class="md-nav__icon md-icon"></span>
             Nodes
           </label>
@@ -2535,6 +2613,48 @@
   
   <span class="md-ellipsis">
     Animation State
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/playseq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Play Sequence
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/onseqevent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Sequence Event
   </span>
   
 
@@ -4356,6 +4476,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Scatter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scatter-collider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scatter ▸ Collider
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4622,8 +4757,55 @@ triangles.</p>
 <p class="admonition-title">Limits</p>
 <p>Up to 8,000 instances and 8 scattered models per terrain. For a Quest, keep it near 2,000 instances of a low-poly
 model (≤ 150 triangles each): each scattered model is one draw call (a dense one, a few — it is drawn in patches so
-its levels of detail can switch), plus one per shadow-casting light. Instances have no physics colliders and cannot
-be selected one by one. Older versions open a painted or scattered terrain as the plain terrain.</p>
+its levels of detail can switch), plus one per shadow-casting light. Instances cannot be selected one by one, and
+are solid only when their model has a <a href="#scatter-collider">Collider</a>. Older versions open a painted or scattered terrain as the plain terrain.</p>
+</div>
+<h3 id="scatter-collider">Scatter ▸ Collider</h3>
+<p><em>New in 1.39.</em> A scattered model — a rock, a tree trunk, a primitive — can be <strong>solid</strong> in a simulation. Each scattered
+model has a <strong>Collider</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Collider</th>
+<th>Shape</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>None</strong> (the default)</td>
+<td>No collider — the instances are scenery you pass through.</td>
+</tr>
+<tr>
+<td><strong>Box</strong></td>
+<td>The model's bounding box.</td>
+</tr>
+<tr>
+<td><strong>Sphere</strong></td>
+<td>A ball reaching the model's farthest point.</td>
+</tr>
+<tr>
+<td><strong>Mesh hull</strong></td>
+<td>The model's convex hull — the closest fit for a rock (a flat model falls back to its box).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Where:</strong> select the terrain ▸ Properties ▸ <strong>Scatter</strong> ▸ the model's row ▸ <strong>Collider</strong>. The Sculpt toolbox's
+Scatter brush has a <strong>Collider</strong> pick too: it is what a <em>newly</em> scattered model starts with — painting more rocks into
+an existing set never changes that set's collider.</p>
+<p><img alt="Properties ▸ Scatter: the Dodecahedron rocks set to Mesh hull, the cones left at None" src="../img/terrain/scatter-collider.png" /></p>
+<ul>
+<li>While a <a href="../physics/">simulation</a> runs, every instance of that model is a <strong>static</strong> collider — a thrown ball bounces
+  off the rocks and stops on top of one. The colliders follow each instance's position, rotation, scale and <em>Align to
+  slope</em> tilt, and the terrain's own transform; a terrain moving mid-run does not drag them along.</li>
+<li>The choice is part of the scene: saved, one undo step per change, and <strong>every player</strong> gets the same colliders,
+  whoever runs the simulation.</li>
+<li>A hit on a scattered rock counts as a hit on the terrain — <a href="../nodes/onimpact/">On Impact</a> and friends name the
+  terrain.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Only what a player can reach</p>
+<p>2,000 instances build their colliders in 10–40 ms when the simulation starts and add about 0.1 ms per physics step.
+Give colliders to the rocks and trunks a player can actually touch, not to grass.</p>
 </div>
 <h2 id="hand-edits-lock-the-parametric-rows">Hand edits lock the parametric rows</h2>
 <p>The moment you sculpt a terrain — or carve a road into it, or edit it in mesh mode — the Geometry rows <strong>lock</strong>, and the panel says so.</p>
@@ -4666,7 +4848,7 @@ be selected one by one. Older versions open a painted or scattered terrain as th
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-17
+    2026-10-18
   </span>
 
     

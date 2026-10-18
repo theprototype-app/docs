@@ -466,6 +466,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../privacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Privacy & Error Reports
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../avatars/" class="md-nav__link">
         
   
@@ -683,6 +704,15 @@
   <a href="#when-things-go-wrong" class="md-nav__link">
     <span class="md-ellipsis">
       When things go wrong
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-status-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      The status page
     </span>
   </a>
   
@@ -1108,6 +1138,27 @@
   
   <span class="md-ellipsis">
     Animation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../timeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Timeline (Cutscenes)
   </span>
   
 
@@ -1607,6 +1658,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../debugger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Node Graph Debugger
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../code-workspace/" class="md-nav__link">
         
   
@@ -1677,10 +1749,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
         
           
-          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1691,8 +1763,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
             <span class="md-nav__icon md-icon"></span>
             Nodes
           </label>
@@ -2571,6 +2643,48 @@
   
   <span class="md-ellipsis">
     Animation State
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/playseq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Play Sequence
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/onseqevent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    On Sequence Event
   </span>
   
 
@@ -4457,6 +4571,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#the-status-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      The status page
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4738,6 +4861,43 @@ device can check it, so a code set on another device of yours has to be set agai
 </tr>
 </tbody>
 </table>
+<h2 id="the-status-page">The status page</h2>
+<p><strong><a href="https://status.theprototype.app">status.theprototype.app</a></strong> answers <em>is the service up?</em> It is checked from outside
+every five minutes:</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>What it covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>The app</strong></td>
+<td>theprototype.app itself</td>
+</tr>
+<tr>
+<td><strong>Accounts, saves and community</strong></td>
+<td>sign-in, cloud saves, community scenes</td>
+</tr>
+<tr>
+<td><strong>Signaling</strong></td>
+<td>connecting people to each other</td>
+</tr>
+<tr>
+<td><strong>TURN relay</strong></td>
+<td>the relay used on networks that block direct connections</td>
+</tr>
+<tr>
+<td><strong>Community pages and error reports</strong></td>
+<td>the community pages and the <a href="../privacy/#anonymous-error-reports">error reports</a> (since 1.39)</td>
+</tr>
+</tbody>
+</table>
+<p>Most of the app is peer-to-peer and keeps working while a service is down — a session you are in carries on. Sign-in,
+cloud saves and the community need the service. An outage opens an issue in
+<a href="https://github.com/theprototype-app/status">github.com/theprototype-app/status</a> and closes it on recovery. The checks
+never count as visits or errors.</p>
 
 
 
@@ -4758,7 +4918,7 @@ device can check it, so a code set on another device of yours has to be set agai
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-15
+    2026-10-18
   </span>
 
     
