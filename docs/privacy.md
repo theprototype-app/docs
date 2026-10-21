@@ -21,7 +21,7 @@ search finds it under *privacy*, *crash*, *telemetry* or *error reports*.
   and IP addresses since 1.40).
 - The lines of the **app's own code** where it happened.
 - The **app version**, the **device type** (desktop / phone / tablet / headset), the **browser and OS** family and major
-  version, **WebGL / WebGPU**, the **app area** (editing / playing / VR) and whether it was the live site or a preview (a preview reports under its own label, such as `1.40-preview`).
+  version, **WebGL / WebGPU**, the **app area** (editing / playing / VR) and whether it was the live site or a preview (a preview reports under its own label, such as `1.40.0-preview`).
 
 ### What it never holds
 
