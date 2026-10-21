@@ -26,6 +26,16 @@ object (or a spawned copy of it). The **other** output carries the body it touch
 contact with the ground plane reports an empty *other*. Since 1.22 the node sits in the palette's **Physics** group. See
 [Contact filters](../colliders.md#contact-filters-only-with-and-other).
 
+## On the object that was hit
+
+*New in 1.40.* On Impact also fires on a **static** or **kinematic** (flow-animated) object when a falling body lands on
+it — a pressure plate, a target, a moving platform — with **other** = the body that landed. Put On Impact in the
+plate's own flow and it fires when a crate drops onto it. Two **dynamic** bodies still fire only for the one that was
+falling, so nothing fires twice.
+
+An impact is still a landing: downward speed over 1.2 m/s (raise **minStrength** for harder ones), each body at most
+every 0.3 s. A ball thrown sideways into a wall fires nothing on either side.
+
 ## Practical example
 
 Sparks + a thud when a crate lands:

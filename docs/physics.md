@@ -26,6 +26,21 @@ To give a whole selection physics at once, **Configure Scene ▸ Physics** lists
 (*dynamic · 1 kg*, *static*, *collider only*; click a row to select it) and has an **Enable physics on selection** button
 that makes the selected objects dynamic.
 
+### Continuous collision, per object
+
+*New in 1.40.* A dynamic body has its own **Continuous collision** row in **Properties ▸ Physics**:
+
+| Choice | What it does |
+|---|---|
+| **Scene default** (the default) | follows **Configure Scene ▸ Physics ▸ Continuous collision**; the row says whether that is on or off |
+| **On** | this body always gets continuous collision — for bullets, thrown balls and anything fast and small |
+| **Off** | this body skips it, in a scene that has it on (it costs a little speed per body) |
+
+Continuous collision (CCD) stops a fast, small body passing straight through a thin wall between two physics steps — a
+5 cm ball at 60 m/s moves a metre per step. A throw faster than 5 m/s still turns it on for that body until it comes to
+rest, whatever the pick. The pick is shared with everyone, saved with the scene and applies to a running simulation at
+once; **Scene default** saves nothing, so older scenes are unchanged.
+
 ## Scene settings
 
 Everything in **Configure Scene ▸ Physics** is shared with your peers, saved with the scene and applied live — you can change any of it mid-run.
@@ -55,7 +70,7 @@ One toast reports a whole burst ("3 objects fell out of bounds — returned to s
 
 ### Defaults (advanced)
 
-**Material** fills in friction and bounce for every object that does not set its own — the fastest way to make a whole scene icy, rubbery, wooden or metallic. **Drag** and **spin drag** (linear and angular damping) are what turn a jittery tower stable and stop crates sliding forever. **Continuous collision** is off by default and costs a little speed; thrown objects switch it on for themselves regardless, because a 20 m/s throw travels 0.33 m per step and would otherwise pass through a thin wall.
+**Material** fills in friction and bounce for every object that does not set its own — the fastest way to make a whole scene icy, rubbery, wooden or metallic. **Drag** and **spin drag** (linear and angular damping) are what turn a jittery tower stable and stop crates sliding forever. **Continuous collision** is off by default and costs a little speed (each body can [override it](#continuous-collision-per-object)); thrown objects switch it on for themselves regardless, because a 20 m/s throw travels 0.33 m per step and would otherwise pass through a thin wall.
 
 !!! tip "Primitives are ready to play"
     Newly added primitives (cube, sphere, stairs…) come with a **Dynamic** body (mass 1) out of the box — add a few, press <kbd>P</kbd>, and they fall, stack and throw immediately. Building scenery instead? Set **Body** back to *Auto* or *Static* in the Inspector. Terrain always spawns as scenery.
