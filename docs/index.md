@@ -24,6 +24,17 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.40 — physics and water.** A fast, small body can have [continuous collision](physics.md#continuous-collision-per-object)
+of its own (**Properties ▸ Physics ▸ Continuous collision**), so a bullet or a thrown ball never passes through a thin
+wall. [On Impact](nodes/onimpact.md#on-the-object-that-was-hit) also fires on the static or kinematic object that was
+hit — a pressure plate, a target, a moving platform — with **other** = the body that landed. A fluid tank's pour
+[joins the pool](simulation.md#pouring-into-a-pool) it lands in and ripples it, and tanks can run on the graphics card:
+[GPU fluid](simulation.md#gpu-fluid) (**Settings ▸ Scene ▸ Performance**) measures your device once and uses WebGPU
+only where it is clearly faster. Also: a **View only** joiner sees the room's HUD, shader graphs, animation and look at
+once ([Joining](connection.md#the-request-and-how-it-ends)), 3D labels and VR panel text work offline, error reports
+strip server names and IP addresses ([Privacy](privacy.md#what-a-report-holds)), and the Pool party toys float like
+foam.
+
 **1.39 — logic you can see.** The [Node Graph Debugger](debugger.md) pauses your game when an event reaches a node
 with a breakpoint (<kbd>F9</kbd>), steps event by event (<kbd>F10</kbd>), shows the live value on every wire and keeps a
 watch list — all local to you, while the other players keep playing. The [Timeline](timeline.md) lays camera shots

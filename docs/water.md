@@ -142,7 +142,9 @@ Search Settings for *water*, *caustics* or *refraction* to find the row.
 
 ## Examples
 
-**Menu ▸ Templates ▸ Examples** has three water scenes: **Aquarium**, **Pool party** and **Island ocean** (its boat
+A [fluid tank](simulation.md#pouring-into-a-pool) pouring onto a pool's surface joins the pool and ripples it (1.40).
+
+**Menu ▸ Templates ▸ Examples** has three water scenes: **Aquarium**, **Pool party** (its toys float like foam since 1.40) and **Island ocean** (its boat
 floats and rides the swell). Pool party and Island ocean have
 [Start simulation on load](physics.md#start-simulation-on-load) on, so they move as soon as they open. Since 1.32
 the Aquarium is a reef, with fish from the [Aquarium Kit](packs.md#aquarium-kit-132) pack. For particle

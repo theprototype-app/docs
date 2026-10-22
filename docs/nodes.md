@@ -48,29 +48,30 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**Set Active Camera**](nodes/setcamera.md) | Makes a camera object the active view for every player when a pulse arrives. |
 | [**Camera Rig**](nodes/camerarig.md) | Moves a camera object: it follows the target at an offset and/or turns to look at it, with damping (seconds of lag). Wire it into an Object Selector that picks a camera. It never moves the editor view or another player's view - look through the camera (Set Active Camera) to see it. |
 | [**Set Look**](nodes/setlook.md) | Switches a camera's look (its post-processing) on or off when a pulse arrives, and by default looks through that camera too. |
-| **Game Start** | Fires once when the game starts (Play, or a round reset) - the place to spawn, reset counters and arm timers. |
-| **Travel to scene** | Loads another saved scene by name when a pulse arrives - a door to the next level, replicated to everyone. |
+| [**Game Start**](nodes/gamestart.md) | Fires once when the game starts (Play, or a round reset) - the place to spawn, reset counters and arm timers. |
+| [**Travel to scene**](nodes/travel.md) | Loads another saved scene by name when a pulse arrives - a door to the next level, replicated to everyone. |
 | **All Players** | Iterates the connected players so a per-player value can be read, or a HUD row shown, for each of them. |
 | **Set Variable** | Stores a named value in the replicated scene variables when a pulse arrives - shared state without an object. |
 | **Get Variable** | Reads a named scene variable as a value - the read side of Set Variable, live on every peer. |
-| **Game Time** | Seconds since the game (or the round) started, the same on every peer - a clock that pauses with the game. |
-| **Player Variable** | A value kept PER PLAYER (score, lives, team) - each peer reads its own row, or a named player's. |
 | [**Store Value**](nodes/storevalue.md) | Saves a value on THIS device when a pulse arrives (set, keep the max or min, or add) - a best score or a level reached that survives a reload; never sent to other players. |
 | [**Stored Value**](nodes/storedvalue.md) | Reads what Store Value saved on this device, as a number or text - the read side of a best score; each player sees their own. |
-| [**Announce**](nodes/announce.md) | A big centred banner ("GOAL!", "Floor {v}") on a desktop and in a headset — local to each player, fired from the shared trigger. |
-| [**Game Sound**](nodes/gamesound.md) | Plays one of 20 built-in game sounds (coin, goal, whistle, levelup…) at an object or everywhere; no audio files. |
-| [**Effect Burst**](nodes/effectburst.md) | A short sparkle / confetti / smoke / sparks burst at an object — pooled and local. |
-| [**Controller Buzz**](nodes/hapticpulse.md) | Vibrates the VR controllers with a named pattern — only in Interact and Play. |
-| [**Game Music**](nodes/gamemusic.md) | Declares the scene's looping music (seven built-in tracks), playing only while someone plays. |
-| [**Game Setting**](nodes/gamesetting.md) | Declares one row in the game's Settings (a toggle, a range or a choice) and outputs this player's value — saved on this device, never shared. |
-| [**Point Grab**](nodes/pointgrab.md) | While its `enabled` input reads off, players cannot pick objects up by pointing at them — only a touching hand moves them. |
+| [**Announce**](nodes/announce.md) | Shows a big banner - 'Ring 2 reached', 'GOAL!' - on every screen and in VR when a pulse arrives; {v} in the text shows a wired number. |
+| [**Game Sound**](nodes/gamesound.md) | Plays one of the built-in game sounds (coin, ring, levelup, cheer...) when a pulse arrives, at the wired object if one is wired; no sound files needed. |
+| [**Effect Burst**](nodes/effectburst.md) | Fires a short sparkle, confetti, smoke or sparks burst at the wired object (or in front of the player) when a pulse arrives; pooled and local to each device. |
+| [**Controller Buzz**](nodes/hapticpulse.md) | Buzzes the VR controllers with a named pattern (tap, bump, success...) when a pulse arrives - only in Interact or Play, never while editing. |
+| [**Game Music**](nodes/gamemusic.md) | Plays a looping built-in music preset while you are in Interact or Play - always, or only during a round; wire 'on' to switch it by a condition. |
+| [**Game Setting**](nodes/gamesetting.md) | Declares one row in the game's Settings (a toggle, a range or a choice) and outputs this player's value - saved on this device for this game, never shared. |
+| [**Point Grab**](nodes/pointgrab.md) | While 'enabled' reads off, players cannot pick objects up by pointing at them (the VR grip ray, the desktop carry); a hand touching an object still moves it. |
+| [**On Clap**](nodes/onclap.md) | Fires a pulse when a VR player brings both hands together and holds them - with where they met (point) and whether it was you (byMe); wire 'enabled' to a setting to switch it. |
+| **Game Time** | Seconds since the game (or the round) started, the same on every peer - a clock that pauses with the game. |
+| **Player Variable** | A value kept PER PLAYER (score, lives, team) - each peer reads its own row, or a named player's. |
 
 ## Character
 
 | Node | What it does |
 |---|---|
 | **Character Controller** | Turns the connected object into a walking, jumping character driven by the player's movement input. |
-| **Move Input** | The player's movement input as numbers - stick or WASD axes and the jump button - for driving things by hand. |
+| [**Move Input**](nodes/moveinput.md) | The player's movement input as numbers - stick or WASD axes and the jump button - for driving things by hand. |
 | **Possess Object** | Puts the player in control of the connected object when a pulse arrives - a vehicle, a turret, a ball. |
 | **Camera Follow** | Makes the camera follow the connected object at a set distance and height - a third-person or chase view. |
 | **Move Speed** | Overrides the character's walking speed while a value is wired - sprint, mud, slow motion. |
@@ -80,12 +81,13 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | Node | What it does |
 |---|---|
 | **HUD Screen** | Shows or hides a whole HUD screen (a named layer of elements) while its condition holds. |
-| **HUD Text** | Puts a value into a HUD text element - a live score, a name, a round number. |
-| **HUD Timer** | Runs a HUD timer element's countdown on the shared clock (duration, format, autostart), so every player sees the same time. |
+| **HUD Text** | Writes a number into a HUD text element through a format such as 'Gems: {v}' - a score, a count, a readout. |
 | **HUD Bar** | Drives a HUD bar element's fill from a number - health, fuel, progress. |
-| **HUD Button** | Fires a pulse when a HUD button is pressed - the on-screen counterpart of On Click. |
+| [**HUD Button**](nodes/hudbutton.md) | Fires a pulse when a HUD button is pressed - the on-screen counterpart of On Click. |
+| **HUD Timer** | Runs a countdown in a HUD text element from its duration, formatted like '{v}s' - starts by itself or on a pulse. |
 | **HUD List** | Fills a HUD list element with the items a value provides - an inventory, objectives, players. |
 | **HUD Rows** | Appends or replaces rows in a HUD rows element from a pulse - a log, a chat, a scoreboard feed. |
+| **Leaderboard** | Ranks the players by their own per-player variable (laps, score) into a HUD element, highest or lowest first, top N rows. |
 | **HUD Input** | Reads what the player typed into a HUD input element as a value. |
 | **HUD Set Input** | Writes a value into a HUD input element when a pulse arrives - to prefill, clear or correct it. |
 
@@ -93,8 +95,9 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 
 | Node | What it does |
 |---|---|
-| [**Script**](nodes/script.md) | Your own JavaScript - an effect that moves its object every frame, or (with declared typed inputs and outputs) a small pure function whose return feeds other nodes. |
+| [**Script**](nodes/script.md) | Your own JavaScript - an effect that moves its object every frame, or (with declared typed inputs and outputs) a small pure function whose return feeds other nodes. v2 scripts also get `api`: object(uuid or name), raycast(from, dir), and in effects keys() (this device only) and spawn('/create ...') (the host spawns once for everyone). |
 | [**Behaviour**](behaviours.md) | Game logic written as a small JavaScript file (params, replicated state, event handlers, kit calls) - run once on the authority peer, with a live node view of its events, state and knobs. |
+| **Code link** | Points at the module or kit file whose code runs part of this game - double-click (or Open code) to read it. It does nothing at runtime; it is how the Main graph shows where every rule lives. |
 | [**Math**](nodes/math.md) | Combines numbers (+ - * / min max mod pow) or shapes one: sin/cos (b scales them, 0 = 1), abs, round, floor, clamp to 0..b, negate. + input adds sockets (up to 8) for + - * / min max. |
 | [**Compare**](nodes/compare.md) | Compares two numbers and outputs true or false. |
 | [**Gate**](nodes/gate.md) | Boolean logic - AND, OR, NOT, XOR. + input adds sockets (up to 8): AND = all true, OR = any true, XOR = an odd number true. |
@@ -119,11 +122,10 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | Node | What it does |
 |---|---|
 | [**On Click**](nodes/onclick.md) | Fires a short pulse when its object is clicked - the bridge from user input into the graph. |
+| [**On Grab**](nodes/ongrab.md) | Fires a pulse when a player picks the object up - a carry in Play or Interact, or a VR grip in Interact; editor moves never fire it. |
 | [**Key Press**](nodes/keypress.md) | Fires a pulse while a keyboard key is pressed - the bridge from your keyboard into the graph. |
+| [**On Hit**](nodes/onhit.md) | Fires a pulse when a hand or a walking player knocks the object - with how hard it was hit (speed) and whether you did it (byMe). |
 | [**On Rest**](nodes/onrest.md) | Fires a pulse when a physics body has finished moving - the counterpart to On Impact, which fires when it starts. |
-| [**On Hit**](nodes/onhit.md) | Fires a pulse when a hand or a player knocks the connected object, with how hard and whether it was you. |
-| [**On Grab**](nodes/ongrab.md) | Fires a pulse when a player picks up the object — a desktop carry or a VR grip in Interact. |
-| [**On Clap**](nodes/onclap.md) | Fires when a VR player brings both hands together and holds them, with where they met (`point`) and whether it was you. |
 | **Gamepad Button** | Fires a pulse (or holds a level) while a gamepad button is pressed - the pad's counterpart of Key Press. |
 | **Gamepad Axis** | A gamepad stick or trigger axis as a number between -1 and 1, with a dead zone. |
 
@@ -133,15 +135,15 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 |---|---|
 | [**Shake**](nodes/shake.md) | Jitters the connected object around its resting position - rumble, nervousness, impact feedback. |
 | [**Spin**](nodes/spin.md) | Rotates the connected object continuously around one axis. |
+| [**Rotate / Motor**](fluids.md#nodes) | Turns the connected object about its own local axis (and its origin, so a wheel turns on its hub) at a set rpm with a spin-up. Paddles and scoops it turns carry water from Fluid emitters. On a dynamic physics body during a simulation it becomes a real motor: torque-limited, so a load slows it. |
+| [**Float Along Flow**](fluids.md#nodes) | Carries the connected object along a Flow path - a leaf, a toy boat - from where you placed it, at the path's speed, bobbing and turning with the current, looping at the end. Uses the nearest Flow path unless one is wired. |
 | [**Bounce**](nodes/bounce.md) | Bounces the connected object up and down off its resting height, like a dribbled ball. |
 | [**Orbit**](nodes/orbit.md) | Circles the connected object around its resting position on the horizontal plane. |
 | [**Path patrol**](nodes/pathpatrol.md) | Walks the connected object along a series of waypoints you click into the scene, facing along the path. |
-| [**Follow Path**](nodes/followpath.md) | Moves the connected object along a smooth path - a drawn Spline, a Flow path or its own waypoints - at a speed, looping, ping-ponging or once, facing along it and leaning into the turns. |
-| [**Wander**](nodes/wander.md) | Drifts the connected object around a smooth, never-repeating target inside an area object (a water volume, a room) or a box around where it was placed. |
-| [**Orient to Velocity**](nodes/orientvelocity.md) | Turns the connected object to face the way it is moving, smoothly, leaning into turns - put it after Wander, Orbit or any mover. |
-| [**Body Wave**](nodes/bodywave.md) | Bends the connected object with a wave travelling along its body - a swimming fish, a snake, a flag, a tail - stronger and faster the faster it moves. |
-| [**Rotate / Motor**](fluids.md#nodes) | Turns its object about one of its own axes at an rpm with a spin-up; on a dynamic body during a simulation, a motor of a given torque. Paddles it turns push fluid (1.25). |
-| [**Float Along Flow**](fluids.md#nodes) | Carries its object along the nearest (or wired) flow path at the path's speed, bobbing and facing the current (1.25). |
+| [**Follow Path**](nodes/followpath.md) | Moves the connected object along a smooth path - a drawn Spline, a Flow path or its own waypoints - at a speed, looping, ping-ponging or once, facing along it and leaning into the turns. An offset spreads several riders out along one path. |
+| [**Wander**](nodes/wander.md) | Drifts the connected object around a smooth, never-repeating target inside an area object (a water volume, a room) or a box around where it was placed - fish, birds, fireflies, idle drones. |
+| [**Orient to Velocity**](nodes/orientvelocity.md) | Turns the connected object to face the way it is moving, smoothly, leaning into turns - put it after Wander, Orbit or any mover so it looks where it goes. |
+| [**Body Wave**](nodes/bodywave.md) | Bends the connected object with a wave travelling along its body - a swimming fish, a snake, a flag, a tail - stronger and faster the faster it moves, curving into turns. A shader effect: physics and picking keep the rest pose. |
 | [**Animation Finished**](nodes/animfinished.md) | Fires a pulse when the connected object's animation clip reaches its end. |
 | [**Animation Marker**](nodes/animmarker.md) | Fires a pulse when the connected object's animation passes a named marker. |
 | [**Animation State**](nodes/animstate.md) | Reads the connected object's animation transport as a number - playing, position or progress. |
@@ -183,10 +185,10 @@ object) and an **other** output (the body it touched) — see [Contact filters](
 
 | Node | What it does |
 |---|---|
-| **Device Param** | Writes a number into one parameter of the connected audio device every frame - an LFO on a cutoff, a fader on a level. |
-| **Device Level** | The live output level of the connected audio device (or a wired one) as a number - a meter you can drive anything with. |
-| **Transport** | The shared music transport as a number - beat, bar, phase, bpm or playing - identical on every peer. |
-| **Note Trigger** | Plays a note on the connected audio device when a pulse arrives - a drum pad, a sampler pad, a synth key. |
+| [**Device Param**](nodes/deviceparam.md) | Writes a number into one parameter of the connected audio device every frame - an LFO on a cutoff, a fader on a level. |
+| [**Device Level**](nodes/devicelevel.md) | The live output level of the connected audio device (or a wired one) as a number - a meter you can drive anything with. |
+| [**Transport**](nodes/transportbeat.md) | The shared music transport as a number - beat, bar, phase, bpm or playing - identical on every peer. |
+| [**Note Trigger**](nodes/notetrigger.md) | Plays a note on the connected audio device when a pulse arrives - a drum pad, a sampler pad, a synth key. |
 
 ## Kit
 

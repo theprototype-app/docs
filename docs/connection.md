@@ -72,7 +72,7 @@ A few cases ask first, or refuse with a message:
 
 A connection request waits for the host. Three things can end it, and each one says so on both sides:
 
-- **Approve** — you are connected. The card offers **View only** and **Editor access** where roles are in use, and a plain **Approve** where they are not.
+- **Approve** — you are connected. The card offers **View only** and **Editor access** where roles are in use, and a plain **Approve** where they are not. Since 1.40 a **View only** joiner gets the room's HUD, HUD values, shader graphs, animation, look and room anchor straight away, and an **Editor access** joiner is an editor on their own screen as soon as the connection opens.
 - **Reject** — the request ends and the person is told: *AB12CD declined your connection request.* At the session's ceiling the card also offers **Tell them it's full**, which answers with *AB12CD's session is full (16 people). Try again when someone leaves.* and a **Try again** button.
 - **Nobody answers** — after **90 seconds** the request cancels itself on both sides and offers **Try again**, instead of sitting on *Requesting* for ever.
 

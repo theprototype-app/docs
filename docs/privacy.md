@@ -17,10 +17,11 @@ search finds it under *privacy*, *crash*, *telemetry* or *error reports*.
 
 - The **kind** of failure: error, rejected promise, WebGL context lost, out of memory, or crash.
 - The **error message** — with anything that could name you or your work removed **on your device first**: web
-  addresses, file paths, emails, ids and quoted names become placeholders.
+  addresses, server names, IP addresses, file paths, emails, ids and quoted names become placeholders (server names
+  and IP addresses since 1.40).
 - The lines of the **app's own code** where it happened.
 - The **app version**, the **device type** (desktop / phone / tablet / headset), the **browser and OS** family and major
-  version, **WebGL / WebGPU**, the **app area** (editing / playing / VR) and whether it was the live site or a preview.
+  version, **WebGL / WebGPU**, the **app area** (editing / playing / VR) and whether it was the live site or a preview (a preview reports under its own label, such as `1.40.0-preview`).
 
 ### What it never holds
 
