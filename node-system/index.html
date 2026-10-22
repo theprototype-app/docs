@@ -443,6 +443,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../accessibility/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accessibility
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../settings/" class="md-nav__link">
         
   
@@ -3792,6 +3813,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../making-your-game-accessible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Making Your Game Accessible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../hud-editor/" class="md-nav__link">
         
   
@@ -4553,12 +4595,13 @@ until you switch. <strong>Select-first</strong> is the convention most other 3D 
 does not travel still opens the Add menu rather than being eaten by the pan.</p>
 <p>It is your own setting: it changes nothing for your peers and nothing in the graph.</p>
 <h2 id="connecting-typed-sockets">Connecting: typed sockets</h2>
-<p>Drag from a node's output (right side) to another node's input (left side). Every socket is <strong>color-coded by its value type</strong>, and only compatible types connect — an incompatible pair shows <strong>red</strong> while you drag.</p>
+<p>Drag from a node's output (right side) to another node's input (left side). Every socket is <strong>color-coded by its value type</strong>, and only compatible types connect — an incompatible pair shows a red cross while you drag.</p>
 <table>
 <thead>
 <tr>
 <th>Type</th>
-<th>Color</th>
+<th>Color (Dark)</th>
+<th>Shape</th>
 <th>Carries</th>
 </tr>
 </thead>
@@ -4566,40 +4609,50 @@ does not travel still opens the Add menu rather than being eaten by the pan.</p>
 <tr>
 <td>number</td>
 <td><span style="color:#38bdf8">●</span> <code>#38bdf8</code></td>
+<td>disc</td>
 <td>a numeric value</td>
 </tr>
 <tr>
 <td>vector3</td>
-<td><span style="color:#a78bfa">●</span> <code>#a78bfa</code></td>
+<td><span style="color:#a78bfa">◆</span> <code>#a78bfa</code></td>
+<td>diamond</td>
 <td>an x/y/z triple (also usable as a world point)</td>
 </tr>
 <tr>
 <td>boolean</td>
-<td><span style="color:#f472b6">●</span> <code>#f472b6</code></td>
+<td><span style="color:#f472b6">■</span> <code>#f472b6</code></td>
+<td>square</td>
 <td>true/false</td>
 </tr>
 <tr>
 <td>color</td>
-<td><span style="color:#fbbf24">●</span> <code>#fbbf24</code></td>
+<td><span style="color:#fbbf24">⬢</span> <code>#fbbf24</code></td>
+<td>hexagon</td>
 <td>a color</td>
 </tr>
 <tr>
 <td>object</td>
-<td><span style="color:#4ade80">●</span> <code>#4ade80</code></td>
+<td><span style="color:#4ade80">⬟</span> <code>#4ade80</code></td>
+<td>pentagon</td>
 <td>a reference to a scene object</td>
 </tr>
 <tr>
 <td>event</td>
-<td><span style="color:#facc15">●</span> <code>#facc15</code></td>
+<td><span style="color:#e2e8f0">➤</span> <code>#e2e8f0</code></td>
+<td>arrow</td>
 <td>a short trigger pulse</td>
 </tr>
 <tr>
 <td>effect</td>
-<td><span style="color:#fb923c">●</span> <code>#fb923c</code></td>
+<td><span style="color:#fb923c">★</span> <code>#fb923c</code></td>
+<td>star</td>
 <td>a per-frame scene effect</td>
 </tr>
 </tbody>
 </table>
+<p>Since 1.41 every socket type has a <strong>shape</strong> as well as a colour, so wiring never depends on telling hues apart, and
+Light and High contrast use darker / brighter tints of the same set. While you drag, a socket that cannot take the wire
+turns into a red <strong>cross</strong>. See <a href="../accessibility/#status-colours-you-can-tell-apart">Accessibility</a>.</p>
 <p>Sensible conversions are allowed automatically: numbers ↔ booleans, numbers → vectors, events → numbers/booleans, and vector3 ↔ object (so a Vector3 literal can stand in for an object as a world point). <strong>Effect</strong> sockets only connect to other effect sockets.</p>
 <h2 id="how-values-flow">How values flow</h2>
 <div class="highlight"><pre><span></span><code>sources (Input) → logic → effect nodes → Object Selector
@@ -4677,7 +4730,7 @@ below the graph.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-05
+    2026-10-22
   </span>
 
     
