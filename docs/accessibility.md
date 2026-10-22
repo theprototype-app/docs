@@ -10,6 +10,8 @@ by *accessibility*, *a11y*, *zoom*, *low vision*, *contrast*, *colour blind*, *m
 The games you make have their own **Accessibility** page for players — see
 [Making your game accessible](making-your-game-accessible.md).
 
+![Settings ▸ Accessibility on a computer: UI scale, High contrast, Motion and Show captions, each a row of its own](img/accessibility/settings-desktop.png)
+
 ## UI scale
 
 **Settings ▸ Accessibility ▸ Size ▸ UI scale**: **90 %**, **100 %** (default), **110 %**, **120 %**, **130 %**,
@@ -24,6 +26,8 @@ Every panel, sheet, dock, toolbar, menu, toast and the phone layout grows or shr
 - The scale is applied before the app draws its first frame, so a reload never flashes the old size.
 - On a small phone, 150 % leaves less room for the scene; 120–130 % is often the best balance there.
 
+![The Accessibility page at 150 % on a folded phone: bigger type and controls, nothing off the screen](img/accessibility/scale-150-phone.png){ width="300" }
+
 ## High contrast
 
 **Settings ▸ Accessibility ▸ Colour ▸ High contrast** (the same choice as **Interface ▸ Theme ▸ High contrast**).
@@ -37,6 +41,8 @@ The 3D view follows it too, on this device only:
 - the selection outline becomes a thick yellow edge, readable on a dark sky and on a light wall;
 - an object another person is holding gets a pink-red outline;
 - the move / rotate / scale handles are bigger and drawn in brighter axis colours (X red, Y green, Z light blue).
+
+![High contrast: black panels and white text, a box with the thick yellow selection edge and the bigger move handles](img/accessibility/high-contrast.png)
 
 If you picked your own selection-outline colour in Settings, High contrast keeps yours. Switching High contrast off
 here goes back to the theme you had before.
