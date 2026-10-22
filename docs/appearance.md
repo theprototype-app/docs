@@ -13,7 +13,7 @@ viewport keeps following the scene's environment (sky, background, grid), whatev
 | **Light** | light panels and dark text |
 | **Green console** | green-on-black, like an old terminal |
 | **8-bit** | a retro palette |
-| **High contrast** | strong borders and maximum text contrast, for readability |
+| **High contrast** | white text on black at 7:1 (AAA), 3:1 borders and switches, a thick selection outline and bigger handles — also a switch in [Settings ▸ Accessibility](accessibility.md#high-contrast) |
 
 ![The Profiler in the Dark, Light, Green console, 8-bit and High contrast themes](img/appearance/themes.png)
 

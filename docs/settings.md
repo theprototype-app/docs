@@ -18,7 +18,7 @@ Since 1.26 Settings has a new layout. No setting was lost or changed meaning: ev
 
     | Group | Categories |
     |---|---|
-    | **General** | Interface, Controls, Input, Touch controls, Shortcuts |
+    | **General** | Interface, Accessibility, Controls, Input, Touch controls, Shortcuts |
     | **Workspace** | Scene, Explorer, Node types, Export |
     | **Devices & services** | VR, AI, Connection, Privacy |
 

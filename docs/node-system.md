@@ -44,17 +44,21 @@ It is your own setting: it changes nothing for your peers and nothing in the gra
 
 ## Connecting: typed sockets
 
-Drag from a node's output (right side) to another node's input (left side). Every socket is **color-coded by its value type**, and only compatible types connect — an incompatible pair shows **red** while you drag.
+Drag from a node's output (right side) to another node's input (left side). Every socket is **color-coded by its value type**, and only compatible types connect — an incompatible pair shows a red cross while you drag.
 
-| Type | Color | Carries |
-|---|---|---|
-| number | <span style="color:#38bdf8">●</span> `#38bdf8` | a numeric value |
-| vector3 | <span style="color:#a78bfa">●</span> `#a78bfa` | an x/y/z triple (also usable as a world point) |
-| boolean | <span style="color:#f472b6">●</span> `#f472b6` | true/false |
-| color | <span style="color:#fbbf24">●</span> `#fbbf24` | a color |
-| object | <span style="color:#4ade80">●</span> `#4ade80` | a reference to a scene object |
-| event | <span style="color:#facc15">●</span> `#facc15` | a short trigger pulse |
-| effect | <span style="color:#fb923c">●</span> `#fb923c` | a per-frame scene effect |
+| Type | Color (Dark) | Shape | Carries |
+|---|---|---|---|
+| number | <span style="color:#38bdf8">●</span> `#38bdf8` | disc | a numeric value |
+| vector3 | <span style="color:#a78bfa">◆</span> `#a78bfa` | diamond | an x/y/z triple (also usable as a world point) |
+| boolean | <span style="color:#f472b6">■</span> `#f472b6` | square | true/false |
+| color | <span style="color:#fbbf24">⬢</span> `#fbbf24` | hexagon | a color |
+| object | <span style="color:#4ade80">⬟</span> `#4ade80` | pentagon | a reference to a scene object |
+| event | <span style="color:#e2e8f0">➤</span> `#e2e8f0` | arrow | a short trigger pulse |
+| effect | <span style="color:#fb923c">★</span> `#fb923c` | star | a per-frame scene effect |
+
+Since 1.41 every socket type has a **shape** as well as a colour, so wiring never depends on telling hues apart, and
+Light and High contrast use darker / brighter tints of the same set. While you drag, a socket that cannot take the wire
+turns into a red **cross**. See [Accessibility](accessibility.md#status-colours-you-can-tell-apart).
 
 Sensible conversions are allowed automatically: numbers ↔ booleans, numbers → vectors, events → numbers/booleans, and vector3 ↔ object (so a Vector3 literal can stand in for an object as a world point). **Effect** sockets only connect to other effect sockets.
 

@@ -34,7 +34,9 @@ undoable, and they play in exported and published games.
 2. **+ Track** ▸ Camera / Animation / Audio / Event.
 3. **Double-click a lane** to add an item at that time. It picks the selected camera or animated object (or the first
    one); audio takes the first sound in the Explorer. Select the item and finish it in the strip below the tracks:
-   time, length, camera(s), object + clip + speed, sound + gain, event name.
+   time, length, camera(s), object + clip + speed, sound + gain + **caption**, event name.
+   An audio clip's **Caption** (one line, up to 200 characters) shows at the bottom of the screen while the clip plays
+   for anyone with captions on ([Accessibility](accessibility.md#captions)).
 4. **Drag** an item to move it; drag its **right edge** to change its length. Items snap to other items' edges, the
    playhead and the frame grid (the magnet button turns snapping off; hold <kbd>Alt</kbd> to drag freely). Each drag is
    one undo step.

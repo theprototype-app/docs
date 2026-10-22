@@ -24,6 +24,17 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.41 — accessibility.** A new [Accessibility](accessibility.md) page in Settings: a **UI scale** from 90 to 150 %
+(every panel and the phone layout; the 3D view keeps its full resolution), **Motion** (*Follow system* / *Reduce* /
+*Full*) and **Show captions**. **High contrast** is a real theme now — text at 7:1, a thick selection outline and
+bigger handles — and status colours are [colour-blind safe in every theme](accessibility.md#status-colours-you-can-tell-apart),
+each with a shape. The whole editor works [from the keyboard](accessibility.md#keyboard-navigation) (a skip link,
+focus rings, arrow keys in toolbars, <kbd>F6</kbd> between regions, <kbd>Esc</kbd> out of everything) and with a
+[screen reader](accessibility.md#screen-readers) (toasts read aloud, selection says name and kind, the object list is
+a tree). Every game gets a player **Accessibility** menu — captions, a colour-blind filter, HUD text size and
+remappable controls — and VR has a Low / High comfort vignette, **Recenter** for seated play and **One-handed** mode:
+see [Making your game accessible](making-your-game-accessible.md).
+
 **1.40 — physics and water.** A fast, small body can have [continuous collision](physics.md#continuous-collision-per-object)
 of its own (**Properties ▸ Physics ▸ Continuous collision**), so a bullet or a thrown ball never passes through a thin
 wall. [On Impact](nodes/onimpact.md#on-the-object-that-was-hit) also fires on the static or kinematic object that was

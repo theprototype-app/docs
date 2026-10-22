@@ -20,3 +20,9 @@ wired object (it pans and fades with distance), or everywhere when nothing is wi
 
 Sounds play only while someone is playing (Interact or Play), on each player's own device, at the
 **Game sounds** volume in Settings ▸ Interface ▸ Sound.
+
+## Caption
+
+Leave **caption** blank and players with captions on see the sound's name (`[coin]`, `[explosion]`); type your own
+words to say more (`The gate creaks open`), or `-` to never caption it. Very frequent sounds (step, click, pop) have no
+default caption. See [Making your game accessible](../making-your-game-accessible.md#captions).
