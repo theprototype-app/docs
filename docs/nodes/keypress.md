@@ -29,3 +29,9 @@ Press <kbd>R</kbd> to spin an object:
 
 !!! tip
     Inside an [object flow](../object-flows.md) you can skip the Object Selector — a Key Press wired into a Spin's speed drives the flow's owner directly.
+
+## Action (for players)
+
+Fill in **action (for players)** (`Jump`, `Open the door`) and the key appears under that name in the game menu's
+Accessibility ▸ **Controls** list, where a player can move it to any key that suits them. Every Key Press follows the
+player's layout. See [Making your game accessible](../making-your-game-accessible.md#controls).

@@ -349,6 +349,22 @@ headset's **All settings** panel, and desktop **Settings ▸ VR**. Search deskto
 - **Seated** lifts your view to a standing eye height, measured from your head when you switch to it. **Height** adds to
   that. While you walk in a game your feet stay on the floor.
 
+## Comfort for everyone
+
+- **Comfort vignette** (Settings ▸ VR ▸ Comfort) is **Off / Low / High**: the edges of your view darken while the stick
+  moves or turns you. A saved "on" from before 1.41 is *High*. A game's own Comfort vignette row is *Default / Off /
+  Low / High* (Default follows yours).
+- **Recenter** (Settings ▸ VR ▸ Body, and the game menu's Accessibility page in the headset) measures a seated head
+  again from where you sit now and turns you to face the game's spawn (or the scene's forward). The headset's own
+  recenter does the same.
+- **One-handed** (Settings ▸ VR ▸ Controls): *Off* / *Left only* / *Right only* puts everything on one controller —
+  the stick walks forward and back and turns sideways, holding the stick press aims a teleport (release jumps), B / Y
+  opens the radial menu (which then also offers *Edit / Interact*, *Game menu* and *Ping*), A / X talks or jumps, and
+  that controller's laser points at every panel.
+- In a game, the pause menu's **Accessibility** page repeats Comfort vignette, Stance, One-handed and Recenter, and adds
+  captions and HUD text size (the colour filter is for flat screens only). See
+  [Making your game accessible](making-your-game-accessible.md#vr-comfort).
+
 ## Remapping your buttons
 
 **Settings ▸ VR ▸ Controls** on the desktop, or **Settings ▸ Controls ▸ Remap buttons** in the headset (the **Buttons** tab

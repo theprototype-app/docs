@@ -33,3 +33,8 @@ A campfire with crackle:
 
 !!! tip
     Looping sounds run off the synced clock, so all peers hear the same phase. Wire **volume** from a [Slider](slider.md) for a shared mixing knob.
+
+## Caption
+
+The **caption** field (1.41) is the line players with captions on read while the sound plays — `[rain on the roof]`,
+`[engine starts]`. It shows each time the sound starts. See [Making your game accessible](../making-your-game-accessible.md#captions).

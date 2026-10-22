@@ -9,6 +9,7 @@ nav:
     - Tours: tours.md
     - Units: units.md
     - Themes & Appearance: appearance.md
+    - Accessibility: accessibility.md
     - Settings: settings.md
     - Privacy & Error Reports: privacy.md
     - Your Character: avatars.md
@@ -155,6 +156,7 @@ nav:
     - The Games Tab: games.md
     - Game Rules on the Main Graph: game-rules.md
     - Build a Game Loop: build-a-game.md
+    - Making Your Game Accessible: making-your-game-accessible.md
     - HUD Editor: hud-editor.md
     - Game Kit: game-kit.md
     - Behaviours: behaviours.md

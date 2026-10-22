@@ -473,6 +473,9 @@ api.peerIds();           // connected peer ids — free state a departed peer le
 
 api.flyTo([x, y, z], [lx, ly, lz]);   // LOCAL camera move (never replicated)
 api.playSound('pluck', [x, y, z]);    // LOCAL spatial chime
+api.playSound('coin', [x, y, z], { caption: 'Coin collected' });   // 1.41: a caption for players who have captions on
+api.captions.show('A voice: "Over here!"', { seconds: 4 });        // 1.41: a caption line, LOCAL
+api.captions.shown();   // 1.41: does this player have captions on?
 api.followCam(uuid); api.stopFollowCam();   // LOCAL chase camera
 ```
 
