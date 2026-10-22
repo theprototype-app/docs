@@ -4638,11 +4638,11 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 <td>Switches a camera's look (its post-processing) on or off when a pulse arrives, and by default looks through that camera too.</td>
 </tr>
 <tr>
-<td><strong>Game Start</strong></td>
+<td><a href="gamestart/"><strong>Game Start</strong></a></td>
 <td>Fires once when the game starts (Play, or a round reset) - the place to spawn, reset counters and arm timers.</td>
 </tr>
 <tr>
-<td><strong>Travel to scene</strong></td>
+<td><a href="travel/"><strong>Travel to scene</strong></a></td>
 <td>Loads another saved scene by name when a pulse arrives - a door to the next level, replicated to everyone.</td>
 </tr>
 <tr>
@@ -4658,14 +4658,6 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 <td>Reads a named scene variable as a value - the read side of Set Variable, live on every peer.</td>
 </tr>
 <tr>
-<td><strong>Game Time</strong></td>
-<td>Seconds since the game (or the round) started, the same on every peer - a clock that pauses with the game.</td>
-</tr>
-<tr>
-<td><strong>Player Variable</strong></td>
-<td>A value kept PER PLAYER (score, lives, team) - each peer reads its own row, or a named player's.</td>
-</tr>
-<tr>
 <td><a href="storevalue/"><strong>Store Value</strong></a></td>
 <td>Saves a value on THIS device when a pulse arrives (set, keep the max or min, or add) - a best score or a level reached that survives a reload; never sent to other players.</td>
 </tr>
@@ -4675,31 +4667,43 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 </tr>
 <tr>
 <td><a href="announce/"><strong>Announce</strong></a></td>
-<td>A big centred banner ("GOAL!", "Floor {v}") on a desktop and in a headset — local to each player, fired from the shared trigger.</td>
+<td>Shows a big banner - 'Ring 2 reached', 'GOAL!' - on every screen and in VR when a pulse arrives; {v} in the text shows a wired number.</td>
 </tr>
 <tr>
 <td><a href="gamesound/"><strong>Game Sound</strong></a></td>
-<td>Plays one of 20 built-in game sounds (coin, goal, whistle, levelup…) at an object or everywhere; no audio files.</td>
+<td>Plays one of the built-in game sounds (coin, ring, levelup, cheer...) when a pulse arrives, at the wired object if one is wired; no sound files needed.</td>
 </tr>
 <tr>
 <td><a href="effectburst/"><strong>Effect Burst</strong></a></td>
-<td>A short sparkle / confetti / smoke / sparks burst at an object — pooled and local.</td>
+<td>Fires a short sparkle, confetti, smoke or sparks burst at the wired object (or in front of the player) when a pulse arrives; pooled and local to each device.</td>
 </tr>
 <tr>
 <td><a href="hapticpulse/"><strong>Controller Buzz</strong></a></td>
-<td>Vibrates the VR controllers with a named pattern — only in Interact and Play.</td>
+<td>Buzzes the VR controllers with a named pattern (tap, bump, success...) when a pulse arrives - only in Interact or Play, never while editing.</td>
 </tr>
 <tr>
 <td><a href="gamemusic/"><strong>Game Music</strong></a></td>
-<td>Declares the scene's looping music (seven built-in tracks), playing only while someone plays.</td>
+<td>Plays a looping built-in music preset while you are in Interact or Play - always, or only during a round; wire 'on' to switch it by a condition.</td>
 </tr>
 <tr>
 <td><a href="gamesetting/"><strong>Game Setting</strong></a></td>
-<td>Declares one row in the game's Settings (a toggle, a range or a choice) and outputs this player's value — saved on this device, never shared.</td>
+<td>Declares one row in the game's Settings (a toggle, a range or a choice) and outputs this player's value - saved on this device for this game, never shared.</td>
 </tr>
 <tr>
 <td><a href="pointgrab/"><strong>Point Grab</strong></a></td>
-<td>While its <code>enabled</code> input reads off, players cannot pick objects up by pointing at them — only a touching hand moves them.</td>
+<td>While 'enabled' reads off, players cannot pick objects up by pointing at them (the VR grip ray, the desktop carry); a hand touching an object still moves it.</td>
+</tr>
+<tr>
+<td><a href="onclap/"><strong>On Clap</strong></a></td>
+<td>Fires a pulse when a VR player brings both hands together and holds them - with where they met (point) and whether it was you (byMe); wire 'enabled' to a setting to switch it.</td>
+</tr>
+<tr>
+<td><strong>Game Time</strong></td>
+<td>Seconds since the game (or the round) started, the same on every peer - a clock that pauses with the game.</td>
+</tr>
+<tr>
+<td><strong>Player Variable</strong></td>
+<td>A value kept PER PLAYER (score, lives, team) - each peer reads its own row, or a named player's.</td>
 </tr>
 </tbody>
 </table>
@@ -4717,7 +4721,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 <td>Turns the connected object into a walking, jumping character driven by the player's movement input.</td>
 </tr>
 <tr>
-<td><strong>Move Input</strong></td>
+<td><a href="moveinput/"><strong>Move Input</strong></a></td>
 <td>The player's movement input as numbers - stick or WASD axes and the jump button - for driving things by hand.</td>
 </tr>
 <tr>
@@ -4749,19 +4753,19 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 </tr>
 <tr>
 <td><strong>HUD Text</strong></td>
-<td>Puts a value into a HUD text element - a live score, a name, a round number.</td>
-</tr>
-<tr>
-<td><strong>HUD Timer</strong></td>
-<td>Runs a HUD timer element's countdown on the shared clock (duration, format, autostart), so every player sees the same time.</td>
+<td>Writes a number into a HUD text element through a format such as 'Gems: {v}' - a score, a count, a readout.</td>
 </tr>
 <tr>
 <td><strong>HUD Bar</strong></td>
 <td>Drives a HUD bar element's fill from a number - health, fuel, progress.</td>
 </tr>
 <tr>
-<td><strong>HUD Button</strong></td>
+<td><a href="hudbutton/"><strong>HUD Button</strong></a></td>
 <td>Fires a pulse when a HUD button is pressed - the on-screen counterpart of On Click.</td>
+</tr>
+<tr>
+<td><strong>HUD Timer</strong></td>
+<td>Runs a countdown in a HUD text element from its duration, formatted like '{v}s' - starts by itself or on a pulse.</td>
 </tr>
 <tr>
 <td><strong>HUD List</strong></td>
@@ -4770,6 +4774,10 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 <tr>
 <td><strong>HUD Rows</strong></td>
 <td>Appends or replaces rows in a HUD rows element from a pulse - a log, a chat, a scoreboard feed.</td>
+</tr>
+<tr>
+<td><strong>Leaderboard</strong></td>
+<td>Ranks the players by their own per-player variable (laps, score) into a HUD element, highest or lowest first, top N rows.</td>
 </tr>
 <tr>
 <td><strong>HUD Input</strong></td>
@@ -4792,11 +4800,15 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 <tbody>
 <tr>
 <td><a href="script/"><strong>Script</strong></a></td>
-<td>Your own JavaScript - an effect that moves its object every frame, or (with declared typed inputs and outputs) a small pure function whose return feeds other nodes.</td>
+<td>Your own JavaScript - an effect that moves its object every frame, or (with declared typed inputs and outputs) a small pure function whose return feeds other nodes. v2 scripts also get <code>api</code>: object(uuid or name), raycast(from, dir), and in effects keys() (this device only) and spawn('/create ...') (the host spawns once for everyone).</td>
 </tr>
 <tr>
 <td><a href="../behaviours/"><strong>Behaviour</strong></a></td>
 <td>Game logic written as a small JavaScript file (params, replicated state, event handlers, kit calls) - run once on the authority peer, with a live node view of its events, state and knobs.</td>
+</tr>
+<tr>
+<td><strong>Code link</strong></td>
+<td>Points at the module or kit file whose code runs part of this game - double-click (or Open code) to read it. It does nothing at runtime; it is how the Main graph shows where every rule lives.</td>
 </tr>
 <tr>
 <td><a href="math/"><strong>Math</strong></a></td>
@@ -4886,24 +4898,20 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 <td>Fires a short pulse when its object is clicked - the bridge from user input into the graph.</td>
 </tr>
 <tr>
+<td><a href="ongrab/"><strong>On Grab</strong></a></td>
+<td>Fires a pulse when a player picks the object up - a carry in Play or Interact, or a VR grip in Interact; editor moves never fire it.</td>
+</tr>
+<tr>
 <td><a href="keypress/"><strong>Key Press</strong></a></td>
 <td>Fires a pulse while a keyboard key is pressed - the bridge from your keyboard into the graph.</td>
 </tr>
 <tr>
+<td><a href="onhit/"><strong>On Hit</strong></a></td>
+<td>Fires a pulse when a hand or a walking player knocks the object - with how hard it was hit (speed) and whether you did it (byMe).</td>
+</tr>
+<tr>
 <td><a href="onrest/"><strong>On Rest</strong></a></td>
 <td>Fires a pulse when a physics body has finished moving - the counterpart to On Impact, which fires when it starts.</td>
-</tr>
-<tr>
-<td><a href="onhit/"><strong>On Hit</strong></a></td>
-<td>Fires a pulse when a hand or a player knocks the connected object, with how hard and whether it was you.</td>
-</tr>
-<tr>
-<td><a href="ongrab/"><strong>On Grab</strong></a></td>
-<td>Fires a pulse when a player picks up the object — a desktop carry or a VR grip in Interact.</td>
-</tr>
-<tr>
-<td><a href="onclap/"><strong>On Clap</strong></a></td>
-<td>Fires when a VR player brings both hands together and holds them, with where they met (<code>point</code>) and whether it was you.</td>
 </tr>
 <tr>
 <td><strong>Gamepad Button</strong></td>
@@ -4933,6 +4941,14 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 <td>Rotates the connected object continuously around one axis.</td>
 </tr>
 <tr>
+<td><a href="../fluids/#nodes"><strong>Rotate / Motor</strong></a></td>
+<td>Turns the connected object about its own local axis (and its origin, so a wheel turns on its hub) at a set rpm with a spin-up. Paddles and scoops it turns carry water from Fluid emitters. On a dynamic physics body during a simulation it becomes a real motor: torque-limited, so a load slows it.</td>
+</tr>
+<tr>
+<td><a href="../fluids/#nodes"><strong>Float Along Flow</strong></a></td>
+<td>Carries the connected object along a Flow path - a leaf, a toy boat - from where you placed it, at the path's speed, bobbing and turning with the current, looping at the end. Uses the nearest Flow path unless one is wired.</td>
+</tr>
+<tr>
 <td><a href="bounce/"><strong>Bounce</strong></a></td>
 <td>Bounces the connected object up and down off its resting height, like a dribbled ball.</td>
 </tr>
@@ -4946,27 +4962,19 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 </tr>
 <tr>
 <td><a href="followpath/"><strong>Follow Path</strong></a></td>
-<td>Moves the connected object along a smooth path - a drawn Spline, a Flow path or its own waypoints - at a speed, looping, ping-ponging or once, facing along it and leaning into the turns.</td>
+<td>Moves the connected object along a smooth path - a drawn Spline, a Flow path or its own waypoints - at a speed, looping, ping-ponging or once, facing along it and leaning into the turns. An offset spreads several riders out along one path.</td>
 </tr>
 <tr>
 <td><a href="wander/"><strong>Wander</strong></a></td>
-<td>Drifts the connected object around a smooth, never-repeating target inside an area object (a water volume, a room) or a box around where it was placed.</td>
+<td>Drifts the connected object around a smooth, never-repeating target inside an area object (a water volume, a room) or a box around where it was placed - fish, birds, fireflies, idle drones.</td>
 </tr>
 <tr>
 <td><a href="orientvelocity/"><strong>Orient to Velocity</strong></a></td>
-<td>Turns the connected object to face the way it is moving, smoothly, leaning into turns - put it after Wander, Orbit or any mover.</td>
+<td>Turns the connected object to face the way it is moving, smoothly, leaning into turns - put it after Wander, Orbit or any mover so it looks where it goes.</td>
 </tr>
 <tr>
 <td><a href="bodywave/"><strong>Body Wave</strong></a></td>
-<td>Bends the connected object with a wave travelling along its body - a swimming fish, a snake, a flag, a tail - stronger and faster the faster it moves.</td>
-</tr>
-<tr>
-<td><a href="../fluids/#nodes"><strong>Rotate / Motor</strong></a></td>
-<td>Turns its object about one of its own axes at an rpm with a spin-up; on a dynamic body during a simulation, a motor of a given torque. Paddles it turns push fluid (1.25).</td>
-</tr>
-<tr>
-<td><a href="../fluids/#nodes"><strong>Float Along Flow</strong></a></td>
-<td>Carries its object along the nearest (or wired) flow path at the path's speed, bobbing and facing the current (1.25).</td>
+<td>Bends the connected object with a wave travelling along its body - a swimming fish, a snake, a flag, a tail - stronger and faster the faster it moves, curving into turns. A shader effect: physics and picking keep the rest pose.</td>
 </tr>
 <tr>
 <td><a href="animfinished/"><strong>Animation Finished</strong></a></td>
@@ -5096,19 +5104,19 @@ object) and an <strong>other</strong> output (the body it touched) — see <a hr
 </thead>
 <tbody>
 <tr>
-<td><strong>Device Param</strong></td>
+<td><a href="deviceparam/"><strong>Device Param</strong></a></td>
 <td>Writes a number into one parameter of the connected audio device every frame - an LFO on a cutoff, a fader on a level.</td>
 </tr>
 <tr>
-<td><strong>Device Level</strong></td>
+<td><a href="devicelevel/"><strong>Device Level</strong></a></td>
 <td>The live output level of the connected audio device (or a wired one) as a number - a meter you can drive anything with.</td>
 </tr>
 <tr>
-<td><strong>Transport</strong></td>
+<td><a href="transportbeat/"><strong>Transport</strong></a></td>
 <td>The shared music transport as a number - beat, bar, phase, bpm or playing - identical on every peer.</td>
 </tr>
 <tr>
-<td><strong>Note Trigger</strong></td>
+<td><a href="notetrigger/"><strong>Note Trigger</strong></a></td>
 <td>Plays a note on the connected audio device when a pulse arrives - a drum pad, a sampler pad, a synth key.</td>
 </tr>
 </tbody>
@@ -5179,7 +5187,7 @@ every peer counts once. The <a href="../game-kit/#the-pieces">Game kit</a> page 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-18
+    2026-10-21
   </span>
 
     

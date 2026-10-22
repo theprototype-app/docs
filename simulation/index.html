@@ -1137,6 +1137,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pouring-into-a-pool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pouring into a pool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu-fluid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU fluid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#limits" class="md-nav__link">
     <span class="md-ellipsis">
       Limits
@@ -4357,6 +4375,24 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pouring-into-a-pool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pouring into a pool
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpu-fluid" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPU fluid
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#limits" class="md-nav__link">
     <span class="md-ellipsis">
       Limits
@@ -4492,6 +4528,35 @@ over the rim, falls, splashes into any water below and settles. The tank holds l
 again. The simulation transport's <strong>Pause</strong> holds the tank and its spilled drops still, and <strong>Reset</strong> refills it (see
 <a href="../physics/#the-simulation-controls-hud">The simulation controls HUD</a>).</p>
 <p><img alt="Fluid tank toy: the Honey tank tipped, its honey spilled onto the table" src="../img/simulation/tank-spill.png" /></p>
+<h3 id="pouring-into-a-pool">Pouring into a pool</h3>
+<p><em>New in 1.40.</em> A tank's water reaches the pool it pours into. When a tank stands in a pool, or a pool's surface runs
+through the tank, a pour inside the tank that falls onto that surface <strong>joins the pool</strong>: it leaves the tank, the pool
+ripples where it lands and a couple of droplets kick back up as a splash. Nothing to switch on — it works for any fluid
+tank and any <a href="../water/">water object</a> (tank, pool, round pool, ocean) whose surface crosses the tank.</p>
+<ul>
+<li>Fluid the tank already holds below the pool's surface <strong>stays</strong>: a tank standing in a pool keeps its water, the
+  glass is still there.</li>
+<li>A calm surface bobbing across the pool's level is not a landing; only water falling onto the surface (faster than a
+  wade, about 0.6 m/s) joins the pool.</li>
+<li>Everyone's tank pours the same water from the same settings, so everyone sees the pour land and ripple in the same
+  place. Nothing extra is sent over the network. The ripples and droplets are a local picture, like every water ripple.</li>
+</ul>
+<p><img alt="A pour inside a tank landing on the pool's surface and rippling it" src="../img/simulation/tank-pours-into-pool.png" /></p>
+<h3 id="gpu-fluid">GPU fluid</h3>
+<p><em>New in 1.40.</em> Fluid tanks can run their particle solver on the <strong>graphics card</strong> (WebGPU compute) instead of the
+processor. The fluid behaves the same either way: same particle count, same tank, same pour, the same push on toys
+floating in it, the same pour into a pool.</p>
+<p><strong>Where:</strong> <strong>Settings ▸ Scene ▸ Performance ▸ GPU fluid</strong> — <strong>Auto</strong> (the default) or <strong>Off</strong>, this device only.</p>
+<p><strong>How Auto decides.</strong> The first time a fluid tank runs, the app measures this device once: one 8000-particle tank
+stepped on the graphics card and on the processor. It uses the graphics card only if that step is clearly faster (at
+most 75 % of the processor's time) and remembers the answer for this browser. The row says what Auto chose and the two
+times; <strong>Measure again</strong> forgets the answer and measures on the next tank. A tank already pouring when you change the
+setting starts again from its fill (like <strong>Refill</strong>).</p>
+<p><strong>It falls back to the processor</strong> when the browser has no WebGPU (many Linux browsers, a headset browser without
+compute), when the graphics card is not faster, or when it stops (a lost device or a driver error): the tanks restart
+on the processor and the row says why.</p>
+<p>Measured on the development machine (Chromium, an AMD GPU): 8000 particles step in 2.5–2.9 ms on the graphics card
+against 35–37 ms on the processor, including sending the particles to the card and reading them back.</p>
 <h3 id="limits">Limits</h3>
 <ul>
 <li>Each player simulates their own fluid; only the settings are shared. Splashes differ slightly between players. The push
@@ -4502,6 +4567,7 @@ again. The simulation transport's <strong>Pause</strong> holds the tank and its 
   loaded (see <a href="../water/#quality">Water ▸ Quality</a>).</li>
 <li>Spilled drops settle on the ground and on the tops of objects' bounding boxes, not on slopes.</li>
 <li>Scaling the tank resizes the fluid box.</li>
+<li><a href="../fluids/">Fluid emitters</a> still run on the processor whatever <strong>GPU fluid</strong> says.</li>
 </ul>
 <h2 id="jiggle">Jiggle</h2>
 <p><strong>Secondary motion</strong> for any object: it lags behind when you move it, overshoots when it stops, wobbles like jelly when it
@@ -4537,7 +4603,7 @@ pour into and drop toys in). <strong>Pool party</strong> shows floating toys in 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-05
+    2026-10-21
   </span>
 
     
