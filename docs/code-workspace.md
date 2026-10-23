@@ -45,6 +45,49 @@ Leaving the page with unsaved code shows the browser's warning.
 **Undo and redo** (<kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Y</kbd>) step through saved code edits, on every
 peer; an open tab follows them.
 
+## Editing together
+
+Since 1.42, when two or more people in a session open the same code — a Script node, a Behaviour node, a script file,
+or a [text document](#text-documents) — they type into **one shared text**. Everyone sees the others' typing as it
+happens, and two people typing in the same line both keep what they typed: nothing is overwritten.
+
+![Editing together: the other person's caret and selection in their colour, and the "Editing with you" strip](img/code-workspace/editing-together.png)
+
+- The other person's **caret** and **selection** show in their colour (hover the caret for their name). The strip under
+  the toolbar, **Editing with you**, lists everyone in the file and the line they are on; a screen reader reads it as
+  "Ana is on line 4, 12 characters selected".
+- <kbd>Ctrl</kbd>+<kbd>S</kbd> **saves exactly as before**: the node (or file) gets the text as it is now, for everyone.
+  A tab shows **●** while anybody's edits are unsaved; once somebody saves, every person's tab is clean.
+- <kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes only **your own** typing, never someone else's.
+- **Revert** on a shared tab throws away the unsaved edits of everyone in that file.
+- Someone who joins later and opens the file sees the **current** text, including edits nobody has saved yet.
+- A **viewer** (a cloud room's read-only role) sees the text move but cannot type.
+
+The shared text lives only while somebody has the file open; what lands in the scene or the file is always what someone
+saved. It travels over the same direct peer-to-peer connection as everything else — no server.
+
+### Text documents
+
+Text files in the [Explorer](explorer.md) (`.txt`, `.md` …) open in the Code tab too: select one and press **Edit** in
+its preview, double-click it, or right-click ▸ **Edit in the Code tab** — and they are shared the same way.
+
+## Pop out to its own window
+
+**Pop out** (↗) in the workspace header opens the whole code workspace in its **own browser window** — drag it to a
+second monitor and keep the 3D view full-size in the app. Desktop browsers only (hidden on phones, touch screens and in
+VR).
+
+![The code workspace in its own window, with Dock back in its header](img/code-workspace/pop-out-window.png)
+
+- Everything stays live both ways: typing, <kbd>Ctrl</kbd>+<kbd>S</kbd> applying the script to the scene, the error
+  banner and Problems, the sidebars, quick open, menus — and [editing together](#editing-together).
+- While the window is open the app's own Code panel steps aside; opening code anywhere in the app (**Edit code** on a
+  node, a `.js` file in the Explorer) brings that window to the front.
+- **Dock back** in the window's header — or simply closing the window — puts the editor back in the app, docked or
+  floating as it was. Closing or reloading the app tab closes the code window too.
+- The window follows the app's theme, **High contrast** and UI scale, and remembers its size and place for next time.
+- If the browser blocks pop-ups, a notice says so with **Try again** (or allow pop-ups for the site).
+
 ## Sidebars
 
 ![The code workspace in 1.25: Open editors and the Project tree on the left, the tab strip, and the Outline on the right](img/code-workspace/sidebars.png)
@@ -156,5 +199,6 @@ The **Live** checkbox on a node or behaviour tab applies inline edits as you typ
 - A node bound to a file still carries its code, so a scene runs the same whether or not the file is in anyone's
   Library.
 - Files are addressed by their content: two files with byte-identical content are the same file.
-- The second-monitor window (**⧉ Window**) is an experiment, switched on with
-  `localStorage['code:popout'] = 'true'` in the browser console.
+- [Editing together](#editing-together) matches files by name: two different files with the same name open on two
+  machines share one text. A viewer's own cursor is not shown to the others.
+- Notes, annotation pins and Inspector text fields are not shared live — they keep their usual sync.

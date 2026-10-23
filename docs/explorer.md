@@ -148,7 +148,7 @@ The view has its own **View**, **Group** (*By who deleted it*) and **Sort** opti
 The header's **Thumbnails / List** toggle switches views. The list has sortable columns — **Name**, **Type**, **Size**, **Added**, **Owner** (in Deleted: **Location**, **Deleted by**, **Deleted at**) — click a header to sort, drag it sideways to reorder, drag its edge to resize, and right-click the header to choose columns or **Reset widths and order**. Columns and sort are remembered per view.
 
 - **Single-click** selects an item and shows its details in the **ⓘ Properties** panel.
-- **Double-click** opens it in a **preview window** (below); text files open in a floating code editor (<kbd>Ctrl</kbd>+<kbd>S</kbd> saves back to the item).
+- **Double-click** opens it in a **preview window** (below); text files open in the [Code tab](code-workspace.md#text-documents), shared live with everyone who opens them (<kbd>Ctrl</kbd>+<kbd>S</kbd> saves back to the item).
 - **Right-click** an item for Open, Download, Share, Rename, Delete, Properties (and *Copy contents* for text files,
   **Edit image…** for images — see [The Image editor](image-editor.md)).
 - The search box filters the whole library by name; the breadcrumb path bar (toggleable) shows where you are.

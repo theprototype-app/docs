@@ -24,6 +24,16 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.42 — together and anywhere.** Open the same code as someone in your session and you
+[type into one text together](code-workspace.md#editing-together): two people in one line both keep their typing,
+everyone's cursor and selection show in their colour, an **Editing with you** strip names who is where, a late joiner
+sees the unsaved text, and <kbd>Ctrl</kbd>+<kbd>S</kbd> saves as before. Explorer
+[text documents](code-workspace.md#text-documents) open in the Code tab and are shared the same way. **Pop out** puts
+the [code editor in its own window](code-workspace.md#pop-out-to-its-own-window) for a second monitor; **Dock back**
+returns it. On an Android phone, [AR table](ar-table.md) puts your scene on a real table through the camera — tap to
+place, pinch and twist, then **Play**. Also: checkpoint pictures show the scene without gizmos, and
+[very large scenes](checkpoints.md#very-large-scenes) skip automatic checkpoints.
+
 **1.41 — accessibility.** A new [Accessibility](accessibility.md) page in Settings: a **UI scale** from 90 to 150 %
 (every panel and the phone layout; the 3D view keeps its full resolution), **Motion** (*Follow system* / *Reduce* /
 *Full*) and **Show captions**. **High contrast** is a real theme now — text at 7:1, a thick selection outline and
