@@ -1229,6 +1229,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Automatic checkpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#very-large-scenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Very large scenes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4031,6 +4046,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ar-table/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Play on a Table (AR, Android)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -4362,6 +4398,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Automatic checkpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#very-large-scenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Very large scenes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4454,6 +4505,13 @@ a note ("before lighting", "try the red version next"), then press <strong>Save 
 <p>While you work, autosave also adds an <strong>automatic</strong> checkpoint every few minutes — only when the scene actually changed
 since the last one, and never while a scene is loading or a simulation is running.</p>
 <p>In the Checkpoints window the <strong>Automatic</strong> switch shows or hides the automatic checkpoints in the timeline.</p>
+<p>A checkpoint's picture (and a saved scene's) shows the <strong>scene only</strong> — no gizmo, grid, light or camera helpers or
+selection outline, whatever was selected when it was cut.</p>
+<h3 id="very-large-scenes">Very large scenes</h3>
+<p>A very large scene — over the <a href="../performance/#the-budget-chip-will-it-fit-on-a-quest">budget meter</a>'s <strong>Desktop</strong> line for triangles (4 M) or texture memory
+(512 MB) — skips automatic checkpoints, because each one copies the whole scene. The first time it happens a notice says
+so, with a <strong>Settings</strong> button. Named checkpoints (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>) always work.</p>
+<p><img alt="The notice when a large scene skips its automatic checkpoint" src="../img/checkpoints/large-scene-notice.png" /></p>
 <h2 id="settings">Settings</h2>
 <p><strong>Settings ▸ Scene ▸ Checkpoints</strong>:</p>
 <table>
@@ -4479,6 +4537,11 @@ since the last one, and never while a scene is loading or a simulation is runnin
 <td>Checkpoint storage</td>
 <td>250 MB</td>
 <td>100 MB / 250 MB / 500 MB / 1 GB that this device may use</td>
+</tr>
+<tr>
+<td>Auto checkpoints on large scenes</td>
+<td>off</td>
+<td>automatic checkpoints for <a href="#very-large-scenes">very large scenes</a> too (1.42)</td>
 </tr>
 </tbody>
 </table>
@@ -4511,7 +4574,7 @@ since the last one, and never while a scene is loading or a simulation is runnin
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-07
+    2026-10-23
   </span>
 
     
