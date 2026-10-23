@@ -168,6 +168,7 @@ nav:
   - VR:
     - VR Guide: vr.md
     - Colocation (shared room): colocation.md
+    - Play on a Table (AR, Android): ar-table.md
   - AI:
     - Assistant: ai/assistant.md
     - Providers: ai/providers.md

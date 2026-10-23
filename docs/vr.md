@@ -9,6 +9,8 @@ ThePrototype runs in a WebXR headset browser — build, edit and collaborate in 
 
 Open the app in your headset browser and press the on-screen **Play** button. When a headset is present the button wears a pair of goggles instead of the play triangle, so you can see where the press is about to take you — and with passthrough on it shows **A** and **R** in the lenses. Passthrough/mixed-reality is a Settings toggle that keeps your room visible behind the scene.
 
+No headset? On an Android phone you can [play the scene on a real table](ar-table.md) through the camera.
+
 In a Quest's browser the page can also offer the browser's own **Enter VR** button, once per visit (the **Offer Enter VR**
 setting — see [Tours](tours.md#settings)). The first time you enter VR on a device, the [welcome tour](#welcome-tour)
 shows you your controllers.

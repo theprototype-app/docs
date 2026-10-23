@@ -33,6 +33,17 @@ since the last one, and never while a scene is loading or a simulation is runnin
 
 In the Checkpoints window the **Automatic** switch shows or hides the automatic checkpoints in the timeline.
 
+A checkpoint's picture (and a saved scene's) shows the **scene only** — no gizmo, grid, light or camera helpers or
+selection outline, whatever was selected when it was cut.
+
+### Very large scenes
+
+A very large scene — over the [budget meter](performance.md#the-budget-chip-will-it-fit-on-a-quest)'s **Desktop** line for triangles (4 M) or texture memory
+(512 MB) — skips automatic checkpoints, because each one copies the whole scene. The first time it happens a notice says
+so, with a **Settings** button. Named checkpoints (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>) always work.
+
+![The notice when a large scene skips its automatic checkpoint](img/checkpoints/large-scene-notice.png)
+
 ## Settings
 
 **Settings ▸ Scene ▸ Checkpoints**:
@@ -42,6 +53,7 @@ In the Checkpoints window the **Automatic** switch shows or hides the automatic 
 | Keep automatic checkpoints | on | autosave adds rows to the timeline |
 | Automatic checkpoint every | 10 min | 5 / 10 / 30 / 60 min — the shortest gap between two |
 | Checkpoint storage | 250 MB | 100 MB / 250 MB / 500 MB / 1 GB that this device may use |
+| Auto checkpoints on large scenes | off | automatic checkpoints for [very large scenes](#very-large-scenes) too (1.42) |
 
 ## Limits
 
