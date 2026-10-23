@@ -41,6 +41,7 @@ nav:
     - Fluid Tank & Jiggle: simulation.md
     - "Fluids: Emitters & Flow Paths": fluids.md
     - Terrain & Sculpting: terrain.md
+    - Scatter: scatter.md
     - Saving & Sessions: saving.md
     - Checkpoints: checkpoints.md
     - Loading Placeholders: loading.md
