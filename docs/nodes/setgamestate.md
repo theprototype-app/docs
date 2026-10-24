@@ -15,6 +15,11 @@ writes to.
 The trigger needs a **pulse**. A true/false value (a [Compare](compare.md)) wired straight in
 does nothing; put an event node such as [All Players](allplayers.md) between them.
 
+!!! warning "Known problem in 1.42"
+    The card does not draw its **trigger** socket yet, so this node cannot be wired by hand in the node editor. Until
+    that is fixed, let the HUD editor build it: select a button and pick one of the game actions (see the tip at the end
+    of this page) — the action adds a Set Game State already wired to the button.
+
 ## Parameters
 
 | Parameter | Default | Options |
@@ -61,7 +66,7 @@ A start button and a pause key:
 4. Press Play and click the box: the round starts for everyone. <kbd>P</kbd> pauses it, and a
    click on the box resumes it.
 
-![An On Click on the Start box drives Set Game State (playing); a Key Press P drives a second Set Game State (paused)](../img/nodes/setgamestate.png)
+![The example's nodes: On Click on the Start box, a Key Press for P, and two Set Game State cards (playing, paused) — in 1.42 the cards have no trigger socket to wire into](../img/nodes/setgamestate.png)
 
 !!! tip
     The HUD editor builds these for you: select a button and pick **Actions ▸ Start the game**,

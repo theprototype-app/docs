@@ -44,4 +44,8 @@ Count each player's own bell rings on their own HUD:
 4. Each player's HUD counts only the rings they made. Switch the Player Variable to `sum` to show
    the team's total instead.
 
-![On Hit (who me) on the Bell pulses a Set Variable (rings, add, player) fed by a Number; a Player Variable (rings, mine) drives a HUD Text](../img/nodes/peervariable.png)
+!!! warning "Known problem in 1.42"
+    Step 2 cannot be wired by hand yet: the Set Variable card does not draw its **trigger** and **value** sockets (see
+    [Set Variable](setvariable.md)). The Player Variable half of the example works as shown.
+
+![The example's nodes: On Hit (who me) on the Bell, a Set Variable (rings, add, player) beside a Number, and a Player Variable (rings, mine) driving a HUD Text](../img/nodes/peervariable.png)

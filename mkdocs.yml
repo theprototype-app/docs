@@ -60,95 +60,137 @@ nav:
     - Flow Nodes: nodes.md
     - Object Flows: object-flows.md
     - Nodes:
-      - Slider: nodes/slider.md
-      - Color Picker: nodes/colorpicker.md
-      - Switcher: nodes/switcher.md
-      - Number: nodes/number.md
-      - Vector3: nodes/vector3.md
-      - Toggle: nodes/toggle.md
-      - Random: nodes/random.md
-      - Time: nodes/time.md
-      - Object Selector: nodes/objectselector.md
-      - Velocity: nodes/velocity.md
-      - Measure: nodes/measure.md
-      - Spawn: nodes/spawn.md
-      - Flow Input: nodes/flowinput.md
-      - Flow Output: nodes/flowoutput.md
-      - Object Flow: nodes/objectflow.md
-      - Script: nodes/script.md
-      - Math: nodes/math.md
-      - Compare: nodes/compare.md
-      - Gate: nodes/gate.md
-      - Map Range: nodes/maprange.md
-      - Select: nodes/select.md
-      - Loop: nodes/loop.md
-      - Timer: nodes/timer.md
-      - Distance: nodes/distance.md
-      - Proximity: nodes/proximity.md
-      - Look At: nodes/lookat.md
-      - Set Color: nodes/setcolor.md
-      - Set Shader Uniform: nodes/setuniform.md
-      - Visibility: nodes/visibility.md
-      - On Click: nodes/onclick.md
-      - Key Press: nodes/keypress.md
-      - On Impact: nodes/onimpact.md
-      - On Hit: nodes/onhit.md
-      - On Grab: nodes/ongrab.md
-      - On Clap: nodes/onclap.md
-      - On Rest: nodes/onrest.md
-      - On Enter: nodes/onenter.md
-      - On Exit: nodes/onexit.md
-      - Play Animation: nodes/playanim.md
-      - Animation Finished: nodes/animfinished.md
-      - Animation Marker: nodes/animmarker.md
-      - Animation State: nodes/animstate.md
-      - Play Sequence: nodes/playseq.md
-      - On Sequence Event: nodes/onseqevent.md
-      - Counter: nodes/counter.md
-      - Shake: nodes/shake.md
-      - Spin: nodes/spin.md
-      - Bounce: nodes/bounce.md
-      - Jiggle: nodes/jiggle.md
-      - Orbit: nodes/orbit.md
-      - Path Patrol: nodes/pathpatrol.md
-      - Follow Path: nodes/followpath.md
-      - Wander: nodes/wander.md
-      - Orient to Velocity: nodes/orientvelocity.md
-      - Body Wave: nodes/bodywave.md
-      - Mass: nodes/mass.md
-      - Bounciness: nodes/bounciness.md
-      - Friction: nodes/friction.md
-      - Angular Velocity: nodes/angularvelocity.md
-      - Collider: nodes/collider.md
-      - Motor: nodes/motor.md
-      - Impulse: nodes/impulse.md
-      - Set Velocity: nodes/setvelocity.md
-      - Joint: nodes/joint.md
-      - Pulse: nodes/pulse.md
-      - Blink: nodes/blink.md
-      - Sound: nodes/sound.md
-      - Particles: nodes/particle.md
-      - Custom Node: nodes/customnode.md
-      - Set Active Camera: nodes/setcamera.md
-      - Camera Rig: nodes/camerarig.md
-      - Set Look: nodes/setlook.md
-      - Game Start: nodes/gamestart.md
-      - Store Value: nodes/storevalue.md
-      - Stored Value: nodes/storedvalue.md
-      - Announce: nodes/announce.md
-      - Game Sound: nodes/gamesound.md
-      - Effect Burst: nodes/effectburst.md
-      - Controller Buzz: nodes/hapticpulse.md
-      - Game Music: nodes/gamemusic.md
-      - Game Setting: nodes/gamesetting.md
-      - Point Grab: nodes/pointgrab.md
-      - Travel to scene: nodes/travel.md
-      - Move Input: nodes/moveinput.md
-      - HUD Button: nodes/hudbutton.md
-      - Device Param: nodes/deviceparam.md
-      - Device Level: nodes/devicelevel.md
-      - Transport: nodes/transportbeat.md
-      - Note Trigger: nodes/notetrigger.md
+      - Input:
+        - Slider: nodes/slider.md
+        - Color Picker: nodes/colorpicker.md
+        - Switcher: nodes/switcher.md
+        - Number: nodes/number.md
+        - Vector3: nodes/vector3.md
+        - Toggle: nodes/toggle.md
+        - Random: nodes/random.md
+        - Time: nodes/time.md
+      - Scene:
+        - Object Selector: nodes/objectselector.md
+        - Velocity: nodes/velocity.md
+        - Measure: nodes/measure.md
+        - Spawn: nodes/spawn.md
+      - Object Flow:
+        - Flow Input: nodes/flowinput.md
+        - Flow Output: nodes/flowoutput.md
+        - Object Flow: nodes/objectflow.md
+      - Game:
+        - Set Game State: nodes/setgamestate.md
+        - On Game State: nodes/ongamestate.md
+        - Set Active Camera: nodes/setcamera.md
+        - Camera Rig: nodes/camerarig.md
+        - Set Look: nodes/setlook.md
+        - Game Start: nodes/gamestart.md
+        - Travel to scene: nodes/travel.md
+        - All Players: nodes/allplayers.md
+        - Set Variable: nodes/setvariable.md
+        - Get Variable: nodes/getvariable.md
+        - Store Value: nodes/storevalue.md
+        - Stored Value: nodes/storedvalue.md
+        - Announce: nodes/announce.md
+        - Game Sound: nodes/gamesound.md
+        - Effect Burst: nodes/effectburst.md
+        - Controller Buzz: nodes/hapticpulse.md
+        - Game Music: nodes/gamemusic.md
+        - Game Setting: nodes/gamesetting.md
+        - Point Grab: nodes/pointgrab.md
+        - On Clap: nodes/onclap.md
+        - Game Time: nodes/gametime.md
+        - Player Variable: nodes/peervariable.md
+      - Character:
+        - Character Controller: nodes/charcontroller.md
+        - Move Input: nodes/moveinput.md
+        - Possess Object: nodes/possessnode.md
+        - Camera Follow: nodes/camerafollow.md
+        - Move Speed: nodes/movespeed.md
+      - HUD:
+        - HUD Screen: nodes/hudscreen.md
+        - HUD Text: nodes/hudtext.md
+        - HUD Bar: nodes/hudbar.md
+        - HUD Button: nodes/hudbutton.md
+        - HUD Timer: nodes/hudtimer.md
+        - HUD List: nodes/hudlist.md
+        - HUD Rows: nodes/hudrows.md
+        - Leaderboard: nodes/leaderboard.md
+        - HUD Input: nodes/hudinput.md
+        - HUD Set Input: nodes/hudset.md
+      - Logic:
+        - Script: nodes/script.md
+        - Custom Node: nodes/customnode.md
+        - Behaviour: nodes/behaviour.md
+        - Code link: nodes/coderef.md
+        - Math: nodes/math.md
+        - Compare: nodes/compare.md
+        - Gate: nodes/gate.md
+        - Map Range: nodes/maprange.md
+        - Select: nodes/select.md
+        - Latch: nodes/latch.md
+        - Delay: nodes/delay.md
+        - Sequence: nodes/sequence.md
+        - Once: nodes/once.md
+        - Counter: nodes/counter.md
+        - Loop: nodes/loop.md
+        - Timer: nodes/timer.md
+        - Distance: nodes/distance.md
+        - Proximity: nodes/proximity.md
+        - Look At: nodes/lookat.md
+        - Set Color: nodes/setcolor.md
+        - Visibility: nodes/visibility.md
+        - Set Shader Uniform: nodes/setuniform.md
+      - Triggers:
+        - On Click: nodes/onclick.md
+        - On Grab: nodes/ongrab.md
+        - Key Press: nodes/keypress.md
+        - On Hit: nodes/onhit.md
+        - On Rest: nodes/onrest.md
+        - Gamepad Button: nodes/gamepadbutton.md
+        - Gamepad Axis: nodes/gamepadaxis.md
+      - Animation:
+        - Shake: nodes/shake.md
+        - Spin: nodes/spin.md
+        - Rotate / Motor: nodes/rotor.md
+        - Float Along Flow: nodes/flowfloat.md
+        - Bounce: nodes/bounce.md
+        - Orbit: nodes/orbit.md
+        - Path Patrol: nodes/pathpatrol.md
+        - Follow Path: nodes/followpath.md
+        - Wander: nodes/wander.md
+        - Orient to Velocity: nodes/orientvelocity.md
+        - Body Wave: nodes/bodywave.md
+        - Animation Finished: nodes/animfinished.md
+        - Animation Marker: nodes/animmarker.md
+        - Animation State: nodes/animstate.md
+        - Play Animation: nodes/playanim.md
+        - Play Sequence: nodes/playseq.md
+        - On Sequence Event: nodes/onseqevent.md
+      - Physics:
+        - On Impact: nodes/onimpact.md
+        - On Enter: nodes/onenter.md
+        - On Exit: nodes/onexit.md
+        - Mass: nodes/mass.md
+        - Bounciness: nodes/bounciness.md
+        - Friction: nodes/friction.md
+        - Angular Velocity: nodes/angularvelocity.md
+        - Collider: nodes/collider.md
+        - Motor: nodes/motor.md
+        - Impulse: nodes/impulse.md
+        - Set Velocity: nodes/setvelocity.md
+        - Joint: nodes/joint.md
+      - Effects:
+        - Pulse: nodes/pulse.md
+        - Blink: nodes/blink.md
+        - Sound: nodes/sound.md
+        - Particles: nodes/particle.md
+        - Jiggle: nodes/jiggle.md
+      - Music:
+        - Device Param: nodes/deviceparam.md
+        - Device Level: nodes/devicelevel.md
+        - Transport: nodes/transportbeat.md
+        - Note Trigger: nodes/notetrigger.md
   - Audio:
     - Music & Sound: audio.md
     - Music Playground: music.md
@@ -219,7 +261,7 @@ theme:
     - content.action.edit
     - navigation.top
     # Collapsible nav: navigation.sections + navigation.expand are intentionally
-    # omitted so nested groups (e.g. the 38 pages under Flow Graph > Nodes)
+    # omitted so nested groups (e.g. the node pages under Flow Graph > Nodes)
     # collapse behind a chevron instead of rendering fully expanded.
     # - navigation.tabs
   icon:
