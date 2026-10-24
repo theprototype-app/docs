@@ -24,6 +24,13 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.42.1 — security fix.** Code that travels in a scene — Script nodes, Behaviour files, a Character Controller's
+Player code and Custom (code) HUD elements — now runs in a [sandbox](security.md#scene-code-runs-in-a-sandbox) with
+no access to the page, your keys, your sign-in or the network. Built apps ship a Content-Security-Policy
+([self-hosting](security.md#self-hosting)), invite links that name another signaling server ask first, and on
+theprototype.app play links and embeds open from play.theprototype.app. Advisory:
+[GHSA-r74q-9hg7-wrgr](https://github.com/theprototype-app/core/security/advisories/GHSA-r74q-9hg7-wrgr).
+
 **1.42 — together and anywhere.** Open the same code as someone in your session and you
 [type into one text together](code-workspace.md#editing-together): two people in one line both keep their typing,
 everyone's cursor and selection show in their colour, an **Editing with you** strip names who is where, a late joiner

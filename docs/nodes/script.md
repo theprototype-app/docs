@@ -70,6 +70,21 @@ A script cannot freeze the app:
 
 If a scene's scripts hang so badly that the editor never gets a frame, open it in [safe mode](../node-system.md#safe-mode).
 
+## Where your code runs
+
+*Since 1.42.1.* Scripts run in a **sandbox** — a separate JavaScript engine, not the app page — so a scene you open
+from someone else cannot read your keys or your sign-in, or send anything off your device
+([Security](../security.md)). What that means for your code:
+
+- `object` is a **view** of the object: `uuid`, `name`, `position`, `rotation`, `scale`, `quaternion`, `visible`,
+  `userData` and the `material`'s values (`color`, `opacity`, `emissive` …), with the usual helpers (`set`, `copy`,
+  `add`, `multiplyScalar`, `setHSL`, `lerp` …). What you change on it is applied to the real object after the call.
+  It has no `parent`, `children` or `geometry` — reach other objects through inputs or `api.object()`.
+- There is no `document`, `window`, network, storage or timers, and one call may run for at most a quarter of a
+  second.
+- Changing transforms is cheap; touching `material` every frame costs more, so set colours when they change.
+- A scene with scripts loads the engine while it opens, so scripts start as the scene appears.
+
 ## Typed sockets
 
 Press **Typed sockets…** above the code in the code workspace to declare your own sockets. **+ input** and

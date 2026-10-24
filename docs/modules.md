@@ -75,6 +75,7 @@ User modules must be **self-contained**: a single `module.js` with no `import` s
 
 !!! warning "Trust model"
     Installing a module means running its code in your session, with your peer connections. There is no sandbox. Install only from sources you trust.
+    (Code that travels inside a **scene** — scripts, behaviours, custom HUD elements — does run in a sandbox; see [Security](security.md).)
 
 ## From the Browse gallery
 
