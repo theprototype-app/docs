@@ -72,7 +72,7 @@ If a scene's scripts hang so badly that the editor never gets a frame, open it i
 
 ## Where your code runs
 
-*Since 1.42.1.* Scripts run in a **sandbox** — a separate JavaScript engine, not the app page — so a scene you open
+*Since 1.43.1.* Scripts run in a **sandbox** — a separate JavaScript engine, not the app page — so a scene you open
 from someone else cannot read your keys or your sign-in, or send anything off your device
 ([Security](../security.md)). What that means for your code:
 

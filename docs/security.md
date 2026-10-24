@@ -7,7 +7,7 @@ what is trusted, and what a self-hosted copy needs to send. To report a problem,
 
 ## Scene code runs in a sandbox
 
-*Since 1.42.1.* Code that travels with a scene runs in a **separate JavaScript engine** (QuickJS, compiled to
+*Since 1.43.1.* Code that travels with a scene runs in a **separate JavaScript engine** (QuickJS, compiled to
 WebAssembly), not in the app page. It has exactly the scene API it is given — the object it drives, variables,
 events, raycasts, the game kit — and nothing else:
 

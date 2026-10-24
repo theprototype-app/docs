@@ -24,7 +24,7 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
-**1.42.1 — security fix.** Code that travels in a scene — Script nodes, Behaviour files, a Character Controller's
+**1.43.1 — security fix.** Code that travels in a scene — Script nodes, Behaviour files, a Character Controller's
 Player code and Custom (code) HUD elements — now runs in a [sandbox](security.md#scene-code-runs-in-a-sandbox) with
 no access to the page, your keys, your sign-in or the network. Built apps ship a Content-Security-Policy
 ([self-hosting](security.md#self-hosting)), invite links that name another signaling server ask first, and on
