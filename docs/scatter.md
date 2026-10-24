@@ -42,7 +42,7 @@ density are measured before the object's scale, so moving or scaling the object 
   server, so nothing extra travels.
 - **Prefabs** — a prefab scatters as its **look only** (model and materials); its logic, physics and scripts are not
   copied, and the model's row says so. [To objects](#convert-both-ways) brings the real prefab back, logic and all.
-- **Use as scatter source** — right-click any object ▸ *Use as scatter source*, then paint it. A kit piece you have not
+- **Use as scatter source** — right-click any object ▸ **Physics & effects ▸ Use as scatter source**, then paint it. A kit piece you have not
   edited scatters as its pack item; anything else scatters as its look.
 
 ### Mix, tint and sink
