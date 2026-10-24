@@ -1,8 +1,19 @@
 # Move Input
 
-The player's movement input as numbers - stick or WASD axes and the jump button - for driving things by hand.
+The player's own movement keys as numbers — the W/A/S/D axes — for driving things by hand.
 
-**Output:** number (per axis: x, y, jump)
+**Outputs:**
+
+| Handle | Type | Reads |
+|---|---|---|
+| x | number | <kbd>D</kbd> = 1, <kbd>A</kbd> = −1, neither or both = 0 |
+| y | number | <kbd>W</kbd> = 1, <kbd>S</kbd> = −1, neither or both = 0 |
+
+Each player reads **their own** keys: a player pressing nothing reads 0, whatever anyone else is pressing, and nothing
+is sent over the network. That is what you want for "my turret turns with my keys", and the wrong tool for a value
+every player must agree on.
+
+Move Input reads the keyboard only. For a gamepad stick use a [Gamepad Axis](gamepadaxis.md).
 
 ## Inputs
 
@@ -14,4 +25,5 @@ None.
 
 ## Practical example
 
-Wire **Move Input**'s x axis into a **Spin** node's speed through an Object Selector: the stick (or A/D) spins the object by hand - a turntable, a crane, a valve.
+Wire **Move Input**'s **x** into a **Spin** node's speed through an Object Selector: <kbd>A</kbd> and <kbd>D</kbd> spin
+the object by hand — a turntable, a crane, a valve.
