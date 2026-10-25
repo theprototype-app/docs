@@ -14,7 +14,7 @@
         <link rel="prev" href="../fluids/">
       
       
-        <link rel="next" href="../saving/">
+        <link rel="next" href="../scatter/">
       
       
       <link rel="icon" href="../logo.svg">
@@ -1301,6 +1301,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scatter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scatter
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -5915,13 +5936,18 @@ Inspector ▸ <strong>Terrain paint ▸ Paint…</strong>) and pick the <strong>
   give it a colour or texture (<em>Use the material for layer 1</em> goes back), so the first stroke on a fresh terrain only
   changes where you paint.</li>
 <li>The coverage line shows how much of the terrain each layer covers; <strong>Clear paint</strong> removes all of it.</li>
+<li><em>New in 1.43:</em> <strong>Detail</strong> sets this terrain's paint resolution, 64 × 64 to 512 × 512 (default 128). What is painted
+  is resampled (edges get sharper or softer) and the next strokes paint at that detail; a bigger map costs more to send
+  while you paint.</li>
 <li>One drag = <strong>one undo step</strong>. Peers see the stroke while you paint and exactly your result when you let go; the
   paint is saved with the scene.</li>
 </ul>
 <p><img alt="The Inspector's Terrain paint section" src="../img/terrain/inspector-paint.png" /></p>
 <h2 id="scatter">Scatter</h2>
-<p>The <strong>Scatter</strong> brush paints instances of a <strong>primitive or any 3D model in your Library</strong> — trees, rocks, grass
-tufts — onto the terrain.</p>
+<p>The <strong>Scatter</strong> brush paints instances of a primitive, a Library model, a pack item or a prefab's look — trees, rocks,
+grass tufts — onto the terrain. Since 1.43 a set can also <strong>fill</strong> the terrain by count or density with slope, height
+and painted-layer masks, mix several models, and be edited instance by instance: see <a href="../scatter/">Scatter</a>, which also
+covers scatter on any other object.</p>
 <p><img alt="The Scatter brush in the Sculpt toolbox, with cones scattered over a painted terrain" src="../img/terrain/scatter-toolbox.png" /></p>
 <table>
 <thead>
@@ -5933,11 +5959,11 @@ tufts — onto the terrain.</p>
 <tbody>
 <tr>
 <td><strong>Source</strong></td>
-<td>A primitive, or any model in your Library.</td>
+<td>A primitive, a Library model, a pack item or a prefab (<a href="../scatter/#what-you-can-scatter">what you can scatter</a>).</td>
 </tr>
 <tr>
-<td><strong>Paint / erase</strong></td>
-<td>Paint adds instances; the eraser removes <em>that model's</em> instances under the brush.</td>
+<td><strong>Tools</strong></td>
+<td>Paint, Erase, Rotate, Scale, Relax and Select (<a href="../scatter/#edit-instances">Edit instances</a>).</td>
 </tr>
 <tr>
 <td><strong>Density</strong></td>
@@ -5958,7 +5984,8 @@ tufts — onto the terrain.</p>
 </tbody>
 </table>
 <p>Instances follow the ground — sculpting the terrain later moves them with it. Inspector ▸ <strong>Scatter</strong> lists each
-scattered model with its count, an Align toggle and <strong>Remove</strong>. Scatter is counted by the
+scattered model with its count, an Align toggle and <strong>Remove</strong>, plus the Fill, mix, Tint and Sink rows
+(<a href="../scatter/">Scatter</a>). Scatter is counted by the
 <a href="../performance/#the-budget-chip-will-it-fit-on-a-quest">budget chip</a> on the terrain's row, and a dense model (300
 triangles or more) switches to lighter <a href="../lod/">levels of detail</a> with distance — instances far away draw fewer
 triangles.</p>
@@ -5966,8 +5993,9 @@ triangles.</p>
 <p class="admonition-title">Limits</p>
 <p>Up to 8,000 instances and 8 scattered models per terrain. For a Quest, keep it near 2,000 instances of a low-poly
 model (≤ 150 triangles each): each scattered model is one draw call (a dense one, a few — it is drawn in patches so
-its levels of detail can switch), plus one per shadow-casting light. Instances cannot be selected one by one, and
-are solid only when their model has a <a href="#scatter-collider">Collider</a>. Older versions open a painted or scattered terrain as the plain terrain.</p>
+its levels of detail can switch), plus one per shadow-casting light; far instances
+<a href="../scatter/#distant-scatter-each-device">thin out per device</a>. Instances are solid only when their model has a
+<a href="#scatter-collider">Collider</a>. Older versions open a painted or scattered terrain as the plain terrain.</p>
 </div>
 <h3 id="scatter-collider">Scatter ▸ Collider</h3>
 <p><em>New in 1.39.</em> A scattered model — a rock, a tree trunk, a primitive — can be <strong>solid</strong> in a simulation. Each scattered
@@ -6057,7 +6085,7 @@ Give colliders to the rocks and trunks a player can actually touch, not to grass
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-18
+    2026-10-24
   </span>
 
     
