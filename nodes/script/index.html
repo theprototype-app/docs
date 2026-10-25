@@ -506,6 +506,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security & Self-hosting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../avatars/" class="md-nav__link">
         
   
@@ -3094,6 +3115,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#where-your-code-runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where your code runs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#typed-sockets" class="md-nav__link">
     <span class="md-ellipsis">
       Typed sockets
@@ -5623,6 +5653,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#where-your-code-runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Where your code runs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#typed-sockets" class="md-nav__link">
     <span class="md-ellipsis">
       Typed sockets
@@ -5782,6 +5821,20 @@ opens read-only, with <strong>Make editable copy</strong> — see <a href="../..
   <em>paused: too slow</em> badge on the card, so the rest of the scene keeps its frame rate. Editing its code starts it again.</li>
 </ul>
 <p>If a scene's scripts hang so badly that the editor never gets a frame, open it in <a href="../../node-system/#safe-mode">safe mode</a>.</p>
+<h2 id="where-your-code-runs">Where your code runs</h2>
+<p><em>Since 1.43.1.</em> Scripts run in a <strong>sandbox</strong> — a separate JavaScript engine, not the app page — so a scene you open
+from someone else cannot read your keys or your sign-in, or send anything off your device
+(<a href="../../security/">Security</a>). What that means for your code:</p>
+<ul>
+<li><code>object</code> is a <strong>view</strong> of the object: <code>uuid</code>, <code>name</code>, <code>position</code>, <code>rotation</code>, <code>scale</code>, <code>quaternion</code>, <code>visible</code>,
+  <code>userData</code> and the <code>material</code>'s values (<code>color</code>, <code>opacity</code>, <code>emissive</code> …), with the usual helpers (<code>set</code>, <code>copy</code>,
+  <code>add</code>, <code>multiplyScalar</code>, <code>setHSL</code>, <code>lerp</code> …). What you change on it is applied to the real object after the call.
+  It has no <code>parent</code>, <code>children</code> or <code>geometry</code> — reach other objects through inputs or <code>api.object()</code>.</li>
+<li>There is no <code>document</code>, <code>window</code>, network, storage or timers, and one call may run for at most a quarter of a
+  second.</li>
+<li>Changing transforms is cheap; touching <code>material</code> every frame costs more, so set colours when they change.</li>
+<li>A scene with scripts loads the engine while it opens, so scripts start as the scene appears.</li>
+</ul>
 <h2 id="typed-sockets">Typed sockets</h2>
 <p>Press <strong>Typed sockets…</strong> above the code in the code workspace to declare your own sockets. <strong>+ input</strong> and
 <strong>+ output</strong> add one; give each a name and a type.</p>
@@ -5933,7 +5986,7 @@ workspace shows the same findings as advice.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-05
+    2026-10-24
   </span>
 
     
