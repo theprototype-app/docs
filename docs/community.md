@@ -80,6 +80,21 @@ opens the same scene in the full app in a new tab, and a ▶ button re-enters pl
 The same player is available on any scene link by adding **`&embed=1`**: `https://theprototype.app/?s=‹id›&play=1&embed=1`.
 The flag lasts for the life of the page.
 
+#### Paste a link, get a game (oEmbed)
+
+*New in 1.44.* Paste a public scene's link (`https://theprototype.app/s/‹id›`) into a site that understands
+**oEmbed** — Notion, WordPress, Discourse, Ghost and the many sites that use Iframely — and the game plays in place,
+no snippet needed. Behind it is an oEmbed endpoint any developer can call:
+
+```
+https://theprototype.app/oembed?url=https://theprototype.app/s/‹id›&maxwidth=800&maxheight=600
+```
+
+It answers JSON with `type: "rich"` and the same `<iframe>` of `/e/‹id›` the **Embed** button copies: 16:9, 640×360
+unless you ask for another size (up to 1280 wide), fitted inside `maxwidth` / `maxheight`. Every `/s/` page also
+advertises it with a `<link rel="alternate" type="application/json+oembed">` tag, so sites find it on their own.
+Only **public** scenes embed: an unlisted scene's link answers *not found*.
+
 ## Play and remix
 
 **The editor is the player.** Play opens the real app with the full scene, not a preview: the game's HUD, its flow graph, its physics and its sound all run, and a click on the viewport takes the pointer.
@@ -154,6 +169,10 @@ The site and the app share one sign-in. **Sign in** in the site header offers th
 ## Reporting
 
 Every scene page ends with **Report this scene**: pick a reason — **Spam**, **Not safe for work**, **Stolen work**, **Illegal content** or **Other** — add a note if you like, and send it (this needs a sign-in, and counts once per person per scene). A scene reported by three different people — counting only accounts older than three days — is hidden from every list and page until a maintainer has looked at it.
+
+**Report a room or a person** (*new in 1.44*): a public room's card in **Rooms** has a ⚑ **Report** button, and in
+**Users** right-click someone's **Watch** ▸ **Report…**. The same reasons apply, plus **Harassment**. The person or
+host you report is never told who reported them; you can send up to 20 room and person reports an hour.
 
 Staff accounts have a **Staff · Insights & moderation** entry in the profile menu for the report queue and the visit
 totals; it is not shown to anyone else. Assets an author had no right to license are exactly what *Stolen work* is for: the license picker cannot express "all rights reserved", so a report and a takedown are how that is handled.

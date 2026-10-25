@@ -3,7 +3,7 @@
 A **project** is everything in your Explorer: the library items and folders, every
 saved scene with its version history, and the project's name. It lives on your
 machine (IndexedDB) and replicates to the people you build with — there is no server
-copy. One file, the **`.tp`**, carries the whole thing.
+copy unless you sign in and keep [cloud saves](community.md#cloud-saves-and-kept-rooms). One file, the **`.tp`**, carries the whole thing.
 
 ## The pieces
 

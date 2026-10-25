@@ -124,7 +124,7 @@ export default {
 };
 ```
 
-**The one rule that matters:** a module runs on every peer and there is no server, so whatever it does must end up identical on all clients — one of three ways:
+**The one rule that matters:** a module runs on every peer and there is no game server, so whatever it does must end up identical on all clients — one of three ways:
 
 1. **Deterministic from shared inputs** — effects computed from node `data` (already replicated) and the synced clock. Prefer this.
 2. **Broadcast events** — `api.send({...})` a small message for discrete happenings, apply it locally and in `api.onMessage`; never re-broadcast from a receiver.

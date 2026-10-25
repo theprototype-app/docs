@@ -15,6 +15,7 @@ nav:
     - Security & Self-hosting: security.md
     - Your Character: avatars.md
     - Connection: connection.md
+    - Sharing into the App: sharing-into-the-app.md
   - Building:
     - Explorer: explorer.md
     - Importing Big Models: import-optimize.md
@@ -28,6 +29,7 @@ nav:
     - Splines: splines.md
     - Snapping: snapping.md
     - Measure, Align & Distribute: measure-align.md
+    - Reference Images: reference-images.md
     - UV & Textures: uv-editor.md
     - Image Editor: image-editor.md
     - Shader Graph: shader-graph.md
@@ -198,6 +200,7 @@ nav:
     - Music Playground: music.md
   - Games:
     - The Games Tab: games.md
+    - Play Here: play-here.md
     - Game Rules on the Main Graph: game-rules.md
     - Build a Game Loop: build-a-game.md
     - Making Your Game Accessible: making-your-game-accessible.md

@@ -1,8 +1,26 @@
 # Welcome
 
-ThePrototype is a collaborative 3D prototyping app that runs entirely in your browser — peer-to-peer, with no server and no accounts.
+ThePrototype is a collaborative 3D prototyping app that runs in your browser — sessions are peer-to-peer, and you need no account.
 
-You build scenes from primitives, imported models and packs, wire behavior with a visual node graph, and everything you do is instantly visible to everyone connected to you. Peers connect directly to each other (WebRTC); the only shared infrastructure is a small signaling service used to establish the connection.
+You build scenes from primitives, imported models and packs, wire behavior with a visual node graph, and everything you do is instantly visible to everyone connected to you.
+
+## How it works
+
+**Sessions are peer-to-peer.** Your edits, objects, node graphs, voice and chat go straight from your browser to the
+people you are connected to (WebRTC). Servers do the jobs a browser cannot do alone; on theprototype.app they are ours:
+
+- **Signaling** introduces you to each other, and a **TURN relay** carries a session's encrypted traffic when two
+  networks cannot reach each other directly ([Connection](connection.md)).
+- **Accounts and cloud saves** — optional. Without signing in your scenes stay in your browser; signed in, you can
+  keep [cloud saves](community.md#cloud-saves-and-kept-rooms).
+- **Assets** — packs, skies and models download from our storage and the jsDelivr CDN (and are
+  [kept on your device](settings.md#downloads-kept-on-this-device) afterwards).
+- **Community pages** — published scenes, play links, embeds and the gallery.
+- **Anonymous error reports** (on by default, one switch turns them off — [Privacy](privacy.md)) and **anonymous
+  aggregate counters**, such as page views, with no cookies and nothing that identifies you.
+
+The app is open source: a build pointed at your own signaling server, or fully [self-hosted](security.md#self-hosting),
+involves none of our servers.
 
 ## Quick start
 
@@ -23,6 +41,16 @@ on a phone that gives the scene the whole height of the screen.
 with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
+
+**1.44 — quick wins.** [Play here](play-here.md) starts Play where your camera is (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd>)
+and Stop puts the camera back. Drop an image on the viewport for a see-through [reference image](reference-images.md)
+to trace over — hidden in Play, never exported. With the app installed, [share files into it](sharing-into-the-app.md)
+from your phone or open a `.tpscene` from your desktop. Paste a scene link into Notion or WordPress and it
+[plays in place](community.md#paste-a-link-get-a-game-oembed) (oEmbed). Movement stays
+[smooth on a lossy connection](connection.md#smoother-movement-on-a-bad-connection), and packs and skies are
+[kept on your device](settings.md#downloads-kept-on-this-device). Also: people who drop out leave the Users list on
+their own, a guest who joins automatically is announced with **Remove**, rooms and people can be
+[reported](community.md#reporting), and the AI assistant's objects stay put in Play unless you ask for physics.
 
 **1.43.1 — security fix.** Code that travels in a scene — Script nodes, Behaviour files, a Character Controller's
 Player code and Custom (code) HUD elements — now runs in a [sandbox](security.md#scene-code-runs-in-a-sandbox) with

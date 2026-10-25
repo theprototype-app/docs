@@ -82,6 +82,10 @@ cone flame"* works better than *"make something cozy"*.
 
 ## Behaviors and physics
 
+**Things the assistant builds stay put when you press Play** (*1.44*), unless you ask for physics — *"make it fall"*,
+*"give it a mass of 5 kg"*. And as a **viewer** the assistant can read the scene and answer questions, but it tells
+you it cannot change anything instead of pretending to.
+
 The assistant can also wire up **flow-node behavior** — the same nodes you'd drag into
 the node editor. Ask for motion and it adds the node to the right object's graph: *"make
 the crate spin"*, *"the drone should patrol between the towers"*, *"create a moving
