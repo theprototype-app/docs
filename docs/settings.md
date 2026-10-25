@@ -85,6 +85,26 @@ photo decoder (libheif-js) is LGPL-3.0: it ships unmodified as its own file, loa
 - **Comfortable** (the default).
 - **Compact** — tighter 32 px rows and controls on a computer screen. Phones keep finger-sized targets.
 
+## Downloads kept on this device
+
+*New in 1.44.* Pack files, skies, converted textures (the optimized copy of an imported model) and files from the
+CC0 browser are kept in the browser's private file storage, once per content. The next time a scene needs them they
+load from the device — faster, and without the network.
+
+**Where:** **Settings ▸ Storage**:
+
+- **Cached downloads** — how much is kept, split into packs / skies / converted textures / downloads, and **Clear**.
+- **Cache size limit** — 256 MB, 512 MB, 1 GB (default) or 2 GB. Past the limit, the files used longest ago go first.
+- **Keep on this device** — whether the browser has agreed to keep this storage when it runs short of space, with
+  **Ask the browser**.
+- **Storage breakdown** — everything the app keeps (the same window as Explorer ▸ Disk), with pack downloads per pack
+  and the cached kinds under *Cached downloads*, each with a tick to reclaim it.
+
+The first time something is cached, a notice explains why and offers **Keep them** (asks the browser to keep the
+storage) or **Not now** — asked once, never again; the Settings row can ask later. The app itself (its code and pages)
+is never kept here, so updates always arrive on the next load. Where the browser has no private file storage the
+cache uses the older Cache Storage, and where neither exists everything downloads each time, as before.
+
 ## Where things moved
 
 | Setting | Was | Now |

@@ -130,6 +130,11 @@ Your room's panel has a **Room name**, a **Short description** and these switche
 | **Enable room screenshot** | the list card shows a picture of your scene instead of a coloured initial |
 | **Room code** | list the room first, then type a code and **Set** it: someone who knows it gets in as a viewer **without** waiting for approval. A listed room with a code shows 🔒 |
 
+**When someone joins automatically** (*new in 1.44*) — a guest through *Allow guests to join automatically*, or
+anyone with the room code — you get a notice saying who came in, with **Turn off** (stops automatic joining) and
+**Remove**, and the same notice stays in the notification centre. While a listed room lets guests in, the Connect bar
+reads **Public · guests join**. **Remove** takes them out and keeps them out while your tab stays open.
+
 Joining a coded room asks for the code (*"🔒 ‹room› needs a code"*). The right code goes straight in; a wrong one is
 refused, and five wrong codes lock that person out for ten minutes. If the room also requires approval, **Ask the host
 instead** sends an ordinary request. The code itself is never stored on the server or sent in the clear — only your
@@ -151,6 +156,30 @@ A momentary network blip no longer throws you out, either. A peer that drops for
 
 !!! note
     How many peers work for you depends on your uplink, since each one sends to every other. Voice chat and live gestures are the bandwidth-hungry parts — a large scene is sent once per joiner, not continuously.
+
+## Smoother movement on a bad connection
+
+*New in 1.44.* Avatars, VR hands, objects being dragged or held, possessed rides and physics bodies travel on a
+second, **fast** connection between each pair of players. It never waits for a lost packet to be sent again — the
+next position, a twentieth of a second later, simply replaces it. Scene edits (adding, deleting, renaming, finishing
+a move — every change you make) stay on the **reliable** connection, so they still arrive complete and in order.
+
+Nothing to switch on: it opens by itself when both players run 1.44 or newer, and with someone on an older version
+the session uses the reliable connection for everything, as before. Measured on a simulated lossy link (two peers,
+20 updates a second), 95 % of the gaps between updates were at most:
+
+| packet loss | before | 1.44 |
+|---|---|---|
+| none | 57 ms | 57 ms |
+| 5 % | 249 ms | 74 ms |
+| 10 % | 249 ms (worst 1.3 s) | 99 ms (worst 154 ms) |
+
+A message bigger than about 12 KB (rare for a pose) goes on the reliable connection, and when a movement stops its
+last position is re-sent reliably a quarter of a second later, so nothing is left a few centimetres off.
+
+**People who drop out leave the list** (*1.44*): someone whose app crashed or lost its connection now leaves the
+Users list on their own within about half a minute (it used to keep a "ghost"), and leaving a session no longer shows
+*Connection error*.
 
 ## When the signaling link drops
 

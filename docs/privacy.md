@@ -1,7 +1,9 @@
 # Privacy & Error Reports
 
-theprototype.app runs peer-to-peer: your scene goes from your browser straight to the people you connect to. This page
-covers the one thing the app sends about itself — **anonymous error reports** — and how to switch it off. For accounts,
+In a session your scene goes from your browser straight to the people you connect to (peer-to-peer); our servers
+introduce you, relay the encrypted traffic when a direct link is impossible, and serve accounts, cloud saves, assets
+and community pages ([how it works](index.md#how-it-works)). This page covers what the app sends about itself —
+**anonymous error reports**, and how to switch them off — and the anonymous counters. For accounts,
 cloud saves and the community, see the site's [privacy page](https://theprototype.app/privacy).
 
 ## Anonymous error reports
@@ -31,6 +33,14 @@ No account, no IP address, no scene content, no names, no cookie — and nothing
 - Reports **expire** after about three months.
 - A crash that kills the tab — common when a phone or headset runs out of memory — is reported on the tab's **next
   load**, as kind *crash*.
+
+## Anonymous counters
+
+theprototype.app also counts things in aggregate — page visits and plays of a published scene. These are totals:
+no cookie, no account, nothing that links one visit to another or to you.
+
+**Performance reports** are separate and **off** unless you switch them on (**Settings ▸ Interface ▸ Send
+performance reports**): frame-time numbers and versions, no account and no scene content.
 
 !!! note "Other builds send nothing"
     The engine is [open source](https://github.com/theprototype-app/core). A build of it that is not ours has no report
