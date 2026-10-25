@@ -572,6 +572,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#downloads-kept-on-this-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downloads kept on this device
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#where-things-moved" class="md-nav__link">
     <span class="md-ellipsis">
       Where things moved
@@ -664,6 +673,27 @@
   
   <span class="md-ellipsis">
     Connection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sharing-into-the-app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sharing into the App
   </span>
   
 
@@ -958,6 +988,27 @@
   
   <span class="md-ellipsis">
     Measure, Align & Distribute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference-images/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference Images
   </span>
   
 
@@ -4914,6 +4965,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../play-here/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Play Here
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../game-rules/" class="md-nav__link">
         
   
@@ -5631,6 +5703,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#downloads-kept-on-this-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downloads kept on this device
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#where-things-moved" class="md-nav__link">
     <span class="md-ellipsis">
       Where things moved
@@ -5767,6 +5848,23 @@ photo decoder (libheif-js) is LGPL-3.0: it ships unmodified as its own file, loa
 <li><strong>Comfortable</strong> (the default).</li>
 <li><strong>Compact</strong> — tighter 32 px rows and controls on a computer screen. Phones keep finger-sized targets.</li>
 </ul>
+<h2 id="downloads-kept-on-this-device">Downloads kept on this device</h2>
+<p><em>New in 1.44.</em> Pack files, skies, converted textures (the optimized copy of an imported model) and files from the
+CC0 browser are kept in the browser's private file storage, once per content. The next time a scene needs them they
+load from the device — faster, and without the network.</p>
+<p><strong>Where:</strong> <strong>Settings ▸ Storage</strong>:</p>
+<ul>
+<li><strong>Cached downloads</strong> — how much is kept, split into packs / skies / converted textures / downloads, and <strong>Clear</strong>.</li>
+<li><strong>Cache size limit</strong> — 256 MB, 512 MB, 1 GB (default) or 2 GB. Past the limit, the files used longest ago go first.</li>
+<li><strong>Keep on this device</strong> — whether the browser has agreed to keep this storage when it runs short of space, with
+  <strong>Ask the browser</strong>.</li>
+<li><strong>Storage breakdown</strong> — everything the app keeps (the same window as Explorer ▸ Disk), with pack downloads per pack
+  and the cached kinds under <em>Cached downloads</em>, each with a tick to reclaim it.</li>
+</ul>
+<p>The first time something is cached, a notice explains why and offers <strong>Keep them</strong> (asks the browser to keep the
+storage) or <strong>Not now</strong> — asked once, never again; the Settings row can ask later. The app itself (its code and pages)
+is never kept here, so updates always arrive on the next load. Where the browser has no private file storage the
+cache uses the older Cache Storage, and where neither exists everything downloads each time, as before.</p>
 <h2 id="where-things-moved">Where things moved</h2>
 <table>
 <thead>
@@ -5919,7 +6017,7 @@ photo decoder (libheif-js) is LGPL-3.0: it ships unmodified as its own file, loa
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-24
+    2026-10-25
   </span>
 
     

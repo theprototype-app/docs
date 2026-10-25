@@ -14,7 +14,7 @@
         <link rel="prev" href="../avatars/">
       
       
-        <link rel="next" href="../explorer/">
+        <link rel="next" href="../sharing-into-the-app/">
       
       
       <link rel="icon" href="../logo.svg">
@@ -707,6 +707,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#smoother-movement-on-a-bad-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Smoother movement on a bad connection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#when-the-signaling-link-drops" class="md-nav__link">
     <span class="md-ellipsis">
       When the signaling link drops
@@ -764,6 +773,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sharing-into-the-app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sharing into the App
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1054,6 +1084,27 @@
   
   <span class="md-ellipsis">
     Measure, Align & Distribute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference-images/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference Images
   </span>
   
 
@@ -5010,6 +5061,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../play-here/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Play Here
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../game-rules/" class="md-nav__link">
         
   
@@ -5778,6 +5850,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#smoother-movement-on-a-bad-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Smoother movement on a bad connection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#when-the-signaling-link-drops" class="md-nav__link">
     <span class="md-ellipsis">
       When the signaling link drops
@@ -6002,6 +6083,10 @@ and lets you list your own. Browsing is open to everyone; listing a room needs y
 </tr>
 </tbody>
 </table>
+<p><strong>When someone joins automatically</strong> (<em>new in 1.44</em>) — a guest through <em>Allow guests to join automatically</em>, or
+anyone with the room code — you get a notice saying who came in, with <strong>Turn off</strong> (stops automatic joining) and
+<strong>Remove</strong>, and the same notice stays in the notification centre. While a listed room lets guests in, the Connect bar
+reads <strong>Public · guests join</strong>. <strong>Remove</strong> takes them out and keeps them out while your tab stays open.</p>
 <p>Joining a coded room asks for the code (<em>"🔒 ‹room› needs a code"</em>). The right code goes straight in; a wrong one is
 refused, and five wrong codes lock that person out for ten minutes. If the room also requires approval, <strong>Ask the host
 instead</strong> sends an ordinary request. The code itself is never stored on the server or sent in the clear — only your
@@ -6020,6 +6105,45 @@ device can check it, so a code set on another device of yours has to be set agai
 <p class="admonition-title">Note</p>
 <p>How many peers work for you depends on your uplink, since each one sends to every other. Voice chat and live gestures are the bandwidth-hungry parts — a large scene is sent once per joiner, not continuously.</p>
 </div>
+<h2 id="smoother-movement-on-a-bad-connection">Smoother movement on a bad connection</h2>
+<p><em>New in 1.44.</em> Avatars, VR hands, objects being dragged or held, possessed rides and physics bodies travel on a
+second, <strong>fast</strong> connection between each pair of players. It never waits for a lost packet to be sent again — the
+next position, a twentieth of a second later, simply replaces it. Scene edits (adding, deleting, renaming, finishing
+a move — every change you make) stay on the <strong>reliable</strong> connection, so they still arrive complete and in order.</p>
+<p>Nothing to switch on: it opens by itself when both players run 1.44 or newer, and with someone on an older version
+the session uses the reliable connection for everything, as before. Measured on a simulated lossy link (two peers,
+20 updates a second), 95 % of the gaps between updates were at most:</p>
+<table>
+<thead>
+<tr>
+<th>packet loss</th>
+<th>before</th>
+<th>1.44</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>none</td>
+<td>57 ms</td>
+<td>57 ms</td>
+</tr>
+<tr>
+<td>5 %</td>
+<td>249 ms</td>
+<td>74 ms</td>
+</tr>
+<tr>
+<td>10 %</td>
+<td>249 ms (worst 1.3 s)</td>
+<td>99 ms (worst 154 ms)</td>
+</tr>
+</tbody>
+</table>
+<p>A message bigger than about 12 KB (rare for a pose) goes on the reliable connection, and when a movement stops its
+last position is re-sent reliably a quarter of a second later, so nothing is left a few centimetres off.</p>
+<p><strong>People who drop out leave the list</strong> (<em>1.44</em>): someone whose app crashed or lost its connection now leaves the
+Users list on their own within about half a minute (it used to keep a "ghost"), and leaving a session no longer shows
+<em>Connection error</em>.</p>
 <h2 id="when-the-signaling-link-drops">When the signaling link drops</h2>
 <p>The link to the signaling server is not the link to your peers — losing it does not end a session you are already in, it only stops new people finding you. When it drops the app reconnects on its own, backing off a little further between tries and <strong>never giving up</strong>, and the <a href="#the-status-dot">status dot</a> pulses yellow while it is retrying so a dead link does not read as a dead app. Coming back online, or returning to the tab, retries immediately instead of waiting out the backoff — and since 1.32 it does so <strong>silently</strong>: switching apps on a phone and coming back no longer toasts. If the server stays unreachable for about a minute, the dot turns red and <strong>one</strong> entry appears in the notification centre; the retries carry on. A peer connection that closed is rebuilt rather than abandoned.</p>
 <h2 id="diagnostics-you-can-copy">Diagnostics you can copy</h2>
@@ -6169,7 +6293,7 @@ never count as visits or errors.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-21
+    2026-10-25
   </span>
 
     

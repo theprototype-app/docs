@@ -342,6 +342,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How it works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#quick-start" class="md-nav__link">
     <span class="md-ellipsis">
       Quick start
@@ -620,6 +629,27 @@
   
   <span class="md-ellipsis">
     Connection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sharing-into-the-app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sharing into the App
   </span>
   
 
@@ -914,6 +944,27 @@
   
   <span class="md-ellipsis">
     Measure, Align & Distribute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reference-images/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference Images
   </span>
   
 
@@ -4870,6 +4921,27 @@
   
   
     <li class="md-nav__item">
+      <a href="play-here/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Play Here
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="game-rules/" class="md-nav__link">
         
   
@@ -5527,6 +5599,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How it works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#quick-start" class="md-nav__link">
     <span class="md-ellipsis">
       Quick start
@@ -5577,8 +5658,24 @@
 
 
 <h1 id="welcome">Welcome</h1>
-<p>ThePrototype is a collaborative 3D prototyping app that runs entirely in your browser — peer-to-peer, with no server and no accounts.</p>
-<p>You build scenes from primitives, imported models and packs, wire behavior with a visual node graph, and everything you do is instantly visible to everyone connected to you. Peers connect directly to each other (WebRTC); the only shared infrastructure is a small signaling service used to establish the connection.</p>
+<p>ThePrototype is a collaborative 3D prototyping app that runs in your browser — sessions are peer-to-peer, and you need no account.</p>
+<p>You build scenes from primitives, imported models and packs, wire behavior with a visual node graph, and everything you do is instantly visible to everyone connected to you.</p>
+<h2 id="how-it-works">How it works</h2>
+<p><strong>Sessions are peer-to-peer.</strong> Your edits, objects, node graphs, voice and chat go straight from your browser to the
+people you are connected to (WebRTC). Servers do the jobs a browser cannot do alone; on theprototype.app they are ours:</p>
+<ul>
+<li><strong>Signaling</strong> introduces you to each other, and a <strong>TURN relay</strong> carries a session's encrypted traffic when two
+  networks cannot reach each other directly (<a href="connection/">Connection</a>).</li>
+<li><strong>Accounts and cloud saves</strong> — optional. Without signing in your scenes stay in your browser; signed in, you can
+  keep <a href="community/#cloud-saves-and-kept-rooms">cloud saves</a>.</li>
+<li><strong>Assets</strong> — packs, skies and models download from our storage and the jsDelivr CDN (and are
+  <a href="settings/#downloads-kept-on-this-device">kept on your device</a> afterwards).</li>
+<li><strong>Community pages</strong> — published scenes, play links, embeds and the gallery.</li>
+<li><strong>Anonymous error reports</strong> (on by default, one switch turns them off — <a href="privacy/">Privacy</a>) and <strong>anonymous
+  aggregate counters</strong>, such as page views, with no cookies and nothing that identifies you.</li>
+</ul>
+<p>The app is open source: a build pointed at your own signaling server, or fully <a href="security/#self-hosting">self-hosted</a>,
+involves none of our servers.</p>
 <h2 id="quick-start">Quick start</h2>
 <ol>
 <li><strong>Open the app</strong> in a desktop browser (VR headset browsers work too).</li>
@@ -5597,6 +5694,15 @@ on a phone that gives the scene the whole height of the screen.</p>
 <a href="https://github.com/theprototype-app/core">github.com/theprototype-app/core</a> (also <strong>Settings ▸ About ▸ Source Code</strong>),
 with a contributing guide and an <code>llms.txt</code> for coding agents.</p>
 <h2 id="whats-new">What's new</h2>
+<p><strong>1.44 — quick wins.</strong> <a href="play-here/">Play here</a> starts Play where your camera is (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd>)
+and Stop puts the camera back. Drop an image on the viewport for a see-through <a href="reference-images/">reference image</a>
+to trace over — hidden in Play, never exported. With the app installed, <a href="sharing-into-the-app/">share files into it</a>
+from your phone or open a <code>.tpscene</code> from your desktop. Paste a scene link into Notion or WordPress and it
+<a href="community/#paste-a-link-get-a-game-oembed">plays in place</a> (oEmbed). Movement stays
+<a href="connection/#smoother-movement-on-a-bad-connection">smooth on a lossy connection</a>, and packs and skies are
+<a href="settings/#downloads-kept-on-this-device">kept on your device</a>. Also: people who drop out leave the Users list on
+their own, a guest who joins automatically is announced with <strong>Remove</strong>, rooms and people can be
+<a href="community/#reporting">reported</a>, and the AI assistant's objects stay put in Play unless you ask for physics.</p>
 <p><strong>1.43.1 — security fix.</strong> Code that travels in a scene — Script nodes, Behaviour files, a Character Controller's
 Player code and Custom (code) HUD elements — now runs in a <a href="security/#scene-code-runs-in-a-sandbox">sandbox</a> with
 no access to the page, your keys, your sign-in or the network. Built apps ship a Content-Security-Policy

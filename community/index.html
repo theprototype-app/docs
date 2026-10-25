@@ -562,6 +562,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sharing-into-the-app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sharing into the App
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -847,6 +868,27 @@
   
   <span class="md-ellipsis">
     Measure, Align & Distribute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference-images/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference Images
   </span>
   
 
@@ -4803,6 +4845,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../play-here/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Play Here
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../game-rules/" class="md-nav__link">
         
   
@@ -5118,6 +5181,21 @@
       Embedding a scene
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Embedding a scene">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paste-a-link-get-a-game-oembed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paste a link, get a game (oEmbed)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -5770,6 +5848,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Embedding a scene">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paste-a-link-get-a-game-oembed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paste a link, get a game (oEmbed)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -6035,6 +6128,16 @@ toasts — just the viewport, the game's HUD and the touch controls. A small cor
 opens the same scene in the full app in a new tab, and a ▶ button re-enters play after <kbd>Esc</kbd>.</p>
 <p>The same player is available on any scene link by adding <strong><code>&amp;embed=1</code></strong>: <code>https://theprototype.app/?s=‹id›&amp;play=1&amp;embed=1</code>.
 The flag lasts for the life of the page.</p>
+<h4 id="paste-a-link-get-a-game-oembed">Paste a link, get a game (oEmbed)</h4>
+<p><em>New in 1.44.</em> Paste a public scene's link (<code>https://theprototype.app/s/‹id›</code>) into a site that understands
+<strong>oEmbed</strong> — Notion, WordPress, Discourse, Ghost and the many sites that use Iframely — and the game plays in place,
+no snippet needed. Behind it is an oEmbed endpoint any developer can call:</p>
+<div class="highlight"><pre><span></span><code>https://theprototype.app/oembed?url=https://theprototype.app/s/‹id›&amp;maxwidth=800&amp;maxheight=600
+</code></pre></div>
+<p>It answers JSON with <code>type: "rich"</code> and the same <code>&lt;iframe&gt;</code> of <code>/e/‹id›</code> the <strong>Embed</strong> button copies: 16:9, 640×360
+unless you ask for another size (up to 1280 wide), fitted inside <code>maxwidth</code> / <code>maxheight</code>. Every <code>/s/</code> page also
+advertises it with a <code>&lt;link rel="alternate" type="application/json+oembed"&gt;</code> tag, so sites find it on their own.
+Only <strong>public</strong> scenes embed: an unlisted scene's link answers <em>not found</em>.</p>
 <h2 id="play-and-remix">Play and remix</h2>
 <p><strong>The editor is the player.</strong> Play opens the real app with the full scene, not a preview: the game's HUD, its flow graph, its physics and its sound all run, and a click on the viewport takes the pointer.</p>
 <p><strong>Remix is a local load.</strong> Nothing is created on the server until you publish. When you do, the dialog shows a ticked <em>Remix of "‹title›" by @handle</em> line and the new scene carries that lineage on its page. Every license in the picker allows this; a remix of your own scene is simply a new scene, with no lineage line. A remix is also a <strong>new game</strong> with its own <a href="#one-game-one-count">game id</a>.</p>
@@ -6084,6 +6187,9 @@ moderation: ‹reason›</em>. Press <strong>Ask for a review</strong> — once 
 <p>The site and the app share one sign-in. <strong>Sign in</strong> in the site header offers the same GitHub and Google buttons; signed in, the menu under your name has <strong>My profile</strong>, <strong>Open the app</strong> and <strong>Sign out</strong>. Inside the app the same account is under the logo menu's profile block as <strong>Sign in to cloud</strong>.</p>
 <h2 id="reporting">Reporting</h2>
 <p>Every scene page ends with <strong>Report this scene</strong>: pick a reason — <strong>Spam</strong>, <strong>Not safe for work</strong>, <strong>Stolen work</strong>, <strong>Illegal content</strong> or <strong>Other</strong> — add a note if you like, and send it (this needs a sign-in, and counts once per person per scene). A scene reported by three different people — counting only accounts older than three days — is hidden from every list and page until a maintainer has looked at it.</p>
+<p><strong>Report a room or a person</strong> (<em>new in 1.44</em>): a public room's card in <strong>Rooms</strong> has a ⚑ <strong>Report</strong> button, and in
+<strong>Users</strong> right-click someone's <strong>Watch</strong> ▸ <strong>Report…</strong>. The same reasons apply, plus <strong>Harassment</strong>. The person or
+host you report is never told who reported them; you can send up to 20 room and person reports an hour.</p>
 <p>Staff accounts have a <strong>Staff · Insights &amp; moderation</strong> entry in the profile menu for the report queue and the visit
 totals; it is not shown to anyone else. Assets an author had no right to license are exactly what <em>Stolen work</em> is for: the license picker cannot express "all rights reserved", so a report and a takedown are how that is handled.</p>
 <h2 id="cloud-saves-and-kept-rooms">Cloud saves and kept rooms</h2>
@@ -6154,7 +6260,7 @@ self-hosted or local build shows no such section.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-08
+    2026-10-25
   </span>
 
     
