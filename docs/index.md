@@ -24,6 +24,13 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**NEXT — music, small.** <!-- 75-int: set the version at release --> Plug in a USB or Bluetooth
+[MIDI keyboard](music.md#play-from-a-midi-keyboard) and play the music devices in your scene — everyone hears it, the
+piano and synth hold notes while a key is down and the sustain pedal works; the browser is asked only when you press
+**Connect**. Every device that plays notes gets a [piano roll](music.md#the-piano-roll): a looping 1–8 bar clip that
+plays with the shared transport, in time on every screen. Filter cutoffs move evenly across the range, and module
+authors get [`onMidi`, `heldNotes`, `onTransport`, `importSample` and log-scale ranges](module-sdk.md#audio-devices).
+
 **1.42 — together and anywhere.** Open the same code as someone in your session and you
 [type into one text together](code-workspace.md#editing-together): two people in one line both keep their typing,
 everyone's cursor and selection show in their colour, an **Editing with you** strip names who is where, a late joiner

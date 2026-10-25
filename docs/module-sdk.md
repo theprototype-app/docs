@@ -257,6 +257,43 @@ api.audio.setParams(uuid, { level: v }, { before });  // release: one entry
 same document, so `schedule`'s callback must be a pure function of its arguments — an
 impure one desyncs silently.
 
+**MIDI keyboards.** The user connects one in the Music toolbox (core never asks the browser on
+its own); core then plays the device the toolbox's *Play on* picker names through the same
+replicated `api.audio.note` path, so a module writes nothing for that. Declare
+`heldNotes: true` on the spec when `onNote` understands a held note: a key then arrives as
+`{note, velocity, gate: 0}` and its release as `{note, velocity: 0, off: true}` (the sustain
+pedal defers the offs). Without the flag a key plays your own note length and no off is sent.
+
+```js
+const off = api.audio.onMidi((msg) => {      // every parsed message, LOCAL (nothing is sent for you)
+	if (msg.type === 'cc' && msg.controller === 1) api.audio.previewParams(uuid, { cutoff: 200 + msg.value * 8000 });
+});                                          // msg: {type, channel, note, velocity, controller, value, data, input}
+await api.audio.midi();                      // {status: 'off'|'asking'|'on'|'denied'|'unsupported'|'error', inputs}
+```
+
+**The piano roll.** Any device whose spec has an `onNote` gets the core [piano roll](music.md#the-piano-roll). The
+clip lives in the device's own params under the undeclared key `roll` (a JSON string — do not
+declare a param named `roll`). Every peer plays the clip itself from the shared transport, so
+a clip note reaches your `onNote` as `{note, velocity, at, gate, roll: true}` — `at` the wall
+stamp of its beat, `gate` its length in seconds — on every peer at once, with nothing sent.
+Honour `gate` and a clip plays the lengths it was drawn with.
+
+**Transport changes, samples, log ranges.**
+
+```js
+const off = api.audio.onTransport((t) => {   // now, then on every CHANGE (play/stop/tempo/swing/loop,
+	if (!t.playing) stopMyArp();              // a peer's included) - never per beat: use schedule()
+});                                          // t: transport() + startedAt; goes with the module
+const { hash, name } = await api.audio.importSample(wavBytes, 'bounce.wav');
+// bytes (ArrayBuffer / typed array / Blob) -> an Explorer audio item shared by hash, like a
+// recorded take; rejects on no bytes, a non-audio name, or the sharing limit
+api.audio.setParams(uuid, { sample: hash });  // then sample(hash) decodes it on every peer
+```
+
+A `range` param may declare `scale: 'log'` (needs `min > 0`): the Inspector row, the Music
+toolbox row and the VR knob then travel in ratios, so a 20-20000 Hz cutoff gives each decade
+the same travel. The stored value is the plain number, so nothing else changes.
+
 #### registerDropHandler
 
 Core has no placement for an audio or text item dropped on an object, so a module can

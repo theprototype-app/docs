@@ -41,6 +41,8 @@ brings its cables with it.
 Every device declares its parameters; they show as knobs in VR (grab and turn), in the
 **Music** toolbox and in the Inspector's **Device** section. A knob turn or a fader drag is
 one undo step, however long the gesture, and peers hear it move while you turn it.
+Frequency knobs such as the filter **Cutoff** (Music FX, the Music Voice synth) move evenly through the low, middle and
+high ranges — each octave gets the same travel — instead of crowding the low end into the first few pixels.
 
 The **Music** toolbox appears in the sidebar under **Modules** as soon as any device kind
 is registered (also on the viewport menu under **Module tools**). It has three parts:
@@ -65,6 +67,46 @@ The Transport device is its face; the drum machine, the looper and anything sche
 run from the same beat, so every peer's kick lands on the same beat and a late joiner starts
 on the next one. Nothing is streamed during playback: each peer schedules the same pattern
 from the same document through a look-ahead scheduler.
+
+## Play from a MIDI keyboard
+
+A USB or Bluetooth MIDI keyboard or pad controller plays the devices in your scene — the piano, the synth, sampler
+pads, drum pads — and **everyone in the session hears it**, through the same notes a click on a key sends. Web MIDI
+works in Chrome and Edge (desktop and Android); other browsers say so in the row.
+
+![The Music toolbox with the MIDI input row](img/music/toolbox-midi-row.png)
+
+1. Open the **Music** toolbox and scroll to **MIDI input** at the bottom.
+2. Press **Connect MIDI keyboard**. The row says what will happen, then **Allow MIDI** asks your browser. Nothing is
+   asked until you press it, and the browser asks only once; the next time you open the app it reconnects quietly.
+3. Play. The row lists your connected keyboards and the last note.
+
+**Play on** picks the device your keys play; by default it is the last music device you selected. The choice is yours
+alone, so two people with two keyboards can play two instruments. On the piano and the synth a key **holds its note
+while you hold it down**, and the **sustain pedal** works; other devices play their usual note length.
+**Disconnect** stops listening, and the app remembers it. If you said no to the browser, the row explains how to allow
+MIDI again in the site settings (the icon at the left of the address bar); then press **Try again**.
+
+## The piano roll
+
+Every device that plays notes has a **piano roll**: a looping clip of **1, 2, 4 or 8 bars** drawn on a grid. Open it
+from the Inspector (select the device ▸ **Device** ▸ **Piano roll**) or from the Music toolbox (**Piano roll…**); on a
+phone it opens as a bottom sheet.
+
+![The piano roll](img/music/piano-roll.png)
+
+- **Click** an empty cell to add a note of the length in **Note**. **Drag** a note to move it, drag its **right
+  edge** to make it longer, and **double-click** or **right-click** it to remove it. On a phone, tap to add; a swipe
+  scrolls without adding.
+- From the keyboard: <kbd>Enter</kbd> adds a note (after the selected one, or middle C on beat 1), the **arrow keys**
+  move the selection (<kbd>Shift</kbd> moves a beat or an octave, <kbd>Alt</kbd>+<kbd>←</kbd>/<kbd>→</kbd> changes
+  its length) and <kbd>Delete</kbd> removes it.
+- **Bars** sets the clip length, **−** / **+** shift the visible octave, **Clear** empties the clip and **Play clip**
+  switches it on or off without deleting it. **▶** starts the shared transport.
+
+The clip plays with the [shared transport](#the-shared-transport): every screen plays it in time on its own, nothing is
+streamed while it plays. It belongs to the device, so it saves with the scene, comes back with a prefab, reaches someone
+who joins later, and every edit is one undo step that everyone sees.
 
 ## Automation from the flow graph
 
