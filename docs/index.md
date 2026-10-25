@@ -24,6 +24,13 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.43.1 — security fix.** Code that travels in a scene — Script nodes, Behaviour files, a Character Controller's
+Player code and Custom (code) HUD elements — now runs in a [sandbox](security.md#scene-code-runs-in-a-sandbox) with
+no access to the page, your keys, your sign-in or the network. Built apps ship a Content-Security-Policy
+([self-hosting](security.md#self-hosting)), invite links that name another signaling server ask first, and on
+theprototype.app play links and embeds open from play.theprototype.app. Advisory:
+[GHSA-r74q-9hg7-wrgr](https://github.com/theprototype-app/core/security/advisories/GHSA-r74q-9hg7-wrgr).
+
 **1.43 — scatter everywhere.** [Scatter](scatter.md) works on [any object](scatter.md#add-scatter-to-an-object) now,
 not just terrains — moss on a rock, barnacles on a ship — and moves with it. A set can
 [fill](scatter.md#fill-and-masks) by count or density with a minimum spacing and slope, height or painted-layer masks,

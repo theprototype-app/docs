@@ -79,7 +79,7 @@ A small mark on an element on the stage means something is wired to it — a but
 | **Minimap** | a top-down plot of the scene with you and your peers as dots |
 | **Damage flash** | a full-screen tint that spikes when pulsed, then fades |
 | **Debug** | level, game state, round, variables, players and fps — a pill that expands on click |
-| **Custom (code)** | you write the render function; double-click it on the stage to edit the code |
+| **Custom (code)** | you write the render function; double-click it on the stage to edit the code. It draws text, boxes, styles, SVG and a 2D canvas in a [sandbox](security.md#scene-code-runs-in-a-sandbox) — no event listeners or timers; use a Button for presses |
 
 **Input**
 
