@@ -31,6 +31,15 @@ no access to the page, your keys, your sign-in or the network. Built apps ship a
 theprototype.app play links and embeds open from play.theprototype.app. Advisory:
 [GHSA-r74q-9hg7-wrgr](https://github.com/theprototype-app/core/security/advisories/GHSA-r74q-9hg7-wrgr).
 
+**1.43 — scatter everywhere.** [Scatter](scatter.md) works on [any object](scatter.md#add-scatter-to-an-object) now,
+not just terrains — moss on a rock, barnacles on a ship — and moves with it. A set can
+[fill](scatter.md#fill-and-masks) by count or density with a minimum spacing and slope, height or painted-layer masks,
+[mix models](scatter.md#mix-tint-and-sink) by weight with tint and sink, and draw pack items, prefabs (their look) or
+any object you pick. [Edit instances](scatter.md#edit-instances) with Rotate, Scale, Relax and a Select tool with a
+gizmo, and [convert both ways](scatter.md#convert-both-ways) — a prefab comes back with its logic. Everyone gets the
+same layout from a seed + your edits, while [far scatter thins](scatter.md#distant-scatter-each-device) to each
+device's budget.
+
 **1.42 — together and anywhere.** Open the same code as someone in your session and you
 [type into one text together](code-workspace.md#editing-together): two people in one line both keep their typing,
 everyone's cursor and selection show in their colour, an **Editing with you** strip names who is where, a late joiner

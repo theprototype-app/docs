@@ -43,16 +43,16 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 
 | Node | What it does |
 |---|---|
-| **Set Game State** | Switches the shared game state (menu, playing, paused, over) when a pulse arrives - every peer follows the same state. |
-| **On Game State** | Fires a pulse when the shared game state becomes the one you pick - the hook for "when the round starts". |
+| [**Set Game State**](nodes/setgamestate.md) | Switches the shared game state (menu, playing, paused, over) when a pulse arrives - every peer follows the same state. |
+| [**On Game State**](nodes/ongamestate.md) | Fires a pulse when the shared game state becomes the one you pick - the hook for "when the round starts". |
 | [**Set Active Camera**](nodes/setcamera.md) | Makes a camera object the active view for every player when a pulse arrives. |
 | [**Camera Rig**](nodes/camerarig.md) | Moves a camera object: it follows the target at an offset and/or turns to look at it, with damping (seconds of lag). Wire it into an Object Selector that picks a camera. It never moves the editor view or another player's view - look through the camera (Set Active Camera) to see it. |
 | [**Set Look**](nodes/setlook.md) | Switches a camera's look (its post-processing) on or off when a pulse arrives, and by default looks through that camera too. |
 | [**Game Start**](nodes/gamestart.md) | Fires once when the game starts (Play, or a round reset) - the place to spawn, reset counters and arm timers. |
 | [**Travel to scene**](nodes/travel.md) | Loads another saved scene by name when a pulse arrives - a door to the next level, replicated to everyone. |
-| **All Players** | Iterates the connected players so a per-player value can be read, or a HUD row shown, for each of them. |
-| **Set Variable** | Stores a named value in the replicated scene variables when a pulse arrives - shared state without an object. |
-| **Get Variable** | Reads a named scene variable as a value - the read side of Set Variable, live on every peer. |
+| [**All Players**](nodes/allplayers.md) | Iterates the connected players so a per-player value can be read, or a HUD row shown, for each of them. |
+| [**Set Variable**](nodes/setvariable.md) | Stores a named value in the replicated scene variables when a pulse arrives - shared state without an object. |
+| [**Get Variable**](nodes/getvariable.md) | Reads a named scene variable as a value - the read side of Set Variable, live on every peer. |
 | [**Store Value**](nodes/storevalue.md) | Saves a value on THIS device when a pulse arrives (set, keep the max or min, or add) - a best score or a level reached that survives a reload; never sent to other players. |
 | [**Stored Value**](nodes/storedvalue.md) | Reads what Store Value saved on this device, as a number or text - the read side of a best score; each player sees their own. |
 | [**Announce**](nodes/announce.md) | Shows a big banner - 'Ring 2 reached', 'GOAL!' - on every screen and in VR when a pulse arrives; {v} in the text shows a wired number. |
@@ -63,50 +63,50 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**Game Setting**](nodes/gamesetting.md) | Declares one row in the game's Settings (a toggle, a range or a choice) and outputs this player's value - saved on this device for this game, never shared. |
 | [**Point Grab**](nodes/pointgrab.md) | While 'enabled' reads off, players cannot pick objects up by pointing at them (the VR grip ray, the desktop carry); a hand touching an object still moves it. |
 | [**On Clap**](nodes/onclap.md) | Fires a pulse when a VR player brings both hands together and holds them - with where they met (point) and whether it was you (byMe); wire 'enabled' to a setting to switch it. |
-| **Game Time** | Seconds since the game (or the round) started, the same on every peer - a clock that pauses with the game. |
-| **Player Variable** | A value kept PER PLAYER (score, lives, team) - each peer reads its own row, or a named player's. |
+| [**Game Time**](nodes/gametime.md) | Seconds since the game (or the round) started, the same on every peer - a clock that pauses with the game. |
+| [**Player Variable**](nodes/peervariable.md) | A value kept PER PLAYER (score, lives, team) - each peer reads its own row, or a named player's. |
 
 ## Character
 
 | Node | What it does |
 |---|---|
-| **Character Controller** | Turns the connected object into a walking, jumping character driven by the player's movement input. |
+| [**Character Controller**](nodes/charcontroller.md) | Turns the connected object into a walking, jumping character driven by the player's movement input. |
 | [**Move Input**](nodes/moveinput.md) | The player's movement input as numbers - stick or WASD axes and the jump button - for driving things by hand. |
-| **Possess Object** | Puts the player in control of the connected object when a pulse arrives - a vehicle, a turret, a ball. |
-| **Camera Follow** | Makes the camera follow the connected object at a set distance and height - a third-person or chase view. |
-| **Move Speed** | Overrides the character's walking speed while a value is wired - sprint, mud, slow motion. |
+| [**Possess Object**](nodes/possessnode.md) | Puts the player in control of the connected object when a pulse arrives - a vehicle, a turret, a ball. |
+| [**Camera Follow**](nodes/camerafollow.md) | Makes the camera follow the connected object at a set distance and height - a third-person or chase view. |
+| [**Move Speed**](nodes/movespeed.md) | Overrides the character's walking speed while a value is wired - sprint, mud, slow motion. |
 
 ## HUD
 
 | Node | What it does |
 |---|---|
-| **HUD Screen** | Shows or hides a whole HUD screen (a named layer of elements) while its condition holds. |
-| **HUD Text** | Writes a number into a HUD text element through a format such as 'Gems: {v}' - a score, a count, a readout. |
-| **HUD Bar** | Drives a HUD bar element's fill from a number - health, fuel, progress. |
+| [**HUD Screen**](nodes/hudscreen.md) | Shows or hides a whole HUD screen (a named layer of elements) while its condition holds. |
+| [**HUD Text**](nodes/hudtext.md) | Writes a number into a HUD text element through a format such as 'Gems: {v}' - a score, a count, a readout. |
+| [**HUD Bar**](nodes/hudbar.md) | Drives a HUD bar element's fill from a number - health, fuel, progress. |
 | [**HUD Button**](nodes/hudbutton.md) | Fires a pulse when a HUD button is pressed - the on-screen counterpart of On Click. |
-| **HUD Timer** | Runs a countdown in a HUD text element from its duration, formatted like '{v}s' - starts by itself or on a pulse. |
-| **HUD List** | Fills a HUD list element with the items a value provides - an inventory, objectives, players. |
-| **HUD Rows** | Appends or replaces rows in a HUD rows element from a pulse - a log, a chat, a scoreboard feed. |
-| **Leaderboard** | Ranks the players by their own per-player variable (laps, score) into a HUD element, highest or lowest first, top N rows. |
-| **HUD Input** | Reads what the player typed into a HUD input element as a value. |
-| **HUD Set Input** | Writes a value into a HUD input element when a pulse arrives - to prefill, clear or correct it. |
+| [**HUD Timer**](nodes/hudtimer.md) | Runs a countdown in a HUD text element from its duration, formatted like '{v}s' - starts by itself or on a pulse. |
+| [**HUD List**](nodes/hudlist.md) | Fills a HUD list element with the items a value provides - an inventory, objectives, players. |
+| [**HUD Rows**](nodes/hudrows.md) | Appends or replaces rows in a HUD rows element from a pulse - a log, a chat, a scoreboard feed. |
+| [**Leaderboard**](nodes/leaderboard.md) | Ranks the players by their own per-player variable (laps, score) into a HUD element, highest or lowest first, top N rows. |
+| [**HUD Input**](nodes/hudinput.md) | Reads what the player typed into a HUD input element as a value. |
+| [**HUD Set Input**](nodes/hudset.md) | Writes a value into a HUD input element when a pulse arrives - to prefill, clear or correct it. |
 
 ## Logic
 
 | Node | What it does |
 |---|---|
 | [**Script**](nodes/script.md) | Your own JavaScript - an effect that moves its object every frame, or (with declared typed inputs and outputs) a small pure function whose return feeds other nodes. v2 scripts also get `api`: object(uuid or name), raycast(from, dir), and in effects keys() (this device only) and spawn('/create ...') (the host spawns once for everyone). |
-| [**Behaviour**](behaviours.md) | Game logic written as a small JavaScript file (params, replicated state, event handlers, kit calls) - run once on the authority peer, with a live node view of its events, state and knobs. |
-| **Code link** | Points at the module or kit file whose code runs part of this game - double-click (or Open code) to read it. It does nothing at runtime; it is how the Main graph shows where every rule lives. |
+| [**Behaviour**](nodes/behaviour.md) | Game logic written as a small JavaScript file (params, replicated state, event handlers, kit calls) - run once on the authority peer, with a live node view of its events, state and knobs. |
+| [**Code link**](nodes/coderef.md) | Points at the module or kit file whose code runs part of this game - double-click (or Open code) to read it. It does nothing at runtime; it is how the Main graph shows where every rule lives. |
 | [**Math**](nodes/math.md) | Combines numbers (+ - * / min max mod pow) or shapes one: sin/cos (b scales them, 0 = 1), abs, round, floor, clamp to 0..b, negate. + input adds sockets (up to 8) for + - * / min max. |
 | [**Compare**](nodes/compare.md) | Compares two numbers and outputs true or false. |
 | [**Gate**](nodes/gate.md) | Boolean logic - AND, OR, NOT, XOR. + input adds sockets (up to 8): AND = all true, OR = any true, XOR = an odd number true. |
 | [**Map Range**](nodes/maprange.md) | Remaps a number from one range to another - the glue between free-range sources and bounded parameters. |
 | [**Select**](nodes/select.md) | Picks one of up to four values (a, b, c, d) by a rounded index. |
-| **Latch** | Holds a boolean until told otherwise - set, reset and toggle pulses make it a memory bit. |
-| **Delay** | Passes a pulse on after a set number of seconds - the timing of a fuse, or a door that closes later. |
-| **Sequence** | Fires its outputs one after another, one per pulse, then wraps around - a step-by-step trigger. |
-| **Once** | Lets exactly one pulse through until it is re-armed - a checkpoint, a pickup, a first-time event. |
+| [**Latch**](nodes/latch.md) | Holds a boolean until told otherwise - set, reset and toggle pulses make it a memory bit. |
+| [**Delay**](nodes/delay.md) | Passes a pulse on after a set number of seconds - the timing of a fuse, or a door that closes later. |
+| [**Sequence**](nodes/sequence.md) | Fires its outputs one after another, one per pulse, then wraps around - a step-by-step trigger. |
+| [**Once**](nodes/once.md) | Lets exactly one pulse through until it is re-armed - a checkpoint, a pickup, a first-time event. |
 | [**Counter**](nodes/counter.md) | Counts trigger pulses and outputs the running total. |
 | [**Loop**](nodes/loop.md) | Sweeps a number from one value to another over time, repeating - a ready-made animation ramp. |
 | [**Timer**](nodes/timer.md) | A delay line: outputs its input as it was a set number of seconds ago. |
@@ -126,8 +126,8 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**Key Press**](nodes/keypress.md) | Fires a pulse while a keyboard key is pressed - the bridge from your keyboard into the graph. |
 | [**On Hit**](nodes/onhit.md) | Fires a pulse when a hand or a walking player knocks the object - with how hard it was hit (speed) and whether you did it (byMe). |
 | [**On Rest**](nodes/onrest.md) | Fires a pulse when a physics body has finished moving - the counterpart to On Impact, which fires when it starts. |
-| **Gamepad Button** | Fires a pulse (or holds a level) while a gamepad button is pressed - the pad's counterpart of Key Press. |
-| **Gamepad Axis** | A gamepad stick or trigger axis as a number between -1 and 1, with a dead zone. |
+| [**Gamepad Button**](nodes/gamepadbutton.md) | Fires a pulse (or holds a level) while a gamepad button is pressed - the pad's counterpart of Key Press. |
+| [**Gamepad Axis**](nodes/gamepadaxis.md) | A gamepad stick or trigger axis as a number between -1 and 1, with a dead zone. |
 
 ## Animation
 
@@ -135,8 +135,8 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 |---|---|
 | [**Shake**](nodes/shake.md) | Jitters the connected object around its resting position - rumble, nervousness, impact feedback. |
 | [**Spin**](nodes/spin.md) | Rotates the connected object continuously around one axis. |
-| [**Rotate / Motor**](fluids.md#nodes) | Turns the connected object about its own local axis (and its origin, so a wheel turns on its hub) at a set rpm with a spin-up. Paddles and scoops it turns carry water from Fluid emitters. On a dynamic physics body during a simulation it becomes a real motor: torque-limited, so a load slows it. |
-| [**Float Along Flow**](fluids.md#nodes) | Carries the connected object along a Flow path - a leaf, a toy boat - from where you placed it, at the path's speed, bobbing and turning with the current, looping at the end. Uses the nearest Flow path unless one is wired. |
+| [**Rotate / Motor**](nodes/rotor.md) | Turns the connected object about its own local axis (and its origin, so a wheel turns on its hub) at a set rpm with a spin-up. Paddles and scoops it turns carry water from Fluid emitters. On a dynamic physics body during a simulation it becomes a real motor: torque-limited, so a load slows it. |
+| [**Float Along Flow**](nodes/flowfloat.md) | Carries the connected object along a Flow path - a leaf, a toy boat - from where you placed it, at the path's speed, bobbing and turning with the current, looping at the end. Uses the nearest Flow path unless one is wired. |
 | [**Bounce**](nodes/bounce.md) | Bounces the connected object up and down off its resting height, like a dribbled ball. |
 | [**Orbit**](nodes/orbit.md) | Circles the connected object around its resting position on the horizontal plane. |
 | [**Path patrol**](nodes/pathpatrol.md) | Walks the connected object along a series of waypoints you click into the scene, facing along the path. |
