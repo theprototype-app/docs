@@ -96,6 +96,9 @@ Inspector ▸ **Terrain paint ▸ Paint…**) and pick the **Paint** brush after
   give it a colour or texture (*Use the material for layer 1* goes back), so the first stroke on a fresh terrain only
   changes where you paint.
 - The coverage line shows how much of the terrain each layer covers; **Clear paint** removes all of it.
+- *New in 1.43:* **Detail** sets this terrain's paint resolution, 64 × 64 to 512 × 512 (default 128). What is painted
+  is resampled (edges get sharper or softer) and the next strokes paint at that detail; a bigger map costs more to send
+  while you paint.
 - One drag = **one undo step**. Peers see the stroke while you paint and exactly your result when you let go; the
   paint is saved with the scene.
 
@@ -103,22 +106,25 @@ Inspector ▸ **Terrain paint ▸ Paint…**) and pick the **Paint** brush after
 
 ## Scatter
 
-The **Scatter** brush paints instances of a **primitive or any 3D model in your Library** — trees, rocks, grass
-tufts — onto the terrain.
+The **Scatter** brush paints instances of a primitive, a Library model, a pack item or a prefab's look — trees, rocks,
+grass tufts — onto the terrain. Since 1.43 a set can also **fill** the terrain by count or density with slope, height
+and painted-layer masks, mix several models, and be edited instance by instance: see [Scatter](scatter.md), which also
+covers scatter on any other object.
 
 ![The Scatter brush in the Sculpt toolbox, with cones scattered over a painted terrain](img/terrain/scatter-toolbox.png)
 
 | Control | What it does |
 |---|---|
-| **Source** | A primitive, or any model in your Library. |
-| **Paint / erase** | Paint adds instances; the eraser removes *that model's* instances under the brush. |
+| **Source** | A primitive, a Library model, a pack item or a prefab ([what you can scatter](scatter.md#what-you-can-scatter)). |
+| **Tools** | Paint, Erase, Rotate, Scale, Relax and Select ([Edit instances](scatter.md#edit-instances)). |
 | **Density** | Instances per m² — painting over a patch fills it up to that density and never past it. |
 | **Scale min – max** | A random size per instance. |
 | **Random rotation** | Turns each instance around its vertical axis. |
 | **Align to slope** | Tilts instances to the ground. |
 
 Instances follow the ground — sculpting the terrain later moves them with it. Inspector ▸ **Scatter** lists each
-scattered model with its count, an Align toggle and **Remove**. Scatter is counted by the
+scattered model with its count, an Align toggle and **Remove**, plus the Fill, mix, Tint and Sink rows
+([Scatter](scatter.md)). Scatter is counted by the
 [budget chip](performance.md#the-budget-chip-will-it-fit-on-a-quest) on the terrain's row, and a dense model (300
 triangles or more) switches to lighter [levels of detail](lod.md) with distance — instances far away draw fewer
 triangles.
@@ -126,8 +132,9 @@ triangles.
 !!! note "Limits"
     Up to 8,000 instances and 8 scattered models per terrain. For a Quest, keep it near 2,000 instances of a low-poly
     model (≤ 150 triangles each): each scattered model is one draw call (a dense one, a few — it is drawn in patches so
-    its levels of detail can switch), plus one per shadow-casting light. Instances cannot be selected one by one, and
-    are solid only when their model has a [Collider](#scatter-collider). Older versions open a painted or scattered terrain as the plain terrain.
+    its levels of detail can switch), plus one per shadow-casting light; far instances
+    [thin out per device](scatter.md#distant-scatter-each-device). Instances are solid only when their model has a
+    [Collider](#scatter-collider). Older versions open a painted or scattered terrain as the plain terrain.
 
 ### Scatter ▸ Collider
 
