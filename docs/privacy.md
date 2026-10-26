@@ -3,7 +3,7 @@
 In a session your scene goes from your browser straight to the people you connect to (peer-to-peer); our servers
 introduce you, relay the encrypted traffic when a direct link is impossible, and serve accounts, cloud saves, assets
 and community pages ([how it works](index.md#how-it-works)). This page covers what the app sends about itself —
-**anonymous error reports**, and how to switch them off — and the anonymous counters. For accounts,
+**anonymous error reports** and **first-visit usage counts**, and how to switch them off — and the anonymous counters. For accounts,
 cloud saves and the community, see the site's [privacy page](https://theprototype.app/privacy).
 
 ## Anonymous error reports
@@ -38,6 +38,21 @@ No account, no IP address, no scene content, no names, no cookie — and nothing
 
 theprototype.app also counts things in aggregate — page visits and plays of a published scene. These are totals:
 no cookie, no account, nothing that links one visit to another or to you.
+
+## Usage counts (first visits)
+
+To learn whether a first visit works, theprototype.app counts a few first-visit steps, **each at most once per
+browser**: the Welcome card shown and which answer was picked, a first change, a first Play (with roughly how many
+minutes after the Welcome card), a first invite, finishing or skipping the [first-game quest](tours.md#the-first-game-quest),
+and whether the browser comes back the next day, a week later or in a later week. A count carries only the app version
+and the kind of device (desktop, touch screen or headset) — **no account, no IP address, no cookie, no identifier**, so
+two counts can never be joined into one person. Your browser keeps a small note of which steps it already counted; it
+never leaves it.
+
+**Where:** **Settings ▸ Privacy ▸ Count my visits anonymously** (on by default). Nothing is counted while your browser
+sends *Do Not Track* or *Global Privacy Control*.
+
+![Settings ▸ Privacy ▸ Usage counts with the Count my visits anonymously switch](img/settings/privacy-usage-counts.png)
 
 **Performance reports** are separate and **off** unless you switch them on (**Settings ▸ Interface ▸ Send
 performance reports**): frame-time numbers and versions, no account and no scene content.
