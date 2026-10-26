@@ -14,7 +14,7 @@
         <link rel="prev" href="../publish-export/">
       
       
-        <link rel="next" href="../colocation/">
+        <link rel="next" href="../building-in-vr/">
       
       
       <link rel="icon" href="../logo.svg">
@@ -5466,6 +5466,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../building-in-vr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building in VR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../colocation/" class="md-nav__link">
         
   
@@ -6254,7 +6275,7 @@ sector that opens another ring opens that ring and keeps the menu up.</p>
 </tr>
 <tr>
 <td><strong>Add ▸</strong></td>
-<td>the viewport menu's Add: Cube, Wedge, Stairs, Sphere, Cylinder, Torus, <strong>Terrain</strong>, <strong>Architecture ▸</strong> and <strong>Prefabs</strong></td>
+<td>the viewport menu's Add: Cube, Wedge, Stairs, Sphere, Cylinder, Torus, <strong>Terrain</strong>, <strong>Architecture ▸</strong>, <strong>Prefabs</strong> and <strong>Assets</strong> (the <a href="../building-in-vr/#the-asset-browser-on-your-wrist">Asset Browser on your wrist</a>)</td>
 </tr>
 <tr>
 <td><strong>Scene ▸</strong></td>
@@ -6262,7 +6283,7 @@ sector that opens another ring opens that ring and keeps the menu up.</p>
 </tr>
 <tr>
 <td><strong>Tools ▸</strong></td>
-<td>Select, Box select, Draw mode, Ping, Simulate physics, <strong>Profile ▸</strong>, <strong>AI</strong> (<a href="#the-ai-assistant-in-vr">below</a>)</td>
+<td>Select, Box select, Draw mode, <strong>Measure</strong> (<a href="../building-in-vr/#measure">Building in VR</a>), Ping, Simulate physics, <strong>Profile ▸</strong>, <strong>Play here</strong> (<a href="../play-here/">Play here</a>), <strong>AI</strong> (<a href="#the-ai-assistant-in-vr">below</a>)</td>
 </tr>
 <tr>
 <td><strong>Redo</strong> · <strong>Undo</strong></td>
@@ -6275,6 +6296,10 @@ sector that opens another ring opens that ring and keeps the menu up.</p>
 <tr>
 <td><strong>Settings ▸</strong></td>
 <td>every VR setting, the microphone, the welcome tour and Exit VR (<a href="#settings">below</a>)</td>
+</tr>
+<tr>
+<td><strong>Back to 1:1</strong></td>
+<td>only while the world is scaled, turned or moved — puts it back to life size (<a href="../building-in-vr/#shrink-the-world-miniature-mode">miniature mode</a>)</td>
 </tr>
 </tbody>
 </table>
@@ -6297,7 +6322,9 @@ last:</p>
 <li><strong>Color</strong> opens a live palette, <strong>Snapping</strong> its side-menu.</li>
 <li><strong>Edit collider</strong> shapes the object's collider in the headset — see
   <a href="../colliders/#editing-a-collider-in-vr">Colliders</a>.</li>
-<li>With several objects selected, Duplicate, Save prefab and Delete act on all of them and show how many.</li>
+<li>With several objects selected, Duplicate, Save prefab and Delete act on all of them and show how many, and
+  <strong>Arrange</strong> aligns, spaces or drops them (<a href="../building-in-vr/#arrange-align-distribute-drop-to-ground">Building in VR</a>).</li>
+<li>A selected measurement item shows <strong>Edit measurement</strong> (<a href="../building-in-vr/#measure">Measure</a>).</li>
 </ul>
 <h3 id="settings">Settings</h3>
 <p><img alt="The Settings ring: Comfort, Body, Controls, Display, Editing, Microphone, All settings, Exit VR" src="../img/vr/settings-ring.png" /></p>
@@ -6324,12 +6351,12 @@ on the keyboard puts the previous search back.</p>
 <li><strong>Move</strong> — push the left thumbstick. With <strong>VR flying</strong> on, forward follows where your controller aims; otherwise it stays level. Hold the <strong>left grip</strong> to switch the stick to panning and elevation.</li>
 <li><strong>Teleport</strong> — push the <strong>right thumbstick up</strong> to arc a beam, release to blink to the landing spot (in Edit: the ground or any upward-facing surface; in a game, only walkable ground inside the play area — a red arc is refused). Toggle teleport in Settings.</li>
 <li><strong>Turn</strong> — push the right thumbstick left/right. <strong>Turning</strong> is <em>Snap</em> (fixed steps of the <strong>Snap angle</strong>, 15–90°, default 45°), <em>Smooth</em> (a steady turn at the <strong>Smooth speed</strong>) or <em>Off</em>, in <strong>Settings ▸ Comfort</strong>; <strong>Mirror turn</strong> flips the direction, and the <strong>Comfort vignette</strong> darkens the edges of your view while you turn or move. This works in Edit and in games alike.</li>
-<li><strong>World grab</strong> — grip with <strong>both hands in empty air</strong> to grab the whole world: pull your hands apart/together to scale, twist to rotate, move to reposition. The turn and the scale <a href="#snapping-the-world-while-you-grab-it">snap to steps</a>. <strong>Scene ▸ World 1:1</strong> snaps it back to normal. Holding the world with <strong>one</strong> grip, push the stick <strong>up/down</strong> to send it away or bring it closer, as with an object.</li>
+<li><strong>World grab</strong> — grip with <strong>both hands</strong> to grab the whole world — since 1.45 wherever you point, even over objects: pull your hands apart/together to scale (down to a 1:50 <a href="../building-in-vr/#shrink-the-world-miniature-mode">miniature</a>), twist to rotate, move to reposition. The turn and the scale <a href="#snapping-the-world-while-you-grab-it">snap to steps</a>. <strong>Scene ▸ World 1:1</strong> snaps it back to normal. Holding the world with <strong>one</strong> grip, push the stick <strong>up/down</strong> to send it away or bring it closer, as with an object.</li>
 <li><strong>Dollhouse</strong> — <strong>Scene ▸ Dollhouse</strong> shows the whole scene as a model in front of you; point into it to <a href="#dollhouse-teleport">stand anywhere</a>.</li>
 </ul>
 <h3 id="snapping-the-world-while-you-grab-it">Snapping the world while you grab it</h3>
 <p>Since 1.28, when you hold <strong>both grips in empty air</strong> and pull your hands apart or together, or twist them, the world
-<strong>turns in 15° steps</strong> and <strong>sticks at 1×, 2×, 5× and 10×</strong> (and at ½, ⅕ and ⅒). Each step gives a light tick in your
+<strong>turns in 15° steps</strong> and <strong>sticks at 1×, 2×, 5× and 10×</strong> (and at ½, ⅕, ⅒ and, since 1.45, 1:50). Each step gives a light tick in your
 hands, and a readout between your hands says where you are — for example <em>2× · 45°</em>.</p>
 <p>To move the world freely again, turn off <strong>Settings ▸ VR ▸ Controls ▸ World grab snapping</strong> (also radial <strong>Settings ▸
 Controls</strong>). It is on by default.</p>
@@ -6346,7 +6373,7 @@ amber pin where you stand.</p>
 <h2 id="grabbing-scaling-and-stretching">Grabbing, scaling and stretching</h2>
 <ul>
 <li><strong>Grip</strong> an object to grab it. The default <em>rigid</em> grab treats the controller as a handle — the grabbing hand's thumbstick reels the object nearer/farther and scales it. (Other grab styles: <strong>Settings ▸ Controls ▸ Grab style</strong>.)</li>
-<li><strong>Two hands</strong> on the same object scales it uniformly by the distance between them. Two hands on <strong>two different</strong> objects hold one each (Towers' blocks): letting go of one never freezes the other.</li>
+<li><strong>Two hands</strong> on the same object scales it uniformly by the distance between them. Since 1.45, grab it with one hand and move it a little first, then add the second grip — two grips that arrive together grab the world (<a href="../building-in-vr/#shrink-the-world-miniature-mode">why</a>). Two hands on <strong>two different</strong> objects hold one each (Towers' blocks): letting go of one never freezes the other.</li>
 <li>In <strong>Edit</strong>, walls and floors are scenery and a grip on them moves the world — <strong>select</strong> one first to grip it.</li>
 <li><strong>VR Stretch</strong> — non-uniform, per-axis scaling. From the Edit menu, grab the <strong>W/H/D slider handles</strong> and drag horizontally to stretch that axis; the result is baked when you confirm.</li>
 <li><strong>Box select</strong> (Tools ▸ Box select) — pull the trigger to anchor one corner, drag out a box, release to select everything inside it.</li>
@@ -6380,7 +6407,8 @@ Smooth and Flatten brush.</p>
   down</strong> the strength (5 – 100 %). A label on that hand shows the tool and both numbers. While you sculpt, that stick
   does not walk or turn you; the other stick still does.</li>
 <li><strong>Tools</strong> — while you sculpt, the radial menu opens on the <strong>Sculpt</strong> ring: <strong>Raise</strong>, <strong>Lower</strong>, <strong>Smooth</strong>,
-  <strong>Flatten</strong> and <strong>Done</strong>. <strong>Back</strong> goes to the usual menu.</li>
+  <strong>Flatten</strong> and <strong>Done</strong>, plus (since 1.45) <strong>Paint ▸</strong> terrain layers and <strong>Scatter ▸</strong> brushes — see
+  <a href="../building-in-vr/#brushes-on-the-controller">Brushes on the controller</a>. <strong>Back</strong> goes to the usual menu.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Limits</p>
@@ -6461,7 +6489,7 @@ headset's <strong>All settings</strong> panel, and desktop <strong>Settings ▸ 
 </tr>
 <tr>
 <td><strong>Controls</strong></td>
-<td><strong>Menu hand</strong> (Right / Left), <strong>Hold to open menu</strong>, <strong>Left-handed</strong>, <strong>Grab style</strong>, <strong>World grab snapping</strong> (<a href="#snapping-the-world-while-you-grab-it">world grab</a>), <strong>Remap buttons</strong>, <strong>Reset buttons</strong></td>
+<td><strong>Menu hand</strong> (Right / Left), <strong>Hold to open menu</strong>, <strong>Left-handed</strong>, <strong>Grab style</strong>, <strong>World grab snapping</strong> (<a href="#snapping-the-world-while-you-grab-it">world grab</a>), <strong>Both grips scale the world</strong> (Always / Only in empty air — <a href="../building-in-vr/#shrink-the-world-miniature-mode">miniature mode</a>), <strong>Remap buttons</strong>, <strong>Reset buttons</strong></td>
 </tr>
 <tr>
 <td><strong>Display</strong></td>
@@ -6544,7 +6572,7 @@ teleport on, <strong>Snap</strong> turning and the <strong>Comfort vignette</str
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-23
+    2026-10-26
   </span>
 
     

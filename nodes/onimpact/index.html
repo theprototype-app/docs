@@ -5281,6 +5281,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../building-in-vr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building in VR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../colocation/" class="md-nav__link">
         
   
@@ -5700,10 +5721,11 @@
 
 
 <h1 id="on-impact">On Impact</h1>
-<p>Fires a pulse when a <a href="../../physics/">physics simulation</a> lands the connected object on the ground or another object.</p>
+<p>Fires a pulse when, in a <a href="../../physics/">physics simulation</a>, the connected object hits something — from any side, or
+only when it lands (the <strong>From</strong> option).</p>
 <p><strong>Output:</strong> event (wire into a <a href="../particle/">Particles</a> trigger, a <a href="../counter/">Counter</a>, or an <a href="../objectselector/">Object Selector</a>)</p>
 <h2 id="how-it-works">How it works</h2>
-<p>While a simulation runs, the peer stepping the physics detects each real contact — a falling crate hitting the floor, a thrown ball hitting a wall — and pulses this node for <strong>everyone</strong> (the trigger rides the same replicated stamp as <a href="../onclick/">On Click</a>). Gentle settling and rolling are filtered out: the object must actually be falling, and each object has a short cooldown so bounces don't spam.</p>
+<p>While a simulation runs, the peer stepping the physics detects each real contact — a falling crate hitting the floor, a thrown ball hitting a wall — and pulses this node for <strong>everyone</strong> (the trigger rides the same replicated stamp as <a href="../onclick/">On Click</a>). Gentle settling and rolling are filtered out: the two objects must close fast enough along the contact (or, with <strong>From: landing only</strong>, the object must actually be falling), and each object has a short cooldown so bounces don't spam.</p>
 <h2 id="parameters">Parameters</h2>
 <table>
 <thead>
@@ -5717,10 +5739,17 @@
 <tr>
 <td>minStrength</td>
 <td>1</td>
-<td>minimum impact speed (m/s, downward at contact) — raise it so only hard landings count</td>
+<td>minimum impact speed (m/s, along the contact; downward with <em>landing only</em>) — raise it so only hard hits count</td>
+</tr>
+<tr>
+<td>direction (<strong>From</strong>)</td>
+<td>any side</td>
+<td><em>any side</em>: a hit from any direction — a ball thrown at a wall or a target; <em>landing only</em>: landings only (before 1.45 every On Impact worked this way)</td>
 </tr>
 </tbody>
 </table>
+<p><em>New in 1.45.</em> <strong>From: any side</strong> is the default for a new node. On Impact nodes in scenes saved before 1.45 keep
+<em>landing only</em>, so they fire exactly as they did.</p>
 <h2 id="targeting">Targeting</h2>
 <p>Like On Click, the node fires for the object it <em>reaches</em> in the graph: wire it into an <a href="../objectselector/">Object Selector</a> (directly or through other nodes), or drop it unwired inside an object's own flow to target that object.</p>
 <h2 id="only-with-and-other">Only with, and other</h2>
@@ -5734,8 +5763,8 @@ contact with the ground plane reports an empty <em>other</em>. Since 1.22 the no
 it — a pressure plate, a target, a moving platform — with <strong>other</strong> = the body that landed. Put On Impact in the
 plate's own flow and it fires when a crate drops onto it. Two <strong>dynamic</strong> bodies still fire only for the one that was
 falling, so nothing fires twice.</p>
-<p>An impact is still a landing: downward speed over 1.2 m/s (raise <strong>minStrength</strong> for harder ones), each body at most
-every 0.3 s. A ball thrown sideways into a wall fires nothing on either side.</p>
+<p>The threshold is a closing speed over 1.2 m/s (raise <strong>minStrength</strong> for harder ones), each body at most every 0.3 s.
+With <strong>From: landing only</strong> it counts only downward speed, so a ball thrown sideways into a wall fires nothing.</p>
 <h2 id="practical-example">Practical example</h2>
 <p>Sparks + a thud when a crate lands:</p>
 <ol>
@@ -5767,7 +5796,7 @@ every 0.3 s. A ball thrown sideways into a wall fires nothing on either side.</p
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-21
+    2026-10-26
   </span>
 
     

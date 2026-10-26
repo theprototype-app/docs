@@ -722,6 +722,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="When the signaling link drops">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-the-connection-drops" class="md-nav__link">
+    <span class="md-ellipsis">
+      When the connection drops
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -5397,6 +5412,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../building-in-vr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building in VR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../colocation/" class="md-nav__link">
         
   
@@ -5865,6 +5901,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="When the signaling link drops">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-the-connection-drops" class="md-nav__link">
+    <span class="md-ellipsis">
+      When the connection drops
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -6146,6 +6197,13 @@ Users list on their own within about half a minute (it used to keep a "ghost"), 
 <em>Connection error</em>.</p>
 <h2 id="when-the-signaling-link-drops">When the signaling link drops</h2>
 <p>The link to the signaling server is not the link to your peers — losing it does not end a session you are already in, it only stops new people finding you. When it drops the app reconnects on its own, backing off a little further between tries and <strong>never giving up</strong>, and the <a href="#the-status-dot">status dot</a> pulses yellow while it is retrying so a dead link does not read as a dead app. Coming back online, or returning to the tab, retries immediately instead of waiting out the backoff — and since 1.32 it does so <strong>silently</strong>: switching apps on a phone and coming back no longer toasts. If the server stays unreachable for about a minute, the dot turns red and <strong>one</strong> entry appears in the notification centre; the retries carry on. A peer connection that closed is rebuilt rather than abandoned.</p>
+<h3 id="when-the-connection-drops">When the connection drops</h3>
+<p>After a short network drop (a Wi-Fi hop, a closed lid) or a signaling-server blip heals, a person who joined your room
+keeps the role you gave them: the role in <strong>Users</strong> stays as it was and their edits keep arriving. Before 1.45, on the
+hosted site, an Editor came back from such a drop as View-only — their edits stayed on their own screen and you never
+saw them. There is nothing to set.</p>
+<p>A drop longer than the reconnect window (about 15 seconds, plus a dial already in flight) still ends the session for
+that person; they rejoin with the invite link.</p>
 <h2 id="diagnostics-you-can-copy">Diagnostics you can copy</h2>
 <p><strong>Settings ▸ About ▸ Copy diagnostics</strong> puts a bundle on your clipboard: the version, this session's peer and scene counts, the scene's <a href="../performance/">budget numbers</a>, the last uncaught error and the last 300 log lines. A toast confirms <em>Diagnostics copied to the clipboard</em>.</p>
 <p>Since 1.35 a line that repeats back-to-back is written <strong>once with a count</strong> — <code>WARN [console] … (×180, last 10:42:07.311)</code> — so a burst of one warning can no longer push the useful lines out of the log.</p>
@@ -6293,7 +6351,7 @@ never count as visits or errors.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-25
+    2026-10-26
   </span>
 
     
