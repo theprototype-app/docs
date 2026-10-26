@@ -185,6 +185,16 @@ Users list on their own within about half a minute (it used to keep a "ghost"), 
 
 The link to the signaling server is not the link to your peers — losing it does not end a session you are already in, it only stops new people finding you. When it drops the app reconnects on its own, backing off a little further between tries and **never giving up**, and the [status dot](#the-status-dot) pulses yellow while it is retrying so a dead link does not read as a dead app. Coming back online, or returning to the tab, retries immediately instead of waiting out the backoff — and since 1.32 it does so **silently**: switching apps on a phone and coming back no longer toasts. If the server stays unreachable for about a minute, the dot turns red and **one** entry appears in the notification centre; the retries carry on. A peer connection that closed is rebuilt rather than abandoned.
 
+### When the connection drops
+
+After a short network drop (a Wi-Fi hop, a closed lid) or a signaling-server blip heals, a person who joined your room
+keeps the role you gave them: the role in **Users** stays as it was and their edits keep arriving. Before 1.45, on the
+hosted site, an Editor came back from such a drop as View-only — their edits stayed on their own screen and you never
+saw them. There is nothing to set.
+
+A drop longer than the reconnect window (about 15 seconds, plus a dial already in flight) still ends the session for
+that person; they rejoin with the invite link.
+
 ## Diagnostics you can copy
 
 **Settings ▸ About ▸ Copy diagnostics** puts a bundle on your clipboard: the version, this session's peer and scene counts, the scene's [budget numbers](performance.md), the last uncaught error and the last 300 log lines. A toast confirms *Diagnostics copied to the clipboard*.

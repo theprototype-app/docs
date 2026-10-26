@@ -49,7 +49,8 @@ drops a selection, the Sculpt ring gains terrain **Paint** and the **Scatter** b
 Asset Browser on your wrist with the drag-to-place ghost on your laser. With hand tracking a pinch browses and places.
 Also: [On Impact](nodes/onimpact.md) fires on a hit from any side (new **From** option; old scenes keep landings only),
 Rotate / Motor nodes spin up from rest and an auto-starting HUD Timer counts its full time, six nodes show the sockets
-they read, and the profile button opens with Enter or Space.
+they read, and the profile button opens with Enter or Space. Someone who joined your room keeps their role after a
+network or signaling blip — they used to come back View-only ([connection drops](connection.md#when-the-connection-drops)).
 
 **1.44 — quick wins.** [Play here](play-here.md) starts Play where your camera is (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd>)
 and Stop puts the camera back. Drop an image on the viewport for a see-through [reference image](reference-images.md)
