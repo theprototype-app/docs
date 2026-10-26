@@ -214,6 +214,7 @@ nav:
     - Publish & Export: publish-export.md
   - VR:
     - VR Guide: vr.md
+    - Building in VR: building-in-vr.md
     - Colocation (shared room): colocation.md
     - Play on a Table (AR, Android): ar-table.md
   - AI:
