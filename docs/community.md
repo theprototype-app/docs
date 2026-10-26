@@ -16,7 +16,7 @@ The **Publish** row sits in the logo menu directly under **Save**. Its hint tell
 The first click walks you through what is missing, once:
 
 1. **Sign in** — **Continue with GitHub** or **Continue with Google**.
-2. **Pick your handle** — your pages live at `/u/‹handle›`. Lowercase letters, digits and dashes, 3–24 characters, and it is claimed **once**: there is no rename. Your peer nickname in sessions is a separate thing and is never touched.
+2. **Pick your handle** — your pages live at `/u/‹handle›`. Lowercase letters, digits and dashes, 3–24 characters, and you can [change it](#changing-your-handle) once every 30 days. Your peer nickname in sessions is a separate thing and is never touched.
 
 Then the dialog itself:
 
@@ -59,12 +59,23 @@ Every published scene has a page at `/s/‹id›`: the hero shot, the title, the
 - **Remix** — opens it in the editor and remembers where it came from, so your Publish credits the original.
 - **Download .tpscene** — the file itself, to keep or import anywhere.
 
+**3D preview** on the hero picture loads the scene right there on the page, through its [play link](#links-that-open-the-app):
+orbit it, or click into it to play. **⤢ Full screen** opens the play link itself and **Picture** puts the still back
+(and unloads the scene). Nothing loads until you press it, so the page stays light; on a phone the buttons are
+thumb-sized.
+
 A public scene also has an **Embed** button — see [Embedding a scene](#embedding-a-scene).
 
 Below that: what the scene includes, its lineage (*Remix of … by @handle*, and how many remixes it has), and comments. **Report this scene** is at the bottom — see [Reporting](#reporting).
 
 `/community` is the browse page: **Featured**, **Recent** and **Top**, tag chips, a **Mine** chip while you are signed in
 (see [below](#mine)), and a strip for the contest that is open.
+
+- **Search** (the box above the tabs) matches a scene's title, summary and tags **and the maker's @handle**; every word
+  you type must match (`mirror night`, `@bea`). It works together with the tabs and tag chips, and the address keeps it
+  (`/community?q=mirror`), so a search can be shared.
+- **Top** has **This week**, **This month** and **All time**: the most-liked scenes published in that window. A plain
+  `/community?tab=top` link still means all time.
 
 ### Links that open the app
 
@@ -103,7 +114,16 @@ Only **public** scenes embed: an unlisted scene's link answers *not found*.
 
 ## The Community tab in Templates
 
-**Menu ▸ Templates ▸ Community** lists published scenes inside the app — featured ones first, then the most recent — with the author's handle, the license, the size and the like count on each card. Tag chips narrow the list; **Clear** resets it. Clicking a card loads the scene through the ordinary template path: a backup of your current scene is stashed first, and connected peers are asked before anything changes. The small button in a card's corner saves the scene to your Library instead, without loading it.
+**Menu ▸ Templates ▸ Community** lists published scenes inside the app with the author's handle, the license, the size and the like count on each card. **Featured / Recent / Top** sort the list, tag chips narrow it, and **Clear** resets it.
+
+The **search field** at the top (every Templates tab has one) searches the **whole community**, not just the cards
+already loaded: titles, summaries, tags and makers' @handles — type `bea` and @bea's scenes come back. On the other tabs
+it filters the templates and games by title, description and tags; every word you type must match.
+
+![Templates ▸ Community searching for "bea", with the Featured / Recent / Top chips](img/community/templates-search.png)
+
+A copy of the app you build yourself shows the open GitHub gallery here, and the search field filters its cards.
+ Clicking a card loads the scene through the ordinary template path: a backup of your current scene is stashed first, and connected peers are asked before anything changes. The small button in a card's corner saves the scene to your Library instead, without loading it.
 
 When a contest is open a notice row says so (*Contest: Make a mirror — 9 days left*) with a **More** link to its page, and the tab's **Publish yours** link opens the Publish dialog.
 
@@ -163,6 +183,19 @@ One entry per scene per contest — a second attempt says *Already entered*. Onc
 ## Profiles and handles
 
 Your profile is `/u/‹handle›`: your avatar, your public scenes, your total likes and any contest badges (*Winner*, *Judge's pick*). The handle is the one you claimed the first time you published. There is no profile editor yet, so the page shows what the sign-in provided.
+
+### Changing your handle
+
+Signed in, your own profile page has **Change handle**: type the new one (3–24 lowercase letters, digits or dashes) and
+**Save** — you land on `/u/‹new›`.
+
+![Change handle on your own profile: the field, Save and Cancel, and the 30-day rule under it](img/community/change-handle.png)
+
+- You can change it **once every 30 days**; trying again sooner says the date you can next change it.
+- For 30 days your **old handle is held for you** — nobody else can take it — and `/u/‹old›` sends visitors to your new
+  page. Going back to your previous handle within that time is an undo, not a new change.
+- Your scenes, likes, badges and sessions are untouched; your peer nickname in sessions is a separate thing.
+- Pages are cached for about a minute, so the old address may show your old page briefly right after a change.
 
 The site and the app share one sign-in. **Sign in** in the site header offers the same GitHub and Google buttons; signed in, the menu under your name has **My profile**, **Open the app** and **Sign out**. Inside the app the same account is under the logo menu's profile block as **Sign in to cloud**.
 

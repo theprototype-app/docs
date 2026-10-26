@@ -42,6 +42,16 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**NEXT — first win and community.** <!-- 76-int: set the version at release --> Your first visit asks
+[one question](tours.md#your-first-visit) — Play a game, Remix a game, Start from a template or Describe it — and a
+three-step [first-game quest](tours.md#the-first-game-quest) walks you through changing it, playing it and inviting a
+friend; a new visitor's advanced buttons wait behind **»** / **More** until their first Play, and the editor tour is in
+the logo menu as **Tour the interface**. The Templates window has a search field on every tab, and
+[Templates ▸ Community](community.md#the-community-tab-in-templates) searches the whole community (titles, summaries,
+tags, makers' @handles) and sorts Featured / Recent / Top. On the site: [search and Top this week / month](community.md#a-scenes-page),
+[change your handle](community.md#changing-your-handle) once every 30 days, and a click-to-load **3D preview** on
+scene pages.
+
 **1.47 — game logic in the headset.** Radial ▸ **Tools ▸ Logic** opens the node graph as a panel in VR: move cards,
 wire sockets with the laser and set values on a wrist pad, and everyone sees it live — see
 [Logic in the headset](building-in-vr.md#logic-in-the-headset). An Android phone can now
