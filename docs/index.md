@@ -42,6 +42,16 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.45 — build in the headset.** Everything you need to build a scene now works in VR — see
+[Building in VR](building-in-vr.md). Both grips **shrink the world** to a 1:50 miniature to work from above (Back to 1:1
+on the radial), **Tools ▸ Measure** snaps points to corners with the laser, **Selected ▸ Arrange** aligns, spaces and
+drops a selection, the Sculpt ring gains terrain **Paint** and the **Scatter** brushes, and **Add ▸ Assets** opens an
+Asset Browser on your wrist with the drag-to-place ghost on your laser. With hand tracking a pinch browses and places.
+Also: [On Impact](nodes/onimpact.md) fires on a hit from any side (new **From** option; old scenes keep landings only),
+Rotate / Motor nodes spin up from rest and an auto-starting HUD Timer counts its full time, six nodes show the sockets
+they read, and the profile button opens with Enter or Space. Someone who joined your room keeps their role after a
+network or signaling blip — they used to come back View-only ([connection drops](connection.md#when-the-connection-drops)).
+
 **1.44 — quick wins.** [Play here](play-here.md) starts Play where your camera is (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd>)
 and Stop puts the camera back. Drop an image on the viewport for a see-through [reference image](reference-images.md)
 to trace over — hidden in Play, never exported. With the app installed, [share files into it](sharing-into-the-app.md)
