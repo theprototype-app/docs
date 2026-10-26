@@ -145,6 +145,9 @@ Drag any **selected** row in the object list and the whole selection comes along
 World positions are kept and a drop is one undo step. An object cannot be dropped into its own child. Local-only objects
 (ones not shared with the session) dropped onto a shared parent become shared, as before.
 
+Local objects also stay out of files: a downloaded scene, a whole-scene export, a published or submitted scene and a
+game export leave them out and say how many ("1 local object was not included"). Share them first to include them.
+
 ### What double-click does
 
 Opening properties is the default, but it is a setting: **Settings ▸ Scene ▸ Selection ▸ Double-click action** offers *Open properties*, *Edit mesh*, *Focus and isolate* and *Select same type*.
