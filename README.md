@@ -104,7 +104,7 @@ One short sentence.
 
 A loop is raw HTML (`../img/` paths, since pages are served as folders): `<video class="shot vignette" autoplay loop
 muted playsinline preload="metadata" poster="…poster.webp">` with the `.webm` source first, then the `.mp4`
-(see controls.md). Shots are taken on an e2e **remote** slot on the Deck (`E2E_PC= e2e-slot -- …`): a pc slot's
+(see controls.md). `node tools/shots/review/page-check.cjs` screenshots the built pages (fades, loop, lightbox). Shots are taken on an e2e **remote** slot on the Deck (`E2E_PC= e2e-slot -- …`): a pc slot's
 WSL GPU path draws no ambient occlusion.
 
 **Release checklist line (V7):** after the preview deploys, `APP_URL=<preview> E2E_PC= e2e-slot -- bash

@@ -12,17 +12,24 @@ const { callout, pill, seedOf } = require('./lib/draw.cjs');
 const { fadeClasses, clearOfFade } = require('./lib/fade.cjs');
 
 const STILL_BUDGET = 250 * 1024;
+// the docs content column is about this wide (CSS px) on a desktop: a wider shot is shown smaller,
+// so its callouts and captions are drawn larger to read the same on the page
+const DISPLAY = 760;
+const pageScale = (cssWidth) => Math.max(1, cssWidth / DISPLAY);
 
 async function composeTiles(meta, dir) {
 	// tiles side by side (row) or 2 × 2 (grid2x2), a transparent gap between, rounded tile corners,
 	// a caption pill in each tile's lower-left corner
 	const s = meta.dpr;
 	const gap = 12 * s, radius = 10 * s;
+	const first = await sharp(path.join(dir, meta.tiles[0].file)).metadata();
+	const cols0 = meta.compose === 'grid2x2' ? 2 : meta.tiles.length;
+	const k = s * pageScale((cols0 * first.width) / s);
 	const tiles = await Promise.all(meta.tiles.map(async (t) => {
 		const img = sharp(path.join(dir, t.file));
 		const m = await img.metadata();
 		const mask = Buffer.from(`<svg width="${m.width}" height="${m.height}"><rect width="${m.width}" height="${m.height}" rx="${radius}" fill="#fff"/></svg>`);
-		const cap = t.caption ? Buffer.from(`<svg width="${m.width}" height="${m.height}">${pill(t.caption, 10 * s, m.height - 10 * s, s)}</svg>`) : null;
+		const cap = t.caption ? Buffer.from(`<svg width="${m.width}" height="${m.height}">${pill(t.caption, 10 * k, m.height - 10 * k, k)}</svg>`) : null;
 		const buf = await img.composite([{ input: mask, blend: 'dest-in' }, ...(cap ? [{ input: cap }] : [])]).png().toBuffer();
 		return { buf, w: m.width, h: m.height };
 	}));
@@ -61,7 +68,7 @@ async function annotateShot(page, shot) {
 		base = fs.readFileSync(path.join(dir, shot.id + '.webp'));
 		({ width: W, height: H } = await sharp(base).metadata());
 	}
-	const s = meta.dpr;
+	const s = meta.dpr * pageScale(W / meta.dpr);
 	const fade = meta.fade;
 	const layers = [];
 	const problems = [];

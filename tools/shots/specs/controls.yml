@@ -53,7 +53,7 @@ shots:
       - {click: 'p[title="Rotate (2)"]'}
     crop: {rect: [250, 140, 940, 760]}
     annotate:
-      - {n: 1, at: {object: Crate, point: center}, shape: arrow, label: median point, from: [-190, -120]}
+      - {n: 1, at: {object: Crate, point: center}, shape: arrow, label: median point, from: [-90, -175]}
       - {n: 2, at: {selector: 'p[title^="Pivot:"]'}, shape: circle, label: pivot mode, badge: tr}
 
   - id: orbit-zoom-focus
