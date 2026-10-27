@@ -5720,7 +5720,8 @@ uses one client for all of them.</p>
 <li>
 <p>Paste your <strong>API key / bearer token</strong>, adjust the <strong>model id</strong> if needed, and <strong>Save</strong>.</p>
 </li>
-<li>Use <strong>Test connection</strong> to confirm the endpoint and key work before you rely on them.</li>
+<li>Use <strong>Test connection</strong> to confirm the endpoint and key work before you rely on them. It answers within about 10 s
+   and says what is wrong (see Troubleshooting below).</li>
 <li>Select the provider (the radio button) to make it active.</li>
 </ol>
 <p><strong>Signed in on theprototype.app?</strong> The cloud plugin may add a <strong>hosted</strong> provider row for you — no key, URL or model to
@@ -5731,7 +5732,8 @@ and switch the active one from the assistant window or Settings.</p>
 <h2 id="self-hosted-vllm-endpoints">Self-hosted / vLLM endpoints</h2>
 <p>Point the <strong>Custom</strong> preset at your server's OpenAI-compatible base (the URL that ends in
 <code>/v1</code>), set the model id to whatever your server serves, and add a bearer token if it
-requires one.</p>
+requires one. An address typed without <code>https://</code>, or pasted with <code>/chat/completions</code> on the end, is fixed up for
+you — <strong>Will call …</strong> under the field shows the exact address the app will use.</p>
 <div class="admonition warning">
 <p class="admonition-title">Allow browser origins (CORS)</p>
 <p>The app runs entirely in your browser and calls the endpoint directly — there is no
@@ -5739,8 +5741,9 @@ backend proxy. A self-hosted server must therefore send permissive CORS headers,
 the browser blocks the request. For vLLM, start it with:</p>
 <div class="highlight"><pre><span></span><code>vllm serve &lt;model&gt; --allowed-origins &#39;[&quot;*&quot;]&#39;
 </code></pre></div>
-<p>Other servers have an equivalent CORS/allowed-origins setting. If you see a
-"Network or CORS error", this is almost always the cause.</p>
+<p>Ollama: set <code>OLLAMA_ORIGINS=https://theprototype.app</code>. LM Studio: turn on <strong>Enable CORS</strong> in its server
+settings. Other servers have an equivalent allowed-origins setting. <strong>Test connection</strong> tells a server that
+answers without allowing this site (CORS) apart from one it cannot reach at all.</p>
 </div>
 <h2 id="where-keys-are-stored">Where keys are stored</h2>
 <div class="admonition danger">
@@ -5773,8 +5776,36 @@ production key on a shared machine.</p>
 <td>The base URL is wrong (HTTP 404) — check the <code>/v1</code> path.</td>
 </tr>
 <tr>
-<td><strong>Network or CORS error</strong></td>
-<td>The endpoint didn't allow the browser origin — see the CORS note above.</td>
+<td><strong>The server answered, but does not allow this site (CORS)</strong></td>
+<td>The server is up but blocks the browser — see the CORS note above (the message names the setting for vLLM / Ollama / LM Studio).</td>
+</tr>
+<tr>
+<td><strong>Could not reach …</strong></td>
+<td>Wrong address or port, the server is down, or (self-signed HTTPS) the browser does not trust its certificate yet — open <code>&lt;base URL&gt;/models</code> in a new tab, accept it, then test again.</td>
+</tr>
+<tr>
+<td><strong>The browser blocks an http:// address on this https page</strong></td>
+<td>Use <code>https://</code>, or <code>http://127.0.0.1</code> for a server on this computer.</td>
+</tr>
+<tr>
+<td><strong>No answer … within 10 s</strong></td>
+<td>The server is slow or unreachable.</td>
+</tr>
+<tr>
+<td><strong>Key rejected</strong></td>
+<td>The provider refused the key (also Google's <code>API_KEY_INVALID</code>).</td>
+</tr>
+<tr>
+<td><strong>Unknown model</strong></td>
+<td>Use an id from the model list — on vLLM it is the <code>--served-model-name</code> value.</td>
+</tr>
+<tr>
+<td><strong>The server is not set up for tool calls</strong></td>
+<td>Start vLLM with <code>--enable-auto-tool-choice --tool-call-parser &lt;parser&gt;</code> (Qwen3: <code>qwen3_xml</code>; many others: <code>hermes</code>).</td>
+</tr>
+<tr>
+<td><strong>The conversation is longer than the model's context</strong></td>
+<td>Start a new chat, or raise <code>--max-model-len</code> on the server.</td>
 </tr>
 <tr>
 <td><strong>Provider server error</strong></td>
@@ -5802,7 +5833,7 @@ production key on a shared machine.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-04
+    2026-10-27
   </span>
 
     
