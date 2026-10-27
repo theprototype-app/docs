@@ -181,7 +181,8 @@ Every value in these two panels can be copied, pasted and reset from a right-cli
 
 Since 1.32 a window in the bottom dock has no **✕** or undock button of its own:
 
-- **Close it from its tab.** Every tab carries its **✕**.
+- **Close it from its tab.** Every tab carries its **✕**. From the keyboard, focus the tab and press <kbd>Delete</kbd>
+  (since 1.46); a split pair closes together. The tab's right-click menu (<kbd>Shift</kbd>+<kbd>F10</kbd>) has **Close** too.
 - **Undock** sits at the right end of the dock's tab strip, just left of **Minimize the dock**. It takes the window you
   are looking at out of the dock as a floating window. To have it take **every** docked window out as one floating
   window with tabs instead, set **Settings ▸ Interface ▸ Windows & chrome ▸ Undock button** to *All as one tabbed
