@@ -6,7 +6,8 @@ Embeds an object's own graph into the **Scene flow** as a single card — the wa
 
 ## Adding one
 
-- right-click the object in the viewport ▸ **Add flow to Scene graph**, or
+- right-click the object in the viewport ▸ **Add flow to Scene graph** (an object with no flow gets one, with a Flow Input
+  and a Flow Output to start from — one Undo; greyed out while someone else holds the object), or
 - add an **Object Flow** node from the palette (*Object Flow* group) and pick the object.
 
 Only objects that already **have** a flow are listed, and a flow can't embed itself.
