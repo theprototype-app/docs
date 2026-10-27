@@ -13,7 +13,7 @@ find them, look at their character, mute or hide them for yourself — and, if y
 - or focus it (<kbd>Tab</kbd>) and press the context-menu key or <kbd>Shift</kbd>+<kbd>F10</kbd>.
 - In a headset: radial menu ▸ **Tools ▸ People**.
 
-![The peer menu on a person in the Connected panel](img/people/peer-menu.png)
+![The peer menu on a person in the Connected panel](img/people/peer-menu.png){ width="414" }
 
 ## What is in it
 

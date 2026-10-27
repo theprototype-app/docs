@@ -74,7 +74,7 @@ batched **create_objects**. Then **screenshot** to check the result.
   **Undo** that one step for everybody.
 - To stop it, revoke its invite or use **Remove from session** on its row ([Users and moderation](../people.md)).
 
-![Agent activity in the AI assistant window](../img/ai/agent-activity.png)
+![Agent activity in the AI assistant window](../img/ai/agent-activity.png){ width="500" }
 
 ## Security notes
 

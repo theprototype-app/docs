@@ -19,7 +19,7 @@ approval card. See [Inviting someone](connection.md#inviting-someone).
 | **AI agent** | Claude Code, Claude Desktop or any MCP client — see [Build with an AI agent](ai/build-with-an-agent.md) | **Edit** |
 | **Person** | a friend, a colleague, your other device | **View** |
 
-![The invite sheet: AI agent and Person tabs, role, expiry and how many may use it](img/invites/request-ai-sheet.png)
+![The invite sheet: AI agent and Person tabs, role, expiry and how many may use it](img/invites/request-ai-sheet.png){ width="440" }
 
 1. Pick the settings:
     - **Role** — **View** or **Edit**. On theprototype.app (accounts and roles) the person or agent joins with exactly
