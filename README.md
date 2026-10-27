@@ -89,10 +89,10 @@ for readers who prefer reduced motion. Each still ≤ 250 KB.
 Markup:
 
 ```markdown
-<figure class="shot-figure" markdown>
 ![Long alt text naming every numbered callout](img/controls/viewport-overview.webp){ .shot loading=lazy width="1440" }
-<figcaption>One short sentence.</figcaption>
-</figure>
+/// caption
+One short sentence.
+///
 
 <div class="shot-key" markdown>
 1. What the first badge points at.
@@ -101,6 +101,15 @@ Markup:
 
 [Try it](https://theprototype.app/){ .tryit data-tryit="controls-viewport" }
 ```
+
+A loop is raw HTML (`../img/` paths, since pages are served as folders): `<video class="shot vignette" autoplay loop
+muted playsinline preload="metadata" poster="…poster.webp">` with the `.webm` source first, then the `.mp4`
+(see controls.md). Shots are taken on an e2e **remote** slot on the Deck (`E2E_PC= e2e-slot -- …`): a pc slot's
+WSL GPU path draws no ambient occlusion.
+
+**Release checklist line (V7):** after the preview deploys, `APP_URL=<preview> E2E_PC= e2e-slot -- bash
+tools/shots/reshoot.sh` — exit 0 = every docs shot is current; exit 1 lists the stale ones with a before/after
+sheet: re-shoot those (`node tools/shots/shoot.cjs <page/id>`) in the release's docs PR.
 
 Fonts baked into the callouts: Caveat and Atkinson Hyperlegible, both under the SIL Open Font License 1.1
 (`tools/shots/fonts/OFL-*.txt`).

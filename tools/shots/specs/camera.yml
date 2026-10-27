@@ -7,17 +7,17 @@ defaults:
   dpr: 2
   format: webp
   scene:
-    - {create: Box, name: Crate, at: [0, 1, 0]}
-    - {create: TorusKnot, name: Knot, at: [2.6, 1.4, 0.4], scale: 0.8}
-    - {create: Sphere, name: Ball, at: [-2.4, 1, 0.8]}
-    - {camera: {pos: [6.5, 4.4, 7.8], target: [0.2, 1, 0]}}
+    - {create: Box, name: Crate, at: [0, 0.8, 0], scale: 1.6, color: '#c9a26b'}
+    - {create: TorusKnot, name: Knot, at: [2.5, 1.3, 0.5], scale: 0.7, color: '#81b29a'}
+    - {create: Sphere, name: Ball, at: [-2.3, 0.8, 0.9], scale: 0.8, color: '#6c8cd5'}
+    - {camera: {pos: [7.4, 4.6, 9], target: [0.1, 0.9, 0]}}
 shots:
   - id: render-modes
     alt: >-
       The same three objects in the three render modes: Shaded, Shaded + AO (soft contact shadows where
       surfaces meet) and Wireframe (every edge).
     tryit: camera-render-mode
-    crop: {around: {union: [{object: Crate}, {object: Knot}, {object: Ball}]}, size: [700, 420]}
+    crop: {around: {union: [{object: Crate}, {object: Knot}, {object: Ball}]}, size: [640, 400]}
     variants:
       - {store: {viewMode: shaded}, suffix: shaded, caption: Shaded}
       - {store: {viewMode: shaded-ao}, suffix: ao, caption: 'Shaded + AO'}
@@ -32,8 +32,8 @@ shots:
       - {section: View}
     crop: {selector: 'section.sec-panel:has(#view-mode-switch)', pad: 10}
     annotate:
-      - {n: 1, at: {selector: '#view-mode-switch'}, shape: box, label: render mode, badge: l}
-      - {n: 2, at: {text: Show light helpers}, shape: underline, badge: l}
+      - {n: 1, at: {union: [{selector: '#view-mode-shaded'}, {selector: '#view-mode-wireframe'}]}, shape: box, pad: 4, badge: r}
+      - {n: 2, at: {text: Show light helpers, find: 'button'}, shape: box, pad: 3, badge: l}
 
   - id: grid-and-lights
     alt: >-
@@ -41,9 +41,9 @@ shots:
       wire sphere at the light. 2: the spot light's cone, showing where it shines.
     storage: {showLightHelpers: 'true'}
     setup:
-      - {light: point, name: Lamp, at: [-1.2, 3.2, 1.6]}
-      - {light: spot, name: Spot, at: [3.4, 4.2, 2.2]}
-    crop: {rect: [220, 110, 1000, 620]}
+      - {light: point, name: Lamp, at: [-1.4, 2.3, 1.8]}
+      - {light: spot, name: Spot, at: [2.4, 3, 2.2]}
+    crop: {rect: [180, 80, 1080, 680]}
     fade: vignette
     annotate:
       - {n: 1, at: {object: Lamp, point: center}, shape: circle, label: point light}
@@ -54,7 +54,10 @@ shots:
       The same scene under four environment presets: Studio (neutral grey), Daylight (bright sky), Sunset
       (warm, low sun) and Night (dim and cool).
     tryit: camera-environment
-    crop: {around: {union: [{object: Crate}, {object: Knot}, {object: Ball}]}, size: [640, 400]}
+    # lower, so the sky shows above the horizon
+    setup:
+      - {camera: {pos: [7.6, 2.4, 9.2], target: [0.1, 1.4, 0]}}
+    crop: {around: {union: [{object: Crate}, {object: Knot}, {object: Ball}]}, size: [640, 400], offset: [0, -60]}
     variants:
       - {env: studio, suffix: studio, caption: Studio}
       - {env: daylight, suffix: daylight, caption: Daylight}

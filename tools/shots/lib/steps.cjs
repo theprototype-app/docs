@@ -143,6 +143,13 @@ async function elementRect(page, at) {
 			el = all.sort((a, b) => a.getBoundingClientRect().width * a.getBoundingClientRect().height - b.getBoundingClientRect().width * b.getBoundingClientRect().height)[0];
 			if (el && at.up) for (let i = 0; i < at.up && el.parentElement; i++) el = el.parentElement;
 		}
+		// `find`: the nearest control matching it around what was found (the toggle of a labelled row):
+		// climb from the text until an ancestor holds one, and take that one
+		if (el && at.find) {
+			let up = el, hit = null;
+			for (let i = 0; i < 6 && up && !hit; i++, up = up.parentElement) hit = [...up.querySelectorAll(at.find)].filter(visible)[0] || null;
+			el = hit;
+		}
 		if (!el) return null;
 		const r = el.getBoundingClientRect();
 		return { x: r.left, y: r.top, w: r.width, h: r.height };

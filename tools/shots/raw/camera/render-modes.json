@@ -1,0 +1,25 @@
+{
+ "id": "render-modes",
+ "dpr": 2,
+ "shotAt": "2026-10-27T08:43:56.658Z",
+ "app": {
+  "version": "1.45.1",
+  "sha": "b48dea5f"
+ },
+ "tiles": [
+  {
+   "file": "render-modes--shaded.webp",
+   "caption": "Shaded"
+  },
+  {
+   "file": "render-modes--ao.webp",
+   "caption": "Shaded + AO"
+  },
+  {
+   "file": "render-modes--wireframe.webp",
+   "caption": "Wireframe"
+  }
+ ],
+ "compose": "row",
+ "fade": []
+}

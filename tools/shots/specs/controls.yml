@@ -8,16 +8,15 @@ defaults:
   format: webp
   # the demo scene every shot starts from (a fresh, empty session each time)
   scene:
-    - {create: Box, name: Crate, at: [0, 1, 0]}
-    - {create: Sphere, name: Ball, at: [3.2, 1, 0.6]}
-    - {create: Cylinder, name: Post, at: [-3, 1, -0.8]}
-    - {camera: {pos: [7.5, 5.2, 9], target: [0, 0.9, 0]}}
+    - {create: Box, name: Crate, at: [0, 0.8, 0], scale: 1.6, color: '#c9a26b'}
+    - {create: Sphere, name: Ball, at: [2.9, 0.8, 0.9], scale: 0.8, color: '#6c8cd5'}
+    - {create: Cylinder, name: Post, at: [-2.8, 1, -0.6], color: '#81b29a'}
+    - {camera: {pos: [5.6, 4, 7], target: [0, 0.8, 0]}}
 shots:
   - id: viewport-overview
     alt: >-
       The editor with three objects on the floor grid. 1: the selected crate with the Move gizmo on it.
-      2: the transform tools on the bottom bar — Move, Rotate, Scale and Pivot. 3: the floor grid and the
-      coloured axes through the world origin.
+      2: the transform tools on the bottom bar — Move, Rotate, Scale and Pivot. 3: the floor grid.
     tryit: controls-viewport
     setup:
       - {select: Crate}
@@ -35,12 +34,13 @@ shots:
       Scale gizmo (three handles with cubes on their ends).
     setup:
       - {select: Crate}
-      - {camera: {pos: [5, 3.8, 6.2], target: [0, 1, 0]}}
-    crop: {around: {object: Crate}, size: [440, 380]}
+      - {camera: {pos: [5, 3.8, 6.2], target: [0, 0.8, 0]}}
+    crop: {around: {object: Crate}, size: [520, 440]}
+    # the toolbar cells, not the store: only they swap the gizmo (a store write leaves the Move gizmo up)
     variants:
-      - {mode: translate, suffix: move, caption: '1 · Move'}
-      - {mode: rotate, suffix: rotate, caption: '2 · Rotate'}
-      - {mode: scale, suffix: scale, caption: '3 · Scale'}
+      - {steps: [], suffix: move, caption: '1 · Move'}
+      - {click: 'p[title="Rotate (2)"]', suffix: rotate, caption: '2 · Rotate'}
+      - {click: 'p[title="Scale (3)"]', suffix: scale, caption: '3 · Scale'}
     compose: row
 
   - id: multi-pivot
@@ -49,11 +49,11 @@ shots:
       of the selection. 2: the Pivot button on the bottom bar, which steps through the pivot modes.
     setup:
       - {select: [Crate, Ball, Post]}
-      - {mode: rotate}
       - {pivot: median}
+      - {click: 'p[title="Rotate (2)"]'}
     crop: {rect: [250, 140, 940, 760]}
     annotate:
-      - {n: 1, at: {union: [{object: Crate}, {object: Ball}, {object: Post}]}, shape: bracket, label: whole selection}
+      - {n: 1, at: {object: Crate, point: center}, shape: arrow, label: median point, from: [-190, -120]}
       - {n: 2, at: {selector: 'p[title^="Pivot:"]'}, shape: circle, label: pivot mode, badge: tr}
 
   - id: orbit-zoom-focus
