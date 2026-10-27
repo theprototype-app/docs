@@ -76,6 +76,27 @@ Mixed sessions are normal. You can be in AR, the person beside you in VR, and a 
 | Nothing happens on **Fine-tune** | It needs a room to adjust — colocate first. |
 | Your partner's avatar is still there | You are not in the same room *key*. Check the badge; both of you should show the same room. |
 
-## Phones
+## Join from a phone
 
-Android phone AR is not part of this yet — a phone can join the session as usual, but its view is not pinned to your room. iPhone browsers do not offer handheld WebXR AR at all today.
+An Android phone with AR can join a room the headsets have already calibrated, and see the scene where they do.
+
+1. Calibrate the headsets first (above) — note the **point** and the **edge** you agreed on.
+2. On the phone: **More ▸ Join room (AR)**, or open the Play menu (long-press or right-click Play) ▸
+   **Join the room (AR)**. On an unfolded phone the Play menu offers it, along with [Play on a table](ar-table.md);
+   an AR table that is still looking for a surface has a **Join room** button too.
+3. Point the phone at the floor until a ring sits on it, put the ring on the agreed **point** and press
+   **Mark point 1**.
+4. Move the ring to anywhere **along the agreed edge** and press **Mark point 2**. This is the headset's *aim* step:
+   the two taps give the direction. They must be at least **30 cm** apart (closer is refused with a note), and a longer
+   span is better — taps that are each 1 cm off over a 1 m span still agree within about 4 cm at 1.5 m out.
+
+The phone takes the headsets' room key (the chip beside the status shows it) and the room's anchored objects land
+where the headsets see them. **Play** plays the game from there. **Start over** (between the taps) and
+**Recalibrate** (once you are in) redo both taps. While the phone is in the room, the headsets hide its avatar the way
+they hide each other's, and a remote peer sees it where the phone is.
+
+!!! note
+    - The phone keeps no anchors of its own, so it calibrates again every session.
+    - Leaving AR leaves the room.
+    - iPhone browsers do not offer handheld WebXR AR, so an iPhone joins the session as usual but its view is not pinned
+      to the room.

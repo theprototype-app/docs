@@ -1,7 +1,8 @@
 # Building in VR
 
 Since 1.45 you can build a whole scene with the headset on: measure and line things up, paint terrain and scatter, pull
-models off your wrist and drop them in, and shrink the world to a miniature to work on it from above. Everything here
+models off your wrist and drop them in, and shrink the world to a miniature to work on it from above. Since the next
+release you can also [edit the game logic](#logic-in-the-headset) — the node graph — without taking the headset off. Everything here
 works in **Edit**; the radial menu, grabbing and getting around are on the [VR Guide](vr.md).
 
 **Controllers do everything.** With [hand tracking](#hands) you can browse and place; tools that need precision ask you
@@ -110,6 +111,45 @@ whatever you point at — amber when it overlaps something, red when there is no
 it back (or press **Pin** / **To wrist**). In one-handed mode it opens pinned in front of you.
 
 Add ▸ **Prefabs** uses the same ghost: real size, the stick turns it, it rests on surfaces and snaps.
+
+## Logic in the headset
+
+![The Logic panel on the Spinner object's flow: a Number card wired into Spin's speed, with + Node, undo, redo, Fit, zoom and close along the top](img/building-in-vr/logic-panel.png)
+
+Radial menu ▸ **Tools ▸ Logic** opens the scene's node graph as a panel in front of you. With one object selected,
+**Selected ▸ Edit logic** opens that object's own flow instead (tabs at the top switch between the two). It is the same
+graph as the desktop [node editor](node-editor.md): every change is one undo step, and everyone in the session sees it
+land live.
+
+| Do this | With |
+|---|---|
+| Move a card | **trigger-drag** the card |
+| Wire two sockets | **trigger-drag** from a socket and let go on another. The wire is green while the types fit and red when they don't; a wire into a value input that already has one replaces it |
+| Move or remove a wire | **trigger-drag** from an input that already has a wire: drop it on another socket to move it, or on the empty graph to remove it |
+| Pan | **trigger-drag** the empty graph |
+| Zoom | push the **stick** up or down while your laser is on the panel (it zooms where you point) |
+| Move the panel | **grip** it and let go where it should stay |
+
+The buttons along the top: **+ Node** opens a palette with the desktop's groups — pick a node and it lands in the middle
+of the view; **↶ / ↷** undo and redo; **Fit** frames every card; **− / +** zoom; **✕** closes the panel.
+
+![The wrist pad for a Number node: value and step with − / + buttons, and Rename, Unwire, Delete](img/building-in-vr/logic-pad.png){ width="320" }
+
+**Click** a card (trigger, no drag) to select it: its values open on a **wrist pad** on your other hand.
+
+- **− / +** step a number; press the value itself to type it on the VR keyboard.
+- **‹ ›** cycle a choice or a colour; toggles flip on a press.
+- **Rename**, **Unwire** (removes its wires) and **Delete** act on the selected card.
+- A node with more values than fit has pages: push the stick up or down while you point at the pad.
+
+In [one-handed mode](vr.md#comfort-for-everyone) the pad sits beside the panel instead of on your wrist. A
+**viewer** sees the panel read-only, and it says so.
+
+!!! note "Limits"
+    - Groups are read-only in VR: you can move a collapsed group's card, but not wire into it or delete it. Edit groups
+      on the desktop.
+    - Custom (code) nodes, Object Flow nodes and Sound nodes need desktop pickers, so the palette leaves them out —
+      add them on the desktop, then wire and tune them here.
 
 ## Hands
 

@@ -42,6 +42,12 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.47 — game logic in the headset.** Radial ▸ **Tools ▸ Logic** opens the node graph as a panel in VR: move cards,
+wire sockets with the laser and set values on a wrist pad, and everyone sees it live — see
+[Logic in the headset](building-in-vr.md#logic-in-the-headset). An Android phone can now
+[join a room the headsets calibrated](colocation.md#join-from-a-phone) with two taps on the floor and see the scene where
+they do, and an unfolded phone's Play menu offers the AR table and Join the room.
+
 **1.46 — every panel in its own window.** Pop out any panel — or a whole dock — into its own browser window and
 spread the editor over two monitors: the Explorer on one screen, the Node editor and Timeline on another, the 3D view
 full-size in the app. Drag tabs between windows and docks; a panel lives in one place, and your windows come back on
