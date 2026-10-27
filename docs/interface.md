@@ -281,6 +281,39 @@ tabs.
 Lists scroll with a thin scrollbar that appears only while you scroll or point at them; there are no chunky native
 scrollbars anywhere.
 
+## Windows on several monitors
+
+Since 1.46 any panel — or a whole dock — can live in its **own browser window**. Drag it to a second monitor and keep
+the 3D view full-size in the app. Everything stays live: it is the same app in a second window, not a copy.
+
+![A popped-out dock: the Node editor and the Timeline as tabs in their own window](img/interface/pop-out-dock.png)
+
+- **Pop out a panel:** right-click a dock tab, a sidebar tab or a floating window's header ▸ **Pop out into a new
+  window**. Or drag a tab out of the browser window and let go. Panels that pop out: the Explorer, Properties /
+  Configure Scene, the Node editor, Timeline, Animation, UV, Shader and HUD editors, the Profiler, the Debugger, Chat,
+  the AI assistant and [Code](code-workspace.md#pop-out-to-its-own-window).
+- **Pop out a whole dock:** **Pop out the whole dock** (dock tab menu) or **Pop out this sidebar** (sidebar tab menu)
+  opens one window with every tab in it.
+- **One panel, one tab:** a window with a single panel shows no tab strip — its header shows the panel's name, and
+  that name *is* the tab. Drag it to move the panel; right-click it for **Dock back**, **Move to…**, **Always show tab
+  strip in windows** and **Close**. Hover shows it can be grabbed.
+- **More tabs:** drop a second panel on a window's header (or use the header's **+**) and a tab strip appears; the
+  title becomes the first tab. Back to one panel, the strip goes again. A popped-out *dock* always shows its tabs, and
+  Settings ▸ Interface ▸ **Always show tab strip in windows** shows them everywhere.
+- **One panel, one place:** a panel is only ever open in one spot. Adding it somewhere else — another window, a dock
+  or a sidebar — moves it there. While you drag a tab, every window and dock that can take it shows a drop zone on its
+  header. Drag a popped tab back into the app (left sidebar, right sidebar, bottom dock — or anywhere else to put it
+  back where it was), or right-click ▸ **Dock back**. Closing a window docks its panels back.
+- **Your windows come back:** the windows you had open are remembered per monitor setup and reopen when you come back.
+  Browsers open one pop-up per click, so if pop-ups are blocked a bar offers **Open 2 windows** — each click opens the
+  next one (or allow pop-ups for the site). Settings ▸ Interface ▸ **Remember windows per screen setup** (Chromium asks
+  to see every screen for this).
+- **Bring all windows back** (command palette, or any tab menu) puts every panel back in the app. Closing or reloading
+  the app's tab closes its windows.
+- **Keys** in a popped-out window are the panel's own; undo and redo still reach the scene.
+- **Not for pop-out:** the Objects list, file previews, the Image editor and phone tabs. Phones, touch screens and VR
+  keep one window — the pop-out entries are hidden there.
+
 ## Focus mode
 
 Press <kbd>Ctrl</kbd>+<kbd>Space</kbd> to maximize the area under the mouse pointer:

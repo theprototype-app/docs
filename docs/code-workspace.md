@@ -87,6 +87,8 @@ VR).
   floating as it was. Closing or reloading the app tab closes the code window too.
 - The window follows the app's theme, **High contrast** and UI scale, and remembers its size and place for next time.
 - If the browser blocks pop-ups, a notice says so with **Try again** (or allow pop-ups for the site).
+- Since 1.46 every other panel can pop out the same way, and the code window takes more tabs — see
+  [Windows on several monitors](interface.md#windows-on-several-monitors).
 
 ## Sidebars
 
@@ -102,11 +104,34 @@ VR).
 - **Project** lists every script in the scene as a tree, with a search box:
     - **Graphs** — per graph (Main first, then each object's), its Script nodes, Behaviour nodes and the
       [Player's code](#the-players-code), plus `graph.json` (the whole graph as editable [JSON](#graph-json)).
-    - **Script files** — the `.js` files in your Library, with how many nodes run each.
+    - **Files** — the text files in your Library (`.js` `.md` `.json` `.txt` `.cfg`) and their folders, with how
+      many nodes run each script. You can make and manage them right here — see [Files and folders](#files-and-folders).
     - **Module sources** — the module and kit files the game uses, **read-only** (see [Module code](#module-code)).
 - The search also matches folder names (*minigolf rules*).
 - Drag the line between the two sections to share the height; double-click it to reset. Drag the sidebar's edge to
   resize it — the width is remembered.
+
+### Files and folders
+
+Since 1.46 the **Files** group of the Project tree is a real file tree: what you make here are ordinary
+[Explorer](explorer.md) files, so they follow the Explorer's sharing rules and everyone in the session sees them.
+
+![The Project tree's menu on a script: Rename, Move to, Cut, Delete, New file, New folder, Show in Explorer](img/code-workspace/files-menu.png)
+
+- **New file** (the page-with-plus button in the Project header, or the right-click menu) offers **Script** (a
+  behaviour with the lifecycle functions ready to fill in), **Note** (`.md`) and **JSON**. A new script opens in a
+  tab straight away.
+- **New folder** makes a folder inside the one you right-clicked (or at the top).
+- **Rename** (<kbd>F2</kbd>): type a bare name and the extension is kept (*boss* stays *boss.js*). Text file names
+  are unique across the library, because shared typing keys on the name.
+- **Move**: drag a file or folder onto another folder, use **Move to ▸**, or <kbd>Ctrl</kbd>+<kbd>X</kbd> then
+  <kbd>Ctrl</kbd>+<kbd>V</kbd> on the destination.
+- **Delete** (<kbd>Del</kbd>) moves it to Deleted, where Restore brings it back.
+- **Undo**: <kbd>Ctrl</kbd>+<kbd>Z</kbd> while the tree has focus (or **Undo** on the toast) undoes the last file
+  operation — one step each. It never touches the scene's own undo history.
+- The menu also opens with <kbd>Shift</kbd>+<kbd>F10</kbd> or the Menu key, and works in the
+  [pop-out window](#pop-out-to-its-own-window) too.
+- Viewers can browse and read; making, renaming, moving and deleting say why they are not available.
 
 ### Right: Outline, Problems, Bound nodes, Find
 
