@@ -62,3 +62,45 @@ output.
 - [core](https://github.com/theprototype-app/core) — the app itself
 - [modules](https://github.com/theprototype-app/modules) — optional and community modules
 - [packs](https://github.com/theprototype-app/packs) — content packs
+
+## Screenshots and loops (`tools/shots/`)
+
+Docs images are shot from the **deployed app** by a spec, not by hand, so they can be re-shot after a release.
+
+- `tools/shots/specs/<page>.yml` — one file per docs page: the demo scene, the crop, the callouts, variants.
+- `tools/shots/raw/<page>/<id>.webp` + `.json` — the un-annotated shot and what was measured (kept in git).
+- `docs/img/<page>/<id>.webp` — the finished image; `.webm` + `.mp4` + `.poster.webp` for a loop.
+
+```bash
+cd tools/shots && npm ci
+# shoot (needs a browser; on the Deck inside an e2e slot), then paste the printed snippet into the page
+APP_URL=https://theprototype.pages.dev/ node shoot.cjs controls/gizmo-modes
+node annotate.cjs controls            # re-draw the callouts from the raw shots — no browser
+node --test test/*.test.cjs           # the fade guard and callout rules
+node tryit-check.cjs                  # every "Try it" link opens and its controls exist (CI runs it)
+APP_URL=<preview> bash reshoot.sh     # after a release: which shots went stale (before/after sheet)
+```
+
+House style (owner, 2026-10-26): hand-drawn strokes, clean numbered badges keyed to a list under the image,
+at most three handwritten words per callout, one warm accent. Fade **only** a side the crop cut, a soft vignette on a
+crop of the 3D view; the driver refuses a callout inside a faded zone. Loops are 3–8 s, muted, ≤ 600 KB, and pause
+for readers who prefer reduced motion. Each still ≤ 250 KB.
+
+Markup:
+
+```markdown
+<figure class="shot-figure" markdown>
+![Long alt text naming every numbered callout](img/controls/viewport-overview.webp){ .shot loading=lazy width="1440" }
+<figcaption>One short sentence.</figcaption>
+</figure>
+
+<div class="shot-key" markdown>
+1. What the first badge points at.
+2. …
+</div>
+
+[Try it](https://theprototype.app/){ .tryit data-tryit="controls-viewport" }
+```
+
+Fonts baked into the callouts: Caveat and Atkinson Hyperlegible, both under the SIL Open Font License 1.1
+(`tools/shots/fonts/OFL-*.txt`).

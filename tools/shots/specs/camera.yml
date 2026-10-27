@@ -1,0 +1,63 @@
+# docs/camera.md — Render mode, the View section, grid + light helpers, Environment presets.
+# Shoot: e2e-slot -- node tools/shots/shoot.cjs camera       Re-annotate: node tools/shots/annotate.cjs camera
+page: camera
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+  scene:
+    - {create: Box, name: Crate, at: [0, 1, 0]}
+    - {create: TorusKnot, name: Knot, at: [2.6, 1.4, 0.4], scale: 0.8}
+    - {create: Sphere, name: Ball, at: [-2.4, 1, 0.8]}
+    - {camera: {pos: [6.5, 4.4, 7.8], target: [0.2, 1, 0]}}
+shots:
+  - id: render-modes
+    alt: >-
+      The same three objects in the three render modes: Shaded, Shaded + AO (soft contact shadows where
+      surfaces meet) and Wireframe (every edge).
+    tryit: camera-render-mode
+    crop: {around: {union: [{object: Crate}, {object: Knot}, {object: Ball}]}, size: [700, 420]}
+    variants:
+      - {store: {viewMode: shaded}, suffix: shaded, caption: Shaded}
+      - {store: {viewMode: shaded-ao}, suffix: ao, caption: 'Shaded + AO'}
+      - {store: {viewMode: wireframe}, suffix: wireframe, caption: Wireframe}
+    compose: row
+
+  - id: view-section
+    alt: >-
+      Configure Scene ▸ View. 1: the render mode switch — Shaded, Shaded + AO, Wireframe. 2: Show light helpers.
+    tryit: camera-view-section
+    setup:
+      - {section: View}
+    crop: {selector: 'section.sec-panel:has(#view-mode-switch)', pad: 10}
+    annotate:
+      - {n: 1, at: {selector: '#view-mode-switch'}, shape: box, label: render mode, badge: l}
+      - {n: 2, at: {text: Show light helpers}, shape: underline, badge: l}
+
+  - id: grid-and-lights
+    alt: >-
+      A point light and a spot light in the scene with light helpers on. 1: the point light's helper — a small
+      wire sphere at the light. 2: the spot light's cone, showing where it shines.
+    storage: {showLightHelpers: 'true'}
+    setup:
+      - {light: point, name: Lamp, at: [-1.2, 3.2, 1.6]}
+      - {light: spot, name: Spot, at: [3.4, 4.2, 2.2]}
+    crop: {rect: [220, 110, 1000, 620]}
+    fade: vignette
+    annotate:
+      - {n: 1, at: {object: Lamp, point: center}, shape: circle, label: point light}
+      - {n: 2, at: {object: Spot, point: center}, shape: circle, label: spot light, badge: tr}
+
+  - id: env-presets
+    alt: >-
+      The same scene under four environment presets: Studio (neutral grey), Daylight (bright sky), Sunset
+      (warm, low sun) and Night (dim and cool).
+    tryit: camera-environment
+    crop: {around: {union: [{object: Crate}, {object: Knot}, {object: Ball}]}, size: [640, 400]}
+    variants:
+      - {env: studio, suffix: studio, caption: Studio}
+      - {env: daylight, suffix: daylight, caption: Daylight}
+      - {env: sunset, suffix: sunset, caption: Sunset}
+      - {env: night, suffix: night, caption: Night}
+    compose: grid2x2

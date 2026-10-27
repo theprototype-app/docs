@@ -1,0 +1,18 @@
+{
+  "name": "theprototype-docs-shots",
+  "private": true,
+  "description": "Docs screenshots, loops and the Try it health check (roadmap 83)",
+  "scripts": {
+    "shots": "node shoot.cjs",
+    "annotate": "node annotate.cjs",
+    "tryit": "node tryit-check.cjs",
+    "stale": "node stale.cjs"
+  },
+  "dependencies": {
+    "opentype.js": "2.0.0",
+    "playwright": "1.62.1",
+    "roughjs": "4.6.6",
+    "sharp": "0.33.5",
+    "yaml": "2.8.1"
+  }
+}

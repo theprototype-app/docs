@@ -1,0 +1,73 @@
+# docs/controls.md — Viewport navigation, Transform gizmo, The pivot of a multi-selection.
+# Shoot: e2e-slot -- node tools/shots/shoot.cjs controls     Re-annotate: node tools/shots/annotate.cjs controls
+page: controls
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+  # the demo scene every shot starts from (a fresh, empty session each time)
+  scene:
+    - {create: Box, name: Crate, at: [0, 1, 0]}
+    - {create: Sphere, name: Ball, at: [3.2, 1, 0.6]}
+    - {create: Cylinder, name: Post, at: [-3, 1, -0.8]}
+    - {camera: {pos: [7.5, 5.2, 9], target: [0, 0.9, 0]}}
+shots:
+  - id: viewport-overview
+    alt: >-
+      The editor with three objects on the floor grid. 1: the selected crate with the Move gizmo on it.
+      2: the transform tools on the bottom bar — Move, Rotate, Scale and Pivot. 3: the floor grid and the
+      coloured axes through the world origin.
+    tryit: controls-viewport
+    setup:
+      - {select: Crate}
+      - {mode: translate}
+    crop: {canvas: true}
+    fade: none
+    annotate:
+      - {n: 1, at: {object: Crate}, shape: circle, label: selected, badge: tl}
+      - {n: 2, at: {union: [{selector: 'p[title="Move (1)"]'}, {selector: 'p[title^="Pivot:"]'}]}, shape: box, label: gizmo tools, badge: l}
+      - {n: 3, at: {rect: [300, 650, 60, 40]}, shape: arrow, label: floor grid, from: [-10, -90]}
+
+  - id: gizmo-modes
+    alt: >-
+      The same crate three times: with the Move gizmo (three arrows), the Rotate gizmo (three rings) and the
+      Scale gizmo (three handles with cubes on their ends).
+    setup:
+      - {select: Crate}
+      - {camera: {pos: [5, 3.8, 6.2], target: [0, 1, 0]}}
+    crop: {around: {object: Crate}, size: [440, 380]}
+    variants:
+      - {mode: translate, suffix: move, caption: '1 · Move'}
+      - {mode: rotate, suffix: rotate, caption: '2 · Rotate'}
+      - {mode: scale, suffix: scale, caption: '3 · Scale'}
+    compose: row
+
+  - id: multi-pivot
+    alt: >-
+      Three objects selected together in Rotate mode. 1: one gizmo turns the whole set about the median point
+      of the selection. 2: the Pivot button on the bottom bar, which steps through the pivot modes.
+    setup:
+      - {select: [Crate, Ball, Post]}
+      - {mode: rotate}
+      - {pivot: median}
+    crop: {rect: [250, 140, 940, 760]}
+    annotate:
+      - {n: 1, at: {union: [{object: Crate}, {object: Ball}, {object: Post}]}, shape: bracket, label: whole selection}
+      - {n: 2, at: {selector: 'p[title^="Pivot:"]'}, shape: circle, label: pivot mode, badge: tr}
+
+  - id: orbit-zoom-focus
+    alt: >-
+      A five-second loop: dragging on the 3D view orbits the camera around the scene, the mouse wheel zooms
+      in, and pressing F with the ball selected frames it.
+    video:
+      lead: 400
+      actions:
+        - {drag: [820, 420, 600, 400], steps: 50, wait: 300}
+        - {wheel: -900, ticks: 9, wait: 300}
+        - {clickObject: Ball, wait: 350}
+        - {key: f, wait: 1400}
+      tail: 500
+    setup: []
+    crop: {rect: [200, 120, 1040, 640]}
+    fade: vignette

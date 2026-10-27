@@ -287,7 +287,32 @@ markdown_extensions:
   - pymdownx.tabbed
   - pymdownx.details
   - pymdownx.tilde
+  # roadmap 83: figure captions under screenshots and loops
+  - pymdownx.blocks.caption
 
 plugins:
   - search
   - git-revision-date
+  # roadmap 83: click a screenshot to see it full size
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      width: auto
+      height: auto
+      zoomable: true
+      draggable: false
+      auto_caption: false
+      skip_classes:
+        - no-lightbox
+
+# roadmap 83: screenshot frames + cut-side fades, loops that respect reduced motion
+extra_css:
+  - stylesheets/shots.css
+extra_javascript:
+  - javascripts/loops.js
+
+# roadmap 83 V8: every "Try it" link must name a check in tools/shots/tryit.yml (the build fails
+# otherwise); tools/shots/tryit-check.cjs opens each link and asserts the controls exist
+hooks:
+  - tools/hooks/tryit.py
