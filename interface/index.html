@@ -512,6 +512,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#windows-on-several-monitors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows on several monitors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#focus-mode" class="md-nav__link">
     <span class="md-ellipsis">
       Focus mode
@@ -5955,6 +5964,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#windows-on-several-monitors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows on several monitors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#focus-mode" class="md-nav__link">
     <span class="md-ellipsis">
       Focus mode
@@ -6274,7 +6292,8 @@ differ); searching Settings for <em>sticky header</em> finds it.</p>
 <h3 id="docked-windows">Docked windows</h3>
 <p>Since 1.32 a window in the bottom dock has no <strong>✕</strong> or undock button of its own:</p>
 <ul>
-<li><strong>Close it from its tab.</strong> Every tab carries its <strong>✕</strong>.</li>
+<li><strong>Close it from its tab.</strong> Every tab carries its <strong>✕</strong>. From the keyboard, focus the tab and press <kbd>Delete</kbd>
+  (since 1.46); a split pair closes together. The tab's right-click menu (<kbd>Shift</kbd>+<kbd>F10</kbd>) has <strong>Close</strong> too.</li>
 <li><strong>Undock</strong> sits at the right end of the dock's tab strip, just left of <strong>Minimize the dock</strong>. It takes the window you
   are looking at out of the dock as a floating window. To have it take <strong>every</strong> docked window out as one floating
   window with tabs instead, set <strong>Settings ▸ Interface ▸ Windows &amp; chrome ▸ Undock button</strong> to <em>All as one tabbed
@@ -6362,6 +6381,37 @@ tabs.</p>
 <a href="#the-dock-on-a-phone">tab of the bottom dock</a> — see <a href="../controls/#workspace-layouts">Workspace layouts</a>.</p>
 <p>Lists scroll with a thin scrollbar that appears only while you scroll or point at them; there are no chunky native
 scrollbars anywhere.</p>
+<h2 id="windows-on-several-monitors">Windows on several monitors</h2>
+<p>Since 1.46 any panel — or a whole dock — can live in its <strong>own browser window</strong>. Drag it to a second monitor and keep
+the 3D view full-size in the app. Everything stays live: it is the same app in a second window, not a copy.</p>
+<p><img alt="A popped-out dock: the Node editor and the Timeline as tabs in their own window" src="../img/interface/pop-out-dock.png" /></p>
+<ul>
+<li><strong>Pop out a panel:</strong> right-click a dock tab, a sidebar tab or a floating window's header ▸ <strong>Pop out into a new
+  window</strong>. Or drag a tab out of the browser window and let go. Panels that pop out: the Explorer, Properties /
+  Configure Scene, the Node editor, Timeline, Animation, UV, Shader and HUD editors, the Profiler, the Debugger, Chat,
+  the AI assistant and <a href="../code-workspace/#pop-out-to-its-own-window">Code</a>.</li>
+<li><strong>Pop out a whole dock:</strong> <strong>Pop out the whole dock</strong> (dock tab menu) or <strong>Pop out this sidebar</strong> (sidebar tab menu)
+  opens one window with every tab in it.</li>
+<li><strong>One panel, one tab:</strong> a window with a single panel shows no tab strip — its header shows the panel's name, and
+  that name <em>is</em> the tab. Drag it to move the panel; right-click it for <strong>Dock back</strong>, <strong>Move to…</strong>, <strong>Always show tab
+  strip in windows</strong> and <strong>Close</strong>. Hover shows it can be grabbed.</li>
+<li><strong>More tabs:</strong> drop a second panel on a window's header (or use the header's <strong>+</strong>) and a tab strip appears; the
+  title becomes the first tab. Back to one panel, the strip goes again. A popped-out <em>dock</em> always shows its tabs, and
+  Settings ▸ Interface ▸ <strong>Always show tab strip in windows</strong> shows them everywhere.</li>
+<li><strong>One panel, one place:</strong> a panel is only ever open in one spot. Adding it somewhere else — another window, a dock
+  or a sidebar — moves it there. While you drag a tab, every window and dock that can take it shows a drop zone on its
+  header. Drag a popped tab back into the app (left sidebar, right sidebar, bottom dock — or anywhere else to put it
+  back where it was), or right-click ▸ <strong>Dock back</strong>. Closing a window docks its panels back.</li>
+<li><strong>Your windows come back:</strong> the windows you had open are remembered per monitor setup and reopen when you come back.
+  Browsers open one pop-up per click, so if pop-ups are blocked a bar offers <strong>Open 2 windows</strong> — each click opens the
+  next one (or allow pop-ups for the site). Settings ▸ Interface ▸ <strong>Remember windows per screen setup</strong> (Chromium asks
+  to see every screen for this).</li>
+<li><strong>Bring all windows back</strong> (command palette, or any tab menu) puts every panel back in the app. Closing or reloading
+  the app's tab closes its windows.</li>
+<li><strong>Keys</strong> in a popped-out window are the panel's own; undo and redo still reach the scene.</li>
+<li><strong>Not for pop-out:</strong> the Objects list, file previews, the Image editor and phone tabs. Phones, touch screens and VR
+  keep one window — the pop-out entries are hidden there.</li>
+</ul>
 <h2 id="focus-mode">Focus mode</h2>
 <p>Press <kbd>Ctrl</kbd>+<kbd>Space</kbd> to maximize the area under the mouse pointer:</p>
 <ul>
@@ -6698,7 +6748,7 @@ with its top edge in the same frame while you resize it:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-18
+    2026-10-27
   </span>
 
     

@@ -1695,6 +1695,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#files-and-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Files and folders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#right-outline-problems-bound-nodes-find" class="md-nav__link">
     <span class="md-ellipsis">
       Right: Outline, Problems, Bound nodes, Find
@@ -5803,6 +5812,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#files-and-folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      Files and folders
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#right-outline-problems-bound-nodes-find" class="md-nav__link">
     <span class="md-ellipsis">
       Right: Outline, Problems, Bound nodes, Find
@@ -5971,6 +5989,8 @@ VR).</p>
   floating as it was. Closing or reloading the app tab closes the code window too.</li>
 <li>The window follows the app's theme, <strong>High contrast</strong> and UI scale, and remembers its size and place for next time.</li>
 <li>If the browser blocks pop-ups, a notice says so with <strong>Try again</strong> (or allow pop-ups for the site).</li>
+<li>Since 1.46 every other panel can pop out the same way, and the code window takes more tabs — see
+  <a href="../interface/#windows-on-several-monitors">Windows on several monitors</a>.</li>
 </ul>
 <h2 id="sidebars">Sidebars</h2>
 <p><img alt="The code workspace in 1.25: Open editors and the Project tree on the left, the tab strip, and the Outline on the right" src="../img/code-workspace/sidebars.png" /></p>
@@ -5983,13 +6003,34 @@ VR).</p>
 <li><strong>Project</strong> lists every script in the scene as a tree, with a search box:<ul>
 <li><strong>Graphs</strong> — per graph (Main first, then each object's), its Script nodes, Behaviour nodes and the
   <a href="#the-players-code">Player's code</a>, plus <code>graph.json</code> (the whole graph as editable <a href="#graph-json">JSON</a>).</li>
-<li><strong>Script files</strong> — the <code>.js</code> files in your Library, with how many nodes run each.</li>
+<li><strong>Files</strong> — the text files in your Library (<code>.js</code> <code>.md</code> <code>.json</code> <code>.txt</code> <code>.cfg</code>) and their folders, with how
+  many nodes run each script. You can make and manage them right here — see <a href="#files-and-folders">Files and folders</a>.</li>
 <li><strong>Module sources</strong> — the module and kit files the game uses, <strong>read-only</strong> (see <a href="#module-code">Module code</a>).</li>
 </ul>
 </li>
 <li>The search also matches folder names (<em>minigolf rules</em>).</li>
 <li>Drag the line between the two sections to share the height; double-click it to reset. Drag the sidebar's edge to
   resize it — the width is remembered.</li>
+</ul>
+<h3 id="files-and-folders">Files and folders</h3>
+<p>Since 1.46 the <strong>Files</strong> group of the Project tree is a real file tree: what you make here are ordinary
+<a href="../explorer/">Explorer</a> files, so they follow the Explorer's sharing rules and everyone in the session sees them.</p>
+<p><img alt="The Project tree's menu on a script: Rename, Move to, Cut, Delete, New file, New folder, Show in Explorer" src="../img/code-workspace/files-menu.png" /></p>
+<ul>
+<li><strong>New file</strong> (the page-with-plus button in the Project header, or the right-click menu) offers <strong>Script</strong> (a
+  behaviour with the lifecycle functions ready to fill in), <strong>Note</strong> (<code>.md</code>) and <strong>JSON</strong>. A new script opens in a
+  tab straight away.</li>
+<li><strong>New folder</strong> makes a folder inside the one you right-clicked (or at the top).</li>
+<li><strong>Rename</strong> (<kbd>F2</kbd>): type a bare name and the extension is kept (<em>boss</em> stays <em>boss.js</em>). Text file names
+  are unique across the library, because shared typing keys on the name.</li>
+<li><strong>Move</strong>: drag a file or folder onto another folder, use <strong>Move to ▸</strong>, or <kbd>Ctrl</kbd>+<kbd>X</kbd> then
+  <kbd>Ctrl</kbd>+<kbd>V</kbd> on the destination.</li>
+<li><strong>Delete</strong> (<kbd>Del</kbd>) moves it to Deleted, where Restore brings it back.</li>
+<li><strong>Undo</strong>: <kbd>Ctrl</kbd>+<kbd>Z</kbd> while the tree has focus (or <strong>Undo</strong> on the toast) undoes the last file
+  operation — one step each. It never touches the scene's own undo history.</li>
+<li>The menu also opens with <kbd>Shift</kbd>+<kbd>F10</kbd> or the Menu key, and works in the
+  <a href="#pop-out-to-its-own-window">pop-out window</a> too.</li>
+<li>Viewers can browse and read; making, renaming, moving and deleting say why they are not available.</li>
 </ul>
 <h3 id="right-outline-problems-bound-nodes-find">Right: Outline, Problems, Bound nodes, Find</h3>
 <p><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd> shows or hides the right sidebar. It has four tool tabs:</p>
@@ -6096,7 +6137,7 @@ compact text.)</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-23
+    2026-10-27
   </span>
 
     
