@@ -42,6 +42,14 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.46 — every panel in its own window.** Pop out any panel — or a whole dock — into its own browser window and
+spread the editor over two monitors: the Explorer on one screen, the Node editor and Timeline on another, the 3D view
+full-size in the app. Drag tabs between windows and docks; a panel lives in one place, and your windows come back on
+the next visit ([Windows on several monitors](interface.md#windows-on-several-monitors)). The Code tab now makes,
+renames, moves and deletes [files and folders](code-workspace.md#files-and-folders) itself — a new script opens from a
+behaviour template. Also: renaming a shared file reaches everyone, and saving a shared file no longer leaves a copy of
+its old version in the Library.
+
 **1.45 — build in the headset.** Everything you need to build a scene now works in VR — see
 [Building in VR](building-in-vr.md). Both grips **shrink the world** to a 1:50 miniature to work from above (Back to 1:1
 on the radial), **Tools ▸ Measure** snaps points to corners with the laser, **Selected ▸ Arrange** aligns, spaces and
