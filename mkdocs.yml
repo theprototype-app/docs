@@ -15,6 +15,8 @@ nav:
     - Security & Self-hosting: security.md
     - Your Character: avatars.md
     - Connection: connection.md
+    - Invite People and Agents: invites.md
+    - Users & Moderation: people.md
     - Sharing into the App: sharing-into-the-app.md
   - Building:
     - Explorer: explorer.md

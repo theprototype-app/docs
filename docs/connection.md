@@ -49,6 +49,10 @@ breaks. On a phone it opens as a sheet like the notifications: a grab bar on top
 
 ![The Connected panel on a computer: five people, one row each — avatar, name, the scene they are in and their p-number underneath, and Editor or Viewer with Go to or Watch on the right](img/connection/peers-panel-desktop.png){ width="515" }
 
+Right-click a person (long-press on touch, <kbd>Shift</kbd>+<kbd>F10</kbd> from the keyboard) for the **peer menu**:
+their profile, Go to, Watch, Mute, Hide — and, for the host or an admin, **Remove from session** and **Remove and
+block**. See [Users and moderation](people.md). An AI agent shows a robot and "AI" instead of a character.
+
 ### Inviting someone
 
 1. **Copy your invite link** (the 📋 button) and send it to a friend.
@@ -56,6 +60,9 @@ breaks. On a phone it opens as a sheet like the notifications: a grab bar on top
 3. You get a **Connection request** toast — press **Approve** and you are connected.
 
 Or do it by ID: they paste your ID into their Connect field and press Connect; the same approval toast appears on your side.
+
+To skip the approval card, send an **invite link** instead (**Connect ▸ Request AI**, a *Person* or an *AI agent*
+tab): it joins in one step with the role you chose, for a limited time. See [Invite people and agents](invites.md).
 
 ### A link in a tab that is already open
 
@@ -134,6 +141,12 @@ Your room's panel has a **Room name**, a **Short description** and these switche
 anyone with the room code — you get a notice saying who came in, with **Turn off** (stops automatic joining) and
 **Remove**, and the same notice stays in the notification centre. While a listed room lets guests in, the Connect bar
 reads **Public · guests join**. **Remove** takes them out and keeps them out while your tab stays open.
+
+**AI agents ask first** (*new in NEXT*). A dial that says it is an AI agent never rides *Allow guests to join
+automatically*: it gets the approval card, with a robot on it, unless you also turn on **Settings ▸ Connection ▸ Let
+AI agents join as guests** (off by default). An [invite link](invites.md) always lets an agent in with the role it
+carries. "AI agent" is what the joining app says about itself, so this is about seeing who knocks, not security: an
+agent that hides it is just a guest, view-only like any other.
 
 Joining a coded room asks for the code (*"🔒 ‹room› needs a code"*). The right code goes straight in; a wrong one is
 refused, and five wrong codes lock that person out for ten minutes. If the room also requires approval, **Ask the host
