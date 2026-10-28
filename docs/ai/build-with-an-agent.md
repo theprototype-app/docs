@@ -48,7 +48,7 @@ batched **create_objects**. Then **screenshot** to check the result.
 | tool / method | what it does |
 |---|---|
 | the app's tools | `create_objects`, `update_objects`, `delete_objects`, `group_objects`, `create_flow_nodes`, `update_flow_nodes`, `set_physics`, `create_joints`, `control_simulation`, behaviours where available, `generate_mesh` when the host has a provider — with their full JSON schemas |
-| `status` | joined or waiting, its role and whether it can edit, who is connected, which tools or modules are missing and why |
+| `status` | joined or waiting, its role and whether it can edit, who is connected, which scene it and the host are in (`withHost`), which tools or modules are missing and why |
 | `screenshot` | a clean picture (no gizmo, grid or helpers) from a temporary camera — `iso`, `top`, `front`, `current`, or `focus` on one object — without moving anyone's view |
 | `wait_for_edit` | waits until someone else changes the scene |
 | `install_modules` | installs the modules the other peers run (games, tools) so the agent sees the same scene |
@@ -72,6 +72,10 @@ batched **create_objects**. Then **screenshot** to check the result.
 - The **AI assistant** window lists every step it takes under **Agent activity** — "Claude · created 12 objects
   (Campfire)" — on every peer, including people who join later. Click a line to select what it touched; editors can
   **Undo** that one step for everybody.
+- **It goes where you go.** Save the scene under another name, or open another scene, and the agent follows you
+  there on its own; it holds its edits while it travels, so nothing lands in the scene you left. Open a scene
+  **privately** and it waits (it tells its user why) until you are back in a shared scene. An agent never takes over
+  as host, and nobody joins your session through it.
 - To stop it, revoke its invite or use **Remove from session** on its row ([Users and moderation](../people.md)).
 
 ![Agent activity in the AI assistant window](../img/ai/agent-activity.png){ width="500" }
