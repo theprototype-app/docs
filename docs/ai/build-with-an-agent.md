@@ -67,8 +67,10 @@ batched **create_objects**. Then **screenshot** to check the result.
 ## What you see while it works
 
 - The agent shows in the Connected panel with a **robot and "AI"** — no character, no voice, no cursor. A small
-  **AI camera marker** shows where its last screenshot looked (**Settings ▸ Connection ▸ Show where AI agents look**,
-  on by default).
+  **AI camera marker** shows where its last screenshot looked, and a **presence marker** — a bot icon with the agent's
+  name — stands over the object it is editing, on desktop and in a headset alike. The presence marker fades while
+  the agent is idle, hides in Play, and leaves with the agent. **Settings ▸ Connection ▸ Show where AI agents look**
+  (on by default) switches both off.
 - The **AI assistant** window lists every step it takes under **Agent activity** — "Claude · created 12 objects
   (Campfire)" — on every peer, including people who join later. Click a line to select what it touched; editors can
   **Undo** that one step for everybody.
