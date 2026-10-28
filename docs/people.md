@@ -3,7 +3,7 @@
 Everyone in your session is listed in the **Connected** panel (the people button, top right). Each person has a menu:
 find them, look at their character, mute or hide them for yourself — and, if you run the session, remove them.
 
-!!! info "New in NEXT"
+!!! info "New in 1.48"
     The peer menu, Hide, and Remove / Remove and block with Allow back.
 
 ## Open the peer menu

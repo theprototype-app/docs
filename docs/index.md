@@ -42,7 +42,7 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
-**NEXT — AI agents in your session.** Send Claude (or any MCP agent) your session link and build together:
+**1.48 — AI agents in your session.** Send Claude (or any MCP agent) your session link and build together:
 `claude mcp add theprototype -- npx -y @theprototype/agent mcp '<link>'` and it joins as a peer, builds with the app's
 own tools — objects, flow nodes, physics — checks its work with screenshots, and lists every step in the AI assistant
 window for everyone to select or undo ([Build with an AI agent](ai/build-with-an-agent.md)). **Connect ▸ Request AI**

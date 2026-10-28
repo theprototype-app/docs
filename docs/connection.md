@@ -142,7 +142,7 @@ anyone with the room code — you get a notice saying who came in, with **Turn o
 **Remove**, and the same notice stays in the notification centre. While a listed room lets guests in, the Connect bar
 reads **Public · guests join**. **Remove** takes them out and keeps them out while your tab stays open.
 
-**AI agents ask first** (*new in NEXT*). A dial that says it is an AI agent never rides *Allow guests to join
+**AI agents ask first** (*new in 1.48*). A dial that says it is an AI agent never rides *Allow guests to join
 automatically*: it gets the approval card, with a robot on it, unless you also turn on **Settings ▸ Connection ▸ Let
 AI agents join as guests** (off by default). An [invite link](invites.md) always lets an agent in with the role it
 carries. "AI agent" is what the joining app says about itself, so this is about seeing who knocks, not security: an

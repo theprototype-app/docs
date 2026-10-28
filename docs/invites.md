@@ -4,7 +4,7 @@ An **invite link** lets someone into your session without an approval card: a fr
 you paste it into. You decide what it allows — **View** or **Edit**, how long it lasts and how many may use it — and you
 can see who used it and take it back.
 
-!!! info "New in NEXT"
+!!! info "New in 1.48"
     Invite links for people and for AI agents, one sheet with two tabs.
 
 A plain session link (your peer id, with no invite) works as before: whoever opens it knocks, and you get the
