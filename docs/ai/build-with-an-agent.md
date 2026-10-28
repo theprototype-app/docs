@@ -66,6 +66,8 @@ batched **create_objects**. Then **screenshot** to check the result.
   never simulates.
 - Lights take their settings directly: `color`, `intensity`, `distance`, `angle`, `penumbra`, `aim` and so on, on
   `create_objects` and `update_objects`. A field that does not apply comes back in that object's `errors`.
+- A wire in `create_flow_nodes` must name a socket the node really has: a wrong `toHandle` (or a wrong `fromHandle`
+  on a node with several outputs) is refused, and the error lists the node's real socket names.
 - Never fight a person: a locked object is skipped, and the agent waits with `wait_for_edit`.
 
 ## What you see while it works
