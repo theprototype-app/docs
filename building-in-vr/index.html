@@ -5289,6 +5289,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#logic-in-the-headset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logic in the headset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hands" class="md-nav__link">
     <span class="md-ellipsis">
       Hands
@@ -5715,6 +5724,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#logic-in-the-headset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logic in the headset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hands" class="md-nav__link">
     <span class="md-ellipsis">
       Hands
@@ -5748,7 +5766,8 @@
 
 <h1 id="building-in-vr">Building in VR</h1>
 <p>Since 1.45 you can build a whole scene with the headset on: measure and line things up, paint terrain and scatter, pull
-models off your wrist and drop them in, and shrink the world to a miniature to work on it from above. Everything here
+models off your wrist and drop them in, and shrink the world to a miniature to work on it from above. Since the next
+release you can also <a href="#logic-in-the-headset">edit the game logic</a> — the node graph — without taking the headset off. Everything here
 works in <strong>Edit</strong>; the radial menu, grabbing and getting around are on the <a href="../vr/">VR Guide</a>.</p>
 <p><strong>Controllers do everything.</strong> With <a href="#hands">hand tracking</a> you can browse and place; tools that need precision ask you
 to pick up a controller. The comfort settings — vignette, seated, one-handed — apply to every tool on this page.</p>
@@ -5838,6 +5857,67 @@ whatever you point at — amber when it overlaps something, red when there is no
 <p><strong>Pin it:</strong> grip the panel and let go in the air — it stays there, bigger. Grip it again and let go near your wrist to put
 it back (or press <strong>Pin</strong> / <strong>To wrist</strong>). In one-handed mode it opens pinned in front of you.</p>
 <p>Add ▸ <strong>Prefabs</strong> uses the same ghost: real size, the stick turns it, it rests on surfaces and snaps.</p>
+<h2 id="logic-in-the-headset">Logic in the headset</h2>
+<p><img alt="The Logic panel on the Spinner object's flow: a Number card wired into Spin's speed, with + Node, undo, redo, Fit, zoom and close along the top" src="../img/building-in-vr/logic-panel.png" /></p>
+<p>Radial menu ▸ <strong>Tools ▸ Logic</strong> opens the scene's node graph as a panel in front of you. With one object selected,
+<strong>Selected ▸ Edit logic</strong> opens that object's own flow instead (tabs at the top switch between the two). It is the same
+graph as the desktop <a href="../node-editor/">node editor</a>: every change is one undo step, and everyone in the session sees it
+land live.</p>
+<table>
+<thead>
+<tr>
+<th>Do this</th>
+<th>With</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Move a card</td>
+<td><strong>trigger-drag</strong> the card</td>
+</tr>
+<tr>
+<td>Wire two sockets</td>
+<td><strong>trigger-drag</strong> from a socket and let go on another. The wire is green while the types fit and red when they don't; a wire into a value input that already has one replaces it</td>
+</tr>
+<tr>
+<td>Move or remove a wire</td>
+<td><strong>trigger-drag</strong> from an input that already has a wire: drop it on another socket to move it, or on the empty graph to remove it</td>
+</tr>
+<tr>
+<td>Pan</td>
+<td><strong>trigger-drag</strong> the empty graph</td>
+</tr>
+<tr>
+<td>Zoom</td>
+<td>push the <strong>stick</strong> up or down while your laser is on the panel (it zooms where you point)</td>
+</tr>
+<tr>
+<td>Move the panel</td>
+<td><strong>grip</strong> it and let go where it should stay</td>
+</tr>
+</tbody>
+</table>
+<p>The buttons along the top: <strong>+ Node</strong> opens a palette with the desktop's groups — pick a node and it lands in the middle
+of the view; <strong>↶ / ↷</strong> undo and redo; <strong>Fit</strong> frames every card; <strong>− / +</strong> zoom; <strong>✕</strong> closes the panel.</p>
+<p><img alt="The wrist pad for a Number node: value and step with − / + buttons, and Rename, Unwire, Delete" src="../img/building-in-vr/logic-pad.png" width="320" /></p>
+<p><strong>Click</strong> a card (trigger, no drag) to select it: its values open on a <strong>wrist pad</strong> on your other hand.</p>
+<ul>
+<li><strong>− / +</strong> step a number; press the value itself to type it on the VR keyboard.</li>
+<li><strong>‹ ›</strong> cycle a choice or a colour; toggles flip on a press.</li>
+<li><strong>Rename</strong>, <strong>Unwire</strong> (removes its wires) and <strong>Delete</strong> act on the selected card.</li>
+<li>A node with more values than fit has pages: push the stick up or down while you point at the pad.</li>
+</ul>
+<p>In <a href="../vr/#comfort-for-everyone">one-handed mode</a> the pad sits beside the panel instead of on your wrist. A
+<strong>viewer</strong> sees the panel read-only, and it says so.</p>
+<div class="admonition note">
+<p class="admonition-title">Limits</p>
+<ul>
+<li>Groups are read-only in VR: you can move a collapsed group's card, but not wire into it or delete it. Edit groups
+  on the desktop.</li>
+<li>Custom (code) nodes, Object Flow nodes and Sound nodes need desktop pickers, so the palette leaves them out —
+  add them on the desktop, then wire and tune them here.</li>
+</ul>
+</div>
 <h2 id="hands">Hands</h2>
 <p>Without controllers, a <strong>pinch is the trigger</strong>: pinch a card to pick it, pinch-drag it out of the panel and let go to drop
 it, or pinch a card and pinch again to place it. Tools that need precision — the sculpt, paint and scatter brushes,
@@ -5870,7 +5950,7 @@ measuring, moving vertices or faces — show <strong>Pick up a controller</stron
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-26
+    2026-10-27
   </span>
 
     
