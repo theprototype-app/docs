@@ -62,6 +62,10 @@ batched **create_objects**. Then **screenshot** to check the result.
 - Motion is **flow nodes**: one behaviour node (spin, bounce, path patrol…) in an object's graph
   drives that object.
 - Pin scenery with `set_physics` `mode: "static"` so Play does not collapse the scene.
+- `control_simulation` runs on the **host's** machine, so physics plays at its real speed; an agent's own page
+  never simulates.
+- Lights take their settings directly: `color`, `intensity`, `distance`, `angle`, `penumbra`, `aim` and so on, on
+  `create_objects` and `update_objects`. A field that does not apply comes back in that object's `errors`.
 - Never fight a person: a locked object is skipped, and the agent waits with `wait_for_edit`.
 
 ## What you see while it works
