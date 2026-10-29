@@ -42,6 +42,15 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.48.1 — fixes for AI agents and game logic.** Reloading the page while joined takes you straight back into the
+session, with no new approval. A deleted object's logic stops (undo brings it back), a game round keeps its referee
+when someone joins, and a shared [Set Variable](nodes/setvariable.md) changes once per event in multiplayer. Agents
+read the scene the way you see it: positions inside a group are local to the group, `list_scene` shows a shape's sizes
+and can be narrowed, and a locked object says who has it. Also fixed: every light type survives an autosave restore,
+Body Wave and Jiggle stack on one object, HUD Text and Bar show wired text, a behaviour's `on.load` sees the scene a
+joiner lands in, deleted lights and avatar photos free their memory, and a phone in the background keeps its link for
+a minute.
+
 **1.48 — AI agents in your session.** Send Claude (or any MCP agent) your session link and build together:
 `claude mcp add theprototype -- npx -y @theprototype/agent mcp '<link>'` and it joins as a peer, builds with the app's
 own tools — objects, flow nodes, physics — checks its work with screenshots, and lists every step in the AI assistant

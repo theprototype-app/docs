@@ -71,7 +71,11 @@ batched **create_objects**. Then **screenshot** to check the result.
 - Code behaviours (`create_behaviour`) explain their own format with a working example. The checker refuses code that
   would silently do nothing: a `this.` member that does not exist (a behaviour drives effect nodes through its
   outputs; it does not move objects itself) or a per-frame hook such as `onTick` (repeat with `this.after`).
-- Never fight a person: a locked object is skipped, and the agent waits with `wait_for_edit`.
+- Inside a group, positions are **local to the group**, the way `list_scene` reports them (since 1.48.1).
+- `list_scene` shows a shape's sizes (a wall's thickness, a box's depth) and can be narrowed: names only, a name
+  pattern, a type, or the objects near a point (since 1.48.1).
+- Never fight a person: a locked object is skipped — the reply names the object and who is editing it — and the agent
+  waits with `wait_for_edit`.
 
 ## What you see while it works
 
