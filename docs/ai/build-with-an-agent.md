@@ -55,6 +55,8 @@ batched **create_objects**. Then **screenshot** to check the result.
 | `status` | joined or waiting, its role and whether it can edit, who is connected, which scene it and the host are in (`withHost`), whether a scene is still arriving (`loading`), any code behaviour that is failing (`behaviourErrors`), whether it is paused because the host left (`hostAway`), which tools or modules are missing and why |
 | `screenshot` | a clean picture (no gizmo, grid or helpers) from a temporary camera — `iso`, `top`, `front`, `current`, or `focus` on one object — without moving anyone's view |
 | `wait_for_edit` | waits until someone else changes the scene |
+| `describe_node_types` | what a flow node type takes and gives — input and output names with their types, params with defaults, one line on what it does — so edges are wired right the first time |
+| `what_can_you_do` | a short, speakable summary of what the agent can do in this session (a viewer hears that it can look but not build) |
 | `install_modules` | installs the modules the other peers run (games, tools) so the agent sees the same scene |
 | `pending_offers` / `accept_offer` | answers questions the app asks (for example an admin-role offer) |
 
