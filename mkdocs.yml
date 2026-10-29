@@ -15,6 +15,8 @@ nav:
     - Security & Self-hosting: security.md
     - Your Character: avatars.md
     - Connection: connection.md
+    - Invite People and Agents: invites.md
+    - Users & Moderation: people.md
     - Sharing into the App: sharing-into-the-app.md
   - Building:
     - Explorer: explorer.md
@@ -219,6 +221,7 @@ nav:
     - Play on a Table (AR, Android): ar-table.md
   - AI:
     - Assistant: ai/assistant.md
+    - Build with an AI agent: ai/build-with-an-agent.md
     - Providers: ai/providers.md
     - Local & Small Models: ai/local-models.md
     - 3D Generation: ai/generation.md

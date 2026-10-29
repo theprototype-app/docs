@@ -7,7 +7,7 @@ camera — and you can play it there while everyone else in the room keeps playi
 ## Start it
 
 1. Open **More ▸ Tools & View ▸ AR table** (you can drag it onto the bottom bar), or long-press **Play** and choose
-   **Play on a table (AR)**.
+   **Play on a table (AR)** (on an unfolded phone, right-click or long-press Play in the toolbar).
 2. Allow the camera. Point the phone at a table and move it slowly until a white ring sits on the surface.
 3. **Tap** (or press **Place here**) to stand the scene there. It is sized to fit the table — the readout at the top
    shows the scale, for example `1:80`.
@@ -31,6 +31,8 @@ theirs travel as always.
 
 - **Chrome on Android** with Google Play Services for AR (ARCore). On an iPhone, or in a desktop browser, the item says
   *AR needs Android Chrome* and does nothing.
+- In a room where headsets are [colocated](colocation.md#join-from-a-phone), **Join room** (or **More ▸ Join room
+  (AR)**) puts the phone in that room at full size instead of on a table.
 - A Quest's passthrough (**Play ▸ Enter AR passthrough**, see the [VR Guide](vr.md)) is a different mode and is
   unchanged.
 

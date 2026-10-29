@@ -42,6 +42,28 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.48 — AI agents in your session.** Send Claude (or any MCP agent) your session link and build together:
+`claude mcp add theprototype -- npx -y @theprototype/agent mcp '<link>'` and it joins as a peer, builds with the app's
+own tools — objects, flow nodes, physics — checks its work with screenshots, and lists every step in the AI assistant
+window for everyone to select or undo ([Build with an AI agent](ai/build-with-an-agent.md)). **Connect ▸ Request AI**
+makes [invite links](invites.md) for agents and people: View or Edit, 10 minutes to a day, one or more uses, revocable,
+no approval card. Right-click anyone in the Connected panel for the new [peer menu](people.md) — profile, Go to, Hide —
+and, for the host or an admin, **Remove** or **Remove and block** with **Allow back**.
+
+**1.47 — game logic in the headset.** Radial ▸ **Tools ▸ Logic** opens the node graph as a panel in VR: move cards,
+wire sockets with the laser and set values on a wrist pad, and everyone sees it live — see
+[Logic in the headset](building-in-vr.md#logic-in-the-headset). An Android phone can now
+[join a room the headsets calibrated](colocation.md#join-from-a-phone) with two taps on the floor and see the scene where
+they do, and an unfolded phone's Play menu offers the AR table and Join the room.
+
+**1.46 — every panel in its own window.** Pop out any panel — or a whole dock — into its own browser window and
+spread the editor over two monitors: the Explorer on one screen, the Node editor and Timeline on another, the 3D view
+full-size in the app. Drag tabs between windows and docks; a panel lives in one place, and your windows come back on
+the next visit ([Windows on several monitors](interface.md#windows-on-several-monitors)). The Code tab now makes,
+renames, moves and deletes [files and folders](code-workspace.md#files-and-folders) itself — a new script opens from a
+behaviour template. Also: renaming a shared file reaches everyone, and saving a shared file no longer leaves a copy of
+its old version in the Library.
+
 **1.45 — build in the headset.** Everything you need to build a scene now works in VR — see
 [Building in VR](building-in-vr.md). Both grips **shrink the world** to a 1:50 miniature to work from above (Back to 1:1
 on the radial), **Tools ▸ Measure** snaps points to corners with the laser, **Selected ▸ Arrange** aligns, spaces and
