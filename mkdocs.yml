@@ -222,6 +222,7 @@ nav:
   - AI:
     - Assistant: ai/assistant.md
     - Build with an AI agent: ai/build-with-an-agent.md
+    - Shapes and modelling with an agent: ai/agent-geometry.md
     - Use theprototype from claude.ai and voice: ai/claude-connector.md
     - Providers: ai/providers.md
     - Local & Small Models: ai/local-models.md
