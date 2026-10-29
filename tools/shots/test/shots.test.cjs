@@ -52,3 +52,28 @@ test('strokes are seeded: the same callout draws the same SVG every time', () =>
 	assert.equal(a, b);
 	assert.ok(!a.includes('NaN'));
 });
+
+// owner rules, 2026-10-29 (lib/rules.cjs, annotate.cjs; the docs build re-checks them in tools/hooks/shots.py)
+const { COLUMN, widthProblem, kindOf, labelText } = require('../lib/rules.cjs');
+const { figureMarkdown } = require('../annotate.cjs');
+
+test('interface wider than the column is refused (crop it); a 3D crop may be wider and scale', () => {
+	assert.match(widthProblem('ui', COLUMN + 1), /crop it/);
+	assert.equal(widthProblem('ui', COLUMN), '');
+	assert.equal(widthProblem('view', 1440), '');
+});
+
+test('a crop with interface in it is ui unless the spec says otherwise', () => {
+	assert.equal(kindOf({}, ['p.toolbar']), 'ui');
+	assert.equal(kindOf({}, []), 'view');
+	assert.equal(kindOf({ kind: 'view' }, ['div.label']), 'view');
+});
+
+test('the figure carries its 1:1 size, a caption and one key line per badge', () => {
+	const md = figureMarkdown({ alt: 'Configure Scene View with two numbered callouts', caption: 'The View section.', annotate: [{ n: 1, key: 'One.' }, { n: 2, key: 'Two.' }] },
+		'img/camera/view-section.webp', '.shot', 311, 402);
+	assert.match(md, /\{ \.shot width="311" height="402" loading=lazy \}/);
+	assert.match(md, /\/\/\/ caption\nThe View section\.\n\/\/\//);
+	assert.match(md, /<div class="shot-key" markdown>\n1\. One\.\n2\. Two\.\n<\/div>/);
+	assert.equal(labelText('2 · Rotate'), 'Rotate');
+});

@@ -319,3 +319,7 @@ extra_javascript:
 # otherwise); tools/shots/tryit-check.cjs opens each link and asserts the controls exist
 hooks:
   - tools/hooks/tryit.py
+  # roadmap 83 V9/V10: the owner's image rules (1:1 interface, figure + caption, key = badges) fail the build;
+  # llms.txt, llms-full.txt, a .md beside every page and a small JSON-LD block for AI readers
+  - tools/hooks/shots.py
+  - tools/hooks/readable.py

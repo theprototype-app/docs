@@ -8,7 +8,8 @@ const path = require('path');
 const { execFileSync } = require('child_process');
 const { openApp } = require('./boot.cjs');
 const { runSteps, resolveRect, waitFrames, measureAnchor } = require('./steps.cjs');
-const { IMG } = require('./spec.cjs');
+const { IMG, ROOT } = require('./spec.cjs');
+const { record } = require('./rules.cjs');
 
 const LOOP_BUDGET = 600 * 1024;
 
@@ -65,6 +66,20 @@ async function act(page, actions) {
 		} else if (a.step) await runSteps(page, [a.step]);
 		if (a.wait ?? 400) await page.waitForTimeout(a.wait ?? 400);
 	}
+}
+
+/** the loop's figure (raw HTML; pages are folders, so ../img/): the caption is the text of what happens */
+function loopFigure(shot, base, [w, h], secs) {
+	const dir = `../img/${shot.page || ''}`;
+	return [
+		'<figure class="shot-figure">',
+		`<video class="shot${shot.fade === 'vignette' ? ' vignette' : ''}" autoplay loop muted playsinline preload="metadata" width="${w}" height="${h}" poster="${dir}/${base}.poster.webp" aria-label="${shot.alt.trim().replace(/"/g, '&quot;')}">`,
+		`<source src="${dir}/${base}.webm" type="video/webm">`,
+		`<source src="${dir}/${base}.mp4" type="video/mp4">`,
+		'</video>',
+		`<figcaption>Loop, ${Math.round(secs)} s: ${(shot.caption || 'WHAT HAPPENS').trim()}</figcaption>`,
+		'</figure>'
+	].join('\n');
 }
 
 async function recordLoop(browser, pageName, shot) {
@@ -128,10 +143,15 @@ async function recordLoop(browser, pageName, shot) {
 		fs.rmSync(tmp, { recursive: true, force: true });
 		const secs = frames[frames.length - 1].t - frames[0].t;
 		if (secs < 3 || secs > 8.5) console.log(`   note: the loop is ${secs.toFixed(1)} s (aim for 3-8 s)`);
+		const dims = execFileSync('ffprobe', ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height', '-of', 'csv=p=0', outs[0].file]).toString().trim().split(',').map(Number);
+		const app = await page.evaluate(() => fetch('/version.json').then((r) => r.json()).catch(() => ({})));
+		const rel = path.relative(path.join(ROOT, 'docs'), outs[0].file);
+		record(rel, { page: pageName, kind: 'loop', dpr: 1, width: dims[0], height: dims[1], seconds: +secs.toFixed(1), badges: 0, labels: [], app: app.version || '', shotAt: new Date().toISOString() });
+		outs.snippet = loopFigure(shot, path.basename(rel, '.webm'), dims, secs);
 		return outs;
 	} finally {
 		await ctx.close().catch(() => {});
 	}
 }
 
-module.exports = { recordLoop, LOOP_BUDGET };
+module.exports = { recordLoop, loopFigure, LOOP_BUDGET };

@@ -14,6 +14,24 @@ const { loadSpecs, RAW } = require('./lib/spec.cjs');
 const { annotateShot } = require('./annotate.cjs');
 const { recordLoop } = require('./lib/loop.cjs');
 const { cutSides, resolveFade } = require('./lib/fade.cjs');
+const { kindOf } = require('./lib/rules.cjs');
+
+/** interface inside the crop: sample a grid of points, keep what is on top that is not the 3D view */
+async function uiInside(page, crop) {
+	return page.evaluate((c) => {
+		const canvas = window.__docs.get(window.__stores.globalRenderer).domElement;
+		const hits = new Set();
+		for (let i = 0; i <= 24; i++) for (let j = 0; j <= 16; j++) {
+			const el = document.elementFromPoint(c.x + 1 + (c.w - 2) * i / 24, c.y + 1 + (c.h - 2) * j / 16);
+			if (!el || el === canvas || el.contains(canvas)) continue;
+			// an empty layer over the canvas is not interface; a control, an icon or text is
+			const ctl = el.closest('button,input,select,textarea,label,a,[role],[title],svg,img');
+			const ui = (ctl && !ctl.contains(canvas)) || (el.innerText || '').trim();
+			if (ui) hits.add(el.tagName.toLowerCase() + (el.id ? '#' + el.id : '') + (el.classList[0] ? '.' + el.classList[0] : ''));
+		}
+		return [...hits].slice(0, 12);
+	}, crop);
+}
 
 const args = process.argv.slice(2);
 const rawOnly = args.includes('--raw-only');
@@ -34,6 +52,7 @@ async function still(page, pageName, shot, dpr) {
 		const { crop, bounds, is3d } = await resolveRect(page, shot.crop);
 		const cut = cutSides(crop, bounds);
 		const fade = resolveFade(shot.fade, cut, is3d);
+		const uiHits = await uiInside(page, crop);
 		const anchors = {};
 		if (!v) {
 			for (const a of shot.annotate || []) {
@@ -45,9 +64,11 @@ async function still(page, pageName, shot, dpr) {
 		const png = await page.screenshot({ clip: { x: crop.x, y: crop.y, width: crop.w, height: crop.h }, animations: 'disabled' });
 		const file = v ? `${shot.id}--${v.suffix || i}.webp` : `${shot.id}.webp`;
 		await sharp(png).webp({ quality: 90, effort: 6 }).toFile(path.join(dir, file));
+		meta.uiHits = [...new Set([...(meta.uiHits || []), ...uiHits])];
 		if (v) tileMeta.push({ file, caption: v.caption || '' });
 		else Object.assign(meta, { width: crop.w * dpr, height: crop.h * dpr, crop, cut, fade, anchors });
 	}
+	meta.kind = kindOf(shot, meta.uiHits);
 	if (tileMeta.length) Object.assign(meta, { tiles: tileMeta, compose: shot.compose, fade: [] });
 	fs.writeFileSync(path.join(dir, shot.id + '.json'), JSON.stringify(meta, null, 1) + '\n');
 }
@@ -64,8 +85,8 @@ async function still(page, pageName, shot, dpr) {
 			try {
 				if (shot.video && stillsOnly) continue;
 				if (shot.video) {
-					const out = await recordLoop(browser, pageName, shot);
-					console.log(`ok ${pageName}/${shot.id}: loop ${out.map((o) => `${path.basename(o.file)} ${Math.round(o.bytes / 1024)} KB`).join(', ')}`);
+					const out = await recordLoop(browser, pageName, { ...shot, page: pageName });
+					console.log(`ok ${pageName}/${shot.id}: loop ${out.map((o) => `${path.basename(o.file)} ${Math.round(o.bytes / 1024)} KB`).join(', ')}\n${out.snippet}`);
 					continue;
 				}
 				const opened = await openApp(browser, { device: shot.device, dpr, theme: shot.theme, storage: shot.storage });

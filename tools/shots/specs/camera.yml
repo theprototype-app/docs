@@ -16,6 +16,7 @@ shots:
     alt: >-
       The same three objects in the three render modes: Shaded, Shaded + AO (soft contact shadows where
       surfaces meet) and Wireframe (every edge).
+    caption: Shaded, Shaded + AO and Wireframe. AO darkens creases and the ground where objects touch it.
     tryit: camera-render-mode
     crop: {around: {union: [{object: Crate}, {object: Knot}, {object: Ball}]}, size: [640, 400]}
     variants:
@@ -25,6 +26,7 @@ shots:
     compose: row
 
   - id: view-section
+    caption: 'Configure Scene ▸ View: how the scene is drawn on your screen.'
     alt: >-
       Configure Scene ▸ View. 1: the render mode switch — Shaded, Shaded + AO, Wireframe. 2: Show light helpers.
     tryit: camera-view-section
@@ -32,13 +34,14 @@ shots:
       - {section: View}
     crop: {selector: 'section.sec-panel:has(#view-mode-switch)', pad: 10}
     annotate:
-      - {n: 1, at: {union: [{selector: '#view-mode-shaded'}, {selector: '#view-mode-wireframe'}]}, shape: box, pad: 4, badge: r}
-      - {n: 2, at: {text: Show light helpers, find: 'button'}, shape: box, pad: 3, badge: l}
+      - {n: 1, at: {union: [{selector: '#view-mode-shaded'}, {selector: '#view-mode-wireframe'}]}, shape: box, pad: 4, badge: r, key: The **render mode** switch.}
+      - {n: 2, at: {text: Show light helpers, find: 'button'}, shape: box, pad: 3, badge: l, key: '**Show light helpers**.'}
 
   - id: grid-and-lights
     alt: >-
       A point light and a spot light in the scene with light helpers on. 1: the point light's helper — a small
       wire sphere at the light. 2: the spot light's cone, showing where it shines.
+    caption: Light helpers show where each light is and where it shines; they are editor-only.
     storage: {showLightHelpers: 'true'}
     setup:
       - {light: point, name: Lamp, at: [-1.4, 2.3, 1.8]}
@@ -46,13 +49,14 @@ shots:
     crop: {rect: [180, 80, 1080, 680]}
     fade: vignette
     annotate:
-      - {n: 1, at: {object: Lamp, point: center}, shape: circle, label: point light}
-      - {n: 2, at: {object: Spot, point: center}, shape: circle, label: spot light, badge: tr}
+      - {n: 1, at: {object: Lamp, point: center}, shape: circle, label: point light, key: "A **point light**'s helper."}
+      - {n: 2, at: {object: Spot, point: center}, shape: circle, label: spot light, badge: tr, key: "A **spot light**'s helper, with the cone it shines into."}
 
   - id: env-presets
     alt: >-
       The same scene under four environment presets: Studio (neutral grey), Daylight (bright sky), Sunset
       (warm, low sun) and Night (dim and cool).
+    caption: Studio, Daylight, Sunset and Night on the same three objects.
     tryit: camera-environment
     # lower, so the sky shows above the horizon
     setup:

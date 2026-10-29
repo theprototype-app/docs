@@ -67,13 +67,23 @@
   box-shadow: 0 0 0 2px rgb(12 12 18 / 0.72);
 }
 
-/* Figures: the caption sits under the image, small and muted. */
-.md-typeset figure.shot-figure { margin: 1.2em 0; }
-.md-typeset figure.shot-figure figcaption {
+/* Centred (owner, 2026-10-29): every figure, image and loop sits in the middle of the column with its caption
+   centred under it. Material already centres a <figure> (fit-content, auto margins); an image alone in its
+   paragraph is centred here, and the key list is a centred block under its figure. Images keep their 1:1
+   width/height (tools/hooks/shots.py checks them); max-width only bites when the column is narrower (a phone). */
+.md-typeset p:has(> img:only-child),
+.md-typeset p:has(> a.glightbox:only-child) { text-align: center; }
+.md-typeset img.shot { display: block; margin-inline: auto; }
+.md-typeset figure { margin-inline: auto; }
+.md-typeset figure.shot-figure { margin: 1.2em auto; }
+.md-typeset figure figcaption {
   font-size: 0.68rem;
   color: var(--md-default-fg-color--light);
-  max-width: none;
+  max-width: 36rem;
+  text-align: center;
+  margin-inline: auto;
 }
+.md-typeset .shot-key { width: fit-content; max-width: 100%; margin-inline: auto; }
 
 /* Loops: a play/pause hint once the reader prefers reduced motion (docs/javascripts/loops.js). */
 .md-typeset video.shot { display: block; background: transparent; }

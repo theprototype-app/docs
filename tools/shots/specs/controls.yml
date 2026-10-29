@@ -17,21 +17,23 @@ shots:
     alt: >-
       The editor with three objects on the floor grid. 1: the selected crate with the Move gizmo on it.
       2: the transform tools on the bottom bar — Move, Rotate, Scale and Pivot. 3: the floor grid.
+    caption: The 3D view with one object selected.
     tryit: controls-viewport
     setup:
       - {select: Crate}
       - {mode: translate}
-    crop: {canvas: true}
-    fade: none
+    # 1:1: the crate and the bottom bar's tools, cropped to the column (interface is never shrunk)
+    crop: {around: {union: [{object: Crate}, {selector: 'p[title="Move (1)"]'}, {selector: 'p[title^="Pivot:"]'}]}, size: [680, 640], offset: [0, -20]}
     annotate:
-      - {n: 1, at: {object: Crate}, shape: circle, label: selected, badge: tl}
-      - {n: 2, at: {union: [{selector: 'p[title="Move (1)"]'}, {selector: 'p[title^="Pivot:"]'}]}, shape: box, label: gizmo tools, badge: l}
-      - {n: 3, at: {rect: [300, 650, 60, 40]}, shape: arrow, label: floor grid, from: [-10, -90]}
+      - {n: 1, at: {object: Crate}, shape: circle, label: selected, badge: tl, key: 'The **selected** object, with the transform gizmo on it.'}
+      - {n: 2, at: {union: [{selector: 'p[title="Move (1)"]'}, {selector: 'p[title^="Pivot:"]'}]}, shape: box, label: gizmo tools, badge: l, key: 'The **gizmo tools** on the bottom bar: Move, Rotate, Scale and the multi-selection Pivot.'}
+      - {n: 3, at: {object: Crate, point: center, offset: [-230, 190]}, shape: arrow, label: floor grid, from: [40, -90], key: 'The **floor grid**, which fades out with distance.'}
 
   - id: gizmo-modes
     alt: >-
       The same crate three times: with the Move gizmo (three arrows), the Rotate gizmo (three rings) and the
       Scale gizmo (three handles with cubes on their ends).
+    caption: '<kbd>1</kbd> Move, <kbd>2</kbd> Rotate, <kbd>3</kbd> Scale — the same buttons are on the bottom bar.'
     setup:
       - {select: Crate}
       - {camera: {pos: [5, 3.8, 6.2], target: [0, 0.8, 0]}}
@@ -47,19 +49,23 @@ shots:
     alt: >-
       Three objects selected together in Rotate mode. 1: one gizmo turns the whole set about the median point
       of the selection. 2: the Pivot button on the bottom bar, which steps through the pivot modes.
+    caption: Rotate turns the whole selection about one pivot; the Pivot button picks which.
     setup:
       - {select: [Crate, Ball, Post]}
       - {pivot: median}
       - {click: 'p[title="Rotate (2)"]'}
-    crop: {rect: [250, 140, 940, 760]}
+      # further back, so the three objects and the bottom bar fit the column at 1:1
+      - {camera: {pos: [8.2, 5.6, 10.2], target: [0, 0.6, 0]}}
+    crop: {around: {union: [{object: Crate}, {object: Ball}, {object: Post}, {selector: 'p[title^="Pivot:"]'}]}, size: [680, 660]}
     annotate:
-      - {n: 1, at: {object: Crate, point: center}, shape: arrow, label: median point, from: [-90, -175]}
-      - {n: 2, at: {selector: 'p[title^="Pivot:"]'}, shape: circle, label: pivot mode, badge: tr}
+      - {n: 1, at: {object: Crate, point: center}, shape: arrow, label: median point, from: [-90, -150], key: 'One gizmo for the whole selection, at its **median point** (the default mode).'}
+      - {n: 2, at: {selector: 'p[title^="Pivot:"]'}, shape: circle, label: pivot mode, badge: tr, key: 'The **Pivot** button: each click steps to the next pivot mode.'}
 
   - id: orbit-zoom-focus
     alt: >-
       A five-second loop: dragging on the 3D view orbits the camera around the scene, the mouse wheel zooms
       in, and pressing F with the ball selected frames it.
+    caption: 'drag to orbit, scroll to zoom, click an object and press <kbd>F</kbd> to frame it.'
     video:
       lead: 400
       actions:

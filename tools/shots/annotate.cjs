@@ -1,21 +1,29 @@
 #!/usr/bin/env node
 // Re-annotate from the raw shots in git — no browser, no app, no slot:
 //   node annotate.cjs [page[/id] ...]        (default: every shot of every spec)
-// Reads specs/<page>.yml and raw/<page>/<id>.{webp,json}; writes docs/img/<page>/<id>.<format> and
-// prints the Markdown snippet (classes for the fade, loading=lazy). Refuses a callout inside a faded
-// edge and an image over its byte budget.
+// Reads specs/<page>.yml and raw/<page>/<id>.{webp,json}; writes docs/img/<page>/<id>.<format>, records it
+// in manifest.json and prints the whole figure for the page (image, caption, the numbered key). Refuses a
+// callout inside a faded edge, an image over its byte budget, and interface wider than the column.
 const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
 const { loadSpecs, ROOT, RAW, IMG } = require('./lib/spec.cjs');
 const { callout, pill, seedOf } = require('./lib/draw.cjs');
 const { fadeClasses, clearOfFade } = require('./lib/fade.cjs');
+const { COLUMN, widthProblem, labelText, record } = require('./lib/rules.cjs');
 
 const STILL_BUDGET = 250 * 1024;
-// the docs content column is about this wide (CSS px) on a desktop: a wider shot is shown smaller,
-// so its callouts and captions are drawn larger to read the same on the page
-const DISPLAY = 760;
-const pageScale = (cssWidth) => Math.max(1, cssWidth / DISPLAY);
+// A crop of the 3D view wider than the column is shown smaller, so its callouts and captions are drawn
+// larger to read the same on the page. Interface is never shown smaller (rules.cjs), so it is drawn 1:1.
+const pageScale = (cssWidth) => Math.max(1, cssWidth / COLUMN);
+
+/** the figure for the page: image, caption, the key list (one line per badge) */
+function figureMarkdown(shot, rel, cls, w, h) {
+	const lines = [`![${shot.alt.trim()}](${rel}){ ${cls} width="${w}" height="${h}" loading=lazy }`, '/// caption', (shot.caption || 'CAPTION').trim(), '///'];
+	const keyed = (shot.annotate || []).filter((a) => a.n);
+	if (keyed.length) lines.push('', '<div class="shot-key" markdown>', ...keyed.map((a) => `${a.n}. ${(a.key || a.label || 'KEY').trim()}`), '</div>');
+	return lines.join('\n');
+}
 
 async function composeTiles(meta, dir) {
 	// tiles side by side (row) or 2 × 2 (grid2x2), a transparent gap between, rounded tile corners,
@@ -68,10 +76,16 @@ async function annotateShot(page, shot) {
 		base = fs.readFileSync(path.join(dir, shot.id + '.webp'));
 		({ width: W, height: H } = await sharp(base).metadata());
 	}
-	const s = meta.dpr * pageScale(W / meta.dpr);
+	const kind = meta.kind || 'view';
+	const s = kind === 'ui' ? meta.dpr : meta.dpr * pageScale(W / meta.dpr);
 	const fade = meta.fade;
 	const layers = [];
 	const problems = [];
+	const wide = widthProblem(kind, Math.round(W / meta.dpr));
+	if (wide) problems.push(wide + (meta.uiHits?.length ? ` (interface seen: ${meta.uiHits.slice(0, 4).join(', ')})` : ''));
+	if (!shot.alt || shot.alt.trim().split(/\s+/).length < 6) problems.push('alt text: say what the image shows, in words (6 words or more)');
+	if (!shot.caption) problems.push('no caption: every figure gets a one-line figcaption');
+	for (const a of shot.annotate || []) if (a.n && !a.key) problems.push(`callout ${a.n}: no key line (the numbered list under the figure)`);
 	for (const a of shot.annotate || []) {
 		const t = meta.anchors?.[a.n];
 		if (!t) { problems.push(`callout ${a.n}: no anchor measured (re-shoot)`); continue; }
@@ -93,8 +107,11 @@ async function annotateShot(page, shot) {
 	fs.writeFileSync(file, out);
 	const cls = ['shot', ...(meta.tiles ? [] : fadeClasses(fade))].map((c) => '.' + c).join(' ');
 	const rel = path.relative(path.join(ROOT, 'docs'), file);
-	const snippet = `![${shot.alt}](${rel}){ ${cls} loading=lazy width="${Math.round(W / s)}" }`;
-	return { file, bytes: out.length, W, H, snippet };
+	// always the CSS size of the capture: 1:1 for interface; a wider 3D crop shrinks to the column in CSS
+	const w = Math.round(W / meta.dpr), h = Math.round(H / meta.dpr);
+	const labels = [...(meta.tiles || []).map((t) => labelText(t.caption)), ...(shot.annotate || []).map((a) => a.label).filter(Boolean)].filter(Boolean);
+	record(rel, { page, kind, dpr: meta.dpr, width: w, height: h, badges: (shot.annotate || []).filter((a) => a.n).length, labels, app: meta.app?.version || '', shotAt: meta.shotAt });
+	return { file, bytes: out.length, W, H, snippet: figureMarkdown(shot, rel, cls, w, h) };
 }
 
 async function main() {
@@ -117,4 +134,4 @@ async function main() {
 }
 
 if (require.main === module) main();
-module.exports = { annotateShot, encode };
+module.exports = { annotateShot, encode, figureMarkdown };

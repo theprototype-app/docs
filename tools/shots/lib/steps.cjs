@@ -157,6 +157,11 @@ async function elementRect(page, at) {
 }
 
 async function measureAnchor(page, at) {
+	// `offset: [dx, dy]` (CSS px): a spot next to something measured — e.g. the floor beside an object
+	if (at.offset) {
+		const r = await measureAnchor(page, { ...at, offset: undefined });
+		return r && { ...r, x: r.x + at.offset[0], y: r.y + at.offset[1] };
+	}
 	if (at.rect) return { x: at.rect[0], y: at.rect[1], w: at.rect[2], h: at.rect[3] };
 	if (at.object) { await ensureHelpers(page); return page.evaluate(({ o, p }) => window.__docs.project(o, p), { o: at.object, p: at.point }); }
 	if (at.union) {

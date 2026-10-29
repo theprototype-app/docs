@@ -50,9 +50,9 @@ output.
 - One page per feature; the left-hand nav is defined explicitly in `mkdocs.yml`, so a new
   page needs an entry there to appear.
 - Node reference pages live under `docs/nodes/`, one per node type.
-- Screenshots live under `docs/img/<page>/<what>.png`: real captures from the production app
-  (theprototype.pages.dev), dark theme unless the page is about themes, palette-compressed PNG, referenced
-  as `![alt text](img/<page>/<what>.png)`.
+- Screenshots live under `docs/img/<page>/<what>.webp`, shot by `tools/shots` from the production app
+  (theprototype.pages.dev), dark theme unless the page is about themes — see the next section and
+  [`tools/shots/README.md`](tools/shots/README.md) for the rules.
 - When the app's SDK surface changes, the matching page changes in the same sitting — the
   authoring guides here are the public contract for
   [`MODULES.md`](https://github.com/theprototype-app/core/blob/main/MODULES.md).
@@ -86,26 +86,9 @@ at most three handwritten words per callout, one warm accent. Fade **only** a si
 crop of the 3D view; the driver refuses a callout inside a faded zone. Loops are 3–8 s, muted, ≤ 600 KB, and pause
 for readers who prefer reduced motion. Each still ≤ 250 KB.
 
-Markup:
-
-```markdown
-![Long alt text naming every numbered callout](img/controls/viewport-overview.webp){ .shot loading=lazy width="1440" }
-/// caption
-One short sentence.
-///
-
-<div class="shot-key" markdown>
-1. What the first badge points at.
-2. …
-</div>
-
-[Try it](https://theprototype.app/){ .tryit data-tryit="controls-viewport" }
-```
-
-A loop is raw HTML (`../img/` paths, since pages are served as folders): `<video class="shot vignette" autoplay loop
-muted playsinline preload="metadata" poster="…poster.webp">` with the `.webm` source first, then the `.mp4`
-(see controls.md). `node tools/shots/review/page-check.cjs` screenshots the built pages (fades, loop, lightbox). Shots are taken on an e2e **remote** slot on the Deck (`E2E_PC= e2e-slot -- …`): a pc slot's
-WSL GPU path draws no ambient occlusion.
+**The rules every image follows** — 1:1 interface (dpr 2, never shrunk: crop instead), centred, and readable without
+pixels (alt in words, a figure with a caption, a key line per badge, a text line per loop) — and the checks that
+enforce them are in [`tools/shots/README.md`](tools/shots/README.md). `annotate.cjs` prints the figure to paste.
 
 **Release checklist line (V7):** after the preview deploys, `APP_URL=<preview> E2E_PC= e2e-slot -- bash
 tools/shots/reshoot.sh` — exit 0 = every docs shot is current; exit 1 lists the stale ones with a before/after
