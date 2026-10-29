@@ -11,6 +11,7 @@ const { loadSpecs, ROOT, RAW, IMG } = require('./lib/spec.cjs');
 const { callout, pill, seedOf } = require('./lib/draw.cjs');
 const { fadeClasses, clearOfFade } = require('./lib/fade.cjs');
 const { COLUMN, widthProblem, labelText, record } = require('./lib/rules.cjs');
+const { mdFile, placeFigure } = require('./lib/place.cjs');
 
 const STILL_BUDGET = 250 * 1024;
 // A crop of the 3D view wider than the column is shown smaller, so its callouts and captions are drawn
@@ -115,7 +116,9 @@ async function annotateShot(page, shot) {
 }
 
 async function main() {
-	const want = process.argv.slice(2);
+	// --place: also swap each figure into its page (lib/place.cjs)
+	const place = process.argv.includes('--place');
+	const want = process.argv.slice(2).filter((a) => !a.startsWith('--'));
 	let bad = 0;
 	for (const { page, spec } of loadSpecs()) {
 		for (const shot of spec.shots) {
@@ -124,6 +127,11 @@ async function main() {
 			try {
 				const r = await annotateShot(page, shot);
 				console.log(`ok ${page}/${shot.id}: ${r.W}×${r.H}, ${Math.round(r.bytes / 1024)} KB → ${path.relative(ROOT, r.file)}\n   ${r.snippet}`);
+				if (place) {
+					const rel = path.relative(path.join(ROOT, 'docs'), r.file);
+					const placed = placeFigure(mdFile(page, spec), [rel, ...[].concat(shot.replaces || [])], r.snippet);
+					console.log(placed ? `   placed in ${path.relative(ROOT, mdFile(page, spec))}` : `   NOT PLACED: no block shows ${rel}${shot.replaces ? ' or ' + shot.replaces : ''} — paste it`);
+				}
 			} catch (e) {
 				bad++;
 				console.log(`FAIL ${page}/${shot.id}: ${e.message}`);

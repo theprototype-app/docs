@@ -126,8 +126,34 @@ async function runSteps(page, steps) {
 			await page.evaluate(st.eval);
 		} else if (st.hover) {
 			await page.locator(st.hover).first().hover();
+		} else if (st.rightClick) {
+			if (typeof st.rightClick === 'string') await page.locator(st.rightClick).first().click({ button: 'right', timeout: 8000 });
+			else { const [x, y] = await pointOf(page, st.rightClick); await page.mouse.click(x, y, { button: 'right' }); }
+		} else if (st.press) {
+			// hold the mouse down on an element (or a point) — a drag shot is taken mid-gesture
+			const [x, y] = await pointOf(page, st.press);
+			await page.mouse.move(x, y, { steps: 5 });
+			await page.mouse.down();
+		} else if (st.moveTo) {
+			const [x, y] = await pointOf(page, st.moveTo);
+			await page.mouse.move(x, y, { steps: st.steps ?? 20 });
+		} else if (st.release) {
+			await page.mouse.up();
+		} else if (st.keyDown) {
+			await page.keyboard.down(st.keyDown);
+		} else if (st.keyUp) {
+			await page.keyboard.up(st.keyUp);
 		} else throw new Error('unknown step ' + JSON.stringify(st));
 	}
+}
+
+/** a step's target as a point: [x, y], or the middle of a selector's element (+ `dx`/`dy` via {selector, dx, dy}) */
+async function pointOf(page, t) {
+	if (Array.isArray(t)) return t;
+	const at = typeof t === 'string' ? { selector: t } : t;
+	const r = await measureAnchor(page, at);
+	if (!r) throw new Error('nothing at ' + JSON.stringify(t));
+	return [r.x + r.w / 2 + (at.dx || 0), r.y + r.h / 2 + (at.dy || 0)];
 }
 
 /** the element's rect, or the smallest visible element whose text is exactly `text` */

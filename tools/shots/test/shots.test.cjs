@@ -77,3 +77,17 @@ test('the figure carries its 1:1 size, a caption and one key line per badge', ()
 	assert.match(md, /<div class="shot-key" markdown>\n1\. One\.\n2\. Two\.\n<\/div>/);
 	assert.equal(labelText('2 · Rotate'), 'Rotate');
 });
+
+test('placing a figure swaps the old image, its caption and its key, and nothing else', () => {
+	const fs = require('fs'), path = require('path');
+	const { placeFigure } = require('../lib/place.cjs');
+	const file = path.join(__dirname, '..', '..', '..', 'docs', '_place_test.md');
+	fs.writeFileSync(file, ['# T', '', '![old](img/x/old.png)', '/// caption', 'Old.', '///', '', '<div class="shot-key" markdown>', '1. a', '</div>', '', 'After.'].join('\n'));
+	try {
+		assert.equal(placeFigure(file, ['img/x/new.webp', 'img/x/old.png'], '![new](img/x/new.webp)\n/// caption\nNew.\n///'), true);
+		assert.equal(fs.readFileSync(file, 'utf8'), ['# T', '', '![new](img/x/new.webp)', '/// caption', 'New.', '///', '', 'After.'].join('\n'));
+		assert.equal(placeFigure(file, ['img/x/none.webp'], 'x'), false);
+	} finally {
+		fs.rmSync(file);
+	}
+});

@@ -15,6 +15,16 @@ const { annotateShot } = require('./annotate.cjs');
 const { recordLoop } = require('./lib/loop.cjs');
 const { cutSides, resolveFade } = require('./lib/fade.cjs');
 const { kindOf } = require('./lib/rules.cjs');
+const { mdFile, placeFigure } = require('./lib/place.cjs');
+const { ROOT } = require('./lib/spec.cjs');
+
+// --place: swap each finished figure into its docs page (lib/place.cjs)
+function place(pageName, spec, shot, file, snippet) {
+	if (!args.includes('--place')) return;
+	const rel = path.relative(path.join(ROOT, 'docs'), file);
+	const ok = placeFigure(mdFile(pageName, spec), [rel, ...[].concat(shot.replaces || [])], snippet);
+	console.log(ok ? '   placed' : `   NOT PLACED: no block shows ${rel} — paste it`);
+}
 
 /** interface inside the crop: sample a grid of points, keep what is on top that is not the 3D view */
 async function uiInside(page, crop) {
@@ -73,8 +83,30 @@ async function still(page, pageName, shot, dpr) {
 	fs.writeFileSync(path.join(dir, shot.id + '.json'), JSON.stringify(meta, null, 1) + '\n');
 }
 
+/**
+ * A shot that cannot be re-made headlessly (two peers, a headset, a game mid-round) is re-cropped from the
+ * capture already in the docs: `from: img/<page>/<file>.png`, `crop: {rect: [x, y, w, h]}` in that file's
+ * pixels, `dpr:` the file's own (1 for an old desktop capture). It then follows every rule like a fresh shot.
+ */
+async function recrop(pageName, shot) {
+	const dir = path.join(RAW, pageName);
+	fs.mkdirSync(dir, { recursive: true });
+	const src = path.join(ROOT, 'docs', shot.from);
+	const [x, y, w, h] = shot.crop.rect;
+	const dpr = shot.dpr ?? 1;
+	await sharp(src).extract({ left: x, top: y, width: w, height: h }).webp({ quality: 95, effort: 6 }).toFile(path.join(dir, shot.id + '.webp'));
+	const anchors = {};
+	for (const a of shot.annotate || []) {
+		if (!a.at.rect) throw new Error(`callout ${a.n}: a re-cropped shot needs rect anchors (in the source file's pixels)`);
+		anchors[a.n] = { x: a.at.rect[0] - x, y: a.at.rect[1] - y, w: a.at.rect[2], h: a.at.rect[3] };
+	}
+	const meta = { id: shot.id, dpr, shotAt: fs.statSync(src).mtime.toISOString(), app: { version: shot.app || 'earlier' }, from: shot.from,
+		width: w, height: h, crop: { x, y, w, h }, cut: shot.cut || [], fade: resolveFade(shot.fade, shot.cut || [], false), anchors, kind: shot.kind || 'ui' };
+	fs.writeFileSync(path.join(dir, shot.id + '.json'), JSON.stringify(meta, null, 1) + '\n');
+}
+
 (async () => {
-	const browser = await launch();
+	let browser = null;
 	let bad = 0;
 	for (const { page: pageName, spec } of loadSpecs()) {
 		for (const shot of spec.shots) {
@@ -84,9 +116,19 @@ async function still(page, pageName, shot, dpr) {
 			let ctx;
 			try {
 				if (shot.video && stillsOnly) continue;
+				if (shot.from) {
+					if (stillsOnly && rawOnly) continue; // a re-shoot against a release has nothing to compare
+					await recrop(pageName, shot);
+					const r = await annotateShot(pageName, shot);
+					console.log(`ok ${pageName}/${shot.id}: re-cropped from ${shot.from}, ${r.W}×${r.H}, ${Math.round(r.bytes / 1024)} KB\n   ${r.snippet}`);
+					place(pageName, spec, shot, r.file, r.snippet);
+					continue;
+				}
+				browser ||= await launch();
 				if (shot.video) {
 					const out = await recordLoop(browser, pageName, { ...shot, page: pageName });
 					console.log(`ok ${pageName}/${shot.id}: loop ${out.map((o) => `${path.basename(o.file)} ${Math.round(o.bytes / 1024)} KB`).join(', ')}\n${out.snippet}`);
+					place(pageName, spec, shot, out[0].file, out.snippet);
 					continue;
 				}
 				const opened = await openApp(browser, { device: shot.device, dpr, theme: shot.theme, storage: shot.storage });
@@ -97,6 +139,7 @@ async function still(page, pageName, shot, dpr) {
 				if (!rawOnly) {
 					const r = await annotateShot(pageName, shot);
 					console.log(`ok ${pageName}/${shot.id}: ${r.W}×${r.H}, ${Math.round(r.bytes / 1024)} KB (${Math.round((Date.now() - t0) / 1000)} s)\n   ${r.snippet}`);
+					place(pageName, spec, shot, r.file, r.snippet);
 				} else console.log(`ok ${pageName}/${shot.id}: raw only`);
 			} catch (e) {
 				bad++;
@@ -106,7 +149,7 @@ async function still(page, pageName, shot, dpr) {
 			}
 		}
 	}
-	await browser.close();
+	await browser?.close();
 	console.log(bad ? `${bad} shot(s) failed` : 'all shots taken');
 	process.exit(bad ? 1 : 0);
 })();

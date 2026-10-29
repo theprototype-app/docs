@@ -31,6 +31,9 @@ async function grey(file) {
 	for (const page of fs.readdirSync(gitRaw)) {
 		for (const f of fs.readdirSync(path.join(gitRaw, page)).filter((x) => x.endsWith('.webp'))) {
 			const old = path.join(gitRaw, page, f), now = path.join(fresh, page, f);
+			// a shot re-cropped from an older capture (`from:` in its spec) is not re-shot against a release
+			const metaFile = path.join(gitRaw, page, f.replace(/(--[\w-]+)?\.webp$/, '.json'));
+			if (fs.existsSync(metaFile) && JSON.parse(fs.readFileSync(metaFile, 'utf8')).from) continue;
 			n++;
 			if (!fs.existsSync(now)) { console.log(`MISSING ${page}/${f}: not re-shot (spec removed, or the shot failed)`); flagged.push([old, null, page + '/' + f]); continue; }
 			const [mo, mn] = [await sharp(old).metadata(), await sharp(now).metadata()];
