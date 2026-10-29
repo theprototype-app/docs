@@ -14,7 +14,7 @@
         <link rel="prev" href="../assistant/">
       
       
-        <link rel="next" href="../providers/">
+        <link rel="next" href="../claude-connector/">
       
       
       <link rel="icon" href="../../logo.svg">
@@ -5481,6 +5481,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../claude-connector/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use theprototype from claude.ai and voice
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../providers/" class="md-nav__link">
         
   
@@ -5814,6 +5835,11 @@
 <a href="https://modelcontextprotocol.io">MCP</a> — into your session and build with it. Hand it a link,
 it joins like any other peer, and you watch the scene grow live. Everything it does is
 replicated to everyone and undoable, exactly like a person's edits.</p>
+<div class="admonition tip">
+<p class="admonition-title">Talking to Claude in claude.ai or the Claude app?</p>
+<p>Use the <a href="../claude-connector/">Claude connector</a> instead: add it once, press <strong>Connect Claude</strong> in
+your tab, and build by chat or voice — no link to paste.</p>
+</div>
 <div class="admonition info">
 <p class="admonition-title">New in 1.48</p>
 <p>Agents join from a link, see the scene through screenshots, and get the app's full tool set
@@ -5873,6 +5899,14 @@ batched <strong>create_objects</strong>. Then <strong>screenshot</strong> to che
 <tr>
 <td><code>wait_for_edit</code></td>
 <td>waits until someone else changes the scene</td>
+</tr>
+<tr>
+<td><code>describe_node_types</code></td>
+<td>what a flow node type takes and gives — input and output names with their types, params with defaults, one line on what it does — so edges are wired right the first time</td>
+</tr>
+<tr>
+<td><code>what_can_you_do</code></td>
+<td>a short, speakable summary of what the agent can do in this session (a viewer hears that it can look but not build)</td>
 </tr>
 <tr>
 <td><code>install_modules</code></td>
