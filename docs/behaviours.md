@@ -75,7 +75,7 @@ is won. (Adapted from `static/behaviours/waves-spawner.js` in the core repo; its
 |---|---|
 | `params` | Numbers you want to tune: a literal (`waves: 5`) or `{value, min, max, step, unit}`. Read as `this.params.waves`. Each one becomes a knob in the node view. |
 | `state` | Plain JSON the game keeps — every peer can read it. |
-| `on` | Event handlers: `start` (once per session), `load` (1.23: once on every peer, read-only), every kit event (`go`, `won`, `lost`, `died`, `damaged`, `spawned`, `emptied`, `scored`, `collected`, `stuck`, `grabRefused`…, or the full `'piece.event'` name), and `grabRequest` — the grab veto, see below. |
+| `on` | Event handlers: `start` (once per session), `load` (1.23: once on every peer, read-only; since 1.48.1 a joiner runs it once the host's scene has arrived, and editing the behaviour releases what its last `load` registered), every kit event (`go`, `won`, `lost`, `died`, `damaged`, `spawned`, `emptied`, `scored`, `collected`, `stuck`, `grabRefused`…, or the full `'piece.event'` name), and `grabRequest` — the grab veto, see below. |
 | `inputs` / `outputs` | (1.23, optional) Sockets on the node: event inputs that run the handler of the same name, and outputs that carry a state field or an event fired by `this.emit(name)`. |
 | methods | Any other function in the file (`startWave` above), called as `this.startWave(…)`. |
 
