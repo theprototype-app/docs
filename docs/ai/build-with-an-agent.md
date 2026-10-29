@@ -5,6 +5,10 @@ You can invite an AI agent — Claude Code, Claude Desktop, or any tool that spe
 it joins like any other peer, and you watch the scene grow live. Everything it does is
 replicated to everyone and undoable, exactly like a person's edits.
 
+!!! tip "Talking to Claude in claude.ai or the Claude app?"
+    Use the [Claude connector](claude-connector.md) instead: add it once, press **Connect Claude** in
+    your tab, and build by chat or voice — no link to paste.
+
 !!! info "New in 1.48"
     Agents join from a link, see the scene through screenshots, and get the app's full tool set
     (objects, flow nodes, physics, and mesh generation through *your* provider).
