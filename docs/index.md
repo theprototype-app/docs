@@ -42,6 +42,14 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.51 — characters and motion.** Any rigged model is a character, and any clip plays on any humanoid. Clips are small
+`.tpanim` files of their own (VRM Animation inside), so they reach your peers once and the model never changes. Free CC0
+packs bring 10 characters and 87 motions; **VRM** avatars arrive with spring bones and expressions. The one-click
+**Locomotion preset** makes a character walk, run and jump under the Player controller; trim, split, join, *In place* and
+*Loop it* make clips game-ready. **Skeleton…** fixes bones and weights, **Download…** gives you a GLB with every clip for
+Blender, Unity, Unreal or Godot, and licences that ask for something warn you before you share
+([Characters and motion](characters-and-motion.md)).
+
 **1.50 — talk to your agent.** The AI assistant window lists the AI agents in your session next to your own assistant:
 pick one and chat, and everyone sees the conversation, the replies as they stream in and every step between them. Claude
 Code listens after one sentence in its terminal (*"listen to my theprototype session"*), and what you type there shows

@@ -38,6 +38,7 @@ nav:
     - Shader Nodes: shader-nodes.md
     - Scene Look (Post-processing): post-processing.md
     - Animation: animation.md
+    - Characters and motion: characters-and-motion.md
     - Timeline (Cutscenes): timeline.md
     - Physics & Simulation: physics.md
     - Colliders: colliders.md
