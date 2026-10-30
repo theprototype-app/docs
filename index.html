@@ -5446,6 +5446,69 @@
   
   
     <li class="md-nav__item">
+      <a href="ai/talk-to-your-agent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Talk to your agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ai/img2threejs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recipe: better models with img2threejs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ai/pixling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recipe: pixel art with Pixling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ai/claude-connector/" class="md-nav__link">
         
   
@@ -5799,6 +5862,15 @@ on a phone that gives the scene the whole height of the screen.</p>
 <a href="https://github.com/theprototype-app/core">github.com/theprototype-app/core</a> (also <strong>Settings ▸ About ▸ Source Code</strong>),
 with a contributing guide and an <code>llms.txt</code> for coding agents.</p>
 <h2 id="whats-new">What's new</h2>
+<p><strong>1.50 — talk to your agent.</strong> The AI assistant window lists the AI agents in your session next to your own assistant:
+pick one and chat, and everyone sees the conversation, the replies as they stream in and every step between them. Claude
+Code listens after one sentence in its terminal (<em>"listen to my theprototype session"</em>), and what you type there shows
+"via terminal". <strong>Stop</strong> cancels what it is doing, the host can mute it, and viewers can ask but it will not change the
+scene for them. Send it <strong>pictures</strong> — shrunk and stripped of location data on your device — and agents can bring in GLB
+models (<code>import_model</code>) and images, sprite sheets and clips (<code>import_file</code>) from their own machine. Every chat is a
+<code>.tpchat</code> file in Explorer ▸ Scene ▸ chats, saved with the scene and private unless you include it when publishing. In VR
+the AI panel talks to the same agent (<a href="ai/talk-to-your-agent/">Talk to your agent</a>; recipes:
+<a href="ai/img2threejs/">img2threejs</a>, <a href="ai/pixling/">Pixling</a>).</p>
 <p><strong>1.48.1 — fixes for AI agents and game logic.</strong> Reloading the page while joined takes you straight back into the
 session, with no new approval. A deleted object's logic stops (undo brings it back), a game round keeps its referee
 when someone joins, and a shared <a href="nodes/setvariable/">Set Variable</a> changes once per event in multiplayer. Agents
@@ -6316,7 +6388,7 @@ for your machine <a href="performance/">reduces quality or pauses instead of fre
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    2026-10-29
+    2026-10-30
   </span>
 
     
