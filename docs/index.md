@@ -42,6 +42,16 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.50 — talk to your agent.** The AI assistant window lists the AI agents in your session next to your own assistant:
+pick one and chat, and everyone sees the conversation, the replies as they stream in and every step between them. Claude
+Code listens after one sentence in its terminal (*"listen to my theprototype session"*), and what you type there shows
+"via terminal". **Stop** cancels what it is doing, the host can mute it, and viewers can ask but it will not change the
+scene for them. Send it **pictures** — shrunk and stripped of location data on your device — and agents can bring in GLB
+models (`import_model`) and images, sprite sheets and clips (`import_file`) from their own machine. Every chat is a
+`.tpchat` file in Explorer ▸ Scene ▸ chats, saved with the scene and private unless you include it when publishing. In VR
+the AI panel talks to the same agent ([Talk to your agent](ai/talk-to-your-agent.md); recipes:
+[img2threejs](ai/img2threejs.md), [Pixling](ai/pixling.md)).
+
 **1.48.1 — fixes for AI agents and game logic.** Reloading the page while joined takes you straight back into the
 session, with no new approval. A deleted object's logic stops (undo brings it back), a game round keeps its referee
 when someone joins, and a shared [Set Variable](nodes/setvariable.md) changes once per event in multiplayer. Agents
