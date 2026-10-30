@@ -13,6 +13,10 @@ replicated to everyone and undoable, exactly like a person's edits.
     Agents join from a link, see the scene through screenshots, and get the app's full tool set
     (objects, flow nodes, physics, and mesh generation through *your* provider).
 
+!!! tip "New in 1.50: talk to it from the app"
+    Chat with the agent in the AI assistant window, send it pictures, and let it import models and files from its own
+    machine — see [Talk to your agent](talk-to-your-agent.md).
+
 ## For you, the person in the session
 
 1. **Give the agent a way in.**

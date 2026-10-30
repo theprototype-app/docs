@@ -222,6 +222,9 @@ nav:
   - AI:
     - Assistant: ai/assistant.md
     - Build with an AI agent: ai/build-with-an-agent.md
+    - Talk to your agent: ai/talk-to-your-agent.md
+    - "Recipe: better models with img2threejs": ai/img2threejs.md
+    - "Recipe: pixel art with Pixling": ai/pixling.md
     - Use theprototype from claude.ai and voice: ai/claude-connector.md
     - Providers: ai/providers.md
     - Local & Small Models: ai/local-models.md
