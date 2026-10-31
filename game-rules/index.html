@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Game Rules on the Main Graph", "url": "https://docs.theprototype.app/game-rules/", "description": "Every game rebuilt in 1.23 has one readable script that is its rules, sitting on the game's Main graph. Open the game, open the node editor, and the whole game is in front of you: the rules in the…", "dateModified": "2026-10-05"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Game Rules on the Main Graph", "url": "https://docs.theprototype.app/game-rules/", "description": "Every game rebuilt in 1.23 has one readable script that is its rules, sitting on the game's Main graph. Open the game, open the node editor, and the whole game is in front of you: the rules in the…", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/game-rules/mini-golf.webp", "caption": "Part of Mini Golf's Main graph at full size."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/game-rules/football.webp", "caption": "Part of Football's Main graph at full size."}]}</script>
 </head>
   
   
@@ -5901,7 +5901,12 @@ the middle, wired to the buttons, the HUD, the sounds and the kit around it. Cha
 code and press <kbd>Ctrl</kbd>+<kbd>S</kbd>, and the game plays by your rules on every player's screen.</p>
 <p>These games ship this way: <strong>Mini Golf</strong>, <strong>Football</strong>, <strong>Dungeon Realms</strong>, <strong>The Alchemist's Escape</strong>, <strong>Sky Run</strong>,
 <strong>Target Toss</strong> and <strong>Marble Maze</strong> (see <a href="../games/">The Games tab</a>).</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/game-rules/mini-golf.png" data-desc-position="bottom"><img alt="Mini Golf's Main graph: the read-me note, the buttons, the Mini Golf rules node with its state and moments, the groups around it and the engine's Code link" src="../img/game-rules/mini-golf.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/game-rules/mini-golf.webp" data-desc-position="bottom"><img alt="Part of Mini Golf's Main graph at full size: the rules node's outputs, such as stroke, outOfBounds and holeSunk, wired to sounds and bursts, with the Code link to the engine below." class="shot fade-l fade-r fade-t fade-b" height="560" loading="lazy" src="../img/game-rules/mini-golf.webp" width="688"></a></p>
+<figcaption>
+<p>Part of Mini Golf's Main graph at full size.</p>
+</figcaption>
+</figure>
 <h2 id="where-it-is">Where it is</h2>
 <p>Open a game from the <strong>Games</strong> tab, then open the <strong>Node editor</strong> (<kbd>N</kbd>). <strong>Main</strong> is the first entry under
 <strong>Flows</strong>. The blue note <em>"… — read me first"</em> says where to start.</p>
@@ -5968,7 +5973,12 @@ code and press <kbd>Ctrl</kbd>+<kbd>S</kbd>, and the game plays by your rules on
 </tbody>
 </table>
 <p>A knob on the rules node rewrites the number in the code itself, so the code and the panel always agree.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/game-rules/football.png" data-desc-position="bottom"><img alt="Football's Main graph: the Match Rules settings node, the Football rules behaviour, and the groups for the nets, buttons and lamps" src="../img/game-rules/football.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/game-rules/football.webp" data-desc-position="bottom"><img alt="Part of Football's Main graph at full size: the Match Rules settings node, the Football rules behaviour, and the Code link to the engine." class="shot fade-l fade-r fade-t fade-b" height="560" loading="lazy" src="../img/game-rules/football.webp" width="688"></a></p>
+<figcaption>
+<p>Part of Football's Main graph at full size.</p>
+</figcaption>
+</figure>
 <h2 id="change-the-rules-in-code">Change the rules in code</h2>
 <p>Double-click the rules node (or right-click ▸ <strong>Open code</strong>). The <a href="../code-workspace/">code workspace</a> opens it; edit it
 and press <kbd>Ctrl</kbd>+<kbd>S</kbd>. The game reloads your rules on every player's screen, and the hole, match or
@@ -6059,7 +6069,7 @@ kit and engine calls it makes, and the moments it emits.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-05
+    2026-10-31
   </span>
 
     

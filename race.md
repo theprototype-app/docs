@@ -5,8 +5,8 @@ across the line after every lap wins; everyone else gets 30 seconds to finish. I
 
 **Templates ▸ Games ▸ Race.** Race is built into the app — it needs no module.
 
-![The Race start screen: click a car, then Start](https://docs.theprototype.app/img/race/menu.png)
-
+![The Race start screen: click a car, then Start](https://docs.theprototype.app/img/race/menu.webp)
+*Figure: The Race start screen.*
 ## How to play
 
 1. Press **▶ Play** (the simulation starts by itself).
@@ -23,8 +23,8 @@ across the line after every lap wins; everyone else gets 30 seconds to finish. I
 The HUD shows your lap, the race clock, the current lap time, your position and your best lap. The results screen lists
 everyone's laps; your best race and best lap are saved on this device.
 
-![Lap 1 of 3: the countdown has just ended](https://docs.theprototype.app/img/race/start.png)
-
+![Lap 1 of 3: the countdown has just ended](https://docs.theprototype.app/img/race/start.webp)
+*Figure: Lap 1 of 3: the countdown has just ended.*
 !!! note "A lap only counts when you have driven all of it"
     Cutting across the infield, or reversing back and forth over the line, counts nothing: the game follows your
     progress along the road, not the line alone.
@@ -41,8 +41,8 @@ Race plays on a touch screen: once you are in a car, the [touch controls](https:
 The usual **Settings ▸ Touch controls** apply (visibility, haptics), and you can move the pedals from the pause menu ▸
 **Touch controls**. The pedals are on / off, like keys, so the throttle is not analogue on a phone.
 
-![Race on a phone: the steering stick bottom left, Reset, Brake and Gas bottom right](https://docs.theprototype.app/img/race/phone-pedals.png)
-
+![Race on a phone: the steering stick bottom left, Reset, Brake and Gas bottom right](https://docs.theprototype.app/img/race/phone-pedals.webp)
+*Figure: Race on a phone.*
 ## In VR
 
 In a headset you sit **in** the car. Your view rides with it, turning with the car but never tilting the horizon, and
@@ -57,8 +57,8 @@ near you, none far away. That brings the start line from 142 to 89 draw calls an
 the Quest budget. If the headset cannot hold its frame rate, [adaptive quality](https://docs.theprototype.app/performance.md#the-quality-governor)
 still turns shadows off.
 
-![The view from the driver's seat in a headset](https://docs.theprototype.app/img/race/vr-seat.png)
-
+![The view from the driver's seat in a headset](https://docs.theprototype.app/img/race/vr-seat.webp)
+*Figure: The view from the driver's seat in a headset.*
 ## Make it yours
 
 Everything the race runs on is on the **Main graph** (node editor, <kbd>N</kbd> — see [Main graph](https://docs.theprototype.app/main-graph.md)):

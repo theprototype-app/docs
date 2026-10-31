@@ -5,8 +5,8 @@ water it is poured into. **Flow paths** carry it along rivers, chutes and pipes,
 leaves and boats along the current. For water volumes (pools, tanks, oceans) see [Water](https://docs.theprototype.app/water.md); for a glass box of
 particle fluid see [Fluid tank](https://docs.theprototype.app/simulation.md#fluid-tank).
 
-![A Fluid emitter pouring a stream into a puddle, with its properties open](https://docs.theprototype.app/img/fluids/fluid-emitter.png)
-
+![A Fluid emitter pouring a stream into a puddle, with its properties open](https://docs.theprototype.app/img/fluids/fluid-emitter.webp)
+*Figure: A Fluid emitter pouring a stream into a puddle.*
 ## Fluid emitter
 
 **Add ▸ Water ▸ Fluid** (right-click the viewport, or the **+** button). It pours from its spout, 1.6 m above where you
@@ -81,8 +81,8 @@ and a headset runs at most 1400 particles.
 head-race, which spills into a fountain basin; the basin overflows down a chute back into the pond, and leaves and boats
 ride along.
 
-![Water works: the scoop wheel, the head-race, the fountain basin and the chute back to the pond](https://docs.theprototype.app/img/fluids/water-works.png)
-
+![Water works: the scoop wheel, the head-race, the fountain basin and the chute back to the pond](https://docs.theprototype.app/img/fluids/water-works.webp)
+*Figure: Water works: the scoop wheel.*
 ## Limits
 
 - Particle water is simulated per player: it never travels over the network, only the settings do.

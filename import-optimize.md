@@ -53,8 +53,8 @@ The defaults for every new import, under **Settings ▸ Import ▸ Import defaul
 
 **Reset** puts the shipped defaults back.
 
-![Settings ▸ Import: Optimize big models automatically, the triangle and texture thresholds, max texture size, Compress textures (KTX2) and LOD levels](https://docs.theprototype.app/img/import-optimize/settings-import.png)
-
+![Settings ▸ Import: Optimize big models automatically, the triangle and texture thresholds, max texture size, Compress textures (KTX2) and LOD levels](https://docs.theprototype.app/img/import-optimize/settings-import.webp)
+*Figure: Settings ▸ Import.*
 ## Per file: Import settings and Reimport
 
 Select the **original** file in the [Explorer](https://docs.theprototype.app/explorer.md) and open its **Properties** (ⓘ): **Import settings** has

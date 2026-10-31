@@ -10,8 +10,8 @@ undoable, and they play in exported and published games.
     The [Animation](https://docs.theprototype.app/animation.md) editor keys **one object's** clips. The Timeline arranges whole clips, shots and
     sounds into a scene-wide sequence.
 
-![The Timeline docked under the viewport: Camera, Animation, Audio and Event tracks with a Cam A → Cam B shot, a Door clip, whoosh.wav and a boom event](https://docs.theprototype.app/img/timeline/tracks.png)
-
+![The Timeline docked under the viewport: Camera, Animation, Audio and Event tracks with a Cam A → Cam B shot, a Door clip, whoosh.wav and a boom event](https://docs.theprototype.app/img/timeline/tracks.webp)
+*Figure: The Timeline docked under the viewport.*
 ## Opening it
 
 - <kbd>Alt</kbd>+<kbd>T</kbd>, or the dock's **+** menu ▸ **Timeline**.
@@ -45,8 +45,8 @@ undoable, and they play in exported and published games.
 6. **Preview** with ▶ or <kbd>Space</kbd>. A preview is yours alone and does **not** fire graph events — events fire
    when the sequence plays in the game.
 
-![Scrubbing at 1.15 s: the viewport previews the shot through Cam A](https://docs.theprototype.app/img/timeline/scrub-shot.png)
-
+![Scrubbing at 1.15 s: the viewport previews the shot through Cam A](https://docs.theprototype.app/img/timeline/scrub-shot.webp)
+*Figure: Scrubbing at 1.15 s.*
 | Key | Does |
 |---|---|
 | <kbd>Space</kbd> | Play / pause the preview |
@@ -79,8 +79,8 @@ A track's **…** menu renames it, moves it up or down, or deletes it; its speak
 The Timeline is a tab of the bottom sheet (**More ▸ Timeline**). The controls wrap onto extra rows, and the tracks
 scroll under them.
 
-![The Timeline as a tab of the bottom sheet on a folded phone](https://docs.theprototype.app/img/timeline/phone-sheet.png)
-
+![The Timeline as a tab of the bottom sheet on a folded phone](https://docs.theprototype.app/img/timeline/phone-sheet.webp)
+*Figure: The Timeline as a tab of the bottom sheet on a folded phone.*
 ## Limits
 
 - One view at a time: a sequence's shots replace what that player looks through until it ends (or a later shot cuts
@@ -90,4 +90,5 @@ scroll under them.
 - A preview never fires graph events, so it cannot change the game state for one player only.
 - Scenes with sequences need 1.39 or later to show them; older versions open the scene without its sequences.
 
-![The Timeline in the light theme](https://docs.theprototype.app/img/timeline/tracks-light.png)
+![The Timeline in the light theme](https://docs.theprototype.app/img/timeline/tracks-light.webp)
+*Figure: The Timeline in the light theme.*

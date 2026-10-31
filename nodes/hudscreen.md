@@ -57,8 +57,8 @@ A pause screen:
    wired into a second HUD Screen set to `hide`.
 4. Press Play and tap <kbd>P</kbd>: the pause screen opens; **Resume** puts the game's own screen back.
 
-![A Key Press wired into a HUD Screen set to show, and a HUD Button wired into a HUD Screen set to hide](https://docs.theprototype.app/img/nodes/hudscreen.png)
-
+![A Key Press wired into a HUD Screen set to show, and a HUD Button wired into a HUD Screen set to hide](https://docs.theprototype.app/img/nodes-hudscreen/hudscreen.webp)
+*Figure: A Key Press wired into a HUD Screen set to show.*
 !!! tip
     Set the *Pause* screen's **input** to **menu** in the HUD editor, so the pointer is freed and the player can click
     **Resume**. To actually stop the round clock as well, wire the same Key Press into a

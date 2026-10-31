@@ -54,8 +54,8 @@ A toast says how many other copies use it and offers:
 | **Update, reset overrides** | each copy matches the prefab exactly |
 | **Undo** | puts the prefab's previous version back in your library |
 
-![After editing the Lamp prefab, a toast offers to update the other instance in the scene](https://docs.theprototype.app/img/prefabs/update-toast.png)
-
+![After editing the Lamp prefab, a toast offers to update the other instance in the scene](https://docs.theprototype.app/img/prefabs/update-toast.webp)
+*Figure: After editing the Lamp prefab.*
 Where each copy stands is always kept. The update is **one undo step** (<kbd>Ctrl</kbd>+<kbd>Z</kbd> puts every copy
 back) and everyone in the session sees it. Your peers do not need the prefab — only you do.
 
@@ -99,8 +99,8 @@ The Explorer's **Prefabs** tab can be sorted into folders and tagged.
 - **Filter** — the tag chips under the breadcrumb filter the tab, and pressed chips combine (*seat* + *wood*). The
   search box matches names and tags. Both reach into folders; **Clear** resets the filter.
 
-![The Prefabs tab filtered by the seat tag](https://docs.theprototype.app/img/prefabs/tag-filter.png)
-
+![The Prefabs tab filtered by the seat tag](https://docs.theprototype.app/img/prefabs/tag-filter.webp)
+*Figure: The Prefabs tab filtered by the seat tag.*
 Folders and tags are part of your own library, on this device, like the prefabs themselves.
 
 ## Exporting a prefab

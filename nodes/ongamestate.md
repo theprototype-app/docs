@@ -38,8 +38,8 @@ Keep each player's best score when a game ends:
 4. Every time the game reaches `over`, each player's device keeps the higher of its saved best
    and the final score.
 
-![On Game State (over) pulses a Store Value whose value comes from Get Variable score](https://docs.theprototype.app/img/nodes/ongamestate.png)
-
+![On Game State (over) pulses a Store Value whose value comes from Get Variable score](https://docs.theprototype.app/img/nodes-ongamestate/ongamestate.webp)
+*Figure: On Game State (over) pulses a Store Value whose value comes from Get Variable score.*
 !!! tip
     Wired into a number input, On Game State reads 1 for the moment after the change and 0
     otherwise, just like [On Click](https://docs.theprototype.app/nodes/onclick.md).

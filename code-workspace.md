@@ -4,8 +4,8 @@ The code workspace is one place for every piece of code in a scene: a [Script](h
 [behaviour](https://docs.theprototype.app/behaviours.md), a `.js` script file from your Library, a module's own source (read-only), and the flow graph
 itself as JSON. Each source is a **tab**, and your edits stay in the tab until you save.
 
-![The code workspace docked beside the Explorer and the Node editor, with a Script node's code open](https://docs.theprototype.app/img/code-workspace/script-tab.png)
-
+![The code workspace docked beside the Explorer and the Node editor, with a Script node's code open](https://docs.theprototype.app/img/code-workspace/script-tab.webp)
+*Figure: The code workspace docked beside the Explorer and the Node editor.*
 ## Where it is
 
 It opens by itself when you ask for code:
@@ -34,8 +34,8 @@ Saving checks the code first. If it does not parse, **nothing is applied**: the 
 the line (click it to jump there), and every node the code feeds shows an amber *edit not applied* badge while it keeps
 running the last good version.
 
-![A save refused: the banner names the line, and the nodes keep the last good version](https://docs.theprototype.app/img/code-workspace/parse-error.png)
-
+![A save refused: the banner names the line, and the nodes keep the last good version](https://docs.theprototype.app/img/code-workspace/parse-error.webp)
+*Figure: A save refused.*
 When the code is good, everything that runs it reloads — on every player's screen.
 
 **Unsaved changes are guarded.** Closing a tab with unsaved edits asks first. Closing the whole workspace with unsaved
@@ -51,8 +51,8 @@ Since 1.42, when two or more people in a session open the same code — a Script
 or a [text document](#text-documents) — they type into **one shared text**. Everyone sees the others' typing as it
 happens, and two people typing in the same line both keep what they typed: nothing is overwritten.
 
-![Editing together: the other person's caret and selection in their colour, and the "Editing with you" strip](https://docs.theprototype.app/img/code-workspace/editing-together.png)
-
+![Editing together: another person's caret and selection in their colour, labelled Peer 8c21, line 2.](https://docs.theprototype.app/img/code-workspace/editing-together.webp)
+*Figure: Editing together.*
 - The other person's **caret** and **selection** show in their colour (hover the caret for their name). The strip under
   the toolbar, **Editing with you**, lists everyone in the file and the line they are on; a screen reader reads it as
   "Ana is on line 4, 12 characters selected".
@@ -77,8 +77,8 @@ its preview, double-click it, or right-click ▸ **Edit in the Code tab** — an
 second monitor and keep the 3D view full-size in the app. Desktop browsers only (hidden on phones, touch screens and in
 VR).
 
-![The code workspace in its own window, with Dock back in its header](https://docs.theprototype.app/img/code-workspace/pop-out-window.png)
-
+![The code workspace in its own window, with Dock back in its header](https://docs.theprototype.app/img/code-workspace/pop-out-window.webp)
+*Figure: The code workspace in its own window.*
 - Everything stays live both ways: typing, <kbd>Ctrl</kbd>+<kbd>S</kbd> applying the script to the scene, the error
   banner and Problems, the sidebars, quick open, menus — and [editing together](#editing-together).
 - While the window is open the app's own Code panel steps aside; opening code anywhere in the app (**Edit code** on a
@@ -92,8 +92,8 @@ VR).
 
 ## Sidebars
 
-![The code workspace in 1.25: Open editors and the Project tree on the left, the tab strip, and the Outline on the right](https://docs.theprototype.app/img/code-workspace/sidebars.png)
-
+![The code workspace: Open editors and the Project tree on the left, with the tab strip above the code.](https://docs.theprototype.app/img/code-workspace/sidebars.webp)
+*Figure: The code workspace.*
 ### Left: Open editors and Project
 
 <kbd>Ctrl</kbd>+<kbd>B</kbd> shows or hides the left sidebar. (Outside the code workspace the same keys, and
@@ -116,8 +116,8 @@ VR).
 Since 1.46 the **Files** group of the Project tree is a real file tree: what you make here are ordinary
 [Explorer](https://docs.theprototype.app/explorer.md) files, so they follow the Explorer's sharing rules and everyone in the session sees them.
 
-![The Project tree's menu on a script: Rename, Move to, Cut, Delete, New file, New folder, Show in Explorer](https://docs.theprototype.app/img/code-workspace/files-menu.png)
-
+![The Project tree's menu on a script: Rename, Move to, Cut, Delete, New file, New folder, Show in Explorer](https://docs.theprototype.app/img/code-workspace/files-menu.webp)
+*Figure: The Project tree's menu on a script.*
 - **New file** (the page-with-plus button in the Project header, or the right-click menu) offers **Script** (a
   behaviour with the lifecycle functions ready to fill in), **Note** (`.md`) and **JSON**. A new script opens in a
   tab straight away.
@@ -178,8 +178,8 @@ return {};                                                  // anything left out
 - **Engine source** (toolbar) shows the built-in walker code it steers, read-only.
 - With no code saved, the Player behaves exactly as before.
 
-![Player: walk open in the code workspace, with Engine source in the toolbar and the Player code row in the Project tree](https://docs.theprototype.app/img/code-workspace/player-code.png)
-
+![Player: walk open in the code workspace, with Engine source in the toolbar and the Player code row in the Project tree](https://docs.theprototype.app/img/code-workspace/player-code.webp)
+*Figure: Player: walk open in the code workspace.*
 ## Code and files
 
 - **Save as file** turns a node's inline code into a script file in your Explorer and binds the node to it.

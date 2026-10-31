@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Publish, Play, Remix", "url": "https://docs.theprototype.app/community/", "description": "Publish the scene you are looking at, hand somebody a link, and they can play it in their browser, open it in the editor, or remix it into something of their own. Contests give you a reason to…", "dateModified": "2026-10-25"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Publish, Play, Remix", "url": "https://docs.theprototype.app/community/", "description": "Publish the scene you are looking at, hand somebody a link, and they can play it in their browser, open it in the editor, or remix it into something of their own. Contests give you a reason to…", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/community/play-link-heart.webp", "caption": "The heart on a play link's start card."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/community/pause-menu-heart.webp", "caption": "The heart in a published game's pause menu."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/community/your-games.webp", "caption": "Your games: visits over 30 days."}]}</script>
 </head>
   
   
@@ -6348,8 +6348,18 @@ Only <strong>public</strong> scenes embed: an unlisted scene's link answers <em>
 the start card of a <strong>play link</strong> (<code>/p/‹id›</code>) and in a published game's <strong>pause menu</strong> (<kbd>Esc</kbd>, top right).
 Press it and the count updates at once (and goes back if the like could not be saved). Signed out, it asks you to sign in
 (profile menu, top right). It is the same like as the ♥ on the scene's page — one like per person per scene.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/community/play-link-heart.png" data-desc-position="bottom"><img alt="The heart on a play link's start card, beside Play" src="../img/community/play-link-heart.png"></a></p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/community/pause-menu-heart.png" data-desc-position="bottom"><img alt="The heart in a published game's pause menu" src="../img/community/pause-menu-heart.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/community/play-link-heart.webp" data-desc-position="bottom"><img alt="The heart on a play link's start card, beside Play" class="shot fade-l fade-r fade-t fade-b" height="450" loading="lazy" src="../img/community/play-link-heart.webp" width="688"></a></p>
+<figcaption>
+<p>The heart on a play link's start card.</p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/community/pause-menu-heart.webp" data-desc-position="bottom"><img alt="The heart in a published game's pause menu" class="shot fade-l fade-r fade-t fade-b" height="470" loading="lazy" src="../img/community/pause-menu-heart.webp" width="688"></a></p>
+<figcaption>
+<p>The heart in a published game's pause menu.</p>
+</figcaption>
+</figure>
 <h3 id="mine">Mine</h3>
 <p>While you are signed in, the <strong>Mine</strong> chip in <strong>Templates ▸ Community</strong> (and on theprototype.app/community) shows only
 your own published scenes — unlisted ones too. A scene staff hid shows <em>Hidden by moderation: ‹reason›</em>, so you know why.</p>
@@ -6358,7 +6368,12 @@ your own published scenes — unlisted ones too. A scene staff hid shows <em>Hid
 play links, embeds and exported builds — for the last <strong>7 days</strong>, <strong>30 days</strong> or <strong>all time</strong>, split by source (play
 link, itch.io, static host, embed). The <a href="#publish">Publish</a> dialog shows the same count for the game you are publishing
 or updating.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/community/your-games.png" data-desc-position="bottom"><img alt="Your games: visits over 30 days, one row per game, with a moderation notice" src="../img/community/your-games.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/community/your-games.webp" data-desc-position="bottom"><img alt="Your games: visits over 30 days, one row per game, with a moderation notice" class="shot fade-l fade-r fade-t" height="680" loading="lazy" src="../img/community/your-games.webp" width="688"></a></p>
+<figcaption>
+<p>Your games: visits over 30 days.</p>
+</figcaption>
+</figure>
 <h3 id="one-game-one-count">One game, one count</h3>
 <p>Every scene gets a permanent <strong>game id</strong> the first time you save, export or publish it. Re-exporting, a new itch.io build
 and the play link all count toward the <strong>same game</strong> — including visits from before you published it. A <strong>copy</strong>
@@ -6459,7 +6474,7 @@ self-hosted or local build shows no such section.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-25
+    2026-10-31
   </span>
 
     

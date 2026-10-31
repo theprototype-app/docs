@@ -3672,8 +3672,8 @@ A session downloads as a **`.tpscene`**, a whole project as a **`.tp`**, and bot
 New in 1.31: drag any object — a pack item, one of your Library models, a prefab — from **Explorer ▸ Packs** or
 **Explorer ▸ Library** onto the viewport, and a **ghost** shows where it will land and how big it is before you let go.
 
-![Dragging the Duck from the starter pack: a box ghost with its size beside the pointer](https://docs.theprototype.app/img/explorer/place-box-ghost.png)
-
+![Dragging the Duck from the starter pack: a box ghost with its size beside the pointer](https://docs.theprototype.app/img/explorer/place-box-ghost.webp)
+*Figure: Dragging the Duck from the starter pack.*
 - **Drag.** Press on a card and drag it over the 3D view. The ghost sits **on** whatever is under the pointer — the
   floor, a table, the side of a wall — and follows the grid when [grid snapping](https://docs.theprototype.app/snapping.md) is on; hold
   <kbd>Shift</kbd> to move it freely. "Align to surface" (snapping options) tilts it onto slopes and walls.
@@ -3701,8 +3701,8 @@ Beside the pointer you see the item's **width × depth × height in metres**, it
 - Hovering the viewport during a drag **starts the download**, so the drop is quick. A placed pack item shows your
   [Placeholder Style](https://docs.theprototype.app/loading.md) until its file arrives. The ghost is yours alone — nobody else sees it.
 
-![Once loaded, the ghost is a see-through copy of the real model](https://docs.theprototype.app/img/explorer/place-model-ghost.png)
-
+![Once loaded, the ghost is a see-through copy of the real model](https://docs.theprototype.app/img/explorer/place-model-ghost.webp)
+*Figure: Once loaded, the ghost is a see-through copy of the real model.*
 ### The Placement preview setting
 
 **Settings ▸ Scene ▸ Performance** (this device only):
@@ -3713,8 +3713,8 @@ Beside the pointer you see the item's **width × depth × height in metres**, it
   (50,000 on a computer, 15,000 on a phone or headset).
 - **Show dimensions** — the size, triangles and download size beside the pointer.
 
-![Settings ▸ Scene ▸ Performance ▸ Placement preview](https://docs.theprototype.app/img/explorer/place-settings.png)
-
+![Settings ▸ Scene ▸ Performance ▸ Placement preview](https://docs.theprototype.app/img/explorer/place-settings.webp)
+*Figure: Settings ▸ Scene ▸ Performance ▸ Placement preview.*
 ### Downloaded pack items and Delete cache
 
 Explorer ▸ Packs marks the items this device has already downloaded with a **✓** (its size in the tooltip), and the
@@ -3723,8 +3723,8 @@ frees its download — the item **stays in the pack** and downloads again the ne
 ▸ **Delete downloads** frees the whole pack's, and [Storage](#storage) lists **Pack downloads** per pack with **Clear
 all pack downloads**.
 
-![A pack item's menu: Delete cache with its size](https://docs.theprototype.app/img/explorer/place-delete-cache.png)
-
+![A pack item's menu: Delete cache with its size](https://docs.theprototype.app/img/explorer/place-delete-cache.webp)
+*Figure: A pack item's menu.*
 ### Images, audio and text
 
 - **Images** dropped onto an object become its **texture**. A big photo is scaled down to 1024 px on its longest side
@@ -3795,8 +3795,8 @@ The defaults for every new import, under **Settings ▸ Import ▸ Import defaul
 
 **Reset** puts the shipped defaults back.
 
-![Settings ▸ Import: Optimize big models automatically, the triangle and texture thresholds, max texture size, Compress textures (KTX2) and LOD levels](https://docs.theprototype.app/img/import-optimize/settings-import.png)
-
+![Settings ▸ Import: Optimize big models automatically, the triangle and texture thresholds, max texture size, Compress textures (KTX2) and LOD levels](https://docs.theprototype.app/img/import-optimize/settings-import.webp)
+*Figure: Settings ▸ Import.*
 ## Per file: Import settings and Reimport
 
 Select the **original** file in the [Explorer](https://docs.theprototype.app/explorer.md) and open its **Properties** (ⓘ): **Import settings** has
@@ -3839,8 +3839,8 @@ credit for you.
 **dock** like Statistics or Chat (drag it onto the dock, or the dock's **+** ▸ Free assets). On a phone it opens as a
 bottom sheet.
 
-![The Asset Browser's Materials tab searching ambientCG for clay](https://docs.theprototype.app/img/free-assets/browser-materials.png)
-
+![The Asset Browser's Materials tab searching ambientCG for clay](https://docs.theprototype.app/img/free-assets/browser-materials.webp)
+*Figure: The Asset Browser's Materials tab searching ambientCG for clay.*
 ## Finding an asset
 
 - Pick a tab — **Models**, **HDRIs**, **Textures**, **Materials** — then **search** by name or tag and narrow by
@@ -3860,16 +3860,16 @@ bottom sheet.
   swatches); *Apply* also puts it on the selected objects. Colour and normal maps are kept; roughness and metalness
   come from their maps.
 
-![A CC0 material applied to a box, credited in the Inspector](https://docs.theprototype.app/img/free-assets/material-applied.png)
-
+![A CC0 material applied to a box, credited in the Inspector](https://docs.theprototype.app/img/free-assets/material-applied.webp)
+*Figure: A CC0 material applied to a box.*
 ## Credits
 
 Every download keeps its source — site, authors, licence (CC0) and a link. You see it in the Explorer's
 **Properties**, in the **Inspector** for a placed object or a CC0 material, and on the material swatch's tooltip. A
 model carries it inside the file, so a peer's copy — and the optimized copy the importer makes — has it too.
 
-![The Explorer's Properties naming a Poly Haven model's source](https://docs.theprototype.app/img/free-assets/explorer-credit.png)
-
+![The Explorer's Properties naming a Poly Haven model's source](https://docs.theprototype.app/img/free-assets/explorer-credit.webp)
+*Figure: The Explorer's Properties naming a Poly Haven model's source.*
 ## Offline and errors
 
 Lists you have opened are saved on this device (for a day), so the browser still shows them offline — a banner says
@@ -3886,7 +3886,8 @@ window says so in plain words and offers *Try again*.
   person's **From ‹name›** swatch row too: it arrives in the background a few seconds after they connect (or after you
   save it), and travels only once.
 
-![The Asset Browser as a bottom sheet on a folded phone](https://docs.theprototype.app/img/free-assets/phone.png)
+![The Asset Browser as a bottom sheet on a folded phone](https://docs.theprototype.app/img/free-assets/phone.webp)
+*Figure: The Asset Browser as a bottom sheet on a folded phone.*
 
 
 ---
@@ -4092,8 +4093,8 @@ settings** override them — see [Importing Big Models](https://docs.theprototyp
 **Configure Scene ▸ Level of detail ▸ LOD distance** moves every chain in the scene at once and is shared with everyone
 in it: above 1 keeps full detail further away, below 1 switches to the lighter levels sooner.
 
-![Configure Scene ▸ Level of detail: the LOD distance slider, shared with everyone in the scene](https://docs.theprototype.app/img/lod/lod-distance.png)
-
+![Configure Scene ▸ Level of detail: the LOD distance slider, shared with everyone in the scene](https://docs.theprototype.app/img/lod/lod-distance.webp)
+*Figure: Configure Scene ▸ Level of detail.*
 ## Pack items with LODs
 
 Pack items can ship their own LOD files (made offline by the pack tools). Placing one adds its LOD
@@ -4190,8 +4191,8 @@ A toast says how many other copies use it and offers:
 | **Update, reset overrides** | each copy matches the prefab exactly |
 | **Undo** | puts the prefab's previous version back in your library |
 
-![After editing the Lamp prefab, a toast offers to update the other instance in the scene](https://docs.theprototype.app/img/prefabs/update-toast.png)
-
+![After editing the Lamp prefab, a toast offers to update the other instance in the scene](https://docs.theprototype.app/img/prefabs/update-toast.webp)
+*Figure: After editing the Lamp prefab.*
 Where each copy stands is always kept. The update is **one undo step** (<kbd>Ctrl</kbd>+<kbd>Z</kbd> puts every copy
 back) and everyone in the session sees it. Your peers do not need the prefab — only you do.
 
@@ -4235,8 +4236,8 @@ The Explorer's **Prefabs** tab can be sorted into folders and tagged.
 - **Filter** — the tag chips under the breadcrumb filter the tab, and pressed chips combine (*seat* + *wood*). The
   search box matches names and tags. Both reach into folders; **Clear** resets the filter.
 
-![The Prefabs tab filtered by the seat tag](https://docs.theprototype.app/img/prefabs/tag-filter.png)
-
+![The Prefabs tab filtered by the seat tag](https://docs.theprototype.app/img/prefabs/tag-filter.webp)
+*Figure: The Prefabs tab filtered by the seat tag.*
 Folders and tags are part of your own library, on this device, like the prefabs themselves.
 
 ## Exporting a prefab
@@ -4270,8 +4271,8 @@ in your session sees your presets and can use them.
 **Where:** select an object and open its properties (double-click it, or right-click ▸ **Properties**). In the
 **Material** section, the **Presets** row sits at the top, above the material type.
 
-![The Presets row with Wood applied](https://docs.theprototype.app/img/materials/presets-wood.png)
-
+![The Presets row with Wood applied](https://docs.theprototype.app/img/materials/presets-wood.webp)
+*Figure: The Presets row with Wood applied.*
 ## Using presets
 
 - **Apply** — click a swatch. With [several objects selected](https://docs.theprototype.app/controls.md#editing-a-multi-selection) it applies to all
@@ -4285,8 +4286,8 @@ in your session sees your presets and can use them.
 - **A friend's presets** — when someone in the session has saved presets, they appear under **From ‹name›**. Click one
   to apply it; while editing (pencil), the copy button saves it into your own library.
 
-![Editing your presets: rename, download and delete on your own swatches](https://docs.theprototype.app/img/materials/presets-edit.png)
-
+![Editing your presets: rename, download and delete on your own swatches](https://docs.theprototype.app/img/materials/presets-edit.webp)
+*Figure: Editing your presets.*
 ## Fish scales and the look tier
 
 **Fish scales** is an iridescent look: a thin film over the surface shifts its colour with the viewing angle (the
@@ -4341,8 +4342,8 @@ Since 1.27 you can build rooms and houses from parametric pieces: walls with doo
 windows that open, and four kinds of stairs. Every piece is a set of numbers you can change at any time, and doors swing
 open for everyone in the session.
 
-![A wall with a door and two windows, two side walls and a spiral stair](https://docs.theprototype.app/img/architecture/house.png)
-
+![A wall with a door and two windows, two side walls and a spiral stair](https://docs.theprototype.app/img/architecture/house.webp)
+*Figure: A wall with a door and two windows.*
 ## Adding a piece
 
 Right-click the viewport ▸ **Add ▸ Architecture** (or type the name into the Add menu's search):
@@ -4366,8 +4367,8 @@ Each one lands 3 m in front of you. See [The first ring](https://docs.theprototy
 Select the piece and open its **Properties**: the **Geometry** section holds every number. Rows that do not apply are
 hidden — a wall with no doors has no *Door width* row.
 
-![Properties ▸ Geometry for a wall: Length, Height, Thickness, Doors, Door width and height, Windows, Win width and height, Sill height, Shift](https://docs.theprototype.app/img/architecture/wall-geometry.png)
-
+![Properties ▸ Geometry for a wall: Length, Height, Thickness, Doors, Door width and height, Windows, Win width and height, Sill height, Shift](https://docs.theprototype.app/img/architecture/wall-geometry.webp)
+*Figure: Properties ▸ Geometry for a wall.*
 ### Wall
 
 | Row | What it sets |
@@ -4431,8 +4432,8 @@ In **Interact** and **Play**, click a door to open or close it, or walk up to a 
 Casement windows open the same way. Every peer sees the same swing, and a player who joins later sees the door already
 open. In **Edit** a door always shows shut, so it is easy to place.
 
-![A door and a casement window open in Interact, with stairs visible through the doorway](https://docs.theprototype.app/img/architecture/door-open.png)
-
+![A door and a casement window open in Interact, with stairs visible through the doorway](https://docs.theprototype.app/img/architecture/door-open.webp)
+*Figure: A door and a casement window open in Interact.*
 ## Collisions
 
 - Walls and stairs collide with their exact shape: doorways stay open, and a walking player climbs steps up to 0.3 m
@@ -4590,8 +4591,8 @@ Since 1.28 the knife cuts along a **polyline**, not only a straight line:
 - While a cut is pending, the toolbox's **Knife options** show how many points you have placed, with **Back** and
   **Cut** buttons — the way to finish a cut on a touch screen.
 
-![A polyline knife cut across the top of a cube: two corners placed, the dashed last leg following the cursor, and Knife options showing 3 points with Back and Cut](https://docs.theprototype.app/img/mesh-editing/knife-polyline.png)
-
+![A polyline knife cut across the top of a cube: two corners placed, the dashed last leg following the cursor, and Knife options showing 3 points with Back and Cut](https://docs.theprototype.app/img/mesh-editing/knife-polyline.webp)
+*Figure: A polyline knife cut across the top of a cube.*
 A point within a few pixels of a corner of the face under it snaps onto that corner, and one within a pixel or two of an
 edge snaps onto the edge, so a cut does not leave needle-thin triangles. The whole polyline is **one undo step**, and
 your peers see the cut as it is committed.
@@ -4606,8 +4607,8 @@ your peers see the cut as it is committed.
 goes *into* the surface, a negative one grows outward. It works on an **open** surface or on a whole piece — a closed box
 becomes hollow. A patch of a closed mesh is refused: select the whole piece (**Shell**) or delete a face first.
 
-![A box made hollow with Solidify, thickness 0.1](https://docs.theprototype.app/img/mesh-editing/solidify.png)
-
+![A box made hollow with Solidify, thickness 0.1](https://docs.theprototype.app/img/mesh-editing/solidify.webp)
+*Figure: A box made hollow with Solidify.*
 Solidify uses averaged vertex normals, so sharp corners get slightly thinner walls.
 
 ### Bridge
@@ -4616,8 +4617,8 @@ Select **two** separate pieces and press Bridge. Their boundaries have to have t
 
 ## Edge tools
 
-![The Edges tab with Slide armed and its factor option](https://docs.theprototype.app/img/mesh-editing/edge-tools-slide.png)
-
+![The Edges tab with Slide armed and its factor option](https://docs.theprototype.app/img/mesh-editing/edge-tools-slide.webp)
+*Figure: The Edges tab with Slide armed and its factor option.*
 | Tool | Key | What it does |
 |---|---|---|
 | **Move** | | Seat the gizmo on the selected edges (X runs along the edge, Z out of the surface). The welded neighbours stretch with it. |
@@ -4647,8 +4648,8 @@ clean polygon; any other outline is fanned from its centre. Fill closes one rim 
 Since 1.24 an end where **four or more** faces meet is bevelled with a **mitered corner** — a small cap joining the
 chamfer to every face there — instead of being refused. (Before, each end needed exactly three faces.)
 
-![An octahedron edge bevelled in 4 segments, mitered where four faces meet](https://docs.theprototype.app/img/mesh-editing/mitered-bevel.png)
-
+![An octahedron edge bevelled in 4 segments, mitered where four faces meet](https://docs.theprototype.app/img/mesh-editing/mitered-bevel.webp)
+*Figure: An octahedron edge bevelled in 4 segments.*
 ## Vertex tools
 
 | Tool | Key | What it does |
@@ -4663,8 +4664,8 @@ chamfer to every face there — instead of being refused. (Before, each end need
 | **Delete** | | Remove every face touching the selected vertices. |
 | **Deselect** | | Clear the selection. |
 
-![The Vertices tab with Bevel armed: width, segments, Out / In and profile](https://docs.theprototype.app/img/mesh-editing/vertex-tools-bevel.png)
-
+![The Vertices tab with Bevel armed: width, segments, Out / In and profile](https://docs.theprototype.app/img/mesh-editing/vertex-tools-bevel.webp)
+*Figure: The Vertices tab with Bevel armed.*
 Vertices are drawn as dots sized in **screen** space, so they stay clickable whether you're zoomed into a cube or out of a whole terrain. The **dot size** slider multiplies that size, and turning the adaptive toggle off gives you a fixed world size instead.
 
 ## Bevel options
@@ -4696,8 +4697,8 @@ Combine two meshes into one. Select exactly **two** meshes (<kbd>Ctrl</kbd>+clic
 The first object takes the result and the second is removed (except in the *keep the cutter* variant). One
 <kbd>Ctrl</kbd>+<kbd>Z</kbd> restores both. Like every mesh edit, it is one undo step and reaches everyone in the session.
 
-![A cylinder subtracted from a box](https://docs.theprototype.app/img/mesh-editing/boolean-subtract.png)
-
+![A cylinder subtracted from a box](https://docs.theprototype.app/img/mesh-editing/boolean-subtract.webp)
+*Figure: A cylinder subtracted from a box.*
 !!! note "Limits"
     - The result uses the **first** object's first material.
     - The inputs should be closed meshes: a mesh with holes gives a result with holes (the toast counts them).
@@ -4768,8 +4769,8 @@ across the chosen axis — the same **X / Y / Z** buttons as Symmetrize — from
 - The side your edit changed wins; **keep + / −** only decides when the edit sits on the plane itself.
 - The edit and its mirror are **one undo step**.
 
-![Live symmetry on across X: one face selected on the left with the gizmo on it, and the Symmetry section's mirror, keep, Symmetrize and live symmetry controls](https://docs.theprototype.app/img/mesh-editing/live-symmetry.png)
-
+![Live symmetry on across X: one face selected on the left with the gizmo on it, and the Symmetry section's mirror, keep, Symmetrize and live symmetry controls](https://docs.theprototype.app/img/mesh-editing/live-symmetry.webp)
+*Figure: Live symmetry on across X.*
 Turning it on does not change the mesh. If the mesh is not symmetric yet, press **Symmetrize** first — a vertex with no
 twin moves alone.
 
@@ -5075,8 +5076,8 @@ and dropped onto the ground in one click. Since 1.39 the measurements you keep a
     person in the session sees it, it is saved with the scene and it undoes like any object. This replaces 1.38's
     pinned measurements, which only you could see and a reload cleared.
 
-![A chain of three measured segments with lengths, the angle between them and the total](https://docs.theprototype.app/img/measure-align/measure-chain.png)
-
+![A chain of three measured segments with lengths, the angle between them and the total](https://docs.theprototype.app/img/measure-align/measure-chain.webp)
+*Figure: A chain of three measured segments with lengths.*
 - **Click (or tap) points.** Each point **snaps** to the corner, edge or face under the pointer — a small orange dot
   shows where the next click will land, and a dashed line runs to it from the last point.
 - **Keep clicking to chain segments.** Every segment shows its length, every corner the **angle** between its two
@@ -5093,8 +5094,8 @@ the exact point under the pointer.
 A kept measurement appears in the [object list](https://docs.theprototype.app/controls.md#selection) with a ruler icon, named **Measurement**. Move,
 rename, hide, delete and undo it like any object.
 
-![Two kept measurements: a 2 m + 1 m chain along a box with its 90° corner and a 3 m total, and a chain of short 6 cm segments whose labels step aside](https://docs.theprototype.app/img/measure-align/measure-items.png)
-
+![Two kept measurements: a 2 m + 1 m chain along a box with its 90° corner and a 3 m total, and a chain of short 6 cm segments whose labels step aside](https://docs.theprototype.app/img/measure-align/measure-items.webp)
+*Figure: Two kept measurements.*
 - **Select** one by clicking its line (or its row in the object list). Properties shows a **Measurement** section with
   each segment's length, the angle at each joint and the total.
 - **Edit its points:** select it and press <kbd>Tab</kbd> (or Properties ▸ *Edit points*, or the object menu ▸ *Edit
@@ -5104,8 +5105,8 @@ rename, hide, delete and undo it like any object.
 - **Delete them all:** viewport menu ▸ **Delete measurements (N)** removes every measurement in the scene in one undo
   step.
 
-![Editing a measurement: the Edit measurement window says point 2 is picked up, the points are drawn in yellow and Properties shows the Measurement object](https://docs.theprototype.app/img/measure-align/measure-edit.png)
-
+![Editing a measurement: point 2 is picked up, the points are drawn in yellow and Properties shows the Measurement object.](https://docs.theprototype.app/img/measure-align/measure-edit.webp)
+*Figure: Editing a measurement.*
 **Labels do not pile up.** On short segments, the lengths, angles and total step aside; a label with no room left is
 not drawn. The Measure window and the Properties section still show every number.
 
@@ -5118,8 +5119,8 @@ not drawn. The Measure window and the Properties section still show every number
 **Where:** select two or more objects ▸ Properties ▸ **Arrange**; or right-click a selected object ▸ **Transform ▸**
 (*Drop to ground*, *Align ▸*, *Align to active ▸*, *Distribute ▸*).
 
-![The Properties Arrange section for three selected objects](https://docs.theprototype.app/img/measure-align/arrange.png)
-
+![The Properties Arrange section for three selected objects](https://docs.theprototype.app/img/measure-align/arrange.webp)
+*Figure: The Properties Arrange section for three selected objects.*
 | Control | What it does |
 |---|---|
 | **Align X / Y / Z — Min / Centre / Max** | Lines every object's lowest edge, centre or highest edge up on that axis. |
@@ -5284,8 +5285,8 @@ the 0–1 square with no overlaps.
    open it — no need to reopen the editor.
 2. Select a mesh, open the UV editor and pick **Unwrap ▸ Smart (xatlas)**.
 
-![A sphere unwrapped with Smart (xatlas): seams placed automatically, pieces packed without overlaps](https://docs.theprototype.app/img/uv-editor/smart-unwrap.png)
-
+![A sphere unwrapped with Smart (xatlas): seams placed automatically, pieces packed without overlaps](https://docs.theprototype.app/img/uv-editor/smart-unwrap.webp)
+*Figure: A sphere unwrapped with Smart (xatlas).*
 Like the built-in projections, it unwraps only the faces you picked in Edit Mesh if you picked any. It is one undo step,
 and your peers get the new mapping.
 
@@ -5369,8 +5370,8 @@ New in 1.32: the **Image editor** crops, rotates, flips, resizes and adjusts a p
 [Explorer](https://docs.theprototype.app/explorer.md) library. When you save, every texture made from that picture updates for everyone in the
 session.
 
-![The Image editor on a computer: the picture on the left, the Edit page with Rotate and flip, Crop, Resize and Adjust on the right](https://docs.theprototype.app/img/image-editor/editor-desktop.png)
-
+![The Image editor on a computer: the picture on the left, the Edit page with Rotate and flip, Crop, Resize and Adjust on the right](https://docs.theprototype.app/img/image-editor/editor-desktop.webp)
+*Figure: The Image editor on a computer.*
 ## Opening it
 
 - Right-click an image in the Explorer ▸ **Edit image…**
@@ -5396,8 +5397,8 @@ The sidebar on the right has two pages: **Edit** and **Versions**.
 - **Adjust**: **Brightness**, **Contrast** and **Saturation** sliders, applied live. **Reset adjustments** puts them
   back.
 
-![Cropping on a computer in the light theme: the crop box over the picture, with X, Y, W and H and Apply crop in the sidebar](https://docs.theprototype.app/img/image-editor/crop-desktop-light.png)
-
+![Cropping on a computer in the light theme: the crop box over the picture, with X, Y, W and H and Apply crop in the sidebar](https://docs.theprototype.app/img/image-editor/crop-desktop-light.webp)
+*Figure: Cropping on a computer in the light theme.*
 ## Saving
 
 - **Save** (<kbd>Ctrl</kbd>+<kbd>S</kbd>) writes over the same Explorer file: same name, same folder, shared with the
@@ -5413,8 +5414,8 @@ The sidebar on the right has two pages: **Edit** and **Versions**.
 The **Versions** page lists every saved state of this image with a thumbnail, date and size, and **Restore** on each.
 **Restore original** at the top goes back to the picture as it first came in.
 
-![The Versions page: Restore original at the top, the current edit and the original below it](https://docs.theprototype.app/img/image-editor/versions-desktop.png)
-
+![The Versions page: Restore original at the top, the current edit and the original below it](https://docs.theprototype.app/img/image-editor/versions-desktop.webp)
+*Figure: The Versions page.*
 ## Textures and their images
 
 A texture remembers the library image it was made from when you apply it from the Explorer. **Edit** in the Inspector
@@ -5440,8 +5441,8 @@ while it is closed (on a phone, the **Windows** sheet), press its header's **Doc
   image…**). Opening an image while it is docked brings the dock tab forward.
 - Closing the tab with unsaved edits asks first, as the window does.
 
-![The Image editor as a tab in the bottom dock, beside Animation, Node editor, Explorer, Flow Code and UV editor](https://docs.theprototype.app/img/image-editor/docked.png)
-
+![The Image editor as a tab in the bottom dock, beside Animation, Node editor, Explorer, Flow Code and UV editor](https://docs.theprototype.app/img/image-editor/docked.webp)
+*Figure: The Image editor as a tab in the bottom dock.*
 ## On a phone
 
 The editor is a full-width sheet between the top bar and the bottom bar, so **Play** stays tappable. The Edit and
@@ -5449,8 +5450,8 @@ Versions pages sit under the picture instead of beside it, and **Crop…** scrol
 Since 1.32 they start **closed**, so the picture gets the screen: tap ✎ (Edit) or ⟲ (Versions) under the picture to
 open one, and it stays open next time.
 
-![The Image editor on a phone: the picture at the top, the Edit page under it, the bottom bar with Play below](https://docs.theprototype.app/img/image-editor/editor-phone.png)
-
+![The Image editor on a phone: the picture at the top, the Edit page under it, the bottom bar with Play below](https://docs.theprototype.app/img/image-editor/editor-phone.webp)
+*Figure: The Image editor on a phone.*
 ## Limits
 
 - Versions are kept **on this device**: the original plus the last 19 saves per image. Peers receive the saved image,
@@ -6412,8 +6413,8 @@ A file without these extras (a `.vrma` from another tool, an animation `.glb`) i
 
 ## Game-ready clips (Animation window ▸ clip tools)
 
-![The clip tools in the Animation window](https://docs.theprototype.app/img/characters-and-motion/clip-tools.png)
-
+![The clip tools in the Animation window](https://docs.theprototype.app/img/characters-and-motion/clip-tools.webp)
+*Figure: The clip tools in the Animation window.*
 Select a character and open the **Animation** window. Under its clips, the clip tools show for the
 clip that is playing:
 
@@ -6451,8 +6452,8 @@ These settings belong to the character (another character using the same clip fi
 
 ## Animation states (a locomotion state machine)
 
-![The Animation states window](https://docs.theprototype.app/img/characters-and-motion/animation-states.png)
-
+![The Animation states window for a Knight: Move, Jump and Fall states with their clips, loop and entry, and the Move to Jump transitions with their conditions.](https://docs.theprototype.app/img/characters-and-motion/animation-states.webp)
+*Figure: The Animation states window for a Knight.*
 Animation window ▸ **Animation states…** opens the states window for the selected character.
 
 - **Locomotion preset**: one click builds *Move* (idle / walk / run blended by speed), *Jump* and
@@ -6534,8 +6535,8 @@ undoable, and they play in exported and published games.
     The [Animation](https://docs.theprototype.app/animation.md) editor keys **one object's** clips. The Timeline arranges whole clips, shots and
     sounds into a scene-wide sequence.
 
-![The Timeline docked under the viewport: Camera, Animation, Audio and Event tracks with a Cam A → Cam B shot, a Door clip, whoosh.wav and a boom event](https://docs.theprototype.app/img/timeline/tracks.png)
-
+![The Timeline docked under the viewport: Camera, Animation, Audio and Event tracks with a Cam A → Cam B shot, a Door clip, whoosh.wav and a boom event](https://docs.theprototype.app/img/timeline/tracks.webp)
+*Figure: The Timeline docked under the viewport.*
 ## Opening it
 
 - <kbd>Alt</kbd>+<kbd>T</kbd>, or the dock's **+** menu ▸ **Timeline**.
@@ -6569,8 +6570,8 @@ undoable, and they play in exported and published games.
 6. **Preview** with ▶ or <kbd>Space</kbd>. A preview is yours alone and does **not** fire graph events — events fire
    when the sequence plays in the game.
 
-![Scrubbing at 1.15 s: the viewport previews the shot through Cam A](https://docs.theprototype.app/img/timeline/scrub-shot.png)
-
+![Scrubbing at 1.15 s: the viewport previews the shot through Cam A](https://docs.theprototype.app/img/timeline/scrub-shot.webp)
+*Figure: Scrubbing at 1.15 s.*
 | Key | Does |
 |---|---|
 | <kbd>Space</kbd> | Play / pause the preview |
@@ -6603,8 +6604,8 @@ A track's **…** menu renames it, moves it up or down, or deletes it; its speak
 The Timeline is a tab of the bottom sheet (**More ▸ Timeline**). The controls wrap onto extra rows, and the tracks
 scroll under them.
 
-![The Timeline as a tab of the bottom sheet on a folded phone](https://docs.theprototype.app/img/timeline/phone-sheet.png)
-
+![The Timeline as a tab of the bottom sheet on a folded phone](https://docs.theprototype.app/img/timeline/phone-sheet.webp)
+*Figure: The Timeline as a tab of the bottom sheet on a folded phone.*
 ## Limits
 
 - One view at a time: a sequence's shots replace what that player looks through until it ends (or a later shot cuts
@@ -6614,7 +6615,8 @@ scroll under them.
 - A preview never fires graph events, so it cannot change the game state for one player only.
 - Scenes with sequences need 1.39 or later to show them; older versions open the scene without its sequences.
 
-![The Timeline in the light theme](https://docs.theprototype.app/img/timeline/tracks-light.png)
+![The Timeline in the light theme](https://docs.theprototype.app/img/timeline/tracks-light.webp)
+*Figure: The Timeline in the light theme.*
 
 
 ---
@@ -6736,8 +6738,8 @@ everything has loaded. The person who opens the scene runs it; everyone else see
 games and play links, and undo / redo work on it like on any edit. *Jelly room*, *Fluid tank toy*, *Pool party* and
 *Island ocean* have it on.
 
-![Configure Scene ▸ Camera ▸ Start view with Start simulation on load ticked](https://docs.theprototype.app/img/physics/sim-on-load-setting.png)
-
+![Configure Scene ▸ Camera ▸ Start view with Start simulation on load ticked](https://docs.theprototype.app/img/physics/sim-on-load-setting.webp)
+*Figure: Configure Scene ▸ Camera ▸ Start view with Start simulation on load ticked.*
 ## Grab and throw mid-simulation
 
 While a simulation is running you can grab a dynamic object and throw it:
@@ -6794,8 +6796,8 @@ ground* ticked flew on a desktop.) **Configure Scene ▸ Play ▸ Flying**:
 | **Allowed** | <kbd>Q</kbd> / <kbd>E</kbd> on a desktop, the **Up** / **Down** touch buttons, and in VR Interact, flying with the stick along where the controller points |
 | **Removed** | nobody flies in this scene, even if a game module or a Character Controller node in fly mode asks for it |
 
-![Configure Scene ▸ Physics ▸ Play mode, with Flying set to Allowed](https://docs.theprototype.app/img/physics/flying-setting.png)
-
+![Configure Scene ▸ Physics ▸ Play mode, with Flying set to Allowed](https://docs.theprototype.app/img/physics/flying-setting.webp)
+*Figure: Configure Scene ▸ Physics ▸ Play mode.*
 Of the bundled games, the Jam Room flies (it is designed for VR flying), and Dungeon Realms does when its **Game Rules ▸
 disableFlight** is off; every other game walks. A module allows flying with `userData.play.locomotion.fly = true` (or by
 un-grounding play), and a [Character Controller](https://docs.theprototype.app/build-a-game.md#3-a-character-that-walks) node in fly mode counts as
@@ -6853,10 +6855,10 @@ Since 1.25 that works wherever the object starts: put it anywhere in a pool, a t
 shoots up and bobs at the surface, wood floats lower, a stone sinks to the bottom. **Properties ▸ Water ▸ Flow &
 physics** on the water adds **Flow up** (an upward current) and **Bob damping** (lower = things keep bobbing longer).
 
-![Toys floating in a pool sunk into the ground](https://docs.theprototype.app/img/physics/sunken-pool.png)
-
-![A wooden crate floating in a pool, with the Floats rows in its Physics properties](https://docs.theprototype.app/img/physics/floats.png)
-
+![Toys floating in a pool sunk into the ground](https://docs.theprototype.app/img/physics/sunken-pool.webp)
+*Figure: Toys floating in a pool sunk into the ground.*
+![A wooden crate floating in a pool, with the Floats rows in its Physics properties](https://docs.theprototype.app/img/physics/floats.webp)
+*Figure: A wooden crate floating in a pool.*
 Select the object and open **Properties ▸ Physics** (Body: *Dynamic*) ▸ **Floats**:
 
 | Floats | Density (kg/m³) | Behaves like |
@@ -6937,8 +6939,8 @@ setting; for running a simulation, gravity, joints and grabbing see [Physics & S
 
 Select an object and open **Properties ▸ Physics**:
 
-![The Physics section of an object's properties, with Show collider on and the green collider wireframe in the viewport](https://docs.theprototype.app/img/colliders/physics-section.png)
-
+![The Physics section of an object's properties, with Show collider on and the green collider wireframe in the viewport](https://docs.theprototype.app/img/colliders/physics-section.webp)
+*Figure: The Physics section of an object's properties.*
 | Row | Options / range | Default |
 |---|---|---|
 | **Body** | Auto (scenery) · Static · Dynamic | Auto (scenery) |
@@ -7001,8 +7003,8 @@ a ball rolls through an arch's opening, falls into a pool or a tank, drives thro
 while **Body** is *Auto (scenery)* or *Static*. A group (an imported model) is merged into one mesh. Static **Arch** and
 **Corner** blocks use it automatically.
 
-![An arch with an exact mesh collider: the green wireframe follows the opening](https://docs.theprototype.app/img/colliders/exact-mesh.png)
-
+![An arch with an exact mesh collider: the green wireframe follows the opening](https://docs.theprototype.app/img/colliders/exact-mesh.webp)
+*Figure: An arch with an exact mesh collider.*
 **Limits.**
 
 - Static and kinematic bodies only. A **Dynamic** body that asks for it gets its convex hull instead, and a toast says
@@ -7026,8 +7028,8 @@ A dynamic arch, cup or U-shaped crate now keeps its openings. One undo restores 
 replicates to everyone. Fine-tune it afterwards with **Edit collider…** ([below](#custom-compound-colliders)). In VR it is
 **Decompose (auto)** in the [collider editor](#editing-a-collider-in-vr).
 
-![The same arch decomposed into convex pieces](https://docs.theprototype.app/img/colliders/decomposed.png)
-
+![The same arch decomposed into convex pieces](https://docs.theprototype.app/img/colliders/decomposed.webp)
+*Figure: The same arch decomposed into convex pieces.*
 The result has to fit the custom-collider budget (about 400 points). Pieces past it are dropped, and the toast says so.
 
 ## Collision groups
@@ -7144,8 +7146,8 @@ dynamic.
 The other body travels with the trigger, so every peer reads the same object. A contact with the ground plane reports an
 empty *other*.
 
-![On Impact and On Enter nodes with only with wired to Object Selectors, and other wired into Distance](https://docs.theprototype.app/img/colliders/contact-filter.png)
-
+![On Impact and On Enter nodes with only with wired to Object Selectors, and other wired into Distance](https://docs.theprototype.app/img/colliders/contact-filter.webp)
+*Figure: On Impact and On Enter nodes with only with wired to Object Selectors.*
 ## Editing a collider in VR
 
 Select an object, open the radial menu's **Selected** ring and pick **Edit collider**. The edit side-menu opens, titled
@@ -7267,8 +7269,8 @@ car, sparks off a swung sword.
 Since 1.27 **Inspector ▸ Particles ▸ Draw as** draws the particles one of four ways. The particles move exactly the
 same in every mode; only the shape on screen changes.
 
-![Draw as set to Trails, with the Trail length, Segments and Inherit velocity rows](https://docs.theprototype.app/img/particles/draw-as.png)
-
+![Draw as set to Trails, with the Trail length, Segments and Inherit velocity rows](https://docs.theprototype.app/img/particles/draw-as.webp)
+*Figure: Draw as set to Trails.*
 | Draw as | What you see | Its rows |
 |---|---|---|
 | **Sprites** (the default) | one image per particle, as before | **Sprite** |
@@ -7280,8 +7282,8 @@ same in every mode; only the shape on screen changes.
   drawn as trails, and the Inspector says so.
 - In **Local** space a ribbon rides along with the object; switch **Space** to **World** for a trail that stays behind it.
 
-![The Magic wisps preset: purple trails curling off a moving cube](https://docs.theprototype.app/img/particles/wisps-trails.png)
-
+![The Magic wisps preset: purple trails curling off a moving cube](https://docs.theprototype.app/img/particles/wisps-trails.webp)
+*Figure: The Magic wisps preset.*
 ## Caps
 
 To keep framerates high, up to **8 emitters** render at once (500 particles each; in VR at most 200 per emitter in every
@@ -7302,8 +7304,8 @@ patterns (**caustics**) on the floor, foam on the wave crests and along the shor
 underwater fog when your camera goes inside, and bubbles that rise and pop at the surface. Everyone in the session sees
 the same water, and the waves move in step on every screen.
 
-![A pool in daylight: caustics on the floor, a ball and a crate in the water](https://docs.theprototype.app/img/water/pool.png)
-
+![A pool in daylight: caustics on the floor, a ball and a crate in the water](https://docs.theprototype.app/img/water/pool.webp)
+*Figure: A pool in daylight.*
 ## Where it is
 
 - **Add ▸ Water** (right-click the viewport, or the **+** button on a phone): *Water tank*, *Pool*, *Ocean*, *Round pool*,
@@ -7358,15 +7360,15 @@ that used to do little:
 | **Toxic** | bright green and glowing |
 | **Ice** | frozen solid |
 
-![The Lava preset: a glowing, opaque tank](https://docs.theprototype.app/img/water/lava.png)
-
+![The Lava preset: a glowing, opaque tank](https://docs.theprototype.app/img/water/lava.webp)
+*Figure: The Lava preset.*
 ## Underwater
 
 Put the camera inside the water and the view fogs over in the water's **underwater colour**, as far as its
 **visibility** reaches. Bubbles rise past you and pop at the surface.
 
-![Inside the Aquarium preset: bubbles rising through blue-green water](https://docs.theprototype.app/img/water/underwater-aquarium.png)
-
+![Inside the Aquarium preset: bubbles rising through blue-green water](https://docs.theprototype.app/img/water/underwater-aquarium.webp)
+*Figure: Inside the Aquarium preset.*
 ## Things in the water
 
 A water object is a pass-through physics **sensor** in the *Water* [collision group](https://docs.theprototype.app/colliders.md#collision-groups):
@@ -7383,8 +7385,8 @@ Since 1.25 a click selects what is **inside or behind** the water — a fish in 
 passes through ▸ Water** (on by default) turns this off for a scene. See
 [Inside and behind water](https://docs.theprototype.app/controls.md#inside-and-behind-water).
 
-![Configure Scene ▸ Advanced ▸ Selection passes through, with the 1 of 3 · Aquarium water chip in the tank](https://docs.theprototype.app/img/water/selection-passes-through.png)
-
+![Configure Scene ▸ Advanced ▸ Selection passes through, with the 1 of 3 · Aquarium water chip in the tank](https://docs.theprototype.app/img/water/selection-passes-through.webp)
+*Figure: Configure Scene ▸ Advanced ▸ Selection passes through.*
 The selected object is drawn un-refracted, exactly under its outline; the rest of the water still refracts. (Before,
 the outline sat beside the refracted fish.)
 
@@ -7404,8 +7406,8 @@ gets a spout on its rim.
 - Drops arc out, **splash into water** (a ripple) and **settle** where they land, then dry up.
 - Each player sees their own drops; the settings are shared. An emitter is one draw call, cheap enough for a Quest.
 
-![Two pour emitters arcing drops over a water tank](https://docs.theprototype.app/img/water/pour-emitters.png)
-
+![Two pour emitters arcing drops over a water tank](https://docs.theprototype.app/img/water/pour-emitters.webp)
+*Figure: Two pour emitters arcing drops over a water tank.*
 For particle water that pools, splashes and flows, use a [Fluid emitter](https://docs.theprototype.app/fluids.md#fluid-emitter).
 
 ## Rain and snow
@@ -7483,8 +7485,8 @@ the open scene, rivers and pipes, see [Fluids](https://docs.theprototype.app/flu
 A glass tank of particle fluid. Move or tilt the tank and the fluid sloshes; pour more in, drain it out; toys dropped in
 float and are pushed around.
 
-![A fluid tank with the smooth surface look](https://docs.theprototype.app/img/simulation/fluid-tank.png)
-
+![A fluid tank with the smooth surface look](https://docs.theprototype.app/img/simulation/fluid-tank.webp)
+*Figure: A fluid tank with the smooth surface look.*
 ### Where it is
 
 - **Add ▸ Simulation ▸ Fluid tank** (right-click the viewport, the **+** button, or <kbd>Shift</kbd>+<kbd>A</kbd> if you
@@ -7508,8 +7510,8 @@ float and are pushed around.
 | **Max spilled drops** · **Drop lifetime** | the limits on spilled fluid, so it never builds up |
 | **Refill** | starts the tank again, filled to its **Fill** level |
 
-![The Drops look, with a ball pushed around by the fluid](https://docs.theprototype.app/img/simulation/fluid-tank-drops.png)
-
+![The Drops look, with a ball pushed around by the fluid](https://docs.theprototype.app/img/simulation/fluid-tank-drops.webp)
+*Figure: The Drops look.*
 ### Spilling
 
 Since 1.25 a tank **spills when tipped**: rotate it (the Water or Honey tank in *Fluid tank toy*) and the fluid pours out
@@ -7517,8 +7519,8 @@ over the rim, falls, splashes into any water below and settles. The tank holds l
 again. The simulation transport's **Pause** holds the tank and its spilled drops still, and **Reset** refills it (see
 [The simulation controls HUD](https://docs.theprototype.app/physics.md#the-simulation-controls-hud)).
 
-![Fluid tank toy: the Honey tank tipped, its honey spilled onto the table](https://docs.theprototype.app/img/simulation/tank-spill.png)
-
+![Fluid tank toy: the Honey tank tipped, its honey spilled onto the table](https://docs.theprototype.app/img/simulation/tank-spill.webp)
+*Figure: Fluid tank toy.*
 ### Pouring into a pool
 
 *New in 1.40.* A tank's water reaches the pool it pours into. When a tank stands in a pool, or a pool's surface runs
@@ -7533,8 +7535,8 @@ tank and any [water object](https://docs.theprototype.app/water.md) (tank, pool,
 - Everyone's tank pours the same water from the same settings, so everyone sees the pour land and ripple in the same
   place. Nothing extra is sent over the network. The ripples and droplets are a local picture, like every water ripple.
 
-![A pour inside a tank landing on the pool's surface and rippling it](https://docs.theprototype.app/img/simulation/tank-pours-into-pool.png)
-
+![A pour inside a tank landing on the pool's surface and rippling it](https://docs.theprototype.app/img/simulation/tank-pours-into-pool.webp)
+*Figure: A pour inside a tank landing on the pool's surface and rippling it.*
 ### GPU fluid
 
 *New in 1.40.* Fluid tanks can run their particle solver on the **graphics card** (WebGPU compute) instead of the
@@ -7574,8 +7576,8 @@ against 35–37 ms on the processor, including sending the particles to the card
 lands or is hit, and sags and sways in the wind. A rigged (skinned) model swings its bone chains instead: tails, hair,
 antennae.
 
-![A block leaning and wobbling under Jiggle](https://docs.theprototype.app/img/simulation/jiggle.png)
-
+![A block leaning and wobbling under Jiggle](https://docs.theprototype.app/img/simulation/jiggle.webp)
+*Figure: A block leaning and wobbling under Jiggle.*
 Add it from the node editor: **Effects ▸ Jiggle**. Put it in an object's own graph, or wire it to an
 [Object Selector](https://docs.theprototype.app/nodes/objectselector.md). Every setting is on the [Jiggle node page](https://docs.theprototype.app/nodes/jiggle.md).
 
@@ -7601,8 +7603,8 @@ water it is poured into. **Flow paths** carry it along rivers, chutes and pipes,
 leaves and boats along the current. For water volumes (pools, tanks, oceans) see [Water](https://docs.theprototype.app/water.md); for a glass box of
 particle fluid see [Fluid tank](https://docs.theprototype.app/simulation.md#fluid-tank).
 
-![A Fluid emitter pouring a stream into a puddle, with its properties open](https://docs.theprototype.app/img/fluids/fluid-emitter.png)
-
+![A Fluid emitter pouring a stream into a puddle, with its properties open](https://docs.theprototype.app/img/fluids/fluid-emitter.webp)
+*Figure: A Fluid emitter pouring a stream into a puddle.*
 ## Fluid emitter
 
 **Add ▸ Water ▸ Fluid** (right-click the viewport, or the **+** button). It pours from its spout, 1.6 m above where you
@@ -7677,8 +7679,8 @@ and a headset runs at most 1400 particles.
 head-race, which spills into a fountain basin; the basin overflows down a chute back into the pond, and leaves and boats
 ride along.
 
-![Water works: the scoop wheel, the head-race, the fountain basin and the chute back to the pond](https://docs.theprototype.app/img/fluids/water-works.png)
-
+![Water works: the scoop wheel, the head-race, the fountain basin and the chute back to the pond](https://docs.theprototype.app/img/fluids/water-works.webp)
+*Figure: Water works: the scoop wheel.*
 ## Limits
 
 - Particle water is simulated per player: it never travels over the network, only the settings do.
@@ -7780,8 +7782,8 @@ The same brush works on **any** mesh, not just terrain: right-click an object �
 Since 1.38 a Terrain can be **painted with four texture layers**. Select it ▸ right-click ▸ **Sculpt terrain** (or
 Inspector ▸ **Terrain paint ▸ Paint…**) and pick the **Paint** brush after Raise / Lower / Smooth / Flatten.
 
-![A painted layer on a terrain](https://docs.theprototype.app/img/terrain/paint-layer.png)
-
+![A painted layer on a terrain](https://docs.theprototype.app/img/terrain/paint-layer.webp)
+*Figure: A painted layer on a terrain.*
 - Pick a **layer (1–4)** in the toolbox, then drag on the terrain. Radius and Strength are the sculpt brush's.
 - Inspector ▸ **Terrain paint** sets, per layer, a **colour**, a **texture** (import a file or drop an Explorer image)
   and **tiling** (how often the texture repeats across the terrain). Layer 1 *is* the terrain's own material until you
@@ -7794,8 +7796,8 @@ Inspector ▸ **Terrain paint ▸ Paint…**) and pick the **Paint** brush after
 - One drag = **one undo step**. Peers see the stroke while you paint and exactly your result when you let go; the
   paint is saved with the scene.
 
-![The Inspector's Terrain paint section](https://docs.theprototype.app/img/terrain/inspector-paint.png)
-
+![Properties of a terrain with its Terrain paint section: four layers, each with a colour and an image, Paint… and Clear paint, and the Scatter section under it.](https://docs.theprototype.app/img/terrain/inspector-paint.webp)
+*Figure: Properties of a terrain with its Terrain paint section.*
 ## Scatter
 
 The **Scatter** brush paints instances of a primitive, a Library model, a pack item or a prefab's look — trees, rocks,
@@ -7803,8 +7805,8 @@ grass tufts — onto the terrain. Since 1.43 a set can also **fill** the terrain
 and painted-layer masks, mix several models, and be edited instance by instance: see [Scatter](https://docs.theprototype.app/scatter.md), which also
 covers scatter on any other object.
 
-![The Scatter brush in the Sculpt toolbox, with cones scattered over a painted terrain](https://docs.theprototype.app/img/terrain/scatter-toolbox.png)
-
+![The Scatter brush in the Sculpt toolbox, beside a terrain painted in patches of colour.](https://docs.theprototype.app/img/terrain/scatter-toolbox.webp)
+*Figure: The Scatter brush in the Sculpt toolbox.*
 | Control | What it does |
 |---|---|
 | **Source** | A primitive, a Library model, a pack item or a prefab ([what you can scatter](https://docs.theprototype.app/scatter.md#what-you-can-scatter)). |
@@ -7844,8 +7846,8 @@ model has a **Collider**:
 Scatter brush has a **Collider** pick too: it is what a *newly* scattered model starts with — painting more rocks into
 an existing set never changes that set's collider.
 
-![Properties ▸ Scatter: the Dodecahedron rocks set to Mesh hull, the cones left at None](https://docs.theprototype.app/img/terrain/scatter-collider.png)
-
+![Properties ▸ Scatter: the Dodecahedron rocks set to Mesh hull, the cones left at None](https://docs.theprototype.app/img/terrain/scatter-collider.webp)
+*Figure: Properties ▸ Scatter.*
 - While a [simulation](https://docs.theprototype.app/physics.md) runs, every instance of that model is a **static** collider — a thrown ball bounces
   off the rocks and stops on top of one. The colliders follow each instance's position, rotation, scale and *Align to
   slope* tilt, and the terrain's own transform; a terrain moving mid-run does not drag them along.
@@ -7905,8 +7907,8 @@ Select any mesh or placed model ▸ **Properties ▸ Scatter** (right after the 
 *Add pour emitter*) ▸ **Add scatter**. 200 instances of the brush's current model fill the whole surface. The instances
 belong to the object: move, turn or scale it and they come along, for everyone in the session.
 
-![Properties ▸ Scatter on a sphere: 200 cones fill it, with the Fill rows below](https://docs.theprototype.app/img/scatter/add-scatter.png)
-
+![Properties ▸ Scatter on a sphere: 200 cones fill it, with the Fill rows below](https://docs.theprototype.app/img/scatter/add-scatter.webp)
+*Figure: Properties ▸ Scatter on a sphere.*
 On a Terrain the Scatter section stays where it was (after Terrain paint) with the same rows. **Add fill** adds another
 set; **Paint scatter…** (or **Scatter…** on a terrain) opens the scatter brush to paint by hand.
 
@@ -7960,8 +7962,8 @@ On a terrain, the scatter brush in the Sculpt toolbox has a row of **tools**:
 
 **Affects** (every tool but Paint) limits a tool to one model of a mix — erase only the boxes, turn only the trees.
 
-![The Select tool: seven instances picked, the gizmo on them and the selection commands in the toolbox](https://docs.theprototype.app/img/scatter/select-tool.png)
-
+![The Select tool: seven instances picked, the gizmo on them and the selection commands in the toolbox](https://docs.theprototype.app/img/scatter/select-tool.webp)
+*Figure: The Select tool.*
 **Select**: click an instance; <kbd>Shift</kbd>/<kbd>Ctrl</kbd>+click adds or removes; drag a box to select everything
 inside it; <kbd>Ctrl</kbd>+<kbd>A</kbd> selects every instance of the Affects model. The gizmo's **Move** slides the
 selection over the ground, **Turn** rotates it about up, **Size** scales it — one drag is one undo step. The toolbox adds
@@ -8033,8 +8035,8 @@ GLTF and JSON join them once you offer them in Save options.
 Its **Save** remembers the options and saves; **Cancel** forgets the changes. On a folded phone the dialog opens full
 screen.
 
-![Save options on a computer: Save as Project or Scene, what a scene and a project include, and More formats, with Cancel and Save at the bottom](https://docs.theprototype.app/img/saving/save-options.png)
-
+![Save options on a computer: Save as Project or Scene, what a scene and a project include, and More formats, with Cancel and Save at the bottom](https://docs.theprototype.app/img/saving/save-options.webp)
+*Figure: Save options on a computer.*
 <kbd>Ctrl</kbd>+<kbd>S</kbd> saves the **open scene** as a new version in the [Explorer](https://docs.theprototype.app/explorer.md); a scene that has never been named asks for a name first.
 
 ## Where you left off
@@ -8153,8 +8155,8 @@ A **checkpoint** is a copy of the scene as it is right now — objects, node gra
 **on this device**, with a name, an optional note, a picture and a time. [Autosave](https://docs.theprototype.app/saving.md#autosave) only remembers
 the *last* state; checkpoints let you go back to *any* earlier one.
 
-![The Checkpoints timeline comparing two checkpoints with the swipe slider](https://docs.theprototype.app/img/checkpoints/timeline-compare.png)
-
+![The Checkpoints timeline comparing two checkpoints with the swipe slider](https://docs.theprototype.app/img/checkpoints/timeline-compare.webp)
+*Figure: The Checkpoints timeline comparing two checkpoints with the swipe slider.*
 ## Saving a checkpoint
 
 **Menu** (the logo button) ▸ **Save checkpoint…**, or press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>. Type a name and, if you like,
@@ -8191,8 +8193,8 @@ A very large scene — over the [budget meter](https://docs.theprototype.app/per
 (512 MB) — skips automatic checkpoints, because each one copies the whole scene. The first time it happens a notice says
 so, with a **Settings** button. Named checkpoints (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>) always work.
 
-![The notice when a large scene skips its automatic checkpoint](https://docs.theprototype.app/img/checkpoints/large-scene-notice.png)
-
+![The notice when a large scene skips its automatic checkpoint](https://docs.theprototype.app/img/checkpoints/large-scene-notice.webp)
+*Figure: The notice when a large scene skips its automatic checkpoint.*
 ## Settings
 
 **Settings ▸ Scene ▸ Checkpoints**:
@@ -8239,8 +8241,8 @@ the scene's [start view](#start-view) the moment the load begins, and you can lo
 Modern is the default since 1.22. If you never changed this setting, you now get Modern; if you picked **Colored
 boxes** in 1.21, you keep it.
 
-![A Modern placeholder filling from the bottom as its model downloads](https://docs.theprototype.app/img/loading/modern-loading.png)
-
+![A Modern placeholder filling from the bottom as its model downloads](https://docs.theprototype.app/img/loading/modern-loading.webp)
+*Figure: A Modern placeholder filling from the bottom as its model downloads.*
 Both styles turn **amber** when a piece is stuck and **red with a “!”** when it failed.
 
 ## Working while it loads
@@ -8257,8 +8259,8 @@ Properties panel, <kbd>Shift</kbd>-click to select several. When the model arriv
   retrying would not fix it.
 - **Red** — it gave up. Hover it to see the file address, the HTTP status and the reason.
 
-![A failed placeholder: red, with its tooltip and the “Retry all” toast](https://docs.theprototype.app/img/loading/modern-failed.png)
-
+![A failed placeholder: red, with its tooltip and the “Retry all” toast](https://docs.theprototype.app/img/loading/modern-failed.webp)
+*Figure: A failed placeholder.*
 To recover:
 
 - **Double-click** a red box to try again, or **right-click** it ▸ **Retry loading**, **Replace model…** or **Delete**.
@@ -8286,8 +8288,8 @@ start view a few seconds into the load.)
 once the scene has finished loading. Click it to fly back. You can also press <kbd>Home</kbd> at any time to return to
 the start view of the scene you opened last.
 
-![The Back to start view button under the connection bar after Tavern Interior has loaded](https://docs.theprototype.app/img/loading/back-to-start-view.png)
-
+![The Back to start view button under the connection bar after Tavern Interior has loaded](https://docs.theprototype.app/img/loading/back-to-start-view.webp)
+*Figure: The Back to start view button under the connection bar after Tavern Interior has loaded.*
 To change a scene's start view, move the camera where you want it and save the scene again.
 
 ### Hold camera until loaded
@@ -8295,8 +8297,8 @@ To change a scene's start view, move the camera where you want it and save the s
 **Configure Scene ▸ Camera ▸ Start view ▸ Hold camera until loaded** (off by default) keeps the camera on the start view
 until the scene is ready. It is saved with the scene and shared with everyone in the session.
 
-![Configure Scene ▸ Camera with Hold camera until loaded ticked under Start view](https://docs.theprototype.app/img/loading/hold-setting.png)
-
+![Configure Scene ▸ Camera with Hold camera until loaded ticked under Start view](https://docs.theprototype.app/img/loading/hold-setting.webp)
+*Figure: Configure Scene ▸ Camera with Hold camera until loaded ticked under Start view.*
 While the scene loads, the camera stays on the start view and ignores camera input, and a small **Loading… camera is
 held** note shows under the loading bar. In VR, teleport, turning, the walk stick and grabbing the world are paused the
 same way.
@@ -8549,8 +8551,8 @@ Besides your own view, a scene can hold **cameras** of its own — the shot a ga
 security monitor. Add one from **right-click ▸ Add ▸ Camera ▸ Perspective** (or **Orthographic**). It appears as a small
 camera marker you move and turn like any object; selecting it opens **Properties ▸ Camera**:
 
-![The Camera section of a camera object's properties, with its picture-in-picture preview](https://docs.theprototype.app/img/camera/camera-object.png)
-
+![A selected camera in the scene: Properties ▸ Camera with Kind, FOV, Near, Far and Framing, and the camera's preview window in the corner of the view.](https://docs.theprototype.app/img/camera/camera-object.webp)
+*Figure: A camera's properties, with its preview window at the lower left.*
 | Row | What it does |
 |---|---|
 | **Kind** | Perspective or Orthographic |
@@ -8643,8 +8645,8 @@ scene's sky **and** its light. Every object picks up the image's colours and bri
 [water](https://docs.theprototype.app/water.md) mirrors the real clouds. The scene's sun is placed where the photo's sun is, so shadows agree with the
 sky.
 
-![A mirror sphere and a box lit by the Meadow sky image](https://docs.theprototype.app/img/camera/sky-meadow.png)
-
+![A mirror sphere and a box lit by the Meadow sky image](https://docs.theprototype.app/img/camera/sky-meadow.webp)
+*Figure: The Meadow sky image lighting a mirror sphere and a box.*
 It lives in **Configure Scene ▸ Environment ▸ Sky image (HDRI)**, under the preset chips and the Exposure slider. Click
 a card to switch to that sky; like every Environment setting, everyone in the session sees it.
 
@@ -8659,8 +8661,8 @@ a card to switch to that sky; like every Environment setting, everyone in the se
 The five skies are also preset chips, and in VR they are in the radial menu's **Scene ▸ Environment**. All five are CC0
 images from [Poly Haven](https://polyhaven.com).
 
-![Configure Scene ▸ Environment with the Sky image section: the sky cards, Upload HDRI…, Rotation, Image light, Show as sky, Sky blur and Tone mapping](https://docs.theprototype.app/img/camera/sky-image-section.png)
-
+![Configure Scene ▸ Environment: the sky preset cards, Upload HDRI…, Rotation, Image light, Show as sky, Sky blur and Tone mapping.](https://docs.theprototype.app/img/camera/sky-image-section.webp)
+*Figure: Configure Scene ▸ Environment, with its Sky image section.*
 | Row | What it does |
 |---|---|
 | **Upload HDRI…** | use your own equirectangular `.hdr` or `.exr` file (up to 25 MB; 1k–2k is plenty). It is added to the [Explorer](https://docs.theprototype.app/explorer.md), your peers download it from you automatically, and it is saved inside `.tpscene` files and exports |
@@ -8735,8 +8737,8 @@ Record a short video of the viewport while the recorder drives the camera: a **t
 
 Right-click the viewport ▸ **Tools ▸ Recording…**
 
-![The Recording dialog set to a one-turn turntable of the whole scene](https://docs.theprototype.app/img/recording/turntable-dialog.png)
-
+![The Recording dialog: What to film set to Turntable, with Orbit, Turns, Direction, Size, Frame rate, Length, Quality and the Start recording button.](https://docs.theprototype.app/img/recording/turntable-dialog.webp)
+*Figure: The Recording dialog, in a small window.*
 ## What to film
 
 | Mode | What the camera does | Options |
@@ -8763,14 +8765,14 @@ The dialog estimates the file size before you start.
 A small bar shows the progress, with **Cancel**. The camera is yours alone: nothing is sent to anyone in the session, and
 your view comes back where it was afterwards.
 
-![The recording bar above the toolbar](https://docs.theprototype.app/img/recording/recording-bar.png)
-
+![The recording bar above the toolbar](https://docs.theprototype.app/img/recording/recording-bar.webp)
+*Figure: The recording bar sits above the toolbar while a take runs.*
 ## The file
 
 The video is saved to **Explorer ▸ Recordings** (double-click it to play it) and offered as **Download**.
 
-![The finished take: Download, Show in Explorer, Record again](https://docs.theprototype.app/img/recording/result.png)
-
+![The finished take: Download, Show in Explorer, Record again](https://docs.theprototype.app/img/recording/result.webp)
+*Figure: The finished take, with Download, Show in Explorer and Record again.*
 ## Limits
 
 - Not in VR or Play — the recorder drives the editor camera.
@@ -8822,8 +8824,8 @@ too.
 toast offers **Undo** for about 8 seconds — a thin bar shows the time left. Undo puts back exactly what was there: for
 everyone in the session (the scene and its objects), or on this device (modules, settings).
 
-![The toast after clearing the scene, with Undo](https://docs.theprototype.app/img/notes/undo-toast.png)
-
+![The toast after clearing the scene, with Undo](https://docs.theprototype.app/img/notifications/undo-toast.webp)
+*Figure: A toast with Undo, after clearing the scene.*
 After the 8 seconds, <kbd>Ctrl</kbd>+<kbd>Z</kbd> still undoes a delete; a **Clear scene** can no longer be undone.
 
 ## Scene notes
@@ -8835,8 +8837,8 @@ Notes are little pinned comments you can attach to any object — feedback, TODO
 Right-click an object ▸ **Add note**. The note is pinned **exactly where you clicked** on the object and follows it as it
 moves. The card that opens has:
 
-![Editing a scene note, with the notes drawer grouping the scene's notes by label](https://docs.theprototype.app/img/notes/note-card.png)
-
+![Editing a scene note, with the notes drawer grouping the scene's notes by label](https://docs.theprototype.app/img/notifications/note-card.webp)
+*Figure: Editing a note beside the notes drawer.*
 | Field | What it is |
 |---|---|
 | **Name** | optional — a short title shown in the drawer, on the card and in the marker's hover tip |
@@ -8853,8 +8855,8 @@ moves. The card that opens has:
 you can delete your own reply (**×**). Adding, editing or deleting a note and replying are each one
 <kbd>Ctrl</kbd>+<kbd>Z</kbd> — and the undo reaches everyone in the session.
 
-![A note with a thread of replies and the Reply box](https://docs.theprototype.app/img/notes/note-thread.png)
-
+![A note with a thread of replies and the Reply box](https://docs.theprototype.app/img/notifications/note-thread.webp)
+*Figure: A note with a thread of replies.*
 Clicking a saved note's marker opens it to read: its text, label, author and date, with **Delete**, **Follow** (fly to
 the pin and keep following it) and **Edit**, which brings back the card above.
 
@@ -8879,8 +8881,8 @@ The **📝 notes** button in the top-right chrome (just left of the bell) opens 
 **page of the Notes tab**: its ‹ › step through the notes, and closing it — ✕, or swiping it down — returns to the list
 exactly where you left it. The note page and the list share one height, and neither covers **Play**.
 
-![A note open as a page of the notes on a folded phone: ‹ 5/14 › in its header, Reply, then Delete, Follow and Edit above the bottom bar](https://docs.theprototype.app/img/notes/note-page-phone.png)
-
+![A note open as a page of the notes on a folded phone: ‹ 5/14 › in its header, Reply, then Delete, Follow and Edit above the bottom bar](https://docs.theprototype.app/img/notifications/note-page-phone.webp)
+*Figure: A note as a page of the notes on a folded phone.*
 **Settings ▸ Controls ▸ Double-click to open notes** makes a single click on a marker — and the ‹ › arrows — only fly the
 camera to the note, with the card opening on a double click: handy for walking through a scene full of notes without a
 card in the way.
@@ -8899,8 +8901,8 @@ If there are no notes yet, the drawer tells you to select an object and add one 
 - **History** — someone who joins the session sees the conversation so far. A session saved in the
   [Sessions manager](https://docs.theprototype.app/saving.md#sessions-manager) keeps its chat; an exported `.tpscene` never contains it.
 
-![The chat: a line that mentions you is ringed, and :+1: became an emoji](https://docs.theprototype.app/img/notes/chat-mentions.png)
-
+![The chat: a line that mentions you is ringed, and :+1: became an emoji](https://docs.theprototype.app/img/notifications/chat-mentions.webp)
+*Figure: In the chat, a line that mentions you is ringed.*
 ## Pinging
 
 A ping is a momentary "look here!" pulse everyone sees at once — great for pointing during a call.
@@ -8962,8 +8964,8 @@ bar if you want it there. Since 1.39 you can move the chip anywhere, or hide it,
 [Edit positions](https://docs.theprototype.app/controls.md#moving-the-clusters); **Customize toolbar… ▸ Budget chip** shows it again. Opening its
 **▾** menu no longer makes it vanish.
 
-![The budget chip beside the toolbar, reading Quest 200% in red for the Race scene](https://docs.theprototype.app/img/performance/budget-chip.png)
-
+![The budget chip beside the toolbar, reading Quest 200% in red for the Race scene](https://docs.theprototype.app/img/performance/budget-chip.webp)
+*Figure: The budget chip sits beside the toolbar.*
 **Reading it.** The chip shows the device and how much of its tightest budget the scene uses (*Quest 87%*):
 
 | Colour | Meaning |
@@ -8984,8 +8986,8 @@ largest share of a budget, with their triangles, calls and texture memory, and w
 [optimizing them on import](https://docs.theprototype.app/import-optimize.md) would save (≈, by your **Settings ▸ Import** numbers). Click a row to
 select that object.
 
-![Statistics ▸ Budget for the Race scene on Quest: draw calls, triangles, texture memory, lights, shadow-casting lights and shadow draws against the budget, and the heaviest objects with what optimizing them on import would save](https://docs.theprototype.app/img/performance/statistics-budget.png)
-
+![Statistics ▸ Budget for the Race scene on Quest: draw calls, triangles, texture memory, lights, shadow-casting lights and shadow draws against the budget, and the heaviest objects with what optimizing them on import would save](https://docs.theprototype.app/img/performance/statistics-budget.webp)
+*Figure: Statistics ▸ Budget against the Quest limits.*
 **What is counted.** The scene's *content* as that device would draw it: every visible object, the environment (sky,
 sun, ground) and module content — not the editor's grid, gizmos or helpers — at full detail (the closest view), so the
 reading does not change as you orbit. Kit pieces that instance count one call. Texture memory is counted the way the
@@ -9091,8 +9093,8 @@ and a panel explains it rather than leaving you looking at a tab that appears to
 
 The preset is saved on this device only; it is never sent to peers or saved in a scene.
 
-![Configure Scene with Quality first: Preset Auto / High / Medium / Low, Reduce quality when the scene is heavy, Shadows, Simplify distant models and Draw repeated kit pieces together, above Environment; one Lowered resolution to keep it smooth notice with Keep full quality at the top](https://docs.theprototype.app/img/performance/configure-scene-quality.png)
-
+![Configure Scene with Quality first: Preset Auto / High / Medium / Low, Reduce quality when the scene is heavy, Shadows, Simplify distant models and Draw repeated kit pieces together, above Environment; one Lowered resolution to keep it smooth notice with Keep full quality at the top](https://docs.theprototype.app/img/performance/configure-scene-quality.webp)
+*Figure: Configure Scene opens with Quality first.*
 ## The quality governor
 
 Before any of the stops above, the app tries to keep the frames. **Settings ▸ Scene ▸ Performance ▸
@@ -9310,8 +9312,8 @@ its edge button, like the Explorer's. The **right** one has two tabs:
 double-click resets it. On a very wide screen the graph and the list sit side by side and the bar resizes the columns.
 The sidebars, the tab and the split are remembered on this device.
 
-![The Profiler docked on a computer: the recordings on the left, the timeline and the Tree in the middle with Heavy crate picked, and Details on the right for the frame at 2.1 s](https://docs.theprototype.app/img/profiler/details-sidebar.png)
-
+![The Profiler docked on a computer, cut at the column: the timeline and the Tree with Heavy crate picked, and Details on the right for the frame at 2.1 s.](https://docs.theprototype.app/img/profiler/details-sidebar.webp)
+*Figure: The Tree in the middle, Details for the picked frame on the right.*
 On a phone the Profiler opens with both sidebars hidden, so the graph gets the screen.
 
 ### Compare
@@ -9341,8 +9343,8 @@ picture of what you saw. In a headset it is the radial menu's **Tools ▸ Profil
 4. Tick **Send this to the theprototype team** and press **Send** — or press **Save on this device** instead, and it
    lands in the Profiler's [recordings](#the-recordings-list).
 
-![Report a problem: a box drawn on the picture, a note, and the Send box ticked](https://docs.theprototype.app/img/profiler/report-a-problem.png)
-
+![Report a problem: a box drawn on the picture, a note, and the Send box ticked](https://docs.theprototype.app/img/profiler/report-a-problem.webp)
+*Figure: Report a problem: box what is wrong, add a note, choose whether to send it.*
 **In a headset** the VR keyboard asks what is wrong — say where on the screen. When you are signed in, its title says
 that <kbd>Enter</kbd> sends it.
 
@@ -9598,8 +9600,8 @@ and how the pieces are wired are all reachable from here. Every node on it lists
 double-click on a node that has code opens that code, and values flow through any chain of nodes the same way on every
 screen.
 
-![The Main graph: the ⓘ Params tab shows the selected Bounce node's properties](https://docs.theprototype.app/img/main-graph/properties.png)
-
+![The Main graph: the ⓘ Params tab shows the selected Bounce node's properties](https://docs.theprototype.app/img/main-graph/properties.webp)
+*Figure: The Main graph.*
 ## Where it is
 
 - **Node editor** (<kbd>N</kbd>) ▸ **Flows** ▸ **Main** — the first row of the list. The breadcrumb bar at the top of
@@ -9720,8 +9722,8 @@ Press <kbd>?</kbd> anywhere to see every shortcut, grouped by panel, with the pa
 from the live keymap, so a key you rebind in **Settings ▸ Shortcuts** shows up there straight away. Type to filter;
 <kbd>Esc</kbd> closes it.
 
-![The cheat sheet: the node editor's keys first, because it has focus, then the 3D viewport's](https://docs.theprototype.app/img/node-editor/cheat-sheet.png)
-
+![The cheat sheet: the node editor's keys first, because it has focus, then the 3D viewport's](https://docs.theprototype.app/img/node-editor/cheat-sheet.webp)
+*Figure: The cheat sheet.*
 ## Node editor shortcuts
 
 | Key | Does |
@@ -9780,8 +9782,8 @@ Long names end in "…": point at a crumb (or **press and hold** it on a phone) 
 right end — or <kbd>Esc</kbd> — leaves a group, and the bin deletes the object's flow (it asks first, in a dialog).
 Jumping between the Scene and an object's flow is two taps: the crumb, then the row.
 
-![The breadcrumb bar in the docked node editor: ⌂ Scene › Angelfish 1…, with the object crumb's list open — Main, the Scene graph, then the object flows, the current one ticked](https://docs.theprototype.app/img/node-editor/breadcrumb-siblings.png)
-
+![The breadcrumb bar in the docked node editor: ⌂ Scene › Angelfish 1…, with the object crumb's list open — Main, the Scene graph, then the object flows, the current one ticked](https://docs.theprototype.app/img/node-editor/breadcrumb-siblings.webp)
+*Figure: The breadcrumb bar in the docked node editor.*
 On a phone the minimap is off by default; **⚙ Settings ▸ Minimap** turns it on.
 
 ## Tidy graph
@@ -9798,8 +9800,8 @@ The node editor can lay a graph out for you.
   result.
 - Inside a group (double-click a group card), Tidy arranges that group's contents.
 
-![Waves' Main graph after 1.25: the run's rules, three group cards with notes, and the Tidy button in the corner controls](https://docs.theprototype.app/img/node-editor/tidy-waves-main.png)
-
+![Part of Waves' Main graph at full size: tidied columns of nodes, with a note reading The crystal glows.](https://docs.theprototype.app/img/node-editor/tidy-waves-main.webp)
+*Figure: Part of Waves' Main graph at full size.*
 Every game's Main graph ships tidied — see [The Games tab](https://docs.theprototype.app/games.md#tidy-main-graphs).
 
 ## Groups
@@ -9817,8 +9819,8 @@ exactly as before.
 - Groups nest, copy and paste with their contents, and undo and redo like every other edit.
 - <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd> ungroups: the nodes stay exactly where they were.
 
-![Inside a group: Group inputs on the left, Group outputs on the right, and the breadcrumb at the top](https://docs.theprototype.app/img/node-editor/group.png)
-
+![Inside a group: Group inputs on the left, Group outputs on the right, and the breadcrumb at the top](https://docs.theprototype.app/img/node-editor/group.webp)
+*Figure: Inside a group.*
 ### Node group files (.tpnode)
 
 Right-click a group ▸ **Export group (.tpnode)…** (or any selection ▸ **Export as node group (.tpnode)…**) saves it as a
@@ -9872,8 +9874,8 @@ on variables in a watch list.
 It is **yours alone**. The other players in the session keep playing, and nothing you set in the debugger is saved
 into the scene or sent to anyone.
 
-![The Debugger paused at a Counter: the On Click wire shows a pulse, the Map Range wire reads 1, the watch list follows the score variable and the Counter's breakpoint is listed](https://docs.theprototype.app/img/debugger/paused-dark.png)
-
+![The Debugger paused at a Counter: the On Click wire shows a pulse, the Map Range wire reads 1, the watch list follows the score variable and the Counter's breakpoint is listed](https://docs.theprototype.app/img/debugger/paused-dark.webp)
+*Figure: The Debugger paused at a Counter.*
 ## Breakpoints
 
 In the [node editor](https://docs.theprototype.app/node-system.md), right-click a node ▸ **Breakpoint (pause Play here)**, or select nodes and press
@@ -9919,8 +9921,8 @@ While you are paused, **your** view is frozen and events queue up for you; the s
     Breakpoints are off in VR — on a headset the game just keeps running. [Module](https://docs.theprototype.app/modules.md) code keeps running while
     you are paused.
 
-![The Debugger in the light theme](https://docs.theprototype.app/img/debugger/paused-light.png)
-
+![The Debugger in the light theme](https://docs.theprototype.app/img/debugger/paused-light.webp)
+*Figure: The Debugger in the light theme.*
 ## Several HUD Buttons, one module input
 
 Also in 1.39: several **HUD Buttons** can be wired into one module input (a Match Button's *press*, a Realms Button's
@@ -9938,8 +9940,8 @@ The code workspace is one place for every piece of code in a scene: a [Script](h
 [behaviour](https://docs.theprototype.app/behaviours.md), a `.js` script file from your Library, a module's own source (read-only), and the flow graph
 itself as JSON. Each source is a **tab**, and your edits stay in the tab until you save.
 
-![The code workspace docked beside the Explorer and the Node editor, with a Script node's code open](https://docs.theprototype.app/img/code-workspace/script-tab.png)
-
+![The code workspace docked beside the Explorer and the Node editor, with a Script node's code open](https://docs.theprototype.app/img/code-workspace/script-tab.webp)
+*Figure: The code workspace docked beside the Explorer and the Node editor.*
 ## Where it is
 
 It opens by itself when you ask for code:
@@ -9968,8 +9970,8 @@ Saving checks the code first. If it does not parse, **nothing is applied**: the 
 the line (click it to jump there), and every node the code feeds shows an amber *edit not applied* badge while it keeps
 running the last good version.
 
-![A save refused: the banner names the line, and the nodes keep the last good version](https://docs.theprototype.app/img/code-workspace/parse-error.png)
-
+![A save refused: the banner names the line, and the nodes keep the last good version](https://docs.theprototype.app/img/code-workspace/parse-error.webp)
+*Figure: A save refused.*
 When the code is good, everything that runs it reloads — on every player's screen.
 
 **Unsaved changes are guarded.** Closing a tab with unsaved edits asks first. Closing the whole workspace with unsaved
@@ -9985,8 +9987,8 @@ Since 1.42, when two or more people in a session open the same code — a Script
 or a [text document](#text-documents) — they type into **one shared text**. Everyone sees the others' typing as it
 happens, and two people typing in the same line both keep what they typed: nothing is overwritten.
 
-![Editing together: the other person's caret and selection in their colour, and the "Editing with you" strip](https://docs.theprototype.app/img/code-workspace/editing-together.png)
-
+![Editing together: another person's caret and selection in their colour, labelled Peer 8c21, line 2.](https://docs.theprototype.app/img/code-workspace/editing-together.webp)
+*Figure: Editing together.*
 - The other person's **caret** and **selection** show in their colour (hover the caret for their name). The strip under
   the toolbar, **Editing with you**, lists everyone in the file and the line they are on; a screen reader reads it as
   "Ana is on line 4, 12 characters selected".
@@ -10011,8 +10013,8 @@ its preview, double-click it, or right-click ▸ **Edit in the Code tab** — an
 second monitor and keep the 3D view full-size in the app. Desktop browsers only (hidden on phones, touch screens and in
 VR).
 
-![The code workspace in its own window, with Dock back in its header](https://docs.theprototype.app/img/code-workspace/pop-out-window.png)
-
+![The code workspace in its own window, with Dock back in its header](https://docs.theprototype.app/img/code-workspace/pop-out-window.webp)
+*Figure: The code workspace in its own window.*
 - Everything stays live both ways: typing, <kbd>Ctrl</kbd>+<kbd>S</kbd> applying the script to the scene, the error
   banner and Problems, the sidebars, quick open, menus — and [editing together](#editing-together).
 - While the window is open the app's own Code panel steps aside; opening code anywhere in the app (**Edit code** on a
@@ -10026,8 +10028,8 @@ VR).
 
 ## Sidebars
 
-![The code workspace in 1.25: Open editors and the Project tree on the left, the tab strip, and the Outline on the right](https://docs.theprototype.app/img/code-workspace/sidebars.png)
-
+![The code workspace: Open editors and the Project tree on the left, with the tab strip above the code.](https://docs.theprototype.app/img/code-workspace/sidebars.webp)
+*Figure: The code workspace.*
 ### Left: Open editors and Project
 
 <kbd>Ctrl</kbd>+<kbd>B</kbd> shows or hides the left sidebar. (Outside the code workspace the same keys, and
@@ -10050,8 +10052,8 @@ VR).
 Since 1.46 the **Files** group of the Project tree is a real file tree: what you make here are ordinary
 [Explorer](https://docs.theprototype.app/explorer.md) files, so they follow the Explorer's sharing rules and everyone in the session sees them.
 
-![The Project tree's menu on a script: Rename, Move to, Cut, Delete, New file, New folder, Show in Explorer](https://docs.theprototype.app/img/code-workspace/files-menu.png)
-
+![The Project tree's menu on a script: Rename, Move to, Cut, Delete, New file, New folder, Show in Explorer](https://docs.theprototype.app/img/code-workspace/files-menu.webp)
+*Figure: The Project tree's menu on a script.*
 - **New file** (the page-with-plus button in the Project header, or the right-click menu) offers **Script** (a
   behaviour with the lifecycle functions ready to fill in), **Note** (`.md`) and **JSON**. A new script opens in a
   tab straight away.
@@ -10112,8 +10114,8 @@ return {};                                                  // anything left out
 - **Engine source** (toolbar) shows the built-in walker code it steers, read-only.
 - With no code saved, the Player behaves exactly as before.
 
-![Player: walk open in the code workspace, with Engine source in the toolbar and the Player code row in the Project tree](https://docs.theprototype.app/img/code-workspace/player-code.png)
-
+![Player: walk open in the code workspace, with Engine source in the toolbar and the Player code row in the Project tree](https://docs.theprototype.app/img/code-workspace/player-code.webp)
+*Figure: Player: walk open in the code workspace.*
 ## Code and files
 
 - **Save as file** turns a node's inline code into a script file in your Explorer and binds the node to it.
@@ -11128,8 +11130,8 @@ A start button and a pause key:
 4. Press Play and click the box: the round starts for everyone. <kbd>P</kbd> pauses it, and a
    click on the box resumes it.
 
-![The example's nodes: On Click on the Start box, a Key Press for P, and two Set Game State cards (playing, paused) — in 1.42 the cards have no trigger socket to wire into](https://docs.theprototype.app/img/nodes/setgamestate.png)
-
+![The example's nodes: On Click on the Start box, a Key Press for P, and two Set Game State cards (playing, paused) — in 1.42 the cards have no trigger socket to wire into](https://docs.theprototype.app/img/nodes-setgamestate/setgamestate.webp)
+*Figure: The example's nodes.*
 !!! tip
     The HUD editor builds these for you: select a button and pick **Actions ▸ Start the game**,
     **Pause**, **Resume**, **End the game**, **Back to the menu** or **Reset the game**.
@@ -11179,8 +11181,8 @@ Keep each player's best score when a game ends:
 4. Every time the game reaches `over`, each player's device keeps the higher of its saved best
    and the final score.
 
-![On Game State (over) pulses a Store Value whose value comes from Get Variable score](https://docs.theprototype.app/img/nodes/ongamestate.png)
-
+![On Game State (over) pulses a Store Value whose value comes from Get Variable score](https://docs.theprototype.app/img/nodes-ongamestate/ongamestate.webp)
+*Figure: On Game State (over) pulses a Store Value whose value comes from Get Variable score.*
 !!! tip
     Wired into a number input, On Game State reads 1 for the moment after the change and 0
     otherwise, just like [On Click](https://docs.theprototype.app/nodes/onclick.md).
@@ -11255,8 +11257,8 @@ A chase camera for a car:
    now stays behind the car and turns with it.
 5. To see through the camera, use [Set Active Camera](https://docs.theprototype.app/nodes/setcamera.md) or the camera's **Preview**.
 
-![A camera object, its viewing pyramid drawn, aimed at a cube by a Camera Rig](https://docs.theprototype.app/img/nodes/camera-rig.png)
-
+![A camera object, its viewing pyramid drawn, aimed at a cube by a Camera Rig](https://docs.theprototype.app/img/nodes-camerarig/camera-rig.webp)
+*Figure: A camera object.*
 ## Limits
 
 - It moves camera objects only. Wired to anything else it does nothing, and a toast says so.
@@ -11409,8 +11411,8 @@ End the race when every player has done three laps:
 
 Each player's own `laps` comes from a [Set Variable](https://docs.theprototype.app/nodes/setvariable.md) with scope `player`.
 
-![A Player Variable (laps, mine) into a Compare (≥ 3), into All Players' condition, into Set Game State (over)](https://docs.theprototype.app/img/nodes/allplayers.png)
-
+![A Player Variable (laps, mine) into a Compare (≥ 3), into All Players' condition, into Set Game State (over)](https://docs.theprototype.app/img/nodes-allplayers/allplayers.webp)
+*Figure: A Player Variable (laps.*
 !!! tip
     All Players also works as a "this just came true" detector for a shared condition: a
     Compare cannot drive a trigger input directly, but Compare → All Players → Set Game State
@@ -11489,7 +11491,8 @@ Add a point to the shared score with each click on a coin:
 4. Read the score with a [Get Variable](https://docs.theprototype.app/nodes/getvariable.md) named `score`, or show it on screen with
    the HUD editor's **Actions ▸ Show a variable**.
 
-![The example's nodes: On Click on the Coin, a Set Variable (score, add, shared) and a Number set to 1 — in 1.42 the Set Variable card has no sockets to wire into](https://docs.theprototype.app/img/nodes/setvariable.png)
+![The example's nodes: On Click on the Coin, a Set Variable (score, add, shared) and a Number set to 1 — in 1.42 the Set Variable card has no sockets to wire into](https://docs.theprototype.app/img/nodes-setvariable/setvariable.webp)
+*Figure: The example's nodes.*
 
 
 ---
@@ -11532,8 +11535,8 @@ A door that disappears once the team has 10 points:
 4. Add an **Object Selector** picking the `Door`; wire Visibility → Object Selector. The door
    stays while the score is under 10 and vanishes for everyone when it reaches 10.
 
-![Get Variable score into a Compare (less than 10), driving a Visibility node on the Door's Object Selector](https://docs.theprototype.app/img/nodes/getvariable.png)
-
+![Get Variable score into a Compare (less than 10), driving a Visibility node on the Door's Object Selector](https://docs.theprototype.app/img/nodes-getvariable/getvariable.webp)
+*Figure: Get Variable score into a Compare (less than 10).*
 !!! tip
     To show a variable on screen, select a HUD Text element and pick **Actions ▸ Show a
     variable** in the HUD editor: it wires a Get Variable into a [HUD Text](https://docs.theprototype.app/nodes/hudtext.md) for you.
@@ -11936,8 +11939,8 @@ A bridge that appears 30 seconds into the round:
    game: the bridge shows up for everyone at the same moment, and is hidden again when the next
    round starts.
 
-![Game Time (elapsed) into a Compare (at least 30), driving a Visibility node on the Bridge's Object Selector](https://docs.theprototype.app/img/nodes/gametime.png)
-
+![Game Time (elapsed) into a Compare (at least 30), driving a Visibility node on the Bridge's Object Selector](https://docs.theprototype.app/img/nodes-gametime/gametime.webp)
+*Figure: Game Time (elapsed) into a Compare (at least 30).*
 !!! tip
     **Actions ▸ Show the round time** in the HUD editor wires a Game Time (`remaining`, 60 s)
     into a HUD Text for you. For a time limit that actually ends the round, use **Kit: Round**
@@ -11998,7 +12001,8 @@ Count each player's own bell rings on their own HUD:
     Step 2 cannot be wired by hand yet: the Set Variable card does not draw its **trigger** and **value** sockets (see
     [Set Variable](https://docs.theprototype.app/nodes/setvariable.md)). The Player Variable half of the example works as shown.
 
-![The example's nodes: On Hit (who me) on the Bell, a Set Variable (rings, add, player) beside a Number, and a Player Variable (rings, mine) driving a HUD Text](https://docs.theprototype.app/img/nodes/peervariable.png)
+![The example's nodes: On Hit (who me) on the Bell, a Set Variable (rings, add, player) beside a Number, and a Player Variable (rings, mine) driving a HUD Text](https://docs.theprototype.app/img/nodes-peervariable/peervariable.webp)
+*Figure: The example's nodes.*
 
 
 ---
@@ -12090,8 +12094,8 @@ A walker whose jump you can tune while you play:
 4. Press **Play**. <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> walks and <kbd>Space</kbd> jumps. Drag the slider
    to jump higher or lower.
 
-![A Slider wired into the jumpHeight input of a Character Controller set to walk](https://docs.theprototype.app/img/nodes/charcontroller.png)
-
+![A Slider wired into the jumpHeight input of a Character Controller set to walk](https://docs.theprototype.app/img/nodes-charcontroller/charcontroller.webp)
+*Figure: A Slider wired into the jumpHeight input of a Character Controller set to walk.*
 !!! tip
     To change speed from the graph (a sprint key, a mud patch), use a [Move Speed](https://docs.theprototype.app/nodes/movespeed.md) node. To read the
     player's WASD as numbers, use [Move Input](https://docs.theprototype.app/nodes/moveinput.md).
@@ -12211,8 +12215,8 @@ Drive a box with <kbd>F</kbd> and let go with <kbd>G</kbd>:
 4. Press <kbd>F</kbd>: the view moves behind the cart and <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> drive it.
    Press <kbd>G</kbd> to hand it back.
 
-![Two Key Press nodes wired into the trigger and release inputs of a Possess Object, with an Object Selector picking the Cart wired into its target](https://docs.theprototype.app/img/nodes/possessnode.png)
-
+![Two Key Press nodes wired into the trigger and release inputs of a Possess Object, with an Object Selector picking the Cart wired into its target](https://docs.theprototype.app/img/nodes-possessnode/possessnode.webp)
+*Figure: Two Key Press nodes wired into the trigger and release inputs of a Possess Object.*
 !!! tip
     To have the camera follow something that moves **by itself**, such as a physics car, an animation or another
     player, use [Camera Follow](https://docs.theprototype.app/nodes/camerafollow.md) instead. It moves the view without taking the controls.
@@ -12268,8 +12272,8 @@ Follow a wandering box with <kbd>C</kbd> and stop with <kbd>X</kbd>:
 4. Add a **Key Press** on <kbd>C</kbd> into **trigger** and a **Key Press** on <kbd>X</kbd> into **stop**.
 5. Press <kbd>C</kbd>: the view swings in behind the rover and follows it. Press <kbd>X</kbd> to let go.
 
-![A Wander moving the Rover through an Object Selector, which also feeds the target of a Camera Follow triggered by two Key Press nodes](https://docs.theprototype.app/img/nodes/camerafollow.png)
-
+![A Wander moving the Rover through an Object Selector, which also feeds the target of a Camera Follow triggered by two Key Press nodes](https://docs.theprototype.app/img/nodes-camerafollow/camerafollow.webp)
+*Figure: A Wander moving the Rover through an Object Selector.*
 !!! tip
     Camera Follow moves the player's own view. To move a camera **object** (a chase camera you can cut to, with an
     offset and damping you choose), use [Camera Rig](https://docs.theprototype.app/nodes/camerarig.md).
@@ -12329,8 +12333,8 @@ Hold <kbd>Shift</kbd> to sprint:
    Wire them the same way.
 4. Press **Play**: holding <kbd>Shift</kbd> walks fast, and letting go walks at the normal speed.
 
-![Two Key Press nodes on Shift, one with edge down and one with edge up, each wired into the set input of a Move Speed node, beside a Character Controller](https://docs.theprototype.app/img/nodes/movespeed.png)
-
+![Two Key Press nodes on Shift, one with edge down and one with edge up, each wired into the set input of a Move Speed node, beside a Character Controller](https://docs.theprototype.app/img/nodes-movespeed/movespeed.webp)
+*Figure: Two Key Press nodes on Shift.*
 !!! tip
     A Key Press fires for **anyone's** key, so in a multiplayer game this sprint is shared: one player's <kbd>Shift</kbd>
     speeds everybody up. For a per-player sprint, use the controller's
@@ -12400,8 +12404,8 @@ A pause screen:
    wired into a second HUD Screen set to `hide`.
 4. Press Play and tap <kbd>P</kbd>: the pause screen opens; **Resume** puts the game's own screen back.
 
-![A Key Press wired into a HUD Screen set to show, and a HUD Button wired into a HUD Screen set to hide](https://docs.theprototype.app/img/nodes/hudscreen.png)
-
+![A Key Press wired into a HUD Screen set to show, and a HUD Button wired into a HUD Screen set to hide](https://docs.theprototype.app/img/nodes-hudscreen/hudscreen.webp)
+*Figure: A Key Press wired into a HUD Screen set to show.*
 !!! tip
     Set the *Pause* screen's **input** to **menu** in the HUD editor, so the pointer is freed and the player can click
     **Resume**. To actually stop the round clock as well, wire the same Key Press into a
@@ -12465,8 +12469,8 @@ A button that counts its own presses:
 3. Wire HUD Button → Counter's **pulse**, and Counter → HUD Text's **value**.
 4. Set the format to `Presses: {v}`. Press Play and click the button: the text counts up, for every player.
 
-![A HUD Button wired into a Counter, the Counter into a HUD Text with the format "Presses: {v}"](https://docs.theprototype.app/img/nodes/hudtext.png)
-
+![A HUD Button wired into a Counter, the Counter into a HUD Text with the format "Presses: {v}"](https://docs.theprototype.app/img/nodes-hudtext/hudtext.webp)
+*Figure: A HUD Button wired into a Counter.*
 !!! tip
     One HUD Text per element. Two nodes writing the same element fight over it, and the last one in the graph wins.
 
@@ -12530,8 +12534,8 @@ A bar you can drag:
 3. Wire Slider → HUD Bar's **value**, and set the HUD Bar's **min** to 0 and **max** to 40.
 4. Drag the slider: the bar fills and empties with it.
 
-![A Slider wired into a HUD Bar's value, with min 0 and max 40](https://docs.theprototype.app/img/nodes/hudbar.png)
-
+![A Slider wired into a HUD Bar's value, with min 0 and max 40](https://docs.theprototype.app/img/nodes-hudbar/hudbar.webp)
+*Figure: A Slider wired into a HUD Bar's value.*
 !!! tip
     For a health bar, keep the health in a variable and wire a [Get Variable](https://docs.theprototype.app/nodes/getvariable.md) into **value**, with
     **max** set to the starting health — the bar then empties as the variable goes down.
@@ -12615,7 +12619,8 @@ A one-minute round clock, as the node is meant to be used:
 3. Set duration 60, format `{v}s`, and turn **autostart** off.
 4. Every round, the clock counts down from 60s on every player's screen.
 
-![A Game Start wired into a HUD Timer's start, with duration 60 and format "{v}s"](https://docs.theprototype.app/img/nodes/hudtimer.png)
+![A Game Start wired into a HUD Timer's start, with duration 60 and format "{v}s"](https://docs.theprototype.app/img/nodes-hudtimer/hudtimer.webp)
+*Figure: A Game Start wired into a HUD Timer's start.*
 
 
 ---
@@ -12671,7 +12676,8 @@ A titled top-three:
 4. Press Play: the list shows *Top players* and the three highest scores. Nothing needs wiring between the two nodes;
    they meet at the element.
 
-![A Leaderboard and a HUD List side by side, both naming the same list element](https://docs.theprototype.app/img/nodes/hudlist.png)
+![A Leaderboard and a HUD List side by side, both naming the same list element](https://docs.theprototype.app/img/nodes-hudlist/hudlist.webp)
+*Figure: A Leaderboard and a HUD List side by side.*
 
 
 ---
@@ -12730,7 +12736,8 @@ A press log:
 3. Wire HUD Button → HUD Rows' **trigger**.
 4. Each press adds a *Bell rung* row to the list, on every player's screen.
 
-![The example's nodes: a HUD Button and a HUD Rows node set to append the row "Bell rung" — in 1.42 the HUD Rows card has no trigger socket to wire into](https://docs.theprototype.app/img/nodes/hudrows.png)
+![The example's nodes: a HUD Button and a HUD Rows node set to append the row "Bell rung" — in 1.42 the HUD Rows card has no trigger socket to wire into](https://docs.theprototype.app/img/nodes-hudrows/hudrows.webp)
+*Figure: The example's nodes.*
 
 
 ---
@@ -12801,8 +12808,8 @@ A race to collect gems:
    format `My gems: {v}`.
 4. Press Play with friends: the list ranks everyone by their gems, and each player sees their own count.
 
-![A Leaderboard ranking the gems variable, beside a Player Variable wired into a HUD Text](https://docs.theprototype.app/img/nodes/leaderboard.png)
-
+![A Leaderboard ranking the gems variable, beside a Player Variable wired into a HUD Text](https://docs.theprototype.app/img/nodes-leaderboard/leaderboard.webp)
+*Figure: A Leaderboard ranking the gems variable.*
 !!! tip
     For a race, rank lap times with **order** `asc` and **decimals** 2, so the fastest time sits on top.
 
@@ -12872,8 +12879,8 @@ A speed slider with a readout:
 3. Add a **HUD Text** picking the text, format `Speed: {v}`; wire HUD Input → HUD Text's **value**.
 4. Press Play and drag the slider: the text follows — on your screen only, because the slider is not shared.
 
-![A HUD Input reading a slider, wired into a HUD Text with the format "Speed: {v}"](https://docs.theprototype.app/img/nodes/hudinput.png)
-
+![A HUD Input reading a slider, wired into a HUD Text with the format "Speed: {v}"](https://docs.theprototype.app/img/nodes-hudinput/hudinput.webp)
+*Figure: A HUD Input reading a slider.*
 !!! tip
     To let a press read the control at that moment, wire the HUD Input into the **value** of the node the press drives
     — a [Store Value](https://docs.theprototype.app/nodes/storevalue.md) behind a **Save** button keeps the player's setting on their device.
@@ -12942,7 +12949,8 @@ A Reset button for a volume slider:
 3. Wire HUD Button → HUD Set Input's **trigger**.
 4. Drag the slider, then press *Reset*: it jumps back to 50.
 
-![The example's nodes: a HUD Button and a HUD Set Input whose value is 50 — in 1.42 the HUD Set Input card has no trigger socket to wire into](https://docs.theprototype.app/img/nodes/hudset.png)
+![The example's nodes: a HUD Button and a HUD Set Input whose value is 50 — in 1.42 the HUD Set Input card has no trigger socket to wire into](https://docs.theprototype.app/img/nodes-hudset/hudset.webp)
+*Figure: The example's nodes.*
 
 
 ---
@@ -13229,8 +13237,8 @@ Three taps light a lamp:
 4. Wire Compare → a **Visibility** node's **on**, and Visibility → an **Object Selector** picking the lamp.
 5. Press Play and tap <kbd>T</kbd> three times: the count shows on the card and the lamp appears for everyone.
 
-![A Key Press wired into a Behaviour's tap input; its taps output feeds a Compare that drives the lamp's Visibility](https://docs.theprototype.app/img/nodes/behaviour.png)
-
+![A Key Press wired into a Behaviour's tap input; its taps output feeds a Compare that drives the lamp's Visibility](https://docs.theprototype.app/img/nodes-behaviour/behaviour.webp)
+*Figure: A Key Press wired into a Behaviour's tap input; its taps output feeds a Compare that drives the lamp's Visibil.*
 !!! tip
     Logic that is easier to wire than to write — a pulse that should hold, a delay, a one-shot — belongs in nodes such
     as [Latch](https://docs.theprototype.app/nodes/latch.md), [Delay](https://docs.theprototype.app/nodes/delay.md) and [Once](https://docs.theprototype.app/nodes/once.md). Reach for a Behaviour when the rule has loops, timers
@@ -13284,7 +13292,8 @@ A link to Mini Golf's engine:
 2. In **ⓘ Params**, set title *Mini Golf engine*, module `minigolf`, file `module.js`.
 3. Double-click the card: `module.js` opens read-only in the code workspace.
 
-![A Code link card titled Mini Golf engine pointing at minigolf/module.js, with its Open code button](https://docs.theprototype.app/img/nodes/coderef.png)
+![A Code link card titled Mini Golf engine pointing at minigolf/module.js, with its Open code button](https://docs.theprototype.app/img/nodes-coderef/coderef.webp)
+*Figure: A Code link card titled Mini Golf engine pointing at minigolf/module.js.*
 
 
 ---
@@ -13432,8 +13441,8 @@ The extra inputs **c** to **h** have no value of their own: an input with no wir
 wires after it down one name (removing **b** turns **c** into **b**), one <kbd>Ctrl</kbd>+<kbd>Z</kbd> puts it all back,
 and groups around the node update their sockets too. [Compare](https://docs.theprototype.app/nodes/compare.md) stays two-input.
 
-![A Gate with four inputs inside a group: the group shows sockets a to d](https://docs.theprototype.app/img/nodes/gate-group.png)
-
+![A Gate with four inputs inside a group: the group shows sockets a to d](https://docs.theprototype.app/img/nodes-gate/gate-group.webp)
+*Figure: A Gate with four inputs inside a group.*
 ## Parameters
 
 | Parameter | Default | Options |
@@ -13595,8 +13604,8 @@ A lamp you switch with a key:
 3. Add an **Object Selector** picking the lamp; wire Visibility → Object Selector.
 4. Press Play and tap <kbd>E</kbd>: the lamp appears, tap again and it is gone — for every player.
 
-![A Key Press wired into a Latch's toggle, the Latch driving a Visibility node on the lamp's Object Selector](https://docs.theprototype.app/img/nodes/latch.png)
-
+![A Key Press wired into a Latch's toggle, the Latch driving a Visibility node on the lamp's Object Selector](https://docs.theprototype.app/img/nodes-latch/latch.webp)
+*Figure: A Key Press wired into a Latch's toggle.*
 !!! tip
     For "hide it once it is picked up", wire the pickup's pulse into **reset** with **initial** on, and turn on
     **reset each round** so the pickup returns every round. A [Store Value](https://docs.theprototype.app/nodes/storevalue.md) keeps a result after the
@@ -13654,8 +13663,8 @@ A door that lets you through for three seconds:
    Visibility → Object Selector.
 4. Press Play, tap <kbd>E</kbd>: the door vanishes, and three seconds later it is back.
 
-![A Key Press resetting a Latch and triggering a three-second Delay that sets the Latch again, which drives the door's Visibility](https://docs.theprototype.app/img/nodes/delay.png)
-
+![A Key Press resetting a Latch and triggering a three-second Delay that sets the Latch again, which drives the door's Visibility](https://docs.theprototype.app/img/nodes-delay/delay.webp)
+*Figure: A Key Press resetting a Latch and triggering a three-second Delay that sets the Latch again.*
 !!! tip
     For a cooldown, wire the action's pulse into a Delay's trigger and the Delay into a Latch's **set**, with the same
     pulse into the Latch's **reset**: the Latch reads false while the action is cooling down. Pressing again during the
@@ -13720,8 +13729,8 @@ Count one, two, three — and back to zero:
    **reset**.
 4. Press Play and tap <kbd>G</kbd>: the Counter reads 1, 2, 3 a second apart, then 0.
 
-![A Key Press triggering a Sequence whose first three steps count up a Counter and whose fourth step resets it](https://docs.theprototype.app/img/nodes/sequence.png)
-
+![A Key Press triggering a Sequence whose first three steps count up a Counter and whose fourth step resets it](https://docs.theprototype.app/img/nodes-sequence/sequence.webp)
+*Figure: A Key Press triggering a Sequence whose first three steps count up a Counter and whose fourth step resets it.*
 !!! tip
     Steps are ordinary pulses, so each one can drive anything an event drives — a [Latch](https://docs.theprototype.app/nodes/latch.md) set, a Spawn, a
     sound, another Sequence for more than four steps.
@@ -13779,8 +13788,8 @@ A treasure chest that pays out only once:
 4. Add a **Key Press** (capture <kbd>R</kbd>); wire it → Once's **rearm**.
 5. Press Play and click the chest a few times: the Counter reads 1. Press <kbd>R</kbd> and the next click counts again.
 
-![On Click on the chest feeding a Once that counts into a Counter, with a Key Press wired to the Once's rearm](https://docs.theprototype.app/img/nodes/once.png)
-
+![On Click on the chest feeding a Once, with a Key Press wired to the Once's rearm; the Once's output runs on to a Counter past the right edge.](https://docs.theprototype.app/img/nodes-once/once.webp)
+*Figure: On Click on the chest feeding a Once.*
 !!! tip
     Once is the opposite of a [Latch](https://docs.theprototype.app/nodes/latch.md): a Latch *holds* a value, a Once *passes* a single pulse. For a pickup
     that should both count once and disappear, wire the same pulse into a Once (for the score) and a Latch (for the
@@ -14410,8 +14419,8 @@ A lamp that shows while <kbd>A</kbd> is held:
 3. Wire it into a **Visibility** node's **on** input, and wire Visibility → an **Object Selector** that picks *Lamp*.
 4. Hold **A** on the pad: the lamp appears on every player's screen, and it hides again when you let go.
 
-![A Gamepad Button on A wired into the on input of a Visibility node, which drives an Object Selector picking the Lamp](https://docs.theprototype.app/img/nodes/gamepadbutton.png)
-
+![A Gamepad Button on A wired into the on input of a Visibility node, which drives an Object Selector picking the Lamp](https://docs.theprototype.app/img/nodes-gamepadbutton/gamepadbutton.webp)
+*Figure: A Gamepad Button on A wired into the on input of a Visibility node.*
 !!! tip
     For a stick, use [Gamepad Axis](https://docs.theprototype.app/nodes/gamepadaxis.md). It gives a number instead of a pulse.
 
@@ -14487,8 +14496,8 @@ Show a sign while the left stick is pushed hard to the right:
 4. Push the stick right past halfway: the sign appears on **your** screen. Other players see it only when they push
    their own sticks.
 
-![A Gamepad Axis on lx with deadzone 0.5 wired into a Compare, then a Visibility node driving an Object Selector picking the Sign](https://docs.theprototype.app/img/nodes/gamepadaxis.png)
-
+![A Gamepad Axis on lx with deadzone 0.5 wired into a Compare, then a Visibility node driving an Object Selector picking the Sign](https://docs.theprototype.app/img/nodes-gamepadaxis/gamepadaxis.webp)
+*Figure: A Gamepad Axis on lx with deadzone 0.5 wired into a Compare.*
 !!! tip
     Pushing a stick forward reads negative on `ly` and `ry`. Turn on **invert** if you want forward to read +1.
 
@@ -14623,8 +14632,8 @@ A turntable you can switch off:
 3. Add a **Toggle** (on) and wire it → Rotate / Motor's **on**. Untick the Toggle: the turntable goes back to its
    placed pose; tick it and it turns again, for every player.
 
-![A Toggle wired into a Rotate / Motor's on input, the Rotate / Motor driving the turntable's Object Selector](https://docs.theprototype.app/img/nodes/rotor.png)
-
+![A Toggle wired into a Rotate / Motor's on input, the Rotate / Motor driving the turntable's Object Selector](https://docs.theprototype.app/img/nodes-rotor/rotor.webp)
+*Figure: A Toggle wired into a Rotate / Motor's on input.*
 !!! note "Spin-up"
     The spin-up ramp is measured on the shared clock, which every player shares from its daily start, not from the
     moment the node is switched on. In practice the object is already at full speed when you look, and switching **on**
@@ -14680,8 +14689,8 @@ A toy boat on a river:
    comes back round at the end.
 4. Raise **speed** to 2 for a faster current, or **bob** for choppier water.
 
-![An Object Selector picking a Flow path feeds Float Along Flow's path input; Float Along Flow drives the boat's Object Selector](https://docs.theprototype.app/img/nodes/flowfloat.png)
-
+![An Object Selector picking a Flow path feeds Float Along Flow's path input; Float Along Flow drives the boat's Object Selector](https://docs.theprototype.app/img/nodes-flowfloat/flowfloat.webp)
+*Figure: An Object Selector picking a Flow path feeds Float Along Flow's path input; Float Along Flow drives the boat's.*
 !!! tip
     The nearest-path rule means a leaf dropped on a river needs no **path** wire at all — wire one when two paths run
     close together and you want to choose. For a path drawn as a spline, or ping-pong and run-once travel, see
@@ -16469,8 +16478,8 @@ code and press <kbd>Ctrl</kbd>+<kbd>S</kbd>, and the game plays by your rules on
 These games ship this way: **Mini Golf**, **Football**, **Dungeon Realms**, **The Alchemist's Escape**, **Sky Run**,
 **Target Toss** and **Marble Maze** (see [The Games tab](https://docs.theprototype.app/games.md)).
 
-![Mini Golf's Main graph: the read-me note, the buttons, the Mini Golf rules node with its state and moments, the groups around it and the engine's Code link](https://docs.theprototype.app/img/game-rules/mini-golf.png)
-
+![Part of Mini Golf's Main graph at full size: the rules node's outputs, such as stroke, outOfBounds and holeSunk, wired to sounds and bursts, with the Code link to the engine below.](https://docs.theprototype.app/img/game-rules/mini-golf.webp)
+*Figure: Part of Mini Golf's Main graph at full size.*
 ## Where it is
 
 Open a game from the **Games** tab, then open the **Node editor** (<kbd>N</kbd>). **Main** is the first entry under
@@ -16512,8 +16521,8 @@ You do not have to read code to tune a game. Select the rules node — or the ga
 
 A knob on the rules node rewrites the number in the code itself, so the code and the panel always agree.
 
-![Football's Main graph: the Match Rules settings node, the Football rules behaviour, and the groups for the nets, buttons and lamps](https://docs.theprototype.app/img/game-rules/football.png)
-
+![Part of Football's Main graph at full size: the Match Rules settings node, the Football rules behaviour, and the Code link to the engine.](https://docs.theprototype.app/img/game-rules/football.webp)
+*Figure: Part of Football's Main graph at full size.*
 ## Change the rules in code
 
 Double-click the rules node (or right-click ▸ **Open code**). The [code workspace](https://docs.theprototype.app/code-workspace.md) opens it; edit it
@@ -16987,8 +16996,8 @@ The **HUD** is the 2D layer over the game — a score, a health bar, a start men
 Press <kbd>Alt</kbd>+<kbd>H</kbd>, or the **＋** in the bottom dock's tab strip ▸ **HUD editor** (the toolbar can carry a
 HUD button too — see [The toolbar](https://docs.theprototype.app/controls.md#the-toolbar)). Like every editor window it docks at the bottom or floats.
 
-![The HUD editor on the Stars Room's menu screen: screens and palette on the left, the stage in the middle, the selected button's properties and actions on the right](https://docs.theprototype.app/img/hud/hud-editor.png)
-
+![The HUD editor on the Stars Room's menu screen: the stage in the middle, with the selected button.](https://docs.theprototype.app/img/hud-editor/hud-editor.webp)
+*Figure: The HUD editor on the Stars Room's menu screen.*
 | Part | What it holds |
 |---|---|
 | **Left column, top** | which HUD you are editing (the document picker), then the **screens** of that HUD — click one to edit it; its **while** and **input** settings open under it; **★** makes it the default screen everyone starts on; **✕** deletes it; **+ Screen** adds one |
@@ -17589,8 +17598,8 @@ across the line after every lap wins; everyone else gets 30 seconds to finish. I
 
 **Templates ▸ Games ▸ Race.** Race is built into the app — it needs no module.
 
-![The Race start screen: click a car, then Start](https://docs.theprototype.app/img/race/menu.png)
-
+![The Race start screen: click a car, then Start](https://docs.theprototype.app/img/race/menu.webp)
+*Figure: The Race start screen.*
 ## How to play
 
 1. Press **▶ Play** (the simulation starts by itself).
@@ -17607,8 +17616,8 @@ across the line after every lap wins; everyone else gets 30 seconds to finish. I
 The HUD shows your lap, the race clock, the current lap time, your position and your best lap. The results screen lists
 everyone's laps; your best race and best lap are saved on this device.
 
-![Lap 1 of 3: the countdown has just ended](https://docs.theprototype.app/img/race/start.png)
-
+![Lap 1 of 3: the countdown has just ended](https://docs.theprototype.app/img/race/start.webp)
+*Figure: Lap 1 of 3: the countdown has just ended.*
 !!! note "A lap only counts when you have driven all of it"
     Cutting across the infield, or reversing back and forth over the line, counts nothing: the game follows your
     progress along the road, not the line alone.
@@ -17625,8 +17634,8 @@ Race plays on a touch screen: once you are in a car, the [touch controls](https:
 The usual **Settings ▸ Touch controls** apply (visibility, haptics), and you can move the pedals from the pause menu ▸
 **Touch controls**. The pedals are on / off, like keys, so the throttle is not analogue on a phone.
 
-![Race on a phone: the steering stick bottom left, Reset, Brake and Gas bottom right](https://docs.theprototype.app/img/race/phone-pedals.png)
-
+![Race on a phone: the steering stick bottom left, Reset, Brake and Gas bottom right](https://docs.theprototype.app/img/race/phone-pedals.webp)
+*Figure: Race on a phone.*
 ## In VR
 
 In a headset you sit **in** the car. Your view rides with it, turning with the car but never tilting the horizon, and
@@ -17641,8 +17650,8 @@ near you, none far away. That brings the start line from 142 to 89 draw calls an
 the Quest budget. If the headset cannot hold its frame rate, [adaptive quality](https://docs.theprototype.app/performance.md#the-quality-governor)
 still turns shadows off.
 
-![The view from the driver's seat in a headset](https://docs.theprototype.app/img/race/vr-seat.png)
-
+![The view from the driver's seat in a headset](https://docs.theprototype.app/img/race/vr-seat.webp)
+*Figure: The view from the driver's seat in a headset.*
 ## Make it yours
 
 Everything the race runs on is on the **Main graph** (node editor, <kbd>N</kbd> — see [Main graph](https://docs.theprototype.app/main-graph.md)):
@@ -17784,10 +17793,10 @@ the start card of a **play link** (`/p/‹id›`) and in a published game's **pa
 Press it and the count updates at once (and goes back if the like could not be saved). Signed out, it asks you to sign in
 (profile menu, top right). It is the same like as the ♥ on the scene's page — one like per person per scene.
 
-![The heart on a play link's start card, beside Play](https://docs.theprototype.app/img/community/play-link-heart.png)
-
-![The heart in a published game's pause menu](https://docs.theprototype.app/img/community/pause-menu-heart.png)
-
+![The heart on a play link's start card, beside Play](https://docs.theprototype.app/img/community/play-link-heart.webp)
+*Figure: The heart on a play link's start card.*
+![The heart in a published game's pause menu](https://docs.theprototype.app/img/community/pause-menu-heart.webp)
+*Figure: The heart in a published game's pause menu.*
 ### Mine
 
 While you are signed in, the **Mine** chip in **Templates ▸ Community** (and on theprototype.app/community) shows only
@@ -17800,8 +17809,8 @@ play links, embeds and exported builds — for the last **7 days**, **30 days** 
 link, itch.io, static host, embed). The [Publish](#publish) dialog shows the same count for the game you are publishing
 or updating.
 
-![Your games: visits over 30 days, one row per game, with a moderation notice](https://docs.theprototype.app/img/community/your-games.png)
-
+![Your games: visits over 30 days, one row per game, with a moderation notice](https://docs.theprototype.app/img/community/your-games.webp)
+*Figure: Your games: visits over 30 days.*
 ### One game, one count
 
 Every scene gets a permanent **game id** the first time you save, export or publish it. Re-exporting, a new itch.io build
@@ -17948,8 +17957,8 @@ A play link, an embed and an exported game all open the same **player**:
   shows *Made with ThePrototype*, clicking opens theprototype.app in a new tab. It moves up out of the way of a game's
   touch buttons and is not drawn inside a VR headset.
 
-![Mini Golf exported for itch.io, playing in the itch.io frame: the game's own HUD, the fullscreen button bottom-left and the badge bottom-right](https://docs.theprototype.app/img/export/itch-mini-golf.png)
-
+![Mini Golf exported for itch.io: the game's start card, playing in the itch.io frame.](https://docs.theprototype.app/img/publish-export/itch-mini-golf.webp)
+*Figure: Mini Golf exported for itch.io.*
 The badge is **always on** in play links, embeds and exports. An exported file is yours to edit, so this is a request,
 not a lock — please keep it: it is how other people find the tool you made your game with. Clicks on the badge are
 counted per game, with no personal data, so we can see how many people arrive from games made here — and you can see
@@ -17957,8 +17966,8 @@ yours in [Your games & stats](https://docs.theprototype.app/community.md#your-ga
 
 ## Export: a game in a zip
 
-![The Export tab with the itch.io preset selected](https://docs.theprototype.app/img/export/export-tab.png)
-
+![The Export tab with the itch.io preset selected](https://docs.theprototype.app/img/publish-export/export-tab.webp)
+*Figure: The Export tab with the itch.io preset selected.*
 1. Open the scene, then **Menu ▸ Publish / Export ▸ Export**.
 2. Pick a **preset**:
 
@@ -18045,8 +18054,8 @@ the submission for you, and works without signing in:
 5. **Copy the gallery.json row** copies the row and opens `gallery.json` for editing: add it to the `entries` list on the
    same pull request.
 
-![The Community gallery tab after Build submission zip: the two GitHub steps](https://docs.theprototype.app/img/export/gallery-tab.png)
-
+![The Community gallery tab after Build submission zip: the two GitHub steps](https://docs.theprototype.app/img/publish-export/gallery-tab.webp)
+*Figure: The Community gallery tab after Build submission zip.*
 The app never sends anything itself; every step on GitHub is your click. Before you start, the tab checks the same rules
 as the gallery's own checks: the scene at most 25 MB, the thumbnail at most 512 KB, a license, a title of at most 80
 characters and a description of at most 300.
@@ -18082,8 +18091,8 @@ for: Full quality / For Quest / web**. Your last choice is remembered on this de
 
 The full-quality file is never overwritten by accident: the Quest file has its own name.
 
-![Save options with Optimize for: Full quality or For Quest / web](https://docs.theprototype.app/img/saving/save-options-optimize-for.png)
-
+![Save options with Optimize for: Full quality or For Quest / web](https://docs.theprototype.app/img/publish-export/save-options-optimize-for.webp)
+*Figure: Save options with Optimize for.*
 Measured on a 65,024-triangle model with a 4096 px texture:
 
 | | Full quality | For Quest / web |
@@ -18179,8 +18188,8 @@ in front of you on a gently curved band, arranged the way the author arranged it
 to the left, the clock up and to the right, the hint along the bottom. It replaces the single strip of short text lines
 earlier versions showed.
 
-![Waves in a headset: the score up left, the wave in the middle, more readouts below](https://docs.theprototype.app/img/vr/game-hud-waves.png)
-
+![Waves in a headset: the score up left, the wave in the middle, more readouts below](https://docs.theprototype.app/img/vr/game-hud-waves.webp)
+*Figure: Waves in a headset.*
 It appears by itself whenever a game is running and you are in Interact or Play; there is nothing to set up. Menus (the
 start screen, pause, results) still appear on the board in front of you — the band carries what you read while playing.
 
@@ -18230,8 +18239,8 @@ sector that opens another ring opens that ring and keeps the menu up.
 
 ### The first ring
 
-![The first ring: Objects, Add, Scene, Tools, Redo, Undo, Chat, Settings around a Close hub](https://docs.theprototype.app/img/vr/radial-root.png)
-
+![The first ring: Objects, Add, Scene, Tools, Redo, Undo, Chat, Settings around a Close hub](https://docs.theprototype.app/img/vr/radial-root.webp)
+*Figure: The first ring.*
 The names and icons match the desktop menus:
 
 | Sector | Does |
@@ -18274,8 +18283,8 @@ last:
 
 ### Settings
 
-![The Settings ring: Comfort, Body, Controls, Display, Editing, Microphone, All settings, Exit VR](https://docs.theprototype.app/img/vr/settings-ring.png)
-
+![The Settings ring: Comfort, Body, Controls, Display, Editing, Microphone, All settings, Exit VR](https://docs.theprototype.app/img/vr/settings-ring.webp)
+*Figure: The Settings ring.*
 **Settings ▸** has a ring per page — **Comfort**, **Body**, **Controls**, **Display** and **Editing** — plus:
 
 - **Microphone** — press to cycle *Push to talk* / *Open* / *Off*;
@@ -18291,14 +18300,14 @@ stays open so you can see the change.
 and right change a value (or the page, on the tab strip), and a stick press presses the row. **Back to menu** returns you
 to the Settings ring.
 
-![The All settings panel on its Comfort tab](https://docs.theprototype.app/img/vr/settings-panel.png)
-
+![The All settings panel on its Comfort tab](https://docs.theprototype.app/img/vr/settings-panel.webp)
+*Figure: The All settings panel on its Comfort tab.*
 **Search** — the last tab of the panel. Press the query row and type on the VR keyboard: the results follow every key
 (*turn* lists Turning, Snap angle, Smooth speed and Mirror turn). Press a result to change it right there. <kbd>Esc</kbd>
 on the keyboard puts the previous search back.
 
-![The Search tab: "turn" finds four rows](https://docs.theprototype.app/img/vr/settings-search.png)
-
+![The Search tab: "turn" finds four rows](https://docs.theprototype.app/img/vr/settings-search.webp)
+*Figure: The Search tab.*
 ## Getting around
 
 - **Move** — push the left thumbstick. With **VR flying** on, forward follows where your controller aims; otherwise it stays level. Hold the **left grip** to switch the stick to panning and elevation.
@@ -18392,8 +18401,8 @@ desktop [AI Assistant](https://docs.theprototype.app/ai/assistant.md) window** �
 round. Your messages show as violet chips on the right, the assistant's answers below them; grey lines are what it is
 doing (*Creating 3 object(s)*).
 
-![The AI Assistant panel in the headset](https://docs.theprototype.app/img/vr/ai-panel.png)
-
+![The AI Assistant panel in the headset](https://docs.theprototype.app/img/vr/ai-panel.webp)
+*Figure: The AI Assistant panel in the headset.*
 - **Ask** — point at **＋ Ask AI…** and pull the trigger (or press the stick): the VR keyboard opens; type and press ⏎.
   Everything the assistant builds replicates to your peers and undoes as one step.
 - **Talk** — hold the **mic** button (keep the trigger held on it), or hold your **talk button** (A on the right
@@ -18541,8 +18550,8 @@ air* (two grips on an object scale that object).
 
 ## Measure
 
-![A measured chain with its labels, and the Arrange ring on the menu hand](https://docs.theprototype.app/img/building-in-vr/measure-arrange.png)
-
+![A measured chain with its labels, and the Arrange ring on the menu hand](https://docs.theprototype.app/img/building-in-vr/measure-arrange.webp)
+*Figure: A measured chain with its labels.*
 Radial menu ▸ **Tools ▸ Measure** — a trigger tool beside Select, Box select and Draw mode.
 
 - Point the laser of the hand that does not hold the menu. A dashed segment and a marker show where the next point lands.
@@ -18593,8 +18602,8 @@ work in a miniature too: the ring and the stroke follow your laser at the world'
 
 ## The Asset Browser on your wrist
 
-![The Asset Browser panel: Packs, Free CC0 and My library tabs, a search box and the packs](https://docs.theprototype.app/img/building-in-vr/asset-browser-packs.png)
-
+![The Asset Browser panel: Packs, Free CC0 and My library tabs, a search box and the packs](https://docs.theprototype.app/img/building-in-vr/asset-browser-packs.webp)
+*Figure: The Asset Browser panel.*
 Radial menu ▸ **Add ▸ Assets** opens a panel on the wrist of your menu hand, facing you. Point at it with the other hand.
 
 - **Packs** — the packs in your Explorer. Press a pack to open it, **‹ Packs** to go back.
@@ -18615,8 +18624,8 @@ whatever you point at — amber when it overlaps something, red when there is no
 - Each placement is one undo step, and everyone sees it.
 - In a **miniature** the object still lands at full size, at the spot under your laser.
 
-![Placing: "Duck: trigger places · stick turns · grip stops"](https://docs.theprototype.app/img/building-in-vr/asset-browser-placing.png)
-
+![Placing: "Duck: trigger places · stick turns · grip stops"](https://docs.theprototype.app/img/building-in-vr/asset-browser-placing.webp)
+*Figure: Placing: "Duck.*
 **Pin it:** grip the panel and let go in the air — it stays there, bigger. Grip it again and let go near your wrist to put
 it back (or press **Pin** / **To wrist**). In one-handed mode it opens pinned in front of you.
 
@@ -18624,8 +18633,8 @@ Add ▸ **Prefabs** uses the same ghost: real size, the stick turns it, it rests
 
 ## Logic in the headset
 
-![The Logic panel on the Spinner object's flow: a Number card wired into Spin's speed, with + Node, undo, redo, Fit, zoom and close along the top](https://docs.theprototype.app/img/building-in-vr/logic-panel.png)
-
+![The Logic panel on the Spinner object's flow: a Number card wired into Spin's speed, with + Node, undo, redo, Fit, zoom and close along the top](https://docs.theprototype.app/img/building-in-vr/logic-panel.webp)
+*Figure: The Logic panel on the Spinner object's flow.*
 Radial menu ▸ **Tools ▸ Logic** opens the scene's node graph as a panel in front of you. With one object selected,
 **Selected ▸ Edit logic** opens that object's own flow instead (tabs at the top switch between the two). It is the same
 graph as the desktop [node editor](https://docs.theprototype.app/node-editor.md): every change is one undo step, and everyone in the session sees it
@@ -18643,8 +18652,8 @@ land live.
 The buttons along the top: **+ Node** opens a palette with the desktop's groups — pick a node and it lands in the middle
 of the view; **↶ / ↷** undo and redo; **Fit** frames every card; **− / +** zoom; **✕** closes the panel.
 
-![The wrist pad for a Number node: value and step with − / + buttons, and Rename, Unwire, Delete](https://docs.theprototype.app/img/building-in-vr/logic-pad.png)
-
+![The wrist pad for a Number node: value and step with − / + buttons, and Rename, Unwire, Delete](https://docs.theprototype.app/img/building-in-vr/logic-pad.webp)
+*Figure: The wrist pad for a Number node.*
 **Click** a card (trigger, no drag) to select it: its values open on a **wrist pad** on your other hand.
 
 - **− / +** step a number; press the value itself to type it on the VR keyboard.
@@ -18889,13 +18898,13 @@ Talk to the assistant instead of typing. Set up a speech-to-text provider in **S
 | **Language hint** | blank (detect) | for example `en` |
 | **Test connection** | — | sends half a second of silence; *Connected* means the server accepted it |
 
-![Voice typing set to Groq](https://docs.theprototype.app/img/ai/voice-typing-settings.png)
-
+![The Voice typing setting in the AI assistant's settings, set to Groq.](https://docs.theprototype.app/img/ai-assistant/voice-typing-settings.webp)
+*Figure: The Voice typing setting in the AI assistant's settings.*
 The assistant window then has a **mic** button next to **Send**: click to listen, click again to stop. The words land in
 the input, so you can fix them before sending. (In VR they are sent as soon as you let go.)
 
-![The assistant window with the mic button next to Send](https://docs.theprototype.app/img/ai/assistant-mic.png)
-
+![The assistant window with the mic button next to Send](https://docs.theprototype.app/img/ai-assistant/assistant-mic.webp)
+*Figure: The assistant window with the mic button next to Send.*
 - The voice key is stored on this device only, like the AI provider key ([Where keys are stored](https://docs.theprototype.app/ai/providers.md#where-keys-are-stored)).
 - If voice chat is on, the assistant uses the same microphone without opening a second one, and voice chat keeps
   working.
@@ -19089,8 +19098,8 @@ batched **create_objects**. Then **screenshot** to check the result.
   back, the agent asks to come in again — the ordinary approval card — and carries on.
 - To stop it, revoke its invite or use **Remove from session** on its row ([Users and moderation](https://docs.theprototype.app/people.md)).
 
-![Agent activity in the AI assistant window](https://docs.theprototype.app/img/ai/agent-activity.png)
-
+![Agent activity in the AI assistant window](https://docs.theprototype.app/img/ai-build-with-an-agent/agent-activity.webp)
+*Figure: Agent activity in the AI assistant window.*
 ## Security notes
 
 - An invite's token lives in the URL **hash**, which browsers never send to any server. Link
@@ -19905,8 +19914,8 @@ controls on the **right** — on **Core**, the download icon and the switch; on 
 **Update** — sit under its name and description. A description that is cut short ends in a chevron: tap the text to read
 all of it, tap again to fold it. The dev-URL row fits a phone's width too.
 
-![Modules ▸ Core on a folded phone: each module's download icon and switch on the right, + Button and Pong: spawn / remove under their descriptions, and VR Sleeve Palette's description tapped open in full](https://docs.theprototype.app/img/modules/core-phone.png)
-
+![Modules ▸ Core on a folded phone: each module's download icon and switch on the right, + Button and Pong: spawn / remove under their descriptions, and VR Sleeve Palette's description tapped open in full](https://docs.theprototype.app/img/modules/core-phone.webp)
+*Figure: Modules ▸ Core on a folded phone.*
 - **Core modules** ship with the app (hello, button, pong, VR sleeve). Toggle each on or off: both are **live** (since 1.20, disabling no longer needs a reload).
 - The dungeon generator, piano, avatar controller, VR essentials and drivable car used to ship in the app; they now live in the **Browse** gallery, so install them there when you want them. Everyone in a session needs the same modules for shared behaviour to match — including anyone who joins later.
 - **⬇ Download as example** exports a core module as a zip — the best starting point for writing your own.

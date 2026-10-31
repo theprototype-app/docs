@@ -245,8 +245,8 @@ A session downloads as a **`.tpscene`**, a whole project as a **`.tp`**, and bot
 New in 1.31: drag any object — a pack item, one of your Library models, a prefab — from **Explorer ▸ Packs** or
 **Explorer ▸ Library** onto the viewport, and a **ghost** shows where it will land and how big it is before you let go.
 
-![Dragging the Duck from the starter pack: a box ghost with its size beside the pointer](https://docs.theprototype.app/img/explorer/place-box-ghost.png)
-
+![Dragging the Duck from the starter pack: a box ghost with its size beside the pointer](https://docs.theprototype.app/img/explorer/place-box-ghost.webp)
+*Figure: Dragging the Duck from the starter pack.*
 - **Drag.** Press on a card and drag it over the 3D view. The ghost sits **on** whatever is under the pointer — the
   floor, a table, the side of a wall — and follows the grid when [grid snapping](https://docs.theprototype.app/snapping.md) is on; hold
   <kbd>Shift</kbd> to move it freely. "Align to surface" (snapping options) tilts it onto slopes and walls.
@@ -274,8 +274,8 @@ Beside the pointer you see the item's **width × depth × height in metres**, it
 - Hovering the viewport during a drag **starts the download**, so the drop is quick. A placed pack item shows your
   [Placeholder Style](https://docs.theprototype.app/loading.md) until its file arrives. The ghost is yours alone — nobody else sees it.
 
-![Once loaded, the ghost is a see-through copy of the real model](https://docs.theprototype.app/img/explorer/place-model-ghost.png)
-
+![Once loaded, the ghost is a see-through copy of the real model](https://docs.theprototype.app/img/explorer/place-model-ghost.webp)
+*Figure: Once loaded, the ghost is a see-through copy of the real model.*
 ### The Placement preview setting
 
 **Settings ▸ Scene ▸ Performance** (this device only):
@@ -286,8 +286,8 @@ Beside the pointer you see the item's **width × depth × height in metres**, it
   (50,000 on a computer, 15,000 on a phone or headset).
 - **Show dimensions** — the size, triangles and download size beside the pointer.
 
-![Settings ▸ Scene ▸ Performance ▸ Placement preview](https://docs.theprototype.app/img/explorer/place-settings.png)
-
+![Settings ▸ Scene ▸ Performance ▸ Placement preview](https://docs.theprototype.app/img/explorer/place-settings.webp)
+*Figure: Settings ▸ Scene ▸ Performance ▸ Placement preview.*
 ### Downloaded pack items and Delete cache
 
 Explorer ▸ Packs marks the items this device has already downloaded with a **✓** (its size in the tooltip), and the
@@ -296,8 +296,8 @@ frees its download — the item **stays in the pack** and downloads again the ne
 ▸ **Delete downloads** frees the whole pack's, and [Storage](#storage) lists **Pack downloads** per pack with **Clear
 all pack downloads**.
 
-![A pack item's menu: Delete cache with its size](https://docs.theprototype.app/img/explorer/place-delete-cache.png)
-
+![A pack item's menu: Delete cache with its size](https://docs.theprototype.app/img/explorer/place-delete-cache.webp)
+*Figure: A pack item's menu.*
 ### Images, audio and text
 
 - **Images** dropped onto an object become its **texture**. A big photo is scaled down to 1024 px on its longest side

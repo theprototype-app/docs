@@ -113,8 +113,8 @@ everything has loaded. The person who opens the scene runs it; everyone else see
 games and play links, and undo / redo work on it like on any edit. *Jelly room*, *Fluid tank toy*, *Pool party* and
 *Island ocean* have it on.
 
-![Configure Scene ▸ Camera ▸ Start view with Start simulation on load ticked](https://docs.theprototype.app/img/physics/sim-on-load-setting.png)
-
+![Configure Scene ▸ Camera ▸ Start view with Start simulation on load ticked](https://docs.theprototype.app/img/physics/sim-on-load-setting.webp)
+*Figure: Configure Scene ▸ Camera ▸ Start view with Start simulation on load ticked.*
 ## Grab and throw mid-simulation
 
 While a simulation is running you can grab a dynamic object and throw it:
@@ -171,8 +171,8 @@ ground* ticked flew on a desktop.) **Configure Scene ▸ Play ▸ Flying**:
 | **Allowed** | <kbd>Q</kbd> / <kbd>E</kbd> on a desktop, the **Up** / **Down** touch buttons, and in VR Interact, flying with the stick along where the controller points |
 | **Removed** | nobody flies in this scene, even if a game module or a Character Controller node in fly mode asks for it |
 
-![Configure Scene ▸ Physics ▸ Play mode, with Flying set to Allowed](https://docs.theprototype.app/img/physics/flying-setting.png)
-
+![Configure Scene ▸ Physics ▸ Play mode, with Flying set to Allowed](https://docs.theprototype.app/img/physics/flying-setting.webp)
+*Figure: Configure Scene ▸ Physics ▸ Play mode.*
 Of the bundled games, the Jam Room flies (it is designed for VR flying), and Dungeon Realms does when its **Game Rules ▸
 disableFlight** is off; every other game walks. A module allows flying with `userData.play.locomotion.fly = true` (or by
 un-grounding play), and a [Character Controller](https://docs.theprototype.app/build-a-game.md#3-a-character-that-walks) node in fly mode counts as
@@ -230,10 +230,10 @@ Since 1.25 that works wherever the object starts: put it anywhere in a pool, a t
 shoots up and bobs at the surface, wood floats lower, a stone sinks to the bottom. **Properties ▸ Water ▸ Flow &
 physics** on the water adds **Flow up** (an upward current) and **Bob damping** (lower = things keep bobbing longer).
 
-![Toys floating in a pool sunk into the ground](https://docs.theprototype.app/img/physics/sunken-pool.png)
-
-![A wooden crate floating in a pool, with the Floats rows in its Physics properties](https://docs.theprototype.app/img/physics/floats.png)
-
+![Toys floating in a pool sunk into the ground](https://docs.theprototype.app/img/physics/sunken-pool.webp)
+*Figure: Toys floating in a pool sunk into the ground.*
+![A wooden crate floating in a pool, with the Floats rows in its Physics properties](https://docs.theprototype.app/img/physics/floats.webp)
+*Figure: A wooden crate floating in a pool.*
 Select the object and open **Properties ▸ Physics** (Body: *Dynamic*) ▸ **Floats**:
 
 | Floats | Density (kg/m³) | Behaves like |

@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Terrain & Sculpting", "url": "https://docs.theprototype.app/terrain/", "description": "Add ground and shape it two ways: procedurally, by dialling in hills from a handful of numbers, and by hand, with a brush that raises, lowers, smooths and flattens. Every edit replicates to your…", "dateModified": "2026-10-24"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Terrain & Sculpting", "url": "https://docs.theprototype.app/terrain/", "description": "Add ground and shape it two ways: procedurally, by dialling in hills from a handful of numbers, and by hand, with a brush that raises, lowers, smooths and flattens. Every edit replicates to your…", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/terrain/paint-layer.webp", "caption": "A painted layer on a terrain."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/terrain/inspector-paint.webp", "caption": "Properties of a terrain with its Terrain paint section."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/terrain/scatter-toolbox.webp", "caption": "The Scatter brush in the Sculpt toolbox."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/terrain/scatter-collider.webp", "caption": "Properties ▸ Scatter."}]}</script>
 </head>
   
   
@@ -6211,7 +6211,12 @@ pick <strong>Selected ▸ Sculpt terrain</strong> — see <a href="../vr/#sculpt
 <h2 id="painting-layers">Painting layers</h2>
 <p>Since 1.38 a Terrain can be <strong>painted with four texture layers</strong>. Select it ▸ right-click ▸ <strong>Sculpt terrain</strong> (or
 Inspector ▸ <strong>Terrain paint ▸ Paint…</strong>) and pick the <strong>Paint</strong> brush after Raise / Lower / Smooth / Flatten.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/terrain/paint-layer.png" data-desc-position="bottom"><img alt="A painted layer on a terrain" src="../img/terrain/paint-layer.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/terrain/paint-layer.webp" data-desc-position="bottom"><img alt="A painted layer on a terrain" class="shot vignette" height="569" loading="lazy" src="../img/terrain/paint-layer.webp" width="1126"></a></p>
+<figcaption>
+<p>A painted layer on a terrain.</p>
+</figcaption>
+</figure>
 <ul>
 <li>Pick a <strong>layer (1–4)</strong> in the toolbox, then drag on the terrain. Radius and Strength are the sculpt brush's.</li>
 <li>Inspector ▸ <strong>Terrain paint</strong> sets, per layer, a <strong>colour</strong>, a <strong>texture</strong> (import a file or drop an Explorer image)
@@ -6225,13 +6230,23 @@ Inspector ▸ <strong>Terrain paint ▸ Paint…</strong>) and pick the <strong>
 <li>One drag = <strong>one undo step</strong>. Peers see the stroke while you paint and exactly your result when you let go; the
   paint is saved with the scene.</li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/terrain/inspector-paint.png" data-desc-position="bottom"><img alt="The Inspector's Terrain paint section" src="../img/terrain/inspector-paint.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/terrain/inspector-paint.webp" data-desc-position="bottom"><img alt="Properties of a terrain with its Terrain paint section: four layers, each with a colour and an image, Paint… and Clear paint, and the Scatter section under it." class="shot fade-l" height="720" loading="lazy" src="../img/terrain/inspector-paint.webp" width="688"></a></p>
+<figcaption>
+<p>Properties of a terrain with its Terrain paint section.</p>
+</figcaption>
+</figure>
 <h2 id="scatter">Scatter</h2>
 <p>The <strong>Scatter</strong> brush paints instances of a primitive, a Library model, a pack item or a prefab's look — trees, rocks,
 grass tufts — onto the terrain. Since 1.43 a set can also <strong>fill</strong> the terrain by count or density with slope, height
 and painted-layer masks, mix several models, and be edited instance by instance: see <a href="../scatter/">Scatter</a>, which also
 covers scatter on any other object.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/terrain/scatter-toolbox.png" data-desc-position="bottom"><img alt="The Scatter brush in the Sculpt toolbox, with cones scattered over a painted terrain" src="../img/terrain/scatter-toolbox.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/terrain/scatter-toolbox.webp" data-desc-position="bottom"><img alt="The Scatter brush in the Sculpt toolbox, beside a terrain painted in patches of colour." class="shot fade-r" height="720" loading="lazy" src="../img/terrain/scatter-toolbox.webp" width="688"></a></p>
+<figcaption>
+<p>The Scatter brush in the Sculpt toolbox.</p>
+</figcaption>
+</figure>
 <table>
 <thead>
 <tr>
@@ -6312,7 +6327,12 @@ model has a <strong>Collider</strong>:</p>
 <p><strong>Where:</strong> select the terrain ▸ Properties ▸ <strong>Scatter</strong> ▸ the model's row ▸ <strong>Collider</strong>. The Sculpt toolbox's
 Scatter brush has a <strong>Collider</strong> pick too: it is what a <em>newly</em> scattered model starts with — painting more rocks into
 an existing set never changes that set's collider.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/terrain/scatter-collider.png" data-desc-position="bottom"><img alt="Properties ▸ Scatter: the Dodecahedron rocks set to Mesh hull, the cones left at None" src="../img/terrain/scatter-collider.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/terrain/scatter-collider.webp" data-desc-position="bottom"><img alt="Properties ▸ Scatter: the Dodecahedron rocks set to Mesh hull, the cones left at None" class="shot fade-l" height="900" loading="lazy" src="../img/terrain/scatter-collider.webp" width="688"></a></p>
+<figcaption>
+<p>Properties ▸ Scatter.</p>
+</figcaption>
+</figure>
 <ul>
 <li>While a <a href="../physics/">simulation</a> runs, every instance of that model is a <strong>static</strong> collider — a thrown ball bounces
   off the rocks and stops on top of one. The colliders follow each instance's position, rotation, scale and <em>Align to
@@ -6368,7 +6388,7 @@ Give colliders to the rocks and trunks a player can actually touch, not to grass
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-24
+    2026-10-31
   </span>
 
     

@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Scatter", "url": "https://docs.theprototype.app/scatter/", "description": "A scatter set is its settings + a seed + your hand edits. Every computer in your session builds the same instances from those, and so does every reload — a set of thousands of instances travels as…", "dateModified": "2026-10-24"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Scatter", "url": "https://docs.theprototype.app/scatter/", "description": "A scatter set is its settings + a seed + your hand edits. Every computer in your session builds the same instances from those, and so does every reload — a set of thousands of instances travels as…", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/scatter/add-scatter.webp", "caption": "Properties ▸ Scatter on a sphere."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/scatter/select-tool.webp", "caption": "The Select tool."}]}</script>
 </head>
   
   
@@ -5934,7 +5934,12 @@ from those, and so does every reload — a set of thousands of instances travels
 <p>Select any mesh or placed model ▸ <strong>Properties ▸ Scatter</strong> (right after the Water section's <em>Add bubble emitter</em> /
 <em>Add pour emitter</em>) ▸ <strong>Add scatter</strong>. 200 instances of the brush's current model fill the whole surface. The instances
 belong to the object: move, turn or scale it and they come along, for everyone in the session.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/scatter/add-scatter.png" data-desc-position="bottom"><img alt="Properties ▸ Scatter on a sphere: 200 cones fill it, with the Fill rows below" src="../img/scatter/add-scatter.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/scatter/add-scatter.webp" data-desc-position="bottom"><img alt="Properties ▸ Scatter on a sphere: 200 cones fill it, with the Fill rows below" class="shot fade-l" height="720" loading="lazy" src="../img/scatter/add-scatter.webp" width="688"></a></p>
+<figcaption>
+<p>Properties ▸ Scatter on a sphere.</p>
+</figcaption>
+</figure>
 <p>On a Terrain the Scatter section stays where it was (after Terrain paint) with the same rows. <strong>Add fill</strong> adds another
 set; <strong>Paint scatter…</strong> (or <strong>Scatter…</strong> on a terrain) opens the scatter brush to paint by hand.</p>
 <h2 id="fill-and-masks">Fill and masks</h2>
@@ -6034,7 +6039,12 @@ density are measured before the object's scale, so moving or scaling the object 
 </tbody>
 </table>
 <p><strong>Affects</strong> (every tool but Paint) limits a tool to one model of a mix — erase only the boxes, turn only the trees.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/scatter/select-tool.png" data-desc-position="bottom"><img alt="The Select tool: seven instances picked, the gizmo on them and the selection commands in the toolbox" src="../img/scatter/select-tool.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/scatter/select-tool.webp" data-desc-position="bottom"><img alt="The Select tool: seven instances picked, the gizmo on them and the selection commands in the toolbox" class="shot fade-r" height="720" loading="lazy" src="../img/scatter/select-tool.webp" width="688"></a></p>
+<figcaption>
+<p>The Select tool.</p>
+</figcaption>
+</figure>
 <p><strong>Select</strong>: click an instance; <kbd>Shift</kbd>/<kbd>Ctrl</kbd>+click adds or removes; drag a box to select everything
 inside it; <kbd>Ctrl</kbd>+<kbd>A</kbd> selects every instance of the Affects model. The gizmo's <strong>Move</strong> slides the
 selection over the ground, <strong>Turn</strong> rotates it about up, <strong>Size</strong> scales it — one drag is one undo step. The toolbox adds
@@ -6089,7 +6099,7 @@ Everything replicates, undoes in one step per stroke, drag or command, and saves
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-24
+    2026-10-31
   </span>
 
     

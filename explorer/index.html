@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Explorer", "url": "https://docs.theprototype.app/explorer/", "description": "The Explorer is the session's file library — import files, organize them into folders, preview them, share them with the people you are connected to, and drag them straight into the scene.", "dateModified": "2026-10-23"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Explorer", "url": "https://docs.theprototype.app/explorer/", "description": "The Explorer is the session's file library — import files, organize them into folders, preview them, share them with the people you are connected to, and drag them straight into the scene.", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-box-ghost.webp", "caption": "Dragging the Duck from the starter pack."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-model-ghost.webp", "caption": "Once loaded, the ghost is a see-through copy of the real model."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-settings.webp", "caption": "Settings ▸ Scene ▸ Performance ▸ Placement preview."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-delete-cache.webp", "caption": "A pack item's menu."}]}</script>
 </head>
   
   
@@ -6539,7 +6539,12 @@ open has unsaved changes, or has never been saved at all, the app asks first: <e
 <h2 id="placing-objects">Placing objects</h2>
 <p>New in 1.31: drag any object — a pack item, one of your Library models, a prefab — from <strong>Explorer ▸ Packs</strong> or
 <strong>Explorer ▸ Library</strong> onto the viewport, and a <strong>ghost</strong> shows where it will land and how big it is before you let go.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/explorer/place-box-ghost.png" data-desc-position="bottom"><img alt="Dragging the Duck from the starter pack: a box ghost with its size beside the pointer" src="../img/explorer/place-box-ghost.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/explorer/place-box-ghost.webp" data-desc-position="bottom"><img alt="Dragging the Duck from the starter pack: a box ghost with its size beside the pointer" class="shot fade-l fade-r" height="560" loading="lazy" src="../img/explorer/place-box-ghost.webp" width="688"></a></p>
+<figcaption>
+<p>Dragging the Duck from the starter pack.</p>
+</figcaption>
+</figure>
 <ul>
 <li><strong>Drag.</strong> Press on a card and drag it over the 3D view. The ghost sits <strong>on</strong> whatever is under the pointer — the
   floor, a table, the side of a wall — and follows the grid when <a href="../snapping/">grid snapping</a> is on; hold
@@ -6567,7 +6572,12 @@ open has unsaved changes, or has never been saved at all, the app asks first: <e
 <li>Hovering the viewport during a drag <strong>starts the download</strong>, so the drop is quick. A placed pack item shows your
   <a href="../loading/">Placeholder Style</a> until its file arrives. The ghost is yours alone — nobody else sees it.</li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/explorer/place-model-ghost.png" data-desc-position="bottom"><img alt="Once loaded, the ghost is a see-through copy of the real model" src="../img/explorer/place-model-ghost.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/explorer/place-model-ghost.webp" data-desc-position="bottom"><img alt="Once loaded, the ghost is a see-through copy of the real model" class="shot fade-l fade-r" height="560" loading="lazy" src="../img/explorer/place-model-ghost.webp" width="688"></a></p>
+<figcaption>
+<p>Once loaded, the ghost is a see-through copy of the real model.</p>
+</figcaption>
+</figure>
 <h3 id="the-placement-preview-setting">The Placement preview setting</h3>
 <p><strong>Settings ▸ Scene ▸ Performance</strong> (this device only):</p>
 <ul>
@@ -6577,14 +6587,24 @@ open has unsaved changes, or has never been saved at all, the app asks first: <e
   (50,000 on a computer, 15,000 on a phone or headset).</li>
 <li><strong>Show dimensions</strong> — the size, triangles and download size beside the pointer.</li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/explorer/place-settings.png" data-desc-position="bottom"><img alt="Settings ▸ Scene ▸ Performance ▸ Placement preview" src="../img/explorer/place-settings.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/explorer/place-settings.webp" data-desc-position="bottom"><img alt="Settings ▸ Scene ▸ Performance ▸ Placement preview" class="shot fade-l fade-r" height="280" loading="lazy" src="../img/explorer/place-settings.webp" width="688"></a></p>
+<figcaption>
+<p>Settings ▸ Scene ▸ Performance ▸ Placement preview.</p>
+</figcaption>
+</figure>
 <h3 id="downloaded-pack-items-and-delete-cache">Downloaded pack items and Delete cache</h3>
 <p>Explorer ▸ Packs marks the items this device has already downloaded with a <strong>✓</strong> (its size in the tooltip), and the
 filter menu inside the Packs has <strong>Downloaded</strong> to show only those. Right-click a pack item ▸ <strong>Delete cache (size)</strong>
 frees its download — the item <strong>stays in the pack</strong> and downloads again the next time you place it. Right-click a pack
 ▸ <strong>Delete downloads</strong> frees the whole pack's, and <a href="#storage">Storage</a> lists <strong>Pack downloads</strong> per pack with <strong>Clear
 all pack downloads</strong>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/explorer/place-delete-cache.png" data-desc-position="bottom"><img alt="A pack item's menu: Delete cache with its size" src="../img/explorer/place-delete-cache.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/explorer/place-delete-cache.webp" data-desc-position="bottom"><img alt="A pack item's menu: Delete cache with its size" class="shot fade-l fade-r" height="340" loading="lazy" src="../img/explorer/place-delete-cache.webp" width="688"></a></p>
+<figcaption>
+<p>A pack item's menu.</p>
+</figcaption>
+</figure>
 <h3 id="images-audio-and-text">Images, audio and text</h3>
 <ul>
 <li><strong>Images</strong> dropped onto an object become its <strong>texture</strong>. A big photo is scaled down to 1024 px on its longest side
@@ -6614,7 +6634,7 @@ Add menu still places in front of you; drag-to-place in VR comes later.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-23
+    2026-10-31
   </span>
 
     

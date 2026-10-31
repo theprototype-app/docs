@@ -4,8 +4,8 @@ Since 1.27 you can build rooms and houses from parametric pieces: walls with doo
 windows that open, and four kinds of stairs. Every piece is a set of numbers you can change at any time, and doors swing
 open for everyone in the session.
 
-![A wall with a door and two windows, two side walls and a spiral stair](https://docs.theprototype.app/img/architecture/house.png)
-
+![A wall with a door and two windows, two side walls and a spiral stair](https://docs.theprototype.app/img/architecture/house.webp)
+*Figure: A wall with a door and two windows.*
 ## Adding a piece
 
 Right-click the viewport ▸ **Add ▸ Architecture** (or type the name into the Add menu's search):
@@ -29,8 +29,8 @@ Each one lands 3 m in front of you. See [The first ring](https://docs.theprototy
 Select the piece and open its **Properties**: the **Geometry** section holds every number. Rows that do not apply are
 hidden — a wall with no doors has no *Door width* row.
 
-![Properties ▸ Geometry for a wall: Length, Height, Thickness, Doors, Door width and height, Windows, Win width and height, Sill height, Shift](https://docs.theprototype.app/img/architecture/wall-geometry.png)
-
+![Properties ▸ Geometry for a wall: Length, Height, Thickness, Doors, Door width and height, Windows, Win width and height, Sill height, Shift](https://docs.theprototype.app/img/architecture/wall-geometry.webp)
+*Figure: Properties ▸ Geometry for a wall.*
 ### Wall
 
 | Row | What it sets |
@@ -94,8 +94,8 @@ In **Interact** and **Play**, click a door to open or close it, or walk up to a 
 Casement windows open the same way. Every peer sees the same swing, and a player who joins later sees the door already
 open. In **Edit** a door always shows shut, so it is easy to place.
 
-![A door and a casement window open in Interact, with stairs visible through the doorway](https://docs.theprototype.app/img/architecture/door-open.png)
-
+![A door and a casement window open in Interact, with stairs visible through the doorway](https://docs.theprototype.app/img/architecture/door-open.webp)
+*Figure: A door and a casement window open in Interact.*
 ## Collisions
 
 - Walls and stairs collide with their exact shape: doorways stay open, and a walking player climbs steps up to 0.3 m

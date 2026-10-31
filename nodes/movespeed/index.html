@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Move Speed", "url": "https://docs.theprototype.app/nodes/movespeed/", "description": "Reads the player's movement speed, and sets a new one when a pulse arrives. Use it for sprint, mud or slow motion.", "dateModified": "2026-10-24"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Move Speed", "url": "https://docs.theprototype.app/nodes/movespeed/", "description": "Reads the player's movement speed, and sets a new one when a pulse arrives. Use it for sprint, mud or slow motion.", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/nodes-movespeed/movespeed.webp", "caption": "Two Key Press nodes on Shift."}]}</script>
 </head>
   
   
@@ -5959,7 +5959,12 @@ is local: it changes only your own speed, and only your own Move Speed readouts 
    Wire them the same way.</li>
 <li>Press <strong>Play</strong>: holding <kbd>Shift</kbd> walks fast, and letting go walks at the normal speed.</li>
 </ol>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/nodes/movespeed.png" data-desc-position="bottom"><img alt="Two Key Press nodes on Shift, one with edge down and one with edge up, each wired into the set input of a Move Speed node, beside a Character Controller" src="../../img/nodes/movespeed.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/nodes-movespeed/movespeed.webp" data-desc-position="bottom"><img alt="Two Key Press nodes on Shift, one with edge down and one with edge up, each wired into the set input of a Move Speed node, beside a Character Controller" class="shot" height="639" loading="lazy" src="../../img/nodes-movespeed/movespeed.webp" width="448"></a></p>
+<figcaption>
+<p>Two Key Press nodes on Shift.</p>
+</figcaption>
+</figure>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>A Key Press fires for <strong>anyone's</strong> key, so in a multiplayer game this sprint is shared: one player's <kbd>Shift</kbd>
@@ -5986,7 +5991,7 @@ speeds everybody up. For a per-player sprint, use the controller's
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-24
+    2026-10-31
   </span>
 
     

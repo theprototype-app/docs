@@ -47,4 +47,5 @@ A titled top-three:
 4. Press Play: the list shows *Top players* and the three highest scores. Nothing needs wiring between the two nodes;
    they meet at the element.
 
-![A Leaderboard and a HUD List side by side, both naming the same list element](https://docs.theprototype.app/img/nodes/hudlist.png)
+![A Leaderboard and a HUD List side by side, both naming the same list element](https://docs.theprototype.app/img/nodes-hudlist/hudlist.webp)
+*Figure: A Leaderboard and a HUD List side by side.*

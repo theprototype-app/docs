@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Camera & View", "url": "https://docs.theprototype.app/camera/", "description": "Everything about how the scene looks on your screen — the camera lens, render mode, shadows, the grid and the environment — lives in one place: Configure Scene.", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.51.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/render-modes.webp", "caption": "Shaded, Shaded + AO and Wireframe. AO darkens creases and the ground where objects touch it."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/view-section.webp", "caption": "Configure Scene ▸ View: how the scene is drawn on your screen."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/env-presets.webp", "caption": "Studio, Daylight, Sunset and Night on the same three objects."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/grid-and-lights.webp", "caption": "Light helpers show where each light is and where it shines; they are editor-only."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Camera & View", "url": "https://docs.theprototype.app/camera/", "description": "Everything about how the scene looks on your screen — the camera lens, render mode, shadows, the grid and the environment — lives in one place: Configure Scene.", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.51.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/render-modes.webp", "caption": "Shaded, Shaded + AO and Wireframe. AO darkens creases and the ground where objects touch it."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/view-section.webp", "caption": "Configure Scene ▸ View: how the scene is drawn on your screen."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/camera-object.webp", "caption": "A camera's properties, with its preview window at the lower left."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/env-presets.webp", "caption": "Studio, Daylight, Sunset and Night on the same three objects."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/sky-meadow.webp", "caption": "The Meadow sky image lighting a mirror sphere and a box."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/sky-image-section.webp", "caption": "Configure Scene ▸ Environment, with its Sky image section."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/grid-and-lights.webp", "caption": "Light helpers show where each light is and where it shines; they are editor-only."}]}</script>
 </head>
   
   
@@ -6138,7 +6138,12 @@ instead of yours.</p>
 <p>Besides your own view, a scene can hold <strong>cameras</strong> of its own — the shot a game starts from, a cutscene angle, a
 security monitor. Add one from <strong>right-click ▸ Add ▸ Camera ▸ Perspective</strong> (or <strong>Orthographic</strong>). It appears as a small
 camera marker you move and turn like any object; selecting it opens <strong>Properties ▸ Camera</strong>:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/camera/camera-object.png" data-desc-position="bottom"><img alt="The Camera section of a camera object's properties, with its picture-in-picture preview" src="../img/camera/camera-object.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/camera/camera-object.webp" data-desc-position="bottom"><img alt="A selected camera in the scene: Properties ▸ Camera with Kind, FOV, Near, Far and Framing, and the camera's preview window in the corner of the view." class="shot fade-l fade-b" height="840" loading="lazy" src="../img/camera/camera-object.webp" width="688"></a></p>
+<figcaption>
+<p>A camera's properties, with its preview window at the lower left.</p>
+</figcaption>
+</figure>
 <table>
 <thead>
 <tr>
@@ -6299,7 +6304,12 @@ photo; see <a href="#sky-images-hdri">Sky images</a>.</p>
 scene's sky <strong>and</strong> its light. Every object picks up the image's colours and brightness, shiny objects reflect it, and
 <a href="../water/">water</a> mirrors the real clouds. The scene's sun is placed where the photo's sun is, so shadows agree with the
 sky.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/camera/sky-meadow.png" data-desc-position="bottom"><img alt="A mirror sphere and a box lit by the Meadow sky image" src="../img/camera/sky-meadow.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/camera/sky-meadow.webp" data-desc-position="bottom"><img alt="A mirror sphere and a box lit by the Meadow sky image" class="shot" height="720" loading="lazy" src="../img/camera/sky-meadow.webp" width="1280"></a></p>
+<figcaption>
+<p>The Meadow sky image lighting a mirror sphere and a box.</p>
+</figcaption>
+</figure>
 <p>It lives in <strong>Configure Scene ▸ Environment ▸ Sky image (HDRI)</strong>, under the preset chips and the Exposure slider. Click
 a card to switch to that sky; like every Environment setting, everyone in the session sees it.</p>
 <table>
@@ -6334,7 +6344,12 @@ a card to switch to that sky; like every Environment setting, everyone in the se
 </table>
 <p>The five skies are also preset chips, and in VR they are in the radial menu's <strong>Scene ▸ Environment</strong>. All five are CC0
 images from <a href="https://polyhaven.com">Poly Haven</a>.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/camera/sky-image-section.png" data-desc-position="bottom"><img alt="Configure Scene ▸ Environment with the Sky image section: the sky cards, Upload HDRI…, Rotation, Image light, Show as sky, Sky blur and Tone mapping" src="../img/camera/sky-image-section.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/camera/sky-image-section.webp" data-desc-position="bottom"><img alt="Configure Scene ▸ Environment: the sky preset cards, Upload HDRI…, Rotation, Image light, Show as sky, Sky blur and Tone mapping." class="shot fade-b" height="800" loading="lazy" src="../img/camera/sky-image-section.webp" width="340"></a></p>
+<figcaption>
+<p>Configure Scene ▸ Environment, with its Sky image section.</p>
+</figcaption>
+</figure>
 <table>
 <thead>
 <tr>

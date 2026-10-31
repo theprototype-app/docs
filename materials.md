@@ -8,8 +8,8 @@ in your session sees your presets and can use them.
 **Where:** select an object and open its properties (double-click it, or right-click ▸ **Properties**). In the
 **Material** section, the **Presets** row sits at the top, above the material type.
 
-![The Presets row with Wood applied](https://docs.theprototype.app/img/materials/presets-wood.png)
-
+![The Presets row with Wood applied](https://docs.theprototype.app/img/materials/presets-wood.webp)
+*Figure: The Presets row with Wood applied.*
 ## Using presets
 
 - **Apply** — click a swatch. With [several objects selected](https://docs.theprototype.app/controls.md#editing-a-multi-selection) it applies to all
@@ -23,8 +23,8 @@ in your session sees your presets and can use them.
 - **A friend's presets** — when someone in the session has saved presets, they appear under **From ‹name›**. Click one
   to apply it; while editing (pencil), the copy button saves it into your own library.
 
-![Editing your presets: rename, download and delete on your own swatches](https://docs.theprototype.app/img/materials/presets-edit.png)
-
+![Editing your presets: rename, download and delete on your own swatches](https://docs.theprototype.app/img/materials/presets-edit.webp)
+*Figure: Editing your presets.*
 ## Fish scales and the look tier
 
 **Fish scales** is an iridescent look: a thin film over the surface shifts its colour with the viewing angle (the

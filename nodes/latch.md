@@ -52,8 +52,8 @@ A lamp you switch with a key:
 3. Add an **Object Selector** picking the lamp; wire Visibility → Object Selector.
 4. Press Play and tap <kbd>E</kbd>: the lamp appears, tap again and it is gone — for every player.
 
-![A Key Press wired into a Latch's toggle, the Latch driving a Visibility node on the lamp's Object Selector](https://docs.theprototype.app/img/nodes/latch.png)
-
+![A Key Press wired into a Latch's toggle, the Latch driving a Visibility node on the lamp's Object Selector](https://docs.theprototype.app/img/nodes-latch/latch.webp)
+*Figure: A Key Press wired into a Latch's toggle.*
 !!! tip
     For "hide it once it is picked up", wire the pickup's pulse into **reset** with **initial** on, and turn on
     **reset each round** so the pickup returns every round. A [Store Value](https://docs.theprototype.app/nodes/storevalue.md) keeps a result after the

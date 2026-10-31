@@ -5,8 +5,8 @@ and how the pieces are wired are all reachable from here. Every node on it lists
 double-click on a node that has code opens that code, and values flow through any chain of nodes the same way on every
 screen.
 
-![The Main graph: the ⓘ Params tab shows the selected Bounce node's properties](https://docs.theprototype.app/img/main-graph/properties.png)
-
+![The Main graph: the ⓘ Params tab shows the selected Bounce node's properties](https://docs.theprototype.app/img/main-graph/properties.webp)
+*Figure: The Main graph.*
 ## Where it is
 
 - **Node editor** (<kbd>N</kbd>) ▸ **Flows** ▸ **Main** — the first row of the list. The breadcrumb bar at the top of

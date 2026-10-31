@@ -137,8 +137,8 @@ Since 1.28 the knife cuts along a **polyline**, not only a straight line:
 - While a cut is pending, the toolbox's **Knife options** show how many points you have placed, with **Back** and
   **Cut** buttons — the way to finish a cut on a touch screen.
 
-![A polyline knife cut across the top of a cube: two corners placed, the dashed last leg following the cursor, and Knife options showing 3 points with Back and Cut](https://docs.theprototype.app/img/mesh-editing/knife-polyline.png)
-
+![A polyline knife cut across the top of a cube: two corners placed, the dashed last leg following the cursor, and Knife options showing 3 points with Back and Cut](https://docs.theprototype.app/img/mesh-editing/knife-polyline.webp)
+*Figure: A polyline knife cut across the top of a cube.*
 A point within a few pixels of a corner of the face under it snaps onto that corner, and one within a pixel or two of an
 edge snaps onto the edge, so a cut does not leave needle-thin triangles. The whole polyline is **one undo step**, and
 your peers see the cut as it is committed.
@@ -153,8 +153,8 @@ your peers see the cut as it is committed.
 goes *into* the surface, a negative one grows outward. It works on an **open** surface or on a whole piece — a closed box
 becomes hollow. A patch of a closed mesh is refused: select the whole piece (**Shell**) or delete a face first.
 
-![A box made hollow with Solidify, thickness 0.1](https://docs.theprototype.app/img/mesh-editing/solidify.png)
-
+![A box made hollow with Solidify, thickness 0.1](https://docs.theprototype.app/img/mesh-editing/solidify.webp)
+*Figure: A box made hollow with Solidify.*
 Solidify uses averaged vertex normals, so sharp corners get slightly thinner walls.
 
 ### Bridge
@@ -163,8 +163,8 @@ Select **two** separate pieces and press Bridge. Their boundaries have to have t
 
 ## Edge tools
 
-![The Edges tab with Slide armed and its factor option](https://docs.theprototype.app/img/mesh-editing/edge-tools-slide.png)
-
+![The Edges tab with Slide armed and its factor option](https://docs.theprototype.app/img/mesh-editing/edge-tools-slide.webp)
+*Figure: The Edges tab with Slide armed and its factor option.*
 | Tool | Key | What it does |
 |---|---|---|
 | **Move** | | Seat the gizmo on the selected edges (X runs along the edge, Z out of the surface). The welded neighbours stretch with it. |
@@ -194,8 +194,8 @@ clean polygon; any other outline is fanned from its centre. Fill closes one rim 
 Since 1.24 an end where **four or more** faces meet is bevelled with a **mitered corner** — a small cap joining the
 chamfer to every face there — instead of being refused. (Before, each end needed exactly three faces.)
 
-![An octahedron edge bevelled in 4 segments, mitered where four faces meet](https://docs.theprototype.app/img/mesh-editing/mitered-bevel.png)
-
+![An octahedron edge bevelled in 4 segments, mitered where four faces meet](https://docs.theprototype.app/img/mesh-editing/mitered-bevel.webp)
+*Figure: An octahedron edge bevelled in 4 segments.*
 ## Vertex tools
 
 | Tool | Key | What it does |
@@ -210,8 +210,8 @@ chamfer to every face there — instead of being refused. (Before, each end need
 | **Delete** | | Remove every face touching the selected vertices. |
 | **Deselect** | | Clear the selection. |
 
-![The Vertices tab with Bevel armed: width, segments, Out / In and profile](https://docs.theprototype.app/img/mesh-editing/vertex-tools-bevel.png)
-
+![The Vertices tab with Bevel armed: width, segments, Out / In and profile](https://docs.theprototype.app/img/mesh-editing/vertex-tools-bevel.webp)
+*Figure: The Vertices tab with Bevel armed.*
 Vertices are drawn as dots sized in **screen** space, so they stay clickable whether you're zoomed into a cube or out of a whole terrain. The **dot size** slider multiplies that size, and turning the adaptive toggle off gives you a fixed world size instead.
 
 ## Bevel options
@@ -243,8 +243,8 @@ Combine two meshes into one. Select exactly **two** meshes (<kbd>Ctrl</kbd>+clic
 The first object takes the result and the second is removed (except in the *keep the cutter* variant). One
 <kbd>Ctrl</kbd>+<kbd>Z</kbd> restores both. Like every mesh edit, it is one undo step and reaches everyone in the session.
 
-![A cylinder subtracted from a box](https://docs.theprototype.app/img/mesh-editing/boolean-subtract.png)
-
+![A cylinder subtracted from a box](https://docs.theprototype.app/img/mesh-editing/boolean-subtract.webp)
+*Figure: A cylinder subtracted from a box.*
 !!! note "Limits"
     - The result uses the **first** object's first material.
     - The inputs should be closed meshes: a mesh with holes gives a result with holes (the toast counts them).
@@ -315,8 +315,8 @@ across the chosen axis — the same **X / Y / Z** buttons as Symmetrize — from
 - The side your edit changed wins; **keep + / −** only decides when the edit sits on the plane itself.
 - The edit and its mirror are **one undo step**.
 
-![Live symmetry on across X: one face selected on the left with the gizmo on it, and the Symmetry section's mirror, keep, Symmetrize and live symmetry controls](https://docs.theprototype.app/img/mesh-editing/live-symmetry.png)
-
+![Live symmetry on across X: one face selected on the left with the gizmo on it, and the Symmetry section's mirror, keep, Symmetrize and live symmetry controls](https://docs.theprototype.app/img/mesh-editing/live-symmetry.webp)
+*Figure: Live symmetry on across X.*
 Turning it on does not change the mesh. If the mesh is not symmetric yet, press **Symmetrize** first — a vertex with no
 twin moves alone.
 

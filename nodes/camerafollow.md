@@ -44,8 +44,8 @@ Follow a wandering box with <kbd>C</kbd> and stop with <kbd>X</kbd>:
 4. Add a **Key Press** on <kbd>C</kbd> into **trigger** and a **Key Press** on <kbd>X</kbd> into **stop**.
 5. Press <kbd>C</kbd>: the view swings in behind the rover and follows it. Press <kbd>X</kbd> to let go.
 
-![A Wander moving the Rover through an Object Selector, which also feeds the target of a Camera Follow triggered by two Key Press nodes](https://docs.theprototype.app/img/nodes/camerafollow.png)
-
+![A Wander moving the Rover through an Object Selector, which also feeds the target of a Camera Follow triggered by two Key Press nodes](https://docs.theprototype.app/img/nodes-camerafollow/camerafollow.webp)
+*Figure: A Wander moving the Rover through an Object Selector.*
 !!! tip
     Camera Follow moves the player's own view. To move a camera **object** (a chase camera you can cut to, with an
     offset and damping you choose), use [Camera Rig](https://docs.theprototype.app/nodes/camerarig.md).

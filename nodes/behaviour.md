@@ -67,8 +67,8 @@ Three taps light a lamp:
 4. Wire Compare → a **Visibility** node's **on**, and Visibility → an **Object Selector** picking the lamp.
 5. Press Play and tap <kbd>T</kbd> three times: the count shows on the card and the lamp appears for everyone.
 
-![A Key Press wired into a Behaviour's tap input; its taps output feeds a Compare that drives the lamp's Visibility](https://docs.theprototype.app/img/nodes/behaviour.png)
-
+![A Key Press wired into a Behaviour's tap input; its taps output feeds a Compare that drives the lamp's Visibility](https://docs.theprototype.app/img/nodes-behaviour/behaviour.webp)
+*Figure: A Key Press wired into a Behaviour's tap input; its taps output feeds a Compare that drives the lamp's Visibil.*
 !!! tip
     Logic that is easier to wire than to write — a pulse that should hold, a delay, a one-shot — belongs in nodes such
     as [Latch](https://docs.theprototype.app/nodes/latch.md), [Delay](https://docs.theprototype.app/nodes/delay.md) and [Once](https://docs.theprototype.app/nodes/once.md). Reach for a Behaviour when the rule has loops, timers

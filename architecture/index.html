@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Architecture", "url": "https://docs.theprototype.app/architecture/", "description": "Since 1.27 you can build rooms and houses from parametric pieces: walls with doorways and window openings, doors and windows that open, and four kinds of stairs. Every piece is a set of numbers…", "dateModified": "2026-10-07"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Architecture", "url": "https://docs.theprototype.app/architecture/", "description": "Since 1.27 you can build rooms and houses from parametric pieces: walls with doorways and window openings, doors and windows that open, and four kinds of stairs. Every piece is a set of numbers…", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/architecture/house.webp", "caption": "A wall with a door and two windows."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/architecture/wall-geometry.webp", "caption": "Properties ▸ Geometry for a wall."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/architecture/door-open.webp", "caption": "A door and a casement window open in Interact."}]}</script>
 </head>
   
   
@@ -6012,7 +6012,12 @@
 <p>Since 1.27 you can build rooms and houses from parametric pieces: walls with doorways and window openings, doors and
 windows that open, and four kinds of stairs. Every piece is a set of numbers you can change at any time, and doors swing
 open for everyone in the session.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/architecture/house.png" data-desc-position="bottom"><img alt="A wall with a door and two windows, two side walls and a spiral stair" src="../img/architecture/house.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/architecture/house.webp" data-desc-position="bottom"><img alt="A wall with a door and two windows, two side walls and a spiral stair" class="shot vignette" height="600" loading="lazy" src="../img/architecture/house.webp" width="1126"></a></p>
+<figcaption>
+<p>A wall with a door and two windows.</p>
+</figcaption>
+</figure>
 <h2 id="adding-a-piece">Adding a piece</h2>
 <p>Right-click the viewport ▸ <strong>Add ▸ Architecture</strong> (or type the name into the Add menu's search):</p>
 <table>
@@ -6048,7 +6053,12 @@ Each one lands 3 m in front of you. See <a href="../vr/#the-first-ring">The firs
 <h2 id="editing-a-piece">Editing a piece</h2>
 <p>Select the piece and open its <strong>Properties</strong>: the <strong>Geometry</strong> section holds every number. Rows that do not apply are
 hidden — a wall with no doors has no <em>Door width</em> row.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/architecture/wall-geometry.png" data-desc-position="bottom"><img alt="Properties ▸ Geometry for a wall: Length, Height, Thickness, Doors, Door width and height, Windows, Win width and height, Sill height, Shift" src="../img/architecture/wall-geometry.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/architecture/wall-geometry.webp" data-desc-position="bottom"><img alt="Properties ▸ Geometry for a wall: Length, Height, Thickness, Doors, Door width and height, Windows, Win width and height, Sill height, Shift" class="shot fade-l" height="760" loading="lazy" src="../img/architecture/wall-geometry.webp" width="688"></a></p>
+<figcaption>
+<p>Properties ▸ Geometry for a wall.</p>
+</figcaption>
+</figure>
 <h3 id="wall">Wall</h3>
 <table>
 <thead>
@@ -6215,7 +6225,12 @@ height</strong>). The pieces from the Add menu already match each other.</p>
 <p>In <strong>Interact</strong> and <strong>Play</strong>, click a door to open or close it, or walk up to a door set to open on proximity.
 Casement windows open the same way. Every peer sees the same swing, and a player who joins later sees the door already
 open. In <strong>Edit</strong> a door always shows shut, so it is easy to place.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/architecture/door-open.png" data-desc-position="bottom"><img alt="A door and a casement window open in Interact, with stairs visible through the doorway" src="../img/architecture/door-open.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/architecture/door-open.webp" data-desc-position="bottom"><img alt="A door and a casement window open in Interact, with stairs visible through the doorway" class="shot vignette" height="600" loading="lazy" src="../img/architecture/door-open.webp" width="1126"></a></p>
+<figcaption>
+<p>A door and a casement window open in Interact.</p>
+</figcaption>
+</figure>
 <h2 id="collisions">Collisions</h2>
 <ul>
 <li>Walls and stairs collide with their exact shape: doorways stay open, and a walking player climbs steps up to 0.3 m
@@ -6249,7 +6264,7 @@ open. In <strong>Edit</strong> a door always shows shut, so it is easy to place.
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-07
+    2026-10-31
   </span>
 
     

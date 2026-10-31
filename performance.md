@@ -42,8 +42,8 @@ bar if you want it there. Since 1.39 you can move the chip anywhere, or hide it,
 [Edit positions](https://docs.theprototype.app/controls.md#moving-the-clusters); **Customize toolbar… ▸ Budget chip** shows it again. Opening its
 **▾** menu no longer makes it vanish.
 
-![The budget chip beside the toolbar, reading Quest 200% in red for the Race scene](https://docs.theprototype.app/img/performance/budget-chip.png)
-
+![The budget chip beside the toolbar, reading Quest 200% in red for the Race scene](https://docs.theprototype.app/img/performance/budget-chip.webp)
+*Figure: The budget chip sits beside the toolbar.*
 **Reading it.** The chip shows the device and how much of its tightest budget the scene uses (*Quest 87%*):
 
 | Colour | Meaning |
@@ -64,8 +64,8 @@ largest share of a budget, with their triangles, calls and texture memory, and w
 [optimizing them on import](https://docs.theprototype.app/import-optimize.md) would save (≈, by your **Settings ▸ Import** numbers). Click a row to
 select that object.
 
-![Statistics ▸ Budget for the Race scene on Quest: draw calls, triangles, texture memory, lights, shadow-casting lights and shadow draws against the budget, and the heaviest objects with what optimizing them on import would save](https://docs.theprototype.app/img/performance/statistics-budget.png)
-
+![Statistics ▸ Budget for the Race scene on Quest: draw calls, triangles, texture memory, lights, shadow-casting lights and shadow draws against the budget, and the heaviest objects with what optimizing them on import would save](https://docs.theprototype.app/img/performance/statistics-budget.webp)
+*Figure: Statistics ▸ Budget against the Quest limits.*
 **What is counted.** The scene's *content* as that device would draw it: every visible object, the environment (sky,
 sun, ground) and module content — not the editor's grid, gizmos or helpers — at full detail (the closest view), so the
 reading does not change as you orbit. Kit pieces that instance count one call. Texture memory is counted the way the
@@ -171,8 +171,8 @@ and a panel explains it rather than leaving you looking at a tab that appears to
 
 The preset is saved on this device only; it is never sent to peers or saved in a scene.
 
-![Configure Scene with Quality first: Preset Auto / High / Medium / Low, Reduce quality when the scene is heavy, Shadows, Simplify distant models and Draw repeated kit pieces together, above Environment; one Lowered resolution to keep it smooth notice with Keep full quality at the top](https://docs.theprototype.app/img/performance/configure-scene-quality.png)
-
+![Configure Scene with Quality first: Preset Auto / High / Medium / Low, Reduce quality when the scene is heavy, Shadows, Simplify distant models and Draw repeated kit pieces together, above Environment; one Lowered resolution to keep it smooth notice with Keep full quality at the top](https://docs.theprototype.app/img/performance/configure-scene-quality.webp)
+*Figure: Configure Scene opens with Quality first.*
 ## The quality governor
 
 Before any of the stops above, the app tries to keep the frames. **Settings ▸ Scene ▸ Performance ▸

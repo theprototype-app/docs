@@ -121,8 +121,8 @@ its edge button, like the Explorer's. The **right** one has two tabs:
 double-click resets it. On a very wide screen the graph and the list sit side by side and the bar resizes the columns.
 The sidebars, the tab and the split are remembered on this device.
 
-![The Profiler docked on a computer: the recordings on the left, the timeline and the Tree in the middle with Heavy crate picked, and Details on the right for the frame at 2.1 s](https://docs.theprototype.app/img/profiler/details-sidebar.png)
-
+![The Profiler docked on a computer, cut at the column: the timeline and the Tree with Heavy crate picked, and Details on the right for the frame at 2.1 s.](https://docs.theprototype.app/img/profiler/details-sidebar.webp)
+*Figure: The Tree in the middle, Details for the picked frame on the right.*
 On a phone the Profiler opens with both sidebars hidden, so the graph gets the screen.
 
 ### Compare
@@ -152,8 +152,8 @@ picture of what you saw. In a headset it is the radial menu's **Tools ▸ Profil
 4. Tick **Send this to the theprototype team** and press **Send** — or press **Save on this device** instead, and it
    lands in the Profiler's [recordings](#the-recordings-list).
 
-![Report a problem: a box drawn on the picture, a note, and the Send box ticked](https://docs.theprototype.app/img/profiler/report-a-problem.png)
-
+![Report a problem: a box drawn on the picture, a note, and the Send box ticked](https://docs.theprototype.app/img/profiler/report-a-problem.webp)
+*Figure: Report a problem: box what is wrong, add a note, choose whether to send it.*
 **In a headset** the VR keyboard asks what is wrong — say where on the screen. When you are signed in, its title says
 that <kbd>Enter</kbd> sends it.
 

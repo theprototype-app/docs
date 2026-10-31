@@ -10,8 +10,8 @@ the open scene, rivers and pipes, see [Fluids](https://docs.theprototype.app/flu
 A glass tank of particle fluid. Move or tilt the tank and the fluid sloshes; pour more in, drain it out; toys dropped in
 float and are pushed around.
 
-![A fluid tank with the smooth surface look](https://docs.theprototype.app/img/simulation/fluid-tank.png)
-
+![A fluid tank with the smooth surface look](https://docs.theprototype.app/img/simulation/fluid-tank.webp)
+*Figure: A fluid tank with the smooth surface look.*
 ### Where it is
 
 - **Add ▸ Simulation ▸ Fluid tank** (right-click the viewport, the **+** button, or <kbd>Shift</kbd>+<kbd>A</kbd> if you
@@ -35,8 +35,8 @@ float and are pushed around.
 | **Max spilled drops** · **Drop lifetime** | the limits on spilled fluid, so it never builds up |
 | **Refill** | starts the tank again, filled to its **Fill** level |
 
-![The Drops look, with a ball pushed around by the fluid](https://docs.theprototype.app/img/simulation/fluid-tank-drops.png)
-
+![The Drops look, with a ball pushed around by the fluid](https://docs.theprototype.app/img/simulation/fluid-tank-drops.webp)
+*Figure: The Drops look.*
 ### Spilling
 
 Since 1.25 a tank **spills when tipped**: rotate it (the Water or Honey tank in *Fluid tank toy*) and the fluid pours out
@@ -44,8 +44,8 @@ over the rim, falls, splashes into any water below and settles. The tank holds l
 again. The simulation transport's **Pause** holds the tank and its spilled drops still, and **Reset** refills it (see
 [The simulation controls HUD](https://docs.theprototype.app/physics.md#the-simulation-controls-hud)).
 
-![Fluid tank toy: the Honey tank tipped, its honey spilled onto the table](https://docs.theprototype.app/img/simulation/tank-spill.png)
-
+![Fluid tank toy: the Honey tank tipped, its honey spilled onto the table](https://docs.theprototype.app/img/simulation/tank-spill.webp)
+*Figure: Fluid tank toy.*
 ### Pouring into a pool
 
 *New in 1.40.* A tank's water reaches the pool it pours into. When a tank stands in a pool, or a pool's surface runs
@@ -60,8 +60,8 @@ tank and any [water object](https://docs.theprototype.app/water.md) (tank, pool,
 - Everyone's tank pours the same water from the same settings, so everyone sees the pour land and ripple in the same
   place. Nothing extra is sent over the network. The ripples and droplets are a local picture, like every water ripple.
 
-![A pour inside a tank landing on the pool's surface and rippling it](https://docs.theprototype.app/img/simulation/tank-pours-into-pool.png)
-
+![A pour inside a tank landing on the pool's surface and rippling it](https://docs.theprototype.app/img/simulation/tank-pours-into-pool.webp)
+*Figure: A pour inside a tank landing on the pool's surface and rippling it.*
 ### GPU fluid
 
 *New in 1.40.* Fluid tanks can run their particle solver on the **graphics card** (WebGPU compute) instead of the
@@ -101,8 +101,8 @@ against 35–37 ms on the processor, including sending the particles to the card
 lands or is hit, and sags and sways in the wind. A rigged (skinned) model swings its bone chains instead: tails, hair,
 antennae.
 
-![A block leaning and wobbling under Jiggle](https://docs.theprototype.app/img/simulation/jiggle.png)
-
+![A block leaning and wobbling under Jiggle](https://docs.theprototype.app/img/simulation/jiggle.webp)
+*Figure: A block leaning and wobbling under Jiggle.*
 Add it from the node editor: **Effects ▸ Jiggle**. Put it in an object's own graph, or wire it to an
 [Object Selector](https://docs.theprototype.app/nodes/objectselector.md). Every setting is on the [Jiggle node page](https://docs.theprototype.app/nodes/jiggle.md).
 

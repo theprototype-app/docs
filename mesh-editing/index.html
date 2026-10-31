@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Mesh Editing", "url": "https://docs.theprototype.app/mesh-editing/", "description": "Reshape any mesh by hand: drag its vertices, slide its edges, extrude and bevel its faces, fill holes, give a surface thickness, cut it with a knife, mirror one half onto the other — or combine…", "dateModified": "2026-10-07"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Mesh Editing", "url": "https://docs.theprototype.app/mesh-editing/", "description": "Reshape any mesh by hand: drag its vertices, slide its edges, extrude and bevel its faces, fill holes, give a surface thickness, cut it with a knife, mirror one half onto the other — or combine…", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/mesh-editing/knife-polyline.webp", "caption": "A polyline knife cut across the top of a cube."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/mesh-editing/solidify.webp", "caption": "A box made hollow with Solidify."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/mesh-editing/edge-tools-slide.webp", "caption": "The Edges tab with Slide armed and its factor option."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/mesh-editing/mitered-bevel.webp", "caption": "An octahedron edge bevelled in 4 segments."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/mesh-editing/vertex-tools-bevel.webp", "caption": "The Vertices tab with Bevel armed."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/mesh-editing/boolean-subtract.webp", "caption": "A cylinder subtracted from a box."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/mesh-editing/live-symmetry.webp", "caption": "Live symmetry on across X."}]}</script>
 </head>
   
   
@@ -6748,7 +6748,12 @@
 <li>While a cut is pending, the toolbox's <strong>Knife options</strong> show how many points you have placed, with <strong>Back</strong> and
   <strong>Cut</strong> buttons — the way to finish a cut on a touch screen.</li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/mesh-editing/knife-polyline.png" data-desc-position="bottom"><img alt="A polyline knife cut across the top of a cube: two corners placed, the dashed last leg following the cursor, and Knife options showing 3 points with Back and Cut" src="../img/mesh-editing/knife-polyline.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/mesh-editing/knife-polyline.webp" data-desc-position="bottom"><img alt="A polyline knife cut across the top of a cube: two corners placed, the dashed last leg following the cursor, and Knife options showing 3 points with Back and Cut" class="shot fade-r" height="900" loading="lazy" src="../img/mesh-editing/knife-polyline.webp" width="688"></a></p>
+<figcaption>
+<p>A polyline knife cut across the top of a cube.</p>
+</figcaption>
+</figure>
 <p>A point within a few pixels of a corner of the face under it snaps onto that corner, and one within a pixel or two of an
 edge snaps onto the edge, so a cut does not leave needle-thin triangles. The whole polyline is <strong>one undo step</strong>, and
 your peers see the cut as it is committed.</p>
@@ -6761,12 +6766,22 @@ of that triangle.</p>
 <p><strong>Solidify</strong> gives the selected surface thickness: a copy behind it plus a rim joining the two. A positive <strong>thickness</strong>
 goes <em>into</em> the surface, a negative one grows outward. It works on an <strong>open</strong> surface or on a whole piece — a closed box
 becomes hollow. A patch of a closed mesh is refused: select the whole piece (<strong>Shell</strong>) or delete a face first.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/mesh-editing/solidify.png" data-desc-position="bottom"><img alt="A box made hollow with Solidify, thickness 0.1" src="../img/mesh-editing/solidify.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/mesh-editing/solidify.webp" data-desc-position="bottom"><img alt="A box made hollow with Solidify, thickness 0.1" class="shot fade-r" height="900" loading="lazy" src="../img/mesh-editing/solidify.webp" width="688"></a></p>
+<figcaption>
+<p>A box made hollow with Solidify.</p>
+</figcaption>
+</figure>
 <p>Solidify uses averaged vertex normals, so sharp corners get slightly thinner walls.</p>
 <h3 id="bridge">Bridge</h3>
 <p>Select <strong>two</strong> separate pieces and press Bridge. Their boundaries have to have the <strong>same number of edges</strong> — the toolbox prints both counts next to the selection so you can check. Bridging two faces of one solid punches a hole through it; bridging two separate shells builds a tube between them, and the walls are wound correctly either way.</p>
 <h2 id="edge-tools">Edge tools</h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/mesh-editing/edge-tools-slide.png" data-desc-position="bottom"><img alt="The Edges tab with Slide armed and its factor option" src="../img/mesh-editing/edge-tools-slide.png" width="180"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/mesh-editing/edge-tools-slide.webp" data-desc-position="bottom"><img alt="The Edges tab with Slide armed and its factor option" class="shot" height="812" loading="lazy" src="../img/mesh-editing/edge-tools-slide.webp" width="212"></a></p>
+<figcaption>
+<p>The Edges tab with Slide armed and its factor option.</p>
+</figcaption>
+</figure>
 <table>
 <thead>
 <tr>
@@ -6834,7 +6849,12 @@ clean polygon; any other outline is fanned from its centre. Fill closes one rim 
 <h3 id="mitered-corners">Mitered corners</h3>
 <p>Since 1.24 an end where <strong>four or more</strong> faces meet is bevelled with a <strong>mitered corner</strong> — a small cap joining the
 chamfer to every face there — instead of being refused. (Before, each end needed exactly three faces.)</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/mesh-editing/mitered-bevel.png" data-desc-position="bottom"><img alt="An octahedron edge bevelled in 4 segments, mitered where four faces meet" src="../img/mesh-editing/mitered-bevel.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/mesh-editing/mitered-bevel.webp" data-desc-position="bottom"><img alt="An octahedron edge bevelled in 4 segments, mitered where four faces meet" class="shot vignette" height="639" loading="lazy" src="../img/mesh-editing/mitered-bevel.webp" width="1232"></a></p>
+<figcaption>
+<p>An octahedron edge bevelled in 4 segments.</p>
+</figcaption>
+</figure>
 <h2 id="vertex-tools">Vertex tools</h2>
 <table>
 <thead>
@@ -6892,7 +6912,12 @@ chamfer to every face there — instead of being refused. (Before, each end need
 </tr>
 </tbody>
 </table>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/mesh-editing/vertex-tools-bevel.png" data-desc-position="bottom"><img alt="The Vertices tab with Bevel armed: width, segments, Out / In and profile" src="../img/mesh-editing/vertex-tools-bevel.png" width="180"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/mesh-editing/vertex-tools-bevel.webp" data-desc-position="bottom"><img alt="The Vertices tab with Bevel armed: width, segments, Out / In and profile" class="shot" height="852" loading="lazy" src="../img/mesh-editing/vertex-tools-bevel.webp" width="212"></a></p>
+<figcaption>
+<p>The Vertices tab with Bevel armed.</p>
+</figcaption>
+</figure>
 <p>Vertices are drawn as dots sized in <strong>screen</strong> space, so they stay clickable whether you're zoomed into a cube or out of a whole terrain. The <strong>dot size</strong> slider multiplies that size, and turning the adaptive toggle off gives you a fixed world size instead.</p>
 <h2 id="bevel-options">Bevel options</h2>
 <p>Bevel works in all three modes and shares one set of options:</p>
@@ -6955,7 +6980,12 @@ other tool options.</p>
 </table>
 <p>The first object takes the result and the second is removed (except in the <em>keep the cutter</em> variant). One
 <kbd>Ctrl</kbd>+<kbd>Z</kbd> restores both. Like every mesh edit, it is one undo step and reaches everyone in the session.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/mesh-editing/boolean-subtract.png" data-desc-position="bottom"><img alt="A cylinder subtracted from a box" src="../img/mesh-editing/boolean-subtract.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/mesh-editing/boolean-subtract.webp" data-desc-position="bottom"><img alt="A cylinder subtracted from a box" class="shot vignette" height="639" loading="lazy" src="../img/mesh-editing/boolean-subtract.webp" width="1232"></a></p>
+<figcaption>
+<p>A cylinder subtracted from a box.</p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Limits</p>
 <ul>
@@ -7046,7 +7076,12 @@ across the chosen axis — the same <strong>X / Y / Z</strong> buttons as Symmet
 <li>The side your edit changed wins; <strong>keep + / −</strong> only decides when the edit sits on the plane itself.</li>
 <li>The edit and its mirror are <strong>one undo step</strong>.</li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/mesh-editing/live-symmetry.png" data-desc-position="bottom"><img alt="Live symmetry on across X: one face selected on the left with the gizmo on it, and the Symmetry section's mirror, keep, Symmetrize and live symmetry controls" src="../img/mesh-editing/live-symmetry.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/mesh-editing/live-symmetry.webp" data-desc-position="bottom"><img alt="Live symmetry on across X: one face selected on the left with the gizmo on it, and the Symmetry section's mirror, keep, Symmetrize and live symmetry controls" class="shot fade-r" height="900" loading="lazy" src="../img/mesh-editing/live-symmetry.webp" width="688"></a></p>
+<figcaption>
+<p>Live symmetry on across X.</p>
+</figcaption>
+</figure>
 <p>Turning it on does not change the mesh. If the mesh is not symmetric yet, press <strong>Symmetrize</strong> first — a vertex with no
 twin moves alone.</p>
 <ul>
@@ -7248,7 +7283,7 @@ its own row.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-07
+    2026-10-31
   </span>
 
     

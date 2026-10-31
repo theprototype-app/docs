@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Fluid Tank & Jiggle", "url": "https://docs.theprototype.app/simulation/", "description": "Two kinds of motion that are about the look more than the rules: a fluid tank of particle liquid you can slosh, pour and drain, and the Jiggle node, which makes any object lag, wobble and sway.…", "dateModified": "2026-10-21"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Fluid Tank & Jiggle", "url": "https://docs.theprototype.app/simulation/", "description": "Two kinds of motion that are about the look more than the rules: a fluid tank of particle liquid you can slosh, pour and drain, and the Jiggle node, which makes any object lag, wobble and sway.…", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/simulation/fluid-tank.webp", "caption": "A fluid tank with the smooth surface look."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/simulation/fluid-tank-drops.webp", "caption": "The Drops look."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/simulation/tank-spill.webp", "caption": "Fluid tank toy."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/simulation/tank-pours-into-pool.webp", "caption": "A pour inside a tank landing on the pool's surface and rippling it."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/simulation/jiggle.webp", "caption": "A block leaning and wobbling under Jiggle."}]}</script>
 </head>
   
   
@@ -5968,7 +5968,12 @@ the open scene, rivers and pipes, see <a href="../fluids/">Fluids</a>.</p>
 <h2 id="fluid-tank">Fluid tank</h2>
 <p>A glass tank of particle fluid. Move or tilt the tank and the fluid sloshes; pour more in, drain it out; toys dropped in
 float and are pushed around.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/simulation/fluid-tank.png" data-desc-position="bottom"><img alt="A fluid tank with the smooth surface look" src="../img/simulation/fluid-tank.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/simulation/fluid-tank.webp" data-desc-position="bottom"><img alt="A fluid tank with the smooth surface look" class="shot vignette" height="569" loading="lazy" src="../img/simulation/fluid-tank.webp" width="1126"></a></p>
+<figcaption>
+<p>A fluid tank with the smooth surface look.</p>
+</figcaption>
+</figure>
 <h3 id="where-it-is">Where it is</h3>
 <ul>
 <li><strong>Add ▸ Simulation ▸ Fluid tank</strong> (right-click the viewport, the <strong>+</strong> button, or <kbd>Shift</kbd>+<kbd>A</kbd> if you
@@ -6034,13 +6039,23 @@ float and are pushed around.</p>
 </tr>
 </tbody>
 </table>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/simulation/fluid-tank-drops.png" data-desc-position="bottom"><img alt="The Drops look, with a ball pushed around by the fluid" src="../img/simulation/fluid-tank-drops.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/simulation/fluid-tank-drops.webp" data-desc-position="bottom"><img alt="The Drops look, with a ball pushed around by the fluid" class="shot vignette" height="569" loading="lazy" src="../img/simulation/fluid-tank-drops.webp" width="1126"></a></p>
+<figcaption>
+<p>The Drops look.</p>
+</figcaption>
+</figure>
 <h3 id="spilling">Spilling</h3>
 <p>Since 1.25 a tank <strong>spills when tipped</strong>: rotate it (the Water or Honey tank in <em>Fluid tank toy</em>) and the fluid pours out
 over the rim, falls, splashes into any water below and settles. The tank holds less afterwards — <strong>Refill</strong> fills it
 again. The simulation transport's <strong>Pause</strong> holds the tank and its spilled drops still, and <strong>Reset</strong> refills it (see
 <a href="../physics/#the-simulation-controls-hud">The simulation controls HUD</a>).</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/simulation/tank-spill.png" data-desc-position="bottom"><img alt="Fluid tank toy: the Honey tank tipped, its honey spilled onto the table" src="../img/simulation/tank-spill.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/simulation/tank-spill.webp" data-desc-position="bottom"><img alt="Fluid tank toy: the Honey tank tipped, its honey spilled onto the table" class="shot fade-r fade-t fade-b" height="640" loading="lazy" src="../img/simulation/tank-spill.webp" width="688"></a></p>
+<figcaption>
+<p>Fluid tank toy.</p>
+</figcaption>
+</figure>
 <h3 id="pouring-into-a-pool">Pouring into a pool</h3>
 <p><em>New in 1.40.</em> A tank's water reaches the pool it pours into. When a tank stands in a pool, or a pool's surface runs
 through the tank, a pour inside the tank that falls onto that surface <strong>joins the pool</strong>: it leaves the tank, the pool
@@ -6054,7 +6069,12 @@ tank and any <a href="../water/">water object</a> (tank, pool, round pool, ocean
 <li>Everyone's tank pours the same water from the same settings, so everyone sees the pour land and ripple in the same
   place. Nothing extra is sent over the network. The ripples and droplets are a local picture, like every water ripple.</li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/simulation/tank-pours-into-pool.png" data-desc-position="bottom"><img alt="A pour inside a tank landing on the pool's surface and rippling it" src="../img/simulation/tank-pours-into-pool.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/simulation/tank-pours-into-pool.webp" data-desc-position="bottom"><img alt="A pour inside a tank landing on the pool's surface and rippling it" class="shot vignette" height="553" loading="lazy" src="../img/simulation/tank-pours-into-pool.webp" width="968"></a></p>
+<figcaption>
+<p>A pour inside a tank landing on the pool's surface and rippling it.</p>
+</figcaption>
+</figure>
 <h3 id="gpu-fluid">GPU fluid</h3>
 <p><em>New in 1.40.</em> Fluid tanks can run their particle solver on the <strong>graphics card</strong> (WebGPU compute) instead of the
 processor. The fluid behaves the same either way: same particle count, same tank, same pour, the same push on toys
@@ -6086,7 +6106,12 @@ against 35–37 ms on the processor, including sending the particles to the card
 <p><strong>Secondary motion</strong> for any object: it lags behind when you move it, overshoots when it stops, wobbles like jelly when it
 lands or is hit, and sags and sways in the wind. A rigged (skinned) model swings its bone chains instead: tails, hair,
 antennae.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/simulation/jiggle.png" data-desc-position="bottom"><img alt="A block leaning and wobbling under Jiggle" src="../img/simulation/jiggle.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/simulation/jiggle.webp" data-desc-position="bottom"><img alt="A block leaning and wobbling under Jiggle" class="shot vignette" height="569" loading="lazy" src="../img/simulation/jiggle.webp" width="1126"></a></p>
+<figcaption>
+<p>A block leaning and wobbling under Jiggle.</p>
+</figcaption>
+</figure>
 <p>Add it from the node editor: <strong>Effects ▸ Jiggle</strong>. Put it in an object's own graph, or wire it to an
 <a href="../nodes/objectselector/">Object Selector</a>. Every setting is on the <a href="../nodes/jiggle/">Jiggle node page</a>.</p>
 <p>Jiggle is a <strong>look only</strong>. It never changes the object's real position, so physics, saving and the other players are
@@ -6116,7 +6141,7 @@ pour into and drop toys in). <strong>Pool party</strong> shows floating toys in 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-21
+    2026-10-31
   </span>
 
     

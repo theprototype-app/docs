@@ -106,8 +106,8 @@ batched **create_objects**. Then **screenshot** to check the result.
   back, the agent asks to come in again — the ordinary approval card — and carries on.
 - To stop it, revoke its invite or use **Remove from session** on its row ([Users and moderation](https://docs.theprototype.app/people.md)).
 
-![Agent activity in the AI assistant window](https://docs.theprototype.app/img/ai/agent-activity.png)
-
+![Agent activity in the AI assistant window](https://docs.theprototype.app/img/ai-build-with-an-agent/agent-activity.webp)
+*Figure: Agent activity in the AI assistant window.*
 ## Security notes
 
 - An invite's token lives in the URL **hash**, which browsers never send to any server. Link

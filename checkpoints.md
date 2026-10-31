@@ -4,8 +4,8 @@ A **checkpoint** is a copy of the scene as it is right now — objects, node gra
 **on this device**, with a name, an optional note, a picture and a time. [Autosave](https://docs.theprototype.app/saving.md#autosave) only remembers
 the *last* state; checkpoints let you go back to *any* earlier one.
 
-![The Checkpoints timeline comparing two checkpoints with the swipe slider](https://docs.theprototype.app/img/checkpoints/timeline-compare.png)
-
+![The Checkpoints timeline comparing two checkpoints with the swipe slider](https://docs.theprototype.app/img/checkpoints/timeline-compare.webp)
+*Figure: The Checkpoints timeline comparing two checkpoints with the swipe slider.*
 ## Saving a checkpoint
 
 **Menu** (the logo button) ▸ **Save checkpoint…**, or press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>. Type a name and, if you like,
@@ -42,8 +42,8 @@ A very large scene — over the [budget meter](https://docs.theprototype.app/per
 (512 MB) — skips automatic checkpoints, because each one copies the whole scene. The first time it happens a notice says
 so, with a **Settings** button. Named checkpoints (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>) always work.
 
-![The notice when a large scene skips its automatic checkpoint](https://docs.theprototype.app/img/checkpoints/large-scene-notice.png)
-
+![The notice when a large scene skips its automatic checkpoint](https://docs.theprototype.app/img/checkpoints/large-scene-notice.webp)
+*Figure: The notice when a large scene skips its automatic checkpoint.*
 ## Settings
 
 **Settings ▸ Scene ▸ Checkpoints**:

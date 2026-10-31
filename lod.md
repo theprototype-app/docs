@@ -66,8 +66,8 @@ settings** override them — see [Importing Big Models](https://docs.theprototyp
 **Configure Scene ▸ Level of detail ▸ LOD distance** moves every chain in the scene at once and is shared with everyone
 in it: above 1 keeps full detail further away, below 1 switches to the lighter levels sooner.
 
-![Configure Scene ▸ Level of detail: the LOD distance slider, shared with everyone in the scene](https://docs.theprototype.app/img/lod/lod-distance.png)
-
+![Configure Scene ▸ Level of detail: the LOD distance slider, shared with everyone in the scene](https://docs.theprototype.app/img/lod/lod-distance.webp)
+*Figure: Configure Scene ▸ Level of detail.*
 ## Pack items with LODs
 
 Pack items can ship their own LOD files (made offline by the pack tools). Placing one adds its LOD

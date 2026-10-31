@@ -47,4 +47,5 @@ A one-minute round clock, as the node is meant to be used:
 3. Set duration 60, format `{v}s`, and turn **autostart** off.
 4. Every round, the clock counts down from 60s on every player's screen.
 
-![A Game Start wired into a HUD Timer's start, with duration 60 and format "{v}s"](https://docs.theprototype.app/img/nodes/hudtimer.png)
+![A Game Start wired into a HUD Timer's start, with duration 60 and format "{v}s"](https://docs.theprototype.app/img/nodes-hudtimer/hudtimer.webp)
+*Figure: A Game Start wired into a HUD Timer's start.*

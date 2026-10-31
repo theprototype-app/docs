@@ -28,8 +28,8 @@ Press <kbd>?</kbd> anywhere to see every shortcut, grouped by panel, with the pa
 from the live keymap, so a key you rebind in **Settings ▸ Shortcuts** shows up there straight away. Type to filter;
 <kbd>Esc</kbd> closes it.
 
-![The cheat sheet: the node editor's keys first, because it has focus, then the 3D viewport's](https://docs.theprototype.app/img/node-editor/cheat-sheet.png)
-
+![The cheat sheet: the node editor's keys first, because it has focus, then the 3D viewport's](https://docs.theprototype.app/img/node-editor/cheat-sheet.webp)
+*Figure: The cheat sheet.*
 ## Node editor shortcuts
 
 | Key | Does |
@@ -88,8 +88,8 @@ Long names end in "…": point at a crumb (or **press and hold** it on a phone) 
 right end — or <kbd>Esc</kbd> — leaves a group, and the bin deletes the object's flow (it asks first, in a dialog).
 Jumping between the Scene and an object's flow is two taps: the crumb, then the row.
 
-![The breadcrumb bar in the docked node editor: ⌂ Scene › Angelfish 1…, with the object crumb's list open — Main, the Scene graph, then the object flows, the current one ticked](https://docs.theprototype.app/img/node-editor/breadcrumb-siblings.png)
-
+![The breadcrumb bar in the docked node editor: ⌂ Scene › Angelfish 1…, with the object crumb's list open — Main, the Scene graph, then the object flows, the current one ticked](https://docs.theprototype.app/img/node-editor/breadcrumb-siblings.webp)
+*Figure: The breadcrumb bar in the docked node editor.*
 On a phone the minimap is off by default; **⚙ Settings ▸ Minimap** turns it on.
 
 ## Tidy graph
@@ -106,8 +106,8 @@ The node editor can lay a graph out for you.
   result.
 - Inside a group (double-click a group card), Tidy arranges that group's contents.
 
-![Waves' Main graph after 1.25: the run's rules, three group cards with notes, and the Tidy button in the corner controls](https://docs.theprototype.app/img/node-editor/tidy-waves-main.png)
-
+![Part of Waves' Main graph at full size: tidied columns of nodes, with a note reading The crystal glows.](https://docs.theprototype.app/img/node-editor/tidy-waves-main.webp)
+*Figure: Part of Waves' Main graph at full size.*
 Every game's Main graph ships tidied — see [The Games tab](https://docs.theprototype.app/games.md#tidy-main-graphs).
 
 ## Groups
@@ -125,8 +125,8 @@ exactly as before.
 - Groups nest, copy and paste with their contents, and undo and redo like every other edit.
 - <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd> ungroups: the nodes stay exactly where they were.
 
-![Inside a group: Group inputs on the left, Group outputs on the right, and the breadcrumb at the top](https://docs.theprototype.app/img/node-editor/group.png)
-
+![Inside a group: Group inputs on the left, Group outputs on the right, and the breadcrumb at the top](https://docs.theprototype.app/img/node-editor/group.webp)
+*Figure: Inside a group.*
 ### Node group files (.tpnode)
 
 Right-click a group ▸ **Export group (.tpnode)…** (or any selection ▸ **Export as node group (.tpnode)…**) saves it as a

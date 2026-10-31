@@ -53,8 +53,8 @@ A bar you can drag:
 3. Wire Slider → HUD Bar's **value**, and set the HUD Bar's **min** to 0 and **max** to 40.
 4. Drag the slider: the bar fills and empties with it.
 
-![A Slider wired into a HUD Bar's value, with min 0 and max 40](https://docs.theprototype.app/img/nodes/hudbar.png)
-
+![A Slider wired into a HUD Bar's value, with min 0 and max 40](https://docs.theprototype.app/img/nodes-hudbar/hudbar.webp)
+*Figure: A Slider wired into a HUD Bar's value.*
 !!! tip
     For a health bar, keep the health in a variable and wire a [Get Variable](https://docs.theprototype.app/nodes/getvariable.md) into **value**, with
     **max** set to the starting health — the bar then empties as the variable goes down.

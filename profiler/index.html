@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Profiler & Recordings", "url": "https://docs.theprototype.app/profiler/", "description": "The Statistics window tells you where a scene stands right now. The Profiler tells you what happened: it records frame time, draw calls, triangles and the quality level over time, and — in a…", "dateModified": "2026-10-15"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Profiler & Recordings", "url": "https://docs.theprototype.app/profiler/", "description": "The Statistics window tells you where a scene stands right now. The Profiler tells you what happened: it records frame time, draw calls, triangles and the quality level over time, and — in a…", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/profiler/details-sidebar.webp", "caption": "The Tree in the middle, Details for the picked frame on the right."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/profiler/report-a-problem.webp", "caption": "Report a problem: box what is wrong, add a note, choose whether to send it."}]}</script>
 </head>
   
   
@@ -6305,7 +6305,12 @@ its edge button, like the Explorer's. The <strong>right</strong> one has two tab
 <p><strong>The splitter</strong> between the graph and the list resizes them: drag it, or focus it and use the arrow keys;
 double-click resets it. On a very wide screen the graph and the list sit side by side and the bar resizes the columns.
 The sidebars, the tab and the split are remembered on this device.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/profiler/details-sidebar.png" data-desc-position="bottom"><img alt="The Profiler docked on a computer: the recordings on the left, the timeline and the Tree in the middle with Heavy crate picked, and Details on the right for the frame at 2.1 s" src="../img/profiler/details-sidebar.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/profiler/details-sidebar.webp" data-desc-position="bottom"><img alt="The Profiler docked on a computer, cut at the column: the timeline and the Tree with Heavy crate picked, and Details on the right for the frame at 2.1 s." class="shot fade-l" height="438" loading="lazy" src="../img/profiler/details-sidebar.webp" width="688"></a></p>
+<figcaption>
+<p>The Tree in the middle, Details for the picked frame on the right.</p>
+</figcaption>
+</figure>
 <p>On a phone the Profiler opens with both sidebars hidden, so the graph gets the screen.</p>
 <h3 id="compare">Compare</h3>
 <p><strong>Compare</strong> puts two recordings side by side: choose one as <strong>A</strong> (the baseline) and one as <strong>B</strong>.
@@ -6328,7 +6333,12 @@ picture of what you saw. In a headset it is the radial menu's <strong>Tools ▸ 
 <li>Tick <strong>Send this to the theprototype team</strong> and press <strong>Send</strong> — or press <strong>Save on this device</strong> instead, and it
    lands in the Profiler's <a href="#the-recordings-list">recordings</a>.</li>
 </ol>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/profiler/report-a-problem.png" data-desc-position="bottom"><img alt="Report a problem: a box drawn on the picture, a note, and the Send box ticked" src="../img/profiler/report-a-problem.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/profiler/report-a-problem.webp" data-desc-position="bottom"><img alt="Report a problem: a box drawn on the picture, a note, and the Send box ticked" class="shot" height="641" loading="lazy" src="../img/profiler/report-a-problem.webp" width="560"></a></p>
+<figcaption>
+<p>Report a problem: box what is wrong, add a note, choose whether to send it.</p>
+</figcaption>
+</figure>
 <p><strong>In a headset</strong> the VR keyboard asks what is wrong — say where on the screen. When you are signed in, its title says
 that <kbd>Enter</kbd> sends it.</p>
 <p><strong>What is sent:</strong> the picture, your note and boxes, the app version and your device (and the frame data, if ticked),
@@ -6436,7 +6446,7 @@ JSON Schema in the core repo:
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-15
+    2026-10-31
   </span>
 
     

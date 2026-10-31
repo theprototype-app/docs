@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "HUD Input", "url": "https://docs.theprototype.app/nodes/hudinput/", "description": "Reads a HUD input element — what the player typed, picked, dragged or switched — as a value for the graph.", "dateModified": "2026-10-24"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "HUD Input", "url": "https://docs.theprototype.app/nodes/hudinput/", "description": "Reads a HUD input element — what the player typed, picked, dragged or switched — as a value for the graph.", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/nodes-hudinput/hudinput.webp", "caption": "A HUD Input reading a slider."}]}</script>
 </head>
   
   
@@ -5984,7 +5984,12 @@ its text</strong> — each adds this node, already pointing at it, with <strong>
 <li>Add a <strong>HUD Text</strong> picking the text, format <code>Speed: {v}</code>; wire HUD Input → HUD Text's <strong>value</strong>.</li>
 <li>Press Play and drag the slider: the text follows — on your screen only, because the slider is not shared.</li>
 </ol>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/nodes/hudinput.png" data-desc-position="bottom"><img alt="A HUD Input reading a slider, wired into a HUD Text with the format &quot;Speed: {v}&quot;" src="../../img/nodes/hudinput.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/nodes-hudinput/hudinput.webp" data-desc-position="bottom"><img alt="A HUD Input reading a slider, wired into a HUD Text with the format &quot;Speed: {v}&quot;" class="shot" height="315" loading="lazy" src="../../img/nodes-hudinput/hudinput.webp" width="688"></a></p>
+<figcaption>
+<p>A HUD Input reading a slider.</p>
+</figcaption>
+</figure>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>To let a press read the control at that moment, wire the HUD Input into the <strong>value</strong> of the node the press drives
@@ -6010,7 +6015,7 @@ its text</strong> — each adds this node, already pointing at it, with <strong>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-24
+    2026-10-31
   </span>
 
     

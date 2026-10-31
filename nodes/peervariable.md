@@ -48,4 +48,5 @@ Count each player's own bell rings on their own HUD:
     Step 2 cannot be wired by hand yet: the Set Variable card does not draw its **trigger** and **value** sockets (see
     [Set Variable](https://docs.theprototype.app/nodes/setvariable.md)). The Player Variable half of the example works as shown.
 
-![The example's nodes: On Hit (who me) on the Bell, a Set Variable (rings, add, player) beside a Number, and a Player Variable (rings, mine) driving a HUD Text](https://docs.theprototype.app/img/nodes/peervariable.png)
+![The example's nodes: On Hit (who me) on the Bell, a Set Variable (rings, add, player) beside a Number, and a Player Variable (rings, mine) driving a HUD Text](https://docs.theprototype.app/img/nodes-peervariable/peervariable.webp)
+*Figure: The example's nodes.*

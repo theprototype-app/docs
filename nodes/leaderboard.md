@@ -62,7 +62,7 @@ A race to collect gems:
    format `My gems: {v}`.
 4. Press Play with friends: the list ranks everyone by their gems, and each player sees their own count.
 
-![A Leaderboard ranking the gems variable, beside a Player Variable wired into a HUD Text](https://docs.theprototype.app/img/nodes/leaderboard.png)
-
+![A Leaderboard ranking the gems variable, beside a Player Variable wired into a HUD Text](https://docs.theprototype.app/img/nodes-leaderboard/leaderboard.webp)
+*Figure: A Leaderboard ranking the gems variable.*
 !!! tip
     For a race, rank lap times with **order** `asc` and **decimals** 2, so the fastest time sits on top.

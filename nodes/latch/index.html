@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Latch", "url": "https://docs.theprototype.app/nodes/latch/", "description": "Holds a boolean until told otherwise — set, reset and toggle pulses make it a memory bit. Every trigger in the graph is a short pulse; a Latch is how a pulse becomes something that stays: a door…", "dateModified": "2026-10-24"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Latch", "url": "https://docs.theprototype.app/nodes/latch/", "description": "Holds a boolean until told otherwise — set, reset and toggle pulses make it a memory bit. Every trigger in the graph is a short pulse; a Latch is how a pulse becomes something that stays: a door…", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/nodes-latch/latch.webp", "caption": "A Key Press wired into a Latch's toggle."}]}</script>
 </head>
   
   
@@ -5960,7 +5960,12 @@ default, so a Latch in a graph without a game never changes because somebody pre
 <li>Add an <strong>Object Selector</strong> picking the lamp; wire Visibility → Object Selector.</li>
 <li>Press Play and tap <kbd>E</kbd>: the lamp appears, tap again and it is gone — for every player.</li>
 </ol>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/nodes/latch.png" data-desc-position="bottom"><img alt="A Key Press wired into a Latch's toggle, the Latch driving a Visibility node on the lamp's Object Selector" src="../../img/nodes/latch.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/nodes-latch/latch.webp" data-desc-position="bottom"><img alt="A Key Press wired into a Latch's toggle, the Latch driving a Visibility node on the lamp's Object Selector" class="shot" height="176" loading="lazy" src="../../img/nodes-latch/latch.webp" width="688"></a></p>
+<figcaption>
+<p>A Key Press wired into a Latch's toggle.</p>
+</figcaption>
+</figure>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>For "hide it once it is picked up", wire the pickup's pulse into <strong>reset</strong> with <strong>initial</strong> on, and turn on
@@ -5987,7 +5992,7 @@ round ends — a round-scoped Latch reads <strong>initial</strong> again the mom
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-24
+    2026-10-31
   </span>
 
     

@@ -48,8 +48,8 @@ Hold <kbd>Shift</kbd> to sprint:
    Wire them the same way.
 4. Press **Play**: holding <kbd>Shift</kbd> walks fast, and letting go walks at the normal speed.
 
-![Two Key Press nodes on Shift, one with edge down and one with edge up, each wired into the set input of a Move Speed node, beside a Character Controller](https://docs.theprototype.app/img/nodes/movespeed.png)
-
+![Two Key Press nodes on Shift, one with edge down and one with edge up, each wired into the set input of a Move Speed node, beside a Character Controller](https://docs.theprototype.app/img/nodes-movespeed/movespeed.webp)
+*Figure: Two Key Press nodes on Shift.*
 !!! tip
     A Key Press fires for **anyone's** key, so in a multiplayer game this sprint is shared: one player's <kbd>Shift</kbd>
     speeds everybody up. For a per-player sprint, use the controller's

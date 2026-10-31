@@ -7,8 +7,8 @@ on variables in a watch list.
 It is **yours alone**. The other players in the session keep playing, and nothing you set in the debugger is saved
 into the scene or sent to anyone.
 
-![The Debugger paused at a Counter: the On Click wire shows a pulse, the Map Range wire reads 1, the watch list follows the score variable and the Counter's breakpoint is listed](https://docs.theprototype.app/img/debugger/paused-dark.png)
-
+![The Debugger paused at a Counter: the On Click wire shows a pulse, the Map Range wire reads 1, the watch list follows the score variable and the Counter's breakpoint is listed](https://docs.theprototype.app/img/debugger/paused-dark.webp)
+*Figure: The Debugger paused at a Counter.*
 ## Breakpoints
 
 In the [node editor](https://docs.theprototype.app/node-system.md), right-click a node ▸ **Breakpoint (pause Play here)**, or select nodes and press
@@ -54,8 +54,8 @@ While you are paused, **your** view is frozen and events queue up for you; the s
     Breakpoints are off in VR — on a headset the game just keeps running. [Module](https://docs.theprototype.app/modules.md) code keeps running while
     you are paused.
 
-![The Debugger in the light theme](https://docs.theprototype.app/img/debugger/paused-light.png)
-
+![The Debugger in the light theme](https://docs.theprototype.app/img/debugger/paused-light.webp)
+*Figure: The Debugger in the light theme.*
 ## Several HUD Buttons, one module input
 
 Also in 1.39: several **HUD Buttons** can be wired into one module input (a Match Button's *press*, a Realms Button's

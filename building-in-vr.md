@@ -31,8 +31,8 @@ air* (two grips on an object scale that object).
 
 ## Measure
 
-![A measured chain with its labels, and the Arrange ring on the menu hand](https://docs.theprototype.app/img/building-in-vr/measure-arrange.png)
-
+![A measured chain with its labels, and the Arrange ring on the menu hand](https://docs.theprototype.app/img/building-in-vr/measure-arrange.webp)
+*Figure: A measured chain with its labels.*
 Radial menu ▸ **Tools ▸ Measure** — a trigger tool beside Select, Box select and Draw mode.
 
 - Point the laser of the hand that does not hold the menu. A dashed segment and a marker show where the next point lands.
@@ -83,8 +83,8 @@ work in a miniature too: the ring and the stroke follow your laser at the world'
 
 ## The Asset Browser on your wrist
 
-![The Asset Browser panel: Packs, Free CC0 and My library tabs, a search box and the packs](https://docs.theprototype.app/img/building-in-vr/asset-browser-packs.png)
-
+![The Asset Browser panel: Packs, Free CC0 and My library tabs, a search box and the packs](https://docs.theprototype.app/img/building-in-vr/asset-browser-packs.webp)
+*Figure: The Asset Browser panel.*
 Radial menu ▸ **Add ▸ Assets** opens a panel on the wrist of your menu hand, facing you. Point at it with the other hand.
 
 - **Packs** — the packs in your Explorer. Press a pack to open it, **‹ Packs** to go back.
@@ -105,8 +105,8 @@ whatever you point at — amber when it overlaps something, red when there is no
 - Each placement is one undo step, and everyone sees it.
 - In a **miniature** the object still lands at full size, at the spot under your laser.
 
-![Placing: "Duck: trigger places · stick turns · grip stops"](https://docs.theprototype.app/img/building-in-vr/asset-browser-placing.png)
-
+![Placing: "Duck: trigger places · stick turns · grip stops"](https://docs.theprototype.app/img/building-in-vr/asset-browser-placing.webp)
+*Figure: Placing: "Duck.*
 **Pin it:** grip the panel and let go in the air — it stays there, bigger. Grip it again and let go near your wrist to put
 it back (or press **Pin** / **To wrist**). In one-handed mode it opens pinned in front of you.
 
@@ -114,8 +114,8 @@ Add ▸ **Prefabs** uses the same ghost: real size, the stick turns it, it rests
 
 ## Logic in the headset
 
-![The Logic panel on the Spinner object's flow: a Number card wired into Spin's speed, with + Node, undo, redo, Fit, zoom and close along the top](https://docs.theprototype.app/img/building-in-vr/logic-panel.png)
-
+![The Logic panel on the Spinner object's flow: a Number card wired into Spin's speed, with + Node, undo, redo, Fit, zoom and close along the top](https://docs.theprototype.app/img/building-in-vr/logic-panel.webp)
+*Figure: The Logic panel on the Spinner object's flow.*
 Radial menu ▸ **Tools ▸ Logic** opens the scene's node graph as a panel in front of you. With one object selected,
 **Selected ▸ Edit logic** opens that object's own flow instead (tabs at the top switch between the two). It is the same
 graph as the desktop [node editor](https://docs.theprototype.app/node-editor.md): every change is one undo step, and everyone in the session sees it
@@ -133,8 +133,8 @@ land live.
 The buttons along the top: **+ Node** opens a palette with the desktop's groups — pick a node and it lands in the middle
 of the view; **↶ / ↷** undo and redo; **Fit** frames every card; **− / +** zoom; **✕** closes the panel.
 
-![The wrist pad for a Number node: value and step with − / + buttons, and Rename, Unwire, Delete](https://docs.theprototype.app/img/building-in-vr/logic-pad.png)
-
+![The wrist pad for a Number node: value and step with − / + buttons, and Rename, Unwire, Delete](https://docs.theprototype.app/img/building-in-vr/logic-pad.webp)
+*Figure: The wrist pad for a Number node.*
 **Click** a card (trigger, no drag) to select it: its values open on a **wrist pad** on your other hand.
 
 - **− / +** step a number; press the value itself to type it on the VR keyboard.

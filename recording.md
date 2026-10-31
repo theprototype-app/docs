@@ -5,8 +5,8 @@ Record a short video of the viewport while the recorder drives the camera: a **t
 
 Right-click the viewport ▸ **Tools ▸ Recording…**
 
-![The Recording dialog set to a one-turn turntable of the whole scene](https://docs.theprototype.app/img/recording/turntable-dialog.png)
-
+![The Recording dialog: What to film set to Turntable, with Orbit, Turns, Direction, Size, Frame rate, Length, Quality and the Start recording button.](https://docs.theprototype.app/img/recording/turntable-dialog.webp)
+*Figure: The Recording dialog, in a small window.*
 ## What to film
 
 | Mode | What the camera does | Options |
@@ -33,14 +33,14 @@ The dialog estimates the file size before you start.
 A small bar shows the progress, with **Cancel**. The camera is yours alone: nothing is sent to anyone in the session, and
 your view comes back where it was afterwards.
 
-![The recording bar above the toolbar](https://docs.theprototype.app/img/recording/recording-bar.png)
-
+![The recording bar above the toolbar](https://docs.theprototype.app/img/recording/recording-bar.webp)
+*Figure: The recording bar sits above the toolbar while a take runs.*
 ## The file
 
 The video is saved to **Explorer ▸ Recordings** (double-click it to play it) and offered as **Download**.
 
-![The finished take: Download, Show in Explorer, Record again](https://docs.theprototype.app/img/recording/result.png)
-
+![The finished take: Download, Show in Explorer, Record again](https://docs.theprototype.app/img/recording/result.webp)
+*Figure: The finished take, with Download, Show in Explorer and Record again.*
 ## Limits
 
 - Not in VR or Play — the recorder drives the editor camera.

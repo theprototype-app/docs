@@ -50,8 +50,8 @@ A turntable you can switch off:
 3. Add a **Toggle** (on) and wire it → Rotate / Motor's **on**. Untick the Toggle: the turntable goes back to its
    placed pose; tick it and it turns again, for every player.
 
-![A Toggle wired into a Rotate / Motor's on input, the Rotate / Motor driving the turntable's Object Selector](https://docs.theprototype.app/img/nodes/rotor.png)
-
+![A Toggle wired into a Rotate / Motor's on input, the Rotate / Motor driving the turntable's Object Selector](https://docs.theprototype.app/img/nodes-rotor/rotor.webp)
+*Figure: A Toggle wired into a Rotate / Motor's on input.*
 !!! note "Spin-up"
     The spin-up ramp is measured on the shared clock, which every player shares from its daily start, not from the
     moment the node is switched on. In practice the object is already at full speed when you look, and switching **on**

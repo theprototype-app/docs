@@ -14,8 +14,8 @@ controls on the **right** — on **Core**, the download icon and the switch; on 
 **Update** — sit under its name and description. A description that is cut short ends in a chevron: tap the text to read
 all of it, tap again to fold it. The dev-URL row fits a phone's width too.
 
-![Modules ▸ Core on a folded phone: each module's download icon and switch on the right, + Button and Pong: spawn / remove under their descriptions, and VR Sleeve Palette's description tapped open in full](https://docs.theprototype.app/img/modules/core-phone.png)
-
+![Modules ▸ Core on a folded phone: each module's download icon and switch on the right, + Button and Pong: spawn / remove under their descriptions, and VR Sleeve Palette's description tapped open in full](https://docs.theprototype.app/img/modules/core-phone.webp)
+*Figure: Modules ▸ Core on a folded phone.*
 - **Core modules** ship with the app (hello, button, pong, VR sleeve). Toggle each on or off: both are **live** (since 1.20, disabling no longer needs a reload).
 - The dungeon generator, piano, avatar controller, VR essentials and drivable car used to ship in the app; they now live in the **Browse** gallery, so install them there when you want them. Everyone in a session needs the same modules for shared behaviour to match — including anyone who joins later.
 - **⬇ Download as example** exports a core module as a zip — the best starting point for writing your own.

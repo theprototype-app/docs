@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Code Workspace", "url": "https://docs.theprototype.app/code-workspace/", "description": "The code workspace is one place for every piece of code in a scene: a Script node's code, a behaviour, a .js script file from your Library, a module's own source (read-only), and the flow graph…", "dateModified": "2026-10-27"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Code Workspace", "url": "https://docs.theprototype.app/code-workspace/", "description": "The code workspace is one place for every piece of code in a scene: a Script node's code, a behaviour, a .js script file from your Library, a module's own source (read-only), and the flow graph…", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/code-workspace/script-tab.webp", "caption": "The code workspace docked beside the Explorer and the Node editor."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/code-workspace/parse-error.webp", "caption": "A save refused."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/code-workspace/editing-together.webp", "caption": "Editing together."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/code-workspace/pop-out-window.webp", "caption": "The code workspace in its own window."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/code-workspace/sidebars.webp", "caption": "The code workspace."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/code-workspace/files-menu.webp", "caption": "The Project tree's menu on a script."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/code-workspace/player-code.webp", "caption": "Player: walk open in the code workspace."}]}</script>
 </head>
   
   
@@ -6102,7 +6102,12 @@
 <p>The code workspace is one place for every piece of code in a scene: a <a href="../nodes/script/">Script</a> node's code, a
 <a href="../behaviours/">behaviour</a>, a <code>.js</code> script file from your Library, a module's own source (read-only), and the flow graph
 itself as JSON. Each source is a <strong>tab</strong>, and your edits stay in the tab until you save.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/code-workspace/script-tab.png" data-desc-position="bottom"><img alt="The code workspace docked beside the Explorer and the Node editor, with a Script node's code open" src="../img/code-workspace/script-tab.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/code-workspace/script-tab.webp" data-desc-position="bottom"><img alt="The code workspace docked beside the Explorer and the Node editor, with a Script node's code open" class="shot fade-r fade-t" height="340" loading="lazy" src="../img/code-workspace/script-tab.webp" width="688"></a></p>
+<figcaption>
+<p>The code workspace docked beside the Explorer and the Node editor.</p>
+</figcaption>
+</figure>
 <h2 id="where-it-is">Where it is</h2>
 <p>It opens by itself when you ask for code:</p>
 <ul>
@@ -6125,7 +6130,12 @@ means it has unsaved edits; <strong>Revert</strong> throws them away.</p>
 <p>Saving checks the code first. If it does not parse, <strong>nothing is applied</strong>: the tab shows a red <strong>!</strong>, the banner names
 the line (click it to jump there), and every node the code feeds shows an amber <em>edit not applied</em> badge while it keeps
 running the last good version.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/code-workspace/parse-error.png" data-desc-position="bottom"><img alt="A save refused: the banner names the line, and the nodes keep the last good version" src="../img/code-workspace/parse-error.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/code-workspace/parse-error.webp" data-desc-position="bottom"><img alt="A save refused: the banner names the line, and the nodes keep the last good version" class="shot fade-r fade-t" height="340" loading="lazy" src="../img/code-workspace/parse-error.webp" width="688"></a></p>
+<figcaption>
+<p>A save refused.</p>
+</figcaption>
+</figure>
 <p>When the code is good, everything that runs it reloads — on every player's screen.</p>
 <p><strong>Unsaved changes are guarded.</strong> Closing a tab with unsaved edits asks first. Closing the whole workspace with unsaved
 files asks <strong>Save all / Don't save / Cancel</strong> — a file whose code has an error is not saved, and the dialog says so.
@@ -6136,7 +6146,12 @@ peer; an open tab follows them.</p>
 <p>Since 1.42, when two or more people in a session open the same code — a Script node, a Behaviour node, a script file,
 or a <a href="#text-documents">text document</a> — they type into <strong>one shared text</strong>. Everyone sees the others' typing as it
 happens, and two people typing in the same line both keep what they typed: nothing is overwritten.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/code-workspace/editing-together.png" data-desc-position="bottom"><img alt="Editing together: the other person's caret and selection in their colour, and the &quot;Editing with you&quot; strip" src="../img/code-workspace/editing-together.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/code-workspace/editing-together.webp" data-desc-position="bottom"><img alt="Editing together: another person's caret and selection in their colour, labelled Peer 8c21, line 2." class="shot fade-r" height="285" loading="lazy" src="../img/code-workspace/editing-together.webp" width="688"></a></p>
+<figcaption>
+<p>Editing together.</p>
+</figcaption>
+</figure>
 <ul>
 <li>The other person's <strong>caret</strong> and <strong>selection</strong> show in their colour (hover the caret for their name). The strip under
   the toolbar, <strong>Editing with you</strong>, lists everyone in the file and the line they are on; a screen reader reads it as
@@ -6157,7 +6172,12 @@ its preview, double-click it, or right-click ▸ <strong>Edit in the Code tab</s
 <p><strong>Pop out</strong> (↗) in the workspace header opens the whole code workspace in its <strong>own browser window</strong> — drag it to a
 second monitor and keep the 3D view full-size in the app. Desktop browsers only (hidden on phones, touch screens and in
 VR).</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/code-workspace/pop-out-window.png" data-desc-position="bottom"><img alt="The code workspace in its own window, with Dock back in its header" src="../img/code-workspace/pop-out-window.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/code-workspace/pop-out-window.webp" data-desc-position="bottom"><img alt="The code workspace in its own window, with Dock back in its header" class="shot fade-r" height="640" loading="lazy" src="../img/code-workspace/pop-out-window.webp" width="688"></a></p>
+<figcaption>
+<p>The code workspace in its own window.</p>
+</figcaption>
+</figure>
 <ul>
 <li>Everything stays live both ways: typing, <kbd>Ctrl</kbd>+<kbd>S</kbd> applying the script to the scene, the error
   banner and Problems, the sidebars, quick open, menus — and <a href="#editing-together">editing together</a>.</li>
@@ -6171,7 +6191,12 @@ VR).</p>
   <a href="../interface/#windows-on-several-monitors">Windows on several monitors</a>.</li>
 </ul>
 <h2 id="sidebars">Sidebars</h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/code-workspace/sidebars.png" data-desc-position="bottom"><img alt="The code workspace in 1.25: Open editors and the Project tree on the left, the tab strip, and the Outline on the right" src="../img/code-workspace/sidebars.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/code-workspace/sidebars.webp" data-desc-position="bottom"><img alt="The code workspace: Open editors and the Project tree on the left, with the tab strip above the code." class="shot fade-r fade-t" height="650" loading="lazy" src="../img/code-workspace/sidebars.webp" width="688"></a></p>
+<figcaption>
+<p>The code workspace.</p>
+</figcaption>
+</figure>
 <h3 id="left-open-editors-and-project">Left: Open editors and Project</h3>
 <p><kbd>Ctrl</kbd>+<kbd>B</kbd> shows or hides the left sidebar. (Outside the code workspace the same keys, and
 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd>, show and hide the app's own <a href="../interface/#sidebars">sidebars</a>.)</p>
@@ -6193,7 +6218,12 @@ VR).</p>
 <h3 id="files-and-folders">Files and folders</h3>
 <p>Since 1.46 the <strong>Files</strong> group of the Project tree is a real file tree: what you make here are ordinary
 <a href="../explorer/">Explorer</a> files, so they follow the Explorer's sharing rules and everyone in the session sees them.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/code-workspace/files-menu.png" data-desc-position="bottom"><img alt="The Project tree's menu on a script: Rename, Move to, Cut, Delete, New file, New folder, Show in Explorer" src="../img/code-workspace/files-menu.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/code-workspace/files-menu.webp" data-desc-position="bottom"><img alt="The Project tree's menu on a script: Rename, Move to, Cut, Delete, New file, New folder, Show in Explorer" class="shot fade-r fade-t" height="450" loading="lazy" src="../img/code-workspace/files-menu.webp" width="688"></a></p>
+<figcaption>
+<p>The Project tree's menu on a script.</p>
+</figcaption>
+</figure>
 <ul>
 <li><strong>New file</strong> (the page-with-plus button in the Project header, or the right-click menu) offers <strong>Script</strong> (a
   behaviour with the lifecycle functions ready to fill in), <strong>Note</strong> (<code>.md</code>) and <strong>JSON</strong>. A new script opens in a
@@ -6251,7 +6281,12 @@ The code runs every frame on each player's own machine and decides how <em>that<
 <li><strong>Engine source</strong> (toolbar) shows the built-in walker code it steers, read-only.</li>
 <li>With no code saved, the Player behaves exactly as before.</li>
 </ul>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/code-workspace/player-code.png" data-desc-position="bottom"><img alt="Player: walk open in the code workspace, with Engine source in the toolbar and the Player code row in the Project tree" src="../img/code-workspace/player-code.png"></a></p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/code-workspace/player-code.webp" data-desc-position="bottom"><img alt="Player: walk open in the code workspace, with Engine source in the toolbar and the Player code row in the Project tree" class="shot fade-r fade-t fade-b" height="470" loading="lazy" src="../img/code-workspace/player-code.webp" width="688"></a></p>
+<figcaption>
+<p>Player: walk open in the code workspace.</p>
+</figcaption>
+</figure>
 <h2 id="code-and-files">Code and files</h2>
 <ul>
 <li><strong>Save as file</strong> turns a node's inline code into a script file in your Explorer and binds the node to it.</li>
@@ -6315,7 +6350,7 @@ compact text.)</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-27
+    2026-10-31
   </span>
 
     

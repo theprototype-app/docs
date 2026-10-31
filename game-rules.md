@@ -8,8 +8,8 @@ code and press <kbd>Ctrl</kbd>+<kbd>S</kbd>, and the game plays by your rules on
 These games ship this way: **Mini Golf**, **Football**, **Dungeon Realms**, **The Alchemist's Escape**, **Sky Run**,
 **Target Toss** and **Marble Maze** (see [The Games tab](https://docs.theprototype.app/games.md)).
 
-![Mini Golf's Main graph: the read-me note, the buttons, the Mini Golf rules node with its state and moments, the groups around it and the engine's Code link](https://docs.theprototype.app/img/game-rules/mini-golf.png)
-
+![Part of Mini Golf's Main graph at full size: the rules node's outputs, such as stroke, outOfBounds and holeSunk, wired to sounds and bursts, with the Code link to the engine below.](https://docs.theprototype.app/img/game-rules/mini-golf.webp)
+*Figure: Part of Mini Golf's Main graph at full size.*
 ## Where it is
 
 Open a game from the **Games** tab, then open the **Node editor** (<kbd>N</kbd>). **Main** is the first entry under
@@ -51,8 +51,8 @@ You do not have to read code to tune a game. Select the rules node — or the ga
 
 A knob on the rules node rewrites the number in the code itself, so the code and the panel always agree.
 
-![Football's Main graph: the Match Rules settings node, the Football rules behaviour, and the groups for the nets, buttons and lamps](https://docs.theprototype.app/img/game-rules/football.png)
-
+![Part of Football's Main graph at full size: the Match Rules settings node, the Football rules behaviour, and the Code link to the engine.](https://docs.theprototype.app/img/game-rules/football.webp)
+*Figure: Part of Football's Main graph at full size.*
 ## Change the rules in code
 
 Double-click the rules node (or right-click ▸ **Open code**). The [code workspace](https://docs.theprototype.app/code-workspace.md) opens it; edit it

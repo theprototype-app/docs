@@ -28,8 +28,8 @@ GLTF and JSON join them once you offer them in Save options.
 Its **Save** remembers the options and saves; **Cancel** forgets the changes. On a folded phone the dialog opens full
 screen.
 
-![Save options on a computer: Save as Project or Scene, what a scene and a project include, and More formats, with Cancel and Save at the bottom](https://docs.theprototype.app/img/saving/save-options.png)
-
+![Save options on a computer: Save as Project or Scene, what a scene and a project include, and More formats, with Cancel and Save at the bottom](https://docs.theprototype.app/img/saving/save-options.webp)
+*Figure: Save options on a computer.*
 <kbd>Ctrl</kbd>+<kbd>S</kbd> saves the **open scene** as a new version in the [Explorer](https://docs.theprototype.app/explorer.md); a scene that has never been named asks for a name first.
 
 ## Where you left off
