@@ -4,11 +4,10 @@ On a phone or tablet, Play shows a **move stick** on the left, a **look drag** o
 buttons** — Jump, Throw, Grab, Use… — exactly the actions the game needs. Every control can be moved, resized and faded,
 and any button can wear your own pressed and released images.
 
-<!-- 36-docs: images are the 36-touch lane's emulated-phone captures; re-shoot from the 1.21 preview before release -->
-
-![Sky Run on a phone: the move stick bottom-left and the Jump button bottom-right](https://docs.theprototype.app/img/touch/sky-run-phone.png)
-![The touch controls layout editor, with the Jump button selected](https://docs.theprototype.app/img/touch/layout-editor.png)
-
+![Sky Run on a phone: the move stick bottom-left and the Jump button bottom-right](https://docs.theprototype.app/img/touch-controls/sky-run-phone.webp)
+*Figure: Sky Run on a phone.*
+![The touch controls layout editor, with the Jump button selected](https://docs.theprototype.app/img/touch-controls/layout-editor.webp)
+*Figure: The touch controls layout editor.*
 For the phone layout itself — the bottom bar, the selection toolbar, the dock and its tabs, and the sheets — see
 [The Interface: On a phone](https://docs.theprototype.app/interface.md#on-a-phone).
 

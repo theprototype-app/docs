@@ -704,8 +704,8 @@ the water itself.
   of <kbd>Alt</kbd> and the preview disappears.
 - The object list always reaches every object, whatever is in front of it.
 
-![Alt+click in the Aquarium: the chip by the cursor says 2 of 3 · Fish orange](https://docs.theprototype.app/img/controls/alt-click-cycle.png)
-
+![Alt+click in the Aquarium: the chip by the cursor says 2 of 3 · Fish orange](https://docs.theprototype.app/img/controls/alt-click-cycle.webp)
+*Figure: Alt+click steps through what is under the cursor; the chip says which one you have.*
 **Configure Scene ▸ Advanced ▸ Selection passes through** chooses what clicks go through:
 
 | Option | Default | What it does |
@@ -860,8 +860,8 @@ copying, rather than half-linked.
 Select several objects (<kbd>Shift</kbd>+click, box select, <kbd>Ctrl</kbd>+<kbd>A</kbd>) and open **Properties**: the
 panel says **Editing N objects**, and every row applies to all of them.
 
-![Properties with three objects selected: Editing 3 objects, the Pivot row, and a Geometry section that reaches only the two boxes](https://docs.theprototype.app/img/controls/multi-edit.png)
-
+![Properties with three objects selected: the Editing 3 objects notice, the Transform section with Move origin and the Pivot row, then the Arrange section with its align and distribute buttons.](https://docs.theprototype.app/img/controls/multi-edit.webp)
+*Figure: Properties with three objects selected: every value below applies to all of them.*
 - **Shared values show; differing values show a dash.** A slider, number or list whose objects disagree reads **—**, a
   checkbox shows the in-between state, and a material or emission colour says *(mixed)* under the picker.
 - **Setting a dashed row sets every object** to the new value — type into a dashed Roughness, tick an in-between
@@ -949,8 +949,8 @@ Since 1.25 that holds for **every slider and number field inside a node** — ev
 behaviour's [Open view](https://docs.theprototype.app/behaviours.md#the-live-node-view): a drag changes the value, never the node and never the whole
 graph, and the behaviour view no longer flickers the cursor.
 
-![A behaviour's Open view in the node editor: the params' knobs on the left drag their value, not the graph](https://docs.theprototype.app/img/controls/behaviour-view-knobs.png)
-
+![A behaviour's Open view in the node editor: the params' knobs on the left drag their value, not the graph](https://docs.theprototype.app/img/controls/behaviour-view-knobs.webp)
+*Figure: In a behaviour's Open view, a param's knob drags its value, not the graph.*
 Fields that hold a distance or an angle also accept a typed **unit** (`12cm`, `4in`,
 `90deg`) — see [Units](https://docs.theprototype.app/units.md).
 
@@ -993,10 +993,10 @@ there, and paste it back.
   <kbd>Ctrl</kbd>+<kbd>V</kbd> (<kbd>⌘</kbd><kbd>C</kbd> / <kbd>⌘</kbd><kbd>V</kbd> on a Mac). While you are typing in a
   box, <kbd>Ctrl</kbd>+<kbd>C</kbd> / <kbd>Ctrl</kbd>+<kbd>V</kbd> copy text as usual.
 
-![Properties of a Box with Position right-clicked: Copy vector (Ctrl+C), Paste vector (Ctrl+V), Reset, and under One axis Paste X only, Paste Y only, Paste Z only](https://docs.theprototype.app/img/controls/copy-paste-vector-menu.png)
-
-![The TRANSFORM section header right-clicked: Copy section, Copy as JSON, Paste section and Reset section](https://docs.theprototype.app/img/controls/copy-paste-section-menu.png)
-
+![Properties of a Box with Position right-clicked: Copy vector (Ctrl+C), Paste vector (Ctrl+V), Reset, and under One axis Paste X only, Paste Y only, Paste Z only](https://docs.theprototype.app/img/controls/copy-paste-vector-menu.webp)
+*Figure: A vector row's right-click menu: copy, paste, reset, or paste one axis.*
+![The TRANSFORM section header right-clicked: Copy section, Copy as JSON, Paste section and Reset section](https://docs.theprototype.app/img/controls/copy-paste-section-menu.webp)
+*Figure: A section header's right-click menu.*
 **What the clipboard holds:**
 
 | Copied | Text |
@@ -1072,10 +1072,10 @@ without docking — release Ctrl to dock*. You can press or release the key at a
 follows the key at once. It works for a single window, a window group dragged by its tab strip, and a tab torn out of
 a group.
 
-![The floating Objects window dragged over the right sidebar: it turns see-through, the sidebar column is outlined and the target reads Add as tab, with Hold Ctrl to place without docking underneath](https://docs.theprototype.app/img/controls/window-over-sidebar-hint.png)
-
-![The same drag with Ctrl held: the outline and the target are gone, the Objects window lies over the sidebar as it will be dropped, and a label beside the pointer reads Placing without docking — release Ctrl to dock](https://docs.theprototype.app/img/controls/window-place-without-docking.png)
-
+![The floating Objects window dragged over the right sidebar: it turns see-through, the sidebar column is outlined and the target reads Add as tab, with Hold Ctrl to place without docking underneath](https://docs.theprototype.app/img/controls/window-over-sidebar-hint.webp)
+*Figure: A floating window dragged over a sidebar: drop to add it as a tab, or hold Ctrl.*
+![The same drag with Ctrl held: the outline and the target are gone, the Objects window lies over the sidebar as it will be dropped, and a label beside the pointer reads Placing without docking — release Ctrl to dock](https://docs.theprototype.app/img/controls/window-place-without-docking.webp)
+*Figure: The same drag with Ctrl held: the window will land over the sidebar, not in it.*
 On a touch screen there is no key to hold: drop the window anywhere it is not over a target, or press and hold a docked
 window's tab and pick **Undock into a floating window** to take it out as a floating one.
 
@@ -1096,8 +1096,8 @@ Right-click a floating window's header — or press and hold it on a touch scree
 The same menu opens on a tab of a [floating window with tabs](https://docs.theprototype.app/interface.md#floating-windows-with-tabs). The header itself
 is unchanged.
 
-![The floating Objects window's header right-clicked: Dock to bottom, Move to left sidebar, Move to right sidebar, Float (undock) greyed because it already floats, Group with… open on Chat, Bring to front, Reset size and Close](https://docs.theprototype.app/img/controls/window-menu.png)
-
+![The floating Objects window's header right-clicked: Dock to bottom, Move to left sidebar, Move to right sidebar, Float (undock) greyed because it already floats, Group with…, Bring to front, Reset size and Close.](https://docs.theprototype.app/img/controls/window-menu.webp)
+*Figure: A floating window's header menu.*
 For the bottom dock's own buttons — **Undock**, **Split**, closing a view from its tab, **Dock all tabs** on a floating
 window — and for docking a window into an exact slot by dropping it on the dock's tab bar, see
 [Windows and tabs](https://docs.theprototype.app/interface.md#windows-and-tabs).
@@ -1240,14 +1240,14 @@ logo and your profile picture stay where they are.) In **Edit positions** every 
   unfolding a phone, beside a pinned sidebar or above the dock. [Workspace layouts](#workspace-layouts) carry the places
   and rotations.
 
-![Edit positions with Touch tools on: every cluster has a small grip under it — the Undo, Redo and Multi-select row beside the logo, the Connect bar, the top-right group, the bottom toolbar and both corner stacks — and every button still carries its red − with green + slots](https://docs.theprototype.app/img/controls/edit-positions-clusters.png)
-
-![Edit positions: the budget chip has its own grip and red − right of the toolbar](https://docs.theprototype.app/img/controls/budget-chip-edit-positions.png)
-
-![After Rotate to vertical and Rotate to horizontal: the toolbar stands on the left edge with Play in its middle, and the bottom-left corner buttons lie in a row](https://docs.theprototype.app/img/controls/clusters-rotated.png)
-
-![Edit positions with a mouse: the buttons beside the logo are drawn faint (hidden by default on a computer) and their grip menu is open — Move, Rotate to vertical, Reset position, Reset all positions, Show cluster and Show all](https://docs.theprototype.app/img/controls/touch-tools-show-cluster.png)
-
+![Edit positions: every cluster has a small grip under it — the Undo, Redo and Multi-select row beside the logo, the Connect bar, the top-right group, the bottom toolbar and both corner stacks — and every button carries a red −.](https://docs.theprototype.app/img/controls/edit-positions-clusters.webp)
+*Figure: Edit positions, in a small window: every cluster has a grip, every button a red −.*
+![Edit positions: the budget chip has its own grip and red − right of the toolbar](https://docs.theprototype.app/img/controls/budget-chip-edit-positions.webp)
+*Figure: In Edit positions the budget chip has its own grip and red −.*
+![After Rotate to vertical and Rotate to horizontal: the toolbar stands on the left edge with Play in its middle, and the bottom-left corner buttons lie in a row](https://docs.theprototype.app/img/controls/clusters-rotated.webp)
+*Figure: Clusters after Rotate to vertical and Rotate to horizontal.*
+![Edit positions with a mouse: the buttons beside the logo are drawn faint (hidden by default on a computer) and their grip menu is open — Move, Rotate to vertical, Reset position, Reset all positions, Show cluster and Show all](https://docs.theprototype.app/img/controls/touch-tools-show-cluster.webp)
+*Figure: A cluster's grip menu, with Show cluster and Show all.*
 #### Arranging the buttons
 
 Single buttons move between the clusters as before. The places that take buttons:
@@ -1280,12 +1280,12 @@ Then:
 - The round green **✓** at the top right of the toolbar **applies** the new layout. <kbd>Esc</kbd>, or a click anywhere
   else, cancels it.
 
-![Edit positions on a computer: every button has a red −, green + slots sit at the ends of the bar and on top of each corner stack, a grip sits beside the bar and each corner stack, and the green ✓ applies](https://docs.theprototype.app/img/controls/edit-positions.png)
-
-![Edit positions reaching the top right: the notifications and Explorer buttons in the top-right group carry a red − with a green + for its next place, the left corner holds four buttons and no +, the right corner shows one +, and every cluster has its grip](https://docs.theprototype.app/img/controls/edit-positions-top-right.png)
-
-![The top of the screen in Edit positions with a mouse: Undo, Redo and Multi-select beside the logo carry a red − with a + for the next place, the Connect bar has its own red −, the top-right group shows a + for its next place, and each of the three clusters has its grip underneath](https://docs.theprototype.app/img/controls/edit-positions-connect-bar.png)
-
+![Edit positions on a computer: every button on the bottom toolbar has a red −, green + slots sit at the ends of the bar, a grip sits beside it, and the green ✓ applies.](https://docs.theprototype.app/img/controls/edit-positions.webp)
+*Figure: Edit positions on a computer: the bottom toolbar.*
+![Edit positions reaching the top right: the notifications and Explorer buttons in the top-right group each carry a red −, with a green + for the next place in the group.](https://docs.theprototype.app/img/controls/edit-positions-top-right.webp)
+*Figure: Edit positions reaching the top right of the screen.*
+![The top of the screen in Edit positions with a mouse: the Connect bar has its own red − and a grip under it.](https://docs.theprototype.app/img/controls/edit-positions-connect-bar.webp)
+*Figure: The Connect bar in Edit positions.*
 The menus name buttons by their short name — **Pivot**, **Microphone**; the toolbar's own tooltips still tell you the
 pivot mode and how to talk.
 
@@ -1313,8 +1313,8 @@ Float** button (the lock in the drawer's header), or right-click the Connect bar
   **compact** form (the status dot and the chevron); tap the dot for the full bar, and it grows back by itself when room
   returns.
 
-![The floating Connect bar right-clicked outside Edit positions: its menu reads Move, Pin to top row, Reset position and Reset all positions (the last two greyed while the bar is in its default place)](https://docs.theprototype.app/img/controls/connect-bar-menu.png)
-
+![The floating Connect bar right-clicked outside Edit positions: its menu reads Move, Pin to top row, Reset position and Reset all positions (the last two greyed while the bar is in its default place)](https://docs.theprototype.app/img/controls/connect-bar-menu.webp)
+*Figure: The Connect bar's right-click menu, outside Edit positions.*
 Each kind of screen (touch or mouse) remembers its own choice, and layouts carry it. On a folded phone Connect is the
 chip in the phone's top bar, unchanged.
 
@@ -1519,8 +1519,8 @@ The light theme and every custom `.theme.json` restyle all of it; see [Themes & 
 - Someone who is **speaking** in voice chat gets a soft green ring on their avatar.
 - Buttons are 36–38 px with a mouse and grow to **44 px on a touch screen**.
 
-![The right sidebar pinned at full height with Configure Scene open: the profile button has moved left of it and its menu — Customize character, Profile settings, Sign in to cloud — opens right under it, beside the sidebar](https://docs.theprototype.app/img/interface/profile-menu-pinned-sidebar.png)
-
+![The right sidebar pinned at full height with Configure Scene open: the profile button has moved left of it and its menu — Customize character, Profile settings, Sign in to cloud — opens right under it, beside the sidebar](https://docs.theprototype.app/img/interface/profile-menu-pinned-sidebar.webp)
+*Figure: With a sidebar pinned at full height, the profile menu opens under its button, beside the sidebar.*
 ## The command palette (Ctrl+K)
 
 <kbd>Ctrl</kbd>+<kbd>K</kbd> opens one search box over everything: **tools** (Move, Scale, Interact…), **windows**
@@ -1592,10 +1592,10 @@ and, at its far end, the **Full height** button (↕) and the **hide** button.
 - **A pinned Properties** (the pin in its header) follows your selection without pulling its tab over the Objects list
   when the two share a side; double-click an object (or pick **Properties** in its menu) to bring it forward.
 
-![A sidebar on the right with two tabs, Objects and Configure Scene (in front), and the Full height button at the end of its tab strip](https://docs.theprototype.app/img/interface/sidebar-tabs.png)
-
-![The Objects tab of a sidebar right-clicked: Close, Close others (greyed, it is the only tab), Undock into a floating window, Move to the left side and Move to the bottom dock](https://docs.theprototype.app/img/interface/sidebar-tab-menu.png)
-
+![A sidebar on the right with two tabs, Objects and Configure Scene (in front), and the Full height button at the end of its tab strip](https://docs.theprototype.app/img/interface/sidebar-tabs.webp)
+*Figure: Two windows as tabs in one sidebar; Full height is at the end of the tab strip.*
+![The Objects tab of a sidebar right-clicked: Close, Close others, Undock into a floating window, Move to the left side, Move to the bottom dock and Hide this sidebar.](https://docs.theprototype.app/img/interface/sidebar-tab-menu.webp)
+*Figure: A sidebar tab's right-click menu.*
 #### Dragging a tab
 
 Drag a sidebar tab and a highlight shows what will happen before you let go — there is never a silent drop:
@@ -1610,8 +1610,8 @@ Drag a sidebar tab and a highlight shows what will happen before you let go — 
 Dragging a floating window onto a sidebar (or a screen edge), or a bottom-dock tab onto a sidebar, shows the same
 highlights, painted above every panel; the window you drag turns see-through so the highlight stays readable.
 
-![An Objects tab dragged out of the right sidebar into the 3D view: a dashed blue box reads Float here](https://docs.theprototype.app/img/interface/sidebar-drag-float-here.png)
-
+![An Objects tab dragged out of the right sidebar into the 3D view: a dashed blue box reads Float here](https://docs.theprototype.app/img/interface/sidebar-drag-float-here.webp)
+*Figure: Dragging a tab into the 3D view: drop it to float the window.*
 #### Any window in a sidebar
 
 Every window that can be docked at the bottom can also be a sidebar tab — the Node editor, Flow Code, Animation, UV,
@@ -1629,14 +1629,14 @@ the Explorer (search and filters; its search hides when the sidebar is narrower 
 floating window), the Shader editor, Code, the Profiler, the Image editor (the file name) and Statistics (the budget dot
 and re-read).
 
-![The same sidebar at full height: it runs from the top edge to the bottom, the notes, bell and profile buttons slid left of it, and the docked Node editor ends beside it](https://docs.theprototype.app/img/interface/sidebar-full-height.png)
-
+![The right sidebar at full height, with Objects and Configure Scene as tabs: it runs from the top edge to the bottom, and the notes, bell and profile buttons have slid left of it.](https://docs.theprototype.app/img/interface/sidebar-full-height.webp)
+*Figure: Full height: the sidebar runs from the top edge to the bottom.*
 Which side Configure Scene and Properties dock to, each side's width and Full height, the tab order and the tab in front
 are kept on this device and saved in [workspace layouts](https://docs.theprototype.app/controls.md#workspace-layouts). A phone keeps its
 [bottom dock](#the-dock-on-a-phone) instead.
 
-![Light theme: the Objects list as a sidebar on the left and Configure Scene as a sidebar on the right](https://docs.theprototype.app/img/interface/sidebars-both-sides-light.png)
-
+![Light theme: the Objects list as a sidebar on the left and Configure Scene as a sidebar on the right](https://docs.theprototype.app/img/interface/sidebars-both-sides-light.webp)
+*Figure: A sidebar on each side, in the Light theme. The two are shown together, cut from one screen.*
 #### Panel headers
 
 The Properties and Configure Scene headers — the panel's name and the **Filter properties** box — have a **lock**
@@ -1690,8 +1690,8 @@ second copy:
 To close a docked window use its tab's **×**; to bring a floating window into the dock, drag it onto the dock or use its
 [window menu](https://docs.theprototype.app/controls.md#the-window-menu) (**Dock to bottom**).
 
-![The dock's + menu open: Node editor and Explorer are ticked In dock, Objects is ticked Floating, Statistics is ticked Right sidebar, and every closed window says Open](https://docs.theprototype.app/img/interface/dock-plus-menu.png)
-
+![The dock's + menu open: Node editor and Explorer are marked In dock, Objects is marked Floating, and every other window can be opened from the same list.](https://docs.theprototype.app/img/interface/dock-plus-menu.webp)
+*Figure: The dock's + menu, in a small window: each row says where that window is now.*
 **Dock any window exactly where you want it**: drag a floating window by its header or any empty part of it — or tear
 a tab out of a tabbed window, or drag a whole tabbed window by its tab bar — onto the **dock's tab bar**. The window turns
 see-through, the tab bar is outlined and a **caret** shows the slot between the docked tabs where it will land; let go
@@ -1703,8 +1703,8 @@ on an unfolded phone or a tablet.
 Everywhere else a floating window simply moves — over the open dock, over the sidebars, partly off screen — and stays
 under the cursor the whole way; a header that ends up under the Controls bar is nudged above it when you let go.
 
-![The Objects window dragged over the dock's tab bar: it is see-through, the tab bar is outlined and a caret marks the slot after the Node editor tab](https://docs.theprototype.app/img/interface/dock-drop-objects.png)
-
+![The Objects window dragged over the dock's tab bar: it is see-through, the tab bar is outlined and a caret marks the slot after the Node editor tab](https://docs.theprototype.app/img/interface/dock-drop-objects.webp)
+*Figure: Drop on the dock's tab bar; the caret shows the slot.*
 **Floating windows can overlap the dock**: move them over it and resize them past its top edge — only the screen edge
 stops the resize corner. The Objects list remembers whether you last had it docked, and the toolbar button and
 <kbd>O</kbd> open it there.
@@ -1733,10 +1733,10 @@ the app closes one window of a pair for a while, the other fills the dock until 
 screen — a computer or an unfolded phone; on a folded phone the dock is one column and a pair shows as its two ordinary
 tabs.
 
-![The dock split side by side: one tab reads Node editor / Explorer, the Node editor with three nodes on the left, the Explorer's Library on the right, the divider between them and the Split button pressed at the right end of the strip](https://docs.theprototype.app/img/interface/dock-split.png)
-
-![A floating Explorer dragged over the right pane of a split dock: the pane is outlined and says Show in this pane](https://docs.theprototype.app/img/interface/drop-into-split-pane.png)
-
+![The dock split side by side: one tab reads Node editor / Explorer, with the Node editor on the left and the Explorer on the right.](https://docs.theprototype.app/img/interface/dock-split.webp)
+*Figure: The dock split side by side, in a small window.*
+![A floating Objects window dragged over the right pane of a split dock: the pane is outlined and says Show in this pane.](https://docs.theprototype.app/img/interface/drop-into-split-pane.webp)
+*Figure: A floating window dragged over a pane of a split dock.*
 ### Floating windows with tabs
 
 - **Statistics groups too** (since 1.39): its header menu ▸ **Group with…**, another window's **Group with…** ▸
@@ -1763,8 +1763,8 @@ scrollbars anywhere.
 Since 1.46 any panel — or a whole dock — can live in its **own browser window**. Drag it to a second monitor and keep
 the 3D view full-size in the app. Everything stays live: it is the same app in a second window, not a copy.
 
-![A popped-out dock: the Node editor and the Timeline as tabs in their own window](https://docs.theprototype.app/img/interface/pop-out-dock.png)
-
+![A popped-out dock: the Node editor and the Timeline as tabs in their own window](https://docs.theprototype.app/img/interface/pop-out-dock.webp)
+*Figure: A popped-out dock is its own browser window.*
 - **Pop out a panel:** right-click a dock tab, a sidebar tab or a floating window's header ▸ **Pop out into a new
   window**. Or drag a tab out of the browser window and let go. Panels that pop out: the Explorer, Properties /
   Configure Scene, the Node editor, Timeline, Animation, UV, Shader and HUD editors, the Profiler, the Debugger, Chat,
@@ -1808,8 +1808,8 @@ focus** on a docked window, a **Viewport** button shows or hides the
 [viewport picture-in-picture](#the-viewport-picture-in-picture) without leaving focus mode. Focus mode also
 ends when a dialog opens or you press Play.
 
-![Focus mode on the docked Explorer: it fills the whole window, the Viewport button (pressed) sits just left of Exit focus in the tab row, and the viewport picture-in-picture shows the scene in the bottom-right corner](https://docs.theprototype.app/img/interface/focus-mode-viewport-toggle.png)
-
+![Focus mode on the docked Explorer: it fills the whole window, the Viewport button (pressed) sits just left of Exit focus in the tab row, and the viewport picture-in-picture shows the scene in the bottom-right corner](https://docs.theprototype.app/img/interface/focus-mode-viewport-toggle.webp)
+*Figure: Focus mode, in a small window: the Viewport button shows or hides the picture-in-picture.*
 Without a keyboard: **View ▸ Focus mode** in the 3D view's right-click menu, right-click a dock tab ▸ **Maximize (focus
 mode)**, or on a phone **More ▸ Tools & View ▸ Focus mode** (which you can also drag onto the
 [phone bar](#the-phone-bar-and-more)).
@@ -1842,8 +1842,8 @@ moving it never moves your main view.
 
 The PiP's keys are listed in **Settings ▸ Shortcuts ▸ Viewport picture-in-picture**, where they can be rebound.
 
-![Focus mode on the docked Flow Code window: it fills the whole window with its tab row and Exit focus along the top edge, and the Viewport picture-in-picture shows the scene in the bottom-right corner](https://docs.theprototype.app/img/interface/focus-mode-pip.png)
-
+![Focus mode on the docked Flow Code window: it fills the whole window with its tab row and Exit focus along the top edge, and the Viewport picture-in-picture shows the scene in the bottom-right corner](https://docs.theprototype.app/img/interface/focus-mode-pip.webp)
+*Figure: Focus mode on the Flow Code window, in a small window.*
 ## Menus
 
 The right-click, Add (<kbd>Shift</kbd>+<kbd>A</kbd>) and viewport menus share one style: 32 px rows, an icon per row,
@@ -1867,8 +1867,8 @@ Project actions**:
   with the **Project | Scene | ⚙** switch under Save; the **⚙** opens the same Save options.
 - **Auto** is List on a phone and Compact everywhere else. Searching the settings for *burger* or *compact* finds it.
 
-![The main menu's Project section in the Compact layout: New from template… across the top, then Load beside Save with its ▾, then Import beside Export…](https://docs.theprototype.app/img/interface/menu-project-compact.png)
-
+![The main menu's Project section in the Compact layout: New from template… across the top, then Load beside Save with its ▾, then Import beside Export…](https://docs.theprototype.app/img/interface/menu-project-compact.webp)
+*Figure: The main menu's Project section in the Compact layout.*
 ## Dialogs
 
 Modules, Sessions, Checkpoints, Templates, Storage, Publish / Export, Import and every confirmation share one dialog
@@ -1891,8 +1891,8 @@ for this device. Passive results — *Saved*, *Copied*, *Exported…* — stay [
 in the notification centre. Requests from other people (to load a session, to take control, to see your private scene)
 stay cards in the corner, like connection requests: a dialog would take over your screen from afar.
 
-![Delete this flow? as a dialog over the dimmed screen: the logo and the toolbar are covered too, Delete flow in red beside Cancel](https://docs.theprototype.app/img/interface/dialog-delete-flow.png)
-
+![Delete this flow? as a dialog over the dimmed screen, with Delete flow in red beside Cancel.](https://docs.theprototype.app/img/interface/dialog-delete-flow.webp)
+*Figure: A confirmation is a dialog over the dimmed screen.*
 ## On a phone
 
 Below 640 px wide — a folded phone — the app switches to a phone layout with less on screen and nothing missing. An
@@ -1959,8 +1959,8 @@ added, moved or removed an item on the bar, and stays away; **Settings ▸ Inter
 on an item in More means it is already on the bar, and **Reset bar** (at the end of More) brings back the default. With More closed nothing moves by
 accident: a long press on a bar item opens More and picks that item up in one gesture.
 
-![More open on a folded phone, with Move being dragged from More ▸ Edit down onto the bottom bar; a blue line marks where it will land between Add and Objects](https://docs.theprototype.app/img/interface/phone-bar-drag-in.png)
-
+![More open on a folded phone, with Move being dragged from More ▸ Edit down onto the bottom bar; a blue line marks where it will land between Add and Objects](https://docs.theprototype.app/img/interface/phone-bar-drag-in.webp)
+*Figure: More open on a folded phone, with Move being dragged onto the bottom bar.*
 **What can go on the bar** — everything in More:
 
 - **Windows**: Add, More, Objects, Statistics, Chat, Explorer, Node editor, Animation, Scene, AI assistant, Notes, Flow
@@ -1982,8 +1982,8 @@ the app tells you once: press and hold any item on the bar to get More back.
 | **Dock tab row** | the row of tabs above docked windows is hidden; the bar and More still switch views |
 | **Grab handle** | no grab bar on docked windows and sheets (and no tap to step the size); drag the top edge to resize |
 
-![Light theme: the bottom of More — Edit, Tools & View, then the Show switches (Selection toolbar, Dock tab row, Grab handle) and Reset bar](https://docs.theprototype.app/img/interface/phone-more-show-switches-light.png)
-
+![Light theme: the bottom of More — Edit, Tools & View, then the Show switches (Selection toolbar, Dock tab row, Grab handle) and Reset bar](https://docs.theprototype.app/img/interface/phone-more-show-switches-light.webp)
+*Figure: The bottom of More on a phone, in the Light theme.*
 The bar and the switches are kept on this device; they are never shared with peers or saved in scenes, but a
 [workspace layout](https://docs.theprototype.app/controls.md#workspace-layouts) saved on the phone keeps the bar. On a wider screen — an unfolded
 phone, a tablet, a computer — the desktop toolbar is used instead, and your phone bar is waiting for the next fold. A bar
@@ -2013,8 +2013,8 @@ editor and the other editors:
 - **The main menu closes** as Configure Scene opens, since its tab is underneath the menu. On a computer the menu stays
   open, above the sidebar.
 
-![On a folded phone: the selection toolbar above the dock, whose tab strip holds Explorer and Properties (in front) with + beside them; the Properties tab shows the selected Box, and the bottom bar with Play sits underneath](https://docs.theprototype.app/img/interface/dock-tabs-properties-phone.png)
-
+![On a folded phone: the selection toolbar above the dock, whose tab strip holds Properties with + beside it; the Properties of a box fill the dock above the bottom bar.](https://docs.theprototype.app/img/interface/dock-tabs-properties-phone.webp)
+*Figure: The dock on a folded phone: tabs above it, the selection toolbar above them.*
 **Folding and unfolding.** Unfold the phone (or widen the window past 640 px) and each tab goes back to its place on the
 bigger screen: Properties and Configure Scene to their [sidebar](#sidebars) (the right side unless you moved them),
 Objects to its window or sidebar, Notes to the notes drawer, Layouts to the Layouts dialog. Fold it again and the same
@@ -2068,8 +2068,8 @@ with its top edge in the same frame while you resize it:
 Every toggle shows its state: a filled (tinted) button is on. Tapping a selected object deselects it — see
 [Tapping to select](https://docs.theprototype.app/controls.md#tapping-to-select-on-a-touch-screen).
 
-![The selection toolbar on a folded phone: Move (on), Rotate, Scale, Select multiple, Interact, then Inspect, then Undo and Redo, above the bottom bar with Play](https://docs.theprototype.app/img/interface/selection-toolbar-phone.png)
-
+![The selection toolbar on a folded phone: Move (on), Rotate, Scale, Select multiple, Interact, then Inspect, then Undo and Redo, above the bottom bar with Play in its middle.](https://docs.theprototype.app/img/interface/selection-toolbar-phone.webp)
+*Figure: The selection toolbar on a folded phone, above the bottom bar.*
 ## For module authors
 
 Every part shown here is on the **/kit** page of the app, in every state, and module panels can use the same parts — see
@@ -2086,11 +2086,10 @@ On a phone or tablet, Play shows a **move stick** on the left, a **look drag** o
 buttons** — Jump, Throw, Grab, Use… — exactly the actions the game needs. Every control can be moved, resized and faded,
 and any button can wear your own pressed and released images.
 
-<!-- 36-docs: images are the 36-touch lane's emulated-phone captures; re-shoot from the 1.21 preview before release -->
-
-![Sky Run on a phone: the move stick bottom-left and the Jump button bottom-right](https://docs.theprototype.app/img/touch/sky-run-phone.png)
-![The touch controls layout editor, with the Jump button selected](https://docs.theprototype.app/img/touch/layout-editor.png)
-
+![Sky Run on a phone: the move stick bottom-left and the Jump button bottom-right](https://docs.theprototype.app/img/touch-controls/sky-run-phone.webp)
+*Figure: Sky Run on a phone.*
+![The touch controls layout editor, with the Jump button selected](https://docs.theprototype.app/img/touch-controls/layout-editor.webp)
+*Figure: The touch controls layout editor.*
 For the phone layout itself — the bottom bar, the selection toolbar, the dock and its tabs, and the sheets — see
 [The Interface: On a phone](https://docs.theprototype.app/interface.md#on-a-phone).
 
@@ -2219,8 +2218,8 @@ headset off, or reload the page — picks up where you stopped.
 The first time you enter VR on a device, the welcome plays on a panel in front of you, a little below eye level. Turn away
 and it comes back in front of you. Point at its buttons and pull the trigger.
 
-![Step 1 of the VR welcome: a drawing of both controllers beside the text, with Skip, Don't show again and Next](https://docs.theprototype.app/img/tours/vr-welcome.png)
-
+![Step 1 of the VR welcome: the title Welcome to ThePrototype VR mode, a drawing of both controllers with their buttons named, and Skip, Don't show again and Next along the bottom.](https://docs.theprototype.app/img/tours/vr-welcome.webp)
+*Figure: Step 1 of 8 of the VR welcome, in the headset.*
 It has eight steps:
 
 1. Welcome
@@ -2244,8 +2243,8 @@ app reads which pair you have from the browser. The text and the lit buttons fol
 Six steps on the screen: adding things, looking around, your tools, Play, building together, and the logo menu. It starts
 after the first-visit Welcome card closes.
 
-![Step 1 of the editor tour, pointing at the + button: Welcome! Start by adding something](https://docs.theprototype.app/img/tours/editor-tour.png)
-
+![Step 1 of the editor tour: a card that says Welcome! Start by adding something, with a highlight on the + button at the lower left of the window.](https://docs.theprototype.app/img/tours/editor-tour.webp)
+*Figure: Step 1 of the editor tour points at the + button.*
 On a touch screen you get the **touch version**: the same steps with finger gestures, shown as a sheet at the bottom or
 top of the screen.
 
@@ -2261,8 +2260,8 @@ drawings, and the preview does not count as having seen the welcome.
 
 ## Settings
 
-![Settings ▸ Interface ▸ Tours, found by searching for "tours"](https://docs.theprototype.app/img/tours/settings-tours.png)
-
+![Settings ▸ Interface ▸ Tours: the Show tours automatically switch and a row that resets them, found by searching for the word tours.](https://docs.theprototype.app/img/tours/settings-tours.webp)
+*Figure: Settings searched for "tours".*
 All in **Settings ▸ Interface ▸ Tours**:
 
 | Setting | Default | What it does |
@@ -2353,8 +2352,8 @@ viewport keeps following the scene's environment (sky, background, grid), whatev
 | **8-bit** | a retro palette |
 | **High contrast** | white text on black at 7:1 (AAA), 3:1 borders and switches, a thick selection outline and bigger handles — also a switch in [Settings ▸ Accessibility](https://docs.theprototype.app/accessibility.md#high-contrast) |
 
-![The Profiler in the Dark, Light, Green console, 8-bit and High contrast themes](https://docs.theprototype.app/img/appearance/themes.png)
-
+![The Settings page's Appearance rows in the five built-in themes: Dark, Light, Green console, 8-bit and High contrast.](https://docs.theprototype.app/img/appearance/themes.webp)
+*Figure: Dark, Light, Green console, 8-bit and High contrast on the same Settings rows.*
 Since 1.21 every theme is checked for readable contrast: the Profiler's numbers, the number fields, the Explorer's
 sidebar, the shader and node editors and the light theme's drawers all keep their text legible (at least 4.5:1 for the
 Profiler's text).
@@ -2418,8 +2417,8 @@ by *accessibility*, *a11y*, *zoom*, *low vision*, *contrast*, *colour blind*, *m
 The games you make have their own **Accessibility** page for players — see
 [Making your game accessible](https://docs.theprototype.app/making-your-game-accessible.md).
 
-![Settings ▸ Accessibility on a computer: UI scale, High contrast, Motion and Show captions, each a row of its own](https://docs.theprototype.app/img/accessibility/settings-desktop.png)
-
+![Settings ▸ Accessibility on a computer: UI scale with its percentage menu, the High contrast switch, Motion with Follow system, Reduce and Full, and Show captions at the bottom, each in a row of its own.](https://docs.theprototype.app/img/accessibility/settings-desktop.webp)
+*Figure: Settings ▸ Accessibility, every row applying to this device.*
 ## UI scale
 
 **Settings ▸ Accessibility ▸ Size ▸ UI scale**: **90 %**, **100 %** (default), **110 %**, **120 %**, **130 %**,
@@ -2434,8 +2433,8 @@ Every panel, sheet, dock, toolbar, menu, toast and the phone layout grows or shr
 - The scale is applied before the app draws its first frame, so a reload never flashes the old size.
 - On a small phone, 150 % leaves less room for the scene; 120–130 % is often the best balance there.
 
-![The Accessibility page at 150 % on a folded phone: bigger type and controls, nothing off the screen](https://docs.theprototype.app/img/accessibility/scale-150-phone.png)
-
+![The Accessibility page at 150 % on a folded phone: bigger type and bigger controls, with nothing pushed off the screen.](https://docs.theprototype.app/img/accessibility/scale-150-phone.webp)
+*Figure: UI scale at 150 % on a folded phone.*
 ## High contrast
 
 **Settings ▸ Accessibility ▸ Colour ▸ High contrast** (the same choice as **Interface ▸ Theme ▸ High contrast**).
@@ -2450,8 +2449,8 @@ The 3D view follows it too, on this device only:
 - an object another person is holding gets a pink-red outline;
 - the move / rotate / scale handles are bigger and drawn in brighter axis colours (X red, Y green, Z light blue).
 
-![High contrast: black panels and white text, a box with the thick yellow selection edge and the bigger move handles](https://docs.theprototype.app/img/accessibility/high-contrast.png)
-
+![High contrast theme: black panels with white text beside a box that wears the thick yellow selection edge and the bigger move handles.](https://docs.theprototype.app/img/accessibility/high-contrast.webp)
+*Figure: High contrast keeps text at 7:1 and thickens the selection edge and the handles.*
 If you picked your own selection-outline colour in Settings, High contrast keeps yours. Switching High contrast off
 here goes back to the theme you had before.
 
@@ -2574,8 +2573,8 @@ you close it.
 
 Since 1.26 Settings has a new layout. No setting was lost or changed meaning: every switch keeps the value it had.
 
-![Settings on a computer: the grouped menu on the left, the Interface page with its Appearance rows](https://docs.theprototype.app/img/settings/interface-desktop.png)
-
+![Settings on a computer: the grouped menu on the left (General, Workspace, Devices & Services) and the Interface page with its Appearance rows on the right, cut at the column's edge.](https://docs.theprototype.app/img/settings/interface-desktop.webp)
+*Figure: Settings on a computer, the grouped menu beside the page.*
 ## Finding your way
 
 - **On a computer** the window has a menu on the left in three groups, with **About & what's new** pinned at the bottom:
@@ -2595,8 +2594,8 @@ Since 1.26 Settings has a new layout. No setting was lost or changed meaning: ev
   (**Node types ▸ Physics**), **About ▸ What's new**. A breadcrumb (*VR › Remap buttons*) or **‹ Back** returns, and
   <kbd>Esc</kbd> backs out of a sub-page first.
 
-![Settings on a phone: the list of categories in their three groups](https://docs.theprototype.app/img/settings/home-phone.png)
-
+![Settings on a phone: a search box above the list of categories in their groups — General, Workspace and Devices & Services.](https://docs.theprototype.app/img/settings/home-phone.webp)
+*Figure: On a phone, Settings opens on the list of categories.*
 ### Search
 
 The search box sits in the header (on a phone, at the top of the list). It finds a setting by its name, its description
@@ -2616,8 +2615,8 @@ description — a wide segmented choice, a text field, a slider on a narrow phon
 the same row can sit on one line on an unfolded phone or a computer and stack on a folded phone. A segmented choice too
 wide even for its own line (**Scene ▸ Editing ▸ Double-click action** on a phone) shows its options in two columns.
 
-![Settings ▸ Scene on a folded phone: Double-click action's four choices in two columns under its name, while Length's dropdown, Angle's Degrees | Radians and the Duplicates switches stay beside their names](https://docs.theprototype.app/img/settings/rows-phone.png)
-
+![Settings ▸ Scene on a folded phone: Double-click action's four choices in two columns under its name, while Length's dropdown, Angle's Degrees and Radians and the Duplicates switches stay beside their names.](https://docs.theprototype.app/img/settings/rows-phone.webp)
+*Figure: Rows on a narrow screen: long choices wrap under the name, short ones stay beside it.*
 | Badge | Means |
 |---|---|
 | **This device** | the setting is kept only on this computer or headset |
@@ -2837,15 +2836,15 @@ stands under the person's viewpoint, **walks, runs, strafes, jumps and idles** w
 where they look, and — when they are in **VR** — reaches for their controllers with its arms. The classic floating head
 is still there as a choice.
 
-![Another person's character, a Knight, standing where their camera is](https://docs.theprototype.app/img/avatars/peer-character.png)
-
+![Another person's character, a Knight, standing where their camera is](https://docs.theprototype.app/img/avatars/peer-character.webp)
+*Figure: Another person's character stands where their camera is.*
 ## The characters
 
 Nine characters ship with the app: **Knight**, **Mage**, **Rogue**, **Hooded rogue**, **Barbarian**, **Skeleton**,
 **Skeleton warrior**, **Skeleton mage** and **Skeleton rogue**, from Kay Lousberg's free CC0 KayKit packs.
 
-![The nine characters](https://docs.theprototype.app/img/avatars/characters.png)
-
+![The nine characters of the character picker, standing together in a three by three grid.](https://docs.theprototype.app/img/avatars/characters.webp)
+*Figure: The nine characters.*
 If you never pick one, you get **Auto**: a character chosen from your id, so everyone sees the same one for you.
 The same characters are also an Explorer pack, **Packs ▸ Adventurers**, that you can place in a scene as animated
 models (see [Packs](https://docs.theprototype.app/packs.md#adventurers-124)).
@@ -2856,8 +2855,8 @@ Profile menu (your picture, top right) ▸ **Customize Character** — also **Se
 character…**. A drawer opens (a bottom sheet on a phone) and puts **your own character** in a plain **studio**: a
 neutral backdrop in your theme's colours, a floor disc and a soft key light.
 
-![Customize character on a computer: your character in the studio on the left, the drawer with Show in scene, Surprise me and the presets on the right](https://docs.theprototype.app/img/avatars/studio-desktop.png)
-
+![Customize character on a computer, two parts of one screen side by side: your character on a lit disc in the studio, labelled You, and the drawer with Show in scene, Surprise me, the character presets, head, hat and colours.](https://docs.theprototype.app/img/avatars/studio-desktop.webp)
+*Figure: Customize character on a computer. The studio is on the left of the screen, the drawer on the right.*
 ### The studio
 
 The scene is hidden from *your* view only while you customise — nothing in it changes, and other people in the session
@@ -2910,8 +2909,8 @@ When someone gives no input for a while, everyone sees their character **knocked
 the head sways in a slow figure-8, and its eyes turn into spinning stars. Any key, click, mouse move or head move wakes
 them, and it fades out smoothly.
 
-![Eight characters knocked off, stars circling their heads and in their eyes](https://docs.theprototype.app/img/avatars/knocked-off.png)
-
+![Eight characters knocked off, stars circling their heads and in their eyes](https://docs.theprototype.app/img/avatars/knocked-off.webp)
+*Figure: Knocked off: stars circle the head.*
 **Settings ▸ Interface ▸ Avatars ▸ Knocked-off idle** chooses when *you* count as idle: **Off**, **10 s**, **20 s** (the
 default) or **60 s**. It is a setting for this device.
 
@@ -2987,8 +2986,8 @@ Point at the dot — or press and hold it on a touch screen — for the full sen
 while the signaling link is down it also says how long it has been trying. On a phone a tap on the chip opens the full
 connection details.
 
-![The phone's top bar when it is crowded: the logo, the connection chip with a green dot, ▾ and the microphone, then the bell and the peers](https://docs.theprototype.app/img/connection/status-dot-phone.png)
-
+![The phone's top bar when it is crowded: the logo, the connection chip with a green dot, ▾ and the microphone, then the bell and the peers](https://docs.theprototype.app/img/connection/status-dot-phone.webp)
+*Figure: A phone's crowded top bar: the chip keeps the connection dot.*
 ### Who is here: the peers panel
 
 The peers button in the top bar (beside the bell, with the number of people) opens the **Connected** panel. Its header
@@ -2997,8 +2996,8 @@ at it for the full name), a second line with where they are and their role, and 
 **Go to** or the role list. On a computer the panel is 320–420 px wide and grows with long names, so nothing wraps or
 breaks. On a phone it opens as a sheet like the notifications: a grab bar on top, and a swipe down closes it.
 
-![The Connected panel on a computer: five people, one row each — avatar, name, the scene they are in and their p-number underneath, and Editor or Viewer with Go to or Watch on the right](https://docs.theprototype.app/img/connection/peers-panel-desktop.png)
-
+![The Connected panel on a computer: five people, one row each — avatar, name, the scene they are in and their p-number underneath, and Editor or Viewer with Go to or Watch on the right](https://docs.theprototype.app/img/connection/peers-panel-desktop.webp)
+*Figure: The Connected panel on a computer.*
 Right-click a person (long-press on touch, <kbd>Shift</kbd>+<kbd>F10</kbd> from the keyboard) for the **peer menu**:
 their profile, Go to, Watch, Mute, Hide — and, for the host or an admin, **Remove from session** and **Remove and
 block**. See [Users and moderation](https://docs.theprototype.app/people.md). An AI agent shows a robot and "AI" instead of a character.
@@ -3261,7 +3260,12 @@ approval card. See [Inviting someone](https://docs.theprototype.app/connection.m
 | **AI agent** | Claude Code, Claude Desktop or any MCP client — see [Build with an AI agent](https://docs.theprototype.app/ai/build-with-an-agent.md) | **Edit** |
 | **Person** | a friend, a colleague, your other device | **View** |
 
-![The invite sheet: AI agent and Person tabs, role, expiry and how many may use it](https://docs.theprototype.app/img/invites/request-ai-sheet.png)
+![The invite sheet, Invite to this session. 1: the AI agent and Person tabs. 2: Role, Expires and Can be used by. 3: the Create invite link button.](https://docs.theprototype.app/img/invites/request-ai-sheet.webp)
+*Figure: The invite sheet, open on the AI agent tab.*
+
+1. The **AI agent** and **Person** tabs: who the link is for.
+2. **Role**, how long until it **expires**, and how many may use it.
+3. **Create invite link** makes the link to send.
 
 1. Pick the settings:
     - **Role** — **View** or **Edit**. On theprototype.app (accounts and roles) the person or agent joins with exactly
@@ -3336,8 +3340,8 @@ find them, look at their character, mute or hide them for yourself — and, if y
 - or focus it (<kbd>Tab</kbd>) and press the context-menu key or <kbd>Shift</kbd>+<kbd>F10</kbd>.
 - In a headset: radial menu ▸ **Tools ▸ People**.
 
-![The peer menu on a person in the Connected panel](https://docs.theprototype.app/img/people/peer-menu.png)
-
+![The peer menu on a person in the Connected panel](https://docs.theprototype.app/img/people/peer-menu.webp)
+*Figure: The peer menu on a person in the Connected panel.*
 ## What is in it
 
 | group | entries |

@@ -10,8 +10,8 @@ you close it.
 
 Since 1.26 Settings has a new layout. No setting was lost or changed meaning: every switch keeps the value it had.
 
-![Settings on a computer: the grouped menu on the left, the Interface page with its Appearance rows](https://docs.theprototype.app/img/settings/interface-desktop.png)
-
+![Settings on a computer: the grouped menu on the left (General, Workspace, Devices & Services) and the Interface page with its Appearance rows on the right, cut at the column's edge.](https://docs.theprototype.app/img/settings/interface-desktop.webp)
+*Figure: Settings on a computer, the grouped menu beside the page.*
 ## Finding your way
 
 - **On a computer** the window has a menu on the left in three groups, with **About & what's new** pinned at the bottom:
@@ -31,8 +31,8 @@ Since 1.26 Settings has a new layout. No setting was lost or changed meaning: ev
   (**Node types ▸ Physics**), **About ▸ What's new**. A breadcrumb (*VR › Remap buttons*) or **‹ Back** returns, and
   <kbd>Esc</kbd> backs out of a sub-page first.
 
-![Settings on a phone: the list of categories in their three groups](https://docs.theprototype.app/img/settings/home-phone.png)
-
+![Settings on a phone: a search box above the list of categories in their groups — General, Workspace and Devices & Services.](https://docs.theprototype.app/img/settings/home-phone.webp)
+*Figure: On a phone, Settings opens on the list of categories.*
 ### Search
 
 The search box sits in the header (on a phone, at the top of the list). It finds a setting by its name, its description
@@ -52,8 +52,8 @@ description — a wide segmented choice, a text field, a slider on a narrow phon
 the same row can sit on one line on an unfolded phone or a computer and stack on a folded phone. A segmented choice too
 wide even for its own line (**Scene ▸ Editing ▸ Double-click action** on a phone) shows its options in two columns.
 
-![Settings ▸ Scene on a folded phone: Double-click action's four choices in two columns under its name, while Length's dropdown, Angle's Degrees | Radians and the Duplicates switches stay beside their names](https://docs.theprototype.app/img/settings/rows-phone.png)
-
+![Settings ▸ Scene on a folded phone: Double-click action's four choices in two columns under its name, while Length's dropdown, Angle's Degrees and Radians and the Duplicates switches stay beside their names.](https://docs.theprototype.app/img/settings/rows-phone.webp)
+*Figure: Rows on a narrow screen: long choices wrap under the name, short ones stay beside it.*
 | Badge | Means |
 |---|---|
 | **This device** | the setting is kept only on this computer or headset |

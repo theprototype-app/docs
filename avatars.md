@@ -5,15 +5,15 @@ stands under the person's viewpoint, **walks, runs, strafes, jumps and idles** w
 where they look, and — when they are in **VR** — reaches for their controllers with its arms. The classic floating head
 is still there as a choice.
 
-![Another person's character, a Knight, standing where their camera is](https://docs.theprototype.app/img/avatars/peer-character.png)
-
+![Another person's character, a Knight, standing where their camera is](https://docs.theprototype.app/img/avatars/peer-character.webp)
+*Figure: Another person's character stands where their camera is.*
 ## The characters
 
 Nine characters ship with the app: **Knight**, **Mage**, **Rogue**, **Hooded rogue**, **Barbarian**, **Skeleton**,
 **Skeleton warrior**, **Skeleton mage** and **Skeleton rogue**, from Kay Lousberg's free CC0 KayKit packs.
 
-![The nine characters](https://docs.theprototype.app/img/avatars/characters.png)
-
+![The nine characters of the character picker, standing together in a three by three grid.](https://docs.theprototype.app/img/avatars/characters.webp)
+*Figure: The nine characters.*
 If you never pick one, you get **Auto**: a character chosen from your id, so everyone sees the same one for you.
 The same characters are also an Explorer pack, **Packs ▸ Adventurers**, that you can place in a scene as animated
 models (see [Packs](https://docs.theprototype.app/packs.md#adventurers-124)).
@@ -24,8 +24,8 @@ Profile menu (your picture, top right) ▸ **Customize Character** — also **Se
 character…**. A drawer opens (a bottom sheet on a phone) and puts **your own character** in a plain **studio**: a
 neutral backdrop in your theme's colours, a floor disc and a soft key light.
 
-![Customize character on a computer: your character in the studio on the left, the drawer with Show in scene, Surprise me and the presets on the right](https://docs.theprototype.app/img/avatars/studio-desktop.png)
-
+![Customize character on a computer, two parts of one screen side by side: your character on a lit disc in the studio, labelled You, and the drawer with Show in scene, Surprise me, the character presets, head, hat and colours.](https://docs.theprototype.app/img/avatars/studio-desktop.webp)
+*Figure: Customize character on a computer. The studio is on the left of the screen, the drawer on the right.*
 ### The studio
 
 The scene is hidden from *your* view only while you customise — nothing in it changes, and other people in the session
@@ -78,8 +78,8 @@ When someone gives no input for a while, everyone sees their character **knocked
 the head sways in a slow figure-8, and its eyes turn into spinning stars. Any key, click, mouse move or head move wakes
 them, and it fades out smoothly.
 
-![Eight characters knocked off, stars circling their heads and in their eyes](https://docs.theprototype.app/img/avatars/knocked-off.png)
-
+![Eight characters knocked off, stars circling their heads and in their eyes](https://docs.theprototype.app/img/avatars/knocked-off.webp)
+*Figure: Knocked off: stars circle the head.*
 **Settings ▸ Interface ▸ Avatars ▸ Knocked-off idle** chooses when *you* count as idle: **Off**, **10 s**, **20 s** (the
 default) or **60 s**. It is a setting for this device.
 

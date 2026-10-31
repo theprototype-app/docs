@@ -19,7 +19,12 @@ approval card. See [Inviting someone](https://docs.theprototype.app/connection.m
 | **AI agent** | Claude Code, Claude Desktop or any MCP client — see [Build with an AI agent](https://docs.theprototype.app/ai/build-with-an-agent.md) | **Edit** |
 | **Person** | a friend, a colleague, your other device | **View** |
 
-![The invite sheet: AI agent and Person tabs, role, expiry and how many may use it](https://docs.theprototype.app/img/invites/request-ai-sheet.png)
+![The invite sheet, Invite to this session. 1: the AI agent and Person tabs. 2: Role, Expires and Can be used by. 3: the Create invite link button.](https://docs.theprototype.app/img/invites/request-ai-sheet.webp)
+*Figure: The invite sheet, open on the AI agent tab.*
+
+1. The **AI agent** and **Person** tabs: who the link is for.
+2. **Role**, how long until it **expires**, and how many may use it.
+3. **Create invite link** makes the link to send.
 
 1. Pick the settings:
     - **Role** — **View** or **Edit**. On theprototype.app (accounts and roles) the person or agent joins with exactly

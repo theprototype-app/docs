@@ -37,8 +37,8 @@ Point at the dot — or press and hold it on a touch screen — for the full sen
 while the signaling link is down it also says how long it has been trying. On a phone a tap on the chip opens the full
 connection details.
 
-![The phone's top bar when it is crowded: the logo, the connection chip with a green dot, ▾ and the microphone, then the bell and the peers](https://docs.theprototype.app/img/connection/status-dot-phone.png)
-
+![The phone's top bar when it is crowded: the logo, the connection chip with a green dot, ▾ and the microphone, then the bell and the peers](https://docs.theprototype.app/img/connection/status-dot-phone.webp)
+*Figure: A phone's crowded top bar: the chip keeps the connection dot.*
 ### Who is here: the peers panel
 
 The peers button in the top bar (beside the bell, with the number of people) opens the **Connected** panel. Its header
@@ -47,8 +47,8 @@ at it for the full name), a second line with where they are and their role, and 
 **Go to** or the role list. On a computer the panel is 320–420 px wide and grows with long names, so nothing wraps or
 breaks. On a phone it opens as a sheet like the notifications: a grab bar on top, and a swipe down closes it.
 
-![The Connected panel on a computer: five people, one row each — avatar, name, the scene they are in and their p-number underneath, and Editor or Viewer with Go to or Watch on the right](https://docs.theprototype.app/img/connection/peers-panel-desktop.png)
-
+![The Connected panel on a computer: five people, one row each — avatar, name, the scene they are in and their p-number underneath, and Editor or Viewer with Go to or Watch on the right](https://docs.theprototype.app/img/connection/peers-panel-desktop.webp)
+*Figure: The Connected panel on a computer.*
 Right-click a person (long-press on touch, <kbd>Shift</kbd>+<kbd>F10</kbd> from the keyboard) for the **peer menu**:
 their profile, Go to, Watch, Mute, Hide — and, for the host or an admin, **Remove from session** and **Remove and
 block**. See [Users and moderation](https://docs.theprototype.app/people.md). An AI agent shows a robot and "AI" instead of a character.

@@ -10,8 +10,8 @@ by *accessibility*, *a11y*, *zoom*, *low vision*, *contrast*, *colour blind*, *m
 The games you make have their own **Accessibility** page for players — see
 [Making your game accessible](https://docs.theprototype.app/making-your-game-accessible.md).
 
-![Settings ▸ Accessibility on a computer: UI scale, High contrast, Motion and Show captions, each a row of its own](https://docs.theprototype.app/img/accessibility/settings-desktop.png)
-
+![Settings ▸ Accessibility on a computer: UI scale with its percentage menu, the High contrast switch, Motion with Follow system, Reduce and Full, and Show captions at the bottom, each in a row of its own.](https://docs.theprototype.app/img/accessibility/settings-desktop.webp)
+*Figure: Settings ▸ Accessibility, every row applying to this device.*
 ## UI scale
 
 **Settings ▸ Accessibility ▸ Size ▸ UI scale**: **90 %**, **100 %** (default), **110 %**, **120 %**, **130 %**,
@@ -26,8 +26,8 @@ Every panel, sheet, dock, toolbar, menu, toast and the phone layout grows or shr
 - The scale is applied before the app draws its first frame, so a reload never flashes the old size.
 - On a small phone, 150 % leaves less room for the scene; 120–130 % is often the best balance there.
 
-![The Accessibility page at 150 % on a folded phone: bigger type and controls, nothing off the screen](https://docs.theprototype.app/img/accessibility/scale-150-phone.png)
-
+![The Accessibility page at 150 % on a folded phone: bigger type and bigger controls, with nothing pushed off the screen.](https://docs.theprototype.app/img/accessibility/scale-150-phone.webp)
+*Figure: UI scale at 150 % on a folded phone.*
 ## High contrast
 
 **Settings ▸ Accessibility ▸ Colour ▸ High contrast** (the same choice as **Interface ▸ Theme ▸ High contrast**).
@@ -42,8 +42,8 @@ The 3D view follows it too, on this device only:
 - an object another person is holding gets a pink-red outline;
 - the move / rotate / scale handles are bigger and drawn in brighter axis colours (X red, Y green, Z light blue).
 
-![High contrast: black panels and white text, a box with the thick yellow selection edge and the bigger move handles](https://docs.theprototype.app/img/accessibility/high-contrast.png)
-
+![High contrast theme: black panels with white text beside a box that wears the thick yellow selection edge and the bigger move handles.](https://docs.theprototype.app/img/accessibility/high-contrast.webp)
+*Figure: High contrast keeps text at 7:1 and thickens the selection edge and the handles.*
 If you picked your own selection-outline colour in Settings, High contrast keeps yours. Switching High contrast off
 here goes back to the theme you had before.
 
