@@ -64,6 +64,13 @@ Or do it by ID: they paste your ID into their Connect field and press Connect; t
 To skip the approval card, send an **invite link** instead (**Connect ▸ Request AI**, a *Person* or an *AI agent*
 tab): it joins in one step with the role you chose, for a limited time. See [Invite people and agents](invites.md).
 
+### Reloading while joined
+
+*Since 1.48.1.* A guest who reloads the page — or whose phone reloads it — goes straight back into the session it was
+in, on the same seat and with no new approval card, instead of being asked *Restore previous session?*. The restore
+offer still appears when there is no live session to go back to. A phone whose screen turns off, or that switches to
+another app, keeps its link for up to a minute.
+
 ### A link in a tab that is already open
 
 You do not have to reload to follow an invite. Paste the link into the **address bar** of the tab that is already running the app and press <kbd>Enter</kbd>: the app dials that session on the spot, with your scene and your session id intact. (The Connect field takes a bare ID, not a link.)
