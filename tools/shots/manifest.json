@@ -95,6 +95,17 @@
    "app": "1.51.0",
    "shotAt": "2026-10-31T14:27:55.310Z"
   },
+  "img/camera/camera-object.webp": {
+   "page": "camera",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 688,
+   "height": 840,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T15:04:45.176Z"
+  },
   "img/camera/env-presets.webp": {
    "page": "camera",
    "kind": "view",
@@ -139,6 +150,28 @@
    ],
    "app": "1.51.0",
    "shotAt": "2026-10-31T14:06:23.299Z"
+  },
+  "img/camera/sky-image-section.webp": {
+   "page": "camera",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 340,
+   "height": 800,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T15:06:10.668Z"
+  },
+  "img/camera/sky-meadow.webp": {
+   "page": "camera",
+   "kind": "view",
+   "dpr": 1,
+   "width": 1280,
+   "height": 720,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.489Z"
   },
   "img/camera/view-section.webp": {
    "page": "camera",
@@ -625,6 +658,61 @@
    "app": "1.51.0",
    "shotAt": "2026-10-31T14:26:36.592Z"
   },
+  "img/notifications/chat-mentions.webp": {
+   "page": "notifications",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 500,
+   "height": 420,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.573Z"
+  },
+  "img/notifications/note-card.webp": {
+   "page": "notifications",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 820,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.574Z"
+  },
+  "img/notifications/note-page-phone.webp": {
+   "page": "notifications",
+   "kind": "ui",
+   "dpr": 2.9,
+   "width": 390,
+   "height": 480,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.574Z"
+  },
+  "img/notifications/note-thread.webp": {
+   "page": "notifications",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 300,
+   "height": 265,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.574Z"
+  },
+  "img/notifications/undo-toast.webp": {
+   "page": "notifications",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 420,
+   "height": 62,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.574Z"
+  },
   "img/people/peer-menu.webp": {
    "page": "people",
    "kind": "ui",
@@ -635,6 +723,94 @@
    "labels": [],
    "app": "earlier",
    "shotAt": "2026-10-29T08:56:54.344Z"
+  },
+  "img/performance/budget-chip.webp": {
+   "page": "performance",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 652,
+   "height": 80,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.576Z"
+  },
+  "img/performance/configure-scene-quality.webp": {
+   "page": "performance",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 340,
+   "height": 700,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T15:05:18.948Z"
+  },
+  "img/performance/statistics-budget.webp": {
+   "page": "performance",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 404,
+   "height": 484,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.579Z"
+  },
+  "img/profiler/details-sidebar.webp": {
+   "page": "profiler",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 438,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.585Z"
+  },
+  "img/profiler/report-a-problem.webp": {
+   "page": "profiler",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 560,
+   "height": 641,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.586Z"
+  },
+  "img/recording/recording-bar.webp": {
+   "page": "recording",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 160,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.589Z"
+  },
+  "img/recording/result.webp": {
+   "page": "recording",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 700,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.589Z"
+  },
+  "img/recording/turntable-dialog.webp": {
+   "page": "recording",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 688,
+   "height": 840,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T15:05:35.491Z"
   },
   "img/settings/home-phone.webp": {
    "page": "settings",

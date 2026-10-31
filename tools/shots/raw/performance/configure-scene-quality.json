@@ -1,0 +1,41 @@
+{
+ "id": "configure-scene-quality",
+ "dpr": 2,
+ "shotAt": "2026-10-31T15:05:18.948Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "header.wc-head",
+  "div.ins-filter",
+  "div#inspector.tp-ui",
+  "label.tp-ui",
+  "button.sec-panel-head",
+  "span.pr-label",
+  "label#scene-auto-quality-label.it-label",
+  "label#scene-lod-enabled-label.it-label",
+  "label#scene-kit-instancing-label.it-label",
+  "button.chip",
+  "div.tp-ui",
+  "button#hdri-none.hdri-card"
+ ],
+ "width": 680,
+ "height": 1400,
+ "crop": {
+  "x": 1100,
+  "y": 56,
+  "w": 340,
+  "h": 700
+ },
+ "cut": [
+  "l",
+  "t",
+  "b"
+ ],
+ "fade": [
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

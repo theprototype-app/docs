@@ -1,0 +1,37 @@
+page: profiler
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: details-sidebar
+  replaces: img/profiler/details-sidebar.png
+  dpr: 1
+  kind: ui
+  caption: The Tree in the middle, Details for the picked frame on the right.
+  crop:
+    rect:
+    - 752
+    - 0
+    - 688
+    - 438
+  fade:
+  - l
+  alt: 'The Profiler docked on a computer, cut at the column: the timeline and the Tree with Heavy crate picked, and Details
+    on the right for the frame at 2.1 s.'
+  from: img/profiler/details-sidebar.png
+- id: report-a-problem
+  replaces: img/profiler/report-a-problem.png
+  dpr: 1
+  kind: ui
+  caption: 'Report a problem: box what is wrong, add a note, choose whether to send it.'
+  crop:
+    rect:
+    - 0
+    - 0
+    - 560
+    - 641
+  fade: []
+  alt: 'Report a problem: a box drawn on the picture, a note, and the Send box ticked'
+  from: img/profiler/report-a-problem.png

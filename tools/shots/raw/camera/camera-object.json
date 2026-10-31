@@ -1,0 +1,41 @@
+{
+ "id": "camera-object",
+ "dpr": 2,
+ "shotAt": "2026-10-31T15:04:45.176Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "div.pip-bar",
+  "button.pip-btn",
+  "header.wc-head",
+  "div.ins-filter",
+  "div#inspector.tp-ui",
+  "svg.lucide",
+  "input#name.ui-input",
+  "button#select-group.ts-btn",
+  "button.sec-panel-head",
+  "span.pr-label",
+  "div.ui-row",
+  "button.ui-chip"
+ ],
+ "width": 1376,
+ "height": 1680,
+ "crop": {
+  "x": 752,
+  "y": 0,
+  "w": 688,
+  "h": 840
+ },
+ "cut": [
+  "l",
+  "b"
+ ],
+ "fade": [
+  "l",
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

@@ -1,0 +1,53 @@
+page: performance
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: budget-chip
+  replaces: img/performance/budget-chip.png
+  dpr: 1
+  kind: ui
+  caption: The budget chip sits beside the toolbar.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 652
+    - 80
+  fade: &id001 []
+  alt: The budget chip beside the toolbar, reading Quest 200% in red for the Race scene
+  from: img/performance/budget-chip.png
+- id: statistics-budget
+  replaces: img/performance/statistics-budget.png
+  dpr: 1
+  kind: ui
+  caption: Statistics ▸ Budget against the Quest limits.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 404
+    - 484
+  fade: *id001
+  alt: 'Statistics ▸ Budget for the Race scene on Quest: draw calls, triangles, texture memory, lights, shadow-casting lights
+    and shadow draws against the budget, and the heaviest objects with what optimizing them on import would save'
+  from: img/performance/statistics-budget.png
+- id: configure-scene-quality
+  replaces: img/performance/configure-scene-quality.png
+  caption: Configure Scene opens with Quality first.
+  setup:
+  - section: Quality
+  - wait: 1200
+  crop:
+    rect:
+    - 1100
+    - 56
+    - 340
+    - 700
+  fade:
+  - b
+  alt: 'Configure Scene with Quality first: Preset Auto / High / Medium / Low, Reduce quality when the scene is heavy, Shadows,
+    Simplify distant models and Draw repeated kit pieces together, above Environment; one Lowered resolution to keep it smooth
+    notice with Keep full quality at the top'

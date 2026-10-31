@@ -1,0 +1,23 @@
+{
+ "id": "result",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.589Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/recording/result.png",
+ "width": 688,
+ "height": 700,
+ "crop": {
+  "x": 30,
+  "y": 60,
+  "w": 688,
+  "h": 700
+ },
+ "cut": [],
+ "fade": [
+  "r"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}
