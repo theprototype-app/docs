@@ -79,7 +79,7 @@ The host decides how much of their library a guest sees: **Connect ▸ ▾ (Info
 | Setting | Guests see |
 | --- | --- |
 | **Current scene's files** (default) | the open scene's file and the files it uses |
-| **Project** | the above, plus the project's other scenes and every file already shared in the session |
+| **Every scene on this device, and shared files** | the above, plus every scene file on this device and every file already shared in the session |
 | **Whole library** | every file and folder in your Library |
 | **None** | nothing |
 
