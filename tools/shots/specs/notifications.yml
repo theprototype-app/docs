@@ -1,0 +1,79 @@
+page: notifications
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: undo-toast
+  replaces: img/notes/undo-toast.png
+  dpr: 1
+  kind: ui
+  caption: A toast with Undo, after clearing the scene.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 420
+    - 62
+  fade: &id001 []
+  alt: The toast after clearing the scene, with Undo
+  from: img/notes/undo-toast.png
+- id: note-card
+  replaces: img/notes/note-card.png
+  dpr: 1
+  kind: ui
+  caption: Editing a note beside the notes drawer.
+  crop:
+    rect:
+    - 152
+    - 0
+    - 688
+    - 820
+  fade:
+  - l
+  alt: Editing a scene note, with the notes drawer grouping the scene's notes by label
+  from: img/notes/note-card.png
+- id: note-thread
+  replaces: img/notes/note-thread.png
+  dpr: 1
+  kind: ui
+  caption: A note with a thread of replies.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 300
+    - 265
+  fade: *id001
+  alt: A note with a thread of replies and the Reply box
+  from: img/notes/note-thread.png
+- id: note-page-phone
+  replaces: img/notes/note-page-phone.png
+  dpr: 2.9
+  kind: ui
+  caption: A note as a page of the notes on a folded phone.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 1131
+    - 1392
+  fade: []
+  alt: 'A note open as a page of the notes on a folded phone: ‹ 5/14 › in its header, Reply, then Delete, Follow and Edit
+    above the bottom bar'
+  from: img/notes/note-page-phone.png
+- id: chat-mentions
+  replaces: img/notes/chat-mentions.png
+  dpr: 1
+  kind: ui
+  caption: In the chat, a line that mentions you is ringed.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 500
+    - 420
+  fade: *id001
+  alt: 'The chat: a line that mentions you is ringed, and :+1: became an emoji'
+  from: img/notes/chat-mentions.png

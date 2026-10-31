@@ -68,7 +68,10 @@ Besides your own view, a scene can hold **cameras** of its own — the shot a ga
 security monitor. Add one from **right-click ▸ Add ▸ Camera ▸ Perspective** (or **Orthographic**). It appears as a small
 camera marker you move and turn like any object; selecting it opens **Properties ▸ Camera**:
 
-![The Camera section of a camera object's properties, with its picture-in-picture preview](img/camera/camera-object.png)
+![A selected camera in the scene: Properties ▸ Camera with Kind, FOV, Near, Far and Framing, and the camera's preview window in the corner of the view.](img/camera/camera-object.webp){ .shot .fade-l .fade-b width="688" height="840" loading=lazy }
+/// caption
+A camera's properties, with its preview window at the lower left.
+///
 
 | Row | What it does |
 |---|---|
@@ -165,7 +168,10 @@ scene's sky **and** its light. Every object picks up the image's colours and bri
 [water](water.md) mirrors the real clouds. The scene's sun is placed where the photo's sun is, so shadows agree with the
 sky.
 
-![A mirror sphere and a box lit by the Meadow sky image](img/camera/sky-meadow.png)
+![A mirror sphere and a box lit by the Meadow sky image](img/camera/sky-meadow.webp){ .shot width="1280" height="720" loading=lazy }
+/// caption
+The Meadow sky image lighting a mirror sphere and a box.
+///
 
 It lives in **Configure Scene ▸ Environment ▸ Sky image (HDRI)**, under the preset chips and the Exposure slider. Click
 a card to switch to that sky; like every Environment setting, everyone in the session sees it.
@@ -181,7 +187,10 @@ a card to switch to that sky; like every Environment setting, everyone in the se
 The five skies are also preset chips, and in VR they are in the radial menu's **Scene ▸ Environment**. All five are CC0
 images from [Poly Haven](https://polyhaven.com).
 
-![Configure Scene ▸ Environment with the Sky image section: the sky cards, Upload HDRI…, Rotation, Image light, Show as sky, Sky blur and Tone mapping](img/camera/sky-image-section.png)
+![Configure Scene ▸ Environment: the sky preset cards, Upload HDRI…, Rotation, Image light, Show as sky, Sky blur and Tone mapping.](img/camera/sky-image-section.webp){ .shot .fade-b width="340" height="800" loading=lazy }
+/// caption
+Configure Scene ▸ Environment, with its Sky image section.
+///
 
 | Row | What it does |
 |---|---|

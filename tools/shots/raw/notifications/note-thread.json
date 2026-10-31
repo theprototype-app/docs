@@ -1,0 +1,21 @@
+{
+ "id": "note-thread",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.574Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/notes/note-thread.png",
+ "width": 300,
+ "height": 265,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 300,
+  "h": 265
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

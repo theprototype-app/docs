@@ -5,7 +5,10 @@ Record a short video of the viewport while the recorder drives the camera: a **t
 
 Right-click the viewport ▸ **Tools ▸ Recording…**
 
-![The Recording dialog set to a one-turn turntable of the whole scene](img/recording/turntable-dialog.png)
+![The Recording dialog: What to film set to Turntable, with Orbit, Turns, Direction, Size, Frame rate, Length, Quality and the Start recording button.](img/recording/turntable-dialog.webp){ .shot width="688" height="840" loading=lazy }
+/// caption
+The Recording dialog, in a small window.
+///
 
 ## What to film
 
@@ -33,13 +36,19 @@ The dialog estimates the file size before you start.
 A small bar shows the progress, with **Cancel**. The camera is yours alone: nothing is sent to anyone in the session, and
 your view comes back where it was afterwards.
 
-![The recording bar above the toolbar](img/recording/recording-bar.png)
+![The recording bar above the toolbar](img/recording/recording-bar.webp){ .shot .fade-l .fade-r .fade-t width="688" height="160" loading=lazy }
+/// caption
+The recording bar sits above the toolbar while a take runs.
+///
 
 ## The file
 
 The video is saved to **Explorer ▸ Recordings** (double-click it to play it) and offered as **Download**.
 
-![The finished take: Download, Show in Explorer, Record again](img/recording/result.png)
+![The finished take: Download, Show in Explorer, Record again](img/recording/result.webp){ .shot .fade-r width="688" height="700" loading=lazy }
+/// caption
+The finished take, with Download, Show in Explorer and Record again.
+///
 
 ## Limits
 

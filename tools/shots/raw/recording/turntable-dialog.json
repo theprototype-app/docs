@@ -1,0 +1,35 @@
+{
+ "id": "turntable-dialog",
+ "dpr": 2,
+ "shotAt": "2026-10-31T15:05:35.491Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "dialog.tp-ui",
+  "header.wc-head",
+  "div.md-body",
+  "div#recording-dialog.rec-wrap",
+  "label.svelte-cwk4o9",
+  "div.rec-grid",
+  "div.rec-label-row",
+  "p.rec-note",
+  "select#recording-revolutions.ui-input",
+  "select#recording-direction.ui-input",
+  "select#recording-fps.ui-input",
+  "input#recording-duration.ui-input"
+ ],
+ "width": 1376,
+ "height": 1680,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 688,
+  "h": 840
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

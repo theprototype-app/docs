@@ -1,0 +1,21 @@
+{
+ "id": "note-page-phone",
+ "dpr": 2.9,
+ "shotAt": "2026-10-27T07:46:24.574Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/notes/note-page-phone.png",
+ "width": 1131,
+ "height": 1392,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 1131,
+  "h": 1392
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

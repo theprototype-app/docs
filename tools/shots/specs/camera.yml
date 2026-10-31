@@ -68,3 +68,61 @@ shots:
       - {env: sunset, suffix: sunset, caption: Sunset}
       - {env: night, suffix: night, caption: Night}
     compose: grid2x2
+
+  - id: camera-object
+    replaces: img/camera/camera-object.png
+    caption: A camera's properties, with its preview window at the lower left.
+    alt: 'A selected camera in the scene: Properties ▸ Camera with Kind, FOV, Near, Far and Framing, and the camera''s preview
+      window in the corner of the view.'
+    setup:
+    - create: Camera
+      name: Cam
+      at:
+      - -2
+      - 2
+      - 6
+      keepSelected: true
+    - eval: window.__stores.inspectorKind.set('selection'); window.__stores.inspectorClose.set(false)
+    - wait: 1500
+    crop:
+      rect:
+      - 752
+      - 0
+      - 688
+      - 840
+    fade:
+    - l
+    - b
+  - id: sky-meadow
+    replaces: img/camera/sky-meadow.png
+    dpr: 1
+    kind: view
+    caption: The Meadow sky image lighting a mirror sphere and a box.
+    crop:
+      rect:
+      - 0
+      - 0
+      - 1280
+      - 720
+    fade: []
+    alt: A mirror sphere and a box lit by the Meadow sky image
+    from: img/camera/sky-meadow.png
+  - id: sky-image-section
+    replaces: img/camera/sky-image-section.png
+    caption: Configure Scene ▸ Environment, with its Sky image section.
+    alt: 'Configure Scene ▸ Environment: the sky preset cards, Upload HDRI…, Rotation, Image light, Show as sky, Sky blur and
+      Tone mapping.'
+    setup:
+    - section: Environment
+    - wait: 1200
+    # the Meadow card, not the Meadow preset above it: the rows it shows only exist with a sky image chosen
+    - eval: "[...document.querySelectorAll('button')].filter((b) => b.textContent.includes('Meadow')).pop().click()"
+    - wait: 3000
+    crop:
+      rect:
+      - 1100
+      - 56
+      - 340
+      - 800
+    fade:
+    - b
