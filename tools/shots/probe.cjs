@@ -39,7 +39,7 @@ fs.mkdirSync(out, { recursive: true });
 							(a ? ` aria="${a.slice(0, 60)}"` : '') + (t && t !== a ? ` title="${t.slice(0, 60)}"` : '') + (txt ? ` "${txt}"` : '');
 					});
 			});
-			fs.writeFileSync(path.join(out, `${st.name}.txt`), els.join('\n') + '\n');
+			fs.writeFileSync(path.join(out, `${st.name}.txt`), [await page.title(), ...els].join('\n') + '\n');
 			console.log(`${st.name}: ${els.length} controls → ${path.join(out, st.name)}.{png,txt}`);
 		}
 		if (errors.length) console.log('page errors: ' + errors.slice(0, 3).join(' | '));

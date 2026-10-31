@@ -1,0 +1,21 @@
+{
+ "id": "menu-project-compact",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.528Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/interface/menu-project-compact.png",
+ "width": 290,
+ "height": 215,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 290,
+  "h": 215
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

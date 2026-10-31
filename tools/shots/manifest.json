@@ -10,7 +10,7 @@
    "badges": 0,
    "labels": [],
    "app": "1.51.0",
-   "shotAt": "2026-10-31T14:27:19.128Z"
+   "shotAt": "2026-10-31T14:29:45.235Z"
   },
   "img/accessibility/scale-150-phone.webp": {
    "page": "accessibility",
@@ -173,6 +173,215 @@
    ],
    "app": "1.51.0",
    "shotAt": "2026-10-31T14:10:44.640Z"
+  },
+  "img/interface/dialog-delete-flow.webp": {
+   "page": "interface",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 400,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.523Z"
+  },
+  "img/interface/dock-drop-objects.webp": {
+   "page": "interface",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 688,
+   "height": 840,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:42:27.452Z"
+  },
+  "img/interface/dock-plus-menu.webp": {
+   "page": "interface",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 688,
+   "height": 840,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:42:10.048Z"
+  },
+  "img/interface/dock-split.webp": {
+   "page": "interface",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 688,
+   "height": 840,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:42:59.165Z"
+  },
+  "img/interface/dock-tabs-properties-phone.webp": {
+   "page": "interface",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 390,
+   "height": 596,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:43:50.256Z"
+  },
+  "img/interface/drop-into-split-pane.webp": {
+   "page": "interface",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 688,
+   "height": 840,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:43:17.512Z"
+  },
+  "img/interface/focus-mode-pip.webp": {
+   "page": "interface",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 688,
+   "height": 840,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:43:33.957Z"
+  },
+  "img/interface/focus-mode-viewport-toggle.webp": {
+   "page": "interface",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 688,
+   "height": 840,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:42:43.256Z"
+  },
+  "img/interface/menu-project-compact.webp": {
+   "page": "interface",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 290,
+   "height": 215,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.528Z"
+  },
+  "img/interface/phone-bar-drag-in.webp": {
+   "page": "interface",
+   "kind": "ui",
+   "dpr": 2.9,
+   "width": 390,
+   "height": 550,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.530Z"
+  },
+  "img/interface/phone-more-show-switches-light.webp": {
+   "page": "interface",
+   "kind": "ui",
+   "dpr": 2.9,
+   "width": 390,
+   "height": 550,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.532Z"
+  },
+  "img/interface/pop-out-dock.webp": {
+   "page": "interface",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 600,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-29T08:56:54.344Z"
+  },
+  "img/interface/profile-menu-pinned-sidebar.webp": {
+   "page": "interface",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 688,
+   "height": 460,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:40:45.534Z"
+  },
+  "img/interface/selection-toolbar-phone.webp": {
+   "page": "interface",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 390,
+   "height": 196,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:44:04.330Z"
+  },
+  "img/interface/sidebar-drag-float-here.webp": {
+   "page": "interface",
+   "kind": "view",
+   "dpr": 2,
+   "width": 688,
+   "height": 480,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:36:48.031Z"
+  },
+  "img/interface/sidebar-full-height.webp": {
+   "page": "interface",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 688,
+   "height": 900,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:41:34.130Z"
+  },
+  "img/interface/sidebar-tab-menu.webp": {
+   "page": "interface",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 520,
+   "height": 330,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:41:17.652Z"
+  },
+  "img/interface/sidebar-tabs.webp": {
+   "page": "interface",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 340,
+   "height": 440,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:41:01.898Z"
+  },
+  "img/interface/sidebars-both-sides-light.webp": {
+   "page": "interface",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 688,
+   "height": 620,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:41:51.453Z"
   },
   "img/invites/request-ai-sheet.webp": {
    "page": "invites",

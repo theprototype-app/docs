@@ -1,0 +1,41 @@
+{
+ "id": "sidebar-tabs",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:41:01.898Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "button.sb-tab",
+  "header.wc-head",
+  "div.ins-filter",
+  "div#inspector.tp-ui",
+  "svg.lucide",
+  "path",
+  "label.tp-ui",
+  "button.sec-panel-head",
+  "p.ui-section-label",
+  "button#view-mode-shaded.ui-chip",
+  "p.mb-1",
+  "div.sec-panel-body"
+ ],
+ "width": 680,
+ "height": 880,
+ "crop": {
+  "x": 1100,
+  "y": 56,
+  "w": 340,
+  "h": 440
+ },
+ "cut": [
+  "l",
+  "t",
+  "b"
+ ],
+ "fade": [
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

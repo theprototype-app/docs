@@ -1,0 +1,39 @@
+{
+ "id": "selection-toolbar-phone",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:44:04.330Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "nav#ps-bar.ps-bar",
+  "button#ps-add.ps-tab",
+  "button#ps-move.ps-cell",
+  "div#ps-strip.ps-strip",
+  "svg.lucide",
+  "span.ps-tab-lbl",
+  "path",
+  "button#ps-rotate.ps-cell",
+  "button#ps-objects.ps-tab",
+  "button#ps-scale.ps-cell",
+  "button#ps-multiselect.ps-cell",
+  "button#ps-play.ps-tab"
+ ],
+ "width": 780,
+ "height": 392,
+ "crop": {
+  "x": 0,
+  "y": 700,
+  "w": 390,
+  "h": 196
+ },
+ "cut": [
+  "t"
+ ],
+ "fade": [
+  "t"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

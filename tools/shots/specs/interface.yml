@@ -1,0 +1,430 @@
+page: interface
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+  scene:
+  - create: Box
+    name: Crate
+    at:
+    - 0
+    - 0.8
+    - 0
+    scale: 1.6
+    color: '#c9a26b'
+  - create: Sphere
+    name: Ball
+    at:
+    - 2.9
+    - 0.8
+    - 0.9
+    scale: 0.8
+    color: '#6c8cd5'
+  - create: Cylinder
+    name: Post
+    at:
+    - -2.8
+    - 1
+    - -0.6
+    color: '#81b29a'
+  - camera:
+      pos:
+      - 6.8
+      - 4.8
+      - 8.6
+      target:
+      - 0
+      - 0.8
+      - 0
+shots:
+- id: profile-menu-pinned-sidebar
+  replaces: img/interface/profile-menu-pinned-sidebar.png
+  caption: With a sidebar pinned at full height, the profile menu opens under its button, beside the sidebar.
+  setup:
+  - section: View
+  - eval: window.__stores.sidebars.toggleSidebarFull('right',true)
+  - wait: 900
+  - click: '#avatar-trigger'
+  - wait: 700
+  crop:
+    rect:
+    - 752
+    - 0
+    - 688
+    - 460
+  fade:
+  - l
+  - b
+  alt: 'The right sidebar pinned at full height with Configure Scene open: the profile button has moved left of it and its
+    menu — Customize character, Profile settings, Sign in to cloud — opens right under it, beside the sidebar'
+- id: sidebar-tabs
+  replaces: img/interface/sidebar-tabs.png
+  caption: Two windows as tabs in one sidebar; Full height is at the end of the tab strip.
+  setup:
+  - section: View
+  - &id001
+    click: p[title="Object list (O)"]
+  - wait: 600
+  - &id002
+    eval: window.__stores.docking.dockToSide('objects','right')
+  - wait: 900
+  - click: button.sb-tab:has-text("Configure Scene")
+  - wait: 500
+  crop:
+    rect:
+    - 1100
+    - 56
+    - 340
+    - 440
+  fade:
+  - b
+  alt: A sidebar on the right with two tabs, Objects and Configure Scene (in front), and the Full height button at the end
+    of its tab strip
+- id: sidebar-tab-menu
+  replaces: img/interface/sidebar-tab-menu.png
+  caption: A sidebar tab's right-click menu.
+  setup:
+  - section: View
+  - *id001
+  - wait: 600
+  - *id002
+  - wait: 900
+  - rightClick: button.sb-tab:has-text("Objects")
+  - wait: 500
+  crop:
+    rect:
+    - 920
+    - 50
+    - 520
+    - 330
+  fade:
+  - l
+  - b
+  alt: 'The Objects tab of a sidebar right-clicked: Close, Close others, Undock into a floating window, Move to the left side,
+    Move to the bottom dock and Hide this sidebar.'
+- id: sidebar-drag-float-here
+  replaces: img/interface/sidebar-drag-float-here.png
+  caption: 'Dragging a tab into the 3D view: drop it to float the window.'
+  setup:
+  - section: View
+  - *id001
+  - wait: 600
+  - *id002
+  - wait: 900
+  - press:
+      text: Objects
+      within: .sb-tabs
+  - moveTo:
+    - 720
+    - 430
+  - wait: 600
+  crop:
+    rect:
+    - 376
+    - 190
+    - 688
+    - 480
+  fade:
+  - l
+  - r
+  - t
+  - b
+  alt: 'An Objects tab dragged out of the right sidebar into the 3D view: a dashed blue box reads Float here'
+- id: sidebar-full-height
+  replaces: img/interface/sidebar-full-height.png
+  caption: 'Full height: the sidebar runs from the top edge to the bottom.'
+  alt: 'The right sidebar at full height, with Objects and Configure Scene as tabs: it runs from the top edge to the bottom,
+    and the notes, bell and profile buttons have slid left of it.'
+  setup:
+  - section: View
+  - *id001
+  - wait: 600
+  - *id002
+  - wait: 900
+  - click: button.sb-tab:has-text("Configure Scene")
+  - eval: window.__stores.sidebars.toggleSidebarFull('right',true)
+  - wait: 900
+  crop:
+    rect:
+    - 752
+    - 0
+    - 688
+    - 900
+  fade:
+  - l
+- id: sidebars-both-sides-light
+  replaces: img/interface/sidebars-both-sides-light.png
+  theme: light
+  kind: ui
+  caption: A sidebar on each side, in the Light theme. The two are shown together, cut from one screen.
+  setup:
+  - section: View
+  - *id001
+  - wait: 600
+  - eval: window.__stores.docking.dockToSide('objects','left')
+  - wait: 900
+  crop:
+    rect:
+    - 0
+    - 56
+    - 338
+    - 620
+  compose: row
+  variants:
+  - steps: []
+    crop:
+      rect:
+      - 0
+      - 56
+      - 338
+      - 620
+    suffix: left
+  - steps: []
+    crop:
+      rect:
+      - 1102
+      - 56
+      - 338
+      - 620
+    suffix: right
+  alt: 'Light theme: the Objects list as a sidebar on the left and Configure Scene as a sidebar on the right'
+- id: dock-plus-menu
+  replaces: img/interface/dock-plus-menu.png
+  device: window-688-tall
+  caption: 'The dock''s + menu, in a small window: each row says where that window is now.'
+  alt: 'The dock''s + menu open: Node editor and Explorer are marked In dock, Objects is marked Floating, and every other
+    window can be opened from the same list.'
+  setup:
+  - *id001
+  - wait: 700
+  - &id003
+    eval: window.__stores.dockMenu.dockTab('flow'); window.__stores.dockMenu.dockTab('explorer')
+  - wait: 1200
+  - click: '#dock-add-view:visible'
+  - wait: 600
+  crop:
+    rect:
+    - 0
+    - 0
+    - 688
+    - 840
+  fade: []
+- id: dock-drop-objects
+  replaces: img/interface/dock-drop-objects.png
+  device: window-688-tall
+  caption: Drop on the dock's tab bar; the caret shows the slot.
+  setup:
+  - *id001
+  - wait: 700
+  - *id003
+  - wait: 1200
+  - press:
+      text: Objects
+  - moveTo: '#dock-add-view'
+  - wait: 600
+  crop:
+    rect:
+    - 0
+    - 0
+    - 688
+    - 840
+  fade: []
+  alt: 'The Objects window dragged over the dock''s tab bar: it is see-through, the tab bar is outlined and a caret marks
+    the slot after the Node editor tab'
+- id: pop-out-dock
+  replaces: img/interface/pop-out-dock.png
+  app: earlier
+  caption: A popped-out dock is its own browser window.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 688
+    - 600
+  dpr: 1
+  kind: ui
+  fade:
+  - r
+  alt: 'A popped-out dock: the Node editor and the Timeline as tabs in their own window'
+  from: img/interface/pop-out-dock.png
+- id: focus-mode-viewport-toggle
+  replaces: img/interface/focus-mode-viewport-toggle.png
+  device: window-688-tall
+  caption: 'Focus mode, in a small window: the Viewport button shows or hides the picture-in-picture.'
+  setup:
+  - *id003
+  - wait: 1000
+  - eval: window.__stores.focusMode.enterFocus('dock')
+  - wait: 1200
+  crop:
+    rect:
+    - 0
+    - 0
+    - 688
+    - 840
+  fade: []
+  alt: 'Focus mode on the docked Explorer: it fills the whole window, the Viewport button (pressed) sits just left of Exit
+    focus in the tab row, and the viewport picture-in-picture shows the scene in the bottom-right corner'
+- id: menu-project-compact
+  replaces: img/interface/menu-project-compact.png
+  caption: The main menu's Project section in the Compact layout.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 290
+    - 215
+  dpr: 1
+  kind: ui
+  fade: []
+  alt: 'The main menu''s Project section in the Compact layout: New from template… across the top, then Load beside Save with
+    its ▾, then Import beside Export…'
+  from: img/interface/menu-project-compact.png
+- id: dock-split
+  replaces: img/interface/dock-split.png
+  device: window-688-tall
+  caption: The dock split side by side, in a small window.
+  alt: 'The dock split side by side: one tab reads Node editor / Explorer, with the Node editor on the left and the Explorer
+    on the right.'
+  setup:
+  - *id003
+  - wait: 1200
+  - click: '#dock-split:visible'
+  - wait: 1000
+  crop:
+    rect:
+    - 0
+    - 0
+    - 688
+    - 840
+  fade: []
+- id: drop-into-split-pane
+  replaces: img/interface/drop-into-split-pane.png
+  device: window-688-tall
+  caption: A floating window dragged over a pane of a split dock.
+  alt: 'A floating Objects window dragged over the right pane of a split dock: the pane is outlined and says Show in this
+    pane.'
+  setup:
+  - *id001
+  - wait: 700
+  - *id003
+  - wait: 1200
+  - click: '#dock-split:visible'
+  - wait: 1000
+  - press:
+      text: Objects
+  - moveTo:
+    - 520
+    - 620
+  - wait: 700
+  crop:
+    rect:
+    - 0
+    - 0
+    - 688
+    - 840
+  fade: []
+- id: focus-mode-pip
+  replaces: img/interface/focus-mode-pip.png
+  device: window-688-tall
+  caption: Focus mode on the Flow Code window, in a small window.
+  setup:
+  - eval: window.__stores.dockMenu.dockTab('flowcode')
+  - wait: 1200
+  - eval: window.__stores.focusMode.enterFocus('dock')
+  - wait: 1200
+  crop:
+    rect:
+    - 0
+    - 0
+    - 688
+    - 840
+  fade: []
+  alt: 'Focus mode on the docked Flow Code window: it fills the whole window with its tab row and Exit focus along the top
+    edge, and the Viewport picture-in-picture shows the scene in the bottom-right corner'
+- id: dialog-delete-flow
+  replaces: img/interface/dialog-delete-flow.png
+  dpr: 1
+  kind: ui
+  caption: A confirmation is a dialog over the dimmed screen.
+  alt: Delete this flow? as a dialog over the dimmed screen, with Delete flow in red beside Cancel.
+  crop:
+    rect:
+    - 376
+    - 250
+    - 688
+    - 400
+  fade:
+  - l
+  - r
+  - t
+  - b
+  from: img/interface/dialog-delete-flow.png
+- id: phone-bar-drag-in
+  replaces: img/interface/phone-bar-drag-in.png
+  dpr: 2.9
+  kind: ui
+  caption: More open on a folded phone, with Move being dragged onto the bottom bar.
+  crop:
+    rect:
+    - 0
+    - 1003
+    - 1131
+    - 1595
+  fade:
+  - t
+  alt: More open on a folded phone, with Move being dragged from More ▸ Edit down onto the bottom bar; a blue line marks where
+    it will land between Add and Objects
+  from: img/interface/phone-bar-drag-in.png
+- id: phone-more-show-switches-light
+  replaces: img/interface/phone-more-show-switches-light.png
+  dpr: 2.9
+  kind: ui
+  caption: The bottom of More on a phone, in the Light theme.
+  crop:
+    rect:
+    - 0
+    - 1003
+    - 1131
+    - 1595
+  fade:
+  - t
+  alt: 'Light theme: the bottom of More — Edit, Tools & View, then the Show switches (Selection toolbar, Dock tab row, Grab
+    handle) and Reset bar'
+  from: img/interface/phone-more-show-switches-light.png
+- id: dock-tabs-properties-phone
+  replaces: img/interface/dock-tabs-properties-phone.png
+  device: n6-folded
+  caption: 'The dock on a folded phone: tabs above it, the selection toolbar above them.'
+  setup:
+  - select: Crate
+  - eval: window.__stores.inspectorKind.set('selection'); window.__stores.inspectorClose.set(false)
+  - wait: 1500
+  crop:
+    rect:
+    - 0
+    - 300
+    - 390
+    - 596
+  fade:
+  - t
+  alt: 'On a folded phone: the selection toolbar above the dock, whose tab strip holds Properties with + beside it; the Properties
+    of a box fill the dock above the bottom bar.'
+- id: selection-toolbar-phone
+  replaces: img/interface/selection-toolbar-phone.png
+  device: n6-folded
+  caption: The selection toolbar on a folded phone, above the bottom bar.
+  setup:
+  - select: Crate
+  - wait: 1000
+  crop:
+    rect:
+    - 0
+    - 700
+    - 390
+    - 196
+  fade:
+  - t
+  alt: 'The selection toolbar on a folded phone: Move (on), Rotate, Scale, Select multiple, Interact, then Inspect, then Undo
+    and Redo, above the bottom bar with Play in its middle.'

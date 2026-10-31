@@ -10,6 +10,9 @@ const GPU_ARGS = ['--ignore-gpu-blocklist', '--use-angle=vulkan', '--enable-feat
 
 const DEVICES = {
 	desktop: { viewport: { width: 1440, height: 900 } },
+	// a whole small window that fits the docs column at 1:1 (interface is never shrunk, so a layout is shot in a small window)
+	'window-688': { viewport: { width: 688, height: 600 } },
+	'window-688-tall': { viewport: { width: 688, height: 840 } },
 	// OPPO Find N6, the owner's phone: folded and unfolded (CSS px)
 	'n6-folded': { viewport: { width: 390, height: 896 }, hasTouch: true, isMobile: true },
 	'n6-unfolded': { viewport: { width: 760, height: 840 }, hasTouch: true, isMobile: true }
