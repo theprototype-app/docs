@@ -1,0 +1,24 @@
+{
+ "id": "sidebars",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.493Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/code-workspace/sidebars.png",
+ "width": 688,
+ "height": 650,
+ "crop": {
+  "x": 0,
+  "y": 250,
+  "w": 688,
+  "h": 650
+ },
+ "cut": [],
+ "fade": [
+  "r",
+  "t"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

@@ -1,0 +1,22 @@
+page: nodes-hudbar
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: hudbar
+  replaces: img/nodes/hudbar.png
+  alt: A Slider wired into a HUD Bar's value, with min 0 and max 40
+  caption: A Slider wired into a HUD Bar's value.
+  crop:
+    rect:
+    - 21
+    - 0
+    - 688
+    - 365
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/nodes/hudbar.png
+md: nodes/hudbar.md

@@ -5,7 +5,10 @@ across the line after every lap wins; everyone else gets 30 seconds to finish. I
 
 **Templates ▸ Games ▸ Race.** Race is built into the app — it needs no module.
 
-![The Race start screen: click a car, then Start](img/race/menu.png)
+![The Race start screen: click a car, then Start](img/race/menu.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="450" loading=lazy }
+/// caption
+The Race start screen.
+///
 
 ## How to play
 
@@ -23,7 +26,10 @@ across the line after every lap wins; everyone else gets 30 seconds to finish. I
 The HUD shows your lap, the race clock, the current lap time, your position and your best lap. The results screen lists
 everyone's laps; your best race and best lap are saved on this device.
 
-![Lap 1 of 3: the countdown has just ended](img/race/start.png)
+![Lap 1 of 3: the countdown has just ended](img/race/start.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+/// caption
+Lap 1 of 3: the countdown has just ended.
+///
 
 !!! note "A lap only counts when you have driven all of it"
     Cutting across the infield, or reversing back and forth over the line, counts nothing: the game follows your
@@ -41,7 +47,10 @@ Race plays on a touch screen: once you are in a car, the [touch controls](touch-
 The usual **Settings ▸ Touch controls** apply (visibility, haptics), and you can move the pedals from the pause menu ▸
 **Touch controls**. The pedals are on / off, like keys, so the throttle is not analogue on a phone.
 
-![Race on a phone: the steering stick bottom left, Reset, Brake and Gas bottom right](img/race/phone-pedals.png){ width="320" }
+![Race on a phone: the steering stick bottom left, Reset, Brake and Gas bottom right](img/race/phone-pedals.webp){ .shot width="480" height="1000" loading=lazy }
+/// caption
+Race on a phone.
+///
 
 ## In VR
 
@@ -57,7 +66,10 @@ near you, none far away. That brings the start line from 142 to 89 draw calls an
 the Quest budget. If the headset cannot hold its frame rate, [adaptive quality](performance.md#the-quality-governor)
 still turns shadows off.
 
-![The view from the driver's seat in a headset](img/race/vr-seat.png)
+![The view from the driver's seat in a headset](img/race/vr-seat.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+/// caption
+The view from the driver's seat in a headset.
+///
 
 ## Make it yours
 

@@ -1,0 +1,23 @@
+page: hud-editor
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: hud-editor
+  replaces: img/hud/hud-editor.png
+  alt: 'The HUD editor on the Stars Room''s menu screen: the stage in the middle, with the selected button.'
+  caption: The HUD editor on the Stars Room's menu screen.
+  crop:
+    rect:
+    - 376
+    - 0
+    - 688
+    - 638
+  fade:
+  - l
+  - r
+  kind: ui
+  dpr: 1
+  from: img/hud/hud-editor.png

@@ -114,9 +114,15 @@ the start card of a **play link** (`/p/‹id›`) and in a published game's **pa
 Press it and the count updates at once (and goes back if the like could not be saved). Signed out, it asks you to sign in
 (profile menu, top right). It is the same like as the ♥ on the scene's page — one like per person per scene.
 
-![The heart on a play link's start card, beside Play](img/community/play-link-heart.png)
+![The heart on a play link's start card, beside Play](img/community/play-link-heart.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="450" loading=lazy }
+/// caption
+The heart on a play link's start card.
+///
 
-![The heart in a published game's pause menu](img/community/pause-menu-heart.png)
+![The heart in a published game's pause menu](img/community/pause-menu-heart.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="470" loading=lazy }
+/// caption
+The heart in a published game's pause menu.
+///
 
 ### Mine
 
@@ -130,7 +136,10 @@ play links, embeds and exported builds — for the last **7 days**, **30 days** 
 link, itch.io, static host, embed). The [Publish](#publish) dialog shows the same count for the game you are publishing
 or updating.
 
-![Your games: visits over 30 days, one row per game, with a moderation notice](img/community/your-games.png)
+![Your games: visits over 30 days, one row per game, with a moderation notice](img/community/your-games.webp){ .shot .fade-l .fade-r .fade-t width="688" height="680" loading=lazy }
+/// caption
+Your games: visits over 30 days.
+///
 
 ### One game, one count
 

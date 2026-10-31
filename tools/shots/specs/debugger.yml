@@ -1,0 +1,36 @@
+page: debugger
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: paused-dark
+  replaces: img/debugger/paused-dark.png
+  alt: 'The Debugger paused at a Counter: the On Click wire shows a pulse, the Map Range wire reads 1, the watch list follows
+    the score variable and the Counter''s breakpoint is listed'
+  caption: The Debugger paused at a Counter.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 300
+    - 408
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/debugger/paused-dark.png
+- id: paused-light
+  replaces: img/debugger/paused-light.png
+  alt: The Debugger in the light theme
+  caption: The Debugger in the light theme.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 300
+    - 408
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/debugger/paused-light.png

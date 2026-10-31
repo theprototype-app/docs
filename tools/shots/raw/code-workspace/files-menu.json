@@ -1,0 +1,24 @@
+{
+ "id": "files-menu",
+ "dpr": 1,
+ "shotAt": "2026-10-29T08:56:54.344Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/code-workspace/files-menu.png",
+ "width": 688,
+ "height": 450,
+ "crop": {
+  "x": 0,
+  "y": 450,
+  "w": 688,
+  "h": 450
+ },
+ "cut": [],
+ "fade": [
+  "r",
+  "t"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

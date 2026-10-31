@@ -13,6 +13,12 @@ const { images, column } = readManifest();
 const pages = {};
 for (const [p, e] of Object.entries(images)) (pages[e.page || p.split('/')[1]] ||= []).push({ path: p, ...e });
 const want = process.argv.slice(2);
+// a spec can name its Markdown file (`md: nodes/gate.md`, page key nodes-gate); the built page is that file's folder
+const urlOf = (pg) => {
+	const f = path.join(__dirname, '..', 'specs', pg + '.yml');
+	const m = fs.existsSync(f) && fs.readFileSync(f, 'utf8').match(/^md:\s*(\S+)/m);
+	return (m ? m[1] : pg + '.md').replace(/(^|\/)index\.md$/, '$1').replace(/\.md$/, '/');
+};
 
 (async () => {
 	if (OUT) fs.mkdirSync(OUT, { recursive: true });
@@ -24,8 +30,8 @@ const want = process.argv.slice(2);
 		const p = await ctx.newPage();
 		for (const [pg, list] of Object.entries(pages)) {
 			if (want.length && !want.includes(pg)) continue;
-			// a page is its docs .md file's folder (nodes/x.md → nodes/x/); the images say which page by their folder
-			await p.goto(SITE + pg + '/', { waitUntil: 'networkidle' });
+			const res = await p.goto(SITE + urlOf(pg), { waitUntil: 'networkidle' });
+			if (!res || !res.ok()) { bad.push(`${pg}: ${urlOf(pg)} did not load (${res && res.status()})`); continue; }
 			const col = await p.evaluate(() => {
 				const t = document.querySelector('.md-content__inner');
 				const r = t.getBoundingClientRect(), cs = getComputedStyle(t);
@@ -73,7 +79,7 @@ const want = process.argv.slice(2);
 	const rp = await rctx.newPage();
 	for (const [pg, list] of Object.entries(pages)) {
 		if (!list.some((e) => e.kind === 'loop') || (want.length && !want.includes(pg))) continue;
-		await rp.goto(SITE + pg + '/', { waitUntil: 'networkidle' });
+		await rp.goto(SITE + urlOf(pg), { waitUntil: 'networkidle' });
 		await rp.waitForTimeout(1200);
 		const paused = await rp.locator('video.shot').first().evaluate((x) => x.paused && x.controls);
 		console.log(`${pg}: reduced motion → paused with controls ${paused}`);

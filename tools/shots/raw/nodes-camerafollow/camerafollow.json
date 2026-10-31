@@ -1,0 +1,24 @@
+{
+ "id": "camerafollow",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.561Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/nodes/camerafollow.png",
+ "width": 688,
+ "height": 639,
+ "crop": {
+  "x": 41,
+  "y": 0,
+  "w": 688,
+  "h": 639
+ },
+ "cut": [],
+ "fade": [
+  "l",
+  "r"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

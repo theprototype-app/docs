@@ -1,0 +1,22 @@
+page: nodes-gamepadbutton
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: gamepadbutton
+  replaces: img/nodes/gamepadbutton.png
+  alt: A Gamepad Button on A wired into the on input of a Visibility node, which drives an Object Selector picking the Lamp
+  caption: A Gamepad Button on A wired into the on input of a Visibility node.
+  crop:
+    rect:
+    - 32
+    - 0
+    - 1032
+    - 462
+  fade: []
+  kind: ui
+  dpr: 1.5
+  from: img/nodes/gamepadbutton.png
+md: nodes/gamepadbutton.md

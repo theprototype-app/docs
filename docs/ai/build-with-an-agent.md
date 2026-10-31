@@ -106,7 +106,10 @@ batched **create_objects**. Then **screenshot** to check the result.
   back, the agent asks to come in again — the ordinary approval card — and carries on.
 - To stop it, revoke its invite or use **Remove from session** on its row ([Users and moderation](../people.md)).
 
-![Agent activity in the AI assistant window](../img/ai/agent-activity.png){ width="500" }
+![Agent activity in the AI assistant window](../img/ai-build-with-an-agent/agent-activity.webp){ .shot width="500" height="440" loading=lazy }
+/// caption
+Agent activity in the AI assistant window.
+///
 
 ## Security notes
 

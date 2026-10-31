@@ -1,0 +1,25 @@
+{
+ "id": "your-games",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.496Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/community/your-games.png",
+ "width": 688,
+ "height": 680,
+ "crop": {
+  "x": 296,
+  "y": 40,
+  "w": 688,
+  "h": 680
+ },
+ "cut": [],
+ "fade": [
+  "l",
+  "r",
+  "t"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

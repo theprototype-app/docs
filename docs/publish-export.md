@@ -37,7 +37,10 @@ A play link, an embed and an exported game all open the same **player**:
   shows *Made with ThePrototype*, clicking opens theprototype.app in a new tab. It moves up out of the way of a game's
   touch buttons and is not drawn inside a VR headset.
 
-![Mini Golf exported for itch.io, playing in the itch.io frame: the game's own HUD, the fullscreen button bottom-left and the badge bottom-right](img/export/itch-mini-golf.png)
+![Mini Golf exported for itch.io: the game's start card, playing in the itch.io frame.](img/publish-export/itch-mini-golf.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="560" loading=lazy }
+/// caption
+Mini Golf exported for itch.io.
+///
 
 The badge is **always on** in play links, embeds and exports. An exported file is yours to edit, so this is a request,
 not a lock — please keep it: it is how other people find the tool you made your game with. Clicks on the badge are
@@ -46,7 +49,10 @@ yours in [Your games & stats](community.md#your-games-stats).
 
 ## Export: a game in a zip
 
-![The Export tab with the itch.io preset selected](img/export/export-tab.png)
+![The Export tab with the itch.io preset selected](img/publish-export/export-tab.webp){ .shot .fade-r width="688" height="550" loading=lazy }
+/// caption
+The Export tab with the itch.io preset selected.
+///
 
 1. Open the scene, then **Menu ▸ Publish / Export ▸ Export**.
 2. Pick a **preset**:
@@ -134,7 +140,10 @@ the submission for you, and works without signing in:
 5. **Copy the gallery.json row** copies the row and opens `gallery.json` for editing: add it to the `entries` list on the
    same pull request.
 
-![The Community gallery tab after Build submission zip: the two GitHub steps](img/export/gallery-tab.png)
+![The Community gallery tab after Build submission zip: the two GitHub steps](img/publish-export/gallery-tab.webp){ .shot .fade-r .fade-b width="688" height="700" loading=lazy }
+/// caption
+The Community gallery tab after Build submission zip.
+///
 
 The app never sends anything itself; every step on GitHub is your click. Before you start, the tab checks the same rules
 as the gallery's own checks: the scene at most 25 MB, the thumbnail at most 512 KB, a license, a title of at most 80
@@ -171,7 +180,10 @@ for: Full quality / For Quest / web**. Your last choice is remembered on this de
 
 The full-quality file is never overwritten by accident: the Quest file has its own name.
 
-![Save options with Optimize for: Full quality or For Quest / web](img/saving/save-options-optimize-for.png){ width="400" }
+![Save options with Optimize for: Full quality or For Quest / web](img/publish-export/save-options-optimize-for.webp){ .shot width="544" height="816" loading=lazy }
+/// caption
+Save options with Optimize for.
+///
 
 Measured on a 65,024-triangle model with a 4096 px texture:
 

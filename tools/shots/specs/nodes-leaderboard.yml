@@ -1,0 +1,22 @@
+page: nodes-leaderboard
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: leaderboard
+  replaces: img/nodes/leaderboard.png
+  alt: A Leaderboard ranking the gems variable, beside a Player Variable wired into a HUD Text
+  caption: A Leaderboard ranking the gems variable.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 610
+    - 639
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/nodes/leaderboard.png
+md: nodes/leaderboard.md

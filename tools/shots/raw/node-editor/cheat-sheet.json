@@ -1,0 +1,26 @@
+{
+ "id": "cheat-sheet",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.556Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/node-editor/cheat-sheet.png",
+ "width": 688,
+ "height": 640,
+ "crop": {
+  "x": 296,
+  "y": 40,
+  "w": 688,
+  "h": 640
+ },
+ "cut": [],
+ "fade": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

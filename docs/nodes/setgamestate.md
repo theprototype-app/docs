@@ -66,7 +66,10 @@ A start button and a pause key:
 4. Press Play and click the box: the round starts for everyone. <kbd>P</kbd> pauses it, and a
    click on the box resumes it.
 
-![The example's nodes: On Click on the Start box, a Key Press for P, and two Set Game State cards (playing, paused) — in 1.42 the cards have no trigger socket to wire into](../img/nodes/setgamestate.png)
+![The example's nodes: On Click on the Start box, a Key Press for P, and two Set Game State cards (playing, paused) — in 1.42 the cards have no trigger socket to wire into](../img/nodes-setgamestate/setgamestate.webp){ .shot width="514" height="639" loading=lazy }
+/// caption
+The example's nodes.
+///
 
 !!! tip
     The HUD editor builds these for you: select a button and pick **Actions ▸ Start the game**,

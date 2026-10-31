@@ -48,4 +48,7 @@ Count each player's own bell rings on their own HUD:
     Step 2 cannot be wired by hand yet: the Set Variable card does not draw its **trigger** and **value** sockets (see
     [Set Variable](setvariable.md)). The Player Variable half of the example works as shown.
 
-![The example's nodes: On Hit (who me) on the Bell, a Set Variable (rings, add, player) beside a Number, and a Player Variable (rings, mine) driving a HUD Text](../img/nodes/peervariable.png)
+![The example's nodes: On Hit (who me) on the Bell, a Set Variable (rings, add, player) beside a Number, and a Player Variable (rings, mine) driving a HUD Text](../img/nodes-peervariable/peervariable.webp){ .shot width="688" height="270" loading=lazy }
+/// caption
+The example's nodes.
+///

@@ -1,0 +1,22 @@
+page: nodes-camerarig
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: camera-rig
+  replaces: img/nodes/camera-rig.png
+  alt: A camera object, its viewing pyramid drawn, aimed at a cube by a Camera Rig
+  caption: A camera object.
+  crop:
+    rect:
+    - 77
+    - 65
+    - 1126
+    - 569
+  fade: vignette
+  kind: view
+  dpr: 1
+  from: img/nodes/camera-rig.png
+md: nodes/camerarig.md

@@ -1,0 +1,23 @@
+{
+ "id": "pop-out-window",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.492Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/code-workspace/pop-out-window.png",
+ "width": 688,
+ "height": 640,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 688,
+  "h": 640
+ },
+ "cut": [],
+ "fade": [
+  "r"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

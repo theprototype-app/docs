@@ -1,0 +1,22 @@
+page: nodes-hudinput
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: hudinput
+  replaces: img/nodes/hudinput.png
+  alt: 'A HUD Input reading a slider, wired into a HUD Text with the format "Speed: {v}"'
+  caption: A HUD Input reading a slider.
+  crop:
+    rect:
+    - 21
+    - 0
+    - 688
+    - 315
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/nodes/hudinput.png
+md: nodes/hudinput.md

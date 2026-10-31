@@ -34,6 +34,39 @@
    "app": "1.51.0",
    "shotAt": "2026-10-31T14:22:12.960Z"
   },
+  "img/ai-assistant/assistant-mic.webp": {
+   "page": "ai-assistant",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 500,
+   "height": 440,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.463Z"
+  },
+  "img/ai-assistant/voice-typing-settings.webp": {
+   "page": "ai-assistant",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 248,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.464Z"
+  },
+  "img/ai-build-with-an-agent/agent-activity.webp": {
+   "page": "ai-build-with-an-agent",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 500,
+   "height": 440,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-29T08:56:54.343Z"
+  },
   "img/appearance/themes.webp": {
    "page": "appearance",
    "kind": "ui",
@@ -127,6 +160,61 @@
    "labels": [],
    "app": "1.51.0",
    "shotAt": "2026-10-31T14:27:55.310Z"
+  },
+  "img/building-in-vr/asset-browser-packs.webp": {
+   "page": "building-in-vr",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 384,
+   "height": 448,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.480Z"
+  },
+  "img/building-in-vr/asset-browser-placing.webp": {
+   "page": "building-in-vr",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 384,
+   "height": 448,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.481Z"
+  },
+  "img/building-in-vr/logic-pad.webp": {
+   "page": "building-in-vr",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 384,
+   "height": 448,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-29T08:56:54.343Z"
+  },
+  "img/building-in-vr/logic-panel.webp": {
+   "page": "building-in-vr",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 640,
+   "height": 400,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-29T08:56:54.343Z"
+  },
+  "img/building-in-vr/measure-arrange.webp": {
+   "page": "building-in-vr",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 384,
+   "height": 384,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.482Z"
   },
   "img/camera/camera-object.webp": {
    "page": "camera",
@@ -261,6 +349,83 @@
    "app": "earlier",
    "shotAt": "2026-10-27T07:46:24.490Z"
   },
+  "img/code-workspace/editing-together.webp": {
+   "page": "code-workspace",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 285,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.490Z"
+  },
+  "img/code-workspace/files-menu.webp": {
+   "page": "code-workspace",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 450,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-29T08:56:54.344Z"
+  },
+  "img/code-workspace/parse-error.webp": {
+   "page": "code-workspace",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 340,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.491Z"
+  },
+  "img/code-workspace/player-code.webp": {
+   "page": "code-workspace",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 470,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.492Z"
+  },
+  "img/code-workspace/pop-out-window.webp": {
+   "page": "code-workspace",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 640,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.492Z"
+  },
+  "img/code-workspace/script-tab.webp": {
+   "page": "code-workspace",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 340,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.493Z"
+  },
+  "img/code-workspace/sidebars.webp": {
+   "page": "code-workspace",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 650,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.493Z"
+  },
   "img/colliders/contact-filter.webp": {
    "page": "colliders",
    "kind": "ui",
@@ -304,6 +469,39 @@
    "labels": [],
    "app": "earlier",
    "shotAt": "2026-10-27T07:46:24.495Z"
+  },
+  "img/community/pause-menu-heart.webp": {
+   "page": "community",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 470,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.495Z"
+  },
+  "img/community/play-link-heart.webp": {
+   "page": "community",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 450,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.496Z"
+  },
+  "img/community/your-games.webp": {
+   "page": "community",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 680,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.496Z"
   },
   "img/connection/peers-panel-desktop.webp": {
    "page": "connection",
@@ -559,6 +757,28 @@
    "app": "earlier",
    "shotAt": "2026-10-27T07:46:24.506Z"
   },
+  "img/debugger/paused-dark.webp": {
+   "page": "debugger",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 300,
+   "height": 408,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.506Z"
+  },
+  "img/debugger/paused-light.webp": {
+   "page": "debugger",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 300,
+   "height": 408,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.507Z"
+  },
   "img/explorer/place-box-ghost.webp": {
    "page": "explorer",
    "kind": "ui",
@@ -668,6 +888,39 @@
    "labels": [],
    "app": "earlier",
    "shotAt": "2026-10-27T07:46:24.516Z"
+  },
+  "img/game-rules/football.webp": {
+   "page": "game-rules",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 560,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.517Z"
+  },
+  "img/game-rules/mini-golf.webp": {
+   "page": "game-rules",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 560,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.519Z"
+  },
+  "img/hud-editor/hud-editor.webp": {
+   "page": "hud-editor",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 638,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.520Z"
   },
   "img/image-editor/crop-desktop-light.webp": {
    "page": "image-editor",
@@ -1010,6 +1263,17 @@
    "app": "earlier",
    "shotAt": "2026-10-27T07:46:24.544Z"
   },
+  "img/main-graph/properties.webp": {
+   "page": "main-graph",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 600,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.545Z"
+  },
   "img/materials/presets-edit.webp": {
    "page": "materials",
    "kind": "ui",
@@ -1152,6 +1416,413 @@
    "labels": [],
    "app": "earlier",
    "shotAt": "2026-10-27T07:46:24.554Z"
+  },
+  "img/modules/core-phone.webp": {
+   "page": "modules",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 480,
+   "height": 908,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.555Z"
+  },
+  "img/node-editor/breadcrumb-siblings.webp": {
+   "page": "node-editor",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 337,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.555Z"
+  },
+  "img/node-editor/cheat-sheet.webp": {
+   "page": "node-editor",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 640,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.556Z"
+  },
+  "img/node-editor/group.webp": {
+   "page": "node-editor",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 420,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.557Z"
+  },
+  "img/node-editor/tidy-waves-main.webp": {
+   "page": "node-editor",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 560,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.558Z"
+  },
+  "img/nodes-allplayers/allplayers.webp": {
+   "page": "nodes-allplayers",
+   "kind": "ui",
+   "dpr": 1.5,
+   "width": 688,
+   "height": 160,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.559Z"
+  },
+  "img/nodes-behaviour/behaviour.webp": {
+   "page": "nodes-behaviour",
+   "kind": "ui",
+   "dpr": 1.5,
+   "width": 688,
+   "height": 148,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.560Z"
+  },
+  "img/nodes-camerafollow/camerafollow.webp": {
+   "page": "nodes-camerafollow",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 639,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.561Z"
+  },
+  "img/nodes-camerarig/camera-rig.webp": {
+   "page": "nodes-camerarig",
+   "kind": "view",
+   "dpr": 1,
+   "width": 1126,
+   "height": 569,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.561Z"
+  },
+  "img/nodes-charcontroller/charcontroller.webp": {
+   "page": "nodes-charcontroller",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 411,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.562Z"
+  },
+  "img/nodes-coderef/coderef.webp": {
+   "page": "nodes-coderef",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 282,
+   "height": 231,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.562Z"
+  },
+  "img/nodes-delay/delay.webp": {
+   "page": "nodes-delay",
+   "kind": "ui",
+   "dpr": 1.5,
+   "width": 688,
+   "height": 180,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.563Z"
+  },
+  "img/nodes-flowfloat/flowfloat.webp": {
+   "page": "nodes-flowfloat",
+   "kind": "ui",
+   "dpr": 1.5,
+   "width": 688,
+   "height": 206,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.563Z"
+  },
+  "img/nodes-gamepadaxis/gamepadaxis.webp": {
+   "page": "nodes-gamepadaxis",
+   "kind": "ui",
+   "dpr": 1.5,
+   "width": 688,
+   "height": 220,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.564Z"
+  },
+  "img/nodes-gamepadbutton/gamepadbutton.webp": {
+   "page": "nodes-gamepadbutton",
+   "kind": "ui",
+   "dpr": 1.5,
+   "width": 688,
+   "height": 308,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.564Z"
+  },
+  "img/nodes-gametime/gametime.webp": {
+   "page": "nodes-gametime",
+   "kind": "ui",
+   "dpr": 1.5,
+   "width": 688,
+   "height": 148,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.564Z"
+  },
+  "img/nodes-gate/gate-group.webp": {
+   "page": "nodes-gate",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 520,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.565Z"
+  },
+  "img/nodes-getvariable/getvariable.webp": {
+   "page": "nodes-getvariable",
+   "kind": "ui",
+   "dpr": 1.5,
+   "width": 688,
+   "height": 148,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.566Z"
+  },
+  "img/nodes-hudbar/hudbar.webp": {
+   "page": "nodes-hudbar",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 365,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.566Z"
+  },
+  "img/nodes-hudinput/hudinput.webp": {
+   "page": "nodes-hudinput",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 315,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.566Z"
+  },
+  "img/nodes-hudlist/hudlist.webp": {
+   "page": "nodes-hudlist",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 487,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.567Z"
+  },
+  "img/nodes-hudrows/hudrows.webp": {
+   "page": "nodes-hudrows",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 325,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.567Z"
+  },
+  "img/nodes-hudscreen/hudscreen.webp": {
+   "page": "nodes-hudscreen",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 635,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.567Z"
+  },
+  "img/nodes-hudset/hudset.webp": {
+   "page": "nodes-hudset",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 254,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.567Z"
+  },
+  "img/nodes-hudtext/hudtext.webp": {
+   "page": "nodes-hudtext",
+   "kind": "ui",
+   "dpr": 1.5,
+   "width": 688,
+   "height": 198,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.568Z"
+  },
+  "img/nodes-hudtimer/hudtimer.webp": {
+   "page": "nodes-hudtimer",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 416,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.568Z"
+  },
+  "img/nodes-latch/latch.webp": {
+   "page": "nodes-latch",
+   "kind": "ui",
+   "dpr": 1.5,
+   "width": 688,
+   "height": 176,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.569Z"
+  },
+  "img/nodes-leaderboard/leaderboard.webp": {
+   "page": "nodes-leaderboard",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 610,
+   "height": 639,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.569Z"
+  },
+  "img/nodes-movespeed/movespeed.webp": {
+   "page": "nodes-movespeed",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 448,
+   "height": 639,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.569Z"
+  },
+  "img/nodes-once/once.webp": {
+   "page": "nodes-once",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 639,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.570Z"
+  },
+  "img/nodes-ongamestate/ongamestate.webp": {
+   "page": "nodes-ongamestate",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 473,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.570Z"
+  },
+  "img/nodes-peervariable/peervariable.webp": {
+   "page": "nodes-peervariable",
+   "kind": "ui",
+   "dpr": 1.5,
+   "width": 688,
+   "height": 270,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.570Z"
+  },
+  "img/nodes-possessnode/possessnode.webp": {
+   "page": "nodes-possessnode",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 552,
+   "height": 639,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.571Z"
+  },
+  "img/nodes-rotor/rotor.webp": {
+   "page": "nodes-rotor",
+   "kind": "ui",
+   "dpr": 1.5,
+   "width": 688,
+   "height": 244,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.571Z"
+  },
+  "img/nodes-sequence/sequence.webp": {
+   "page": "nodes-sequence",
+   "kind": "ui",
+   "dpr": 1.5,
+   "width": 688,
+   "height": 230,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.572Z"
+  },
+  "img/nodes-setgamestate/setgamestate.webp": {
+   "page": "nodes-setgamestate",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 514,
+   "height": 639,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.572Z"
+  },
+  "img/nodes-setvariable/setvariable.webp": {
+   "page": "nodes-setvariable",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 551,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.573Z"
   },
   "img/notifications/chat-mentions.webp": {
    "page": "notifications",
@@ -1361,6 +2032,94 @@
    "labels": [],
    "app": "earlier",
    "shotAt": "2026-10-27T07:46:24.586Z"
+  },
+  "img/publish-export/export-tab.webp": {
+   "page": "publish-export",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 550,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.511Z"
+  },
+  "img/publish-export/gallery-tab.webp": {
+   "page": "publish-export",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 700,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.511Z"
+  },
+  "img/publish-export/itch-mini-golf.webp": {
+   "page": "publish-export",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 560,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.512Z"
+  },
+  "img/publish-export/save-options-optimize-for.webp": {
+   "page": "publish-export",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 544,
+   "height": 816,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.590Z"
+  },
+  "img/race/menu.webp": {
+   "page": "race",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 688,
+   "height": 450,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.587Z"
+  },
+  "img/race/phone-pedals.webp": {
+   "page": "race",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 480,
+   "height": 1000,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.587Z"
+  },
+  "img/race/start.webp": {
+   "page": "race",
+   "kind": "view",
+   "dpr": 1,
+   "width": 1126,
+   "height": 569,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.588Z"
+  },
+  "img/race/vr-seat.webp": {
+   "page": "race",
+   "kind": "view",
+   "dpr": 1,
+   "width": 1126,
+   "height": 569,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.588Z"
   },
   "img/recording/recording-bar.webp": {
    "page": "recording",
@@ -1669,6 +2428,72 @@
    "labels": [],
    "app": "earlier",
    "shotAt": "2026-10-27T07:46:24.608Z"
+  },
+  "img/vr/ai-panel.webp": {
+   "page": "vr",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 384,
+   "height": 384,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.609Z"
+  },
+  "img/vr/game-hud-waves.webp": {
+   "page": "vr",
+   "kind": "ui",
+   "dpr": 1,
+   "width": 640,
+   "height": 640,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.609Z"
+  },
+  "img/vr/radial-root.webp": {
+   "page": "vr",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 360,
+   "height": 360,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.609Z"
+  },
+  "img/vr/settings-panel.webp": {
+   "page": "vr",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 360,
+   "height": 360,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.610Z"
+  },
+  "img/vr/settings-ring.webp": {
+   "page": "vr",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 360,
+   "height": 360,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.610Z"
+  },
+  "img/vr/settings-search.webp": {
+   "page": "vr",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 384,
+   "height": 384,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.611Z"
   },
   "img/water/lava.webp": {
    "page": "water",

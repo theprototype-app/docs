@@ -1,0 +1,23 @@
+page: nodes-possessnode
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: possessnode
+  replaces: img/nodes/possessnode.png
+  alt: Two Key Press nodes wired into the trigger and release inputs of a Possess Object, with an Object Selector picking
+    the Cart wired into its target
+  caption: Two Key Press nodes wired into the trigger and release inputs of a Possess Object.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 552
+    - 639
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/nodes/possessnode.png
+md: nodes/possessnode.md

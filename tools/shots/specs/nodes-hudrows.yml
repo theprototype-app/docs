@@ -1,0 +1,23 @@
+page: nodes-hudrows
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: hudrows
+  replaces: img/nodes/hudrows.png
+  alt: 'The example''s nodes: a HUD Button and a HUD Rows node set to append the row "Bell rung" — in 1.42 the HUD Rows card
+    has no trigger socket to wire into'
+  caption: The example's nodes.
+  crop:
+    rect:
+    - 21
+    - 0
+    - 688
+    - 325
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/nodes/hudrows.png
+md: nodes/hudrows.md

@@ -1,0 +1,21 @@
+{
+ "id": "behaviour",
+ "dpr": 1.5,
+ "shotAt": "2026-10-27T07:46:24.560Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/nodes/behaviour.png",
+ "width": 1032,
+ "height": 222,
+ "crop": {
+  "x": 32,
+  "y": 0,
+  "w": 1032,
+  "h": 222
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

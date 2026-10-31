@@ -1,0 +1,22 @@
+page: nodes-coderef
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: coderef
+  replaces: img/nodes/coderef.png
+  alt: A Code link card titled Mini Golf engine pointing at minigolf/module.js, with its Open code button
+  caption: A Code link card titled Mini Golf engine pointing at minigolf/module.js.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 282
+    - 231
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/nodes/coderef.png
+md: nodes/coderef.md

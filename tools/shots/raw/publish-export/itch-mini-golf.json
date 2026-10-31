@@ -1,0 +1,26 @@
+{
+ "id": "itch-mini-golf",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.512Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/export/itch-mini-golf.png",
+ "width": 688,
+ "height": 560,
+ "crop": {
+  "x": 296,
+  "y": 80,
+  "w": 688,
+  "h": 560
+ },
+ "cut": [],
+ "fade": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

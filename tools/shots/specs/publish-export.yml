@@ -1,0 +1,70 @@
+page: publish-export
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: itch-mini-golf
+  replaces: img/export/itch-mini-golf.png
+  alt: 'Mini Golf exported for itch.io: the game''s start card, playing in the itch.io frame.'
+  caption: Mini Golf exported for itch.io.
+  crop:
+    rect:
+    - 296
+    - 80
+    - 688
+    - 560
+  fade:
+  - l
+  - r
+  - t
+  - b
+  kind: ui
+  dpr: 1
+  from: img/export/itch-mini-golf.png
+- id: export-tab
+  replaces: img/export/export-tab.png
+  alt: The Export tab with the itch.io preset selected
+  caption: The Export tab with the itch.io preset selected.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 688
+    - 550
+  fade:
+  - r
+  kind: ui
+  dpr: 1
+  from: img/export/export-tab.png
+- id: gallery-tab
+  replaces: img/export/gallery-tab.png
+  alt: 'The Community gallery tab after Build submission zip: the two GitHub steps'
+  caption: The Community gallery tab after Build submission zip.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 688
+    - 700
+  fade:
+  - r
+  - b
+  kind: ui
+  dpr: 1
+  from: img/export/gallery-tab.png
+- id: save-options-optimize-for
+  replaces: img/saving/save-options-optimize-for.png
+  alt: 'Save options with Optimize for: Full quality or For Quest / web'
+  caption: Save options with Optimize for.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 544
+    - 816
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/saving/save-options-optimize-for.png

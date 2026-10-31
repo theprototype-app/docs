@@ -50,4 +50,7 @@ A press log:
 3. Wire HUD Button → HUD Rows' **trigger**.
 4. Each press adds a *Bell rung* row to the list, on every player's screen.
 
-![The example's nodes: a HUD Button and a HUD Rows node set to append the row "Bell rung" — in 1.42 the HUD Rows card has no trigger socket to wire into](../img/nodes/hudrows.png)
+![The example's nodes: a HUD Button and a HUD Rows node set to append the row "Bell rung" — in 1.42 the HUD Rows card has no trigger socket to wire into](../img/nodes-hudrows/hudrows.webp){ .shot width="688" height="325" loading=lazy }
+/// caption
+The example's nodes.
+///

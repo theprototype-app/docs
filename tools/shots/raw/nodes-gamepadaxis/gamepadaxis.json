@@ -1,0 +1,21 @@
+{
+ "id": "gamepadaxis",
+ "dpr": 1.5,
+ "shotAt": "2026-10-27T07:46:24.564Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/nodes/gamepadaxis.png",
+ "width": 1032,
+ "height": 330,
+ "crop": {
+  "x": 32,
+  "y": 0,
+  "w": 1032,
+  "h": 330
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

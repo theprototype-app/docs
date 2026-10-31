@@ -1,0 +1,22 @@
+page: modules
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: core-phone
+  replaces: img/modules/core-phone.png
+  alt: 'Modules ▸ Core on a folded phone: each module''s download icon and switch on the right, + Button and Pong: spawn /
+    remove under their descriptions, and VR Sleeve Palette''s description tapped open in full'
+  caption: Modules ▸ Core on a folded phone.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 480
+    - 908
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/modules/core-phone.png

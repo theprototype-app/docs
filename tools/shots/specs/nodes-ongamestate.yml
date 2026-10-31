@@ -1,0 +1,22 @@
+page: nodes-ongamestate
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: ongamestate
+  replaces: img/nodes/ongamestate.png
+  alt: On Game State (over) pulses a Store Value whose value comes from Get Variable score
+  caption: On Game State (over) pulses a Store Value whose value comes from Get Variable score.
+  crop:
+    rect:
+    - 21
+    - 0
+    - 688
+    - 473
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/nodes/ongamestate.png
+md: nodes/ongamestate.md

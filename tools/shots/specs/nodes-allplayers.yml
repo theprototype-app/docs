@@ -1,0 +1,22 @@
+page: nodes-allplayers
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: allplayers
+  replaces: img/nodes/allplayers.png
+  alt: A Player Variable (laps, mine) into a Compare (≥ 3), into All Players' condition, into Set Game State (over)
+  caption: A Player Variable (laps.
+  crop:
+    rect:
+    - 32
+    - 0
+    - 1032
+    - 240
+  fade: []
+  kind: ui
+  dpr: 1.5
+  from: img/nodes/allplayers.png
+md: nodes/allplayers.md

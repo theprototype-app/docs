@@ -5,7 +5,10 @@ and how the pieces are wired are all reachable from here. Every node on it lists
 double-click on a node that has code opens that code, and values flow through any chain of nodes the same way on every
 screen.
 
-![The Main graph: the ⓘ Params tab shows the selected Bounce node's properties](img/main-graph/properties.png)
+![The Main graph: the ⓘ Params tab shows the selected Bounce node's properties](img/main-graph/properties.webp){ .shot .fade-l .fade-t width="688" height="600" loading=lazy }
+/// caption
+The Main graph.
+///
 
 ## Where it is
 

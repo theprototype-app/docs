@@ -1,0 +1,22 @@
+page: nodes-latch
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: latch
+  replaces: img/nodes/latch.png
+  alt: A Key Press wired into a Latch's toggle, the Latch driving a Visibility node on the lamp's Object Selector
+  caption: A Key Press wired into a Latch's toggle.
+  crop:
+    rect:
+    - 32
+    - 0
+    - 1032
+    - 264
+  fade: []
+  kind: ui
+  dpr: 1.5
+  from: img/nodes/latch.png
+md: nodes/latch.md

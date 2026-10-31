@@ -1,0 +1,60 @@
+page: community
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: play-link-heart
+  replaces: img/community/play-link-heart.png
+  alt: The heart on a play link's start card, beside Play
+  caption: The heart on a play link's start card.
+  crop:
+    rect:
+    - 296
+    - 150
+    - 688
+    - 450
+  fade:
+  - l
+  - r
+  - t
+  - b
+  kind: ui
+  dpr: 1
+  from: img/community/play-link-heart.png
+- id: pause-menu-heart
+  replaces: img/community/pause-menu-heart.png
+  alt: The heart in a published game's pause menu
+  caption: The heart in a published game's pause menu.
+  crop:
+    rect:
+    - 296
+    - 150
+    - 688
+    - 470
+  fade:
+  - l
+  - r
+  - t
+  - b
+  kind: ui
+  dpr: 1
+  from: img/community/pause-menu-heart.png
+- id: your-games
+  replaces: img/community/your-games.png
+  alt: 'Your games: visits over 30 days, one row per game, with a moderation notice'
+  caption: 'Your games: visits over 30 days.'
+  crop:
+    rect:
+    - 296
+    - 40
+    - 688
+    - 680
+  fade:
+  - l
+  - r
+  - t
+  kind: ui
+  dpr: 1
+  from: img/community/your-games.png

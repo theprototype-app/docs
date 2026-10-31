@@ -1,0 +1,23 @@
+page: nodes-setgamestate
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: setgamestate
+  replaces: img/nodes/setgamestate.png
+  alt: 'The example''s nodes: On Click on the Start box, a Key Press for P, and two Set Game State cards (playing, paused)
+    — in 1.42 the cards have no trigger socket to wire into'
+  caption: The example's nodes.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 514
+    - 639
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/nodes/setgamestate.png
+md: nodes/setgamestate.md
