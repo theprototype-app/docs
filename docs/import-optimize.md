@@ -77,6 +77,10 @@ The other half of the pipeline is on the way out: **Optimize for: For Quest / we
 [Save options](saving.md#save-options) and **Settings ▸ Export** writes compressed textures, compressed geometry and the
 LOD chain into a GLTF or a Scene file — see [Publish & Export](publish-export.md#optimize-for-quest-web).
 
+## Replacing a model later
+
+A new version of a model does not have to be a new object: [Replace model…](edit-in-blender.md#replace-a-model-from-any-file) keeps the object, its flows, physics and clips.
+
 ## Limits
 
 - After an undo, or opening a `.tpscene` saved with **Full quality**, a texture is the plain (resized) picture again —

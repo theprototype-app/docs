@@ -42,6 +42,13 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.53 — your tools, connected.** Replace a model from a file and keep the object: its place, flows, physics and clips. **Edit in
+Blender** downloads the model, and the file you export comes back with *Update "<name>"?*, wherever you drop it; Chrome and Edge
+can watch the file and reload on each save. A 100×, Z-up or unapplied export gets a one-click fix. **Settings ▸ Tools &
+connections** replaces Settings ▸ AI: one page for chat and mesh providers, voice typing, agents and desktop tools, each with a
+status and a Test. Skies download the first time you pick one, so the app download is about 6 MB smaller. See
+[Edit in Blender](edit-in-blender.md) and [Tools & connections](tools-and-connections.md).
+
 **1.52 — sessions in your Explorer.** Joining a session shows the host's files as *"<Host>'s session"* in your Explorer,
 read-only, above your Library: open them, copy them, and **Save on host** if you can edit. Nothing downloads until you
 open or copy it, and hosts choose what guests see. Save project now asks about unsaved changes and opens where you left
