@@ -15,7 +15,10 @@ viewport keeps following the scene's environment (sky, background, grid), whatev
 | **8-bit** | a retro palette |
 | **High contrast** | white text on black at 7:1 (AAA), 3:1 borders and switches, a thick selection outline and bigger handles — also a switch in [Settings ▸ Accessibility](accessibility.md#high-contrast) |
 
-![The Profiler in the Dark, Light, Green console, 8-bit and High contrast themes](img/appearance/themes.png)
+![The Settings page's Appearance rows in the five built-in themes: Dark, Light, Green console, 8-bit and High contrast.](img/appearance/themes.webp){ .shot width="688" height="555" loading=lazy }
+/// caption
+Dark, Light, Green console, 8-bit and High contrast on the same Settings rows.
+///
 
 Since 1.21 every theme is checked for readable contrast: the Profiler's numbers, the number fields, the Explorer's
 sidebar, the shader and node editors and the light theme's drawers all keep their text legible (at least 4.5:1 for the

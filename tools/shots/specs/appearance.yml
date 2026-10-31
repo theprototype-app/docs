@@ -1,0 +1,22 @@
+# docs/appearance.md
+page: appearance
+defaults: {device: desktop, theme: dark, dpr: 2, format: webp}
+shots:
+  - id: themes
+    replaces: img/appearance/themes.png
+    alt: >-
+      The Settings page's Appearance rows in the five built-in themes: Dark, Light, Green console, 8-bit and High
+      contrast.
+    caption: Dark, Light, Green console, 8-bit and High contrast on the same Settings rows.
+    kind: ui
+    setup:
+      - {eval: "const s=window.__stores; s.settingsSection.set('interface'); s.settingsOpen.set(true)"}
+      - {wait: 1500}
+    crop: {rect: [490, 168, 338, 143]}
+    variants:
+      - {eval: "window.__stores.themes.theme.set('dark')", suffix: dark, caption: Dark}
+      - {eval: "window.__stores.themes.theme.set('light')", suffix: light, caption: Light}
+      - {eval: "window.__stores.themes.theme.set('green')", suffix: green, caption: Green console}
+      - {eval: "window.__stores.themes.theme.set('bit8')", suffix: 8bit, caption: 8-bit}
+      - {eval: "window.__stores.themes.theme.set('contrast')", suffix: contrast, caption: High contrast}
+    compose: grid2x2

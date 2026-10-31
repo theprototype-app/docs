@@ -59,7 +59,8 @@ async function still(page, pageName, shot, dpr) {
 	for (const [i, v] of tiles.entries()) {
 		if (v) await runSteps(page, v.steps || [v]);
 		await waitFrames(page, shot.settle ?? 1200);
-		const { crop, bounds, is3d } = await resolveRect(page, shot.crop);
+		// a tile may have its own crop (two parts of one screen, side by side)
+		const { crop, bounds, is3d } = await resolveRect(page, v?.crop || shot.crop);
 		const cut = cutSides(crop, bounds);
 		const fade = resolveFade(shot.fade, cut, is3d);
 		const uiHits = await uiInside(page, crop);

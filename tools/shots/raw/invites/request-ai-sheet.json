@@ -1,0 +1,54 @@
+{
+ "id": "request-ai-sheet",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:26:36.592Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "dialog.tp-ui",
+  "header.wc-head",
+  "div.md-bar",
+  "div.md-body",
+  "h2#md-title-c1.wc-title",
+  "button#invite-tab-agent.tab",
+  "p.inv-lead",
+  "div#invite-sheet.inv",
+  "span#invite-role-label.inv-label",
+  "div.inv-row",
+  "span#invite-uses-label.inv-label",
+  "div.inv-actions"
+ ],
+ "width": 928,
+ "height": 950,
+ "crop": {
+  "x": 488,
+  "y": 213,
+  "w": 464,
+  "h": 475
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 70,
+   "y": 137.5,
+   "w": 238.0625,
+   "h": 78
+  },
+  "2": {
+   "x": 457.0625,
+   "y": 369.5,
+   "w": 392.9375,
+   "h": 260
+  },
+  "3": {
+   "x": 526.34375,
+   "y": 661.5,
+   "w": 331.65625,
+   "h": 72
+  }
+ },
+ "kind": "ui"
+}

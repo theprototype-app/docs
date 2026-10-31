@@ -1,6 +1,67 @@
 {
  "column": 688,
  "images": {
+  "img/accessibility/high-contrast.webp": {
+   "page": "accessibility",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 688,
+   "height": 620,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:27:19.128Z"
+  },
+  "img/accessibility/scale-150-phone.webp": {
+   "page": "accessibility",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 390,
+   "height": 640,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:22:26.583Z"
+  },
+  "img/accessibility/settings-desktop.webp": {
+   "page": "accessibility",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 688,
+   "height": 590,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:22:12.960Z"
+  },
+  "img/appearance/themes.webp": {
+   "page": "appearance",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 688,
+   "height": 555,
+   "badges": 0,
+   "labels": [
+    "Dark",
+    "Light",
+    "Green console",
+    "bit",
+    "High contrast"
+   ],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:27:33.083Z"
+  },
+  "img/avatars/studio-desktop.webp": {
+   "page": "avatars",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 688,
+   "height": 835,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:27:55.310Z"
+  },
   "img/camera/env-presets.webp": {
    "page": "camera",
    "kind": "view",
@@ -112,6 +173,83 @@
    ],
    "app": "1.51.0",
    "shotAt": "2026-10-31T14:10:44.640Z"
+  },
+  "img/invites/request-ai-sheet.webp": {
+   "page": "invites",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 464,
+   "height": 475,
+   "badges": 3,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:26:36.592Z"
+  },
+  "img/settings/home-phone.webp": {
+   "page": "settings",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 390,
+   "height": 896,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:23:56.001Z"
+  },
+  "img/settings/interface-desktop.webp": {
+   "page": "settings",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 688,
+   "height": 720,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:23:42.402Z"
+  },
+  "img/settings/rows-phone.webp": {
+   "page": "settings",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 390,
+   "height": 700,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:24:09.278Z"
+  },
+  "img/tours/editor-tour.webp": {
+   "page": "tours",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 688,
+   "height": 500,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:24:26.543Z"
+  },
+  "img/tours/settings-tours.webp": {
+   "page": "tours",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 688,
+   "height": 480,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:24:41.524Z"
+  },
+  "img/tours/vr-welcome.webp": {
+   "page": "tours",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 512,
+   "height": 320,
+   "badges": 0,
+   "labels": [],
+   "app": "earlier",
+   "shotAt": "2026-10-27T07:46:24.607Z"
   }
  }
 }

@@ -24,7 +24,10 @@ Profile menu (your picture, top right) ▸ **Customize Character** — also **Se
 character…**. A drawer opens (a bottom sheet on a phone) and puts **your own character** in a plain **studio**: a
 neutral backdrop in your theme's colours, a floor disc and a soft key light.
 
-![Customize character on a computer: your character in the studio on the left, the drawer with Show in scene, Surprise me and the presets on the right](img/avatars/studio-desktop.png)
+![Customize character on a computer, two parts of one screen side by side: your character on a lit disc in the studio, labelled You, and the drawer with Show in scene, Surprise me, the character presets, head, hat and colours.](img/avatars/studio-desktop.webp){ .shot width="688" height="835" loading=lazy }
+/// caption
+Customize character on a computer. The studio is on the left of the screen, the drawer on the right.
+///
 
 ### The studio
 

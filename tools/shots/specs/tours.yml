@@ -1,0 +1,41 @@
+# docs/tours.md
+page: tours
+defaults: {device: desktop, theme: dark, dpr: 2, format: webp}
+shots:
+  - id: vr-welcome
+    replaces: img/tours/vr-welcome.png
+    # a panel drawn on a headset texture: no headset here, so re-cropped from the existing capture (QUESTIONS Q1)
+    from: img/tours/vr-welcome.png
+    dpr: 2
+    kind: ui
+    crop: {rect: [0, 0, 1024, 640]}
+    fade: []
+    alt: >-
+      Step 1 of the VR welcome: the title Welcome to ThePrototype VR mode, a drawing of both controllers with their
+      buttons named, and Skip, Don't show again and Next along the bottom.
+    caption: Step 1 of 8 of the VR welcome, in the headset.
+  - id: editor-tour
+    replaces: img/tours/editor-tour.png
+    alt: >-
+      Step 1 of the editor tour: a card that says Welcome! Start by adding something, with a highlight on the + button
+      at the lower left of the window.
+    caption: Step 1 of the editor tour points at the + button.
+    setup:
+      - {eval: "window.__stores.tours.tours.start('editor')"}
+      - {wait: 2000}
+    crop: {rect: [0, 400, 688, 500]}
+    fade: [t, r]
+  - id: settings-tours
+    replaces: img/tours/settings-tours.png
+    alt: >-
+      Settings ▸ Interface ▸ Tours: the Show tours automatically switch and a row that resets them, found by searching
+      for the word tours.
+    caption: Settings searched for "tours".
+    setup:
+      - {eval: "const s=window.__stores; s.settingsSection.set('interface'); s.settingsOpen.set(true)"}
+      - {wait: 1200}
+      - {click: 'input[placeholder="Search settings"]'}
+      - {eval: "const i=document.querySelector('input[placeholder=\"Search settings\"]'); i.value='tours'; i.dispatchEvent(new Event('input',{bubbles:true}))"}
+      - {wait: 1200}
+    crop: {rect: [470, 90, 688, 480]}
+    fade: [b]

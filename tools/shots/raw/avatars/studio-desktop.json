@@ -1,0 +1,41 @@
+{
+ "id": "studio-desktop",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:27:55.310Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "button#budget-chip.bc-main",
+  "button#budget-chip-target.bc-caret",
+  "p.hud-cell",
+  "button#editor-mode-toggle.hud-cell",
+  "p#play-button.hud-play",
+  "div#character-resize.cp-grip",
+  "header.wc-head",
+  "div.cp-body",
+  "footer.cp-foot",
+  "aside#character-panel.tp-ui",
+  "div.cp-row",
+  "svg.lucide",
+  "button#character-surprise.tp-ui",
+  "div.cp-chips",
+  "button.cp-chip",
+  "section.svelte-1d76ywv",
+  "h3.cp-label"
+ ],
+ "kind": "ui",
+ "tiles": [
+  {
+   "file": "studio-desktop--studio.webp",
+   "caption": ""
+  },
+  {
+   "file": "studio-desktop--drawer.webp",
+   "caption": ""
+  }
+ ],
+ "compose": "row",
+ "fade": []
+}

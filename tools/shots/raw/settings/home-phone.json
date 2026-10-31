@@ -1,0 +1,32 @@
+{
+ "id": "home-phone",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:23:56.001Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "header.wc-head",
+  "div#settings-main.settings-main",
+  "dialog.tp-ui",
+  "button.sn-row",
+  "div.sn-group-label",
+  "div.sn-groups",
+  "span.sn-label",
+  "span#settings-touch-header",
+  "svg.lucide"
+ ],
+ "width": 780,
+ "height": 1792,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 390,
+  "h": 896
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

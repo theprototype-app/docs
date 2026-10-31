@@ -38,9 +38,14 @@ async function composeTiles(meta, dir) {
 		const img = sharp(path.join(dir, t.file));
 		const m = await img.metadata();
 		const mask = Buffer.from(`<svg width="${m.width}" height="${m.height}"><rect width="${m.width}" height="${m.height}" rx="${radius}" fill="#fff"/></svg>`);
-		const cap = t.caption ? Buffer.from(`<svg width="${m.width}" height="${m.height}">${pill(t.caption, 10 * k, m.height - 10 * k, k)}</svg>`) : null;
-		const buf = await img.composite([{ input: mask, blend: 'dest-in' }, ...(cap ? [{ input: cap }] : [])]).png().toBuffer();
-		return { buf, w: m.width, h: m.height };
+		// a caption must not cover interface: on a UI tile it gets its own strip under the tile, on a 3D tile it sits inside
+		const strip = meta.kind === 'ui' && t.caption ? 34 * s : 0;
+		const H = m.height + strip;
+		const cap = t.caption ? Buffer.from(`<svg width="${m.width}" height="${H}">${pill(t.caption, 10 * k, H - (strip ? 4 * s : 10 * k), k)}</svg>`) : null;
+		const rounded = await img.composite([{ input: mask, blend: 'dest-in' }]).png().toBuffer();
+		const buf = await sharp({ create: { width: m.width, height: H, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } } })
+			.composite([{ input: rounded, left: 0, top: 0 }, ...(cap ? [{ input: cap, left: 0, top: 0 }] : [])]).png().toBuffer();
+		return { buf, w: m.width, h: H };
 	}));
 	const cols = meta.compose === 'grid2x2' ? 2 : tiles.length;
 	const rows = Math.ceil(tiles.length / cols);

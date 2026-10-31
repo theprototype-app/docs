@@ -1,0 +1,43 @@
+{
+ "id": "high-contrast",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:27:19.128Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "button.sb-tab",
+  "header.wc-head",
+  "div.ins-filter",
+  "div#inspector.tp-ui",
+  "label.tp-ui",
+  "input#name.ui-input",
+  "p#uuid.truncate",
+  "button#select-group.ts-btn",
+  "button.sec-panel-head",
+  "span.pr-label",
+  "div.tp-ui",
+  "span.text-[length:var(--fs-badge)]"
+ ],
+ "width": 1376,
+ "height": 1240,
+ "crop": {
+  "x": 752,
+  "y": 70,
+  "w": 688,
+  "h": 620
+ },
+ "cut": [
+  "l",
+  "t",
+  "b"
+ ],
+ "fade": [
+  "l",
+  "t",
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

@@ -1,0 +1,42 @@
+# docs/accessibility.md
+page: accessibility
+defaults: {device: desktop, theme: dark, dpr: 2, format: webp}
+shots:
+  - id: settings-desktop
+    replaces: img/accessibility/settings-desktop.png
+    alt: >-
+      Settings ▸ Accessibility on a computer: UI scale with its percentage menu, the High contrast switch, Motion
+      with Follow system, Reduce and Full, and Show captions at the bottom, each in a row of its own.
+    caption: Settings ▸ Accessibility, every row applying to this device.
+    setup:
+      - {eval: "const s=window.__stores; s.settingsSection.set('accessibility'); s.settingsOpen.set(true)"}
+      - {wait: 1500}
+    crop: {rect: [470, 160, 688, 590]}
+    fade: [b]
+  - id: scale-150-phone
+    replaces: img/accessibility/scale-150-phone.png
+    device: n6-folded
+    storage: {'ui:scale': '150'}
+    alt: >-
+      The Accessibility page at 150 % on a folded phone: bigger type and bigger controls, with nothing pushed off
+      the screen.
+    caption: UI scale at 150 % on a folded phone.
+    setup:
+      - {eval: "const s=window.__stores; s.settingsSection.set('accessibility'); s.settingsOpen.set(true)"}
+      - {wait: 1500}
+    crop: {rect: [0, 0, 390, 640]}
+    fade: [b]
+  - id: high-contrast
+    replaces: img/accessibility/high-contrast.png
+    theme: contrast
+    alt: >-
+      High contrast theme: black panels with white text beside a box that wears the thick yellow selection edge and
+      the bigger move handles.
+    caption: High contrast keeps text at 7:1 and thickens the selection edge and the handles.
+    setup:
+      - {create: Box, name: Crate, at: [0, 0.8, 0], scale: 1.6, color: '#c9a26b'}
+      - {select: Crate}
+      - {eval: "const s=window.__stores; s.inspectorKind.set('selection'); s.inspectorClose.set(false); s.objectActions.flyTo([1.8, 3.8, 10], [-0.9, 0.9, 0], 0)"}
+      - {wait: 2000}
+    crop: {rect: [752, 70, 688, 620]}
+    fade: [l, t, b]
