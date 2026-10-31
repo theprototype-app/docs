@@ -21,7 +21,8 @@ like your own edits.
 ## Set it up (once)
 
 1. In claude.ai open **Settings ▸ Connectors ▸ Add custom connector** and enter
-   `https://theprototype.app/mcp`.
+   `https://theprototype.app/mcp`. The **AI assistant** window shows this link with a **Copy link**
+   button while no AI provider is set up.
 2. claude.ai sends you to theprototype to approve it. The page names the app asking and where it
    will return (claude.ai). Leave **Allow changes** ticked to let Claude build, or untick it for a
    **look-only** connection that can only read the scene and take pictures. Press **Allow**.
@@ -31,8 +32,10 @@ like your own edits.
 ## Connect your tab (each time you build)
 
 1. Open theprototype.app, sign in, and open or join the scene you want to work on.
-2. Open the **AI assistant** and press **Connect Claude** (also in **Settings ▸ Connected apps**).
-   A chip reads **Claude connected · this tab**.
+2. Press the **AI** button and press **Connect Claude** (also in **Settings ▸ Connected apps**).
+   A chip reads **Claude connected · this tab**. The AI button always opens the window; signed out,
+   the same card offers **Sign in to connect** first. With no AI provider set up, the window also
+   offers **Use your own AI provider** (**Open settings**).
 3. Ask Claude something: *"Build a campfire with five logs and a warm light"*, *"Make the flame
    flicker"*, *"What can you do here?"*
 
@@ -62,9 +65,19 @@ trees by the fire"*) — it never reads out ids or numbers. Good things to say:
 |---|---|
 | Add shapes, lights and groups; move, resize, recolour, rename, hide and delete them | Save or open files, or change your settings |
 | Make things move and react with flow nodes (spin, bounce, follow a path, open on click) and look up how each node wires | Install modules, approve people who knock, or answer the app's questions for you |
-| Add physics and run the simulation | See anything outside the theprototype tab, or move your camera |
+| Add physics and run the simulation in your tab at its full frame rate, whether you host or joined (your own assistant's **Physics tools** setting is not changed) | See anything outside the theprototype tab, or move your camera |
+| Animate a model's named parts, and see where everyone stands and looks, so *"put a tree in front of me"* lands in front of you, in VR too (a look-only connection sees only your own position) | |
+| Ask your tab to join a session from a link you give it: nothing happens until you press **Join** on the card in the tab (see below) | |
 | Write small code behaviours, and generate 3D models with **your** mesh provider when you have one | Do more than you can: a **viewer's** Claude can look but not build, and locked objects stay locked |
 | Take a picture of the scene to check its work | Keep working after you close the tab |
+
+### Joining a session from a link
+
+Give Claude a session or invite link and ask it to join. Your tab shows **Join a session?**, naming the
+session and who asks (*Claude (connector)*). **Cancel**, or 90 seconds with no answer, refuses. After **Join**
+the app's usual questions still apply: leaving your current session, another signaling server, the host's
+Approve, and what to do with work you have open. One question at a time: if another is open in the tab, Claude
+is told to try later. A look-only connection cannot ask to join.
 
 ## See and undo what it did
 

@@ -228,6 +228,47 @@ The **⚙ settings** tab holds local preferences: single-click opens folders, sh
 
 Right-click an object in the viewport ▸ **Save as…** and choose the format. **Prefab** is the classic snapshot; **Prefab (.glb)** and **Prefab (.tpscene)** make a prefab that *is* a file — the `.glb` carries geometry, materials and baked animation, the `.tpscene` also carries animation clips, object flow graphs, shader graphs and joints — so it can be dragged into the Library, shared, and exported as the exact bytes it was saved as (**Export ▸ The original file**). The last two entries, **glTF binary (.glb)** and **glTF (.gltf)**, are plain downloads. See [Prefabs](https://docs.theprototype.app/prefabs.md).
 
+## A session you joined
+
+![The host's session above your Library](https://docs.theprototype.app/img/explorer/session-volume.png)
+
+When you join someone's session, a new root appears at the top of the Explorer tree, above your mounted projects
+and your Library: **"<Host>'s session"**, with a banner over it: *You're in <Host>'s session · saves go to <Host>*.
+
+- On a phone the folder tree starts hidden: tap **Show folder tree** (the arrow at the Explorer's edge) to see it.
+- It shows the files the host chose to share (see *Join a session ▸ What guests see*), in the host's own folders,
+  with their names, kinds and sizes. Thumbnails arrive a moment after the list.
+- It is **read-only**: you cannot rename, move, delete or drop files into it. Your own Library is never mixed with it.
+- Nothing is downloaded when you join. A file's bytes come from the host only when you **open** or **copy** it.
+- **Open** (double-click) — images and videos open in the preview, text files open in the text editor marked
+  *Read-only* (no Save). Scenes, 3D models and sounds ask you to **Copy to my library** first.
+- **Copy to my library** (right-click a file or a folder, or drag it onto your Library) — the file becomes an
+  ordinary file of yours, with the same name, in a folder of the same name. Several files are copied in one go.
+- **Big downloads ask first.** Opening or copying more than about 50 MB at once asks
+  *"Download 72 MB from <Host>?"*. Cancel and nothing is transferred.
+- **Save on host** (the save icon on the session's row, or right-click the empty grid) saves the session's scene
+  into the **host's** library, as a new version (Version history restores it). Only editors can; a view-only guest
+  sees the button greyed with the reason — use **Copy to my library** instead.
+- Leaving the session removes the root. Anything you copied stays in your Library.
+- Opening one of **your own** scenes while you are in someone's session asks first:
+  **Leave the session and open it**, or **Bring a copy into this session**.
+
+## Save project with several libraries open
+
+![The Save project dialog](https://docs.theprototype.app/img/explorer/save-project-dialog.png)
+
+"Several libraries" means your Library plus a session you joined, or a mounted project with unsaved changes.
+
+- With **one** library open, **Save** (and **Ctrl+S**) saves it straight away, as before.
+- With **several**, Save asks once: every open library has a checkbox, the one you are working in (the session,
+  while you are in one) is ticked, and each row says where it saves — *This device*, *Save on host*, *Mounted
+  project*. A library you cannot save is greyed with the reason (view-only, or no unsaved changes).
+  If the open scene has unsaved changes, the dialog says so.
+- A library is never saved into another one. You get one result line per library saved.
+- **Remember my choice** stores your answer in **Settings ▸ Save options ▸ When several libraries are open**:
+  **Ask** (default) · **Save the active one** · **Save all I can**. Ctrl+S follows the same setting.
+  The dialog links to the setting.
+
 ## Mounting a saved project
 
 **＋ Mount project…** at the top of the tree lists the projects saved in this browser (and **Import project (.tp)…** for a file). A mounted project appears as its own root beside your Library: browse it, open a scene from it into the viewport, edit its files and folders, then **Save changes** to write them back — or **Refresh** to re-read it and throw your edits away. **Copy to Library** brings one of its files into your own project. **Unmount** just stops showing it; the saved project is not deleted.

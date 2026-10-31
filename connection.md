@@ -64,6 +64,27 @@ Or do it by ID: they paste your ID into their Connect field and press Connect; t
 To skip the approval card, send an **invite link** instead (**Connect ▸ Request AI**, a *Person* or an *AI agent*
 tab): it joins in one step with the role you chose, for a limited time. See [Invite people and agents](https://docs.theprototype.app/invites.md).
 
+### What guests see
+
+![Connect ▸ Info ▸ Guests see](https://docs.theprototype.app/img/connection/guests-see.png)
+
+The host decides how much of their library a guest sees: **Connect ▸ ▾ (Info) ▸ Guests see**.
+
+| Setting | Guests see |
+| --- | --- |
+| **Current scene's files** (default) | the open scene's file and the files it uses |
+| **Every scene on this device, and shared files** | the above, plus every scene file on this device and every file already shared in the session |
+| **Whole library** | every file and folder in your Library |
+| **None** | nothing |
+
+Changing it updates every guest's view straight away. The host's device answers a download only for files it is
+currently showing that guest, so narrowing the setting also stops downloads of files no longer shown.
+
+### Saving as a guest
+
+Your edits land in the host's scene. **Save on host** (Explorer, on the session's row) saves it into the host's
+library; **Copy to my library** brings a file to yours. A view-only guest can copy, not save on host.
+
 ### Reloading while joined
 
 *Since 1.48.1.* A guest who reloads the page — or whose phone reloads it — goes straight back into the session it was

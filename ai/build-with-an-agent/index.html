@@ -5447,6 +5447,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#join-from-a-running-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      Join from a running session
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#what-the-agent-gets" class="md-nav__link">
     <span class="md-ellipsis">
       What the agent gets
@@ -5852,6 +5861,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#join-from-a-running-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      Join from a running session
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#what-the-agent-gets" class="md-nav__link">
     <span class="md-ellipsis">
       What the agent gets
@@ -5974,6 +5992,13 @@ installed. The bridge opens the link in that browser — it <em>is</em> the app,
 — joins, and turns the app's tools into MCP tools.</p>
 <p>A good first exchange is three calls: <strong>status</strong> (am I in, can I edit?), the tool list, and one
 batched <strong>create_objects</strong>. Then <strong>screenshot</strong> to check the result.</p>
+<h3 id="join-from-a-running-session">Join from a running session</h3>
+<p>A Claude Code that is already running can add the bridge with no restart. Start it over HTTP:</p>
+<div class="highlight"><pre><span></span><code>npx<span class="w"> </span>-y<span class="w"> </span>@theprototype/agent<span class="w"> </span>serve<span class="w"> </span>--port<span class="w"> </span><span class="m">8765</span>
+claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>http<span class="w"> </span>theprototype<span class="w"> </span>http://127.0.0.1:8765/mcp
+</code></pre></div>
+<p>It answers on this machine only. The tool list is complete from the start, for clients that read it once;
+before a join, scene tools answer <em>not connected — join first</em>. Then call <code>connect</code> with the session link.</p>
 <h3 id="what-the-agent-gets">What the agent gets</h3>
 <table>
 <thead>

@@ -915,6 +915,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#a-session-you-joined" class="md-nav__link">
+    <span class="md-ellipsis">
+      A session you joined
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-project-with-several-libraries-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      Save project with several libraries open
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mounting-a-saved-project" class="md-nav__link">
     <span class="md-ellipsis">
       Mounting a saved project
@@ -6208,6 +6226,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#a-session-you-joined" class="md-nav__link">
+    <span class="md-ellipsis">
+      A session you joined
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-project-with-several-libraries-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      Save project with several libraries open
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#mounting-a-saved-project" class="md-nav__link">
     <span class="md-ellipsis">
       Mounting a saved project
@@ -6530,6 +6566,43 @@ open has unsaved changes, or has never been saved at all, the app asks first: <e
 <p>The <strong>⚙ settings</strong> tab holds local preferences: single-click opens folders, show path bar, 3D model preview, stack multiple drops on one spot, confirm before updating a prefab, hide built-in packs, and the <em>Import pack (.zip)</em> button.</p>
 <h2 id="prefabs-that-are-files">Prefabs that are files</h2>
 <p>Right-click an object in the viewport ▸ <strong>Save as…</strong> and choose the format. <strong>Prefab</strong> is the classic snapshot; <strong>Prefab (.glb)</strong> and <strong>Prefab (.tpscene)</strong> make a prefab that <em>is</em> a file — the <code>.glb</code> carries geometry, materials and baked animation, the <code>.tpscene</code> also carries animation clips, object flow graphs, shader graphs and joints — so it can be dragged into the Library, shared, and exported as the exact bytes it was saved as (<strong>Export ▸ The original file</strong>). The last two entries, <strong>glTF binary (.glb)</strong> and <strong>glTF (.gltf)</strong>, are plain downloads. See <a href="../prefabs/">Prefabs</a>.</p>
+<h2 id="a-session-you-joined">A session you joined</h2>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/explorer/session-volume.png" data-desc-position="bottom"><img alt="The host's session above your Library" src="../img/explorer/session-volume.png"></a></p>
+<p>When you join someone's session, a new root appears at the top of the Explorer tree, above your mounted projects
+and your Library: <strong>"<host>'s session"</host></strong>, with a banner over it: <em>You're in <host>'s session · saves go to <host></host></host></em>.</p>
+<ul>
+<li>On a phone the folder tree starts hidden: tap <strong>Show folder tree</strong> (the arrow at the Explorer's edge) to see it.</li>
+<li>It shows the files the host chose to share (see <em>Join a session ▸ What guests see</em>), in the host's own folders,
+  with their names, kinds and sizes. Thumbnails arrive a moment after the list.</li>
+<li>It is <strong>read-only</strong>: you cannot rename, move, delete or drop files into it. Your own Library is never mixed with it.</li>
+<li>Nothing is downloaded when you join. A file's bytes come from the host only when you <strong>open</strong> or <strong>copy</strong> it.</li>
+<li><strong>Open</strong> (double-click) — images and videos open in the preview, text files open in the text editor marked
+  <em>Read-only</em> (no Save). Scenes, 3D models and sounds ask you to <strong>Copy to my library</strong> first.</li>
+<li><strong>Copy to my library</strong> (right-click a file or a folder, or drag it onto your Library) — the file becomes an
+  ordinary file of yours, with the same name, in a folder of the same name. Several files are copied in one go.</li>
+<li><strong>Big downloads ask first.</strong> Opening or copying more than about 50 MB at once asks
+  <em>"Download 72 MB from <host>?"</host></em>. Cancel and nothing is transferred.</li>
+<li><strong>Save on host</strong> (the save icon on the session's row, or right-click the empty grid) saves the session's scene
+  into the <strong>host's</strong> library, as a new version (Version history restores it). Only editors can; a view-only guest
+  sees the button greyed with the reason — use <strong>Copy to my library</strong> instead.</li>
+<li>Leaving the session removes the root. Anything you copied stays in your Library.</li>
+<li>Opening one of <strong>your own</strong> scenes while you are in someone's session asks first:
+  <strong>Leave the session and open it</strong>, or <strong>Bring a copy into this session</strong>.</li>
+</ul>
+<h2 id="save-project-with-several-libraries-open">Save project with several libraries open</h2>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/explorer/save-project-dialog.png" data-desc-position="bottom"><img alt="The Save project dialog" src="../img/explorer/save-project-dialog.png"></a></p>
+<p>"Several libraries" means your Library plus a session you joined, or a mounted project with unsaved changes.</p>
+<ul>
+<li>With <strong>one</strong> library open, <strong>Save</strong> (and <strong>Ctrl+S</strong>) saves it straight away, as before.</li>
+<li>With <strong>several</strong>, Save asks once: every open library has a checkbox, the one you are working in (the session,
+  while you are in one) is ticked, and each row says where it saves — <em>This device</em>, <em>Save on host</em>, <em>Mounted
+  project</em>. A library you cannot save is greyed with the reason (view-only, or no unsaved changes).
+  If the open scene has unsaved changes, the dialog says so.</li>
+<li>A library is never saved into another one. You get one result line per library saved.</li>
+<li><strong>Remember my choice</strong> stores your answer in <strong>Settings ▸ Save options ▸ When several libraries are open</strong>:
+  <strong>Ask</strong> (default) · <strong>Save the active one</strong> · <strong>Save all I can</strong>. Ctrl+S follows the same setting.
+  The dialog links to the setting.</li>
+</ul>
 <h2 id="mounting-a-saved-project">Mounting a saved project</h2>
 <p><strong>＋ Mount project…</strong> at the top of the tree lists the projects saved in this browser (and <strong>Import project (.tp)…</strong> for a file). A mounted project appears as its own root beside your Library: browse it, open a scene from it into the viewport, edit its files and folders, then <strong>Save changes</strong> to write them back — or <strong>Refresh</strong> to re-read it and throw your edits away. <strong>Copy to Library</strong> brings one of its files into your own project. <strong>Unmount</strong> just stops showing it; the saved project is not deleted.</p>
 <h2 id="storage">Storage</h2>
