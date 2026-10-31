@@ -28,7 +28,7 @@ shots:
     # down to the bottom of the view, so only the three cut sides fade and the bar stays sharp
     crop: {around: {union: [{object: Crate}, {object: Ball}, {object: Post}, {selector: 'p[title^="Pivot:"]'}]}, size: [680, 740]}
     annotate:
-      - {n: 1, at: {object: Crate}, shape: circle, label: selected, badge: tl, key: 'The **selected** object, with the transform gizmo on it.'}
+      - {n: 1, at: {object: Crate}, shape: circle, label: selected, badge: tr, key: 'The **selected** object, with the transform gizmo on it.'}
       - {n: 2, at: {union: [{selector: 'p[title="Move (1)"]'}, {selector: 'p[title^="Pivot:"]'}]}, shape: box, label: gizmo tools, badge: t, key: 'The **gizmo tools** on the bottom bar: Move, Rotate, Scale and the multi-selection Pivot.'}
       - {n: 3, at: {object: Crate, point: center, offset: [-190, 190]}, shape: arrow, label: floor grid, from: [60, 70], key: 'The **floor grid**, which fades out with distance.'}
 

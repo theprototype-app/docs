@@ -156,6 +156,11 @@ function callout(a, t, W, H, s, seed) {
 		const map = { tl: [ox.l + r * 0.9, oy.t], tr: [ox.r - r * 0.9, oy.t], bl: [ox.l + r * 0.9, oy.b], br: [ox.r - r * 0.9, oy.b],
 			l: [ox.l, oy.c], r: [ox.r, oy.c], t: [ox.c, ring.y - r - 3 * s], b: [ox.c, ring.y + ring.h + r + 3 * s] };
 		anchor = map[pos] || map.tl;
+		// a circle has no corners: a corner badge sits on the outline itself, at 45°, so it reads as part of it
+		if (shape === 'circle' && pos.length === 2) {
+			const k = Math.SQRT1_2, rx = ring.w / 2, ry = ring.h / 2;
+			anchor = [ring.x + rx + (pos[1] === 'l' ? -k : k) * rx, ring.y + ry + (pos[0] === 't' ? -k : k) * ry];
+		}
 	}
 	const b = badge(a.n, anchor[0], anchor[1], s);
 	parts.push(b.svg);
