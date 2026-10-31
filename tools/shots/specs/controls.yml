@@ -22,12 +22,15 @@ shots:
     setup:
       - {select: Crate}
       - {mode: translate}
-    # 1:1: the crate and the bottom bar's tools, cropped to the column (interface is never shrunk)
-    crop: {around: {union: [{object: Crate}, {selector: 'p[title="Move (1)"]'}, {selector: 'p[title^="Pivot:"]'}]}, size: [680, 640], offset: [0, -20]}
+      # further back, so the objects and the bottom bar fit the column at 1:1
+      - {camera: {pos: [8.2, 5.6, 10.2], target: [0, 0.6, 0]}}
+    # 1:1: the objects and the bottom bar's tools, cropped to the column (interface is never shrunk);
+    # down to the bottom of the view, so only the three cut sides fade and the bar stays sharp
+    crop: {around: {union: [{object: Crate}, {object: Ball}, {object: Post}, {selector: 'p[title^="Pivot:"]'}]}, size: [680, 740]}
     annotate:
       - {n: 1, at: {object: Crate}, shape: circle, label: selected, badge: tl, key: 'The **selected** object, with the transform gizmo on it.'}
-      - {n: 2, at: {union: [{selector: 'p[title="Move (1)"]'}, {selector: 'p[title^="Pivot:"]'}]}, shape: box, label: gizmo tools, badge: l, key: 'The **gizmo tools** on the bottom bar: Move, Rotate, Scale and the multi-selection Pivot.'}
-      - {n: 3, at: {object: Crate, point: center, offset: [-230, 190]}, shape: arrow, label: floor grid, from: [40, -90], key: 'The **floor grid**, which fades out with distance.'}
+      - {n: 2, at: {union: [{selector: 'p[title="Move (1)"]'}, {selector: 'p[title^="Pivot:"]'}]}, shape: box, label: gizmo tools, badge: t, key: 'The **gizmo tools** on the bottom bar: Move, Rotate, Scale and the multi-selection Pivot.'}
+      - {n: 3, at: {object: Crate, point: center, offset: [-190, 190]}, shape: arrow, label: floor grid, from: [60, 70], key: 'The **floor grid**, which fades out with distance.'}
 
   - id: gizmo-modes
     alt: >-
@@ -58,22 +61,23 @@ shots:
       - {camera: {pos: [8.2, 5.6, 10.2], target: [0, 0.6, 0]}}
     crop: {around: {union: [{object: Crate}, {object: Ball}, {object: Post}, {selector: 'p[title^="Pivot:"]'}]}, size: [680, 660]}
     annotate:
-      - {n: 1, at: {object: Crate, point: center}, shape: arrow, label: median point, from: [-90, -150], key: 'One gizmo for the whole selection, at its **median point** (the default mode).'}
+      - {n: 1, at: {object: Crate, point: center}, shape: arrow, label: median point, from: [-80, 150], key: 'One gizmo for the whole selection, at its **median point** (the default mode).'}
       - {n: 2, at: {selector: 'p[title^="Pivot:"]'}, shape: circle, label: pivot mode, badge: tr, key: 'The **Pivot** button: each click steps to the next pivot mode.'}
 
   - id: orbit-zoom-focus
     alt: >-
-      A five-second loop: dragging on the 3D view orbits the camera around the scene, the mouse wheel zooms
+      A short loop: dragging on the 3D view orbits the camera around the scene, the mouse wheel zooms
       in, and pressing F with the ball selected frames it.
     caption: 'drag to orbit, scroll to zoom, click an object and press <kbd>F</kbd> to frame it.'
     video:
       lead: 400
       actions:
-        - {drag: [820, 420, 600, 400], steps: 50, wait: 300}
-        - {wheel: -900, ticks: 9, wait: 300}
-        - {clickObject: Ball, wait: 350}
-        - {key: f, wait: 1400}
-      tail: 500
+        # steps/ticks low: on a remote slot each one is a round trip, and the loop keeps to 3-8 s
+        - {drag: [820, 420, 600, 400], steps: 22, wait: 150}
+        - {wheel: -900, ticks: 5, wait: 150}
+        - {clickObject: Ball, wait: 200}
+        - {key: f, wait: 1100}
+      tail: 300
     setup: []
     crop: {rect: [200, 120, 1040, 640]}
     fade: vignette

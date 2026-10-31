@@ -4,7 +4,7 @@ How to move the camera, select and transform objects, and find every keyboard sh
 
 ## Viewport navigation
 
-![The editor with three objects on the floor grid. 1: the selected crate with the Move gizmo on it. 2: the transform tools on the bottom bar — Move, Rotate, Scale and Pivot. 3: the floor grid.](img/controls/viewport-overview.webp){ .shot loading=lazy width="1440" }
+![The editor with three objects on the floor grid. 1: the selected crate with the Move gizmo on it. 2: the transform tools on the bottom bar — Move, Rotate, Scale and Pivot. 3: the floor grid.](img/controls/viewport-overview.webp){ .shot .fade-l .fade-r .fade-t width="680" height="683" loading=lazy }
 /// caption
 The 3D view with one object selected.
 ///
@@ -24,11 +24,11 @@ The 3D view with one object selected.
 - **Camera bookmarks** — save the current view from the right-click menu (**Camera bookmarks ▸ Save current view**), recall with <kbd>Shift</kbd>+<kbd>1</kbd>…<kbd>5</kbd>.
 
 <figure class="shot-figure">
-<video class="shot vignette" autoplay loop muted playsinline preload="metadata" width="960" height="590" poster="../img/controls/orbit-zoom-focus.poster.webp" aria-label="A five-second loop: dragging on the 3D view orbits the camera around the scene, the mouse wheel zooms in, and pressing F with the ball selected frames it.">
+<video class="shot vignette" autoplay loop muted playsinline preload="metadata" width="960" height="590" poster="../img/controls/orbit-zoom-focus.poster.webp" aria-label="A short loop: dragging on the 3D view orbits the camera around the scene, the mouse wheel zooms in, and pressing F with the ball selected frames it.">
 <source src="../img/controls/orbit-zoom-focus.webm" type="video/webm">
 <source src="../img/controls/orbit-zoom-focus.mp4" type="video/mp4">
 </video>
-<figcaption>Drag to orbit, scroll to zoom, click an object and press <kbd>F</kbd> to frame it.</figcaption>
+<figcaption>Loop, 5 s: drag to orbit, scroll to zoom, click an object and press <kbd>F</kbd> to frame it.</figcaption>
 </figure>
 
 ### The mouse wheel
@@ -281,7 +281,7 @@ moves the set as a whole instead of collapsing it onto one plane.
 | <kbd>2</kbd> | Rotate |
 | <kbd>3</kbd> | Scale |
 
-![The same crate three times: with the Move gizmo (three arrows), the Rotate gizmo (three rings) and the Scale gizmo (three handles with cubes on their ends).](img/controls/gizmo-modes.webp){ .shot loading=lazy width="1584" }
+![The same crate three times: with the Move gizmo (three arrows), the Rotate gizmo (three rings) and the Scale gizmo (three handles with cubes on their ends).](img/controls/gizmo-modes.webp){ .shot width="1584" height="440" loading=lazy }
 /// caption
 <kbd>1</kbd> Move, <kbd>2</kbd> Rotate, <kbd>3</kbd> Scale — the same buttons are on the bottom bar.
 ///
@@ -319,11 +319,14 @@ With several objects selected, what the set rotates and scales about is a choice
 - the **Pivot** dropdown in the properties panel's Transform section, or right-click ▸ **Pivot point**;
 - in VR, **Settings ▸ Editing ▸ Pivot point** (see [Grabbing a selection](vr.md#grabbing-a-selection)).
 
-![Three objects selected together in Rotate mode. 1: one gizmo turns the whole set about the median point of the selection. 2: the Pivot button on the bottom bar, which steps through the pivot modes.](img/controls/multi-pivot.webp){ .shot .fade-l .fade-r .fade-t loading=lazy width="940" }
+![Three objects selected together in Rotate mode. 1: one gizmo turns the whole set about the median point of the selection. 2: the Pivot button on the bottom bar, which steps through the pivot modes.](img/controls/multi-pivot.webp){ .shot .fade-l .fade-r .fade-t width="680" height="643" loading=lazy }
+/// caption
+Rotate turns the whole selection about one pivot; the Pivot button picks which.
+///
 
 <div class="shot-key" markdown>
 1. One gizmo for the whole selection, at its **median point** (the default mode).
-2. The **Pivot** button: each click steps to the next mode.
+2. The **Pivot** button: each click steps to the next pivot mode.
 </div>
 
 | Mode | Turns about |

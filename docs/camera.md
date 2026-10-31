@@ -30,7 +30,7 @@ Three per-device render modes under **Viewport — this device**:
 | **Shaded + AO** | Adds ambient occlusion — soft contact shadows in creases and corners (the default on a desktop; phones and tablets start in plain **Shaded**). |
 | **Wireframe** | Shows every edge. |
 
-![The same three objects in the three render modes: Shaded, Shaded + AO (soft contact shadows where surfaces meet) and Wireframe (every edge).](img/camera/render-modes.webp){ .shot loading=lazy width="1944" }
+![The same three objects in the three render modes: Shaded, Shaded + AO (soft contact shadows where surfaces meet) and Wireframe (every edge).](img/camera/render-modes.webp){ .shot width="1944" height="400" loading=lazy }
 /// caption
 Shaded, Shaded + AO and Wireframe. AO darkens creases and the ground where objects touch it.
 ///
@@ -48,7 +48,10 @@ you switch it off for yourself under **Overrides — this device**. If the scene
 ambient occlusion, **Shaded + AO** switches off and says so: the scene's setting is used
 instead of yours.
 
-![Configure Scene ▸ View. 1: the render mode switch — Shaded, Shaded + AO, Wireframe. 2: Show light helpers.](img/camera/view-section.webp){ .shot loading=lazy width="311" }
+![Configure Scene ▸ View. 1: the render mode switch — Shaded, Shaded + AO, Wireframe. 2: Show light helpers.](img/camera/view-section.webp){ .shot width="311" height="615" loading=lazy }
+/// caption
+Configure Scene ▸ View: how the scene is drawn on your screen.
+///
 
 <div class="shot-key" markdown>
 1. The **render mode** switch.
@@ -139,7 +142,7 @@ The **Environment** section sets the scene's lighting and sky. Pick a preset chi
 | **Night** | Dim and cool. |
 | **Classic** | The pre-lighting look with the rig **off** — bring your own lights. |
 
-![The same scene under four environment presets: Studio (neutral grey), Daylight (bright sky), Sunset (warm, low sun) and Night (dim and cool).](img/camera/env-presets.webp){ .shot loading=lazy width="1292" }
+![The same scene under four environment presets: Studio (neutral grey), Daylight (bright sky), Sunset (warm, low sun) and Night (dim and cool).](img/camera/env-presets.webp){ .shot width="1292" height="812" loading=lazy }
 /// caption
 Studio, Daylight, Sunset and Night on the same three objects.
 ///
@@ -226,7 +229,10 @@ A **directional** or **spot** light shines where it points. Turn it with the rot
 
 A directional light has a direction, not a distance. Its helper line reaches as far as **Settings ▸ Scene ▸ Light helper length** says — display only.
 
-![A point light and a spot light in the scene with light helpers on. 1: the point light's helper — a small wire sphere at the light. 2: the spot light's cone, showing where it shines.](img/camera/grid-and-lights.webp){ .shot .vignette loading=lazy width="1080" }
+![A point light and a spot light in the scene with light helpers on. 1: the point light's helper — a small wire sphere at the light. 2: the spot light's cone, showing where it shines.](img/camera/grid-and-lights.webp){ .shot .vignette width="1080" height="680" loading=lazy }
+/// caption
+Light helpers show where each light is and where it shines; they are editor-only.
+///
 
 <div class="shot-key" markdown>
 1. A **point light**'s helper.

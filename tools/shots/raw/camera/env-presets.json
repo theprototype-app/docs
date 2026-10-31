@@ -1,11 +1,13 @@
 {
  "id": "env-presets",
  "dpr": 2,
- "shotAt": "2026-10-27T08:44:37.976Z",
+ "shotAt": "2026-10-31T14:07:09.598Z",
  "app": {
-  "version": "1.45.1",
-  "sha": "b48dea5f"
+  "version": "1.51.0",
+  "sha": "6fe31dae"
  },
+ "uiHits": [],
+ "kind": "view",
  "tiles": [
   {
    "file": "env-presets--studio.webp",
