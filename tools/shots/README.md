@@ -14,6 +14,16 @@ re-shot after a release. The owner's rules (batch 1 review, 2026-10-29) hold for
 - A crop of the **3D view alone** (`kind: view`) may be wider; CSS fits it to the column, and its callouts are drawn
   larger to match.
 - A spec can force the kind (`kind: view`) when what the sampler saw is not interface (a 3D label, say).
+- **A whole layout** (dock, focus mode, a sidebar beside the view) does not fit a 1440 px window at 1:1. Shoot it in a
+  small window instead: `device: window-688` or `window-688-tall`. The app is real at that size, whole, and nothing is
+  cut. A narrow window shows the touch cluster beside the logo and folds the Connect bar, so say "in a small window" in
+  the caption.
+- **Two parts of one screen** that do not fit side by side in one crop are two tiles (`variants` with their own `crop`,
+  `compose: row`), and the caption says they are cut from one screen. On an interface tile the name sits in a strip
+  under the tile, never over a control.
+- **A state one headless browser cannot make** (two peers, a headset, a game mid-round) is re-cropped from the older
+  capture: `from:` the file, `dpr:` the file's own, and it follows every other rule. Those are owed a real dpr-2 shot;
+  the file stays in `docs/img` so the re-crop can be repeated.
 
 ## 2. Centred
 
@@ -58,7 +68,8 @@ node annotate.cjs camera            # re-draw from raw/ without a browser; print
 node --test test/*.test.cjs         # the rules, offline
 ```
 
-Paste the printed figure as is:
+`shoot.cjs --place` swaps the figure in for the block that shows the shot, or the older image named by `replaces:`.
+Or paste the printed figure as is:
 
 ```markdown
 ![Configure Scene ▸ View. 1: the render mode switch … 2: Show light helpers.](img/camera/view-section.webp){ .shot width="311" height="402" loading=lazy }

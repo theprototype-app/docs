@@ -10,7 +10,10 @@ you close it.
 
 Since 1.26 Settings has a new layout. No setting was lost or changed meaning: every switch keeps the value it had.
 
-![Settings on a computer: the grouped menu on the left, the Interface page with its Appearance rows](img/settings/interface-desktop.png)
+![Settings on a computer: the grouped menu on the left (General, Workspace, Devices & Services) and the Interface page with its Appearance rows on the right, cut at the column's edge.](img/settings/interface-desktop.webp){ .shot .fade-r width="688" height="720" loading=lazy }
+/// caption
+Settings on a computer, the grouped menu beside the page.
+///
 
 ## Finding your way
 
@@ -31,7 +34,10 @@ Since 1.26 Settings has a new layout. No setting was lost or changed meaning: ev
   (**Node types ▸ Physics**), **About ▸ What's new**. A breadcrumb (*VR › Remap buttons*) or **‹ Back** returns, and
   <kbd>Esc</kbd> backs out of a sub-page first.
 
-![Settings on a phone: the list of categories in their three groups](img/settings/home-phone.png){ width="300" }
+![Settings on a phone: a search box above the list of categories in their groups — General, Workspace and Devices & Services.](img/settings/home-phone.webp){ .shot width="390" height="896" loading=lazy }
+/// caption
+On a phone, Settings opens on the list of categories.
+///
 
 ### Search
 
@@ -52,7 +58,10 @@ description — a wide segmented choice, a text field, a slider on a narrow phon
 the same row can sit on one line on an unfolded phone or a computer and stack on a folded phone. A segmented choice too
 wide even for its own line (**Scene ▸ Editing ▸ Double-click action** on a phone) shows its options in two columns.
 
-![Settings ▸ Scene on a folded phone: Double-click action's four choices in two columns under its name, while Length's dropdown, Angle's Degrees | Radians and the Duplicates switches stay beside their names](img/settings/rows-phone.png){ width="300" }
+![Settings ▸ Scene on a folded phone: Double-click action's four choices in two columns under its name, while Length's dropdown, Angle's Degrees and Radians and the Duplicates switches stay beside their names.](img/settings/rows-phone.webp){ .shot .fade-b width="390" height="700" loading=lazy }
+/// caption
+Rows on a narrow screen: long choices wrap under the name, short ones stay beside it.
+///
 
 | Badge | Means |
 |---|---|

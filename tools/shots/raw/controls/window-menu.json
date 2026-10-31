@@ -1,0 +1,33 @@
+{
+ "id": "window-menu",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:48:25.570Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "div.fixed",
+  "div.cursor-pointer",
+  "svg.lucide",
+  "span.flex",
+  "div.ctx-scroll",
+  "span.flex-1"
+ ],
+ "width": 1376,
+ "height": 1240,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 688,
+  "h": 620
+ },
+ "cut": [
+  "b"
+ ],
+ "fade": [
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

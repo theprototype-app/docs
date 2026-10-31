@@ -1,0 +1,82 @@
+page: avatars
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: studio-desktop
+  replaces: img/avatars/studio-desktop.png
+  kind: ui
+  alt: 'Customize character on a computer, two parts of one screen side by side: your character on a lit disc in the studio,
+    labelled You, and the drawer with Show in scene, Surprise me, the character presets, head, hat and colours.'
+  caption: Customize character on a computer. The studio is on the left of the screen, the drawer on the right.
+  setup:
+  - eval: window.__stores.characterModalOpen.set(true)
+  - wait: 4000
+  crop:
+    rect:
+    - 376
+    - 65
+    - 338
+    - 835
+  variants:
+  - steps: []
+    crop:
+      rect:
+      - 376
+      - 65
+      - 338
+      - 835
+    suffix: studio
+  - steps: []
+    crop:
+      rect:
+      - 1102
+      - 65
+      - 338
+      - 835
+    suffix: drawer
+  compose: row
+- id: peer-character
+  replaces: img/avatars/peer-character.png
+  dpr: 1
+  kind: view
+  caption: Another person's character stands where their camera is.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 1280
+    - 720
+  fade: []
+  alt: Another person's character, a Knight, standing where their camera is
+  from: img/avatars/peer-character.png
+- id: characters
+  replaces: img/avatars/characters.png
+  dpr: 1
+  kind: view
+  caption: The nine characters.
+  alt: The nine characters of the character picker, standing together in a three by three grid.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 1536
+    - 1536
+  fade: []
+  from: img/avatars/characters.png
+- id: knocked-off
+  replaces: img/avatars/knocked-off.png
+  dpr: 1
+  kind: view
+  caption: 'Knocked off: stars circle the head.'
+  crop:
+    rect:
+    - 0
+    - 0
+    - 1280
+    - 720
+  fade: []
+  alt: Eight characters knocked off, stars circling their heads and in their eyes
+  from: img/avatars/knocked-off.png

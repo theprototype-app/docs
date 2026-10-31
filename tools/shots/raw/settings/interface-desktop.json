@@ -1,0 +1,42 @@
+{
+ "id": "interface-desktop",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:23:42.402Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "dialog.tp-ui",
+  "header.wc-head",
+  "nav#settings-nav.tp-ui",
+  "footer.settings-foot",
+  "button.sn-row",
+  "span.sn-label",
+  "div.sn-group-label",
+  "div.sn-group",
+  "div#settings-main.settings-main",
+  "h2.ss-title",
+  "div.ss-page",
+  "section.tp-ui"
+ ],
+ "width": 1376,
+ "height": 1440,
+ "crop": {
+  "x": 241,
+  "y": 90,
+  "w": 688,
+  "h": 720
+ },
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
+ "fade": [
+  "r"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

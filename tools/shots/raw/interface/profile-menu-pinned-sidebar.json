@@ -1,0 +1,41 @@
+{
+ "id": "profile-menu-pinned-sidebar",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:40:45.534Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "div.connect-pill",
+  "span.pm-name",
+  "span.pm-sub",
+  "button.tp-ui",
+  "span.nr-icon",
+  "button#cloud-signin-btn",
+  "div.tp-cloud-account",
+  "a#cloud-star-link",
+  "a#cloud-support-link",
+  "a#cloud-community-link",
+  "div.cloud-slot",
+  "svg.lucide"
+ ],
+ "width": 1376,
+ "height": 920,
+ "crop": {
+  "x": 752,
+  "y": 0,
+  "w": 688,
+  "h": 460
+ },
+ "cut": [
+  "l",
+  "b"
+ ],
+ "fade": [
+  "l",
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

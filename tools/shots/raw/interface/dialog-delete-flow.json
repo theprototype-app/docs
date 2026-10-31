@@ -1,0 +1,26 @@
+{
+ "id": "dialog-delete-flow",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.523Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/interface/dialog-delete-flow.png",
+ "width": 688,
+ "height": 400,
+ "crop": {
+  "x": 376,
+  "y": 250,
+  "w": 688,
+  "h": 400
+ },
+ "cut": [],
+ "fade": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

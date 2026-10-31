@@ -1,0 +1,35 @@
+{
+ "id": "edit-positions-connect-bar",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:47:16.323Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "span.hud-edit-grip",
+  "svg.lucide",
+  "circle",
+  "button.hud-edit-remove"
+ ],
+ "width": 1376,
+ "height": 180,
+ "crop": {
+  "x": 376,
+  "y": 0,
+  "w": 688,
+  "h": 90
+ },
+ "cut": [
+  "l",
+  "r",
+  "b"
+ ],
+ "fade": [
+  "l",
+  "r",
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

@@ -1,0 +1,32 @@
+{
+ "id": "sidebar-drag-float-here",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:36:48.031Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [],
+ "width": 1376,
+ "height": 960,
+ "crop": {
+  "x": 376,
+  "y": 190,
+  "w": 688,
+  "h": 480
+ },
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
+ "fade": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
+ "anchors": {},
+ "kind": "view"
+}

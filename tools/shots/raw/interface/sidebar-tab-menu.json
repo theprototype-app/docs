@@ -1,0 +1,35 @@
+{
+ "id": "sidebar-tab-menu",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:41:17.652Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "div.fixed",
+  "div.cursor-pointer",
+  "span.flex",
+  "span.flex-1",
+  "div.ctx-scroll"
+ ],
+ "width": 1040,
+ "height": 660,
+ "crop": {
+  "x": 920,
+  "y": 50,
+  "w": 520,
+  "h": 330
+ },
+ "cut": [
+  "l",
+  "t",
+  "b"
+ ],
+ "fade": [
+  "l",
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

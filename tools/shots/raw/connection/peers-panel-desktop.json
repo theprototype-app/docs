@@ -1,0 +1,21 @@
+{
+ "id": "peers-panel-desktop",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.497Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/connection/peers-panel-desktop.png",
+ "width": 515,
+ "height": 385,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 515,
+  "h": 385
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

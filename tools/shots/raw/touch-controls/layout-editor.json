@@ -1,0 +1,21 @@
+{
+ "id": "layout-editor",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.606Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/touch/layout-editor.png",
+ "width": 320,
+ "height": 693,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 320,
+  "h": 693
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

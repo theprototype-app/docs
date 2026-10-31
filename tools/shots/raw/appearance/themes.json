@@ -1,0 +1,50 @@
+{
+ "id": "themes",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:27:33.083Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "h2.ss-title",
+  "p.ss-desc",
+  "div.ss-page",
+  "h3.sec-title",
+  "section.tp-ui",
+  "div#row-theme.tp-ui",
+  "span.sr-name",
+  "div.sr-text",
+  "div.sr-head",
+  "div#settings-main.settings-main",
+  "span.tp-ui",
+  "div.sec-card-head",
+  "div.sec-card",
+  "p#row-theme-desc.sr-desc"
+ ],
+ "kind": "ui",
+ "tiles": [
+  {
+   "file": "themes--dark.webp",
+   "caption": "Dark"
+  },
+  {
+   "file": "themes--light.webp",
+   "caption": "Light"
+  },
+  {
+   "file": "themes--green.webp",
+   "caption": "Green console"
+  },
+  {
+   "file": "themes--8bit.webp",
+   "caption": "8-bit"
+  },
+  {
+   "file": "themes--contrast.webp",
+   "caption": "High contrast"
+  }
+ ],
+ "compose": "grid2x2",
+ "fade": []
+}

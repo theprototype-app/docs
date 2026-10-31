@@ -1,0 +1,42 @@
+{
+ "id": "settings-tours",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:24:41.524Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "header.wc-head",
+  "h2#settings-title.wc-title",
+  "div#settings-main.settings-main",
+  "button.ss-path-btn",
+  "h3.sec-title",
+  "div#row-tours-auto.tp-ui",
+  "div#row-tour-vr.tp-ui",
+  "div#row-tour-editor.tp-ui",
+  "div#row-xr-offer.tp-ui",
+  "div#row-tours-reset.tp-ui",
+  "span.sr-name",
+  "p#row-tour-vr-desc.sr-desc"
+ ],
+ "width": 1376,
+ "height": 960,
+ "crop": {
+  "x": 470,
+  "y": 90,
+  "w": 688,
+  "h": 480
+ },
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
+ "fade": [
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

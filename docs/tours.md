@@ -9,7 +9,10 @@ headset off, or reload the page — picks up where you stopped.
 The first time you enter VR on a device, the welcome plays on a panel in front of you, a little below eye level. Turn away
 and it comes back in front of you. Point at its buttons and pull the trigger.
 
-![Step 1 of the VR welcome: a drawing of both controllers beside the text, with Skip, Don't show again and Next](img/tours/vr-welcome.png)
+![Step 1 of the VR welcome: the title Welcome to ThePrototype VR mode, a drawing of both controllers with their buttons named, and Skip, Don't show again and Next along the bottom.](img/tours/vr-welcome.webp){ .shot width="512" height="320" loading=lazy }
+/// caption
+Step 1 of 8 of the VR welcome, in the headset.
+///
 
 It has eight steps:
 
@@ -34,7 +37,10 @@ app reads which pair you have from the browser. The text and the lit buttons fol
 Six steps on the screen: adding things, looking around, your tools, Play, building together, and the logo menu. It starts
 after the first-visit Welcome card closes.
 
-![Step 1 of the editor tour, pointing at the + button: Welcome! Start by adding something](img/tours/editor-tour.png)
+![Step 1 of the editor tour: a card that says Welcome! Start by adding something, with a highlight on the + button at the lower left of the window.](img/tours/editor-tour.webp){ .shot .fade-t .fade-r width="688" height="500" loading=lazy }
+/// caption
+Step 1 of the editor tour points at the + button.
+///
 
 On a touch screen you get the **touch version**: the same steps with finger gestures, shown as a sheet at the bottom or
 top of the screen.
@@ -51,7 +57,10 @@ drawings, and the preview does not count as having seen the welcome.
 
 ## Settings
 
-![Settings ▸ Interface ▸ Tours, found by searching for "tours"](img/tours/settings-tours.png)
+![Settings ▸ Interface ▸ Tours: the Show tours automatically switch and a row that resets them, found by searching for the word tours.](img/tours/settings-tours.webp){ .shot .fade-b width="688" height="480" loading=lazy }
+/// caption
+Settings searched for "tours".
+///
 
 All in **Settings ▸ Interface ▸ Tours**:
 

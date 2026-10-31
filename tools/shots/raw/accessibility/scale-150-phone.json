@@ -1,0 +1,39 @@
+{
+ "id": "scale-150-phone",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:22:26.583Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "header.wc-head",
+  "div#settings-main.settings-main",
+  "button.wc-back",
+  "section.tp-ui",
+  "div#row-ui-scale.tp-ui",
+  "div.ss-body",
+  "h3.sec-title",
+  "div#row-high-contrast.tp-ui",
+  "span.sr-name",
+  "p#row-ui-scale-desc.sr-desc",
+  "div.sr-body",
+  "button#ui-scale.ts-btn"
+ ],
+ "width": 780,
+ "height": 1280,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 390,
+  "h": 640
+ },
+ "cut": [
+  "b"
+ ],
+ "fade": [
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

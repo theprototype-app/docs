@@ -61,8 +61,10 @@ const want = process.argv.slice(2);
 				const t0 = await v.evaluate((x) => x.currentTime);
 				await p.waitForTimeout(1500);
 				const t1 = await v.evaluate((x) => x.currentTime);
-				console.log(`${pg}: loop plays ${t1 > t0} (${t0.toFixed(2)} → ${t1.toFixed(2)} s)`);
-				if (!(t1 > t0)) bad.push(`${pg}: the loop does not play`);
+				// it loops, so the time may have wrapped round: moving at all is playing
+				const plays = t1 !== t0 && !(await v.evaluate((x) => x.paused));
+				console.log(`${pg}: loop plays ${plays} (${t0.toFixed(2)} → ${t1.toFixed(2)} s)`);
+				if (!plays) bad.push(`${pg}: the loop does not play`);
 			}
 		}
 		await ctx.close();

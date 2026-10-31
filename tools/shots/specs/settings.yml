@@ -1,0 +1,39 @@
+# docs/settings.md
+page: settings
+defaults: {device: desktop, theme: dark, dpr: 2, format: webp}
+shots:
+  - id: interface-desktop
+    replaces: img/settings/interface-desktop.png
+    alt: >-
+      Settings on a computer: the grouped menu on the left (General, Workspace, Devices & Services) and the Interface
+      page with its Appearance rows on the right, cut at the column's edge.
+    caption: Settings on a computer, the grouped menu beside the page.
+    setup:
+      - {eval: "const s=window.__stores; s.settingsSection.set('interface'); s.settingsOpen.set(true)"}
+      - {wait: 1500}
+    crop: {rect: [241, 90, 688, 720]}
+    fade: [r]
+  - id: home-phone
+    replaces: img/settings/home-phone.png
+    device: n6-folded
+    alt: >-
+      Settings on a phone: a search box above the list of categories in their groups — General, Workspace and
+      Devices & Services.
+    caption: On a phone, Settings opens on the list of categories.
+    setup:
+      - {eval: "window.__stores.settingsOpen.set(true)"}
+      - {wait: 1500}
+    crop: {rect: [0, 0, 390, 896]}
+    fade: []
+  - id: rows-phone
+    replaces: img/settings/rows-phone.png
+    device: n6-folded
+    alt: >-
+      Settings ▸ Scene on a folded phone: Double-click action's four choices in two columns under its name, while
+      Length's dropdown, Angle's Degrees and Radians and the Duplicates switches stay beside their names.
+    caption: "Rows on a narrow screen: long choices wrap under the name, short ones stay beside it."
+    setup:
+      - {eval: "const s=window.__stores; s.settingsOpen.set(true); s.settingsSection.set('scene')"}
+      - {wait: 1500}
+    crop: {rect: [0, 0, 390, 700]}
+    fade: [b]
