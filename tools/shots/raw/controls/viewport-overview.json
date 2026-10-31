@@ -1,0 +1,58 @@
+{
+ "id": "viewport-overview",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:10:44.640Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "p.hud-cell",
+  "svg.lucide",
+  "path",
+  "p#explorer-slot.hud-cell",
+  "button#toolbar-customize.hud-cell",
+  "button#budget-chip.bc-main",
+  "span.bc-target",
+  "span#budget-chip-percent.bc-pct"
+ ],
+ "width": 1360,
+ "height": 1366,
+ "crop": {
+  "x": 406,
+  "y": 217,
+  "w": 680,
+  "h": 683
+ },
+ "cut": [
+  "l",
+  "r",
+  "t"
+ ],
+ "fade": [
+  "l",
+  "r",
+  "t"
+ ],
+ "anchors": {
+  "1": {
+   "x": 422.57769039174286,
+   "y": 241.40017666807762,
+   "w": 407.43653444491474,
+   "h": 405.1531616417585
+  },
+  "2": {
+   "x": 165,
+   "y": 1248,
+   "w": 316,
+   "h": 76
+  },
+  "3": {
+   "x": 224.0000000000009,
+   "y": 788.8562077839188,
+   "w": 48,
+   "h": 48
+  }
+ },
+ "kind": "ui"
+}

@@ -1,0 +1,117 @@
+{
+ "column": 688,
+ "images": {
+  "img/camera/env-presets.webp": {
+   "page": "camera",
+   "kind": "view",
+   "dpr": 2,
+   "width": 1292,
+   "height": 812,
+   "badges": 0,
+   "labels": [
+    "Studio",
+    "Daylight",
+    "Sunset",
+    "Night"
+   ],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:07:09.598Z"
+  },
+  "img/camera/grid-and-lights.webp": {
+   "page": "camera",
+   "kind": "view",
+   "dpr": 2,
+   "width": 1080,
+   "height": 680,
+   "badges": 2,
+   "labels": [
+    "point light",
+    "spot light"
+   ],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:06:55.552Z"
+  },
+  "img/camera/render-modes.webp": {
+   "page": "camera",
+   "kind": "view",
+   "dpr": 2,
+   "width": 1944,
+   "height": 400,
+   "badges": 0,
+   "labels": [
+    "Shaded",
+    "Shaded + AO",
+    "Wireframe"
+   ],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:06:23.299Z"
+  },
+  "img/camera/view-section.webp": {
+   "page": "camera",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 311,
+   "height": 615,
+   "badges": 2,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:06:42.183Z"
+  },
+  "img/controls/gizmo-modes.webp": {
+   "page": "controls",
+   "kind": "view",
+   "dpr": 2,
+   "width": 1584,
+   "height": 440,
+   "badges": 0,
+   "labels": [
+    "Move",
+    "Rotate",
+    "Scale"
+   ],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:07:52.447Z"
+  },
+  "img/controls/multi-pivot.webp": {
+   "page": "controls",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 680,
+   "height": 643,
+   "badges": 2,
+   "labels": [
+    "median point",
+    "pivot mode"
+   ],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:09:40.393Z"
+  },
+  "img/controls/orbit-zoom-focus.webm": {
+   "page": "controls",
+   "kind": "loop",
+   "dpr": 1,
+   "width": 960,
+   "height": 590,
+   "seconds": 4.8,
+   "badges": 0,
+   "labels": [],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:10:02.861Z"
+  },
+  "img/controls/viewport-overview.webp": {
+   "page": "controls",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 680,
+   "height": 683,
+   "badges": 3,
+   "labels": [
+    "selected",
+    "gizmo tools",
+    "floor grid"
+   ],
+   "app": "1.51.0",
+   "shotAt": "2026-10-31T14:10:44.640Z"
+  }
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "id": "gizmo-modes",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:07:52.447Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [],
+ "kind": "view",
+ "tiles": [
+  {
+   "file": "gizmo-modes--move.webp",
+   "caption": "1 · Move"
+  },
+  {
+   "file": "gizmo-modes--rotate.webp",
+   "caption": "2 · Rotate"
+  },
+  {
+   "file": "gizmo-modes--scale.webp",
+   "caption": "3 · Scale"
+  }
+ ],
+ "compose": "row",
+ "fade": []
+}

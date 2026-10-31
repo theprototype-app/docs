@@ -1,0 +1,83 @@
+# docs/controls.md — Viewport navigation, Transform gizmo, The pivot of a multi-selection.
+# Shoot: e2e-slot -- node tools/shots/shoot.cjs controls     Re-annotate: node tools/shots/annotate.cjs controls
+page: controls
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+  # the demo scene every shot starts from (a fresh, empty session each time)
+  scene:
+    - {create: Box, name: Crate, at: [0, 0.8, 0], scale: 1.6, color: '#c9a26b'}
+    - {create: Sphere, name: Ball, at: [2.9, 0.8, 0.9], scale: 0.8, color: '#6c8cd5'}
+    - {create: Cylinder, name: Post, at: [-2.8, 1, -0.6], color: '#81b29a'}
+    - {camera: {pos: [5.6, 4, 7], target: [0, 0.8, 0]}}
+shots:
+  - id: viewport-overview
+    alt: >-
+      The editor with three objects on the floor grid. 1: the selected crate with the Move gizmo on it.
+      2: the transform tools on the bottom bar — Move, Rotate, Scale and Pivot. 3: the floor grid.
+    caption: The 3D view with one object selected.
+    tryit: controls-viewport
+    setup:
+      - {select: Crate}
+      - {mode: translate}
+      # further back, so the objects and the bottom bar fit the column at 1:1
+      - {camera: {pos: [8.2, 5.6, 10.2], target: [0, 0.6, 0]}}
+    # 1:1: the objects and the bottom bar's tools, cropped to the column (interface is never shrunk);
+    # down to the bottom of the view, so only the three cut sides fade and the bar stays sharp
+    crop: {around: {union: [{object: Crate}, {object: Ball}, {object: Post}, {selector: 'p[title^="Pivot:"]'}]}, size: [680, 740]}
+    annotate:
+      - {n: 1, at: {object: Crate}, shape: circle, label: selected, badge: tr, key: 'The **selected** object, with the transform gizmo on it.'}
+      - {n: 2, at: {union: [{selector: 'p[title="Move (1)"]'}, {selector: 'p[title^="Pivot:"]'}]}, shape: box, label: gizmo tools, badge: t, key: 'The **gizmo tools** on the bottom bar: Move, Rotate, Scale and the multi-selection Pivot.'}
+      - {n: 3, at: {object: Crate, point: center, offset: [-190, 190]}, shape: arrow, label: floor grid, from: [60, 70], key: 'The **floor grid**, which fades out with distance.'}
+
+  - id: gizmo-modes
+    alt: >-
+      The same crate three times: with the Move gizmo (three arrows), the Rotate gizmo (three rings) and the
+      Scale gizmo (three handles with cubes on their ends).
+    caption: '<kbd>1</kbd> Move, <kbd>2</kbd> Rotate, <kbd>3</kbd> Scale — the same buttons are on the bottom bar.'
+    setup:
+      - {select: Crate}
+      - {camera: {pos: [5, 3.8, 6.2], target: [0, 0.8, 0]}}
+    crop: {around: {object: Crate}, size: [520, 440]}
+    # the toolbar cells, not the store: only they swap the gizmo (a store write leaves the Move gizmo up)
+    variants:
+      - {steps: [], suffix: move, caption: '1 · Move'}
+      - {click: 'p[title="Rotate (2)"]', suffix: rotate, caption: '2 · Rotate'}
+      - {click: 'p[title="Scale (3)"]', suffix: scale, caption: '3 · Scale'}
+    compose: row
+
+  - id: multi-pivot
+    alt: >-
+      Three objects selected together in Rotate mode. 1: one gizmo turns the whole set about the median point
+      of the selection. 2: the Pivot button on the bottom bar, which steps through the pivot modes.
+    caption: Rotate turns the whole selection about one pivot; the Pivot button picks which.
+    setup:
+      - {select: [Crate, Ball, Post]}
+      - {pivot: median}
+      - {click: 'p[title="Rotate (2)"]'}
+      # further back, so the three objects and the bottom bar fit the column at 1:1
+      - {camera: {pos: [8.2, 5.6, 10.2], target: [0, 0.6, 0]}}
+    crop: {around: {union: [{object: Crate}, {object: Ball}, {object: Post}, {selector: 'p[title^="Pivot:"]'}]}, size: [680, 660]}
+    annotate:
+      - {n: 1, at: {object: Crate, point: center}, shape: arrow, label: median point, from: [-80, 150], key: 'One gizmo for the whole selection, at its **median point** (the default mode).'}
+      - {n: 2, at: {selector: 'p[title^="Pivot:"]'}, shape: circle, label: pivot mode, badge: tr, key: 'The **Pivot** button: each click steps to the next pivot mode.'}
+
+  - id: orbit-zoom-focus
+    alt: >-
+      A short loop: dragging on the 3D view orbits the camera around the scene, the mouse wheel zooms
+      in, and pressing F with the ball selected frames it.
+    caption: 'drag to orbit, scroll to zoom, click an object and press <kbd>F</kbd> to frame it.'
+    video:
+      lead: 400
+      actions:
+        # steps/ticks low: on a remote slot each one is a round trip, and the loop keeps to 3-8 s
+        - {drag: [820, 420, 600, 400], steps: 22, wait: 150}
+        - {wheel: -900, ticks: 5, wait: 150}
+        - {clickObject: Ball, wait: 200}
+        - {key: f, wait: 1100}
+      tail: 300
+    setup: []
+    crop: {rect: [200, 120, 1040, 640]}
+    fade: vignette

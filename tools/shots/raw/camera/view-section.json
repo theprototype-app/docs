@@ -1,0 +1,48 @@
+{
+ "id": "view-section",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:06:42.183Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "div#drawer-label.tp-ui",
+  "div#inspector.tp-ui",
+  "button.sec-panel-head",
+  "div#view-mode-switch.flex",
+  "p.mb-1",
+  "p.ui-section-label",
+  "label#override-post-label.it-label",
+  "div.sec-panel-body",
+  "div.tp-ui",
+  "label#ins-toggle-sfabdzs-label.it-label",
+  "label#ins-toggle-5ci9pp2-label.it-label",
+  "div.flex"
+ ],
+ "width": 622,
+ "height": 1230,
+ "crop": {
+  "x": 1125,
+  "y": 183,
+  "w": 311,
+  "h": 615
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 20,
+   "y": 153.5625,
+   "w": 488.375,
+   "h": 52
+  },
+  "2": {
+   "x": 522,
+   "y": 1047.5625,
+   "w": 80,
+   "h": 48
+  }
+ },
+ "kind": "ui"
+}

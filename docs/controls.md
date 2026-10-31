@@ -4,11 +4,32 @@ How to move the camera, select and transform objects, and find every keyboard sh
 
 ## Viewport navigation
 
+![The editor with three objects on the floor grid. 1: the selected crate with the Move gizmo on it. 2: the transform tools on the bottom bar — Move, Rotate, Scale and Pivot. 3: the floor grid.](img/controls/viewport-overview.webp){ .shot .fade-l .fade-r .fade-t width="680" height="683" loading=lazy }
+/// caption
+The 3D view with one object selected.
+///
+
+<div class="shot-key" markdown>
+1. The **selected** object, with the transform gizmo on it.
+2. The **gizmo tools** on the bottom bar: Move, Rotate, Scale and the multi-selection Pivot.
+3. The **floor grid**, which fades out with distance.
+</div>
+
+[Try it](https://theprototype.app/){ .tryit data-tryit="controls-viewport" }
+
 - **Orbit** — drag with the left mouse button (right-drag also orbits; a quick right-click *tap* opens the context menu instead).
 - **Zoom** — mouse wheel. A two-finger swipe on a trackpad pans instead; see [The mouse wheel](#the-mouse-wheel) if yours does the wrong thing.
 - **Fly** — hold <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to pan on the camera's horizontal plane, <kbd>Q</kbd>/<kbd>E</kbd> to fly down/up, hold <kbd>Shift</kbd> for 3× speed. These keys fly only while the 3D view has the keyboard — if a panel has it, click the 3D view first (see [Keys follow the panel you are in](#keys-follow-the-panel-you-are-in)).
 - **Focus** — <kbd>F</kbd> frames the selected object.
 - **Camera bookmarks** — save the current view from the right-click menu (**Camera bookmarks ▸ Save current view**), recall with <kbd>Shift</kbd>+<kbd>1</kbd>…<kbd>5</kbd>.
+
+<figure class="shot-figure">
+<video class="shot vignette" autoplay loop muted playsinline preload="metadata" width="960" height="590" poster="../img/controls/orbit-zoom-focus.poster.webp" aria-label="A short loop: dragging on the 3D view orbits the camera around the scene, the mouse wheel zooms in, and pressing F with the ball selected frames it.">
+<source src="../img/controls/orbit-zoom-focus.webm" type="video/webm">
+<source src="../img/controls/orbit-zoom-focus.mp4" type="video/mp4">
+</video>
+<figcaption>Loop, 5 s: drag to orbit, scroll to zoom, click an object and press <kbd>F</kbd> to frame it.</figcaption>
+</figure>
 
 ### The mouse wheel
 
@@ -260,6 +281,11 @@ moves the set as a whole instead of collapsing it onto one plane.
 | <kbd>2</kbd> | Rotate |
 | <kbd>3</kbd> | Scale |
 
+![The same crate three times: with the Move gizmo (three arrows), the Rotate gizmo (three rings) and the Scale gizmo (three handles with cubes on their ends).](img/controls/gizmo-modes.webp){ .shot width="1584" height="440" loading=lazy }
+/// caption
+<kbd>1</kbd> Move, <kbd>2</kbd> Rotate, <kbd>3</kbd> Scale — the same buttons are on the bottom bar.
+///
+
 Snapping is configured from the right-click menu under **Snapping** — grid steps and snap-to-surface, plus snapping onto real geometry: vertices, edges, faces and other objects, optionally turning the object onto the surface it lands on. See [Snapping](snapping.md).
 
 ### Hiding the gizmo, and getting the selection back
@@ -292,6 +318,16 @@ With several objects selected, what the set rotates and scales about is a choice
   click steps to the next one;
 - the **Pivot** dropdown in the properties panel's Transform section, or right-click ▸ **Pivot point**;
 - in VR, **Settings ▸ Editing ▸ Pivot point** (see [Grabbing a selection](vr.md#grabbing-a-selection)).
+
+![Three objects selected together in Rotate mode. 1: one gizmo turns the whole set about the median point of the selection. 2: the Pivot button on the bottom bar, which steps through the pivot modes.](img/controls/multi-pivot.webp){ .shot .fade-l .fade-r .fade-t width="680" height="643" loading=lazy }
+/// caption
+Rotate turns the whole selection about one pivot; the Pivot button picks which.
+///
+
+<div class="shot-key" markdown>
+1. One gizmo for the whole selection, at its **median point** (the default mode).
+2. The **Pivot** button: each click steps to the next pivot mode.
+</div>
 
 | Mode | Turns about |
 |---|---|

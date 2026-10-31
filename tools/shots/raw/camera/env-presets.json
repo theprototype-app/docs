@@ -1,0 +1,31 @@
+{
+ "id": "env-presets",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:07:09.598Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [],
+ "kind": "view",
+ "tiles": [
+  {
+   "file": "env-presets--studio.webp",
+   "caption": "Studio"
+  },
+  {
+   "file": "env-presets--daylight.webp",
+   "caption": "Daylight"
+  },
+  {
+   "file": "env-presets--sunset.webp",
+   "caption": "Sunset"
+  },
+  {
+   "file": "env-presets--night.webp",
+   "caption": "Night"
+  }
+ ],
+ "compose": "grid2x2",
+ "fade": []
+}
