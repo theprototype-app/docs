@@ -56,6 +56,7 @@ batched **create_objects**. Then **screenshot** to check the result.
 | tool / method | what it does |
 |---|---|
 | the app's tools | `create_objects`, `update_objects`, `delete_objects`, `group_objects`, `create_flow_nodes`, `update_flow_nodes`, `set_physics`, `create_joints`, `control_simulation`, behaviours where available, `generate_mesh` when the host has a provider — with their full JSON schemas |
+| materials and looks | `set_material`, `list_materials`, `get_material`, `create_shader`, `edit_shader`, `assign_shader`, `describe_shader_nodes`, `set_post`, `get_post`, `create_post_graph`, `uv_unwrap`, `set_uv` — see [Materials and looks with an agent](agent-look.md) |
 | `status` | joined or waiting, its role and whether it can edit, who is connected, which scene it and the host are in (`withHost`), whether a scene is still arriving (`loading`), any code behaviour that is failing (`behaviourErrors`), whether it is paused because the host left (`hostAway`), which tools or modules are missing and why |
 | `screenshot` | a clean picture (no gizmo, grid or helpers) from a temporary camera — `iso`, `top`, `front`, `current`, or `focus` on one object — without moving anyone's view |
 | `wait_for_edit` | waits until someone else changes the scene |
