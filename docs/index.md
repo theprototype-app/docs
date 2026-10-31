@@ -42,6 +42,12 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.52 — sessions in your Explorer.** Joining a session shows the host's files as *"<Host>'s session"* in your Explorer,
+read-only, above your Library: open them, copy them, and **Save on host** if you can edit. Nothing downloads until you
+open or copy it, and hosts choose what guests see. Save project now asks about unsaved changes and opens where you left
+off. On claude.ai, Claude can use physics in your tab, see where you stand, and join a session from a link once you
+confirm. See [A session you joined](explorer.md#a-session-you-joined) and [Claude connector](ai/claude-connector.md).
+
 **1.51 — characters and motion.** Any rigged model is a character, and any clip plays on any humanoid. Clips are small
 `.tpanim` files of their own (VRM Animation inside), so they reach your peers once and the model never changes. Free CC0
 packs bring 10 characters and 87 motions; **VRM** avatars arrive with spring bones and expressions. The one-click

@@ -51,6 +51,18 @@ installed. The bridge opens the link in that browser — it *is* the app, at the
 A good first exchange is three calls: **status** (am I in, can I edit?), the tool list, and one
 batched **create_objects**. Then **screenshot** to check the result.
 
+### Join from a running session
+
+A Claude Code that is already running can add the bridge with no restart. Start it over HTTP:
+
+```sh
+npx -y @theprototype/agent serve --port 8765
+claude mcp add --transport http theprototype http://127.0.0.1:8765/mcp
+```
+
+It answers on this machine only. The tool list is complete from the start, for clients that read it once;
+before a join, scene tools answer *not connected — join first*. Then call `connect` with the session link.
+
 ### What the agent gets
 
 | tool / method | what it does |

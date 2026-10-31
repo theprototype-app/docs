@@ -49,6 +49,14 @@ A **plain page reload starts clean**, with everything closed. The workspace come
 when you ask for your scene back, not every time you refresh — and a scene whose author
 had nothing open will not close the panels *you* have open.
 
+### Saving and reopening a project
+
+Pressing **Save** with the Project format while the open scene has unsaved changes names the scene and offers
+**Save scene and project** or **Save project without these changes**. A scene with no name is not in the project yet,
+so it offers to save the scene first. The `.tp` remembers which scene was open, and opening it takes you back there;
+if that scene is gone, the scene on screen stays. On Android, `.tp` and `.tpscene` downloads now keep their extension
+(no more `.tp.zip`).
+
 ## Starting from a template
 
 **Menu ▸ Templates** (**New from template…** in the Compact layout) opens a picker of ready-made scenes, in four tabs:
