@@ -223,6 +223,7 @@ nav:
   - AI:
     - Assistant: ai/assistant.md
     - Build with an AI agent: ai/build-with-an-agent.md
+    - Materials and looks with an agent: ai/agent-look.md
     - Talk to your agent: ai/talk-to-your-agent.md
     - "Recipe: better models with img2threejs": ai/img2threejs.md
     - "Recipe: pixel art with Pixling": ai/pixling.md
