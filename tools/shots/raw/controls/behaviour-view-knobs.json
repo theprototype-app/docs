@@ -1,0 +1,26 @@
+{
+ "id": "behaviour-view-knobs",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.498Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/controls/behaviour-view-knobs.png",
+ "width": 688,
+ "height": 460,
+ "crop": {
+  "x": 420,
+  "y": 420,
+  "w": 688,
+  "h": 460
+ },
+ "cut": [],
+ "fade": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

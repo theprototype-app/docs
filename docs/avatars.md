@@ -5,14 +5,20 @@ stands under the person's viewpoint, **walks, runs, strafes, jumps and idles** w
 where they look, and — when they are in **VR** — reaches for their controllers with its arms. The classic floating head
 is still there as a choice.
 
-![Another person's character, a Knight, standing where their camera is](img/avatars/peer-character.png)
+![Another person's character, a Knight, standing where their camera is](img/avatars/peer-character.webp){ .shot width="1280" height="720" loading=lazy }
+/// caption
+Another person's character stands where their camera is.
+///
 
 ## The characters
 
 Nine characters ship with the app: **Knight**, **Mage**, **Rogue**, **Hooded rogue**, **Barbarian**, **Skeleton**,
 **Skeleton warrior**, **Skeleton mage** and **Skeleton rogue**, from Kay Lousberg's free CC0 KayKit packs.
 
-![The nine characters](img/avatars/characters.png)
+![The nine characters of the character picker, standing together in a three by three grid.](img/avatars/characters.webp){ .shot width="1536" height="1536" loading=lazy }
+/// caption
+The nine characters.
+///
 
 If you never pick one, you get **Auto**: a character chosen from your id, so everyone sees the same one for you.
 The same characters are also an Explorer pack, **Packs ▸ Adventurers**, that you can place in a scene as animated
@@ -81,7 +87,10 @@ When someone gives no input for a while, everyone sees their character **knocked
 the head sways in a slow figure-8, and its eyes turn into spinning stars. Any key, click, mouse move or head move wakes
 them, and it fades out smoothly.
 
-![Eight characters knocked off, stars circling their heads and in their eyes](img/avatars/knocked-off.png)
+![Eight characters knocked off, stars circling their heads and in their eyes](img/avatars/knocked-off.webp){ .shot width="1280" height="720" loading=lazy }
+/// caption
+Knocked off: stars circle the head.
+///
 
 **Settings ▸ Interface ▸ Avatars ▸ Knocked-off idle** chooses when *you* count as idle: **Off**, **10 s**, **20 s** (the
 default) or **60 s**. It is a setting for this device.

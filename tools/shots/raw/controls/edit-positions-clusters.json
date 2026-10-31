@@ -1,0 +1,33 @@
+{
+ "id": "edit-positions-clusters",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:46:34.741Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "svg.lucide",
+  "button.hud-edit-grip",
+  "button.tt-btn",
+  "button#toolbar-edit-add-start.hud-cell",
+  "div#hud-tr.tp-ui",
+  "button#toolbar-edit-add-end.hud-cell",
+  "button#toolbar-edit-apply.hud-edit-apply",
+  "path",
+  "div#hud-stack-right.tp-ui",
+  "button.hud-edit-remove"
+ ],
+ "width": 1376,
+ "height": 1680,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 688,
+  "h": 840
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

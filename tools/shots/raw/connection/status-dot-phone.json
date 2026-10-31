@@ -1,0 +1,21 @@
+{
+ "id": "status-dot-phone",
+ "dpr": 2.9,
+ "shotAt": "2026-10-27T07:46:24.497Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/connection/status-dot-phone.png",
+ "width": 1131,
+ "height": 174,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 1131,
+  "h": 174
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

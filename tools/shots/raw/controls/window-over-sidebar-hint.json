@@ -1,0 +1,21 @@
+{
+ "id": "window-over-sidebar-hint",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.506Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/controls/window-over-sidebar-hint.png",
+ "width": 620,
+ "height": 584,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 620,
+  "h": 584
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

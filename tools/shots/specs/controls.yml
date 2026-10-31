@@ -81,3 +81,282 @@ shots:
     setup: []
     crop: {rect: [200, 120, 1040, 640]}
     fade: vignette
+
+  - id: alt-click-cycle
+    replaces: img/controls/alt-click-cycle.png
+    dpr: 1
+    kind: ui
+    caption: Alt+click steps through what is under the cursor; the chip says which one you have.
+    crop:
+      rect:
+      - 500
+      - 130
+      - 688
+      - 480
+    fade:
+    - l
+    - r
+    - t
+    - b
+    alt: 'Alt+click in the Aquarium: the chip by the cursor says 2 of 3 · Fish orange'
+    from: img/controls/alt-click-cycle.png
+  - id: multi-edit
+    replaces: img/controls/multi-edit.png
+    caption: 'Properties with three objects selected: every value below applies to all of them.'
+    setup:
+    - create: Box
+      name: Crate2
+      at:
+      - 2.4
+      - 0.8
+      - -2.2
+      color: '#c97b6b'
+    - select:
+      - Crate
+      - Crate2
+      - Ball
+    - &id001
+      eval: window.__stores.inspectorKind.set('selection'); window.__stores.inspectorClose.set(false)
+    - wait: 1500
+    crop:
+      rect:
+      - 752
+      - 56
+      - 688
+      - 700
+    fade:
+    - l
+    - b
+    alt: 'Properties with three objects selected: the Editing 3 objects notice, the Transform section with Move origin and the Pivot row, then the Arrange section with its align and distribute buttons.'
+  - id: behaviour-view-knobs
+    replaces: img/controls/behaviour-view-knobs.png
+    dpr: 1
+    kind: ui
+    caption: In a behaviour's Open view, a param's knob drags its value, not the graph.
+    crop:
+      rect:
+      - 420
+      - 420
+      - 688
+      - 460
+    fade:
+    - l
+    - r
+    - t
+    - b
+    alt: 'A behaviour''s Open view in the node editor: the params'' knobs on the left drag their value, not the graph'
+    from: img/controls/behaviour-view-knobs.png
+  - id: copy-paste-vector-menu
+    replaces: img/controls/copy-paste-vector-menu.png
+    caption: 'A vector row''s right-click menu: copy, paste, reset, or paste one axis.'
+    setup:
+    - select: Crate
+    - *id001
+    - wait: 1500
+    - rightClick:
+        text: Position
+    - wait: 600
+    crop:
+      rect:
+      - 752
+      - 56
+      - 688
+      - 560
+    fade:
+    - l
+    - b
+    alt: 'Properties of a Box with Position right-clicked: Copy vector (Ctrl+C), Paste vector (Ctrl+V), Reset, and under One
+      axis Paste X only, Paste Y only, Paste Z only'
+  - id: copy-paste-section-menu
+    replaces: img/controls/copy-paste-section-menu.png
+    caption: A section header's right-click menu.
+    setup:
+    - select: Crate
+    - *id001
+    - wait: 1500
+    - rightClick:
+        text: Transform
+    - wait: 600
+    crop:
+      rect:
+      - 752
+      - 56
+      - 688
+      - 560
+    fade:
+    - l
+    - b
+    alt: 'The TRANSFORM section header right-clicked: Copy section, Copy as JSON, Paste section and Reset section'
+  - id: window-over-sidebar-hint
+    replaces: img/controls/window-over-sidebar-hint.png
+    dpr: 1
+    kind: ui
+    caption: 'A floating window dragged over a sidebar: drop to add it as a tab, or hold Ctrl.'
+    crop:
+      rect:
+      - 0
+      - 0
+      - 620
+      - 584
+    fade: []
+    alt: 'The floating Objects window dragged over the right sidebar: it turns see-through, the sidebar column is outlined and
+      the target reads Add as tab, with Hold Ctrl to place without docking underneath'
+    from: img/controls/window-over-sidebar-hint.png
+  - id: window-place-without-docking
+    replaces: img/controls/window-place-without-docking.png
+    dpr: 1
+    kind: ui
+    caption: 'The same drag with Ctrl held: the window will land over the sidebar, not in it.'
+    crop:
+      rect:
+      - 0
+      - 0
+      - 620
+      - 584
+    fade: []
+    alt: 'The same drag with Ctrl held: the outline and the target are gone, the Objects window lies over the sidebar as it
+      will be dropped, and a label beside the pointer reads Placing without docking — release Ctrl to dock'
+    from: img/controls/window-place-without-docking.png
+  - id: window-menu
+    replaces: img/controls/window-menu.png
+    caption: A floating window's header menu.
+    alt: 'The floating Objects window''s header right-clicked: Dock to bottom, Move to left sidebar, Move to right sidebar,
+      Float (undock) greyed because it already floats, Group with…, Bring to front, Reset size and Close.'
+    setup:
+    - click: p[title="Object list (O)"]
+    - wait: 800
+    - rightClick:
+        text: Objects
+    - wait: 600
+    device: window-688-tall
+    crop:
+      rect: [0, 0, 688, 620]
+    fade: [b]
+  - id: edit-positions-clusters
+    replaces: img/controls/edit-positions-clusters.png
+    device: window-688-tall
+    caption: 'Edit positions, in a small window: every cluster has a grip, every button a red −.'
+    alt: 'Edit positions: every cluster has a small grip under it — the Undo, Redo and Multi-select row beside the logo, the
+      Connect bar, the top-right group, the bottom toolbar and both corner stacks — and every button carries a red −.'
+    setup: &id002
+    - rightClick: p[title="Move (1)"]
+    - wait: 400
+    - clickText: Edit positions
+    - wait: 900
+    crop:
+      rect:
+      - 0
+      - 0
+      - 688
+      - 840
+    fade: []
+  - id: budget-chip-edit-positions
+    replaces: img/controls/budget-chip-edit-positions.png
+    caption: In Edit positions the budget chip has its own grip and red −.
+    setup: *id002
+    crop:
+      rect:
+      - 240
+      - 770
+      - 688
+      - 130
+    fade:
+    - l
+    - r
+    - t
+    alt: 'Edit positions: the budget chip has its own grip and red − right of the toolbar'
+  - id: clusters-rotated
+    replaces: img/controls/clusters-rotated.png
+    dpr: 1
+    kind: ui
+    caption: Clusters after Rotate to vertical and Rotate to horizontal.
+    crop:
+      rect:
+      - 0
+      - 200
+      - 400
+      - 700
+    fade:
+    - r
+    - t
+    alt: 'After Rotate to vertical and Rotate to horizontal: the toolbar stands on the left edge with Play in its middle, and
+      the bottom-left corner buttons lie in a row'
+    from: img/controls/clusters-rotated.png
+  - id: touch-tools-show-cluster
+    replaces: img/controls/touch-tools-show-cluster.png
+    dpr: 1
+    kind: ui
+    caption: A cluster's grip menu, with Show cluster and Show all.
+    crop:
+      rect:
+      - 0
+      - 0
+      - 390
+      - 370
+    fade: []
+    alt: 'Edit positions with a mouse: the buttons beside the logo are drawn faint (hidden by default on a computer) and their
+      grip menu is open — Move, Rotate to vertical, Reset position, Reset all positions, Show cluster and Show all'
+    from: img/controls/touch-tools-show-cluster.png
+  - id: edit-positions
+    replaces: img/controls/edit-positions.png
+    caption: 'Edit positions on a computer: the bottom toolbar.'
+    alt: 'Edit positions on a computer: every button on the bottom toolbar has a red −, green + slots sit at the ends of the
+      bar, a grip sits beside it, and the green ✓ applies.'
+    setup: *id002
+    crop:
+      rect:
+      - 376
+      - 770
+      - 688
+      - 130
+    fade:
+    - l
+    - r
+    - t
+  - id: edit-positions-top-right
+    replaces: img/controls/edit-positions-top-right.png
+    dpr: 1
+    kind: ui
+    caption: Edit positions reaching the top right of the screen.
+    crop:
+      rect:
+      - 752
+      - 0
+      - 688
+      - 130
+    fade:
+    - l
+    - b
+    alt: 'Edit positions reaching the top right: the notifications and Explorer buttons in the top-right group each carry a
+      red −, with a green + for the next place in the group.'
+    from: img/controls/edit-positions-top-right.png
+  - id: edit-positions-connect-bar
+    replaces: img/controls/edit-positions-connect-bar.png
+    caption: The Connect bar in Edit positions.
+    alt: 'The top of the screen in Edit positions with a mouse: the Connect bar has its own red − and a grip under it.'
+    setup: *id002
+    crop:
+      rect:
+      - 376
+      - 0
+      - 688
+      - 90
+    fade:
+    - l
+    - r
+    - b
+  - id: connect-bar-menu
+    replaces: img/controls/connect-bar-menu.png
+    dpr: 1
+    kind: ui
+    caption: The Connect bar's right-click menu, outside Edit positions.
+    crop:
+      rect:
+      - 0
+      - 0
+      - 510
+      - 215
+    fade: []
+    alt: 'The floating Connect bar right-clicked outside Edit positions: its menu reads Move, Pin to top row, Reset position
+      and Reset all positions (the last two greyed while the bar is in its default place)'
+    from: img/controls/connect-bar-menu.png
