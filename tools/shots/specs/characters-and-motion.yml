@@ -1,0 +1,36 @@
+page: characters-and-motion
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: clip-tools
+  replaces: img/characters-and-motion/clip-tools.png
+  alt: The clip tools in the Animation window
+  caption: The clip tools in the Animation window.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 223
+    - 329
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/characters-and-motion/clip-tools.png
+- id: animation-states
+  replaces: img/characters-and-motion/animation-states.png
+  alt: 'The Animation states window for a Knight: Move, Jump and Fall states with their clips, loop and entry, and the Move
+    to Jump transitions with their conditions.'
+  caption: The Animation states window for a Knight.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 360
+    - 472
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/characters-and-motion/animation-states.png

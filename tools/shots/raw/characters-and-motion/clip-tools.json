@@ -1,0 +1,21 @@
+{
+ "id": "clip-tools",
+ "dpr": 1,
+ "shotAt": "2026-10-31T14:06:04.426Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/characters-and-motion/clip-tools.png",
+ "width": 223,
+ "height": 329,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 223,
+  "h": 329
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

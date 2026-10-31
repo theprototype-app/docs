@@ -113,7 +113,10 @@ everything has loaded. The person who opens the scene runs it; everyone else see
 games and play links, and undo / redo work on it like on any edit. *Jelly room*, *Fluid tank toy*, *Pool party* and
 *Island ocean* have it on.
 
-![Configure Scene ▸ Camera ▸ Start view with Start simulation on load ticked](img/physics/sim-on-load-setting.png)
+![Configure Scene ▸ Camera ▸ Start view with Start simulation on load ticked](img/physics/sim-on-load-setting.webp){ .shot .fade-l width="688" height="720" loading=lazy }
+/// caption
+Configure Scene ▸ Camera ▸ Start view with Start simulation on load ticked.
+///
 
 ## Grab and throw mid-simulation
 
@@ -171,7 +174,10 @@ ground* ticked flew on a desktop.) **Configure Scene ▸ Play ▸ Flying**:
 | **Allowed** | <kbd>Q</kbd> / <kbd>E</kbd> on a desktop, the **Up** / **Down** touch buttons, and in VR Interact, flying with the stick along where the controller points |
 | **Removed** | nobody flies in this scene, even if a game module or a Character Controller node in fly mode asks for it |
 
-![Configure Scene ▸ Physics ▸ Play mode, with Flying set to Allowed](img/physics/flying-setting.png)
+![Configure Scene ▸ Physics ▸ Play mode, with Flying set to Allowed](img/physics/flying-setting.webp){ .shot .fade-l width="688" height="800" loading=lazy }
+/// caption
+Configure Scene ▸ Physics ▸ Play mode.
+///
 
 Of the bundled games, the Jam Room flies (it is designed for VR flying), and Dungeon Realms does when its **Game Rules ▸
 disableFlight** is off; every other game walks. A module allows flying with `userData.play.locomotion.fly = true` (or by
@@ -230,9 +236,15 @@ Since 1.25 that works wherever the object starts: put it anywhere in a pool, a t
 shoots up and bobs at the surface, wood floats lower, a stone sinks to the bottom. **Properties ▸ Water ▸ Flow &
 physics** on the water adds **Flow up** (an upward current) and **Bob damping** (lower = things keep bobbing longer).
 
-![Toys floating in a pool sunk into the ground](img/physics/sunken-pool.png)
+![Toys floating in a pool sunk into the ground](img/physics/sunken-pool.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+/// caption
+Toys floating in a pool sunk into the ground.
+///
 
-![A wooden crate floating in a pool, with the Floats rows in its Physics properties](img/physics/floats.png)
+![A wooden crate floating in a pool, with the Floats rows in its Physics properties](img/physics/floats.webp){ .shot .fade-l width="688" height="720" loading=lazy }
+/// caption
+A wooden crate floating in a pool.
+///
 
 Select the object and open **Properties ▸ Physics** (Body: *Dynamic*) ▸ **Floats**:
 

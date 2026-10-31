@@ -1,0 +1,23 @@
+{
+ "id": "phone",
+ "dpr": 2.9,
+ "shotAt": "2026-10-27T07:46:24.516Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/free-assets/phone.png",
+ "width": 1131,
+ "height": 1595,
+ "crop": {
+  "x": 0,
+  "y": 1003,
+  "w": 1131,
+  "h": 1595
+ },
+ "cut": [],
+ "fade": [
+  "t"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

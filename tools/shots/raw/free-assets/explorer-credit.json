@@ -1,0 +1,24 @@
+{
+ "id": "explorer-credit",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.515Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/free-assets/explorer-credit.png",
+ "width": 688,
+ "height": 400,
+ "crop": {
+  "x": 752,
+  "y": 500,
+  "w": 688,
+  "h": 400
+ },
+ "cut": [],
+ "fade": [
+  "l",
+  "t"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

@@ -1,0 +1,67 @@
+page: colliders
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: physics-section
+  replaces: img/colliders/physics-section.png
+  alt: The Physics section of an object's properties, with Show collider on and the green collider wireframe in the viewport
+  caption: The Physics section of an object's properties.
+  crop:
+    rect:
+    - 552
+    - 0
+    - 688
+    - 780
+  fade:
+  - l
+  kind: ui
+  dpr: 1
+  from: img/colliders/physics-section.png
+- id: exact-mesh
+  replaces: img/colliders/exact-mesh.png
+  alt: 'An arch with an exact mesh collider: the green wireframe follows the opening'
+  caption: An arch with an exact mesh collider.
+  crop:
+    rect:
+    - 77
+    - 65
+    - 1126
+    - 569
+  fade: vignette
+  kind: view
+  dpr: 1
+  from: img/colliders/exact-mesh.png
+- id: decomposed
+  replaces: img/colliders/decomposed.png
+  alt: The same arch decomposed into convex pieces
+  caption: The same arch decomposed into convex pieces.
+  crop:
+    rect:
+    - 77
+    - 65
+    - 1126
+    - 569
+  fade: vignette
+  kind: view
+  dpr: 1
+  from: img/colliders/decomposed.png
+- id: contact-filter
+  replaces: img/colliders/contact-filter.png
+  alt: On Impact and On Enter nodes with only with wired to Object Selectors, and other wired into Distance
+  caption: On Impact and On Enter nodes with only with wired to Object Selectors.
+  crop:
+    rect:
+    - 250
+    - 300
+    - 688
+    - 420
+  fade:
+  - l
+  - r
+  - t
+  kind: ui
+  dpr: 1
+  from: img/colliders/contact-filter.png

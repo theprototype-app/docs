@@ -1,0 +1,21 @@
+{
+ "id": "modern-loading",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.544Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/loading/modern-loading.png",
+ "width": 380,
+ "height": 300,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 380,
+  "h": 300
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

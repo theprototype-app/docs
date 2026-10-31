@@ -1,0 +1,73 @@
+page: free-assets
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: browser-materials
+  replaces: img/free-assets/browser-materials.png
+  alt: The Asset Browser's Materials tab searching ambientCG for clay
+  caption: The Asset Browser's Materials tab searching ambientCG for clay.
+  crop:
+    rect:
+    - 100
+    - 40
+    - 688
+    - 640
+  fade:
+  - l
+  - r
+  - t
+  - b
+  kind: ui
+  dpr: 1
+  from: img/free-assets/browser-materials.png
+- id: material-applied
+  replaces: img/free-assets/material-applied.png
+  alt: A CC0 material applied to a box, credited in the Inspector
+  caption: A CC0 material applied to a box.
+  crop:
+    rect:
+    - 752
+    - 40
+    - 688
+    - 800
+  fade:
+  - l
+  - t
+  - b
+  kind: ui
+  dpr: 1
+  from: img/free-assets/material-applied.png
+- id: explorer-credit
+  replaces: img/free-assets/explorer-credit.png
+  alt: The Explorer's Properties naming a Poly Haven model's source
+  caption: The Explorer's Properties naming a Poly Haven model's source.
+  crop:
+    rect:
+    - 752
+    - 500
+    - 688
+    - 400
+  fade:
+  - l
+  - t
+  kind: ui
+  dpr: 1
+  from: img/free-assets/explorer-credit.png
+- id: phone
+  replaces: img/free-assets/phone.png
+  alt: The Asset Browser as a bottom sheet on a folded phone
+  caption: The Asset Browser as a bottom sheet on a folded phone.
+  crop:
+    rect:
+    - 0
+    - 1003
+    - 1131
+    - 1595
+  fade:
+  - t
+  kind: ui
+  dpr: 2.9
+  from: img/free-assets/phone.png

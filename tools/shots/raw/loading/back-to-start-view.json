@@ -1,0 +1,25 @@
+{
+ "id": "back-to-start-view",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.543Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/loading/back-to-start-view.png",
+ "width": 688,
+ "height": 400,
+ "crop": {
+  "x": 296,
+  "y": 0,
+  "w": 688,
+  "h": 400
+ },
+ "cut": [],
+ "fade": [
+  "l",
+  "r",
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

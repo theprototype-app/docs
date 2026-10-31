@@ -1,0 +1,41 @@
+page: checkpoints
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: timeline-compare
+  replaces: img/checkpoints/timeline-compare.png
+  alt: The Checkpoints timeline comparing two checkpoints with the swipe slider
+  caption: The Checkpoints timeline comparing two checkpoints with the swipe slider.
+  crop:
+    rect:
+    - 60
+    - 40
+    - 688
+    - 600
+  fade:
+  - r
+  - t
+  - b
+  kind: ui
+  dpr: 1
+  from: img/checkpoints/timeline-compare.png
+- id: large-scene-notice
+  replaces: img/checkpoints/large-scene-notice.png
+  alt: The notice when a large scene skips its automatic checkpoint
+  caption: The notice when a large scene skips its automatic checkpoint.
+  crop:
+    rect:
+    - 296
+    - 0
+    - 688
+    - 500
+  fade:
+  - l
+  - r
+  - b
+  kind: ui
+  dpr: 1
+  from: img/checkpoints/large-scene-notice.png

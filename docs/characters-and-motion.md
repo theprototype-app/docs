@@ -154,7 +154,10 @@ A file without these extras (a `.vrma` from another tool, an animation `.glb`) i
 
 ## Game-ready clips (Animation window ▸ clip tools)
 
-![The clip tools in the Animation window](img/characters-and-motion/clip-tools.png)
+![The clip tools in the Animation window](img/characters-and-motion/clip-tools.webp){ .shot width="223" height="329" loading=lazy }
+/// caption
+The clip tools in the Animation window.
+///
 
 Select a character and open the **Animation** window. Under its clips, the clip tools show for the
 clip that is playing:
@@ -193,7 +196,10 @@ These settings belong to the character (another character using the same clip fi
 
 ## Animation states (a locomotion state machine)
 
-![The Animation states window](img/characters-and-motion/animation-states.png)
+![The Animation states window for a Knight: Move, Jump and Fall states with their clips, loop and entry, and the Move to Jump transitions with their conditions.](img/characters-and-motion/animation-states.webp){ .shot width="360" height="472" loading=lazy }
+/// caption
+The Animation states window for a Knight.
+///
 
 Animation window ▸ **Animation states…** opens the states window for the selected character.
 

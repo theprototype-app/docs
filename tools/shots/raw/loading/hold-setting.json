@@ -1,0 +1,23 @@
+{
+ "id": "hold-setting",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.544Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/loading/hold-setting.png",
+ "width": 688,
+ "height": 800,
+ "crop": {
+  "x": 592,
+  "y": 0,
+  "w": 688,
+  "h": 800
+ },
+ "cut": [],
+ "fade": [
+  "l"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

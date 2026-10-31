@@ -9,7 +9,10 @@ credit for you.
 **dock** like Statistics or Chat (drag it onto the dock, or the dock's **+** ▸ Free assets). On a phone it opens as a
 bottom sheet.
 
-![The Asset Browser's Materials tab searching ambientCG for clay](img/free-assets/browser-materials.png)
+![The Asset Browser's Materials tab searching ambientCG for clay](img/free-assets/browser-materials.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="640" loading=lazy }
+/// caption
+The Asset Browser's Materials tab searching ambientCG for clay.
+///
 
 ## Finding an asset
 
@@ -30,7 +33,10 @@ bottom sheet.
   swatches); *Apply* also puts it on the selected objects. Colour and normal maps are kept; roughness and metalness
   come from their maps.
 
-![A CC0 material applied to a box, credited in the Inspector](img/free-assets/material-applied.png)
+![A CC0 material applied to a box, credited in the Inspector](img/free-assets/material-applied.webp){ .shot .fade-l .fade-t .fade-b width="688" height="800" loading=lazy }
+/// caption
+A CC0 material applied to a box.
+///
 
 ## Credits
 
@@ -38,7 +44,10 @@ Every download keeps its source — site, authors, licence (CC0) and a link. You
 **Properties**, in the **Inspector** for a placed object or a CC0 material, and on the material swatch's tooltip. A
 model carries it inside the file, so a peer's copy — and the optimized copy the importer makes — has it too.
 
-![The Explorer's Properties naming a Poly Haven model's source](img/free-assets/explorer-credit.png)
+![The Explorer's Properties naming a Poly Haven model's source](img/free-assets/explorer-credit.webp){ .shot .fade-l .fade-t width="688" height="400" loading=lazy }
+/// caption
+The Explorer's Properties naming a Poly Haven model's source.
+///
 
 ## Offline and errors
 
@@ -56,4 +65,7 @@ window says so in plain words and offers *Try again*.
   person's **From ‹name›** swatch row too: it arrives in the background a few seconds after they connect (or after you
   save it), and travels only once.
 
-![The Asset Browser as a bottom sheet on a folded phone](img/free-assets/phone.png)
+![The Asset Browser as a bottom sheet on a folded phone](img/free-assets/phone.webp){ .shot .fade-t width="390" height="550" loading=lazy }
+/// caption
+The Asset Browser as a bottom sheet on a folded phone.
+///

@@ -1,0 +1,24 @@
+{
+ "id": "smart-unwrap",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.608Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/uv-editor/smart-unwrap.png",
+ "width": 688,
+ "height": 900,
+ "crop": {
+  "x": 356,
+  "y": 0,
+  "w": 688,
+  "h": 900
+ },
+ "cut": [],
+ "fade": [
+  "l",
+  "r"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

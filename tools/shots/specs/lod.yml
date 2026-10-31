@@ -1,0 +1,21 @@
+page: lod
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: lod-distance
+  replaces: img/lod/lod-distance.png
+  alt: 'Configure Scene ▸ Level of detail: the LOD distance slider, shared with everyone in the scene'
+  caption: Configure Scene ▸ Level of detail.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 307
+    - 152
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/lod/lod-distance.png

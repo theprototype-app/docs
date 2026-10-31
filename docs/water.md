@@ -5,7 +5,10 @@ patterns (**caustics**) on the floor, foam on the wave crests and along the shor
 underwater fog when your camera goes inside, and bubbles that rise and pop at the surface. Everyone in the session sees
 the same water, and the waves move in step on every screen.
 
-![A pool in daylight: caustics on the floor, a ball and a crate in the water](img/water/pool.png)
+![A pool in daylight: caustics on the floor, a ball and a crate in the water](img/water/pool.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+/// caption
+A pool in daylight.
+///
 
 ## Where it is
 
@@ -61,14 +64,20 @@ that used to do little:
 | **Toxic** | bright green and glowing |
 | **Ice** | frozen solid |
 
-![The Lava preset: a glowing, opaque tank](img/water/lava.png)
+![The Lava preset: a glowing, opaque tank](img/water/lava.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+/// caption
+The Lava preset.
+///
 
 ## Underwater
 
 Put the camera inside the water and the view fogs over in the water's **underwater colour**, as far as its
 **visibility** reaches. Bubbles rise past you and pop at the surface.
 
-![Inside the Aquarium preset: bubbles rising through blue-green water](img/water/underwater-aquarium.png)
+![Inside the Aquarium preset: bubbles rising through blue-green water](img/water/underwater-aquarium.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+/// caption
+Inside the Aquarium preset.
+///
 
 ## Things in the water
 
@@ -86,7 +95,10 @@ Since 1.25 a click selects what is **inside or behind** the water — a fish in 
 passes through ▸ Water** (on by default) turns this off for a scene. See
 [Inside and behind water](controls.md#inside-and-behind-water).
 
-![Configure Scene ▸ Advanced ▸ Selection passes through, with the 1 of 3 · Aquarium water chip in the tank](img/water/selection-passes-through.png)
+![Configure Scene ▸ Advanced ▸ Selection passes through, with the 1 of 3 · Aquarium water chip in the tank](img/water/selection-passes-through.webp){ .shot .fade-l width="688" height="720" loading=lazy }
+/// caption
+Configure Scene ▸ Advanced ▸ Selection passes through.
+///
 
 The selected object is drawn un-refracted, exactly under its outline; the rest of the water still refracts. (Before,
 the outline sat beside the refracted fish.)
@@ -107,7 +119,10 @@ gets a spout on its rim.
 - Drops arc out, **splash into water** (a ripple) and **settle** where they land, then dry up.
 - Each player sees their own drops; the settings are shared. An emitter is one draw call, cheap enough for a Quest.
 
-![Two pour emitters arcing drops over a water tank](img/water/pour-emitters.png)
+![Two pour emitters arcing drops over a water tank](img/water/pour-emitters.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+/// caption
+Two pour emitters arcing drops over a water tank.
+///
 
 For particle water that pools, splashes and flows, use a [Fluid emitter](fluids.md#fluid-emitter).
 

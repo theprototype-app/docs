@@ -1,0 +1,21 @@
+{
+ "id": "tank-pours-into-pool",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.598Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/simulation/tank-pours-into-pool.png",
+ "width": 968,
+ "height": 553,
+ "crop": {
+  "x": 66,
+  "y": 63,
+  "w": 968,
+  "h": 553
+ },
+ "cut": [],
+ "fade": "vignette",
+ "anchors": {},
+ "kind": "view"
+}

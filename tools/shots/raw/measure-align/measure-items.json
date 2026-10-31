@@ -1,0 +1,26 @@
+{
+ "id": "measure-items",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.548Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/measure-align/measure-items.png",
+ "width": 688,
+ "height": 500,
+ "crop": {
+  "x": 420,
+  "y": 220,
+  "w": 688,
+  "h": 500
+ },
+ "cut": [],
+ "fade": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

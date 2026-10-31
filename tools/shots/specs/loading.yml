@@ -1,0 +1,67 @@
+page: loading
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: modern-loading
+  replaces: img/loading/modern-loading.png
+  alt: A Modern placeholder filling from the bottom as its model downloads
+  caption: A Modern placeholder filling from the bottom as its model downloads.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 380
+    - 300
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/loading/modern-loading.png
+- id: modern-failed
+  replaces: img/loading/modern-failed.png
+  alt: 'A failed placeholder: red, with its tooltip and the “Retry all” toast'
+  caption: A failed placeholder.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 640
+    - 370
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/loading/modern-failed.png
+- id: back-to-start-view
+  replaces: img/loading/back-to-start-view.png
+  alt: The Back to start view button under the connection bar after Tavern Interior has loaded
+  caption: The Back to start view button under the connection bar after Tavern Interior has loaded.
+  crop:
+    rect:
+    - 296
+    - 0
+    - 688
+    - 400
+  fade:
+  - l
+  - r
+  - b
+  kind: ui
+  dpr: 1
+  from: img/loading/back-to-start-view.png
+- id: hold-setting
+  replaces: img/loading/hold-setting.png
+  alt: Configure Scene ▸ Camera with Hold camera until loaded ticked under Start view
+  caption: Configure Scene ▸ Camera with Hold camera until loaded ticked under Start view.
+  crop:
+    rect:
+    - 592
+    - 0
+    - 688
+    - 800
+  fade:
+  - l
+  kind: ui
+  dpr: 1
+  from: img/loading/hold-setting.png

@@ -1,0 +1,23 @@
+page: uv-editor
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: smart-unwrap
+  replaces: img/uv-editor/smart-unwrap.png
+  alt: 'A sphere unwrapped with Smart (xatlas): seams placed automatically, pieces packed without overlaps'
+  caption: A sphere unwrapped with Smart (xatlas).
+  crop:
+    rect:
+    - 356
+    - 0
+    - 688
+    - 900
+  fade:
+  - l
+  - r
+  kind: ui
+  dpr: 1
+  from: img/uv-editor/smart-unwrap.png
