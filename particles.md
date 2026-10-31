@@ -1,0 +1,119 @@
+# Particle Effects
+
+Add dust, smoke, fire, sparkles, confetti and sparks to your scene. Emitters attach to any object (or stand on their own), follow it around, and — because everything replicates — everyone in the session sees the same effect.
+
+Particles are **deterministic**: each particle's motion is computed from a shared clock, so peers see identical results without streaming anything. They're also cheap — one draw call per emitter, simulated on the GPU.
+
+## Adding an emitter
+
+There are three ways in, and they all end up as the same emitter.
+
+### From the object menu
+
+Right-click an object ▸ **Effects ▸** and pick a preset. It attaches immediately and starts playing (burst presets fire once so you see them right away). If you have several objects selected, the emitter is added to all of them.
+
+### From the Inspector
+
+Select an object and open its **Particles** section:
+
+- With no emitter yet: the **Add emitter…** dropdown attaches a preset.
+- With one attached: tweak every property (below), swap the preset, **💥 Burst now**, or **Remove emitter**.
+
+### As a standalone object
+
+Right-click empty space ▸ **Add ▸ Effects ▸** places a small marker object that carries the emitter — perfect for a campfire in the middle of the room with nothing to attach to. It moves, saves and replicates like any other object.
+
+## The presets
+
+| Preset | What it looks like | Emission |
+|---|---|---|
+| **Sparkles** | glinting stars that drift and twinkle | continuous |
+| **Fire** | rising orange flames + embers | continuous |
+| **Smoke** | soft grey plume that trails and fades | continuous |
+| **Dust puff** | a low brown scatter | burst |
+| **Confetti** | tumbling coloured squares | burst |
+| **Sparks** | fast bright streaks that arc and die — since 1.27 drawn [stretched along their motion](#how-particles-are-drawn), and thrown along by a moving emitter | burst |
+| **Rain** | streaks falling over an 8 × 8 m area, with a small splash ring where each one lands | continuous |
+| **Snow** | flakes drifting down over an 8 × 8 m area, settling and fading on the ground | continuous |
+| **Ribbon trail** | one glowing band behind a moving object — a sword swish, a comet tail (since 1.27) | continuous |
+| **Magic wisps** | trails that curl off a moving object (since 1.27) | continuous |
+
+**Rain** and **Snow** (1.22) are weather: **Add ▸ Effects ▸ Rain** places the emitter up at cloud height, and the drops fall
+about 6 m to the ground below it, drifting with a little wind. Pair them with [Water](https://docs.theprototype.app/water.md) for a storm over the sea.
+
+A preset is just a starting point — every value below is editable afterwards. A Sparks emitter added before 1.27 keeps
+its old look.
+
+## Continuous, burst, and on-impact
+
+- **Continuous** emitters (Sparkles, Fire, Smoke) emit forever.
+- **Burst** emitters (Dust puff, Confetti, Sparks) fire all their particles at once, then wait for the next trigger. They auto-fire once when you attach them so you get instant feedback; after that, replay them with **💥 Burst now** or wire an event into the [Particles node](https://docs.theprototype.app/nodes/particle.md).
+- **On impact (physics)** emitters fire automatically when a [physics simulation](https://docs.theprototype.app/physics.md) lands the object on the ground or another object — a dust puff exactly when the crate hits the floor. Set the object's body to **Dynamic**, set the emitter's **Emission** to *On impact*, and press <kbd>P</kbd>. Every peer sees the same burst. Small settling bounces are filtered out (the object has to be actually falling), and a rolling object won't machine-gun bursts.
+
+!!! tip "Throwing things"
+    While a simulation runs you can **grab and throw** any dynamic object — drag it with the gizmo on desktop, or grip-grab it in VR — and it flies off with the velocity of your hand when you let go. Heavier objects (higher **Mass**) hit harder. Combine with an on-impact emitter for very satisfying crashes.
+
+## Properties
+
+Open the Inspector's **Particles** section on an object with an emitter:
+
+| Property | Range | Meaning |
+|---|---|---|
+| **Preset** | — | re-seeds every value from a preset |
+| **Emission** | continuous · burst | one-shot vs endless |
+| **Count** | 1 – 500 | how many particles |
+| **Lifetime** | 0.1 – 6 s | how long each particle lives |
+| **Speed** | 0 – 8 | launch speed |
+| **Gravity** | −10 – 10 | positive rises, negative falls |
+| **Turbulence** | 0 – 1 | how much the paths wobble |
+| **Size start / end** | 0 – 1 | grows or shrinks over life |
+| **Opacity** | 0 – 1 | peak transparency |
+| **Emit from** | X / Y / Z | where particles spawn, relative to the object's center (local axes) — lift them to the top, a corner, an exhaust, etc. |
+| **Color** | two swatches | start → end gradient over life |
+| **Draw as** | Sprites · Stretch · Trails · Ribbon | how each particle is drawn — see [below](#how-particles-are-drawn) |
+| **Sprite** | dot · streak · puff · star · confetti | the particle shape |
+| **Blending** | additive · normal | *additive* glows (fire, sparks); *normal* for smoke/confetti |
+| **Space** | local · world | see below |
+| **Inherit velocity** | 0 – 1 | World space only — see [below](#inherit-velocity) |
+
+!!! note
+    Glowing presets (Sparkles, Fire, Sparks — additive blending) render *through* the object they emit from, so they're visible even when the spawn point is inside a solid mesh. Smoke, Confetti and Dust use normal blending and are properly hidden behind geometry.
+
+### Local vs world space
+
+- **Local** — particles ride along with the object. Best for auras, fire on a moving torch, sparkles on a pickup.
+- **World** — particles keep the spot they were born and the object trails away from them. Best for smoke plumes and debris.
+
+### Inherit velocity
+
+In **World** space, **Inherit velocity** sets how much of the emitter's own speed a particle keeps when it is born. At 0
+(the default) particles stay where they were born; at 1 they are thrown along with the moving object — exhaust off a
+car, sparks off a swung sword.
+
+## How particles are drawn
+
+Since 1.27 **Inspector ▸ Particles ▸ Draw as** draws the particles one of four ways. The particles move exactly the
+same in every mode; only the shape on screen changes.
+
+![Draw as set to Trails, with the Trail length, Segments and Inherit velocity rows](https://docs.theprototype.app/img/particles/draw-as.png)
+
+| Draw as | What you see | Its rows |
+|---|---|---|
+| **Sprites** (the default) | one image per particle, as before | **Sprite** |
+| **Stretch** | each particle is a streak pointing the way it moves: fast particles are long, slow ones round. The **Sparks** preset uses it | **Stretch** — the seconds of motion each streak covers (0.005–0.3) |
+| **Trails** | every particle leaves a fading band behind it | **Trail length** (seconds), **Segments** (2–16; more give smoother curves) |
+| **Ribbon** | **one** band joining the particles in the order they were born. In **World** space that is the path the emitter took — a sword swish, a comet tail, a car's tail light. The **Ribbon trail** preset is set up for it | none: the width runs from **Size start** to **Size end**, and the band fades out as its particles do |
+
+- A ribbon needs **Continuous** emission: a burst is born all at once, so it has no order. On a burst emitter a ribbon is
+  drawn as trails, and the Inspector says so.
+- In **Local** space a ribbon rides along with the object; switch **Space** to **World** for a trail that stays behind it.
+
+![The Magic wisps preset: purple trails curling off a moving cube](https://docs.theprototype.app/img/particles/wisps-trails.png)
+
+## Caps
+
+To keep framerates high, up to **8 emitters** render at once (500 particles each; in VR at most 200 per emitter in every
+**Draw as** mode, trails and ribbons included). Extra emitters beyond the cap are skipped with a toast. Particles are hidden in **Wireframe** view mode.
+
+!!! tip
+    For fully flow-driven effects — emission wired to a slider, colour from a picker, or a burst fired by a click or key — use the [Particles node](https://docs.theprototype.app/nodes/particle.md) in the node editor instead of the Inspector.
