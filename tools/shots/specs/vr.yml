@@ -1,0 +1,91 @@
+page: vr
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: game-hud-waves
+  replaces: img/vr/game-hud-waves.png
+  alt: 'Waves in a headset: the score up left, the wave in the middle, more readouts below'
+  caption: Waves in a headset.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 640
+    - 640
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/vr/game-hud-waves.png
+- id: radial-root
+  replaces: img/vr/radial-root.png
+  alt: 'The first ring: Objects, Add, Scene, Tools, Redo, Undo, Chat, Settings around a Close hub'
+  caption: The first ring.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 720
+    - 720
+  fade: []
+  kind: ui
+  dpr: 2
+  from: img/vr/radial-root.png
+- id: settings-ring
+  replaces: img/vr/settings-ring.png
+  alt: 'The Settings ring: Comfort, Body, Controls, Display, Editing, Microphone, All settings, Exit VR'
+  caption: The Settings ring.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 720
+    - 720
+  fade: []
+  kind: ui
+  dpr: 2
+  from: img/vr/settings-ring.png
+- id: settings-panel
+  replaces: img/vr/settings-panel.png
+  alt: The All settings panel on its Comfort tab
+  caption: The All settings panel on its Comfort tab.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 720
+    - 720
+  fade: []
+  kind: ui
+  dpr: 2
+  from: img/vr/settings-panel.png
+- id: settings-search
+  replaces: img/vr/settings-search.png
+  alt: 'The Search tab: "turn" finds four rows'
+  caption: The Search tab.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 768
+    - 768
+  fade: []
+  kind: ui
+  dpr: 2
+  from: img/vr/settings-search.png
+- id: ai-panel
+  replaces: img/vr/ai-panel.png
+  alt: The AI Assistant panel in the headset
+  caption: The AI Assistant panel in the headset.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 768
+    - 768
+  fade: []
+  kind: ui
+  dpr: 2
+  from: img/vr/ai-panel.png

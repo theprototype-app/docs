@@ -1,0 +1,22 @@
+page: nodes-hudtimer
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: hudtimer
+  replaces: img/nodes/hudtimer.png
+  alt: A Game Start wired into a HUD Timer's start, with duration 60 and format "{v}s"
+  caption: A Game Start wired into a HUD Timer's start.
+  crop:
+    rect:
+    - 21
+    - 0
+    - 688
+    - 416
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/nodes/hudtimer.png
+md: nodes/hudtimer.md

@@ -78,7 +78,10 @@ in front of you on a gently curved band, arranged the way the author arranged it
 to the left, the clock up and to the right, the hint along the bottom. It replaces the single strip of short text lines
 earlier versions showed.
 
-![Waves in a headset: the score up left, the wave in the middle, more readouts below](img/vr/game-hud-waves.png)
+![Waves in a headset: the score up left, the wave in the middle, more readouts below](img/vr/game-hud-waves.webp){ .shot width="640" height="640" loading=lazy }
+/// caption
+Waves in a headset.
+///
 
 It appears by itself whenever a game is running and you are in Interact or Play; there is nothing to set up. Menus (the
 start screen, pause, results) still appear on the board in front of you — the band carries what you read while playing.
@@ -129,7 +132,10 @@ sector that opens another ring opens that ring and keeps the menu up.
 
 ### The first ring
 
-![The first ring: Objects, Add, Scene, Tools, Redo, Undo, Chat, Settings around a Close hub](img/vr/radial-root.png)
+![The first ring: Objects, Add, Scene, Tools, Redo, Undo, Chat, Settings around a Close hub](img/vr/radial-root.webp){ .shot width="360" height="360" loading=lazy }
+/// caption
+The first ring.
+///
 
 The names and icons match the desktop menus:
 
@@ -173,7 +179,10 @@ last:
 
 ### Settings
 
-![The Settings ring: Comfort, Body, Controls, Display, Editing, Microphone, All settings, Exit VR](img/vr/settings-ring.png)
+![The Settings ring: Comfort, Body, Controls, Display, Editing, Microphone, All settings, Exit VR](img/vr/settings-ring.webp){ .shot width="360" height="360" loading=lazy }
+/// caption
+The Settings ring.
+///
 
 **Settings ▸** has a ring per page — **Comfort**, **Body**, **Controls**, **Display** and **Editing** — plus:
 
@@ -190,13 +199,19 @@ stays open so you can see the change.
 and right change a value (or the page, on the tab strip), and a stick press presses the row. **Back to menu** returns you
 to the Settings ring.
 
-![The All settings panel on its Comfort tab](img/vr/settings-panel.png)
+![The All settings panel on its Comfort tab](img/vr/settings-panel.webp){ .shot width="360" height="360" loading=lazy }
+/// caption
+The All settings panel on its Comfort tab.
+///
 
 **Search** — the last tab of the panel. Press the query row and type on the VR keyboard: the results follow every key
 (*turn* lists Turning, Snap angle, Smooth speed and Mirror turn). Press a result to change it right there. <kbd>Esc</kbd>
 on the keyboard puts the previous search back.
 
-![The Search tab: "turn" finds four rows](img/vr/settings-search.png)
+![The Search tab: "turn" finds four rows](img/vr/settings-search.webp){ .shot width="384" height="384" loading=lazy }
+/// caption
+The Search tab.
+///
 
 ## Getting around
 
@@ -291,7 +306,10 @@ desktop [AI Assistant](ai/assistant.md) window** — what you asked on the deskt
 round. Your messages show as violet chips on the right, the assistant's answers below them; grey lines are what it is
 doing (*Creating 3 object(s)*).
 
-![The AI Assistant panel in the headset](img/vr/ai-panel.png)
+![The AI Assistant panel in the headset](img/vr/ai-panel.webp){ .shot width="384" height="384" loading=lazy }
+/// caption
+The AI Assistant panel in the headset.
+///
 
 - **Ask** — point at **＋ Ask AI…** and pull the trigger (or press the stick): the VR keyboard opens; type and press ⏎.
   Everything the assistant builds replicates to your peers and undoes as one step.

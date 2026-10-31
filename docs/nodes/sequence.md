@@ -52,7 +52,10 @@ Count one, two, three — and back to zero:
    **reset**.
 4. Press Play and tap <kbd>G</kbd>: the Counter reads 1, 2, 3 a second apart, then 0.
 
-![A Key Press triggering a Sequence whose first three steps count up a Counter and whose fourth step resets it](../img/nodes/sequence.png)
+![A Key Press triggering a Sequence whose first three steps count up a Counter and whose fourth step resets it](../img/nodes-sequence/sequence.webp){ .shot width="688" height="230" loading=lazy }
+/// caption
+A Key Press triggering a Sequence whose first three steps count up a Counter and whose fourth step resets it.
+///
 
 !!! tip
     Steps are ordinary pulses, so each one can drive anything an event drives — a [Latch](latch.md) set, a Spawn, a

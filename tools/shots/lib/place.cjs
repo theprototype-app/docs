@@ -28,7 +28,9 @@ function placeFigure(file, targets, figure) {
 	let k = j;
 	while (k < lines.length && lines[k].trim() === '') k++;
 	if (/^<div class="shot-key"/.test(lines[k] || '')) { while (k < lines.length && !/^<\/div>/.test(lines[k])) k++; end = k; }
-	lines.splice(start, end - start + 1, ...figure.split('\n'));
+	// the figure's image path is from docs/: a page in a sub-folder reaches it through ../
+	const up = rel ? rel.split(path.sep).map(() => '..').join('/') + '/' : '';
+	lines.splice(start, end - start + 1, ...figure.replace('](img/', `](${up}img/`).split('\n'));
 	fs.writeFileSync(file, lines.join('\n'));
 	return true;
 }

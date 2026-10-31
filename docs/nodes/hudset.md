@@ -57,4 +57,7 @@ A Reset button for a volume slider:
 3. Wire HUD Button → HUD Set Input's **trigger**.
 4. Drag the slider, then press *Reset*: it jumps back to 50.
 
-![The example's nodes: a HUD Button and a HUD Set Input whose value is 50 — in 1.42 the HUD Set Input card has no trigger socket to wire into](../img/nodes/hudset.png)
+![The example's nodes: a HUD Button and a HUD Set Input whose value is 50 — in 1.42 the HUD Set Input card has no trigger socket to wire into](../img/nodes-hudset/hudset.webp){ .shot width="688" height="254" loading=lazy }
+/// caption
+The example's nodes.
+///

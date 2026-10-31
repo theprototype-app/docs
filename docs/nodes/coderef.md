@@ -41,4 +41,7 @@ A link to Mini Golf's engine:
 2. In **ⓘ Params**, set title *Mini Golf engine*, module `minigolf`, file `module.js`.
 3. Double-click the card: `module.js` opens read-only in the code workspace.
 
-![A Code link card titled Mini Golf engine pointing at minigolf/module.js, with its Open code button](../img/nodes/coderef.png)
+![A Code link card titled Mini Golf engine pointing at minigolf/module.js, with its Open code button](../img/nodes-coderef/coderef.webp){ .shot width="282" height="231" loading=lazy }
+/// caption
+A Code link card titled Mini Golf engine pointing at minigolf/module.js.
+///

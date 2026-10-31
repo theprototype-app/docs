@@ -1,0 +1,23 @@
+{
+ "id": "breadcrumb-siblings",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.555Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/node-editor/breadcrumb-siblings.png",
+ "width": 688,
+ "height": 337,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 688,
+  "h": 337
+ },
+ "cut": [],
+ "fade": [
+  "r"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

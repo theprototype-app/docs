@@ -1,0 +1,22 @@
+page: nodes-getvariable
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: getvariable
+  replaces: img/nodes/getvariable.png
+  alt: Get Variable score into a Compare (less than 10), driving a Visibility node on the Door's Object Selector
+  caption: Get Variable score into a Compare (less than 10).
+  crop:
+    rect:
+    - 32
+    - 0
+    - 1032
+    - 222
+  fade: []
+  kind: ui
+  dpr: 1.5
+  from: img/nodes/getvariable.png
+md: nodes/getvariable.md

@@ -1,0 +1,23 @@
+{
+ "id": "export-tab",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.511Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/export/export-tab.png",
+ "width": 688,
+ "height": 550,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 688,
+  "h": 550
+ },
+ "cut": [],
+ "fade": [
+  "r"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

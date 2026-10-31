@@ -1,0 +1,22 @@
+page: nodes-behaviour
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: behaviour
+  replaces: img/nodes/behaviour.png
+  alt: A Key Press wired into a Behaviour's tap input; its taps output feeds a Compare that drives the lamp's Visibility
+  caption: A Key Press wired into a Behaviour's tap input; its taps output feeds a Compare that drives the lamp's Visibil.
+  crop:
+    rect:
+    - 32
+    - 0
+    - 1032
+    - 222
+  fade: []
+  kind: ui
+  dpr: 1.5
+  from: img/nodes/behaviour.png
+md: nodes/behaviour.md

@@ -1,0 +1,21 @@
+{
+ "id": "logic-pad",
+ "dpr": 2,
+ "shotAt": "2026-10-29T08:56:54.343Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/building-in-vr/logic-pad.png",
+ "width": 768,
+ "height": 896,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 768,
+  "h": 896
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

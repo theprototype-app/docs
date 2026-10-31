@@ -1,0 +1,23 @@
+page: nodes-delay
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: delay
+  replaces: img/nodes/delay.png
+  alt: A Key Press resetting a Latch and triggering a three-second Delay that sets the Latch again, which drives the door's
+    Visibility
+  caption: A Key Press resetting a Latch and triggering a three-second Delay that sets the Latch again.
+  crop:
+    rect:
+    - 32
+    - 0
+    - 1032
+    - 270
+  fade: []
+  kind: ui
+  dpr: 1.5
+  from: img/nodes/delay.png
+md: nodes/delay.md

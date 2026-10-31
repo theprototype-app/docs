@@ -1,0 +1,22 @@
+page: nodes-hudlist
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: hudlist
+  replaces: img/nodes/hudlist.png
+  alt: A Leaderboard and a HUD List side by side, both naming the same list element
+  caption: A Leaderboard and a HUD List side by side.
+  crop:
+    rect:
+    - 21
+    - 0
+    - 688
+    - 487
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/nodes/hudlist.png
+md: nodes/hudlist.md

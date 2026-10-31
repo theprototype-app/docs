@@ -1,0 +1,25 @@
+page: nodes-gate
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: gate-group
+  replaces: img/nodes/gate-group.png
+  alt: 'A Gate with four inputs inside a group: the group shows sockets a to d'
+  caption: A Gate with four inputs inside a group.
+  crop:
+    rect:
+    - 296
+    - 200
+    - 688
+    - 520
+  fade:
+  - l
+  - r
+  - t
+  kind: ui
+  dpr: 1
+  from: img/nodes/gate-group.png
+md: nodes/gate.md

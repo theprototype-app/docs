@@ -43,7 +43,10 @@ A toy boat on a river:
    comes back round at the end.
 4. Raise **speed** to 2 for a faster current, or **bob** for choppier water.
 
-![An Object Selector picking a Flow path feeds Float Along Flow's path input; Float Along Flow drives the boat's Object Selector](../img/nodes/flowfloat.png)
+![An Object Selector picking a Flow path feeds Float Along Flow's path input; Float Along Flow drives the boat's Object Selector](../img/nodes-flowfloat/flowfloat.webp){ .shot width="688" height="206" loading=lazy }
+/// caption
+An Object Selector picking a Flow path feeds Float Along Flow's path input; Float Along Flow drives the boat's.
+///
 
 !!! tip
     The nearest-path rule means a leaf dropped on a river needs no **path** wire at all — wire one when two paths run

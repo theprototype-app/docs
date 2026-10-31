@@ -1,0 +1,21 @@
+{
+ "id": "leaderboard",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.569Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/nodes/leaderboard.png",
+ "width": 610,
+ "height": 639,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 610,
+  "h": 639
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

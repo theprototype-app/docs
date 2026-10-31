@@ -1,0 +1,23 @@
+page: nodes-setvariable
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: setvariable
+  replaces: img/nodes/setvariable.png
+  alt: 'The example''s nodes: On Click on the Coin, a Set Variable (score, add, shared) and a Number set to 1 — in 1.42 the
+    Set Variable card has no sockets to wire into'
+  caption: The example's nodes.
+  crop:
+    rect:
+    - 21
+    - 0
+    - 688
+    - 551
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/nodes/setvariable.png
+md: nodes/setvariable.md

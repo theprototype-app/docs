@@ -1,0 +1,24 @@
+page: nodes-once
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: once
+  replaces: img/nodes/once.png
+  alt: On Click on the chest feeding a Once, with a Key Press wired to the Once's rearm; the Once's output runs on to a Counter
+    past the right edge.
+  caption: On Click on the chest feeding a Once.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 688
+    - 639
+  fade:
+  - r
+  kind: ui
+  dpr: 1
+  from: img/nodes/once.png
+md: nodes/once.md

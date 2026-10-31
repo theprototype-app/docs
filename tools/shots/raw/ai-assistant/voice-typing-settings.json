@@ -1,0 +1,23 @@
+{
+ "id": "voice-typing-settings",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.464Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/ai/voice-typing-settings.png",
+ "width": 688,
+ "height": 248,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 688,
+  "h": 248
+ },
+ "cut": [],
+ "fade": [
+  "r"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

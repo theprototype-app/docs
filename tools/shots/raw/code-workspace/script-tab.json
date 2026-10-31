@@ -1,0 +1,24 @@
+{
+ "id": "script-tab",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.493Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/code-workspace/script-tab.png",
+ "width": 688,
+ "height": 340,
+ "crop": {
+  "x": 0,
+  "y": 380,
+  "w": 688,
+  "h": 340
+ },
+ "cut": [],
+ "fade": [
+  "r",
+  "t"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

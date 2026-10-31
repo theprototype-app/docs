@@ -1,0 +1,22 @@
+page: ai-build-with-an-agent
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: agent-activity
+  replaces: img/ai/agent-activity.png
+  alt: Agent activity in the AI assistant window
+  caption: Agent activity in the AI assistant window.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 500
+    - 440
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/ai/agent-activity.png
+md: ai/build-with-an-agent.md

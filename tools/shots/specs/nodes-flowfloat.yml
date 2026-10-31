@@ -1,0 +1,23 @@
+page: nodes-flowfloat
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: flowfloat
+  replaces: img/nodes/flowfloat.png
+  alt: An Object Selector picking a Flow path feeds Float Along Flow's path input; Float Along Flow drives the boat's Object
+    Selector
+  caption: An Object Selector picking a Flow path feeds Float Along Flow's path input; Float Along Flow drives the boat's.
+  crop:
+    rect:
+    - 32
+    - 0
+    - 1032
+    - 309
+  fade: []
+  kind: ui
+  dpr: 1.5
+  from: img/nodes/flowfloat.png
+md: nodes/flowfloat.md

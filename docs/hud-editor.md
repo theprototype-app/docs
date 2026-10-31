@@ -9,7 +9,10 @@ The **HUD** is the 2D layer over the game — a score, a health bar, a start men
 Press <kbd>Alt</kbd>+<kbd>H</kbd>, or the **＋** in the bottom dock's tab strip ▸ **HUD editor** (the toolbar can carry a
 HUD button too — see [The toolbar](controls.md#the-toolbar)). Like every editor window it docks at the bottom or floats.
 
-![The HUD editor on the Stars Room's menu screen: screens and palette on the left, the stage in the middle, the selected button's properties and actions on the right](img/hud/hud-editor.png)
+![The HUD editor on the Stars Room's menu screen: the stage in the middle, with the selected button.](img/hud-editor/hud-editor.webp){ .shot .fade-l .fade-r width="688" height="638" loading=lazy }
+/// caption
+The HUD editor on the Stars Room's menu screen.
+///
 
 | Part | What it holds |
 |---|---|

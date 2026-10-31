@@ -1,0 +1,23 @@
+page: nodes-gamepadaxis
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: gamepadaxis
+  replaces: img/nodes/gamepadaxis.png
+  alt: A Gamepad Axis on lx with deadzone 0.5 wired into a Compare, then a Visibility node driving an Object Selector picking
+    the Sign
+  caption: A Gamepad Axis on lx with deadzone 0.5 wired into a Compare.
+  crop:
+    rect:
+    - 32
+    - 0
+    - 1032
+    - 330
+  fade: []
+  kind: ui
+  dpr: 1.5
+  from: img/nodes/gamepadaxis.png
+md: nodes/gamepadaxis.md

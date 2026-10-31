@@ -1,0 +1,21 @@
+{
+ "id": "logic-panel",
+ "dpr": 2,
+ "shotAt": "2026-10-29T08:56:54.343Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/building-in-vr/logic-panel.png",
+ "width": 1280,
+ "height": 800,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 1280,
+  "h": 800
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

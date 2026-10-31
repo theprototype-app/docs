@@ -39,7 +39,10 @@ A bridge that appears 30 seconds into the round:
    game: the bridge shows up for everyone at the same moment, and is hidden again when the next
    round starts.
 
-![Game Time (elapsed) into a Compare (at least 30), driving a Visibility node on the Bridge's Object Selector](../img/nodes/gametime.png)
+![Game Time (elapsed) into a Compare (at least 30), driving a Visibility node on the Bridge's Object Selector](../img/nodes-gametime/gametime.webp){ .shot width="688" height="148" loading=lazy }
+/// caption
+Game Time (elapsed) into a Compare (at least 30).
+///
 
 !!! tip
     **Actions ▸ Show the round time** in the HUD editor wires a Game Time (`remaining`, 60 s)
