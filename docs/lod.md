@@ -66,7 +66,10 @@ settings** override them — see [Importing Big Models](import-optimize.md).
 **Configure Scene ▸ Level of detail ▸ LOD distance** moves every chain in the scene at once and is shared with everyone
 in it: above 1 keeps full detail further away, below 1 switches to the lighter levels sooner.
 
-![Configure Scene ▸ Level of detail: the LOD distance slider, shared with everyone in the scene](img/lod/lod-distance.png){ width="320" }
+![Configure Scene ▸ Level of detail: the LOD distance slider, shared with everyone in the scene](img/lod/lod-distance.webp){ .shot width="307" height="152" loading=lazy }
+/// caption
+Configure Scene ▸ Level of detail.
+///
 
 ## Pack items with LODs
 

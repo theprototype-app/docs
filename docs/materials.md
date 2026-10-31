@@ -8,7 +8,10 @@ in your session sees your presets and can use them.
 **Where:** select an object and open its properties (double-click it, or right-click ▸ **Properties**). In the
 **Material** section, the **Presets** row sits at the top, above the material type.
 
-![The Presets row with Wood applied](img/materials/presets-wood.png)
+![The Presets row with Wood applied](img/materials/presets-wood.webp){ .shot width="304" height="450" loading=lazy }
+/// caption
+The Presets row with Wood applied.
+///
 
 ## Using presets
 
@@ -23,7 +26,10 @@ in your session sees your presets and can use them.
 - **A friend's presets** — when someone in the session has saved presets, they appear under **From ‹name›**. Click one
   to apply it; while editing (pencil), the copy button saves it into your own library.
 
-![Editing your presets: rename, download and delete on your own swatches](img/materials/presets-edit.png)
+![Editing your presets: rename, download and delete on your own swatches](img/materials/presets-edit.webp){ .shot width="304" height="511" loading=lazy }
+/// caption
+Editing your presets.
+///
 
 ## Fish scales and the look tier
 

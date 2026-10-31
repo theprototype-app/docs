@@ -1,0 +1,37 @@
+page: scatter
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: add-scatter
+  replaces: img/scatter/add-scatter.png
+  alt: 'Properties ▸ Scatter on a sphere: 200 cones fill it, with the Fill rows below'
+  caption: Properties ▸ Scatter on a sphere.
+  crop:
+    rect:
+    - 592
+    - 0
+    - 688
+    - 720
+  fade:
+  - l
+  kind: ui
+  dpr: 1
+  from: img/scatter/add-scatter.png
+- id: select-tool
+  replaces: img/scatter/select-tool.png
+  alt: 'The Select tool: seven instances picked, the gizmo on them and the selection commands in the toolbox'
+  caption: The Select tool.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 688
+    - 720
+  fade:
+  - r
+  kind: ui
+  dpr: 1
+  from: img/scatter/select-tool.png

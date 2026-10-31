@@ -1,0 +1,21 @@
+{
+ "id": "underwater-aquarium",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.615Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/water/underwater-aquarium.png",
+ "width": 1126,
+ "height": 569,
+ "crop": {
+  "x": 77,
+  "y": 65,
+  "w": 1126,
+  "h": 569
+ },
+ "cut": [],
+ "fade": "vignette",
+ "anchors": {},
+ "kind": "view"
+}

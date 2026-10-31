@@ -1,0 +1,21 @@
+{
+ "id": "mitered-bevel",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.553Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/mesh-editing/mitered-bevel.png",
+ "width": 1232,
+ "height": 639,
+ "crop": {
+  "x": 84,
+  "y": 153,
+  "w": 1232,
+  "h": 639
+ },
+ "cut": [],
+ "fade": "vignette",
+ "anchors": {},
+ "kind": "view"
+}

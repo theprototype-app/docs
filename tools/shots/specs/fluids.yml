@@ -1,0 +1,36 @@
+page: fluids
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: fluid-emitter
+  replaces: img/fluids/fluid-emitter.png
+  alt: A Fluid emitter pouring a stream into a puddle, with its properties open
+  caption: A Fluid emitter pouring a stream into a puddle.
+  crop:
+    rect:
+    - 592
+    - 0
+    - 688
+    - 720
+  fade:
+  - l
+  kind: ui
+  dpr: 1
+  from: img/fluids/fluid-emitter.png
+- id: water-works
+  replaces: img/fluids/water-works.png
+  alt: 'Water works: the scoop wheel, the head-race, the fountain basin and the chute back to the pond'
+  caption: 'Water works: the scoop wheel.'
+  crop:
+    rect:
+    - 77
+    - 65
+    - 1126
+    - 569
+  fade: vignette
+  kind: view
+  dpr: 1
+  from: img/fluids/water-works.png

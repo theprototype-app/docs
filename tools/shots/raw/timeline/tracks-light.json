@@ -1,0 +1,24 @@
+{
+ "id": "tracks-light",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.604Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/timeline/tracks-light.png",
+ "width": 688,
+ "height": 400,
+ "crop": {
+  "x": 0,
+  "y": 500,
+  "w": 688,
+  "h": 400
+ },
+ "cut": [],
+ "fade": [
+  "r",
+  "t"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

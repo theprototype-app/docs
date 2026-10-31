@@ -1,0 +1,39 @@
+page: prefabs
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: update-toast
+  replaces: img/prefabs/update-toast.png
+  alt: After editing the Lamp prefab, a toast offers to update the other instance in the scene
+  caption: After editing the Lamp prefab.
+  crop:
+    rect:
+    - 296
+    - 0
+    - 688
+    - 800
+  fade:
+  - l
+  - r
+  kind: ui
+  dpr: 1
+  from: img/prefabs/update-toast.png
+- id: tag-filter
+  replaces: img/prefabs/tag-filter.png
+  alt: The Prefabs tab filtered by the seat tag
+  caption: The Prefabs tab filtered by the seat tag.
+  crop:
+    rect:
+    - 296
+    - 0
+    - 688
+    - 800
+  fade:
+  - l
+  - r
+  kind: ui
+  dpr: 1
+  from: img/prefabs/tag-filter.png

@@ -1,0 +1,22 @@
+page: saving
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: save-options
+  replaces: img/saving/save-options.png
+  alt: 'Save options on a computer: Save as Project or Scene, what a scene and a project include, and More formats, with Cancel
+    and Save at the bottom'
+  caption: Save options on a computer.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 530
+    - 805
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/saving/save-options.png

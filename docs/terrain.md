@@ -88,7 +88,10 @@ The same brush works on **any** mesh, not just terrain: right-click an object �
 Since 1.38 a Terrain can be **painted with four texture layers**. Select it ▸ right-click ▸ **Sculpt terrain** (or
 Inspector ▸ **Terrain paint ▸ Paint…**) and pick the **Paint** brush after Raise / Lower / Smooth / Flatten.
 
-![A painted layer on a terrain](img/terrain/paint-layer.png)
+![A painted layer on a terrain](img/terrain/paint-layer.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+/// caption
+A painted layer on a terrain.
+///
 
 - Pick a **layer (1–4)** in the toolbox, then drag on the terrain. Radius and Strength are the sculpt brush's.
 - Inspector ▸ **Terrain paint** sets, per layer, a **colour**, a **texture** (import a file or drop an Explorer image)
@@ -102,7 +105,10 @@ Inspector ▸ **Terrain paint ▸ Paint…**) and pick the **Paint** brush after
 - One drag = **one undo step**. Peers see the stroke while you paint and exactly your result when you let go; the
   paint is saved with the scene.
 
-![The Inspector's Terrain paint section](img/terrain/inspector-paint.png)
+![Properties of a terrain with its Terrain paint section: four layers, each with a colour and an image, Paint… and Clear paint, and the Scatter section under it.](img/terrain/inspector-paint.webp){ .shot .fade-l width="688" height="720" loading=lazy }
+/// caption
+Properties of a terrain with its Terrain paint section.
+///
 
 ## Scatter
 
@@ -111,7 +117,10 @@ grass tufts — onto the terrain. Since 1.43 a set can also **fill** the terrain
 and painted-layer masks, mix several models, and be edited instance by instance: see [Scatter](scatter.md), which also
 covers scatter on any other object.
 
-![The Scatter brush in the Sculpt toolbox, with cones scattered over a painted terrain](img/terrain/scatter-toolbox.png)
+![The Scatter brush in the Sculpt toolbox, beside a terrain painted in patches of colour.](img/terrain/scatter-toolbox.webp){ .shot .fade-r width="688" height="720" loading=lazy }
+/// caption
+The Scatter brush in the Sculpt toolbox.
+///
 
 | Control | What it does |
 |---|---|
@@ -152,7 +161,10 @@ model has a **Collider**:
 Scatter brush has a **Collider** pick too: it is what a *newly* scattered model starts with — painting more rocks into
 an existing set never changes that set's collider.
 
-![Properties ▸ Scatter: the Dodecahedron rocks set to Mesh hull, the cones left at None](img/terrain/scatter-collider.png)
+![Properties ▸ Scatter: the Dodecahedron rocks set to Mesh hull, the cones left at None](img/terrain/scatter-collider.webp){ .shot .fade-l width="688" height="900" loading=lazy }
+/// caption
+Properties ▸ Scatter.
+///
 
 - While a [simulation](physics.md) runs, every instance of that model is a **static** collider — a thrown ball bounces
   off the rocks and stops on top of one. The colliders follow each instance's position, rotation, scale and *Align to

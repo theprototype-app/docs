@@ -1,0 +1,80 @@
+page: simulation
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: fluid-tank
+  replaces: img/simulation/fluid-tank.png
+  alt: A fluid tank with the smooth surface look
+  caption: A fluid tank with the smooth surface look.
+  crop:
+    rect:
+    - 77
+    - 65
+    - 1126
+    - 569
+  fade: vignette
+  kind: view
+  dpr: 1
+  from: img/simulation/fluid-tank.png
+- id: fluid-tank-drops
+  replaces: img/simulation/fluid-tank-drops.png
+  alt: The Drops look, with a ball pushed around by the fluid
+  caption: The Drops look.
+  crop:
+    rect:
+    - 77
+    - 65
+    - 1126
+    - 569
+  fade: vignette
+  kind: view
+  dpr: 1
+  from: img/simulation/fluid-tank-drops.png
+- id: tank-spill
+  replaces: img/simulation/tank-spill.png
+  alt: 'Fluid tank toy: the Honey tank tipped, its honey spilled onto the table'
+  caption: Fluid tank toy.
+  crop:
+    rect:
+    - 0
+    - 40
+    - 688
+    - 640
+  fade:
+  - r
+  - t
+  - b
+  kind: ui
+  dpr: 1
+  from: img/simulation/tank-spill.png
+- id: tank-pours-into-pool
+  replaces: img/simulation/tank-pours-into-pool.png
+  alt: A pour inside a tank landing on the pool's surface and rippling it
+  caption: A pour inside a tank landing on the pool's surface and rippling it.
+  crop:
+    rect:
+    - 66
+    - 63
+    - 968
+    - 553
+  fade: vignette
+  kind: view
+  dpr: 1
+  from: img/simulation/tank-pours-into-pool.png
+- id: jiggle
+  replaces: img/simulation/jiggle.png
+  alt: A block leaning and wobbling under Jiggle
+  caption: A block leaning and wobbling under Jiggle.
+  crop:
+    rect:
+    - 77
+    - 65
+    - 1126
+    - 569
+  fade: vignette
+  kind: view
+  dpr: 1
+  from: img/simulation/jiggle.png

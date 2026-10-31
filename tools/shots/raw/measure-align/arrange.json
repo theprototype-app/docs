@@ -1,0 +1,23 @@
+{
+ "id": "arrange",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.546Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/measure-align/arrange.png",
+ "width": 688,
+ "height": 900,
+ "crop": {
+  "x": 752,
+  "y": 0,
+  "w": 688,
+  "h": 900
+ },
+ "cut": [],
+ "fade": [
+  "l"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

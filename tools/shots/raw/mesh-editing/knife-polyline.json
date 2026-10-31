@@ -1,0 +1,23 @@
+{
+ "id": "knife-polyline",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.552Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/mesh-editing/knife-polyline.png",
+ "width": 688,
+ "height": 900,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 688,
+  "h": 900
+ },
+ "cut": [],
+ "fade": [
+  "r"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

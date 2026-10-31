@@ -1,0 +1,35 @@
+page: materials
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: presets-wood
+  replaces: img/materials/presets-wood.png
+  alt: The Presets row with Wood applied
+  caption: The Presets row with Wood applied.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 304
+    - 450
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/materials/presets-wood.png
+- id: presets-edit
+  replaces: img/materials/presets-edit.png
+  alt: 'Editing your presets: rename, download and delete on your own swatches'
+  caption: Editing your presets.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 304
+    - 511
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/materials/presets-edit.png

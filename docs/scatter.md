@@ -13,7 +13,10 @@ Select any mesh or placed model ▸ **Properties ▸ Scatter** (right after the 
 *Add pour emitter*) ▸ **Add scatter**. 200 instances of the brush's current model fill the whole surface. The instances
 belong to the object: move, turn or scale it and they come along, for everyone in the session.
 
-![Properties ▸ Scatter on a sphere: 200 cones fill it, with the Fill rows below](img/scatter/add-scatter.png)
+![Properties ▸ Scatter on a sphere: 200 cones fill it, with the Fill rows below](img/scatter/add-scatter.webp){ .shot .fade-l width="688" height="720" loading=lazy }
+/// caption
+Properties ▸ Scatter on a sphere.
+///
 
 On a Terrain the Scatter section stays where it was (after Terrain paint) with the same rows. **Add fill** adds another
 set; **Paint scatter…** (or **Scatter…** on a terrain) opens the scatter brush to paint by hand.
@@ -68,7 +71,10 @@ On a terrain, the scatter brush in the Sculpt toolbox has a row of **tools**:
 
 **Affects** (every tool but Paint) limits a tool to one model of a mix — erase only the boxes, turn only the trees.
 
-![The Select tool: seven instances picked, the gizmo on them and the selection commands in the toolbox](img/scatter/select-tool.png)
+![The Select tool: seven instances picked, the gizmo on them and the selection commands in the toolbox](img/scatter/select-tool.webp){ .shot .fade-r width="688" height="720" loading=lazy }
+/// caption
+The Select tool.
+///
 
 **Select**: click an instance; <kbd>Shift</kbd>/<kbd>Ctrl</kbd>+click adds or removes; drag a box to select everything
 inside it; <kbd>Ctrl</kbd>+<kbd>A</kbd> selects every instance of the Affects model. The gizmo's **Move** slides the

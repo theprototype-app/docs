@@ -1,0 +1,26 @@
+page: import-optimize
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: settings-import
+  replaces: img/import-optimize/settings-import.png
+  alt: 'Settings ▸ Import: Optimize big models automatically, the triangle and texture thresholds, max texture size, Compress
+    textures (KTX2) and LOD levels'
+  caption: Settings ▸ Import.
+  crop:
+    rect:
+    - 480
+    - 100
+    - 688
+    - 700
+  fade:
+  - l
+  - r
+  - t
+  - b
+  kind: ui
+  dpr: 1
+  from: img/import-optimize/settings-import.png

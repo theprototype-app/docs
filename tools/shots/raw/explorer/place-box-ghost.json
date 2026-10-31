@@ -1,0 +1,24 @@
+{
+ "id": "place-box-ghost",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.507Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/explorer/place-box-ghost.png",
+ "width": 688,
+ "height": 560,
+ "crop": {
+  "x": 156,
+  "y": 0,
+  "w": 688,
+  "h": 560
+ },
+ "cut": [],
+ "fade": [
+  "l",
+  "r"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

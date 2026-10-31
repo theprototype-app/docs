@@ -19,7 +19,10 @@ the scene's [start view](#start-view) the moment the load begins, and you can lo
 Modern is the default since 1.22. If you never changed this setting, you now get Modern; if you picked **Colored
 boxes** in 1.21, you keep it.
 
-![A Modern placeholder filling from the bottom as its model downloads](img/loading/modern-loading.png)
+![A Modern placeholder filling from the bottom as its model downloads](img/loading/modern-loading.webp){ .shot width="380" height="300" loading=lazy }
+/// caption
+A Modern placeholder filling from the bottom as its model downloads.
+///
 
 Both styles turn **amber** when a piece is stuck and **red with a “!”** when it failed.
 
@@ -37,7 +40,10 @@ Properties panel, <kbd>Shift</kbd>-click to select several. When the model arriv
   retrying would not fix it.
 - **Red** — it gave up. Hover it to see the file address, the HTTP status and the reason.
 
-![A failed placeholder: red, with its tooltip and the “Retry all” toast](img/loading/modern-failed.png)
+![A failed placeholder: red, with its tooltip and the “Retry all” toast](img/loading/modern-failed.webp){ .shot width="640" height="370" loading=lazy }
+/// caption
+A failed placeholder.
+///
 
 To recover:
 
@@ -66,7 +72,10 @@ start view a few seconds into the load.)
 once the scene has finished loading. Click it to fly back. You can also press <kbd>Home</kbd> at any time to return to
 the start view of the scene you opened last.
 
-![The Back to start view button under the connection bar after Tavern Interior has loaded](img/loading/back-to-start-view.png)
+![The Back to start view button under the connection bar after Tavern Interior has loaded](img/loading/back-to-start-view.webp){ .shot .fade-l .fade-r .fade-b width="688" height="400" loading=lazy }
+/// caption
+The Back to start view button under the connection bar after Tavern Interior has loaded.
+///
 
 To change a scene's start view, move the camera where you want it and save the scene again.
 
@@ -75,7 +84,10 @@ To change a scene's start view, move the camera where you want it and save the s
 **Configure Scene ▸ Camera ▸ Start view ▸ Hold camera until loaded** (off by default) keeps the camera on the start view
 until the scene is ready. It is saved with the scene and shared with everyone in the session.
 
-![Configure Scene ▸ Camera with Hold camera until loaded ticked under Start view](img/loading/hold-setting.png)
+![Configure Scene ▸ Camera with Hold camera until loaded ticked under Start view](img/loading/hold-setting.webp){ .shot .fade-l width="688" height="800" loading=lazy }
+/// caption
+Configure Scene ▸ Camera with Hold camera until loaded ticked under Start view.
+///
 
 While the scene loads, the camera stays on the start view and ignores camera input, and a small **Loading… camera is
 held** note shows under the loading bar. In VR, teleport, turning, the walk stick and grabbing the world are paused the

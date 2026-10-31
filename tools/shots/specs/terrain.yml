@@ -1,0 +1,67 @@
+page: terrain
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: paint-layer
+  replaces: img/terrain/paint-layer.png
+  alt: A painted layer on a terrain
+  caption: A painted layer on a terrain.
+  crop:
+    rect:
+    - 77
+    - 65
+    - 1126
+    - 569
+  fade: vignette
+  kind: view
+  dpr: 1
+  from: img/terrain/paint-layer.png
+- id: inspector-paint
+  replaces: img/terrain/inspector-paint.png
+  alt: 'Properties of a terrain with its Terrain paint section: four layers, each with a colour and an image, Paint… and Clear
+    paint, and the Scatter section under it.'
+  caption: Properties of a terrain with its Terrain paint section.
+  crop:
+    rect:
+    - 592
+    - 0
+    - 688
+    - 720
+  fade:
+  - l
+  kind: ui
+  dpr: 1
+  from: img/terrain/inspector-paint.png
+- id: scatter-toolbox
+  replaces: img/terrain/scatter-toolbox.png
+  alt: The Scatter brush in the Sculpt toolbox, beside a terrain painted in patches of colour.
+  caption: The Scatter brush in the Sculpt toolbox.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 688
+    - 720
+  fade:
+  - r
+  kind: ui
+  dpr: 1
+  from: img/terrain/scatter-toolbox.png
+- id: scatter-collider
+  replaces: img/terrain/scatter-collider.png
+  alt: 'Properties ▸ Scatter: the Dodecahedron rocks set to Mesh hull, the cones left at None'
+  caption: Properties ▸ Scatter.
+  crop:
+    rect:
+    - 752
+    - 0
+    - 688
+    - 900
+  fade:
+  - l
+  kind: ui
+  dpr: 1
+  from: img/terrain/scatter-collider.png

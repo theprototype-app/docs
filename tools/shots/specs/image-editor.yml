@@ -1,0 +1,92 @@
+page: image-editor
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: editor-desktop
+  replaces: img/image-editor/editor-desktop.png
+  alt: 'The Image editor on a computer: the picture on the left, the Edit page with Rotate and flip, Crop, Resize and Adjust
+    on the right'
+  caption: The Image editor on a computer.
+  crop:
+    rect:
+    - 300
+    - 40
+    - 688
+    - 700
+  fade:
+  - l
+  - r
+  - t
+  - b
+  kind: ui
+  dpr: 1
+  from: img/image-editor/editor-desktop.png
+- id: crop-desktop-light
+  replaces: img/image-editor/crop-desktop-light.png
+  alt: 'Cropping on a computer in the light theme: the crop box over the picture, with X, Y, W and H and Apply crop in the
+    sidebar'
+  caption: Cropping on a computer in the light theme.
+  crop:
+    rect:
+    - 180
+    - 40
+    - 688
+    - 700
+  fade:
+  - l
+  - r
+  - t
+  - b
+  kind: ui
+  dpr: 1
+  from: img/image-editor/crop-desktop-light.png
+- id: versions-desktop
+  replaces: img/image-editor/versions-desktop.png
+  alt: 'The Versions page: Restore original at the top, the current edit and the original below it'
+  caption: The Versions page.
+  crop:
+    rect:
+    - 300
+    - 40
+    - 688
+    - 700
+  fade:
+  - l
+  - r
+  - t
+  - b
+  kind: ui
+  dpr: 1
+  from: img/image-editor/versions-desktop.png
+- id: docked
+  replaces: img/image-editor/docked.png
+  alt: The Image editor as a tab in the bottom dock, beside Animation, Node editor, Explorer, Flow Code and UV editor
+  caption: The Image editor as a tab in the bottom dock.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 688
+    - 337
+  fade:
+  - r
+  kind: ui
+  dpr: 1
+  from: img/image-editor/docked.png
+- id: editor-phone
+  replaces: img/image-editor/editor-phone.png
+  alt: 'The Image editor on a phone: the picture at the top, the Edit page under it, the bottom bar with Play below'
+  caption: The Image editor on a phone.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 780
+    - 1688
+  fade: []
+  kind: ui
+  dpr: 2
+  from: img/image-editor/editor-phone.png

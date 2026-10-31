@@ -1,0 +1,66 @@
+page: physics
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: sim-on-load-setting
+  replaces: img/physics/sim-on-load-setting.png
+  alt: Configure Scene ▸ Camera ▸ Start view with Start simulation on load ticked
+  caption: Configure Scene ▸ Camera ▸ Start view with Start simulation on load ticked.
+  crop:
+    rect:
+    - 592
+    - 0
+    - 688
+    - 720
+  fade:
+  - l
+  kind: ui
+  dpr: 1
+  from: img/physics/sim-on-load-setting.png
+- id: flying-setting
+  replaces: img/physics/flying-setting.png
+  alt: Configure Scene ▸ Physics ▸ Play mode, with Flying set to Allowed
+  caption: Configure Scene ▸ Physics ▸ Play mode.
+  crop:
+    rect:
+    - 592
+    - 0
+    - 688
+    - 800
+  fade:
+  - l
+  kind: ui
+  dpr: 1
+  from: img/physics/flying-setting.png
+- id: sunken-pool
+  replaces: img/physics/sunken-pool.png
+  alt: Toys floating in a pool sunk into the ground
+  caption: Toys floating in a pool sunk into the ground.
+  crop:
+    rect:
+    - 77
+    - 65
+    - 1126
+    - 569
+  fade: vignette
+  kind: view
+  dpr: 1
+  from: img/physics/sunken-pool.png
+- id: floats
+  replaces: img/physics/floats.png
+  alt: A wooden crate floating in a pool, with the Floats rows in its Physics properties
+  caption: A wooden crate floating in a pool.
+  crop:
+    rect:
+    - 592
+    - 0
+    - 688
+    - 720
+  fade:
+  - l
+  kind: ui
+  dpr: 1
+  from: img/physics/floats.png

@@ -1,0 +1,23 @@
+{
+ "id": "selection-passes-through",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.614Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/water/selection-passes-through.png",
+ "width": 688,
+ "height": 720,
+ "crop": {
+  "x": 592,
+  "y": 0,
+  "w": 688,
+  "h": 720
+ },
+ "cut": [],
+ "fade": [
+  "l"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

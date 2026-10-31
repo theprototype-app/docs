@@ -1,0 +1,35 @@
+page: particles
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: draw-as
+  replaces: img/particles/draw-as.png
+  alt: Draw as set to Trails, with the Trail length, Segments and Inherit velocity rows
+  caption: Draw as set to Trails.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 280
+    - 191
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/particles/draw-as.png
+- id: wisps-trails
+  replaces: img/particles/wisps-trails.png
+  alt: 'The Magic wisps preset: purple trails curling off a moving cube'
+  caption: The Magic wisps preset.
+  crop:
+    rect:
+    - 77
+    - 65
+    - 1126
+    - 569
+  fade: vignette
+  kind: view
+  dpr: 1
+  from: img/particles/wisps-trails.png
