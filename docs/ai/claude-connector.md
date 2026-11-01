@@ -103,6 +103,8 @@ file into the tab yourself, then ask Claude to place or change it.
   appear in **status**.
 - **Animated objects:** on an object that is being animated, Claude reads and edits the pose you authored, and is
   told it is animated and where it is right now.
+- **Physics in a group:** the simulation only runs objects at the top of the scene. If an object with physics is
+  inside a group, Claude is told so and can move it out, or set physics on the group itself.
 - **Particles** on a rotated parent: in world space, an emitter can follow the object (*a rocket's exhaust*) or
   keep world axes (*a fire that burns straight up*). Gravity always points world down.
 
@@ -126,6 +128,9 @@ can undo them from their own screen.
   work, and the answer goes back. Your scene is never stored by the connector, and we do not log
   what Claude asks or what your tab answers — only counts (how many calls, how long they took).
 - Pictures come from the theprototype canvas only, downscaled, and never while the tab is hidden.
+- If the link to your tab drops for a moment, Claude's call carries on and answers once the link is back. If
+  something can't run right now, such as a tool whose code failed to load, **status** tells Claude, usually with
+  the fix: reload the tab.
 - There is a fair-use limit on calls per minute. If Claude goes too fast it is told to wait a few
   seconds; ask again and it continues.
 - Generating 3D models has its own limit per hour, because each one costs you credits with your mesh provider.
