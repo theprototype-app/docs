@@ -68,7 +68,7 @@ trees by the fire"*) — it never reads out ids or numbers. Good things to say:
 | Add physics and run the simulation in your tab at its full frame rate, whether you host or joined (your own assistant's **Physics tools** setting is not changed) | See anything outside the theprototype tab, or move your camera |
 | Animate a model's named parts, and see where everyone stands and looks, so *"put a tree in front of me"* lands in front of you, in VR too (a look-only connection sees only your own position) | |
 | Ask your tab to join a session from a link you give it: nothing happens until you press **Join** on the card in the tab (see below) | |
-| Write small code behaviours, and generate 3D models with **your** mesh provider when you have one | Do more than you can: a **viewer's** Claude can look but not build, and locked objects stay locked |
+| Write small code behaviours | Do more than you can: a **viewer's** Claude can look but not build, and locked objects stay locked |
 | Take a picture of the scene to check its work, and save the open scene as a new version in your Library (see below) | Keep working after you close the tab |
 
 ### Joining a session from a link
@@ -133,8 +133,6 @@ can undo them from their own screen.
   the fix: reload the tab.
 - There is a fair-use limit on calls per minute. If Claude goes too fast it is told to wait a few
   seconds; ask again and it continues.
-- Generating 3D models has its own limit per hour, because each one costs you credits with your mesh provider.
-  A request your tab refuses does not count.
 
 See also: [Build with an AI agent](build-with-an-agent.md) · [Assistant](assistant.md) ·
 [Security](../security.md)
