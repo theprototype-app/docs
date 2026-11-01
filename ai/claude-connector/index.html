@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Use theprototype from claude.ai and voice", "url": "https://docs.theprototype.app/ai/claude-connector/", "description": "Add theprototype as a connector in claude.ai, press Connect Claude in your open theprototype tab, and talk Claude through building — in a chat on the web or desktop, in the Claude phone app, or…", "dateModified": "2026-10-31"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Use theprototype from claude.ai and voice", "url": "https://docs.theprototype.app/ai/claude-connector/", "description": "Add theprototype as a connector in claude.ai, press Connect Claude in your open theprototype tab, and talk Claude through building — in a chat on the web or desktop, in the Claude phone app, or…", "dateModified": "2026-11-01"}</script>
 </head>
   
   
@@ -5629,6 +5629,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#saving-the-scene" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saving the scene
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importing files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scripts-spin-and-particles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scripts, spin and particles
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5968,6 +5995,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#saving-the-scene" class="md-nav__link">
+    <span class="md-ellipsis">
+      Saving the scene
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importing-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importing files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scripts-spin-and-particles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scripts, spin and particles
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6093,7 +6147,7 @@ trees by the fire"</em>) — it never reads out ids or numbers. Good things to s
 <tbody>
 <tr>
 <td>Add shapes, lights and groups; move, resize, recolour, rename, hide and delete them</td>
-<td>Save or open files, or change your settings</td>
+<td>Open files or import them from your computer, or change your settings</td>
 </tr>
 <tr>
 <td>Make things move and react with flow nodes (spin, bounce, follow a path, open on click) and look up how each node wires</td>
@@ -6116,7 +6170,7 @@ trees by the fire"</em>) — it never reads out ids or numbers. Good things to s
 <td>Do more than you can: a <strong>viewer's</strong> Claude can look but not build, and locked objects stay locked</td>
 </tr>
 <tr>
-<td>Take a picture of the scene to check its work</td>
+<td>Take a picture of the scene to check its work, and save the open scene as a new version in your Library (see below)</td>
 <td>Keep working after you close the tab</td>
 </tr>
 </tbody>
@@ -6127,6 +6181,30 @@ session and who asks (<em>Claude (connector)</em>). <strong>Cancel</strong>, or 
 the app's usual questions still apply: leaving your current session, another signaling server, the host's
 Approve, and what to do with work you have open. One question at a time: if another is open in the tab, Claude
 is told to try later. A look-only connection cannot ask to join.</p>
+<p>Claude only says it joined once the connection is really up. If the session cannot be reached, the host refuses
+or you cancel, it tells you what happened, and <strong>status</strong> shows the last result and whether the host is still
+deciding.</p>
+<h3 id="saving-the-scene">Saving the scene</h3>
+<p><em>"Save this"</em> is the same save as <strong>Ctrl+S</strong>: a new version, and <strong>Version history</strong> can bring back older ones.
+In someone else's session it saves on the host. A viewer cannot save, a private scene cannot be saved this way,
+and Claude cannot write over a different scene: if the name it picks is taken, it is told to choose another or
+to ask you to open that scene first.</p>
+<h3 id="importing-files">Importing files</h3>
+<p>Claude cannot import a model or file through the connector: it has no file on your computer to send. Drop the
+file into the tab yourself, then ask Claude to place or change it.</p>
+<h3 id="scripts-spin-and-particles">Scripts, spin and particles</h3>
+<ul>
+<li><strong>Scripts</strong> run every frame in a sandbox, on a view of their object, starting again from the base pose. Write
+  the pose from the time, as in <code>object.rotation.y = base.rot[1] + time * speed</code>. Something like <code>+= 0.01</code> will
+  not build up. Claude gets a warning when a script cannot work as written, and errors from running scripts
+  appear in <strong>status</strong>.</li>
+<li><strong>Animated objects:</strong> on an object that is being animated, Claude reads and edits the pose you authored, and is
+  told it is animated and where it is right now.</li>
+<li><strong>Physics in a group:</strong> the simulation only runs objects at the top of the scene. If an object with physics is
+  inside a group, Claude is told so and can move it out, or set physics on the group itself.</li>
+<li><strong>Particles</strong> on a rotated parent: in world space, an emitter can follow the object (<em>a rocket's exhaust</em>) or
+  keep world axes (<em>a fire that burns straight up</em>). Gravity always points world down.</li>
+</ul>
 <h2 id="see-and-undo-what-it-did">See and undo what it did</h2>
 <p>Every step Claude takes is a line labelled <strong>Claude (connector)</strong> in <strong>Agent activity</strong>, with its
 own <strong>Undo</strong>. Anyone in the session sees the changes as they happen, and anyone with edit access
@@ -6145,8 +6223,13 @@ can undo them from their own screen.</p>
   work, and the answer goes back. Your scene is never stored by the connector, and we do not log
   what Claude asks or what your tab answers — only counts (how many calls, how long they took).</li>
 <li>Pictures come from the theprototype canvas only, downscaled, and never while the tab is hidden.</li>
+<li>If the link to your tab drops for a moment, Claude's call carries on and answers once the link is back. If
+  something can't run right now, such as a tool whose code failed to load, <strong>status</strong> tells Claude, usually with
+  the fix: reload the tab.</li>
 <li>There is a fair-use limit on calls per minute. If Claude goes too fast it is told to wait a few
   seconds; ask again and it continues.</li>
+<li>Generating 3D models has its own limit per hour, because each one costs you credits with your mesh provider.
+  A request your tab refuses does not count.</li>
 </ul>
 <p>See also: <a href="../build-with-an-agent/">Build with an AI agent</a> · <a href="../assistant/">Assistant</a> ·
 <a href="../../security/">Security</a></p>
@@ -6170,7 +6253,7 @@ can undo them from their own screen.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-31
+    2026-11-01
   </span>
 
     
