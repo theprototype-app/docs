@@ -320,7 +320,7 @@ The AI Assistant panel in the headset.
 - Grip the panel and drag to move it (it remembers where you put it); ✕ closes it.
 
 There are **no AI settings in VR**: the provider and [voice typing](ai/assistant.md#voice-typing) are set up in desktop
-**Settings ▸ AI**. Until a provider is set up, the panel says so and the input row stays shut.
+**Settings ▸ Tools & connections**. Until a provider is set up, the panel says so and the input row stays shut.
 
 !!! note "Limits"
     - The panel shows the last 7 turns, two lines each; long answers are shortened — read them in full in the desktop

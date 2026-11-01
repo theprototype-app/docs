@@ -11,6 +11,7 @@ nav:
     - Themes & Appearance: appearance.md
     - Accessibility: accessibility.md
     - Settings: settings.md
+    - Tools & connections: tools-and-connections.md
     - Privacy & Error Reports: privacy.md
     - Security & Self-hosting: security.md
     - Your Character: avatars.md
@@ -21,6 +22,7 @@ nav:
   - Building:
     - Explorer: explorer.md
     - Importing Big Models: import-optimize.md
+    - Edit in Blender: edit-in-blender.md
     - "Free Assets (CC0)": free-assets.md
     - Packs: packs.md
     - Levels of Detail: lod.md
@@ -226,6 +228,7 @@ nav:
     - Talk to your agent: ai/talk-to-your-agent.md
     - "Recipe: better models with img2threejs": ai/img2threejs.md
     - "Recipe: pixel art with Pixling": ai/pixling.md
+    - "Recipe: Agents + Blender": ai/agents-and-blender.md
     - Use theprototype from claude.ai and voice: ai/claude-connector.md
     - Providers: ai/providers.md
     - Local & Small Models: ai/local-models.md
