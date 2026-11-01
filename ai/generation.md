@@ -5,7 +5,7 @@ replicated to everyone, undoable like any other object. You bring the generator:
 **self-hosted ComfyUI** running a TRELLIS workflow, or a **hosted API** (Meshy).
 
 !!! note "This is opt-in"
-    Nothing is generated until you enable **Mesh generation** in **Settings → AI** and add
+    Nothing is generated until you add a **Mesh provider** in **Settings ▸ Tools & connections** and
     a provider. Turning it on reveals **“✨ Generate 3D model…”** in the Add menu and lets
     the AI assistant call a `generate_mesh` tool.
 
@@ -101,7 +101,7 @@ localhost) TLS + auth.
 
 ### 5. Configure it in the app
 
-**Settings → AI → Mesh generation → + Add mesh provider:**
+**Settings ▸ Tools & connections ▸ Mesh providers ▸ Add mesh provider:**
 
 | Field | Value |
 |---|---|
@@ -132,7 +132,7 @@ actually writes to the output and (if you have multiple outputs) set the output 
 
 No GPU required. Uses your provider account credits per generation.
 
-**Settings → AI → Mesh generation → + Add mesh provider:**
+**Settings ▸ Tools & connections ▸ Mesh providers ▸ Add mesh provider:**
 
 | Field | Value |
 |---|---|

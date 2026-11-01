@@ -20,7 +20,7 @@ Since 1.26 Settings has a new layout. No setting was lost or changed meaning: ev
     |---|---|
     | **General** | Interface, Accessibility, Controls, Input, Touch controls, Shortcuts |
     | **Workspace** | Scene, Explorer, Node types, Export |
-    | **Devices & services** | VR, AI, Connection, Privacy |
+    | **Devices & services** | VR, Tools & connections, Connection, Privacy |
 
     A dot on **About & what's new** means there is an update you have not read. <kbd>↑</kbd> / <kbd>↓</kbd> walk the menu.
 
@@ -64,7 +64,7 @@ wide even for its own line (**Scene ▸ Editing ▸ Double-click action** on a p
 Changes save as you make them — there is no Save button; **Done** closes the window.
 
 - **Reset ‹Category› to defaults** — bottom left on a computer, at the end of the page on a phone — puts every setting
-  on that page back, after asking. There is no undo for it. It never touches your work: the AI page keeps your saved
+  on that page back, after asking. There is no undo for it. It never touches your work: the Tools & connections page keeps your saved
   providers and keys, the Interface page keeps the themes you loaded.
 - **About ▸ Danger zone** holds the two big ones, each asking first:
     - **Clear saved session** — the autosaved copy of your work (see [Autosave](https://docs.theprototype.app/saving.md#autosave)).
@@ -90,6 +90,10 @@ photo decoder (libheif-js) is LGPL-3.0: it ships unmodified as its own file, loa
 *New in 1.44.* Pack files, skies, converted textures (the optimized copy of an imported model) and files from the
 CC0 browser are kept in the browser's private file storage, once per content. The next time a scene needs them they
 load from the device — faster, and without the network.
+
+*New in 1.53:* the five skies in Configure Scene ▸ Environment ([sky images](https://docs.theprototype.app/camera.md#sky-images-hdri)) are no longer part of the app. A sky downloads the first time
+you pick one and stays here. Offline or with the download blocked, it shows its flat colours and tries again when you are back
+online. Exported games still carry their sky.
 
 **Where:** **Settings ▸ Storage**:
 

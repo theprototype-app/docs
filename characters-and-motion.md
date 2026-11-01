@@ -231,6 +231,10 @@ a hand, a lamp on a rotor arm) — or lets go, staying where it was.
 `mode: "relative"` (default) = offsets from each part's rest pose, `"absolute"` = local values. A turn
 longer than 90° between two keys is split so a full turn spins. `play: false` assigns without playing.
 
+## Re-rigged in another tool?
+
+[Replace model…](https://docs.theprototype.app/edit-in-blender.md#animations) swaps the file and keeps your clips, embedded and `.tpanim`, when their bones still exist.
+
 ## Limits (motion)
 - Blend by Speed and the states graph blend at most the clips they name; their phases are per
   device (a walk's step can be a fraction of a cycle apart between two screens).

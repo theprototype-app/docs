@@ -53,7 +53,7 @@ picture, drop files on the window, or drag a picture from the Explorer onto it. 
 - The agent sees the picture, and its bridge also saves it to a private temporary file (removed when the bridge exits)
   whose path comes with your message — for a skill such as [img2threejs](https://docs.theprototype.app/ai/img2threejs.md) that wants a file.
 - **Keep in Explorer** (the bookmark on a picture) turns it into an image in **Library ▸ References**, shared with the
-  session and listed under **Scene ▸ references**, so it saves with the scene. *Settings ▸ AI ▸ Chat pictures ▸ Keep
+  session and listed under **Scene ▸ references**, so it saves with the scene. *Settings ▸ Tools & connections ▸ Chat pictures ▸ Keep
   sent pictures in Explorer* keeps every picture you send (off by default).
 - Editors and admins attach pictures; viewers see them.
 

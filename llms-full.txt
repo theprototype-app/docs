@@ -51,6 +51,13 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.53 — your tools, connected.** Replace a model from a file and keep the object: its place, flows, physics and clips. **Edit in
+Blender** downloads the model, and the file you export comes back with *Update "<name>"?*, wherever you drop it; Chrome and Edge
+can watch the file and reload on each save. A 100×, Z-up or unapplied export gets a one-click fix. **Settings ▸ Tools &
+connections** replaces Settings ▸ AI: one page for chat and mesh providers, voice typing, agents and desktop tools, each with a
+status and a Test. Skies download the first time you pick one, so the app download is about 6 MB smaller. See
+[Edit in Blender](https://docs.theprototype.app/edit-in-blender.md) and [Tools & connections](https://docs.theprototype.app/tools-and-connections.md).
+
 **1.52 — sessions in your Explorer.** Joining a session shows the host's files as *"<Host>'s session"* in your Explorer,
 read-only, above your Library: open them, copy them, and **Save on host** if you can edit. Nothing downloads until you
 open or copy it, and hosts choose what guests see. Save project now asks about unsaved changes and opens where you left
@@ -2589,7 +2596,7 @@ Since 1.26 Settings has a new layout. No setting was lost or changed meaning: ev
     |---|---|
     | **General** | Interface, Accessibility, Controls, Input, Touch controls, Shortcuts |
     | **Workspace** | Scene, Explorer, Node types, Export |
-    | **Devices & services** | VR, AI, Connection, Privacy |
+    | **Devices & services** | VR, Tools & connections, Connection, Privacy |
 
     A dot on **About & what's new** means there is an update you have not read. <kbd>↑</kbd> / <kbd>↓</kbd> walk the menu.
 
@@ -2633,7 +2640,7 @@ wide even for its own line (**Scene ▸ Editing ▸ Double-click action** on a p
 Changes save as you make them — there is no Save button; **Done** closes the window.
 
 - **Reset ‹Category› to defaults** — bottom left on a computer, at the end of the page on a phone — puts every setting
-  on that page back, after asking. There is no undo for it. It never touches your work: the AI page keeps your saved
+  on that page back, after asking. There is no undo for it. It never touches your work: the Tools & connections page keeps your saved
   providers and keys, the Interface page keeps the themes you loaded.
 - **About ▸ Danger zone** holds the two big ones, each asking first:
     - **Clear saved session** — the autosaved copy of your work (see [Autosave](https://docs.theprototype.app/saving.md#autosave)).
@@ -2659,6 +2666,10 @@ photo decoder (libheif-js) is LGPL-3.0: it ships unmodified as its own file, loa
 *New in 1.44.* Pack files, skies, converted textures (the optimized copy of an imported model) and files from the
 CC0 browser are kept in the browser's private file storage, once per content. The next time a scene needs them they
 load from the device — faster, and without the network.
+
+*New in 1.53:* the five skies in Configure Scene ▸ Environment ([sky images](https://docs.theprototype.app/camera.md#sky-images-hdri)) are no longer part of the app. A sky downloads the first time
+you pick one and stays here. Offline or with the download blocked, it shows its flat colours and tries again when you are back
+online. Exported games still carry their sky.
 
 **Where:** **Settings ▸ Storage**:
 
@@ -2702,6 +2713,57 @@ cache uses the older Cache Storage, and where neither exists everything download
 | Optimize for | new in 1.37 | **Export ▸ Optimize for** — **Full quality** / **For Quest / web** (replaces the *Compress textures — not in this release* row), this device only; the same as **Save options ▸ Optimize for**. See [Optimize for Quest / web](https://docs.theprototype.app/publish-export.md#optimize-for-quest-web) |
 | Send anonymous error reports | new in 1.39 | **Privacy ▸ Send anonymous error reports** — on by default; see [Privacy & Error Reports](https://docs.theprototype.app/privacy.md#anonymous-error-reports) |
 | Third-party licences | new in 1.39 | **About ▸ Third-party licences** — see [above](#third-party-licences) |
+
+
+---
+
+Source: https://docs.theprototype.app/tools-and-connections/ (Markdown: https://docs.theprototype.app/tools-and-connections.md)
+
+# Tools & connections
+
+**Settings ▸ Tools & connections** is one page for everything outside the app: the AI models you use, the services that
+generate 3D models, the agents in your session and the desktop tools you edit in. Set up only the ones you use. It used
+to be Settings ▸ AI, and your saved providers and keys carried over as they were.
+
+![Settings ▸ Tools & connections, starting with chat providers, chat pictures and mesh providers](https://docs.theprototype.app/img/tools-and-connections/tools-connections.webp)
+
+## A row
+
+Each tool is one row:
+
+- **A status** in words, with a coloured dot: green is ready to use, grey is switched off or not connected, amber needs
+  setting up, and red means the last Test failed.
+- **Test** asks the tool whether it answers right now. It costs nothing and generates nothing (see below).
+- **Enable / Disable** switches it. Nothing is deleted: the provider and its key stay, ready for later.
+- **Turns on** lists the features the tool gives you, such as *Generate 3D model* or *the assistant's mic*.
+- **Set up** opens its form. **Guide** opens its docs page, where it has one.
+
+## The sections
+
+| Section | What it holds | What Test does |
+|---|---|---|
+| **Chat providers** | The models behind the [AI assistant](https://docs.theprototype.app/ai/assistant.md) and the quick prompt bar, and voice typing. See [AI Providers](https://docs.theprototype.app/ai/providers.md) | Lists the provider's models and checks yours answers. Voice typing sends half a second of silence |
+| **Chat pictures** | How pictures you attach to a chat are sized and kept. See [Talk to your agent](https://docs.theprototype.app/ai/talk-to-your-agent.md) | — |
+| **Mesh providers** | Text to 3D models from the Add menu, the assistant and agents. See [3D Generation](https://docs.theprototype.app/ai/generation.md) | ComfyUI: asks for its status. Meshy: lists your tasks, so it uses no credits |
+| **Animation providers**, **theprototype AI box** | Not available yet: a later update adds rigging and animation services and your own GPU box here | — |
+| **Agents** | Coding agents in this session, with **Set up** making an invite link and the MCP command to paste. See [Build with an AI agent](https://docs.theprototype.app/ai/build-with-an-agent.md). On theprototype.app, also [Connect Claude](https://docs.theprototype.app/ai/claude-connector.md) | Says who is connected |
+| **Desktop tools** | Blender and any other tool that opens and saves glTF. Nothing to install. See [Edit in Blender](https://docs.theprototype.app/edit-in-blender.md) | Says whether this browser can also watch a saved file |
+
+## When a tool is missing
+
+Buttons for a feature whose tool is not set up stay where they are. Press one and it says what is missing, then opens the
+right row: *"Generate 3D model needs a Mesh provider: set one up in Settings ▸ Tools & connections."* The quick prompt bar,
+the mic and *Edit in Blender* work the same way.
+
+The AI button is different: it always opens the AI window, which offers Connect Claude or your own provider.
+
+The assistant reads the same status. Ask it for something this device has not set up and it tells you what is needed
+instead of guessing. Agents see the same through `status().missingTools`.
+
+## Where this lives
+
+Everything on this page stays on this device: it is not sent to other people in the session or saved in a scene. API keys
+are stored unencrypted in this browser and only ever sent to the provider you set up.
 
 
 ---
@@ -3884,12 +3946,100 @@ The other half of the pipeline is on the way out: **Optimize for: For Quest / we
 [Save options](https://docs.theprototype.app/saving.md#save-options) and **Settings ▸ Export** writes compressed textures, compressed geometry and the
 LOD chain into a GLTF or a Scene file — see [Publish & Export](https://docs.theprototype.app/publish-export.md#optimize-for-quest-web).
 
+## Replacing a model later
+
+A new version of a model does not have to be a new object: [Replace model…](https://docs.theprototype.app/edit-in-blender.md#replace-a-model-from-any-file) keeps the object, its flows, physics and clips.
+
 ## Limits
 
 - After an undo, or opening a `.tpscene` saved with **Full quality**, a texture is the plain (resized) picture again —
   the size saving stays; the GPU compression comes back on the next import or a **For Quest / web** save.
 - The original is kept in the Library even when it is larger than the 25 MB sharing limit; it is not shared with peers
   in that case.
+
+
+---
+
+Source: https://docs.theprototype.app/edit-in-blender/ (Markdown: https://docs.theprototype.app/edit-in-blender.md)
+
+# Edit in Blender
+
+Take a model to Blender (or Maya, 3ds Max, Cascadeur, any tool that reads and writes glTF) and bring it back. The object
+keeps its place, flows, physics and clips. There is nothing to install.
+
+## The round trip
+
+1. Right-click the object ▸ **Mesh ▸ Edit in Blender…**, or use Properties ▸ **Model**. `<object name>.glb` downloads, with
+   its rig, weights and clips if it is animated, and a short card shows these steps.
+2. In Blender: **File ▸ Import ▸ glTF 2.0**, pick the file, and make your edits.
+   For a model without a rig, use **Object ▸ Apply ▸ All Transforms** (Ctrl+A) before exporting.
+3. **File ▸ Export ▸ glTF 2.0** with these settings:
+
+    | Setting | Value |
+    |---|---|
+    | Format | **glTF Binary (.glb)** |
+    | Include | **Custom Properties**: this keeps the link to the object |
+    | Transform | **+Y Up** |
+    | Data ▸ Mesh | **Apply Modifiers** |
+    | Animation | On, for a rigged model, so its clips go along |
+    | Units | Metres (Scene ▸ Units ▸ Unit Scale 1.0) |
+
+4. **Drop the exported file anywhere** in theprototype. It recognises the object and asks **Update "<name>"?**, with no need
+   to select anything. If you left *Custom Properties* off, select the object, drop the file on it and choose **Replace**.
+
+![The Edit in Blender card, with the export settings and Watch the exported file](https://docs.theprototype.app/img/edit-in-blender/card.webp)
+
+## Watch the file
+
+In Chrome or Edge on a computer, the card has **Watch the exported file…**. Pick the `.glb` you export from Blender, and each
+time you export again theprototype offers **Reload**, or **Always reload** to update on every save. Properties ▸ Model shows
+the watched file with *Reload automatically* and *Stop*.
+
+Other browsers can drop the file instead. The watch is on your computer only and ends when you reload the page. The update
+itself reaches everyone.
+
+## Replace a model from any file
+
+*Replace model…* swaps an object's model for another file, whether or not it came from Edit in Blender.
+
+- **Where:** right-click an imported model ▸ **Mesh ▸ Replace model…**, or Properties ▸ **Model ▸ Replace model…** (the only
+  place for a single primitive such as a box). Or drop a model file **onto the selected object** and choose **Replace**.
+  Choose *Add as a new object* for the old behaviour, and tick *Remember for this session* to stop being asked until you reload.
+- **Formats:** `.glb`, `.gltf`, `.vrm`, `.fbx`, `.stl`, and `.obj` (pick its `.mtl` and textures along with it).
+- **What stays:** the object itself: its name, position, rotation, scale, its parent and place in the object list, its flows and
+  every flow node pointing at it, behaviours, physics, colliders, notes, and materials you changed in theprototype, on the part
+  with the same name. Only the model changes.
+- **Undo:** one Ctrl+Z puts the old model back for everyone. The new model reaches every peer and anyone who joins later.
+- **Limits:** a replace is refused while a simulation runs and while someone else is editing the object.
+
+### Animations
+
+A clip the old model had and the new file lacks is **kept when every bone it moves exists in the new model**, matched by bone
+name, so re-rigging or fixing weights in another tool does not lose it.
+
+- A clip the new file has under the same name wins.
+- A clip that names a bone the new model lacks is dropped. The message after the replace lists what was kept and dropped.
+- Clips inside the old model's file need a `.glb` replacement, because they are written into the new file so everyone gets them.
+- [`.tpanim` clips](https://docs.theprototype.app/characters-and-motion.md) follow the same rule and stay separate files; a humanoid clip stays when the new
+  model has humanoid bones. A dropped one comes back with Ctrl+Z.
+
+### Checks before it is placed
+
+If the new model looks off, theprototype says so and offers a one-click fix, or *Replace as it is*:
+
+| It looks like | The fix |
+|---|---|
+| About **100× larger or smaller** than the model it replaces (the centimetre / metre mix-up, common with FBX) | *Scale by 0.01* (or 100) |
+| **Lying on its side** (exported Z-up) | *Stand it up* |
+| **Transforms not applied** (a scale or a quarter turn left on the file's root) | *Apply transforms* for models without a rig; for a rig, apply them in your tool and export again |
+
+## Earlier versions
+
+Ctrl+Z right after an update brings back the previous one, and earlier versions come back from [checkpoints](https://docs.theprototype.app/checkpoints.md).
+
+## Let an agent do it
+
+Claude Code can make the whole trip for you: see the [Agents + Blender recipe](https://docs.theprototype.app/ai/agents-and-blender.md).
 
 
 ---
@@ -6558,6 +6708,10 @@ a hand, a lamp on a rotor arm) — or lets go, staying where it was.
 `mode: "relative"` (default) = offsets from each part's rest pose, `"absolute"` = local values. A turn
 longer than 90° between two keys is split so a full turn spins. `play: false` assigns without playing.
 
+## Re-rigged in another tool?
+
+[Replace model…](https://docs.theprototype.app/edit-in-blender.md#animations) swaps the file and keeps your clips, embedded and `.tpanim`, when their bones still exist.
+
 ## Limits (motion)
 - Blend by Speed and the states graph blend at most the clips they name; their phases are per
   device (a walk's step can be a fraction of a cycle apart between two screens).
@@ -8725,6 +8879,9 @@ sky.
 *Figure: The Meadow sky image lighting a mirror sphere and a box.*
 It lives in **Configure Scene ▸ Environment ▸ Sky image (HDRI)**, under the preset chips and the Exposure slider. Click
 a card to switch to that sky; like every Environment setting, everyone in the session sees it.
+
+Since 1.53 a sky downloads the first time you pick it and stays [on this device](https://docs.theprototype.app/settings.md#downloads-kept-on-this-device). Offline or
+with the download blocked, the preset's flat colours show until the sky can load. Exported games still carry their sky.
 
 | Sky | What it looks like |
 |---|---|
@@ -18488,7 +18645,7 @@ doing (*Creating 3 object(s)*).
 - Grip the panel and drag to move it (it remembers where you put it); ✕ closes it.
 
 There are **no AI settings in VR**: the provider and [voice typing](https://docs.theprototype.app/ai/assistant.md#voice-typing) are set up in desktop
-**Settings ▸ AI**. Until a provider is set up, the panel says so and the input row stays shut.
+**Settings ▸ Tools & connections**. Until a provider is set up, the panel says so and the input row stays shut.
 
 !!! note "Limits"
     - The panel shows the last 7 turns, two lines each; long answers are shortened — read them in full in the desktop
@@ -18929,12 +19086,12 @@ Everything it does is a normal edit: it **replicates live to everyone in the ses
 !!! note "You bring the model"
     The assistant talks to an AI provider you configure (Grok, Gemini, or any
     OpenAI-compatible / self-hosted endpoint). Nothing is sent anywhere until you add a
-    provider and a key in **Settings ▸ AI**. See [AI Providers](https://docs.theprototype.app/ai/providers.md).
+    provider and a key in **Settings ▸ Tools & connections**. See [AI Providers](https://docs.theprototype.app/ai/providers.md).
 
 ## Turning it on
 
-1. Open **Settings ▸ AI** and toggle **Enable assistant**.
-2. Add a provider (Grok, Gemini or a custom endpoint) and select it as active.
+1. Open **Settings ▸ Tools & connections** and press **Add chat provider** (Grok, Gemini or a custom endpoint).
+2. Switch its row on with **Enable**, and press **Test** to check it answers.
 
 Once enabled, there are a few ways to reach it.
 
@@ -18964,7 +19121,7 @@ and talk — see [The AI assistant in VR](https://docs.theprototype.app/vr.md#th
 
 ## Voice typing
 
-Talk to the assistant instead of typing. Set up a speech-to-text provider in **Settings ▸ AI ▸ Voice typing provider**
+Talk to the assistant instead of typing. Set up a speech-to-text provider in **Settings ▸ Tools & connections ▸ Voice typing**
 (search *voice*, *whisper* or *dictation*):
 
 | Setting | Default | Notes |
@@ -19025,7 +19182,7 @@ The assistant reads your graphs as the same [compact text](https://docs.theproto
 which is several times shorter than JSON, and can add nodes by writing that text.
 
 **Physics** (bodies, welds/hinges with motors, and starting the simulation) is a
-per-provider opt-in — the **Physics tools (advanced)** checkbox in **Settings ▸ AI**.
+per-provider opt-in — the **Physics tools (advanced)** checkbox in the provider's form (**Settings ▸ Tools & connections**, **Set up**).
 It's off by default because multi-step physics is hard for small local models; see
 [Local & Small Models](https://docs.theprototype.app/ai/local-models.md) for what the checkbox gates, model-size guidance
 and recommended vLLM flags. With it enabled, the assistant may **start the simulation
@@ -19057,7 +19214,7 @@ reset it first, then one undo reverts the whole prompt.
 | Symptom | Fix |
 |---|---|
 | <kbd>`</kbd> shows a toast about Settings | Enable the assistant and add a provider first. |
-| "Invalid API key" | Re-check the key in **Settings ▸ AI ▸ Edit**. |
+| "Invalid API key" | Re-check the key in **Settings ▸ Tools & connections**, **Set up**. |
 | "Network or CORS error" | A self-hosted endpoint must allow browser origins — see [Providers](https://docs.theprototype.app/ai/providers.md). |
 | Objects look wrong / oversized | Ask a follow-up ("half the size", "move it to the origin") — it edits in place. |
 
@@ -19102,7 +19259,7 @@ replicated to everyone and undoable, exactly like a person's edits.
 
 What an agent never does: move your camera, read anything outside the scene, or use API keys of
 its own inside the app. If it generates a 3D model (*generate_mesh*), that runs on **your** mesh
-provider (Settings ▸ AI ▸ Mesh generation) — you see who asked on the progress card and can
+provider (Settings ▸ Tools & connections ▸ Mesh providers) — you see who asked on the progress card and can
 cancel it there.
 
 ## For the agent (setup)
@@ -19276,7 +19433,7 @@ picture, drop files on the window, or drag a picture from the Explorer onto it. 
 - The agent sees the picture, and its bridge also saves it to a private temporary file (removed when the bridge exits)
   whose path comes with your message — for a skill such as [img2threejs](https://docs.theprototype.app/ai/img2threejs.md) that wants a file.
 - **Keep in Explorer** (the bookmark on a picture) turns it into an image in **Library ▸ References**, shared with the
-  session and listed under **Scene ▸ references**, so it saves with the scene. *Settings ▸ AI ▸ Chat pictures ▸ Keep
+  session and listed under **Scene ▸ references**, so it saves with the scene. *Settings ▸ Tools & connections ▸ Chat pictures ▸ Keep
   sent pictures in Explorer* keeps every picture you send (off by default).
 - Editors and admins attach pictures; viewers see them.
 
@@ -19410,6 +19567,52 @@ files from the agent's machine](https://docs.theprototype.app/ai/talk-to-your-ag
 
 ---
 
+Source: https://docs.theprototype.app/ai/agents-and-blender/ (Markdown: https://docs.theprototype.app/ai/agents-and-blender.md)
+
+# Recipe: Agents + Blender
+
+Claude Code with two MCP servers, theprototype's and [blender-mcp](https://github.com/ahujasid/blender-mcp) (MIT, a separate
+project), can do the Blender half of a round trip for you: *"fix the fox's armpit weights in Blender and put it back"*.
+
+You need Blender on the same computer as Claude Code, with the blender-mcp add-on running, and a theprototype session open.
+
+## Set it up
+
+1. Follow blender-mcp's README: install its add-on in Blender, then connect its server in the Blender sidebar.
+2. Add it to Claude Code:
+
+    ```bash
+    claude mcp add blender -- uvx blender-mcp
+    ```
+
+3. In theprototype: **Settings ▸ Tools & connections ▸ Agents ▸ Coding agents ▸ Set up**, or Connect ▸ Request AI. Create an
+   invite with **Edit** and paste the MCP command it gives you:
+
+    ```bash
+    claude mcp add theprototype -- npx -y @theprototype/agent mcp '<your invite link>'
+    ```
+
+## What to ask
+
+Agent tools cannot yet export an object from a session or replace one in place, so you do both ends and the agent does the work
+in Blender:
+
+1. **You** press **Edit in Blender…** on the fox. `Fox.glb` lands in your downloads.
+2. **Ask Claude Code**, naming the file:
+
+    > Import ~/Downloads/Fox.glb into Blender, fix the armpit weights, and export it to ~/Downloads/Fox-fixed.glb as a GLB with
+    > Custom Properties on, +Y Up and Apply Modifiers.
+
+3. **You** drop `Fox-fixed.glb` onto theprototype and answer **Update "Fox"?**
+
+The object keeps its flows, physics and clips, and one Ctrl+Z puts the old model back. See [Edit in Blender](https://docs.theprototype.app/edit-in-blender.md).
+
+!!! warning "blender-mcp runs code in Blender"
+    Its server lets the agent run Python in your Blender. Save your work first, and read what it plans before you allow it.
+
+
+---
+
 Source: https://docs.theprototype.app/ai/claude-connector/ (Markdown: https://docs.theprototype.app/ai/claude-connector.md)
 
 # Use theprototype from claude.ai and voice
@@ -19527,14 +19730,14 @@ Source: https://docs.theprototype.app/ai/providers/ (Markdown: https://docs.thep
 # AI Providers
 
 The assistant needs a model to talk to. You supply one — a hosted provider like Grok or
-Gemini, or your own self-hosted endpoint. Configure it once in **Settings ▸ AI**.
+Gemini, or your own self-hosted endpoint. Configure it once in **Settings ▸ Tools & connections**.
 
 Every supported provider speaks the same **OpenAI chat-completions** dialect, so the app
 uses one client for all of them.
 
 ## Adding a provider
 
-1. Open **Settings ▸ AI** and click **+ Add provider**.
+1. Open **Settings ▸ Tools & connections** and click **Add chat provider**.
 2. Pick a preset — it fills in the base URL and a default model:
 
     | Preset | Base URL | Notes |
@@ -19649,7 +19852,7 @@ suggested value at startup).
 !!! tip "The app defends itself either way"
     The client detects an unusable streamed turn, retries it **unstreamed**, and stops
     streaming for the rest of the session. You can also turn **Stream responses** off
-    permanently for a provider in **Settings ▸ AI** — recommended for any server whose
+    permanently for a provider in **Settings ▸ Tools & connections** — recommended for any server whose
     tool calls only work unstreamed. Fixing the parser is still better: streaming feels
     much more responsive.
 
@@ -19679,7 +19882,7 @@ vllm serve Qwen/Qwen3.5-32B-AWQ \
 ## The "Physics tools" checkbox
 
 Behavior (flow-node) tools are always available to the assistant. **Physics tools are a
-per-provider opt-in** — the *Physics tools (advanced)* checkbox in **Settings ▸ AI**,
+per-provider opt-in** — the *Physics tools (advanced)* checkbox in the provider's form,
 next to *Stream responses*. It gates:
 
 - `set_physics` — body params (dynamic mass / static scenery / bounciness / friction /
@@ -19717,7 +19920,7 @@ replicated to everyone, undoable like any other object. You bring the generator:
 **self-hosted ComfyUI** running a TRELLIS workflow, or a **hosted API** (Meshy).
 
 !!! note "This is opt-in"
-    Nothing is generated until you enable **Mesh generation** in **Settings → AI** and add
+    Nothing is generated until you add a **Mesh provider** in **Settings ▸ Tools & connections** and
     a provider. Turning it on reveals **“✨ Generate 3D model…”** in the Add menu and lets
     the AI assistant call a `generate_mesh` tool.
 
@@ -19813,7 +20016,7 @@ localhost) TLS + auth.
 
 ### 5. Configure it in the app
 
-**Settings → AI → Mesh generation → + Add mesh provider:**
+**Settings ▸ Tools & connections ▸ Mesh providers ▸ Add mesh provider:**
 
 | Field | Value |
 |---|---|
@@ -19844,7 +20047,7 @@ actually writes to the output and (if you have multiple outputs) set the output 
 
 No GPU required. Uses your provider account credits per generation.
 
-**Settings → AI → Mesh generation → + Add mesh provider:**
+**Settings ▸ Tools & connections ▸ Mesh providers ▸ Add mesh provider:**
 
 | Field | Value |
 |---|---|

@@ -41,7 +41,7 @@ suggested value at startup).
 !!! tip "The app defends itself either way"
     The client detects an unusable streamed turn, retries it **unstreamed**, and stops
     streaming for the rest of the session. You can also turn **Stream responses** off
-    permanently for a provider in **Settings ▸ AI** — recommended for any server whose
+    permanently for a provider in **Settings ▸ Tools & connections** — recommended for any server whose
     tool calls only work unstreamed. Fixing the parser is still better: streaming feels
     much more responsive.
 
@@ -71,7 +71,7 @@ vllm serve Qwen/Qwen3.5-32B-AWQ \
 ## The "Physics tools" checkbox
 
 Behavior (flow-node) tools are always available to the assistant. **Physics tools are a
-per-provider opt-in** — the *Physics tools (advanced)* checkbox in **Settings ▸ AI**,
+per-provider opt-in** — the *Physics tools (advanced)* checkbox in the provider's form,
 next to *Stream responses*. It gates:
 
 - `set_physics` — body params (dynamic mass / static scenery / bounciness / friction /

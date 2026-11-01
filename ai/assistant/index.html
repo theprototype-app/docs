@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Assistant", "url": "https://docs.theprototype.app/ai/assistant/", "description": "Build and rearrange the scene by describing what you want. The assistant turns a prompt into real objects — primitives, lights and groups — placed, colored and named for you. Everything it does is…", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/ai-assistant/voice-typing-settings.webp", "caption": "The Voice typing setting in the AI assistant's settings."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/ai-assistant/assistant-mic.webp", "caption": "The assistant window with the mic button next to Send."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Assistant", "url": "https://docs.theprototype.app/ai/assistant/", "description": "Build and rearrange the scene by describing what you want. The assistant turns a prompt into real objects — primitives, lights and groups — placed, colored and named for you. Everything it does is…", "dateModified": "2026-11-01", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/ai-assistant/voice-typing-settings.webp", "caption": "The Voice typing setting in the AI assistant's settings."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/ai-assistant/assistant-mic.webp", "caption": "The assistant window with the mic button next to Send."}]}</script>
 </head>
   
   
@@ -495,6 +495,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../tools-and-connections/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools &amp; connections
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../privacy/" class="md-nav__link">
         
   
@@ -710,6 +731,27 @@
   
   <span class="md-ellipsis">
     Importing Big Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../edit-in-blender/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Edit in Blender
   </span>
   
 
@@ -5611,6 +5653,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../agents-and-blender/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recipe: Agents + Blender
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../claude-connector/" class="md-nav__link">
         
   
@@ -6005,12 +6068,12 @@ Everything it does is a normal edit: it <strong>replicates live to everyone in t
 <p class="admonition-title">You bring the model</p>
 <p>The assistant talks to an AI provider you configure (Grok, Gemini, or any
 OpenAI-compatible / self-hosted endpoint). Nothing is sent anywhere until you add a
-provider and a key in <strong>Settings ▸ AI</strong>. See <a href="../providers/">AI Providers</a>.</p>
+provider and a key in <strong>Settings ▸ Tools &amp; connections</strong>. See <a href="../providers/">AI Providers</a>.</p>
 </div>
 <h2 id="turning-it-on">Turning it on</h2>
 <ol>
-<li>Open <strong>Settings ▸ AI</strong> and toggle <strong>Enable assistant</strong>.</li>
-<li>Add a provider (Grok, Gemini or a custom endpoint) and select it as active.</li>
+<li>Open <strong>Settings ▸ Tools &amp; connections</strong> and press <strong>Add chat provider</strong> (Grok, Gemini or a custom endpoint).</li>
+<li>Switch its row on with <strong>Enable</strong>, and press <strong>Test</strong> to check it answers.</li>
 </ol>
 <p>Once enabled, there are a few ways to reach it.</p>
 <h3 id="the-quick-prompt-bar">The quick prompt bar</h3>
@@ -6030,7 +6093,7 @@ the assistant window — the same window the quick prompt bar opens into.</p>
 <p>Radial menu ▸ <strong>Tools ▸ AI</strong> opens the same conversation on a panel in the headset, where you can type or hold a button
 and talk — see <a href="../../vr/#the-ai-assistant-in-vr">The AI assistant in VR</a>.</p>
 <h2 id="voice-typing">Voice typing</h2>
-<p>Talk to the assistant instead of typing. Set up a speech-to-text provider in <strong>Settings ▸ AI ▸ Voice typing provider</strong>
+<p>Talk to the assistant instead of typing. Set up a speech-to-text provider in <strong>Settings ▸ Tools &amp; connections ▸ Voice typing</strong>
 (search <em>voice</em>, <em>whisper</em> or <em>dictation</em>):</p>
 <table>
 <thead>
@@ -6115,7 +6178,7 @@ scene.</p>
 <p>The assistant reads your graphs as the same <a href="../../node-system/#flow-code-the-graph-as-text">compact text</a> Flow Code shows,
 which is several times shorter than JSON, and can add nodes by writing that text.</p>
 <p><strong>Physics</strong> (bodies, welds/hinges with motors, and starting the simulation) is a
-per-provider opt-in — the <strong>Physics tools (advanced)</strong> checkbox in <strong>Settings ▸ AI</strong>.
+per-provider opt-in — the <strong>Physics tools (advanced)</strong> checkbox in the provider's form (<strong>Settings ▸ Tools &amp; connections</strong>, <strong>Set up</strong>).
 It's off by default because multi-step physics is hard for small local models; see
 <a href="../local-models/">Local &amp; Small Models</a> for what the checkbox gates, model-size guidance
 and recommended vLLM flags. With it enabled, the assistant may <strong>start the simulation
@@ -6156,7 +6219,7 @@ reset it first, then one undo reverts the whole prompt.</p>
 </tr>
 <tr>
 <td>"Invalid API key"</td>
-<td>Re-check the key in <strong>Settings ▸ AI ▸ Edit</strong>.</td>
+<td>Re-check the key in <strong>Settings ▸ Tools &amp; connections</strong>, <strong>Set up</strong>.</td>
 </tr>
 <tr>
 <td>"Network or CORS error"</td>
@@ -6188,7 +6251,7 @@ reset it first, then one undo reverts the whole prompt.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-31
+    2026-11-01
   </span>
 
     

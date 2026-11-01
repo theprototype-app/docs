@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Camera & View", "url": "https://docs.theprototype.app/camera/", "description": "Everything about how the scene looks on your screen — the camera lens, render mode, shadows, the grid and the environment — lives in one place: Configure Scene.", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.51.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/render-modes.webp", "caption": "Shaded, Shaded + AO and Wireframe. AO darkens creases and the ground where objects touch it."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/view-section.webp", "caption": "Configure Scene ▸ View: how the scene is drawn on your screen."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/camera-object.webp", "caption": "A camera's properties, with its preview window at the lower left."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/env-presets.webp", "caption": "Studio, Daylight, Sunset and Night on the same three objects."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/sky-meadow.webp", "caption": "The Meadow sky image lighting a mirror sphere and a box."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/sky-image-section.webp", "caption": "Configure Scene ▸ Environment, with its Sky image section."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/grid-and-lights.webp", "caption": "Light helpers show where each light is and where it shines; they are editor-only."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Camera & View", "url": "https://docs.theprototype.app/camera/", "description": "Everything about how the scene looks on your screen — the camera lens, render mode, shadows, the grid and the environment — lives in one place: Configure Scene.", "dateModified": "2026-11-01", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.51.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/render-modes.webp", "caption": "Shaded, Shaded + AO and Wireframe. AO darkens creases and the ground where objects touch it."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/view-section.webp", "caption": "Configure Scene ▸ View: how the scene is drawn on your screen."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/camera-object.webp", "caption": "A camera's properties, with its preview window at the lower left."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/env-presets.webp", "caption": "Studio, Daylight, Sunset and Night on the same three objects."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/sky-meadow.webp", "caption": "The Meadow sky image lighting a mirror sphere and a box."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/sky-image-section.webp", "caption": "Configure Scene ▸ Environment, with its Sky image section."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/grid-and-lights.webp", "caption": "Light helpers show where each light is and where it shines; they are editor-only."}]}</script>
 </head>
   
   
@@ -495,6 +495,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../tools-and-connections/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools &amp; connections
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../privacy/" class="md-nav__link">
         
   
@@ -710,6 +731,27 @@
   
   <span class="md-ellipsis">
     Importing Big Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../edit-in-blender/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Edit in Blender
   </span>
   
 
@@ -5644,6 +5686,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../ai/agents-and-blender/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recipe: Agents + Blender
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../ai/claude-connector/" class="md-nav__link">
         
   
@@ -6312,6 +6375,8 @@ sky.</p>
 </figure>
 <p>It lives in <strong>Configure Scene ▸ Environment ▸ Sky image (HDRI)</strong>, under the preset chips and the Exposure slider. Click
 a card to switch to that sky; like every Environment setting, everyone in the session sees it.</p>
+<p>Since 1.53 a sky downloads the first time you pick it and stays <a href="../settings/#downloads-kept-on-this-device">on this device</a>. Offline or
+with the download blocked, the preset's flat colours show until the sky can load. Exported games still carry their sky.</p>
 <table>
 <thead>
 <tr>
@@ -6468,7 +6533,7 @@ Sky image quality</strong>:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-31
+    2026-11-01
   </span>
 
     

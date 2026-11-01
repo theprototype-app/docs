@@ -160,6 +160,9 @@ sky.
 It lives in **Configure Scene ▸ Environment ▸ Sky image (HDRI)**, under the preset chips and the Exposure slider. Click
 a card to switch to that sky; like every Environment setting, everyone in the session sees it.
 
+Since 1.53 a sky downloads the first time you pick it and stays [on this device](https://docs.theprototype.app/settings.md#downloads-kept-on-this-device). Offline or
+with the download blocked, the preset's flat colours show until the sky can load. Exported games still carry their sky.
+
 | Sky | What it looks like |
 |---|---|
 | **Clear sky** | open blue sky with clouds, haze on the horizon |

@@ -34,7 +34,7 @@ replicated to everyone and undoable, exactly like a person's edits.
 
 What an agent never does: move your camera, read anything outside the scene, or use API keys of
 its own inside the app. If it generates a 3D model (*generate_mesh*), that runs on **your** mesh
-provider (Settings ▸ AI ▸ Mesh generation) — you see who asked on the progress card and can
+provider (Settings ▸ Tools & connections ▸ Mesh providers) — you see who asked on the progress card and can
 cancel it there.
 
 ## For the agent (setup)

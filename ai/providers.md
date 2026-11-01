@@ -1,14 +1,14 @@
 # AI Providers
 
 The assistant needs a model to talk to. You supply one — a hosted provider like Grok or
-Gemini, or your own self-hosted endpoint. Configure it once in **Settings ▸ AI**.
+Gemini, or your own self-hosted endpoint. Configure it once in **Settings ▸ Tools & connections**.
 
 Every supported provider speaks the same **OpenAI chat-completions** dialect, so the app
 uses one client for all of them.
 
 ## Adding a provider
 
-1. Open **Settings ▸ AI** and click **+ Add provider**.
+1. Open **Settings ▸ Tools & connections** and click **Add chat provider**.
 2. Pick a preset — it fills in the base URL and a default model:
 
     | Preset | Base URL | Notes |
