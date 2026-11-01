@@ -1,0 +1,110 @@
+page: mesh-editing
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: knife-polyline
+  replaces: img/mesh-editing/knife-polyline.png
+  alt: 'A polyline knife cut across the top of a cube: two corners placed, the dashed last leg following the cursor, and Knife
+    options showing 3 points with Back and Cut'
+  caption: A polyline knife cut across the top of a cube.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 688
+    - 900
+  fade:
+  - r
+  kind: ui
+  dpr: 1
+  from: img/mesh-editing/knife-polyline.png
+- id: solidify
+  replaces: img/mesh-editing/solidify.png
+  alt: A box made hollow with Solidify, thickness 0.1
+  caption: A box made hollow with Solidify.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 688
+    - 900
+  fade:
+  - r
+  kind: ui
+  dpr: 1
+  from: img/mesh-editing/solidify.png
+- id: edge-tools-slide
+  replaces: img/mesh-editing/edge-tools-slide.png
+  alt: The Edges tab with Slide armed and its factor option
+  caption: The Edges tab with Slide armed and its factor option.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 212
+    - 812
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/mesh-editing/edge-tools-slide.png
+- id: mitered-bevel
+  replaces: img/mesh-editing/mitered-bevel.png
+  alt: An octahedron edge bevelled in 4 segments, mitered where four faces meet
+  caption: An octahedron edge bevelled in 4 segments.
+  crop:
+    rect:
+    - 84
+    - 153
+    - 1232
+    - 639
+  fade: vignette
+  kind: view
+  dpr: 1
+  from: img/mesh-editing/mitered-bevel.png
+- id: vertex-tools-bevel
+  replaces: img/mesh-editing/vertex-tools-bevel.png
+  alt: 'The Vertices tab with Bevel armed: width, segments, Out / In and profile'
+  caption: The Vertices tab with Bevel armed.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 212
+    - 852
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/mesh-editing/vertex-tools-bevel.png
+- id: boolean-subtract
+  replaces: img/mesh-editing/boolean-subtract.png
+  alt: A cylinder subtracted from a box
+  caption: A cylinder subtracted from a box.
+  crop:
+    rect:
+    - 84
+    - 153
+    - 1232
+    - 639
+  fade: vignette
+  kind: view
+  dpr: 1
+  from: img/mesh-editing/boolean-subtract.png
+- id: live-symmetry
+  replaces: img/mesh-editing/live-symmetry.png
+  alt: 'Live symmetry on across X: one face selected on the left with the gizmo on it, and the Symmetry section''s mirror,
+    keep, Symmetrize and live symmetry controls'
+  caption: Live symmetry on across X.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 688
+    - 900
+  fade:
+  - r
+  kind: ui
+  dpr: 1
+  from: img/mesh-editing/live-symmetry.png

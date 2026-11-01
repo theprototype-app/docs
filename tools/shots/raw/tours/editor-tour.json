@@ -1,0 +1,41 @@
+{
+ "id": "editor-tour",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:24:26.543Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "span.tour-name",
+  "div#tour-card.tour-card",
+  "p.tour-body",
+  "button#tour-skip.tour-link",
+  "svg.lucide",
+  "div#hud-stack-left.tp-ui",
+  "circle",
+  "div.tour-actions",
+  "button#mobile-add-button.hud-fab",
+  "button#ai-hud-button.hud-fab",
+  "button#tour-never.tour-link",
+  "div.tour-head"
+ ],
+ "width": 1376,
+ "height": 1000,
+ "crop": {
+  "x": 0,
+  "y": 400,
+  "w": 688,
+  "h": 500
+ },
+ "cut": [
+  "r",
+  "t"
+ ],
+ "fade": [
+  "t",
+  "r"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

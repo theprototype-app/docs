@@ -228,6 +228,47 @@ The **⚙ settings** tab holds local preferences: single-click opens folders, sh
 
 Right-click an object in the viewport ▸ **Save as…** and choose the format. **Prefab** is the classic snapshot; **Prefab (.glb)** and **Prefab (.tpscene)** make a prefab that *is* a file — the `.glb` carries geometry, materials and baked animation, the `.tpscene` also carries animation clips, object flow graphs, shader graphs and joints — so it can be dragged into the Library, shared, and exported as the exact bytes it was saved as (**Export ▸ The original file**). The last two entries, **glTF binary (.glb)** and **glTF (.gltf)**, are plain downloads. See [Prefabs](prefabs.md).
 
+## A session you joined
+
+![The host's session above your Library](img/explorer/session-volume.png)
+
+When you join someone's session, a new root appears at the top of the Explorer tree, above your mounted projects
+and your Library: **"<Host>'s session"**, with a banner over it: *You're in <Host>'s session · saves go to <Host>*.
+
+- On a phone the folder tree starts hidden: tap **Show folder tree** (the arrow at the Explorer's edge) to see it.
+- It shows the files the host chose to share (see *Join a session ▸ What guests see*), in the host's own folders,
+  with their names, kinds and sizes. Thumbnails arrive a moment after the list.
+- It is **read-only**: you cannot rename, move, delete or drop files into it. Your own Library is never mixed with it.
+- Nothing is downloaded when you join. A file's bytes come from the host only when you **open** or **copy** it.
+- **Open** (double-click) — images and videos open in the preview, text files open in the text editor marked
+  *Read-only* (no Save). Scenes, 3D models and sounds ask you to **Copy to my library** first.
+- **Copy to my library** (right-click a file or a folder, or drag it onto your Library) — the file becomes an
+  ordinary file of yours, with the same name, in a folder of the same name. Several files are copied in one go.
+- **Big downloads ask first.** Opening or copying more than about 50 MB at once asks
+  *"Download 72 MB from <Host>?"*. Cancel and nothing is transferred.
+- **Save on host** (the save icon on the session's row, or right-click the empty grid) saves the session's scene
+  into the **host's** library, as a new version (Version history restores it). Only editors can; a view-only guest
+  sees the button greyed with the reason — use **Copy to my library** instead.
+- Leaving the session removes the root. Anything you copied stays in your Library.
+- Opening one of **your own** scenes while you are in someone's session asks first:
+  **Leave the session and open it**, or **Bring a copy into this session**.
+
+## Save project with several libraries open
+
+![The Save project dialog](img/explorer/save-project-dialog.png)
+
+"Several libraries" means your Library plus a session you joined, or a mounted project with unsaved changes.
+
+- With **one** library open, **Save** (and **Ctrl+S**) saves it straight away, as before.
+- With **several**, Save asks once: every open library has a checkbox, the one you are working in (the session,
+  while you are in one) is ticked, and each row says where it saves — *This device*, *Save on host*, *Mounted
+  project*. A library you cannot save is greyed with the reason (view-only, or no unsaved changes).
+  If the open scene has unsaved changes, the dialog says so.
+- A library is never saved into another one. You get one result line per library saved.
+- **Remember my choice** stores your answer in **Settings ▸ Save options ▸ When several libraries are open**:
+  **Ask** (default) · **Save the active one** · **Save all I can**. Ctrl+S follows the same setting.
+  The dialog links to the setting.
+
 ## Mounting a saved project
 
 **＋ Mount project…** at the top of the tree lists the projects saved in this browser (and **Import project (.tp)…** for a file). A mounted project appears as its own root beside your Library: browse it, open a scene from it into the viewport, edit its files and folders, then **Save changes** to write them back — or **Refresh** to re-read it and throw your edits away. **Copy to Library** brings one of its files into your own project. **Unmount** just stops showing it; the saved project is not deleted.
@@ -245,7 +286,10 @@ A session downloads as a **`.tpscene`**, a whole project as a **`.tp`**, and bot
 New in 1.31: drag any object — a pack item, one of your Library models, a prefab — from **Explorer ▸ Packs** or
 **Explorer ▸ Library** onto the viewport, and a **ghost** shows where it will land and how big it is before you let go.
 
-![Dragging the Duck from the starter pack: a box ghost with its size beside the pointer](img/explorer/place-box-ghost.png)
+![Dragging the Duck from the starter pack: a box ghost with its size beside the pointer](img/explorer/place-box-ghost.webp){ .shot .fade-l .fade-r width="688" height="560" loading=lazy }
+/// caption
+Dragging the Duck from the starter pack.
+///
 
 - **Drag.** Press on a card and drag it over the 3D view. The ghost sits **on** whatever is under the pointer — the
   floor, a table, the side of a wall — and follows the grid when [grid snapping](snapping.md) is on; hold
@@ -274,7 +318,10 @@ Beside the pointer you see the item's **width × depth × height in metres**, it
 - Hovering the viewport during a drag **starts the download**, so the drop is quick. A placed pack item shows your
   [Placeholder Style](loading.md) until its file arrives. The ghost is yours alone — nobody else sees it.
 
-![Once loaded, the ghost is a see-through copy of the real model](img/explorer/place-model-ghost.png)
+![Once loaded, the ghost is a see-through copy of the real model](img/explorer/place-model-ghost.webp){ .shot .fade-l .fade-r width="688" height="560" loading=lazy }
+/// caption
+Once loaded, the ghost is a see-through copy of the real model.
+///
 
 ### The Placement preview setting
 
@@ -286,7 +333,10 @@ Beside the pointer you see the item's **width × depth × height in metres**, it
   (50,000 on a computer, 15,000 on a phone or headset).
 - **Show dimensions** — the size, triangles and download size beside the pointer.
 
-![Settings ▸ Scene ▸ Performance ▸ Placement preview](img/explorer/place-settings.png)
+![Settings ▸ Scene ▸ Performance ▸ Placement preview](img/explorer/place-settings.webp){ .shot .fade-l .fade-r width="688" height="280" loading=lazy }
+/// caption
+Settings ▸ Scene ▸ Performance ▸ Placement preview.
+///
 
 ### Downloaded pack items and Delete cache
 
@@ -296,7 +346,10 @@ frees its download — the item **stays in the pack** and downloads again the ne
 ▸ **Delete downloads** frees the whole pack's, and [Storage](#storage) lists **Pack downloads** per pack with **Clear
 all pack downloads**.
 
-![A pack item's menu: Delete cache with its size](img/explorer/place-delete-cache.png)
+![A pack item's menu: Delete cache with its size](img/explorer/place-delete-cache.webp){ .shot .fade-l .fade-r width="688" height="340" loading=lazy }
+/// caption
+A pack item's menu.
+///
 
 ### Images, audio and text
 

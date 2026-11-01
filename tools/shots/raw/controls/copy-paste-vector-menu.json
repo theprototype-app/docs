@@ -1,0 +1,36 @@
+{
+ "id": "copy-paste-vector-menu",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:45:50.487Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "div.fixed",
+  "div.ctx-scroll",
+  "div.ctx-section",
+  "div.cursor-pointer",
+  "span.flex",
+  "span.flex-1"
+ ],
+ "width": 1376,
+ "height": 1120,
+ "crop": {
+  "x": 752,
+  "y": 56,
+  "w": 688,
+  "h": 560
+ },
+ "cut": [
+  "l",
+  "t",
+  "b"
+ ],
+ "fade": [
+  "l",
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

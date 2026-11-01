@@ -1,0 +1,35 @@
+page: touch-controls
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: sky-run-phone
+  replaces: img/touch/sky-run-phone.png
+  dpr: 1
+  kind: ui
+  caption: Sky Run on a phone.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 320
+    - 693
+  fade: []
+  alt: 'Sky Run on a phone: the move stick bottom-left and the Jump button bottom-right'
+  from: img/touch/sky-run-phone.png
+- id: layout-editor
+  replaces: img/touch/layout-editor.png
+  dpr: 1
+  kind: ui
+  caption: The touch controls layout editor.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 320
+    - 693
+  fade: []
+  alt: The touch controls layout editor, with the Jump button selected
+  from: img/touch/layout-editor.png

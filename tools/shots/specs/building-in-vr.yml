@@ -1,0 +1,78 @@
+page: building-in-vr
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: measure-arrange
+  replaces: img/building-in-vr/measure-arrange.png
+  alt: A measured chain with its labels, and the Arrange ring on the menu hand
+  caption: A measured chain with its labels.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 768
+    - 768
+  fade: []
+  kind: ui
+  dpr: 2
+  from: img/building-in-vr/measure-arrange.png
+- id: asset-browser-packs
+  replaces: img/building-in-vr/asset-browser-packs.png
+  alt: 'The Asset Browser panel: Packs, Free CC0 and My library tabs, a search box and the packs'
+  caption: The Asset Browser panel.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 768
+    - 896
+  fade: []
+  kind: ui
+  dpr: 2
+  from: img/building-in-vr/asset-browser-packs.png
+- id: asset-browser-placing
+  replaces: img/building-in-vr/asset-browser-placing.png
+  alt: 'Placing: "Duck: trigger places · stick turns · grip stops"'
+  caption: 'Placing: "Duck.'
+  crop:
+    rect:
+    - 0
+    - 0
+    - 768
+    - 896
+  fade: []
+  kind: ui
+  dpr: 2
+  from: img/building-in-vr/asset-browser-placing.png
+- id: logic-panel
+  replaces: img/building-in-vr/logic-panel.png
+  alt: 'The Logic panel on the Spinner object''s flow: a Number card wired into Spin''s speed, with + Node, undo, redo, Fit,
+    zoom and close along the top'
+  caption: The Logic panel on the Spinner object's flow.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 1280
+    - 800
+  fade: []
+  kind: ui
+  dpr: 2
+  from: img/building-in-vr/logic-panel.png
+- id: logic-pad
+  replaces: img/building-in-vr/logic-pad.png
+  alt: 'The wrist pad for a Number node: value and step with − / + buttons, and Rename, Unwire, Delete'
+  caption: The wrist pad for a Number node.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 768
+    - 896
+  fade: []
+  kind: ui
+  dpr: 2
+  from: img/building-in-vr/logic-pad.png

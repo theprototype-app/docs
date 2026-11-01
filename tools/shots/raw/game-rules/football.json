@@ -1,0 +1,26 @@
+{
+ "id": "football",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.517Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/game-rules/football.png",
+ "width": 688,
+ "height": 560,
+ "crop": {
+  "x": 620,
+  "y": 420,
+  "w": 688,
+  "h": 560
+ },
+ "cut": [],
+ "fade": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

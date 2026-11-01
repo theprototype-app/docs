@@ -1,0 +1,21 @@
+{
+ "id": "vertex-tools-bevel",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.554Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/mesh-editing/vertex-tools-bevel.png",
+ "width": 212,
+ "height": 852,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 212,
+  "h": 852
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

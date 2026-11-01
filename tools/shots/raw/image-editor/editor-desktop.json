@@ -1,0 +1,26 @@
+{
+ "id": "editor-desktop",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.521Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/image-editor/editor-desktop.png",
+ "width": 688,
+ "height": 700,
+ "crop": {
+  "x": 300,
+  "y": 40,
+  "w": 688,
+  "h": 700
+ },
+ "cut": [],
+ "fade": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

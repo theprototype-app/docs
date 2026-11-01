@@ -1,0 +1,21 @@
+page: people
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: peer-menu
+  replaces: img/people/peer-menu.png
+  dpr: 1
+  kind: ui
+  caption: The peer menu on a person in the Connected panel.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 414
+    - 849
+  fade: []
+  alt: The peer menu on a person in the Connected panel
+  from: img/people/peer-menu.png

@@ -1,0 +1,39 @@
+{
+ "id": "budget-chip-edit-positions",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:46:49.159Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "svg.lucide",
+  "button#toolbar-edit-add-start.hud-cell",
+  "nav#controls-pill.tp-ui",
+  "button.hud-edit-grip",
+  "path",
+  "button.hud-edit-remove",
+  "span.hud-play",
+  "button#toolbar-edit-add-end.hud-cell"
+ ],
+ "width": 1376,
+ "height": 260,
+ "crop": {
+  "x": 240,
+  "y": 770,
+  "w": 688,
+  "h": 130
+ },
+ "cut": [
+  "l",
+  "r",
+  "t"
+ ],
+ "fade": [
+  "l",
+  "r",
+  "t"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

@@ -1,0 +1,22 @@
+page: nodes-hudscreen
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: hudscreen
+  replaces: img/nodes/hudscreen.png
+  alt: A Key Press wired into a HUD Screen set to show, and a HUD Button wired into a HUD Screen set to hide
+  caption: A Key Press wired into a HUD Screen set to show.
+  crop:
+    rect:
+    - 21
+    - 0
+    - 688
+    - 635
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/nodes/hudscreen.png
+md: nodes/hudscreen.md

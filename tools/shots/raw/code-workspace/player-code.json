@@ -1,0 +1,25 @@
+{
+ "id": "player-code",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.492Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/code-workspace/player-code.png",
+ "width": 688,
+ "height": 470,
+ "crop": {
+  "x": 0,
+  "y": 250,
+  "w": 688,
+  "h": 470
+ },
+ "cut": [],
+ "fade": [
+  "r",
+  "t",
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

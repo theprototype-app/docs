@@ -1,0 +1,22 @@
+page: nodes-gametime
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: gametime
+  replaces: img/nodes/gametime.png
+  alt: Game Time (elapsed) into a Compare (at least 30), driving a Visibility node on the Bridge's Object Selector
+  caption: Game Time (elapsed) into a Compare (at least 30).
+  crop:
+    rect:
+    - 32
+    - 0
+    - 1032
+    - 222
+  fade: []
+  kind: ui
+  dpr: 1.5
+  from: img/nodes/gametime.png
+md: nodes/gametime.md

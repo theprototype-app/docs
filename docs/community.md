@@ -114,13 +114,13 @@ Only **public** scenes embed: an unlisted scene's link answers *not found*.
 
 ## The Community tab in Templates
 
-**Menu ▸ Templates ▸ Community** lists published scenes inside the app with the author's handle, the license, the size and the like count on each card. **Featured / Recent / Top** sort the list, tag chips narrow it, and **Clear** resets it.
+**Menu ▸ Templates ▸ Community** lists published scenes inside the app with the author's handle, the license, the size and the like count on each card. It opens on **Featured**, the scenes we picked; while there are fewer than 8 picks the list fills up with the newest. **All** shows every scene, newest first, **Top** the most liked; tag chips narrow it, and **Clear** resets it.
 
 The **search field** at the top (every Templates tab has one) searches the **whole community**, not just the cards
 already loaded: titles, summaries, tags and makers' @handles — type `bea` and @bea's scenes come back. On the other tabs
 it filters the templates and games by title, description and tags; every word you type must match.
 
-![Templates ▸ Community searching for "bea", with the Featured / Recent / Top chips](img/community/templates-search.png)
+![Templates ▸ Community searching for "bea", with the Featured / All / Top chips](img/community/templates-search.png)
 
 A copy of the app you build yourself shows the open GitHub gallery here, and the search field filters its cards.
  Clicking a card loads the scene through the ordinary template path: a backup of your current scene is stashed first, and connected peers are asked before anything changes. The small button in a card's corner saves the scene to your Library instead, without loading it.
@@ -134,9 +134,15 @@ the start card of a **play link** (`/p/‹id›`) and in a published game's **pa
 Press it and the count updates at once (and goes back if the like could not be saved). Signed out, it asks you to sign in
 (profile menu, top right). It is the same like as the ♥ on the scene's page — one like per person per scene.
 
-![The heart on a play link's start card, beside Play](img/community/play-link-heart.png)
+![The heart on a play link's start card, beside Play](img/community/play-link-heart.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="450" loading=lazy }
+/// caption
+The heart on a play link's start card.
+///
 
-![The heart in a published game's pause menu](img/community/pause-menu-heart.png)
+![The heart in a published game's pause menu](img/community/pause-menu-heart.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="470" loading=lazy }
+/// caption
+The heart in a published game's pause menu.
+///
 
 ### Mine
 
@@ -150,7 +156,10 @@ play links, embeds and exported builds — for the last **7 days**, **30 days** 
 link, itch.io, static host, embed). The [Publish](#publish) dialog shows the same count for the game you are publishing
 or updating.
 
-![Your games: visits over 30 days, one row per game, with a moderation notice](img/community/your-games.png)
+![Your games: visits over 30 days, one row per game, with a moderation notice](img/community/your-games.webp){ .shot .fade-l .fade-r .fade-t width="688" height="680" loading=lazy }
+/// caption
+Your games: visits over 30 days.
+///
 
 ### One game, one count
 
@@ -196,6 +205,14 @@ Signed in, your own profile page has **Change handle**: type the new one (3–24
   page. Going back to your previous handle within that time is an undo, not a new change.
 - Your scenes, likes, badges and sessions are untouched; your peer nickname in sessions is a separate thing.
 - Pages are cached for about a minute, so the old address may show your old page briefly right after a change.
+
+### Sign in or create an account
+
+Signing in and creating an account are one flow: the profile menu's **Sign in to cloud** opens one screen with GitHub, Google and,
+where it is on, an email code. Your first sign-in needs the **I agree to the Terms** box ticked (it links the
+[Terms](https://theprototype.app/terms) and the [Content policy](https://theprototype.app/content-policy)). Below it sits an optional
+box for feature-update emails; leaving that off changes nothing. An older account sees a small bar asking to accept the
+Terms once, and again if a new version comes out.
 
 The site and the app share one sign-in. **Sign in** in the site header offers the same GitHub and Google buttons; signed in, the menu under your name has **My profile**, **Open the app** and **Sign out**. Inside the app the same account is under the logo menu's profile block as **Sign in to cloud**.
 

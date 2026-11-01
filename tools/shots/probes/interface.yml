@@ -1,0 +1,30 @@
+device: desktop
+theme: dark
+scene:
+  - {create: Box, name: Crate, at: [0, 0.8, 0], scale: 1.6, color: '#c9a26b'}
+  - {camera: {pos: [5.6, 4, 7], target: [0, 0.8, 0]}}
+stages:
+  - name: 01-boot
+    steps: []
+  - name: 02-scene-view
+    steps: [{section: View}]
+  - name: 03-objects-right
+    steps: [{eval: "window.__stores.docking.dockToSide('objects', 'right')"}, {wait: 800}]
+  - name: 04-full-height
+    steps: [{eval: "window.__stores.sidebars.toggleSidebarFull('right', true)"}, {wait: 800}]
+  - name: 05-tab-menu
+    steps: [{rightClick: '[data-sidebar-tab="objects"]'}]
+  - name: 06-dock
+    steps: [{key: Escape}, {eval: "window.__stores.sidebars.toggleSidebarFull('right', false)"}, {eval: "window.__stores.dockMenu.dockTab('flow'); window.__stores.dockMenu.dockTab('explorer')"}, {wait: 1200}]
+  - name: 07-focus-explorer
+    steps: [{eval: "window.__stores.focusMode.enterFocus('dock')"}, {wait: 1000}]
+  - name: 08-exit-focus
+    steps: [{eval: "window.__stores.focusMode.exitFocus()"}, {wait: 600}]
+  - name: 09-dock-plus
+    steps: [{click: '[aria-label^="Add a window"]'}, {wait: 600}]
+  - name: 10-props
+    steps: [{key: Escape}, {select: Crate}, {eval: "window.__stores.inspectorKind.set('selection'); window.__stores.inspectorClose.set(false)"}, {wait: 1200}]
+  - name: 11-pos-menu
+    steps: [{rightClick: {text: Position}}]
+  - name: 12-edit-positions
+    steps: [{key: Escape}, {rightClick: 'p[title="Move (1)"]'}, {wait: 400}, {clickText: Edit positions}, {wait: 800}]

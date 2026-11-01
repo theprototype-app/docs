@@ -1,0 +1,72 @@
+page: timeline
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: tracks
+  replaces: img/timeline/tracks.png
+  alt: 'The Timeline docked under the viewport: Camera, Animation, Audio and Event tracks with a Cam A → Cam B shot, a Door
+    clip, whoosh.wav and a boom event'
+  caption: The Timeline docked under the viewport.
+  crop:
+    rect:
+    - 0
+    - 500
+    - 688
+    - 400
+  fade:
+  - r
+  - t
+  kind: ui
+  dpr: 1
+  from: img/timeline/tracks.png
+- id: scrub-shot
+  replaces: img/timeline/scrub-shot.png
+  alt: 'Scrubbing at 1.15 s: the viewport previews the shot through Cam A'
+  caption: Scrubbing at 1.15 s.
+  crop:
+    rect:
+    - 376
+    - 200
+    - 688
+    - 700
+  fade:
+  - l
+  - r
+  - t
+  kind: ui
+  dpr: 1
+  from: img/timeline/scrub-shot.png
+- id: phone-sheet
+  replaces: img/timeline/phone-sheet.png
+  alt: The Timeline as a tab of the bottom sheet on a folded phone
+  caption: The Timeline as a tab of the bottom sheet on a folded phone.
+  crop:
+    rect:
+    - 0
+    - 1003
+    - 1131
+    - 1595
+  fade:
+  - t
+  kind: ui
+  dpr: 2.9
+  from: img/timeline/phone-sheet.png
+- id: tracks-light
+  replaces: img/timeline/tracks-light.png
+  alt: The Timeline in the light theme
+  caption: The Timeline in the light theme.
+  crop:
+    rect:
+    - 0
+    - 500
+    - 688
+    - 400
+  fade:
+  - r
+  - t
+  kind: ui
+  dpr: 1
+  from: img/timeline/tracks-light.png

@@ -37,7 +37,10 @@ Point at the dot — or press and hold it on a touch screen — for the full sen
 while the signaling link is down it also says how long it has been trying. On a phone a tap on the chip opens the full
 connection details.
 
-![The phone's top bar when it is crowded: the logo, the connection chip with a green dot, ▾ and the microphone, then the bell and the peers](img/connection/status-dot-phone.png){ width="420" }
+![The phone's top bar when it is crowded: the logo, the connection chip with a green dot, ▾ and the microphone, then the bell and the peers](img/connection/status-dot-phone.webp){ .shot width="390" height="60" loading=lazy }
+/// caption
+A phone's crowded top bar: the chip keeps the connection dot.
+///
 
 ### Who is here: the peers panel
 
@@ -47,7 +50,14 @@ at it for the full name), a second line with where they are and their role, and 
 **Go to** or the role list. On a computer the panel is 320–420 px wide and grows with long names, so nothing wraps or
 breaks. On a phone it opens as a sheet like the notifications: a grab bar on top, and a swipe down closes it.
 
-![The Connected panel on a computer: five people, one row each — avatar, name, the scene they are in and their p-number underneath, and Editor or Viewer with Go to or Watch on the right](img/connection/peers-panel-desktop.png){ width="515" }
+![The Connected panel on a computer: five people, one row each — avatar, name, the scene they are in and their p-number underneath, and Editor or Viewer with Go to or Watch on the right](img/connection/peers-panel-desktop.webp){ .shot width="515" height="385" loading=lazy }
+/// caption
+The Connected panel on a computer.
+///
+
+Right-click a person (long-press on touch, <kbd>Shift</kbd>+<kbd>F10</kbd> from the keyboard) for the **peer menu**:
+their profile, Go to, Watch, Mute, Hide — and, for the host or an admin, **Remove from session** and **Remove and
+block**. See [Users and moderation](people.md). An AI agent shows a robot and "AI" instead of a character.
 
 ### Inviting someone
 
@@ -56,6 +66,37 @@ breaks. On a phone it opens as a sheet like the notifications: a grab bar on top
 3. You get a **Connection request** toast — press **Approve** and you are connected.
 
 Or do it by ID: they paste your ID into their Connect field and press Connect; the same approval toast appears on your side.
+
+To skip the approval card, send an **invite link** instead (**Connect ▸ Request AI**, a *Person* or an *AI agent*
+tab): it joins in one step with the role you chose, for a limited time. See [Invite people and agents](invites.md).
+
+### What guests see
+
+![Connect ▸ Info ▸ Guests see](img/connection/guests-see.png)
+
+The host decides how much of their library a guest sees: **Connect ▸ ▾ (Info) ▸ Guests see**.
+
+| Setting | Guests see |
+| --- | --- |
+| **Current scene's files** (default) | the open scene's file and the files it uses |
+| **Every scene on this device, and shared files** | the above, plus every scene file on this device and every file already shared in the session |
+| **Whole library** | every file and folder in your Library |
+| **None** | nothing |
+
+Changing it updates every guest's view straight away. The host's device answers a download only for files it is
+currently showing that guest, so narrowing the setting also stops downloads of files no longer shown.
+
+### Saving as a guest
+
+Your edits land in the host's scene. **Save on host** (Explorer, on the session's row) saves it into the host's
+library; **Copy to my library** brings a file to yours. A view-only guest can copy, not save on host.
+
+### Reloading while joined
+
+*Since 1.48.1.* A guest who reloads the page — or whose phone reloads it — goes straight back into the session it was
+in, on the same seat and with no new approval card, instead of being asked *Restore previous session?*. The restore
+offer still appears when there is no live session to go back to. A phone whose screen turns off, or that switches to
+another app, keeps its link for up to a minute.
 
 ### A link in a tab that is already open
 
@@ -134,6 +175,12 @@ Your room's panel has a **Room name**, a **Short description** and these switche
 anyone with the room code — you get a notice saying who came in, with **Turn off** (stops automatic joining) and
 **Remove**, and the same notice stays in the notification centre. While a listed room lets guests in, the Connect bar
 reads **Public · guests join**. **Remove** takes them out and keeps them out while your tab stays open.
+
+**AI agents ask first** (*new in 1.48*). A dial that says it is an AI agent never rides *Allow guests to join
+automatically*: it gets the approval card, with a robot on it, unless you also turn on **Settings ▸ Connection ▸ Let
+AI agents join as guests** (off by default). An [invite link](invites.md) always lets an agent in with the role it
+carries. "AI agent" is what the joining app says about itself, so this is about seeing who knocks, not security: an
+agent that hides it is just a guest, view-only like any other.
 
 Joining a coded room asks for the code (*"🔒 ‹room› needs a code"*). The right code goes straight in; a wrong one is
 refused, and five wrong codes lock that person out for ten minutes. If the room also requires approval, **Ask the host

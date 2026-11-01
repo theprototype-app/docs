@@ -8,12 +8,12 @@ Everything it does is a normal edit: it **replicates live to everyone in the ses
 !!! note "You bring the model"
     The assistant talks to an AI provider you configure (Grok, Gemini, or any
     OpenAI-compatible / self-hosted endpoint). Nothing is sent anywhere until you add a
-    provider and a key in **Settings ▸ AI**. See [AI Providers](providers.md).
+    provider and a key in **Settings ▸ Tools & connections**. See [AI Providers](providers.md).
 
 ## Turning it on
 
-1. Open **Settings ▸ AI** and toggle **Enable assistant**.
-2. Add a provider (Grok, Gemini or a custom endpoint) and select it as active.
+1. Open **Settings ▸ Tools & connections** and press **Add chat provider** (Grok, Gemini or a custom endpoint).
+2. Switch its row on with **Enable**, and press **Test** to check it answers.
 
 Once enabled, there are a few ways to reach it.
 
@@ -43,7 +43,7 @@ and talk — see [The AI assistant in VR](../vr.md#the-ai-assistant-in-vr).
 
 ## Voice typing
 
-Talk to the assistant instead of typing. Set up a speech-to-text provider in **Settings ▸ AI ▸ Voice typing provider**
+Talk to the assistant instead of typing. Set up a speech-to-text provider in **Settings ▸ Tools & connections ▸ Voice typing**
 (search *voice*, *whisper* or *dictation*):
 
 | Setting | Default | Notes |
@@ -53,12 +53,18 @@ Talk to the assistant instead of typing. Set up a speech-to-text provider in **S
 | **Language hint** | blank (detect) | for example `en` |
 | **Test connection** | — | sends half a second of silence; *Connected* means the server accepted it |
 
-![Voice typing set to Groq](../img/ai/voice-typing-settings.png)
+![The Voice typing setting in the AI assistant's settings, set to Groq.](../img/ai-assistant/voice-typing-settings.webp){ .shot .fade-r width="688" height="248" loading=lazy }
+/// caption
+The Voice typing setting in the AI assistant's settings.
+///
 
 The assistant window then has a **mic** button next to **Send**: click to listen, click again to stop. The words land in
 the input, so you can fix them before sending. (In VR they are sent as soon as you let go.)
 
-![The assistant window with the mic button next to Send](../img/ai/assistant-mic.png)
+![The assistant window with the mic button next to Send](../img/ai-assistant/assistant-mic.webp){ .shot width="500" height="440" loading=lazy }
+/// caption
+The assistant window with the mic button next to Send.
+///
 
 - The voice key is stored on this device only, like the AI provider key ([Where keys are stored](providers.md#where-keys-are-stored)).
 - If voice chat is on, the assistant uses the same microphone without opening a second one, and voice chat keeps
@@ -104,7 +110,7 @@ The assistant reads your graphs as the same [compact text](../node-system.md#flo
 which is several times shorter than JSON, and can add nodes by writing that text.
 
 **Physics** (bodies, welds/hinges with motors, and starting the simulation) is a
-per-provider opt-in — the **Physics tools (advanced)** checkbox in **Settings ▸ AI**.
+per-provider opt-in — the **Physics tools (advanced)** checkbox in the provider's form (**Settings ▸ Tools & connections**, **Set up**).
 It's off by default because multi-step physics is hard for small local models; see
 [Local & Small Models](local-models.md) for what the checkbox gates, model-size guidance
 and recommended vLLM flags. With it enabled, the assistant may **start the simulation
@@ -136,6 +142,6 @@ reset it first, then one undo reverts the whole prompt.
 | Symptom | Fix |
 |---|---|
 | <kbd>`</kbd> shows a toast about Settings | Enable the assistant and add a provider first. |
-| "Invalid API key" | Re-check the key in **Settings ▸ AI ▸ Edit**. |
+| "Invalid API key" | Re-check the key in **Settings ▸ Tools & connections**, **Set up**. |
 | "Network or CORS error" | A self-hosted endpoint must allow browser origins — see [Providers](providers.md). |
 | Objects look wrong / oversized | Ask a follow-up ("half the size", "move it to the origin") — it edits in place. |

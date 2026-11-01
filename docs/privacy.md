@@ -41,15 +41,20 @@ no cookie, no account, nothing that links one visit to another or to you.
 
 ## Usage counts (first visits)
 
-To learn whether a first visit works, theprototype.app counts a few first-visit steps, **each at most once per
-browser**: the Welcome card shown and which answer was picked, a first change, a first Play (with roughly how many
-minutes after the Welcome card), a first invite, finishing or skipping the [first-game quest](tours.md#the-first-game-quest),
-and whether the browser comes back the next day, a week later or in a later week. A count carries only the app version
-and the kind of device (desktop, touch screen or headset) — **no account, no IP address, no cookie, no identifier**, so
-two counts can never be joined into one person. Your browser keeps a small note of which steps it already counted; it
-never leaves it.
+To learn whether a first visit works, theprototype.app counts a few steps of a visit that met the Welcome card: the card
+shown and which answer was picked, a first change, a first Play (with roughly how many minutes after the card), a first
+invite, finishing or skipping the [first-game quest](tours.md#the-first-game-quest). A count carries only the app version
+and the kind of device (desktop, touch screen or headset) — **no account, no IP address, no cookie, no identifier**.
 
-**Where:** **Settings ▸ Privacy ▸ Count my visits anonymously** (on by default). Nothing is counted while your browser
+**By default nothing is stored in your browser**, and each step counts once per page, so a reload can count it again.
+
+**After your first Play** a small card asks:
+
+- **Agree** keeps a small note in your browser, so each step counts once per browser and we can also count whether the browser
+  comes back the next day, a week later or in a later week. The note never leaves your browser.
+- **No thanks** stops the counting and remembers only that answer.
+
+**Where:** **Settings ▸ Privacy ▸ Count my visits anonymously**. Off also deletes the note. Nothing is counted while your browser
 sends *Do Not Track* or *Global Privacy Control*.
 
 ![Settings ▸ Privacy ▸ Usage counts with the Count my visits anonymously switch](img/settings/privacy-usage-counts.png)

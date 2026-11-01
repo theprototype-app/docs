@@ -28,7 +28,10 @@ Press <kbd>?</kbd> anywhere to see every shortcut, grouped by panel, with the pa
 from the live keymap, so a key you rebind in **Settings ▸ Shortcuts** shows up there straight away. Type to filter;
 <kbd>Esc</kbd> closes it.
 
-![The cheat sheet: the node editor's keys first, because it has focus, then the 3D viewport's](img/node-editor/cheat-sheet.png)
+![The cheat sheet: the node editor's keys first, because it has focus, then the 3D viewport's](img/node-editor/cheat-sheet.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="640" loading=lazy }
+/// caption
+The cheat sheet.
+///
 
 ## Node editor shortcuts
 
@@ -88,7 +91,10 @@ Long names end in "…": point at a crumb (or **press and hold** it on a phone) 
 right end — or <kbd>Esc</kbd> — leaves a group, and the bin deletes the object's flow (it asks first, in a dialog).
 Jumping between the Scene and an object's flow is two taps: the crumb, then the row.
 
-![The breadcrumb bar in the docked node editor: ⌂ Scene › Angelfish 1…, with the object crumb's list open — Main, the Scene graph, then the object flows, the current one ticked](img/node-editor/breadcrumb-siblings.png)
+![The breadcrumb bar in the docked node editor: ⌂ Scene › Angelfish 1…, with the object crumb's list open — Main, the Scene graph, then the object flows, the current one ticked](img/node-editor/breadcrumb-siblings.webp){ .shot .fade-r width="688" height="337" loading=lazy }
+/// caption
+The breadcrumb bar in the docked node editor.
+///
 
 On a phone the minimap is off by default; **⚙ Settings ▸ Minimap** turns it on.
 
@@ -106,7 +112,10 @@ The node editor can lay a graph out for you.
   result.
 - Inside a group (double-click a group card), Tidy arranges that group's contents.
 
-![Waves' Main graph after 1.25: the run's rules, three group cards with notes, and the Tidy button in the corner controls](img/node-editor/tidy-waves-main.png)
+![Part of Waves' Main graph at full size: tidied columns of nodes, with a note reading The crystal glows.](img/node-editor/tidy-waves-main.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="560" loading=lazy }
+/// caption
+Part of Waves' Main graph at full size.
+///
 
 Every game's Main graph ships tidied — see [The Games tab](games.md#tidy-main-graphs).
 
@@ -125,7 +134,10 @@ exactly as before.
 - Groups nest, copy and paste with their contents, and undo and redo like every other edit.
 - <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd> ungroups: the nodes stay exactly where they were.
 
-![Inside a group: Group inputs on the left, Group outputs on the right, and the breadcrumb at the top](img/node-editor/group.png)
+![Inside a group: Group inputs on the left, Group outputs on the right, and the breadcrumb at the top](img/node-editor/group.webp){ .shot .fade-l .fade-r .fade-t width="688" height="420" loading=lazy }
+/// caption
+Inside a group.
+///
 
 ### Node group files (.tpnode)
 

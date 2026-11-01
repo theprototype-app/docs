@@ -4,7 +4,10 @@ A **checkpoint** is a copy of the scene as it is right now — objects, node gra
 **on this device**, with a name, an optional note, a picture and a time. [Autosave](saving.md#autosave) only remembers
 the *last* state; checkpoints let you go back to *any* earlier one.
 
-![The Checkpoints timeline comparing two checkpoints with the swipe slider](img/checkpoints/timeline-compare.png)
+![The Checkpoints timeline comparing two checkpoints with the swipe slider](img/checkpoints/timeline-compare.webp){ .shot .fade-r .fade-t .fade-b width="688" height="600" loading=lazy }
+/// caption
+The Checkpoints timeline comparing two checkpoints with the swipe slider.
+///
 
 ## Saving a checkpoint
 
@@ -42,7 +45,10 @@ A very large scene — over the [budget meter](performance.md#the-budget-chip-wi
 (512 MB) — skips automatic checkpoints, because each one copies the whole scene. The first time it happens a notice says
 so, with a **Settings** button. Named checkpoints (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>) always work.
 
-![The notice when a large scene skips its automatic checkpoint](img/checkpoints/large-scene-notice.png)
+![The notice when a large scene skips its automatic checkpoint](img/checkpoints/large-scene-notice.webp){ .shot .fade-l .fade-r .fade-b width="688" height="500" loading=lazy }
+/// caption
+The notice when a large scene skips its automatic checkpoint.
+///
 
 ## Settings
 

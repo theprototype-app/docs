@@ -7,7 +7,10 @@ on variables in a watch list.
 It is **yours alone**. The other players in the session keep playing, and nothing you set in the debugger is saved
 into the scene or sent to anyone.
 
-![The Debugger paused at a Counter: the On Click wire shows a pulse, the Map Range wire reads 1, the watch list follows the score variable and the Counter's breakpoint is listed](img/debugger/paused-dark.png){ width="300" }
+![The Debugger paused at a Counter: the On Click wire shows a pulse, the Map Range wire reads 1, the watch list follows the score variable and the Counter's breakpoint is listed](img/debugger/paused-dark.webp){ .shot width="300" height="408" loading=lazy }
+/// caption
+The Debugger paused at a Counter.
+///
 
 ## Breakpoints
 
@@ -54,7 +57,10 @@ While you are paused, **your** view is frozen and events queue up for you; the s
     Breakpoints are off in VR — on a headset the game just keeps running. [Module](modules.md) code keeps running while
     you are paused.
 
-![The Debugger in the light theme](img/debugger/paused-light.png){ width="300" }
+![The Debugger in the light theme](img/debugger/paused-light.webp){ .shot width="300" height="408" loading=lazy }
+/// caption
+The Debugger in the light theme.
+///
 
 ## Several HUD Buttons, one module input
 

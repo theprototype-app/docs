@@ -1,0 +1,23 @@
+page: main-graph
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: properties
+  replaces: img/main-graph/properties.png
+  alt: 'The Main graph: the ⓘ Params tab shows the selected Bounce node''s properties'
+  caption: The Main graph.
+  crop:
+    rect:
+    - 712
+    - 300
+    - 688
+    - 600
+  fade:
+  - l
+  - t
+  kind: ui
+  dpr: 1
+  from: img/main-graph/properties.png

@@ -1,0 +1,26 @@
+{
+ "id": "browser-materials",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.515Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/free-assets/browser-materials.png",
+ "width": 688,
+ "height": 640,
+ "crop": {
+  "x": 100,
+  "y": 40,
+  "w": 688,
+  "h": 640
+ },
+ "cut": [],
+ "fade": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

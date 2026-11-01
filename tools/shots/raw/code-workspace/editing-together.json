@@ -1,0 +1,23 @@
+{
+ "id": "editing-together",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.490Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/code-workspace/editing-together.png",
+ "width": 688,
+ "height": 285,
+ "crop": {
+  "x": 222,
+  "y": 435,
+  "w": 688,
+  "h": 285
+ },
+ "cut": [],
+ "fade": [
+  "r"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

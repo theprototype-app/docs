@@ -1,0 +1,31 @@
+{
+ "id": "dock-plus-menu",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:42:10.048Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "div.fixed",
+  "div.cursor-pointer",
+  "svg.lucide",
+  "span.flex",
+  "path",
+  "circle",
+  "span.flex-1",
+  "span.ctx-hint"
+ ],
+ "width": 1376,
+ "height": 1680,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 688,
+  "h": 840
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

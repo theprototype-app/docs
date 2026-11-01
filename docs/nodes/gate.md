@@ -29,7 +29,10 @@ The extra inputs **c** to **h** have no value of their own: an input with no wir
 wires after it down one name (removing **b** turns **c** into **b**), one <kbd>Ctrl</kbd>+<kbd>Z</kbd> puts it all back,
 and groups around the node update their sockets too. [Compare](compare.md) stays two-input.
 
-![A Gate with four inputs inside a group: the group shows sockets a to d](../img/nodes/gate-group.png)
+![A Gate with four inputs inside a group: the group shows sockets a to d](../img/nodes-gate/gate-group.webp){ .shot .fade-l .fade-r .fade-t width="688" height="520" loading=lazy }
+/// caption
+A Gate with four inputs inside a group.
+///
 
 ## Parameters
 

@@ -1,0 +1,53 @@
+{
+ "id": "multi-pivot",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:09:40.393Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "p.hud-cell",
+  "svg.lucide",
+  "path",
+  "rect",
+  "p#explorer-slot.hud-cell",
+  "button#toolbar-customize.hud-cell",
+  "button#budget-chip.bc-main",
+  "span.bc-target",
+  "span#budget-chip-percent.bc-pct"
+ ],
+ "width": 1360,
+ "height": 1286,
+ "crop": {
+  "x": 406,
+  "y": 257,
+  "w": 680,
+  "h": 643
+ },
+ "cut": [
+  "l",
+  "r",
+  "t"
+ ],
+ "fade": [
+  "l",
+  "r",
+  "t"
+ ],
+ "anchors": {
+  "1": {
+   "x": 604.0000000000009,
+   "y": 328.8562077839189,
+   "w": 48,
+   "h": 48
+  },
+  "2": {
+   "x": 405,
+   "y": 1168,
+   "w": 76,
+   "h": 76
+  }
+ },
+ "kind": "ui"
+}

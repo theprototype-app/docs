@@ -1,0 +1,62 @@
+page: recording
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: turntable-dialog
+  replaces: img/recording/turntable-dialog.png
+  device: window-688-tall
+  caption: The Recording dialog, in a small window.
+  alt: 'The Recording dialog: What to film set to Turntable, with Orbit, Turns, Direction, Size, Frame rate, Length, Quality
+    and the Start recording button.'
+  setup:
+  - create: Sphere
+    name: Ball
+    at:
+    - 0
+    - 1
+    - 0
+    color: '#6c8cd5'
+  - eval: window.__stores.recordingStores.recordingOpen.set(true)
+  - wait: 1200
+  crop:
+    rect:
+    - 0
+    - 0
+    - 688
+    - 840
+  fade: []
+- id: recording-bar
+  replaces: img/recording/recording-bar.png
+  dpr: 1
+  kind: ui
+  caption: The recording bar sits above the toolbar while a take runs.
+  crop:
+    rect:
+    - 296
+    - 640
+    - 688
+    - 160
+  fade:
+  - l
+  - r
+  - t
+  alt: The recording bar above the toolbar
+  from: img/recording/recording-bar.png
+- id: result
+  replaces: img/recording/result.png
+  dpr: 1
+  kind: ui
+  caption: The finished take, with Download, Show in Explorer and Record again.
+  crop:
+    rect:
+    - 30
+    - 60
+    - 688
+    - 700
+  fade:
+  - r
+  alt: 'The finished take: Download, Show in Explorer, Record again'
+  from: img/recording/result.png

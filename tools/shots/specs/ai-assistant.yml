@@ -1,0 +1,37 @@
+page: ai-assistant
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: voice-typing-settings
+  replaces: img/ai/voice-typing-settings.png
+  alt: The Voice typing setting in the AI assistant's settings, set to Groq.
+  caption: The Voice typing setting in the AI assistant's settings.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 688
+    - 248
+  fade:
+  - r
+  kind: ui
+  dpr: 1
+  from: img/ai/voice-typing-settings.png
+- id: assistant-mic
+  replaces: img/ai/assistant-mic.png
+  alt: The assistant window with the mic button next to Send
+  caption: The assistant window with the mic button next to Send.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 500
+    - 440
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/ai/assistant-mic.png
+md: ai/assistant.md

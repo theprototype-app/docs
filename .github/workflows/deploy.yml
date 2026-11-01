@@ -18,7 +18,36 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Roadmap 83 V8: every "Try it" link opens and the controls its page shows exist; a broken link or a
+  # renamed control stops the deploy (tools/shots/tryit.yml, tools/shots/tryit-check.cjs).
+  tryit:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tools/shots
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: tools/shots/package-lock.json
+
+      - name: Install the shot tools
+        run: npm ci
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Unit tests (fade guard, callout rules)
+        run: node --test test/*.test.cjs
+
+      - name: Try it links
+        run: node tryit-check.cjs
+
   build-deploy:
+    needs: tryit
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -40,4 +69,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Build and deploy to gh-pages
-        run: mkdocs gh-deploy --force --clean
+        run: mkdocs gh-deploy --force --clean --strict

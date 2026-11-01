@@ -1,0 +1,67 @@
+page: race
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: menu
+  replaces: img/race/menu.png
+  alt: 'The Race start screen: click a car, then Start'
+  caption: The Race start screen.
+  crop:
+    rect:
+    - 296
+    - 150
+    - 688
+    - 450
+  fade:
+  - l
+  - r
+  - t
+  - b
+  kind: ui
+  dpr: 1
+  from: img/race/menu.png
+- id: start
+  replaces: img/race/start.png
+  alt: 'Lap 1 of 3: the countdown has just ended'
+  caption: 'Lap 1 of 3: the countdown has just ended.'
+  crop:
+    rect:
+    - 77
+    - 65
+    - 1126
+    - 569
+  fade: vignette
+  kind: view
+  dpr: 1
+  from: img/race/start.png
+- id: phone-pedals
+  replaces: img/race/phone-pedals.png
+  alt: 'Race on a phone: the steering stick bottom left, Reset, Brake and Gas bottom right'
+  caption: Race on a phone.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 480
+    - 1000
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/race/phone-pedals.png
+- id: vr-seat
+  replaces: img/race/vr-seat.png
+  alt: The view from the driver's seat in a headset
+  caption: The view from the driver's seat in a headset.
+  crop:
+    rect:
+    - 77
+    - 65
+    - 1126
+    - 569
+  fade: vignette
+  kind: view
+  dpr: 1
+  from: img/race/vr-seat.png

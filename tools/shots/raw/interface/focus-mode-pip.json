@@ -1,0 +1,35 @@
+{
+ "id": "focus-mode-pip",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:43:33.957Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "div#flow-code-dock.fixed",
+  "div.tp-ui",
+  "div.flex",
+  "div.cm-gutter",
+  "div.cm-content",
+  "div.dt-row",
+  "button#focus-pip-toggle.tp-ui",
+  "div#focus-exit.focus-exit",
+  "button.tp-ui",
+  "button#flow-code-format-text.tp-seg-btn",
+  "button#flow-code-format-json.tp-seg-btn",
+  "button.ui-button-quiet"
+ ],
+ "width": 1376,
+ "height": 1680,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 688,
+  "h": 840
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

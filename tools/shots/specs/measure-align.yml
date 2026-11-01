@@ -1,0 +1,74 @@
+page: measure-align
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: measure-chain
+  replaces: img/measure-align/measure-chain.png
+  alt: A chain of three measured segments with lengths, the angle between them and the total
+  caption: A chain of three measured segments with lengths.
+  crop:
+    rect:
+    - 420
+    - 220
+    - 688
+    - 500
+  fade:
+  - l
+  - r
+  - t
+  - b
+  kind: ui
+  dpr: 1
+  from: img/measure-align/measure-chain.png
+- id: measure-items
+  replaces: img/measure-align/measure-items.png
+  alt: 'Two kept measurements: a 2 m + 1 m chain along a box with its 90° corner and a 3 m total, and a chain of short 6 cm
+    segments whose labels step aside'
+  caption: Two kept measurements.
+  crop:
+    rect:
+    - 420
+    - 220
+    - 688
+    - 500
+  fade:
+  - l
+  - r
+  - t
+  - b
+  kind: ui
+  dpr: 1
+  from: img/measure-align/measure-items.png
+- id: measure-edit
+  replaces: img/measure-align/measure-edit.png
+  alt: 'Editing a measurement: point 2 is picked up, the points are drawn in yellow and Properties shows the Measurement object.'
+  caption: Editing a measurement.
+  crop:
+    rect:
+    - 752
+    - 0
+    - 688
+    - 900
+  fade:
+  - l
+  kind: ui
+  dpr: 1
+  from: img/measure-align/measure-edit.png
+- id: arrange
+  replaces: img/measure-align/arrange.png
+  alt: The Properties Arrange section for three selected objects
+  caption: The Properties Arrange section for three selected objects.
+  crop:
+    rect:
+    - 752
+    - 0
+    - 688
+    - 900
+  fade:
+  - l
+  kind: ui
+  dpr: 1
+  from: img/measure-align/arrange.png

@@ -1,0 +1,21 @@
+{
+ "id": "statistics-budget",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.579Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/performance/statistics-budget.png",
+ "width": 404,
+ "height": 484,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 404,
+  "h": 484
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

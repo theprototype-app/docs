@@ -1,0 +1,23 @@
+page: nodes-movespeed
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: movespeed
+  replaces: img/nodes/movespeed.png
+  alt: Two Key Press nodes on Shift, one with edge down and one with edge up, each wired into the set input of a Move Speed
+    node, beside a Character Controller
+  caption: Two Key Press nodes on Shift.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 448
+    - 639
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/nodes/movespeed.png
+md: nodes/movespeed.md

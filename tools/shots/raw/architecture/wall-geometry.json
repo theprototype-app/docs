@@ -1,0 +1,23 @@
+{
+ "id": "wall-geometry",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.469Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/architecture/wall-geometry.png",
+ "width": 688,
+ "height": 760,
+ "crop": {
+  "x": 592,
+  "y": 0,
+  "w": 688,
+  "h": 760
+ },
+ "cut": [],
+ "fade": [
+  "l"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

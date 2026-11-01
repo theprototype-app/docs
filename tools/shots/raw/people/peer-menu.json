@@ -1,0 +1,21 @@
+{
+ "id": "peer-menu",
+ "dpr": 1,
+ "shotAt": "2026-10-29T08:56:54.344Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/people/peer-menu.png",
+ "width": 414,
+ "height": 849,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 414,
+  "h": 849
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

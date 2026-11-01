@@ -1,0 +1,71 @@
+page: explorer
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: place-box-ghost
+  replaces: img/explorer/place-box-ghost.png
+  alt: 'Dragging the Duck from the starter pack: a box ghost with its size beside the pointer'
+  caption: Dragging the Duck from the starter pack.
+  crop:
+    rect:
+    - 156
+    - 0
+    - 688
+    - 560
+  fade:
+  - l
+  - r
+  kind: ui
+  dpr: 1
+  from: img/explorer/place-box-ghost.png
+- id: place-model-ghost
+  replaces: img/explorer/place-model-ghost.png
+  alt: Once loaded, the ghost is a see-through copy of the real model
+  caption: Once loaded, the ghost is a see-through copy of the real model.
+  crop:
+    rect:
+    - 156
+    - 0
+    - 688
+    - 560
+  fade:
+  - l
+  - r
+  kind: ui
+  dpr: 1
+  from: img/explorer/place-model-ghost.png
+- id: place-settings
+  replaces: img/explorer/place-settings.png
+  alt: Settings ▸ Scene ▸ Performance ▸ Placement preview
+  caption: Settings ▸ Scene ▸ Performance ▸ Placement preview.
+  crop:
+    rect:
+    - 6
+    - 0
+    - 688
+    - 280
+  fade:
+  - l
+  - r
+  kind: ui
+  dpr: 1
+  from: img/explorer/place-settings.png
+- id: place-delete-cache
+  replaces: img/explorer/place-delete-cache.png
+  alt: 'A pack item''s menu: Delete cache with its size'
+  caption: A pack item's menu.
+  crop:
+    rect:
+    - 6
+    - 0
+    - 688
+    - 340
+  fade:
+  - l
+  - r
+  kind: ui
+  dpr: 1
+  from: img/explorer/place-delete-cache.png

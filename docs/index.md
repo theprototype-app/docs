@@ -48,9 +48,59 @@ three-step [first-game quest](tours.md#the-first-game-quest) walks you through c
 friend; a new visitor's advanced buttons wait behind **»** / **More** until their first Play, and the editor tour is in
 the logo menu as **Tour the interface**. The Templates window has a search field on every tab, and
 [Templates ▸ Community](community.md#the-community-tab-in-templates) searches the whole community (titles, summaries,
-tags, makers' @handles) and sorts Featured / Recent / Top. On the site: [search and Top this week / month](community.md#a-scenes-page),
+tags, makers' @handles) and opens on Featured, with All and Top beside them. On the site: [search and Top this week / month](community.md#a-scenes-page),
 [change your handle](community.md#changing-your-handle) once every 30 days, and a click-to-load **3D preview** on
-scene pages.
+scene pages. Signing in is one screen, GitHub or Google, with the Terms box.
+Signed out, the [AI assistant](ai/claude-connector.md#connect-your-tab-each-time-you-build) sends you to your profile with **Sign in to connect**.
+Scripts get `elapsed`, and Claude can take a [screenshot from any angle](ai/claude-connector.md#see-and-undo-what-it-did).
+
+**1.53 — your tools, connected.** Replace a model from a file and keep the object: its place, flows, physics and clips. **Edit in
+Blender** downloads the model, and the file you export comes back with *Update "<name>"?*, wherever you drop it; Chrome and Edge
+can watch the file and reload on each save. A 100×, Z-up or unapplied export gets a one-click fix. **Settings ▸ Tools &
+connections** replaces Settings ▸ AI: one page for chat and mesh providers, voice typing, agents and desktop tools, each with a
+status and a Test. Skies download the first time you pick one, so the app download is about 6 MB smaller. See
+[Edit in Blender](edit-in-blender.md) and [Tools & connections](tools-and-connections.md).
+
+**1.52 — sessions in your Explorer.** Joining a session shows the host's files as *"<Host>'s session"* in your Explorer,
+read-only, above your Library: open them, copy them, and **Save on host** if you can edit. Nothing downloads until you
+open or copy it, and hosts choose what guests see. Save project now asks about unsaved changes and opens where you left
+off. On claude.ai, Claude can use physics in your tab, see where you stand, and join a session from a link once you
+confirm. See [A session you joined](explorer.md#a-session-you-joined) and [Claude connector](ai/claude-connector.md).
+
+**1.51 — characters and motion.** Any rigged model is a character, and any clip plays on any humanoid. Clips are small
+`.tpanim` files of their own (VRM Animation inside), so they reach your peers once and the model never changes. Free CC0
+packs bring 10 characters and 87 motions; **VRM** avatars arrive with spring bones and expressions. The one-click
+**Locomotion preset** makes a character walk, run and jump under the Player controller; trim, split, join, *In place* and
+*Loop it* make clips game-ready. **Skeleton…** fixes bones and weights, **Download…** gives you a GLB with every clip for
+Blender, Unity, Unreal or Godot, and licences that ask for something warn you before you share
+([Characters and motion](characters-and-motion.md)).
+
+**1.50 — talk to your agent.** The AI assistant window lists the AI agents in your session next to your own assistant:
+pick one and chat, and everyone sees the conversation, the replies as they stream in and every step between them. Claude
+Code listens after one sentence in its terminal (*"listen to my theprototype session"*), and what you type there shows
+"via terminal". **Stop** cancels what it is doing, the host can mute it, and viewers can ask but it will not change the
+scene for them. Send it **pictures** — shrunk and stripped of location data on your device — and agents can bring in GLB
+models (`import_model`) and images, sprite sheets and clips (`import_file`) from their own machine. Every chat is a
+`.tpchat` file in Explorer ▸ Scene ▸ chats, saved with the scene and private unless you include it when publishing. In VR
+the AI panel talks to the same agent ([Talk to your agent](ai/talk-to-your-agent.md); recipes:
+[img2threejs](ai/img2threejs.md), [Pixling](ai/pixling.md)).
+
+**1.48.1 — fixes for AI agents and game logic.** Reloading the page while joined takes you straight back into the
+session, with no new approval. A deleted object's logic stops (undo brings it back), a game round keeps its referee
+when someone joins, and a shared [Set Variable](nodes/setvariable.md) changes once per event in multiplayer. Agents
+read the scene the way you see it: positions inside a group are local to the group, `list_scene` shows a shape's sizes
+and can be narrowed, and a locked object says who has it. Also fixed: every light type survives an autosave restore,
+Body Wave and Jiggle stack on one object, HUD Text and Bar show wired text, a behaviour's `on.load` sees the scene a
+joiner lands in, deleted lights and avatar photos free their memory, and a phone in the background keeps its link for
+a minute.
+
+**1.48 — AI agents in your session.** Send Claude (or any MCP agent) your session link and build together:
+`claude mcp add theprototype -- npx -y @theprototype/agent mcp '<link>'` and it joins as a peer, builds with the app's
+own tools — objects, flow nodes, physics — checks its work with screenshots, and lists every step in the AI assistant
+window for everyone to select or undo ([Build with an AI agent](ai/build-with-an-agent.md)). **Connect ▸ Request AI**
+makes [invite links](invites.md) for agents and people: View or Edit, 10 minutes to a day, one or more uses, revocable,
+no approval card. Right-click anyone in the Connected panel for the new [peer menu](people.md) — profile, Go to, Hide —
+and, for the host or an admin, **Remove** or **Remove and block** with **Allow back**.
 
 **1.47 — game logic in the headset.** Radial ▸ **Tools ▸ Logic** opens the node graph as a panel in VR: move cards,
 wire sockets with the laser and set values on a wrist pad, and everyone sees it live — see

@@ -1,0 +1,20 @@
+device: desktop
+theme: dark
+scene:
+  - {create: Box, name: Crate, at: [0, 0.8, 0], scale: 1.6, color: '#c9a26b'}
+  - {camera: {pos: [5.6, 4, 7], target: [0, 0.8, 0]}}
+stages:
+  - name: s01-settings-a11y
+    steps: [{eval: "const s=window.__stores; s.settingsSection.set('accessibility'); s.settingsOpen.set(true)"}, {wait: 1500}]
+  - name: s02-settings-interface
+    steps: [{eval: "window.__stores.settingsSection.set('interface')"}, {wait: 1000}]
+  - name: s03-settings-tours
+    steps: [{eval: "const s=window.__stores; s.settingsOpen.set(false); s.settingsSearch&&s.settingsSearch.set('tours'); s.settingsOpen.set(true)"}, {wait: 1000}]
+  - name: s04-close
+    steps: [{eval: "window.__stores.settingsOpen.set(false)"}, {key: Escape}, {wait: 600}]
+  - name: s05-invite
+    steps: [{eval: "const s=window.__stores; console.log(Object.keys(s.inviteStore||{}).join()); s.inviteStore.inviteSheet.set({kind:'agent'})"}, {wait: 1500}]
+  - name: s06-close
+    steps: [{eval: "window.__stores.inviteStore.inviteSheet.set(null)"}, {wait: 500}]
+  - name: s07-keys
+    steps: [{eval: "document.title=Object.keys(window.__stores).filter(k=>/studio|avatar|charact|tour|profile|peers|connect|theme/i.test(k)).join(' ')"}, {eval: "document.documentElement.setAttribute('data-probe', document.title)"}]

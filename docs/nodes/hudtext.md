@@ -51,7 +51,10 @@ A button that counts its own presses:
 3. Wire HUD Button → Counter's **pulse**, and Counter → HUD Text's **value**.
 4. Set the format to `Presses: {v}`. Press Play and click the button: the text counts up, for every player.
 
-![A HUD Button wired into a Counter, the Counter into a HUD Text with the format "Presses: {v}"](../img/nodes/hudtext.png)
+![A HUD Button wired into a Counter, the Counter into a HUD Text with the format "Presses: {v}"](../img/nodes-hudtext/hudtext.webp){ .shot width="688" height="198" loading=lazy }
+/// caption
+A HUD Button wired into a Counter.
+///
 
 !!! tip
     One HUD Text per element. Two nodes writing the same element fight over it, and the last one in the graph wins.

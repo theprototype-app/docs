@@ -1,0 +1,21 @@
+{
+ "id": "assistant-mic",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.463Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/ai/assistant-mic.png",
+ "width": 500,
+ "height": 440,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 500,
+  "h": 440
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

@@ -1,0 +1,76 @@
+page: node-editor
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: cheat-sheet
+  replaces: img/node-editor/cheat-sheet.png
+  alt: 'The cheat sheet: the node editor''s keys first, because it has focus, then the 3D viewport''s'
+  caption: The cheat sheet.
+  crop:
+    rect:
+    - 296
+    - 40
+    - 688
+    - 640
+  fade:
+  - l
+  - r
+  - t
+  - b
+  kind: ui
+  dpr: 1
+  from: img/node-editor/cheat-sheet.png
+- id: breadcrumb-siblings
+  replaces: img/node-editor/breadcrumb-siblings.png
+  alt: 'The breadcrumb bar in the docked node editor: ⌂ Scene › Angelfish 1…, with the object crumb''s list open — Main, the
+    Scene graph, then the object flows, the current one ticked'
+  caption: The breadcrumb bar in the docked node editor.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 688
+    - 337
+  fade:
+  - r
+  kind: ui
+  dpr: 1
+  from: img/node-editor/breadcrumb-siblings.png
+- id: tidy-waves-main
+  replaces: img/node-editor/tidy-waves-main.png
+  alt: 'Part of Waves'' Main graph at full size: tidied columns of nodes, with a note reading The crystal glows.'
+  caption: Part of Waves' Main graph at full size.
+  crop:
+    rect:
+    - 620
+    - 420
+    - 688
+    - 560
+  fade:
+  - l
+  - r
+  - t
+  - b
+  kind: ui
+  dpr: 1
+  from: img/node-editor/tidy-waves-main.png
+- id: group
+  replaces: img/node-editor/group.png
+  alt: 'Inside a group: Group inputs on the left, Group outputs on the right, and the breadcrumb at the top'
+  caption: Inside a group.
+  crop:
+    rect:
+    - 296
+    - 300
+    - 688
+    - 420
+  fade:
+  - l
+  - r
+  - t
+  kind: ui
+  dpr: 1
+  from: img/node-editor/group.png

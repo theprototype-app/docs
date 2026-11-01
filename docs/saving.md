@@ -28,7 +28,10 @@ GLTF and JSON join them once you offer them in Save options.
 Its **Save** remembers the options and saves; **Cancel** forgets the changes. On a folded phone the dialog opens full
 screen.
 
-![Save options on a computer: Save as Project or Scene, what a scene and a project include, and More formats, with Cancel and Save at the bottom](img/saving/save-options.png){ width="400" }
+![Save options on a computer: Save as Project or Scene, what a scene and a project include, and More formats, with Cancel and Save at the bottom](img/saving/save-options.webp){ .shot width="530" height="805" loading=lazy }
+/// caption
+Save options on a computer.
+///
 
 <kbd>Ctrl</kbd>+<kbd>S</kbd> saves the **open scene** as a new version in the [Explorer](explorer.md); a scene that has never been named asks for a name first.
 
@@ -45,6 +48,14 @@ Restoring a session — from the **Restore previous session?** dialog, from *aut
 A **plain page reload starts clean**, with everything closed. The workspace comes back
 when you ask for your scene back, not every time you refresh — and a scene whose author
 had nothing open will not close the panels *you* have open.
+
+### Saving and reopening a project
+
+Pressing **Save** with the Project format while the open scene has unsaved changes names the scene and offers
+**Save scene and project** or **Save project without these changes**. A scene with no name is not in the project yet,
+so it offers to save the scene first. The `.tp` remembers which scene was open, and opening it takes you back there;
+if that scene is gone, the scene on screen stays. On Android, `.tp` and `.tpscene` downloads now keep their extension
+(no more `.tp.zip`).
 
 ## Starting from a template
 

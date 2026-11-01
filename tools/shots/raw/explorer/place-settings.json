@@ -1,0 +1,24 @@
+{
+ "id": "place-settings",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.510Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/explorer/place-settings.png",
+ "width": 688,
+ "height": 280,
+ "crop": {
+  "x": 6,
+  "y": 0,
+  "w": 688,
+  "h": 280
+ },
+ "cut": [],
+ "fade": [
+  "l",
+  "r"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

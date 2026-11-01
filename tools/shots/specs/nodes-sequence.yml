@@ -1,0 +1,22 @@
+page: nodes-sequence
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: sequence
+  replaces: img/nodes/sequence.png
+  alt: A Key Press triggering a Sequence whose first three steps count up a Counter and whose fourth step resets it
+  caption: A Key Press triggering a Sequence whose first three steps count up a Counter and whose fourth step resets it.
+  crop:
+    rect:
+    - 32
+    - 0
+    - 1032
+    - 345
+  fade: []
+  kind: ui
+  dpr: 1.5
+  from: img/nodes/sequence.png
+md: nodes/sequence.md

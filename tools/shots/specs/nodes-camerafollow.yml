@@ -1,0 +1,25 @@
+page: nodes-camerafollow
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: camerafollow
+  replaces: img/nodes/camerafollow.png
+  alt: A Wander moving the Rover through an Object Selector, which also feeds the target of a Camera Follow triggered by two
+    Key Press nodes
+  caption: A Wander moving the Rover through an Object Selector.
+  crop:
+    rect:
+    - 41
+    - 0
+    - 688
+    - 639
+  fade:
+  - l
+  - r
+  kind: ui
+  dpr: 1
+  from: img/nodes/camerafollow.png
+md: nodes/camerafollow.md

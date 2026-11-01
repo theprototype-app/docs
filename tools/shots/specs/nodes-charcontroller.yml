@@ -1,0 +1,22 @@
+page: nodes-charcontroller
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: charcontroller
+  replaces: img/nodes/charcontroller.png
+  alt: A Slider wired into the jumpHeight input of a Character Controller set to walk
+  caption: A Slider wired into the jumpHeight input of a Character Controller set to walk.
+  crop:
+    rect:
+    - 21
+    - 0
+    - 688
+    - 411
+  fade: []
+  kind: ui
+  dpr: 1
+  from: img/nodes/charcontroller.png
+md: nodes/charcontroller.md

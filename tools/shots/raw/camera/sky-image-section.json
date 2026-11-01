@@ -1,0 +1,41 @@
+{
+ "id": "sky-image-section",
+ "dpr": 2,
+ "shotAt": "2026-10-31T15:06:10.668Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "div#budget-chip-wrap.tp-ui",
+  "header.wc-head",
+  "div.ins-filter",
+  "div#inspector.tp-ui",
+  "label.tp-ui",
+  "svg.lucide",
+  "button.chip",
+  "span.pr-label",
+  "button#hdri-none.hdri-card",
+  "img.svelte-1ctxc59",
+  "button#hdri-upload.ui-button-quiet",
+  "div.tp-ui"
+ ],
+ "width": 680,
+ "height": 1600,
+ "crop": {
+  "x": 1100,
+  "y": 56,
+  "w": 340,
+  "h": 800
+ },
+ "cut": [
+  "l",
+  "t",
+  "b"
+ ],
+ "fade": [
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

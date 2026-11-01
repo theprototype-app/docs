@@ -46,12 +46,11 @@ On Click) runs the node on every player's copy of the graph. Into a `player`-sco
 that adds to **everybody's** own number ("everyone scores when the boss falls"). A pulse only one
 player sees — an [On Hit](onhit.md) with who `me` — adds to that player's number alone.
 
-!!! warning "`add` on a shared variable can count twice"
-    Every player's copy works out *current + value* for itself. When their timing differs a
-    little, one pickup can be counted twice. For a number that must be exact, count the pulses
-    with a [Counter](counter.md) (every player holds the same count), or use the
-    [game kit](../game-kit.md)'s **Kit: Score**, which counts every point once. A `player`-scope
-    variable has only one writer, so it cannot double up.
+!!! note "One event, one change (since 1.48.1)"
+    A shared pulse runs the node on every player's copy, but a `shared` variable changes **once**
+    for the whole session: one click adds 1 once, and a toggle (`set` to NOT the value) flips once.
+    Before 1.48.1 every player applied the change itself, so `add` could count two or three times.
+    A `player`-scope variable has only one writer, so it never doubled up.
 
 A player can hold up to 64 per-player names. Variables are separate from
 [Store Value](storevalue.md), which keeps a number on one device across reloads and never shares
@@ -67,4 +66,7 @@ Add a point to the shared score with each click on a coin:
 4. Read the score with a [Get Variable](getvariable.md) named `score`, or show it on screen with
    the HUD editor's **Actions ▸ Show a variable**.
 
-![The example's nodes: On Click on the Coin, a Set Variable (score, add, shared) and a Number set to 1 — in 1.42 the Set Variable card has no sockets to wire into](../img/nodes/setvariable.png)
+![The example's nodes: On Click on the Coin, a Set Variable (score, add, shared) and a Number set to 1 — in 1.42 the Set Variable card has no sockets to wire into](../img/nodes-setvariable/setvariable.webp){ .shot width="688" height="551" loading=lazy }
+/// caption
+The example's nodes.
+///

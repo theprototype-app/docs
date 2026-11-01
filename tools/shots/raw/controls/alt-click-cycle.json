@@ -1,0 +1,26 @@
+{
+ "id": "alt-click-cycle",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.497Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/controls/alt-click-cycle.png",
+ "width": 688,
+ "height": 480,
+ "crop": {
+  "x": 500,
+  "y": 130,
+  "w": 688,
+  "h": 480
+ },
+ "cut": [],
+ "fade": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

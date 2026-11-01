@@ -1,0 +1,22 @@
+page: nodes-hudtext
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: hudtext
+  replaces: img/nodes/hudtext.png
+  alt: 'A HUD Button wired into a Counter, the Counter into a HUD Text with the format "Presses: {v}"'
+  caption: A HUD Button wired into a Counter.
+  crop:
+    rect:
+    - 32
+    - 0
+    - 1032
+    - 297
+  fade: []
+  kind: ui
+  dpr: 1.5
+  from: img/nodes/hudtext.png
+md: nodes/hudtext.md

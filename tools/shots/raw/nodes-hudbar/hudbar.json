@@ -1,0 +1,21 @@
+{
+ "id": "hudbar",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.566Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/nodes/hudbar.png",
+ "width": 688,
+ "height": 365,
+ "crop": {
+  "x": 21,
+  "y": 0,
+  "w": 688,
+  "h": 365
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

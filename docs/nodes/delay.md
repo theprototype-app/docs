@@ -45,7 +45,10 @@ A door that lets you through for three seconds:
    Visibility → Object Selector.
 4. Press Play, tap <kbd>E</kbd>: the door vanishes, and three seconds later it is back.
 
-![A Key Press resetting a Latch and triggering a three-second Delay that sets the Latch again, which drives the door's Visibility](../img/nodes/delay.png)
+![A Key Press resetting a Latch and triggering a three-second Delay that sets the Latch again, which drives the door's Visibility](../img/nodes-delay/delay.webp){ .shot width="688" height="180" loading=lazy }
+/// caption
+A Key Press resetting a Latch and triggering a three-second Delay that sets the Latch again.
+///
 
 !!! tip
     For a cooldown, wire the action's pulse into a Delay's trigger and the Delay into a Latch's **set**, with the same

@@ -43,7 +43,10 @@ The light theme and every custom `.theme.json` restyle all of it; see [Themes & 
 - Someone who is **speaking** in voice chat gets a soft green ring on their avatar.
 - Buttons are 36–38 px with a mouse and grow to **44 px on a touch screen**.
 
-![The right sidebar pinned at full height with Configure Scene open: the profile button has moved left of it and its menu — Customize character, Profile settings, Sign in to cloud — opens right under it, beside the sidebar](img/interface/profile-menu-pinned-sidebar.png){ width="700" }
+![The right sidebar pinned at full height with Configure Scene open: the profile button has moved left of it and its menu — Customize character, Profile settings, Sign in to cloud — opens right under it, beside the sidebar](img/interface/profile-menu-pinned-sidebar.webp){ .shot .fade-l .fade-b width="688" height="460" loading=lazy }
+/// caption
+With a sidebar pinned at full height, the profile menu opens under its button, beside the sidebar.
+///
 
 ## The command palette (Ctrl+K)
 
@@ -116,9 +119,15 @@ and, at its far end, the **Full height** button (↕) and the **hide** button.
 - **A pinned Properties** (the pin in its header) follows your selection without pulling its tab over the Objects list
   when the two share a side; double-click an object (or pick **Properties** in its menu) to bring it forward.
 
-![A sidebar on the right with two tabs, Objects and Configure Scene (in front), and the Full height button at the end of its tab strip](img/interface/sidebar-tabs.png)
+![A sidebar on the right with two tabs, Objects and Configure Scene (in front), and the Full height button at the end of its tab strip](img/interface/sidebar-tabs.webp){ .shot .fade-b width="340" height="440" loading=lazy }
+/// caption
+Two windows as tabs in one sidebar; Full height is at the end of the tab strip.
+///
 
-![The Objects tab of a sidebar right-clicked: Close, Close others (greyed, it is the only tab), Undock into a floating window, Move to the left side and Move to the bottom dock](img/interface/sidebar-tab-menu.png){ width="360" }
+![The Objects tab of a sidebar right-clicked: Close, Close others, Undock into a floating window, Move to the left side, Move to the bottom dock and Hide this sidebar.](img/interface/sidebar-tab-menu.webp){ .shot .fade-l .fade-b width="520" height="330" loading=lazy }
+/// caption
+A sidebar tab's right-click menu.
+///
 
 #### Dragging a tab
 
@@ -134,7 +143,10 @@ Drag a sidebar tab and a highlight shows what will happen before you let go — 
 Dragging a floating window onto a sidebar (or a screen edge), or a bottom-dock tab onto a sidebar, shows the same
 highlights, painted above every panel; the window you drag turns see-through so the highlight stays readable.
 
-![An Objects tab dragged out of the right sidebar into the 3D view: a dashed blue box reads Float here](img/interface/sidebar-drag-float-here.png)
+![An Objects tab dragged out of the right sidebar into the 3D view: a dashed blue box reads Float here](img/interface/sidebar-drag-float-here.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="480" loading=lazy }
+/// caption
+Dragging a tab into the 3D view: drop it to float the window.
+///
 
 #### Any window in a sidebar
 
@@ -153,13 +165,19 @@ the Explorer (search and filters; its search hides when the sidebar is narrower 
 floating window), the Shader editor, Code, the Profiler, the Image editor (the file name) and Statistics (the budget dot
 and re-read).
 
-![The same sidebar at full height: it runs from the top edge to the bottom, the notes, bell and profile buttons slid left of it, and the docked Node editor ends beside it](img/interface/sidebar-full-height.png)
+![The right sidebar at full height, with Objects and Configure Scene as tabs: it runs from the top edge to the bottom, and the notes, bell and profile buttons have slid left of it.](img/interface/sidebar-full-height.webp){ .shot .fade-l width="688" height="900" loading=lazy }
+/// caption
+Full height: the sidebar runs from the top edge to the bottom.
+///
 
 Which side Configure Scene and Properties dock to, each side's width and Full height, the tab order and the tab in front
 are kept on this device and saved in [workspace layouts](controls.md#workspace-layouts). A phone keeps its
 [bottom dock](#the-dock-on-a-phone) instead.
 
-![Light theme: the Objects list as a sidebar on the left and Configure Scene as a sidebar on the right](img/interface/sidebars-both-sides-light.png)
+![Light theme: the Objects list as a sidebar on the left and Configure Scene as a sidebar on the right](img/interface/sidebars-both-sides-light.webp){ .shot width="688" height="620" loading=lazy }
+/// caption
+A sidebar on each side, in the Light theme. The two are shown together, cut from one screen.
+///
 
 #### Panel headers
 
@@ -214,7 +232,10 @@ second copy:
 To close a docked window use its tab's **×**; to bring a floating window into the dock, drag it onto the dock or use its
 [window menu](controls.md#the-window-menu) (**Dock to bottom**).
 
-![The dock's + menu open: Node editor and Explorer are ticked In dock, Objects is ticked Floating, Statistics is ticked Right sidebar, and every closed window says Open](img/interface/dock-plus-menu.png)
+![The dock's + menu open: Node editor and Explorer are marked In dock, Objects is marked Floating, and every other window can be opened from the same list.](img/interface/dock-plus-menu.webp){ .shot width="688" height="840" loading=lazy }
+/// caption
+The dock's + menu, in a small window: each row says where that window is now.
+///
 
 **Dock any window exactly where you want it**: drag a floating window by its header or any empty part of it — or tear
 a tab out of a tabbed window, or drag a whole tabbed window by its tab bar — onto the **dock's tab bar**. The window turns
@@ -227,7 +248,10 @@ on an unfolded phone or a tablet.
 Everywhere else a floating window simply moves — over the open dock, over the sidebars, partly off screen — and stays
 under the cursor the whole way; a header that ends up under the Controls bar is nudged above it when you let go.
 
-![The Objects window dragged over the dock's tab bar: it is see-through, the tab bar is outlined and a caret marks the slot after the Node editor tab](img/interface/dock-drop-objects.png)
+![The Objects window dragged over the dock's tab bar: it is see-through, the tab bar is outlined and a caret marks the slot after the Node editor tab](img/interface/dock-drop-objects.webp){ .shot width="688" height="840" loading=lazy }
+/// caption
+Drop on the dock's tab bar; the caret shows the slot.
+///
 
 **Floating windows can overlap the dock**: move them over it and resize them past its top edge — only the screen edge
 stops the resize corner. The Objects list remembers whether you last had it docked, and the toolbar button and
@@ -257,9 +281,15 @@ the app closes one window of a pair for a while, the other fills the dock until 
 screen — a computer or an unfolded phone; on a folded phone the dock is one column and a pair shows as its two ordinary
 tabs.
 
-![The dock split side by side: one tab reads Node editor / Explorer, the Node editor with three nodes on the left, the Explorer's Library on the right, the divider between them and the Split button pressed at the right end of the strip](img/interface/dock-split.png)
+![The dock split side by side: one tab reads Node editor / Explorer, with the Node editor on the left and the Explorer on the right.](img/interface/dock-split.webp){ .shot width="688" height="840" loading=lazy }
+/// caption
+The dock split side by side, in a small window.
+///
 
-![A floating Explorer dragged over the right pane of a split dock: the pane is outlined and says Show in this pane](img/interface/drop-into-split-pane.png)
+![A floating Objects window dragged over the right pane of a split dock: the pane is outlined and says Show in this pane.](img/interface/drop-into-split-pane.webp){ .shot width="688" height="840" loading=lazy }
+/// caption
+A floating window dragged over a pane of a split dock.
+///
 
 ### Floating windows with tabs
 
@@ -287,7 +317,10 @@ scrollbars anywhere.
 Since 1.46 any panel — or a whole dock — can live in its **own browser window**. Drag it to a second monitor and keep
 the 3D view full-size in the app. Everything stays live: it is the same app in a second window, not a copy.
 
-![A popped-out dock: the Node editor and the Timeline as tabs in their own window](img/interface/pop-out-dock.png)
+![A popped-out dock: the Node editor and the Timeline as tabs in their own window](img/interface/pop-out-dock.webp){ .shot .fade-r width="688" height="600" loading=lazy }
+/// caption
+A popped-out dock is its own browser window.
+///
 
 - **Pop out a panel:** right-click a dock tab, a sidebar tab or a floating window's header ▸ **Pop out into a new
   window**. Or drag a tab out of the browser window and let go. Panels that pop out: the Explorer, Properties /
@@ -332,7 +365,10 @@ focus** on a docked window, a **Viewport** button shows or hides the
 [viewport picture-in-picture](#the-viewport-picture-in-picture) without leaving focus mode. Focus mode also
 ends when a dialog opens or you press Play.
 
-![Focus mode on the docked Explorer: it fills the whole window, the Viewport button (pressed) sits just left of Exit focus in the tab row, and the viewport picture-in-picture shows the scene in the bottom-right corner](img/interface/focus-mode-viewport-toggle.png)
+![Focus mode on the docked Explorer: it fills the whole window, the Viewport button (pressed) sits just left of Exit focus in the tab row, and the viewport picture-in-picture shows the scene in the bottom-right corner](img/interface/focus-mode-viewport-toggle.webp){ .shot width="688" height="840" loading=lazy }
+/// caption
+Focus mode, in a small window: the Viewport button shows or hides the picture-in-picture.
+///
 
 Without a keyboard: **View ▸ Focus mode** in the 3D view's right-click menu, right-click a dock tab ▸ **Maximize (focus
 mode)**, or on a phone **More ▸ Tools & View ▸ Focus mode** (which you can also drag onto the
@@ -366,7 +402,10 @@ moving it never moves your main view.
 
 The PiP's keys are listed in **Settings ▸ Shortcuts ▸ Viewport picture-in-picture**, where they can be rebound.
 
-![Focus mode on the docked Flow Code window: it fills the whole window with its tab row and Exit focus along the top edge, and the Viewport picture-in-picture shows the scene in the bottom-right corner](img/interface/focus-mode-pip.png)
+![Focus mode on the docked Flow Code window: it fills the whole window with its tab row and Exit focus along the top edge, and the Viewport picture-in-picture shows the scene in the bottom-right corner](img/interface/focus-mode-pip.webp){ .shot width="688" height="840" loading=lazy }
+/// caption
+Focus mode on the Flow Code window, in a small window.
+///
 
 ## Menus
 
@@ -391,7 +430,10 @@ Project actions**:
   with the **Project | Scene | ⚙** switch under Save; the **⚙** opens the same Save options.
 - **Auto** is List on a phone and Compact everywhere else. Searching the settings for *burger* or *compact* finds it.
 
-![The main menu's Project section in the Compact layout: New from template… across the top, then Load beside Save with its ▾, then Import beside Export…](img/interface/menu-project-compact.png){ width="290" }
+![The main menu's Project section in the Compact layout: New from template… across the top, then Load beside Save with its ▾, then Import beside Export…](img/interface/menu-project-compact.webp){ .shot width="290" height="215" loading=lazy }
+/// caption
+The main menu's Project section in the Compact layout.
+///
 
 ## Dialogs
 
@@ -415,7 +457,10 @@ for this device. Passive results — *Saved*, *Copied*, *Exported…* — stay [
 in the notification centre. Requests from other people (to load a session, to take control, to see your private scene)
 stay cards in the corner, like connection requests: a dialog would take over your screen from afar.
 
-![Delete this flow? as a dialog over the dimmed screen: the logo and the toolbar are covered too, Delete flow in red beside Cancel](img/interface/dialog-delete-flow.png)
+![Delete this flow? as a dialog over the dimmed screen, with Delete flow in red beside Cancel.](img/interface/dialog-delete-flow.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="400" loading=lazy }
+/// caption
+A confirmation is a dialog over the dimmed screen.
+///
 
 ## On a phone
 
@@ -483,7 +528,10 @@ added, moved or removed an item on the bar, and stays away; **Settings ▸ Inter
 on an item in More means it is already on the bar, and **Reset bar** (at the end of More) brings back the default. With More closed nothing moves by
 accident: a long press on a bar item opens More and picks that item up in one gesture.
 
-![More open on a folded phone, with Move being dragged from More ▸ Edit down onto the bottom bar; a blue line marks where it will land between Add and Objects](img/interface/phone-bar-drag-in.png){ width="320" }
+![More open on a folded phone, with Move being dragged from More ▸ Edit down onto the bottom bar; a blue line marks where it will land between Add and Objects](img/interface/phone-bar-drag-in.webp){ .shot .fade-t width="390" height="550" loading=lazy }
+/// caption
+More open on a folded phone, with Move being dragged onto the bottom bar.
+///
 
 **What can go on the bar** — everything in More:
 
@@ -506,7 +554,10 @@ the app tells you once: press and hold any item on the bar to get More back.
 | **Dock tab row** | the row of tabs above docked windows is hidden; the bar and More still switch views |
 | **Grab handle** | no grab bar on docked windows and sheets (and no tap to step the size); drag the top edge to resize |
 
-![Light theme: the bottom of More — Edit, Tools & View, then the Show switches (Selection toolbar, Dock tab row, Grab handle) and Reset bar](img/interface/phone-more-show-switches-light.png){ width="320" }
+![Light theme: the bottom of More — Edit, Tools & View, then the Show switches (Selection toolbar, Dock tab row, Grab handle) and Reset bar](img/interface/phone-more-show-switches-light.webp){ .shot .fade-t width="390" height="550" loading=lazy }
+/// caption
+The bottom of More on a phone, in the Light theme.
+///
 
 The bar and the switches are kept on this device; they are never shared with peers or saved in scenes, but a
 [workspace layout](controls.md#workspace-layouts) saved on the phone keeps the bar. On a wider screen — an unfolded
@@ -537,7 +588,10 @@ editor and the other editors:
 - **The main menu closes** as Configure Scene opens, since its tab is underneath the menu. On a computer the menu stays
   open, above the sidebar.
 
-![On a folded phone: the selection toolbar above the dock, whose tab strip holds Explorer and Properties (in front) with + beside them; the Properties tab shows the selected Box, and the bottom bar with Play sits underneath](img/interface/dock-tabs-properties-phone.png){ width="360" }
+![On a folded phone: the selection toolbar above the dock, whose tab strip holds Properties with + beside it; the Properties of a box fill the dock above the bottom bar.](img/interface/dock-tabs-properties-phone.webp){ .shot .fade-t width="390" height="596" loading=lazy }
+/// caption
+The dock on a folded phone: tabs above it, the selection toolbar above them.
+///
 
 **Folding and unfolding.** Unfold the phone (or widen the window past 640 px) and each tab goes back to its place on the
 bigger screen: Properties and Configure Scene to their [sidebar](#sidebars) (the right side unless you moved them),
@@ -592,7 +646,10 @@ with its top edge in the same frame while you resize it:
 Every toggle shows its state: a filled (tinted) button is on. Tapping a selected object deselects it — see
 [Tapping to select](controls.md#tapping-to-select-on-a-touch-screen).
 
-![The selection toolbar on a folded phone: Move (on), Rotate, Scale, Select multiple, Interact, then Inspect, then Undo and Redo, above the bottom bar with Play](img/interface/selection-toolbar-phone.png){ width="360" }
+![The selection toolbar on a folded phone: Move (on), Rotate, Scale, Select multiple, Interact, then Inspect, then Undo and Redo, above the bottom bar with Play in its middle.](img/interface/selection-toolbar-phone.webp){ .shot .fade-t width="390" height="196" loading=lazy }
+/// caption
+The selection toolbar on a folded phone, above the bottom bar.
+///
 
 ## For module authors
 

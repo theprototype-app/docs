@@ -1,0 +1,37 @@
+page: connection
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: status-dot-phone
+  replaces: img/connection/status-dot-phone.png
+  dpr: 2.9
+  kind: ui
+  caption: 'A phone''s crowded top bar: the chip keeps the connection dot.'
+  crop:
+    rect:
+    - 0
+    - 0
+    - 1131
+    - 174
+  fade: []
+  alt: 'The phone''s top bar when it is crowded: the logo, the connection chip with a green dot, ▾ and the microphone, then
+    the bell and the peers'
+  from: img/connection/status-dot-phone.png
+- id: peers-panel-desktop
+  replaces: img/connection/peers-panel-desktop.png
+  dpr: 1
+  kind: ui
+  caption: The Connected panel on a computer.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 515
+    - 385
+  fade: []
+  alt: 'The Connected panel on a computer: five people, one row each — avatar, name, the scene they are in and their p-number
+    underneath, and Editor or Viewer with Go to or Watch on the right'
+  from: img/connection/peers-panel-desktop.png

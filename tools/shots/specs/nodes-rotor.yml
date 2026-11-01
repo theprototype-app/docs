@@ -1,0 +1,22 @@
+page: nodes-rotor
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: rotor
+  replaces: img/nodes/rotor.png
+  alt: A Toggle wired into a Rotate / Motor's on input, the Rotate / Motor driving the turntable's Object Selector
+  caption: A Toggle wired into a Rotate / Motor's on input.
+  crop:
+    rect:
+    - 32
+    - 0
+    - 1032
+    - 366
+  fade: []
+  kind: ui
+  dpr: 1.5
+  from: img/nodes/rotor.png
+md: nodes/rotor.md

@@ -1,0 +1,39 @@
+{
+ "id": "sidebar-full-height",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:41:34.130Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "p.hud-cell",
+  "p#explorer-slot.hud-cell",
+  "button#toolbar-customize.hud-cell",
+  "div.sb-tabs",
+  "header.wc-head",
+  "div.ins-filter",
+  "div#inspector.tp-ui",
+  "div.sec-panel-body",
+  "p.mb-1",
+  "div.tp-ui",
+  "label#override-shaders-label.it-label",
+  "div.flex"
+ ],
+ "width": 1376,
+ "height": 1800,
+ "crop": {
+  "x": 752,
+  "y": 0,
+  "w": 688,
+  "h": 900
+ },
+ "cut": [
+  "l"
+ ],
+ "fade": [
+  "l"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

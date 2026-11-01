@@ -1,0 +1,21 @@
+{
+ "id": "presets-wood",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.546Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/materials/presets-wood.png",
+ "width": 304,
+ "height": 450,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 304,
+  "h": 450
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

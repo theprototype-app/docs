@@ -1,0 +1,23 @@
+{
+ "id": "pop-out-dock",
+ "dpr": 1,
+ "shotAt": "2026-10-29T08:56:54.344Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/interface/pop-out-dock.png",
+ "width": 688,
+ "height": 600,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 688,
+  "h": 600
+ },
+ "cut": [],
+ "fade": [
+  "r"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

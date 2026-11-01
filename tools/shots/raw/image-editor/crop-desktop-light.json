@@ -1,0 +1,26 @@
+{
+ "id": "crop-desktop-light",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.520Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/image-editor/crop-desktop-light.png",
+ "width": 688,
+ "height": 700,
+ "crop": {
+  "x": 180,
+  "y": 40,
+  "w": 688,
+  "h": 700
+ },
+ "cut": [],
+ "fade": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

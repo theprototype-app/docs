@@ -1,0 +1,21 @@
+{
+ "id": "hudtimer",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.568Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/nodes/hudtimer.png",
+ "width": 688,
+ "height": 416,
+ "crop": {
+  "x": 21,
+  "y": 0,
+  "w": 688,
+  "h": 416
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

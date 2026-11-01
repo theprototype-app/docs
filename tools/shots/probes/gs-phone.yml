@@ -1,0 +1,11 @@
+device: n6-folded
+theme: dark
+stages:
+  - name: p01-boot
+    steps: []
+  - name: p02-settings-home
+    steps: [{eval: "window.__stores.settingsOpen.set(true)"}, {wait: 1500}]
+  - name: p03-settings-scene
+    steps: [{eval: "window.__stores.settingsSection.set('scene')"}, {wait: 1200}]
+  - name: p04-a11y
+    steps: [{eval: "window.__stores.settingsSection.set('accessibility')"}, {wait: 1200}]

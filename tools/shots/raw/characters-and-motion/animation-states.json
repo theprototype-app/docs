@@ -1,0 +1,21 @@
+{
+ "id": "animation-states",
+ "dpr": 1,
+ "shotAt": "2026-10-31T14:06:04.426Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/characters-and-motion/animation-states.png",
+ "width": 360,
+ "height": 472,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 360,
+  "h": 472
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

@@ -95,7 +95,10 @@ car, sparks off a swung sword.
 Since 1.27 **Inspector ▸ Particles ▸ Draw as** draws the particles one of four ways. The particles move exactly the
 same in every mode; only the shape on screen changes.
 
-![Draw as set to Trails, with the Trail length, Segments and Inherit velocity rows](img/particles/draw-as.png)
+![Draw as set to Trails, with the Trail length, Segments and Inherit velocity rows](img/particles/draw-as.webp){ .shot width="280" height="191" loading=lazy }
+/// caption
+Draw as set to Trails.
+///
 
 | Draw as | What you see | Its rows |
 |---|---|---|
@@ -108,7 +111,10 @@ same in every mode; only the shape on screen changes.
   drawn as trails, and the Inspector says so.
 - In **Local** space a ribbon rides along with the object; switch **Space** to **World** for a trail that stays behind it.
 
-![The Magic wisps preset: purple trails curling off a moving cube](img/particles/wisps-trails.png)
+![The Magic wisps preset: purple trails curling off a moving cube](img/particles/wisps-trails.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+/// caption
+The Magic wisps preset.
+///
 
 ## Caps
 

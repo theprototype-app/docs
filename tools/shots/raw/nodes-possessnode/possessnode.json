@@ -1,0 +1,21 @@
+{
+ "id": "possessnode",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.571Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/nodes/possessnode.png",
+ "width": 552,
+ "height": 639,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 552,
+  "h": 639
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

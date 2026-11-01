@@ -1,0 +1,119 @@
+page: code-workspace
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: script-tab
+  replaces: img/code-workspace/script-tab.png
+  alt: The code workspace docked beside the Explorer and the Node editor, with a Script node's code open
+  caption: The code workspace docked beside the Explorer and the Node editor.
+  crop:
+    rect:
+    - 0
+    - 380
+    - 688
+    - 340
+  fade:
+  - r
+  - t
+  kind: ui
+  dpr: 1
+  from: img/code-workspace/script-tab.png
+- id: parse-error
+  replaces: img/code-workspace/parse-error.png
+  alt: 'A save refused: the banner names the line, and the nodes keep the last good version'
+  caption: A save refused.
+  crop:
+    rect:
+    - 0
+    - 380
+    - 688
+    - 340
+  fade:
+  - r
+  - t
+  kind: ui
+  dpr: 1
+  from: img/code-workspace/parse-error.png
+- id: editing-together
+  replaces: img/code-workspace/editing-together.png
+  alt: 'Editing together: another person''s caret and selection in their colour, labelled Peer 8c21, line 2.'
+  caption: Editing together.
+  crop:
+    rect:
+    - 222
+    - 435
+    - 688
+    - 285
+  fade:
+  - r
+  kind: ui
+  dpr: 1
+  from: img/code-workspace/editing-together.png
+- id: pop-out-window
+  replaces: img/code-workspace/pop-out-window.png
+  alt: The code workspace in its own window, with Dock back in its header
+  caption: The code workspace in its own window.
+  crop:
+    rect:
+    - 0
+    - 0
+    - 688
+    - 640
+  fade:
+  - r
+  kind: ui
+  dpr: 1
+  from: img/code-workspace/pop-out-window.png
+- id: sidebars
+  replaces: img/code-workspace/sidebars.png
+  alt: 'The code workspace: Open editors and the Project tree on the left, with the tab strip above the code.'
+  caption: The code workspace.
+  crop:
+    rect:
+    - 0
+    - 250
+    - 688
+    - 650
+  fade:
+  - r
+  - t
+  kind: ui
+  dpr: 1
+  from: img/code-workspace/sidebars.png
+- id: files-menu
+  replaces: img/code-workspace/files-menu.png
+  alt: 'The Project tree''s menu on a script: Rename, Move to, Cut, Delete, New file, New folder, Show in Explorer'
+  caption: The Project tree's menu on a script.
+  crop:
+    rect:
+    - 0
+    - 450
+    - 688
+    - 450
+  fade:
+  - r
+  - t
+  kind: ui
+  dpr: 1
+  from: img/code-workspace/files-menu.png
+- id: player-code
+  replaces: img/code-workspace/player-code.png
+  alt: 'Player: walk open in the code workspace, with Engine source in the toolbar and the Player code row in the Project
+    tree'
+  caption: 'Player: walk open in the code workspace.'
+  crop:
+    rect:
+    - 0
+    - 250
+    - 688
+    - 470
+  fade:
+  - r
+  - t
+  - b
+  kind: ui
+  dpr: 1
+  from: img/code-workspace/player-code.png

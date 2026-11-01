@@ -5,7 +5,10 @@ water it is poured into. **Flow paths** carry it along rivers, chutes and pipes,
 leaves and boats along the current. For water volumes (pools, tanks, oceans) see [Water](water.md); for a glass box of
 particle fluid see [Fluid tank](simulation.md#fluid-tank).
 
-![A Fluid emitter pouring a stream into a puddle, with its properties open](img/fluids/fluid-emitter.png)
+![A Fluid emitter pouring a stream into a puddle, with its properties open](img/fluids/fluid-emitter.webp){ .shot .fade-l width="688" height="720" loading=lazy }
+/// caption
+A Fluid emitter pouring a stream into a puddle.
+///
 
 ## Fluid emitter
 
@@ -81,7 +84,10 @@ and a headset runs at most 1400 particles.
 head-race, which spills into a fountain basin; the basin overflows down a chute back into the pond, and leaves and boats
 ride along.
 
-![Water works: the scoop wheel, the head-race, the fountain basin and the chute back to the pond](img/fluids/water-works.png)
+![Water works: the scoop wheel, the head-race, the fountain basin and the chute back to the pond](img/fluids/water-works.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+/// caption
+Water works: the scoop wheel.
+///
 
 ## Limits
 

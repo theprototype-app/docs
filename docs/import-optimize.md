@@ -53,7 +53,10 @@ The defaults for every new import, under **Settings ▸ Import ▸ Import defaul
 
 **Reset** puts the shipped defaults back.
 
-![Settings ▸ Import: Optimize big models automatically, the triangle and texture thresholds, max texture size, Compress textures (KTX2) and LOD levels](img/import-optimize/settings-import.png)
+![Settings ▸ Import: Optimize big models automatically, the triangle and texture thresholds, max texture size, Compress textures (KTX2) and LOD levels](img/import-optimize/settings-import.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="700" loading=lazy }
+/// caption
+Settings ▸ Import.
+///
 
 ## Per file: Import settings and Reimport
 
@@ -73,6 +76,10 @@ LOD chain.
 The other half of the pipeline is on the way out: **Optimize for: For Quest / web** in
 [Save options](saving.md#save-options) and **Settings ▸ Export** writes compressed textures, compressed geometry and the
 LOD chain into a GLTF or a Scene file — see [Publish & Export](publish-export.md#optimize-for-quest-web).
+
+## Replacing a model later
+
+A new version of a model does not have to be a new object: [Replace model…](edit-in-blender.md#replace-a-model-from-any-file) keeps the object, its flows, physics and clips.
 
 ## Limits
 

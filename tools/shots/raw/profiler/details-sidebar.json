@@ -1,0 +1,23 @@
+{
+ "id": "details-sidebar",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.585Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/profiler/details-sidebar.png",
+ "width": 688,
+ "height": 438,
+ "crop": {
+  "x": 752,
+  "y": 0,
+  "w": 688,
+  "h": 438
+ },
+ "cut": [],
+ "fade": [
+  "l"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

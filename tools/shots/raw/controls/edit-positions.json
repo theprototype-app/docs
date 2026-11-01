@@ -1,0 +1,41 @@
+{
+ "id": "edit-positions",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:47:02.740Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "button#cluster-grip-bar.cl-grip",
+  "nav#controls-pill.tp-ui",
+  "button#toolbar-edit-add-start.hud-cell",
+  "svg.lucide",
+  "button.hud-edit-grip",
+  "button.hud-edit-remove",
+  "span.hud-play",
+  "button#toolbar-edit-add-end.hud-cell",
+  "button#toolbar-edit-apply.hud-edit-apply",
+  "path"
+ ],
+ "width": 1376,
+ "height": 260,
+ "crop": {
+  "x": 376,
+  "y": 770,
+  "w": 688,
+  "h": 130
+ },
+ "cut": [
+  "l",
+  "r",
+  "t"
+ ],
+ "fade": [
+  "l",
+  "r",
+  "t"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

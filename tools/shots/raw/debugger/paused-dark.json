@@ -1,0 +1,21 @@
+{
+ "id": "paused-dark",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.506Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/debugger/paused-dark.png",
+ "width": 300,
+ "height": 408,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 300,
+  "h": 408
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

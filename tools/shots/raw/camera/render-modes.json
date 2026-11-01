@@ -1,0 +1,27 @@
+{
+ "id": "render-modes",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:06:23.299Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [],
+ "kind": "view",
+ "tiles": [
+  {
+   "file": "render-modes--shaded.webp",
+   "caption": "Shaded"
+  },
+  {
+   "file": "render-modes--ao.webp",
+   "caption": "Shaded + AO"
+  },
+  {
+   "file": "render-modes--wireframe.webp",
+   "caption": "Wireframe"
+  }
+ ],
+ "compose": "row",
+ "fade": []
+}

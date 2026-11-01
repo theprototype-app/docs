@@ -1,0 +1,42 @@
+{
+ "id": "settings-desktop",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:22:12.960Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "div#settings-main.settings-main",
+  "h2.ss-title",
+  "div.ss-page",
+  "section.tp-ui",
+  "div#row-ui-scale.tp-ui",
+  "div.ss-body",
+  "div.sec-card",
+  "div#row-high-contrast.tp-ui",
+  "div#row-motion.tp-ui",
+  "h3.sec-title",
+  "div#row-captions.tp-ui",
+  "span.sr-name"
+ ],
+ "width": 1376,
+ "height": 1180,
+ "crop": {
+  "x": 470,
+  "y": 160,
+  "w": 688,
+  "h": 590
+ },
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
+ "fade": [
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

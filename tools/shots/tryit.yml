@@ -1,0 +1,40 @@
+# Roadmap 83 V8 — "Try it" links double as a docs health check.
+# A page writes   [Try it](https://theprototype.app/){ .tryit data-tryit="<id>" }
+# and names a check here. `mkdocs build --strict` fails on a link with no check (tools/hooks/tryit.py);
+# `node tools/shots/tryit-check.cjs` opens every check's url and asserts each control in `expect`
+# exists and is visible — a renamed or removed control fails the docs build in CI.
+# expect: {selector} | {text, within?} ; steps: the shot step language (tools/shots/lib/steps.cjs)
+checks:
+  controls-viewport:
+    url: https://theprototype.app/
+    expect:
+      - {name: Move tool, selector: 'p[title="Move (1)"]'}
+      - {name: Rotate tool, selector: 'p[title="Rotate (2)"]'}
+      - {name: Scale tool, selector: 'p[title="Scale (3)"]'}
+      - {name: Pivot button, selector: 'p[title^="Pivot:"]'}
+      - {name: the 3D view, selector: canvas}
+  camera-render-mode:
+    url: https://theprototype.app/
+    steps:
+      - {section: View}
+    expect:
+      - {name: Shaded, selector: '#view-mode-shaded'}
+      - {name: Shaded + AO, selector: '#view-mode-shaded-ao'}
+      - {name: Wireframe, selector: '#view-mode-wireframe'}
+  camera-view-section:
+    url: https://theprototype.app/
+    steps:
+      - {section: View}
+    expect:
+      - {name: render mode switch, selector: '#view-mode-switch'}
+      - {name: Show light helpers, text: Show light helpers}
+  camera-environment:
+    url: https://theprototype.app/
+    steps:
+      - {section: Environment}
+    expect:
+      - {name: preset chips, selector: '#environment-presets'}
+      - {name: Studio, text: Studio, within: '#environment-presets'}
+      - {name: Daylight, text: Daylight, within: '#environment-presets'}
+      - {name: Sunset, text: Sunset, within: '#environment-presets'}
+      - {name: Night, text: Night, within: '#environment-presets'}

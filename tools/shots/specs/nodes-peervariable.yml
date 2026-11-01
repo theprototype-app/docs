@@ -1,0 +1,23 @@
+page: nodes-peervariable
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: peervariable
+  replaces: img/nodes/peervariable.png
+  alt: 'The example''s nodes: On Hit (who me) on the Bell, a Set Variable (rings, add, player) beside a Number, and a Player
+    Variable (rings, mine) driving a HUD Text'
+  caption: The example's nodes.
+  crop:
+    rect:
+    - 32
+    - 0
+    - 1032
+    - 405
+  fade: []
+  kind: ui
+  dpr: 1.5
+  from: img/nodes/peervariable.png
+md: nodes/peervariable.md

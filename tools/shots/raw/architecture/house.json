@@ -1,0 +1,21 @@
+{
+ "id": "house",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.468Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/architecture/house.png",
+ "width": 1126,
+ "height": 600,
+ "crop": {
+  "x": 77,
+  "y": 68,
+  "w": 1126,
+  "h": 600
+ },
+ "cut": [],
+ "fade": "vignette",
+ "anchors": {},
+ "kind": "view"
+}

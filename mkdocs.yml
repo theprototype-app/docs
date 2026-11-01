@@ -11,14 +11,18 @@ nav:
     - Themes & Appearance: appearance.md
     - Accessibility: accessibility.md
     - Settings: settings.md
+    - Tools & connections: tools-and-connections.md
     - Privacy & Error Reports: privacy.md
     - Security & Self-hosting: security.md
     - Your Character: avatars.md
     - Connection: connection.md
+    - Invite People and Agents: invites.md
+    - Users & Moderation: people.md
     - Sharing into the App: sharing-into-the-app.md
   - Building:
     - Explorer: explorer.md
     - Importing Big Models: import-optimize.md
+    - Edit in Blender: edit-in-blender.md
     - "Free Assets (CC0)": free-assets.md
     - Packs: packs.md
     - Levels of Detail: lod.md
@@ -36,6 +40,7 @@ nav:
     - Shader Nodes: shader-nodes.md
     - Scene Look (Post-processing): post-processing.md
     - Animation: animation.md
+    - Characters and motion: characters-and-motion.md
     - Timeline (Cutscenes): timeline.md
     - Physics & Simulation: physics.md
     - Colliders: colliders.md
@@ -219,6 +224,12 @@ nav:
     - Play on a Table (AR, Android): ar-table.md
   - AI:
     - Assistant: ai/assistant.md
+    - Build with an AI agent: ai/build-with-an-agent.md
+    - Talk to your agent: ai/talk-to-your-agent.md
+    - "Recipe: better models with img2threejs": ai/img2threejs.md
+    - "Recipe: pixel art with Pixling": ai/pixling.md
+    - "Recipe: Agents + Blender": ai/agents-and-blender.md
+    - Use theprototype from claude.ai and voice: ai/claude-connector.md
     - Providers: ai/providers.md
     - Local & Small Models: ai/local-models.md
     - 3D Generation: ai/generation.md
@@ -287,7 +298,36 @@ markdown_extensions:
   - pymdownx.tabbed
   - pymdownx.details
   - pymdownx.tilde
+  # roadmap 83: figure captions under screenshots and loops
+  - pymdownx.blocks.caption
 
 plugins:
   - search
   - git-revision-date
+  # roadmap 83: click a screenshot to see it full size
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      width: auto
+      height: auto
+      zoomable: true
+      draggable: false
+      auto_caption: false
+      skip_classes:
+        - no-lightbox
+
+# roadmap 83: screenshot frames + cut-side fades, loops that respect reduced motion
+extra_css:
+  - stylesheets/shots.css
+extra_javascript:
+  - javascripts/loops.js
+
+# roadmap 83 V8: every "Try it" link must name a check in tools/shots/tryit.yml (the build fails
+# otherwise); tools/shots/tryit-check.cjs opens each link and asserts the controls exist
+hooks:
+  - tools/hooks/tryit.py
+  # roadmap 83 V9/V10: the owner's image rules (1:1 interface, figure + caption, key = badges) fail the build;
+  # llms.txt, llms-full.txt, a .md beside every page and a small JSON-LD block for AI readers
+  - tools/hooks/shots.py
+  - tools/hooks/readable.py

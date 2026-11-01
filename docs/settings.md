@@ -10,7 +10,10 @@ you close it.
 
 Since 1.26 Settings has a new layout. No setting was lost or changed meaning: every switch keeps the value it had.
 
-![Settings on a computer: the grouped menu on the left, the Interface page with its Appearance rows](img/settings/interface-desktop.png)
+![Settings on a computer: the grouped menu on the left (General, Workspace, Devices & Services) and the Interface page with its Appearance rows on the right, cut at the column's edge.](img/settings/interface-desktop.webp){ .shot .fade-r width="688" height="720" loading=lazy }
+/// caption
+Settings on a computer, the grouped menu beside the page.
+///
 
 ## Finding your way
 
@@ -20,7 +23,7 @@ Since 1.26 Settings has a new layout. No setting was lost or changed meaning: ev
     |---|---|
     | **General** | Interface, Accessibility, Controls, Input, Touch controls, Shortcuts |
     | **Workspace** | Scene, Explorer, Node types, Export |
-    | **Devices & services** | VR, AI, Connection, Privacy |
+    | **Devices & services** | VR, Tools & connections, Connection, Privacy |
 
     A dot on **About & what's new** means there is an update you have not read. <kbd>↑</kbd> / <kbd>↓</kbd> walk the menu.
 
@@ -31,7 +34,10 @@ Since 1.26 Settings has a new layout. No setting was lost or changed meaning: ev
   (**Node types ▸ Physics**), **About ▸ What's new**. A breadcrumb (*VR › Remap buttons*) or **‹ Back** returns, and
   <kbd>Esc</kbd> backs out of a sub-page first.
 
-![Settings on a phone: the list of categories in their three groups](img/settings/home-phone.png){ width="300" }
+![Settings on a phone: a search box above the list of categories in their groups — General, Workspace and Devices & Services.](img/settings/home-phone.webp){ .shot width="390" height="896" loading=lazy }
+/// caption
+On a phone, Settings opens on the list of categories.
+///
 
 ### Search
 
@@ -52,7 +58,10 @@ description — a wide segmented choice, a text field, a slider on a narrow phon
 the same row can sit on one line on an unfolded phone or a computer and stack on a folded phone. A segmented choice too
 wide even for its own line (**Scene ▸ Editing ▸ Double-click action** on a phone) shows its options in two columns.
 
-![Settings ▸ Scene on a folded phone: Double-click action's four choices in two columns under its name, while Length's dropdown, Angle's Degrees | Radians and the Duplicates switches stay beside their names](img/settings/rows-phone.png){ width="300" }
+![Settings ▸ Scene on a folded phone: Double-click action's four choices in two columns under its name, while Length's dropdown, Angle's Degrees and Radians and the Duplicates switches stay beside their names.](img/settings/rows-phone.webp){ .shot .fade-b width="390" height="700" loading=lazy }
+/// caption
+Rows on a narrow screen: long choices wrap under the name, short ones stay beside it.
+///
 
 | Badge | Means |
 |---|---|
@@ -64,7 +73,7 @@ wide even for its own line (**Scene ▸ Editing ▸ Double-click action** on a p
 Changes save as you make them — there is no Save button; **Done** closes the window.
 
 - **Reset ‹Category› to defaults** — bottom left on a computer, at the end of the page on a phone — puts every setting
-  on that page back, after asking. There is no undo for it. It never touches your work: the AI page keeps your saved
+  on that page back, after asking. There is no undo for it. It never touches your work: the Tools & connections page keeps your saved
   providers and keys, the Interface page keeps the themes you loaded.
 - **About ▸ Danger zone** holds the two big ones, each asking first:
     - **Clear saved session** — the autosaved copy of your work (see [Autosave](saving.md#autosave)).
@@ -90,6 +99,10 @@ photo decoder (libheif-js) is LGPL-3.0: it ships unmodified as its own file, loa
 *New in 1.44.* Pack files, skies, converted textures (the optimized copy of an imported model) and files from the
 CC0 browser are kept in the browser's private file storage, once per content. The next time a scene needs them they
 load from the device — faster, and without the network.
+
+*New in 1.53:* the five skies in Configure Scene ▸ Environment ([sky images](camera.md#sky-images-hdri)) are no longer part of the app. A sky downloads the first time
+you pick one and stays here. Offline or with the download blocked, it shows its flat colours and tries again when you are back
+online. Exported games still carry their sky.
 
 **Where:** **Settings ▸ Storage**:
 

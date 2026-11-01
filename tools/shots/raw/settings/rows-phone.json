@@ -1,0 +1,39 @@
+{
+ "id": "rows-phone",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:24:09.278Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "header.wc-head",
+  "div#settings-main.settings-main",
+  "button.wc-back",
+  "section.tp-ui",
+  "div#row-show-grid.tp-ui",
+  "div#row-light-helper.tp-ui",
+  "div#row-sim-controls.tp-ui",
+  "h3.sec-title",
+  "div#row-quality-preset.tp-ui",
+  "div#row-shadow-quality.tp-ui",
+  "div.sr-text",
+  "p#row-light-helper-desc.sr-desc"
+ ],
+ "width": 780,
+ "height": 1400,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 390,
+  "h": 700
+ },
+ "cut": [
+  "b"
+ ],
+ "fade": [
+  "b"
+ ],
+ "anchors": {},
+ "kind": "ui"
+}

@@ -30,7 +30,7 @@ pulse is asked by every peer with the *same* request, so one press is one change
   best* on each device whose best was beaten.
 - A player who **joins late** gets the current state and does not hear old events.
 - When the **authority leaves**, the next peer takes over, including the enemies of a wave in
-  progress.
+  progress. Someone **joining** does not take a running round over (since 1.48.1).
 - **Clearing the scene** resets the kit.
 
 ## The pieces

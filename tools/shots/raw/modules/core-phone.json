@@ -1,0 +1,21 @@
+{
+ "id": "core-phone",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.555Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/modules/core-phone.png",
+ "width": 480,
+ "height": 908,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 480,
+  "h": 908
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

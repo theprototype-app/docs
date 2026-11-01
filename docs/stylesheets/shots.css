@@ -1,0 +1,101 @@
+/* Roadmap 83: screenshots and loops you can see.
+   .shot       — rounded corners, a hairline and a soft shadow (natural UI edges stay hard)
+   .fade-*     — fade ONLY a side the crop cut (the UI continues there); 6 % of that side
+   .vignette   — a soft radial fade for a crop of the 3D view, which has no real edges
+   The fractions match tools/shots/lib/fade.cjs, which refuses a callout inside a faded zone. */
+
+.md-typeset img.shot,
+.md-typeset video.shot {
+  border-radius: 10px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.08), 0 10px 28px rgb(0 0 0 / 0.12);
+  max-width: 100%;
+  height: auto;
+}
+
+/* A faded side has no hairline or shadow to fight the fade: masking the whole box does both. */
+.md-typeset .shot.fade-l, .md-typeset .shot.fade-r, .md-typeset .shot.fade-t, .md-typeset .shot.fade-b,
+.md-typeset .shot.vignette {
+  border-color: transparent;
+  box-shadow: none;
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+.md-typeset .shot.fade-l { --fade-l: linear-gradient(to right, transparent, #000 6%); }
+.md-typeset .shot.fade-r { --fade-r: linear-gradient(to left, transparent, #000 6%); }
+.md-typeset .shot.fade-t { --fade-t: linear-gradient(to bottom, transparent, #000 6%); }
+.md-typeset .shot.fade-b { --fade-b: linear-gradient(to top, transparent, #000 6%); }
+.md-typeset .shot:is(.fade-l, .fade-r, .fade-t, .fade-b) {
+  -webkit-mask-image: var(--fade-l, linear-gradient(#000, #000)), var(--fade-r, linear-gradient(#000, #000)),
+    var(--fade-t, linear-gradient(#000, #000)), var(--fade-b, linear-gradient(#000, #000));
+  mask-image: var(--fade-l, linear-gradient(#000, #000)), var(--fade-r, linear-gradient(#000, #000)),
+    var(--fade-t, linear-gradient(#000, #000)), var(--fade-b, linear-gradient(#000, #000));
+}
+/* the ellipse through the four corners (radii w/√2, h/√2): solid to 80 %, gone at the corners */
+.md-typeset .shot.vignette {
+  -webkit-mask-image: radial-gradient(70.71% 70.71% at 50% 50%, #000 80%, transparent 100%);
+  mask-image: radial-gradient(70.71% 70.71% at 50% 50%, #000 80%, transparent 100%);
+}
+
+/* The numbered list under an annotated image: the numbers are the image's badges. */
+.md-typeset .shot-key ol {
+  list-style: none;
+  counter-reset: shot;
+  padding-left: 0;
+  margin-left: 0;
+}
+.md-typeset .shot-key ol > li {
+  counter-increment: shot;
+  position: relative;
+  padding-left: 2.1em;
+  margin-left: 0;
+}
+.md-typeset .shot-key ol > li::before {
+  content: counter(shot);
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  width: 1.45em;
+  height: 1.45em;
+  border-radius: 50%;
+  background: #ff7a45;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85em;
+  line-height: 1.45em;
+  text-align: center;
+  box-shadow: 0 0 0 2px rgb(12 12 18 / 0.72);
+}
+
+/* Centred (owner, 2026-10-29): every figure, image and loop sits in the middle of the column with its caption
+   centred under it. Material already centres a <figure> (fit-content, auto margins); an image alone in its
+   paragraph is centred here, and the key list is a centred block under its figure. Images keep their 1:1
+   width/height (tools/hooks/shots.py checks them); max-width only bites when the column is narrower (a phone). */
+.md-typeset p:has(> img:only-child),
+.md-typeset p:has(> a.glightbox:only-child) { text-align: center; }
+.md-typeset img.shot { display: block; margin-inline: auto; }
+.md-typeset figure { margin-inline: auto; }
+.md-typeset figure.shot-figure { margin: 1.2em auto; }
+.md-typeset figure figcaption {
+  font-size: 0.68rem;
+  color: var(--md-default-fg-color--light);
+  max-width: 36rem;
+  text-align: center;
+  margin-inline: auto;
+}
+.md-typeset .shot-key { width: fit-content; max-width: 100%; margin-inline: auto; }
+
+/* Loops: a play/pause hint once the reader prefers reduced motion (docs/javascripts/loops.js). */
+.md-typeset video.shot { display: block; background: transparent; }
+
+/* "Try it" links: a quiet pill after the figure. */
+.md-typeset a.tryit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  padding: 0.15em 0.75em;
+  border: 1px solid var(--md-accent-fg-color);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}

@@ -1,0 +1,78 @@
+page: water
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: pool
+  replaces: img/water/pool.png
+  alt: 'A pool in daylight: caustics on the floor, a ball and a crate in the water'
+  caption: A pool in daylight.
+  crop:
+    rect:
+    - 77
+    - 65
+    - 1126
+    - 569
+  fade: vignette
+  kind: view
+  dpr: 1
+  from: img/water/pool.png
+- id: lava
+  replaces: img/water/lava.png
+  alt: 'The Lava preset: a glowing, opaque tank'
+  caption: The Lava preset.
+  crop:
+    rect:
+    - 77
+    - 65
+    - 1126
+    - 569
+  fade: vignette
+  kind: view
+  dpr: 1
+  from: img/water/lava.png
+- id: underwater-aquarium
+  replaces: img/water/underwater-aquarium.png
+  alt: 'Inside the Aquarium preset: bubbles rising through blue-green water'
+  caption: Inside the Aquarium preset.
+  crop:
+    rect:
+    - 77
+    - 65
+    - 1126
+    - 569
+  fade: vignette
+  kind: view
+  dpr: 1
+  from: img/water/underwater-aquarium.png
+- id: selection-passes-through
+  replaces: img/water/selection-passes-through.png
+  alt: Configure Scene ▸ Advanced ▸ Selection passes through, with the 1 of 3 · Aquarium water chip in the tank
+  caption: Configure Scene ▸ Advanced ▸ Selection passes through.
+  crop:
+    rect:
+    - 592
+    - 0
+    - 688
+    - 720
+  fade:
+  - l
+  kind: ui
+  dpr: 1
+  from: img/water/selection-passes-through.png
+- id: pour-emitters
+  replaces: img/water/pour-emitters.png
+  alt: Two pour emitters arcing drops over a water tank
+  caption: Two pour emitters arcing drops over a water tank.
+  crop:
+    rect:
+    - 77
+    - 65
+    - 1126
+    - 569
+  fade: vignette
+  kind: view
+  dpr: 1
+  from: img/water/pour-emitters.png

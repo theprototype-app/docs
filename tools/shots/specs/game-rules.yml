@@ -1,0 +1,45 @@
+page: game-rules
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: mini-golf
+  replaces: img/game-rules/mini-golf.png
+  alt: 'Part of Mini Golf''s Main graph at full size: the rules node''s outputs, such as stroke, outOfBounds and holeSunk,
+    wired to sounds and bursts, with the Code link to the engine below.'
+  caption: Part of Mini Golf's Main graph at full size.
+  crop:
+    rect:
+    - 620
+    - 420
+    - 688
+    - 560
+  fade:
+  - l
+  - r
+  - t
+  - b
+  kind: ui
+  dpr: 1
+  from: img/game-rules/mini-golf.png
+- id: football
+  replaces: img/game-rules/football.png
+  alt: 'Part of Football''s Main graph at full size: the Match Rules settings node, the Football rules behaviour, and the
+    Code link to the engine.'
+  caption: Part of Football's Main graph at full size.
+  crop:
+    rect:
+    - 620
+    - 420
+    - 688
+    - 560
+  fade:
+  - l
+  - r
+  - t
+  - b
+  kind: ui
+  dpr: 1
+  from: img/game-rules/football.png

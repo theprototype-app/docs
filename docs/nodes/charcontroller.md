@@ -83,7 +83,10 @@ A walker whose jump you can tune while you play:
 4. Press **Play**. <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> walks and <kbd>Space</kbd> jumps. Drag the slider
    to jump higher or lower.
 
-![A Slider wired into the jumpHeight input of a Character Controller set to walk](../img/nodes/charcontroller.png)
+![A Slider wired into the jumpHeight input of a Character Controller set to walk](../img/nodes-charcontroller/charcontroller.webp){ .shot width="688" height="411" loading=lazy }
+/// caption
+A Slider wired into the jumpHeight input of a Character Controller set to walk.
+///
 
 !!! tip
     To change speed from the graph (a sprint key, a mud patch), use a [Move Speed](movespeed.md) node. To read the

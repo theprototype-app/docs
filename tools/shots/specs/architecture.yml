@@ -1,0 +1,51 @@
+page: architecture
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+shots:
+- id: house
+  replaces: img/architecture/house.png
+  alt: A wall with a door and two windows, two side walls and a spiral stair
+  caption: A wall with a door and two windows.
+  crop:
+    rect:
+    - 77
+    - 68
+    - 1126
+    - 600
+  fade: vignette
+  kind: view
+  dpr: 1
+  from: img/architecture/house.png
+- id: wall-geometry
+  replaces: img/architecture/wall-geometry.png
+  alt: 'Properties ▸ Geometry for a wall: Length, Height, Thickness, Doors, Door width and height, Windows, Win width and
+    height, Sill height, Shift'
+  caption: Properties ▸ Geometry for a wall.
+  crop:
+    rect:
+    - 592
+    - 0
+    - 688
+    - 760
+  fade:
+  - l
+  kind: ui
+  dpr: 1
+  from: img/architecture/wall-geometry.png
+- id: door-open
+  replaces: img/architecture/door-open.png
+  alt: A door and a casement window open in Interact, with stairs visible through the doorway
+  caption: A door and a casement window open in Interact.
+  crop:
+    rect:
+    - 77
+    - 68
+    - 1126
+    - 600
+  fade: vignette
+  kind: view
+  dpr: 1
+  from: img/architecture/door-open.png

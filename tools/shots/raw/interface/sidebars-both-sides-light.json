@@ -1,0 +1,40 @@
+{
+ "id": "sidebars-both-sides-light",
+ "dpr": 2,
+ "shotAt": "2026-10-31T14:41:51.453Z",
+ "app": {
+  "version": "1.51.0",
+  "sha": "6fe31dae"
+ },
+ "uiHits": [
+  "header.wc-head",
+  "div.obj-filters",
+  "div.obj-row",
+  "div.obj-scroller",
+  "path",
+  "p.row-name",
+  "div#sidebar-grip-right.sb-grip",
+  "div.ins-filter",
+  "div#inspector.tp-ui",
+  "label.tp-ui",
+  "p.ui-section-label",
+  "div.sec-panel-body",
+  "p.mb-1",
+  "label#override-post-label.it-label",
+  "label#override-shaders-label.it-label",
+  "span.sec-title"
+ ],
+ "kind": "ui",
+ "tiles": [
+  {
+   "file": "sidebars-both-sides-light--left.webp",
+   "caption": ""
+  },
+  {
+   "file": "sidebars-both-sides-light--right.webp",
+   "caption": ""
+  }
+ ],
+ "compose": "row",
+ "fade": []
+}

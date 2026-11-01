@@ -1,0 +1,19 @@
+# docs/invites.md
+page: invites
+defaults: {device: desktop, theme: dark, dpr: 2, format: webp}
+shots:
+  - id: request-ai-sheet
+    replaces: img/invites/request-ai-sheet.png
+    alt: >-
+      The invite sheet, Invite to this session. 1: the AI agent and Person tabs. 2: Role, Expires and Can be used by.
+      3: the Create invite link button.
+    caption: The invite sheet, open on the AI agent tab.
+    setup:
+      - {eval: "window.__stores.inviteStore.inviteSheet.set({kind:'agent'})"}
+      - {wait: 1500}
+    crop: {selector: 'dialog[open]:has(#invite-sheet)', pad: 12}
+    fade: []
+    annotate:
+      - {n: 1, at: {selector: '.tabs-list'}, shape: box, pad: 4, badge: r, key: 'The **AI agent** and **Person** tabs: who the link is for.'}
+      - {n: 2, at: {union: [{selector: '#invite-role-view'}, {selector: '#invite-expiry-10m'}, {selector: '#invite-uses-1'}, {selector: '#invite-uses-25'}]}, shape: box, pad: 4, badge: l, key: "**Role**, how long until it **expires**, and how many may use it."}
+      - {n: 3, at: {selector: '#invite-create'}, shape: box, pad: 3, badge: l, key: '**Create invite link** makes the link to send.'}

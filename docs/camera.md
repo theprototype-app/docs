@@ -11,13 +11,14 @@ Click **🎛️ Configure Scene** in the sidebar menu. It opens as a tab of the 
   [The Quality preset](performance.md#the-quality-preset)).
 - **Environment** — lighting preset, exposure, [sky image](#sky-images-hdri), saved presets (shared).
 - **Music** — the shared background track and your local volume (see [Music & Sound](audio.md)).
-- **View** — render mode, camera lens, clip planes (your device only).
+- **View** — render mode, the scene-look overrides and light helpers (your device only).
+- **Camera** — lens presets, field of view and clip planes (your device only).
 - **Background** and **Fog** (shared).
 
 A dot appears next to the menu item while the panel is open; click it again to close.
 
 !!! note "Shared vs. this device"
-    The **Environment**, **Background** and **Fog** settings replicate to everyone. The **View** section — render mode, camera lens and clip planes — is **local to your device**, so you can zoom, wireframe or dim shadows without changing what your peers see.
+    The **Environment**, **Background** and **Fog** settings replicate to everyone. The **View** and **Camera** sections — render mode, lens and clip planes — are **local to your device**, so you can zoom, wireframe or dim shadows without changing what your peers see.
 
 ## Render mode (View)
 
@@ -28,6 +29,13 @@ Three per-device render modes under **Viewport — this device**:
 | **Shaded** | Plain lit shading. |
 | **Shaded + AO** | Adds ambient occlusion — soft contact shadows in creases and corners (the default on a desktop; phones and tablets start in plain **Shaded**). |
 | **Wireframe** | Shows every edge. |
+
+![The same three objects in the three render modes: Shaded, Shaded + AO (soft contact shadows where surfaces meet) and Wireframe (every edge).](img/camera/render-modes.webp){ .shot width="1944" height="400" loading=lazy }
+/// caption
+Shaded, Shaded + AO and Wireframe. AO darkens creases and the ground where objects touch it.
+///
+
+[Try it](https://theprototype.app/){ .tryit data-tryit="camera-render-mode" }
 
 <kbd>Z</kbd> in the 3D view cycles them: Shaded → Shaded + AO → Wireframe (Shaded + AO is skipped when the scene's own
 look already sets ambient occlusion). Rebind it in **Settings ▸ Shortcuts**.
@@ -40,6 +48,18 @@ you switch it off for yourself under **Overrides — this device**. If the scene
 ambient occlusion, **Shaded + AO** switches off and says so: the scene's setting is used
 instead of yours.
 
+![Configure Scene ▸ View. 1: the render mode switch — Shaded, Shaded + AO, Wireframe. 2: Show light helpers.](img/camera/view-section.webp){ .shot width="311" height="615" loading=lazy }
+/// caption
+Configure Scene ▸ View: how the scene is drawn on your screen.
+///
+
+<div class="shot-key" markdown>
+1. The **render mode** switch.
+2. **Show light helpers**.
+</div>
+
+[Try it](https://theprototype.app/){ .tryit data-tryit="camera-view-section" }
+
 The **Show light helpers** toggle here draws icons for lights so you can see where they are — in the editor only; see [Helpers hide in Play](#helpers-hide-in-play).
 
 ## Camera objects
@@ -48,7 +68,10 @@ Besides your own view, a scene can hold **cameras** of its own — the shot a ga
 security monitor. Add one from **right-click ▸ Add ▸ Camera ▸ Perspective** (or **Orthographic**). It appears as a small
 camera marker you move and turn like any object; selecting it opens **Properties ▸ Camera**:
 
-![The Camera section of a camera object's properties, with its picture-in-picture preview](img/camera/camera-object.png)
+![A selected camera in the scene: Properties ▸ Camera with Kind, FOV, Near, Far and Framing, and the camera's preview window in the corner of the view.](img/camera/camera-object.webp){ .shot .fade-l .fade-b width="688" height="840" loading=lazy }
+/// caption
+A camera's properties, with its preview window at the lower left.
+///
 
 | Row | What it does |
 |---|---|
@@ -79,7 +102,7 @@ camera, [Set Look](nodes/setlook.md) for each camera's own [look](post-processin
 
 ## Camera lens
 
-The default camera is a **40° field of view** — a natural, product-viz look with real depth and little wide-angle distortion. You can change it under **Camera lens**:
+The default camera is a **40° field of view** — a natural, product-viz look with real depth and little wide-angle distortion. You can change it in the **Camera** section:
 
 **Lens presets** (labelled by their full-frame focal-length equivalent):
 
@@ -97,7 +120,7 @@ Below the presets, the **Camera FOV** slider gives fine control (15°–120°).
 
 ## Clip planes
 
-Also in **View**, the near/far clip planes control the depth range the camera renders (per-device):
+In the **Camera** section, the near/far clip planes control the depth range the camera renders (per-device):
 
 - **Near clip** (0.01–2) — surfaces closer than this are cut away. Lower it if very close objects vanish.
 - **Far clip** (from 10) — the far limit. It **grows automatically to fit the scene**, and the orbit zoom-out limit is paired to it so you can never dolly past the far plane and blank the scene.
@@ -122,6 +145,13 @@ The **Environment** section sets the scene's lighting and sky. Pick a preset chi
 | **Night** | Dim and cool. |
 | **Classic** | The pre-lighting look with the rig **off** — bring your own lights. |
 
+![The same scene under four environment presets: Studio (neutral grey), Daylight (bright sky), Sunset (warm, low sun) and Night (dim and cool).](img/camera/env-presets.webp){ .shot width="1292" height="812" loading=lazy }
+/// caption
+Studio, Daylight, Sunset and Night on the same three objects.
+///
+
+[Try it](https://theprototype.app/){ .tryit data-tryit="camera-environment" }
+
 Since 1.27 five more chips — **Clear sky**, **Meadow**, **Sunrise**, **Starlight** and **Photo studio** — use a real sky
 photo; see [Sky images](#sky-images-hdri).
 
@@ -138,10 +168,16 @@ scene's sky **and** its light. Every object picks up the image's colours and bri
 [water](water.md) mirrors the real clouds. The scene's sun is placed where the photo's sun is, so shadows agree with the
 sky.
 
-![A mirror sphere and a box lit by the Meadow sky image](img/camera/sky-meadow.png)
+![A mirror sphere and a box lit by the Meadow sky image](img/camera/sky-meadow.webp){ .shot width="1280" height="720" loading=lazy }
+/// caption
+The Meadow sky image lighting a mirror sphere and a box.
+///
 
 It lives in **Configure Scene ▸ Environment ▸ Sky image (HDRI)**, under the preset chips and the Exposure slider. Click
 a card to switch to that sky; like every Environment setting, everyone in the session sees it.
+
+Since 1.53 a sky downloads the first time you pick it and stays [on this device](settings.md#downloads-kept-on-this-device). Offline or
+with the download blocked, the preset's flat colours show until the sky can load. Exported games still carry their sky.
 
 | Sky | What it looks like |
 |---|---|
@@ -154,7 +190,10 @@ a card to switch to that sky; like every Environment setting, everyone in the se
 The five skies are also preset chips, and in VR they are in the radial menu's **Scene ▸ Environment**. All five are CC0
 images from [Poly Haven](https://polyhaven.com).
 
-![Configure Scene ▸ Environment with the Sky image section: the sky cards, Upload HDRI…, Rotation, Image light, Show as sky, Sky blur and Tone mapping](img/camera/sky-image-section.png)
+![Configure Scene ▸ Environment: the sky preset cards, Upload HDRI…, Rotation, Image light, Show as sky, Sky blur and Tone mapping.](img/camera/sky-image-section.webp){ .shot .fade-b width="340" height="800" loading=lazy }
+/// caption
+Configure Scene ▸ Environment, with its Sky image section.
+///
 
 | Row | What it does |
 |---|---|
@@ -201,6 +240,16 @@ A **directional** or **spot** light shines where it points. Turn it with the rot
 **Aim at**, in the Properties panel's Light section, points the light once at a spot: type a world **X / Y / Z**, or press **Pick in viewport** and click a surface (<kbd>Esc</kbd> cancels). It writes the rotation, so the gizmo and the rows agree afterwards.
 
 A directional light has a direction, not a distance. Its helper line reaches as far as **Settings ▸ Scene ▸ Light helper length** says — display only.
+
+![A point light and a spot light in the scene with light helpers on. 1: the point light's helper — a small wire sphere at the light. 2: the spot light's cone, showing where it shines.](img/camera/grid-and-lights.webp){ .shot .vignette width="1080" height="680" loading=lazy }
+/// caption
+Light helpers show where each light is and where it shines; they are editor-only.
+///
+
+<div class="shot-key" markdown>
+1. A **point light**'s helper.
+2. A **spot light**'s helper, with the cone it shines into.
+</div>
 
 ### A light with an origin
 

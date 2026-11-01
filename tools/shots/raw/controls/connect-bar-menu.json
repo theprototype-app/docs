@@ -1,0 +1,21 @@
+{
+ "id": "connect-bar-menu",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.499Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/controls/connect-bar-menu.png",
+ "width": 510,
+ "height": 215,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 510,
+  "h": 215
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

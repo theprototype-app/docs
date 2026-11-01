@@ -1,0 +1,21 @@
+{
+ "id": "presets-edit",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.546Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/materials/presets-edit.png",
+ "width": 304,
+ "height": 511,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 304,
+  "h": 511
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

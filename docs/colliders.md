@@ -10,7 +10,10 @@ setting; for running a simulation, gravity, joints and grabbing see [Physics & S
 
 Select an object and open **Properties ▸ Physics**:
 
-![The Physics section of an object's properties, with Show collider on and the green collider wireframe in the viewport](img/colliders/physics-section.png)
+![The Physics section of an object's properties, with Show collider on and the green collider wireframe in the viewport](img/colliders/physics-section.webp){ .shot .fade-l width="688" height="780" loading=lazy }
+/// caption
+The Physics section of an object's properties.
+///
 
 | Row | Options / range | Default |
 |---|---|---|
@@ -74,7 +77,10 @@ a ball rolls through an arch's opening, falls into a pool or a tank, drives thro
 while **Body** is *Auto (scenery)* or *Static*. A group (an imported model) is merged into one mesh. Static **Arch** and
 **Corner** blocks use it automatically.
 
-![An arch with an exact mesh collider: the green wireframe follows the opening](img/colliders/exact-mesh.png)
+![An arch with an exact mesh collider: the green wireframe follows the opening](img/colliders/exact-mesh.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+/// caption
+An arch with an exact mesh collider.
+///
 
 **Limits.**
 
@@ -99,7 +105,10 @@ A dynamic arch, cup or U-shaped crate now keeps its openings. One undo restores 
 replicates to everyone. Fine-tune it afterwards with **Edit collider…** ([below](#custom-compound-colliders)). In VR it is
 **Decompose (auto)** in the [collider editor](#editing-a-collider-in-vr).
 
-![The same arch decomposed into convex pieces](img/colliders/decomposed.png)
+![The same arch decomposed into convex pieces](img/colliders/decomposed.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+/// caption
+The same arch decomposed into convex pieces.
+///
 
 The result has to fit the custom-collider budget (about 400 points). Pieces past it are dropped, and the toast says so.
 
@@ -217,7 +226,10 @@ dynamic.
 The other body travels with the trigger, so every peer reads the same object. A contact with the ground plane reports an
 empty *other*.
 
-![On Impact and On Enter nodes with only with wired to Object Selectors, and other wired into Distance](img/colliders/contact-filter.png)
+![On Impact and On Enter nodes with only with wired to Object Selectors, and other wired into Distance](img/colliders/contact-filter.webp){ .shot .fade-l .fade-r .fade-t width="688" height="420" loading=lazy }
+/// caption
+On Impact and On Enter nodes with only with wired to Object Selectors.
+///
 
 ## Editing a collider in VR
 

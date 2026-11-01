@@ -1,0 +1,21 @@
+{
+ "id": "phone-pedals",
+ "dpr": 1,
+ "shotAt": "2026-10-27T07:46:24.587Z",
+ "app": {
+  "version": "earlier"
+ },
+ "from": "img/race/phone-pedals.png",
+ "width": 480,
+ "height": 1000,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 480,
+  "h": 1000
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

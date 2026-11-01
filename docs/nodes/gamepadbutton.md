@@ -65,7 +65,10 @@ A lamp that shows while <kbd>A</kbd> is held:
 3. Wire it into a **Visibility** node's **on** input, and wire Visibility → an **Object Selector** that picks *Lamp*.
 4. Hold **A** on the pad: the lamp appears on every player's screen, and it hides again when you let go.
 
-![A Gamepad Button on A wired into the on input of a Visibility node, which drives an Object Selector picking the Lamp](../img/nodes/gamepadbutton.png)
+![A Gamepad Button on A wired into the on input of a Visibility node, which drives an Object Selector picking the Lamp](../img/nodes-gamepadbutton/gamepadbutton.webp){ .shot width="688" height="308" loading=lazy }
+/// caption
+A Gamepad Button on A wired into the on input of a Visibility node.
+///
 
 !!! tip
     For a stick, use [Gamepad Axis](gamepadaxis.md). It gives a number instead of a pulse.
