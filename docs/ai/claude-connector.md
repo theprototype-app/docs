@@ -20,9 +20,10 @@ like your own edits.
 
 ## Set it up (once)
 
-1. In claude.ai open **Settings ▸ Connectors ▸ Add custom connector** and enter
-   `https://theprototype.app/mcp`. The **AI assistant** window shows this link with a **Copy link**
-   button while no AI provider is set up.
+1. Press **Add to Claude** in the **AI assistant** window (shown while no AI provider is set up), or find
+   theprototype in [Claude's connector directory](https://claude.ai/directory/connectors/theprototype).
+   Or add it by hand: in claude.ai open **Settings ▸ Connectors ▸ Add custom connector** and enter
+   `https://theprototype.app/mcp`; the window has a copy button beside the address.
 2. claude.ai sends you to theprototype to approve it. The page names the app asking and where it
    will return (claude.ai). Leave **Allow changes** ticked to let Claude build, or untick it for a
    **look-only** connection that can only read the scene and take pictures. Press **Allow**.
