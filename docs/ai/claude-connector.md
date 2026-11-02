@@ -20,9 +20,10 @@ like your own edits.
 
 ## Set it up (once)
 
-1. In claude.ai open **Settings ▸ Connectors ▸ Add custom connector** and enter
-   `https://theprototype.app/mcp`. The **AI assistant** window shows this link with a **Copy link**
-   button while no AI provider is set up.
+1. Press **Add to Claude** in the **AI assistant** window (shown while no AI provider is set up), or find
+   theprototype in [Claude's connector directory](https://claude.ai/directory/connectors/theprototype).
+   Or add it by hand: in claude.ai open **Settings ▸ Connectors ▸ Add custom connector** and enter
+   `https://theprototype.app/mcp`; the window has a copy button beside the address.
 2. claude.ai sends you to theprototype to approve it. The page names the app asking and where it
    will return (claude.ai). Leave **Allow changes** ticked to let Claude build, or untick it for a
    **look-only** connection that can only read the scene and take pictures. Press **Allow**.
@@ -34,8 +35,9 @@ like your own edits.
 1. Open theprototype.app, sign in, and open or join the scene you want to work on.
 2. Press the **AI** button and press **Connect Claude** (also in **Settings ▸ Connected apps**).
    A chip reads **Claude connected · this tab**. The AI button always opens the window; signed out,
-   the same card offers **Sign in to connect** first. With no AI provider set up, the window also
-   offers **Use your own AI provider** (**Open settings**).
+   the same card offers **Sign in to connect**, which opens your profile menu at the top right, the one place to
+   sign in. With no AI provider set up, the window also offers **Use your own AI provider** (**Open settings**).
+   Working with a local model or your own key while signed out? **Sign in to connect** stays in the window's header.
 3. Ask Claude something: *"Build a campfire with five logs and a warm light"*, *"Make the flame
    flicker"*, *"What can you do here?"*
 
@@ -98,21 +100,26 @@ file into the tab yourself, then ask Claude to place or change it.
 ### Scripts, spin and particles
 
 - **Scripts** run every frame in a sandbox, on a view of their object, starting again from the base pose. Write
-  the pose from the time, as in `object.rotation.y = base.rot[1] + time * speed`. Something like `+= 0.01` will
-  not build up. Claude gets a warning when a script cannot work as written, and errors from running scripts
-  appear in **status**.
+  the pose from the time, as in `object.rotation.y = base.rot[1] + elapsed * speed`. `elapsed` is seconds of the game
+  round, the same for everyone inside a round; outside a round it counts from your own Play press. `time` is unchanged.
+  Something like `+= 0.01` will not build up: the warning says why and points at `elapsed`. Errors from running
+  scripts appear in **status**.
 - **Animated objects:** on an object that is being animated, Claude reads and edits the pose you authored, and is
   told it is animated and where it is right now.
 - **Physics in a group:** the simulation only runs objects at the top of the scene. If an object with physics is
   inside a group, Claude is told so and can move it out, or set physics on the group itself.
 - **Particles** on a rotated parent: in world space, an emitter can follow the object (*a rocket's exhaust*) or
-  keep world axes (*a fire that burns straight up*). Gravity always points world down.
+  keep world axes (*a fire that burns straight up*). Gravity is acceleration along world Y in m/s²: negative falls, positive rises.
 
 ## See and undo what it did
 
 Every step Claude takes is a line labelled **Claude (connector)** in **Agent activity**, with its
 own **Undo**. Anyone in the session sees the changes as they happen, and anyone with edit access
 can undo them from their own screen.
+
+**Screenshots** have a 4:3 shape whatever your window's shape, except the *current* view, which keeps your canvas. Claude
+can pick the angle (front, back, left, right, top, below, iso, or a yaw and pitch), a camera position and target, the objects to
+frame, a zoom (0.1-10) and a margin (0.5-4). It is told which camera it used, and your own view never moves.
 
 ## Stop it
 
