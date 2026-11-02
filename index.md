@@ -42,6 +42,18 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.54 — first win and community.** Your first visit asks
+[one question](https://docs.theprototype.app/tours.md#your-first-visit) — Play a game, Remix a game, Start from a template or Describe it — and a
+three-step [first-game quest](https://docs.theprototype.app/tours.md#the-first-game-quest) walks you through changing it, playing it and inviting a
+friend; a new visitor's advanced buttons wait behind **»** / **More** until their first Play, and the editor tour is in
+the logo menu as **Tour the interface**. The Templates window has a search field on every tab, and
+[Templates ▸ Community](https://docs.theprototype.app/community.md#the-community-tab-in-templates) searches the whole community (titles, summaries,
+tags, makers' @handles) and opens on Featured, with All and Top beside them. On the site: [search and Top this week / month](https://docs.theprototype.app/community.md#a-scenes-page),
+[change your handle](https://docs.theprototype.app/community.md#changing-your-handle) once every 30 days, and a click-to-load **3D preview** on
+scene pages. Signing in is one screen, GitHub or Google, with the Terms box.
+Signed out, the [AI assistant](https://docs.theprototype.app/ai/claude-connector.md#connect-your-tab-each-time-you-build) sends you to your profile with **Sign in to connect**.
+Scripts get `elapsed`, and Claude can take a [screenshot from any angle](https://docs.theprototype.app/ai/claude-connector.md#see-and-undo-what-it-did).
+
 **1.53 — your tools, connected.** Replace a model from a file and keep the object: its place, flows, physics and clips. **Edit in
 Blender** downloads the model, and the file you export comes back with *Update "<name>"?*, wherever you drop it; Chrome and Edge
 can watch the file and reload on each save. A 100×, Z-up or unapplied export gets a one-click fix. **Settings ▸ Tools &

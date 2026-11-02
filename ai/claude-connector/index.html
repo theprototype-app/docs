@@ -6098,9 +6098,10 @@ instead — it gives Claude Code or Claude Desktop the same tools over a session
 </ul>
 <h2 id="set-it-up-once">Set it up (once)</h2>
 <ol>
-<li>In claude.ai open <strong>Settings ▸ Connectors ▸ Add custom connector</strong> and enter
-   <code>https://theprototype.app/mcp</code>. The <strong>AI assistant</strong> window shows this link with a <strong>Copy link</strong>
-   button while no AI provider is set up.</li>
+<li>Press <strong>Add to Claude</strong> in the <strong>AI assistant</strong> window (shown while no AI provider is set up), or find
+   theprototype in <a href="https://claude.ai/directory/connectors/theprototype">Claude's connector directory</a>.
+   Or add it by hand: in claude.ai open <strong>Settings ▸ Connectors ▸ Add custom connector</strong> and enter
+   <code>https://theprototype.app/mcp</code>; the window has a copy button beside the address.</li>
 <li>claude.ai sends you to theprototype to approve it. The page names the app asking and where it
    will return (claude.ai). Leave <strong>Allow changes</strong> ticked to let Claude build, or untick it for a
    <strong>look-only</strong> connection that can only read the scene and take pictures. Press <strong>Allow</strong>.
@@ -6112,8 +6113,9 @@ instead — it gives Claude Code or Claude Desktop the same tools over a session
 <li>Open theprototype.app, sign in, and open or join the scene you want to work on.</li>
 <li>Press the <strong>AI</strong> button and press <strong>Connect Claude</strong> (also in <strong>Settings ▸ Connected apps</strong>).
    A chip reads <strong>Claude connected · this tab</strong>. The AI button always opens the window; signed out,
-   the same card offers <strong>Sign in to connect</strong> first. With no AI provider set up, the window also
-   offers <strong>Use your own AI provider</strong> (<strong>Open settings</strong>).</li>
+   the same card offers <strong>Sign in to connect</strong>, which opens your profile menu at the top right, the one place to
+   sign in. With no AI provider set up, the window also offers <strong>Use your own AI provider</strong> (<strong>Open settings</strong>).
+   Working with a local model or your own key while signed out? <strong>Sign in to connect</strong> stays in the window's header.</li>
 <li>Ask Claude something: <em>"Build a campfire with five logs and a warm light"</em>, <em>"Make the flame
    flicker"</em>, <em>"What can you do here?"</em></li>
 </ol>
@@ -6195,20 +6197,24 @@ file into the tab yourself, then ask Claude to place or change it.</p>
 <h3 id="scripts-spin-and-particles">Scripts, spin and particles</h3>
 <ul>
 <li><strong>Scripts</strong> run every frame in a sandbox, on a view of their object, starting again from the base pose. Write
-  the pose from the time, as in <code>object.rotation.y = base.rot[1] + time * speed</code>. Something like <code>+= 0.01</code> will
-  not build up. Claude gets a warning when a script cannot work as written, and errors from running scripts
-  appear in <strong>status</strong>.</li>
+  the pose from the time, as in <code>object.rotation.y = base.rot[1] + elapsed * speed</code>. <code>elapsed</code> is seconds of the game
+  round, the same for everyone inside a round; outside a round it counts from your own Play press. <code>time</code> is unchanged.
+  Something like <code>+= 0.01</code> will not build up: the warning says why and points at <code>elapsed</code>. Errors from running
+  scripts appear in <strong>status</strong>.</li>
 <li><strong>Animated objects:</strong> on an object that is being animated, Claude reads and edits the pose you authored, and is
   told it is animated and where it is right now.</li>
 <li><strong>Physics in a group:</strong> the simulation only runs objects at the top of the scene. If an object with physics is
   inside a group, Claude is told so and can move it out, or set physics on the group itself.</li>
 <li><strong>Particles</strong> on a rotated parent: in world space, an emitter can follow the object (<em>a rocket's exhaust</em>) or
-  keep world axes (<em>a fire that burns straight up</em>). Gravity always points world down.</li>
+  keep world axes (<em>a fire that burns straight up</em>). Gravity is acceleration along world Y in m/s²: negative falls, positive rises.</li>
 </ul>
 <h2 id="see-and-undo-what-it-did">See and undo what it did</h2>
 <p>Every step Claude takes is a line labelled <strong>Claude (connector)</strong> in <strong>Agent activity</strong>, with its
 own <strong>Undo</strong>. Anyone in the session sees the changes as they happen, and anyone with edit access
 can undo them from their own screen.</p>
+<p><strong>Screenshots</strong> have a 4:3 shape whatever your window's shape, except the <em>current</em> view, which keeps your canvas. Claude
+can pick the angle (front, back, left, right, top, below, iso, or a yaw and pitch), a camera position and target, the objects to
+frame, a zoom (0.1-10) and a margin (0.5-4). It is told which camera it used, and your own view never moves.</p>
 <h2 id="stop-it">Stop it</h2>
 <ul>
 <li><strong>Disconnect</strong> (next to the chip, or in Settings ▸ Connected apps) stops Claude at once, including
