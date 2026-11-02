@@ -216,6 +216,23 @@ Terms once, and again if a new version comes out.
 
 The site and the app share one sign-in. **Sign in** in the site header offers the same GitHub and Google buttons; signed in, the menu under your name has **My profile**, **Open the app** and **Sign out**. Inside the app the same account is under the logo menu's profile block as **Sign in to cloud**.
 
+### Sign-in methods and "Can't sign in?"
+
+*New in 1.54.1.* theprototype.app has no passwords: you sign in with GitHub or Google. If you lose access to that one
+account, you lose the way in. Link both now and either one gets you back: **Account menu ▸ Sign-in methods**.
+
+![Account menu ▸ Sign-in methods](img/community/sign-in-methods.png)
+
+- **Link** next to a provider opens its sign-in window. Afterwards that provider signs you in to this same account, even if
+  its email address is different.
+- **Unlink** removes one. It appears only while you have at least two; the last way in can't be removed.
+- If the provider account you pick already belongs to another account here, nothing changes: you stay signed in as you
+  are, and the panel tells you.
+
+**Locked out?** The sign-in sheet has a **Can't sign in?** link, and the account menu's **Support** goes to the same page
+(`/cant-sign-in`). It says what to send to contact@theprototype.app and what we can and can't verify. **Sponsors** now has
+its own entry in the account menu. One identity per provider on an account; the review account can't link any.
+
 ## Reporting
 
 Every scene page ends with **Report this scene**: pick a reason — **Spam**, **Not safe for work**, **Stolen work**, **Illegal content** or **Other** — add a note if you like, and send it (this needs a sign-in, and counts once per person per scene). A scene reported by three different people — counting only accounts older than three days — is hidden from every list and page until a maintainer has looked at it.
