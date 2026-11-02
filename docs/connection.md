@@ -119,6 +119,12 @@ A connection request waits for the host. Three things can end it, and each one s
 
 While it is open the requester sees a countdown beside *Requesting*, and your card says how long that person has been waiting (*asked 34s ago*). An expired card can still be approved — approving simply dials them back. Dialling somebody who is not online ends the request too, rather than leaving it up beside a toast saying they are unreachable. If a connection is stuck, the panel offers a **Retry** that closes the stale link and reconnects.
 
+**When a guest approves someone** (*since 1.54.1*). A guest's **Approve** lets that person in at the guest only. The
+host decides for itself, with its own settings: an approval card of its own, or no card where the room lets people in
+automatically (an open room, or *Allow guests to join automatically*). A guest's **Copy your invite link**
+names the session's host, so a friend a guest invites asks the host directly. An [invite link](invites.md) a guest
+made names that guest; the host is then asked by its own settings in the same way.
+
 !!! note "Waiting requests are capped"
     A rush of joiners folds into the Connect drawer rather than burying the screen, and when the queue is full the expired cards are dropped before the live ones.
 
