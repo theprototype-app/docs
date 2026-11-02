@@ -42,7 +42,7 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
-**NEXT — first win and community.** <!-- 76-int: set the version at release --> Your first visit asks
+**1.54 — first win and community.** Your first visit asks
 [one question](tours.md#your-first-visit) — Play a game, Remix a game, Start from a template or Describe it — and a
 three-step [first-game quest](tours.md#the-first-game-quest) walks you through changing it, playing it and inviting a
 friend; a new visitor's advanced buttons wait behind **»** / **More** until their first Play, and the editor tour is in
