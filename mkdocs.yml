@@ -229,6 +229,7 @@ nav:
     - "Recipe: better models with img2threejs": ai/img2threejs.md
     - "Recipe: pixel art with Pixling": ai/pixling.md
     - "Recipe: Agents + Blender": ai/agents-and-blender.md
+    - Shapes and modelling with an agent: ai/agent-geometry.md
     - Use theprototype from claude.ai and voice: ai/claude-connector.md
     - Providers: ai/providers.md
     - Local & Small Models: ai/local-models.md
