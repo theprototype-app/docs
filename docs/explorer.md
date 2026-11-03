@@ -373,7 +373,7 @@ Settings ▸ Scene ▸ Performance ▸ Placement preview.
 ///
 
 <div class="shot-key" markdown>
-1. **Placement preview**: what the ghost of a dragged item shows.
+1. **Placement preview**: **what shows** as the ghost of a dragged item.
 </div>
 
 ### Downloaded pack items and Delete cache
@@ -390,7 +390,7 @@ A pack item's menu.
 ///
 
 <div class="shot-key" markdown>
-1. **Delete cache** frees the download; the item stays in the pack.
+1. **Delete cache** **frees it**: the download goes; the item stays in the pack.
 </div>
 
 ### Images, audio and text

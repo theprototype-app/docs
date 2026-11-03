@@ -89,5 +89,5 @@ shots:
       - {wait: 500}
     crop: {around: {selector: '[data-tour="physics-floats"]'}, size: [688, 720], offset: [-170, 0], ui: true}
     annotate:
-      - {n: 1, at: {selector: '#physics-floats'}, shape: box, label: floats as, badge: l, key: '**Floats**: what the body is made of in water — Wood floats about 60 % under.'}
+      - {n: 1, at: {selector: '#physics-floats'}, shape: box, label: floats as, badge: l, key: '**Floats as**: what the body is made of in water — Wood floats about 60 % under.'}
       - {n: 2, at: {object: Crate}, shape: circle, label: at its draft, badge: tl, key: 'The crate rests **at its draft**: 60 % of it under the surface.'}

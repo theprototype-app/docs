@@ -259,7 +259,7 @@ A wooden crate floating in a pool.
 ///
 
 <div class="shot-key" markdown>
-1. **Floats**: what the body is made of in water — Wood floats about 60 % under.
+1. **Floats as**: what the body is made of in water — Wood floats about 60 % under.
 2. The crate rests **at its draft**: 60 % of it under the surface.
 </div>
 

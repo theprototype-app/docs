@@ -16,7 +16,7 @@ The HUD editor on the Stars Room's menu screen.
 
 <div class="shot-key" markdown>
 1. The **selected** element: drag it to move, drag its corner grip to resize; its fields fill the Properties pane.
-2. **Snap** snaps to the grid, the stage centre lines and other elements' edges.
+2. **Snapping**: to the grid, the stage centre lines and other elements' edges.
 </div>
 
 | Part | What it holds |

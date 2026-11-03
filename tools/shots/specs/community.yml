@@ -26,7 +26,7 @@ shots:
       hint Click to look around · Esc to pause. 1: the heart.
     caption: The heart on a play link's start card.
     annotate:
-      - {n: 1, at: {selector: '#embed-heart'}, shape: circle, label: like it, badge: r, key: 'The **heart**: press it to **like** the game; the count updates at once.'}
+      - {n: 1, at: {selector: '#embed-heart'}, shape: circle, label: like it, badge: r, key: 'The **heart**: press it to **like it**; the count updates at once.'}
   - id: pause-menu-heart
     replaces: img/community/pause-menu-heart.png
     scene:

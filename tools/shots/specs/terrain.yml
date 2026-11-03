@@ -76,7 +76,7 @@ shots:
     crop: {union: [{selector: '#sculpt-toolbar'}, {selector: '#sculpt-toolbar', offset: [496, 0]}], pad: 8}
     fade: [r]
     annotate:
-      - {n: 1, at: {selector: '#sculpt-scatter-source'}, shape: box, pad: 3, label: scatter what, badge: r, key: 'What the brush **scatters**: a primitive, a Library model, a pack item or a prefab.'}
+      - {n: 1, at: {selector: '#sculpt-scatter-source'}, shape: box, pad: 3, label: scatter what, badge: r, key: '**Scatter what**: a primitive, a Library model, a pack item or a prefab.'}
 
   # its own terrain: rocks with a hull collider, cones with none (core tests/e2e/scatter-colliders.test.cjs)
   - id: scatter-collider

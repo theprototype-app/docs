@@ -89,7 +89,7 @@ An arch with an exact mesh collider.
 ///
 
 <div class="shot-key" markdown>
-1. An exact mesh keeps the **opening**: the wireframe follows every face of the arch.
+1. The **opening kept**: an exact mesh's wireframe follows every face of the arch.
 </div>
 
 **Limits.**

@@ -66,7 +66,7 @@ shots:
     the object flows of Angelfish 1, Angelfish 2 and Clownfish, the current one ticked. 1: the object crumb. 2: the list.
   caption: The breadcrumb bar in the docked Node editor.
   annotate:
-  - {n: 1, at: {selector: '#flow-scope-chip button.tp-crumb[aria-current="location"]'}, shape: box, label: you are here, badge: r, key: 'The **object crumb**: the flow you are in. Click it for its siblings.'}
+  - {n: 1, at: {selector: '#flow-scope-chip button.tp-crumb[aria-current="location"]'}, shape: box, label: you are here, badge: r, key: 'The **object crumb**: **you are here**. Click it for its siblings.'}
   - {n: 2, at: {selector: '[role="menu"]'}, shape: bracket, side: r, badge: r, key: 'The **list**: every other flow at this level, the current one ticked.'}
 - id: tidy-waves-main
   replaces: img/node-editor/tidy-waves-main.png

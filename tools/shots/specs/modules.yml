@@ -26,5 +26,5 @@ shots:
     caption: Modules ▸ Core on a folded phone.
     annotate:
       - {n: 1, at: {selector: '#enable-module-hello'}, shape: box, pad: 3, badge: b, key: 'The **switch** turns a module **on or off**; the icon beside it downloads it.'}
-      - {n: 2, at: {text: 'Pong: spawn / remove'}, shape: box, label: its action, badge: r, key: 'A module''s own **action** sits under its name and description.'}
+      - {n: 2, at: {text: 'Pong: spawn / remove'}, shape: box, label: its action, badge: r, key: 'A module''s own button, **its action**, sits under its name and description.'}
       - {n: 3, at: {selector: '[data-desc-toggle="core:vrsleeve"]'}, shape: box, badge: r, key: 'A description cut short ends in a chevron: tap it to read it all, tap again to fold it.'}

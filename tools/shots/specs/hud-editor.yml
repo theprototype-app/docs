@@ -39,4 +39,4 @@ shots:
     caption: The HUD editor on the Stars Room's menu screen.
     annotate:
       - {n: 1, at: {selector: '#hud-board [data-hud-item="start-btn"]'}, shape: box, label: selected, badge: r, key: 'The **selected** element: drag it to move, drag its corner grip to resize; its fields fill the Properties pane.'}
-      - {n: 2, at: {text: Snap}, shape: box, label: snapping, badge: b, key: '**Snap** snaps to the grid, the stage centre lines and other elements'' edges.'}
+      - {n: 2, at: {text: Snap}, shape: box, label: snapping, badge: b, key: '**Snapping**: to the grid, the stage centre lines and other elements'' edges.'}

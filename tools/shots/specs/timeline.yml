@@ -90,7 +90,7 @@ shots:
     # the sheet's tab row and the Timeline under it
     crop: {union: [{selector: '.tl-root'}, {text: Timeline}], pad: 8}
     annotate:
-      - {n: 1, at: {text: Timeline}, shape: box, pad: 3, label: sheet tab, badge: r, key: 'The **Timeline** tab of the bottom sheet (More ▸ Timeline opens it).'}
+      - {n: 1, at: {text: Timeline}, shape: box, pad: 3, label: sheet tab, badge: r, key: 'The **Timeline** **sheet tab** in the bottom sheet (More ▸ Timeline opens it).'}
 
   - id: tracks-light
     replaces: img/timeline/tracks-light.png

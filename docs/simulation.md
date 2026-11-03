@@ -64,7 +64,7 @@ Fluid tank toy.
 ///
 
 <div class="shot-key" markdown>
-1. The **tipped** Honey tank: it pours out over its rim and holds less afterwards.
+1. The **tipped tank** of honey: it pours out over its rim and holds less afterwards.
 2. The **spilled** honey settles on the table top; Refill fills the tank again.
 </div>
 

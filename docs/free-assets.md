@@ -85,5 +85,5 @@ The Asset Browser as a bottom sheet on a folded phone.
 ///
 
 <div class="shot-key" markdown>
-1. **1k** is the default on a phone or a Quest: smaller downloads.
+1. **1k** is the **phone default** (and the Quest's): smaller downloads.
 </div>

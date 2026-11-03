@@ -41,7 +41,7 @@ shots:
     crop: {around: {object: Duck}, size: [460, 360]}
     annotate:
       # the fill stands just under half the height (46 of 100 KB): its front edge sits a little under the middle
-      - {n: 1, at: {object: Duck, point: center, offset: [0, 10]}, shape: underline, label: arrived so far, badge: r, key: 'The **fill** rises with the bytes that have arrived.'}
+      - {n: 1, at: {object: Duck, point: center, offset: [0, 10]}, shape: underline, label: arrived so far, badge: r, key: 'The **fill** rises with the bytes **arrived so far**.'}
 
   - id: modern-failed
     replaces: img/loading/modern-failed.png
@@ -90,7 +90,7 @@ shots:
     crop: {around: {selector: '#start-view-back'}, size: [688, 140], offset: [0, -9], ui: true}
     fade: [l, r, b]
     annotate:
-      - {n: 1, at: {selector: '#start-view-back'}, shape: box, label: fly back, badge: r, key: '**Back to start view** flies to where the scene opened (<kbd>Home</kbd> does the same).'}
+      - {n: 1, at: {selector: '#start-view-back'}, shape: box, label: fly back, badge: r, key: '**Back to start view**: **fly back** to where the scene opened (<kbd>Home</kbd> does the same).'}
 
   - id: hold-setting
     replaces: img/loading/hold-setting.png

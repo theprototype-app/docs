@@ -51,7 +51,7 @@ The finished take, with Download, Show in Explorer and Record again.
 ///
 
 <div class="shot-key" markdown>
-1. **Download** saves the .webm; it is in the Explorer already.
+1. **Download** to **save file** (.webm); it is in the Explorer already.
 2. **Record again** goes back to the settings for a new take.
 </div>
 

@@ -56,7 +56,7 @@ The notice when a large scene skips its automatic checkpoint.
 ///
 
 <div class="shot-key" markdown>
-1. **Settings ▸ Scene** has the switch that keeps automatic checkpoints for large scenes too.
+1. **Keep them on**: **Settings ▸ Scene** has the switch that keeps automatic checkpoints for large scenes too.
 </div>
 
 ## Settings

@@ -70,5 +70,5 @@ shots:
   # the dialog fills the 688 px window: its sides are the window's, not a cut
   fade: []
   annotate:
-  - {n: 1, at: {selector: '#recording-download'}, shape: box, label: save file, badge: b, key: '**Download** saves the .webm; it is in the Explorer already.'}
+  - {n: 1, at: {selector: '#recording-download'}, shape: box, label: save file, badge: b, key: '**Download** to **save file** (.webm); it is in the Explorer already.'}
   - {n: 2, at: {selector: '#recording-again'}, shape: box, label: new take, badge: b, key: '**Record again** goes back to the settings for a new take.'}

@@ -92,8 +92,8 @@ The Asset Browser panel.
 ///
 
 <div class="shot-key" markdown>
-1. **Packs**, **Free CC0** and **My library**: **where** the models come **from**.
-2. **Pin** leaves the panel in the air, bigger; **To wrist** puts it back (**✕** closes it).
+1. **Where from**: **Packs**, **Free CC0** or **My library**, where the models come from.
+2. **Pin it**: the panel stays in the air, bigger; **To wrist** puts it back (**✕** closes it).
 </div>
 
 Radial menu ▸ **Add ▸ Assets** opens a panel on the wrist of your menu hand, facing you. Point at it with the other hand.
@@ -140,7 +140,7 @@ The Logic panel on the Spinner object's flow.
 
 <div class="shot-key" markdown>
 1. **Scene** or the selected object's own flow (**Spinner**): **which graph** the panel shows.
-2. **+ Node** opens a palette with the desktop's groups; the node lands in the middle of the view.
+2. **+ Node** to **add a node**: a palette with the desktop's groups; the node lands in the middle of the view.
 </div>
 
 Radial menu ▸ **Tools ▸ Logic** opens the scene's node graph as a panel in front of you. With one object selected,
@@ -166,7 +166,7 @@ The wrist pad for a Number node.
 ///
 
 <div class="shot-key" markdown>
-1. **−** / **+** step the value; press the number to type one on the VR keyboard.
+1. **Change it**: **−** / **+** step the value; press the number to type one on the VR keyboard.
 2. **Rename**, **Unwire** (every wire on **the node**) and **Delete**, each one undo step.
 </div>
 

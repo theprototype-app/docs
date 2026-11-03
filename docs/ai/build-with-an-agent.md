@@ -125,7 +125,7 @@ Agent activity in the AI assistant window.
 
 <div class="shot-key" markdown>
 1. **Agent activity** counts the steps; under each agent's name, one line per step it took (click a line to select what it touched).
-2. **Undo** takes back that one step, for everybody.
+2. **Undo it**: takes back that one step, for everybody.
 </div>
 
 ## Security notes

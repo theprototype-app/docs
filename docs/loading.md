@@ -25,7 +25,7 @@ A Modern placeholder filling from the bottom as its model downloads.
 ///
 
 <div class="shot-key" markdown>
-1. The **fill** rises with the bytes that have arrived.
+1. The **fill** rises with the bytes **arrived so far**.
 </div>
 
 Both styles turn **amber** when a piece is stuck and **red with a “!”** when it failed.
@@ -87,7 +87,7 @@ The Back to start view button under the connection bar after Tavern Interior has
 ///
 
 <div class="shot-key" markdown>
-1. **Back to start view** flies to where the scene opened (<kbd>Home</kbd> does the same).
+1. **Back to start view**: **fly back** to where the scene opened (<kbd>Home</kbd> does the same).
 </div>
 
 To change a scene's start view, move the camera where you want it and save the scene again.

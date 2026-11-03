@@ -73,4 +73,4 @@ shots:
       - {wait: 1200}
     crop: {around: {selector: '.tp-toast'}, size: [688, 460], offset: [0, 170], ui: true}
     annotate:
-      - {n: 1, at: {text: Settings, within: '.tp-toast'}, shape: underline, label: keep them on, badge: r, key: '**Settings ▸ Scene** has the switch that keeps automatic checkpoints for large scenes too.'}
+      - {n: 1, at: {text: Settings, within: '.tp-toast'}, shape: underline, label: keep them on, badge: r, key: '**Keep them on**: **Settings ▸ Scene** has the switch that keeps automatic checkpoints for large scenes too.'}
