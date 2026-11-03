@@ -24,7 +24,12 @@ source venv/bin/activate
 
 pip install -r requirements.txt
 mkdocs serve            # http://127.0.0.1:8000, live reload
+mkdocs build --strict   # what CI runs: any warning (a broken link, an image rule) fails it
 ```
+
+`requirements.txt` pins everything `mkdocs.yml` needs — the Material theme, the git-revision-date and glightbox
+plugins (glightbox needs `selectolax`); the hooks in `tools/hooks/` use only PyYAML, which comes with MkDocs — so a
+fresh venv builds without extra installs. A plugin or hook that needs a new package adds it there in the same change.
 
 <details>
 <summary>Python on Windows</summary>
