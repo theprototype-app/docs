@@ -38,7 +38,9 @@ Meshy is a third-party service. Before anything is sent, the app asks:
   [Meshy's privacy policy](https://www.meshy.ai/privacy-policy).
 
 **Cancel sends nothing.** The same question comes up when the assistant makes a model from a picture you
-attached. A self-hosted ComfyUI is your own server, so it does not ask.
+attached. A ComfyUI on this computer or your local network is your own server, so it does not ask; one
+anywhere else (a rented GPU, a hosted preset) asks before the picture leaves, and gets the picture under a
+plain name, never your file's.
 
 ### Limits
 
@@ -104,17 +106,18 @@ What you get:
 
 | | |
 |---|---|
-| Loops | `while` and `do` are refused; a `for` loop counts to a constant (up to 1024 per loop, 65536 down a nest) |
-| Size | 64 KB per stage |
-| `#include` | only `<tonemapping_fragment>` and `<colorspace_fragment>` |
+| Loops | `while` and `do` are refused; a `for` loop declares its `int` counter and counts up to a number or a `#define` above it (up to 1024 per loop). The whole stage may take **65536 loop steps in all**: nested loops multiply, loops one after another add, and a function called inside a loop counts its own loops each time |
+| Parameters | no `out` or `inout` parameters: return the value instead |
+| Size | 64 KB per stage, plain ASCII outside comments, no backslashes or carriage returns |
+| Preprocessor | `#define NAME 32` (a name for a whole number, once) and two `#include`s: `<tonemapping_fragment>` and `<colorspace_fragment>`. No `#if`, `#ifdef`, `#undef` or other directives |
 | Textures | not in v1 (no samplers) |
 | Lighting | none built in: a pair is unlit unless you light it yourself; skinned and instanced meshes do not follow it |
 | Where | surface materials; post effects show the GLSL and Graph JSON tabs only |
 
-Before a shader runs, **each device tests it on its own**: it compiles and draws a tiny frame in a
-separate worker, then the first real frame is timed. A shader that fails, is too slow, or makes the
+Before a shader runs, **each device tests it on its own**: it compiles and draws a small frame in a
+separate worker, with the shader's own field values and a running clock, then the first real frame is timed. A shader that fails, is too slow, or makes the
 graphics context drop is turned **off on that device** with the reason and a **Try again** button. The
-scene keeps the shader: it is that device's verdict, not everyone's.
+scene keeps the shader: it is that device's verdict, not everyone's, and the device remembers it until you press **Try again**.
 
 ### Where your GLSL runs
 
