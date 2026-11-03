@@ -1,23 +1,43 @@
 {
  "id": "flying-setting",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.581Z",
+ "spec": "77983be5c3ab",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:09:37.362Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/physics/flying-setting.png",
- "width": 688,
- "height": 800,
+ "uiHits": [
+  "div#inspector.tp-ui",
+  "div.flex",
+  "svg.lucide",
+  "div.tp-ui",
+  "span.pr-label",
+  "label#physics-play-reach-on-label.it-label",
+  "label#physics-sim-on-play-label.it-label",
+  "button#physics-spawn-set.tp-ui",
+  "button.sec-panel-head",
+  "span.sec-title",
+  "span.tp-ui",
+  "div.ts-wrap"
+ ],
+ "width": 606,
+ "height": 690,
  "crop": {
-  "x": 592,
-  "y": 0,
-  "w": 688,
-  "h": 800
+  "x": 1129,
+  "y": 352,
+  "w": 303,
+  "h": 345
  },
  "cut": [],
- "fade": [
-  "l"
- ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 224,
+   "y": 251.5625,
+   "w": 370,
+   "h": 76
+  }
+ },
  "kind": "ui"
 }

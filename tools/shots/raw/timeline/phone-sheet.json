@@ -1,23 +1,43 @@
 {
  "id": "phone-sheet",
- "dpr": 2.9,
- "shotAt": "2026-10-27T07:46:24.603Z",
+ "spec": "8b0771d92814",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:51:06.332Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/timeline/phone-sheet.png",
- "width": 1131,
- "height": 1595,
+ "uiHits": [
+  "button.sg-handle",
+  "div#timeline-dock.tp-ui",
+  "nav#ps-bar.ps-bar",
+  "span.ts-label",
+  "span#timeline-time.tl-time",
+  "label.tl-flag",
+  "button#timeline-add-track.tp-ui",
+  "div.tl-corner",
+  "div.tl-track-head",
+  "div.tl-grid",
+  "button#timeline-autoplay.tp-ui",
+  "svg.lucide"
+ ],
+ "width": 780,
+ "height": 1340,
  "crop": {
   "x": 0,
-  "y": 1003,
-  "w": 1131,
-  "h": 1595
+  "y": 151,
+  "w": 390,
+  "h": 670
  },
  "cut": [],
- "fade": [
-  "t"
- ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 28,
+   "y": 15,
+   "w": 161.15625,
+   "h": 44
+  }
+ },
  "kind": "ui"
 }

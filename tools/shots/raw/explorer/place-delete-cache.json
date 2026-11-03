@@ -1,24 +1,39 @@
 {
  "id": "place-delete-cache",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.509Z",
+ "spec": "dd93cfa4ffaa",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:46:17.733Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/explorer/place-delete-cache.png",
- "width": 688,
- "height": 340,
- "crop": {
-  "x": 6,
-  "y": 0,
-  "w": 688,
-  "h": 340
- },
- "cut": [],
- "fade": [
-  "l",
-  "r"
+ "uiHits": [
+  "div.fixed",
+  "div.ctx-disabled",
+  "div.cursor-pointer",
+  "span.flex",
+  "span.flex-1",
+  "span.ctx-hint"
  ],
- "anchors": {},
+ "width": 860,
+ "height": 538,
+ "crop": {
+  "x": 333,
+  "y": 632,
+  "w": 430,
+  "h": 269
+ },
+ "cut": [
+  "b"
+ ],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 234,
+   "y": 452,
+   "w": 353.5625,
+   "h": 64
+  }
+ },
  "kind": "ui"
 }

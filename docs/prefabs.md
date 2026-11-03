@@ -54,10 +54,15 @@ A toast says how many other copies use it and offers:
 | **Update, reset overrides** | each copy matches the prefab exactly |
 | **Undo** | puts the prefab's previous version back in your library |
 
-![After editing the Lamp prefab, a toast offers to update the other instance in the scene](img/prefabs/update-toast.webp){ .shot .fade-l .fade-r width="688" height="800" loading=lazy }
+![After an edit to one copy of the Lamp prefab is applied back to it, a toast says Updated "Lamp", 1 other instance in this scene, with Update 1 instance, Update, reset overrides and Undo. 1: Update 1 instance. 2: Update, reset overrides.](img/prefabs/update-toast.webp){ .shot width="520" height="118" loading=lazy }
 /// caption
 After editing the Lamp prefab.
 ///
+
+<div class="shot-key" markdown>
+1. **Update 1 instance**: the other copy takes the new version and keeps its own changes.
+2. **Update, reset overrides**: the copy matches the prefab exactly.
+</div>
 
 Where each copy stands is always kept. The update is **one undo step** (<kbd>Ctrl</kbd>+<kbd>Z</kbd> puts every copy
 back) and everyone in the session sees it. Your peers do not need the prefab — only you do.
@@ -102,10 +107,15 @@ The Explorer's **Prefabs** tab can be sorted into folders and tagged.
 - **Filter** — the tag chips under the breadcrumb filter the tab, and pressed chips combine (*seat* + *wood*). The
   search box matches names and tags. Both reach into folders; **Clear** resets the filter.
 
-![The Prefabs tab filtered by the seat tag](img/prefabs/tag-filter.webp){ .shot .fade-l .fade-r width="688" height="800" loading=lazy }
+![The Explorer's Prefabs view filtered by the seat tag: the tag chips seat, wood and metal under the breadcrumb with seat pressed, and only the three seats shown (Oak chair, Steel chair, Bench). 1: the pressed seat chip. 2: Clear.](img/prefabs/tag-filter.webp){ .shot .fade-b width="680" height="440" loading=lazy }
 /// caption
 The Prefabs tab filtered by the seat tag.
 ///
+
+<div class="shot-key" markdown>
+1. A pressed **tag chip** filters the tab; pressed chips combine (*seat* + *wood*).
+2. **Clear** resets the filter.
+</div>
 
 Folders and tags are part of your own library, on this device, like the prefabs themselves.
 

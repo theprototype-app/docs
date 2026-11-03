@@ -8,10 +8,15 @@ in your session sees your presets and can use them.
 **Where:** select an object and open its properties (double-click it, or right-click ▸ **Properties**). In the
 **Material** section, the **Presets** row sits at the top, above the material type.
 
-![The Presets row with Wood applied](img/materials/presets-wood.webp){ .shot width="304" height="450" loading=lazy }
+![The Material section's Presets row: the eight built-in swatches Wood, Metal, Plastic, Glass, Stone, Rubber, Fish scales and Neon, with Wood outlined because the box wears it, and + and the pencil above. 1: Wood, applied. 2: + saves the current look.](img/materials/presets-wood.webp){ .shot width="311" height="214" loading=lazy }
 /// caption
 The Presets row with Wood applied.
 ///
+
+<div class="shot-key" markdown>
+1. The swatch of the preset the object wears is **outlined**.
+2. **+** saves the current look as your own preset.
+</div>
 
 ## Using presets
 
@@ -26,10 +31,15 @@ The Presets row with Wood applied.
 - **A friend's presets** — when someone in the session has saved presets, they appear under **From ‹name›**. Click one
   to apply it; while editing (pencil), the copy button saves it into your own library.
 
-![Editing your presets: rename, download and delete on your own swatches](img/materials/presets-edit.webp){ .shot width="304" height="511" loading=lazy }
+![Editing your presets: the pencil is pressed, your own swatch Red brick is picked and the bar under the row has its rename, download and delete buttons, with Import beside. 1: the pencil. 2: rename, download and delete.](img/materials/presets-edit.webp){ .shot width="311" height="250" loading=lazy }
 /// caption
 Editing your presets.
 ///
+
+<div class="shot-key" markdown>
+1. The **pencil** starts editing; the tick finishes.
+2. **Rename**, **download** as a `.matpreset.json` file, and **delete** (it asks first).
+</div>
 
 ## Fish scales and the look tier
 

@@ -1,23 +1,57 @@
 {
  "id": "select-tool",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.593Z",
+ "spec": "41bf23a6da1d",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:15:13.462Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/scatter/select-tool.png",
- "width": 688,
- "height": 720,
+ "uiHits": [
+  "img.h-7",
+  "div.toolbox-body",
+  "svg.lucide",
+  "span.tbx-label",
+  "button#sculpt-scatter-source.ts-btn",
+  "button#sculpt-scatter-paint.tbx-btn",
+  "div#sculpt-scatter-selection.tbx-row",
+  "button#sculpt-scatter-turn-left.tbx-cmd",
+  "button#sculpt-scatter-delete.tbx-cmd",
+  "label.flex",
+  "div.tbx-row",
+  "input#sculpt-scatter-scale-min.ui-input"
+ ],
+ "width": 1376,
+ "height": 1400,
  "crop": {
   "x": 0,
-  "y": 0,
+  "y": 23,
   "w": 688,
-  "h": 720
+  "h": 700
  },
- "cut": [],
- "fade": [
-  "r"
+ "cut": [
+  "r",
+  "t",
+  "b"
  ],
- "anchors": {},
+ "fade": [
+  "r",
+  "t",
+  "b"
+ ],
+ "anchors": {
+  "1": {
+   "x": 42,
+   "y": 782,
+   "w": 312,
+   "h": 32
+  },
+  "2": {
+   "x": 989.3767227496627,
+   "y": 759.5659873441134,
+   "w": 48,
+   "h": 48
+  }
+ },
  "kind": "ui"
 }

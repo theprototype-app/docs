@@ -5,63 +5,101 @@ defaults:
   dpr: 2
   format: webp
 shots:
-- id: menu
-  replaces: img/race/menu.png
-  alt: 'The Race start screen: click a car, then Start'
-  caption: The Race start screen.
-  crop:
-    rect:
-    - 296
-    - 150
-    - 688
-    - 450
-  fade:
-  - l
-  - r
-  - t
-  - b
-  kind: ui
-  dpr: 1
-  from: img/race/menu.png
-- id: start
-  replaces: img/race/start.png
-  alt: 'Lap 1 of 3: the countdown has just ended'
-  caption: 'Lap 1 of 3: the countdown has just ended.'
-  crop:
-    rect:
-    - 77
-    - 65
-    - 1126
-    - 569
-  fade: vignette
-  kind: view
-  dpr: 1
-  from: img/race/start.png
-- id: phone-pedals
-  replaces: img/race/phone-pedals.png
-  alt: 'Race on a phone: the steering stick bottom left, Reset, Brake and Gas bottom right'
-  caption: Race on a phone.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 480
-    - 1000
-  fade: []
-  kind: ui
-  dpr: 1
-  from: img/race/phone-pedals.png
-- id: vr-seat
-  replaces: img/race/vr-seat.png
-  alt: The view from the driver's seat in a headset
-  caption: The view from the driver's seat in a headset.
-  crop:
-    rect:
-    - 77
-    - 65
-    - 1126
-    - 569
-  fade: vignette
-  kind: view
-  dpr: 1
-  from: img/race/vr-seat.png
+  # 83-batch3: Race from Templates ▸ Games (built in, no module), in Play. A car is taken through the race module's
+  # own handle (window.__race.claim, what game-race.test.cjs drives) and Start is the HUD's own button.
+  - id: menu
+    replaces: img/race/menu.png
+    scene:
+      - eval: >-
+          (async () => { const S = window.__stores, D = window.__docs; await S.sceneTemplates.loadTemplatesIndex();
+          const g = D.get(S.sceneTemplates.games).find((x) => x.slug === 'race'); await S.sceneTemplates.loadRemoteScene(g, {}); })()
+      - {wait: 9000}
+    setup:
+      - {click: '#play-button'}
+      - {wait: 5000}
+      - {eval: "window.__race.claim('Race car 1')"}
+      - {wait: 1500}
+    crop: {around: {text: Start, within: '#hud-layer'}, size: [640, 440], offset: [0, 10], ui: true}
+    fade: [t, b]
+    kind: ui
+    alt: >-
+      The Race start screen over the start line: the title RACE, click a car to take the wheel then Start, 3 laps,
+      the Start button, the keys W / S drive, A / D steer, R back on the road, and In the car — press Start. 1: the
+      Start button. 2: the line that says you are in a car.
+    caption: The Race start screen.
+    annotate:
+      - {n: 1, at: {text: Start, within: '#hud-layer'}, shape: box, label: start, badge: r, key: '**Start** runs the countdown for everyone in the session.'}
+      - {n: 2, at: {text: In the car — press Start, within: '#hud-layer'}, shape: underline, label: in a car, badge: b, key: 'Says whether you are **in a car**: click one of the four cars first.'}
+  - id: start
+    replaces: img/race/start.png
+    scene:
+      - eval: >-
+          (async () => { const S = window.__stores, D = window.__docs; await S.sceneTemplates.loadTemplatesIndex();
+          const g = D.get(S.sceneTemplates.games).find((x) => x.slug === 'race'); await S.sceneTemplates.loadRemoteScene(g, {}); })()
+      - {wait: 9000}
+    setup:
+      - {click: '#play-button'}
+      - {wait: 5000}
+      - {eval: "window.__race.claim('Race car 1')"}
+      - {wait: 1500}
+      - {eval: "[...document.querySelectorAll('#hud-layer button')].find((b) => b.textContent.trim() === 'Start').click()"}
+      # 3-2-1, then GO! — taken as the countdown ends
+      - {wait: 4500}
+    crop: {canvas: true}
+    fade: vignette
+    kind: view
+    alt: >-
+      Lap 1 of 3 just after the countdown: the chase camera behind your car on the start line, the other cars beside
+      it, and the HUD with your lap, the race clock, the lap time and your position.
+    caption: 'Lap 1 of 3: the countdown has just ended.'
+  - id: phone-pedals
+    replaces: img/race/phone-pedals.png
+    device: n6-folded
+    scene:
+      - eval: >-
+          (async () => { const S = window.__stores, D = window.__docs; await S.sceneTemplates.loadTemplatesIndex();
+          const g = D.get(S.sceneTemplates.games).find((x) => x.slug === 'race'); await S.sceneTemplates.loadRemoteScene(g, {}); })()
+      - {wait: 9000}
+    setup:
+      - {click: '#ps-play'}
+      - {wait: 5000}
+      - {eval: "window.__race.claim('Race car 1')"}
+      - {wait: 1500}
+      - {eval: "[...document.querySelectorAll('#hud-layer button')].find((b) => b.textContent.trim() === 'Start').click()"}
+      - {wait: 4500}
+    crop: {rect: [0, 0, 390, 896]}
+    fade: []
+    kind: ui
+    alt: >-
+      Race on a folded phone, just after the countdown: the HUD along the top, your car on the road, the steering
+      stick at the lower left and the race buttons at the lower right. 1: the steering stick. 2: Reset. 3: Brake and
+      Gas.
+    caption: Race on a phone.
+    annotate:
+      - {n: 1, at: {selector: '.touch-stick-rest'}, shape: circle, label: steer, badge: t, key: 'The **stick** steers: drag anywhere on the left half.'}
+      - {n: 2, at: {selector: '#touch-btn-reset'}, shape: circle, label: reset, badge: t, key: '**Reset** puts you back on the road where you are (the <kbd>R</kbd> key).'}
+      - {n: 3, at: {union: [{selector: '#touch-btn-brake'}, {selector: '#touch-btn-gas'}]}, shape: box, label: brake and gas, badge: l, key: '**Brake** and **Gas** are on / off, like keys.'}
+  - id: vr-seat
+    replaces: img/race/vr-seat.png
+    # an emulated Quest 3 (lib/rig.cjs `xr:`, IWER; mono, so the page canvas is the one eye): Play enters the
+    # headset, a car is taken, and the kit round starts the race the way Start does (race-touch-vr.test.cjs)
+    xr: {head: [0, 1.6, 0]}
+    scene:
+      - eval: >-
+          (async () => { const S = window.__stores, D = window.__docs; await S.sceneTemplates.loadTemplatesIndex();
+          const g = D.get(S.sceneTemplates.games).find((x) => x.slug === 'race'); await S.sceneTemplates.loadRemoteScene(g, {}); })()
+      - {wait: 9000}
+    setup:
+      - {xr: enter, wait: 5000}
+      - {eval: "window.__race.claim('Race car 1')"}
+      - eval: >-
+          (async () => { await window.__stores.moduleSDK.initModules([{ id: 'docskit', name: 'docs kit handle', version: '1.0.0',
+          description: '', register(api) { window.__docsKit = api.kit; } }]); window.__docsKit.round.start(); })()
+      - {wait: 7000}
+    crop: {rect: [157, 165, 1126, 569]}
+    fade: vignette
+    kind: view
+    alt: >-
+      The view from the driver's seat in a headset: the road ahead from inside your car on the start line, with the
+      other cars beside you.
+    caption: The view from the driver's seat in a headset.

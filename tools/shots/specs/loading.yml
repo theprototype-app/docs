@@ -1,67 +1,109 @@
+# docs/loading.md — loading placeholders, the start view and Hold camera until loaded.
+# Shoot: e2e-slot -- node tools/shots/shoot.cjs loading     Re-annotate: node tools/shots/annotate.cjs loading
+# 83-batch3: real captures (were re-crops of the 36 U9 / L2 evidence). A placeholder is a pack STUB (an empty group
+# with a packRef, as a loaded scene or a peer's broadcast adds it — core tests/e2e/placeholders.test.cjs) whose file
+# is a jsDelivr path that does not exist, so it fails with a real HTTP 404. The production build has no slow server
+# to hold a download half-way, so modern-loading puts the stub's file record back to "fetching" and feeds it a byte
+# count (loadStates.noteAttempt / noteBytes, the calls the downloader makes) — the placeholder, its shader and its
+# fill are the app's own.
 page: loading
 defaults:
   device: desktop
   theme: dark
   dpr: 2
   format: webp
+  scene:
+    - {store: {toastStore: []}}
+    - eval: >-
+        (() => { const S = window.__stores, g = window.__docs.get(S.objectsGroup);
+        const stub = new g.constructor(); stub.name = 'Duck';
+        stub.userData = {packRef: {pack: 'docs', item: 'Duck', path: 'https://cdn.jsdelivr.net/gh/theprototype-app/packs@main/docs-missing/Duck.glb',
+          box: [-0.6, 0, -0.5, 0.6, 1.2, 0.5]}, packStub: true};
+        g.add(stub); stub.updateMatrixWorld(true); S.pokeScene(); })()
+    - {camera: {pos: [0, 2.4, 4.2], target: [0, 0.6, 0]}}
+    - {wait: 4000}
 shots:
-- id: modern-loading
-  replaces: img/loading/modern-loading.png
-  alt: A Modern placeholder filling from the bottom as its model downloads
-  caption: A Modern placeholder filling from the bottom as its model downloads.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 380
-    - 300
-  fade: []
-  kind: ui
-  dpr: 1
-  from: img/loading/modern-loading.png
-- id: modern-failed
-  replaces: img/loading/modern-failed.png
-  alt: 'A failed placeholder: red, with its tooltip and the “Retry all” toast'
-  caption: A failed placeholder.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 640
-    - 370
-  fade: []
-  kind: ui
-  dpr: 1
-  from: img/loading/modern-failed.png
-- id: back-to-start-view
-  replaces: img/loading/back-to-start-view.png
-  alt: The Back to start view button under the connection bar after Tavern Interior has loaded
-  caption: The Back to start view button under the connection bar after Tavern Interior has loaded.
-  crop:
-    rect:
-    - 296
-    - 0
-    - 688
-    - 400
-  fade:
-  - l
-  - r
-  - b
-  kind: ui
-  dpr: 1
-  from: img/loading/back-to-start-view.png
-- id: hold-setting
-  replaces: img/loading/hold-setting.png
-  alt: Configure Scene ▸ Camera with Hold camera until loaded ticked under Start view
-  caption: Configure Scene ▸ Camera with Hold camera until loaded ticked under Start view.
-  crop:
-    rect:
-    - 592
-    - 0
-    - 688
-    - 800
-  fade:
-  - l
-  kind: ui
-  dpr: 1
-  from: img/loading/hold-setting.png
+  - id: modern-loading
+    replaces: img/loading/modern-loading.png
+    alt: >-
+      A Modern placeholder, a see-through blue box with a grid on its faces, filled from the bottom to just under half
+      as its model downloads. 1: the fill line, how much has arrived.
+    caption: A Modern placeholder filling from the bottom as its model downloads.
+    kind: view
+    fade: vignette
+    setup:
+      - eval: >-
+          (() => { const L = window.__stores.loadStates, url = 'https://cdn.jsdelivr.net/gh/theprototype-app/packs@main/docs-missing/Duck.glb';
+          L.noteAttempt(url, 1); setInterval(() => L.noteBytes(url, 46000, 100000), 200); })()
+      # further back than the page's camera: the whole placeholder in the crop, not one face of it
+      - {camera: {pos: [0, 2.9, 5.6], target: [0, 0.6, 0]}}
+      - {wait: 1500}
+    crop: {around: {object: Duck}, size: [460, 360]}
+    annotate:
+      # the fill stands just under half the height (46 of 100 KB): its front edge sits a little under the middle
+      - {n: 1, at: {object: Duck, point: center, offset: [0, 10]}, shape: underline, label: arrived so far, badge: r, key: 'The **fill** rises with the bytes that have arrived.'}
+
+  - id: modern-failed
+    replaces: img/loading/modern-failed.png
+    alt: >-
+      A failed placeholder, red, with the pointer over it: its tooltip says Duck failed, file not found (HTTP 404), the
+      address, and how to retry or replace it; the toast above says 1 object failed to load, with Retry all. 1: the
+      tooltip. 2: Retry all.
+    caption: A failed placeholder.
+    setup:
+      - {css: '.toasts-stack,.tp-toast{display:revert!important}'}
+      # the tooltip ray-casts the placeholder under the pointer (PlaceholderTooltip, 80 ms throttle): aim at its middle,
+      # then a last small move after the throttle so the final position is the one it reads
+      - {moveTo: {object: Duck, point: center}, steps: 6}
+      - {wait: 300}
+      - {moveTo: {object: Duck, point: center, dx: 4, dy: 2}, steps: 1}
+      - {wait: 900}
+      - {eval: "const miss = ['.tp-toast', '#placeholder-tooltip'].filter((q) => !document.querySelector(q)); if (miss.length) throw new Error('missing: ' + miss.join(', ') + '; toasts: ' + [...document.querySelectorAll('.tp-toast')].map((t) => t.textContent.trim().slice(0, 60)).join(' | '))"}
+    crop: {union: [{selector: '.tp-toast'}, {selector: '#placeholder-tooltip'}, {object: Duck}], pad: 24}
+    annotate:
+      - {n: 1, at: {selector: '#placeholder-tooltip'}, shape: box, label: why it failed, badge: l, key: 'Hover a red placeholder: **why it failed** — the status, the reason and the file''s address.'}
+      - {n: 2, at: {text: Retry all, within: '.tp-toast'}, shape: underline, label: retry, badge: r, key: '**Retry all** tries every failed file again.'}
+
+  # Templates ▸ General ▸ Tavern Interior. The button shows for 6 s after a load the camera moved during; the shot
+  # moves the camera while the scene loads, then keeps the button up (startViewHint) for as long as the capture takes
+  - id: back-to-start-view
+    replaces: img/loading/back-to-start-view.png
+    alt: >-
+      Tavern Interior just loaded, the camera moved off its start view onto a brick wall, and the Back to start view
+      button under the connection bar. 1: Back to start view.
+    caption: The Back to start view button under the connection bar after Tavern Interior has loaded.
+    scene: []
+    setup:
+      - eval: >-
+          (async () => { const S = window.__stores, D = window.__docs; await S.sceneTemplates.loadTemplatesIndex();
+          const e = D.get(S.sceneTemplates.templates).find((x) => x.slug === 'tavern-interior'); S.sceneTemplates.loadRemoteScene(e, {}); })()
+      - {wait: 1500}
+      - {camera: {pos: [2, 1.8, 2], target: [2, 1.6, -6]}}
+      - {wait: 12000}
+      - {camera: {pos: [2, 1.8, 2], target: [2, 1.6, -6]}}
+      - {css: '.toasts-stack{display:revert!important}'}
+      - eval: >-
+          (() => { const v = window.__stores.startView; if (window.__docs.get(v.startViewHint)?.kind !== 'back')
+          v.startViewHint.set({kind: 'back', until: 1e15}); })()
+      - {wait: 600}
+    # the connection bar whole at the top, the button under it, a strip of the scene below
+    crop: {around: {selector: '#start-view-back'}, size: [688, 140], offset: [0, -9], ui: true}
+    fade: [l, r, b]
+    annotate:
+      - {n: 1, at: {selector: '#start-view-back'}, shape: box, label: fly back, badge: r, key: '**Back to start view** flies to where the scene opened (<kbd>Home</kbd> does the same).'}
+
+  - id: hold-setting
+    replaces: img/loading/hold-setting.png
+    alt: >-
+      Configure Scene ▸ Camera ▸ Start view with Hold camera until loaded ticked and its note, above Start simulation on
+      load. 1: Hold camera until loaded.
+    caption: Configure Scene ▸ Camera with Hold camera until loaded ticked under Start view.
+    scene: []
+    setup:
+      - {eval: "window.__stores.scenePhysics.setScenePhysics({holdCamera: true})"}
+      - {section: Start view}
+      - {eval: "document.querySelector('[data-anchor=\"Start view\"]')?.scrollIntoView({block: 'center'})"}
+      - {wait: 600}
+    crop: {union: [{selector: '[data-anchor="Start view"]'}, {selector: 'div[data-keywords^="simulation physics start"]'}], pad: 12}
+    annotate:
+      - {n: 1, at: {text: Hold camera until loaded}, shape: box, pad: 3, badge: t, key: '**Hold camera until loaded**: the camera stays on the saved view, and ignores input, until the scene is in.'}

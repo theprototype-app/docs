@@ -1,24 +1,36 @@
 {
  "id": "camerafollow",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.561Z",
+ "spec": "3b9117dc79ca",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:55:46.941Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/nodes/camerafollow.png",
- "width": 688,
- "height": 639,
+ "uiHits": [
+  "div.svelte-flow__pane",
+  "div#flow-list.tp-ui",
+  "div.flex",
+  "div.svelte-flow__handle",
+  "div.relative",
+  "label.relative",
+  "span.overflow-hidden",
+  "span.flex",
+  "span",
+  "path.svelte-flow__edge-interaction",
+  "select.nodrag",
+  "button.nodrag"
+ ],
+ "width": 1244,
+ "height": 1226,
  "crop": {
-  "x": 41,
-  "y": 0,
-  "w": 688,
-  "h": 639
+  "x": 208,
+  "y": 284,
+  "w": 622,
+  "h": 613
  },
  "cut": [],
- "fade": [
-  "l",
-  "r"
- ],
+ "fade": [],
  "anchors": {},
  "kind": "ui"
 }

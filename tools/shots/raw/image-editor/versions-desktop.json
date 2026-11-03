@@ -1,26 +1,43 @@
 {
  "id": "versions-desktop",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.521Z",
+ "spec": "798b528ba904",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:30:28.863Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/image-editor/versions-desktop.png",
- "width": 688,
- "height": 700,
+ "uiHits": [
+  "header.wc-head",
+  "div.border-b",
+  "button.tp-ui",
+  "div#image-editor-window.ui-panel",
+  "div.flex",
+  "button#image-editor-save-copy.tp-ui",
+  "button#image-editor-save.tp-ui",
+  "div.ws-tabs",
+  "button.ws-tab-btn",
+  "div.ws-resize",
+  "div#image-editor-history.ie-pane",
+  "button#image-editor-restore-original.tp-ui"
+ ],
+ "width": 1360,
+ "height": 1120,
  "crop": {
-  "x": 300,
-  "y": 40,
-  "w": 688,
-  "h": 700
+  "x": 180,
+  "y": 110,
+  "w": 680,
+  "h": 560
  },
  "cut": [],
- "fade": [
-  "l",
-  "r",
-  "t",
-  "b"
- ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 880,
+   "y": 162,
+   "w": 460,
+   "h": 64
+  }
+ },
  "kind": "ui"
 }

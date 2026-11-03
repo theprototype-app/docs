@@ -1,23 +1,41 @@
 {
  "id": "sim-on-load-setting",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.582Z",
+ "spec": "443641649b04",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:45:33.448Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/physics/sim-on-load-setting.png",
- "width": 688,
- "height": 720,
+ "uiHits": [
+  "div#inspector.tp-ui",
+  "div.sec-panel-body",
+  "p.ui-section-label",
+  "div.tp-ui",
+  "label#hold-camera-until-loaded-label.it-label",
+  "p.text-[length:var(--fs-badge)]",
+  "label#sim-on-load-label.it-label",
+  "span.tg-knob",
+  "button#sim-on-load.tp-ui",
+  "button#hold-camera-until-loaded.tp-ui"
+ ],
+ "width": 630,
+ "height": 558,
  "crop": {
-  "x": 592,
-  "y": 0,
-  "w": 688,
-  "h": 720
+  "x": 1123,
+  "y": 476,
+  "w": 315,
+  "h": 279
  },
  "cut": [],
- "fade": [
-  "l"
- ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 526,
+   "y": 341.78125,
+   "w": 80,
+   "h": 48
+  }
+ },
  "kind": "ui"
 }

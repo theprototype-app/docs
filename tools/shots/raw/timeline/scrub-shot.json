@@ -1,25 +1,49 @@
 {
  "id": "scrub-shot",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.603Z",
+ "spec": "4c1a7f8eef9a",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:50:51.180Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/timeline/scrub-shot.png",
- "width": 688,
- "height": 700,
+ "uiHits": [
+  "div.resize-cue",
+  "div#timeline-dock.tp-ui",
+  "span.dn-label",
+  "div.tl-corner",
+  "path",
+  "div.tl-track-head",
+  "div.tl-grid",
+  "input#timeline-duration.dn-input",
+  "span.tl-track-name",
+  "button#touch-undo.tt-btn",
+  "button#touch-redo.tt-btn",
+  "p.hud-cell"
+ ],
+ "width": 1376,
+ "height": 1680,
  "crop": {
-  "x": 376,
-  "y": 200,
+  "x": 0,
+  "y": 0,
   "w": 688,
-  "h": 700
+  "h": 840
  },
  "cut": [],
- "fade": [
-  "l",
-  "r",
-  "t"
- ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 540.65625,
+   "y": 1216,
+   "w": 4,
+   "h": 46
+  },
+  "2": {
+   "x": 414.09375,
+   "y": 130,
+   "w": 547.8125,
+   "h": 82.5
+  }
+ },
  "kind": "ui"
 }

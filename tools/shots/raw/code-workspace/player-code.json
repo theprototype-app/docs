@@ -1,25 +1,45 @@
 {
  "id": "player-code",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.492Z",
+ "spec": "b9ae328d0fcc",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:35:17.340Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/code-workspace/player-code.png",
- "width": 688,
- "height": 470,
+ "uiHits": [
+  "div.resize-cue",
+  "div#code-ws-dock.code-ws",
+  "svg.lucide",
+  "span.code-tab-name",
+  "span.code-kind",
+  "input#code-ws-live.tp-check",
+  "div.cm-gutterElement",
+  "div.cm-gutter",
+  "div.flex",
+  "label.code-live",
+  "div#code-ws-toolbar.flex",
+  "span.ͼu"
+ ],
+ "width": 1376,
+ "height": 940,
  "crop": {
   "x": 0,
-  "y": 250,
+  "y": 240,
   "w": 688,
   "h": 470
  },
  "cut": [],
  "fade": [
-  "r",
-  "t",
   "b"
  ],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 1113.09375,
+   "y": 138,
+   "w": 238.90625,
+   "h": 56
+  }
+ },
  "kind": "ui"
 }

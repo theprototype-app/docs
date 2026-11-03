@@ -1,3 +1,7 @@
+# docs/colliders.md — the Physics section, exact mesh vs decomposed colliders, contact filters.
+# Shoot: e2e-slot -- node tools/shots/shoot.cjs colliders     Re-annotate: node tools/shots/annotate.cjs colliders
+# 83-batch3: real captures (were re-crops of the 36-colliders evidence). Recipes: core tests/e2e collider-trimesh,
+# collider-decompose and flow-contact-filter. 3D shots on a remote slot (E2E_PC=).
 page: colliders
 defaults:
   device: desktop
@@ -5,63 +9,133 @@ defaults:
   dpr: 2
   format: webp
 shots:
-- id: physics-section
-  replaces: img/colliders/physics-section.png
-  alt: The Physics section of an object's properties, with Show collider on and the green collider wireframe in the viewport
-  caption: The Physics section of an object's properties.
-  crop:
-    rect:
-    - 552
-    - 0
-    - 688
-    - 780
-  fade:
-  - l
-  kind: ui
-  dpr: 1
-  from: img/colliders/physics-section.png
-- id: exact-mesh
-  replaces: img/colliders/exact-mesh.png
-  alt: 'An arch with an exact mesh collider: the green wireframe follows the opening'
-  caption: An arch with an exact mesh collider.
-  crop:
-    rect:
-    - 77
-    - 65
-    - 1126
-    - 569
-  fade: vignette
-  kind: view
-  dpr: 1
-  from: img/colliders/exact-mesh.png
-- id: decomposed
-  replaces: img/colliders/decomposed.png
-  alt: The same arch decomposed into convex pieces
-  caption: The same arch decomposed into convex pieces.
-  crop:
-    rect:
-    - 77
-    - 65
-    - 1126
-    - 569
-  fade: vignette
-  kind: view
-  dpr: 1
-  from: img/colliders/decomposed.png
-- id: contact-filter
-  replaces: img/colliders/contact-filter.png
-  alt: On Impact and On Enter nodes with only with wired to Object Selectors, and other wired into Distance
-  caption: On Impact and On Enter nodes with only with wired to Object Selectors.
-  crop:
-    rect:
-    - 250
-    - 300
-    - 688
-    - 420
-  fade:
-  - l
-  - r
-  - t
-  kind: ui
-  dpr: 1
-  from: img/colliders/contact-filter.png
+  - id: physics-section
+    replaces: img/colliders/physics-section.png
+    alt: >-
+      A torus knot selected beside its Physics properties: Body Dynamic, Mass, Material, Bounciness, Friction, Collider
+      set to Convex hull and Show collider ticked, with the green hull wireframe drawn round the knot. 1: the Collider
+      choice. 2: Show collider. 3: the collider wireframe.
+    caption: The Physics section of an object's properties.
+    storage: {'inspector:sec:Physics': open}
+    scene:
+      - {create: TorusKnot, name: Knot, at: [0, 1.3, 0], scale: 0.8, color: '#6c8cd5'}
+      - eval: >-
+          window.__stores.physics.setPhysicsFor(window.__docs.byName('Knot').uuid, {mode: 'dynamic', mass: 2, collider: 'hull'})
+      - {camera: {pos: [-1.4, 2.8, 5.6], target: [-1.4, 1.2, 0]}}
+    setup:
+      - {select: Knot}
+      - {eval: "window.__stores.inspectorKind.set('selection'); window.__stores.inspectorClose.set(false)"}
+      - {wait: 1500}
+      # the click first (Playwright scrolls its target into view), then centre the Collider row, then the camera
+      # (selecting frames the object)
+      - {click: '#physics-show-collider'}
+      - {wait: 800}
+      # Collider and Show collider are ~540 px apart: centre the row half-way (Lock position), so both are in view,
+      # under the panel's sticky header and above the toolbar
+      - {eval: "[...document.querySelectorAll('#inspector *')].find((e) => !e.children.length && e.textContent.trim() === 'Lock position')?.scrollIntoView({block: 'center'})"}
+      - {wait: 1500}
+      # far back: the knot (about 2.2 m across) small enough to sit whole between the crop's left edge and the panel
+      - {camera: {pos: [-2.7, 5.5, 18], target: [-2.7, 1.2, 0]}}
+      - {wait: 800}
+    crop: {around: {union: [{selector: '#physics-collider'}, {text: Show collider — this device}]}, size: [688, 660], offset: [-170, 0], ui: true}
+    fade: []
+    annotate:
+      - {n: 1, at: {selector: '#physics-collider'}, shape: box, pad: 3, badge: r, key: 'The **Collider**: the simple shape physics tests instead of your triangles.'}
+      - {n: 2, at: {text: Show collider — this device}, shape: underline, badge: l, key: '**Show collider** draws it as a green wireframe, on this device only.'}
+      - {n: 3, at: {object: Knot}, shape: circle, label: the hull, badge: tl, key: 'The **hull** wraps the knot: holes and dents are filled in.'}
+
+  - id: exact-mesh
+    replaces: img/colliders/exact-mesh.png
+    alt: >-
+      A static arch with an exact mesh collider: the green wireframe follows the arch's opening, so a ball can roll
+      through it. 1: the opening, kept by the exact mesh.
+    caption: An arch with an exact mesh collider.
+    kind: view
+    fade: vignette
+    scene:
+      - {create: Arch, name: Arch, at: [0, 0, 0]}
+      - eval: >-
+          (() => { const S = window.__stores; S.physics.setPhysicsFor(window.__docs.byName('Arch').uuid, {mode: 'static', collider: 'trimesh'});
+          S.colliderHelpers.showColliders.set(true); })()
+      - {camera: {pos: [0.6, 1.9, 6.4], target: [0, 1.3, 0]}}
+    setup:
+      - {deselect: true}
+      - {wait: 1200}
+    crop: {around: {object: Arch}, size: [1000, 600]}
+    annotate:
+      - {n: 1, at: {object: Arch, point: center}, shape: circle, label: opening kept, badge: r, key: 'An exact mesh keeps the **opening**: the wireframe follows every face of the arch.'}
+
+  - id: decomposed
+    replaces: img/colliders/decomposed.png
+    alt: >-
+      The same arch, dynamic, after Decompose: its collider is a handful of convex pieces drawn as green wireframes, and
+      the opening stays open. 1: one convex piece.
+    caption: The same arch decomposed into convex pieces.
+    kind: view
+    fade: vignette
+    storage: {'inspector:sec:Physics': open}
+    scene:
+      - {create: Arch, name: Arch, at: [0, 0, 0]}
+      - eval: >-
+          window.__stores.physics.setPhysicsFor(window.__docs.byName('Arch').uuid, {mode: 'dynamic', mass: 500})
+      - {camera: {pos: [0.6, 1.9, 6.4], target: [0, 1.3, 0]}}
+    setup:
+      # the Inspector's own button (it runs in a worker and writes the pieces)
+      - {select: Arch}
+      - {eval: "window.__stores.inspectorKind.set('selection'); window.__stores.inspectorClose.set(false)"}
+      - {wait: 1500}
+      - {eval: "document.querySelector('#physics-decompose')?.scrollIntoView({block: 'center'})"}
+      - {click: '#physics-decompose'}
+      - {wait: 5000}
+      - {deselect: true}
+      - {closePanels: true}
+      - {eval: "window.__stores.colliderHelpers.showColliders.set(true)"}
+      - {wait: 1200}
+    crop: {around: {object: Arch}, size: [1000, 600]}
+    annotate:
+      - {n: 1, at: {object: Arch, point: top}, shape: circle, label: convex piece, badge: tr, key: 'Each **convex piece** is a simple hull; together they keep the opening.'}
+
+  # the graph from core's flow-contact-filter suite, smaller: one On Impact filtered to the Target (its `other` into a
+  # Distance), one On Enter on a sensor filtered to the ball
+  - id: contact-filter
+    replaces: img/colliders/contact-filter.png
+    alt: >-
+      The node editor: an On Impact node whose only with input is wired from the Target's Object Selector and whose
+      other output feeds a Distance node, and an On Enter node on a sensor zone filtered to the Ball. 1: only with.
+      2: other, the body that was hit.
+    caption: On Impact and On Enter nodes with only with wired to Object Selectors.
+    scene:
+      - {create: Box, name: Target, at: [0, 0.25, 0], scale: [2, 0.5, 2], color: '#6c8cd5'}
+      - {create: Sphere, name: Ball, at: [0, 3, 0], scale: 0.4, color: '#81b29a'}
+      - {create: Box, name: Zone, at: [-4, 1.5, 0], scale: [2, 0.6, 2], color: '#c9a26b'}
+      - eval: >-
+          (() => { const S = window.__stores, D = window.__docs; const u = (n) => D.byName(n).uuid;
+          S.physics.setPhysicsFor(u('Target'), {mode: 'static'});
+          S.physics.setPhysicsFor(u('Ball'), {mode: 'dynamic', mass: 1, collider: 'sphere'});
+          S.physics.setPhysicsFor(u('Zone'), {mode: 'static', sensor: true});
+          const sel = (id, n, x, y) => ({id, type: 'objectselector', position: {x, y}, data: {label: 'Object', selected: u(n)}});
+          S.flowNodes.set([
+            sel('selT', 'Target', -260, 40),
+            {id: 'imp1', type: 'onimpact', position: {x: 0, y: 0}, data: {label: 'On Impact', pulse: 0.3, minStrength: 0.5}},
+            sel('selB', 'Ball', 240, 0),
+            {id: 'dist1', type: 'distance', position: {x: 240, y: 110}, data: {label: 'Distance'}},
+            sel('selB2', 'Ball', 0, 150),
+            sel('selD', 'Ball', -260, 300),
+            {id: 'oe1', type: 'onenter', position: {x: 0, y: 270}, data: {label: 'On Enter', pulse: 0.3}},
+            sel('selZ', 'Zone', 240, 270)]);
+          S.flowEdges.set([
+            {id: 'e-imp1-selB', source: 'imp1', target: 'selB'},
+            {id: 'e-selT-imp1.filter', source: 'selT', target: 'imp1', targetHandle: 'filter'},
+            {id: 'e-imp1.other-dist1.a', source: 'imp1', sourceHandle: 'other', target: 'dist1', targetHandle: 'a'},
+            {id: 'e-selB2-dist1.b', source: 'selB2', target: 'dist1', targetHandle: 'b'},
+            {id: 'e-oe1-selZ', source: 'oe1', target: 'selZ'},
+            {id: 'e-selD-oe1.filter', source: 'selD', target: 'oe1', targetHandle: 'filter'}]); })()
+    setup:
+      - {eval: "window.__stores.dockMenu.dockTab('flow'); window.__stores.bottomDock.bottomDockActive.set('flow'); window.__stores.bottomDock.dockHeight.set(560)"}
+      - {wait: 2000}
+      - {eval: "window.__flowViewport?.fitView({padding: 0.12, maxZoom: 0.9, duration: 0})"}
+      - {wait: 800}
+    crop: {union: [{selector: '.svelte-flow__node[data-id="selT"]'}, {selector: '.svelte-flow__node[data-id="dist1"]'}, {selector: '.svelte-flow__node[data-id="selZ"]'}, {selector: '.svelte-flow__node[data-id="selD"]'}], pad: 28}
+    annotate:
+      - {n: 1, at: {selector: '.svelte-flow__node[data-id="selT"]'}, shape: box, badge: b, key: '**only with**: an Object Selector wired here makes the node fire only when the other body is that object.'}
+      - {n: 2, at: {selector: '.svelte-flow__node[data-id="dist1"]'}, shape: box, badge: b, key: '**other** carries the body that was hit — here into a Distance node.'}

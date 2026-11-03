@@ -1,13 +1,28 @@
 {
  "id": "pop-out-window",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.492Z",
+ "spec": "c0f96afe467f",
+ "dpr": 2,
+ "shotAt": "2026-11-03T15:02:13.068Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/code-workspace/pop-out-window.png",
- "width": 688,
- "height": 640,
+ "uiHits": [
+  "div.pw-head",
+  "div#code-ws-popped.code-ws",
+  "button#code-ws-toggle-left.ui-button-quiet",
+  "span.code-tab-name",
+  "span.code-muted",
+  "div.tp-noscrollbar",
+  "div.cm-gutter",
+  "div.flex",
+  "span.code-tab-close",
+  "div.cm-line",
+  "div.cm-content",
+  "div#code-ws-tabs.code-strip"
+ ],
+ "width": 1376,
+ "height": 1280,
  "crop": {
   "x": 0,
   "y": 0,
@@ -15,9 +30,14 @@
   "h": 640
  },
  "cut": [],
- "fade": [
-  "r"
- ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 1184.59375,
+   "y": 76,
+   "w": 183.40625,
+   "h": 40
+  }
+ },
  "kind": "ui"
 }

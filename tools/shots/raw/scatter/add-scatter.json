@@ -1,23 +1,54 @@
 {
  "id": "add-scatter",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.593Z",
+ "spec": "5efbe106370a",
+ "dpr": 2,
+ "shotAt": "2026-11-03T15:07:33.790Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/scatter/add-scatter.png",
- "width": 688,
- "height": 720,
+ "uiHits": [
+  "button.sb-tab",
+  "header.wc-head",
+  "div.ins-filter",
+  "div#inspector.tp-ui",
+  "span.sb-tab-label",
+  "h2#wc-title-c1.wc-title",
+  "label.tp-ui",
+  "button#bubbles-add.tp-ui",
+  "button#pour-add.tp-ui",
+  "span.sec-title",
+  "div.flex",
+  "span.ts-label"
+ ],
+ "width": 1376,
+ "height": 1440,
  "crop": {
-  "x": 592,
-  "y": 0,
+  "x": 729,
+  "y": 76,
   "w": 688,
   "h": 720
  },
- "cut": [],
- "fade": [
-  "l"
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
  ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 153.80937159735163,
+   "y": 552.8625739880151,
+   "w": 372.8310774442207,
+   "h": 382.6675844082131
+  },
+  "2": {
+   "x": 828,
+   "y": 810.4375,
+   "w": 262.75,
+   "h": 321.625
+  }
+ },
  "kind": "ui"
 }

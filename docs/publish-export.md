@@ -49,10 +49,14 @@ yours in [Your games & stats](community.md#your-games-stats).
 
 ## Export: a game in a zip
 
-![The Export tab with the itch.io preset selected](img/publish-export/export-tab.webp){ .shot .fade-r width="688" height="550" loading=lazy }
+![The Export tab of Publish / Export with the itch.io preset selected: the three presets itch.io, Static host and Embed, the title Mini Golf, the viewport size, the cover image and CDN boxes, the size estimate, the itch.io upload notes and Build & download zip. 1: the itch.io preset.](img/publish-export/export-tab.webp){ .shot width="647" height="724" loading=lazy }
 /// caption
 The Export tab with the itch.io preset selected.
 ///
+
+<div class="shot-key" markdown>
+1. The **itch.io** **preset**: a zip with `index.html` at its root, and the viewport size to type into itch.io.
+</div>
 
 1. Open the scene, then **Menu ▸ Publish / Export ▸ Export**.
 2. Pick a **preset**:
@@ -140,10 +144,15 @@ the submission for you, and works without signing in:
 5. **Copy the gallery.json row** copies the row and opens `gallery.json` for editing: add it to the `entries` list on the
    same pull request.
 
-![The Community gallery tab after Build submission zip: the two GitHub steps](img/publish-export/gallery-tab.webp){ .shot .fade-r .fade-b width="688" height="700" loading=lazy }
+![The Community gallery tab after Build submission zip: the card's fields above, then the line that the submission zip was downloaded and the two GitHub steps, Upload the folder on GitHub and Copy the gallery.json row, with the row itself below. 1: Upload the folder on GitHub. 2: Copy the gallery.json row.](img/publish-export/gallery-tab.webp){ .shot width="647" height="739" loading=lazy }
 /// caption
 The Community gallery tab after Build submission zip.
 ///
+
+<div class="shot-key" markdown>
+1. **Upload the folder on GitHub** (**step one**): drag in the three files; GitHub forks the repository and offers *Propose changes*.
+2. **Copy the gallery.json row** (**step two**): add it to the `entries` list on the same pull request.
+</div>
 
 The app never sends anything itself; every step on GitHub is your click. Before you start, the tab checks the same rules
 as the gallery's own checks: the scene at most 25 MB, the thumbnail at most 512 KB, a license, a title of at most 80
@@ -180,10 +189,14 @@ for: Full quality / For Quest / web**. Your last choice is remembered on this de
 
 The full-quality file is never overwritten by accident: the Quest file has its own name.
 
-![Save options with Optimize for: Full quality or For Quest / web](img/publish-export/save-options-optimize-for.webp){ .shot width="544" height="816" loading=lazy }
+![Save options: Save as Project or Scene, then Optimize for with Full quality or For Quest / web, then what a scene file includes (Assets, Imported packs, Flow graph), with Cancel and Save at the bottom. 1: the Optimize for choice.](img/publish-export/save-options-optimize-for.webp){ .shot width="520" height="792" loading=lazy }
 /// caption
 Save options with Optimize for.
 ///
+
+<div class="shot-key" markdown>
+1. **Optimize for**: **Full quality**, or **For Quest / web** — KTX2 textures at most 2048 px and an LOD chain, much smaller.
+</div>
 
 Measured on a 65,024-triangle model with a 4096 px texture:
 

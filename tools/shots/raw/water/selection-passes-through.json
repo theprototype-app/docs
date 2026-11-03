@@ -1,23 +1,55 @@
 {
  "id": "selection-passes-through",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.614Z",
+ "spec": "ae92cbf795d0",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:53:08.204Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/water/selection-passes-through.png",
- "width": 688,
- "height": 720,
- "crop": {
-  "x": 592,
-  "y": 0,
-  "w": 688,
-  "h": 720
- },
- "cut": [],
- "fade": [
-  "l"
+ "uiHits": [
+  "svg.lucide",
+  "p.hud-cell",
+  "button#budget-chip.bc-main",
+  "span.bc-target",
+  "span#budget-chip-percent.bc-pct",
+  "button#budget-chip-target.bc-caret",
+  "div#inspector.tp-ui",
+  "div.slider",
+  "input.svelte-1xmlgu5",
+  "span.appear",
+  "div.wrapper",
+  "label.pr-label"
  ],
- "anchors": {},
+ "width": 1348,
+ "height": 1170,
+ "crop": {
+  "x": 767,
+  "y": 315,
+  "w": 674,
+  "h": 585
+ },
+ "cut": [
+  "l",
+  "t"
+ ],
+ "fade": [
+  "l",
+  "t"
+ ],
+ "anchors": {
+  "1": {
+   "x": 1238,
+   "y": 748.5625,
+   "w": 80,
+   "h": 48
+  },
+  "2": {
+   "x": 635.4375,
+   "y": 211.40625,
+   "w": 271.625,
+   "h": 45.875
+  }
+ },
  "kind": "ui"
 }

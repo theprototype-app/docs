@@ -1,21 +1,46 @@
 {
  "id": "phone-pedals",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.587Z",
+ "spec": "509915694d84",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:47:39.489Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/race/phone-pedals.png",
- "width": 480,
- "height": 1000,
+ "uiHits": [
+  "button#touch-btn-brake.touch-btn",
+  "button#touch-btn-reset.touch-btn",
+  "button#touch-btn-gas.touch-btn"
+ ],
+ "width": 780,
+ "height": 1792,
  "crop": {
   "x": 0,
   "y": 0,
-  "w": 480,
-  "h": 1000
+  "w": 390,
+  "h": 896
  },
  "cut": [],
  "fade": [],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 56,
+   "y": 1448,
+   "w": 256,
+   "h": 256
+  },
+  "2": {
+   "x": 473.34375,
+   "y": 1453.34375,
+   "w": 116,
+   "h": 116
+  },
+  "3": {
+   "x": 428,
+   "y": 1552,
+   "w": 296,
+   "h": 152
+  }
+ },
  "kind": "ui"
 }

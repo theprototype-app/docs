@@ -19,11 +19,6 @@ Appends, replaces or clears rows in a HUD List element on a pulse — a log, a c
 | op | append | `append` (add the row at the end), `set` (replace every row with this one), `clear` (empty the list) |
 | text | (empty) | the row when nothing is wired into **text** — a fixed line such as `GAME OVER` |
 
-!!! warning "Known problem in 1.42"
-    The card does not draw its **trigger** and **text** sockets yet, so this node cannot be wired in the node editor.
-    For a list that fills itself from per-player numbers, use a [Leaderboard](leaderboard.md); for fixed rows, type them
-    on the List element in the HUD editor.
-
 ## How the rows behave
 
 - **Once per pulse.** The node acts when a new pulse arrives, never every frame, so `append` adds one row per press.
@@ -50,7 +45,7 @@ A press log:
 3. Wire HUD Button → HUD Rows' **trigger**.
 4. Each press adds a *Bell rung* row to the list, on every player's screen.
 
-![The example's nodes: a HUD Button and a HUD Rows node set to append the row "Bell rung" — in 1.42 the HUD Rows card has no trigger socket to wire into](../img/nodes-hudrows/hudrows.webp){ .shot width="688" height="325" loading=lazy }
+![A HUD Button wired into the trigger of a HUD Rows node set to append the row "Bell rung" to a list](../img/nodes-hudrows/hudrows.webp){ .shot width="402" height="213" loading=lazy }
 /// caption
-The example's nodes.
+Each press adds a row to the list.
 ///

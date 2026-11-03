@@ -5,41 +5,72 @@ defaults:
   dpr: 2
   format: webp
 shots:
-- id: mini-golf
-  replaces: img/game-rules/mini-golf.png
-  alt: 'Part of Mini Golf''s Main graph at full size: the rules node''s outputs, such as stroke, outOfBounds and holeSunk,
-    wired to sounds and bursts, with the Code link to the engine below.'
-  caption: Part of Mini Golf's Main graph at full size.
-  crop:
-    rect:
-    - 620
-    - 420
-    - 688
-    - 560
-  fade:
-  - l
-  - r
-  - t
-  - b
-  kind: ui
-  dpr: 1
-  from: img/game-rules/mini-golf.png
-- id: football
-  replaces: img/game-rules/football.png
-  alt: 'Part of Football''s Main graph at full size: the Match Rules settings node, the Football rules behaviour, and the
-    Code link to the engine.'
-  caption: Part of Football's Main graph at full size.
-  crop:
-    rect:
-    - 620
-    - 420
-    - 688
-    - 560
-  fade:
-  - l
-  - r
-  - t
-  - b
-  kind: ui
-  dpr: 1
-  from: img/game-rules/football.png
+  # 83-batch3: the shipped game from Templates ▸ Games, its Main graph in the bottom dock at full height, the view
+  # set with the flow pane's own setViewport (Nodes.svelte's window.__flowViewport) so the crop lands on flow coords
+  - id: mini-golf
+    replaces: img/game-rules/mini-golf.png
+    scene:
+      - eval: >-
+          (async () => { const S = window.__stores, D = window.__docs; await S.sceneTemplates.loadTemplatesIndex();
+          const g = D.get(S.sceneTemplates.games).find((x) => x.slug === 'mini-golf'); await S.sceneTemplates.loadRemoteScene(g, {}); })()
+      - {wait: 9000}
+    setup:
+      - {eval: "const S = window.__stores; S.dockMenu.dockTab('flow'); S.bottomDock.bottomDockActive.set('flow'); S.bottomDock.dockHeight.set(720)"}
+      - {wait: 2500}
+      # zoom 1 ("at full size"), the Code link 300 px in and 450 px down the pane
+      - eval: >-
+          const n = window.__docs.get(window.__stores.flowNodes).find((x) => x.type === 'coderef');
+          window.__flowViewport.setViewport({ x: 300 - n.position.x, y: 450 - n.position.y, zoom: 1 })
+      - {wait: 1500}
+    # the lower half of the rules node, the Code link under it, the left edge of the Hole feedback group
+    crop:
+      union:
+        - {selector: '.svelte-flow__node-coderef', offset: [-30, -400]}
+        - {selector: '.svelte-flow__node-coderef', offset: [490, 10]}
+    fade: [t, r]
+    kind: ui
+    alt: >-
+      Part of Mini Golf's Main graph at full size: the lower half of the Mini Golf rules node, its outputs such as
+      stroke, outOfBounds and holeSunk wired into the Hole feedback group's sounds and bursts, and the Code link node
+      below it. 1: a moment output, holeSunk. 2: the rules node's Code button. 3: the Code link to the engine.
+    caption: Part of Mini Golf's Main graph at full size.
+    annotate:
+      # the output row spans the node's width (its name is right-aligned): box the name and its socket only
+      - {n: 1, at: {union: [{selector: '.behaviour-out[data-socket="holeSunk"] > span'}, {selector: '.behaviour-out[data-socket="holeSunk"] .svelte-flow__handle'}]}, shape: box, pad: 3, label: a moment, badge: r, key: 'A **moment** ⚡ output — *holeSunk*, the ball in the cup — wired into a banner, a burst and a sound.'}
+      - {n: 2, at: {selector: '.behaviour-code'}, shape: box, pad: 3, label: the rules, badge: b, key: '**Code** opens **the rules** in the code workspace; edit them and press <kbd>Ctrl</kbd>+<kbd>S</kbd>.'}
+      - {n: 3, at: {selector: '.svelte-flow__node-coderef'}, shape: box, label: the engine, badge: r, key: 'The **Code link** opens **the engine** (`minigolf/module.js`) read-only: the ball, the putting, the VR putter.'}
+  - id: football
+    replaces: img/game-rules/football.png
+    # Football needs one module: the load waits on the modules dialog, so it is started without an await and the
+    # dialog's Install is pressed
+    scene:
+      - eval: >-
+          window.__wl = 'running'; (async () => { const S = window.__stores, D = window.__docs; await S.sceneTemplates.loadTemplatesIndex();
+          const g = D.get(S.sceneTemplates.games).find((x) => x.slug === 'football'); await S.sceneTemplates.loadRemoteScene(g, {origin: 'games'}); })(); 0
+      - {wait: 6000}
+      - {clickText: Install (1)}
+      - {wait: 20000}
+    setup:
+      - {eval: "const S = window.__stores; S.dockMenu.dockTab('flow'); S.bottomDock.bottomDockActive.set('flow'); S.bottomDock.dockHeight.set(720)"}
+      - {wait: 2500}
+      # Match Rules (240, 40), the rules node (760, -22) and the Code link (760, 394) at 0.85: all three whole in 688 px
+      - {eval: "window.__flowViewport.setViewport({ x: 40, y: 60, zoom: 0.85 })"}
+      - {wait: 1500}
+    crop:
+      union:
+        - {selector: '.svelte-flow__node-fbrules'}
+        - {selector: '.svelte-flow__node-behaviour'}
+        - {selector: '.svelte-flow__node-coderef'}
+      pad: 12
+    fade: []
+    kind: ui
+    alt: >-
+      Part of Football's Main graph: the Match Rules settings node with mode, winBy, goalsToWin, matchSeconds, serve
+      and tie on the left, the Pitch node, the Football rules behaviour with its red, blue and goal outputs, and the
+      Code link to the engine below it. 1: Match Rules, the settings. 2: the rules node's Code button. 3: the Code link
+      to the engine.
+    caption: Part of Football's Main graph.
+    annotate:
+      - {n: 1, at: {selector: '.svelte-flow__node-fbrules'}, shape: box, label: settings, badge: r, key: '**Match Rules**, the game''s **settings** node: goals to win, match seconds, serve, own goals, tie.'}
+      - {n: 2, at: {selector: '.behaviour-code'}, shape: box, pad: 3, label: the rules, badge: b, key: '**Code** opens *Football rules*, **the rules** themselves, in the code workspace.'}
+      - {n: 3, at: {selector: '.svelte-flow__node-coderef'}, shape: box, label: the engine, badge: l, key: 'The **Code link** opens **the engine** (`football/module.js`) read-only: the ball, the gates, the kick-off.'}

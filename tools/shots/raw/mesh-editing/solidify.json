@@ -1,23 +1,56 @@
 {
  "id": "solidify",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.554Z",
+ "spec": "5b4bb5af1a36",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:32:43.760Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/mesh-editing/solidify.png",
- "width": 688,
- "height": 900,
- "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 688,
-  "h": 900
- },
- "cut": [],
- "fade": [
-  "r"
+ "uiHits": [
+  "div.toolbox-header",
+  "div.toolbox-body",
+  "button#mesh-gran-quad.px-2",
+  "button#mesh-sel-loop.tbx-cmd",
+  "svg.lucide",
+  "span.tbx-label",
+  "span.dn-label",
+  "button#mesh-sec-gizmo.tbx-sec-head",
+  "label.flex",
+  "button#mesh-gran-face.px-2",
+  "button#mesh-sel-grow.tbx-cmd",
+  "button#mesh-op-extrude.tbx-btn"
  ],
- "anchors": {},
+ "width": 1376,
+ "height": 1280,
+ "crop": {
+  "x": 500,
+  "y": 56,
+  "w": 688,
+  "h": 640
+ },
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
+ "fade": [
+  "b"
+ ],
+ "anchors": {
+  "1": {
+   "x": 416,
+   "y": 518.338156691394,
+   "w": 48,
+   "h": 48
+  },
+  "2": {
+   "x": 1060.25,
+   "y": 930,
+   "w": 175.75,
+   "h": 40.8125
+  }
+ },
  "kind": "ui"
 }

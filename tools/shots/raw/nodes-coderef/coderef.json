@@ -1,18 +1,31 @@
 {
  "id": "coderef",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.562Z",
+ "spec": "03946b4ee384",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:56:30.897Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/nodes/coderef.png",
- "width": 282,
- "height": 231,
+ "uiHits": [
+  "div.svelte-flow__pane",
+  "div.svelte-flow__node",
+  "div.node-card",
+  "div.flex",
+  "div.relative",
+  "span.h-2",
+  "span.text-xs",
+  "span.truncate",
+  "button.nodrag",
+  "span.overflow-hidden"
+ ],
+ "width": 364,
+ "height": 290,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 282,
-  "h": 231
+  "x": 208,
+  "y": 284,
+  "w": 182,
+  "h": 145
  },
  "cut": [],
  "fade": [],

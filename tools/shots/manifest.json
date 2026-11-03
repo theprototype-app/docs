@@ -37,24 +37,26 @@
   "img/ai-assistant/assistant-mic.webp": {
    "page": "ai-assistant",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 500,
    "height": 440,
-   "badges": 0,
+   "badges": 1,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.463Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:37:36.257Z"
   },
   "img/ai-assistant/voice-typing-settings.webp": {
    "page": "ai-assistant",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 248,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.464Z"
+   "dpr": 2,
+   "width": 383,
+   "height": 500,
+   "badges": 2,
+   "labels": [
+    "provider"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:32:53.346Z"
   },
   "img/ai-build-with-an-agent/agent-activity.webp": {
    "page": "ai-build-with-an-agent",
@@ -105,35 +107,42 @@
   "img/architecture/door-open.webp": {
    "page": "architecture",
    "kind": "view",
-   "dpr": 1,
-   "width": 1126,
+   "dpr": 2,
+   "width": 1080,
    "height": 600,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.466Z"
+   "badges": 2,
+   "labels": [
+    "click opens",
+    "casement"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:07:45.555Z"
   },
   "img/architecture/house.webp": {
    "page": "architecture",
    "kind": "view",
-   "dpr": 1,
-   "width": 1126,
+   "dpr": 2,
+   "width": 1080,
    "height": 600,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.468Z"
+   "badges": 3,
+   "labels": [
+    "door",
+    "window",
+    "spiral stair"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:07:11.878Z"
   },
   "img/architecture/wall-geometry.webp": {
    "page": "architecture",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 760,
-   "badges": 0,
+   "dpr": 2,
+   "width": 351,
+   "height": 456,
+   "badges": 3,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.469Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:37:49.747Z"
   },
   "img/avatars/characters.webp": {
    "page": "avatars",
@@ -185,10 +194,13 @@
    "dpr": 2,
    "width": 384,
    "height": 448,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.480Z"
+   "badges": 2,
+   "labels": [
+    "where from",
+    "pin it"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:38:29.148Z"
   },
   "img/building-in-vr/asset-browser-placing.webp": {
    "page": "building-in-vr",
@@ -196,10 +208,10 @@
    "dpr": 2,
    "width": 384,
    "height": 448,
-   "badges": 0,
+   "badges": 2,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.481Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:38:55.744Z"
   },
   "img/building-in-vr/logic-pad.webp": {
    "page": "building-in-vr",
@@ -207,10 +219,13 @@
    "dpr": 2,
    "width": 384,
    "height": 448,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-29T08:56:54.343Z"
+   "badges": 2,
+   "labels": [
+    "change it",
+    "the node"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:39:41.533Z"
   },
   "img/building-in-vr/logic-panel.webp": {
    "page": "building-in-vr",
@@ -218,21 +233,24 @@
    "dpr": 2,
    "width": 640,
    "height": 400,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-29T08:56:54.343Z"
+   "badges": 2,
+   "labels": [
+    "which graph",
+    "add a node"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:39:16.476Z"
   },
   "img/building-in-vr/measure-arrange.webp": {
    "page": "building-in-vr",
-   "kind": "ui",
+   "kind": "view",
    "dpr": 2,
-   "width": 384,
-   "height": 384,
+   "width": 740,
+   "height": 600,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.482Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:33:12.147Z"
   },
   "img/camera/camera-object.webp": {
    "page": "camera",
@@ -304,13 +322,15 @@
   "img/camera/sky-meadow.webp": {
    "page": "camera",
    "kind": "view",
-   "dpr": 1,
-   "width": 1280,
-   "height": 720,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.489Z"
+   "dpr": 2,
+   "width": 1100,
+   "height": 600,
+   "badges": 1,
+   "labels": [
+    "sky reflected"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:33:31.875Z"
   },
   "img/camera/view-section.webp": {
    "page": "camera",
@@ -365,167 +385,184 @@
   "img/checkpoints/large-scene-notice.webp": {
    "page": "checkpoints",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
-   "height": 500,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.489Z"
+   "height": 460,
+   "badges": 1,
+   "labels": [
+    "keep them on"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:40:33.512Z"
   },
   "img/checkpoints/timeline-compare.webp": {
    "page": "checkpoints",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 600,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.490Z"
+   "dpr": 2,
+   "width": 647,
+   "height": 739,
+   "badges": 2,
+   "labels": [
+    "swipe",
+    "what changed"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:33:50.791Z"
   },
   "img/code-workspace/editing-together.webp": {
    "page": "code-workspace",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
-   "height": 285,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.490Z"
+   "height": 340,
+   "badges": 1,
+   "labels": [
+    "who is here"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:41:41.068Z"
   },
   "img/code-workspace/files-menu.webp": {
    "page": "code-workspace",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
-   "height": 450,
-   "badges": 0,
+   "height": 640,
+   "badges": 2,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-29T08:56:54.344Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:35:01.472Z"
   },
   "img/code-workspace/parse-error.webp": {
    "page": "code-workspace",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
    "height": 340,
-   "badges": 0,
+   "badges": 1,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.491Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:41:06.323Z"
   },
   "img/code-workspace/player-code.webp": {
    "page": "code-workspace",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
    "height": 470,
-   "badges": 0,
+   "badges": 1,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.492Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:35:17.340Z"
   },
   "img/code-workspace/pop-out-window.webp": {
    "page": "code-workspace",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
    "height": 640,
-   "badges": 0,
+   "badges": 1,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.492Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T15:02:13.068Z"
   },
   "img/code-workspace/script-tab.webp": {
    "page": "code-workspace",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
-   "height": 340,
-   "badges": 0,
+   "height": 380,
+   "badges": 1,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.493Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T15:01:54.655Z"
   },
   "img/code-workspace/sidebars.webp": {
    "page": "code-workspace",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
-   "height": 650,
-   "badges": 0,
+   "height": 520,
+   "badges": 3,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.493Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:34:44.351Z"
   },
   "img/colliders/contact-filter.webp": {
    "page": "colliders",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 420,
-   "badges": 0,
+   "dpr": 2,
+   "width": 659,
+   "height": 361,
+   "badges": 2,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.494Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:36:08.484Z"
   },
   "img/colliders/decomposed.webp": {
    "page": "colliders",
    "kind": "view",
-   "dpr": 1,
-   "width": 1126,
-   "height": 569,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.495Z"
+   "dpr": 2,
+   "width": 1000,
+   "height": 600,
+   "badges": 1,
+   "labels": [
+    "convex piece"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:35:53.227Z"
   },
   "img/colliders/exact-mesh.webp": {
    "page": "colliders",
    "kind": "view",
-   "dpr": 1,
-   "width": 1126,
-   "height": 569,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.495Z"
+   "dpr": 2,
+   "width": 1000,
+   "height": 600,
+   "badges": 1,
+   "labels": [
+    "opening kept"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:43:29.380Z"
   },
   "img/colliders/physics-section.webp": {
    "page": "colliders",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
-   "height": 780,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.495Z"
+   "height": 660,
+   "badges": 3,
+   "labels": [
+    "the hull"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T15:06:03.328Z"
   },
   "img/community/pause-menu-heart.webp": {
    "page": "community",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 470,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.495Z"
+   "dpr": 2,
+   "width": 500,
+   "height": 593,
+   "badges": 1,
+   "labels": [
+    "liked"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:44:52.630Z"
   },
   "img/community/play-link-heart.webp": {
    "page": "community",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 450,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.496Z"
+   "dpr": 2,
+   "width": 640,
+   "height": 420,
+   "badges": 1,
+   "labels": [
+    "like it"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:36:28.834Z"
   },
   "img/community/your-games.webp": {
    "page": "community",
@@ -821,24 +858,24 @@
   "img/debugger/paused-dark.webp": {
    "page": "debugger",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 300,
-   "height": 408,
-   "badges": 0,
+   "height": 341,
+   "badges": 1,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.506Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:45:10.880Z"
   },
   "img/debugger/paused-light.webp": {
    "page": "debugger",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 300,
-   "height": 408,
-   "badges": 0,
+   "height": 341,
+   "badges": 1,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.507Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:45:29.102Z"
   },
   "img/edit-in-blender/card.webp": {
    "page": "edit-in-blender",
@@ -857,211 +894,241 @@
   "img/explorer/place-box-ghost.webp": {
    "page": "explorer",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 560,
-   "badges": 0,
+   "dpr": 2,
+   "width": 600,
+   "height": 360,
+   "badges": 1,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.507Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:23:33.717Z"
   },
   "img/explorer/place-delete-cache.webp": {
    "page": "explorer",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 340,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.509Z"
+   "dpr": 2,
+   "width": 430,
+   "height": 268,
+   "badges": 1,
+   "labels": [
+    "frees it"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:46:17.733Z"
   },
   "img/explorer/place-model-ghost.webp": {
    "page": "explorer",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 560,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.510Z"
+   "dpr": 2,
+   "width": 600,
+   "height": 360,
+   "badges": 1,
+   "labels": [
+    "the model"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:24:01.176Z"
   },
   "img/explorer/place-settings.webp": {
    "page": "explorer",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 280,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.510Z"
+   "dpr": 2,
+   "width": 674,
+   "height": 277,
+   "badges": 1,
+   "labels": [
+    "what shows"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:08:42.752Z"
   },
   "img/fluids/fluid-emitter.webp": {
    "page": "fluids",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
+   "dpr": 2,
+   "width": 560,
    "height": 720,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.513Z"
+   "badges": 2,
+   "labels": [
+    "stream",
+    "rate"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:36:48.348Z"
   },
   "img/fluids/water-works.webp": {
    "page": "fluids",
    "kind": "view",
-   "dpr": 1,
-   "width": 1126,
-   "height": 569,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.514Z"
+   "dpr": 2,
+   "width": 1120,
+   "height": 600,
+   "badges": 3,
+   "labels": [
+    "scoop wheel",
+    "head-race",
+    "fountain"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:57:15.281Z"
   },
   "img/free-assets/browser-materials.webp": {
    "page": "free-assets",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 640,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.515Z"
+   "dpr": 2,
+   "width": 576,
+   "height": 616,
+   "badges": 2,
+   "labels": [
+    "name or tag"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:47:20.493Z"
   },
   "img/free-assets/explorer-credit.webp": {
    "page": "free-assets",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 400,
-   "badges": 0,
+   "dpr": 2,
+   "width": 230,
+   "height": 245,
+   "badges": 1,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.515Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:48:42.719Z"
   },
   "img/free-assets/material-applied.webp": {
    "page": "free-assets",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 800,
-   "badges": 0,
+   "dpr": 2,
+   "width": 311,
+   "height": 244,
+   "badges": 2,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.516Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T15:06:41.458Z"
   },
   "img/free-assets/phone.webp": {
    "page": "free-assets",
    "kind": "ui",
-   "dpr": 2.9,
+   "dpr": 2,
    "width": 390,
-   "height": 550,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.516Z"
+   "height": 560,
+   "badges": 1,
+   "labels": [
+    "phone default"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:10:55.743Z"
   },
   "img/game-rules/football.webp": {
    "page": "game-rules",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 560,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.517Z"
+   "dpr": 2,
+   "width": 679,
+   "height": 501,
+   "badges": 3,
+   "labels": [
+    "settings",
+    "the rules",
+    "the engine"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:49:48.122Z"
   },
   "img/game-rules/mini-golf.webp": {
    "page": "game-rules",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 560,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.519Z"
+   "dpr": 2,
+   "width": 670,
+   "height": 555,
+   "badges": 3,
+   "labels": [
+    "a moment",
+    "the rules",
+    "the engine"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:38:13.373Z"
   },
   "img/hud-editor/hud-editor.webp": {
    "page": "hud-editor",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 638,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.520Z"
+   "dpr": 2,
+   "width": 595,
+   "height": 593,
+   "badges": 2,
+   "labels": [
+    "selected",
+    "snapping"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:57:41.642Z"
   },
   "img/image-editor/crop-desktop-light.webp": {
    "page": "image-editor",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 700,
-   "badges": 0,
+   "dpr": 2,
+   "width": 680,
+   "height": 560,
+   "badges": 3,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.520Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:11:22.443Z"
   },
   "img/image-editor/docked.webp": {
    "page": "image-editor",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
-   "height": 337,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.521Z"
+   "height": 349,
+   "badges": 1,
+   "labels": [
+    "docked"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:57:57.291Z"
   },
   "img/image-editor/editor-desktop.webp": {
    "page": "image-editor",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 700,
-   "badges": 0,
+   "dpr": 2,
+   "width": 680,
+   "height": 780,
+   "badges": 3,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.521Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:30:12.517Z"
   },
   "img/image-editor/editor-phone.webp": {
    "page": "image-editor",
    "kind": "ui",
    "dpr": 2,
    "width": 390,
-   "height": 844,
-   "badges": 0,
+   "height": 896,
+   "badges": 2,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.521Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:50:47.687Z"
   },
   "img/image-editor/versions-desktop.webp": {
    "page": "image-editor",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 700,
-   "badges": 0,
+   "dpr": 2,
+   "width": 680,
+   "height": 560,
+   "badges": 1,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.521Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:30:28.863Z"
   },
   "img/import-optimize/settings-import.webp": {
    "page": "import-optimize",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 700,
-   "badges": 0,
+   "dpr": 2,
+   "width": 678,
+   "height": 543,
+   "badges": 2,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.522Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:51:00.426Z"
   },
   "img/index/quick-start-add.webp": {
    "page": "index",
@@ -1302,695 +1369,738 @@
   "img/loading/back-to-start-view.webp": {
    "page": "loading",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
-   "height": 400,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.543Z"
+   "height": 140,
+   "badges": 1,
+   "labels": [
+    "fly back"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T15:03:34.128Z"
   },
   "img/loading/hold-setting.webp": {
    "page": "loading",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 800,
-   "badges": 0,
+   "dpr": 2,
+   "width": 315,
+   "height": 279,
+   "badges": 1,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.544Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:52:08.990Z"
   },
   "img/loading/modern-failed.webp": {
    "page": "loading",
    "kind": "ui",
-   "dpr": 1,
-   "width": 640,
-   "height": 370,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.544Z"
+   "dpr": 2,
+   "width": 686,
+   "height": 652,
+   "badges": 2,
+   "labels": [
+    "why it failed",
+    "retry"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:39:25.739Z"
   },
   "img/loading/modern-loading.webp": {
    "page": "loading",
-   "kind": "ui",
-   "dpr": 1,
-   "width": 380,
-   "height": 300,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.544Z"
+   "kind": "view",
+   "dpr": 2,
+   "width": 460,
+   "height": 360,
+   "badges": 1,
+   "labels": [
+    "arrived so far"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:39:10.253Z"
   },
   "img/lod/lod-distance.webp": {
    "page": "lod",
    "kind": "ui",
-   "dpr": 1,
-   "width": 307,
-   "height": 152,
-   "badges": 0,
+   "dpr": 2,
+   "width": 311,
+   "height": 157,
+   "badges": 2,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.544Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:31:08.836Z"
   },
   "img/main-graph/properties.webp": {
    "page": "main-graph",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
-   "height": 600,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.545Z"
+   "height": 330,
+   "badges": 2,
+   "labels": [
+    "selected"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:40:09.904Z"
   },
   "img/materials/presets-edit.webp": {
    "page": "materials",
    "kind": "ui",
-   "dpr": 1,
-   "width": 304,
-   "height": 511,
-   "badges": 0,
+   "dpr": 2,
+   "width": 311,
+   "height": 250,
+   "badges": 2,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.546Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:31:38.465Z"
   },
   "img/materials/presets-wood.webp": {
    "page": "materials",
    "kind": "ui",
-   "dpr": 1,
-   "width": 304,
-   "height": 450,
-   "badges": 0,
+   "dpr": 2,
+   "width": 311,
+   "height": 214,
+   "badges": 2,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.546Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:31:24.002Z"
   },
   "img/measure-align/arrange.webp": {
    "page": "measure-align",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 900,
-   "badges": 0,
+   "dpr": 2,
+   "width": 311,
+   "height": 379,
+   "badges": 2,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.546Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:32:17.764Z"
   },
   "img/measure-align/measure-chain.webp": {
    "page": "measure-align",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
    "height": 500,
-   "badges": 0,
+   "badges": 3,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.547Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:31:50.496Z"
   },
   "img/measure-align/measure-edit.webp": {
    "page": "measure-align",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
-   "height": 900,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.547Z"
+   "height": 833,
+   "badges": 2,
+   "labels": [
+    "picked up"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T15:06:54.489Z"
   },
   "img/measure-align/measure-items.webp": {
    "page": "measure-align",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
    "height": 500,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.548Z"
+   "badges": 2,
+   "labels": [
+    "labels step aside"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:13:37.643Z"
   },
   "img/mesh-editing/boolean-subtract.webp": {
    "page": "mesh-editing",
    "kind": "view",
-   "dpr": 1,
-   "width": 1232,
-   "height": 639,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.548Z"
+   "dpr": 2,
+   "width": 1100,
+   "height": 600,
+   "badges": 1,
+   "labels": [
+    "cut out"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:15:21.026Z"
   },
   "img/mesh-editing/edge-tools-slide.webp": {
    "page": "mesh-editing",
    "kind": "ui",
-   "dpr": 1,
-   "width": 212,
-   "height": 812,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.549Z"
+   "dpr": 2,
+   "width": 322,
+   "height": 440,
+   "badges": 2,
+   "labels": [
+    "−1 to +1"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:24:25.853Z"
   },
   "img/mesh-editing/knife-polyline.webp": {
    "page": "mesh-editing",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
-   "height": 900,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.552Z"
+   "height": 700,
+   "badges": 2,
+   "labels": [
+    "corners so far"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:52:40.090Z"
   },
   "img/mesh-editing/live-symmetry.webp": {
    "page": "mesh-editing",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
-   "height": 900,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.553Z"
+   "height": 700,
+   "badges": 2,
+   "labels": [
+    "mirrored edits"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:53:07.867Z"
   },
   "img/mesh-editing/mitered-bevel.webp": {
    "page": "mesh-editing",
    "kind": "view",
-   "dpr": 1,
-   "width": 1232,
-   "height": 639,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.553Z"
+   "dpr": 2,
+   "width": 760,
+   "height": 520,
+   "badges": 1,
+   "labels": [
+    "mitered corner"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:52:53.969Z"
   },
   "img/mesh-editing/solidify.webp": {
    "page": "mesh-editing",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
-   "height": 900,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.554Z"
+   "height": 640,
+   "badges": 2,
+   "labels": [
+    "thick walls"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:32:43.760Z"
   },
   "img/mesh-editing/vertex-tools-bevel.webp": {
    "page": "mesh-editing",
    "kind": "ui",
-   "dpr": 1,
-   "width": 212,
-   "height": 852,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.554Z"
+   "dpr": 2,
+   "width": 322,
+   "height": 440,
+   "badges": 3,
+   "labels": [
+    "rounder",
+    "bulge"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:24:37.906Z"
   },
   "img/modules/core-phone.webp": {
    "page": "modules",
    "kind": "ui",
-   "dpr": 1,
-   "width": 480,
-   "height": 908,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.555Z"
+   "dpr": 2,
+   "width": 390,
+   "height": 896,
+   "badges": 3,
+   "labels": [
+    "its action"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:53:21.601Z"
   },
   "img/node-editor/breadcrumb-siblings.webp": {
    "page": "node-editor",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 337,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.555Z"
+   "dpr": 2,
+   "width": 457,
+   "height": 215,
+   "badges": 2,
+   "labels": [
+    "you are here"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:40:55.896Z"
   },
   "img/node-editor/cheat-sheet.webp": {
    "page": "node-editor",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
    "height": 640,
-   "badges": 0,
+   "badges": 2,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.556Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:40:38.726Z"
   },
   "img/node-editor/group.webp": {
    "page": "node-editor",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
    "height": 420,
-   "badges": 0,
+   "badges": 3,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.557Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T15:03:52.619Z"
   },
   "img/node-editor/tidy-waves-main.webp": {
    "page": "node-editor",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
-   "height": 560,
-   "badges": 0,
+   "height": 480,
+   "badges": 1,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.558Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:41:38.763Z"
   },
   "img/nodes-allplayers/allplayers.webp": {
    "page": "nodes-allplayers",
    "kind": "ui",
-   "dpr": 1.5,
-   "width": 688,
-   "height": 160,
+   "dpr": 2,
+   "width": 622,
+   "height": 347,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.559Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:55:09.028Z"
   },
   "img/nodes-behaviour/behaviour.webp": {
    "page": "nodes-behaviour",
    "kind": "ui",
-   "dpr": 1.5,
-   "width": 688,
-   "height": 148,
+   "dpr": 2,
+   "width": 650,
+   "height": 341,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.560Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:42:13.713Z"
   },
   "img/nodes-camerafollow/camerafollow.webp": {
    "page": "nodes-camerafollow",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 639,
+   "dpr": 2,
+   "width": 622,
+   "height": 613,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.561Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:55:46.941Z"
   },
   "img/nodes-camerarig/camera-rig.webp": {
    "page": "nodes-camerarig",
    "kind": "view",
-   "dpr": 1,
-   "width": 1126,
-   "height": 569,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.561Z"
+   "dpr": 2,
+   "width": 960,
+   "height": 540,
+   "badges": 2,
+   "labels": [
+    "camera",
+    "target"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:42:28.142Z"
   },
   "img/nodes-charcontroller/charcontroller.webp": {
    "page": "nodes-charcontroller",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 411,
+   "dpr": 2,
+   "width": 402,
+   "height": 274,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.562Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:56:16.192Z"
   },
   "img/nodes-coderef/coderef.webp": {
    "page": "nodes-coderef",
    "kind": "ui",
-   "dpr": 1,
-   "width": 282,
-   "height": 231,
+   "dpr": 2,
+   "width": 182,
+   "height": 145,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.562Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:56:30.897Z"
   },
   "img/nodes-delay/delay.webp": {
    "page": "nodes-delay",
    "kind": "ui",
-   "dpr": 1.5,
-   "width": 688,
-   "height": 180,
+   "dpr": 2,
+   "width": 650,
+   "height": 347,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.563Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:42:44.435Z"
   },
   "img/nodes-flowfloat/flowfloat.webp": {
    "page": "nodes-flowfloat",
    "kind": "ui",
-   "dpr": 1.5,
-   "width": 688,
-   "height": 206,
+   "dpr": 2,
+   "width": 622,
+   "height": 216,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.563Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:57:04.914Z"
   },
   "img/nodes-gamepadaxis/gamepadaxis.webp": {
    "page": "nodes-gamepadaxis",
    "kind": "ui",
-   "dpr": 1.5,
-   "width": 688,
-   "height": 220,
+   "dpr": 2,
+   "width": 650,
+   "height": 313,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.564Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:42:59.996Z"
   },
   "img/nodes-gamepadbutton/gamepadbutton.webp": {
    "page": "nodes-gamepadbutton",
    "kind": "ui",
-   "dpr": 1.5,
-   "width": 688,
-   "height": 308,
+   "dpr": 2,
+   "width": 622,
+   "height": 334,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.564Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:57:36.825Z"
   },
   "img/nodes-gametime/gametime.webp": {
    "page": "nodes-gametime",
    "kind": "ui",
-   "dpr": 1.5,
-   "width": 688,
-   "height": 148,
+   "dpr": 2,
+   "width": 650,
+   "height": 243,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.564Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:43:15.342Z"
   },
   "img/nodes-gate/gate-group.webp": {
    "page": "nodes-gate",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 520,
+   "dpr": 2,
+   "width": 339,
+   "height": 440,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.565Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:58:10.507Z"
   },
   "img/nodes-getvariable/getvariable.webp": {
    "page": "nodes-getvariable",
    "kind": "ui",
-   "dpr": 1.5,
-   "width": 688,
-   "height": 148,
+   "dpr": 2,
+   "width": 650,
+   "height": 243,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.566Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:43:30.826Z"
   },
   "img/nodes-hudbar/hudbar.webp": {
    "page": "nodes-hudbar",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 365,
+   "dpr": 2,
+   "width": 402,
+   "height": 264,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.566Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:58:42.144Z"
   },
   "img/nodes-hudinput/hudinput.webp": {
    "page": "nodes-hudinput",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 315,
+   "dpr": 2,
+   "width": 402,
+   "height": 228,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.566Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:58:57.785Z"
   },
   "img/nodes-hudlist/hudlist.webp": {
    "page": "nodes-hudlist",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 487,
+   "dpr": 2,
+   "width": 402,
+   "height": 351,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.567Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:59:13.939Z"
   },
   "img/nodes-hudrows/hudrows.webp": {
    "page": "nodes-hudrows",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 325,
+   "dpr": 2,
+   "width": 402,
+   "height": 213,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.567Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:59:29.698Z"
   },
   "img/nodes-hudscreen/hudscreen.webp": {
    "page": "nodes-hudscreen",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 635,
+   "dpr": 2,
+   "width": 402,
+   "height": 436,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.567Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:59:45.715Z"
   },
   "img/nodes-hudset/hudset.webp": {
    "page": "nodes-hudset",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 254,
+   "dpr": 2,
+   "width": 402,
+   "height": 186,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.567Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:43:46.875Z"
   },
   "img/nodes-hudtext/hudtext.webp": {
    "page": "nodes-hudtext",
    "kind": "ui",
-   "dpr": 1.5,
-   "width": 688,
-   "height": 198,
+   "dpr": 2,
+   "width": 622,
+   "height": 228,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.568Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:00:17.628Z"
   },
   "img/nodes-hudtimer/hudtimer.webp": {
    "page": "nodes-hudtimer",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 416,
+   "dpr": 2,
+   "width": 402,
+   "height": 300,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.568Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:00:34.754Z"
   },
   "img/nodes-latch/latch.webp": {
    "page": "nodes-latch",
    "kind": "ui",
-   "dpr": 1.5,
-   "width": 688,
-   "height": 176,
+   "dpr": 2,
+   "width": 650,
+   "height": 243,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.569Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:44:02.175Z"
   },
   "img/nodes-leaderboard/leaderboard.webp": {
    "page": "nodes-leaderboard",
    "kind": "ui",
-   "dpr": 1,
-   "width": 610,
-   "height": 639,
+   "dpr": 2,
+   "width": 402,
+   "height": 598,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.569Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:44:18.304Z"
   },
   "img/nodes-movespeed/movespeed.webp": {
    "page": "nodes-movespeed",
    "kind": "ui",
-   "dpr": 1,
-   "width": 448,
-   "height": 639,
+   "dpr": 2,
+   "width": 622,
+   "height": 494,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.569Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:01:22.116Z"
   },
   "img/nodes-once/once.webp": {
    "page": "nodes-once",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 639,
+   "dpr": 2,
+   "width": 622,
+   "height": 386,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.570Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:01:38.204Z"
   },
   "img/nodes-ongamestate/ongamestate.webp": {
    "page": "nodes-ongamestate",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 473,
+   "dpr": 2,
+   "width": 402,
+   "height": 306,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.570Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:01:53.465Z"
   },
   "img/nodes-peervariable/peervariable.webp": {
    "page": "nodes-peervariable",
    "kind": "ui",
-   "dpr": 1.5,
-   "width": 688,
-   "height": 270,
+   "dpr": 2,
+   "width": 402,
+   "height": 616,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.570Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:02:10.352Z"
   },
   "img/nodes-possessnode/possessnode.webp": {
    "page": "nodes-possessnode",
    "kind": "ui",
-   "dpr": 1,
-   "width": 552,
-   "height": 639,
+   "dpr": 2,
+   "width": 402,
+   "height": 613,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.571Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:02:26.196Z"
   },
   "img/nodes-rotor/rotor.webp": {
    "page": "nodes-rotor",
    "kind": "ui",
-   "dpr": 1.5,
-   "width": 688,
-   "height": 244,
+   "dpr": 2,
+   "width": 622,
+   "height": 259,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.571Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:02:42.104Z"
   },
   "img/nodes-sequence/sequence.webp": {
    "page": "nodes-sequence",
    "kind": "ui",
-   "dpr": 1.5,
-   "width": 688,
-   "height": 230,
+   "dpr": 2,
+   "width": 622,
+   "height": 259,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.572Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:02:57.266Z"
   },
   "img/nodes-setgamestate/setgamestate.webp": {
    "page": "nodes-setgamestate",
    "kind": "ui",
-   "dpr": 1,
-   "width": 514,
-   "height": 639,
+   "dpr": 2,
+   "width": 402,
+   "height": 589,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.572Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:03:13.388Z"
   },
   "img/nodes-setvariable/setvariable.webp": {
    "page": "nodes-setvariable",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 551,
+   "dpr": 2,
+   "width": 402,
+   "height": 381,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.573Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:03:29.519Z"
   },
   "img/notifications/chat-mentions.webp": {
    "page": "notifications",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 500,
    "height": 420,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.573Z"
+   "badges": 2,
+   "labels": [
+    "mentions you",
+    "emoji"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:07:59.606Z"
   },
   "img/notifications/note-card.webp": {
    "page": "notifications",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
+   "dpr": 2,
+   "width": 445,
    "height": 820,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.574Z"
+   "badges": 2,
+   "labels": [
+    "editing",
+    "by label"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:44:33.144Z"
   },
   "img/notifications/note-page-phone.webp": {
    "page": "notifications",
    "kind": "ui",
-   "dpr": 2.9,
+   "dpr": 2,
    "width": 390,
    "height": 480,
-   "badges": 0,
+   "badges": 1,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.574Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:07:31.140Z"
   },
   "img/notifications/note-thread.webp": {
    "page": "notifications",
    "kind": "ui",
-   "dpr": 1,
-   "width": 300,
-   "height": 265,
-   "badges": 0,
+   "dpr": 2,
+   "width": 396,
+   "height": 299,
+   "badges": 2,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.574Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:45:04.184Z"
   },
   "img/notifications/undo-toast.webp": {
    "page": "notifications",
    "kind": "ui",
-   "dpr": 1,
-   "width": 420,
-   "height": 62,
-   "badges": 0,
+   "dpr": 2,
+   "width": 416,
+   "height": 82,
+   "badges": 1,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.574Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:03:44.167Z"
   },
   "img/particles/draw-as.webp": {
    "page": "particles",
    "kind": "ui",
-   "dpr": 1,
-   "width": 280,
-   "height": 191,
+   "dpr": 2,
+   "width": 307,
+   "height": 207,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.575Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:45:19.405Z"
   },
   "img/particles/wisps-trails.webp": {
    "page": "particles",
    "kind": "view",
-   "dpr": 1,
-   "width": 1126,
-   "height": 569,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.576Z"
+   "dpr": 2,
+   "width": 1011,
+   "height": 600,
+   "badges": 1,
+   "labels": [
+    "emitter"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:08:33.376Z"
   },
   "img/people/peer-menu.webp": {
    "page": "people",
@@ -2006,13 +2116,13 @@
   "img/performance/budget-chip.webp": {
    "page": "performance",
    "kind": "ui",
-   "dpr": 1,
-   "width": 652,
-   "height": 80,
+   "dpr": 2,
+   "width": 646,
+   "height": 72,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.576Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:08:51.641Z"
   },
   "img/performance/configure-scene-quality.webp": {
    "page": "performance",
@@ -2028,90 +2138,99 @@
   "img/performance/statistics-budget.webp": {
    "page": "performance",
    "kind": "ui",
-   "dpr": 1,
-   "width": 404,
-   "height": 484,
-   "badges": 0,
+   "dpr": 2,
+   "width": 380,
+   "height": 460,
+   "badges": 1,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.579Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:09:12.887Z"
   },
   "img/physics/floats.webp": {
    "page": "physics",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
+   "dpr": 2,
+   "width": 673,
    "height": 720,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.580Z"
+   "badges": 2,
+   "labels": [
+    "floats as",
+    "at its draft"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:46:07.879Z"
   },
   "img/physics/flying-setting.webp": {
    "page": "physics",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 800,
-   "badges": 0,
+   "dpr": 2,
+   "width": 303,
+   "height": 345,
+   "badges": 1,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.581Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:09:37.362Z"
   },
   "img/physics/sim-on-load-setting.webp": {
    "page": "physics",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 720,
-   "badges": 0,
+   "dpr": 2,
+   "width": 315,
+   "height": 279,
+   "badges": 1,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.582Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:45:33.448Z"
   },
   "img/physics/sunken-pool.webp": {
    "page": "physics",
    "kind": "view",
-   "dpr": 1,
-   "width": 1126,
-   "height": 569,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.582Z"
+   "dpr": 2,
+   "width": 1040,
+   "height": 420,
+   "badges": 1,
+   "labels": [
+    "floats"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T15:07:14.371Z"
   },
   "img/prefabs/tag-filter.webp": {
    "page": "prefabs",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 800,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.584Z"
+   "dpr": 2,
+   "width": 680,
+   "height": 440,
+   "badges": 2,
+   "labels": [
+    "pressed tag"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:33:52.086Z"
   },
   "img/prefabs/update-toast.webp": {
    "page": "prefabs",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 800,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.585Z"
+   "dpr": 2,
+   "width": 520,
+   "height": 118,
+   "badges": 2,
+   "labels": [
+    "exact copy"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:15:50.489Z"
   },
   "img/profiler/details-sidebar.webp": {
    "page": "profiler",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
-   "height": 438,
-   "badges": 0,
+   "height": 560,
+   "badges": 1,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.585Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:46:34.339Z"
   },
   "img/profiler/report-a-problem.webp": {
    "page": "profiler",
@@ -2127,24 +2246,26 @@
   "img/publish-export/export-tab.webp": {
    "page": "publish-export",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 550,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.511Z"
+   "dpr": 2,
+   "width": 647,
+   "height": 724,
+   "badges": 1,
+   "labels": [
+    "preset"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:11:21.299Z"
   },
   "img/publish-export/gallery-tab.webp": {
    "page": "publish-export",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 700,
-   "badges": 0,
+   "dpr": 2,
+   "width": 647,
+   "height": 739,
+   "badges": 2,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.511Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:11:43.418Z"
   },
   "img/publish-export/itch-mini-golf.webp": {
    "page": "publish-export",
@@ -2160,79 +2281,91 @@
   "img/publish-export/save-options-optimize-for.webp": {
    "page": "publish-export",
    "kind": "ui",
-   "dpr": 1,
-   "width": 544,
-   "height": 816,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.590Z"
+   "dpr": 2,
+   "width": 520,
+   "height": 792,
+   "badges": 1,
+   "labels": [
+    "Optimize for"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:11:55.584Z"
   },
   "img/race/menu.webp": {
    "page": "race",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 450,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.587Z"
+   "dpr": 2,
+   "width": 640,
+   "height": 440,
+   "badges": 2,
+   "labels": [
+    "start",
+    "in a car"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:47:01.428Z"
   },
   "img/race/phone-pedals.webp": {
    "page": "race",
    "kind": "ui",
-   "dpr": 1,
-   "width": 480,
-   "height": 1000,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.587Z"
+   "dpr": 2,
+   "width": 390,
+   "height": 896,
+   "badges": 3,
+   "labels": [
+    "steer",
+    "reset",
+    "brake and gas"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:47:39.489Z"
   },
   "img/race/start.webp": {
    "page": "race",
    "kind": "view",
-   "dpr": 1,
-   "width": 1126,
-   "height": 569,
+   "dpr": 2,
+   "width": 1440,
+   "height": 900,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.588Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:12:54.744Z"
   },
   "img/race/vr-seat.webp": {
    "page": "race",
    "kind": "view",
-   "dpr": 1,
+   "dpr": 2,
    "width": 1126,
    "height": 569,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.588Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:13:54.658Z"
   },
   "img/recording/recording-bar.webp": {
    "page": "recording",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 160,
+   "dpr": 2,
+   "width": 425,
+   "height": 92,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.589Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:14:08.712Z"
   },
   "img/recording/result.webp": {
    "page": "recording",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
-   "height": 700,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.589Z"
+   "height": 630,
+   "badges": 2,
+   "labels": [
+    "save file",
+    "new take"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:48:01.502Z"
   },
   "img/recording/turntable-dialog.webp": {
    "page": "recording",
@@ -2248,35 +2381,38 @@
   "img/saving/save-options.webp": {
    "page": "saving",
    "kind": "ui",
-   "dpr": 1,
-   "width": 530,
-   "height": 805,
+   "dpr": 2,
+   "width": 520,
+   "height": 792,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.590Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:14:40.182Z"
   },
   "img/scatter/add-scatter.webp": {
    "page": "scatter",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
    "height": 720,
-   "badges": 0,
+   "badges": 2,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.593Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T15:07:33.790Z"
   },
   "img/scatter/select-tool.webp": {
    "page": "scatter",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
-   "height": 720,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.593Z"
+   "height": 700,
+   "badges": 2,
+   "labels": [
+    "selection tools",
+    "picked"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:15:13.462Z"
   },
   "img/settings/home-phone.webp": {
    "page": "settings",
@@ -2314,145 +2450,167 @@
   "img/simulation/fluid-tank-drops.webp": {
    "page": "simulation",
    "kind": "view",
-   "dpr": 1,
-   "width": 1126,
-   "height": 569,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.596Z"
+   "dpr": 2,
+   "width": 1000,
+   "height": 560,
+   "badges": 1,
+   "labels": [
+    "pushed about"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:15:47.822Z"
   },
   "img/simulation/fluid-tank.webp": {
    "page": "simulation",
    "kind": "view",
-   "dpr": 1,
-   "width": 1126,
-   "height": 569,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.596Z"
+   "dpr": 2,
+   "width": 1000,
+   "height": 560,
+   "badges": 1,
+   "labels": [
+    "smooth surface"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:15:30.087Z"
   },
   "img/simulation/jiggle.webp": {
    "page": "simulation",
    "kind": "view",
-   "dpr": 1,
-   "width": 1126,
-   "height": 569,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.597Z"
+   "dpr": 2,
+   "width": 900,
+   "height": 560,
+   "badges": 1,
+   "labels": [
+    "lags behind"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:49:23.487Z"
   },
   "img/simulation/tank-pours-into-pool.webp": {
    "page": "simulation",
    "kind": "view",
-   "dpr": 1,
-   "width": 968,
-   "height": 553,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.598Z"
+   "dpr": 2,
+   "width": 1090,
+   "height": 580,
+   "badges": 1,
+   "labels": [
+    "pour lands"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:49:09.650Z"
   },
   "img/simulation/tank-spill.webp": {
    "page": "simulation",
-   "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 640,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.599Z"
+   "kind": "view",
+   "dpr": 2,
+   "width": 1000,
+   "height": 600,
+   "badges": 2,
+   "labels": [
+    "tipped tank",
+    "spilled honey"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:48:51.083Z"
   },
   "img/terrain/inspector-paint.webp": {
    "page": "terrain",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 720,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.600Z"
+   "dpr": 2,
+   "width": 303,
+   "height": 565,
+   "badges": 1,
+   "labels": [
+    "paint brush"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:49:53.731Z"
   },
   "img/terrain/paint-layer.webp": {
    "page": "terrain",
-   "kind": "view",
-   "dpr": 1,
-   "width": 1126,
-   "height": 569,
-   "badges": 0,
+   "kind": "ui",
+   "dpr": 2,
+   "width": 664,
+   "height": 439,
+   "badges": 2,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.600Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:49:37.382Z"
   },
   "img/terrain/scatter-collider.webp": {
    "page": "terrain",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 900,
+   "dpr": 2,
+   "width": 303,
+   "height": 478,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.601Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:50:22.357Z"
   },
   "img/terrain/scatter-toolbox.webp": {
    "page": "terrain",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 720,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.601Z"
+   "dpr": 2,
+   "width": 686,
+   "height": 539,
+   "badges": 1,
+   "labels": [
+    "scatter what"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:58:59.780Z"
   },
   "img/timeline/phone-sheet.webp": {
    "page": "timeline",
    "kind": "ui",
-   "dpr": 2.9,
+   "dpr": 2,
    "width": 390,
-   "height": 550,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.603Z"
+   "height": 670,
+   "badges": 1,
+   "labels": [
+    "sheet tab"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:51:06.332Z"
   },
   "img/timeline/scrub-shot.webp": {
    "page": "timeline",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
-   "height": 700,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.603Z"
+   "height": 840,
+   "badges": 2,
+   "labels": [
+    "playhead",
+    "shot camera"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:50:51.180Z"
   },
   "img/timeline/tracks-light.webp": {
    "page": "timeline",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 400,
+   "dpr": 2,
+   "width": 672,
+   "height": 303,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.604Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:18:38.476Z"
   },
   "img/timeline/tracks.webp": {
    "page": "timeline",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 400,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.604Z"
+   "dpr": 2,
+   "width": 680,
+   "height": 303,
+   "badges": 2,
+   "labels": [
+    "event"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:50:36.248Z"
   },
   "img/touch-controls/layout-editor.webp": {
    "page": "touch-controls",
@@ -2543,134 +2701,145 @@
   "img/uv-editor/smart-unwrap.webp": {
    "page": "uv-editor",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 900,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.608Z"
+   "dpr": 2,
+   "width": 640,
+   "height": 460,
+   "badges": 1,
+   "labels": [
+    "Smart (xatlas)"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T13:34:15.116Z"
   },
   "img/vr/ai-panel.webp": {
    "page": "vr",
    "kind": "ui",
    "dpr": 2,
-   "width": 384,
-   "height": 384,
+   "width": 400,
+   "height": 400,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.609Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:52:28.160Z"
   },
   "img/vr/game-hud-waves.webp": {
    "page": "vr",
-   "kind": "ui",
-   "dpr": 1,
+   "kind": "view",
+   "dpr": 2,
    "width": 640,
    "height": 640,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.609Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:19:25.973Z"
   },
   "img/vr/radial-root.webp": {
    "page": "vr",
    "kind": "ui",
    "dpr": 2,
-   "width": 360,
-   "height": 360,
+   "width": 390,
+   "height": 390,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.609Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:51:23.458Z"
   },
   "img/vr/settings-panel.webp": {
    "page": "vr",
    "kind": "ui",
    "dpr": 2,
-   "width": 360,
-   "height": 360,
+   "width": 400,
+   "height": 400,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.610Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:51:55.537Z"
   },
   "img/vr/settings-ring.webp": {
    "page": "vr",
    "kind": "ui",
    "dpr": 2,
-   "width": 360,
-   "height": 360,
+   "width": 390,
+   "height": 390,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.610Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:51:39.476Z"
   },
   "img/vr/settings-search.webp": {
    "page": "vr",
    "kind": "ui",
    "dpr": 2,
-   "width": 384,
-   "height": 384,
+   "width": 400,
+   "height": 400,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.611Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:52:11.864Z"
   },
   "img/water/lava.webp": {
    "page": "water",
    "kind": "view",
-   "dpr": 1,
-   "width": 1126,
-   "height": 569,
+   "dpr": 2,
+   "width": 1000,
+   "height": 600,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.612Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:21:18.302Z"
   },
   "img/water/pool.webp": {
    "page": "water",
    "kind": "view",
-   "dpr": 1,
-   "width": 1126,
-   "height": 569,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.612Z"
+   "dpr": 2,
+   "width": 1120,
+   "height": 600,
+   "badges": 1,
+   "labels": [
+    "caustics"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:21:03.916Z"
   },
   "img/water/pour-emitters.webp": {
    "page": "water",
    "kind": "view",
-   "dpr": 1,
-   "width": 1126,
-   "height": 569,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.613Z"
+   "dpr": 2,
+   "width": 1120,
+   "height": 600,
+   "badges": 2,
+   "labels": [
+    "spout",
+    "rim pour"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:22:19.425Z"
   },
   "img/water/selection-passes-through.webp": {
    "page": "water",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 720,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.614Z"
+   "dpr": 2,
+   "width": 673,
+   "height": 585,
+   "badges": 2,
+   "labels": [
+    "which one"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:53:08.204Z"
   },
   "img/water/underwater-aquarium.webp": {
    "page": "water",
    "kind": "view",
-   "dpr": 1,
-   "width": 1126,
-   "height": 569,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.615Z"
+   "dpr": 2,
+   "width": 880,
+   "height": 520,
+   "badges": 1,
+   "labels": [
+    "bubbles"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T15:08:43.927Z"
   }
  }
 }

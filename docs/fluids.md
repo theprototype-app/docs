@@ -5,10 +5,15 @@ water it is poured into. **Flow paths** carry it along rivers, chutes and pipes,
 leaves and boats along the current. For water volumes (pools, tanks, oceans) see [Water](water.md); for a glass box of
 particle fluid see [Fluid tank](simulation.md#fluid-tank).
 
-![A Fluid emitter pouring a stream into a puddle, with its properties open](img/fluids/fluid-emitter.webp){ .shot .fade-l width="688" height="720" loading=lazy }
+![A Fluid emitter 1.6 m above the floor pouring a stream of water into a puddle, selected, beside its Fluid emitter properties: Emitting, the mode, Rate, Speed, Spread and the area. 1: the stream. 2: Rate per second.](img/fluids/fluid-emitter.webp){ .shot .fade-l .fade-t .fade-b width="560" height="720" loading=lazy }
 /// caption
 A Fluid emitter pouring a stream into a puddle.
 ///
+
+<div class="shot-key" markdown>
+1. The **stream**: real fluid particles that fall, pool and flow.
+2. **Rate**: particles per second while it emits.
+</div>
 
 ## Fluid emitter
 
@@ -84,10 +89,16 @@ and a headset runs at most 1400 particles.
 head-race, which spills into a fountain basin; the basin overflows down a chute back into the pond, and leaves and boats
 ride along.
 
-![Water works: the scoop wheel, the head-race, the fountain basin and the chute back to the pond](img/fluids/water-works.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+![Water works on its diorama: the scoop wheel lifting pond water into the head-race, the fountain basin it feeds, and the chute that carries the water back to the pond. 1: the scoop wheel. 2: the head-race. 3: the fountain.](img/fluids/water-works.webp){ .shot .vignette width="1120" height="600" loading=lazy }
 /// caption
 Water works: the scoop wheel.
 ///
+
+<div class="shot-key" markdown>
+1. The **scoop wheel** lifts pond water as it turns.
+2. The **head-race** carries it across to the fountain.
+3. The **fountain** basin; a chute takes the overflow back to the pond.
+</div>
 
 ## Limits
 

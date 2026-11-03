@@ -1,20 +1,27 @@
 {
  "id": "settings-ring",
+ "spec": "6b187db74514",
  "dpr": 2,
- "shotAt": "2026-10-27T07:46:24.610Z",
+ "shotAt": "2026-11-03T14:51:39.476Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/vr/settings-ring.png",
- "width": 720,
- "height": 720,
+ "uiHits": [],
+ "width": 780,
+ "height": 780,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 720,
-  "h": 720
+  "x": 570,
+  "y": 267,
+  "w": 390,
+  "h": 390
  },
- "cut": [],
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
  "fade": [],
  "anchors": {},
  "kind": "ui"

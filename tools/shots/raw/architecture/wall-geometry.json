@@ -1,23 +1,52 @@
 {
  "id": "wall-geometry",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.469Z",
+ "spec": "c299dc857dd9",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:37:49.747Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/architecture/wall-geometry.png",
- "width": 688,
- "height": 760,
+ "uiHits": [
+  "div#inspector.tp-ui",
+  "p.px-1",
+  "span.pr-label",
+  "div.tp-ui",
+  "section.tp-ui",
+  "input.pr-range",
+  "div.dn-wrap",
+  "input.dn-input",
+  "div.tp-scroll-thumb"
+ ],
+ "width": 702,
+ "height": 912,
  "crop": {
-  "x": 592,
-  "y": 0,
-  "w": 688,
-  "h": 760
+  "x": 1085,
+  "y": 268,
+  "w": 351,
+  "h": 456
  },
  "cut": [],
- "fade": [
-  "l"
- ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 100,
+   "y": 279.71875,
+   "w": 192,
+   "h": 33.78125
+  },
+  "2": {
+   "x": 100,
+   "y": 519.71875,
+   "w": 192,
+   "h": 33.78125
+  },
+  "3": {
+   "x": 100,
+   "y": 839.71875,
+   "w": 192,
+   "h": 33.78125
+  }
+ },
  "kind": "ui"
 }

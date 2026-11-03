@@ -99,7 +99,9 @@ Configure Scene ▸ View: how the scene is drawn on your screen.
 House style (owner, 2026-10-26): hand-drawn strokes, clean numbered badges, at most three handwritten words per
 callout, one warm accent; fade only a side the crop cut, a vignette on a 3D crop; loops 3–8 s, muted, ≤ 600 KB,
 paused under reduced motion; each still ≤ 250 KB. Shoot on a **remote** e2e slot (`E2E_PC=`): a pc slot draws no
-ambient occlusion.
+ambient occlusion. A remote slot tunnels every name `/etc/hosts` puts on the Deck back to it, `theprototype.app`
+included, so the deployed app's own calls there (the CC0 proxy behind Free assets) would fail: `shoot.cjs` and
+`probe.cjs` re-run themselves with `PW_REMOTE_EXPOSE='<loopback>'` (lib/remote.cjs) unless you set it.
 
 ## On a release (V12)
 

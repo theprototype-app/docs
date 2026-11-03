@@ -1,20 +1,27 @@
 {
  "id": "ai-panel",
+ "spec": "4adb8821ff1b",
  "dpr": 2,
- "shotAt": "2026-10-27T07:46:24.609Z",
+ "shotAt": "2026-11-03T14:52:28.160Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/vr/ai-panel.png",
- "width": 768,
- "height": 768,
+ "uiHits": [],
+ "width": 800,
+ "height": 800,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 768,
-  "h": 768
+  "x": 550,
+  "y": 250,
+  "w": 400,
+  "h": 400
  },
- "cut": [],
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
  "fade": [],
  "anchors": {},
  "kind": "ui"

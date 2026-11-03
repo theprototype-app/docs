@@ -1,24 +1,49 @@
 {
  "id": "gallery-tab",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.511Z",
+ "spec": "9fcd33aa9ed0",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:11:43.418Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/export/gallery-tab.png",
- "width": 688,
- "height": 700,
+ "uiHits": [
+  "dialog#publish-export-modal.tp-ui",
+  "header.wc-head",
+  "div.md-bar",
+  "div.md-body",
+  "button#publish-export-tab-publish.tab",
+  "label.svelte-1h8c7jw",
+  "div.gl-grid",
+  "span.gl-label",
+  "div.gl-dim",
+  "div#gallery-panel.gl-panel",
+  "div#gallery-result.gl-result",
+  "div"
+ ],
+ "width": 1294,
+ "height": 1478,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 688,
-  "h": 700
+  "x": 21,
+  "y": 50,
+  "w": 647,
+  "h": 739
  },
  "cut": [],
- "fade": [
-  "r",
-  "b"
- ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 99.28125,
+   "y": 1032.71875,
+   "w": 350.625,
+   "h": 56
+  },
+  "2": {
+   "x": 99.28125,
+   "y": 1139.71875,
+   "w": 319.65625,
+   "h": 56
+  }
+ },
  "kind": "ui"
 }

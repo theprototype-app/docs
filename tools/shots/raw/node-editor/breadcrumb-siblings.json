@@ -1,23 +1,44 @@
 {
  "id": "breadcrumb-siblings",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.555Z",
+ "spec": "8e00ab1197a2",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:40:55.896Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/node-editor/breadcrumb-siblings.png",
- "width": 688,
- "height": 337,
+ "uiHits": [
+  "div.fixed",
+  "div.ctx-scroll",
+  "div.cursor-pointer",
+  "svg.lucide",
+  "div.ctx-section",
+  "span.flex",
+  "span.flex-1"
+ ],
+ "width": 914,
+ "height": 430,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 688,
-  "h": 337
+  "x": 164,
+  "y": 206,
+  "w": 457,
+  "h": 215
  },
  "cut": [],
- "fade": [
-  "r"
- ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 183.375,
+   "y": 16,
+   "w": 199.125,
+   "h": 48
+  },
+  "2": {
+   "x": 184,
+   "y": 68,
+   "w": 393.5,
+   "h": 345
+  }
+ },
  "kind": "ui"
 }

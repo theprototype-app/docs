@@ -28,10 +28,15 @@ Press <kbd>?</kbd> anywhere to see every shortcut, grouped by panel, with the pa
 from the live keymap, so a key you rebind in **Settings ▸ Shortcuts** shows up there straight away. Type to filter;
 <kbd>Esc</kbd> closes it.
 
-![The cheat sheet: the node editor's keys first, because it has focus, then the 3D viewport's](img/node-editor/cheat-sheet.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="640" loading=lazy }
+![The cheat sheet opened with ? while the Node editor has focus: the Node editor's keys first, then the 3D viewport's, with a filter box at the top. 1: the filter. 2: the Node editor's keys.](img/node-editor/cheat-sheet.webp){ .shot .fade-r .fade-b width="688" height="640" loading=lazy }
 /// caption
 The cheat sheet.
 ///
+
+<div class="shot-key" markdown>
+1. Type in the **filter** to find a key by what it does.
+2. The keys of the area that **has focus** come first.
+</div>
 
 ## Node editor shortcuts
 
@@ -91,10 +96,15 @@ Long names end in "…": point at a crumb (or **press and hold** it on a phone) 
 right end — or <kbd>Esc</kbd> — leaves a group, and the bin deletes the object's flow (it asks first, in a dialog).
 Jumping between the Scene and an object's flow is two taps: the crumb, then the row.
 
-![The breadcrumb bar in the docked node editor: ⌂ Scene › Angelfish 1…, with the object crumb's list open — Main, the Scene graph, then the object flows, the current one ticked](img/node-editor/breadcrumb-siblings.webp){ .shot .fade-r width="688" height="337" loading=lazy }
+![The breadcrumb bar in the docked Node editor, ⌂ Scene › Angelfish 1, with the object crumb's list open: Main, then the object flows of Angelfish 1, Angelfish 2 and Clownfish, the current one ticked. 1: the object crumb. 2: the list.](img/node-editor/breadcrumb-siblings.webp){ .shot width="457" height="215" loading=lazy }
 /// caption
-The breadcrumb bar in the docked node editor.
+The breadcrumb bar in the docked Node editor.
 ///
+
+<div class="shot-key" markdown>
+1. The **object crumb**: the flow you are in. Click it for its siblings.
+2. The **list**: every other flow at this level, the current one ticked.
+</div>
 
 On a phone the minimap is off by default; **⚙ Settings ▸ Minimap** turns it on.
 
@@ -112,10 +122,14 @@ The node editor can lay a graph out for you.
   result.
 - Inside a group (double-click a group card), Tidy arranges that group's contents.
 
-![Part of Waves' Main graph at full size: tidied columns of nodes, with a note reading The crystal glows.](img/node-editor/tidy-waves-main.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="560" loading=lazy }
+![Part of Waves' Main graph at full size after Tidy: columns of nodes, wires running left to right, and a note reading The crystal glows. 1: a note.](img/node-editor/tidy-waves-main.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="480" loading=lazy }
 /// caption
 Part of Waves' Main graph at full size.
 ///
+
+<div class="shot-key" markdown>
+1. A **note** frames the nodes it explains; Tidy keeps them inside it.
+</div>
 
 Every game's Main graph ships tidied — see [The Games tab](games.md#tidy-main-graphs).
 
@@ -134,10 +148,16 @@ exactly as before.
 - Groups nest, copy and paste with their contents, and undo and redo like every other edit.
 - <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd> ungroups: the nodes stay exactly where they were.
 
-![Inside a group: Group inputs on the left, Group outputs on the right, and the breadcrumb at the top](img/node-editor/group.webp){ .shot .fade-l .fade-r .fade-t width="688" height="420" loading=lazy }
+![Inside a group: Group inputs on the left with the Key Press wire coming in, the Latch and the Visibility in the middle, Group outputs on the right, and the breadcrumb at the top. 1: Group inputs. 2: Group outputs. 3: the breadcrumb.](img/node-editor/group.webp){ .shot width="688" height="420" loading=lazy }
 /// caption
 Inside a group.
 ///
+
+<div class="shot-key" markdown>
+1. **Group inputs**: one row per wire that comes into the group.
+2. **Group outputs**: one row per wire that leaves it.
+3. The **breadcrumb**: click a crumb above to leave the group.
+</div>
 
 ### Node group files (.tpnode)
 

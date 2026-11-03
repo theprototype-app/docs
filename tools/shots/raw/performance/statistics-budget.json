@@ -1,21 +1,45 @@
 {
  "id": "statistics-budget",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.579Z",
+ "spec": "f94ebf9c1e22",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:09:12.887Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/performance/statistics-budget.png",
- "width": 404,
- "height": 484,
+ "uiHits": [
+  "div.ui-panel-header",
+  "div.min-h-0",
+  "p#stats-budget-live.shrink-0",
+  "button#stats-budget-target-quest.seg-opt",
+  "p.mt-1",
+  "td.py-0.5",
+  "h5.mt-2",
+  "button.sb-heavy",
+  "div#stats-window.ui-panel",
+  "span#stats-budget-title.flex-1",
+  "span",
+  "span.sb-facts"
+ ],
+ "width": 760,
+ "height": 920,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 404,
-  "h": 484
+  "x": 120,
+  "y": 120,
+  "w": 380,
+  "h": 460
  },
  "cut": [],
- "fade": [],
- "anchors": {},
+ "fade": [
+  "b"
+ ],
+ "anchors": {
+  "1": {
+   "x": 524.25,
+   "y": 98,
+   "w": 217.75,
+   "h": 29.3125
+  }
+ },
  "kind": "ui"
 }

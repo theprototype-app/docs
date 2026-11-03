@@ -5,106 +5,213 @@ defaults:
   dpr: 2
   format: webp
 shots:
+# 83-batch3: mesh sessions through core's own hooks (faceEdit / meshEdit / meshToolParams, the recipes of
+# mesh-knife, mesh-advanced-ops, mesh-boolean and mesh-symmetry-live). Toolbox shots move the Edit Mesh toolbox
+# (#mesh-edit-popup) beside the object with a css step, so one crop holds both; the Inspector is closed.
 - id: knife-polyline
   replaces: img/mesh-editing/knife-polyline.png
-  alt: 'A polyline knife cut across the top of a cube: two corners placed, the dashed last leg following the cursor, and Knife
-    options showing 3 points with Back and Cut'
-  caption: A polyline knife cut across the top of a cube.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 688
-    - 900
-  fade:
-  - r
   kind: ui
-  dpr: 1
-  from: img/mesh-editing/knife-polyline.png
+  setup:
+    - {create: 'Box 2 2 2', name: Cube, at: [0, 1, 0], keepSelected: true}
+    - {closePanels: true}
+    - {css: '#mesh-edit-popup{left:900px!important;top:72px!important}'}
+    - {eval: "const s=window.__stores; s.faceEdit.enterFaceEdit(window.__docs.byName('Cube').uuid); s.faceEdit.setFaceOp('knife')"}
+    - {wait: 1200}
+    # core's polyline recipe: a click, then Shift+click corners; the last leg follows the pointer
+    - {press: {object: Cube, point: center, dx: -200, dy: -20}}
+    - {release: true}
+    - {keyDown: Shift}
+    - {press: {object: Cube, point: center, dx: -20, dy: -25}}
+    - {release: true}
+    - {press: {object: Cube, point: center, dx: 15, dy: 60}}
+    - {release: true}
+    - {keyUp: Shift}
+    - {moveTo: {object: Cube, point: center, dx: 170, dy: 70}, steps: 10}
+    - {wait: 800}
+  crop: {rect: [430, 56, 688, 700]}
+  fade: [b]
+  alt: >-
+    A polyline knife cut across a cube: a first click and two Shift+click corners placed, the dashed last leg
+    following the cursor, and the toolbox's Knife options showing 3 points with Back and Cut. 1: the pending cut.
+    2: Knife options.
+  caption: A polyline knife cut across a cube.
+  annotate:
+    - {n: 1, at: {selector: '.knife-overlay polyline'}, shape: circle, label: corners so far, badge: b, key: 'The **cut so far**: each Shift+click places a corner; the last leg follows the pointer.'}
+    - {n: 2, at: {selector: '#knife-pending'}, shape: box, pad: 3, badge: l, key: '**Knife options**: the points placed, **Back** takes the last one back, **Cut** ends the cut.'}
 - id: solidify
   replaces: img/mesh-editing/solidify.png
-  alt: A box made hollow with Solidify, thickness 0.1
-  caption: A box made hollow with Solidify.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 688
-    - 900
-  fade:
-  - r
   kind: ui
-  dpr: 1
-  from: img/mesh-editing/solidify.png
+  setup:
+    - {create: 'Box 2 2 2', name: Cube, at: [0, 1, 0], keepSelected: true}
+    - {closePanels: true}
+    - {css: &toolbox '#mesh-edit-popup{left:960px!important;top:72px!important}'}
+    - {camera: {pos: [5.4, 6.9, 6.7], target: [0, 0.8, 0]}}
+    # open the top (delete its face), then Solidify the whole box at 0.1: the walls get their thickness
+    - eval: >-
+        const s = window.__stores, fe = s.faceEdit, o = window.__docs.byName('Cube');
+        fe.enterFaceEdit(o.uuid); fe.setFaceGranularity('face');
+        const tris = fe.readTriangles(o.geometry);
+        const top = tris.findIndex((t) => t.every((v) => Math.abs(v.y - 1) < 1e-6));
+        fe.highlightFaceByTriangle(top); fe.pickFaceUnit(top); fe.commitFaceOp('delete');
+        fe.selectAllFaces(); s.meshToolParams.solidifyThickness.set(0.1)
+    - {wait: 600}
+    - {click: '#mesh-op-solidify'}
+    - {wait: 1200}
+  crop: {rect: [500, 56, 688, 640]}
+  fade: [b]
+  alt: >-
+    A box with its top face deleted, made hollow with Solidify at thickness 0.1: the walls now have a visible
+    thickness, and the toolbox shows Solidify options with the thickness. 1: the wall thickness. 2: thickness.
+  caption: A box made hollow with Solidify.
+  annotate:
+    - {n: 1, at: {object: Cube, point: top}, shape: circle, label: thick walls, badge: l, key: 'The walls get **thickness**: a copy behind the surface plus a rim joining the two.'}
+    - {n: 2, at: {selector: '#solidify-thickness'}, shape: box, pad: 3, badge: b, key: '**thickness**, in world units; negative grows outward.'}
 - id: edge-tools-slide
   replaces: img/mesh-editing/edge-tools-slide.png
-  alt: The Edges tab with Slide armed and its factor option
-  caption: The Edges tab with Slide armed and its factor option.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 212
-    - 812
-  fade: []
   kind: ui
-  dpr: 1
-  from: img/mesh-editing/edge-tools-slide.png
+  setup:
+    - {create: Cylinder, name: Can, at: [0, 1, 0], keepSelected: true}
+    - {closePanels: true}
+    # edges mode, one rim edge, Select ▸ Loop, then Slide
+    - eval: >-
+        const s = window.__stores, fe = s.faceEdit, o = window.__docs.byName('Can');
+        fe.enterFaceEdit(o.uuid); fe.setFaceSubmode('edges');
+        const tris = fe.readTriangles(o.geometry);
+        const keyOf = (v) => Math.round(v.x * 1e4) + ',' + Math.round(v.y * 1e4) + ',' + Math.round(v.z * 1e4);
+        const ys = tris.flat().map((v) => v.y), yTop = Math.max(...ys);
+        const t = tris.find((t) => t.filter((v) => Math.abs(v.y - yTop) < 1e-6).length === 2 && t.some((v) => Math.abs(v.y - yTop) > 1e-6));
+        const [a, b] = t.filter((v) => Math.abs(v.y - yTop) < 1e-6).map(keyOf);
+        fe.clearEdgeSelection(); fe.pickEdge(a < b ? a + '|' + b : b + '|' + a); fe.selectEdgeLoop()
+    - {wait: 600}
+    - {click: '#edge-slide'}
+    - {eval: "window.__stores.meshToolParams.focusTool('edge-slide')"}
+    - {wait: 800}
+  crop: {union: [{selector: '#mesh-edit-popup'}, {selector: '#mesh-edit-popup', offset: [110, 0]}], maxHeight: 440}
+  fade: [b]
+  alt: >-
+    The Edit Mesh toolbox on its Edges tab with Slide armed: the edge tools grid, and under it the Edge slide options
+    with the factor. 1: Slide. 2: factor.
+  caption: The Edges tab with Slide armed and its factor option.
+  annotate:
+    - {n: 1, at: {selector: '#edge-slide'}, shape: circle, badge: r, key: '**Slide** moves the selected edges along the faces either side.'}
+    - {n: 2, at: {selector: '#edge-slide-factor'}, shape: box, pad: 3, label: −1 to +1, badge: r, key: '**factor**: 0 is where the edges are, ±1 all the way onto the neighbouring line.'}
 - id: mitered-bevel
   replaces: img/mesh-editing/mitered-bevel.png
-  alt: An octahedron edge bevelled in 4 segments, mitered where four faces meet
-  caption: An octahedron edge bevelled in 4 segments.
-  crop:
-    rect:
-    - 84
-    - 153
-    - 1232
-    - 639
-  fade: vignette
   kind: view
-  dpr: 1
-  from: img/mesh-editing/mitered-bevel.png
+  setup:
+    - {create: Octahedron 1, name: Gem, at: [0, 1.1, 0], keepSelected: true}
+    - {closePanels: true}
+    # mesh-advanced-ops 5b: an edge where four faces meet at each end, bevelled through the real button
+    - eval: >-
+        const s = window.__stores, fe = s.faceEdit, o = window.__docs.byName('Gem');
+        fe.enterFaceEdit(o.uuid); fe.setFaceSubmode('edges');
+        const tris = fe.readTriangles(o.geometry);
+        const keyOf = (v) => Math.round(v.x * 1e4) + ',' + Math.round(v.y * 1e4) + ',' + Math.round(v.z * 1e4);
+        const a = keyOf(tris[0][0]), b = keyOf(tris[0][1]);
+        fe.clearEdgeSelection(); fe.pickEdge(a < b ? a + '|' + b : b + '|' + a);
+        s.meshToolParams.bevelSegments.set(4); s.meshToolParams.bevelProfile.set(0.5); s.meshToolParams.bevelWidth.set(0.15)
+    - {click: '#edge-bevel'}
+    - {wait: 600}
+    - {eval: "const fe=window.__stores.faceEdit; fe.settleOpAdjust?.(); fe.exitFaceEdit()"}
+    - {deselect: true}
+    - {camera: {pos: [3.2, 3.4, 4.6], target: [0, 1.1, 0]}}
+    - {wait: 1200}
+  crop: {around: {object: Gem, offset: [0, -70]}, size: [760, 520]}
+  fade: vignette
+  alt: >-
+    An octahedron with one edge bevelled in 4 segments: a rounded strip along the edge, closed at each end by a
+    mitered corner where four faces meet. 1: a mitered corner.
+  caption: An octahedron edge bevelled in 4 segments.
+  annotate:
+    - {n: 1, at: {object: Gem, point: top}, shape: circle, label: mitered corner, badge: r, key: 'Where **four or more faces** meet, the bevel ends in a **mitered corner**.'}
 - id: vertex-tools-bevel
   replaces: img/mesh-editing/vertex-tools-bevel.png
-  alt: 'The Vertices tab with Bevel armed: width, segments, Out / In and profile'
-  caption: The Vertices tab with Bevel armed.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 212
-    - 852
-  fade: []
   kind: ui
-  dpr: 1
-  from: img/mesh-editing/vertex-tools-bevel.png
+  setup:
+    - {create: Octahedron 1, name: Gem, at: [0, 1.1, 0], keepSelected: true}
+    - {closePanels: true}
+    # vertex mode (meshEdit), the top vertex picked by walking the handles (core's pickVerts)
+    - eval: >-
+        const s = window.__stores, o = window.__docs.byName('Gem');
+        s.meshEdit.enterEditMode(o.uuid);
+        for (let i = 0; i < 400; i++) {
+          s.meshEdit.selectHandle(i);
+          const w = s.meshEdit.vertexSelectionWorldPoint();
+          if (!w) break;
+          const l = o.worldToLocal(w.clone());
+          if (Math.abs(l.x) + Math.abs(l.y - 1) + Math.abs(l.z) < 1e-4) break;
+        }
+        s.meshToolParams.bevelSegments.set(3); s.meshToolParams.bevelProfile.set(0.5)
+    - {wait: 600}
+    - {click: '#mesh-vertex-bevel'}
+    - {eval: "window.__stores.meshToolParams.focusTool('bevel')"}
+    - {wait: 800}
+  crop: {union: [{selector: '#mesh-edit-popup'}, {selector: '#mesh-edit-popup', offset: [110, 0]}], maxHeight: 440}
+  fade: [b]
+  alt: >-
+    The Edit Mesh toolbox on its Vertices tab with Bevel armed: the vertex tools grid, and under it the Bevel options
+    width, segments, Out / In and profile. 1: Bevel. 2: segments. 3: profile.
+  caption: The Vertices tab with Bevel armed.
+  annotate:
+    - {n: 1, at: {selector: '#mesh-vertex-bevel'}, shape: circle, badge: r, key: '**Bevel** cuts the corner off every selected vertex and caps it.'}
+    - {n: 2, at: {selector: '#bevel-segments'}, shape: box, pad: 3, label: rounder, badge: r, key: '**segments** (1 – 8): more round the corner off.'}
+    - {n: 3, at: {selector: '#bevel-profile'}, shape: box, pad: 3, label: bulge, badge: r, key: '**profile**: how far the cap bulges; 0 is flat.'}
 - id: boolean-subtract
   replaces: img/mesh-editing/boolean-subtract.png
-  alt: A cylinder subtracted from a box
-  caption: A cylinder subtracted from a box.
-  crop:
-    rect:
-    - 84
-    - 153
-    - 1232
-    - 639
-  fade: vignette
   kind: view
-  dpr: 1
-  from: img/mesh-editing/boolean-subtract.png
+  setup:
+    - {create: 'Box 2 1 1.4', name: Block, at: [0, 0.5, 0], color: '#6f8fb8'}
+    - {create: Cylinder, name: Drill, at: [0, 0.5, 0], scale: [0.7, 1.6, 0.7]}
+    # the object menu's Boolean ▸ Subtract on (Block, Drill), the way mesh-boolean runs it
+    - eval: >-
+        (async () => {
+          const s = window.__stores, a = window.__docs.byName('Block').uuid, b = window.__docs.byName('Drill').uuid;
+          const items = s.objectMenu.buildObjectMenuItems(a, { selection: [a, b] });
+          const boolean = s.objectMenu.findMenuItem(items, 'Boolean');
+          await boolean.children.find((c) => c.label === 'Subtract').action();
+        })()
+    - {wait: 1200}
+    - {deselect: true}
+    - {camera: {pos: [2.2, 2.6, 2.8], target: [0, 0.4, 0]}}
+    - {wait: 1200}
+  crop: {around: {object: Block}, size: [1100, 600]}
+  fade: vignette
+  alt: >-
+    A box with a cylinder subtracted from it: a round hole straight through the middle of the block, the cylinder
+    itself gone. 1: the hole.
+  caption: A cylinder subtracted from a box.
+  annotate:
+    - {n: 1, at: {object: Block, point: top}, shape: circle, label: cut out, badge: r, key: '**Subtract** cuts the second object out of the first, and removes it.'}
 - id: live-symmetry
   replaces: img/mesh-editing/live-symmetry.png
-  alt: 'Live symmetry on across X: one face selected on the left with the gizmo on it, and the Symmetry section''s mirror,
-    keep, Symmetrize and live symmetry controls'
-  caption: Live symmetry on across X.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 688
-    - 900
-  fade:
-  - r
   kind: ui
-  dpr: 1
-  from: img/mesh-editing/live-symmetry.png
+  # Gizmo & pivot folded, Symmetry open (the toolbox remembers each section), so Symmetry sits higher
+  storage: {'tbx:sec:gizmo': closed, 'tbx:sec:symmetry': open}
+  setup:
+    - {create: 'Box 2 2 2', name: Cube, at: [0, 1, 0], keepSelected: true}
+    - {closePanels: true}
+    - {css: *toolbox}
+    # core's symmetricBox: symmetrized on X so the seam sits on the plane, then the -X face picked
+    - eval: >-
+        const s = window.__stores, fe = s.faceEdit, o = window.__docs.byName('Cube');
+        s.meshToolParams.liveSymmetry.set(false);
+        fe.enterFaceEdit(o.uuid); fe.setFaceGranularity('face'); fe.symmetrizeMesh('x', 1);
+        const face = fe.currentFaces().find((f) => f.normal.x < -0.9);
+        fe.highlightFaceByTriangle(face.triIndices[0]); fe.pickFaceUnit(face.triIndices[0])
+    - {wait: 600}
+    - {eval: "document.getElementById('mesh-sym-live') || document.getElementById('mesh-sec-symmetry')?.click()"}
+    - {wait: 500}
+    - {eval: "document.getElementById('mesh-sec-symmetry')?.scrollIntoView({block: 'center'})"}
+    - {click: '#mesh-sym-live'}
+    - {camera: {pos: [-6.1, 4.2, 7.6], target: [0, 1, 0]}}
+    - {wait: 1200}
+  crop: {rect: [500, 56, 688, 700]}
+  fade: [b]
+  alt: >-
+    Live symmetry on across X: a box in a face session with its left face selected and the gizmo on it, and the
+    toolbox's Symmetry section with the X / Y / Z mirror, keep, Symmetrize and the live symmetry switch. 1: the
+    picked face. 2: live symmetry.
+  caption: Live symmetry on across X.
+  annotate:
+    - {n: 1, at: {object: Cube, point: center, offset: [-40, 0]}, shape: circle, label: mirrored edits, badge: b, key: 'An edit to this face is **mirrored** to the other side as you make it.'}
+    - {n: 2, at: {selector: '#mesh-sym-live'}, shape: box, pad: 3, badge: b, key: 'The **live symmetry** switch; X / Y / Z pick the axis.'}

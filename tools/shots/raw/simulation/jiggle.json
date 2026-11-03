@@ -1,21 +1,35 @@
 {
  "id": "jiggle",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.597Z",
+ "spec": "fa7ca575b218",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:49:23.487Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/simulation/jiggle.png",
- "width": 1126,
- "height": 569,
+ "uiHits": [],
+ "width": 1800,
+ "height": 1120,
  "crop": {
-  "x": 77,
-  "y": 65,
-  "w": 1126,
-  "h": 569
+  "x": 351,
+  "y": 154,
+  "w": 900,
+  "h": 560
  },
- "cut": [],
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
  "fade": "vignette",
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 862.5668520591034,
+   "y": 313.4619234212779,
+   "w": 48,
+   "h": 48
+  }
+ },
  "kind": "view"
 }

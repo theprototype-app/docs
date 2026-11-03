@@ -1,21 +1,36 @@
 {
  "id": "logic-panel",
+ "spec": "87422c7cf0b3",
  "dpr": 2,
- "shotAt": "2026-10-29T08:56:54.343Z",
+ "shotAt": "2026-11-03T13:39:16.476Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/building-in-vr/logic-panel.png",
+ "uiHits": [],
  "width": 1280,
  "height": 800,
  "crop": {
   "x": 0,
   "y": 0,
-  "w": 1280,
-  "h": 800
+  "w": 640,
+  "h": 400
  },
  "cut": [],
  "fade": [],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 140,
+   "y": 18,
+   "w": 282,
+   "h": 60
+  },
+  "2": {
+   "x": 646,
+   "y": 18,
+   "w": 150,
+   "h": 60
+  }
+ },
  "kind": "ui"
 }

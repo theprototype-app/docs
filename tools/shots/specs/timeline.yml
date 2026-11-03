@@ -1,72 +1,102 @@
+# docs/timeline.md — the Timeline (cutscene sequencer).
+# Shoot: e2e-slot -- node tools/shots/shoot.cjs timeline     Re-annotate: node tools/shots/annotate.cjs timeline
+# 83-batch3: real captures (were re-crops of the 1.39 e2e evidence). The scene is core's tests/e2e/timeline.test.cjs
+# recipe: Cam A, Cam B, a Door with a 1 s swing clip, a whoosh.wav in the Explorer, and one sequence with a camera
+# shot (Cam A → Cam B), the door clip, the sound and a "boom" event — built through the sequences API, not the mouse.
 page: timeline
 defaults:
-  device: desktop
+  device: window-688-tall
   theme: dark
   dpr: 2
   format: webp
+  scene:
+    - eval: >-
+        (async () => { const S = window.__stores, D = window.__docs; const g = D.get(S.objectsGroup);
+        const before = new Set(g.children.map((o) => o.uuid));
+        const make = async (cmd, name, pos) => { S.commandsHandler.sceneCommand(cmd); let o = null;
+          for (let i = 0; i < 40 && !o; i++) { await new Promise((r) => setTimeout(r, 100)); o = g.children.find((x) => !before.has(x.uuid)); }
+          before.add(o.uuid); o.name = name; o.position.set(...pos); o.updateMatrix(); o.updateMatrixWorld(true); return o; };
+        const camA = await make('/create Camera', 'Cam A', [0, 2, 8]);
+        const camB = await make('/create Camera', 'Cam B', [6, 3, 4]);
+        const door = await make('/create Box', 'Door', [2, 1, 0]);
+        door.scale.set(1, 2, 0.2);
+        const ap = S.animationPreview; const tr = ap.addTrack(door.uuid, 'rot.y', door);
+        ap.updateKey(door.uuid, tr, 0, {t: 0, v: 0}); ap.updateKey(door.uuid, tr, 1, {t: 1, v: Math.PI / 2});
+        ap.updateAnim(door.uuid, {duration: 1, loop: 'once'});
+        const rate = 8000, n = 3200, buf = new ArrayBuffer(44 + n * 2), v = new DataView(buf);
+        const w = (o, s) => { for (let i = 0; i < s.length; i++) v.setUint8(o + i, s.charCodeAt(i)); };
+        w(0, 'RIFF'); v.setUint32(4, 36 + n * 2, true); w(8, 'WAVE'); w(12, 'fmt '); v.setUint32(16, 16, true);
+        v.setUint16(20, 1, true); v.setUint16(22, 1, true); v.setUint32(24, rate, true); v.setUint32(28, rate * 2, true);
+        v.setUint16(32, 2, true); v.setUint16(34, 16, true); w(36, 'data'); v.setUint32(40, n * 2, true);
+        for (let i = 0; i < n; i++) v.setInt16(44 + i * 2, Math.round(Math.sin((i / rate) * 2 * Math.PI * 440) * 12000), true);
+        const snd = await S.explorer.addItemFromBytes(buf, 'whoosh.wav');
+        S.objectActions.applySelectionSet([], false);
+        const Q = S.sequences; const id = Q.createSequence('Intro'); Q.updateSequence(id, {duration: 6});
+        const t = (k) => Q.addTrack(id, k);
+        Q.addItem(id, t('camera'), {t: 0.1, dur: 2, camera: camA.uuid, to: camB.uuid});
+        Q.addItem(id, t('anim'), {t: 1, dur: 2, target: door.uuid});
+        Q.addItem(id, t('audio'), {t: 0.5, dur: 2, sound: snd.hash, name: 'whoosh.wav'});
+        Q.addItem(id, t('event'), {t: 2.4, name: 'boom'}); })()
+    - {wait: 800}
+    - {eval: "window.__stores.dockMenu.setDockViewShown('timeline', true)"}
+    - {wait: 1500}
+    - {click: '#timeline-fit'}
+    - {wait: 600}
 shots:
-- id: tracks
-  replaces: img/timeline/tracks.png
-  alt: 'The Timeline docked under the viewport: Camera, Animation, Audio and Event tracks with a Cam A → Cam B shot, a Door
-    clip, whoosh.wav and a boom event'
-  caption: The Timeline docked under the viewport.
-  crop:
-    rect:
-    - 0
-    - 500
-    - 688
-    - 400
-  fade:
-  - r
-  - t
-  kind: ui
-  dpr: 1
-  from: img/timeline/tracks.png
-- id: scrub-shot
-  replaces: img/timeline/scrub-shot.png
-  alt: 'Scrubbing at 1.15 s: the viewport previews the shot through Cam A'
-  caption: Scrubbing at 1.15 s.
-  crop:
-    rect:
-    - 376
-    - 200
-    - 688
-    - 700
-  fade:
-  - l
-  - r
-  - t
-  kind: ui
-  dpr: 1
-  from: img/timeline/scrub-shot.png
-- id: phone-sheet
-  replaces: img/timeline/phone-sheet.png
-  alt: The Timeline as a tab of the bottom sheet on a folded phone
-  caption: The Timeline as a tab of the bottom sheet on a folded phone.
-  crop:
-    rect:
-    - 0
-    - 1003
-    - 1131
-    - 1595
-  fade:
-  - t
-  kind: ui
-  dpr: 2.9
-  from: img/timeline/phone-sheet.png
-- id: tracks-light
-  replaces: img/timeline/tracks-light.png
-  alt: The Timeline in the light theme
-  caption: The Timeline in the light theme.
-  crop:
-    rect:
-    - 0
-    - 500
-    - 688
-    - 400
-  fade:
-  - r
-  - t
-  kind: ui
-  dpr: 1
-  from: img/timeline/tracks-light.png
+  - id: tracks
+    replaces: img/timeline/tracks.png
+    alt: >-
+      The Timeline docked under the viewport, in a small window: the Intro sequence with Camera, Animation, Audio and
+      Event tracks holding a Cam A → Cam B shot, a Door clip, whoosh.wav and a boom event. 1: + Track, which adds a
+      track of any kind. 2: the boom event item.
+    caption: The Timeline docked under the viewport.
+    # to the window's right edge, so + Track is not flush with the image's
+    crop: {union: [{selector: '.tl-root'}, {selector: '.tl-root', offset: [8, 0]}]}
+    annotate:
+      - {n: 1, at: {selector: '#timeline-add-track'}, shape: box, pad: 3, badge: l, key: '**+ Track** adds a Camera, Animation, Audio or Event track.'}
+      - {n: 2, at: {selector: '.tl-lane[data-track-kind="event"] .tl-item'}, shape: circle, label: event, badge: r, key: 'An **event** item: it pulses On Sequence Event in the game when the sequence passes it.'}
+
+  - id: scrub-shot
+    replaces: img/timeline/scrub-shot.png
+    alt: >-
+      Scrubbing the Intro sequence at 1.15 s in a small window: the viewport looks through Cam A, half-way into the
+      glide, with the Timeline below. 1: the playhead parked on the ruler. 2: the Previewing Cam A strip.
+    caption: Scrubbing at 1.15 s.
+    setup:
+      # the Previewing strip lives in the toast stack the driver hides; show the stack, keep the toasts hidden
+      - {css: '.toasts-stack{display:revert!important}'}
+      - eval: >-
+          (() => { const S = window.__stores; const id = window.__docs.get(S.sequences.activeSequence);
+          S.sequencePlayer.scrubSequence(id, 1.15); })()
+      - {wait: 1200}
+    # the whole small window: the shot through Cam A above, the Timeline under it
+    crop: {rect: [0, 0, 688, 840]}
+    fade: []
+    annotate:
+      - {n: 1, at: {selector: '.tl-head-mark'}, shape: circle, label: playhead, badge: tr, key: 'The **playhead**, parked at 1.15 s by a click on the ruler.'}
+      - {n: 2, at: {selector: '.preview-banner .spectator-inner'}, shape: box, label: shot camera, badge: b, key: 'The viewport looks through the **shot camera** at that moment; Exit gives you your own view back.'}
+
+  - id: phone-sheet
+    replaces: img/timeline/phone-sheet.png
+    device: n6-folded
+    alt: >-
+      The Timeline as a tab of the bottom sheet on a folded phone: the controls wrap onto two rows over the four
+      tracks with a narrow name column. 1: the Timeline tab of the sheet.
+    caption: The Timeline as a tab of the bottom sheet on a folded phone.
+    # a taller sheet, so all four tracks show under the wrapped controls
+    setup:
+      - {eval: "window.__stores.bottomDock.dockHeight.set(640)"}
+      - {wait: 800}
+    # the sheet's tab row and the Timeline under it
+    crop: {union: [{selector: '.tl-root'}, {text: Timeline}], pad: 8}
+    annotate:
+      - {n: 1, at: {text: Timeline}, shape: box, pad: 3, label: sheet tab, badge: r, key: 'The **Timeline** tab of the bottom sheet (More ▸ Timeline opens it).'}
+
+  - id: tracks-light
+    replaces: img/timeline/tracks-light.png
+    theme: light
+    alt: >-
+      The Timeline in the light theme, in a small window: the Intro sequence with its Camera, Animation, Audio and Event
+      tracks, a Cam A → Cam B shot, a Door clip, whoosh.wav and a boom event.
+    caption: The Timeline in the light theme.
+    crop: {selector: '.tl-root'}

@@ -59,7 +59,7 @@ A speed slider with a readout:
 3. Add a **HUD Text** picking the text, format `Speed: {v}`; wire HUD Input → HUD Text's **value**.
 4. Press Play and drag the slider: the text follows — on your screen only, because the slider is not shared.
 
-![A HUD Input reading a slider, wired into a HUD Text with the format "Speed: {v}"](../img/nodes-hudinput/hudinput.webp){ .shot width="688" height="315" loading=lazy }
+![A HUD Input reading the Speed slider (read value, fallback 50), wired into a HUD Text with the format "Speed: {v}"](../img/nodes-hudinput/hudinput.webp){ .shot width="402" height="228" loading=lazy }
 /// caption
 A HUD Input reading a slider.
 ///

@@ -1,23 +1,49 @@
 {
  "id": "docked",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.521Z",
+ "spec": "8e0afeb7a857",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:57:57.291Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/image-editor/docked.png",
- "width": 688,
- "height": 337,
+ "uiHits": [
+  "div#image-editor-dock.tp-themed",
+  "svg.lucide",
+  "span.wc-sub",
+  "div.border-b",
+  "canvas#image-editor-canvas.absolute",
+  "button.tab-note",
+  "button#image-editor-redo.tp-ui",
+  "div.flex",
+  "p.hud-cell",
+  "span#image-editor-zoom.ie-zoom",
+  "button.tp-ui",
+  "button#editor-mode-toggle.hud-cell"
+ ],
+ "width": 1376,
+ "height": 700,
  "crop": {
   "x": 0,
-  "y": 0,
+  "y": 491,
   "w": 688,
-  "h": 337
+  "h": 350
  },
- "cut": [],
- "fade": [
-  "r"
+ "cut": [
+  "l",
+  "r",
+  "b"
  ],
- "anchors": {},
+ "fade": [
+  "b"
+ ],
+ "anchors": {
+  "1": {
+   "x": 478.15625,
+   "y": 15,
+   "w": 207.28125,
+   "h": 44
+  }
+ },
  "kind": "ui"
 }

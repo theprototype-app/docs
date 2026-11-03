@@ -4,10 +4,16 @@ Since 1.27 you can build rooms and houses from parametric pieces: walls with doo
 windows that open, and four kinds of stairs. Every piece is a set of numbers you can change at any time, and doors swing
 open for everyone in the session.
 
-![A wall with a door and two windows, two side walls and a spiral stair](img/architecture/house.webp){ .shot .vignette width="1126" height="600" loading=lazy }
+![A small house from the Architecture pieces: a front wall with a door in the middle and a window either side, two side walls, and a spiral stair behind. 1: the door. 2: a window. 3: the spiral stair.](img/architecture/house.webp){ .shot .vignette width="1080" height="600" loading=lazy }
 /// caption
 A wall with a door and two windows.
 ///
+
+<div class="shot-key" markdown>
+1. A **Door** fitted into the wall's doorway.
+2. A **Window** fitted into an opening, at the wall's sill height.
+3. **Stairs (spiral)**.
+</div>
 
 ## Adding a piece
 
@@ -32,10 +38,16 @@ Each one lands 3 m in front of you. See [The first ring](vr.md#the-first-ring).
 Select the piece and open its **Properties**: the **Geometry** section holds every number. Rows that do not apply are
 hidden — a wall with no doors has no *Door width* row.
 
-![Properties ▸ Geometry for a wall: Length, Height, Thickness, Doors, Door width and height, Windows, Win width and height, Sill height, Shift](img/architecture/wall-geometry.webp){ .shot .fade-l width="688" height="760" loading=lazy }
+![Properties ▸ Geometry for a wall with a door and two windows: Length, Height, Thickness, Doors, Door width and height, Windows, Win width and height, Sill height and Shift. 1: the doorways. 2: the window openings. 3: Shift.](img/architecture/wall-geometry.webp){ .shot width="351" height="456" loading=lazy }
 /// caption
 Properties ▸ Geometry for a wall.
 ///
+
+<div class="shot-key" markdown>
+1. **Doors**, **Door width**, **Door height**: how many doorways and their size.
+2. **Windows**, **Win width**, **Win height**, **Sill height**: the window openings.
+3. **Shift** slides the openings along the wall.
+</div>
 
 ### Wall
 
@@ -100,10 +112,15 @@ In **Interact** and **Play**, click a door to open or close it, or walk up to a 
 Casement windows open the same way. Every peer sees the same swing, and a player who joins later sees the door already
 open. In **Edit** a door always shows shut, so it is easy to place.
 
-![A door and a casement window open in Interact, with stairs visible through the doorway](img/architecture/door-open.webp){ .shot .vignette width="1126" height="600" loading=lazy }
+![The house in Interact after a click on the door and on the casement window: the door has swung open, showing the spiral stair through the doorway, and the window's sash is open. 1: the open door. 2: the open window.](img/architecture/door-open.webp){ .shot .vignette width="1080" height="600" loading=lazy }
 /// caption
 A door and a casement window open in Interact.
 ///
+
+<div class="shot-key" markdown>
+1. In **Interact** and **Play**, a click opens or closes a door, for everyone.
+2. A **casement window** opens the same way.
+</div>
 
 ## Collisions
 

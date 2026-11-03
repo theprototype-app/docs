@@ -1,23 +1,56 @@
 {
  "id": "knife-polyline",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.552Z",
+ "spec": "6d01765ffeee",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:52:40.090Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/mesh-editing/knife-polyline.png",
- "width": 688,
- "height": 900,
- "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 688,
-  "h": 900
- },
- "cut": [],
- "fade": [
-  "r"
+ "uiHits": [
+  "div.tbx-tabs",
+  "span.tbx-label",
+  "button#mesh-gran-object.px-2",
+  "div.tbx-row",
+  "button#mesh-proportional.tbx-btn",
+  "svg.lucide",
+  "button#mesh-op-solidify.tbx-btn",
+  "button#mesh-op-delete.tbx-btn",
+  "span",
+  "button#mesh-gizmo-toggle.tbx-btn",
+  "input#mesh-snap-enabled.tbx-check",
+  "div.dn-wrap"
  ],
- "anchors": {},
+ "width": 1376,
+ "height": 1400,
+ "crop": {
+  "x": 430,
+  "y": 56,
+  "w": 688,
+  "h": 700
+ },
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
+ "fade": [
+  "b"
+ ],
+ "anchors": {
+  "1": {
+   "x": 180,
+   "y": 801.236328125,
+   "w": 430,
+   "h": 170
+  },
+  "2": {
+   "x": 958,
+   "y": 1126,
+   "w": 312,
+   "h": 37.3125
+  }
+ },
  "kind": "ui"
 }

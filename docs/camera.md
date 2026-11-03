@@ -168,10 +168,14 @@ scene's sky **and** its light. Every object picks up the image's colours and bri
 [water](water.md) mirrors the real clouds. The scene's sun is placed where the photo's sun is, so shadows agree with the
 sky.
 
-![A mirror sphere and a box lit by the Meadow sky image](img/camera/sky-meadow.webp){ .shot width="1280" height="720" loading=lazy }
+![A mirror sphere and a wooden box on the grid under the Meadow sky image: the sphere reflects the meadow and the sky, and the box takes the sky's soft light. 1: the sky reflected in the sphere.](img/camera/sky-meadow.webp){ .shot .vignette width="1100" height="600" loading=lazy }
 /// caption
 The Meadow sky image lighting a mirror sphere and a box.
 ///
+
+<div class="shot-key" markdown>
+1. The sky image lights the scene and shows in every reflection: the **sky reflected** in the mirror sphere.
+</div>
 
 It lives in **Configure Scene ▸ Environment ▸ Sky image (HDRI)**, under the preset chips and the Exposure slider. Click
 a card to switch to that sky; like every Environment setting, everyone in the session sees it.

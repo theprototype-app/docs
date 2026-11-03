@@ -4,6 +4,7 @@
 // (tag, id, title / aria-label, text, rect in CSS px) — enough to pick selectors and crops without guessing.
 //   APP_URL=… e2e-slot -- node probe.cjs <probe.yml> <out dir>
 // probe.yml: {device?, theme?, storage?, scene?: [steps], stages: [{name, steps: [...]}, …]}  (stages run in order)
+if (require.main === module) require('./lib/remote.cjs').exposeLoopbackOnly();
 const fs = require('fs');
 const path = require('path');
 const YAML = require('yaml');

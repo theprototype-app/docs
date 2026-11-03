@@ -1,23 +1,55 @@
 {
  "id": "measure-edit",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.547Z",
+ "spec": "dc7b5eb7c782",
+ "dpr": 2,
+ "shotAt": "2026-11-03T15:06:54.489Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/measure-align/measure-edit.png",
- "width": 688,
- "height": 900,
+ "uiHits": [
+  "p.hud-cell",
+  "p#explorer-slot.hud-cell",
+  "button#toolbar-customize.hud-cell",
+  "button#budget-chip.bc-main",
+  "button#budget-chip-target.bc-caret",
+  "div#sidebar-grip-right.sb-grip",
+  "button.sb-tab",
+  "svg.lucide",
+  "label.tp-ui",
+  "p#uuid.truncate",
+  "div.flex",
+  "span.pr-label"
+ ],
+ "width": 1376,
+ "height": 1666,
  "crop": {
-  "x": 752,
-  "y": 0,
+  "x": 746,
+  "y": 67,
   "w": 688,
-  "h": 900
+  "h": 833
  },
- "cut": [],
+ "cut": [
+  "l",
+  "r",
+  "t"
+ ],
  "fade": [
   "l"
  ],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 532.359375,
+   "y": 708.359375,
+   "w": 82.84375,
+   "h": 41.59375
+  },
+  "2": {
+   "x": 1081.84375,
+   "y": 82,
+   "w": 130.15625,
+   "h": 40
+  }
+ },
  "kind": "ui"
 }

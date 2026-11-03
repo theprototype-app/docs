@@ -1,25 +1,36 @@
 {
  "id": "recording-bar",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.589Z",
+ "spec": "a6e6cd75b7f8",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:14:08.712Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/recording/recording-bar.png",
- "width": 688,
- "height": 160,
+ "uiHits": [
+  "p.hud-cell",
+  "svg.lucide",
+  "div#recording-bar.rec-bar",
+  "span.rec-label",
+  "div.rec-fill",
+  "button#editor-mode-toggle.hud-cell",
+  "div.rec-track",
+  "p#play-button.hud-play",
+  "span#recording-time.rec-time",
+  "button#recording-cancel.rec-cancel",
+  "p#explorer-slot.hud-cell",
+  "button#toolbar-customize.hud-cell"
+ ],
+ "width": 850,
+ "height": 184,
  "crop": {
-  "x": 296,
-  "y": 640,
-  "w": 688,
-  "h": 160
+  "x": 507,
+  "y": 760,
+  "w": 425,
+  "h": 92
  },
  "cut": [],
- "fade": [
-  "l",
-  "r",
-  "t"
- ],
+ "fade": [],
  "anchors": {},
  "kind": "ui"
 }

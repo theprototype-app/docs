@@ -1,21 +1,49 @@
 {
  "id": "lod-distance",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.544Z",
+ "spec": "2d877967e634",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:31:08.836Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/lod/lod-distance.png",
- "width": 307,
- "height": 152,
+ "uiHits": [
+  "div#inspector.tp-ui",
+  "div.flex",
+  "button.sec-panel-head",
+  "svg.lucide",
+  "div.tp-ui",
+  "label.pr-label",
+  "p.text-text-muted",
+  "section.tp-ui",
+  "span.sec-title",
+  "input.pr-range",
+  "span.tp-ui",
+  "div.dn-wrap"
+ ],
+ "width": 622,
+ "height": 314,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 307,
-  "h": 152
+  "x": 1125,
+  "y": 432,
+  "w": 311,
+  "h": 157
  },
  "cut": [],
  "fade": [],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 232,
+   "y": 112.78125,
+   "w": 222,
+   "h": 32
+  },
+  "2": {
+   "x": 299,
+   "y": 36.78125,
+   "w": 103.59375,
+   "h": 40
+  }
+ },
  "kind": "ui"
 }

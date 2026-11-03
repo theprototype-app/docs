@@ -1,18 +1,33 @@
 {
  "id": "gametime",
- "dpr": 1.5,
- "shotAt": "2026-10-27T07:46:24.564Z",
+ "spec": "14ffc3ef7c76",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:43:15.342Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/nodes/gametime.png",
- "width": 1032,
- "height": 222,
+ "uiHits": [
+  "div.svelte-flow__pane",
+  "div.node-card",
+  "div.flex",
+  "div.relative",
+  "div.svelte-flow__handle",
+  "span.overflow-hidden",
+  "span.flex",
+  "select.nodrag",
+  "span",
+  "input.nodrag",
+  "div.svelte-flow__node",
+  "path.svelte-flow__edge-interaction"
+ ],
+ "width": 1300,
+ "height": 486,
  "crop": {
-  "x": 32,
-  "y": 0,
-  "w": 1032,
-  "h": 222
+  "x": 208,
+  "y": 284,
+  "w": 650,
+  "h": 243
  },
  "cut": [],
  "fade": [],

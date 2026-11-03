@@ -1,26 +1,55 @@
 {
  "id": "editor-desktop",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.521Z",
+ "spec": "74b18f1e62ce",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:30:12.517Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/image-editor/editor-desktop.png",
- "width": 688,
- "height": 700,
+ "uiHits": [
+  "div.border-b",
+  "header.wc-head",
+  "button#image-editor-undo.tp-ui",
+  "div#image-editor-window.ui-panel",
+  "button#image-editor-redo.tp-ui",
+  "div.flex",
+  "button.tp-ui",
+  "div.ws-tabs",
+  "button.ws-tab-btn",
+  "div.ws-resize",
+  "span.flex-1",
+  "div.ui-section-label"
+ ],
+ "width": 1360,
+ "height": 1560,
  "crop": {
-  "x": 300,
-  "y": 40,
-  "w": 688,
-  "h": 700
+  "x": 180,
+  "y": 110,
+  "w": 680,
+  "h": 780
  },
  "cut": [],
- "fade": [
-  "l",
-  "r",
-  "t",
-  "b"
- ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 880,
+   "y": 240,
+   "w": 280,
+   "h": 64
+  },
+  "2": {
+   "x": 880,
+   "y": 504,
+   "w": 460,
+   "h": 64
+  },
+  "3": {
+   "x": 1226,
+   "y": 1068.40625,
+   "w": 100,
+   "h": 208.8125
+  }
+ },
  "kind": "ui"
 }

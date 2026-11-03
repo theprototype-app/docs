@@ -1,26 +1,58 @@
 {
  "id": "mini-golf",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.519Z",
+ "spec": "8f98d84e09c2",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:38:13.373Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/game-rules/mini-golf.png",
- "width": 688,
- "height": 560,
+ "uiHits": [
+  "div.svelte-flow__pane",
+  "div.behaviour-out",
+  "div.flex",
+  "span",
+  "div.relative",
+  "span.overflow-hidden",
+  "span.text-xs",
+  "button.nodrag",
+  "span.flex",
+  "span.truncate",
+  "div.svelte-flow__handle",
+  "div.node-card"
+ ],
+ "width": 1340,
+ "height": 1110,
  "crop": {
-  "x": 620,
-  "y": 420,
-  "w": 688,
-  "h": 560
+  "x": 438,
+  "y": 274,
+  "w": 670,
+  "h": 555
  },
  "cut": [],
  "fade": [
-  "l",
-  "r",
   "t",
-  "b"
+  "r"
  ],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 418.15625,
+   "y": 420.65625,
+   "w": 151.84375,
+   "h": 26.65625
+  },
+  "2": {
+   "x": 238.6875,
+   "y": 640.65625,
+   "w": 87.46875,
+   "h": 40
+  },
+  "3": {
+   "x": 60,
+   "y": 800,
+   "w": 300,
+   "h": 290.65625
+  }
+ },
  "kind": "ui"
 }

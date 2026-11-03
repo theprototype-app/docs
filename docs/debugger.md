@@ -7,10 +7,14 @@ on variables in a watch list.
 It is **yours alone**. The other players in the session keep playing, and nothing you set in the debugger is saved
 into the scene or sent to anyone.
 
-![The Debugger paused at a Counter: the On Click wire shows a pulse, the Map Range wire reads 1, the watch list follows the score variable and the Counter's breakpoint is listed](img/debugger/paused-dark.webp){ .shot width="300" height="408" loading=lazy }
+![The Debugger paused at the Counter: the Key Press wire into it shows a pulse, its output wire into Set Variable reads its count, the watch list follows the score variable and the Counter's breakpoint is listed. 1: Paused at.](img/debugger/paused-dark.webp){ .shot width="300" height="341" loading=lazy }
 /// caption
 The Debugger paused at a Counter.
 ///
+
+<div class="shot-key" markdown>
+1. **Paused at** the node the event reached, before it runs; the wires, the watch list and the breakpoints follow under it.
+</div>
 
 ## Breakpoints
 
@@ -57,10 +61,14 @@ While you are paused, **your** view is frozen and events queue up for you; the s
     Breakpoints are off in VR — on a headset the game just keeps running. [Module](modules.md) code keeps running while
     you are paused.
 
-![The Debugger in the light theme](img/debugger/paused-light.webp){ .shot width="300" height="408" loading=lazy }
+![The Debugger in the light theme, paused at the Counter: Step and Resume in its header, the wires, the watch list and the breakpoint list. 1: Step and Resume.](img/debugger/paused-light.webp){ .shot width="300" height="341" loading=lazy }
 /// caption
 The Debugger in the light theme.
 ///
+
+<div class="shot-key" markdown>
+1. **Step** (F10) runs the next event; **Resume** (F8) rejoins the live game.
+</div>
 
 ## Several HUD Buttons, one module input
 

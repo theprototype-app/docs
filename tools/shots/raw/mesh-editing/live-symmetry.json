@@ -1,23 +1,56 @@
 {
  "id": "live-symmetry",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.553Z",
+ "spec": "96e1bcd0779e",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:53:07.867Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/mesh-editing/live-symmetry.png",
- "width": 688,
- "height": 900,
- "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 688,
-  "h": 900
- },
- "cut": [],
- "fade": [
-  "r"
+ "uiHits": [
+  "div.toolbox-header",
+  "span.tbx-label",
+  "button#mesh-gran-object.px-2",
+  "div.tbx-row",
+  "div.toolbox-body",
+  "svg.lucide",
+  "button#mesh-op-solidify.tbx-btn",
+  "button#mesh-op-delete.tbx-btn",
+  "button#mesh-sec-cleanup.tbx-sec-head",
+  "span",
+  "button#mesh-sec-display.tbx-sec-head",
+  "button#mesh-op-loopcut.tbx-btn"
  ],
- "anchors": {},
+ "width": 1376,
+ "height": 1400,
+ "crop": {
+  "x": 500,
+  "y": 56,
+  "w": 688,
+  "h": 700
+ },
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
+ "fade": [
+  "b"
+ ],
+ "anchors": {
+  "1": {
+   "x": 335.99999999999955,
+   "y": 763.9999999999997,
+   "w": 48,
+   "h": 48
+  },
+  "2": {
+   "x": 938,
+   "y": 1143.3125,
+   "w": 28,
+   "h": 28
+  }
+ },
  "kind": "ui"
 }

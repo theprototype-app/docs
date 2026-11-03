@@ -1,26 +1,55 @@
 {
  "id": "football",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.517Z",
+ "spec": "2b111686a760",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:49:48.122Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/game-rules/football.png",
- "width": 688,
- "height": 560,
+ "uiHits": [
+  "div.svelte-flow__pane",
+  "div.svelte-flow__handle",
+  "div.relative",
+  "select.nodrag",
+  "input.nodrag",
+  "span",
+  "div.flex",
+  "div.tp-note-title",
+  "p.tp-note-p",
+  "span.flex",
+  "path.svelte-flow__edge-interaction",
+  "span.h-2"
+ ],
+ "width": 1358,
+ "height": 1002,
  "crop": {
-  "x": 620,
-  "y": 420,
-  "w": 688,
-  "h": 560
+  "x": 400,
+  "y": 253,
+  "w": 679,
+  "h": 501
  },
  "cut": [],
- "fade": [
-  "l",
-  "r",
-  "t",
-  "b"
- ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 24,
+   "y": 130,
+   "w": 255,
+   "h": 763.2203369140625
+  },
+  "2": {
+   "x": 1059.8843994140625,
+   "y": 487.557861328125,
+   "w": 74.3485107421875,
+   "h": 34
+  },
+  "3": {
+   "x": 908,
+   "y": 731.800048828125,
+   "w": 255,
+   "h": 247.057861328125
+  }
+ },
  "kind": "ui"
 }

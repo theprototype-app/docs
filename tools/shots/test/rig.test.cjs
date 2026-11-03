@@ -42,3 +42,19 @@ test('who joins is part of what a capture depends on (a new guest re-shoots it)'
 	assert.notEqual(specHash(a), specHash({ ...a, peers: [{ name: 'Mia' }, { name: 'Bo', role: 'view' }] }));
 	assert.equal(specHash(a), specHash({ ...a, alt: 'words only' }));
 });
+
+test('on a remote slot theprototype.app is not tunnelled back here (the deployed app calls the real one)', () => {
+	const { loopbackOnlyEnv } = require('../lib/remote.cjs');
+	assert.equal(loopbackOnlyEnv({}), null);
+	assert.equal(loopbackOnlyEnv({ PW_REMOTE_WS: 'ws://pc:39001/' }).PW_REMOTE_EXPOSE, '<loopback>');
+	assert.equal(loopbackOnlyEnv({ PW_REMOTE_WS: 'ws://pc:39001/', PW_REMOTE_EXPOSE: '' }), null);
+});
+
+test('a clipped callout marks only the part of its element inside the image', () => {
+	const { callout } = require('../lib/draw.cjs');
+	const tall = { x: 16, y: 563, w: 418, h: 540 };
+	const c = callout({ n: 1, shape: 'box', pad: 3, badge: 'r', clip: true }, tall, 1376, 1040, 2, 7);
+	for (const b of c.boxes) assert.ok(b.y + b.h <= 1040 && b.y >= 0, JSON.stringify(b));
+	const raw = callout({ n: 1, shape: 'box', pad: 3, badge: 'r' }, tall, 1376, 1040, 2, 7);
+	assert.ok(raw.boxes.some((b) => b.y + b.h > 1040));
+});

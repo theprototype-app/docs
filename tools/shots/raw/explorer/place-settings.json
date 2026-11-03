@@ -1,24 +1,43 @@
 {
  "id": "place-settings",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.510Z",
+ "spec": "e6e7832002f0",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:08:42.752Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/explorer/place-settings.png",
- "width": 688,
- "height": 280,
+ "uiHits": [
+  "div#settings-main.settings-main",
+  "div#row-hdri-quality.tp-ui",
+  "div#row-placement-preview.tp-ui",
+  "span.sr-name",
+  "p#row-placement-preview-desc.sr-desc",
+  "div#row-placement-budget.tp-ui",
+  "p#row-placement-budget-desc.sr-desc",
+  "div#row-placement-dims.tp-ui",
+  "p#row-placement-dims-desc.sr-desc",
+  "div.ss-body",
+  "div.sr-head",
+  "div.sr-body"
+ ],
+ "width": 1348,
+ "height": 554,
  "crop": {
-  "x": 6,
-  "y": 0,
-  "w": 688,
-  "h": 280
+  "x": 482,
+  "y": 387,
+  "w": 674,
+  "h": 277
  },
  "cut": [],
- "fade": [
-  "l",
-  "r"
- ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 710.3125,
+   "y": 90.28125,
+   "w": 585.6875,
+   "h": 76
+  }
+ },
  "kind": "ui"
 }

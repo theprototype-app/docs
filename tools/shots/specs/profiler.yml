@@ -4,23 +4,49 @@ defaults:
   theme: dark
   dpr: 2
   format: webp
+  scene:
+  - {create: Box, name: Heavy crate, at: [0, 0.6, 0], scale: 1.2, color: '#c9a26b'}
+  - {create: TorusKnot, name: Knot, at: [2.4, 1, -0.6]}
+  - {create: Sphere, name: Ball, at: [-2.2, 0.6, 0.8], scale: 0.8, color: '#6c8cd5'}
+# 83-batch3 (V11): built live — a real 5 s Detailed recording of a small scene, made with the Profiler's own buttons.
 shots:
 - id: details-sidebar
   replaces: img/profiler/details-sidebar.png
-  dpr: 1
+  setup:
+  - {camera: {pos: [4, 3, 6], target: [0, 1, 0]}}
+  - {eval: "window.__stores.dockMenu.dockTab('profiler'); window.__stores.bottomDock.bottomDockActive.set('profiler'); window.__stores.bottomDock.dockHeight.set(560)"}
+  - {wait: 2500}
+  - {click: '#profiler-mode-detailed'}
+  - {wait: 400}
+  - {eval: "(() => { const s = document.querySelector('select[aria-label=\"Detailed recording length\"]'); if (!s) throw new Error('no length picker'); s.value = '5'; s.dispatchEvent(new Event('change', {bubbles: true})); })()"}
+  - {click: '#profiler-record'}
+  # 5 s of recording, then it lands in the list and opens
+  - {wait: 8000}
+  # one frame in the middle of the recording, then the crate's row in the Tree
+  - {press: '#profiler-timeline'}
+  - {release: true}
+  - {wait: 800}
+  - {click: '#profiler-tree >> text=Heavy crate'}
+  - {wait: 1500}
+  # the picked object's block sits low in the Details sidebar: scroll it into view
+  - {eval: "document.getElementById('profiler-details-object')?.scrollIntoView({block: 'center'})"}
+  - {wait: 500}
+  - eval: >-
+      (() => { const r = document.getElementById('profiler-dock').getBoundingClientRect();
+      const d = document.getElementById('docs-box') || document.body.appendChild(Object.assign(document.createElement('div'), {id: 'docs-box'}));
+      Object.assign(d.style, {position: 'fixed', pointerEvents: 'none', left: r.right - 688 + 'px', top: r.top + 'px', width: '688px', height: Math.min(560, r.height) + 'px'}); })()
+  crop: {selector: '#docs-box'}
+  fade: [l]
   kind: ui
   caption: The Tree in the middle, Details for the picked frame on the right.
-  crop:
-    rect:
-    - 752
-    - 0
-    - 688
-    - 438
-  fade:
-  - l
-  alt: 'The Profiler docked on a computer, cut at the column: the timeline and the Tree with Heavy crate picked, and Details
-    on the right for the frame at 2.1 s.'
-  from: img/profiler/details-sidebar.png
+  alt: >-
+    The Profiler docked on a computer, cut at the column: the Tree with Heavy crate picked, and the Details sidebar on
+    the right for the picked frame, with the picked object's draw calls, triangles and meshes. 1: the picked object.
+  annotate:
+  - {n: 1, at: {selector: '#profiler-details-object'}, shape: bracket, badge: l, key: 'The **picked object**: its draw calls, triangles, meshes, materials and CPU time.'}
+# 83-batch3: kept as the earlier capture. Shot live on 1.54.3 the panel was see-through (the 3D view showed through
+# it), reported to core. Live recipe once fixed: problemReport.openProblemReport(), a drag on #problem-shot, a note in
+# #problem-note, crop #problem-report; callouts on .problem-mark and #problem-note.
 - id: report-a-problem
   replaces: img/profiler/report-a-problem.png
   dpr: 1

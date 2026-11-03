@@ -1,21 +1,45 @@
 {
  "id": "note-page-phone",
- "dpr": 2.9,
- "shotAt": "2026-10-27T07:46:24.574Z",
+ "spec": "1488f211a870",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:07:31.140Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/notes/note-page-phone.png",
- "width": 1131,
- "height": 1392,
+ "uiHits": [
+  "button.sg-handle",
+  "div.note-head",
+  "div.note-body",
+  "div.note-actions",
+  "nav#ps-bar.ps-bar",
+  "div.tp-ui",
+  "span.note-num",
+  "span.note-chip",
+  "input#note-reply-input.ui-input",
+  "svg.lucide",
+  "button#ps-add.ps-tab",
+  "div.note-meta"
+ ],
+ "width": 780,
+ "height": 960,
  "crop": {
   "x": 0,
-  "y": 0,
-  "w": 1131,
-  "h": 1392
+  "y": 416,
+  "w": 390,
+  "h": 480
  },
- "cut": [],
+ "cut": [
+  "t"
+ ],
  "fade": [],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 492.125,
+   "y": 230.78125,
+   "w": 154.75,
+   "h": 41.5625
+  }
+ },
  "kind": "ui"
 }

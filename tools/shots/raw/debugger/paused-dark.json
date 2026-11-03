@@ -1,21 +1,43 @@
 {
  "id": "paused-dark",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.506Z",
+ "spec": "decd9f3f10fd",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:45:10.880Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/debugger/paused-dark.png",
- "width": 300,
- "height": 408,
+ "uiHits": [
+  "div.toolbox-header",
+  "div.toolbox-body",
+  "div.toolbox-status",
+  "svg.lucide",
+  "span#debug-queue.text-text-muted",
+  "p.tbx-label",
+  "button.debug-node",
+  "button#debug-watch-focus.tbx-cmd",
+  "span.debug-node",
+  "select#debug-watch-kind.ui-input",
+  "button#debug-bp-clear.tbx-cmd",
+  "span"
+ ],
+ "width": 600,
+ "height": 682,
  "crop": {
-  "x": 0,
-  "y": 0,
+  "x": 1124,
+  "y": 76,
   "w": 300,
-  "h": 408
+  "h": 341
  },
  "cut": [],
  "fade": [],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 165.375,
+   "y": 78.28125,
+   "w": 90.46875,
+   "h": 32
+  }
+ },
  "kind": "ui"
 }

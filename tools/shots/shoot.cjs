@@ -5,6 +5,7 @@
 // (size, dpr, the measured anchors, the cut sides) and then the annotated docs/img/<page>/<id>.<fmt>
 // (annotate.cjs does that part, and re-does it alone without a browser). A loop writes
 // docs/img/<page>/<id>.webm + .mp4. Run it in an e2e slot: `e2e-slot -- node shoot.cjs …`.
+if (require.main === module) require('./lib/remote.cjs').exposeLoopbackOnly();
 const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');

@@ -73,6 +73,8 @@ async function runSteps(page, steps, env = {}) {
 			// the steps open a window (window.open): wait for it; `capture: popup` shoots it
 			const [win] = await Promise.all([page.context().waitForEvent('page', { timeout: 30000 }), runSteps(page, st.popup, env)]);
 			await win.waitForLoadState('domcontentloaded');
+			// `size: [w, h]`: the window as a person would size it (window.open's features leave it wider than the column)
+			if (st.size) await win.setViewportSize({ width: st.size[0], height: st.size[1] });
 			await win.waitForTimeout(st.wait ?? 3000);
 			env.popup = win;
 		} else if (st.canvas) {
