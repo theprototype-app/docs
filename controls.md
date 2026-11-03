@@ -91,8 +91,11 @@ the water itself.
   of <kbd>Alt</kbd> and the preview disappears.
 - The object list always reaches every object, whatever is in front of it.
 
-![Alt+click in the Aquarium: the chip by the cursor says 2 of 3 · Fish orange](https://docs.theprototype.app/img/controls/alt-click-cycle.webp)
+![Alt+click on a crate with a ball and a post inside it: the second click picked the ball, and the chip beside the cursor reads 2 of 3 · Ball. 1: the chip, which says which of the three you have.](https://docs.theprototype.app/img/controls/alt-click-cycle.webp)
 *Figure: Alt+click steps through what is under the cursor; the chip says which one you have.*
+
+1. The chip says **which one** you have: 2 of 3, and its name.
+
 **Configure Scene ▸ Advanced ▸ Selection passes through** chooses what clicks go through:
 
 | Option | Default | What it does |
@@ -459,9 +462,12 @@ without docking — release Ctrl to dock*. You can press or release the key at a
 follows the key at once. It works for a single window, a window group dragged by its tab strip, and a tab torn out of
 a group.
 
-![The floating Objects window dragged over the right sidebar: it turns see-through, the sidebar column is outlined and the target reads Add as tab, with Hold Ctrl to place without docking underneath](https://docs.theprototype.app/img/controls/window-over-sidebar-hint.webp)
+![The floating Objects window dragged over the right sidebar: it turns see-through, the sidebar column is outlined and the target reads Add as tab, with Hold Ctrl to place without docking underneath. 1: Add as tab.](https://docs.theprototype.app/img/controls/window-over-sidebar-hint.webp)
 *Figure: A floating window dragged over a sidebar: drop to add it as a tab, or hold Ctrl.*
-![The same drag with Ctrl held: the outline and the target are gone, the Objects window lies over the sidebar as it will be dropped, and a label beside the pointer reads Placing without docking — release Ctrl to dock](https://docs.theprototype.app/img/controls/window-place-without-docking.webp)
+
+1. Drop here to **add as tab** in the sidebar; hold Ctrl to place the window without docking.
+
+![The same drag with Ctrl held: the outline and the target are gone, the Objects window lies over the sidebar as it will be dropped, and a label beside the pointer reads Placing without docking — release Ctrl to dock.](https://docs.theprototype.app/img/controls/window-place-without-docking.webp)
 *Figure: The same drag with Ctrl held: the window will land over the sidebar, not in it.*
 On a touch screen there is no key to hold: drop the window anywhere it is not over a target, or press and hold a docked
 window's tab and pick **Undock into a floating window** to take it out as a floating one.
@@ -631,10 +637,13 @@ logo and your profile picture stay where they are.) In **Edit positions** every 
 *Figure: Edit positions, in a small window: every cluster has a grip, every button a red −.*
 ![Edit positions: the budget chip has its own grip and red − right of the toolbar](https://docs.theprototype.app/img/controls/budget-chip-edit-positions.webp)
 *Figure: In Edit positions the budget chip has its own grip and red −.*
-![After Rotate to vertical and Rotate to horizontal: the toolbar stands on the left edge with Play in its middle, and the bottom-left corner buttons lie in a row](https://docs.theprototype.app/img/controls/clusters-rotated.webp)
+![After Rotate to vertical on the toolbar and Rotate to horizontal on the bottom-left buttons: the toolbar stands on the left edge with Play in its middle, and the bottom-left corner buttons lie in a row.](https://docs.theprototype.app/img/controls/clusters-rotated.webp)
 *Figure: Clusters after Rotate to vertical and Rotate to horizontal.*
-![Edit positions with a mouse: the buttons beside the logo are drawn faint (hidden by default on a computer) and their grip menu is open — Move, Rotate to vertical, Reset position, Reset all positions, Show cluster and Show all](https://docs.theprototype.app/img/controls/touch-tools-show-cluster.webp)
+![Edit positions with a mouse: the buttons beside the logo are drawn faint (hidden by default on a computer) and their grip menu is open — Move, Rotate to vertical, Reset position, Reset all positions, Show cluster and Show all. 1: Show cluster.](https://docs.theprototype.app/img/controls/touch-tools-show-cluster.webp)
 *Figure: A cluster's grip menu, with Show cluster and Show all.*
+
+1. **Show cluster** brings back the buttons beside the logo — **show it**.
+
 #### Arranging the buttons
 
 Single buttons move between the clusters as before. The places that take buttons:
@@ -669,7 +678,7 @@ Then:
 
 ![Edit positions on a computer: every button on the bottom toolbar has a red −, green + slots sit at the ends of the bar, a grip sits beside it, and the green ✓ applies.](https://docs.theprototype.app/img/controls/edit-positions.webp)
 *Figure: Edit positions on a computer: the bottom toolbar.*
-![Edit positions reaching the top right: the notifications and Explorer buttons in the top-right group each carry a red −, with a green + for the next place in the group.](https://docs.theprototype.app/img/controls/edit-positions-top-right.webp)
+![Edit positions reaching the top right: the scene notes, notifications and peers buttons in the top-right group each carry a red −, with a green + for the next place in the group and a grip under it.](https://docs.theprototype.app/img/controls/edit-positions-top-right.webp)
 *Figure: Edit positions reaching the top right of the screen.*
 ![The top of the screen in Edit positions with a mouse: the Connect bar has its own red − and a grip under it.](https://docs.theprototype.app/img/controls/edit-positions-connect-bar.webp)
 *Figure: The Connect bar in Edit positions.*
@@ -700,7 +709,7 @@ Float** button (the lock in the drawer's header), or right-click the Connect bar
   **compact** form (the status dot and the chevron); tap the dot for the full bar, and it grows back by itself when room
   returns.
 
-![The floating Connect bar right-clicked outside Edit positions: its menu reads Move, Pin to top row, Reset position and Reset all positions (the last two greyed while the bar is in its default place)](https://docs.theprototype.app/img/controls/connect-bar-menu.webp)
+![The floating Connect bar right-clicked outside Edit positions: its menu reads Move, Pin to top row, Reset position and Reset all positions (the last two greyed while the bar is in its default place).](https://docs.theprototype.app/img/controls/connect-bar-menu.webp)
 *Figure: The Connect bar's right-click menu, outside Edit positions.*
 Each kind of screen (touch or mouse) remembers its own choice, and layouts carry it. On a folded phone Connect is the
 chip in the phone's top bar, unchanged.

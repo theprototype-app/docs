@@ -66,7 +66,10 @@ tab): it joins in one step with the role you chose, for a limited time. See [Inv
 
 ### What guests see
 
-![Connect ▸ Info ▸ Guests see](https://docs.theprototype.app/img/connection/guests-see.png)
+![The Connect drawer's Info tab on a computer: the Session rows — State, Your ID, Guests see with its list, Host — and the Signaling server rows under them. 1: Guests see, which of your files a guest sees in the Explorer.](https://docs.theprototype.app/img/connection/guests-see.webp)
+*Figure: Connect ▸ ▾ ▸ Info, where the host picks what guests see.*
+
+1. **Guests see**: which of your files a guest sees in the Explorer (read-only).
 
 The host decides how much of their library a guest sees: **Connect ▸ ▾ (Info) ▸ Guests see**.
 
@@ -112,6 +115,12 @@ A connection request waits for the host. Three things can end it, and each one s
 - **Nobody answers** — after **90 seconds** the request cancels itself on both sides and offers **Try again**, instead of sitting on *Requesting* for ever.
 
 While it is open the requester sees a countdown beside *Requesting*, and your card says how long that person has been waiting (*asked 34s ago*). An expired card can still be approved — approving simply dials them back. Dialling somebody who is not online ends the request too, rather than leaving it up beside a toast saying they are unreachable. If a connection is stuck, the panel offers a **Retry** that closes the stale link and reconnects.
+
+**When a guest approves someone** (*since 1.54.1*). A guest's **Approve** lets that person in at the guest only. The
+host decides for itself, with its own settings: an approval card of its own, or no card where the room lets people in
+automatically (an open room, or *Allow guests to join automatically*). A guest's **Copy your invite link**
+names the session's host, so a friend a guest invites asks the host directly. An [invite link](https://docs.theprototype.app/invites.md) a guest
+made names that guest; the host is then asked by its own settings in the same way.
 
 !!! note "Waiting requests are capped"
     A rush of joiners folds into the Connect drawer rather than burying the screen, and when the queue is full the expired cards are dropped before the live ones.

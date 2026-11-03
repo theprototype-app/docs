@@ -29,6 +29,12 @@ involves none of our servers.
 3. **Move it** — click the cube to select it, then use the gizmo (<kbd>1</kbd> move, <kbd>2</kbd> rotate, <kbd>3</kbd> scale).
 4. **Invite a friend** — open the Connect panel, copy your peer ID and send it to them. They paste it into their own Connect field and press **Connect**; you approve the request, and from then on you are editing the same scene together.
 
+![The menu a right-click on the empty 3D view opens, with Add ▸ Mesh unfolded and Cube in its list. 1: Add. 2: Cube, the first thing to make.](https://docs.theprototype.app/img/index/quick-start-add.webp)
+*Figure: Quick start, step 2 — right-click the empty view, then Add ▸ Mesh ▸ Cube.*
+
+1. **Add** — the first item of the menu.
+2. Mesh ▸ **Cube**: make **a cube** to start with.
+
 !!! tip
     Everything replicates automatically: objects, transforms, materials, the node graph, chat, pings and voice. There is no "sync" button — if you can see it, your peers can too.
 

@@ -41,6 +41,13 @@ like your own edits.
 3. Ask Claude something: *"Build a campfire with five logs and a warm light"*, *"Make the flame
    flicker"*, *"What can you do here?"*
 
+![The AI assistant window, signed out: Choose how the assistant thinks, with the Connect Claude card — Sign in to connect, step 1 Add theprototype to Claude with the connector address and How it works, step 2 sign in and press Connect Claude. 1: Sign in to connect. 2: Add to Claude. 3: How it works.](https://docs.theprototype.app/img/ai-claude-connector/connect-card.webp)
+*Figure: The AI window's Connect Claude card, before you sign in.*
+
+1. **Sign in to connect** opens your profile menu: **sign in** first.
+2. **Add to Claude** adds the connector in claude.ai — **once only**.
+3. **How it works** opens **this page**.
+
 One tab at a time: pressing Connect Claude in a second tab asks first, then moves the connection
 there. If your network blips, the tab reconnects by itself.
 
