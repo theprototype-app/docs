@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Image Editor", "url": "https://docs.theprototype.app/image-editor/", "description": "New in 1.32: the Image editor crops, rotates, flips, resizes and adjusts a picture in your Explorer library. When you save, every texture made from that picture updates for everyone in the session.", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/image-editor/editor-desktop.webp", "caption": "The Image editor on a computer."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/image-editor/crop-desktop-light.webp", "caption": "Cropping on a computer in the light theme."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/image-editor/versions-desktop.webp", "caption": "The Versions page."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/image-editor/docked.webp", "caption": "The Image editor as a tab in the bottom dock."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/image-editor/editor-phone.webp", "caption": "The Image editor on a phone."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Image Editor", "url": "https://docs.theprototype.app/image-editor/", "description": "New in 1.32: the Image editor crops, rotates, flips, resizes and adjusts a picture in your Explorer library. When you save, every texture made from that picture updates for everyone in the session.", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.54.3"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/image-editor/editor-desktop.webp", "caption": "The Image editor on a computer."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/image-editor/crop-desktop-light.webp", "caption": "Cropping on a computer in the light theme."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/image-editor/versions-desktop.webp", "caption": "The Versions page."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/image-editor/docked.webp", "caption": "The Image editor as a tab in the bottom dock."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/image-editor/editor-phone.webp", "caption": "The Image editor on a phone."}]}</script>
 </head>
   
   
@@ -6034,11 +6034,18 @@
 <a href="../explorer/">Explorer</a> library. When you save, every texture made from that picture updates for everyone in the
 session.</p>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/image-editor/editor-desktop.webp" data-desc-position="bottom"><img alt="The Image editor on a computer: the picture on the left, the Edit page with Rotate and flip, Crop, Resize and Adjust on the right" class="shot fade-l fade-r fade-t fade-b" height="700" loading="lazy" src="../img/image-editor/editor-desktop.webp" width="688"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/image-editor/editor-desktop.webp" data-desc-position="bottom"><img alt="The Image editor on a computer: the picture on the left, and on the right the Edit page with Rotate and flip, Crop, Resize and Adjust, Save and Save as copy above. 1: rotate and flip. 2: Crop. 3: the Adjust sliders." class="shot" height="780" loading="lazy" src="../img/image-editor/editor-desktop.webp" width="680"></a></p>
 <figcaption>
 <p>The Image editor on a computer.</p>
 </figcaption>
 </figure>
+<div class="shot-key">
+<ol>
+<li><strong>Rotate</strong> 90° either way and <strong>flip</strong>.</li>
+<li><strong>Crop…</strong> draws a crop box over the picture.</li>
+<li><strong>Adjust</strong>: brightness, contrast and saturation.</li>
+</ol>
+</div>
 <h2 id="opening-it">Opening it</h2>
 <ul>
 <li>Right-click an image in the Explorer ▸ <strong>Edit image…</strong></li>
@@ -6062,11 +6069,18 @@ toolbar also shows the picture's size and format, and how many textures were mad
   back.</li>
 </ul>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/image-editor/crop-desktop-light.webp" data-desc-position="bottom"><img alt="Cropping on a computer in the light theme: the crop box over the picture, with X, Y, W and H and Apply crop in the sidebar" class="shot fade-l fade-r fade-t fade-b" height="700" loading="lazy" src="../img/image-editor/crop-desktop-light.webp" width="688"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/image-editor/crop-desktop-light.webp" data-desc-position="bottom"><img alt="Cropping on a computer in the light theme: the crop box drawn over the picture with its size badge, and in the sidebar the crop shape, X, Y, W and H and Apply crop. 1: the crop box. 2: X, Y, W and H. 3: Apply crop." class="shot" height="560" loading="lazy" src="../img/image-editor/crop-desktop-light.webp" width="680"></a></p>
 <figcaption>
 <p>Cropping on a computer in the light theme.</p>
 </figcaption>
 </figure>
+<div class="shot-key">
+<ol>
+<li>The <strong>crop box</strong>: drag it or its corners; Enter applies, Esc cancels.</li>
+<li><strong>X</strong>, <strong>Y</strong>, <strong>W</strong>, <strong>H</strong>: the box in pixels.</li>
+<li><strong>Apply crop</strong>.</li>
+</ol>
+</div>
 <h2 id="saving">Saving</h2>
 <ul>
 <li><strong>Save</strong> (<kbd>Ctrl</kbd>+<kbd>S</kbd>) writes over the same Explorer file: same name, same folder, shared with the
@@ -6081,11 +6095,16 @@ toolbar also shows the picture's size and format, and how many textures were mad
 <p>The <strong>Versions</strong> page lists every saved state of this image with a thumbnail, date and size, and <strong>Restore</strong> on each.
 <strong>Restore original</strong> at the top goes back to the picture as it first came in.</p>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/image-editor/versions-desktop.webp" data-desc-position="bottom"><img alt="The Versions page: Restore original at the top, the current edit and the original below it" class="shot fade-l fade-r fade-t fade-b" height="700" loading="lazy" src="../img/image-editor/versions-desktop.webp" width="688"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/image-editor/versions-desktop.webp" data-desc-position="bottom"><img alt="The Versions page after one Save: Restore original at the top, then the current edit and the original image below it. 1: Restore original." class="shot" height="560" loading="lazy" src="../img/image-editor/versions-desktop.webp" width="680"></a></p>
 <figcaption>
 <p>The Versions page.</p>
 </figcaption>
 </figure>
+<div class="shot-key">
+<ol>
+<li><strong>Restore original</strong> puts the image back as it was imported; every Save keeps the version before it.</li>
+</ol>
+</div>
 <h2 id="textures-and-their-images">Textures and their images</h2>
 <p>A texture remembers the library image it was made from when you apply it from the Explorer. <strong>Edit</strong> in the Inspector
 on any other texture — one picked from disk, or one that came with an imported model — first puts it into the library
@@ -6106,22 +6125,33 @@ while it is closed (on a phone, the <strong>Windows</strong> sheet), press its h
 <li>Closing the tab with unsaved edits asks first, as the window does.</li>
 </ul>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/image-editor/docked.webp" data-desc-position="bottom"><img alt="The Image editor as a tab in the bottom dock, beside Animation, Node editor, Explorer, Flow Code and UV editor" class="shot fade-r" height="337" loading="lazy" src="../img/image-editor/docked.webp" width="688"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/image-editor/docked.webp" data-desc-position="bottom"><img alt="The Image editor as a tab in the bottom dock, beside the Node editor and the Explorer, with the picture and its tools below the tabs. 1: the Image editor tab." class="shot fade-b" height="349" loading="lazy" src="../img/image-editor/docked.webp" width="688"></a></p>
 <figcaption>
 <p>The Image editor as a tab in the bottom dock.</p>
 </figcaption>
 </figure>
+<div class="shot-key">
+<ol>
+<li>Docked, the <strong>Image editor</strong> is one more tab in the bottom dock.</li>
+</ol>
+</div>
 <h2 id="on-a-phone">On a phone</h2>
 <p>The editor is a full-width sheet between the top bar and the bottom bar, so <strong>Play</strong> stays tappable. The Edit and
 Versions pages sit under the picture instead of beside it, and <strong>Crop…</strong> scrolls its <strong>Apply crop</strong> button into view.
 Since 1.32 they start <strong>closed</strong>, so the picture gets the screen: tap ✎ (Edit) or ⟲ (Versions) under the picture to
 open one, and it stays open next time.</p>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/image-editor/editor-phone.webp" data-desc-position="bottom"><img alt="The Image editor on a phone: the picture at the top, the Edit page under it, the bottom bar with Play below" class="shot" height="844" loading="lazy" src="../img/image-editor/editor-phone.webp" width="390"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/image-editor/editor-phone.webp" data-desc-position="bottom"><img alt="The Image editor on a phone: the picture at the top, the Edit page under it, and the bottom bar with Play below. 1: the Edit page. 2: Play, still reachable." class="shot" height="896" loading="lazy" src="../img/image-editor/editor-phone.webp" width="390"></a></p>
 <figcaption>
 <p>The Image editor on a phone.</p>
 </figcaption>
 </figure>
+<div class="shot-key">
+<ol>
+<li>The <strong>Edit</strong> and <strong>Versions</strong> pages switch under the picture.</li>
+<li>The sheet leaves <strong>Play</strong> uncovered.</li>
+</ol>
+</div>
 <h2 id="limits">Limits</h2>
 <ul>
 <li>Versions are kept <strong>on this device</strong>: the original plus the last 19 saves per image. Peers receive the saved image,
@@ -6150,7 +6180,7 @@ open one, and it stays open next time.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-31
+    2026-11-03
   </span>
 
     

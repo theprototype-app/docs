@@ -10,8 +10,13 @@ setting; for running a simulation, gravity, joints and grabbing see [Physics & S
 
 Select an object and open **Properties ▸ Physics**:
 
-![The Physics section of an object's properties, with Show collider on and the green collider wireframe in the viewport](https://docs.theprototype.app/img/colliders/physics-section.webp)
+![A torus knot selected beside its Physics properties: Body Dynamic, Mass, Material, Bounciness, Friction, Collider set to Convex hull and Show collider ticked, with the green hull wireframe drawn round the knot. 1: the Collider choice. 2: Show collider. 3: the collider wireframe.](https://docs.theprototype.app/img/colliders/physics-section.webp)
 *Figure: The Physics section of an object's properties.*
+
+1. The **Collider**: the simple shape physics tests instead of your triangles.
+2. **Show collider** draws it as a green wireframe, on this device only.
+3. The **hull** wraps the knot: holes and dents are filled in.
+
 | Row | Options / range | Default |
 |---|---|---|
 | **Body** | Auto (scenery) · Static · Dynamic | Auto (scenery) |
@@ -74,8 +79,11 @@ a ball rolls through an arch's opening, falls into a pool or a tank, drives thro
 while **Body** is *Auto (scenery)* or *Static*. A group (an imported model) is merged into one mesh. Static **Arch** and
 **Corner** blocks use it automatically.
 
-![An arch with an exact mesh collider: the green wireframe follows the opening](https://docs.theprototype.app/img/colliders/exact-mesh.webp)
+![A static arch with an exact mesh collider: the green wireframe follows the arch's opening, so a ball can roll through it. 1: the opening, kept by the exact mesh.](https://docs.theprototype.app/img/colliders/exact-mesh.webp)
 *Figure: An arch with an exact mesh collider.*
+
+1. The **opening kept**: an exact mesh's wireframe follows every face of the arch.
+
 **Limits.**
 
 - Static and kinematic bodies only. A **Dynamic** body that asks for it gets its convex hull instead, and a toast says
@@ -99,8 +107,11 @@ A dynamic arch, cup or U-shaped crate now keeps its openings. One undo restores 
 replicates to everyone. Fine-tune it afterwards with **Edit collider…** ([below](#custom-compound-colliders)). In VR it is
 **Decompose (auto)** in the [collider editor](#editing-a-collider-in-vr).
 
-![The same arch decomposed into convex pieces](https://docs.theprototype.app/img/colliders/decomposed.webp)
+![The same arch, dynamic, after Decompose: its collider is a handful of convex pieces drawn as green wireframes, and the opening stays open. 1: one convex piece.](https://docs.theprototype.app/img/colliders/decomposed.webp)
 *Figure: The same arch decomposed into convex pieces.*
+
+1. Each **convex piece** is a simple hull; together they keep the opening.
+
 The result has to fit the custom-collider budget (about 400 points). Pieces past it are dropped, and the toast says so.
 
 ## Collision groups
@@ -217,8 +228,12 @@ dynamic.
 The other body travels with the trigger, so every peer reads the same object. A contact with the ground plane reports an
 empty *other*.
 
-![On Impact and On Enter nodes with only with wired to Object Selectors, and other wired into Distance](https://docs.theprototype.app/img/colliders/contact-filter.webp)
+![The node editor: an On Impact node whose only with input is wired from the Target's Object Selector and whose other output feeds a Distance node, and an On Enter node on a sensor zone filtered to the Ball. 1: only with. 2: other, the body that was hit.](https://docs.theprototype.app/img/colliders/contact-filter.webp)
 *Figure: On Impact and On Enter nodes with only with wired to Object Selectors.*
+
+1. **only with**: an Object Selector wired here makes the node fire only when the other body is that object.
+2. **other** carries the body that was hit — here into a Distance node.
+
 ## Editing a collider in VR
 
 Select an object, open the radial menu's **Selected** ring and pick **Edit collider**. The edit side-menu opens, titled

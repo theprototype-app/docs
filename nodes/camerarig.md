@@ -35,8 +35,12 @@ A chase camera for a car:
    now stays behind the car and turns with it.
 5. To see through the camera, use [Set Active Camera](https://docs.theprototype.app/nodes/setcamera.md) or the camera's **Preview**.
 
-![A camera object, its viewing pyramid drawn, aimed at a cube by a Camera Rig](https://docs.theprototype.app/img/nodes-camerarig/camera-rig.webp)
-*Figure: A camera object.*
+![A camera object, its viewing pyramid drawn, behind and above a box standing in for a car and aimed at it by a Camera Rig. 1: the camera. 2: the target.](https://docs.theprototype.app/img/nodes-camerarig/camera-rig.webp)
+*Figure: A Camera Rig keeps the camera behind the car, aimed at it.*
+
+1. The **camera object** the rig moves: its viewing pyramid shows where it looks.
+2. The **target** wired into the rig: the camera follows it and looks at it.
+
 ## Limits
 
 - It moves camera objects only. Wired to anything else it does nothing, and a toast says so.

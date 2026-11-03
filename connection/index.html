@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Connection", "url": "https://docs.theprototype.app/connection/", "description": "How peers find each other, how to invite someone into your scene, and how to point the app at a signaling server you trust.", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.54.2"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/status-dot-phone.webp", "caption": "A phone's crowded top bar: the chip keeps the connection dot."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/peers-panel-desktop.webp", "caption": "The Connected panel on a computer."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/guests-see.webp", "caption": "Connect ▸ ▾ ▸ Info, where the host picks what guests see."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Connection", "url": "https://docs.theprototype.app/connection/", "description": "How peers find each other, how to invite someone into your scene, and how to point the app at a signaling server you trust.", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.54.3"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/status-dot-phone.webp", "caption": "A folded phone's top bar: the chip keeps the connection dot."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/peers-panel-desktop.webp", "caption": "The Connected panel on a computer."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/guests-see.webp", "caption": "Connect ▸ ▾ ▸ Info, where the host picks what guests see."}]}</script>
 </head>
   
   
@@ -6331,11 +6331,16 @@ a ▾ (and the microphone while you are in a call).</p>
 while the signaling link is down it also says how long it has been trying. On a phone a tap on the chip opens the full
 connection details.</p>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/connection/status-dot-phone.webp" data-desc-position="bottom"><img alt="The phone's top bar when it is crowded: the logo, the connection chip with a green dot, ▾ and the microphone, then the bell and the peers" class="shot" height="60" loading="lazy" src="../img/connection/status-dot-phone.webp" width="390"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/connection/status-dot-phone.webp" data-desc-position="bottom"><img alt="The top bar of a folded phone with one other person connected: the logo, the connection chip with its dot, ▾ and the microphone, then the bell and the peers button with 2. 1: the connection dot." class="shot" height="120" loading="lazy" src="../img/connection/status-dot-phone.webp" width="390"></a></p>
 <figcaption>
-<p>A phone's crowded top bar: the chip keeps the connection dot.</p>
+<p>A folded phone's top bar: the chip keeps the connection dot.</p>
 </figcaption>
 </figure>
+<div class="shot-key">
+<ol>
+<li>The <strong>dot</strong>: its colour is the connection state (the table above).</li>
+</ol>
+</div>
 <h3 id="who-is-here-the-peers-panel">Who is here: the peers panel</h3>
 <p>The peers button in the top bar (beside the bell, with the number of people) opens the <strong>Connected</strong> panel. Its header
 matches the notification centre's, and each person is <strong>one row</strong>: their avatar, their name (shortened with … — point
@@ -6343,11 +6348,17 @@ at it for the full name), a second line with where they are and their role, and 
 <strong>Go to</strong> or the role list. On a computer the panel is 320–420 px wide and grows with long names, so nothing wraps or
 breaks. On a phone it opens as a sheet like the notifications: a grab bar on top, and a swipe down closes it.</p>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/connection/peers-panel-desktop.webp" data-desc-position="bottom"><img alt="The Connected panel on a computer: five people, one row each — avatar, name, the scene they are in and their p-number underneath, and Editor or Viewer with Go to or Watch on the right" class="shot" height="385" loading="lazy" src="../img/connection/peers-panel-desktop.webp" width="515"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/connection/peers-panel-desktop.webp" data-desc-position="bottom"><img alt="The Connected panel on a computer with four people, one row each: an avatar, the name, the scene they are in, the ping and their short id underneath, then their role (Admin, Editor or Viewer) and Watch on the right. 1: you. 2: a person's role list." class="shot" height="278" loading="lazy" src="../img/connection/peers-panel-desktop.webp" width="393"></a></p>
 <figcaption>
 <p>The Connected panel on a computer.</p>
 </figcaption>
 </figure>
+<div class="shot-key">
+<ol>
+<li><strong>(you)</strong>: your own row; the host is <strong>Admin</strong>.</li>
+<li>A person's <strong>role</strong> (Editor or Viewer): the host changes it here.</li>
+</ol>
+</div>
 <p>Right-click a person (long-press on touch, <kbd>Shift</kbd>+<kbd>F10</kbd> from the keyboard) for the <strong>peer menu</strong>:
 their profile, Go to, Watch, Mute, Hide — and, for the host or an admin, <strong>Remove from session</strong> and <strong>Remove and
 block</strong>. See <a href="../people/">Users and moderation</a>. An AI agent shows a robot and "AI" instead of a character.</p>

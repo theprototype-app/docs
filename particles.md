@@ -95,7 +95,7 @@ car, sparks off a swung sword.
 Since 1.27 **Inspector ▸ Particles ▸ Draw as** draws the particles one of four ways. The particles move exactly the
 same in every mode; only the shape on screen changes.
 
-![Draw as set to Trails, with the Trail length, Segments and Inherit velocity rows](https://docs.theprototype.app/img/particles/draw-as.webp)
+![Properties ▸ Particles: Draw as set to Trails among Sprites, Stretch, Trails and Ribbon, with the Trail length, Segments and Inherit velocity rows that Trails shows.](https://docs.theprototype.app/img/particles/draw-as.webp)
 *Figure: Draw as set to Trails.*
 | Draw as | What you see | Its rows |
 |---|---|---|
@@ -108,8 +108,11 @@ same in every mode; only the shape on screen changes.
   drawn as trails, and the Inspector says so.
 - In **Local** space a ribbon rides along with the object; switch **Space** to **World** for a trail that stays behind it.
 
-![The Magic wisps preset: purple trails curling off a moving cube](https://docs.theprototype.app/img/particles/wisps-trails.webp)
+![The Magic wisps preset drawn as trails: pale purple streaks curling off a grey cube that sweeps from side to side. 1: the moving cube the trails come from.](https://docs.theprototype.app/img/particles/wisps-trails.webp)
 *Figure: The Magic wisps preset.*
+
+1. The **emitter**: Inherit velocity carries its motion into the trails.
+
 ## Caps
 
 To keep framerates high, up to **8 emitters** render at once (500 particles each; in VR at most 200 per emitter in every

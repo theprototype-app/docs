@@ -4,8 +4,13 @@ New in 1.32: the **Image editor** crops, rotates, flips, resizes and adjusts a p
 [Explorer](https://docs.theprototype.app/explorer.md) library. When you save, every texture made from that picture updates for everyone in the
 session.
 
-![The Image editor on a computer: the picture on the left, the Edit page with Rotate and flip, Crop, Resize and Adjust on the right](https://docs.theprototype.app/img/image-editor/editor-desktop.webp)
+![The Image editor on a computer: the picture on the left, and on the right the Edit page with Rotate and flip, Crop, Resize and Adjust, Save and Save as copy above. 1: rotate and flip. 2: Crop. 3: the Adjust sliders.](https://docs.theprototype.app/img/image-editor/editor-desktop.webp)
 *Figure: The Image editor on a computer.*
+
+1. **Rotate** 90° either way and **flip**.
+2. **Crop…** draws a crop box over the picture.
+3. **Adjust**: brightness, contrast and saturation.
+
 ## Opening it
 
 - Right-click an image in the Explorer ▸ **Edit image…**
@@ -31,8 +36,13 @@ The sidebar on the right has two pages: **Edit** and **Versions**.
 - **Adjust**: **Brightness**, **Contrast** and **Saturation** sliders, applied live. **Reset adjustments** puts them
   back.
 
-![Cropping on a computer in the light theme: the crop box over the picture, with X, Y, W and H and Apply crop in the sidebar](https://docs.theprototype.app/img/image-editor/crop-desktop-light.webp)
+![Cropping on a computer in the light theme: the crop box drawn over the picture with its size badge, and in the sidebar the crop shape, X, Y, W and H and Apply crop. 1: the crop box. 2: X, Y, W and H. 3: Apply crop.](https://docs.theprototype.app/img/image-editor/crop-desktop-light.webp)
 *Figure: Cropping on a computer in the light theme.*
+
+1. The **crop box**: drag it or its corners; Enter applies, Esc cancels.
+2. **X**, **Y**, **W**, **H**: the box in pixels.
+3. **Apply crop**.
+
 ## Saving
 
 - **Save** (<kbd>Ctrl</kbd>+<kbd>S</kbd>) writes over the same Explorer file: same name, same folder, shared with the
@@ -48,8 +58,11 @@ The sidebar on the right has two pages: **Edit** and **Versions**.
 The **Versions** page lists every saved state of this image with a thumbnail, date and size, and **Restore** on each.
 **Restore original** at the top goes back to the picture as it first came in.
 
-![The Versions page: Restore original at the top, the current edit and the original below it](https://docs.theprototype.app/img/image-editor/versions-desktop.webp)
+![The Versions page after one Save: Restore original at the top, then the current edit and the original image below it. 1: Restore original.](https://docs.theprototype.app/img/image-editor/versions-desktop.webp)
 *Figure: The Versions page.*
+
+1. **Restore original** puts the image back as it was imported; every Save keeps the version before it.
+
 ## Textures and their images
 
 A texture remembers the library image it was made from when you apply it from the Explorer. **Edit** in the Inspector
@@ -75,8 +88,11 @@ while it is closed (on a phone, the **Windows** sheet), press its header's **Doc
   image…**). Opening an image while it is docked brings the dock tab forward.
 - Closing the tab with unsaved edits asks first, as the window does.
 
-![The Image editor as a tab in the bottom dock, beside Animation, Node editor, Explorer, Flow Code and UV editor](https://docs.theprototype.app/img/image-editor/docked.webp)
+![The Image editor as a tab in the bottom dock, beside the Node editor and the Explorer, with the picture and its tools below the tabs. 1: the Image editor tab.](https://docs.theprototype.app/img/image-editor/docked.webp)
 *Figure: The Image editor as a tab in the bottom dock.*
+
+1. Docked, the **Image editor** is one more tab in the bottom dock.
+
 ## On a phone
 
 The editor is a full-width sheet between the top bar and the bottom bar, so **Play** stays tappable. The Edit and
@@ -84,8 +100,12 @@ Versions pages sit under the picture instead of beside it, and **Crop…** scrol
 Since 1.32 they start **closed**, so the picture gets the screen: tap ✎ (Edit) or ⟲ (Versions) under the picture to
 open one, and it stays open next time.
 
-![The Image editor on a phone: the picture at the top, the Edit page under it, the bottom bar with Play below](https://docs.theprototype.app/img/image-editor/editor-phone.webp)
+![The Image editor on a phone: the picture at the top, the Edit page under it, and the bottom bar with Play below. 1: the Edit page. 2: Play, still reachable.](https://docs.theprototype.app/img/image-editor/editor-phone.webp)
 *Figure: The Image editor on a phone.*
+
+1. The **Edit** and **Versions** pages switch under the picture.
+2. The sheet leaves **Play** uncovered.
+
 ## Limits
 
 - Versions are kept **on this device**: the original plus the last 19 saves per image. Peers receive the saved image,

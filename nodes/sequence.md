@@ -52,7 +52,7 @@ Count one, two, three — and back to zero:
    **reset**.
 4. Press Play and tap <kbd>G</kbd>: the Counter reads 1, 2, 3 a second apart, then 0.
 
-![A Key Press triggering a Sequence whose first three steps count up a Counter and whose fourth step resets it](https://docs.theprototype.app/img/nodes-sequence/sequence.webp)
+![A Key Press triggering a Sequence (waits 0, 1, 1, 1) whose steps 1 to 3 wire into a Counter's pulse and whose step 4 wires into its reset](https://docs.theprototype.app/img/nodes-sequence/sequence.webp)
 *Figure: A Key Press triggering a Sequence whose first three steps count up a Counter and whose fourth step resets it.*
 !!! tip
     Steps are ordinary pulses, so each one can drive anything an event drives — a [Latch](https://docs.theprototype.app/nodes/latch.md) set, a Spawn, a

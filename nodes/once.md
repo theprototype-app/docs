@@ -46,7 +46,7 @@ A treasure chest that pays out only once:
 4. Add a **Key Press** (capture <kbd>R</kbd>); wire it → Once's **rearm**.
 5. Press Play and click the chest a few times: the Counter reads 1. Press <kbd>R</kbd> and the next click counts again.
 
-![On Click on the chest feeding a Once, with a Key Press wired to the Once's rearm; the Once's output runs on to a Counter past the right edge.](https://docs.theprototype.app/img/nodes-once/once.webp)
+![On Click on the chest's Object Selector feeding a Once, with a Key Press for R wired to the Once's rearm; the Once's output runs on to a Counter](https://docs.theprototype.app/img/nodes-once/once.webp)
 *Figure: On Click on the chest feeding a Once.*
 !!! tip
     Once is the opposite of a [Latch](https://docs.theprototype.app/nodes/latch.md): a Latch *holds* a value, a Once *passes* a single pulse. For a pickup

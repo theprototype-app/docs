@@ -34,7 +34,7 @@ A door that disappears once the team has 10 points:
 4. Add an **Object Selector** picking the `Door`; wire Visibility → Object Selector. The door
    stays while the score is under 10 and vanishes for everyone when it reaches 10.
 
-![Get Variable score into a Compare (less than 10), driving a Visibility node on the Door's Object Selector](https://docs.theprototype.app/img/nodes-getvariable/getvariable.webp)
+![Get Variable score into a Compare (lt 10), driving a Visibility node on the Door's Object Selector](https://docs.theprototype.app/img/nodes-getvariable/getvariable.webp)
 *Figure: Get Variable score into a Compare (less than 10).*
 !!! tip
     To show a variable on screen, select a HUD Text element and pick **Actions ▸ Show a

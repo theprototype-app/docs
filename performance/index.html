@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Performance & Budgets", "url": "https://docs.theprototype.app/performance/", "description": "How big a scene can get, how to see where it stands, and what the app does on its own when a scene is more than your machine can draw.", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.51.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/performance/budget-chip.webp", "caption": "The budget chip sits beside the toolbar."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/performance/statistics-budget.webp", "caption": "Statistics ▸ Budget against the Quest limits."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/performance/configure-scene-quality.webp", "caption": "Configure Scene opens with Quality first."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Performance & Budgets", "url": "https://docs.theprototype.app/performance/", "description": "How big a scene can get, how to see where it stands, and what the app does on its own when a scene is more than your machine can draw.", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.54.3"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/performance/budget-chip.webp", "caption": "The budget chip sits beside the toolbar."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/performance/statistics-budget.webp", "caption": "Statistics ▸ Budget against the Quest limits."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/performance/configure-scene-quality.webp", "caption": "Configure Scene opens with Quality first."}]}</script>
 </head>
   
   
@@ -6188,7 +6188,7 @@ bar if you want it there. Since 1.39 you can move the chip anywhere, or hide it,
 <a href="../controls/#moving-the-clusters">Edit positions</a>; <strong>Customize toolbar… ▸ Budget chip</strong> shows it again. Opening its
 <strong>▾</strong> menu no longer makes it vanish.</p>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/performance/budget-chip.webp" data-desc-position="bottom"><img alt="The budget chip beside the toolbar, reading Quest 200% in red for the Race scene" class="shot" height="80" loading="lazy" src="../img/performance/budget-chip.webp" width="652"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/performance/budget-chip.webp" data-desc-position="bottom"><img alt="The budget chip beside the toolbar, reading Quest over 100 % in red: the scene has four point lights, more than the two a Quest's budget allows." class="shot" height="72" loading="lazy" src="../img/performance/budget-chip.webp" width="646"></a></p>
 <figcaption>
 <p>The budget chip sits beside the toolbar.</p>
 </figcaption>
@@ -6226,11 +6226,16 @@ largest share of a budget, with their triangles, calls and texture memory, and w
 <a href="../import-optimize/">optimizing them on import</a> would save (≈, by your <strong>Settings ▸ Import</strong> numbers). Click a row to
 select that object.</p>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/performance/statistics-budget.webp" data-desc-position="bottom"><img alt="Statistics ▸ Budget for the Race scene on Quest: draw calls, triangles, texture memory, lights, shadow-casting lights and shadow draws against the budget, and the heaviest objects with what optimizing them on import would save" class="shot" height="484" loading="lazy" src="../img/performance/statistics-budget.webp" width="404"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/performance/statistics-budget.webp" data-desc-position="bottom"><img alt="Statistics ▸ Budget on Quest for six knots and four point lights: draw calls, triangles, texture memory, lights in red, shadow-casting lights and shadow draws against the budget, then the heaviest objects. 1: the share of the tightest budget." class="shot fade-b" height="460" loading="lazy" src="../img/performance/statistics-budget.webp" width="380"></a></p>
 <figcaption>
 <p>Statistics ▸ Budget against the Quest limits.</p>
 </figcaption>
 </figure>
+<div class="shot-key">
+<ol>
+<li>How much of the <strong>tightest budget</strong> the scene uses: over 100 % is red.</li>
+</ol>
+</div>
 <p><strong>What is counted.</strong> The scene's <em>content</em> as that device would draw it: every visible object, the environment (sky,
 sun, ground) and module content — not the editor's grid, gizmos or helpers — at full detail (the closest view), so the
 reading does not change as you orbit. Kit pieces that instance count one call. Texture memory is counted the way the

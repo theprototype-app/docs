@@ -40,8 +40,8 @@ End the race when every player has done three laps:
 
 Each player's own `laps` comes from a [Set Variable](https://docs.theprototype.app/nodes/setvariable.md) with scope `player`.
 
-![A Player Variable (laps, mine) into a Compare (≥ 3), into All Players' condition, into Set Game State (over)](https://docs.theprototype.app/img/nodes-allplayers/allplayers.webp)
-*Figure: A Player Variable (laps.*
+![A Player Variable (laps, mine) into a Compare (gte 3), into All Players' condition, and All Players into the trigger of a Set Game State (over, finished)](https://docs.theprototype.app/img/nodes-allplayers/allplayers.webp)
+*Figure: The race ends when every player has done three laps.*
 !!! tip
     All Players also works as a "this just came true" detector for a shared condition: a
     Compare cannot drive a trigger input directly, but Compare → All Players → Set Game State

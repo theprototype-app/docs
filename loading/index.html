@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Loading Placeholders", "url": "https://docs.theprototype.app/loading/", "description": "When you open a level built from kit pieces (Castle Courtyard, the Tavern, …) — or a peer sends you one — each piece first appears as a placeholder box where it will stand, and the real model…", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/loading/modern-loading.webp", "caption": "A Modern placeholder filling from the bottom as its model downloads."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/loading/modern-failed.webp", "caption": "A failed placeholder."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/loading/back-to-start-view.webp", "caption": "The Back to start view button under the connection bar after Tavern Interior has loaded."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/loading/hold-setting.webp", "caption": "Configure Scene ▸ Camera with Hold camera until loaded ticked under Start view."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Loading Placeholders", "url": "https://docs.theprototype.app/loading/", "description": "When you open a level built from kit pieces (Castle Courtyard, the Tavern, …) — or a peer sends you one — each piece first appears as a placeholder box where it will stand, and the real model…", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.54.3"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/loading/modern-loading.webp", "caption": "A Modern placeholder filling from the bottom as its model downloads."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/loading/modern-failed.webp", "caption": "A failed placeholder."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/loading/back-to-start-view.webp", "caption": "The Back to start view button under the connection bar after Tavern Interior has loaded."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/loading/hold-setting.webp", "caption": "Configure Scene ▸ Camera with Hold camera until loaded ticked under Start view."}]}</script>
 </head>
   
   
@@ -6017,11 +6017,16 @@ the scene's <a href="#start-view">start view</a> the moment the load begins, and
 <p>Modern is the default since 1.22. If you never changed this setting, you now get Modern; if you picked <strong>Colored
 boxes</strong> in 1.21, you keep it.</p>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/loading/modern-loading.webp" data-desc-position="bottom"><img alt="A Modern placeholder filling from the bottom as its model downloads" class="shot" height="300" loading="lazy" src="../img/loading/modern-loading.webp" width="380"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/loading/modern-loading.webp" data-desc-position="bottom"><img alt="A Modern placeholder, a see-through blue box with a grid on its faces, filled from the bottom to just under half as its model downloads. 1: the fill line, how much has arrived." class="shot vignette" height="360" loading="lazy" src="../img/loading/modern-loading.webp" width="460"></a></p>
 <figcaption>
 <p>A Modern placeholder filling from the bottom as its model downloads.</p>
 </figcaption>
 </figure>
+<div class="shot-key">
+<ol>
+<li>The <strong>fill</strong> rises with the bytes <strong>arrived so far</strong>.</li>
+</ol>
+</div>
 <p>Both styles turn <strong>amber</strong> when a piece is stuck and <strong>red with a “!”</strong> when it failed.</p>
 <h2 id="working-while-it-loads">Working while it loads</h2>
 <p>A placeholder is a real object: click it to select it, drag it with the gizmo, type a position, rotation or scale in the
@@ -6036,11 +6041,17 @@ Properties panel, <kbd>Shift</kbd>-click to select several. When the model arriv
 <li><strong>Red</strong> — it gave up. Hover it to see the file address, the HTTP status and the reason.</li>
 </ul>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/loading/modern-failed.webp" data-desc-position="bottom"><img alt="A failed placeholder: red, with its tooltip and the “Retry all” toast" class="shot" height="370" loading="lazy" src="../img/loading/modern-failed.webp" width="640"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/loading/modern-failed.webp" data-desc-position="bottom"><img alt="A failed placeholder, red, with the pointer over it: its tooltip says Duck failed, file not found (HTTP 404), the address, and how to retry or replace it; the toast above says 1 object failed to load, with Retry all. 1: the tooltip. 2: Retry all." class="shot" height="652" loading="lazy" src="../img/loading/modern-failed.webp" width="686"></a></p>
 <figcaption>
 <p>A failed placeholder.</p>
 </figcaption>
 </figure>
+<div class="shot-key">
+<ol>
+<li>Hover a red placeholder: <strong>why it failed</strong> — the status, the reason and the file's address.</li>
+<li><strong>Retry all</strong> tries every failed file again.</li>
+</ol>
+</div>
 <p>To recover:</p>
 <ul>
 <li><strong>Double-click</strong> a red box to try again, or <strong>right-click</strong> it ▸ <strong>Retry loading</strong>, <strong>Replace model…</strong> or <strong>Delete</strong>.</li>
@@ -6064,21 +6075,31 @@ start view a few seconds into the load.)</p>
 once the scene has finished loading. Click it to fly back. You can also press <kbd>Home</kbd> at any time to return to
 the start view of the scene you opened last.</p>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/loading/back-to-start-view.webp" data-desc-position="bottom"><img alt="The Back to start view button under the connection bar after Tavern Interior has loaded" class="shot fade-l fade-r fade-b" height="400" loading="lazy" src="../img/loading/back-to-start-view.webp" width="688"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/loading/back-to-start-view.webp" data-desc-position="bottom"><img alt="Tavern Interior just loaded, the camera moved off its start view onto a brick wall, and the Back to start view button under the connection bar. 1: Back to start view." class="shot fade-l fade-r fade-b" height="140" loading="lazy" src="../img/loading/back-to-start-view.webp" width="688"></a></p>
 <figcaption>
 <p>The Back to start view button under the connection bar after Tavern Interior has loaded.</p>
 </figcaption>
 </figure>
+<div class="shot-key">
+<ol>
+<li><strong>Back to start view</strong>: <strong>fly back</strong> to where the scene opened (<kbd>Home</kbd> does the same).</li>
+</ol>
+</div>
 <p>To change a scene's start view, move the camera where you want it and save the scene again.</p>
 <h3 id="hold-camera-until-loaded">Hold camera until loaded</h3>
 <p><strong>Configure Scene ▸ Camera ▸ Start view ▸ Hold camera until loaded</strong> (off by default) keeps the camera on the start view
 until the scene is ready. It is saved with the scene and shared with everyone in the session.</p>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/loading/hold-setting.webp" data-desc-position="bottom"><img alt="Configure Scene ▸ Camera with Hold camera until loaded ticked under Start view" class="shot fade-l" height="800" loading="lazy" src="../img/loading/hold-setting.webp" width="688"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/loading/hold-setting.webp" data-desc-position="bottom"><img alt="Configure Scene ▸ Camera ▸ Start view with Hold camera until loaded ticked and its note, above Start simulation on load. 1: Hold camera until loaded." class="shot" height="279" loading="lazy" src="../img/loading/hold-setting.webp" width="315"></a></p>
 <figcaption>
 <p>Configure Scene ▸ Camera with Hold camera until loaded ticked under Start view.</p>
 </figcaption>
 </figure>
+<div class="shot-key">
+<ol>
+<li><strong>Hold camera until loaded</strong>: the camera stays on the saved view, and ignores input, until the scene is in.</li>
+</ol>
+</div>
 <p>While the scene loads, the camera stays on the start view and ignores camera input, and a small <strong>Loading… camera is
 held</strong> note shows under the loading bar. In VR, teleport, turning, the walk stick and grabbing the world are paused the
 same way.</p>
@@ -6171,7 +6192,7 @@ has loaded — see <a href="../physics/#start-simulation-on-load">Physics &amp; 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-31
+    2026-11-03
   </span>
 
     

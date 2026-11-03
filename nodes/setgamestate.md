@@ -15,11 +15,6 @@ writes to.
 The trigger needs a **pulse**. A true/false value (a [Compare](https://docs.theprototype.app/nodes/compare.md)) wired straight in
 does nothing; put an event node such as [All Players](https://docs.theprototype.app/nodes/allplayers.md) between them.
 
-!!! warning "Known problem in 1.42"
-    The card does not draw its **trigger** socket yet, so this node cannot be wired by hand in the node editor. Until
-    that is fixed, let the HUD editor build it: select a button and pick one of the game actions (see the tip at the end
-    of this page) — the action adds a Set Game State already wired to the button.
-
 ## Parameters
 
 | Parameter | Default | Options |
@@ -66,8 +61,8 @@ A start button and a pause key:
 4. Press Play and click the box: the round starts for everyone. <kbd>P</kbd> pauses it, and a
    click on the box resumes it.
 
-![The example's nodes: On Click on the Start box, a Key Press for P, and two Set Game State cards (playing, paused) — in 1.42 the cards have no trigger socket to wire into](https://docs.theprototype.app/img/nodes-setgamestate/setgamestate.webp)
-*Figure: The example's nodes.*
+![The example's nodes: an On Click on the Start box's Object Selector, wired into the trigger of a Set Game State set to playing, and a Key Press for P wired into a second Set Game State set to paused](https://docs.theprototype.app/img/nodes-setgamestate/setgamestate.webp)
+*Figure: A start button and a pause key.*
 !!! tip
     The HUD editor builds these for you: select a button and pick **Actions ▸ Start the game**,
     **Pause**, **Resume**, **End the game**, **Back to the menu** or **Reset the game**.

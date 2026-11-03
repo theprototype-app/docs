@@ -8,8 +8,12 @@ in your session sees your presets and can use them.
 **Where:** select an object and open its properties (double-click it, or right-click ▸ **Properties**). In the
 **Material** section, the **Presets** row sits at the top, above the material type.
 
-![The Presets row with Wood applied](https://docs.theprototype.app/img/materials/presets-wood.webp)
+![The Material section's Presets row: the eight built-in swatches Wood, Metal, Plastic, Glass, Stone, Rubber, Fish scales and Neon, with Wood outlined because the box wears it, and + and the pencil above. 1: Wood, applied. 2: + saves the current look.](https://docs.theprototype.app/img/materials/presets-wood.webp)
 *Figure: The Presets row with Wood applied.*
+
+1. The swatch of the preset the object wears is **outlined**.
+2. **+** saves the current look as your own preset.
+
 ## Using presets
 
 - **Apply** — click a swatch. With [several objects selected](https://docs.theprototype.app/controls.md#editing-a-multi-selection) it applies to all
@@ -23,8 +27,12 @@ in your session sees your presets and can use them.
 - **A friend's presets** — when someone in the session has saved presets, they appear under **From ‹name›**. Click one
   to apply it; while editing (pencil), the copy button saves it into your own library.
 
-![Editing your presets: rename, download and delete on your own swatches](https://docs.theprototype.app/img/materials/presets-edit.webp)
+![Editing your presets: the pencil is pressed, your own swatch Red brick is picked and the bar under the row has its rename, download and delete buttons, with Import beside. 1: the pencil. 2: rename, download and delete.](https://docs.theprototype.app/img/materials/presets-edit.webp)
 *Figure: Editing your presets.*
+
+1. The **pencil** starts editing; the tick finishes.
+2. **Rename**, **download** as a `.matpreset.json` file, and **delete** (it asks first).
+
 ## Fish scales and the look tier
 
 **Fish scales** is an iridescent look: a thin film over the surface shifts its colour with the viewing angle (the

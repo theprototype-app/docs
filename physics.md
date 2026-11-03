@@ -113,8 +113,11 @@ everything has loaded. The person who opens the scene runs it; everyone else see
 games and play links, and undo / redo work on it like on any edit. *Jelly room*, *Fluid tank toy*, *Pool party* and
 *Island ocean* have it on.
 
-![Configure Scene ▸ Camera ▸ Start view with Start simulation on load ticked](https://docs.theprototype.app/img/physics/sim-on-load-setting.webp)
+![Configure Scene ▸ Camera ▸ Start view: Hold camera until loaded off, and Start simulation on load ticked with its note. 1: Start simulation on load.](https://docs.theprototype.app/img/physics/sim-on-load-setting.webp)
 *Figure: Configure Scene ▸ Camera ▸ Start view with Start simulation on load ticked.*
+
+1. **Start simulation on load**: the scene starts its physics by itself once everything has loaded.
+
 ## Grab and throw mid-simulation
 
 While a simulation is running you can grab a dynamic object and throw it:
@@ -171,8 +174,11 @@ ground* ticked flew on a desktop.) **Configure Scene ▸ Play ▸ Flying**:
 | **Allowed** | <kbd>Q</kbd> / <kbd>E</kbd> on a desktop, the **Up** / **Down** touch buttons, and in VR Interact, flying with the stick along where the controller points |
 | **Removed** | nobody flies in this scene, even if a game module or a Character Controller node in fly mode asks for it |
 
-![Configure Scene ▸ Physics ▸ Play mode, with Flying set to Allowed](https://docs.theprototype.app/img/physics/flying-setting.webp)
+![Configure Scene ▸ Physics ▸ Play: Pointer, Limit grab reach, Flying set to Allowed, the simulation switch and the spawn point. 1: the Flying choice, Off, Allowed or Removed.](https://docs.theprototype.app/img/physics/flying-setting.webp)
 *Figure: Configure Scene ▸ Physics ▸ Play mode.*
+
+1. **Flying** in Play: Off (players walk), Allowed (Q / E fly), or Removed (even a game module cannot turn it on).
+
 Of the bundled games, the Jam Room flies (it is designed for VR flying), and Dungeon Realms does when its **Game Rules ▸
 disableFlight** is off; every other game walks. A module allows flying with `userData.play.locomotion.fly = true` (or by
 un-grounding play), and a [Character Controller](https://docs.theprototype.app/build-a-game.md#3-a-character-that-walks) node in fly mode counts as
@@ -230,10 +236,17 @@ Since 1.25 that works wherever the object starts: put it anywhere in a pool, a t
 shoots up and bobs at the surface, wood floats lower, a stone sinks to the bottom. **Properties ▸ Water ▸ Flow &
 physics** on the water adds **Flow up** (an upward current) and **Bob damping** (lower = things keep bobbing longer).
 
-![Toys floating in a pool sunk into the ground](https://docs.theprototype.app/img/physics/sunken-pool.webp)
+![Pool party seen from the deck at water level: a beach ball, a lilo, two swim rings and a rubber duck floating in a pool sunk into the ground. 1: a toy floating at its waterline.](https://docs.theprototype.app/img/physics/sunken-pool.webp)
 *Figure: Toys floating in a pool sunk into the ground.*
-![A wooden crate floating in a pool, with the Floats rows in its Physics properties](https://docs.theprototype.app/img/physics/floats.webp)
+
+1. The beach ball **floats** at its waterline: the water pushes it up by as much as it displaces.
+
+![A wooden crate floating in a pool, selected, with its Physics properties open: Floats set to Wood, Density 600, Buoyancy × 1 and the note that it floats about 60% under. 1: the Floats choice. 2: the crate at its draft.](https://docs.theprototype.app/img/physics/floats.webp)
 *Figure: A wooden crate floating in a pool.*
+
+1. **Floats as**: what the body is made of in water — Wood floats about 60 % under.
+2. The crate rests **at its draft**: 60 % of it under the surface.
+
 Select the object and open **Properties ▸ Physics** (Body: *Dynamic*) ▸ **Floats**:
 
 | Floats | Density (kg/m³) | Behaves like |

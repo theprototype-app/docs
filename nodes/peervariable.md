@@ -44,9 +44,5 @@ Count each player's own bell rings on their own HUD:
 4. Each player's HUD counts only the rings they made. Switch the Player Variable to `sum` to show
    the team's total instead.
 
-!!! warning "Known problem in 1.42"
-    Step 2 cannot be wired by hand yet: the Set Variable card does not draw its **trigger** and **value** sockets (see
-    [Set Variable](https://docs.theprototype.app/nodes/setvariable.md)). The Player Variable half of the example works as shown.
-
-![The example's nodes: On Hit (who me) on the Bell, a Set Variable (rings, add, player) beside a Number, and a Player Variable (rings, mine) driving a HUD Text](https://docs.theprototype.app/img/nodes-peervariable/peervariable.webp)
-*Figure: The example's nodes.*
+![The example's nodes: On Hit (who me) on the Bell's Object Selector and into the trigger of a Set Variable (rings, add, player) with a Number 1 as its value, and a Player Variable (rings, mine) driving a HUD Text](https://docs.theprototype.app/img/nodes-peervariable/peervariable.webp)
+*Figure: Each player's own bell rings, on their own HUD.*

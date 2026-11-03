@@ -118,8 +118,12 @@ before a join, scene tools answer *not connected — join first*. Then call `con
   back, the agent asks to come in again — the ordinary approval card — and carries on.
 - To stop it, revoke its invite or use **Remove from session** on its row ([Users and moderation](https://docs.theprototype.app/people.md)).
 
-![Agent activity in the AI assistant window](https://docs.theprototype.app/img/ai-build-with-an-agent/agent-activity.webp)
+![The AI assistant window with Agent activity open: under the agent's name, Claude, two timed lines — created 3 objects (Rock1, Rock2 +1) and created 1 object (Flame) — each with Undo. 1: the number of steps so far. 2: Undo for one step.](https://docs.theprototype.app/img/ai-build-with-an-agent/agent-activity.webp)
 *Figure: Agent activity in the AI assistant window.*
+
+1. **Agent activity** counts the steps; under each agent's name, one line per step it took (click a line to select what it touched).
+2. **Undo it**: takes back that one step, for everybody.
+
 ## Security notes
 
 - An invite's token lives in the URL **hash**, which browsers never send to any server. Link

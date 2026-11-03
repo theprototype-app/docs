@@ -5,8 +5,12 @@ water it is poured into. **Flow paths** carry it along rivers, chutes and pipes,
 leaves and boats along the current. For water volumes (pools, tanks, oceans) see [Water](https://docs.theprototype.app/water.md); for a glass box of
 particle fluid see [Fluid tank](https://docs.theprototype.app/simulation.md#fluid-tank).
 
-![A Fluid emitter pouring a stream into a puddle, with its properties open](https://docs.theprototype.app/img/fluids/fluid-emitter.webp)
+![A Fluid emitter 1.6 m above the floor pouring a stream of water into a puddle, selected, beside its Fluid emitter properties: Emitting, the mode, Rate, Speed, Spread and the area. 1: the stream. 2: Rate per second.](https://docs.theprototype.app/img/fluids/fluid-emitter.webp)
 *Figure: A Fluid emitter pouring a stream into a puddle.*
+
+1. The **stream**: real fluid particles that fall, pool and flow.
+2. **Rate**: particles per second while it emits.
+
 ## Fluid emitter
 
 **Add ▸ Water ▸ Fluid** (right-click the viewport, or the **+** button). It pours from its spout, 1.6 m above where you
@@ -81,8 +85,13 @@ and a headset runs at most 1400 particles.
 head-race, which spills into a fountain basin; the basin overflows down a chute back into the pond, and leaves and boats
 ride along.
 
-![Water works: the scoop wheel, the head-race, the fountain basin and the chute back to the pond](https://docs.theprototype.app/img/fluids/water-works.webp)
+![Water works on its diorama: the scoop wheel lifting pond water into the head-race, the fountain basin it feeds, and the chute that carries the water back to the pond. 1: the scoop wheel. 2: the head-race. 3: the fountain.](https://docs.theprototype.app/img/fluids/water-works.webp)
 *Figure: Water works: the scoop wheel.*
+
+1. The **scoop wheel** lifts pond water as it turns.
+2. The **head-race** carries it across to the fountain.
+3. The **fountain** basin; a chute takes the overflow back to the pond.
+
 ## Limits
 
 - Particle water is simulated per player: it never travels over the network, only the settings do.

@@ -9,8 +9,12 @@ credit for you.
 **dock** like Statistics or Chat (drag it onto the dock, or the dock's **+** ▸ Free assets). On a phone it opens as a
 bottom sheet.
 
-![The Asset Browser's Materials tab searching ambientCG for clay](https://docs.theprototype.app/img/free-assets/browser-materials.webp)
+![The Asset Browser on its Materials tab, searching ambientCG for clay: a grid of clay materials, each with Add and Apply, the category and the 1k / 2k / 4k pick above. 1: the Materials tab. 2: the search box.](https://docs.theprototype.app/img/free-assets/browser-materials.webp)
 *Figure: The Asset Browser's Materials tab searching ambientCG for clay.*
+
+1. The **Materials** tab (from ambientCG); Models, HDRIs and Textures come from Poly Haven.
+2. **Search** by name or tag.
+
 ## Finding an asset
 
 - Pick a tab — **Models**, **HDRIs**, **Textures**, **Materials** — then **search** by name or tag and narrow by
@@ -30,16 +34,23 @@ bottom sheet.
   swatches); *Apply* also puts it on the selected objects. Colour and normal maps are kept; roughness and metalness
   come from their maps.
 
-![A CC0 material applied to a box, credited in the Inspector](https://docs.theprototype.app/img/free-assets/material-applied.webp)
+![The Inspector of a box after Apply on an ambientCG clay material: the material is the newest of your presets, and under the presets its credit names the site, the authors and the CC0 licence. 1: the new preset. 2: the credit.](https://docs.theprototype.app/img/free-assets/material-applied.webp)
 *Figure: A CC0 material applied to a box.*
+
+1. **Apply** also saved it to your **material presets**.
+2. Its **credit**: site, authors, licence (CC0) and a link.
+
 ## Credits
 
 Every download keeps its source — site, authors, licence (CC0) and a link. You see it in the Explorer's
 **Properties**, in the **Inspector** for a placed object or a CC0 material, and on the material swatch's tooltip. A
 model carries it inside the file, so a peer's copy — and the optimized copy the importer makes — has it too.
 
-![The Explorer's Properties naming a Poly Haven model's source](https://docs.theprototype.app/img/free-assets/explorer-credit.webp)
+![The Explorer's Properties for a model added from Poly Haven: its size, folder (Poly Haven) and owner, then a credit line naming the site, the authors, the CC0 licence and a link. 1: the credit.](https://docs.theprototype.app/img/free-assets/explorer-credit.webp)
 *Figure: The Explorer's Properties naming a Poly Haven model's source.*
+
+1. The **credit** stays with the file, for you and for every peer that gets a copy.
+
 ## Offline and errors
 
 Lists you have opened are saved on this device (for a day), so the browser still shows them offline — a banner says
@@ -56,5 +67,7 @@ window says so in plain words and offers *Try again*.
   person's **From ‹name›** swatch row too: it arrives in the background a few seconds after they connect (or after you
   save it), and travels only once.
 
-![The Asset Browser as a bottom sheet on a folded phone](https://docs.theprototype.app/img/free-assets/phone.webp)
+![The Asset Browser as a bottom sheet on a folded phone: the Models tab, two columns of Poly Haven models and the resolution pick set to 1k. 1: 1k, the phone's default.](https://docs.theprototype.app/img/free-assets/phone.webp)
 *Figure: The Asset Browser as a bottom sheet on a folded phone.*
+
+1. **1k** is the **phone default** (and the Quest's): smaller downloads.

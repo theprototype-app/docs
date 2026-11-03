@@ -54,8 +54,12 @@ A toast says how many other copies use it and offers:
 | **Update, reset overrides** | each copy matches the prefab exactly |
 | **Undo** | puts the prefab's previous version back in your library |
 
-![After editing the Lamp prefab, a toast offers to update the other instance in the scene](https://docs.theprototype.app/img/prefabs/update-toast.webp)
+![After an edit to one copy of the Lamp prefab is applied back to it, a toast says Updated "Lamp", 1 other instance in this scene, with Update 1 instance, Update, reset overrides and Undo. 1: Update 1 instance. 2: Update, reset overrides.](https://docs.theprototype.app/img/prefabs/update-toast.webp)
 *Figure: After editing the Lamp prefab.*
+
+1. **Update 1 instance**: the other copy takes the new version and keeps its own changes.
+2. **Update, reset overrides**: the copy becomes an **exact copy** of the prefab.
+
 Where each copy stands is always kept. The update is **one undo step** (<kbd>Ctrl</kbd>+<kbd>Z</kbd> puts every copy
 back) and everyone in the session sees it. Your peers do not need the prefab — only you do.
 
@@ -99,8 +103,12 @@ The Explorer's **Prefabs** tab can be sorted into folders and tagged.
 - **Filter** — the tag chips under the breadcrumb filter the tab, and pressed chips combine (*seat* + *wood*). The
   search box matches names and tags. Both reach into folders; **Clear** resets the filter.
 
-![The Prefabs tab filtered by the seat tag](https://docs.theprototype.app/img/prefabs/tag-filter.webp)
+![The Explorer's Prefabs view filtered by the seat tag: the tag chips seat, wood and metal under the breadcrumb with seat pressed, and only the three seats shown (Oak chair, Steel chair, Bench). 1: the pressed seat chip. 2: Clear.](https://docs.theprototype.app/img/prefabs/tag-filter.webp)
 *Figure: The Prefabs tab filtered by the seat tag.*
+
+1. A pressed **tag chip** filters the tab; pressed chips combine (*seat* + *wood*).
+2. **Clear** resets the filter.
+
 Folders and tags are part of your own library, on this device, like the prefabs themselves.
 
 ## Exporting a prefab

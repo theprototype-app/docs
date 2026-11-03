@@ -59,7 +59,7 @@ A speed slider with a readout:
 3. Add a **HUD Text** picking the text, format `Speed: {v}`; wire HUD Input → HUD Text's **value**.
 4. Press Play and drag the slider: the text follows — on your screen only, because the slider is not shared.
 
-![A HUD Input reading a slider, wired into a HUD Text with the format "Speed: {v}"](https://docs.theprototype.app/img/nodes-hudinput/hudinput.webp)
+![A HUD Input reading the Speed slider (read value, fallback 50), wired into a HUD Text with the format "Speed: {v}"](https://docs.theprototype.app/img/nodes-hudinput/hudinput.webp)
 *Figure: A HUD Input reading a slider.*
 !!! tip
     To let a press read the control at that moment, wire the HUD Input into the **value** of the node the press drives

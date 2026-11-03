@@ -42,7 +42,7 @@ bar if you want it there. Since 1.39 you can move the chip anywhere, or hide it,
 [Edit positions](https://docs.theprototype.app/controls.md#moving-the-clusters); **Customize toolbar… ▸ Budget chip** shows it again. Opening its
 **▾** menu no longer makes it vanish.
 
-![The budget chip beside the toolbar, reading Quest 200% in red for the Race scene](https://docs.theprototype.app/img/performance/budget-chip.webp)
+![The budget chip beside the toolbar, reading Quest over 100 % in red: the scene has four point lights, more than the two a Quest's budget allows.](https://docs.theprototype.app/img/performance/budget-chip.webp)
 *Figure: The budget chip sits beside the toolbar.*
 **Reading it.** The chip shows the device and how much of its tightest budget the scene uses (*Quest 87%*):
 
@@ -64,8 +64,11 @@ largest share of a budget, with their triangles, calls and texture memory, and w
 [optimizing them on import](https://docs.theprototype.app/import-optimize.md) would save (≈, by your **Settings ▸ Import** numbers). Click a row to
 select that object.
 
-![Statistics ▸ Budget for the Race scene on Quest: draw calls, triangles, texture memory, lights, shadow-casting lights and shadow draws against the budget, and the heaviest objects with what optimizing them on import would save](https://docs.theprototype.app/img/performance/statistics-budget.webp)
+![Statistics ▸ Budget on Quest for six knots and four point lights: draw calls, triangles, texture memory, lights in red, shadow-casting lights and shadow draws against the budget, then the heaviest objects. 1: the share of the tightest budget.](https://docs.theprototype.app/img/performance/statistics-budget.webp)
 *Figure: Statistics ▸ Budget against the Quest limits.*
+
+1. How much of the **tightest budget** the scene uses: over 100 % is red.
+
 **What is counted.** The scene's *content* as that device would draw it: every visible object, the environment (sky,
 sun, ground) and module content — not the editor's grid, gizmos or helpers — at full detail (the closest view), so the
 reading does not change as you orbit. Kit pieces that instance count one call. Texture memory is counted the way the

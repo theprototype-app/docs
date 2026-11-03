@@ -134,10 +134,16 @@ the start card of a **play link** (`/p/‹id›`) and in a published game's **pa
 Press it and the count updates at once (and goes back if the like could not be saved). Signed out, it asks you to sign in
 (profile menu, top right). It is the same like as the ♥ on the scene's page — one like per person per scene.
 
-![The heart on a play link's start card, beside Play](https://docs.theprototype.app/img/community/play-link-heart.webp)
+![A play link's start card over the scene: the orange Play button, the heart with its count beside it, and the hint Click to look around · Esc to pause. 1: the heart.](https://docs.theprototype.app/img/community/play-link-heart.webp)
 *Figure: The heart on a play link's start card.*
-![The heart in a published game's pause menu](https://docs.theprototype.app/img/community/pause-menu-heart.webp)
+
+1. The **heart**: press it to **like it**; the count updates at once.
+
+![Towers' pause menu: the title Paused with the game's name under it and a filled heart with the count 1 at the top right, then Resume, Restart, Settings, How to play, Main menu and Back to editor. 1: the heart.](https://docs.theprototype.app/img/community/pause-menu-heart.webp)
 *Figure: The heart in a published game's pause menu.*
+
+1. The **heart**, filled once you have **liked** the game; press it again to take the like back.
+
 ### Mine
 
 While you are signed in, the **Mine** chip in **Templates ▸ Community** (and on theprototype.app/community) shows only

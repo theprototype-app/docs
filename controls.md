@@ -339,8 +339,11 @@ Since 1.25 that holds for **every slider and number field inside a node** — ev
 behaviour's [Open view](https://docs.theprototype.app/behaviours.md#the-live-node-view): a drag changes the value, never the node and never the whole
 graph, and the behaviour view no longer flickers the cursor.
 
-![A behaviour's Open view in the node editor: the params' knobs on the left drag their value, not the graph](https://docs.theprototype.app/img/controls/behaviour-view-knobs.webp)
+![A behaviour's Open view in the node editor, for a small waves_spawner behaviour: its params waves, size, interval and speed as knobs with sliders on the left, wired into its handlers. 1: a param's knob, which drags its value.](https://docs.theprototype.app/img/controls/behaviour-view-knobs.webp)
 *Figure: In a behaviour's Open view, a param's knob drags its value, not the graph.*
+
+1. A **param knob**: **drag it** to change the value (it writes the source), never the graph.
+
 Fields that hold a distance or an angle also accept a typed **unit** (`12cm`, `4in`,
 `90deg`) — see [Units](https://docs.theprototype.app/units.md).
 

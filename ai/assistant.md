@@ -53,13 +53,20 @@ Talk to the assistant instead of typing. Set up a speech-to-text provider in **S
 | **Language hint** | blank (detect) | for example `en` |
 | **Test connection** | — | sends half a second of silence; *Connected* means the server accepted it |
 
-![The Voice typing setting in the AI assistant's settings, set to Groq.](https://docs.theprototype.app/img/ai-assistant/voice-typing-settings.webp)
-*Figure: The Voice typing setting in the AI assistant's settings.*
+![The voice typing settings set to Groq: the Voice typing provider with OpenAI, Groq and Self-hosted and a Ready badge, then the voice typing server's Base URL and API key. 1: the provider. 2: the API key.](https://docs.theprototype.app/img/ai-assistant/voice-typing-settings.webp)
+*Figure: The Voice typing settings, set to Groq.*
+
+1. The **provider**: OpenAI, Groq or Self-hosted; the badge says **Ready** once it has what it needs.
+2. The **API key** for that provider; it stays on this device. Further down, **Test connection** sends half a second of silence.
+
 The assistant window then has a **mic** button next to **Send**: click to listen, click again to stop. The words land in
 the input, so you can fix them before sending. (In VR they are sent as soon as you let go.)
 
-![The assistant window with the mic button next to Send](https://docs.theprototype.app/img/ai-assistant/assistant-mic.webp)
+![The AI assistant window: two of your messages and the assistant's answer, the provider picker, the input Ask the assistant…, the mic button and Send. 1: the mic button.](https://docs.theprototype.app/img/ai-assistant/assistant-mic.webp)
 *Figure: The assistant window with the mic button next to Send.*
+
+1. The **mic**: click to listen, click again to stop; the words land in the input for you to fix before **Send**.
+
 - The voice key is stored on this device only, like the AI provider key ([Where keys are stored](https://docs.theprototype.app/ai/providers.md#where-keys-are-stored)).
 - If voice chat is on, the assistant uses the same microphone without opening a second one, and voice chat keeps
   working.

@@ -37,8 +37,11 @@ Point at the dot — or press and hold it on a touch screen — for the full sen
 while the signaling link is down it also says how long it has been trying. On a phone a tap on the chip opens the full
 connection details.
 
-![The phone's top bar when it is crowded: the logo, the connection chip with a green dot, ▾ and the microphone, then the bell and the peers](https://docs.theprototype.app/img/connection/status-dot-phone.webp)
-*Figure: A phone's crowded top bar: the chip keeps the connection dot.*
+![The top bar of a folded phone with one other person connected: the logo, the connection chip with its dot, ▾ and the microphone, then the bell and the peers button with 2. 1: the connection dot.](https://docs.theprototype.app/img/connection/status-dot-phone.webp)
+*Figure: A folded phone's top bar: the chip keeps the connection dot.*
+
+1. The **dot**: its colour is the connection state (the table above).
+
 ### Who is here: the peers panel
 
 The peers button in the top bar (beside the bell, with the number of people) opens the **Connected** panel. Its header
@@ -47,8 +50,12 @@ at it for the full name), a second line with where they are and their role, and 
 **Go to** or the role list. On a computer the panel is 320–420 px wide and grows with long names, so nothing wraps or
 breaks. On a phone it opens as a sheet like the notifications: a grab bar on top, and a swipe down closes it.
 
-![The Connected panel on a computer: five people, one row each — avatar, name, the scene they are in and their p-number underneath, and Editor or Viewer with Go to or Watch on the right](https://docs.theprototype.app/img/connection/peers-panel-desktop.webp)
+![The Connected panel on a computer with four people, one row each: an avatar, the name, the scene they are in, the ping and their short id underneath, then their role (Admin, Editor or Viewer) and Watch on the right. 1: you. 2: a person's role list.](https://docs.theprototype.app/img/connection/peers-panel-desktop.webp)
 *Figure: The Connected panel on a computer.*
+
+1. **(you)**: your own row; the host is **Admin**.
+2. A person's **role** (Editor or Viewer): the host changes it here.
+
 Right-click a person (long-press on touch, <kbd>Shift</kbd>+<kbd>F10</kbd> from the keyboard) for the **peer menu**:
 their profile, Go to, Watch, Mute, Hide — and, for the host or an admin, **Remove from session** and **Remove and
 block**. See [Users and moderation](https://docs.theprototype.app/people.md). An AI agent shows a robot and "AI" instead of a character.

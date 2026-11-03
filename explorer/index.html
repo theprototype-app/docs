@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Explorer", "url": "https://docs.theprototype.app/explorer/", "description": "The Explorer is the session's file library — import files, organize them into folders, preview them, share them with the people you are connected to, and drag them straight into the scene.", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-box-ghost.webp", "caption": "Dragging the Duck from the starter pack."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-model-ghost.webp", "caption": "Once loaded, the ghost is a see-through copy of the real model."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-settings.webp", "caption": "Settings ▸ Scene ▸ Performance ▸ Placement preview."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-delete-cache.webp", "caption": "A pack item's menu."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Explorer", "url": "https://docs.theprototype.app/explorer/", "description": "The Explorer is the session's file library — import files, organize them into folders, preview them, share them with the people you are connected to, and drag them straight into the scene.", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.54.3"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-box-ghost.webp", "caption": "Dragging the Duck from the starter pack."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-model-ghost.webp", "caption": "Once loaded, the ghost is a see-through copy of the real model."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-settings.webp", "caption": "Settings ▸ Scene ▸ Performance ▸ Placement preview."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-delete-cache.webp", "caption": "A pack item's menu."}]}</script>
 </head>
   
   
@@ -6733,11 +6733,16 @@ and your Library: <strong>"<host>'s session"</host></strong>, with a banner over
 <p>New in 1.31: drag any object — a pack item, one of your Library models, a prefab — from <strong>Explorer ▸ Packs</strong> or
 <strong>Explorer ▸ Library</strong> onto the viewport, and a <strong>ghost</strong> shows where it will land and how big it is before you let go.</p>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/explorer/place-box-ghost.webp" data-desc-position="bottom"><img alt="Dragging the Duck from the starter pack: a box ghost with its size beside the pointer" class="shot fade-l fade-r" height="560" loading="lazy" src="../img/explorer/place-box-ghost.webp" width="688"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/explorer/place-box-ghost.webp" data-desc-position="bottom"><img alt="Dragging the Duck from the starter pack in the Explorer onto the viewport: a box ghost where it will land, and beside the pointer a chip with its name, width × depth × height, triangles and download size. 1: the size." class="shot fade-l fade-r fade-t" height="360" loading="lazy" src="../img/explorer/place-box-ghost.webp" width="600"></a></p>
 <figcaption>
 <p>Dragging the Duck from the starter pack.</p>
 </figcaption>
 </figure>
+<div class="shot-key">
+<ol>
+<li>Its <strong>size</strong> (width × depth × height in metres), triangles and download size.</li>
+</ol>
+</div>
 <ul>
 <li><strong>Drag.</strong> Press on a card and drag it over the 3D view. The ghost sits <strong>on</strong> whatever is under the pointer — the
   floor, a table, the side of a wall — and follows the grid when <a href="../snapping/">grid snapping</a> is on; hold
@@ -6766,11 +6771,16 @@ and your Library: <strong>"<host>'s session"</host></strong>, with a banner over
   <a href="../loading/">Placeholder Style</a> until its file arrives. The ghost is yours alone — nobody else sees it.</li>
 </ul>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/explorer/place-model-ghost.webp" data-desc-position="bottom"><img alt="Once loaded, the ghost is a see-through copy of the real model" class="shot fade-l fade-r" height="560" loading="lazy" src="../img/explorer/place-model-ghost.webp" width="688"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/explorer/place-model-ghost.webp" data-desc-position="bottom"><img alt="The same drag once the Duck has downloaded: the ghost is a see-through copy of the real model where it will land, with the size chip beside the pointer. 1: the see-through model." class="shot fade-l fade-r fade-t" height="360" loading="lazy" src="../img/explorer/place-model-ghost.webp" width="600"></a></p>
 <figcaption>
 <p>Once loaded, the ghost is a see-through copy of the real model.</p>
 </figcaption>
 </figure>
+<div class="shot-key">
+<ol>
+<li>The <strong>ghost</strong>: a see-through copy of the model, only on your screen.</li>
+</ol>
+</div>
 <h3 id="the-placement-preview-setting">The Placement preview setting</h3>
 <p><strong>Settings ▸ Scene ▸ Performance</strong> (this device only):</p>
 <ul>
@@ -6781,11 +6791,16 @@ and your Library: <strong>"<host>'s session"</host></strong>, with a banner over
 <li><strong>Show dimensions</strong> — the size, triangles and download size beside the pointer.</li>
 </ul>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/explorer/place-settings.webp" data-desc-position="bottom"><img alt="Settings ▸ Scene ▸ Performance ▸ Placement preview" class="shot fade-l fade-r" height="280" loading="lazy" src="../img/explorer/place-settings.webp" width="688"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/explorer/place-settings.webp" data-desc-position="bottom"><img alt="Settings ▸ Scene ▸ Performance ▸ Placement preview: Full model, Within budget or Box only, then Preview triangle budget and Show dimensions. 1: the preview choice." class="shot" height="277" loading="lazy" src="../img/explorer/place-settings.webp" width="674"></a></p>
 <figcaption>
 <p>Settings ▸ Scene ▸ Performance ▸ Placement preview.</p>
 </figcaption>
 </figure>
+<div class="shot-key">
+<ol>
+<li><strong>Placement preview</strong>: <strong>what shows</strong> as the ghost of a dragged item.</li>
+</ol>
+</div>
 <h3 id="downloaded-pack-items-and-delete-cache">Downloaded pack items and Delete cache</h3>
 <p>Explorer ▸ Packs marks the items this device has already downloaded with a <strong>✓</strong> (its size in the tooltip), and the
 filter menu inside the Packs has <strong>Downloaded</strong> to show only those. Right-click a pack item ▸ <strong>Delete cache (size)</strong>
@@ -6793,11 +6808,16 @@ frees its download — the item <strong>stays in the pack</strong> and downloads
 ▸ <strong>Delete downloads</strong> frees the whole pack's, and <a href="#storage">Storage</a> lists <strong>Pack downloads</strong> per pack with <strong>Clear
 all pack downloads</strong>.</p>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/explorer/place-delete-cache.webp" data-desc-position="bottom"><img alt="A pack item's menu: Delete cache with its size" class="shot fade-l fade-r" height="340" loading="lazy" src="../img/explorer/place-delete-cache.webp" width="688"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/explorer/place-delete-cache.webp" data-desc-position="bottom"><img alt="A pack item's menu in the Explorer, opened on the Duck after it was placed once: Duplicate, Share with peers, Properties, Rename and Delete cache with its size. 1: Delete cache." class="shot" height="268" loading="lazy" src="../img/explorer/place-delete-cache.webp" width="430"></a></p>
 <figcaption>
 <p>A pack item's menu.</p>
 </figcaption>
 </figure>
+<div class="shot-key">
+<ol>
+<li><strong>Delete cache</strong> <strong>frees it</strong>: the download goes; the item stays in the pack.</li>
+</ol>
+</div>
 <h3 id="images-audio-and-text">Images, audio and text</h3>
 <ul>
 <li><strong>Images</strong> dropped onto an object become its <strong>texture</strong>. A big photo is scaled down to 1024 px on its longest side

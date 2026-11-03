@@ -13,8 +13,13 @@ and dropped onto the ground in one click. Since 1.39 the measurements you keep a
     person in the session sees it, it is saved with the scene and it undoes like any object. This replaces 1.38's
     pinned measurements, which only you could see and a reload cleared.
 
-![A chain of three measured segments with lengths, the angle between them and the total](https://docs.theprototype.app/img/measure-align/measure-chain.webp)
+![A chain of three measured segments along the corners of a 2 × 1 × 1 box: 2 m along the top front edge, 1 m back along the side and 1 m down the back corner, with a 90° label at each joint and the total, 4 m, at the end. 1: a segment's length. 2: the angle at a joint. 3: the total.](https://docs.theprototype.app/img/measure-align/measure-chain.webp)
 *Figure: A chain of three measured segments with lengths.*
+
+1. Every **segment** shows its length.
+2. Every corner shows the **angle** between its two segments.
+3. The end of the chain shows the **total**.
+
 - **Click (or tap) points.** Each point **snaps** to the corner, edge or face under the pointer — a small orange dot
   shows where the next click will land, and a dashed line runs to it from the last point.
 - **Keep clicking to chain segments.** Every segment shows its length, every corner the **angle** between its two
@@ -31,8 +36,12 @@ the exact point under the pointer.
 A kept measurement appears in the [object list](https://docs.theprototype.app/controls.md#selection) with a ruler icon, named **Measurement**. Move,
 rename, hide, delete and undo it like any object.
 
-![Two kept measurements: a 2 m + 1 m chain along a box with its 90° corner and a 3 m total, and a chain of short 6 cm segments whose labels step aside](https://docs.theprototype.app/img/measure-align/measure-items.webp)
+![Two kept measurements: a 2 m + 1 m chain along the top of a box with its 90° corner and a 3 m total, and in front of it a chain of short 6 cm segments whose labels step aside so none overlap. 1: the 90° corner. 2: the short segments' labels.](https://docs.theprototype.app/img/measure-align/measure-items.webp)
 *Figure: Two kept measurements.*
+
+1. A kept measurement shows the same lengths, angles and total, for everyone.
+2. Labels of **short segments** step aside so they never overlap.
+
 - **Select** one by clicking its line (or its row in the object list). Properties shows a **Measurement** section with
   each segment's length, the angle at each joint and the total.
 - **Edit its points:** select it and press <kbd>Tab</kbd> (or Properties ▸ *Edit points*, or the object menu ▸ *Edit
@@ -42,8 +51,12 @@ rename, hide, delete and undo it like any object.
 - **Delete them all:** viewport menu ▸ **Delete measurements (N)** removes every measurement in the scene in one undo
   step.
 
-![Editing a measurement: point 2 is picked up, the points are drawn in yellow and Properties shows the Measurement object.](https://docs.theprototype.app/img/measure-align/measure-edit.webp)
+![Editing a measurement: point 2 of a kept chain on a box is picked up, the points are drawn in yellow, and Properties on the right shows the Measurement object. 1: the picked point. 2: the Measurement in Properties.](https://docs.theprototype.app/img/measure-align/measure-edit.webp)
 *Figure: Editing a measurement.*
+
+1. A click on a point **picks it up**; the next click puts it down (it snaps).
+2. The measurement is an object: **Properties** shows it like any other.
+
 **Labels do not pile up.** On short segments, the lengths, angles and total step aside; a label with no room left is
 not drawn. The Measure window and the Properties section still show every number.
 
@@ -56,8 +69,12 @@ not drawn. The Measure window and the Properties section still show every number
 **Where:** select two or more objects ▸ Properties ▸ **Arrange**; or right-click a selected object ▸ **Transform ▸**
 (*Drop to ground*, *Align ▸*, *Align to active ▸*, *Distribute ▸*).
 
-![The Properties Arrange section for three selected objects](https://docs.theprototype.app/img/measure-align/arrange.webp)
+![Properties ▸ Arrange for three selected objects: Align X, Y and Z with Min, Centre and Max, Align to Selection or Active, Distribute by centres or gaps, and Drop to ground. 1: Align to. 2: Drop to ground.](https://docs.theprototype.app/img/measure-align/arrange.webp)
 *Figure: The Properties Arrange section for three selected objects.*
+
+1. **Align to**: the whole selection's bounds, or the active (last picked) object.
+2. **Drop to ground**: each object rests on the surface below it.
+
 | Control | What it does |
 |---|---|
 | **Align X / Y / Z — Min / Centre / Max** | Lines every object's lowest edge, centre or highest edge up on that axis. |

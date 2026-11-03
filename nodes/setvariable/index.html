@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Set Variable", "url": "https://docs.theprototype.app/nodes/setvariable/", "description": "Writes a named number when a pulse arrives — a score, lives, a difficulty. With scope shared it is one number the whole game shares, with no object needed to hold it; with scope player it is your…", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/nodes-setvariable/setvariable.webp", "caption": "The example's nodes."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Set Variable", "url": "https://docs.theprototype.app/nodes/setvariable/", "description": "Writes a named number when a pulse arrives — a score, lives, a difficulty. With scope shared it is one number the whole game shares, with no object needed to hold it; with scope player it is your…", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.54.3"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/nodes-setvariable/setvariable.webp", "caption": "A point to the shared score for each click on the coin."}]}</script>
 </head>
   
   
@@ -5954,12 +5954,6 @@ is one number the whole game shares, with no object needed to hold it; with scop
 </table>
 <p>The card has no field for the value: wire one in. The HUD editor's <strong>Actions ▸ Set a variable</strong>
 builds a Set Variable that adds 1 to <code>score</code>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Known problem in 1.42</p>
-<p>The card does not draw its <strong>trigger</strong> and <strong>value</strong> sockets yet, so this node cannot be wired by hand in the node
-editor. Until that is fixed, let the HUD editor build it: select a button and pick <strong>Actions ▸ Set a variable</strong>,
-which adds a Set Variable already wired to the button (it adds 1 to <code>score</code>).</p>
-</div>
 <h2 id="parameters">Parameters</h2>
 <table>
 <thead>
@@ -6045,9 +6039,9 @@ it.</p>
    the HUD editor's <strong>Actions ▸ Show a variable</strong>.</li>
 </ol>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/nodes-setvariable/setvariable.webp" data-desc-position="bottom"><img alt="The example's nodes: On Click on the Coin, a Set Variable (score, add, shared) and a Number set to 1 — in 1.42 the Set Variable card has no sockets to wire into" class="shot" height="551" loading="lazy" src="../../img/nodes-setvariable/setvariable.webp" width="688"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/nodes-setvariable/setvariable.webp" data-desc-position="bottom"><img alt="The example's nodes: an On Click on the Coin's Object Selector, wired into the trigger of a Set Variable (score, add, shared), and a Number set to 1 wired into its value" class="shot" height="381" loading="lazy" src="../../img/nodes-setvariable/setvariable.webp" width="402"></a></p>
 <figcaption>
-<p>The example's nodes.</p>
+<p>A point to the shared score for each click on the coin.</p>
 </figcaption>
 </figure>
 
@@ -6070,7 +6064,7 @@ it.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-31
+    2026-11-03
   </span>
 
     

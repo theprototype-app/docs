@@ -107,8 +107,11 @@ the 0–1 square with no overlaps.
    open it — no need to reopen the editor.
 2. Select a mesh, open the UV editor and pick **Unwrap ▸ Smart (xatlas)**.
 
-![A sphere unwrapped with Smart (xatlas): seams placed automatically, pieces packed without overlaps](https://docs.theprototype.app/img/uv-editor/smart-unwrap.webp)
+![The UV editor after Unwrap ▸ Smart (xatlas) on a sphere: the sphere's surface cut into islands along seams the module chose, packed into the 0 to 1 square with no overlaps. 1: the Unwrap menu.](https://docs.theprototype.app/img/uv-editor/smart-unwrap.webp)
 *Figure: A sphere unwrapped with Smart (xatlas).*
+
+1. **Unwrap ▸ Smart (xatlas)**, added by the module.
+
 Like the built-in projections, it unwraps only the faces you picked in Edit Mesh if you picked any. It is one undo step,
 and your peers get the new mapping.
 

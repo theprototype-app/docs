@@ -8,8 +8,13 @@ code and press <kbd>Ctrl</kbd>+<kbd>S</kbd>, and the game plays by your rules on
 These games ship this way: **Mini Golf**, **Football**, **Dungeon Realms**, **The Alchemist's Escape**, **Sky Run**,
 **Target Toss** and **Marble Maze** (see [The Games tab](https://docs.theprototype.app/games.md)).
 
-![Part of Mini Golf's Main graph at full size: the rules node's outputs, such as stroke, outOfBounds and holeSunk, wired to sounds and bursts, with the Code link to the engine below.](https://docs.theprototype.app/img/game-rules/mini-golf.webp)
+![Part of Mini Golf's Main graph at full size: the lower half of the Mini Golf rules node, its outputs such as stroke, outOfBounds and holeSunk wired into the Hole feedback group's sounds and bursts, and the Code link node below it. 1: a moment output, holeSunk. 2: the rules node's Code button. 3: the Code link to the engine.](https://docs.theprototype.app/img/game-rules/mini-golf.webp)
 *Figure: Part of Mini Golf's Main graph at full size.*
+
+1. A **moment** ⚡ output — *holeSunk*, the ball in the cup — wired into a banner, a burst and a sound.
+2. **Code** opens **the rules** in the code workspace; edit them and press <kbd>Ctrl</kbd>+<kbd>S</kbd>.
+3. The **Code link** opens **the engine** (`minigolf/module.js`) read-only: the ball, the putting, the VR putter.
+
 ## Where it is
 
 Open a game from the **Games** tab, then open the **Node editor** (<kbd>N</kbd>). **Main** is the first entry under
@@ -51,8 +56,13 @@ You do not have to read code to tune a game. Select the rules node — or the ga
 
 A knob on the rules node rewrites the number in the code itself, so the code and the panel always agree.
 
-![Part of Football's Main graph at full size: the Match Rules settings node, the Football rules behaviour, and the Code link to the engine.](https://docs.theprototype.app/img/game-rules/football.webp)
-*Figure: Part of Football's Main graph at full size.*
+![Part of Football's Main graph: the Match Rules settings node with mode, winBy, goalsToWin, matchSeconds, serve and tie on the left, the Pitch node, the Football rules behaviour with its red, blue and goal outputs, and the Code link to the engine below it. 1: Match Rules, the settings. 2: the rules node's Code button. 3: the Code link to the engine.](https://docs.theprototype.app/img/game-rules/football.webp)
+*Figure: Part of Football's Main graph.*
+
+1. **Match Rules**, the game's **settings** node: goals to win, match seconds, serve, own goals, tie.
+2. **Code** opens *Football rules*, **the rules** themselves, in the code workspace.
+3. The **Code link** opens **the engine** (`football/module.js`) read-only: the ball, the gates, the kick-off.
+
 ## Change the rules in code
 
 Double-click the rules node (or right-click ▸ **Open code**). The [code workspace](https://docs.theprototype.app/code-workspace.md) opens it; edit it

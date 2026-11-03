@@ -28,8 +28,12 @@ Press <kbd>?</kbd> anywhere to see every shortcut, grouped by panel, with the pa
 from the live keymap, so a key you rebind in **Settings ▸ Shortcuts** shows up there straight away. Type to filter;
 <kbd>Esc</kbd> closes it.
 
-![The cheat sheet: the node editor's keys first, because it has focus, then the 3D viewport's](https://docs.theprototype.app/img/node-editor/cheat-sheet.webp)
+![The cheat sheet opened with ? while the Node editor has focus: the Node editor's keys first, then the 3D viewport's, with a filter box at the top. 1: the filter. 2: the Node editor's keys.](https://docs.theprototype.app/img/node-editor/cheat-sheet.webp)
 *Figure: The cheat sheet.*
+
+1. Type in the **filter** to find a key by what it does.
+2. The keys of the area that **has focus** come first.
+
 ## Node editor shortcuts
 
 | Key | Does |
@@ -88,8 +92,12 @@ Long names end in "…": point at a crumb (or **press and hold** it on a phone) 
 right end — or <kbd>Esc</kbd> — leaves a group, and the bin deletes the object's flow (it asks first, in a dialog).
 Jumping between the Scene and an object's flow is two taps: the crumb, then the row.
 
-![The breadcrumb bar in the docked node editor: ⌂ Scene › Angelfish 1…, with the object crumb's list open — Main, the Scene graph, then the object flows, the current one ticked](https://docs.theprototype.app/img/node-editor/breadcrumb-siblings.webp)
-*Figure: The breadcrumb bar in the docked node editor.*
+![The breadcrumb bar in the docked Node editor, ⌂ Scene › Angelfish 1, with the object crumb's list open: Main, then the object flows of Angelfish 1, Angelfish 2 and Clownfish, the current one ticked. 1: the object crumb. 2: the list.](https://docs.theprototype.app/img/node-editor/breadcrumb-siblings.webp)
+*Figure: The breadcrumb bar in the docked Node editor.*
+
+1. The **object crumb**: **you are here**. Click it for its siblings.
+2. The **list**: every other flow at this level, the current one ticked.
+
 On a phone the minimap is off by default; **⚙ Settings ▸ Minimap** turns it on.
 
 ## Tidy graph
@@ -106,8 +114,11 @@ The node editor can lay a graph out for you.
   result.
 - Inside a group (double-click a group card), Tidy arranges that group's contents.
 
-![Part of Waves' Main graph at full size: tidied columns of nodes, with a note reading The crystal glows.](https://docs.theprototype.app/img/node-editor/tidy-waves-main.webp)
+![Part of Waves' Main graph at full size after Tidy: columns of nodes, wires running left to right, and a note reading The crystal glows. 1: a note.](https://docs.theprototype.app/img/node-editor/tidy-waves-main.webp)
 *Figure: Part of Waves' Main graph at full size.*
+
+1. A **note** frames the nodes it explains; Tidy keeps them inside it.
+
 Every game's Main graph ships tidied — see [The Games tab](https://docs.theprototype.app/games.md#tidy-main-graphs).
 
 ## Groups
@@ -125,8 +136,13 @@ exactly as before.
 - Groups nest, copy and paste with their contents, and undo and redo like every other edit.
 - <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd> ungroups: the nodes stay exactly where they were.
 
-![Inside a group: Group inputs on the left, Group outputs on the right, and the breadcrumb at the top](https://docs.theprototype.app/img/node-editor/group.webp)
+![Inside a group: Group inputs on the left with the Key Press wire coming in, the Latch and the Visibility in the middle, Group outputs on the right, and the breadcrumb at the top. 1: Group inputs. 2: Group outputs. 3: the breadcrumb.](https://docs.theprototype.app/img/node-editor/group.webp)
 *Figure: Inside a group.*
+
+1. **Group inputs**: one row per wire that comes into the group.
+2. **Group outputs**: one row per wire that leaves it.
+3. The **breadcrumb**: click a crumb above to leave the group.
+
 ### Node group files (.tpnode)
 
 Right-click a group ▸ **Export group (.tpnode)…** (or any selection ▸ **Export as node group (.tpnode)…**) saves it as a

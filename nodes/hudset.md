@@ -20,10 +20,6 @@ that puts the volume back, a difficulty the host sets.
 | element | (none) | the Slider, Toggle, Dropdown, Text field or Tabs to write into — see below |
 | value | 0 | −1000 to 1000 |
 
-!!! warning "Known problem in 1.42"
-    The card does not draw its **trigger**, **value** and **options** sockets yet, so this node cannot be wired in the
-    node editor.
-
 ## How the write behaves
 
 - **Once per pulse**, never every frame — so it never fights the player's own hand on the control.
@@ -57,5 +53,5 @@ A Reset button for a volume slider:
 3. Wire HUD Button → HUD Set Input's **trigger**.
 4. Drag the slider, then press *Reset*: it jumps back to 50.
 
-![The example's nodes: a HUD Button and a HUD Set Input whose value is 50 — in 1.42 the HUD Set Input card has no trigger socket to wire into](https://docs.theprototype.app/img/nodes-hudset/hudset.webp)
-*Figure: The example's nodes.*
+![A HUD Button on Reset wired into the trigger of a HUD Set Input on the Volume slider, value 50](https://docs.theprototype.app/img/nodes-hudset/hudset.webp)
+*Figure: A Reset button puts the slider back to 50.*

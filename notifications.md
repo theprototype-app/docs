@@ -33,8 +33,11 @@ too.
 toast offers **Undo** for about 8 seconds — a thin bar shows the time left. Undo puts back exactly what was there: for
 everyone in the session (the scene and its objects), or on this device (modules, settings).
 
-![The toast after clearing the scene, with Undo](https://docs.theprototype.app/img/notifications/undo-toast.webp)
+![The toast after clearing the scene: 3 objects cleared., with Undo, and the thin bar along its bottom draining for the time the offer lasts. 1: Undo.](https://docs.theprototype.app/img/notifications/undo-toast.webp)
 *Figure: A toast with Undo, after clearing the scene.*
+
+1. **Undo** puts back exactly what was there, for everyone in the session.
+
 After the 8 seconds, <kbd>Ctrl</kbd>+<kbd>Z</kbd> still undoes a delete; a **Clear scene** can no longer be undone.
 
 ## Scene notes
@@ -46,8 +49,12 @@ Notes are little pinned comments you can attach to any object — feedback, TODO
 Right-click an object ▸ **Add note**. The note is pinned **exactly where you clicked** on the object and follows it as it
 moves. The card that opens has:
 
-![Editing a scene note, with the notes drawer grouping the scene's notes by label](https://docs.theprototype.app/img/notifications/note-card.webp)
+![Editing the note Is this door too narrow? beside the notes drawer, which groups the scene's six notes by label: art, lighting and mechanics. 1: the note being edited. 2: a label group.](https://docs.theprototype.app/img/notifications/note-card.webp)
 *Figure: Editing a note beside the notes drawer.*
+
+1. The **note card**: name, description, pin colour and shape, label, a saved camera view, Follow.
+2. The drawer **groups** the notes by label; each group has ‹ › to step through it.
+
 | Field | What it is |
 |---|---|
 | **Name** | optional — a short title shown in the drawer, on the card and in the marker's hover tip |
@@ -64,8 +71,12 @@ moves. The card that opens has:
 you can delete your own reply (**×**). Adding, editing or deleting a note and replying are each one
 <kbd>Ctrl</kbd>+<kbd>Z</kbd> — and the undo reaches everyone in the session.
 
-![A note with a thread of replies and the Reply box](https://docs.theprototype.app/img/notifications/note-thread.webp)
+![The note Is this door too narrow? with a thread of three replies from Mia and Alex, each with its author and time, the Reply box, then Delete, Follow and Edit. 1: the replies. 2: the Reply box.](https://docs.theprototype.app/img/notifications/note-thread.webp)
 *Figure: A note with a thread of replies.*
+
+1. The **replies**, each with its author and time; **×** deletes your own.
+2. The **Reply** box: Enter sends.
+
 Clicking a saved note's marker opens it to read: its text, label, author and date, with **Delete**, **Follow** (fly to
 the pin and keep following it) and **Edit**, which brings back the card above.
 
@@ -90,8 +101,11 @@ The **📝 notes** button in the top-right chrome (just left of the bell) opens 
 **page of the Notes tab**: its ‹ › step through the notes, and closing it — ✕, or swiping it down — returns to the list
 exactly where you left it. The note page and the list share one height, and neither covers **Play**.
 
-![A note open as a page of the notes on a folded phone: ‹ 5/14 › in its header, Reply, then Delete, Follow and Edit above the bottom bar](https://docs.theprototype.app/img/notifications/note-page-phone.webp)
+![A note open as a page of the Notes tab on a folded phone: ‹ › and its place among the six notes in its header, the note's text, label and author, Reply, then Delete, Follow and Edit above the bottom bar. 1: ‹ › through the notes.](https://docs.theprototype.app/img/notifications/note-page-phone.webp)
 *Figure: A note as a page of the notes on a folded phone.*
+
+1. **‹ ›** step through all the scene's notes; closing the page returns to the list.
+
 **Settings ▸ Controls ▸ Double-click to open notes** makes a single click on a marker — and the ‹ › arrows — only fly the
 camera to the note, with the card opening on a double click: handy for walking through a scene full of notes without a
 card in the way.
@@ -110,8 +124,12 @@ If there are no notes yet, the drawer tells you to select an object and add one 
 - **History** — someone who joins the session sees the conversation so far. A session saved in the
   [Sessions manager](https://docs.theprototype.app/saving.md#sessions-manager) keeps its chat; an exported `.tpscene` never contains it.
 
-![The chat: a line that mentions you is ringed, and :+1: became an emoji](https://docs.theprototype.app/img/notifications/chat-mentions.webp)
+![The chat: Mia's line that mentions Alex is ringed, the @Alex in a colour, and Alex's answer, where :+1: became an emoji. 1: the ringed line. 2: the emoji.](https://docs.theprototype.app/img/notifications/chat-mentions.webp)
 *Figure: In the chat, a line that mentions you is ringed.*
+
+1. A line that **mentions you** is ringed; the @name shows in that person's colour.
+2. **Shortcodes** such as `:+1:` turn into emoji when you send.
+
 ## Pinging
 
 A ping is a momentary "look here!" pulse everyone sees at once — great for pointing during a call.

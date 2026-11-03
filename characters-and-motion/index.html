@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Characters and motion", "url": "https://docs.theprototype.app/characters-and-motion/", "description": "Any rigged model is a character, any clip plays on any humanoid, and the clips are small files of their own. Characters and motions come as free CC0 packs, and a character downloads with its clips…", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.54.2"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/characters-and-motion/motion-tab.webp", "caption": "Asset Browser ▸ Motion lists the 87 clips of the Motion pack."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/characters-and-motion/clip-tools.webp", "caption": "The clip tools in the Animation window."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/characters-and-motion/animation-states.webp", "caption": "The Animation states window for a Knight."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Characters and motion", "url": "https://docs.theprototype.app/characters-and-motion/", "description": "Any rigged model is a character, any clip plays on any humanoid, and the clips are small files of their own. Characters and motions come as free CC0 packs, and a character downloads with its clips…", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.54.3"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/characters-and-motion/motion-tab.webp", "caption": "Asset Browser ▸ Motion lists the 87 clips of the Motion pack."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/characters-and-motion/clip-tools.webp", "caption": "The clip tools in the Animation window."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/characters-and-motion/animation-states.webp", "caption": "The Animation states window for a Knight."}]}</script>
 </head>
   
   
@@ -6478,11 +6478,17 @@ to your peers once, and every peer applies it to its own copy of the model.</p>
 </ul>
 <h2 id="game-ready-clips-animation-window-clip-tools">Game-ready clips (Animation window ▸ clip tools)</h2>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/characters-and-motion/clip-tools.webp" data-desc-position="bottom"><img alt="The clip tools in the Animation window" class="shot" height="329" loading="lazy" src="../img/characters-and-motion/clip-tools.webp" width="223"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/characters-and-motion/clip-tools.webp" data-desc-position="bottom"><img alt="The clip tools in the Animation window for the Knight's Walking_A clip: fps, frames and length with seamless loop, In place or Moving, loop, speed, Rename, Loop it and Remove, the playhead and in / out markers, Mark in, Mark out, Trim and Split at playhead. 1: the loop seam. 2: Loop it and Remove." class="shot" height="443" loading="lazy" src="../img/characters-and-motion/clip-tools.webp" width="372"></a></p>
 <figcaption>
 <p>The clip tools in the Animation window.</p>
 </figcaption>
 </figure>
+<div class="shot-key">
+<ol>
+<li>The <strong>loop seam</strong>: "seamless loop", or how far the loop jumps.</li>
+<li><strong>Loop it</strong> makes a new clip that loops without a jump; <strong>Remove</strong> takes the clip off the character (the file stays).</li>
+</ol>
+</div>
 <p>Select a character and open the <strong>Animation</strong> window. Under its clips, the clip tools show for the
 clip that is playing:</p>
 <ul>
@@ -6519,11 +6525,17 @@ clip that is playing:</p>
 </ul>
 <h2 id="animation-states-a-locomotion-state-machine">Animation states (a locomotion state machine)</h2>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/characters-and-motion/animation-states.webp" data-desc-position="bottom"><img alt="The Animation states window for a Knight: Move, Jump and Fall states with their clips, loop and entry, and the Move to Jump transitions with their conditions." class="shot" height="472" loading="lazy" src="../img/characters-and-motion/animation-states.webp" width="360"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/characters-and-motion/animation-states.webp" data-desc-position="bottom"><img alt="The Animation states window for the Knight after Replace with the Locomotion preset: the states Move (a blend by speed of Idle, Walking_A and Running_A, the entry), Jump and Fall with their clips and loop, then the transitions Move to Jump with their conditions. 1: the Locomotion preset. 2: the state playing now." class="shot" height="472" loading="lazy" src="../img/characters-and-motion/animation-states.webp" width="404"></a></p>
 <figcaption>
 <p>The Animation states window for a Knight.</p>
 </figcaption>
 </figure>
+<div class="shot-key">
+<ol>
+<li><strong>Replace with the Locomotion preset</strong>: idle, walk and run blended by speed, jump and fall, from this character's own clips.</li>
+<li>The <strong>state playing now</strong> is outlined (here Move, standing still).</li>
+</ol>
+</div>
 <p>Animation window ▸ <strong>Animation states…</strong> opens the states window for the selected character.</p>
 <ul>
 <li><strong>Locomotion preset</strong>: one click builds <em>Move</em> (idle / walk / run blended by speed), <em>Jump</em> and

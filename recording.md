@@ -33,14 +33,18 @@ The dialog estimates the file size before you start.
 A small bar shows the progress, with **Cancel**. The camera is yours alone: nothing is sent to anyone in the session, and
 your view comes back where it was afterwards.
 
-![The recording bar above the toolbar](https://docs.theprototype.app/img/recording/recording-bar.webp)
+![The recording bar above the toolbar while a turntable take runs: the red dot, Recording, the progress bar, the seconds done of the take's length, and Cancel.](https://docs.theprototype.app/img/recording/recording-bar.webp)
 *Figure: The recording bar sits above the toolbar while a take runs.*
 ## The file
 
 The video is saved to **Explorer ▸ Recordings** (double-click it to play it) and offered as **Download**.
 
-![The finished take: Download, Show in Explorer, Record again](https://docs.theprototype.app/img/recording/result.webp)
+![The finished take in the Recording dialog, in a small window: the video of the turning ball, its file name, length, size and frame rate, Saved to Explorer ▸ Recordings, and the Download, Show in Explorer and Record again buttons. 1: Download. 2: Record again.](https://docs.theprototype.app/img/recording/result.webp)
 *Figure: The finished take, with Download, Show in Explorer and Record again.*
+
+1. **Download** to **save file** (.webm); it is in the Explorer already.
+2. **Record again** goes back to the settings for a new take.
+
 ## Limits
 
 - Not in VR or Play — the recorder drives the editor camera.

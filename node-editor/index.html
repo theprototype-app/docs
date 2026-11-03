@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Node Editor: Keyboard, Groups & Notes", "url": "https://docs.theprototype.app/node-editor/", "description": "Since 1.23 the node editor has its own keyboard: shortcuts go to the panel you are working in, so the same letter can mean one thing among the nodes and another in the 3D view. Nodes can be…", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/node-editor/cheat-sheet.webp", "caption": "The cheat sheet."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/node-editor/breadcrumb-siblings.webp", "caption": "The breadcrumb bar in the docked node editor."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/node-editor/tidy-waves-main.webp", "caption": "Part of Waves' Main graph at full size."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/node-editor/group.webp", "caption": "Inside a group."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Node Editor: Keyboard, Groups & Notes", "url": "https://docs.theprototype.app/node-editor/", "description": "Since 1.23 the node editor has its own keyboard: shortcuts go to the panel you are working in, so the same letter can mean one thing among the nodes and another in the 3D view. Nodes can be…", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.54.3"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/node-editor/cheat-sheet.webp", "caption": "The cheat sheet."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/node-editor/breadcrumb-siblings.webp", "caption": "The breadcrumb bar in the docked Node editor."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/node-editor/tidy-waves-main.webp", "caption": "Part of Waves' Main graph at full size."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/node-editor/group.webp", "caption": "Inside a group."}]}</script>
 </head>
   
   
@@ -6102,11 +6102,17 @@ and never the whole graph.</p>
 from the live keymap, so a key you rebind in <strong>Settings ▸ Shortcuts</strong> shows up there straight away. Type to filter;
 <kbd>Esc</kbd> closes it.</p>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/node-editor/cheat-sheet.webp" data-desc-position="bottom"><img alt="The cheat sheet: the node editor's keys first, because it has focus, then the 3D viewport's" class="shot fade-l fade-r fade-t fade-b" height="640" loading="lazy" src="../img/node-editor/cheat-sheet.webp" width="688"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/node-editor/cheat-sheet.webp" data-desc-position="bottom"><img alt="The cheat sheet opened with ? while the Node editor has focus: the Node editor's keys first, then the 3D viewport's, with a filter box at the top. 1: the filter. 2: the Node editor's keys." class="shot fade-r fade-b" height="640" loading="lazy" src="../img/node-editor/cheat-sheet.webp" width="688"></a></p>
 <figcaption>
 <p>The cheat sheet.</p>
 </figcaption>
 </figure>
+<div class="shot-key">
+<ol>
+<li>Type in the <strong>filter</strong> to find a key by what it does.</li>
+<li>The keys of the area that <strong>has focus</strong> come first.</li>
+</ol>
+</div>
 <h2 id="node-editor-shortcuts">Node editor shortcuts</h2>
 <table>
 <thead>
@@ -6227,11 +6233,17 @@ sits above the graph, so it never covers a node. Tap or click a crumb to see wha
 right end — or <kbd>Esc</kbd> — leaves a group, and the bin deletes the object's flow (it asks first, in a dialog).
 Jumping between the Scene and an object's flow is two taps: the crumb, then the row.</p>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/node-editor/breadcrumb-siblings.webp" data-desc-position="bottom"><img alt="The breadcrumb bar in the docked node editor: ⌂ Scene › Angelfish 1…, with the object crumb's list open — Main, the Scene graph, then the object flows, the current one ticked" class="shot fade-r" height="337" loading="lazy" src="../img/node-editor/breadcrumb-siblings.webp" width="688"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/node-editor/breadcrumb-siblings.webp" data-desc-position="bottom"><img alt="The breadcrumb bar in the docked Node editor, ⌂ Scene › Angelfish 1, with the object crumb's list open: Main, then the object flows of Angelfish 1, Angelfish 2 and Clownfish, the current one ticked. 1: the object crumb. 2: the list." class="shot" height="215" loading="lazy" src="../img/node-editor/breadcrumb-siblings.webp" width="457"></a></p>
 <figcaption>
-<p>The breadcrumb bar in the docked node editor.</p>
+<p>The breadcrumb bar in the docked Node editor.</p>
 </figcaption>
 </figure>
+<div class="shot-key">
+<ol>
+<li>The <strong>object crumb</strong>: <strong>you are here</strong>. Click it for its siblings.</li>
+<li>The <strong>list</strong>: every other flow at this level, the current one ticked.</li>
+</ol>
+</div>
 <p>On a phone the minimap is off by default; <strong>⚙ Settings ▸ Minimap</strong> turns it on.</p>
 <h2 id="tidy-graph">Tidy graph</h2>
 <p>The node editor can lay a graph out for you.</p>
@@ -6247,11 +6259,16 @@ Jumping between the Scene and an object's flow is two taps: the crumb, then the 
 <li>Inside a group (double-click a group card), Tidy arranges that group's contents.</li>
 </ul>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/node-editor/tidy-waves-main.webp" data-desc-position="bottom"><img alt="Part of Waves' Main graph at full size: tidied columns of nodes, with a note reading The crystal glows." class="shot fade-l fade-r fade-t fade-b" height="560" loading="lazy" src="../img/node-editor/tidy-waves-main.webp" width="688"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/node-editor/tidy-waves-main.webp" data-desc-position="bottom"><img alt="Part of Waves' Main graph at full size after Tidy: columns of nodes, wires running left to right, and a note reading The crystal glows. 1: a note." class="shot fade-l fade-r fade-t fade-b" height="480" loading="lazy" src="../img/node-editor/tidy-waves-main.webp" width="688"></a></p>
 <figcaption>
 <p>Part of Waves' Main graph at full size.</p>
 </figcaption>
 </figure>
+<div class="shot-key">
+<ol>
+<li>A <strong>note</strong> frames the nodes it explains; Tidy keeps them inside it.</li>
+</ol>
+</div>
 <p>Every game's Main graph ships tidied — see <a href="../games/#tidy-main-graphs">The Games tab</a>.</p>
 <h2 id="groups">Groups</h2>
 <p>Select some nodes and press <kbd>Ctrl</kbd>+<kbd>G</kbd> (or right-click ▸ <strong>Group</strong>). They collapse into one card whose
@@ -6268,11 +6285,18 @@ exactly as before.</p>
 <li><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd> ungroups: the nodes stay exactly where they were.</li>
 </ul>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/node-editor/group.webp" data-desc-position="bottom"><img alt="Inside a group: Group inputs on the left, Group outputs on the right, and the breadcrumb at the top" class="shot fade-l fade-r fade-t" height="420" loading="lazy" src="../img/node-editor/group.webp" width="688"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/node-editor/group.webp" data-desc-position="bottom"><img alt="Inside a group: Group inputs on the left with the Key Press wire coming in, the Latch and the Visibility in the middle, Group outputs on the right, and the breadcrumb at the top. 1: Group inputs. 2: Group outputs. 3: the breadcrumb." class="shot" height="420" loading="lazy" src="../img/node-editor/group.webp" width="688"></a></p>
 <figcaption>
 <p>Inside a group.</p>
 </figcaption>
 </figure>
+<div class="shot-key">
+<ol>
+<li><strong>Group inputs</strong>: one row per wire that comes into the group.</li>
+<li><strong>Group outputs</strong>: one row per wire that leaves it.</li>
+<li>The <strong>breadcrumb</strong>: click a crumb above to leave the group.</li>
+</ol>
+</div>
 <h3 id="node-group-files-tpnode">Node group files (.tpnode)</h3>
 <p>Right-click a group ▸ <strong>Export group (.tpnode)…</strong> (or any selection ▸ <strong>Export as node group (.tpnode)…</strong>) saves it as a
 file you can reuse in another scene or give to someone. Right-click the canvas ▸ <strong>Import node group (.tpnode)…</strong>, or
@@ -6325,7 +6349,7 @@ already in a graph keep working. <strong>Turn all on</strong> brings them all ba
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-31
+    2026-11-03
   </span>
 
     

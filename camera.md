@@ -155,8 +155,11 @@ scene's sky **and** its light. Every object picks up the image's colours and bri
 [water](https://docs.theprototype.app/water.md) mirrors the real clouds. The scene's sun is placed where the photo's sun is, so shadows agree with the
 sky.
 
-![A mirror sphere and a box lit by the Meadow sky image](https://docs.theprototype.app/img/camera/sky-meadow.webp)
+![A mirror sphere and a wooden box on the grid under the Meadow sky image: the sphere reflects the meadow and the sky, and the box takes the sky's soft light. 1: the sky reflected in the sphere.](https://docs.theprototype.app/img/camera/sky-meadow.webp)
 *Figure: The Meadow sky image lighting a mirror sphere and a box.*
+
+1. The sky image lights the scene and shows in every reflection: the **sky reflected** in the mirror sphere.
+
 It lives in **Configure Scene ▸ Environment ▸ Sky image (HDRI)**, under the preset chips and the Exposure slider. Click
 a card to switch to that sky; like every Environment setting, everyone in the session sees it.
 

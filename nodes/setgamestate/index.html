@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Set Game State", "url": "https://docs.theprototype.app/nodes/setgamestate/", "description": "Switches the shared game state — menu, playing, paused or over — when a pulse arrives. Every player follows the same state: it is the one switch a Start, Pause or Game Over button writes to.", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/nodes-setgamestate/setgamestate.webp", "caption": "The example's nodes."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Set Game State", "url": "https://docs.theprototype.app/nodes/setgamestate/", "description": "Switches the shared game state — menu, playing, paused or over — when a pulse arrives. Every player follows the same state: it is the one switch a Start, Pause or Game Over button writes to.", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.54.3"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/nodes-setgamestate/setgamestate.webp", "caption": "A start button and a pause key."}]}</script>
 </head>
   
   
@@ -5967,12 +5967,6 @@ writes to.</p>
 </table>
 <p>The trigger needs a <strong>pulse</strong>. A true/false value (a <a href="../compare/">Compare</a>) wired straight in
 does nothing; put an event node such as <a href="../allplayers/">All Players</a> between them.</p>
-<div class="admonition warning">
-<p class="admonition-title">Known problem in 1.42</p>
-<p>The card does not draw its <strong>trigger</strong> socket yet, so this node cannot be wired by hand in the node editor. Until
-that is fixed, let the HUD editor build it: select a button and pick one of the game actions (see the tip at the end
-of this page) — the action adds a Set Game State already wired to the button.</p>
-</div>
 <h2 id="parameters">Parameters</h2>
 <table>
 <thead>
@@ -6034,9 +6028,9 @@ seconds.</p>
    click on the box resumes it.</li>
 </ol>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/nodes-setgamestate/setgamestate.webp" data-desc-position="bottom"><img alt="The example's nodes: On Click on the Start box, a Key Press for P, and two Set Game State cards (playing, paused) — in 1.42 the cards have no trigger socket to wire into" class="shot" height="639" loading="lazy" src="../../img/nodes-setgamestate/setgamestate.webp" width="514"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/nodes-setgamestate/setgamestate.webp" data-desc-position="bottom"><img alt="The example's nodes: an On Click on the Start box's Object Selector, wired into the trigger of a Set Game State set to playing, and a Key Press for P wired into a second Set Game State set to paused" class="shot" height="589" loading="lazy" src="../../img/nodes-setgamestate/setgamestate.webp" width="402"></a></p>
 <figcaption>
-<p>The example's nodes.</p>
+<p>A start button and a pause key.</p>
 </figcaption>
 </figure>
 <div class="admonition tip">
@@ -6064,7 +6058,7 @@ seconds.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-31
+    2026-11-03
   </span>
 
     

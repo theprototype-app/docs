@@ -287,8 +287,11 @@ scrollbars anywhere.
 Since 1.46 any panel — or a whole dock — can live in its **own browser window**. Drag it to a second monitor and keep
 the 3D view full-size in the app. Everything stays live: it is the same app in a second window, not a copy.
 
-![A popped-out dock: the Node editor and the Timeline as tabs in their own window](https://docs.theprototype.app/img/interface/pop-out-dock.webp)
+![A popped-out dock in its own browser window: the Node editor and the Timeline as its tabs, the Node editor open with its flows list, node palette and graph. 1: the window's tabs.](https://docs.theprototype.app/img/interface/pop-out-dock.webp)
 *Figure: A popped-out dock is its own browser window.*
+
+1. The dock's **tabs**, now in their own window: drag it to another monitor.
+
 - **Pop out a panel:** right-click a dock tab, a sidebar tab or a floating window's header ▸ **Pop out into a new
   window**. Or drag a tab out of the browser window and let go. Panels that pop out: the Explorer, Properties /
   Configure Scene, the Node editor, Timeline, Animation, UV, Shader and HUD editors, the Profiler, the Debugger, Chat,

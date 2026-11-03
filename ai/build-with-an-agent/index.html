@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Build with an AI agent", "url": "https://docs.theprototype.app/ai/build-with-an-agent/", "description": "You can invite an AI agent — Claude Code, Claude Desktop, or any tool that speaks MCP — into your session and build with it. Hand it a link, it joins like any other peer, and you watch the scene…", "dateModified": "2026-11-01", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/ai-build-with-an-agent/agent-activity.webp", "caption": "Agent activity in the AI assistant window."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Build with an AI agent", "url": "https://docs.theprototype.app/ai/build-with-an-agent/", "description": "You can invite an AI agent — Claude Code, Claude Desktop, or any tool that speaks MCP — into your session and build with it. Hand it a link, it joins like any other peer, and you watch the scene…", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.54.3"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/ai-build-with-an-agent/agent-activity.webp", "caption": "Agent activity in the AI assistant window."}]}</script>
 </head>
   
   
@@ -6148,11 +6148,17 @@ before a join, scene tools answer <em>not connected — join first</em>. Then ca
 <li>To stop it, revoke its invite or use <strong>Remove from session</strong> on its row (<a href="../../people/">Users and moderation</a>).</li>
 </ul>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/ai-build-with-an-agent/agent-activity.webp" data-desc-position="bottom"><img alt="Agent activity in the AI assistant window" class="shot" height="440" loading="lazy" src="../../img/ai-build-with-an-agent/agent-activity.webp" width="500"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/ai-build-with-an-agent/agent-activity.webp" data-desc-position="bottom"><img alt="The AI assistant window with Agent activity open: under the agent's name, Claude, two timed lines — created 3 objects (Rock1, Rock2 +1) and created 1 object (Flame) — each with Undo. 1: the number of steps so far. 2: Undo for one step." class="shot fade-b" height="214" loading="lazy" src="../../img/ai-build-with-an-agent/agent-activity.webp" width="500"></a></p>
 <figcaption>
 <p>Agent activity in the AI assistant window.</p>
 </figcaption>
 </figure>
+<div class="shot-key">
+<ol>
+<li><strong>Agent activity</strong> counts the steps; under each agent's name, one line per step it took (click a line to select what it touched).</li>
+<li><strong>Undo it</strong>: takes back that one step, for everybody.</li>
+</ol>
+</div>
 <h2 id="security-notes">Security notes</h2>
 <ul>
 <li>An invite's token lives in the URL <strong>hash</strong>, which browsers never send to any server. Link
@@ -6197,7 +6203,7 @@ one is a new major. The <code>@theprototype/agent</code> package follows the app
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-01
+    2026-11-03
   </span>
 
     

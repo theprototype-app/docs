@@ -9,8 +9,12 @@ The **HUD** is the 2D layer over the game — a score, a health bar, a start men
 Press <kbd>Alt</kbd>+<kbd>H</kbd>, or the **＋** in the bottom dock's tab strip ▸ **HUD editor** (the toolbar can carry a
 HUD button too — see [The toolbar](https://docs.theprototype.app/controls.md#the-toolbar)). Like every editor window it docks at the bottom or floats.
 
-![The HUD editor on the Stars Room's menu screen: the stage in the middle, with the selected button.](https://docs.theprototype.app/img/hud-editor/hud-editor.webp)
+![The HUD editor on the Stars Room's menu screen: the toolbar with the arrange buttons and Snap along the top, and the stage below with the menu card, its title, Start round, Restart round, More stars, Resume and Quit to free play, the start button selected. 1: the selected start button. 2: the Snap box.](https://docs.theprototype.app/img/hud-editor/hud-editor.webp)
 *Figure: The HUD editor on the Stars Room's menu screen.*
+
+1. The **selected** element: drag it to move, drag its corner grip to resize; its fields fill the Properties pane.
+2. **Snapping**: to the grid, the stage centre lines and other elements' edges.
+
 | Part | What it holds |
 |---|---|
 | **Left column, top** | which HUD you are editing (the document picker), then the **screens** of that HUD — click one to edit it; its **while** and **input** settings open under it; **★** makes it the default screen everyone starts on; **✕** deletes it; **+ Screen** adds one |
