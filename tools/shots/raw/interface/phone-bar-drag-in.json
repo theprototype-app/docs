@@ -1,20 +1,37 @@
 {
  "id": "phone-bar-drag-in",
- "dpr": 2.9,
- "shotAt": "2026-10-27T07:46:24.530Z",
+ "spec": "8dbbc190ab79",
+ "dpr": 2,
+ "shotAt": "2026-11-03T11:14:47.054Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.2",
+  "sha": "de3014f8"
  },
- "from": "img/interface/phone-bar-drag-in.png",
- "width": 1131,
- "height": 1595,
+ "uiHits": [
+  "button#ps-sheet-handle.ps-handle",
+  "div.ps-head",
+  "div#ps-more-sheet.ps-body",
+  "p#ps-more-hint.ps-hint",
+  "nav#ps-bar.ps-bar",
+  "h2.ps-title",
+  "div.ps-tiles",
+  "button#ps-tile-shader.ps-tile",
+  "button#ps-tile-profiler.ps-tile",
+  "h3.ps-sec",
+  "button#ps-more-inspect.ps-tile",
+  "button#ps-more-undo.ps-tile"
+ ],
+ "width": 780,
+ "height": 1100,
  "crop": {
   "x": 0,
-  "y": 1003,
-  "w": 1131,
-  "h": 1595
+  "y": 346,
+  "w": 390,
+  "h": 550
  },
- "cut": [],
+ "cut": [
+  "t"
+ ],
  "fade": [
   "t"
  ],

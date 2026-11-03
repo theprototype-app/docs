@@ -1,18 +1,21 @@
 {
  "id": "copy-paste-vector-menu",
+ "spec": "13f1bdb438c4",
  "dpr": 2,
- "shotAt": "2026-10-31T14:45:50.487Z",
+ "shotAt": "2026-11-03T11:07:37.364Z",
  "app": {
-  "version": "1.51.0",
-  "sha": "6fe31dae"
+  "version": "1.54.2",
+  "sha": "de3014f8"
  },
  "uiHits": [
   "div.fixed",
-  "div.ctx-scroll",
   "div.ctx-section",
-  "div.cursor-pointer",
+  "svg.lucide",
+  "path",
+  "span.flex-1",
   "span.flex",
-  "span.flex-1"
+  "span.ctx-hint",
+  "div.ctx-scroll"
  ],
  "width": 1376,
  "height": 1120,

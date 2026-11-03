@@ -1,20 +1,38 @@
 {
  "id": "clusters-rotated",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.499Z",
+ "spec": "702bce66c86f",
+ "dpr": 2,
+ "shotAt": "2026-11-03T11:09:25.231Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.2",
+  "sha": "de3014f8"
  },
- "from": "img/controls/clusters-rotated.png",
- "width": 400,
- "height": 700,
+ "uiHits": [
+  "button#ai-hud-button.hud-fab",
+  "svg.lucide",
+  "p.hud-cell",
+  "button#editor-mode-toggle.hud-cell",
+  "p#play-button.hud-play",
+  "path",
+  "p#explorer-slot.hud-cell",
+  "button#mobile-add-button.hud-fab",
+  "button#budget-chip.bc-main",
+  "span.bc-target",
+  "span#budget-chip-percent.bc-pct",
+  "button#budget-chip-target.bc-caret"
+ ],
+ "width": 800,
+ "height": 1480,
  "crop": {
   "x": 0,
-  "y": 200,
+  "y": 100,
   "w": 400,
-  "h": 700
+  "h": 740
  },
- "cut": [],
+ "cut": [
+  "r",
+  "t"
+ ],
  "fade": [
   "r",
   "t"

@@ -35,3 +35,16 @@ shots:
   alt: 'The Connected panel on a computer: five people, one row each — avatar, name, the scene they are in and their p-number
     underneath, and Editor or Viewer with Go to or Watch on the right'
   from: img/connection/peers-panel-desktop.png
+- id: guests-see
+  replaces: img/connection/guests-see.png
+  alt: >-
+    The Connect drawer's Info tab on a computer: the Session rows — State, Your ID, Guests see with its list, Host —
+    and the Signaling server rows under them. 1: Guests see, which of your files a guest sees in the Explorer.
+  caption: Connect ▸ ▾ ▸ Info, where the host picks what guests see.
+  setup:
+    - {eval: "window.__stores.connectDrawerOpen.set(true)"}
+    - {wait: 1200}
+  crop: {selector: '[data-testid="connect-info-drawer"]', pad: 8}
+  fade: []
+  annotate:
+    - {n: 1, at: {selector: '#session-share-scope'}, shape: box, label: guests see, badge: b, key: '**Guests see**: which of your files a guest sees in the Explorer (read-only).'}

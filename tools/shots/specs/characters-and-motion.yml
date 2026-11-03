@@ -34,3 +34,19 @@ shots:
   kind: ui
   dpr: 1
   from: img/characters-and-motion/animation-states.png
+# fix-batch-3 row l (owner 2026-11-02 → 83-start): the Asset Browser's Motion tab, shot on production
+- id: motion-tab
+  alt: >-
+    The Free assets (CC0) window on its Motion tab: a search box, All categories and the resolution, then a grid of
+    humanoid clips from the Motion pack — Crouch_Fwd_Loop, Crouch_Idle_Loop, Dance_Loop… — each with Add to Explorer.
+    1: the Motion tab. 2: Add to Explorer.
+  caption: Asset Browser ▸ Motion lists the 87 clips of the Motion pack.
+  setup:
+  - eval: "const S=window.__stores; S.cc0State.assetBrowserKind.set('motion'); S.cc0State.openAssetBrowser()"
+  - wait: 6000
+  crop:
+    rect: [150, 88, 580, 616]
+  fade: [b]
+  annotate:
+  - {n: 1, at: {selector: '#asset-browser-tab-motion'}, shape: box, label: motion, badge: b, key: 'The **Motion** tab of the Asset Browser.'}
+  - {n: 2, at: {text: Add to Explorer, nth: 0}, shape: box, label: then drag, badge: b, key: '**Add to Explorer**, **then drag** the clip onto a character (or pick it in Apply clip…).'}

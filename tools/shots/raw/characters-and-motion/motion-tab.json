@@ -1,0 +1,56 @@
+{
+ "id": "motion-tab",
+ "spec": "e99f524a98f6",
+ "dpr": 2,
+ "shotAt": "2026-11-03T11:06:01.290Z",
+ "app": {
+  "version": "1.54.2",
+  "sha": "de3014f8"
+ },
+ "uiHits": [
+  "div.ui-panel-header",
+  "button#asset-browser-tab-models.tab",
+  "label.tp-ui",
+  "li.ab-card",
+  "p.ab-foot",
+  "svg.lucide",
+  "div.ab-thumb",
+  "p.ab-by",
+  "button.tp-ui",
+  "div.tabs-list",
+  "input#asset-browser-search.sf-input",
+  "button#asset-browser-tab-hdris.tab"
+ ],
+ "width": 1160,
+ "height": 1232,
+ "crop": {
+  "x": 150,
+  "y": 88,
+  "w": 580,
+  "h": 616
+ },
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
+ "fade": [
+  "b"
+ ],
+ "anchors": {
+  "1": {
+   "x": 740.53125,
+   "y": 106,
+   "w": 88.125,
+   "h": 80
+  },
+  "2": {
+   "x": 58,
+   "y": 716.3125,
+   "w": 327.3125,
+   "h": 64
+  }
+ },
+ "kind": "ui"
+}

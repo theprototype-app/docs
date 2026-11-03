@@ -1,0 +1,49 @@
+{
+ "id": "card",
+ "spec": "1142d0b542ce",
+ "dpr": 2,
+ "shotAt": "2026-11-03T11:10:44.946Z",
+ "app": {
+  "version": "1.54.2",
+  "sha": "de3014f8"
+ },
+ "uiHits": [
+  "dialog.tp-ui",
+  "h2#md-title-s14.wc-title",
+  "header.wc-head",
+  "b",
+  "p.text-xs",
+  "div#edit-in-blender.flex",
+  "button#edit-in-blender-watch.tp-ui",
+  "div.flex",
+  "ol.ml-4",
+  "li",
+  "span.text-text-muted",
+  "button#edit-in-blender-again.tp-ui"
+ ],
+ "width": 1232,
+ "height": 860,
+ "crop": {
+  "x": 412,
+  "y": 235,
+  "w": 616,
+  "h": 430
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 102,
+   "y": 690,
+   "w": 415.71875,
+   "h": 64
+  },
+  "2": {
+   "x": 820,
+   "y": 690,
+   "w": 158.125,
+   "h": 64
+  }
+ },
+ "kind": "ui"
+}

@@ -1,0 +1,23 @@
+# docs/edit-in-blender.md — the card the app's Guide button links from (83-start priority: app-linked)
+page: edit-in-blender
+defaults: {device: desktop, theme: dark, dpr: 2, format: webp}
+shots:
+  - id: card
+    replaces: img/edit-in-blender/card.webp
+    alt: >-
+      The Edit "Crate" in Blender card: Crate.glb is in your downloads, then four numbered steps with Blender's glTF
+      export settings, and Watch the exported file…, Download again, Guide and Close along the bottom.
+      1: Watch the exported file. 2: Guide, which opens this page.
+    caption: The Edit in Blender card, after the model downloads.
+    scene:
+      - {create: Box, name: Crate, at: [0, 0.8, 0], scale: 1.6, color: '#c9a26b'}
+      - {camera: {pos: [5.6, 4, 7], target: [0, 0.8, 0]}}
+    setup:
+      # the card as Edit in Blender leaves it (editInBlender.js sets it after the download)
+      - {eval: "const S=window.__stores, o=window.__docs.byName('Crate'); S.editInBlender.editInBlenderCard.set({uuid: o.uuid, name: 'Crate', fileName: 'Crate.glb', format: 'glb', stamped: true})"}
+      - {wait: 1200}
+    crop: {selector: '.md:has(#edit-in-blender)', pad: 28}
+    fade: []
+    annotate:
+      - {n: 1, at: {selector: '#edit-in-blender-watch'}, shape: box, label: watch it, badge: b, key: '**Watch the exported file…**: pick what Blender saves, and every save updates the object — **watch it**.'}
+      - {n: 2, at: {selector: '#edit-in-blender-docs'}, shape: underline, label: this guide, badge: b, key: '**Guide** opens **this guide**.'}

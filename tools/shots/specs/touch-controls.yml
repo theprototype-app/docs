@@ -1,35 +1,43 @@
+# docs/touch-controls.md — a game on a folded phone (OPPO Find N6, the owner's phone). 83-start: getting started,
+# phone page → N6 folded shots at dpr 2 (they were re-crops of older dpr-1 captures).
 page: touch-controls
 defaults:
-  device: desktop
+  device: n6-folded
   theme: dark
   dpr: 2
   format: webp
+  # Sky Run from the Templates index, in Play, on its first stage
+  scene:
+    - eval: >-
+        (async () => { const S = window.__stores, D = window.__docs; await S.sceneTemplates.loadTemplatesIndex();
+        const g = D.get(S.sceneTemplates.games).find((x) => x.slug === 'sky-run'); await S.sceneTemplates.loadRemoteScene(g, {}); })()
+    - {wait: 9000}
+    - {eval: "window.__stores.playMode.requestPlay()"}
+    - {wait: 5000}
+    - {clickText: '1 · Cloud Steps'}
+    - {wait: 4000}
 shots:
-- id: sky-run-phone
-  replaces: img/touch/sky-run-phone.png
-  dpr: 1
-  kind: ui
-  caption: Sky Run on a phone.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 320
-    - 693
-  fade: []
-  alt: 'Sky Run on a phone: the move stick bottom-left and the Jump button bottom-right'
-  from: img/touch/sky-run-phone.png
-- id: layout-editor
-  replaces: img/touch/layout-editor.png
-  dpr: 1
-  kind: ui
-  caption: The touch controls layout editor.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 320
-    - 693
-  fade: []
-  alt: The touch controls layout editor, with the Jump button selected
-  from: img/touch/layout-editor.png
+  - id: sky-run-phone
+    replaces: img/touch-controls/sky-run-phone.webp
+    alt: >-
+      Sky Run in Play on a folded phone: the stage name, the timer and the coins at the top, the move stick in the
+      lower left and the Jump button in the lower right, over the first platform of the level.
+    caption: Sky Run on a folded phone.
+    crop: {rect: [0, 0, 390, 896]}
+    fade: []
+    kind: ui
+  - id: layout-editor
+    replaces: img/touch-controls/layout-editor.webp
+    alt: >-
+      The touch controls layout editor on a folded phone, with the Jump button selected: This game or All games,
+      Hide, Size and Opacity sliders, Default place, Reset, Cancel and Save at the top, the move stick and the Jump
+      button below with their names. 1: save for this game or all games. 2: the selected Jump button.
+    caption: The touch controls layout editor, Jump selected.
+    setup:
+      - {eval: "window.__stores.touchActions.touchLayoutEditorOpen.set(true)"}
+      - {wait: 1500}
+    crop: {rect: [0, 0, 390, 896]}
+    fade: []
+    annotate:
+      - {n: 1, at: {selector: '#touch-layout-scope-game'}, shape: box, label: which games, badge: b, labelSide: l, key: '**This game** or **All games**: **which games** the layout is saved for.'}
+      - {n: 2, at: {text: Jump, within: '#touch-layout-editor', up: 1}, shape: circle, label: selected, badge: t, labelSide: l, key: 'The **selected** button (Jump); its Size and Opacity are the sliders above.'}

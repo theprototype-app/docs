@@ -1,18 +1,22 @@
 {
  "id": "sky-run-phone",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.606Z",
+ "spec": "aa7005093485",
+ "dpr": 2,
+ "shotAt": "2026-11-03T11:16:45.362Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.2",
+  "sha": "de3014f8"
  },
- "from": "img/touch/sky-run-phone.png",
- "width": 320,
- "height": 693,
+ "uiHits": [
+  "button#touch-btn-jump.touch-btn"
+ ],
+ "width": 780,
+ "height": 1792,
  "crop": {
   "x": 0,
   "y": 0,
-  "w": 320,
-  "h": 693
+  "w": 390,
+  "h": 896
  },
  "cut": [],
  "fade": [],
