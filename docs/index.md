@@ -52,6 +52,16 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.55 — give the AI pictures and shaders.** [Generate 3D model from a picture](ai/pictures-and-shaders.md#picture-3d-model):
+a photo, an Explorer image or the viewport, with Meshy or a ComfyUI workflow; location data is removed on your device, and
+you are asked before a picture goes to anyone else's server (for Meshy with the cost and Meshy's privacy link). The AI
+assistant takes [pictures in its chat](ai/pictures-and-shaders.md#pictures-in-the-assistants-chat) — up to 4 a message,
+and a model that cannot see them says so and names one that can. The Shader editor's **`</>`** view shows the GLSL a graph
+compiles to and lets you write [your own GLSL](ai/pictures-and-shaders.md#your-own-glsl) for a material; every device
+tests shader code from someone else before it runs, and on Quest custom shaders stay off until you turn them on. Shader
+graphs and shader code from other people are checked before they reach your graphics card. Start from
+**Templates ▸ Shader garden**.
+
 **1.54.3 — sessions that keep up, friendlier failures, small wins.** A new object's logic reaches everyone in a session
 within seconds instead of about half a minute, a button that toggles a shared variable flips it exactly once for
 everybody, and cancelling a library download really stops it. A browser that can't run 3D now
