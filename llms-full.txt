@@ -57,6 +57,16 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.56 — agents build the whole shape and the whole look.** An agent, the in-app Assistant and Claude on claude.ai can
+now [make shapes](https://docs.theprototype.app/ai/agent-geometry.md) the basic objects cannot (a vase on a lathe, a rail along a path, an extruded
+sign, a mesh from its own points), reshape and model them, and [dress them](https://docs.theprototype.app/ai/agent-look.md): materials and textures —
+from your library, a free CC0 material by name or an https image — node shaders, UV mapping and post effects, where a
+change to the whole scene's look asks the host first. Say ["undo that"](https://docs.theprototype.app/ai/agent-assist.md#undo-that-undo_last) and
+the agent takes back its own last step, or tells you who changed it since. It can also set the point a thing turns about
+and put images into your library. On claude.ai the new tools come as five: `create_shape`, `edit_shape`, `set_look`,
+`assets` and `undo_last` ([tool families](https://docs.theprototype.app/ai/claude-connector.md#tool-families)). To try them, open
+**Templates ▸ Agent workshop**, a plain room with a table, a lamp and a door to ask things of.
+
 **1.55 — give the AI pictures and shaders.** [Generate 3D model from a picture](https://docs.theprototype.app/ai/pictures-and-shaders.md#picture-3d-model):
 a photo, an Explorer image or the viewport, with Meshy or a ComfyUI workflow; location data is removed on your device, and
 you are asked before a picture goes to anyone else's server (for Meshy with the cost and Meshy's privacy link). The AI
@@ -19978,6 +19988,9 @@ before a join, scene tools answer *not connected — join first*. Then call `con
 | tool / method | what it does |
 |---|---|
 | the app's tools | `create_objects`, `update_objects`, `delete_objects`, `group_objects`, `create_flow_nodes`, `update_flow_nodes`, `set_physics`, `create_joints`, `control_simulation`, behaviours where available, `generate_mesh` when the host has a provider — with their full JSON schemas |
+| shapes and modelling | `set_geometry`, `create_lathe`, `create_tube`, `extrude_shape`, `edit_mesh`, `create_mesh` — see [Shapes and modelling with an agent](https://docs.theprototype.app/ai/agent-geometry.md) |
+| materials and looks | `set_material`, `list_materials`, `get_material`, `create_shader`, `edit_shader`, `assign_shader`, `describe_shader_nodes`, `set_post`, `get_post`, `create_post_graph`, `uv_unwrap`, `set_uv` — see [Materials and looks with an agent](https://docs.theprototype.app/ai/agent-look.md) |
+| undo, pivots and images | `undo_last`, `set_pivot`, `create_pivot`, `add_image` — see [Undo, pivots and images with an agent](https://docs.theprototype.app/ai/agent-assist.md) |
 | `status` | joined or waiting, its role and whether it can edit, who is connected, which scene it and the host are in (`withHost`), whether a scene is still arriving (`loading`), any code behaviour that is failing (`behaviourErrors`), whether it is paused because the host left (`hostAway`), which tools or modules are missing and why |
 | `screenshot` | a clean picture (no gizmo, grid or helpers) from a temporary camera — `iso`, `top`, `front`, `current`, or `focus` on one object — without moving anyone's view |
 | `wait_for_edit` | waits until someone else changes the scene |
@@ -20061,6 +20074,299 @@ one is a new major. The `@theprototype/agent` package follows the app release it
 
 For a light peer without a browser (objects only), see the [Console Agent](https://docs.theprototype.app/ai/console-agent.md)
 (`--engine=wire`).
+
+
+---
+
+Source: https://docs.theprototype.app/ai/agent-look/ (Markdown: https://docs.theprototype.app/ai/agent-look.md)
+
+# Materials and looks with an agent
+
+An agent joined to your session ([Build with an AI agent](https://docs.theprototype.app/ai/build-with-an-agent.md)) can make a scene look
+finished: colours and texture maps, node shaders, post effects and UV mapping. The in-app
+[Assistant](https://docs.theprototype.app/ai/assistant.md) has the same tools.
+
+Every call works like the agent's other tools:
+
+- You see the change at once, and so does everyone in the session.
+- **One call is one undo step.** Ctrl+Z takes it back, or press Undo on the call's line in the agent's
+  activity log.
+- Viewers cannot use the tools that change things. They can still use the ones that read.
+- A tool answers per object, with `updated` and `skipped`, so one bad object does not lose the rest of a
+  call.
+
+## When the agent has to ask
+
+Post effects and the scene's default shader change the look of **everything**, so an agent asks first. You
+get a prompt with **Allow** and **Deny**, and nothing changes until you answer.
+
+1. The first call returns `needsConfirm`, a `confirmId` and a one-line `summary`. The host and any admins see
+   the prompt.
+2. The agent calls the same tool again with `{"confirmId": "…", "wait": 30}`. If you pressed Allow, the change
+   runs inside that call, so it is still one undo step. If you pressed Deny, the call says so and nothing
+   changed.
+
+A question stays open for 10 minutes. With the [Claude connector](https://docs.theprototype.app/ai/claude-connector.md) the prompt appears in
+your own tab. The in-app Assistant in your own scene does not ask, because you are the one typing.
+
+This is a courtesy between people who share a scene, not a security feature: an editor could make the same
+change by hand.
+
+## Reference
+
+### set_material: colours, numbers and textures
+
+| field | what it does |
+|---|---|
+| `objects` | up to 200 object uuids |
+| `color`, `emissive` | a hex colour or a CSS name |
+| `roughness`, `metalness`, `opacity` | 0 to 1. `opacity` below 1 also turns `transparent` on, unless the call sets it. |
+| `emissiveIntensity` | 0 to 100 |
+| `params` | any other material number, such as `clearcoat`, `transmission`, `ior` (those need `MeshPhysicalMaterial`) |
+| `type` | swaps the material class first |
+| `maps` | texture slots `albedo`, `normal`, `roughness`, `metalness`, `emissive`, `ao`: a library image hash, an https URL, or `null` to clear |
+| `preset` | a preset name from `list_materials` |
+| `cc0` | fetches a free CC0 material by name, such as `"Wood051"` or `"brown planks"` |
+| `slot` | which material slot of a multi-material object (default 0) |
+| `faces` | gives just those faces their own new material slot ([how to pick faces](#picking-faces)) |
+
+**Texture URLs** must be https and CORS-enabled, at most 16 MB, and really be a PNG, JPEG, WebP, GIF or AVIF:
+the bytes are checked, not the file name. A local or private address is refused. The image becomes a library
+item first, the same as an upload, and the result lists it in `assets`. A plain file name such as
+`"wood.png"` is refused, because a guess would give you an empty texture.
+
+An object wearing a shader graph refuses `set_material`. Edit the shader, or take it off first.
+
+### list_materials and get_material: read what is there
+
+`list_materials` gives each object's slots (type, colour, numbers, which maps), its shader, and the preset
+names. `get_material` gives one object in full: each map's tiling, offset, rotation, size and hash, and its
+shader graph as text with the uniforms a flow can drive. Viewers can use both.
+
+### create_shader: a node shader, as text
+
+Written like flow graphs: one line per node, one per wire, ending at a `surface` node. Use
+`describe_shader_nodes` for the types, or see the [Shader editor](https://docs.theprototype.app/shader-graph.md).
+
+```text
+c = color {value: "#ff8800"}
+out = surface
+c -> out.emissive
+```
+
+| field | what it does |
+|---|---|
+| `objects` | up to 50 uuids. Each object gets its own copy. |
+| `text` | the graph |
+| `replace` | replaces a graph the object already has. Without it, that object is skipped. |
+| `scene` | `true` makes the default for every object, which asks first |
+
+Errors come back in the result and nothing is written: an unknown type, a socket that does not exist, a graph
+with nothing connected, or the compiler's own message.
+
+The result lists the graph's **uniforms**. A float one, named `u_<nodeId>_<param>`, can be driven at run time
+by a **Set Shader Uniform** flow node on that object, for example `u_power_value` for a node `power`. Colours and
+vectors cannot, because flow sockets carry numbers.
+
+### edit_shader and assign_shader
+
+`edit_shader` changes a graph: `params` (`[{node, param, value}]`), `add` (text with new or replaced nodes and
+new wires), `removeNodes`, or `text` for the whole graph. A refused edit changes nothing.
+
+`assign_shader` copies a graph onto other objects, or takes a shader off with `"shader": null`.
+
+### set_post, get_post and create_post_graph: the scene's look
+
+`set_post` edits the [post effects](https://docs.theprototype.app/post-processing.md) with `effects: [{kind, params, enabled, at, remove}]`.
+An entry matches what is already there by `id` or `kind`, so repeating a call adjusts the bloom instead of
+stacking a second one. `replace: true` drops the rest, and `enabled` switches the whole stack. `camera` edits a
+camera's own look instead of the scene's.
+
+`get_post` lists the stack and every effect kind with its params and ranges.
+
+`create_post_graph` adds a custom effect: a `preset` such as `posterise`, or a graph as `text` ending at a
+`postOutput` node.
+
+`set_post` and `create_post_graph` always ask first, including for a camera's own look.
+
+### uv_unwrap and set_uv: how textures sit on a surface
+
+`uv_unwrap` makes new texture coordinates: `smart` (the default: flat islands by surface direction), `box`,
+`planar`, `cylindrical` or `spherical`. Use it when a texture smears on a model. `faces` limits it to those
+faces.
+
+`set_uv` tiles, shifts or rotates a slot's textures: `tiling` (`[u, v]` or one number), `offset`, `rotation` in
+radians, and `maps` to limit it to some slots. It turns repeat on, so a tile does not smear its border.
+
+With `faces`, `set_uv` maps only those faces instead: they are projected flat so the image fills them once, with
+tiling, offset and rotation on top. Pair it with `set_material` `faces` for an image on just that face.
+
+### Picking faces
+
+`faces` in `set_material`, `uv_unwrap` and `set_uv` takes any of these, and they filter together:
+
+| filter | picks |
+|---|---|
+| `{"normal": "up"}` | faces pointing that way: `up`, `down`, `+x`, `-x`, `+z`, `-z` or `[x, y, z]`, with an optional `angle` (default 30 degrees) |
+| `{"box": {"min": […], "max": […]}}` | faces inside a box, in the object's local space |
+| `{"indices": […]}` | face numbers |
+| `{"all": true}` | every face |
+
+## Cookbook
+
+### A glassy floor
+
+> "Make the floor look like polished glass, tinted a little blue."
+
+```json
+set_material {
+  "objects": ["…"],
+  "type": "MeshPhysicalMaterial",
+  "color": "#dfeaf5",
+  "roughness": 0.05,
+  "metalness": 0,
+  "params": {"transmission": 0.9, "ior": 1.5, "clearcoat": 1}
+}
+```
+
+Lower `transmission` for a floor you should not see through. A little `roughness` hides reflections that would
+otherwise look like a mirror.
+
+### A glowing sign with a shader
+
+> "Make the sign glow orange, and let me dim it from a flow."
+
+```json
+create_shader {
+  "objects": ["…"],
+  "text": "c = color {value: \"#ff8800\"}\npower = float {value: 4}\nglow = multiply\nc -> glow.a\npower -> glow.b\nout = surface\nglow -> out.emissive"
+}
+```
+
+The result names `u_power_value` as drivable. A flow node then sets it:
+
+```json
+create_flow_nodes {
+  "graph": "…",
+  "nodes": [{"type": "setuniform", "data": {"uniform": "u_power_value", "value": 1}}]
+}
+```
+
+### A warm film look
+
+> "Give the scene a warm, filmic look."
+
+```json
+set_post {
+  "effects": [
+    {"kind": "huesaturation", "params": {"hue": 0.05, "saturation": -0.1}},
+    {"kind": "brightnesscontrast", "params": {"contrast": 0.1}},
+    {"kind": "bloom", "params": {"intensity": 0.6}},
+    {"kind": "vignette", "params": {"darkness": 0.5}},
+    {"kind": "grain", "params": {"opacity": 0.15}}
+  ]
+}
+```
+
+The first call returns `needsConfirm`. After you press **Allow**, the agent repeats it with the `confirmId`.
+The order in the list is the order of the effects, so the grain sits on the finished picture.
+
+### A floor texture that repeats
+
+> "Put this wood on the floor and tile it four times."
+
+```json
+set_material {"objects": ["…"], "maps": {"albedo": "https://example.com/wood.jpg", "normal": "https://example.com/wood_n.jpg"}}
+set_uv {"objects": ["…"], "tiling": 4}
+```
+
+### A label on one side of a box
+
+> "Put this logo on the front of the crate only."
+
+```json
+set_material {"objects": ["…"], "faces": {"normal": "+z"}, "maps": {"albedo": "https://example.com/logo.png"}}
+set_uv {"objects": ["…"], "faces": {"normal": "+z"}}
+```
+
+The first call gives the front its own material slot, so the other sides keep theirs. The second makes the image
+fill that face once.
+
+
+---
+
+Source: https://docs.theprototype.app/ai/agent-assist/ (Markdown: https://docs.theprototype.app/ai/agent-assist.md)
+
+# Undo, pivots and images with an agent
+
+An agent joined to your session ([Build with an AI agent](https://docs.theprototype.app/ai/build-with-an-agent.md)), Claude on claude.ai
+([Use theprototype from claude.ai and voice](https://docs.theprototype.app/ai/claude-connector.md)) and the in-app [Assistant](https://docs.theprototype.app/ai/assistant.md) can take back
+their own steps, set the point a thing turns about, and put images into your library.
+
+Every call works like the agent's other tools: everyone in the session sees the change at once, one call is one undo
+step (Ctrl+Z, or **Undo** on the call's line in **Agent activity**), and a viewer's agent cannot use the tools that change
+things.
+
+!!! tip "Try it"
+    **Templates ▸ Agent workshop** opens a plain room (a floor, a table with a lamp, a crate, a ball and a door). Ask for
+    a curvy vase on the table, a handrail along the edge, a star-shaped sign above the door, a wood floor or a glass
+    ball, then say *"undo that"*. While Claude is connected, the **Connect Claude** row says so until it has used one of
+    these tools.
+
+## Undo that (`undo_last`)
+
+`undo_last` takes back the agent's **own** last call, or its last few with `count` (up to 20, newest first). It never
+touches anybody else's work. If someone has changed the same objects since, it changes nothing and says who changed
+what, so the agent can tell you instead of undoing over your edit. Selecting an object is not editing it: an object you
+only have selected does not stop the undo.
+
+On claude.ai and in voice mode, *"undo that"* or *"take that back"* calls it. In the in-app Assistant one prompt is one
+step.
+
+## The point a thing turns about (`set_pivot`)
+
+`set_pivot` sets the point an object turns and scales about, without moving it: a head that nods at the neck, a lamp
+that tilts at its joint, a door on its hinge. It is the same setting as the Inspector's **Origin** rows.
+
+- `at`: a point in the world, in metres · `local`: a point in the object's own space · `preset`: `bottom`, `center`,
+  `median`, `world` or `children` · `reset: true`: back to the object's centre.
+- After it, the agent's rotate and scale, animation clips and **Spin** / **Orbit** nodes all turn the object about that
+  point. The scene list shows it as `pivot`.
+- Up to 100 objects in one call. A position given in the same change is taken as written.
+
+## Several parts on one joint (`create_pivot`)
+
+`create_pivot` makes a group at a point and puts objects in it, so turning the group swings them all about that point:
+the parts of an arm about a shoulder, a shade and a bulb about the lamp's joint. `at` is a point or `center`, `bottom` or
+`top` of the objects together; the objects stay where they are. Objects that share a parent group keep it (the pivot
+goes inside). Up to 500 objects.
+
+## Images into the library (`add_image`)
+
+`add_image` puts one image into the shared library and returns its **hash**, which a texture slot takes
+(`set_material`, or a material's `map`). Give exactly one source:
+
+- `url`: an **https** address. The site must allow other origins (CORS), and addresses on your computer or your local
+  network are refused, also after a redirect. It gives up after 20 seconds.
+- `data`: base64, or in parts with `chunk`. This is how an agent passes an image it generated or has on its own machine.
+- `canvas`: an image the agent describes: rectangles, circles, lines, text, gradients, checkers, stripes and seeded
+  noise. Good for textures, signs and labels.
+
+PNG, JPEG, WebP, GIF (the first frame) and AVIF are taken; SVG and HEIC are refused. Limits: 16 MB in, 40 megapixels,
+4096 pixels on the long side (larger is scaled down), a canvas 2048 pixels and 500 steps. **Only the pixels are kept:**
+the image is redrawn and saved again, so location data and anything else inside the file is gone. The same rules apply
+to an https texture given to `set_material`.
+
+## Cookbook
+
+- **A nodding head:** set the head's pivot at the neck (`at: [0, 1.5, 0]`), then rotate it or give it a clip.
+- **A tilting lamp:** `create_pivot` with the shade and the bulb at `bottom`, named *Lamp joint*; rotate that group.
+- **A wood-ish floor from nothing:** `add_image` with a 512 × 512 canvas of brown noise and faint stripes, then put the
+  hash on the floor's material.
+- **"Undo that":** the agent calls `undo_last`; if it refuses, it tells you who changed what instead of trying again.
+
+On claude.ai these tools are reached through the connector's [tool families](https://docs.theprototype.app/ai/claude-connector.md#tool-families):
+`edit_shape` (pivot, pivot_group), `assets` (image), and `undo_last` as itself.
 
 
 ---
@@ -20302,6 +20608,208 @@ The object keeps its flows, physics and clips, and one Ctrl+Z puts the old model
 
 ---
 
+Source: https://docs.theprototype.app/ai/agent-geometry/ (Markdown: https://docs.theprototype.app/ai/agent-geometry.md)
+
+# Shapes and modelling with an agent
+
+An agent joined to your session ([Build with an AI agent](https://docs.theprototype.app/ai/build-with-an-agent.md)) can do more than place
+boxes and spheres. Six tools let it change an object's shape in place, turn a profile into a vase, sweep a
+rail along a path, cut a sign out of an outline, build a mesh from raw data and model a mesh the way
+[Edit Mesh](https://docs.theprototype.app/mesh-editing.md) does. The in-app [Assistant](https://docs.theprototype.app/ai/assistant.md) has the same tools.
+
+Every call works like the agent's other tools:
+
+- You see the change at once, and so does everyone in the session.
+- **One call is one undo step.** Ctrl+Z takes it back, or press Undo on the call's line in the agent's
+  activity log.
+- Viewers cannot use them. A view-only agent gets a refusal and nothing changes.
+- A tool that creates something returns the new object's **uuid**.
+
+## Reference
+
+### set_geometry: reshape in place
+
+Changes the shape of objects that already exist. They keep their uuid, position, material and flows, so
+nothing that points at them breaks. The agent does not delete the object and make it again.
+
+| field | what it does |
+|---|---|
+| `updates` | up to 100 objects, `[{uuid, …}]`, one undo step for all of them |
+| `params` | the shape's own settings, the same ones the Inspector's **Geometry** rows show and `list_scene` reports: `width`/`height`/`depth` for a box, `radiusTop`/`radiusBottom`/`height`/`radialSegments` for a cylinder, `segments`/`phiLength` for a lathe, `depth`/`bevel` for an extrusion. Sizes are capped at 1 km and segment counts to the Inspector's range. |
+| `type` | changes the primitive type in place, for example a box into a `Cylinder`. `params` apply on top of the new type's defaults. |
+| `path`, `radius`, `radii`, `closed`, `radialSegments` | tubes from `create_tube`: a new path, one radius or one per point, a loop |
+| `force` | needed for an object whose vertices were edited by hand (Edit Mesh, sculpting or `edit_mesh`). Rebuilding from params replaces those edits, so without `force: true` the tool refuses and says why. |
+
+### create_lathe: turn a profile
+
+Spins a 2D profile around the Y axis, the way a lathe or a potter's wheel does: vases, bowls, bottles,
+columns, lamp shades.
+
+| field | what it does |
+|---|---|
+| `profile` | `[[radius, height], …]` from bottom to top, 2 to 200 points, in metres. Start and end at radius 0 to close the bottom and the top. |
+| `segments` | steps around the axis, 3 to 128 (default 12; 32 or more looks round) |
+| `phiStart`, `phiLength` | a partial turn, in radians (default a full turn) |
+| `name`, `position`, `rotation`, `scale`, `color`, `parentUuid`, `physics` | as in `create_objects` (physics defaults to static) |
+
+The profile stays editable: the Inspector shows it as a lathe, and `set_geometry` changes `segments` or
+`phiLength` later.
+
+### create_tube: sweep along a path
+
+A smooth tube through a list of points: rails, pipes, cables, handrails, tentacles. It is a
+[spline tube](https://docs.theprototype.app/splines.md), so you can also edit its points in the app afterwards.
+
+| field | what it does |
+|---|---|
+| `path` | `[[x, y, z], …]`, 2 to 200 points, in **scene** space. The object is placed at the path's centre. |
+| `radius` | one radius for every point (default 0.05 m) |
+| `radii` | one radius per point, for a tube that tapers |
+| `closed` | joins the ends into a loop (3 or more points) |
+| `radialSegments` | 3 to 32 (default 8) |
+| `name`, `color`, `physics` | as in `create_objects` |
+
+### extrude_shape: a solid from an outline
+
+A flat outline pushed out into a solid: signs, letters, logos, floor plans, gears, cookies.
+
+| field | what it does |
+|---|---|
+| `points` | the outline, `[[x, y], …]` with x to the right and y up, 3 to 500 points |
+| `holes` | up to 20 outlines cut through it: a window, the inside of an O |
+| `depth` | thickness along +Z, in metres (default 0.2). The solid is centred on it, so it stands upright facing +Z. To lay it flat, rotate it by `[-1.5708, 0, 0]`. |
+| `bevel` | `true`, or `{thickness, size, segments}`, to round the edges |
+| `curveSegments` | 1 to 32 |
+| `name`, `position`, `rotation`, `scale`, `color`, `parentUuid`, `physics` | as in `create_objects` |
+
+### create_mesh: a mesh from raw data
+
+For shapes that none of the other tools make.
+
+| field | what it does |
+|---|---|
+| `vertices` | `[[x, y, z], …]`, up to 20,000 |
+| `faces` | `[[i, j, k]` or `[i, j, k, l]`, …], up to 20,000. These are indices into `vertices`, counter-clockwise as seen from outside. A face can have up to 32 corners and is fanned from its first one, so keep faces convex. An index that does not exist is refused with the face's number. |
+| `uvs` | optional, one `[u, v]` per vertex |
+| `smooth` | smooth shading (the normals are always computed) |
+| `name`, `position`, `rotation`, `scale`, `color`, `parentUuid`, `physics` | as in `create_objects` |
+
+The reply says how many triangles were made. A quad face stays one face in Edit Mesh, so the mesh is ready
+for `edit_mesh`.
+
+### edit_mesh: model a mesh
+
+Runs [Edit Mesh](https://docs.theprototype.app/mesh-editing.md) operations on a selection of a mesh's faces or vertices.
+
+| field | what it does |
+|---|---|
+| `object` | the mesh's uuid |
+| `select` | which part, in the object's **own** (local) space. `mode` is `faces` (default) or `vertices`. Then any of: `indices` (numbers from a preview), `normal` (`up`, `down`, `+x`, `-x`, `+z`, `-z` or `[x, y, z]`, within `angle` degrees, default 30), `box` (`{min, max}`), `all: true`. Filters combine: `normal: "up"` with a `box` means the up-facing faces inside the box. |
+| `ops` | up to 20 operations, run in order. Each one can have its own `select`. |
+
+Face operations: `extrude {distance}`, `inset {amount 0-1}`, `move {distance}` along the normal,
+`bevel {width, segments, profile}`, `subdivide`, `delete`, `flip`.
+
+Vertex operations: `weld` (merge into their centre), `move {offset: [x, y, z]}`,
+`smooth {factor, iterations}`, `dissolve`, `bevel {width}`, `delete`, `connect` (2 vertices),
+`create_face` (3 or 4 vertices).
+
+An operation without its own `select` goes on with what the step before it left selected, as in Edit Mesh:
+after `extrude`, `move` or `flip` that is the same faces, and after `inset` it is the inner face. After
+`subdivide`, `bevel`, `delete` or a vertex operation, the top-level `select` is read again on the mesh as it
+is at that step, and so is any `select` you give the operation itself. Indices always refer to the mesh as
+it is at that step.
+
+**Preview first.** With `ops: []` the tool changes nothing and lists the selected faces or vertices (their
+index, normal and centre) plus the totals. Use the preview to check a selection or to pick indices. A
+preview leaves no line in the activity log.
+
+After an edit the object counts as hand-edited, so `set_geometry` needs `force: true` for it (see above).
+If one operation fails, the ones before it stay applied, and the reply says which step stopped and why.
+
+## Cookbook
+
+### A vase on a lathe
+
+> "Put a terracotta vase on the table."
+
+The agent reads the table's position with `list_scene`, then makes the vase in one call:
+
+```json
+create_lathe {
+  "name": "Vase",
+  "profile": [[0, 0], [0.12, 0.01], [0.16, 0.12], [0.07, 0.3], [0.09, 0.36], [0, 0.36]],
+  "segments": 48,
+  "position": [0, 0.75, 0],
+  "color": "#c06030"
+}
+```
+
+Each profile point is a radius at a height. This one goes from a closed base out to the belly, in to the
+neck, out to a lip, and back to the axis. For a wider belly later, the agent sends a new profile: the
+Inspector shows it as a lathe, so you can change `segments` there too.
+
+### A rail along a path
+
+> "Add a handrail up the stairs."
+
+The agent reads the steps, then sweeps one tube through points about 0.9 m above the nosing of each step:
+
+```json
+create_tube {
+  "name": "Handrail",
+  "path": [[1.1, 0.9, 0], [1.1, 1.2, 0.6], [1.1, 1.5, 1.2], [1.1, 1.8, 1.8]],
+  "radius": 0.025,
+  "color": "#8a6a48"
+}
+```
+
+`radii` with one value per point makes a tapering cable or tentacle. A later
+`set_geometry {"updates": [{"uuid": "…", "path": [...]}]}` moves the rail without making a new object.
+
+### An extruded sign
+
+> "Make a sign with a window in it over the door."
+
+```json
+extrude_shape {
+  "name": "Sign",
+  "points": [[-1, -0.4], [1, -0.4], [1, 0.4], [-1, 0.4]],
+  "holes": [[[-0.8, -0.2], [-0.5, -0.2], [-0.5, 0.2], [-0.8, 0.2]]],
+  "depth": 0.08,
+  "bevel": {"thickness": 0.01, "size": 0.01, "segments": 2},
+  "position": [0, 2.6, 0.1]
+}
+```
+
+The sign stands upright facing +Z. Rotate it by `[-1.5708, 0, 0]` to lay it flat, for example for a floor
+plan.
+
+### A tower from a box (edit_mesh)
+
+> "Turn that box into a tower with a smaller top."
+
+```json
+edit_mesh {"object": "…", "select": {"normal": "up"}, "ops": []}
+edit_mesh {
+  "object": "…",
+  "select": {"normal": "up"},
+  "ops": [
+    {"op": "extrude", "distance": 1},
+    {"op": "inset", "amount": 0.3},
+    {"op": "extrude", "distance": 0.5}
+  ]
+}
+```
+
+The first call is the preview: one face, pointing up. The second call raises the top, insets it and raises
+only the inner part again, all in one undo step. Each step carries on with the previous step's selection,
+so the last extrude leaves the ring around the inner face where it is. To raise the ring as well, give that
+step its own `"select": {"normal": "up"}`.
+
+
+---
+
 Source: https://docs.theprototype.app/ai/claude-connector/ (Markdown: https://docs.theprototype.app/ai/claude-connector.md)
 
 # Use theprototype from claude.ai and voice
@@ -20385,6 +20893,9 @@ trees by the fire"*) — it never reads out ids or numbers. Good things to say:
 | Ask your tab to join a session from a link you give it: nothing happens until you press **Join** on the card in the tab (see below) | |
 | Write small code behaviours | Do more than you can: a **viewer's** Claude can look but not build, and locked objects stay locked |
 | Take a picture of the scene to check its work, and save the open scene as a new version in your Library (see below) | Keep working after you close the tab |
+| Make shapes the basic objects cannot — a vase on a lathe, a rail along a path, an extruded sign, a mesh from its own points — and reshape or model them ([Shapes and modelling](https://docs.theprototype.app/ai/agent-geometry.md)) | Fetch an image from your computer or your local network |
+| Change materials and textures, node shaders, UV mapping and the scene's post effects; a change to the whole scene's look asks you first with **Allow** / **Deny** in the tab ([Materials and looks](https://docs.theprototype.app/ai/agent-look.md)) | |
+| Set the point a thing turns about, and put an image into your library from an https address or one it draws ([Undo, pivots and images](https://docs.theprototype.app/ai/agent-assist.md)) | |
 
 ### Joining a session from a link
 
@@ -20430,9 +20941,27 @@ Every step Claude takes is a line labelled **Claude (connector)** in **Agent act
 own **Undo**. Anyone in the session sees the changes as they happen, and anyone with edit access
 can undo them from their own screen.
 
+Or just say **"undo that"**: Claude takes back its own last step. If someone has changed the same things since,
+it changes nothing and tells you who changed what.
+
 **Screenshots** have a 4:3 shape whatever your window's shape, except the *current* view, which keeps your canvas. Claude
 can pick the angle (front, back, left, right, top, below, iso, or a yaw and pitch), a camera position and target, the objects to
 frame, a zoom (0.1-10) and a margin (0.5-4). It is told which camera it used, and your own view never moves.
+
+### Tool families
+
+To keep its list short, Claude on claude.ai reaches the newer tools in **families**: one tool with an `action`. They do
+exactly what the agent tools of the same job do, with the same limits:
+
+| family | actions | the agent tools behind them |
+|---|---|---|
+| `create_shape` | `lathe`, `tube`, `extrude`, `mesh` | `create_lathe`, `create_tube`, `extrude_shape`, `create_mesh` ([Shapes and modelling](https://docs.theprototype.app/ai/agent-geometry.md)) |
+| `edit_shape` | `params`, `mesh`, `pivot`, `pivot_group` | `set_geometry`, `edit_mesh`, `set_pivot`, `create_pivot` |
+| `set_look` | `material`, `list_materials`, `get_material`, `shader`, `edit_shader`, `assign_shader`, `shader_nodes`, `post`, `get_post`, `post_graph`, `unwrap`, `uv` | `set_material` … `set_uv` ([Materials and looks](https://docs.theprototype.app/ai/agent-look.md)) |
+| `assets` | `image` | `add_image` ([Undo, pivots and images](https://docs.theprototype.app/ai/agent-assist.md)) |
+
+`undo_last` is a tool of its own. A look-only connection can still use the actions that only read (`list_materials`,
+`get_material`, `shader_nodes`, `get_post`).
 
 ## Stop it
 

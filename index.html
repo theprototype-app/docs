@@ -5519,6 +5519,48 @@
   
   
     <li class="md-nav__item">
+      <a href="ai/agent-look/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Materials and looks with an agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ai/agent-assist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Undo, pivots and images with an agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ai/talk-to-your-agent/" class="md-nav__link">
         
   
@@ -5587,6 +5629,27 @@
   
   <span class="md-ellipsis">
     Recipe: Agents + Blender
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ai/agent-geometry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shapes and modelling with an agent
   </span>
   
 
@@ -5989,6 +6052,15 @@ on a phone that gives the scene the whole height of the screen.</p>
 <a href="https://github.com/theprototype-app/core">github.com/theprototype-app/core</a> (also <strong>Settings ▸ About ▸ Source Code</strong>),
 with a contributing guide and an <code>llms.txt</code> for coding agents.</p>
 <h2 id="whats-new">What's new</h2>
+<p><strong>1.56 — agents build the whole shape and the whole look.</strong> An agent, the in-app Assistant and Claude on claude.ai can
+now <a href="ai/agent-geometry/">make shapes</a> the basic objects cannot (a vase on a lathe, a rail along a path, an extruded
+sign, a mesh from its own points), reshape and model them, and <a href="ai/agent-look/">dress them</a>: materials and textures —
+from your library, a free CC0 material by name or an https image — node shaders, UV mapping and post effects, where a
+change to the whole scene's look asks the host first. Say <a href="ai/agent-assist/#undo-that-undo_last">"undo that"</a> and
+the agent takes back its own last step, or tells you who changed it since. It can also set the point a thing turns about
+and put images into your library. On claude.ai the new tools come as five: <code>create_shape</code>, <code>edit_shape</code>, <code>set_look</code>,
+<code>assets</code> and <code>undo_last</code> (<a href="ai/claude-connector/#tool-families">tool families</a>). To try them, open
+<strong>Templates ▸ Agent workshop</strong>, a plain room with a table, a lamp and a door to ask things of.</p>
 <p><strong>1.55 — give the AI pictures and shaders.</strong> <a href="ai/pictures-and-shaders/#picture-3d-model">Generate 3D model from a picture</a>:
 a photo, an Explorer image or the viewport, with Meshy or a ComfyUI workflow; location data is removed on your device, and
 you are asked before a picture goes to anyone else's server (for Meshy with the cost and Meshy's privacy link). The AI

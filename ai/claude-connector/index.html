@@ -8,7 +8,7 @@
         <link rel="canonical" href="https://docs.theprototype.app/ai/claude-connector/">
       
       
-        <link rel="prev" href="../agents-and-blender/">
+        <link rel="prev" href="../agent-geometry/">
       
       
         <link rel="next" href="../providers/">
@@ -5445,6 +5445,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../agent-look/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Materials and looks with an agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-assist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Undo, pivots and images with an agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../talk-to-your-agent/" class="md-nav__link">
         
   
@@ -5513,6 +5555,27 @@
   
   <span class="md-ellipsis">
     Recipe: Agents + Blender
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-geometry/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shapes and modelling with an agent
   </span>
   
 
@@ -5667,6 +5730,21 @@
       See and undo what it did
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="See and undo what it did">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tool-families" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tool families
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -6055,6 +6133,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="See and undo what it did">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tool-families" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tool families
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -6209,6 +6302,18 @@ trees by the fire"</em>) — it never reads out ids or numbers. Good things to s
 <td>Take a picture of the scene to check its work, and save the open scene as a new version in your Library (see below)</td>
 <td>Keep working after you close the tab</td>
 </tr>
+<tr>
+<td>Make shapes the basic objects cannot — a vase on a lathe, a rail along a path, an extruded sign, a mesh from its own points — and reshape or model them (<a href="../agent-geometry/">Shapes and modelling</a>)</td>
+<td>Fetch an image from your computer or your local network</td>
+</tr>
+<tr>
+<td>Change materials and textures, node shaders, UV mapping and the scene's post effects; a change to the whole scene's look asks you first with <strong>Allow</strong> / <strong>Deny</strong> in the tab (<a href="../agent-look/">Materials and looks</a>)</td>
+<td></td>
+</tr>
+<tr>
+<td>Set the point a thing turns about, and put an image into your library from an https address or one it draws (<a href="../agent-assist/">Undo, pivots and images</a>)</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h3 id="joining-a-session-from-a-link">Joining a session from a link</h3>
@@ -6246,9 +6351,47 @@ file into the tab yourself, then ask Claude to place or change it.</p>
 <p>Every step Claude takes is a line labelled <strong>Claude (connector)</strong> in <strong>Agent activity</strong>, with its
 own <strong>Undo</strong>. Anyone in the session sees the changes as they happen, and anyone with edit access
 can undo them from their own screen.</p>
+<p>Or just say <strong>"undo that"</strong>: Claude takes back its own last step. If someone has changed the same things since,
+it changes nothing and tells you who changed what.</p>
 <p><strong>Screenshots</strong> have a 4:3 shape whatever your window's shape, except the <em>current</em> view, which keeps your canvas. Claude
 can pick the angle (front, back, left, right, top, below, iso, or a yaw and pitch), a camera position and target, the objects to
 frame, a zoom (0.1-10) and a margin (0.5-4). It is told which camera it used, and your own view never moves.</p>
+<h3 id="tool-families">Tool families</h3>
+<p>To keep its list short, Claude on claude.ai reaches the newer tools in <strong>families</strong>: one tool with an <code>action</code>. They do
+exactly what the agent tools of the same job do, with the same limits:</p>
+<table>
+<thead>
+<tr>
+<th>family</th>
+<th>actions</th>
+<th>the agent tools behind them</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>create_shape</code></td>
+<td><code>lathe</code>, <code>tube</code>, <code>extrude</code>, <code>mesh</code></td>
+<td><code>create_lathe</code>, <code>create_tube</code>, <code>extrude_shape</code>, <code>create_mesh</code> (<a href="../agent-geometry/">Shapes and modelling</a>)</td>
+</tr>
+<tr>
+<td><code>edit_shape</code></td>
+<td><code>params</code>, <code>mesh</code>, <code>pivot</code>, <code>pivot_group</code></td>
+<td><code>set_geometry</code>, <code>edit_mesh</code>, <code>set_pivot</code>, <code>create_pivot</code></td>
+</tr>
+<tr>
+<td><code>set_look</code></td>
+<td><code>material</code>, <code>list_materials</code>, <code>get_material</code>, <code>shader</code>, <code>edit_shader</code>, <code>assign_shader</code>, <code>shader_nodes</code>, <code>post</code>, <code>get_post</code>, <code>post_graph</code>, <code>unwrap</code>, <code>uv</code></td>
+<td><code>set_material</code> … <code>set_uv</code> (<a href="../agent-look/">Materials and looks</a>)</td>
+</tr>
+<tr>
+<td><code>assets</code></td>
+<td><code>image</code></td>
+<td><code>add_image</code> (<a href="../agent-assist/">Undo, pivots and images</a>)</td>
+</tr>
+</tbody>
+</table>
+<p><code>undo_last</code> is a tool of its own. A look-only connection can still use the actions that only read (<code>list_materials</code>,
+<code>get_material</code>, <code>shader_nodes</code>, <code>get_post</code>).</p>
 <h2 id="stop-it">Stop it</h2>
 <ul>
 <li><strong>Disconnect</strong> (next to the chip, or in Settings ▸ Connected apps) stops Claude at once, including
