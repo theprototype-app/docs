@@ -43,6 +43,11 @@ async function uiInside(page, crop) {
 	}, crop);
 }
 
+// a step that never settles (a load waiting on a dialog, say) must not hold a release battery forever:
+// each still gets SHOTS_TIMEOUT seconds after the app is up, then it fails like any other broken shot
+const SHOT_TIMEOUT = 1000 * +(process.env.SHOTS_TIMEOUT || 240);
+const limit = (p, what) => Promise.race([p, new Promise((_, no) => setTimeout(() => no(new Error(`${what}: nothing after ${SHOT_TIMEOUT / 1000} s (a step hung)`)), SHOT_TIMEOUT).unref())]);
+
 const args = process.argv.slice(2);
 const rawOnly = args.includes('--raw-only');
 const stillsOnly = args.includes('--stills');
@@ -134,8 +139,10 @@ async function recrop(pageName, shot) {
 				}
 				const opened = await openApp(browser, { device: shot.device, dpr, theme: shot.theme, storage: shot.storage });
 				ctx = opened.ctx;
-				await runSteps(opened.page, [...(shot.scene || []), ...(shot.setup || [])]);
-				await still(opened.page, pageName, shot, dpr);
+				await limit((async () => {
+					await runSteps(opened.page, [...(shot.scene || []), ...(shot.setup || [])]);
+					await still(opened.page, pageName, shot, dpr);
+				})(), 'the shot');
 				if (opened.errors.length) console.log(`   page errors: ${opened.errors.slice(0, 3).join(' | ')}`);
 				if (!rawOnly) {
 					const r = await annotateShot(pageName, shot);

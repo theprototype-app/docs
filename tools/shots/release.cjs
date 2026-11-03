@@ -42,7 +42,8 @@ const apply = argv.includes('--apply');
 const want = argv.slice(1).filter((a, i, all) => !a.startsWith('--') && all[i - 1] !== '--out');
 
 const readJson = (f) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return null; } };
-const node = (args, env = {}) => spawnSync(process.execPath, args, { cwd: __dirname, env: { ...process.env, ...env }, encoding: 'utf8', maxBuffer: 64 << 20 });
+// shoot.cjs limits each shot itself (SHOTS_TIMEOUT); this is the backstop for the whole capture (SHOTS_RUN_TIMEOUT, s)
+const node = (args, env = {}) => spawnSync(process.execPath, args, { cwd: __dirname, env: { ...process.env, ...env }, encoding: 'utf8', maxBuffer: 64 << 20, timeout: 1000 * +(process.env.SHOTS_RUN_TIMEOUT || 4 * 3600) });
 
 /** the raw files of one shot (its webp, or its tiles) */
 const rawFiles = (dir, id, meta) => (meta?.tiles ? meta.tiles.map((t) => t.file) : [id + '.webp']).map((f) => path.join(dir, f));
