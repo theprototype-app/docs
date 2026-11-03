@@ -53,7 +53,8 @@ VideoObject per figure with its caption) — `tools/hooks/readable.py`.
 | `annotate.cjs` | when you make the image | UI wider than the column, no alt/caption/key, a callout in a faded edge, over budget |
 | `tools/hooks/shots.py` | every `mkdocs build --strict` (CI) | width/height ≠ CSS size, file size ≠ manifest, UI wider than the column, alt too thin, no figure/figcaption, key lines ≠ badges, a label missing from the text |
 | `review/page-check.cjs` | the built site in a browser | an interface image shown at any width but its 1:1 size, an image or caption off-centre, a loop that does not play or plays under reduced motion |
-| `reshoot.sh` | release checklist | stale shots (before/after sheet), then the strict build above |
+| `release.sh` | release battery (V12) | re-shoots and regenerates what changed; flags a changed layout, a callout that no longer fits, a failed capture; strict build; Try it |
+| `reshoot.sh` | by hand | the same verdicts as a dry run (nothing in git changes), then the strict build |
 
 `manifest.json` is what ties them together: `annotate.cjs` and the loop recorder write one entry per finished image
 (page, kind, dpr, CSS width/height, badge count, labels, app version). Images older than tools/shots are only
@@ -87,3 +88,32 @@ House style (owner, 2026-10-26): hand-drawn strokes, clean numbered badges, at m
 callout, one warm accent; fade only a side the crop cut, a vignette on a 3D crop; loops 3–8 s, muted, ≤ 600 KB,
 paused under reduced motion; each still ≤ 250 KB. Shoot on a **remote** e2e slot (`E2E_PC=`): a pc slot draws no
 ambient occlusion.
+
+## On a release (V12)
+
+The owner does not approve each shot (2026-11-02): the integrator runs the docs part of the release battery and the
+tools decide.
+
+```bash
+APP_URL=<the release's preview URL> E2E_PC= e2e-slot --wait 3600 -- bash tools/shots/release.sh 1.55.0 <out dir>
+```
+
+`release.cjs` captures every still again against the release (raw only, into `<out>/raw`), compares each with its raw
+in git and gives it one verdict:
+
+| verdict | what happened | what the tool does |
+|---|---|---|
+| same | nothing visible changed (mean difference ≤ 0.4 %) | leaves it |
+| drift | a small pixel change (≤ 3 %), same size, every callout's target within 6 CSS px | regenerates it, accepted |
+| spec | its spec changed since the raw in git was taken (the raw records a hash of what a capture depends on) | regenerates it |
+| new | a spec with no raw in git yet | regenerates it |
+| **layout** | a different size, a callout's target moved or vanished, or more than drift | regenerates it, **flags it** |
+| **callout** | a callout no longer fits: its target is gone, or it lands in a faded edge or off the image | keeps the old image, **flags it** |
+| **broken** | the capture failed (a step or selector no longer matches) | keeps the old image, **flags it** |
+
+A re-crop of an older capture (`from:`) and the loops are not re-shot; the summary counts them. `--apply` (release.sh
+passes it) copies the regenerated raws into `raw/`, re-annotates them into `docs/img` and places their figures, so a
+new size lands in the page too. Then the strict build and the Try it check run. Everything flagged is listed in
+`<out>/summary.md` (paste it into the release STATUS and the docs PR) with its before / after / difference in
+`<out>/index.html`: fix the spec (crop, anchor, step) and re-shoot that shot, or accept the new layout as it is.
+Thresholds: `SHOTS_NOISE`, `SHOTS_DRIFT`, `SHOTS_MOVED`. Shoot on a remote slot (`E2E_PC=`), like every shot.

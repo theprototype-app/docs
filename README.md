@@ -78,7 +78,8 @@ APP_URL=https://theprototype.pages.dev/ node shoot.cjs controls/gizmo-modes
 node annotate.cjs controls            # re-draw the callouts from the raw shots — no browser
 node --test test/*.test.cjs           # the fade guard and callout rules
 node tryit-check.cjs                  # every "Try it" link opens and its controls exist (CI runs it)
-APP_URL=<preview> bash reshoot.sh     # after a release: which shots went stale (before/after sheet)
+APP_URL=<preview> bash release.sh 1.55.0 <out>  # a release: re-shoot what changed, diff page, strict build, Try it (V12)
+APP_URL=<preview> bash reshoot.sh     # the same verdicts as a dry run, nothing changed in git
 ```
 
 House style (owner, 2026-10-26): hand-drawn strokes, clean numbered badges keyed to a list under the image,
@@ -90,9 +91,12 @@ for readers who prefer reduced motion. Each still ≤ 250 KB.
 pixels (alt in words, a figure with a caption, a key line per badge, a text line per loop) — and the checks that
 enforce them are in [`tools/shots/README.md`](tools/shots/README.md). `annotate.cjs` prints the figure to paste.
 
-**Release checklist line (V7):** after the preview deploys, `APP_URL=<preview> E2E_PC= e2e-slot -- bash
-tools/shots/reshoot.sh` — exit 0 = every docs shot is current; exit 1 lists the stale ones with a before/after
-sheet: re-shoot those (`node tools/shots/shoot.cjs <page/id>`) in the release's docs PR.
+**Release battery (V12 with V7 + V8, owner 2026-11-02):** after the preview deploys, `APP_URL=<preview> E2E_PC=
+e2e-slot --wait 3600 -- bash tools/shots/release.sh <version> <out dir>` re-shoots every still against the preview,
+regenerates the ones whose spec or interface changed (pixel drift is accepted by itself), runs the strict build and the
+Try it check, and writes a before / after / difference page (`<out>/index.html`) and `<out>/summary.md` for the
+release STATUS and the docs PR. A changed layout, a callout that no longer fits or a capture that failed is flagged
+there (exit 1); commit what it regenerated in the release's docs PR. The rules: [`tools/shots/README.md`](tools/shots/README.md#on-a-release-v12).
 
 Fonts baked into the callouts: Caveat and Atkinson Hyperlegible, both under the SIL Open Font License 1.1
 (`tools/shots/fonts/OFL-*.txt`).

@@ -92,6 +92,8 @@ async function annotateShot(page, shot) {
 	if (!shot.alt || shot.alt.trim().split(/\s+/).length < 6) problems.push('alt text: say what the image shows, in words (6 words or more)');
 	if (!shot.caption) problems.push('no caption: every figure gets a one-line figcaption');
 	for (const a of shot.annotate || []) if (a.n && !a.key) problems.push(`callout ${a.n}: no key line (the numbered list under the figure)`);
+	// M2: text inside an image is three words at most (callout labels: draw.cjs; tile captions here)
+	for (const t of meta.tiles || []) if (labelText(t.caption || '').split(/\s+/).filter(Boolean).length > 3) problems.push(`tile caption "${t.caption}" is more than three words`);
 	for (const a of shot.annotate || []) {
 		const t = meta.anchors?.[a.n];
 		if (!t) { problems.push(`callout ${a.n}: no anchor measured (re-shoot)`); continue; }

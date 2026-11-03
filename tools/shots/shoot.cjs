@@ -16,7 +16,7 @@ const { recordLoop } = require('./lib/loop.cjs');
 const { cutSides, resolveFade } = require('./lib/fade.cjs');
 const { kindOf } = require('./lib/rules.cjs');
 const { mdFile, placeFigure } = require('./lib/place.cjs');
-const { ROOT } = require('./lib/spec.cjs');
+const { ROOT, specHash } = require('./lib/spec.cjs');
 
 // --place: swap each finished figure into its docs page (lib/place.cjs)
 function place(pageName, spec, shot, file, snippet) {
@@ -54,7 +54,7 @@ async function still(page, pageName, shot, dpr) {
 	const tiles = shot.variants && shot.compose ? shot.variants : [null];
 	const dir = path.join(RAW, pageName);
 	fs.mkdirSync(dir, { recursive: true });
-	const meta = { id: shot.id, dpr, shotAt: new Date().toISOString(), app: await page.evaluate(() => fetch('/version.json').then((r) => r.json()).catch(() => ({}))) };
+	const meta = { id: shot.id, spec: specHash(shot), dpr, shotAt: new Date().toISOString(), app: await page.evaluate(() => fetch('/version.json').then((r) => r.json()).catch(() => ({}))) };
 	const tileMeta = [];
 	for (const [i, v] of tiles.entries()) {
 		if (v) await runSteps(page, v.steps || [v]);
@@ -101,7 +101,7 @@ async function recrop(pageName, shot) {
 		if (!a.at.rect) throw new Error(`callout ${a.n}: a re-cropped shot needs rect anchors (in the source file's pixels)`);
 		anchors[a.n] = { x: a.at.rect[0] - x, y: a.at.rect[1] - y, w: a.at.rect[2], h: a.at.rect[3] };
 	}
-	const meta = { id: shot.id, dpr, shotAt: fs.statSync(src).mtime.toISOString(), app: { version: shot.app || 'earlier' }, from: shot.from,
+	const meta = { id: shot.id, spec: specHash(shot), dpr, shotAt: fs.statSync(src).mtime.toISOString(), app: { version: shot.app || 'earlier' }, from: shot.from,
 		width: w, height: h, crop: { x, y, w, h }, cut: shot.cut || [], fade: resolveFade(shot.fade, shot.cut || [], false), anchors, kind: shot.kind || 'ui' };
 	fs.writeFileSync(path.join(dir, shot.id + '.json'), JSON.stringify(meta, null, 1) + '\n');
 }

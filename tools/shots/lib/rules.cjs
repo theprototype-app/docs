@@ -13,7 +13,8 @@ const path = require('path');
 // The narrowest content column a desktop reader gets with both sidebars open (Material 9.5: a 61rem grid
 // at 20 px minus two 12.1rem sidebars and the 1.2rem gutters), in CSS px. Measured by review/page-check.cjs.
 const COLUMN = 688;
-const MANIFEST = path.join(__dirname, '..', 'manifest.json');
+// SHOTS_MANIFEST: a trial annotation (release.cjs) records into its own copy, not the one in git
+const MANIFEST = process.env.SHOTS_MANIFEST || path.join(__dirname, '..', 'manifest.json');
 
 /** 'ui' when interface shows inside the crop, else 'view' (the 3D view alone); a spec's `kind` wins */
 function kindOf(shot, uiHits) {

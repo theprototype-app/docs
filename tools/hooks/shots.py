@@ -57,6 +57,10 @@ def check(m, entry, column):
         out.append(f'{entry.get("badges", 0)} numbered badge(s) but {len(m["key"])} line(s) in the key list under the figure')
     words = " ".join([alt, m["caption"], *m["key"]]).lower()
     for label in entry.get("labels", []):
+        # M2 (owner 2026-11-02): text inside an image stays at three handwritten words at most, so a later
+        # translation only re-draws a few words per image
+        if len(label.split()) > 3:
+            out.append(f'the handwritten label "{label}" is more than three words (the limit for text inside an image)')
         if label.lower() not in words:
             out.append(f'the handwritten label "{label}" is not in the alt, caption or key')
     return out
