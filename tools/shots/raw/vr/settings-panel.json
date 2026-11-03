@@ -1,20 +1,27 @@
 {
  "id": "settings-panel",
+ "spec": "97fd752b11e1",
  "dpr": 2,
- "shotAt": "2026-10-27T07:46:24.610Z",
+ "shotAt": "2026-11-03T14:51:55.537Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/vr/settings-panel.png",
- "width": 720,
- "height": 720,
+ "uiHits": [],
+ "width": 800,
+ "height": 800,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 720,
-  "h": 720
+  "x": 550,
+  "y": 250,
+  "w": 400,
+  "h": 400
  },
- "cut": [],
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
  "fade": [],
  "anchors": {},
  "kind": "ui"

@@ -1,18 +1,33 @@
 {
  "id": "charcontroller",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.562Z",
+ "spec": "fb506b951b6e",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:56:16.192Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/nodes/charcontroller.png",
- "width": 688,
- "height": 411,
+ "uiHits": [
+  "div.svelte-flow__pane",
+  "div.node-card",
+  "div.flex",
+  "div.relative",
+  "div.svelte-flow__node",
+  "span.h-2",
+  "span",
+  "input.nodrag",
+  "span.overflow-hidden",
+  "span.flex",
+  "div.svelte-flow__handle",
+  "path.svelte-flow__edge-interaction"
+ ],
+ "width": 804,
+ "height": 548,
  "crop": {
-  "x": 21,
-  "y": 0,
-  "w": 688,
-  "h": 411
+  "x": 208,
+  "y": 284,
+  "w": 402,
+  "h": 274
  },
  "cut": [],
  "fade": [],

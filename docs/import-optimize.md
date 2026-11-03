@@ -53,10 +53,15 @@ The defaults for every new import, under **Settings ▸ Import ▸ Import defaul
 
 **Reset** puts the shipped defaults back.
 
-![Settings ▸ Import: Optimize big models automatically, the triangle and texture thresholds, max texture size, Compress textures (KTX2) and LOD levels](img/import-optimize/settings-import.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="700" loading=lazy }
+![Settings ▸ Import, the defaults for new imports on this device: Optimize big models automatically, the triangle and texture size thresholds, Max texture size, Compress textures (KTX2) and LOD levels. 1: the automatic optimize switch. 2: Compress textures (KTX2).](img/import-optimize/settings-import.webp){ .shot .fade-b width="678" height="543" loading=lazy }
 /// caption
 Settings ▸ Import.
 ///
+
+<div class="shot-key" markdown>
+1. **Optimize big models automatically**: over the thresholds below, an import gets an LOD chain and smaller textures.
+2. **Compress textures (KTX2)**: the GPU holds a compressed copy, about a sixth of the memory.
+</div>
 
 ## Per file: Import settings and Reimport
 

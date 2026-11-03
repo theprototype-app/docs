@@ -1,21 +1,26 @@
 {
  "id": "knocked-off",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.477Z",
+ "spec": "5ae549ba835e",
+ "dpr": 2,
+ "shotAt": "2026-11-03T12:43:40.508Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/avatars/knocked-off.png",
- "width": 1280,
- "height": 720,
+ "uiHits": [],
+ "width": 2880,
+ "height": 1120,
  "crop": {
   "x": 0,
-  "y": 0,
-  "w": 1280,
-  "h": 720
+  "y": 150,
+  "w": 1440,
+  "h": 560
  },
- "cut": [],
- "fade": [],
+ "cut": [
+  "t",
+  "b"
+ ],
+ "fade": "vignette",
  "anchors": {},
  "kind": "view"
 }

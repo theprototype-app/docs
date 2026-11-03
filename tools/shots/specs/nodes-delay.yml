@@ -1,23 +1,51 @@
 page: nodes-delay
-defaults:
-  device: desktop
-  theme: dark
-  dpr: 2
-  format: webp
+defaults: {device: desktop, theme: dark, dpr: 2, format: webp}
+# 83-batch3 (V11): built live — the example's nodes made and wired by the app's own create_flow_nodes, laid out
+# in columns at 1:1 in the docked Node editor, the crop a box over the cards (#docs-nodes)
 shots:
 - id: delay
   replaces: img/nodes/delay.png
-  alt: A Key Press resetting a Latch and triggering a three-second Delay that sets the Latch again, which drives the door's
-    Visibility
-  caption: A Key Press resetting a Latch and triggering a three-second Delay that sets the Latch again.
-  crop:
-    rect:
-    - 32
-    - 0
-    - 1032
-    - 270
+  setup:
+  - {create: Box, name: Door, at: [0, 1, 0]}
+  - eval: >-
+      (async () => { const S = window.__stores, D = window.__docs;
+      const sel = (name) => { const o = D.byName(name); if (!o) throw new Error('no object ' + name); return {selected: o.uuid}; };
+      const r = await S.aiTools.executeAiTool('create_flow_nodes', {graph: 'scene',
+      nodes: [{ref: 'key', type: 'keypress', data: {code: 'KeyE'}},
+      {ref: 'dl', type: 'delay', data: {seconds: 3}},
+      {ref: 'la', type: 'latch', data: {initial: true}},
+      {ref: 'vis', type: 'visibility'},
+      {ref: 'sel', type: 'objectselector', data: sel('Door')}],
+      edges: [{from: 'key', to: 'la', toHandle: 'reset'},
+      {from: 'key', to: 'dl', toHandle: 'trigger'},
+      {from: 'dl', to: 'la', toHandle: 'set'},
+      {from: 'la', to: 'vis', toHandle: 'on'},
+      {from: 'vis', to: 'sel'}]}, {physics: true});
+      if (!r || r.error || r.partial) throw new Error('create_flow_nodes: ' + JSON.stringify(r && (r.errors || r.error || r.warning)));
+      window.__docsNodes = {...(window.__docsNodes || {}), ...Object.fromEntries(r.created.map((c) => [c.ref, c.id]))};
+      window.__docsCols = [['key'],['dl','vis'],['la','sel']]; })()
+  - {eval: "window.__stores.dockMenu.dockTab('flow'); window.__stores.bottomDock.bottomDockActive.set('flow'); window.__stores.bottomDock.dockHeight.set(700); window.__stores.activeGraphId.set('scene')"}
+  - {wait: 2500}
+  - {css: '.svelte-flow__controls,.svelte-flow__minimap{visibility:hidden!important}'}
+  - eval: >-
+      (async () => { const S = window.__stores, ids = window.__docsNodes, cols = window.__docsCols;
+      if (!window.__flowViewport) throw new Error('the node editor is not open');
+      const card = (ref) => { const el = document.querySelector('.svelte-flow__node[data-id="' + ids[ref] + '"]'); if (!el) throw new Error('no card for ' + ref); return el; };
+      cols.forEach((col, c) => { let y = 0; for (const ref of col) { S.nodesHandler.moveFlowNode(ids[ref], {x: c * 220, y}, 'scene'); y += card(ref).offsetHeight + 40; } });
+      await new Promise((r) => setTimeout(r, 800));
+      await window.__flowViewport.setViewport({x: 56, y: 56, zoom: 1});
+      await new Promise((r) => setTimeout(r, 800));
+      const rs = Object.keys(ids).map((ref) => card(ref).getBoundingClientRect());
+      const x = Math.min(...rs.map((r) => r.left)), y = Math.min(...rs.map((r) => r.top));
+      const d = document.getElementById('docs-nodes') || document.body.appendChild(Object.assign(document.createElement('div'), {id: 'docs-nodes'}));
+      Object.assign(d.style, {position: 'fixed', pointerEvents: 'none', left: x + 'px', top: y + 'px', width: Math.max(...rs.map((r) => r.right)) - x + 'px', height: Math.max(...rs.map((r) => r.bottom)) - y + 'px'}); })()
+  - {wait: 1000}
+  # the Visibility → Object Selector wire loops past the cards' right edge: 28 px more on the right
+  crop: {union: [{selector: '#docs-nodes'}, {selector: '#docs-nodes', offset: [28, 0]}], pad: 16}
   fade: []
   kind: ui
-  dpr: 1.5
-  from: img/nodes/delay.png
+  alt: >-
+    A Key Press resetting a Latch and triggering a three-second Delay that sets the Latch again; the Latch drives
+    a Visibility node on the door's Object Selector
+  caption: A Key Press resetting a Latch and triggering a three-second Delay that sets the Latch again.
 md: nodes/delay.md

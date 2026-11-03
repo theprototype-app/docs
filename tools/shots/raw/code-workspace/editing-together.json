@@ -1,23 +1,45 @@
 {
  "id": "editing-together",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.490Z",
+ "spec": "e5d0b1bcf16a",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:41:41.068Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/code-workspace/editing-together.png",
- "width": 688,
- "height": 285,
+ "uiHits": [
+  "div.resize-cue",
+  "div#code-ws-dock.code-ws",
+  "rect",
+  "span.code-tab-name",
+  "div#code-ws-tabs.code-strip",
+  "span.code-kind",
+  "span.code-muted",
+  "div.flex",
+  "div#script-sockets.flex",
+  "div.cm-gutterElement",
+  "div.cm-gutter",
+  "span.code-tab-close"
+ ],
+ "width": 1376,
+ "height": 680,
  "crop": {
-  "x": 222,
-  "y": 435,
+  "x": 0,
+  "y": 300,
   "w": 688,
-  "h": 285
+  "h": 340
  },
  "cut": [],
  "fade": [
   "r"
  ],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 199.3125,
+   "y": 202,
+   "w": 141.125,
+   "h": 33
+  }
+ },
  "kind": "ui"
 }

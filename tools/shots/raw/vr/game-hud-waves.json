@@ -1,21 +1,28 @@
 {
  "id": "game-hud-waves",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.609Z",
+ "spec": "920e9eeb4807",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:19:25.973Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/vr/game-hud-waves.png",
- "width": 640,
- "height": 640,
+ "uiHits": [],
+ "width": 1280,
+ "height": 1280,
  "crop": {
-  "x": 0,
-  "y": 0,
+  "x": 400,
+  "y": 130,
   "w": 640,
   "h": 640
  },
- "cut": [],
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
  "fade": [],
  "anchors": {},
- "kind": "ui"
+ "kind": "view"
 }

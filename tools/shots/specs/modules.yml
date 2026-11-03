@@ -5,18 +5,26 @@ defaults:
   dpr: 2
   format: webp
 shots:
-- id: core-phone
-  replaces: img/modules/core-phone.png
-  alt: 'Modules ▸ Core on a folded phone: each module''s download icon and switch on the right, + Button and Pong: spawn /
-    remove under their descriptions, and VR Sleeve Palette''s description tapped open in full'
-  caption: Modules ▸ Core on a folded phone.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 480
-    - 908
-  fade: []
-  kind: ui
-  dpr: 1
-  from: img/modules/core-phone.png
+  # 83-batch3: Modules ▸ Core on a folded phone, VR Sleeve Palette's clamped description tapped open
+  # (ModulesManager.svelte's data-desc-toggle, keyed core:<module id>)
+  - id: core-phone
+    replaces: img/modules/core-phone.png
+    device: n6-folded
+    setup:
+      - {eval: "window.__stores.modulesOpen.set(true)"}
+      - {wait: 2000}
+      - {click: '[data-desc-toggle="core:vrsleeve"]'}
+      - {wait: 800}
+    crop: {rect: [0, 0, 390, 896]}
+    fade: []
+    kind: ui
+    alt: >-
+      Modules ▸ Core on a folded phone: each module's name, version and description on the left, its download icon
+      and switch on the right, Button & door's + Button and Pong's spawn / remove under their descriptions, and VR
+      Sleeve Palette's description tapped open in full. 1: a module's switch. 2: Pong's own action. 3: a description
+      tapped open.
+    caption: Modules ▸ Core on a folded phone.
+    annotate:
+      - {n: 1, at: {selector: '#enable-module-hello'}, shape: box, pad: 3, badge: b, key: 'The **switch** turns a module **on or off**; the icon beside it downloads it.'}
+      - {n: 2, at: {text: 'Pong: spawn / remove'}, shape: box, label: its action, badge: r, key: 'A module''s own **action** sits under its name and description.'}
+      - {n: 3, at: {selector: '[data-desc-toggle="core:vrsleeve"]'}, shape: box, badge: r, key: 'A description cut short ends in a chevron: tap it to read it all, tap again to fold it.'}

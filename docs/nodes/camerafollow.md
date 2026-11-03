@@ -44,9 +44,9 @@ Follow a wandering box with <kbd>C</kbd> and stop with <kbd>X</kbd>:
 4. Add a **Key Press** on <kbd>C</kbd> into **trigger** and a **Key Press** on <kbd>X</kbd> into **stop**.
 5. Press <kbd>C</kbd>: the view swings in behind the rover and follows it. Press <kbd>X</kbd> to let go.
 
-![A Wander moving the Rover through an Object Selector, which also feeds the target of a Camera Follow triggered by two Key Press nodes](../img/nodes-camerafollow/camerafollow.webp){ .shot .fade-l .fade-r width="688" height="639" loading=lazy }
+![A Wander moving the Rover through an Object Selector, which also feeds the target of a Camera Follow; Key Press C into its trigger and Key Press X into its stop](../img/nodes-camerafollow/camerafollow.webp){ .shot width="622" height="613" loading=lazy }
 /// caption
-A Wander moving the Rover through an Object Selector.
+A Wander moving the Rover, and a Camera Follow on the same Object Selector.
 ///
 
 !!! tip

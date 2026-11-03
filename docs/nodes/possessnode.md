@@ -78,7 +78,7 @@ Drive a box with <kbd>F</kbd> and let go with <kbd>G</kbd>:
 4. Press <kbd>F</kbd>: the view moves behind the cart and <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> drive it.
    Press <kbd>G</kbd> to hand it back.
 
-![Two Key Press nodes wired into the trigger and release inputs of a Possess Object, with an Object Selector picking the Cart wired into its target](../img/nodes-possessnode/possessnode.webp){ .shot width="552" height="639" loading=lazy }
+![Two Key Press nodes, F and G, wired into the trigger and release inputs of a Possess Object, with an Object Selector picking the Cart wired into its target](../img/nodes-possessnode/possessnode.webp){ .shot width="402" height="613" loading=lazy }
 /// caption
 Two Key Press nodes wired into the trigger and release inputs of a Possess Object.
 ///

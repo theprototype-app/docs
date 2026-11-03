@@ -1,21 +1,49 @@
 {
  "id": "animation-states",
- "dpr": 1,
- "shotAt": "2026-10-31T14:06:04.426Z",
+ "spec": "fe34dd9fb532",
+ "dpr": 2,
+ "shotAt": "2026-11-03T12:39:58.233Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/characters-and-motion/animation-states.png",
- "width": 360,
- "height": 472,
+ "uiHits": [
+  "div.dt-row",
+  "div.toolbox-header",
+  "div.toolbox-body",
+  "div#anim-states.ui-panel",
+  "button#anim-states-preset.tbx-primary",
+  "div.as-state",
+  "input.as-name",
+  "div.as-body",
+  "button.ui-button-quiet",
+  "div.as-line",
+  "div.as-trans",
+  "select.svelte-12xnk68"
+ ],
+ "width": 808,
+ "height": 944,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 360,
+  "x": 1012,
+  "y": 96,
+  "w": 404,
   "h": 472
  },
  "cut": [],
  "fade": [],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 106,
+   "y": 83.34375,
+   "w": 405.53125,
+   "h": 37.3125
+  },
+  "2": {
+   "x": 106,
+   "y": 174.65625,
+   "w": 632,
+   "h": 126.65625
+  }
+ },
  "kind": "ui"
 }

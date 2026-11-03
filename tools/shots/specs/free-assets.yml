@@ -5,69 +5,109 @@ defaults:
   dpr: 2
   format: webp
 shots:
+# 83-batch3: the Asset Browser on production (live Poly Haven / the ambientCG relay), ids from core's
+# cc0-asset-browser suite. The window is 560 × 600 CSS px.
 - id: browser-materials
   replaces: img/free-assets/browser-materials.png
-  alt: The Asset Browser's Materials tab searching ambientCG for clay
-  caption: The Asset Browser's Materials tab searching ambientCG for clay.
-  crop:
-    rect:
-    - 100
-    - 40
-    - 688
-    - 640
-  fade:
-  - l
-  - r
-  - t
-  - b
   kind: ui
-  dpr: 1
-  from: img/free-assets/browser-materials.png
+  setup:
+    - {eval: "window.__stores.cc0State.openAssetBrowser()"}
+    - {wait: 2000}
+    - {click: '#asset-browser-tab-materials'}
+    - {wait: 4000}
+    - {eval: "const i=document.getElementById('asset-browser-search'); i.value='clay'; i.dispatchEvent(new Event('input',{bubbles:true}))"}
+    - {wait: 5000}
+  crop: {selector: '#asset-browser-window', pad: 8, maxHeight: 620}
+  fade: [b]
+  alt: >-
+    The Asset Browser on its Materials tab, searching ambientCG for clay: a grid of clay materials, each with Add
+    and Apply, the category and the 1k / 2k / 4k pick above. 1: the Materials tab. 2: the search box.
+  caption: The Asset Browser's Materials tab searching ambientCG for clay.
+  annotate:
+    - {n: 1, at: {selector: '#asset-browser-tab-materials'}, shape: box, pad: 3, badge: b, key: 'The **Materials** tab (from ambientCG); Models, HDRIs and Textures come from Poly Haven.'}
+    - {n: 2, at: {selector: '#asset-browser-search'}, shape: underline, label: name or tag, badge: b, key: '**Search** by name or tag.'}
 - id: material-applied
   replaces: img/free-assets/material-applied.png
-  alt: A CC0 material applied to a box, credited in the Inspector
-  caption: A CC0 material applied to a box.
-  crop:
-    rect:
-    - 752
-    - 40
-    - 688
-    - 800
-  fade:
-  - l
-  - t
-  - b
   kind: ui
-  dpr: 1
-  from: img/free-assets/material-applied.png
+  setup:
+    - {create: Box, name: Crate, at: [0, 0.5, 0]}
+    - {select: Crate}
+    - {eval: "window.__stores.cc0State.openAssetBrowser()"}
+    - {wait: 2000}
+    - {click: '#asset-browser-tab-materials'}
+    - {wait: 4000}
+    - {eval: "const i=document.getElementById('asset-browser-search'); i.value='clay'; i.dispatchEvent(new Event('input',{bubbles:true}))"}
+    - {wait: 5000}
+    - {click: '.ab-card [data-act="apply"]'}
+    # the material's maps download through the relay, then land on the box and in the presets
+    - {wait: 12000}
+    - {click: '#asset-browser-close'}
+    - {select: Crate}
+    - {eval: "window.__stores.inspectorKind.set('selection'); window.__stores.inspectorClose.set(false)"}
+    - {wait: 1500}
+    - {eval: "document.getElementById('inspector-cc0-material')?.scrollIntoView({block: 'center'})"}
+    - {wait: 800}
+  crop: {union: [{selector: '#material-presets'}, {selector: '#inspector-cc0-material'}, {selector: '#inspector-cc0-material', offset: [0, 30]}], pad: 10}
+  fade: []
+  alt: >-
+    The Inspector of a box after Apply on an ambientCG clay material: the material is the newest of your presets,
+    and under the presets its credit names the site, the authors and the CC0 licence. 1: the new preset. 2: the
+    credit.
+  caption: A CC0 material applied to a box.
+  annotate:
+    - {n: 1, at: {selector: '#material-presets .mp-mine .mp-swatch'}, shape: box, pad: 3, badge: r, key: '**Apply** also saved it to your **material presets**.'}
+    - {n: 2, at: {selector: '#inspector-cc0-material'}, shape: box, pad: 3, badge: b, key: 'Its **credit**: site, authors, licence (CC0) and a link.'}
 - id: explorer-credit
   replaces: img/free-assets/explorer-credit.png
-  alt: The Explorer's Properties naming a Poly Haven model's source
-  caption: The Explorer's Properties naming a Poly Haven model's source.
-  crop:
-    rect:
-    - 752
-    - 500
-    - 688
-    - 400
-  fade:
-  - l
-  - t
   kind: ui
-  dpr: 1
-  from: img/free-assets/explorer-credit.png
+  setup:
+    - {eval: "window.__stores.cc0State.openAssetBrowser()"}
+    - {wait: 2000}
+    - {click: '#asset-browser-tab-models'}
+    - {click: '#asset-browser-res-1k'}
+    - {wait: 5000}
+    - {click: '.ab-card [data-act="library"]'}
+    # download, pack into one .glb, import into Explorer ▸ Poly Haven
+    - {wait: 20000}
+    - {click: '#asset-browser-close'}
+    - {eval: "window.__stores.dockMenu.dockTab('explorer'); window.__stores.bottomDock.bottomDockActive.set('explorer'); window.__stores.bottomDock.dockHeight.set(640)"}
+    - {wait: 1500}
+    # the Library item that carries a Poly Haven source: mark its card so a selector can right-click it
+    - eval: >-
+        let items; window.__stores.explorer.explorerItems.subscribe((v) => (items = v))();
+        const it = items.find((i) => i.source?.site === 'polyhaven');
+        if (it) { window.__stores.explorer.activeFolder.set(it.folderId); }
+    - {wait: 1500}
+    - eval: >-
+        let items; window.__stores.explorer.explorerItems.subscribe((v) => (items = v))();
+        const it = items.find((i) => i.source?.site === 'polyhaven');
+        document.querySelector('[data-card-id="' + it.id + '"]').setAttribute('data-docs', 'cc0');
+    - {rightClick: '[data-docs="cc0"]'}
+    - {wait: 500}
+    - {clickText: Properties}
+    - {wait: 1200}
+    - {eval: "document.getElementById('explorer-cc0-source')?.scrollIntoView({block: 'end'})"}
+    - {wait: 500}
+  crop: {union: [{text: Size}, {selector: '#explorer-cc0-source'}], pad: 12}
+  fade: [t]
+  alt: >-
+    The Explorer's Properties for a model added from Poly Haven: its size, folder (Poly Haven) and owner, then a
+    credit line naming the site, the authors, the CC0 licence and a link. 1: the credit.
+  caption: The Explorer's Properties naming a Poly Haven model's source.
+  annotate:
+    - {n: 1, at: {selector: '#explorer-cc0-source'}, shape: box, pad: 4, badge: t, key: 'The **credit** stays with the file, for you and for every peer that gets a copy.'}
 - id: phone
   replaces: img/free-assets/phone.png
-  alt: The Asset Browser as a bottom sheet on a folded phone
-  caption: The Asset Browser as a bottom sheet on a folded phone.
-  crop:
-    rect:
-    - 0
-    - 1003
-    - 1131
-    - 1595
-  fade:
-  - t
+  device: n6-folded
   kind: ui
-  dpr: 2.9
-  from: img/free-assets/phone.png
+  setup:
+    - {eval: "window.__stores.cc0State.openAssetBrowser()"}
+    - {wait: 6000}
+  crop: {selector: '#asset-browser-window', maxHeight: 560}
+  fade: [b]
+  alt: >-
+    The Asset Browser as a bottom sheet on a folded phone: the Models tab, two columns of Poly Haven models and the
+    resolution pick set to 1k. 1: 1k, the phone's default.
+  caption: The Asset Browser as a bottom sheet on a folded phone.
+  annotate:
+    - {n: 1, at: {selector: '#asset-browser-res-1k'}, shape: circle, label: phone default, badge: b, key: '**1k** is the default on a phone or a Quest: smaller downloads.'}

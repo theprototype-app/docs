@@ -1,23 +1,47 @@
 {
  "id": "phone",
- "dpr": 2.9,
- "shotAt": "2026-10-27T07:46:24.516Z",
+ "spec": "be58989ddfe2",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:10:55.743Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/free-assets/phone.png",
- "width": 1131,
- "height": 1595,
+ "uiHits": [
+  "div.ui-panel-header",
+  "div.ab-top",
+  "div#asset-browser-grid-wrap.min-h-0",
+  "svg.lucide",
+  "button#asset-browser-tab-models.tab",
+  "div.ab-filters",
+  "label.tp-ui",
+  "button#asset-browser-res-1k.seg-opt",
+  "li.ab-card",
+  "ul#asset-browser-grid.ab-grid",
+  "span",
+  "img.svelte-1ep2xup"
+ ],
+ "width": 780,
+ "height": 1120,
  "crop": {
   "x": 0,
-  "y": 1003,
-  "w": 1131,
-  "h": 1595
+  "y": 64,
+  "w": 390,
+  "h": 560
  },
- "cut": [],
- "fade": [
-  "t"
+ "cut": [
+  "b"
  ],
- "anchors": {},
+ "fade": [
+  "b"
+ ],
+ "anchors": {
+  "1": {
+   "x": 26,
+   "y": 330,
+   "w": 60.75,
+   "h": 76
+  }
+ },
  "kind": "ui"
 }

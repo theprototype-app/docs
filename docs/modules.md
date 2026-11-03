@@ -14,10 +14,16 @@ controls on the **right** — on **Core**, the download icon and the switch; on 
 **Update** — sit under its name and description. A description that is cut short ends in a chevron: tap the text to read
 all of it, tap again to fold it. The dev-URL row fits a phone's width too.
 
-![Modules ▸ Core on a folded phone: each module's download icon and switch on the right, + Button and Pong: spawn / remove under their descriptions, and VR Sleeve Palette's description tapped open in full](img/modules/core-phone.webp){ .shot width="480" height="908" loading=lazy }
+![Modules ▸ Core on a folded phone: each module's name, version and description on the left, its download icon and switch on the right, Button & door's + Button and Pong's spawn / remove under their descriptions, and VR Sleeve Palette's description tapped open in full. 1: a module's switch. 2: Pong's own action. 3: a description tapped open.](img/modules/core-phone.webp){ .shot width="390" height="896" loading=lazy }
 /// caption
 Modules ▸ Core on a folded phone.
 ///
+
+<div class="shot-key" markdown>
+1. The **switch** turns a module **on or off**; the icon beside it downloads it.
+2. A module's own **action** sits under its name and description.
+3. A description cut short ends in a chevron: tap it to read it all, tap again to fold it.
+</div>
 
 - **Core modules** ship with the app (hello, button, pong, VR sleeve). Toggle each on or off: both are **live** (since 1.20, disabling no longer needs a reload).
 - The dungeon generator, piano, avatar controller, VR essentials and drivable car used to ship in the app; they now live in the **Browse** gallery, so install them there when you want them. Everyone in a session needs the same modules for shared behaviour to match — including anyone who joins later.

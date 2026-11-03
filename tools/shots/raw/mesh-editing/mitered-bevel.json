@@ -1,21 +1,35 @@
 {
  "id": "mitered-bevel",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.553Z",
+ "spec": "ffe63800cd45",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:52:53.969Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/mesh-editing/mitered-bevel.png",
- "width": 1232,
- "height": 639,
+ "uiHits": [],
+ "width": 1520,
+ "height": 1040,
  "crop": {
-  "x": 84,
-  "y": 153,
-  "w": 1232,
-  "h": 639
+  "x": 328,
+  "y": 166,
+  "w": 760,
+  "h": 520
  },
- "cut": [],
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
  "fade": "vignette",
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 761.0191416194468,
+   "y": 144.27618005537823,
+   "w": 48,
+   "h": 48
+  }
+ },
  "kind": "view"
 }

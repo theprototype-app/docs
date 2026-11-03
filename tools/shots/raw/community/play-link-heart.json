@@ -1,26 +1,46 @@
 {
  "id": "play-link-heart",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.496Z",
+ "spec": "86e24f29fd94",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:36:28.834Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/community/play-link-heart.png",
- "width": 688,
- "height": 450,
+ "uiHits": [
+  "div#embed-start.embed-start",
+  "div.embed-hint",
+  "button#embed-play.embed-play",
+  "button#embed-access.embed-access",
+  "button#embed-heart.tp-heart"
+ ],
+ "width": 1280,
+ "height": 840,
  "crop": {
-  "x": 296,
-  "y": 150,
-  "w": 688,
-  "h": 450
+  "x": 400,
+  "y": 240,
+  "w": 640,
+  "h": 420
  },
- "cut": [],
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
  "fade": [
   "l",
   "r",
   "t",
   "b"
  ],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 672.046875,
+   "y": 313.703125,
+   "w": 111.0625,
+   "h": 67.1875
+  }
+ },
  "kind": "ui"
 }

@@ -1,25 +1,48 @@
 {
  "id": "large-scene-notice",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.489Z",
+ "spec": "213d001313c4",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:40:33.512Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/checkpoints/large-scene-notice.png",
- "width": 688,
- "height": 500,
+ "uiHits": [
+  "div.my-1",
+  "svg.lucide",
+  "div.tp-toast-body",
+  "div.tp-toast-text",
+  "button.tp-toast-action",
+  "div.tp-toast-actions",
+  "button.tp-toast-x"
+ ],
+ "width": 1376,
+ "height": 920,
  "crop": {
-  "x": 296,
-  "y": 0,
+  "x": 376,
+  "y": 64,
   "w": 688,
-  "h": 500
+  "h": 460
  },
- "cut": [],
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
  "fade": [
   "l",
   "r",
+  "t",
   "b"
  ],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 366,
+   "y": 143.375,
+   "w": 97.625,
+   "h": 39
+  }
+ },
  "kind": "ui"
 }

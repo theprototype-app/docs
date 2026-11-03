@@ -4,73 +4,160 @@ defaults:
   theme: dark
   dpr: 2
   format: webp
+# 83-batch3 (V11): every shot built live. Nodes come from the app's own create_flow_nodes (it throws on an error),
+# the Node editor is docked tall, the view is set through the editor's __flowViewport seam, and the crop is #docs-box,
+# a box the setup lays over the part of the dock the picture shows (the dock is full-width, the column is 688).
 shots:
 - id: cheat-sheet
   replaces: img/node-editor/cheat-sheet.png
-  alt: 'The cheat sheet: the node editor''s keys first, because it has focus, then the 3D viewport''s'
-  caption: The cheat sheet.
-  crop:
-    rect:
-    - 296
-    - 40
-    - 688
-    - 640
-  fade:
-  - l
-  - r
-  - t
-  - b
+  setup:
+  - &boxfn
+    eval: >-
+      window.__docsBox = (r, w, h) => { const d = document.getElementById('docs-box') ||
+      document.body.appendChild(Object.assign(document.createElement('div'), {id: 'docs-box'}));
+      Object.assign(d.style, {position: 'fixed', pointerEvents: 'none', left: r.left + 'px', top: r.top + 'px',
+      width: Math.min(w, r.width) + 'px', height: Math.min(h, r.height) + 'px'}); }
+  - &dock {eval: "window.__stores.dockMenu.dockTab('flow'); window.__stores.bottomDock.bottomDockActive.set('flow'); window.__stores.bottomDock.dockHeight.set(700); window.__stores.activeGraphId.set('scene')"}
+  - {wait: 2500}
+  # focus the editor the way a person does, then ? : the sheet opens on the focused area's keys
+  - {click: '.svelte-flow__pane'}
+  - {wait: 300}
+  - {key: '?', noFocus: true}
+  - {wait: 1200}
+  - {eval: "(() => { const s = document.getElementById('shortcut-sheet'); if (!s) throw new Error('no cheat sheet'); window.__docsBox(s.getBoundingClientRect(), 688, 640); })()"}
+  crop: {selector: '#docs-box'}
+  fade: [r, b]
   kind: ui
-  dpr: 1
-  from: img/node-editor/cheat-sheet.png
+  alt: >-
+    The cheat sheet opened with ? while the Node editor has focus: the Node editor's keys first, then the 3D
+    viewport's, with a filter box at the top. 1: the filter. 2: the Node editor's keys.
+  caption: The cheat sheet.
+  annotate:
+  # the filter runs the sheet's whole width (past the crop): the box marks its start, where you type (the centred
+  # sheet's filter starts at x 388, y 76 in the 1440 × 900 window, 30 px high)
+  - {n: 1, at: {rect: [390, 76, 200, 30]}, shape: box, pad: 3, badge: r, key: 'Type in the **filter** to find a key by what it does.'}
+  - {n: 2, at: {text: Node editor, within: '#shortcut-sheet'}, shape: box, badge: r, key: 'The keys of the area that **has focus** come first.'}
 - id: breadcrumb-siblings
   replaces: img/node-editor/breadcrumb-siblings.png
-  alt: 'The breadcrumb bar in the docked node editor: ⌂ Scene › Angelfish 1…, with the object crumb''s list open — Main, the
-    Scene graph, then the object flows, the current one ticked'
-  caption: The breadcrumb bar in the docked node editor.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 688
-    - 337
-  fade:
-  - r
+  setup:
+  - *boxfn
+  - {create: Box, name: Angelfish 1, at: [-2, 1, 0], scale: [0.6, 0.6, 0.2], color: '#f2c14e'}
+  - {create: Box, name: Angelfish 2, at: [0, 1, 0], scale: [0.6, 0.6, 0.2], color: '#f2c14e'}
+  - {create: Box, name: Clownfish, at: [2, 1, 0], scale: [0.6, 0.4, 0.2], color: '#f26b38'}
+  # each fish gets its own object flow (a Rotor), the way Add flow on the object makes one
+  - eval: >-
+      (async () => { const S = window.__stores, D = window.__docs; window.__docsFish = {};
+      for (const name of ['Angelfish 1', 'Angelfish 2', 'Clownfish']) { const o = D.byName(name); if (!o) throw new Error('no ' + name);
+      const r = await S.aiTools.executeAiTool('create_flow_nodes', {graph: o.uuid, nodes: [{ref: 'spin', type: 'rotor'}]}, {physics: true});
+      if (!r || r.error || r.partial) throw new Error('create_flow_nodes ' + name + ': ' + JSON.stringify(r && (r.errors || r.error || r.warning)));
+      window.__docsFish[name] = o.uuid; } })()
+  - *dock
+  - {wait: 2000}
+  - {eval: "window.__stores.activeGraphId.set(window.__docsFish['Angelfish 1'])"}
+  - {wait: 1500}
+  - {click: '#flow-scope-chip button.tp-crumb[aria-current="location"]'}
+  - {wait: 800}
+  # the crumbs list runs the whole bar: the crop is the Scene crumb to the open list, plus room for the callouts
+  crop: {union: [{selector: '#flow-scope-chip .tp-crumb', nth: 0}, {selector: '[role="menu"]'}, {selector: '[role="menu"]', offset: [160, 0]}], pad: 8}
+  fade: []
   kind: ui
-  dpr: 1
-  from: img/node-editor/breadcrumb-siblings.png
+  alt: >-
+    The breadcrumb bar in the docked Node editor, ⌂ Scene › Angelfish 1, with the object crumb's list open: Main, then
+    the object flows of Angelfish 1, Angelfish 2 and Clownfish, the current one ticked. 1: the object crumb. 2: the list.
+  caption: The breadcrumb bar in the docked Node editor.
+  annotate:
+  - {n: 1, at: {selector: '#flow-scope-chip button.tp-crumb[aria-current="location"]'}, shape: box, label: you are here, badge: r, key: 'The **object crumb**: the flow you are in. Click it for its siblings.'}
+  - {n: 2, at: {selector: '[role="menu"]'}, shape: bracket, side: r, badge: r, key: 'The **list**: every other flow at this level, the current one ticked.'}
 - id: tidy-waves-main
   replaces: img/node-editor/tidy-waves-main.png
-  alt: 'Part of Waves'' Main graph at full size: tidied columns of nodes, with a note reading The crystal glows.'
-  caption: Part of Waves' Main graph at full size.
-  crop:
-    rect:
-    - 620
-    - 420
-    - 688
-    - 560
-  fade:
-  - l
-  - r
-  - t
-  - b
+  # Waves needs two modules: the load waits on the modules dialog, so it is started without an await (vr.yml's recipe)
+  scene:
+  - eval: >-
+      window.__wl = 'running'; (async () => { const S = window.__stores, D = window.__docs; await S.sceneTemplates.loadTemplatesIndex();
+      const g = D.get(S.sceneTemplates.games).find((x) => x.slug === 'waves'); await S.sceneTemplates.loadRemoteScene(g, {origin: 'games'}); })(); 0
+  - {wait: 6000}
+  - {clickText: Install (2)}
+  - {wait: 20000}
+  setup:
+  - *boxfn
+  - *dock
+  - {wait: 2500}
+  - {css: '.svelte-flow__controls,.svelte-flow__minimap{visibility:hidden!important}'}
+  - {eval: "window.__flowTidy.tidy('layout')"}
+  - {wait: 1500}
+  # full size (zoom 1), the crystal note near the top of the box; the box starts 40 px into the pane, past its rail
+  - eval: >-
+      (async () => { await window.__flowViewport.setViewport({x: 0, y: 0, zoom: 1});
+      await new Promise((r) => setTimeout(r, 600));
+      const pane = document.querySelector('.svelte-flow').getBoundingClientRect();
+      const note = [...document.querySelectorAll('.svelte-flow__node')].find((n) => /crystal glows/i.test(n.textContent || ''));
+      if (!note) throw new Error('no crystal note in Main');
+      const r = note.getBoundingClientRect();
+      await window.__flowViewport.setViewport({x: 300 - (r.left - pane.left), y: 110 - (r.top - pane.top), zoom: 1});
+      await new Promise((res) => setTimeout(res, 800));
+      window.__docsBox({left: pane.left + 40, top: pane.top + 40, width: pane.width - 40, height: pane.height - 40}, 688, 480); })()
+  - {wait: 500}
+  crop: {selector: '#docs-box'}
+  fade: [l, r, t, b]
   kind: ui
-  dpr: 1
-  from: img/node-editor/tidy-waves-main.png
+  alt: >-
+    Part of Waves' Main graph at full size after Tidy: columns of nodes, wires running left to right, and a note
+    reading The crystal glows. 1: a note.
+  caption: Part of Waves' Main graph at full size.
+  annotate:
+  - {n: 1, at: {text: The crystal glows}, shape: box, pad: 3, badge: r, key: 'A **note** frames the nodes it explains; Tidy keeps them inside it.'}
 - id: group
   replaces: img/node-editor/group.png
-  alt: 'Inside a group: Group inputs on the left, Group outputs on the right, and the breadcrumb at the top'
-  caption: Inside a group.
-  crop:
-    rect:
-    - 296
-    - 300
-    - 688
-    - 420
-  fade:
-  - l
-  - r
-  - t
+  setup:
+  - *boxfn
+  - {create: Sphere, name: Lamp, at: [0, 1.2, 0], scale: 0.5, color: '#ffd166'}
+  - eval: >-
+      (async () => { const S = window.__stores, D = window.__docs;
+      const lamp = D.byName('Lamp'); if (!lamp) throw new Error('no Lamp');
+      const r = await S.aiTools.executeAiTool('create_flow_nodes', {graph: 'scene',
+      nodes: [{ref: 'key', type: 'keypress', data: {code: 'KeyL'}}, {ref: 'latch', type: 'latch'}, {ref: 'vis', type: 'visibility'},
+      {ref: 'sel', type: 'objectselector', data: {selected: lamp.uuid}}],
+      edges: [{from: 'key', to: 'latch'}, {from: 'latch', to: 'vis'}, {from: 'vis', to: 'sel'}]}, {physics: true});
+      if (!r || r.error || r.partial) throw new Error('create_flow_nodes: ' + JSON.stringify(r && (r.errors || r.error || r.warning)));
+      const ids = window.__docsNodes = Object.fromEntries(r.created.map((c) => [c.ref, c.id]));
+      [['key', 0], ['latch', 220], ['vis', 440], ['sel', 660]].forEach(([k, x]) => S.nodesHandler.moveFlowNode(ids[k], {x, y: 0}, 'scene')); })()
+  - *dock
+  - {wait: 2500}
+  - {css: '.svelte-flow__controls,.svelte-flow__minimap{visibility:hidden!important}'}
+  # pick the Latch and the Visibility the way a person does (click, Ctrl+click), then Group
+  - {click: '.svelte-flow__node-latch .node-card > div:first-child'}
+  - {keyDown: Control}
+  - {click: '.svelte-flow__node-visibility .node-card > div:first-child'}
+  - {keyUp: Control}
+  - {wait: 400}
+  - {eval: "window.__stores.nodeEditorActions.runNodeAction('group')"}
+  - {wait: 1200}
+  - eval: >-
+      (async () => { const S = window.__stores; const g = window.__docs.get(S.flowGraphs).scene.nodes.find((n) => n.type === 'group');
+      if (!g) throw new Error('the group was not made'); S.nodeEditorActions.runNodeAction('enterGroup', g.id);
+      await new Promise((r) => setTimeout(r, 1200));
+      if (document.querySelectorAll('.svelte-flow__node-groupio').length !== 2) throw new Error('not inside the group');
+      const pane = document.querySelector('.svelte-flow').getBoundingClientRect();
+      await window.__flowViewport.setViewport({x: 0, y: 0, zoom: 1});
+      await new Promise((r) => setTimeout(r, 600));
+      const rs = [...document.querySelectorAll('.svelte-flow__node')].map((n) => n.getBoundingClientRect());
+      const gx = Math.min(...rs.map((r) => r.left)) - pane.left, gy = Math.min(...rs.map((r) => r.top)) - pane.top;
+      const gw = Math.max(...rs.map((r) => r.right)) - pane.left - gx, gh = Math.max(...rs.map((r) => r.bottom)) - pane.top - gy;
+      const z = Math.min(1, 640 / gw, 330 / gh);
+      await window.__flowViewport.setViewport({x: 24 - gx * z, y: 70 - gy * z, zoom: z});
+      await new Promise((r) => setTimeout(r, 800));
+      const chip = document.getElementById('flow-scope-chip').getBoundingClientRect();
+      const left = Math.min(chip.left, pane.left), top = Math.min(chip.top, pane.top);
+      window.__docsBox({left, top, width: pane.right - left, height: pane.bottom - top}, 688, 420); })()
+  - {wait: 500}
+  crop: {selector: '#docs-box'}
+  fade: []
   kind: ui
-  dpr: 1
-  from: img/node-editor/group.png
+  alt: >-
+    Inside a group: Group inputs on the left with the Key Press wire coming in, the Latch and the Visibility in the
+    middle, Group outputs on the right, and the breadcrumb at the top. 1: Group inputs. 2: Group outputs. 3: the breadcrumb.
+  caption: Inside a group.
+  annotate:
+  - {n: 1, at: {selector: '.svelte-flow__node-groupio', nth: 0}, shape: box, badge: b, key: '**Group inputs**: one row per wire that comes into the group.'}
+  - {n: 2, at: {selector: '.svelte-flow__node-groupio', nth: 1}, shape: box, clip: true, badge: b, key: '**Group outputs**: one row per wire that leaves it.'}
+  - {n: 3, at: {union: [{selector: '#flow-scope-chip .tp-crumb', nth: 0}, {selector: '#flow-scope-chip .tp-crumb', nth: 1}]}, shape: box, pad: 3, badge: r, key: 'The **breadcrumb**: click a crumb above to leave the group.'}

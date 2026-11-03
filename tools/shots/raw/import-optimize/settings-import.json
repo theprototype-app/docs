@@ -1,26 +1,51 @@
 {
  "id": "settings-import",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.522Z",
+ "spec": "db48c13b0a53",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:51:00.426Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/import-optimize/settings-import.png",
- "width": 688,
- "height": 700,
+ "uiHits": [
+  "header.wc-head",
+  "div#settings-main.settings-main",
+  "span.sr-name",
+  "p#row-import-auto-desc.sr-desc",
+  "div#row-import-triangles.tp-ui",
+  "p#row-import-texture-threshold-desc.sr-desc",
+  "div#row-import-max-texture.tp-ui",
+  "p#row-import-compress-desc.sr-desc",
+  "div#row-import-lod-levels.tp-ui",
+  "p#row-import-lod-levels-desc.sr-desc",
+  "div#row-import-lod-ratio-1.tp-ui",
+  "div.sr-head"
+ ],
+ "width": 1356,
+ "height": 1086,
  "crop": {
   "x": 480,
-  "y": 100,
-  "w": 688,
-  "h": 700
+  "y": 136,
+  "w": 678,
+  "h": 543
  },
  "cut": [],
  "fade": [
-  "l",
-  "r",
-  "t",
   "b"
  ],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 1220,
+   "y": 87.5625,
+   "w": 80,
+   "h": 48
+  },
+  "2": {
+   "x": 1220,
+   "y": 760.8125,
+   "w": 80,
+   "h": 48
+  }
+ },
  "kind": "ui"
 }

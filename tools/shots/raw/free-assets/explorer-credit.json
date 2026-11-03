@@ -1,24 +1,45 @@
 {
  "id": "explorer-credit",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.515Z",
+ "spec": "045de959e9ce",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:48:42.719Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/free-assets/explorer-credit.png",
- "width": 688,
- "height": 400,
+ "uiHits": [
+  "button.ws-tab-btn",
+  "div.ws-resize",
+  "div.flex",
+  "span.w-14",
+  "button.ui-button-quiet",
+  "span.cc0-k",
+  "span",
+  "span.min-w-0",
+  "div.mt-1",
+  "a.svelte-1tpdedm",
+  "span.cc0-by",
+  "span.cc0-lic"
+ ],
+ "width": 460,
+ "height": 490,
  "crop": {
-  "x": 752,
-  "y": 500,
-  "w": 688,
-  "h": 400
+  "x": 1205,
+  "y": 401,
+  "w": 230,
+  "h": 245
  },
  "cut": [],
  "fade": [
-  "l",
   "t"
  ],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 24,
+   "y": 376,
+   "w": 412,
+   "h": 89.0625
+  }
+ },
  "kind": "ui"
 }

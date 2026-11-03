@@ -5,6 +5,7 @@
 // (size, dpr, the measured anchors, the cut sides) and then the annotated docs/img/<page>/<id>.<fmt>
 // (annotate.cjs does that part, and re-does it alone without a browser). A loop writes
 // docs/img/<page>/<id>.webm + .mp4. Run it in an e2e slot: `e2e-slot -- node shoot.cjs …`.
+if (require.main === module) require('./lib/remote.cjs').exposeLoopbackOnly();
 const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
@@ -15,6 +16,7 @@ const { annotateShot } = require('./annotate.cjs');
 const { recordLoop } = require('./lib/loop.cjs');
 const { cutSides, resolveFade } = require('./lib/fade.cjs');
 const { kindOf } = require('./lib/rules.cjs');
+const { joinPeers, xrInit, closePeers } = require('./lib/rig.cjs');
 const { mdFile, placeFigure } = require('./lib/place.cjs');
 const { ROOT, specHash } = require('./lib/spec.cjs');
 
@@ -29,14 +31,15 @@ function place(pageName, spec, shot, file, snippet) {
 /** interface inside the crop: sample a grid of points, keep what is on top that is not the 3D view */
 async function uiInside(page, crop) {
 	return page.evaluate((c) => {
-		const canvas = window.__docs.get(window.__stores.globalRenderer).domElement;
+		// a popped-out window has no 3D view of its own
+		const canvas = window.__stores ? window.__docs.get(window.__stores.globalRenderer).domElement : null;
 		const hits = new Set();
 		for (let i = 0; i <= 24; i++) for (let j = 0; j <= 16; j++) {
 			const el = document.elementFromPoint(c.x + 1 + (c.w - 2) * i / 24, c.y + 1 + (c.h - 2) * j / 16);
-			if (!el || el === canvas || el.contains(canvas)) continue;
+			if (!el || (canvas && (el === canvas || el.contains(canvas)))) continue;
 			// an empty layer over the canvas is not interface; a control, an icon or text is
 			const ctl = el.closest('button,input,select,textarea,label,a,[role],[title],svg,img');
-			const ui = (ctl && !ctl.contains(canvas)) || (el.innerText || '').trim();
+			const ui = (ctl && !(canvas && ctl.contains(canvas))) || (el.innerText || '').trim();
 			if (ui) hits.add(el.tagName.toLowerCase() + (el.id ? '#' + el.id : '') + (el.classList[0] ? '.' + el.classList[0] : ''));
 		}
 		return [...hits].slice(0, 12);
@@ -54,7 +57,7 @@ const stillsOnly = args.includes('--stills');
 const want = args.filter((a) => !a.startsWith('--'));
 const picked = (page, id) => !want.length || want.includes(page) || want.includes(page + '/' + id);
 
-async function still(page, pageName, shot, dpr) {
+async function still(page, pageName, shot, dpr, env = {}) {
 	// one tile = one capture; variants make several tiles that annotate.cjs composes
 	const tiles = shot.variants && shot.compose ? shot.variants : [null];
 	const dir = path.join(RAW, pageName);
@@ -62,7 +65,7 @@ async function still(page, pageName, shot, dpr) {
 	const meta = { id: shot.id, spec: specHash(shot), dpr, shotAt: new Date().toISOString(), app: await page.evaluate(() => fetch('/version.json').then((r) => r.json()).catch(() => ({}))) };
 	const tileMeta = [];
 	for (const [i, v] of tiles.entries()) {
-		if (v) await runSteps(page, v.steps || [v]);
+		if (v) await runSteps(page, v.steps || [v], env);
 		await waitFrames(page, shot.settle ?? 1200);
 		// a tile may have its own crop (two parts of one screen, side by side)
 		const { crop, bounds, is3d } = await resolveRect(page, v?.crop || shot.crop);
@@ -119,7 +122,7 @@ async function recrop(pageName, shot) {
 			if (!picked(pageName, shot.id)) continue;
 			const dpr = shot.dpr ?? 2;
 			const t0 = Date.now();
-			let ctx;
+			let ctx, guests;
 			try {
 				if (shot.video && stillsOnly) continue;
 				if (shot.from) {
@@ -137,11 +140,19 @@ async function recrop(pageName, shot) {
 					place(pageName, spec, shot, out[0].file, out.snippet);
 					continue;
 				}
-				const opened = await openApp(browser, { device: shot.device, dpr, theme: shot.theme, storage: shot.storage });
+				const opened = await openApp(browser, { device: shot.device, dpr, theme: shot.theme, storage: shot.storage, init: shot.xr ? xrInit(shot.xr) : [] });
 				ctx = opened.ctx;
 				await limit((async () => {
-					await runSteps(opened.page, [...(shot.scene || []), ...(shot.setup || [])]);
-					await still(opened.page, pageName, shot, dpr);
+					// rig (lib/rig.cjs): guests join first, each runs its own setup, then the host's steps
+					const env = {};
+					if (shot.peers) {
+						env.peers = guests = await joinPeers(browser, opened.page, shot.peers, openApp);
+						for (const g of guests) if (g.spec.setup) await runSteps(g.page, g.spec.setup, env);
+					}
+					await runSteps(opened.page, [...(shot.scene || []), ...(shot.setup || [])], env);
+					const target = shot.capture === 'popup' ? env.popup : opened.page;
+					if (!target) throw new Error('capture: popup, but no step opened a window');
+					await still(target, pageName, shot, dpr, env);
 				})(), 'the shot');
 				if (opened.errors.length) console.log(`   page errors: ${opened.errors.slice(0, 3).join(' | ')}`);
 				if (!rawOnly) {
@@ -153,6 +164,7 @@ async function recrop(pageName, shot) {
 				bad++;
 				console.log(`FAIL ${pageName}/${shot.id}: ${e.message.split('\n')[0]}`);
 			} finally {
+				await closePeers(guests);
 				await ctx?.close().catch(() => {});
 			}
 		}

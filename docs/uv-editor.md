@@ -107,10 +107,14 @@ the 0–1 square with no overlaps.
    open it — no need to reopen the editor.
 2. Select a mesh, open the UV editor and pick **Unwrap ▸ Smart (xatlas)**.
 
-![A sphere unwrapped with Smart (xatlas): seams placed automatically, pieces packed without overlaps](img/uv-editor/smart-unwrap.webp){ .shot .fade-l .fade-r width="688" height="900" loading=lazy }
+![The UV editor after Unwrap ▸ Smart (xatlas) on a sphere: the sphere's surface cut into islands along seams the module chose, packed into the 0 to 1 square with no overlaps. 1: the Unwrap menu.](img/uv-editor/smart-unwrap.webp){ .shot .fade-b width="640" height="460" loading=lazy }
 /// caption
 A sphere unwrapped with Smart (xatlas).
 ///
+
+<div class="shot-key" markdown>
+1. **Unwrap ▸ Smart (xatlas)**, added by the module.
+</div>
 
 Like the built-in projections, it unwraps only the faces you picked in Edit Mesh if you picked any. It is one undo step,
 and your peers get the new mapping.

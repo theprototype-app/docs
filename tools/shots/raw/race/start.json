@@ -1,18 +1,20 @@
 {
  "id": "start",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.588Z",
+ "spec": "04f6f8e17c31",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:12:54.744Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/race/start.png",
- "width": 1126,
- "height": 569,
+ "uiHits": [],
+ "width": 2880,
+ "height": 1800,
  "crop": {
-  "x": 77,
-  "y": 65,
-  "w": 1126,
-  "h": 569
+  "x": 0,
+  "y": 0,
+  "w": 1440,
+  "h": 900
  },
  "cut": [],
  "fade": "vignette",

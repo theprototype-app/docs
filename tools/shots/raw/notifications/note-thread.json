@@ -1,21 +1,49 @@
 {
  "id": "note-thread",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.574Z",
+ "spec": "7fb64a451805",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:45:04.184Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/notes/note-thread.png",
- "width": 300,
- "height": 265,
+ "uiHits": [
+  "button.marker-badge",
+  "div.note-head",
+  "div.note-body",
+  "div.note-actions",
+  "span.note-num",
+  "p.note-desc",
+  "span.note-chip",
+  "ul.note-replies",
+  "span.truncate",
+  "input#note-reply-input.ui-input",
+  "svg.lucide",
+  "span.note-title"
+ ],
+ "width": 792,
+ "height": 598,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 300,
-  "h": 265
+  "x": 689,
+  "y": 131,
+  "w": 396,
+  "h": 299
  },
  "cut": [],
  "fade": [],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 134.3125,
+   "y": 222.5625,
+   "w": 544,
+   "h": 35.09375
+  },
+  "2": {
+   "x": 114.3125,
+   "y": 435.40625,
+   "w": 250.34375,
+   "h": 60
+  }
+ },
  "kind": "ui"
 }

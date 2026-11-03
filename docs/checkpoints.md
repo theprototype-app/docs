@@ -4,10 +4,15 @@ A **checkpoint** is a copy of the scene as it is right now — objects, node gra
 **on this device**, with a name, an optional note, a picture and a time. [Autosave](saving.md#autosave) only remembers
 the *last* state; checkpoints let you go back to *any* earlier one.
 
-![The Checkpoints timeline comparing two checkpoints with the swipe slider](img/checkpoints/timeline-compare.webp){ .shot .fade-r .fade-t .fade-b width="688" height="600" loading=lazy }
+![The Checkpoints timeline in a small window, comparing Blockout v1 with With cone: the two pictures one over the other with a swipe divider, Objects 2 → 3 (+1), the sizes and how far apart they are, and the two picked rows below. 1: the swipe slider. 2: what changed.](img/checkpoints/timeline-compare.webp){ .shot width="647" height="739" loading=lazy }
 /// caption
 The Checkpoints timeline comparing two checkpoints with the swipe slider.
 ///
+
+<div class="shot-key" markdown>
+1. Drag the **swipe** slider to wipe between the older and the newer picture.
+2. **What changed**: object count, size and time between the two.
+</div>
 
 ## Saving a checkpoint
 
@@ -45,10 +50,14 @@ A very large scene — over the [budget meter](performance.md#the-budget-chip-wi
 (512 MB) — skips automatic checkpoints, because each one copies the whole scene. The first time it happens a notice says
 so, with a **Settings** button. Named checkpoints (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>) always work.
 
-![The notice when a large scene skips its automatic checkpoint](img/checkpoints/large-scene-notice.webp){ .shot .fade-l .fade-r .fade-b width="688" height="500" loading=lazy }
+![The notice when a large scene skips its automatic checkpoint: Automatic checkpoints are paused, this scene is very large, named checkpoints still work, with a Settings link, over two dense spheres. 1: Settings, where large scenes can be let in.](img/checkpoints/large-scene-notice.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="460" loading=lazy }
 /// caption
 The notice when a large scene skips its automatic checkpoint.
 ///
+
+<div class="shot-key" markdown>
+1. **Settings ▸ Scene** has the switch that keeps automatic checkpoints for large scenes too.
+</div>
 
 ## Settings
 

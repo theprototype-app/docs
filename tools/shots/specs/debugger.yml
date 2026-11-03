@@ -4,33 +4,48 @@ defaults:
   theme: dark
   dpr: 2
   format: webp
+# 83-batch3 (V11): built live, the same recipe in both themes. A Key Press (E) into a Counter's pulse, the Counter
+# into a Set Variable (score); a breakpoint on the Counter and a watch on score through the debugger's own store
+# (flowDebug — what right-click ▸ Breakpoint and the panel's Watch row write); Play, then E: the pause opens the panel.
 shots:
 - id: paused-dark
   replaces: img/debugger/paused-dark.png
-  alt: 'The Debugger paused at a Counter: the On Click wire shows a pulse, the Map Range wire reads 1, the watch list follows
-    the score variable and the Counter''s breakpoint is listed'
-  caption: The Debugger paused at a Counter.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 300
-    - 408
+  setup: &paused
+  - eval: >-
+      (async () => { const S = window.__stores;
+      const r = await S.aiTools.executeAiTool('create_flow_nodes', {graph: 'scene',
+      nodes: [{ref: 'key', type: 'keypress', data: {code: 'KeyE'}}, {ref: 'cnt', type: 'counter'},
+      {ref: 'set', type: 'setvariable', data: {name: 'score', op: 'set', scope: 'shared'}}],
+      edges: [{from: 'key', to: 'cnt', toHandle: 'pulse'}, {from: 'key', to: 'set', toHandle: 'trigger'}, {from: 'cnt', to: 'set', toHandle: 'value'}]}, {physics: true});
+      if (!r || r.error || r.partial) throw new Error('create_flow_nodes: ' + JSON.stringify(r && (r.errors || r.error || r.warning)));
+      const id = Object.fromEntries(r.created.map((c) => [c.ref, c.id]));
+      S.flowDebug.toggleBreakpoint(id.cnt, true); S.flowDebug.addWatch({kind: 'var', key: 'score'}); })()
+  - {wait: 1000}
+  - {click: '#play-button'}
+  - {wait: 3000}
+  - {key: KeyE}
+  - {wait: 2500}
+  - {eval: "(() => { const s = window.__docs.get(window.__stores.flowDebug.debugStatus); if (s.mode !== 'paused') throw new Error('the debugger did not pause: ' + JSON.stringify(s)); window.__stores.flowDebug.setDebugOpen(true); })()"}
+  - {wait: 1200}
+  crop: {selector: '#flow-debugger'}
   fade: []
   kind: ui
-  dpr: 1
-  from: img/debugger/paused-dark.png
+  alt: >-
+    The Debugger paused at the Counter: the Key Press wire into it shows a pulse, its output wire into Set Variable
+    reads its count, the watch list follows the score variable and the Counter's breakpoint is listed. 1: Paused at.
+  caption: The Debugger paused at a Counter.
+  annotate:
+  - {n: 1, at: {selector: '#debug-at'}, shape: box, pad: 3, badge: t, key: '**Paused at** the node the event reached, before it runs; the wires, the watch list and the breakpoints follow under it.'}
 - id: paused-light
   replaces: img/debugger/paused-light.png
-  alt: The Debugger in the light theme
-  caption: The Debugger in the light theme.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 300
-    - 408
+  theme: light
+  setup: *paused
+  crop: {selector: '#flow-debugger'}
   fade: []
   kind: ui
-  dpr: 1
-  from: img/debugger/paused-light.png
+  alt: >-
+    The Debugger in the light theme, paused at the Counter: Step and Resume in its header, the wires, the watch list
+    and the breakpoint list. 1: Step and Resume.
+  caption: The Debugger in the light theme.
+  annotate:
+  - {n: 1, at: {union: [{selector: '#debug-step'}, {selector: '#debug-resume'}]}, shape: box, pad: 3, badge: l, key: '**Step** (F10) runs the next event; **Resume** (F8) rejoins the live game.'}

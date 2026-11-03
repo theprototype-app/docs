@@ -1,18 +1,33 @@
 {
  "id": "draw-as",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.575Z",
+ "spec": "1f7f8bf18554",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:45:19.405Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/particles/draw-as.png",
- "width": 280,
- "height": 191,
+ "uiHits": [
+  "div#inspector.tp-ui",
+  "div.ui-row",
+  "span#particles-render-label.pm-label",
+  "div.pm-mode",
+  "button#particles-render-points.seg-opt",
+  "div#particles-render.tp-ui",
+  "div.tp-ui",
+  "span.pr-label",
+  "div.pm",
+  "span",
+  "button#particles-render-stretch.seg-opt",
+  "input.pr-range"
+ ],
+ "width": 614,
+ "height": 414,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 280,
-  "h": 191
+  "x": 1127,
+  "y": 629,
+  "w": 307,
+  "h": 207
  },
  "cut": [],
  "fade": [],

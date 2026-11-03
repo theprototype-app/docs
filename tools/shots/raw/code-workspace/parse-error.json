@@ -1,16 +1,31 @@
 {
  "id": "parse-error",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.491Z",
+ "spec": "8b6f74251a8d",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:41:06.323Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/code-workspace/parse-error.png",
- "width": 688,
- "height": 340,
+ "uiHits": [
+  "div.resize-cue",
+  "div#code-ws-dock.code-ws",
+  "rect",
+  "header.cs-head",
+  "button.cs-row",
+  "div#code-ws-open-editors.cs-scroll",
+  "svg.lucide",
+  "div.flex",
+  "input#code-ws-project-search.svelte-1l4ymyb",
+  "path",
+  "div.cs-leaf-wrap",
+  "span.code-tab-name"
+ ],
+ "width": 1376,
+ "height": 680,
  "crop": {
   "x": 0,
-  "y": 380,
+  "y": 300,
   "w": 688,
   "h": 340
  },
@@ -19,6 +34,13 @@
   "r",
   "t"
  ],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 460,
+   "y": 208,
+   "w": 269.90625,
+   "h": 33
+  }
+ },
  "kind": "ui"
 }

@@ -1,21 +1,49 @@
 {
  "id": "presets-edit",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.546Z",
+ "spec": "500d1f8c0ab9",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:31:38.465Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/materials/presets-edit.png",
- "width": 304,
- "height": 511,
+ "uiHits": [
+  "div#inspector.tp-ui",
+  "div.sec-panel-body",
+  "span.mp-title",
+  "button.mp-swatch",
+  "div#material-preset-toolbar.mp-editbar",
+  "span.mp-picked",
+  "div#material-presets.mp-root",
+  "button.tp-ui",
+  "span.mp-ball",
+  "span.mp-label",
+  "svg.lucide",
+  "div.mp-head"
+ ],
+ "width": 622,
+ "height": 500,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 304,
-  "h": 511
+  "x": 1125,
+  "y": 411,
+  "w": 311,
+  "h": 250
  },
  "cut": [],
  "fade": [],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 530,
+   "y": 20.625,
+   "w": 64,
+   "h": 64
+  },
+  "2": {
+   "x": 153.65625,
+   "y": 333.375,
+   "w": 224,
+   "h": 64
+  }
+ },
  "kind": "ui"
 }

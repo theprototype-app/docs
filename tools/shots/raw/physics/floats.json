@@ -1,23 +1,57 @@
 {
  "id": "floats",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.580Z",
+ "spec": "17741167410e",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:46:07.879Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/physics/floats.png",
- "width": 688,
- "height": 720,
+ "uiHits": [
+  "svg.lucide",
+  "p.hud-cell",
+  "button#budget-chip.bc-main",
+  "span.bc-target",
+  "span#budget-chip-percent.bc-pct",
+  "button#budget-chip-target.bc-caret",
+  "div.ins-filter",
+  "div#inspector.tp-ui",
+  "div#physics-decompose-row.ui-row",
+  "label#physics-sensor-label.it-label",
+  "div#physics-collides-row.ui-row",
+  "button.tp-seg-btn"
+ ],
+ "width": 1348,
+ "height": 1440,
  "crop": {
-  "x": 592,
-  "y": 0,
-  "w": 688,
+  "x": 767,
+  "y": 177,
+  "w": 674,
   "h": 720
  },
- "cut": [],
- "fade": [
-  "l"
+ "cut": [
+  "l",
+  "t",
+  "b"
  ],
- "anchors": {},
+ "fade": [
+  "l",
+  "t",
+  "b"
+ ],
+ "anchors": {
+  "1": {
+   "x": 920,
+   "y": 689.1875,
+   "w": 138.25,
+   "h": 60
+  },
+  "2": {
+   "x": 214.9042057612694,
+   "y": 290.9188552948251,
+   "w": 370.44506020289987,
+   "h": 370.22888291900335
+  }
+ },
  "kind": "ui"
 }

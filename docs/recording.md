@@ -36,7 +36,7 @@ The dialog estimates the file size before you start.
 A small bar shows the progress, with **Cancel**. The camera is yours alone: nothing is sent to anyone in the session, and
 your view comes back where it was afterwards.
 
-![The recording bar above the toolbar](img/recording/recording-bar.webp){ .shot .fade-l .fade-r .fade-t width="688" height="160" loading=lazy }
+![The recording bar above the toolbar while a turntable take runs: the red dot, Recording, the progress bar, the seconds done of the take's length, and Cancel.](img/recording/recording-bar.webp){ .shot width="425" height="92" loading=lazy }
 /// caption
 The recording bar sits above the toolbar while a take runs.
 ///
@@ -45,10 +45,15 @@ The recording bar sits above the toolbar while a take runs.
 
 The video is saved to **Explorer ▸ Recordings** (double-click it to play it) and offered as **Download**.
 
-![The finished take: Download, Show in Explorer, Record again](img/recording/result.webp){ .shot .fade-r width="688" height="700" loading=lazy }
+![The finished take in the Recording dialog, in a small window: the video of the turning ball, its file name, length, size and frame rate, Saved to Explorer ▸ Recordings, and the Download, Show in Explorer and Record again buttons. 1: Download. 2: Record again.](img/recording/result.webp){ .shot width="688" height="630" loading=lazy }
 /// caption
 The finished take, with Download, Show in Explorer and Record again.
 ///
+
+<div class="shot-key" markdown>
+1. **Download** saves the .webm; it is in the Explorer already.
+2. **Record again** goes back to the settings for a new take.
+</div>
 
 ## Limits
 

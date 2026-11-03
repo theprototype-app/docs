@@ -1,18 +1,33 @@
 {
  "id": "rotor",
- "dpr": 1.5,
- "shotAt": "2026-10-27T07:46:24.571Z",
+ "spec": "eb50e1c04fe5",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:02:42.104Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/nodes/rotor.png",
- "width": 1032,
- "height": 366,
+ "uiHits": [
+  "div.svelte-flow__pane",
+  "div.flex",
+  "div.relative",
+  "span.overflow-hidden",
+  "span.font-mono",
+  "label.flex",
+  "div.svelte-flow__handle",
+  "path.svelte-flow__edge-interaction",
+  "span.max-w-full",
+  "span",
+  "select.nodrag",
+  "input.nodrag"
+ ],
+ "width": 1244,
+ "height": 518,
  "crop": {
-  "x": 32,
-  "y": 0,
-  "w": 1032,
-  "h": 366
+  "x": 208,
+  "y": 284,
+  "w": 622,
+  "h": 259
  },
  "cut": [],
  "fade": [],

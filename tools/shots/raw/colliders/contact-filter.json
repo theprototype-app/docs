@@ -1,25 +1,49 @@
 {
  "id": "contact-filter",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.494Z",
+ "spec": "159977b83278",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:36:08.484Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/colliders/contact-filter.png",
- "width": 688,
- "height": 420,
+ "uiHits": [
+  "div.svelte-flow__pane",
+  "div.flex",
+  "div.svelte-flow__handle",
+  "div.relative",
+  "span.overflow-hidden",
+  "select.nodrag",
+  "path.svelte-flow__edge-interaction",
+  "span.h-2",
+  "div.node-card",
+  "span",
+  "p.text-[10px]",
+  "span.font-mono"
+ ],
+ "width": 1318,
+ "height": 722,
  "crop": {
-  "x": 250,
-  "y": 300,
-  "w": 688,
-  "h": 420
+  "x": 471,
+  "y": 471,
+  "w": 659,
+  "h": 361
  },
  "cut": [],
- "fade": [
-  "l",
-  "r",
-  "t"
- ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 55,
+   "y": 56,
+   "w": 143.268798828125,
+   "h": 142.903076171875
+  },
+  "2": {
+   "x": 955,
+   "y": 182,
+   "w": 305.35302734375,
+   "h": 160.7906494140625
+  }
+ },
  "kind": "ui"
 }

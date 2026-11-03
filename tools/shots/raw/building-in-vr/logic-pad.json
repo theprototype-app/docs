@@ -1,21 +1,36 @@
 {
  "id": "logic-pad",
+ "spec": "fc671b4bcdc6",
  "dpr": 2,
- "shotAt": "2026-10-29T08:56:54.343Z",
+ "shotAt": "2026-11-03T13:39:41.533Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/building-in-vr/logic-pad.png",
+ "uiHits": [],
  "width": 768,
  "height": 896,
  "crop": {
   "x": 0,
   "y": 0,
-  "w": 768,
-  "h": 896
+  "w": 384,
+  "h": 448
  },
  "cut": [],
  "fade": [],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 20,
+   "y": 162,
+   "w": 728,
+   "h": 60
+  },
+  "2": {
+   "x": 20,
+   "y": 796,
+   "w": 728,
+   "h": 64
+  }
+ },
  "kind": "ui"
 }

@@ -1,26 +1,51 @@
 {
  "id": "cheat-sheet",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.556Z",
+ "spec": "a1664a6893f2",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:40:38.726Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/node-editor/cheat-sheet.png",
- "width": 688,
- "height": 640,
+ "uiHits": [
+  "header.sheet-head",
+  "div.sheet-body",
+  "h3.svelte-tx8x1f",
+  "kbd.svelte-tx8x1f",
+  "div.sheet-row",
+  "span.sheet-keys",
+  "span.sheet-here",
+  "span.sheet-label",
+  "input#shortcut-sheet-filter.ui-input",
+  "section.sheet-scope",
+  "h4.svelte-tx8x1f"
+ ],
+ "width": 1376,
+ "height": 1280,
  "crop": {
-  "x": 296,
-  "y": 40,
+  "x": 230,
+  "y": 63,
   "w": 688,
   "h": 640
  },
  "cut": [],
  "fade": [
-  "l",
   "r",
-  "t",
   "b"
  ],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 320,
+   "y": 26,
+   "w": 400,
+   "h": 60
+  },
+  "2": {
+   "x": 30,
+   "y": 199,
+   "w": 930,
+   "h": 33
+  }
+ },
  "kind": "ui"
 }

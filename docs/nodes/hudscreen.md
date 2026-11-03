@@ -57,9 +57,9 @@ A pause screen:
    wired into a second HUD Screen set to `hide`.
 4. Press Play and tap <kbd>P</kbd>: the pause screen opens; **Resume** puts the game's own screen back.
 
-![A Key Press wired into a HUD Screen set to show, and a HUD Button wired into a HUD Screen set to hide](../img/nodes-hudscreen/hudscreen.webp){ .shot width="688" height="635" loading=lazy }
+![A Key Press for P wired into a HUD Screen showing the Pause screen, and a HUD Button on Resume wired into a HUD Screen hiding it](../img/nodes-hudscreen/hudscreen.webp){ .shot width="402" height="436" loading=lazy }
 /// caption
-A Key Press wired into a HUD Screen set to show.
+A pause screen: P shows it, Resume hides it.
 ///
 
 !!! tip

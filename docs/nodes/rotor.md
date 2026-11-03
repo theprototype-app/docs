@@ -50,7 +50,7 @@ A turntable you can switch off:
 3. Add a **Toggle** (on) and wire it → Rotate / Motor's **on**. Untick the Toggle: the turntable goes back to its
    placed pose; tick it and it turns again, for every player.
 
-![A Toggle wired into a Rotate / Motor's on input, the Rotate / Motor driving the turntable's Object Selector](../img/nodes-rotor/rotor.webp){ .shot width="688" height="244" loading=lazy }
+![A Toggle wired into a Rotate / Motor's on input (axis y, 30 rpm), the Rotate / Motor driving the turntable's Object Selector](../img/nodes-rotor/rotor.webp){ .shot width="622" height="259" loading=lazy }
 /// caption
 A Toggle wired into a Rotate / Motor's on input.
 ///

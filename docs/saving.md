@@ -28,7 +28,7 @@ GLTF and JSON join them once you offer them in Save options.
 Its **Save** remembers the options and saves; **Cancel** forgets the changes. On a folded phone the dialog opens full
 screen.
 
-![Save options on a computer: Save as Project or Scene, what a scene and a project include, and More formats, with Cancel and Save at the bottom](img/saving/save-options.webp){ .shot width="530" height="805" loading=lazy }
+![Save options on a computer: Save as Project or Scene, what a scene (.tpscene) includes — assets, imported packs, the flow graph — what a project (.tp) includes, and More formats, with Cancel and Save at the bottom.](img/saving/save-options.webp){ .shot width="520" height="792" loading=lazy }
 /// caption
 Save options on a computer.
 ///

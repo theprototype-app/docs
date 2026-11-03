@@ -1,35 +1,57 @@
+# docs/particles.md — Draw as (sprites, stretch, trails, ribbon) and the Magic wisps preset.
+# Shoot: e2e-slot -- node tools/shots/shoot.cjs particles     Re-annotate: node tools/shots/annotate.cjs particles
+# 83-batch3: real captures (were re-crops of the 37-fx evidence). Recipe: core tests/e2e/particles-fx.test.cjs —
+# a grey box with the wisps preset, swept side to side (local only) so its particles trail behind it.
 page: particles
 defaults:
   device: desktop
   theme: dark
   dpr: 2
   format: webp
+  scene:
+    - {create: Box, name: Cube, at: [0, 1.2, 0], scale: 0.7, color: '#7a7a7a'}
+    - eval: >-
+        (() => { const S = window.__stores, o = window.__docs.byName('Cube'); delete o.userData.physics;
+        S.particleActions.addParticlesPreset(o.uuid, 'wisps');
+        S.particleActions.updateObjectParticles(o.uuid, {render: 'trails', inherit: 0.3, trail: 0.6, colorStart: '#e9d7ff',
+          colorEnd: '#8a5cff', count: 40, speed: 0.6, turbulence: 0.9}); })()
+    - {camera: {pos: [0, 2.6, 6.2], target: [0, 1.1, 0]}}
 shots:
-- id: draw-as
-  replaces: img/particles/draw-as.png
-  alt: Draw as set to Trails, with the Trail length, Segments and Inherit velocity rows
-  caption: Draw as set to Trails.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 280
-    - 191
-  fade: []
-  kind: ui
-  dpr: 1
-  from: img/particles/draw-as.png
-- id: wisps-trails
-  replaces: img/particles/wisps-trails.png
-  alt: 'The Magic wisps preset: purple trails curling off a moving cube'
-  caption: The Magic wisps preset.
-  crop:
-    rect:
-    - 77
-    - 65
-    - 1126
-    - 569
-  fade: vignette
-  kind: view
-  dpr: 1
-  from: img/particles/wisps-trails.png
+  - id: draw-as
+    replaces: img/particles/draw-as.png
+    alt: >-
+      Properties ▸ Particles: Draw as set to Trails among Sprites, Stretch, Trails and Ribbon, with the Trail length,
+      Segments and Inherit velocity rows that Trails shows.
+    caption: Draw as set to Trails.
+    storage: {'inspector:sec:Particles': open}
+    setup:
+      - {select: Cube}
+      - {eval: "window.__stores.inspectorKind.set('selection'); window.__stores.inspectorClose.set(false)"}
+      - {wait: 1500}
+      - {eval: "document.querySelector('#particles-render')?.scrollIntoView({block: 'center'})"}
+      - {wait: 400}
+      # the real segmented button
+      - {click: '#particles-render-trails'}
+      - {wait: 600}
+    crop: {selector: '.pm', pad: 8}
+
+  - id: wisps-trails
+    replaces: img/particles/wisps-trails.png
+    alt: >-
+      The Magic wisps preset drawn as trails: pale purple streaks curling off a grey cube that sweeps from side to side.
+      1: the moving cube the trails come from.
+    caption: The Magic wisps preset.
+    kind: view
+    fade: vignette
+    setup:
+      - {deselect: true}
+      # sweep the cube 1.4 m each way (the runtime reads its pose; nothing is sent)
+      - eval: >-
+          (() => { const o = window.__docs.byName('Cube'); const home = o.position.clone(); const t0 = performance.now();
+          const loop = () => { const t = (performance.now() - t0) / 1000; o.position.copy(home); o.position.x += Math.sin(t * 2.5) * 1.4;
+          o.position.y += Math.sin(t * 5) * 0.35; requestAnimationFrame(loop); }; loop(); })()
+      - {wait: 3500}
+    settle: 300
+    crop: {around: {object: Cube}, size: [1100, 600], offset: [-120, 0]}
+    annotate:
+      - {n: 1, at: {object: Cube}, shape: circle, label: emitter, badge: tr, key: 'The **emitter**: Inherit velocity carries its motion into the trails.'}

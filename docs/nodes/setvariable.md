@@ -16,11 +16,6 @@ is one number the whole game shares, with no object needed to hold it; with scop
 The card has no field for the value: wire one in. The HUD editor's **Actions ▸ Set a variable**
 builds a Set Variable that adds 1 to `score`.
 
-!!! warning "Known problem in 1.42"
-    The card does not draw its **trigger** and **value** sockets yet, so this node cannot be wired by hand in the node
-    editor. Until that is fixed, let the HUD editor build it: select a button and pick **Actions ▸ Set a variable**,
-    which adds a Set Variable already wired to the button (it adds 1 to `score`).
-
 ## Parameters
 
 | Parameter | Default | Options |
@@ -66,7 +61,7 @@ Add a point to the shared score with each click on a coin:
 4. Read the score with a [Get Variable](getvariable.md) named `score`, or show it on screen with
    the HUD editor's **Actions ▸ Show a variable**.
 
-![The example's nodes: On Click on the Coin, a Set Variable (score, add, shared) and a Number set to 1 — in 1.42 the Set Variable card has no sockets to wire into](../img/nodes-setvariable/setvariable.webp){ .shot width="688" height="551" loading=lazy }
+![The example's nodes: an On Click on the Coin's Object Selector, wired into the trigger of a Set Variable (score, add, shared), and a Number set to 1 wired into its value](../img/nodes-setvariable/setvariable.webp){ .shot width="402" height="381" loading=lazy }
 /// caption
-The example's nodes.
+A point to the shared score for each click on the coin.
 ///

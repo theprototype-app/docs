@@ -1,23 +1,43 @@
 {
  "id": "inspector-paint",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.600Z",
+ "spec": "99e8dd8afde9",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:49:53.731Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/terrain/inspector-paint.png",
- "width": 688,
- "height": 720,
+ "uiHits": [
+  "div#inspector.tp-ui",
+  "div.flex",
+  "button.sec-panel-head",
+  "div#terrain-paint-layers.flex",
+  "span.w-12",
+  "p#terrain-paint-coverage.text-[length:var(--fs-badge)]",
+  "button#terrain-paint-open.tp-ui",
+  "span.min-w-0",
+  "button#terrain-scatter-add-p:Cone.ts-btn",
+  "button#scatter-fill-p_Cone-start.tp-ui",
+  "div.sec-panel-body",
+  "button#scatter-add.tp-ui"
+ ],
+ "width": 606,
+ "height": 1130,
  "crop": {
-  "x": 592,
-  "y": 0,
-  "w": 688,
-  "h": 720
+  "x": 1129,
+  "y": 258,
+  "w": 303,
+  "h": 565
  },
  "cut": [],
- "fade": [
-  "l"
- ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 12,
+   "y": 444.1875,
+   "w": 135.65625,
+   "h": 64
+  }
+ },
  "kind": "ui"
 }

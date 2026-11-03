@@ -38,45 +38,125 @@ shots:
       - 835
     suffix: drawer
   compose: row
+# 83-batch3 (V11): a real second person from the rig (lib/rig.cjs `peers:`), wearing the Knight
 - id: peer-character
   replaces: img/avatars/peer-character.png
-  dpr: 1
   kind: view
+  peers:
+    - name: Mia
+      look: {character: knight}
+      setup:
+        - {camera: {pos: [0, 1.6, -3], target: [0, 1.6, 0]}}
+  setup:
+    - {camera: {pos: [1.6, 1.5, 1.2], target: [0, 1.1, -3]}}
+    - {wait: 3000}
+  crop: {rect: [240, 90, 960, 720]}
+  fade: vignette
+  alt: >-
+    Another person's character, a Knight in grey armour with a red cape, standing in the scene where their camera is,
+    seen from a little to the side.
   caption: Another person's character stands where their camera is.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 1280
-    - 720
-  fade: []
-  alt: Another person's character, a Knight, standing where their camera is
-  from: img/avatars/peer-character.png
+# 83-batch3 (V11): nine real guests from the rig, one per character, their cameras in a row facing this page
 - id: characters
   replaces: img/avatars/characters.png
-  dpr: 1
   kind: view
+  peers:
+    - name: Ava
+      look: {character: knight}
+      setup:
+        - {camera: {pos: [-5.0, 1.6, 0], target: [-5.0, 1.6, 6]}}
+    - name: Ben
+      look: {character: mage}
+      setup:
+        - {camera: {pos: [-3.75, 1.6, 0], target: [-3.75, 1.6, 6]}}
+    - name: Cleo
+      look: {character: rogue}
+      setup:
+        - {camera: {pos: [-2.5, 1.6, 0], target: [-2.5, 1.6, 6]}}
+    - name: Dan
+      look: {character: rogue-hooded}
+      setup:
+        - {camera: {pos: [-1.25, 1.6, 0], target: [-1.25, 1.6, 6]}}
+    - name: Eve
+      look: {character: barbarian}
+      setup:
+        - {camera: {pos: [0.0, 1.6, 0], target: [0.0, 1.6, 6]}}
+    - name: Finn
+      look: {character: skeleton-minion}
+      setup:
+        - {camera: {pos: [1.25, 1.6, 0], target: [1.25, 1.6, 6]}}
+    - name: Gus
+      look: {character: skeleton-warrior}
+      setup:
+        - {camera: {pos: [2.5, 1.6, 0], target: [2.5, 1.6, 6]}}
+    - name: Hana
+      look: {character: skeleton-mage}
+      setup:
+        - {camera: {pos: [3.75, 1.6, 0], target: [3.75, 1.6, 6]}}
+    - name: Ivo
+      look: {character: skeleton-rogue}
+      setup:
+        - {camera: {pos: [5.0, 1.6, 0], target: [5.0, 1.6, 6]}}
+  setup:
+    - {camera: {pos: [0, 1.8, 11.5], target: [0, 1.15, 0]}}
+    - {css: '#hud-tr,.connect-wrap{visibility:hidden}'}
+    - {wait: 4000}
+  crop: {rect: [0, 170, 1440, 540]}
+  fade: vignette
+  alt: >-
+    The nine characters standing side by side: Knight, Mage, Rogue, Hooded rogue, Barbarian, Skeleton, Skeleton
+    warrior, Skeleton mage and Skeleton rogue.
   caption: The nine characters.
-  alt: The nine characters of the character picker, standing together in a three by three grid.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 1536
-    - 1536
-  fade: []
-  from: img/avatars/characters.png
+# knocked off: the same guests with the idle timer at 10 s (Settings ▸ Character), left alone for 16 s
 - id: knocked-off
   replaces: img/avatars/knocked-off.png
-  dpr: 1
   kind: view
+  peers:
+    - name: Ava
+      look: {character: knight}
+      storage: {'avatars:knockedAfter': '10'}
+      setup:
+        - {camera: {pos: [-4.375, 1.6, 0], target: [-4.375, 1.6, 6]}}
+    - name: Ben
+      look: {character: mage}
+      storage: {'avatars:knockedAfter': '10'}
+      setup:
+        - {camera: {pos: [-3.125, 1.6, 0], target: [-3.125, 1.6, 6]}}
+    - name: Cleo
+      look: {character: rogue}
+      storage: {'avatars:knockedAfter': '10'}
+      setup:
+        - {camera: {pos: [-1.875, 1.6, 0], target: [-1.875, 1.6, 6]}}
+    - name: Dan
+      look: {character: rogue-hooded}
+      storage: {'avatars:knockedAfter': '10'}
+      setup:
+        - {camera: {pos: [-0.625, 1.6, 0], target: [-0.625, 1.6, 6]}}
+    - name: Eve
+      look: {character: barbarian}
+      storage: {'avatars:knockedAfter': '10'}
+      setup:
+        - {camera: {pos: [0.625, 1.6, 0], target: [0.625, 1.6, 6]}}
+    - name: Finn
+      look: {character: skeleton-minion}
+      storage: {'avatars:knockedAfter': '10'}
+      setup:
+        - {camera: {pos: [1.875, 1.6, 0], target: [1.875, 1.6, 6]}}
+    - name: Gus
+      look: {character: skeleton-warrior}
+      storage: {'avatars:knockedAfter': '10'}
+      setup:
+        - {camera: {pos: [3.125, 1.6, 0], target: [3.125, 1.6, 6]}}
+    - name: Hana
+      look: {character: skeleton-mage}
+      storage: {'avatars:knockedAfter': '10'}
+      setup:
+        - {camera: {pos: [4.375, 1.6, 0], target: [4.375, 1.6, 6]}}
+  setup:
+    - {camera: {pos: [0, 1.8, 10.5], target: [0, 1.2, 0]}}
+    - {css: '#hud-tr,.connect-wrap{visibility:hidden}'}
+    - {wait: 16000}
+  crop: {rect: [0, 150, 1440, 560]}
+  fade: vignette
+  alt: Eight characters knocked off after a while without input, stars circling their heads and in their eyes.
   caption: 'Knocked off: stars circle the head.'
-  crop:
-    rect:
-    - 0
-    - 0
-    - 1280
-    - 720
-  fade: []
-  alt: Eight characters knocked off, stars circling their heads and in their eyes
-  from: img/avatars/knocked-off.png

@@ -9,10 +9,15 @@ The **HUD** is the 2D layer over the game — a score, a health bar, a start men
 Press <kbd>Alt</kbd>+<kbd>H</kbd>, or the **＋** in the bottom dock's tab strip ▸ **HUD editor** (the toolbar can carry a
 HUD button too — see [The toolbar](controls.md#the-toolbar)). Like every editor window it docks at the bottom or floats.
 
-![The HUD editor on the Stars Room's menu screen: the stage in the middle, with the selected button.](img/hud-editor/hud-editor.webp){ .shot .fade-l .fade-r width="688" height="638" loading=lazy }
+![The HUD editor on the Stars Room's menu screen: the toolbar with the arrange buttons and Snap along the top, and the stage below with the menu card, its title, Start round, Restart round, More stars, Resume and Quit to free play, the start button selected. 1: the selected start button. 2: the Snap box.](img/hud-editor/hud-editor.webp){ .shot .fade-l .fade-r .fade-b width="595" height="593" loading=lazy }
 /// caption
 The HUD editor on the Stars Room's menu screen.
 ///
+
+<div class="shot-key" markdown>
+1. The **selected** element: drag it to move, drag its corner grip to resize; its fields fill the Properties pane.
+2. **Snap** snaps to the grid, the stage centre lines and other elements' edges.
+</div>
 
 | Part | What it holds |
 |---|---|

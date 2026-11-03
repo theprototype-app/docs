@@ -1,25 +1,49 @@
 {
  "id": "material-applied",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.516Z",
+ "spec": "5d6dcd14c765",
+ "dpr": 2,
+ "shotAt": "2026-11-03T15:06:41.458Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/free-assets/material-applied.png",
- "width": 688,
- "height": 800,
+ "uiHits": [
+  "div#inspector.tp-ui",
+  "div.sec-panel-body",
+  "div.mp-head",
+  "span.mp-title",
+  "div.mp-row",
+  "button.mp-swatch",
+  "span.cc0-k",
+  "button#select-material.ts-btn",
+  "span.mp-ball",
+  "span.mp-label",
+  "span.ts-label",
+  "a.svelte-1tpdedm"
+ ],
+ "width": 622,
+ "height": 488,
  "crop": {
-  "x": 752,
-  "y": 40,
-  "w": 688,
-  "h": 800
+  "x": 1125,
+  "y": 307,
+  "w": 311,
+  "h": 244
  },
  "cut": [],
- "fade": [
-  "l",
-  "t",
-  "b"
- ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 336,
+   "y": 215,
+   "w": 96,
+   "h": 106.375
+  },
+  "2": {
+   "x": 20,
+   "y": 349.375,
+   "w": 582,
+   "h": 59.375
+  }
+ },
  "kind": "ui"
 }

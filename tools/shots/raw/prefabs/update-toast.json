@@ -1,24 +1,46 @@
 {
  "id": "update-toast",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.585Z",
+ "spec": "d382a624ddde",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:15:50.489Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/prefabs/update-toast.png",
- "width": 688,
- "height": 800,
+ "uiHits": [
+  "div.my-1",
+  "svg.lucide",
+  "circle",
+  "div.tp-toast-body",
+  "div.tp-toast-text",
+  "div.tp-toast-main",
+  "button.tp-toast-action",
+  "div.tp-toast-actions",
+  "button.tp-toast-x"
+ ],
+ "width": 1040,
+ "height": 236,
  "crop": {
-  "x": 296,
-  "y": 0,
-  "w": 688,
-  "h": 800
+  "x": 460,
+  "y": 55,
+  "w": 520,
+  "h": 118
  },
  "cut": [],
- "fade": [
-  "l",
-  "r"
- ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 198,
+   "y": 123.6875,
+   "w": 215.5,
+   "h": 39
+  },
+  "2": {
+   "x": 437.5,
+   "y": 123.6875,
+   "w": 278.375,
+   "h": 39
+  }
+ },
  "kind": "ui"
 }

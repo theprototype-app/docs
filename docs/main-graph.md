@@ -5,10 +5,15 @@ and how the pieces are wired are all reachable from here. Every node on it lists
 double-click on a node that has code opens that code, and values flow through any chain of nodes the same way on every
 screen.
 
-![The Main graph: the ⓘ Params tab shows the selected Bounce node's properties](img/main-graph/properties.webp){ .shot .fade-l .fade-t width="688" height="600" loading=lazy }
+![The Main graph: a Bounce node, selected, driving the Ball's Object Selector, and the side panel's ⓘ Params tab showing the Bounce node's properties. 1: the selected node. 2: ⓘ Params.](img/main-graph/properties.webp){ .shot .fade-b width="688" height="330" loading=lazy }
 /// caption
 The Main graph.
 ///
+
+<div class="shot-key" markdown>
+1. The **selected node**: a click picks it.
+2. **ⓘ Params** lists every property of the selected node.
+</div>
 
 ## Where it is
 

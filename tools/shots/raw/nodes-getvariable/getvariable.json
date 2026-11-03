@@ -1,18 +1,33 @@
 {
  "id": "getvariable",
- "dpr": 1.5,
- "shotAt": "2026-10-27T07:46:24.566Z",
+ "spec": "ab34526e1ec8",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:43:30.826Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/nodes/getvariable.png",
- "width": 1032,
- "height": 222,
+ "uiHits": [
+  "div.svelte-flow__pane",
+  "div.node-card",
+  "div.flex",
+  "div.relative",
+  "span.overflow-hidden",
+  "span",
+  "input.nodrag",
+  "span.flex",
+  "div.svelte-flow__node",
+  "div.svelte-flow__handle",
+  "path.svelte-flow__edge-interaction",
+  "select.nodrag"
+ ],
+ "width": 1300,
+ "height": 486,
  "crop": {
-  "x": 32,
-  "y": 0,
-  "w": 1032,
-  "h": 222
+  "x": 208,
+  "y": 284,
+  "w": 650,
+  "h": 243
  },
  "cut": [],
  "fade": [],

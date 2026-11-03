@@ -1,25 +1,33 @@
 {
  "id": "gate-group",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.565Z",
+ "spec": "b0282970dd2b",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:58:10.507Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/nodes/gate-group.png",
- "width": 688,
- "height": 520,
+ "uiHits": [
+  "div.svelte-flow__pane",
+  "div.node-card",
+  "div.svelte-flow__node",
+  "span.h-2",
+  "div.relative",
+  "div.flex",
+  "span.overflow-hidden",
+  "div.svelte-flow__handle",
+  "path.svelte-flow__edge-interaction"
+ ],
+ "width": 678,
+ "height": 880,
  "crop": {
-  "x": 296,
-  "y": 200,
-  "w": 688,
-  "h": 520
+  "x": 208,
+  "y": 284,
+  "w": 339,
+  "h": 440
  },
  "cut": [],
- "fade": [
-  "l",
-  "r",
-  "t"
- ],
+ "fade": [],
  "anchors": {},
  "kind": "ui"
 }

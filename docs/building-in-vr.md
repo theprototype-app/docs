@@ -31,9 +31,9 @@ air* (two grips on an object scale that object).
 
 ## Measure
 
-![A measured chain with its labels, and the Arrange ring on the menu hand](img/building-in-vr/measure-arrange.webp){ .shot width="384" height="384" loading=lazy }
+![In the headset: a measured chain along the top of a selected block with its labels — 2.000 m, 90.0°, 1.000 m and the total 3.000 m — and the Arrange ring open on the menu hand, with Axis and the Align sectors.](img/building-in-vr/measure-arrange.webp){ .shot .vignette width="740" height="600" loading=lazy }
 /// caption
-A measured chain with its labels.
+A measured chain with its labels, and the Arrange ring.
 ///
 
 Radial menu ▸ **Tools ▸ Measure** — a trigger tool beside Select, Box select and Draw mode.
@@ -86,10 +86,15 @@ work in a miniature too: the ring and the stroke follow your laser at the world'
 
 ## The Asset Browser on your wrist
 
-![The Asset Browser panel: Packs, Free CC0 and My library tabs, a search box and the packs](img/building-in-vr/asset-browser-packs.webp){ .shot width="384" height="448" loading=lazy }
+![The Asset Browser panel from the headset: the title Assets with Pin and ✕, the tabs Packs, Free CC0 and My library, a search box, a page of pack cards, and the page count at the bottom. 1: the three tabs. 2: Pin.](img/building-in-vr/asset-browser-packs.webp){ .shot width="384" height="448" loading=lazy }
 /// caption
 The Asset Browser panel.
 ///
+
+<div class="shot-key" markdown>
+1. **Packs**, **Free CC0** and **My library**: **where** the models come **from**.
+2. **Pin** leaves the panel in the air, bigger; **To wrist** puts it back (**✕** closes it).
+</div>
 
 Radial menu ▸ **Add ▸ Assets** opens a panel on the wrist of your menu hand, facing you. Point at it with the other hand.
 
@@ -111,10 +116,15 @@ whatever you point at — amber when it overlaps something, red when there is no
 - Each placement is one undo step, and everyone sees it.
 - In a **miniature** the object still lands at full size, at the spot under your laser.
 
-![Placing: "Duck: trigger places · stick turns · grip stops"](img/building-in-vr/asset-browser-placing.webp){ .shot width="384" height="448" loading=lazy }
+![The Asset Browser inside the starter pack while placing: ‹ Packs and a search box, the cards The Prototype logo and Duck, the Duck card highlighted, and the bottom line Duck: trigger places · stick turns · grip stops. 1: the Duck card. 2: the line that says what the trigger does.](img/building-in-vr/asset-browser-placing.webp){ .shot width="384" height="448" loading=lazy }
 /// caption
-Placing: "Duck.
+Placing the Duck: the bottom line says what the trigger does.
 ///
+
+<div class="shot-key" markdown>
+1. The card you clicked: its model rides **your laser** until the grip stops it.
+2. The bottom line says **what** the **trigger does** right now: place one more Duck; the stick turns it.
+</div>
 
 **Pin it:** grip the panel and let go in the air — it stays there, bigger. Grip it again and let go near your wrist to put
 it back (or press **Pin** / **To wrist**). In one-handed mode it opens pinned in front of you.
@@ -123,10 +133,15 @@ Add ▸ **Prefabs** uses the same ghost: real size, the stick turns it, it rests
 
 ## Logic in the headset
 
-![The Logic panel on the Spinner object's flow: a Number card wired into Spin's speed, with + Node, undo, redo, Fit, zoom and close along the top](img/building-in-vr/logic-panel.webp){ .shot width="640" height="400" loading=lazy }
+![The Logic panel on the Spinner object's flow: a Number card wired into Spin's speed and a Compare card, with the tabs Scene and Spinner and the buttons + Node, undo, redo, Fit, zoom out, zoom in and close along the top. 1: the Scene and Spinner tabs. 2: + Node.](img/building-in-vr/logic-panel.webp){ .shot width="640" height="400" loading=lazy }
 /// caption
 The Logic panel on the Spinner object's flow.
 ///
+
+<div class="shot-key" markdown>
+1. **Scene** or the selected object's own flow (**Spinner**): **which graph** the panel shows.
+2. **+ Node** opens a palette with the desktop's groups; the node lands in the middle of the view.
+</div>
 
 Radial menu ▸ **Tools ▸ Logic** opens the scene's node graph as a panel in front of you. With one object selected,
 **Selected ▸ Edit logic** opens that object's own flow instead (tabs at the top switch between the two). It is the same
@@ -145,10 +160,15 @@ land live.
 The buttons along the top: **+ Node** opens a palette with the desktop's groups — pick a node and it lands in the middle
 of the view; **↶ / ↷** undo and redo; **Fit** frames every card; **− / +** zoom; **✕** closes the panel.
 
-![The wrist pad for a Number node: value and step with − / + buttons, and Rename, Unwire, Delete](img/building-in-vr/logic-pad.webp){ .shot width="384" height="448" loading=lazy }
+![The wrist pad for the selected Number node on the Spinner's flow: value and step, each with − and + buttons around the number, and Rename, Unwire and Delete along the bottom. 1: the value row. 2: Rename, Unwire, Delete.](img/building-in-vr/logic-pad.webp){ .shot width="384" height="448" loading=lazy }
 /// caption
 The wrist pad for a Number node.
 ///
+
+<div class="shot-key" markdown>
+1. **−** / **+** step the value; press the number to type one on the VR keyboard.
+2. **Rename**, **Unwire** (every wire on **the node**) and **Delete**, each one undo step.
+</div>
 
 **Click** a card (trigger, no drag) to select it: its values open on a **wrist pad** on your other hand.
 

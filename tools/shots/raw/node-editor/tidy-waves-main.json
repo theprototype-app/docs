@@ -1,18 +1,33 @@
 {
  "id": "tidy-waves-main",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.558Z",
+ "spec": "a2809ed883b0",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:41:38.763Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/node-editor/tidy-waves-main.png",
- "width": 688,
- "height": 560,
+ "uiHits": [
+  "div.svelte-flow__pane",
+  "div.flex",
+  "div.svelte-flow__handle",
+  "label.relative",
+  "span.overflow-hidden",
+  "span.max-w-full",
+  "span",
+  "input.nodrag",
+  "span.nodrag",
+  "div.relative",
+  "span.flex",
+  "div.tp-note-title"
+ ],
+ "width": 1376,
+ "height": 960,
  "crop": {
-  "x": 620,
-  "y": 420,
+  "x": 208,
+  "y": 284,
   "w": 688,
-  "h": 560
+  "h": 480
  },
  "cut": [],
  "fade": [
@@ -21,6 +36,13 @@
   "t",
   "b"
  ],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 522,
+   "y": 142,
+   "w": 476,
+   "h": 56
+  }
+ },
  "kind": "ui"
 }

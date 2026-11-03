@@ -1,21 +1,35 @@
 {
  "id": "pool",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.612Z",
+ "spec": "18effbcfb422",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:21:03.916Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/water/pool.png",
- "width": 1126,
- "height": 569,
+ "uiHits": [],
+ "width": 2240,
+ "height": 1200,
  "crop": {
-  "x": 77,
-  "y": 65,
-  "w": 1126,
-  "h": 569
+  "x": 172,
+  "y": 224,
+  "w": 1120,
+  "h": 600
  },
- "cut": [],
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
  "fade": "vignette",
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 952.0000000000002,
+   "y": 536.3383667392202,
+   "w": 48,
+   "h": 48
+  }
+ },
  "kind": "view"
 }

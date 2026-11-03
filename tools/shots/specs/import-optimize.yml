@@ -5,22 +5,22 @@ defaults:
   dpr: 2
   format: webp
 shots:
+# 83-batch3: Settings ▸ Import on production (the "Defaults for new imports" card, rows by their ids)
 - id: settings-import
   replaces: img/import-optimize/settings-import.png
-  alt: 'Settings ▸ Import: Optimize big models automatically, the triangle and texture thresholds, max texture size, Compress
-    textures (KTX2) and LOD levels'
-  caption: Settings ▸ Import.
-  crop:
-    rect:
-    - 480
-    - 100
-    - 688
-    - 700
-  fade:
-  - l
-  - r
-  - t
-  - b
   kind: ui
-  dpr: 1
-  from: img/import-optimize/settings-import.png
+  setup:
+    - {eval: "const s=window.__stores; s.settingsSection.set('import'); s.settingsOpen.set(true)"}
+    - {wait: 1500}
+    - {eval: "document.getElementById('row-import-auto')?.scrollIntoView({block: 'start'})"}
+    - {wait: 600}
+  crop: {union: [{selector: '#row-import-auto'}, {selector: '#row-import-lod-levels'}], pad: 10, maxHeight: 620}
+  fade: [b]
+  alt: >-
+    Settings ▸ Import, the defaults for new imports on this device: Optimize big models automatically, the triangle
+    and texture size thresholds, Max texture size, Compress textures (KTX2) and LOD levels. 1: the automatic
+    optimize switch. 2: Compress textures (KTX2).
+  caption: Settings ▸ Import.
+  annotate:
+    - {n: 1, at: {selector: '#import-auto'}, shape: box, pad: 3, badge: t, key: '**Optimize big models automatically**: over the thresholds below, an import gets an LOD chain and smaller textures.'}
+    - {n: 2, at: {selector: '#import-compress'}, shape: box, pad: 3, badge: t, key: '**Compress textures (KTX2)**: the GPU holds a compressed copy, about a sixth of the memory.'}

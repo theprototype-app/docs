@@ -1,24 +1,53 @@
 {
  "id": "tag-filter",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.584Z",
+ "spec": "913ae79c37a3",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:33:52.086Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/prefabs/tag-filter.png",
- "width": 688,
- "height": 800,
- "crop": {
-  "x": 296,
-  "y": 0,
-  "w": 688,
-  "h": 800
- },
- "cut": [],
- "fade": [
-  "l",
-  "r"
+ "uiHits": [
+  "header.wc-head",
+  "div.min-h-0",
+  "span.wc-label",
+  "button#explorer-mount-add.shrink-0",
+  "div#explorer-folder-list.flex",
+  "button#explorer-root-row.whitespace-nowrap",
+  "button#new-folder.whitespace-nowrap",
+  "div.flex",
+  "path",
+  "svg.lucide",
+  "button#prefabs-folder.whitespace-nowrap",
+  "button#packs-folder.whitespace-nowrap"
  ],
- "anchors": {},
+ "width": 1360,
+ "height": 880,
+ "crop": {
+  "x": 160,
+  "y": 120,
+  "w": 680,
+  "h": 440
+ },
+ "cut": [
+  "b"
+ ],
+ "fade": [
+  "b"
+ ],
+ "anchors": {
+  "1": {
+   "x": 442,
+   "y": 163,
+   "w": 115.34375,
+   "h": 52
+  },
+  "2": {
+   "x": 856.8125,
+   "y": 157,
+   "w": 106.5625,
+   "h": 64
+  }
+ },
  "kind": "ui"
 }

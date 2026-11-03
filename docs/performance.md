@@ -42,7 +42,7 @@ bar if you want it there. Since 1.39 you can move the chip anywhere, or hide it,
 [Edit positions](controls.md#moving-the-clusters); **Customize toolbar… ▸ Budget chip** shows it again. Opening its
 **▾** menu no longer makes it vanish.
 
-![The budget chip beside the toolbar, reading Quest 200% in red for the Race scene](img/performance/budget-chip.webp){ .shot width="652" height="80" loading=lazy }
+![The budget chip beside the toolbar, reading Quest over 100 % in red: the scene has four point lights, more than the two a Quest's budget allows.](img/performance/budget-chip.webp){ .shot width="646" height="72" loading=lazy }
 /// caption
 The budget chip sits beside the toolbar.
 ///
@@ -67,10 +67,14 @@ largest share of a budget, with their triangles, calls and texture memory, and w
 [optimizing them on import](import-optimize.md) would save (≈, by your **Settings ▸ Import** numbers). Click a row to
 select that object.
 
-![Statistics ▸ Budget for the Race scene on Quest: draw calls, triangles, texture memory, lights, shadow-casting lights and shadow draws against the budget, and the heaviest objects with what optimizing them on import would save](img/performance/statistics-budget.webp){ .shot width="404" height="484" loading=lazy }
+![Statistics ▸ Budget on Quest for six knots and four point lights: draw calls, triangles, texture memory, lights in red, shadow-casting lights and shadow draws against the budget, then the heaviest objects. 1: the share of the tightest budget.](img/performance/statistics-budget.webp){ .shot .fade-b width="380" height="460" loading=lazy }
 /// caption
 Statistics ▸ Budget against the Quest limits.
 ///
+
+<div class="shot-key" markdown>
+1. How much of the **tightest budget** the scene uses: over 100 % is red.
+</div>
 
 **What is counted.** The scene's *content* as that device would draw it: every visible object, the environment (sky,
 sun, ground) and module content — not the editor's grid, gizmos or helpers — at full detail (the closest view), so the

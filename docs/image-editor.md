@@ -4,10 +4,16 @@ New in 1.32: the **Image editor** crops, rotates, flips, resizes and adjusts a p
 [Explorer](explorer.md) library. When you save, every texture made from that picture updates for everyone in the
 session.
 
-![The Image editor on a computer: the picture on the left, the Edit page with Rotate and flip, Crop, Resize and Adjust on the right](img/image-editor/editor-desktop.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="700" loading=lazy }
+![The Image editor on a computer: the picture on the left, and on the right the Edit page with Rotate and flip, Crop, Resize and Adjust, Save and Save as copy above. 1: rotate and flip. 2: Crop. 3: the Adjust sliders.](img/image-editor/editor-desktop.webp){ .shot width="680" height="780" loading=lazy }
 /// caption
 The Image editor on a computer.
 ///
+
+<div class="shot-key" markdown>
+1. **Rotate** 90° either way and **flip**.
+2. **Crop…** draws a crop box over the picture.
+3. **Adjust**: brightness, contrast and saturation.
+</div>
 
 ## Opening it
 
@@ -34,10 +40,16 @@ The sidebar on the right has two pages: **Edit** and **Versions**.
 - **Adjust**: **Brightness**, **Contrast** and **Saturation** sliders, applied live. **Reset adjustments** puts them
   back.
 
-![Cropping on a computer in the light theme: the crop box over the picture, with X, Y, W and H and Apply crop in the sidebar](img/image-editor/crop-desktop-light.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="700" loading=lazy }
+![Cropping on a computer in the light theme: the crop box drawn over the picture with its size badge, and in the sidebar the crop shape, X, Y, W and H and Apply crop. 1: the crop box. 2: X, Y, W and H. 3: Apply crop.](img/image-editor/crop-desktop-light.webp){ .shot width="680" height="560" loading=lazy }
 /// caption
 Cropping on a computer in the light theme.
 ///
+
+<div class="shot-key" markdown>
+1. The **crop box**: drag it or its corners; Enter applies, Esc cancels.
+2. **X**, **Y**, **W**, **H**: the box in pixels.
+3. **Apply crop**.
+</div>
 
 ## Saving
 
@@ -54,10 +66,14 @@ Cropping on a computer in the light theme.
 The **Versions** page lists every saved state of this image with a thumbnail, date and size, and **Restore** on each.
 **Restore original** at the top goes back to the picture as it first came in.
 
-![The Versions page: Restore original at the top, the current edit and the original below it](img/image-editor/versions-desktop.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="700" loading=lazy }
+![The Versions page after one Save: Restore original at the top, then the current edit and the original image below it. 1: Restore original.](img/image-editor/versions-desktop.webp){ .shot width="680" height="560" loading=lazy }
 /// caption
 The Versions page.
 ///
+
+<div class="shot-key" markdown>
+1. **Restore original** puts the image back as it was imported; every Save keeps the version before it.
+</div>
 
 ## Textures and their images
 
@@ -84,10 +100,14 @@ while it is closed (on a phone, the **Windows** sheet), press its header's **Doc
   image…**). Opening an image while it is docked brings the dock tab forward.
 - Closing the tab with unsaved edits asks first, as the window does.
 
-![The Image editor as a tab in the bottom dock, beside Animation, Node editor, Explorer, Flow Code and UV editor](img/image-editor/docked.webp){ .shot .fade-r width="688" height="337" loading=lazy }
+![The Image editor as a tab in the bottom dock, beside the Node editor and the Explorer, with the picture and its tools below the tabs. 1: the Image editor tab.](img/image-editor/docked.webp){ .shot .fade-b width="688" height="349" loading=lazy }
 /// caption
 The Image editor as a tab in the bottom dock.
 ///
+
+<div class="shot-key" markdown>
+1. Docked, the **Image editor** is one more tab in the bottom dock.
+</div>
 
 ## On a phone
 
@@ -96,10 +116,15 @@ Versions pages sit under the picture instead of beside it, and **Crop…** scrol
 Since 1.32 they start **closed**, so the picture gets the screen: tap ✎ (Edit) or ⟲ (Versions) under the picture to
 open one, and it stays open next time.
 
-![The Image editor on a phone: the picture at the top, the Edit page under it, the bottom bar with Play below](img/image-editor/editor-phone.webp){ .shot width="390" height="844" loading=lazy }
+![The Image editor on a phone: the picture at the top, the Edit page under it, and the bottom bar with Play below. 1: the Edit page. 2: Play, still reachable.](img/image-editor/editor-phone.webp){ .shot width="390" height="896" loading=lazy }
 /// caption
 The Image editor on a phone.
 ///
+
+<div class="shot-key" markdown>
+1. The **Edit** and **Versions** pages switch under the picture.
+2. The sheet leaves **Play** uncovered.
+</div>
 
 ## Limits
 

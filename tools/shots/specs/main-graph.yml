@@ -4,20 +4,51 @@ defaults:
   theme: dark
   dpr: 2
   format: webp
+# 83-batch3 (V11): built live — a Bounce on the Ball made by the app's own create_flow_nodes, selected with a click,
+# the ⚙ side panel opened on ⓘ Params; the view is set so the two cards sit just left of the panel, and the crop is
+# #docs-box over the cards and the panel.
 shots:
 - id: properties
   replaces: img/main-graph/properties.png
-  alt: 'The Main graph: the ⓘ Params tab shows the selected Bounce node''s properties'
-  caption: The Main graph.
-  crop:
-    rect:
-    - 712
-    - 300
-    - 688
-    - 600
-  fade:
-  - l
-  - t
+  setup:
+  - {create: Sphere, name: Ball, at: [0, 0.6, 0], color: '#6c8cd5'}
+  - eval: >-
+      (async () => { const S = window.__stores, D = window.__docs;
+      const ball = D.byName('Ball'); if (!ball) throw new Error('no Ball');
+      const r = await S.aiTools.executeAiTool('create_flow_nodes', {graph: 'scene',
+      nodes: [{ref: 'bounce', type: 'bounce', data: {amplitude: 0.5, speed: 2}}, {ref: 'sel', type: 'objectselector', data: {selected: ball.uuid}}],
+      edges: [{from: 'bounce', to: 'sel'}]}, {physics: true});
+      if (!r || r.error || r.partial) throw new Error('create_flow_nodes: ' + JSON.stringify(r && (r.errors || r.error || r.warning)));
+      window.__docsNodes = Object.fromEntries(r.created.map((c) => [c.ref, c.id])); })()
+  - {eval: "window.__stores.dockMenu.dockTab('flow'); window.__stores.bottomDock.bottomDockActive.set('flow'); window.__stores.bottomDock.dockHeight.set(700); window.__stores.activeGraphId.set('scene')"}
+  - {wait: 2500}
+  - {css: '.svelte-flow__controls,.svelte-flow__minimap{visibility:hidden!important}'}
+  - {click: '.svelte-flow__node-bounce .node-card > div:first-child'}
+  - {wait: 500}
+  - {eval: "if (!document.getElementById('flow-props')) document.getElementById('flow-props-toggle').click()"}
+  - {wait: 600}
+  - {click: '#flow-tab-info'}
+  - {wait: 600}
+  - eval: >-
+      (async () => { const S = window.__stores, ids = window.__docsNodes;
+      S.nodesHandler.moveFlowNode(ids.bounce, {x: 0, y: 0}, 'scene'); S.nodesHandler.moveFlowNode(ids.sel, {x: 220, y: 0}, 'scene');
+      await new Promise((r) => setTimeout(r, 600));
+      const pane = document.querySelector('.svelte-flow').getBoundingClientRect();
+      await window.__flowViewport.setViewport({x: pane.width - 460, y: 64, zoom: 1});
+      await new Promise((r) => setTimeout(r, 800));
+      const props = document.getElementById('flow-props').getBoundingClientRect();
+      const card = document.querySelector('.svelte-flow__node[data-id="' + ids.bounce + '"]').getBoundingClientRect();
+      const left = Math.max(props.right - 688, card.left - 40);
+      const d = document.getElementById('docs-box') || document.body.appendChild(Object.assign(document.createElement('div'), {id: 'docs-box'}));
+      Object.assign(d.style, {position: 'fixed', pointerEvents: 'none', left: left + 'px', top: props.top + 'px', width: props.right - left + 'px', height: Math.min(330, props.height) + 'px'}); })()
+  - {wait: 800}
+  crop: {selector: '#docs-box'}
+  fade: [b]
   kind: ui
-  dpr: 1
-  from: img/main-graph/properties.png
+  alt: >-
+    The Main graph: a Bounce node, selected, driving the Ball's Object Selector, and the side panel's ⓘ Params tab
+    showing the Bounce node's properties. 1: the selected node. 2: ⓘ Params.
+  caption: The Main graph.
+  annotate:
+  - {n: 1, at: {selector: '.svelte-flow__node-bounce'}, shape: box, label: selected, badge: b, key: 'The **selected node**: a click picks it.'}
+  - {n: 2, at: {selector: '#flow-tab-info'}, shape: box, badge: bl, key: '**ⓘ Params** lists every property of the selected node.'}

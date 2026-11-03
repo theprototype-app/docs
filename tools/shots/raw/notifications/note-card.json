@@ -1,23 +1,52 @@
 {
  "id": "note-card",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.574Z",
+ "spec": "e703edd006f5",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:44:33.144Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/notes/note-card.png",
- "width": 688,
- "height": 820,
+ "uiHits": [
+  "span.marker-num",
+  "input.ui-input",
+  "textarea.ui-input",
+  "button.note-swatch",
+  "button.note-shape",
+  "button.note-flat",
+  "div.note-body",
+  "svg.lucide",
+  "span",
+  "div.notes-body",
+  "span.notes-num",
+  "div.note-swatches"
+ ],
+ "width": 892,
+ "height": 1640,
  "crop": {
-  "x": 152,
-  "y": 0,
-  "w": 688,
+  "x": 995,
+  "y": 56,
+  "w": 446,
   "h": 820
  },
- "cut": [],
- "fade": [
-  "l"
+ "cut": [
+  "r",
+  "b"
  ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 85.78125,
+   "y": 236.5625,
+   "w": 453.65625,
+   "h": 39
+  },
+  "2": {
+   "x": 312,
+   "y": 641.5,
+   "w": 140.5,
+   "h": 33
+  }
+ },
  "kind": "ui"
 }

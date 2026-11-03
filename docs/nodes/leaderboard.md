@@ -62,7 +62,7 @@ A race to collect gems:
    format `My gems: {v}`.
 4. Press Play with friends: the list ranks everyone by their gems, and each player sees their own count.
 
-![A Leaderboard ranking the gems variable, beside a Player Variable wired into a HUD Text](../img/nodes-leaderboard/leaderboard.webp){ .shot width="610" height="639" loading=lazy }
+![A Leaderboard ranking the gems variable, and a Player Variable (gems, mine) wired into a HUD Text's value with the format "My gems: {v}"](../img/nodes-leaderboard/leaderboard.webp){ .shot width="402" height="598" loading=lazy }
 /// caption
 A Leaderboard ranking the gems variable.
 ///

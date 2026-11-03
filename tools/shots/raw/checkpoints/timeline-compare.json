@@ -1,25 +1,49 @@
 {
  "id": "timeline-compare",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.490Z",
+ "spec": "59d571cfa0ca",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:33:50.791Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/checkpoints/timeline-compare.png",
- "width": 688,
- "height": 600,
+ "uiHits": [
+  "dialog.tp-ui",
+  "header.wc-head",
+  "div.md-body",
+  "footer.md-foot",
+  "button#checkpoint-new.tp-ui",
+  "div#checkpoint-timeline.flex",
+  "section#checkpoint-compare-view.cp-compare",
+  "h3.cp-day",
+  "ul.cp-list",
+  "svg.lucide",
+  "span.cp-tag",
+  "img.cp-img"
+ ],
+ "width": 1294,
+ "height": 1478,
  "crop": {
-  "x": 60,
-  "y": 40,
-  "w": 688,
-  "h": 600
+  "x": 21,
+  "y": 50,
+  "w": 647,
+  "h": 739
  },
  "cut": [],
- "fade": [
-  "r",
-  "t",
-  "b"
- ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 71.28125,
+   "y": 1073.1875,
+   "w": 1149.4375,
+   "h": 32
+  },
+  "2": {
+   "x": 71.28125,
+   "y": 1117.1875,
+   "w": 1149.4375,
+   "h": 32
+  }
+ },
  "kind": "ui"
 }

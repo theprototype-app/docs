@@ -1,26 +1,46 @@
 {
  "id": "behaviour-view-knobs",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.498Z",
+ "spec": "8092164732fb",
+ "dpr": 2,
+ "shotAt": "2026-11-03T12:52:34.895Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/controls/behaviour-view-knobs.png",
- "width": 688,
- "height": 460,
+ "uiHits": [
+  "div.svelte-flow__pane",
+  "span.bview-icon",
+  "div.bview-value",
+  "div.bview-node",
+  "input.nodrag",
+  "div.bview-head",
+  "span.bview-label",
+  "div.svelte-flow__node",
+  "path.svelte-flow__edge-interaction"
+ ],
+ "width": 1376,
+ "height": 1048,
  "crop": {
-  "x": 420,
-  "y": 420,
+  "x": 214,
+  "y": 356,
   "w": 688,
-  "h": 460
+  "h": 524
  },
- "cut": [],
- "fade": [
+ "cut": [
   "l",
   "r",
-  "t",
-  "b"
+  "t"
  ],
- "anchors": {},
+ "fade": [
+  "r"
+ ],
+ "anchors": {
+  "1": {
+   "x": 147.06671142578125,
+   "y": 759.2725830078125,
+   "w": 356.42852783203125,
+   "h": 38.01904296875
+  }
+ },
  "kind": "ui"
 }

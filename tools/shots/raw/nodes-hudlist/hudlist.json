@@ -1,18 +1,33 @@
 {
  "id": "hudlist",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.567Z",
+ "spec": "88e9381061b7",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:59:13.939Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/nodes/hudlist.png",
- "width": 688,
- "height": 487,
+ "uiHits": [
+  "div.svelte-flow__pane",
+  "div.flex",
+  "div.relative",
+  "span",
+  "span.hud-ep-name",
+  "input.nodrag",
+  "select.nodrag",
+  "span.hud-live",
+  "span.hud-ep-sub",
+  "span.flex",
+  "button.nodrag",
+  "svg.lucide"
+ ],
+ "width": 804,
+ "height": 702,
  "crop": {
-  "x": 21,
-  "y": 0,
-  "w": 688,
-  "h": 487
+  "x": 208,
+  "y": 284,
+  "w": 402,
+  "h": 351
  },
  "cut": [],
  "fade": [],

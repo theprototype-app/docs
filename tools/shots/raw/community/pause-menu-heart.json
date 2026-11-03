@@ -1,26 +1,38 @@
 {
  "id": "pause-menu-heart",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.495Z",
+ "spec": "39dcaa0609dc",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:44:52.630Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/community/pause-menu-heart.png",
- "width": 688,
- "height": 470,
+ "uiHits": [
+  "div#game-shell-menu.gs-backdrop",
+  "div.gs-card",
+  "p.gs-sub",
+  "button.gs-item",
+  "div.gs-list",
+  "h2.gs-title",
+  "button#game-shell-heart.tp-heart"
+ ],
+ "width": 1000,
+ "height": 1186,
  "crop": {
-  "x": 296,
-  "y": 150,
-  "w": 688,
-  "h": 470
+  "x": 470,
+  "y": 154,
+  "w": 500,
+  "h": 593
  },
  "cut": [],
- "fade": [
-  "l",
-  "r",
-  "t",
-  "b"
- ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 802.9375,
+   "y": 95.375,
+   "w": 111.0625,
+   "h": 67.1875
+  }
+ },
  "kind": "ui"
 }

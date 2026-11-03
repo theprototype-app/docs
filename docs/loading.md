@@ -19,10 +19,14 @@ the scene's [start view](#start-view) the moment the load begins, and you can lo
 Modern is the default since 1.22. If you never changed this setting, you now get Modern; if you picked **Colored
 boxes** in 1.21, you keep it.
 
-![A Modern placeholder filling from the bottom as its model downloads](img/loading/modern-loading.webp){ .shot width="380" height="300" loading=lazy }
+![A Modern placeholder, a see-through blue box with a grid on its faces, filled from the bottom to just under half as its model downloads. 1: the fill line, how much has arrived.](img/loading/modern-loading.webp){ .shot .vignette width="460" height="360" loading=lazy }
 /// caption
 A Modern placeholder filling from the bottom as its model downloads.
 ///
+
+<div class="shot-key" markdown>
+1. The **fill** rises with the bytes that have arrived.
+</div>
 
 Both styles turn **amber** when a piece is stuck and **red with a “!”** when it failed.
 
@@ -40,10 +44,15 @@ Properties panel, <kbd>Shift</kbd>-click to select several. When the model arriv
   retrying would not fix it.
 - **Red** — it gave up. Hover it to see the file address, the HTTP status and the reason.
 
-![A failed placeholder: red, with its tooltip and the “Retry all” toast](img/loading/modern-failed.webp){ .shot width="640" height="370" loading=lazy }
+![A failed placeholder, red, with the pointer over it: its tooltip says Duck failed, file not found (HTTP 404), the address, and how to retry or replace it; the toast above says 1 object failed to load, with Retry all. 1: the tooltip. 2: Retry all.](img/loading/modern-failed.webp){ .shot width="686" height="652" loading=lazy }
 /// caption
 A failed placeholder.
 ///
+
+<div class="shot-key" markdown>
+1. Hover a red placeholder: **why it failed** — the status, the reason and the file's address.
+2. **Retry all** tries every failed file again.
+</div>
 
 To recover:
 
@@ -72,10 +81,14 @@ start view a few seconds into the load.)
 once the scene has finished loading. Click it to fly back. You can also press <kbd>Home</kbd> at any time to return to
 the start view of the scene you opened last.
 
-![The Back to start view button under the connection bar after Tavern Interior has loaded](img/loading/back-to-start-view.webp){ .shot .fade-l .fade-r .fade-b width="688" height="400" loading=lazy }
+![Tavern Interior just loaded, the camera moved off its start view onto a brick wall, and the Back to start view button under the connection bar. 1: Back to start view.](img/loading/back-to-start-view.webp){ .shot .fade-l .fade-r .fade-b width="688" height="140" loading=lazy }
 /// caption
 The Back to start view button under the connection bar after Tavern Interior has loaded.
 ///
+
+<div class="shot-key" markdown>
+1. **Back to start view** flies to where the scene opened (<kbd>Home</kbd> does the same).
+</div>
 
 To change a scene's start view, move the camera where you want it and save the scene again.
 
@@ -84,10 +97,14 @@ To change a scene's start view, move the camera where you want it and save the s
 **Configure Scene ▸ Camera ▸ Start view ▸ Hold camera until loaded** (off by default) keeps the camera on the start view
 until the scene is ready. It is saved with the scene and shared with everyone in the session.
 
-![Configure Scene ▸ Camera with Hold camera until loaded ticked under Start view](img/loading/hold-setting.webp){ .shot .fade-l width="688" height="800" loading=lazy }
+![Configure Scene ▸ Camera ▸ Start view with Hold camera until loaded ticked and its note, above Start simulation on load. 1: Hold camera until loaded.](img/loading/hold-setting.webp){ .shot width="315" height="279" loading=lazy }
 /// caption
 Configure Scene ▸ Camera with Hold camera until loaded ticked under Start view.
 ///
+
+<div class="shot-key" markdown>
+1. **Hold camera until loaded**: the camera stays on the saved view, and ignores input, until the scene is in.
+</div>
 
 While the scene loads, the camera stays on the start view and ignores camera input, and a small **Loading… camera is
 held** note shows under the loading bar. In VR, teleport, turning, the walk stick and grabbing the world are paused the

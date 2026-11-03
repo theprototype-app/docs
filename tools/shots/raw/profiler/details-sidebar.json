@@ -1,23 +1,45 @@
 {
  "id": "details-sidebar",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.585Z",
+ "spec": "e01c4a165e96",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:46:34.339Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/profiler/details-sidebar.png",
- "width": 688,
- "height": 438,
+ "uiHits": [
+  "div.resize-cue",
+  "div#profiler-toolbar.tp-ui",
+  "canvas.pf-canvas",
+  "div#profiler-splitter.pf-splitter",
+  "p.pf-note",
+  "th.num",
+  "td.num",
+  "div#profiler-dock.tp-themed",
+  "button.pf-sort",
+  "div.ws-tabs",
+  "button.ws-tab-btn",
+  "div.ws-resize"
+ ],
+ "width": 1376,
+ "height": 1120,
  "crop": {
   "x": 752,
-  "y": 0,
+  "y": 340,
   "w": 688,
-  "h": 438
+  "h": 560
  },
  "cut": [],
  "fade": [
   "l"
  ],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 898,
+   "y": 834.34375,
+   "w": 444,
+   "h": 254
+  }
+ },
  "kind": "ui"
 }

@@ -1,23 +1,49 @@
 {
  "id": "voice-typing-settings",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.464Z",
+ "spec": "8fb205b41045",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:32:53.346Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/ai/voice-typing-settings.png",
- "width": 688,
- "height": 248,
+ "uiHits": [
+  "header.wc-head",
+  "div#settings-main.settings-main",
+  "div#row-stt-preset.tp-ui",
+  "div.ss-body",
+  "h3.sec-title",
+  "div#row-stt-base.tp-ui",
+  "div#row-stt-key.tp-ui",
+  "div#row-stt-model.tp-ui",
+  "span.sr-name",
+  "p#row-stt-preset-desc.sr-desc",
+  "div.sr-body",
+  "button#ai-stt-preset-openai.seg-opt"
+ ],
+ "width": 766,
+ "height": 1000,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 688,
-  "h": 248
+  "x": 263,
+  "y": 132,
+  "w": 383,
+  "h": 500
  },
  "cut": [],
- "fade": [
-  "r"
- ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 51.28125,
+   "y": 193.15625,
+   "w": 501.21875,
+   "h": 106
+  },
+  "2": {
+   "x": 51.28125,
+   "y": 864.09375,
+   "w": 661.4375,
+   "h": 64
+  }
+ },
  "kind": "ui"
 }

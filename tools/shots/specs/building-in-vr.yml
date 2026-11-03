@@ -5,74 +5,151 @@ defaults:
   dpr: 2
   format: webp
 shots:
-- id: measure-arrange
-  replaces: img/building-in-vr/measure-arrange.png
-  alt: A measured chain with its labels, and the Arrange ring on the menu hand
-  caption: A measured chain with its labels.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 768
-    - 768
-  fade: []
-  kind: ui
-  dpr: 2
-  from: img/building-in-vr/measure-arrange.png
-- id: asset-browser-packs
-  replaces: img/building-in-vr/asset-browser-packs.png
-  alt: 'The Asset Browser panel: Packs, Free CC0 and My library tabs, a search box and the packs'
-  caption: The Asset Browser panel.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 768
-    - 896
-  fade: []
-  kind: ui
-  dpr: 2
-  from: img/building-in-vr/asset-browser-packs.png
-- id: asset-browser-placing
-  replaces: img/building-in-vr/asset-browser-placing.png
-  alt: 'Placing: "Duck: trigger places · stick turns · grip stops"'
-  caption: 'Placing: "Duck.'
-  crop:
-    rect:
-    - 0
-    - 0
-    - 768
-    - 896
-  fade: []
-  kind: ui
-  dpr: 2
-  from: img/building-in-vr/asset-browser-placing.png
-- id: logic-panel
-  replaces: img/building-in-vr/logic-panel.png
-  alt: 'The Logic panel on the Spinner object''s flow: a Number card wired into Spin''s speed, with + Node, undo, redo, Fit,
-    zoom and close along the top'
-  caption: The Logic panel on the Spinner object's flow.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 1280
-    - 800
-  fade: []
-  kind: ui
-  dpr: 2
-  from: img/building-in-vr/logic-panel.png
-- id: logic-pad
-  replaces: img/building-in-vr/logic-pad.png
-  alt: 'The wrist pad for a Number node: value and step with − / + buttons, and Rename, Unwire, Delete'
-  caption: The wrist pad for a Number node.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 768
-    - 896
-  fade: []
-  kind: ui
-  dpr: 2
-  from: img/building-in-vr/logic-pad.png
+  # 83-batch3 (V11): a real VR entry on an emulated Quest 3 (IWER, lib/rig.cjs `xr:`; mono, so the page canvas is
+  # the one eye). The Asset Browser and the Logic panel and pad are each ONE canvas texture in the world: those
+  # shots are the texture at its own pixels (the module's own *Image() data URL → #docs-canvas, top-left, at
+  # pixels ÷ dpr), so a callout is a rect in that image's CSS px (the old capture's pixels ÷ 2).
+  - id: measure-arrange
+    replaces: img/building-in-vr/measure-arrange.png
+    xr: {head: [0, 1.6, 0]}
+    storage: {vrMenuHand: right}
+    scene:
+      - {create: Box, name: Block, at: [0, 0.5, -2.5], scale: [2, 1, 1]}
+      - {create: Box, name: Crate, at: [-1.8, 0.25, -3], scale: 0.5}
+    setup:
+      - {xr: enter, wait: 4000}
+      - {select: [Block, Crate]}
+      # a kept measurement along the block's top: 2 m, a right angle, 1 m (the headset draws its labels as text
+      # plates, VRMeasureLabels.svelte)
+      - {eval: "window.__stores.measureItems.createMeasurement([[-1, 1, -2], [1, 1, -2], [1, 1, -3]])"}
+      # the menu hand low and to the right with Selected ▸ Arrange open, the pointer hand aimed at the block
+      - eval: >-
+          (() => { const d = window.__iwer.device, th = 0.3 * Math.PI, m = d.controllers.right, p = d.controllers.left;
+          m.position.set(0.38, 1.15, -0.55); m.quaternion.set(Math.sin(th / 2), 0, 0, Math.cos(th / 2));
+          p.position.set(-0.15, 1.3, -0.3); p.quaternion.set(Math.sin(-0.175), 0, 0, Math.cos(-0.175)); })()
+      - {eval: "(() => { const S = window.__stores; S.vrRadialMenu.resetRings(); S.vrRadialMenu.pushRing('arrange'); S.vrMenuOpen.set(true); })()"}
+      - {wait: 2500}
+    crop: {rect: [460, 300, 740, 600]}
+    fade: vignette
+    kind: view
+    alt: >-
+      In the headset: a measured chain along the top of a selected block with its labels — 2.000 m, 90.0°, 1.000 m
+      and the total 3.000 m — and the Arrange ring open on the menu hand, with Axis and the Align sectors.
+    caption: A measured chain with its labels, and the Arrange ring.
+  - id: asset-browser-packs
+    replaces: img/building-in-vr/asset-browser-packs.png
+    xr: {head: [0, 1.6, 0]}
+    storage: {vrMenuHand: right}
+    setup:
+      - {xr: enter, wait: 4000}
+      # Add ▸ Assets, the radial's own action: the panel opens on the menu hand's wrist
+      - {eval: "window.__stores.vrControls.executeVRMenuAction('assets')"}
+      - {wait: 5000}
+      - {canvas: "new Promise((r) => { const i = new Image(); i.onload = () => r(i); i.src = window.__stores.vrAssetBrowser.assetPanelImage(); })"}
+    crop: {selector: '#docs-canvas'}
+    fade: []
+    kind: ui
+    alt: >-
+      The Asset Browser panel from the headset: the title Assets with Pin and ✕, the tabs Packs, Free CC0 and My
+      library, a search box, a page of pack cards, and the page count at the bottom. 1: the three tabs. 2: Pin.
+    caption: The Asset Browser panel.
+    annotate:
+      - {n: 1, at: {rect: [8, 46, 368, 30]}, shape: box, label: where from, badge: b, key: '**Packs**, **Free CC0** and **My library**: **where** the models come **from**.'}
+      - {n: 2, at: {rect: [268, 9, 64, 28]}, shape: box, label: pin it, badge: l, key: '**Pin** leaves the panel in the air, bigger; **To wrist** puts it back (**✕** closes it).'}
+  - id: asset-browser-placing
+    replaces: img/building-in-vr/asset-browser-placing.png
+    xr: {head: [0, 1.6, 0]}
+    storage: {vrMenuHand: right}
+    setup:
+      - {xr: enter, wait: 4000}
+      - {eval: "window.__stores.vrControls.executeVRMenuAction('assets')"}
+      - {wait: 5000}
+      # the starter pack, then a click on the Duck: it rides the laser and the bottom line says what the trigger does
+      - {eval: "window.__stores.vrAssetBrowser.pressAssetButton('card:pack:default')"}
+      - {wait: 3000}
+      - {eval: "window.__stores.vrAssetBrowser.pressAssetButton('card:item:default/Duck')"}
+      - {wait: 4000}
+      - {canvas: "new Promise((r) => { const i = new Image(); i.onload = () => r(i); i.src = window.__stores.vrAssetBrowser.assetPanelImage(); })"}
+    crop: {selector: '#docs-canvas'}
+    fade: []
+    kind: ui
+    alt: >-
+      The Asset Browser inside the starter pack while placing: ‹ Packs and a search box, the cards The Prototype logo
+      and Duck, the Duck card highlighted, and the bottom line Duck: trigger places · stick turns · grip stops. 1: the
+      Duck card. 2: the line that says what the trigger does.
+    caption: 'Placing the Duck: the bottom line says what the trigger does.'
+    annotate:
+      - {n: 1, at: {rect: [262, 120, 112, 79]}, shape: box, pad: 2, badge: b, key: 'The card you clicked: its model rides **your laser** until the grip stops it.'}
+      - {n: 2, at: {rect: [50, 418, 284, 22]}, shape: box, pad: 2, badge: l, key: 'The bottom line says **what** the **trigger does** right now: place one more Duck; the stick turns it.'}
+  - id: logic-panel
+    replaces: img/building-in-vr/logic-panel.png
+    xr: {head: [0, 1.6, 0]}
+    storage: {vrMenuHand: right}
+    setup:
+      - {xr: enter, wait: 4000}
+      # a box called Spinner with its own flow: a Number wired into Spin's speed, and a Compare (vr-logic-iwer.test.cjs)
+      - eval: >-
+          (async () => { const S = window.__stores; S.commandsHandler.sceneCommand('/create box');
+          await new Promise((r) => setTimeout(r, 800));
+          const box = window.__docs.get(S.objectsGroup).children.at(-1); box.name = 'Spinner';
+          await S.aiTools.executeAiTool('create_flow_nodes', { graph: box.uuid,
+          nodes: [{ ref: 'n', type: 'number', data: { value: 1, step: 1 } }, { ref: 's', type: 'spin' }, { ref: 'c', type: 'compare' }],
+          edges: [{ from: 'n', to: 's', toHandle: 'speed' }] });
+          S.objectActions.selectObject(box.uuid); })()
+      - {wait: 1500}
+      # Selected ▸ Edit logic: the panel opens on the box's own flow, pinned in front of you
+      - {eval: "window.__stores.vrControls.executeVRMenuAction('obj:logic')"}
+      - {wait: 4000}
+      - {canvas: "new Promise((r) => { const i = new Image(); i.onload = () => r(i); i.src = window.__stores.vrLogic.logicPanelImage(); })"}
+    crop: {selector: '#docs-canvas'}
+    fade: []
+    kind: ui
+    alt: >-
+      The Logic panel on the Spinner object's flow: a Number card wired into Spin's speed and a Compare card, with the
+      tabs Scene and Spinner and the buttons + Node, undo, redo, Fit, zoom out, zoom in and close along the top.
+      1: the Scene and Spinner tabs. 2: + Node.
+    caption: The Logic panel on the Spinner object's flow.
+    annotate:
+      - {n: 1, at: {rect: [70, 9, 141, 30]}, shape: box, label: which graph, badge: b, key: '**Scene** or the selected object''s own flow (**Spinner**): **which graph** the panel shows.'}
+      - {n: 2, at: {rect: [323, 9, 75, 30]}, shape: box, label: add a node, badge: b, key: '**+ Node** opens a palette with the desktop''s groups; the node lands in the middle of the view.'}
+  - id: logic-pad
+    replaces: img/building-in-vr/logic-pad.png
+    xr: {head: [0, 1.6, 0]}
+    storage: {vrMenuHand: right}
+    setup:
+      - {xr: enter, wait: 4000}
+      - eval: >-
+          (async () => { const S = window.__stores; S.commandsHandler.sceneCommand('/create box');
+          await new Promise((r) => setTimeout(r, 800));
+          const box = window.__docs.get(S.objectsGroup).children.at(-1); box.name = 'Spinner';
+          const res = await S.aiTools.executeAiTool('create_flow_nodes', { graph: box.uuid,
+          nodes: [{ ref: 'n', type: 'number', data: { value: 1, step: 1 } }, { ref: 's', type: 'spin' }, { ref: 'c', type: 'compare' }],
+          edges: [{ from: 'n', to: 's', toHandle: 'speed' }] });
+          const out = typeof res === 'string' ? JSON.parse(res) : res;
+          window.__docsNumber = (out.created || []).find((c) => c.ref === 'n')?.id;
+          S.objectActions.selectObject(box.uuid); })()
+      - {wait: 1500}
+      - {eval: "window.__stores.vrControls.executeVRMenuAction('obj:logic')"}
+      - {wait: 4000}
+      # a trigger click on the Number card (the pointer = the left hand, aimed at the card's body) puts it on the pad
+      - eval: >-
+          (async () => { const pt = window.__stores.vrLogic.logicSocketPoint(window.__docsNumber);
+          const c = window.__iwer.device.controllers.left, from = [-0.12, 1.35, -0.1];
+          const v = [pt[0] - from[0], pt[1] - from[1], pt[2] - from[2]];
+          const yaw = Math.atan2(-v[0], -v[2]), pitch = Math.atan2(v[1], Math.hypot(v[0], v[2]));
+          c.position.set(...from);
+          c.quaternion.set(Math.cos(yaw / 2) * Math.sin(pitch / 2), Math.sin(yaw / 2) * Math.cos(pitch / 2), -Math.sin(yaw / 2) * Math.sin(pitch / 2), Math.cos(yaw / 2) * Math.cos(pitch / 2));
+          const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+          await wait(1000); c.updateButtonValue('trigger', 1); await wait(800); c.updateButtonValue('trigger', 0); await wait(1000); })()
+      - {wait: 1500}
+      - {canvas: "new Promise((r) => { const i = new Image(); i.onload = () => r(i); i.src = window.__stores.vrLogic.logicPadImage(); })"}
+    crop: {selector: '#docs-canvas'}
+    fade: []
+    kind: ui
+    alt: >-
+      The wrist pad for the selected Number node on the Spinner's flow: value and step, each with − and + buttons
+      around the number, and Rename, Unwire and Delete along the bottom. 1: the value row. 2: Rename, Unwire, Delete.
+    caption: The wrist pad for a Number node.
+    annotate:
+      - {n: 1, at: {rect: [10, 81, 364, 30]}, shape: box, label: change it, badge: t, key: '**−** / **+** step the value; press the number to type one on the VR keyboard.'}
+      - {n: 2, at: {rect: [10, 398, 364, 32]}, shape: box, label: the node, badge: t, key: '**Rename**, **Unwire** (every wire on **the node**) and **Delete**, each one undo step.'}

@@ -1,18 +1,33 @@
 {
  "id": "possessnode",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.571Z",
+ "spec": "597927d90508",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:02:26.196Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/nodes/possessnode.png",
- "width": 552,
- "height": 639,
+ "uiHits": [
+  "div.svelte-flow__pane",
+  "div#flow-list.tp-ui",
+  "div.flex",
+  "div.relative",
+  "div.node-card",
+  "div.svelte-flow__handle",
+  "button.nodrag",
+  "select.nodrag",
+  "div.dn-wrap",
+  "input.nodrag",
+  "span.text-text-muted",
+  "span.h-2"
+ ],
+ "width": 804,
+ "height": 1226,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 552,
-  "h": 639
+  "x": 208,
+  "y": 284,
+  "w": 402,
+  "h": 613
  },
  "cut": [],
  "fade": [],

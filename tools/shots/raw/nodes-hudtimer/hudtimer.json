@@ -1,18 +1,33 @@
 {
  "id": "hudtimer",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.568Z",
+ "spec": "fb8e05a30f35",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:00:34.754Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/nodes/hudtimer.png",
- "width": 688,
- "height": 416,
+ "uiHits": [
+  "div.svelte-flow__pane",
+  "div.flex",
+  "div.relative",
+  "div.svelte-flow__handle",
+  "select.nodrag",
+  "span",
+  "span.gc-note",
+  "span.gc-state",
+  "span.overflow-hidden",
+  "path.svelte-flow__edge-interaction",
+  "button.nodrag",
+  "input.nodrag"
+ ],
+ "width": 804,
+ "height": 600,
  "crop": {
-  "x": 21,
-  "y": 0,
-  "w": 688,
-  "h": 416
+  "x": 208,
+  "y": 284,
+  "w": 402,
+  "h": 300
  },
  "cut": [],
  "fade": [],

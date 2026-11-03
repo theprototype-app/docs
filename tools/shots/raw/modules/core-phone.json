@@ -1,21 +1,55 @@
 {
  "id": "core-phone",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.555Z",
+ "spec": "174f2be4e0f0",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:53:21.601Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/modules/core-phone.png",
- "width": 480,
- "height": 908,
+ "uiHits": [
+  "header.wc-head",
+  "div.md-bar",
+  "div.mm-body",
+  "dialog.tp-ui",
+  "button#modules-tab-core.tab",
+  "label.tp-ui",
+  "div#module-card-hello.mm-row",
+  "div#module-card-button.mm-row",
+  "div#module-card-pong.mm-row",
+  "div#module-card-vrsleeve.mm-row",
+  "div#module-card-towers.mm-row",
+  "p.mm-desc"
+ ],
+ "width": 780,
+ "height": 1792,
  "crop": {
   "x": 0,
   "y": 0,
-  "w": 480,
-  "h": 908
+  "w": 390,
+  "h": 896
  },
  "cut": [],
  "fade": [],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 612,
+   "y": 397,
+   "w": 102,
+   "h": 62
+  },
+  "2": {
+   "x": 66,
+   "y": 1013.125,
+   "w": 336.40625,
+   "h": 88
+  },
+  "3": {
+   "x": 66,
+   "y": 1211.125,
+   "w": 396,
+   "h": 274.3125
+  }
+ },
  "kind": "ui"
 }

@@ -1,3 +1,6 @@
+# docs/physics.md — Start simulation on load, Play ▸ Flying, water and buoyancy.
+# Shoot: e2e-slot -- node tools/shots/shoot.cjs physics     Re-annotate: node tools/shots/annotate.cjs physics
+# 83-batch3: real captures (were re-crops of 1.25-1.40 evidence). 3D shots on a remote slot (E2E_PC=).
 page: physics
 defaults:
   device: desktop
@@ -5,62 +8,86 @@ defaults:
   dpr: 2
   format: webp
 shots:
-- id: sim-on-load-setting
-  replaces: img/physics/sim-on-load-setting.png
-  alt: Configure Scene ▸ Camera ▸ Start view with Start simulation on load ticked
-  caption: Configure Scene ▸ Camera ▸ Start view with Start simulation on load ticked.
-  crop:
-    rect:
-    - 592
-    - 0
-    - 688
-    - 720
-  fade:
-  - l
-  kind: ui
-  dpr: 1
-  from: img/physics/sim-on-load-setting.png
-- id: flying-setting
-  replaces: img/physics/flying-setting.png
-  alt: Configure Scene ▸ Physics ▸ Play mode, with Flying set to Allowed
-  caption: Configure Scene ▸ Physics ▸ Play mode.
-  crop:
-    rect:
-    - 592
-    - 0
-    - 688
-    - 800
-  fade:
-  - l
-  kind: ui
-  dpr: 1
-  from: img/physics/flying-setting.png
-- id: sunken-pool
-  replaces: img/physics/sunken-pool.png
-  alt: Toys floating in a pool sunk into the ground
-  caption: Toys floating in a pool sunk into the ground.
-  crop:
-    rect:
-    - 77
-    - 65
-    - 1126
-    - 569
-  fade: vignette
-  kind: view
-  dpr: 1
-  from: img/physics/sunken-pool.png
-- id: floats
-  replaces: img/physics/floats.png
-  alt: A wooden crate floating in a pool, with the Floats rows in its Physics properties
-  caption: A wooden crate floating in a pool.
-  crop:
-    rect:
-    - 592
-    - 0
-    - 688
-    - 720
-  fade:
-  - l
-  kind: ui
-  dpr: 1
-  from: img/physics/floats.png
+  - id: sim-on-load-setting
+    replaces: img/physics/sim-on-load-setting.png
+    alt: >-
+      Configure Scene ▸ Camera ▸ Start view: Hold camera until loaded off, and Start simulation on load ticked with
+      its note. 1: Start simulation on load.
+    caption: Configure Scene ▸ Camera ▸ Start view with Start simulation on load ticked.
+    setup:
+      - {eval: "window.__stores.simOnLoad.setSimOnLoad(true)"}
+      - {section: Start view}
+      - {eval: "document.querySelector('[data-anchor=\"Start view\"]')?.scrollIntoView({block: 'center'})"}
+      - {wait: 600}
+    # the Start view block: its label, the camera hold row and the simulation row with their notes
+    crop: {union: [{selector: '[data-anchor="Start view"]'}, {selector: 'div[data-keywords^="simulation physics start"]'}], pad: 12}
+    annotate:
+      - {n: 1, at: {selector: '#sim-on-load'}, shape: box, pad: 3, badge: l, key: '**Start simulation on load**: the scene starts its physics by itself once everything has loaded.'}
+
+  - id: flying-setting
+    replaces: img/physics/flying-setting.png
+    alt: >-
+      Configure Scene ▸ Physics ▸ Play: Pointer, Limit grab reach, Flying set to Allowed, the simulation switch and the
+      spawn point. 1: the Flying choice, Off, Allowed or Removed.
+    caption: Configure Scene ▸ Physics ▸ Play mode.
+    setup:
+      - {section: Play}
+      - {eval: "document.querySelector('#physics-play-flying')?.scrollIntoView({block: 'center'})"}
+      - {wait: 400}
+      # the real segmented button, not the store
+      - {click: '#physics-play-flying >> text=Allowed'}
+      - {wait: 500}
+    crop: {selector: 'section.sec-panel:has(#physics-play-flying)', pad: 6, maxHeight: 700}
+    annotate:
+      - {n: 1, at: {selector: '#physics-play-flying'}, shape: box, pad: 3, badge: t, key: '**Flying** in Play: Off (players walk), Allowed (Q / E fly), or Removed (even a game module cannot turn it on).'}
+
+  # Pool party (Templates ▸ Examples) starts its simulation on load: the toys bob at their waterline
+  - id: sunken-pool
+    replaces: img/physics/sunken-pool.png
+    alt: >-
+      Pool party seen from the deck at water level: a beach ball, a lilo, two swim rings and a rubber duck floating in a
+      pool sunk into the ground. 1: a toy floating at its waterline.
+    caption: Toys floating in a pool sunk into the ground.
+    kind: view
+    fade: vignette
+    setup:
+      - eval: >-
+          (async () => { const S = window.__stores, D = window.__docs; await S.sceneTemplates.loadTemplatesIndex();
+          const e = D.get(S.sceneTemplates.examples).find((x) => x.slug === 'pool-party'); await S.sceneTemplates.loadRemoteScene(e, {}); })()
+      - {wait: 7000}
+      - {camera: {pos: [0, 1.0, 9.5], target: [0, 0, 0]}}
+      - {deselect: true}
+      - {wait: 1500}
+    # right edge kept left of the sim Reset / Pause buttons (x ≥ 1380): they showed at the old crop's corner
+    crop: {around: {union: [{object: Beach ball}, {object: Swim ring yellow}, {object: Lilo}]}, size: [1040, 420], offset: [-40, -50]}
+    annotate:
+      - {n: 1, at: {object: Beach ball}, shape: circle, label: floats, badge: tr, key: 'The beach ball **floats** at its waterline: the water pushes it up by as much as it displaces.'}
+
+  - id: floats
+    replaces: img/physics/floats.png
+    alt: >-
+      A wooden crate floating in a pool, selected, with its Physics properties open: Floats set to Wood, Density 600,
+      Buoyancy × 1 and the note that it floats about 60% under. 1: the Floats choice. 2: the crate at its draft.
+    caption: A wooden crate floating in a pool.
+    storage: {'inspector:sec:Physics': open}
+    scene:
+      - eval: >-
+          (() => { const S = window.__stores;
+          S.waterActions.makeWater(S.addObjects.spawnAtPoint('/create Box 6 1.5 4', [0, 0.75, 0]), 'pool'); })()
+      - {wait: 600}
+      - {create: Box, name: Crate, at: [0, 1.42, 0], scale: 0.8, color: '#a0723f'}
+      - eval: >-
+          (() => { const o = window.__docs.byName('Crate');
+          window.__stores.physics.setPhysicsFor(o.uuid, {mode: 'dynamic', mass: 1, floats: {density: 600}}); })()
+      # the crate right of the view's middle, so it sits in the column beside the panel
+      - {camera: {pos: [-1.3, 3.4, 6.4], target: [-1.3, 1.2, 0]}}
+    setup:
+      - {select: Crate}
+      - {eval: "window.__stores.inspectorKind.set('selection'); window.__stores.inspectorClose.set(false)"}
+      - {wait: 1500}
+      - {eval: "document.querySelector('[data-tour=\"physics-floats\"]')?.scrollIntoView({block: 'center'})"}
+      - {wait: 500}
+    crop: {around: {selector: '[data-tour="physics-floats"]'}, size: [688, 720], offset: [-170, 0], ui: true}
+    annotate:
+      - {n: 1, at: {selector: '#physics-floats'}, shape: box, label: floats as, badge: l, key: '**Floats**: what the body is made of in water — Wood floats about 60 % under.'}
+      - {n: 2, at: {object: Crate}, shape: circle, label: at its draft, badge: tl, key: 'The crate rests **at its draft**: 60 % of it under the surface.'}

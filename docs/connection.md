@@ -37,10 +37,14 @@ Point at the dot — or press and hold it on a touch screen — for the full sen
 while the signaling link is down it also says how long it has been trying. On a phone a tap on the chip opens the full
 connection details.
 
-![The phone's top bar when it is crowded: the logo, the connection chip with a green dot, ▾ and the microphone, then the bell and the peers](img/connection/status-dot-phone.webp){ .shot width="390" height="60" loading=lazy }
+![The top bar of a folded phone with one other person connected: the logo, the connection chip with its dot, ▾ and the microphone, then the bell and the peers button with 2. 1: the connection dot.](img/connection/status-dot-phone.webp){ .shot width="390" height="120" loading=lazy }
 /// caption
-A phone's crowded top bar: the chip keeps the connection dot.
+A folded phone's top bar: the chip keeps the connection dot.
 ///
+
+<div class="shot-key" markdown>
+1. The **dot**: its colour is the connection state (the table above).
+</div>
 
 ### Who is here: the peers panel
 
@@ -50,10 +54,15 @@ at it for the full name), a second line with where they are and their role, and 
 **Go to** or the role list. On a computer the panel is 320–420 px wide and grows with long names, so nothing wraps or
 breaks. On a phone it opens as a sheet like the notifications: a grab bar on top, and a swipe down closes it.
 
-![The Connected panel on a computer: five people, one row each — avatar, name, the scene they are in and their p-number underneath, and Editor or Viewer with Go to or Watch on the right](img/connection/peers-panel-desktop.webp){ .shot width="515" height="385" loading=lazy }
+![The Connected panel on a computer with four people, one row each: an avatar, the name, the scene they are in, the ping and their short id underneath, then their role (Admin, Editor or Viewer) and Watch on the right. 1: you. 2: a person's role list.](img/connection/peers-panel-desktop.webp){ .shot width="393" height="278" loading=lazy }
 /// caption
 The Connected panel on a computer.
 ///
+
+<div class="shot-key" markdown>
+1. **(you)**: your own row; the host is **Admin**.
+2. A person's **role** (Editor or Viewer): the host changes it here.
+</div>
 
 Right-click a person (long-press on touch, <kbd>Shift</kbd>+<kbd>F10</kbd> from the keyboard) for the **peer menu**:
 their profile, Go to, Watch, Mute, Hide — and, for the host or an admin, **Remove from session** and **Remove and
