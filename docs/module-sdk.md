@@ -499,6 +499,8 @@ api.possessModes              // e.g. ['chase','orbit','none','first'] —
                               // values degrade silently on older builds
 ```
 
+WASD / arrows, a gamepad's left stick or the VR left stick drive the object (tank controls);
+<kbd>Space</kbd> or gamepad A hops it `jumpHeight` metres (default 1.2, `0` = no jump, since 1.54.3).
 With `camera: 'first'` the eye sits at the object plus `eyeHeight`;
 `mouseLook: true` requests pointer lock — horizontal look turns the **object**
 (movement follows the view), vertical pitches the camera, and leaving pointer
