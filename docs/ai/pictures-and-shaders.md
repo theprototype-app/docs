@@ -108,10 +108,10 @@ What you get:
 |---|---|
 | Loops | `while` and `do` are refused; a `for` loop declares its `int` counter and counts up to a number or a `#define` above it (up to 1024 per loop) |
 | Work | one pixel (or vertex) may do about **32768 operations**: each call, operator and assignment counts one, a loop counts its body once per step, a function counts what it runs, and both sides of a branch count. A matrix costs its size (a `mat4` product counts 64, `inverse` 256), and so do whole arrays and structs. A 128-step raymarch is about 2000 |
-| Arrays | at most 64 elements |
+| Arrays | at most 64 elements, one dimension; reading one with a computed index counts its length |
 | Parameters | no `out` or `inout` parameters: return the value instead |
 | Size | 64 KB per stage, plain ASCII outside comments, no backslashes or carriage returns |
-| Preprocessor | `#define NAME 32` (a name for a whole number, once) and two `#include`s: `<tonemapping_fragment>` and `<colorspace_fragment>`. No `#if`, `#ifdef`, `#undef` or other directives |
+| Preprocessor | `#define NAME 32` (a name for a whole number, once) and two `#include`s, after your loops: `<tonemapping_fragment>` and `<colorspace_fragment>`. No `#if`, `#ifdef`, `#undef` or other directives |
 | Textures | not in v1 (no samplers) |
 | Lighting | none built in: a pair is unlit unless you light it yourself; skinned and instanced meshes do not follow it |
 | Where | surface materials; post effects show the GLSL and Graph JSON tabs only |
