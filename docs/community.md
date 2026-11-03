@@ -140,7 +140,7 @@ The heart on a play link's start card.
 ///
 
 <div class="shot-key" markdown>
-1. The **heart**: press it to **like** the game; the count updates at once.
+1. The **heart**: press it to **like it**; the count updates at once.
 </div>
 
 ![Towers' pause menu: the title Paused with the game's name under it and a filled heart with the count 1 at the top right, then Resume, Restart, Settings, How to play, Main menu and Back to editor. 1: the heart.](img/community/pause-menu-heart.webp){ .shot width="500" height="593" loading=lazy }

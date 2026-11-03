@@ -82,7 +82,7 @@ The Select tool.
 ///
 
 <div class="shot-key" markdown>
-1. The **selection** commands: move, turn and size with the gizmo, or step them; Re-roll, Delete, To objects.
+1. The **selection tools**: move, turn and size with the gizmo, or step them; Re-roll, Delete, To objects.
 2. The **picked** instances, ringed; only the model in Affects can be picked.
 </div>
 

@@ -45,7 +45,7 @@ shots:
   caption: After editing the Lamp prefab.
   annotate:
     - {n: 1, at: {text: Update 1 instance}, shape: box, pad: 3, badge: b, key: '**Update 1 instance**: the other copy takes the new version and keeps its own changes.'}
-    - {n: 2, at: {text: 'Update, reset overrides'}, shape: box, pad: 3, label: exact copy, badge: b, key: '**Update, reset overrides**: the copy matches the prefab exactly.'}
+    - {n: 2, at: {text: 'Update, reset overrides'}, shape: box, pad: 3, label: exact copy, badge: b, key: '**Update, reset overrides**: the copy becomes an **exact copy** of the prefab.'}
 # core's prefab-library recipe: four prefabs, tags through prefabLibrary.setPrefabTags, the Explorer on its Prefabs
 # view, the "seat" chip pressed. The floating Explorer opens 720 px wide: narrowed to the column for the shot.
 - id: tag-filter

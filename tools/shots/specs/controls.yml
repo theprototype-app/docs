@@ -171,7 +171,7 @@ shots:
       and speed as knobs with sliders on the left, wired into its handlers. 1: a param's knob, which drags its value.
     caption: In a behaviour's Open view, a param's knob drags its value, not the graph.
     annotate:
-      - {n: 1, at: {selector: 'input[type="range"]', nth: 2}, shape: box, label: drag it, badge: r, key: 'A **param knob**: dragging its slider changes the value (and writes the source), never the graph.'}
+      - {n: 1, at: {selector: 'input[type="range"]', nth: 2}, shape: box, label: drag it, badge: r, key: 'A **param knob**: **drag it** to change the value (it writes the source), never the graph.'}
   - id: copy-paste-vector-menu
     replaces: img/controls/copy-paste-vector-menu.png
     caption: 'A vector row''s right-click menu: copy, paste, reset, or paste one axis.'

@@ -143,7 +143,7 @@ A polyline knife cut across a cube.
 ///
 
 <div class="shot-key" markdown>
-1. The **cut so far**: each Shift+click places a corner; the last leg follows the pointer.
+1. The **corners so far**: each Shift+click places one; the last leg follows the pointer.
 2. **Knife options**: the points placed, **Back** takes the last one back, **Cut** ends the cut.
 </div>
 
@@ -167,7 +167,7 @@ A box made hollow with Solidify.
 ///
 
 <div class="shot-key" markdown>
-1. The walls get **thickness**: a copy behind the surface plus a rim joining the two.
+1. **Thick walls**: a copy behind the surface plus a rim joining the two.
 2. **thickness**, in world units; negative grows outward.
 </div>
 
@@ -186,7 +186,7 @@ The Edges tab with Slide armed and its factor option.
 
 <div class="shot-key" markdown>
 1. **Slide** moves the selected edges along the faces either side.
-2. **factor**: 0 is where the edges are, ±1 all the way onto the neighbouring line.
+2. **factor**, **−1 to +1**: 0 is where the edges are, ±1 all the way onto the neighbouring line.
 </div>
 
 | Tool | Key | What it does |
@@ -248,7 +248,7 @@ The Vertices tab with Bevel armed.
 
 <div class="shot-key" markdown>
 1. **Bevel** cuts the corner off every selected vertex and caps it.
-2. **segments** (1 – 8): more round the corner off.
+2. **segments** (1 – 8): more make the corner **rounder**.
 3. **profile**: how far the cap bulges; 0 is flat.
 </div>
 
@@ -289,7 +289,7 @@ A cylinder subtracted from a box.
 ///
 
 <div class="shot-key" markdown>
-1. **Subtract** cuts the second object out of the first, and removes it.
+1. **Subtract**: the second object is **cut out** of the first, and removed.
 </div>
 
 !!! note "Limits"
@@ -368,7 +368,7 @@ Live symmetry on across X.
 ///
 
 <div class="shot-key" markdown>
-1. An edit to this face is **mirrored** to the other side as you make it.
+1. **Mirrored edits**: an edit to this face shows on the other side as you make it.
 2. The **live symmetry** switch; X / Y / Z pick the axis.
 </div>
 

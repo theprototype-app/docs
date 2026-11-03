@@ -36,7 +36,7 @@ shots:
     2: Knife options.
   caption: A polyline knife cut across a cube.
   annotate:
-    - {n: 1, at: {selector: '.knife-overlay polyline'}, shape: circle, label: corners so far, badge: b, key: 'The **cut so far**: each Shift+click places a corner; the last leg follows the pointer.'}
+    - {n: 1, at: {selector: '.knife-overlay polyline'}, shape: circle, label: corners so far, badge: b, key: 'The **corners so far**: each Shift+click places one; the last leg follows the pointer.'}
     - {n: 2, at: {selector: '#knife-pending'}, shape: box, pad: 3, badge: l, key: '**Knife options**: the points placed, **Back** takes the last one back, **Cut** ends the cut.'}
 - id: solidify
   replaces: img/mesh-editing/solidify.png
@@ -64,7 +64,7 @@ shots:
     thickness, and the toolbox shows Solidify options with the thickness. 1: the wall thickness. 2: thickness.
   caption: A box made hollow with Solidify.
   annotate:
-    - {n: 1, at: {object: Cube, point: top}, shape: circle, label: thick walls, badge: l, key: 'The walls get **thickness**: a copy behind the surface plus a rim joining the two.'}
+    - {n: 1, at: {object: Cube, point: top}, shape: circle, label: thick walls, badge: l, key: '**Thick walls**: a copy behind the surface plus a rim joining the two.'}
     - {n: 2, at: {selector: '#solidify-thickness'}, shape: box, pad: 3, badge: b, key: '**thickness**, in world units; negative grows outward.'}
 - id: edge-tools-slide
   replaces: img/mesh-editing/edge-tools-slide.png
@@ -94,7 +94,7 @@ shots:
   caption: The Edges tab with Slide armed and its factor option.
   annotate:
     - {n: 1, at: {selector: '#edge-slide'}, shape: circle, badge: r, key: '**Slide** moves the selected edges along the faces either side.'}
-    - {n: 2, at: {selector: '#edge-slide-factor'}, shape: box, pad: 3, label: −1 to +1, badge: r, key: '**factor**: 0 is where the edges are, ±1 all the way onto the neighbouring line.'}
+    - {n: 2, at: {selector: '#edge-slide-factor'}, shape: box, pad: 3, label: −1 to +1, badge: r, key: '**factor**, **−1 to +1**: 0 is where the edges are, ±1 all the way onto the neighbouring line.'}
 - id: mitered-bevel
   replaces: img/mesh-editing/mitered-bevel.png
   kind: view
@@ -154,7 +154,7 @@ shots:
   caption: The Vertices tab with Bevel armed.
   annotate:
     - {n: 1, at: {selector: '#mesh-vertex-bevel'}, shape: circle, badge: r, key: '**Bevel** cuts the corner off every selected vertex and caps it.'}
-    - {n: 2, at: {selector: '#bevel-segments'}, shape: box, pad: 3, label: rounder, badge: r, key: '**segments** (1 – 8): more round the corner off.'}
+    - {n: 2, at: {selector: '#bevel-segments'}, shape: box, pad: 3, label: rounder, badge: r, key: '**segments** (1 – 8): more make the corner **rounder**.'}
     - {n: 3, at: {selector: '#bevel-profile'}, shape: box, pad: 3, label: bulge, badge: r, key: '**profile**: how far the cap bulges; 0 is flat.'}
 - id: boolean-subtract
   replaces: img/mesh-editing/boolean-subtract.png
@@ -181,7 +181,7 @@ shots:
     itself gone. 1: the hole.
   caption: A cylinder subtracted from a box.
   annotate:
-    - {n: 1, at: {object: Block, point: top}, shape: circle, label: cut out, badge: r, key: '**Subtract** cuts the second object out of the first, and removes it.'}
+    - {n: 1, at: {object: Block, point: top}, shape: circle, label: cut out, badge: r, key: '**Subtract**: the second object is **cut out** of the first, and removed.'}
 - id: live-symmetry
   replaces: img/mesh-editing/live-symmetry.png
   kind: ui
@@ -213,5 +213,5 @@ shots:
     picked face. 2: live symmetry.
   caption: Live symmetry on across X.
   annotate:
-    - {n: 1, at: {object: Cube, point: center, offset: [-40, 0]}, shape: circle, label: mirrored edits, badge: b, key: 'An edit to this face is **mirrored** to the other side as you make it.'}
+    - {n: 1, at: {object: Cube, point: center, offset: [-40, 0]}, shape: circle, label: mirrored edits, badge: b, key: '**Mirrored edits**: an edit to this face shows on the other side as you make it.'}
     - {n: 2, at: {selector: '#mesh-sym-live'}, shape: box, pad: 3, badge: b, key: 'The **live symmetry** switch; X / Y / Z pick the axis.'}

@@ -63,7 +63,7 @@ shots:
       - {wait: 1200}
     crop: {around: {object: Arch}, size: [1000, 600]}
     annotate:
-      - {n: 1, at: {object: Arch, point: center}, shape: circle, label: opening kept, badge: r, key: 'An exact mesh keeps the **opening**: the wireframe follows every face of the arch.'}
+      - {n: 1, at: {object: Arch, point: center}, shape: circle, label: opening kept, badge: r, key: 'The **opening kept**: an exact mesh''s wireframe follows every face of the arch.'}
 
   - id: decomposed
     replaces: img/colliders/decomposed.png

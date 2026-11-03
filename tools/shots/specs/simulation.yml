@@ -81,7 +81,7 @@ shots:
       - {wait: 15000}
     crop: {around: {object: Honey tank, offset: [110, 20]}, size: [1000, 600]}
     annotate:
-      - {n: 1, at: {object: Honey tank, point: top}, shape: circle, label: tipped tank, badge: l, key: 'The **tipped** Honey tank: it pours out over its rim and holds less afterwards.'}
+      - {n: 1, at: {object: Honey tank, point: top}, shape: circle, label: tipped tank, badge: l, key: 'The **tipped tank** of honey: it pours out over its rim and holds less afterwards.'}
       - {n: 2, at: {object: Honey tank, point: center, offset: [170, 80]}, shape: circle, label: spilled honey, badge: br, key: 'The **spilled** honey settles on the table top; Refill fills the tank again.'}
 
   - id: tank-pours-into-pool

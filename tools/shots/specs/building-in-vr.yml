@@ -54,8 +54,8 @@ shots:
       library, a search box, a page of pack cards, and the page count at the bottom. 1: the three tabs. 2: Pin.
     caption: The Asset Browser panel.
     annotate:
-      - {n: 1, at: {rect: [8, 46, 368, 30]}, shape: box, label: where from, badge: b, key: '**Packs**, **Free CC0** and **My library**: **where** the models come **from**.'}
-      - {n: 2, at: {rect: [268, 9, 64, 28]}, shape: box, label: pin it, badge: l, key: '**Pin** leaves the panel in the air, bigger; **To wrist** puts it back (**✕** closes it).'}
+      - {n: 1, at: {rect: [8, 46, 368, 30]}, shape: box, label: where from, badge: b, key: '**Where from**: **Packs**, **Free CC0** or **My library**, where the models come from.'}
+      - {n: 2, at: {rect: [268, 9, 64, 28]}, shape: box, label: pin it, badge: l, key: '**Pin it**: the panel stays in the air, bigger; **To wrist** puts it back (**✕** closes it).'}
   - id: asset-browser-placing
     replaces: img/building-in-vr/asset-browser-placing.png
     xr: {head: [0, 1.6, 0]}
@@ -111,7 +111,7 @@ shots:
     caption: The Logic panel on the Spinner object's flow.
     annotate:
       - {n: 1, at: {rect: [70, 9, 141, 30]}, shape: box, label: which graph, badge: b, key: '**Scene** or the selected object''s own flow (**Spinner**): **which graph** the panel shows.'}
-      - {n: 2, at: {rect: [323, 9, 75, 30]}, shape: box, label: add a node, badge: b, key: '**+ Node** opens a palette with the desktop''s groups; the node lands in the middle of the view.'}
+      - {n: 2, at: {rect: [323, 9, 75, 30]}, shape: box, label: add a node, badge: b, key: '**+ Node** to **add a node**: a palette with the desktop''s groups; the node lands in the middle of the view.'}
   - id: logic-pad
     replaces: img/building-in-vr/logic-pad.png
     xr: {head: [0, 1.6, 0]}
@@ -151,5 +151,5 @@ shots:
       around the number, and Rename, Unwire and Delete along the bottom. 1: the value row. 2: Rename, Unwire, Delete.
     caption: The wrist pad for a Number node.
     annotate:
-      - {n: 1, at: {rect: [10, 81, 364, 30]}, shape: box, label: change it, badge: t, key: '**−** / **+** step the value; press the number to type one on the VR keyboard.'}
+      - {n: 1, at: {rect: [10, 81, 364, 30]}, shape: box, label: change it, badge: t, key: '**Change it**: **−** / **+** step the value; press the number to type one on the VR keyboard.'}
       - {n: 2, at: {rect: [10, 398, 364, 32]}, shape: box, label: the node, badge: t, key: '**Rename**, **Unwire** (every wire on **the node**) and **Delete**, each one undo step.'}

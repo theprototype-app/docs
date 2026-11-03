@@ -61,7 +61,7 @@ After editing the Lamp prefab.
 
 <div class="shot-key" markdown>
 1. **Update 1 instance**: the other copy takes the new version and keeps its own changes.
-2. **Update, reset overrides**: the copy matches the prefab exactly.
+2. **Update, reset overrides**: the copy becomes an **exact copy** of the prefab.
 </div>
 
 Where each copy stands is always kept. The update is **one undo step** (<kbd>Ctrl</kbd>+<kbd>Z</kbd> puts every copy

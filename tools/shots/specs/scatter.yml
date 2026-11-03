@@ -71,5 +71,5 @@ shots:
       - {wait: 800}
     crop: {around: {selector: '#sculpt-toolbar'}, size: [688, 700], offset: [245, 0], ui: true}
     annotate:
-      - {n: 1, at: {selector: '#sculpt-scatter-selection'}, shape: box, label: selection tools, badge: r, key: 'The **selection** commands: move, turn and size with the gizmo, or step them; Re-roll, Delete, To objects.'}
+      - {n: 1, at: {selector: '#sculpt-scatter-selection'}, shape: box, label: selection tools, badge: r, key: 'The **selection tools**: move, turn and size with the gizmo, or step them; Re-roll, Delete, To objects.'}
       - {n: 2, at: {object: Terrain, point: center}, shape: circle, label: picked, badge: tr, key: 'The **picked** instances, ringed; only the model in Affects can be picked.'}

@@ -102,7 +102,7 @@ The breadcrumb bar in the docked Node editor.
 ///
 
 <div class="shot-key" markdown>
-1. The **object crumb**: the flow you are in. Click it for its siblings.
+1. The **object crumb**: **you are here**. Click it for its siblings.
 2. The **list**: every other flow at this level, the current one ticked.
 </div>
 

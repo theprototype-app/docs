@@ -132,7 +132,7 @@ The Scatter brush in the Sculpt toolbox.
 ///
 
 <div class="shot-key" markdown>
-1. What the brush **scatters**: a primitive, a Library model, a pack item or a prefab.
+1. **Scatter what**: a primitive, a Library model, a pack item or a prefab.
 </div>
 
 | Control | What it does |

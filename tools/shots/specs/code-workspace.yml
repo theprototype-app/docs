@@ -114,7 +114,7 @@ shots:
     toolbar naming her and her line. 1: the Editing with you strip.
   caption: 'Editing together: another person''s caret and selection show in their colour.'
   annotate:
-  - {n: 1, at: {selector: '#code-ws-presence .code-presence-list'}, shape: box, label: who is here, badge: r, key: '**Editing with you**: everyone in the file and the line they are on.'}
+  - {n: 1, at: {selector: '#code-ws-presence .code-presence-list'}, shape: box, label: who is here, badge: r, key: '**Editing with you** shows **who is here**: everyone in the file and the line they are on.'}
 # a real second browser window (lib/rig.cjs `popup:` + `capture: popup`), from a small app window so the popped-out
 # one opens near the column's width too (the interface page's pop-out-dock recipe)
 - id: pop-out-window

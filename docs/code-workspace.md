@@ -71,7 +71,7 @@ Editing together: another person's caret and selection show in their colour.
 ///
 
 <div class="shot-key" markdown>
-1. **Editing with you**: everyone in the file and the line they are on.
+1. **Editing with you** shows **who is here**: everyone in the file and the line they are on.
 </div>
 
 - The other person's **caret** and **selection** show in their colour (hover the caret for their name). The strip under

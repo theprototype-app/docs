@@ -75,7 +75,7 @@ shots:
     budget and Show dimensions. 1: the preview choice.
   caption: Settings ▸ Scene ▸ Performance ▸ Placement preview.
   annotate:
-    - {n: 1, at: {selector: '#placement-preview'}, shape: box, label: what shows, badge: b, key: '**Placement preview**: what the ghost of a dragged item shows.'}
+    - {n: 1, at: {selector: '#placement-preview'}, shape: box, label: what shows, badge: b, key: '**Placement preview**: **what shows** as the ghost of a dragged item.'}
 - id: place-delete-cache
   replaces: img/explorer/place-delete-cache.png
   kind: ui
@@ -101,4 +101,4 @@ shots:
     Properties, Rename and Delete cache with its size. 1: Delete cache.
   caption: A pack item's menu.
   annotate:
-    - {n: 1, at: {selector: '[data-docs="delete-cache"]'}, shape: box, label: frees it, badge: r, key: '**Delete cache** frees the download; the item stays in the pack.'}
+    - {n: 1, at: {selector: '[data-docs="delete-cache"]'}, shape: box, label: frees it, badge: r, key: '**Delete cache** **frees it**: the download goes; the item stays in the pack.'}

@@ -21,7 +21,7 @@ Modules ▸ Core on a folded phone.
 
 <div class="shot-key" markdown>
 1. The **switch** turns a module **on or off**; the icon beside it downloads it.
-2. A module's own **action** sits under its name and description.
+2. A module's own button, **its action**, sits under its name and description.
 3. A description cut short ends in a chevron: tap it to read it all, tap again to fold it.
 </div>
 

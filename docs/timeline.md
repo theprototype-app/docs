@@ -101,7 +101,7 @@ The Timeline as a tab of the bottom sheet on a folded phone.
 ///
 
 <div class="shot-key" markdown>
-1. The **Timeline** tab of the bottom sheet (More ▸ Timeline opens it).
+1. The **Timeline** **sheet tab** in the bottom sheet (More ▸ Timeline opens it).
 </div>
 
 ## Limits

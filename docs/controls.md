@@ -367,7 +367,7 @@ In a behaviour's Open view, a param's knob drags its value, not the graph.
 ///
 
 <div class="shot-key" markdown>
-1. A **param knob**: dragging its slider changes the value (and writes the source), never the graph.
+1. A **param knob**: **drag it** to change the value (it writes the source), never the graph.
 </div>
 
 Fields that hold a distance or an angle also accept a typed **unit** (`12cm`, `4in`,

@@ -110,4 +110,4 @@ shots:
     resolution pick set to 1k. 1: 1k, the phone's default.
   caption: The Asset Browser as a bottom sheet on a folded phone.
   annotate:
-    - {n: 1, at: {selector: '#asset-browser-res-1k'}, shape: circle, label: phone default, badge: b, key: '**1k** is the default on a phone or a Quest: smaller downloads.'}
+    - {n: 1, at: {selector: '#asset-browser-res-1k'}, shape: circle, label: phone default, badge: b, key: '**1k** is the **phone default** (and the Quest''s): smaller downloads.'}
