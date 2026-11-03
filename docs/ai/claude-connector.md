@@ -41,7 +41,7 @@ like your own edits.
 3. Ask Claude something: *"Build a campfire with five logs and a warm light"*, *"Make the flame
    flicker"*, *"What can you do here?"*
 
-![The AI assistant window, signed out: Choose how the assistant thinks, with the Connect Claude card — Sign in to connect, step 1 Add theprototype to Claude with the connector address and How it works, step 2 sign in and press Connect Claude. 1: Sign in to connect. 2: Add to Claude. 3: How it works.](../img/ai-claude-connector/connect-card.webp){ .shot width="520" height="460" loading=lazy }
+![The AI assistant window, signed out: Choose how the assistant thinks, with the Connect Claude card — Sign in to connect, step 1 Add theprototype to Claude with the connector address and How it works, step 2 sign in and press Connect Claude. 1: Sign in to connect. 2: Add to Claude. 3: How it works.](../img/ai-claude-connector/connect-card.webp){ .shot width="520" height="616" loading=lazy }
 /// caption
 The AI window's Connect Claude card, before you sign in.
 ///

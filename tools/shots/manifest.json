@@ -72,15 +72,15 @@
    "kind": "ui",
    "dpr": 2,
    "width": 520,
-   "height": 460,
+   "height": 616,
    "badges": 3,
    "labels": [
     "sign in",
     "once only",
     "this page"
    ],
-   "app": "1.54.2",
-   "shotAt": "2026-11-03T11:05:08.988Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:50:42.759Z"
   },
   "img/appearance/themes.webp": {
    "page": "appearance",
@@ -173,8 +173,8 @@
    "height": 835,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:27:55.310Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T14:51:13.620Z"
   },
   "img/building-in-vr/asset-browser-packs.webp": {
    "page": "building-in-vr",
