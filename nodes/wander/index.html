@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Wander", "url": "https://docs.theprototype.app/nodes/wander/", "description": "Drifts the connected object around a smooth, never-repeating target inside an area object (a water volume, a room) or a box around where it was placed — fish, birds, fireflies, idle drones.", "dateModified": "2026-10-08"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Wander", "url": "https://docs.theprototype.app/nodes/wander/", "description": "Drifts the connected object around a smooth, never-repeating target inside an area object (a water volume, a room) or a box around where it was placed — fish, birds, fireflies, idle drones. With…", "dateModified": "2026-11-03"}</script>
 </head>
   
   
@@ -5908,7 +5908,7 @@
 
 
 <h1 id="wander">Wander</h1>
-<p>Drifts the connected object around a smooth, never-repeating target inside an <strong>area object</strong> (a water volume, a room) or a box around where it was placed — fish, birds, fireflies, idle drones.</p>
+<p>Drifts the connected object around a smooth, never-repeating target inside an <strong>area object</strong> (a water volume, a room) or a box around where it was placed — fish, birds, fireflies, idle drones. With <strong>ground</strong> on it walks across the floor instead — deer, a herd, a wandering NPC.</p>
 <p><strong>Output:</strong> effect (wire into an <a href="../objectselector/">Object Selector</a>, or leave it in an object's own flow)</p>
 <h2 id="inputs">Inputs</h2>
 <table>
@@ -5962,13 +5962,23 @@
 <td>1, 0.3, 1</td>
 <td>half-extents of the box when no area is wired</td>
 </tr>
+<tr>
+<td>ground</td>
+<td>on</td>
+<td>keep the object at the height it was placed at, wandering across the floor only — see below</td>
+</tr>
 </tbody>
 </table>
+<p><strong>Ground</strong> (<em>since 1.54.3</em>) is for walkers — deer, a herd, a wandering NPC. The object wanders in <code>x</code> and <code>z</code> and keeps
+the height you placed it at: no bobbing within <code>ry</code>, and a floor slab wired as the <code>area</code> no longer pulls it down into
+the slab's middle. A new Wander node starts with ground <strong>on</strong>; switch it <strong>off</strong> for a fish, a bird or a firefly that
+should drift up and down too. Wander nodes saved before 1.54.3 keep drifting in 3-D.</p>
 <p>The target is three octaves of smooth noise per axis at incommensurate rates — it never repeats, never jumps, and always stays inside the box. It is a pure function of the shared clock, so every peer sees the same wanderer in the same place.</p>
 <h2 id="practical-example">Practical example</h2>
 <p>Clownfish that potter about the tank:</p>
 <ol>
-<li>Give the fish a <strong>Wander</strong> node and wire an Object Selector of the <strong>water volume</strong> into <code>area</code>; margin 0.4, speed 0.2.</li>
+<li>Give the fish a <strong>Wander</strong> node, switch <strong>ground</strong> off, and wire an Object Selector of the <strong>water volume</strong> into
+   <code>area</code>; margin 0.4, speed 0.2.</li>
 <li>Add <a href="../orientvelocity/">Orient to Velocity</a> so it faces where it is going, and <a href="../bodywave/">Body Wave</a> so it swims.</li>
 <li>Duplicate the fish: with <code>seed</code> 0 each copy wanders its own way.</li>
 </ol>
@@ -5992,7 +6002,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-08
+    2026-11-03
   </span>
 
     

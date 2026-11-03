@@ -57,6 +57,20 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.54.3 — sessions that keep up, friendlier failures, small wins.** A new object's logic reaches everyone in a session
+within seconds instead of about half a minute, a button that toggles a shared variable flips it exactly once for
+everybody, and cancelling a library download really stops it. A browser that can't run 3D now
+[says what to try](https://docs.theprototype.app/performance.md#3d-view-does-not-start) instead of showing a blank page, and a tab left open across an
+update offers **A new version is ready – Reload**. In play, [Possess](https://docs.theprototype.app/nodes/possessnode.md#driving) jumps with
+<kbd>Space</kbd> or gamepad A (**Jump height** on the node), pausing the game pauses behaviour timers (`this.after`), and
+[Wander](https://docs.theprototype.app/nodes/wander.md) keeps objects on the ground with its new **ground** toggle. The Explorer has
+[**Add files…**](https://docs.theprototype.app/explorer.md#add-files-and-new-file) — a file picker for phones and the Quest browser — and
+**New file ▸ Script / Note / JSON / Text**. The experimental [VR sleeve](https://docs.theprototype.app/vr.md#the-sleeve-palette) grows a shape from a
+ghost to true size as you pull it out, latches with a click and cancels at your wrist. Also fixed: windows no longer open
+under the bell and profile buttons on tablet-wide screens, the Connect Claude welcome fits a folded or unfolded phone,
+shortcuts work right after adding a node, a quick tap selects on large phones and foldables, leaving VR on Quest no
+longer throws an error, and Dungeon Realms players no longer start inside the entrance arch.
+
 **1.54 — first win and community.** Your first visit asks
 [one question](https://docs.theprototype.app/tours.md#your-first-visit) — Play a game, Remix a game, Start from a template or Describe it — and a
 three-step [first-game quest](https://docs.theprototype.app/tours.md#the-first-game-quest) walks you through changing it, playing it and inviting a
@@ -3660,6 +3674,32 @@ Drag files from your computer anywhere onto the Explorer panel:
 
 Items are capped at **25 MB** each. Images and models get generated thumbnails; audio and text show icon cards.
 
+### Add files… and New file
+
+*Since 1.54.3.* Phones and the Quest browser have no drag and drop, so the Explorer also opens your device's own file
+picker. **Add files…** is in the right-click menu of the grid background, of a folder, of a mounted
+project and of a folder inside one, and an empty folder shows it as a button under *Nothing here yet*. The files you pick
+land where the same files dropped there would: in that folder, in a mounted project's unsaved changes until you press
+**Save**. The same rules apply as for a drop — the 25 MB cap, a `.tp` added as a folder,
+and [the question about files you already have](#importing-files). Where nothing can be added (the read-only Scene view,
+a session you can only view) the entry does not appear.
+
+![The Explorer's right-click menu with Add files… and New file opened on Script, Note, JSON and Text](https://docs.theprototype.app/img/explorer/add-files-menu.webp)
+
+**New file ▸** (in the same menus of the grid background and of a folder) creates a text file from a template and opens
+it in the code editor:
+
+| Entry | Starts as |
+|---|---|
+| **Script (.js)** | a behaviour with its handlers stubbed out — bind it to a [Behaviour node](https://docs.theprototype.app/nodes/behaviour.md) to run it |
+| **Note (.md)** | a Markdown note with a heading, which everyone in the session can edit together |
+| **JSON (.json)** | an empty JSON object, for settings or data a script reads |
+| **Text (.txt)** | an empty plain text file |
+
+New file is greyed out for a viewer: only editors can change files.
+
+![An empty folder on a phone: Nothing here yet, with the Add files… button under it](https://docs.theprototype.app/img/explorer/add-files-empty-phone.webp)
+
 **Importing something you already have.** A file is identified by its contents, so re-importing the same bytes is not a new file. The app tells you what it already has and lets you skip it, reveal it, or — for a scene — take a real copy. The rule lives in **Settings ▸ Explorer ▸ "When importing files already in your library"** (Ask / Skip them / Import as copies); see [Projects](https://docs.theprototype.app/projects.md#importing-something-you-already-have).
 
 **Big models are optimized as they come in** (1.37): over 50k triangles or with a texture over 2048 px, an import gets
@@ -6833,8 +6873,9 @@ longer than 90° between two keys is split so a full turn spins. `play: false` a
 ## Limits (motion)
 - Blend by Speed and the states graph blend at most the clips they name; their phases are per
   device (a walk's step can be a fraction of a cycle apart between two screens).
-- Possess (the Player) has no jump of its own: a jump comes from vertical motion (a physics hop,
-  logic) or the `jump` trigger (Set Animation Parameter, the window's *Fire*).
+- Possess (the Player) jumps with <kbd>Space</kbd> or gamepad A since 1.54.3 — a hop to the
+  [Possess Object](https://docs.theprototype.app/nodes/possessnode.md#driving) node's **Jump height**. Any other jump comes from vertical motion (a
+  physics hop, logic) or the `jump` trigger (Set Animation Parameter, the window's *Fire*).
 - A part clip binds by node name: renaming a part in the model breaks the clip for that part.
 - A clip whose share weight in a blend falls under 1 % is skipped (the rest renormalize), so a
   settled Move state costs one clip, not three.
@@ -9504,6 +9545,27 @@ say what is lowered now, instead of a second card stacking under it.
 **No switching back and forth.** Since 1.32, if a step came back once and the frames dropped again, it stays lowered for
 the rest of the scene instead of switching off and on. The chip's tooltip says so. Opening another scene, **Keep full
 quality**, or turning automatic quality off and on gives it a fresh start.
+
+## 3D view does not start
+
+*Since 1.54.3.* If the page opens on **"This browser can't show the 3D view"** instead of the editor, the browser refused
+to give the page a **WebGL 2** context — the graphics interface every scene is drawn with. Nothing else can run without
+it, so the app stops there rather than showing a blank page. It is usually a browser setting, not your device. Try, in
+this order:
+
+1. **Turn on hardware acceleration** (also called graphics acceleration), then restart the browser completely:
+    - Chrome and Edge: **Settings ▸ System ▸ Use graphics acceleration when available**.
+    - Firefox: **Settings ▸ General ▸ Performance**: untick *Use recommended performance settings*, then tick
+      *Use hardware acceleration when available*.
+2. **Update your browser** and, on a computer, your **graphics drivers** (from your graphics card's or computer
+   maker's site). Browsers switch WebGL off for some old drivers.
+3. **Try another browser** — a current Chrome, Edge, Firefox or Safari. If it works there, the first browser's settings
+   or an extension are the cause.
+4. Press **Reload** on the screen after each change.
+
+Still stuck? In Chrome or Edge, open `chrome://gpu` (`edge://gpu`) and look at the *WebGL2* line: *Hardware accelerated*
+is what the app needs; *Disabled* or *Unavailable* says the browser has switched it off. The page also sends one short
+[error report](https://docs.theprototype.app/privacy.md#anonymous-error-reports) about the missing WebGL, if reports are on.
 
 ## Budgets in CI
 
@@ -12519,6 +12581,7 @@ the owner of the [object flow](https://docs.theprototype.app/object-flows.md) th
 | turnSpeed | 2.5 | 0.1 – 10: how fast it turns, in radians per second |
 | eyeHeight | 1.7 | 0.2 – 3 m above the object: the eye for the `first` camera |
 | mouseLook | off | `first` camera only: the mouse turns the object and tilts the view |
+| jumpHeight | 1.2 | 0 – 5 m: how high <kbd>Space</kbd> or gamepad A hops the object (**Jump height** on the card; 0 = no jump) |
 
 | camera | What the view does |
 |---|---|
@@ -12531,8 +12594,12 @@ the owner of the [object flow](https://docs.theprototype.app/object-flows.md) th
 
 While you hold an object, the keys drive **it** instead of you. The controls are tank-style:
 <kbd>W</kbd> / <kbd>S</kbd> (or <kbd>↑</kbd> / <kbd>↓</kbd>) drive forward and back along the way it faces, and
-<kbd>A</kbd> / <kbd>D</kbd> (or <kbd>←</kbd> / <kbd>→</kbd>) turn it. In VR the left stick does the same. Your own
-movement pauses until you let go.
+<kbd>A</kbd> / <kbd>D</kbd> (or <kbd>←</kbd> / <kbd>→</kbd>) turn it. A gamepad's left stick does the same (and in VR,
+the left controller's stick). Your own movement pauses until you let go.
+
+**Jumping** (*since 1.54.3*). <kbd>Space</kbd> or a gamepad's **A** hops the object up to **Jump height** and the scene's
+gravity brings it back down to the height it jumped from. One hop at a time: a press in the air does nothing, and holding
+the key or button is still one jump. Set **Jump height** to 0 to switch jumping off — for a turret, say.
 
 You let go when the **release** input pulses, or when you press <kbd>Esc</kbd>. With **mouseLook** on, leaving the
 pointer lock also lets go. Entering VR lets go too. If **trigger** and **release** pulse in the same moment, the
@@ -15216,7 +15283,7 @@ Source: https://docs.theprototype.app/nodes/wander/ (Markdown: https://docs.thep
 
 # Wander
 
-Drifts the connected object around a smooth, never-repeating target inside an **area object** (a water volume, a room) or a box around where it was placed — fish, birds, fireflies, idle drones.
+Drifts the connected object around a smooth, never-repeating target inside an **area object** (a water volume, a room) or a box around where it was placed — fish, birds, fireflies, idle drones. With **ground** on it walks across the floor instead — deer, a herd, a wandering NPC.
 
 **Output:** effect (wire into an [Object Selector](https://docs.theprototype.app/nodes/objectselector.md), or leave it in an object's own flow)
 
@@ -15235,6 +15302,12 @@ Drifts the connected object around a smooth, never-repeating target inside an **
 | seed | 0 | 0 – 999: 0 = take it from the object, so copies never move in step |
 | margin | 0.2 | 0 – 2 m kept clear of the area's sides |
 | rx, ry, rz | 1, 0.3, 1 | half-extents of the box when no area is wired |
+| ground | on | keep the object at the height it was placed at, wandering across the floor only — see below |
+
+**Ground** (*since 1.54.3*) is for walkers — deer, a herd, a wandering NPC. The object wanders in `x` and `z` and keeps
+the height you placed it at: no bobbing within `ry`, and a floor slab wired as the `area` no longer pulls it down into
+the slab's middle. A new Wander node starts with ground **on**; switch it **off** for a fish, a bird or a firefly that
+should drift up and down too. Wander nodes saved before 1.54.3 keep drifting in 3-D.
 
 The target is three octaves of smooth noise per axis at incommensurate rates — it never repeats, never jumps, and always stays inside the box. It is a pure function of the shared clock, so every peer sees the same wanderer in the same place.
 
@@ -15242,7 +15315,8 @@ The target is three octaves of smooth noise per axis at incommensurate rates —
 
 Clownfish that potter about the tank:
 
-1. Give the fish a **Wander** node and wire an Object Selector of the **water volume** into `area`; margin 0.4, speed 0.2.
+1. Give the fish a **Wander** node, switch **ground** off, and wire an Object Selector of the **water volume** into
+   `area`; margin 0.4, speed 0.2.
 2. Add [Orient to Velocity](https://docs.theprototype.app/nodes/orientvelocity.md) so it faces where it is going, and [Body Wave](https://docs.theprototype.app/nodes/bodywave.md) so it swims.
 3. Duplicate the fish: with `seed` 0 each copy wanders its own way.
 
@@ -18829,12 +18903,30 @@ There are **no AI settings in VR**: the provider and [voice typing](https://docs
     - Voice needs a browser that can record audio (Quest Browser, Chrome, Edge, Safari) and microphone permission. A
       recording stops itself after 60 seconds.
 
-## The sleeve palette
+## The sleeve palette (experimental) { #the-sleeve-palette }
 
 **Settings ▸ VR ▸ Editing ▸ Sleeve palette** (experimental, off by default; also radial **Settings ▸ Editing**) puts a strip
-of ghost primitives along the forearm of your other hand (not the menu hand), like a bracer. Point at one and **trigger-drag** it off: it follows your
-controller, the stick scales it and your wrist turns it; release the trigger to place it (one undo step). **Grip-drop** an
-object of yours onto the strip to keep it as a personal slot — those are saved on this device only.
+of ghost primitives along the forearm of your other hand (not the menu hand), like a bracer: Box, Wedge, Stairs, Sphere,
+Cylinder and Torus, then your own slots.
+
+**Taking a shape.** Point at a slot and pull the **trigger** (a **pinch** with tracked hands), or reach over with your
+taking hand and **grip** — or pinch — right at a slot.
+
+**Pulling it out** (*since 1.54.3*). The shape starts at ghost size in your hand and **grows to its true size as you draw
+your hand away from the sleeve wrist** — full size about 40 cm out. It is held out along your hand's ray, far enough that
+it never fills your view. Reaching full size **latches** it with a click you feel in the controller; from then on it is
+held like any grab: the **grip-move sticks reel it** in and out (forward and back) and **scale it** (left and right).
+Let go of the button to place it, as one undo step, with the same snapping as a grip-grab drop.
+
+**Cancelling.** Bring your hand back to your **wrist** — or let go before it has latched — and the shape shrinks and
+flies back into its slot; nothing is added.
+
+**In a miniature world** ([shrink the world](https://docs.theprototype.app/building-in-vr.md#shrink-the-world-miniature-mode)) the shape grows to its
+size *in that world* — as small as the shrunk world around it — and lands at its true size in the scene: a 1 m box is a
+1 m box when you scale the world back up.
+
+**Your own slots.** **Grip-drop** an object of yours onto the strip to keep it as a personal slot — those are saved on
+this device only — and take it out the same way.
 
 ## Hand models
 
@@ -21093,6 +21185,8 @@ api.possessModes              // e.g. ['chase','orbit','none','first'] —
                               // values degrade silently on older builds
 ```
 
+WASD / arrows, a gamepad's left stick or the VR left stick drive the object (tank controls);
+<kbd>Space</kbd> or gamepad A hops it `jumpHeight` metres (default 1.2, `0` = no jump, since 1.54.3).
 With `camera: 'first'` the eye sits at the object plus `eyeHeight`;
 `mouseLook: true` requests pointer lock — horizontal look turns the **object**
 (movement follows the view), vertical pitches the camera, and leaving pointer

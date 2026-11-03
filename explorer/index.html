@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Explorer", "url": "https://docs.theprototype.app/explorer/", "description": "The Explorer is the session's file library — import files, organize them into folders, preview them, share them with the people you are connected to, and drag them straight into the scene.", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-box-ghost.webp", "caption": "Dragging the Duck from the starter pack."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-model-ghost.webp", "caption": "Once loaded, the ghost is a see-through copy of the real model."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-settings.webp", "caption": "Settings ▸ Scene ▸ Performance ▸ Placement preview."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-delete-cache.webp", "caption": "A pack item's menu."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Explorer", "url": "https://docs.theprototype.app/explorer/", "description": "The Explorer is the session's file library — import files, organize them into folders, preview them, share them with the people you are connected to, and drag them straight into the scene.", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-box-ghost.webp", "caption": "Dragging the Duck from the starter pack."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-model-ghost.webp", "caption": "Once loaded, the ghost is a see-through copy of the real model."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-settings.webp", "caption": "Settings ▸ Scene ▸ Performance ▸ Placement preview."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-delete-cache.webp", "caption": "A pack item's menu."}]}</script>
 </head>
   
   
@@ -770,6 +770,15 @@
   
     <nav class="md-nav" aria-label="Importing files">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-files-and-new-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add files… and New file
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#heic-heif-photos" class="md-nav__link">
@@ -6125,6 +6134,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#add-files-and-new-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add files… and New file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#heic-heif-photos" class="md-nav__link">
     <span class="md-ellipsis">
       HEIC / HEIF photos
@@ -6459,6 +6477,45 @@
 </tbody>
 </table>
 <p>Items are capped at <strong>25 MB</strong> each. Images and models get generated thumbnails; audio and text show icon cards.</p>
+<h3 id="add-files-and-new-file">Add files… and New file</h3>
+<p><em>Since 1.54.3.</em> Phones and the Quest browser have no drag and drop, so the Explorer also opens your device's own file
+picker. <strong>Add files…</strong> is in the right-click menu of the grid background, of a folder, of a mounted
+project and of a folder inside one, and an empty folder shows it as a button under <em>Nothing here yet</em>. The files you pick
+land where the same files dropped there would: in that folder, in a mounted project's unsaved changes until you press
+<strong>Save</strong>. The same rules apply as for a drop — the 25 MB cap, a <code>.tp</code> added as a folder,
+and <a href="#importing-files">the question about files you already have</a>. Where nothing can be added (the read-only Scene view,
+a session you can only view) the entry does not appear.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/explorer/add-files-menu.webp" data-desc-position="bottom"><img alt="The Explorer's right-click menu with Add files… and New file opened on Script, Note, JSON and Text" src="../img/explorer/add-files-menu.webp"></a></p>
+<p><strong>New file ▸</strong> (in the same menus of the grid background and of a folder) creates a text file from a template and opens
+it in the code editor:</p>
+<table>
+<thead>
+<tr>
+<th>Entry</th>
+<th>Starts as</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Script (.js)</strong></td>
+<td>a behaviour with its handlers stubbed out — bind it to a <a href="../nodes/behaviour/">Behaviour node</a> to run it</td>
+</tr>
+<tr>
+<td><strong>Note (.md)</strong></td>
+<td>a Markdown note with a heading, which everyone in the session can edit together</td>
+</tr>
+<tr>
+<td><strong>JSON (.json)</strong></td>
+<td>an empty JSON object, for settings or data a script reads</td>
+</tr>
+<tr>
+<td><strong>Text (.txt)</strong></td>
+<td>an empty plain text file</td>
+</tr>
+</tbody>
+</table>
+<p>New file is greyed out for a viewer: only editors can change files.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/explorer/add-files-empty-phone.webp" data-desc-position="bottom"><img alt="An empty folder on a phone: Nothing here yet, with the Add files… button under it" src="../img/explorer/add-files-empty-phone.webp" width="390"></a></p>
 <p><strong>Importing something you already have.</strong> A file is identified by its contents, so re-importing the same bytes is not a new file. The app tells you what it already has and lets you skip it, reveal it, or — for a scene — take a real copy. The rule lives in <strong>Settings ▸ Explorer ▸ "When importing files already in your library"</strong> (Ask / Skip them / Import as copies); see <a href="../projects/#importing-something-you-already-have">Projects</a>.</p>
 <p><strong>Big models are optimized as they come in</strong> (1.37): over 50k triangles or with a texture over 2048 px, an import gets
 an LOD chain and compressed textures, and the original stays beside it — see <a href="../import-optimize/">Importing Big Models</a>.
@@ -6770,7 +6827,7 @@ Add menu still places in front of you; drag-to-place in VR comes later.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-31
+    2026-11-03
   </span>
 
     

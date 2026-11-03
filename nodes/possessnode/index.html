@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Possess Object", "url": "https://docs.theprototype.app/nodes/possessnode/", "description": "Puts the player in control of an object when a pulse arrives: a vehicle, a turret, a ball. A second input hands it back.", "dateModified": "2026-10-31", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/nodes-possessnode/possessnode.webp", "caption": "Two Key Press nodes wired into the trigger and release inputs of a Possess Object."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Possess Object", "url": "https://docs.theprototype.app/nodes/possessnode/", "description": "Puts the player in control of an object when a pulse arrives: a vehicle, a turret, a ball. A second input hands it back.", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "earlier"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/nodes-possessnode/possessnode.webp", "caption": "Two Key Press nodes wired into the trigger and release inputs of a Possess Object."}]}</script>
 </head>
   
   
@@ -5998,6 +5998,11 @@ the owner of the <a href="../../object-flows/">object flow</a> the node sits in.
 <td>off</td>
 <td><code>first</code> camera only: the mouse turns the object and tilts the view</td>
 </tr>
+<tr>
+<td>jumpHeight</td>
+<td>1.2</td>
+<td>0 – 5 m: how high <kbd>Space</kbd> or gamepad A hops the object (<strong>Jump height</strong> on the card; 0 = no jump)</td>
+</tr>
 </tbody>
 </table>
 <table>
@@ -6029,8 +6034,11 @@ the owner of the <a href="../../object-flows/">object flow</a> the node sits in.
 <h2 id="driving">Driving</h2>
 <p>While you hold an object, the keys drive <strong>it</strong> instead of you. The controls are tank-style:
 <kbd>W</kbd> / <kbd>S</kbd> (or <kbd>↑</kbd> / <kbd>↓</kbd>) drive forward and back along the way it faces, and
-<kbd>A</kbd> / <kbd>D</kbd> (or <kbd>←</kbd> / <kbd>→</kbd>) turn it. In VR the left stick does the same. Your own
-movement pauses until you let go.</p>
+<kbd>A</kbd> / <kbd>D</kbd> (or <kbd>←</kbd> / <kbd>→</kbd>) turn it. A gamepad's left stick does the same (and in VR,
+the left controller's stick). Your own movement pauses until you let go.</p>
+<p><strong>Jumping</strong> (<em>since 1.54.3</em>). <kbd>Space</kbd> or a gamepad's <strong>A</strong> hops the object up to <strong>Jump height</strong> and the scene's
+gravity brings it back down to the height it jumped from. One hop at a time: a press in the air does nothing, and holding
+the key or button is still one jump. Set <strong>Jump height</strong> to 0 to switch jumping off — for a turret, say.</p>
 <p>You let go when the <strong>release</strong> input pulses, or when you press <kbd>Esc</kbd>. With <strong>mouseLook</strong> on, leaving the
 pointer lock also lets go. Entering VR lets go too. If <strong>trigger</strong> and <strong>release</strong> pulse in the same moment, the
 release wins. A new <strong>trigger</strong> while you already hold something lets go of it first.</p>
@@ -6091,7 +6099,7 @@ player, use <a href="../camerafollow/">Camera Follow</a> instead. It moves the v
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-31
+    2026-11-03
   </span>
 
     

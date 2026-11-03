@@ -48,6 +48,20 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.54.3 — sessions that keep up, friendlier failures, small wins.** A new object's logic reaches everyone in a session
+within seconds instead of about half a minute, a button that toggles a shared variable flips it exactly once for
+everybody, and cancelling a library download really stops it. A browser that can't run 3D now
+[says what to try](https://docs.theprototype.app/performance.md#3d-view-does-not-start) instead of showing a blank page, and a tab left open across an
+update offers **A new version is ready – Reload**. In play, [Possess](https://docs.theprototype.app/nodes/possessnode.md#driving) jumps with
+<kbd>Space</kbd> or gamepad A (**Jump height** on the node), pausing the game pauses behaviour timers (`this.after`), and
+[Wander](https://docs.theprototype.app/nodes/wander.md) keeps objects on the ground with its new **ground** toggle. The Explorer has
+[**Add files…**](https://docs.theprototype.app/explorer.md#add-files-and-new-file) — a file picker for phones and the Quest browser — and
+**New file ▸ Script / Note / JSON / Text**. The experimental [VR sleeve](https://docs.theprototype.app/vr.md#the-sleeve-palette) grows a shape from a
+ghost to true size as you pull it out, latches with a click and cancels at your wrist. Also fixed: windows no longer open
+under the bell and profile buttons on tablet-wide screens, the Connect Claude welcome fits a folded or unfolded phone,
+shortcuts work right after adding a node, a quick tap selects on large phones and foldables, leaving VR on Quest no
+longer throws an error, and Dungeon Realms players no longer start inside the entrance arch.
+
 **1.54 — first win and community.** Your first visit asks
 [one question](https://docs.theprototype.app/tours.md#your-first-visit) — Play a game, Remix a game, Start from a template or Describe it — and a
 three-step [first-game quest](https://docs.theprototype.app/tours.md#the-first-game-quest) walks you through changing it, playing it and inviting a

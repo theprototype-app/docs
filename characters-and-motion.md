@@ -244,8 +244,9 @@ longer than 90° between two keys is split so a full turn spins. `play: false` a
 ## Limits (motion)
 - Blend by Speed and the states graph blend at most the clips they name; their phases are per
   device (a walk's step can be a fraction of a cycle apart between two screens).
-- Possess (the Player) has no jump of its own: a jump comes from vertical motion (a physics hop,
-  logic) or the `jump` trigger (Set Animation Parameter, the window's *Fire*).
+- Possess (the Player) jumps with <kbd>Space</kbd> or gamepad A since 1.54.3 — a hop to the
+  [Possess Object](https://docs.theprototype.app/nodes/possessnode.md#driving) node's **Jump height**. Any other jump comes from vertical motion (a
+  physics hop, logic) or the `jump` trigger (Set Animation Parameter, the window's *Fire*).
 - A part clip binds by node name: renaming a part in the model breaks the clip for that part.
 - A clip whose share weight in a blend falls under 1 % is skipped (the rest renormalize), so a
   settled Move state costs one clip, not three.

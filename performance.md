@@ -232,6 +232,27 @@ say what is lowered now, instead of a second card stacking under it.
 the rest of the scene instead of switching off and on. The chip's tooltip says so. Opening another scene, **Keep full
 quality**, or turning automatic quality off and on gives it a fresh start.
 
+## 3D view does not start
+
+*Since 1.54.3.* If the page opens on **"This browser can't show the 3D view"** instead of the editor, the browser refused
+to give the page a **WebGL 2** context — the graphics interface every scene is drawn with. Nothing else can run without
+it, so the app stops there rather than showing a blank page. It is usually a browser setting, not your device. Try, in
+this order:
+
+1. **Turn on hardware acceleration** (also called graphics acceleration), then restart the browser completely:
+    - Chrome and Edge: **Settings ▸ System ▸ Use graphics acceleration when available**.
+    - Firefox: **Settings ▸ General ▸ Performance**: untick *Use recommended performance settings*, then tick
+      *Use hardware acceleration when available*.
+2. **Update your browser** and, on a computer, your **graphics drivers** (from your graphics card's or computer
+   maker's site). Browsers switch WebGL off for some old drivers.
+3. **Try another browser** — a current Chrome, Edge, Firefox or Safari. If it works there, the first browser's settings
+   or an extension are the cause.
+4. Press **Reload** on the screen after each change.
+
+Still stuck? In Chrome or Edge, open `chrome://gpu` (`edge://gpu`) and look at the *WebGL2* line: *Hardware accelerated*
+is what the app needs; *Disabled* or *Unavailable* says the browser has switched it off. The page also sends one short
+[error report](https://docs.theprototype.app/privacy.md#anonymous-error-reports) about the missing WebGL, if reports are on.
+
 ## Budgets in CI
 
 For contributors to the core repo: every Games-tab game and every General-tab level is held to

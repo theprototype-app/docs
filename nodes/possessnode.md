@@ -26,6 +26,7 @@ the owner of the [object flow](https://docs.theprototype.app/object-flows.md) th
 | turnSpeed | 2.5 | 0.1 – 10: how fast it turns, in radians per second |
 | eyeHeight | 1.7 | 0.2 – 3 m above the object: the eye for the `first` camera |
 | mouseLook | off | `first` camera only: the mouse turns the object and tilts the view |
+| jumpHeight | 1.2 | 0 – 5 m: how high <kbd>Space</kbd> or gamepad A hops the object (**Jump height** on the card; 0 = no jump) |
 
 | camera | What the view does |
 |---|---|
@@ -38,8 +39,12 @@ the owner of the [object flow](https://docs.theprototype.app/object-flows.md) th
 
 While you hold an object, the keys drive **it** instead of you. The controls are tank-style:
 <kbd>W</kbd> / <kbd>S</kbd> (or <kbd>↑</kbd> / <kbd>↓</kbd>) drive forward and back along the way it faces, and
-<kbd>A</kbd> / <kbd>D</kbd> (or <kbd>←</kbd> / <kbd>→</kbd>) turn it. In VR the left stick does the same. Your own
-movement pauses until you let go.
+<kbd>A</kbd> / <kbd>D</kbd> (or <kbd>←</kbd> / <kbd>→</kbd>) turn it. A gamepad's left stick does the same (and in VR,
+the left controller's stick). Your own movement pauses until you let go.
+
+**Jumping** (*since 1.54.3*). <kbd>Space</kbd> or a gamepad's **A** hops the object up to **Jump height** and the scene's
+gravity brings it back down to the height it jumped from. One hop at a time: a press in the air does nothing, and holding
+the key or button is still one jump. Set **Jump height** to 0 to switch jumping off — for a turret, say.
 
 You let go when the **release** input pulses, or when you press <kbd>Esc</kbd>. With **mouseLook** on, leaving the
 pointer lock also lets go. Entering VR lets go too. If **trigger** and **release** pulse in the same moment, the
