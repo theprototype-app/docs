@@ -233,6 +233,7 @@ nav:
     - Providers: ai/providers.md
     - Local & Small Models: ai/local-models.md
     - 3D Generation: ai/generation.md
+    - Give the AI pictures and shaders: ai/pictures-and-shaders.md
     - Console Agent: ai/console-agent.md
   - Extending:
     - Modules: modules.md
