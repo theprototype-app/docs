@@ -2,10 +2,10 @@
  "id": "peers-panel-desktop",
  "spec": "5989098cea90",
  "dpr": 2,
- "shotAt": "2026-11-03T12:28:03.551Z",
+ "shotAt": "2026-11-03T17:35:04.699Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.55.0",
+  "sha": "34c6810f"
  },
  "uiHits": [
   "div.peers-backdrop",
@@ -33,7 +33,7 @@
  "fade": [],
  "anchors": {
   "1": {
-   "x": 265.125,
+   "x": 264.5625,
    "y": 128,
    "w": 50.65625,
    "h": 33

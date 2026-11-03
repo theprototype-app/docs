@@ -2,10 +2,10 @@
  "id": "selection-passes-through",
  "spec": "ae92cbf795d0",
  "dpr": 2,
- "shotAt": "2026-11-03T14:53:08.204Z",
+ "shotAt": "2026-11-03T18:28:06.972Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.55.0",
+  "sha": "34c6810f"
  },
  "uiHits": [
   "svg.lucide",

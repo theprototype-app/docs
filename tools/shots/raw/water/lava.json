@@ -2,10 +2,10 @@
  "id": "lava",
  "spec": "a9c59a19acb9",
  "dpr": 2,
- "shotAt": "2026-11-03T14:21:18.302Z",
+ "shotAt": "2026-11-03T18:27:26.552Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.55.0",
+  "sha": "34c6810f"
  },
  "uiHits": [],
  "width": 2000,

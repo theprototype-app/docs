@@ -2,10 +2,10 @@
  "id": "select-tool",
  "spec": "41bf23a6da1d",
  "dpr": 2,
- "shotAt": "2026-11-03T14:15:13.462Z",
+ "shotAt": "2026-11-03T18:18:10.728Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.55.0",
+  "sha": "34c6810f"
  },
  "uiHits": [
   "img.h-7",

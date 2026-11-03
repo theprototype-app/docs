@@ -2,10 +2,10 @@
  "id": "settings-search",
  "spec": "cc1052d55a96",
  "dpr": 2,
- "shotAt": "2026-11-03T14:52:11.864Z",
+ "shotAt": "2026-11-03T18:26:39.734Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.55.0",
+  "sha": "34c6810f"
  },
  "uiHits": [],
  "width": 800,
