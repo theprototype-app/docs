@@ -1,0 +1,24 @@
+# docs/index.md — Welcome ▸ Quick start, step 2 (83-start: the first page of the getting-started path)
+page: index
+md: index.md
+defaults: {device: desktop, theme: dark, dpr: 2, format: webp}
+shots:
+  - id: quick-start-add
+    alt: >-
+      The menu a right-click on the empty 3D view opens, with Add ▸ Mesh unfolded and Cube in its list. 1: Add.
+      2: Cube, the first thing to make.
+    caption: Quick start, step 2 — right-click the empty view, then Add ▸ Mesh ▸ Cube.
+    setup:
+      - {camera: {pos: [5.6, 4, 7], target: [0, 0.8, 0]}}
+      - {rightClick: [420, 260]}
+      - {wait: 600}
+      - {clickText: 'Add ▸'}
+      - {wait: 600}
+      - {hover: 'text="Mesh"'}
+      - {wait: 700}
+    crop: {rect: [380, 220, 688, 440]}
+    fade: [b]
+    kind: ui
+    annotate:
+      - {n: 1, at: {text: Add, up: 1}, shape: box, label: add, badge: t, key: '**Add** — the first item of the menu.'}
+      - {n: 2, at: {text: Cube}, shape: circle, label: a cube, badge: r, key: 'Mesh ▸ **Cube**: make **a cube** to start with.'}

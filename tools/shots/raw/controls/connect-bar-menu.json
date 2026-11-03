@@ -1,21 +1,37 @@
 {
  "id": "connect-bar-menu",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.499Z",
+ "spec": "732eb037cdbc",
+ "dpr": 2,
+ "shotAt": "2026-11-03T11:10:33.152Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.2",
+  "sha": "de3014f8"
  },
- "from": "img/controls/connect-bar-menu.png",
- "width": 510,
- "height": 215,
+ "uiHits": [
+  "div.fixed",
+  "div.ctx-scroll",
+  "div.ctx-section",
+  "div.cursor-pointer",
+  "span.flex-1"
+ ],
+ "width": 1120,
+ "height": 460,
  "crop": {
-  "x": 0,
+  "x": 440,
   "y": 0,
-  "w": 510,
-  "h": 215
+  "w": 560,
+  "h": 230
  },
- "cut": [],
- "fade": [],
+ "cut": [
+  "l",
+  "r",
+  "b"
+ ],
+ "fade": [
+  "l",
+  "r",
+  "b"
+ ],
  "anchors": {},
  "kind": "ui"
 }

@@ -1,10 +1,11 @@
 {
  "id": "home-phone",
+ "spec": "3c03229bd2f7",
  "dpr": 2,
- "shotAt": "2026-10-31T14:23:56.001Z",
+ "shotAt": "2026-11-03T11:16:04.443Z",
  "app": {
-  "version": "1.51.0",
-  "sha": "6fe31dae"
+  "version": "1.54.2",
+  "sha": "de3014f8"
  },
  "uiHits": [
   "header.wc-head",
@@ -12,7 +13,6 @@
   "dialog.tp-ui",
   "button.sn-row",
   "div.sn-group-label",
-  "div.sn-groups",
   "span.sn-label",
   "span#settings-touch-header",
   "svg.lucide"

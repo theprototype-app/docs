@@ -99,10 +99,14 @@ the water itself.
   of <kbd>Alt</kbd> and the preview disappears.
 - The object list always reaches every object, whatever is in front of it.
 
-![Alt+click in the Aquarium: the chip by the cursor says 2 of 3 · Fish orange](img/controls/alt-click-cycle.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="480" loading=lazy }
+![Alt+click on a crate with a ball and a post inside it: the second click picked the ball, and the chip beside the cursor reads 2 of 3 · Ball. 1: the chip, which says which of the three you have.](img/controls/alt-click-cycle.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="560" height="420" loading=lazy }
 /// caption
 Alt+click steps through what is under the cursor; the chip says which one you have.
 ///
+
+<div class="shot-key" markdown>
+1. The chip says **which one** you have: 2 of 3, and its name.
+</div>
 
 **Configure Scene ▸ Advanced ▸ Selection passes through** chooses what clicks go through:
 
@@ -489,12 +493,16 @@ without docking — release Ctrl to dock*. You can press or release the key at a
 follows the key at once. It works for a single window, a window group dragged by its tab strip, and a tab torn out of
 a group.
 
-![The floating Objects window dragged over the right sidebar: it turns see-through, the sidebar column is outlined and the target reads Add as tab, with Hold Ctrl to place without docking underneath](img/controls/window-over-sidebar-hint.webp){ .shot width="620" height="584" loading=lazy }
+![The floating Objects window dragged over the right sidebar: it turns see-through, the sidebar column is outlined and the target reads Add as tab, with Hold Ctrl to place without docking underneath. 1: Add as tab.](img/controls/window-over-sidebar-hint.webp){ .shot .fade-l .fade-b width="620" height="584" loading=lazy }
 /// caption
 A floating window dragged over a sidebar: drop to add it as a tab, or hold Ctrl.
 ///
 
-![The same drag with Ctrl held: the outline and the target are gone, the Objects window lies over the sidebar as it will be dropped, and a label beside the pointer reads Placing without docking — release Ctrl to dock](img/controls/window-place-without-docking.webp){ .shot width="620" height="584" loading=lazy }
+<div class="shot-key" markdown>
+1. Drop here to **add as tab** in the sidebar; hold Ctrl to place the window without docking.
+</div>
+
+![The same drag with Ctrl held: the outline and the target are gone, the Objects window lies over the sidebar as it will be dropped, and a label beside the pointer reads Placing without docking — release Ctrl to dock.](img/controls/window-place-without-docking.webp){ .shot .fade-l .fade-b width="620" height="584" loading=lazy }
 /// caption
 The same drag with Ctrl held: the window will land over the sidebar, not in it.
 ///
@@ -676,15 +684,19 @@ Edit positions, in a small window: every cluster has a grip, every button a red 
 In Edit positions the budget chip has its own grip and red −.
 ///
 
-![After Rotate to vertical and Rotate to horizontal: the toolbar stands on the left edge with Play in its middle, and the bottom-left corner buttons lie in a row](img/controls/clusters-rotated.webp){ .shot .fade-r .fade-t width="400" height="700" loading=lazy }
+![After Rotate to vertical on the toolbar and Rotate to horizontal on the bottom-left buttons: the toolbar stands on the left edge with Play in its middle, and the bottom-left corner buttons lie in a row.](img/controls/clusters-rotated.webp){ .shot .fade-r .fade-t width="400" height="740" loading=lazy }
 /// caption
 Clusters after Rotate to vertical and Rotate to horizontal.
 ///
 
-![Edit positions with a mouse: the buttons beside the logo are drawn faint (hidden by default on a computer) and their grip menu is open — Move, Rotate to vertical, Reset position, Reset all positions, Show cluster and Show all](img/controls/touch-tools-show-cluster.webp){ .shot width="390" height="370" loading=lazy }
+![Edit positions with a mouse: the buttons beside the logo are drawn faint (hidden by default on a computer) and their grip menu is open — Move, Rotate to vertical, Reset position, Reset all positions, Show cluster and Show all. 1: Show cluster.](img/controls/touch-tools-show-cluster.webp){ .shot .fade-r .fade-b width="520" height="380" loading=lazy }
 /// caption
 A cluster's grip menu, with Show cluster and Show all.
 ///
+
+<div class="shot-key" markdown>
+1. **Show cluster** brings back the buttons beside the logo — **show it**.
+</div>
 
 #### Arranging the buttons
 
@@ -723,7 +735,7 @@ Then:
 Edit positions on a computer: the bottom toolbar.
 ///
 
-![Edit positions reaching the top right: the notifications and Explorer buttons in the top-right group each carry a red −, with a green + for the next place in the group.](img/controls/edit-positions-top-right.webp){ .shot .fade-l .fade-b width="688" height="130" loading=lazy }
+![Edit positions reaching the top right: the scene notes, notifications and peers buttons in the top-right group each carry a red −, with a green + for the next place in the group and a grip under it.](img/controls/edit-positions-top-right.webp){ .shot .fade-l .fade-b width="688" height="130" loading=lazy }
 /// caption
 Edit positions reaching the top right of the screen.
 ///
@@ -760,7 +772,7 @@ Float** button (the lock in the drawer's header), or right-click the Connect bar
   **compact** form (the status dot and the chevron); tap the dot for the full bar, and it grows back by itself when room
   returns.
 
-![The floating Connect bar right-clicked outside Edit positions: its menu reads Move, Pin to top row, Reset position and Reset all positions (the last two greyed while the bar is in its default place)](img/controls/connect-bar-menu.webp){ .shot width="510" height="215" loading=lazy }
+![The floating Connect bar right-clicked outside Edit positions: its menu reads Move, Pin to top row, Reset position and Reset all positions (the last two greyed while the bar is in its default place).](img/controls/connect-bar-menu.webp){ .shot .fade-l .fade-r .fade-b width="560" height="230" loading=lazy }
 /// caption
 The Connect bar's right-click menu, outside Edit positions.
 ///

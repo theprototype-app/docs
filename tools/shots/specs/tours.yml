@@ -39,3 +39,39 @@ shots:
       - {wait: 1200}
     crop: {rect: [470, 90, 688, 480]}
     fade: [b]
+  # 83-start: the getting-started path (1.54 first visit), shot on production instead of the 76-int capture
+  - id: welcome-question
+    replaces: img/tours/welcome-question.png
+    alt: >-
+      The Welcome card on a first visit: the question What do you want to do? over four answers — Play a game, Remix a
+      game, Start from a template and Describe it — with the Empty scene link under them. 1: the question.
+      2: Empty scene.
+    caption: The Welcome card asks one question on your first visit.
+    setup:
+      - {eval: "window.__stores.whatsNew.openWelcome()"}
+      - {wait: 1500}
+    crop: {selector: '#welcome-overlay', pad: 16}
+    fade: []
+    annotate:
+      - {n: 1, at: {rect: [441, 332, 214, 24]}, shape: underline, label: pick one, badge: r, key: 'The one question, **What do you want to do?** — **pick one** of the four answers: **Play a game**, **Remix a game**, **Start from a template** or **Describe it**.'}
+      - {n: 2, at: {text: Empty scene}, shape: underline, label: or empty, badge: r, key: '**Empty scene** skips the question, **or empty** to start from nothing.'}
+  - id: first-game-quest
+    replaces: img/tours/first-game-quest.png
+    alt: >-
+      Step 1 of the first-game quest in the lower left of the editor: a card headed Your first game, 1 / 3, Make it
+      yours, with Skip, Don't show again and Next, above the + button. 1: the step counter, three steps.
+      2: the + button the step points at.
+    caption: Step 1 of 3 of the first-game quest.
+    scene:
+      - {create: Box, name: Crate, at: [0, 0.8, 0], scale: 1.6, color: '#c9a26b'}
+      - {create: Sphere, name: Ball, at: [2.9, 0.8, 0.9], scale: 0.8, color: '#6c8cd5'}
+      - {create: Cylinder, name: Post, at: [-2.8, 1, -0.6], color: '#81b29a'}
+      - {camera: {pos: [6.8, 4.8, 8.6], target: [0, 0.8, 0]}}
+    setup:
+      - {eval: "window.__stores.firstWin.startFirstWin({choice: 'remix', force: true})"}
+      - {wait: 2500}
+    crop: {rect: [0, 470, 560, 430]}
+    fade: [t, r]
+    annotate:
+      - {n: 1, at: {text: 1 / 3}, shape: circle, label: 3 steps, badge: r, key: 'The step counter: the quest has **3 steps** — make it yours, play it, invite a friend.'}
+      - {n: 2, at: {selector: '#mobile-add-button'}, shape: circle, label: add here, badge: r, key: 'The **+** button, where step 1 points: **add here**, or right-click the view.'}

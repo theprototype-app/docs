@@ -1,0 +1,54 @@
+{
+ "id": "quick-start-add",
+ "spec": "6ca7e913b0ae",
+ "dpr": 2,
+ "shotAt": "2026-11-03T11:10:57.273Z",
+ "app": {
+  "version": "1.54.2",
+  "sha": "de3014f8"
+ },
+ "uiHits": [
+  "div.fixed",
+  "svg.lucide",
+  "div.ctx-disabled",
+  "div.ctx-section",
+  "div.relative",
+  "span.flex-1",
+  "span.flex",
+  "div.ctx-scroll",
+  "div.cursor-pointer",
+  "span.ctx-chev"
+ ],
+ "width": 1376,
+ "height": 880,
+ "crop": {
+  "x": 380,
+  "y": 220,
+  "w": 688,
+  "h": 440
+ },
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
+ "fade": [
+  "b"
+ ],
+ "anchors": {
+  "1": {
+   "x": 112,
+   "y": 104.5,
+   "w": 317,
+   "h": 39
+  },
+  "2": {
+   "x": 918.59375,
+   "y": 128.5,
+   "w": 224,
+   "h": 39
+  }
+ },
+ "kind": "ui"
+}

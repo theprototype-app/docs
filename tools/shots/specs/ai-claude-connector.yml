@@ -1,0 +1,21 @@
+# docs/ai/claude-connector.md — the AI window's Connect Claude card, signed out (what a new person sees first;
+# its How it works link opens this page). 83-start priority: app-linked.
+page: ai-claude-connector
+md: ai/claude-connector.md
+defaults: {device: desktop, theme: dark, dpr: 2, format: webp}
+shots:
+  - id: connect-card
+    alt: >-
+      The AI assistant window, signed out: Choose how the assistant thinks, with the Connect Claude card — Sign in to
+      connect, step 1 Add theprototype to Claude with the connector address and How it works, step 2 sign in and
+      press Connect Claude. 1: Sign in to connect. 2: Add to Claude. 3: How it works.
+    caption: The AI window's Connect Claude card, before you sign in.
+    setup:
+      - {eval: "window.__stores.aiAssistantHidden.set(false)"}
+      - {wait: 1500}
+    crop: {selector: '#ai-assistant-window', pad: 10}
+    fade: []
+    annotate:
+      - {n: 1, at: {selector: '#connect-claude-signin'}, shape: box, label: sign in, badge: b, key: '**Sign in to connect** opens your profile menu: **sign in** first.'}
+      - {n: 2, at: {selector: '#connect-claude-add'}, shape: box, label: once only, badge: r, key: '**Add to Claude** adds the connector in claude.ai — **once only**.'}
+      - {n: 3, at: {selector: '#connect-claude-how'}, shape: box, label: this page, badge: r, key: '**How it works** opens **this page**.'}

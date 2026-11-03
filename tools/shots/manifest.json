@@ -9,8 +9,8 @@
    "height": 620,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:29:45.235Z"
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:04:57.117Z"
   },
   "img/accessibility/scale-150-phone.webp": {
    "page": "accessibility",
@@ -66,6 +66,21 @@
    "labels": [],
    "app": "earlier",
    "shotAt": "2026-10-29T08:56:54.343Z"
+  },
+  "img/ai-claude-connector/connect-card.webp": {
+   "page": "ai-claude-connector",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 520,
+   "height": 460,
+   "badges": 3,
+   "labels": [
+    "sign in",
+    "once only",
+    "this page"
+   ],
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:05:08.988Z"
   },
   "img/appearance/themes.webp": {
    "page": "appearance",
@@ -327,6 +342,20 @@
    "app": "earlier",
    "shotAt": "2026-10-31T14:06:04.426Z"
   },
+  "img/characters-and-motion/motion-tab.webp": {
+   "page": "characters-and-motion",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 580,
+   "height": 616,
+   "badges": 2,
+   "labels": [
+    "motion",
+    "then drag"
+   ],
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:06:01.290Z"
+  },
   "img/checkpoints/large-scene-notice.webp": {
    "page": "checkpoints",
    "kind": "ui",
@@ -503,6 +532,19 @@
    "app": "earlier",
    "shotAt": "2026-10-27T07:46:24.496Z"
   },
+  "img/connection/guests-see.webp": {
+   "page": "connection",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 542,
+   "height": 338,
+   "badges": 1,
+   "labels": [
+    "guests see"
+   ],
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:06:11.771Z"
+  },
   "img/connection/peers-panel-desktop.webp": {
    "page": "connection",
    "kind": "ui",
@@ -527,14 +569,16 @@
   },
   "img/controls/alt-click-cycle.webp": {
    "page": "controls",
-   "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 480,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.497Z"
+   "kind": "view",
+   "dpr": 2,
+   "width": 560,
+   "height": 420,
+   "badges": 1,
+   "labels": [
+    "which one"
+   ],
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:19:56.494Z"
   },
   "img/controls/behaviour-view-knobs.webp": {
    "page": "controls",
@@ -561,24 +605,24 @@
   "img/controls/clusters-rotated.webp": {
    "page": "controls",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 400,
-   "height": 700,
+   "height": 740,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.499Z"
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:09:25.231Z"
   },
   "img/controls/connect-bar-menu.webp": {
    "page": "controls",
    "kind": "ui",
-   "dpr": 1,
-   "width": 510,
-   "height": 215,
+   "dpr": 2,
+   "width": 560,
+   "height": 230,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.499Z"
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:10:33.152Z"
   },
   "img/controls/copy-paste-section-menu.webp": {
    "page": "controls",
@@ -588,8 +632,8 @@
    "height": 560,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:46:06.033Z"
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:07:52.870Z"
   },
   "img/controls/copy-paste-vector-menu.webp": {
    "page": "controls",
@@ -599,8 +643,8 @@
    "height": 560,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:45:50.487Z"
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:07:37.364Z"
   },
   "img/controls/edit-positions-clusters.webp": {
    "page": "controls",
@@ -627,13 +671,13 @@
   "img/controls/edit-positions-top-right.webp": {
    "page": "controls",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
    "height": 130,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.503Z"
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:10:06.561Z"
   },
   "img/controls/edit-positions.webp": {
    "page": "controls",
@@ -701,13 +745,15 @@
   "img/controls/touch-tools-show-cluster.webp": {
    "page": "controls",
    "kind": "ui",
-   "dpr": 1,
-   "width": 390,
-   "height": 370,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.505Z"
+   "dpr": 2,
+   "width": 520,
+   "height": 380,
+   "badges": 1,
+   "labels": [
+    "show it"
+   ],
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:09:39.948Z"
   },
   "img/controls/viewport-overview.webp": {
    "page": "controls",
@@ -738,24 +784,26 @@
   "img/controls/window-over-sidebar-hint.webp": {
    "page": "controls",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 620,
    "height": 584,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.506Z"
+   "badges": 1,
+   "labels": [
+    "add as tab"
+   ],
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:08:09.165Z"
   },
   "img/controls/window-place-without-docking.webp": {
    "page": "controls",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 620,
    "height": 584,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.506Z"
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:08:25.949Z"
   },
   "img/debugger/paused-dark.webp": {
    "page": "debugger",
@@ -778,6 +826,20 @@
    "labels": [],
    "app": "earlier",
    "shotAt": "2026-10-27T07:46:24.507Z"
+  },
+  "img/edit-in-blender/card.webp": {
+   "page": "edit-in-blender",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 616,
+   "height": 430,
+   "badges": 2,
+   "labels": [
+    "watch it",
+    "this guide"
+   ],
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:10:44.946Z"
   },
   "img/explorer/place-box-ghost.webp": {
    "page": "explorer",
@@ -988,16 +1050,30 @@
    "app": "earlier",
    "shotAt": "2026-10-27T07:46:24.522Z"
   },
+  "img/index/quick-start-add.webp": {
+   "page": "index",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 688,
+   "height": 440,
+   "badges": 2,
+   "labels": [
+    "add",
+    "a cube"
+   ],
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:10:57.273Z"
+  },
   "img/interface/dialog-delete-flow.webp": {
    "page": "interface",
    "kind": "ui",
-   "dpr": 1,
-   "width": 688,
-   "height": 400,
+   "dpr": 2,
+   "width": 576,
+   "height": 303,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.523Z"
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:14:31.404Z"
   },
   "img/interface/dock-drop-objects.webp": {
    "page": "interface",
@@ -1079,35 +1155,35 @@
   "img/interface/menu-project-compact.webp": {
    "page": "interface",
    "kind": "ui",
-   "dpr": 1,
-   "width": 290,
-   "height": 215,
+   "dpr": 2,
+   "width": 330,
+   "height": 180,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.528Z"
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:13:32.632Z"
   },
   "img/interface/phone-bar-drag-in.webp": {
    "page": "interface",
    "kind": "ui",
-   "dpr": 2.9,
+   "dpr": 2,
    "width": 390,
    "height": 550,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.530Z"
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:14:47.054Z"
   },
   "img/interface/phone-more-show-switches-light.webp": {
    "page": "interface",
    "kind": "ui",
-   "dpr": 2.9,
+   "dpr": 2,
    "width": 390,
    "height": 550,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.532Z"
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:15:00.563Z"
   },
   "img/interface/pop-out-dock.webp": {
    "page": "interface",
@@ -1128,8 +1204,8 @@
    "height": 460,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:40:45.534Z"
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:11:12.881Z"
   },
   "img/interface/selection-toolbar-phone.webp": {
    "page": "interface",
@@ -1150,8 +1226,8 @@
    "height": 480,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:36:48.031Z"
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:12:00.266Z"
   },
   "img/interface/sidebar-full-height.webp": {
    "page": "interface",
@@ -2195,8 +2271,8 @@
    "height": 896,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:23:56.001Z"
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:16:04.443Z"
   },
   "img/settings/interface-desktop.webp": {
    "page": "settings",
@@ -2366,24 +2442,27 @@
   "img/touch-controls/layout-editor.webp": {
    "page": "touch-controls",
    "kind": "ui",
-   "dpr": 1,
-   "width": 320,
-   "height": 693,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.606Z"
+   "dpr": 2,
+   "width": 390,
+   "height": 896,
+   "badges": 2,
+   "labels": [
+    "which games",
+    "selected"
+   ],
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:17:15.354Z"
   },
   "img/touch-controls/sky-run-phone.webp": {
    "page": "touch-controls",
    "kind": "ui",
-   "dpr": 1,
-   "width": 320,
-   "height": 693,
+   "dpr": 2,
+   "width": 390,
+   "height": 896,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.606Z"
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:16:45.362Z"
   },
   "img/tours/editor-tour.webp": {
    "page": "tours",
@@ -2396,6 +2475,20 @@
    "app": "1.51.0",
    "shotAt": "2026-10-31T14:24:26.543Z"
   },
+  "img/tours/first-game-quest.webp": {
+   "page": "tours",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 560,
+   "height": 430,
+   "badges": 2,
+   "labels": [
+    "3 steps",
+    "add here"
+   ],
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:18:05.764Z"
+  },
   "img/tours/settings-tours.webp": {
    "page": "tours",
    "kind": "ui",
@@ -2404,8 +2497,8 @@
    "height": 480,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:24:41.524Z"
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:17:39.940Z"
   },
   "img/tours/vr-welcome.webp": {
    "page": "tours",
@@ -2417,6 +2510,20 @@
    "labels": [],
    "app": "earlier",
    "shotAt": "2026-10-27T07:46:24.607Z"
+  },
+  "img/tours/welcome-question.webp": {
+   "page": "tours",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 632,
+   "height": 511,
+   "badges": 2,
+   "labels": [
+    "pick one",
+    "or empty"
+   ],
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:17:51.562Z"
   },
   "img/uv-editor/smart-unwrap.webp": {
    "page": "uv-editor",

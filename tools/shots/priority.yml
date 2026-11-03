@@ -1,0 +1,32 @@
+# Roadmap 83 M1 (owner 2026-11-02): which docs pages get fresh shots first. Written by lane 83-start on 2026-11-03
+# against core v1.54.2. Re-check tier 2 when the app gains a docs link: `git grep -n "docs.theprototype.app" <tag> -- src`.
+# release.cjs and shoot.cjs take these page names; `node release.cjs <v> $(node -e "…tier pages…")` re-shoots a tier.
+
+# 1. The getting-started path: what a new person reads, in the order they meet it at the launch
+#    (Welcome ▸ Quick start → the first-visit question and first-game quest → moving around → the screen → phone → others)
+getting-started:
+  - index            # Welcome + Quick start (Add ▸ Mesh ▸ Cube, the gizmo, invite a friend)
+  - tours            # Your first visit (the one question), the first-game quest, the editor tour
+  - controls         # viewport, gizmo, selection
+  - interface        # sidebars, dock, windows, the phone bar
+  - touch-controls   # phone (N6 folded shots)
+  - connection       # the Connect bar, status dot (phone), guests
+  - invites          # Connect ▸ Invite, Request AI
+
+# 2. Every page the app links to (core v1.54.2), with where the link is
+app-linked:
+  - index                   # Sidebar ▸ Docs; the "Read more" on the view-only join toast; the UI kit's Documentation row
+  - ai/claude-connector     # Connect Claude ▸ How it works (connectorLinks.js); the connector's tools list it as docs
+  - ai/build-with-an-agent  # the agent invite tools (builtinTools.js AGENT_DOCS)
+  - ai/local-models         # Settings ▸ AI ▸ Physics tools ▸ "Local & small models guide"
+  - edit-in-blender         # the Edit in Blender card ▸ Guide (editInBlenderState.js)
+  - ui-kit                  # the UI kit page ▸ "UI kit for module authors"
+  # not linked by the app but owed to this pass: fix-batch-3 row l (Motion tab + characters shots)
+  - characters-and-motion
+  # the join toast's "Read more" is about view-only access, which people.md explains (the link goes to the root)
+  - people
+# The Welcome dialog, the first-game quest card, the tours and the first-use hints link no docs page (v1.54.2).
+
+# 3. By traffic: the docs site (GitHub Pages, docs.theprototype.app, not proxied by Cloudflare) has no analytics, so
+#    there is no traffic order. The owner ruled out new tracking. The rest follows the 83-batch3 owed list.
+by-traffic: []

@@ -72,7 +72,14 @@ tab): it joins in one step with the role you chose, for a limited time. See [Inv
 
 ### What guests see
 
-![Connect ▸ Info ▸ Guests see](img/connection/guests-see.png)
+![The Connect drawer's Info tab on a computer: the Session rows — State, Your ID, Guests see with its list, Host — and the Signaling server rows under them. 1: Guests see, which of your files a guest sees in the Explorer.](img/connection/guests-see.webp){ .shot width="542" height="338" loading=lazy }
+/// caption
+Connect ▸ ▾ ▸ Info, where the host picks what guests see.
+///
+
+<div class="shot-key" markdown>
+1. **Guests see**: which of your files a guest sees in the Explorer (read-only).
+</div>
 
 The host decides how much of their library a guest sees: **Connect ▸ ▾ (Info) ▸ Guests see**.
 

@@ -9,7 +9,15 @@ half-way — you take the headset off, or reload the page — picks up where you
 
 The first time you open the app, the Welcome card asks **What do you want to do?**
 
-![The Welcome card: What do you want to do? with Play a game, Remix a game, Start from a template and Describe it](img/tours/welcome-question.png)
+![The Welcome card on a first visit: the question What do you want to do? over four answers — Play a game, Remix a game, Start from a template and Describe it — with the Empty scene link under them. 1: the question. 2: Empty scene.](img/tours/welcome-question.webp){ .shot width="632" height="511" loading=lazy }
+/// caption
+The Welcome card asks one question on your first visit.
+///
+
+<div class="shot-key" markdown>
+1. The one question, **What do you want to do?** — **pick one** of the four answers: **Play a game**, **Remix a game**, **Start from a template** or **Describe it**.
+2. **Empty scene** skips the question, **or empty** to start from nothing.
+</div>
 
 - **Play a game** — pick a game and it opens straight in Play. When you leave it, the app offers to make it yours.
 - **Remix a game** / **Start from a template** — pick one from the list and it opens in the editor. **All games…** /
@@ -28,7 +36,15 @@ Every answer except Play (and Play once you leave the game) starts three short s
 2. **Now play it** — press Play to try your change (Esc, or Back on a phone, returns to editing).
 3. **You made a game!** — invite a friend: copy your link (click or tap your ID); a friend joining counts too.
 
-![Step 1 of the first-game quest beside the + button: Make it yours](img/tours/first-game-quest.png)
+![Step 1 of the first-game quest in the lower left of the editor: a card headed Your first game, 1 / 3, Make it yours, with Skip, Don't show again and Next, above the + button. 1: the step counter, three steps. 2: the + button the step points at.](img/tours/first-game-quest.webp){ .shot .fade-t .fade-r width="560" height="430" loading=lazy }
+/// caption
+Step 1 of 3 of the first-game quest.
+///
+
+<div class="shot-key" markdown>
+1. The step counter: the quest has **3 steps** — make it yours, play it, invite a friend.
+2. The **+** button, where step 1 points: **add here**, or right-click the view.
+</div>
 
 Each step completes when you do it; a ring marks where to look and the scene stays usable. **Skip** and **Don't show
 again** close it. When all three are done, a toast offers **Tour the interface** and **More templates**.

@@ -1,18 +1,19 @@
 {
  "id": "copy-paste-section-menu",
+ "spec": "ebd29a7e6922",
  "dpr": 2,
- "shotAt": "2026-10-31T14:46:06.033Z",
+ "shotAt": "2026-11-03T11:07:52.870Z",
  "app": {
-  "version": "1.51.0",
-  "sha": "6fe31dae"
+  "version": "1.54.2",
+  "sha": "de3014f8"
  },
  "uiHits": [
   "div.fixed",
-  "div.ctx-scroll",
   "div.ctx-section",
   "div.cursor-pointer",
   "span.flex",
-  "span.flex-1"
+  "span.flex-1",
+  "span.ctx-hint"
  ],
  "width": 1376,
  "height": 1120,

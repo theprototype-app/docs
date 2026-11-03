@@ -4,15 +4,20 @@ On a phone or tablet, Play shows a **move stick** on the left, a **look drag** o
 buttons** — Jump, Throw, Grab, Use… — exactly the actions the game needs. Every control can be moved, resized and faded,
 and any button can wear your own pressed and released images.
 
-![Sky Run on a phone: the move stick bottom-left and the Jump button bottom-right](img/touch-controls/sky-run-phone.webp){ .shot width="320" height="693" loading=lazy }
+![Sky Run in Play on a folded phone: the stage name, the timer and the coins at the top, the move stick in the lower left and the Jump button in the lower right, over the first platform of the level.](img/touch-controls/sky-run-phone.webp){ .shot width="390" height="896" loading=lazy }
 /// caption
-Sky Run on a phone.
+Sky Run on a folded phone.
 ///
 
-![The touch controls layout editor, with the Jump button selected](img/touch-controls/layout-editor.webp){ .shot width="320" height="693" loading=lazy }
+![The touch controls layout editor on a folded phone, with the Jump button selected: This game or All games, Hide, Size and Opacity sliders, Default place, Reset, Cancel and Save at the top, the move stick and the Jump button below with their names. 1: save for this game or all games. 2: the selected Jump button.](img/touch-controls/layout-editor.webp){ .shot width="390" height="896" loading=lazy }
 /// caption
-The touch controls layout editor.
+The touch controls layout editor, Jump selected.
 ///
+
+<div class="shot-key" markdown>
+1. **This game** or **All games**: **which games** the layout is saved for.
+2. The **selected** button (Jump); its Size and Opacity are the sliders above.
+</div>
 
 For the phone layout itself — the bottom bar, the selection toolbar, the dock and its tabs, and the sheets — see
 [The Interface: On a phone](interface.md#on-a-phone).

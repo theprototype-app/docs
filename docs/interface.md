@@ -430,7 +430,7 @@ Project actions**:
   with the **Project | Scene | ⚙** switch under Save; the **⚙** opens the same Save options.
 - **Auto** is List on a phone and Compact everywhere else. Searching the settings for *burger* or *compact* finds it.
 
-![The main menu's Project section in the Compact layout: New from template… across the top, then Load beside Save with its ▾, then Import beside Export…](img/interface/menu-project-compact.webp){ .shot width="290" height="215" loading=lazy }
+![The main menu's Project section in the Compact layout: New from template… across the top, then Load beside Save with its ▾, then Import beside Export…, and Cloud saves.](img/interface/menu-project-compact.webp){ .shot .fade-b width="330" height="180" loading=lazy }
 /// caption
 The main menu's Project section in the Compact layout.
 ///
@@ -457,7 +457,7 @@ for this device. Passive results — *Saved*, *Copied*, *Exported…* — stay [
 in the notification centre. Requests from other people (to load a session, to take control, to see your private scene)
 stay cards in the corner, like connection requests: a dialog would take over your screen from afar.
 
-![Delete this flow? as a dialog over the dimmed screen, with Delete flow in red beside Cancel.](img/interface/dialog-delete-flow.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="400" loading=lazy }
+![Delete this flow? as a dialog over the dimmed screen, with Delete flow in red beside Cancel.](img/interface/dialog-delete-flow.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="576" height="303" loading=lazy }
 /// caption
 A confirmation is a dialog over the dimmed screen.
 ///
@@ -528,7 +528,7 @@ added, moved or removed an item on the bar, and stays away; **Settings ▸ Inter
 on an item in More means it is already on the bar, and **Reset bar** (at the end of More) brings back the default. With More closed nothing moves by
 accident: a long press on a bar item opens More and picks that item up in one gesture.
 
-![More open on a folded phone, with Move being dragged from More ▸ Edit down onto the bottom bar; a blue line marks where it will land between Add and Objects](img/interface/phone-bar-drag-in.webp){ .shot .fade-t width="390" height="550" loading=lazy }
+![More open on a folded phone, with Move being dragged from More ▸ Edit down onto the bottom bar; a line marks where it will land between Add and Objects.](img/interface/phone-bar-drag-in.webp){ .shot .fade-t width="390" height="550" loading=lazy }
 /// caption
 More open on a folded phone, with Move being dragged onto the bottom bar.
 ///
@@ -554,7 +554,7 @@ the app tells you once: press and hold any item on the bar to get More back.
 | **Dock tab row** | the row of tabs above docked windows is hidden; the bar and More still switch views |
 | **Grab handle** | no grab bar on docked windows and sheets (and no tap to step the size); drag the top edge to resize |
 
-![Light theme: the bottom of More — Edit, Tools & View, then the Show switches (Selection toolbar, Dock tab row, Grab handle) and Reset bar](img/interface/phone-more-show-switches-light.webp){ .shot .fade-t width="390" height="550" loading=lazy }
+![Light theme: the bottom of More on a folded phone — Tools & View, then the Show switches (Selection toolbar, Dock tab row, Grab handle) and Reset bar.](img/interface/phone-more-show-switches-light.webp){ .shot .fade-t width="390" height="550" loading=lazy }
 /// caption
 The bottom of More on a phone, in the Light theme.
 ///

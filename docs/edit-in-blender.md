@@ -23,7 +23,15 @@ keeps its place, flows, physics and clips. There is nothing to install.
 4. **Drop the exported file anywhere** in theprototype. It recognises the object and asks **Update "<name>"?**, with no need
    to select anything. If you left *Custom Properties* off, select the object, drop the file on it and choose **Replace**.
 
-![The Edit in Blender card, with the export settings and Watch the exported file](img/edit-in-blender/card.webp)
+![The Edit "Crate" in Blender card: Crate.glb is in your downloads, then four numbered steps with Blender's glTF export settings, and Watch the exported file…, Download again, Guide and Close along the bottom. 1: Watch the exported file. 2: Guide, which opens this page.](img/edit-in-blender/card.webp){ .shot width="616" height="430" loading=lazy }
+/// caption
+The Edit in Blender card, after the model downloads.
+///
+
+<div class="shot-key" markdown>
+1. **Watch the exported file…**: pick what Blender saves, and every save updates the object — **watch it**.
+2. **Guide** opens **this guide**.
+</div>
 
 ## Watch the file
 

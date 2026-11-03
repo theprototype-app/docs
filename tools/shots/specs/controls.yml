@@ -84,22 +84,34 @@ shots:
 
   - id: alt-click-cycle
     replaces: img/controls/alt-click-cycle.png
-    dpr: 1
-    kind: ui
+    alt: >-
+      Alt+click on a crate with a ball and a post inside it: the second click picked the ball, and the chip beside the
+      cursor reads 2 of 3 · Ball. 1: the chip, which says which of the three you have.
     caption: Alt+click steps through what is under the cursor; the chip says which one you have.
-    crop:
-      rect:
-      - 500
-      - 130
-      - 688
-      - 480
-    fade:
-    - l
-    - r
-    - t
-    - b
-    alt: 'Alt+click in the Aquarium: the chip by the cursor says 2 of 3 · Fish orange'
-    from: img/controls/alt-click-cycle.png
+    # three objects on one line of sight: the crate's faces, then a ball and a post inside it
+    scene:
+      - {create: Box, name: Crate, at: [0, 0.8, 0], scale: 1.6, color: '#c9a26b'}
+      - {create: Sphere, name: Ball, at: [0, 0.8, 0], scale: 0.5, color: '#6c8cd5'}
+      - {create: Cylinder, name: Post, at: [0, 0.8, 0], scale: [0.3, 0.6, 0.3], color: '#81b29a'}
+      - {camera: {pos: [4.2, 3.2, 5.2], target: [0, 0.8, 0]}}
+    setup:
+      # the app hides the confirming chip after 1.6 s; a slow slot shoots later than that, so hold the real chip
+      - eval: >-
+          (() => { const s = window.__stores.pickCycle.pickCycleHint; let last = null;
+          s.subscribe((h) => { if (h && h.mode === 'picked') last = h; else if (!h && last) queueMicrotask(() => s.set(last)); }); })()
+      # the 3D view needs the keyboard for Alt to reach it
+      - {key: Escape}
+      - {keyDown: Alt}
+      - {press: {object: Crate, point: center}}
+      - {release: true}
+      - {wait: 400}
+      - {press: {object: Crate, point: center}}
+      - {release: true}
+      # the chip shows while Alt is held: shoot before letting go
+      - {wait: 300}
+    crop: {around: {object: Crate}, size: [560, 420], ui: true}
+    annotate:
+      - {n: 1, at: {selector: '#pick-cycle-hint'}, shape: box, label: which one, badge: b, key: 'The chip says **which one** you have: 2 of 3, and its name.'}
   - id: multi-edit
     replaces: img/controls/multi-edit.png
     caption: 'Properties with three objects selected: every value below applies to all of them.'
@@ -189,34 +201,38 @@ shots:
     alt: 'The TRANSFORM section header right-clicked: Copy section, Copy as JSON, Paste section and Reset section'
   - id: window-over-sidebar-hint
     replaces: img/controls/window-over-sidebar-hint.png
-    dpr: 1
-    kind: ui
+    alt: >-
+      The floating Objects window dragged over the right sidebar: it turns see-through, the sidebar column is outlined
+      and the target reads Add as tab, with Hold Ctrl to place without docking underneath. 1: Add as tab.
     caption: 'A floating window dragged over a sidebar: drop to add it as a tab, or hold Ctrl.'
-    crop:
-      rect:
-      - 0
-      - 0
-      - 620
-      - 584
-    fade: []
-    alt: 'The floating Objects window dragged over the right sidebar: it turns see-through, the sidebar column is outlined and
-      the target reads Add as tab, with Hold Ctrl to place without docking underneath'
-    from: img/controls/window-over-sidebar-hint.png
+    setup: &window-drag
+      - {section: Scene}
+      - {click: 'p[title="Object list (O)"]'}
+      - {wait: 1000}
+      - {press: {selector: '#object-list .wc-label'}}
+      - {moveTo: [1280, 360], steps: 25}
+      - {wait: 700}
+    crop: {rect: [820, 40, 620, 584]}
+    fade: [l, b]
+    annotate:
+      - {n: 1, at: {text: Add as tab}, shape: box, label: add as tab, badge: t, key: 'Drop here to **add as tab** in the sidebar; hold Ctrl to place the window without docking.'}
   - id: window-place-without-docking
     replaces: img/controls/window-place-without-docking.png
-    dpr: 1
-    kind: ui
+    alt: >-
+      The same drag with Ctrl held: the outline and the target are gone, the Objects window lies over the sidebar as it
+      will be dropped, and a label beside the pointer reads Placing without docking — release Ctrl to dock.
     caption: 'The same drag with Ctrl held: the window will land over the sidebar, not in it.'
-    crop:
-      rect:
-      - 0
-      - 0
-      - 620
-      - 584
-    fade: []
-    alt: 'The same drag with Ctrl held: the outline and the target are gone, the Objects window lies over the sidebar as it
-      will be dropped, and a label beside the pointer reads Placing without docking — release Ctrl to dock'
-    from: img/controls/window-place-without-docking.png
+    setup:
+      - {section: Scene}
+      - {click: 'p[title="Object list (O)"]'}
+      - {wait: 1000}
+      - {press: {selector: '#object-list .wc-label'}}
+      - {moveTo: [1280, 360], steps: 25}
+      - {keyDown: Control}
+      - {moveTo: [1284, 362], steps: 4}
+      - {wait: 700}
+    crop: {rect: [820, 40, 620, 584]}
+    fade: [l, b]
   - id: window-menu
     replaces: img/controls/window-menu.png
     caption: A floating window's header menu.
@@ -267,36 +283,46 @@ shots:
     alt: 'Edit positions: the budget chip has its own grip and red − right of the toolbar'
   - id: clusters-rotated
     replaces: img/controls/clusters-rotated.png
-    dpr: 1
-    kind: ui
+    alt: >-
+      After Rotate to vertical on the toolbar and Rotate to horizontal on the bottom-left buttons: the toolbar stands
+      on the left edge with Play in its middle, and the bottom-left corner buttons lie in a row.
     caption: Clusters after Rotate to vertical and Rotate to horizontal.
-    crop:
-      rect:
-      - 0
-      - 200
-      - 400
-      - 700
-    fade:
-    - r
-    - t
-    alt: 'After Rotate to vertical and Rotate to horizontal: the toolbar stands on the left edge with Play in its middle, and
-      the bottom-left corner buttons lie in a row'
-    from: img/controls/clusters-rotated.png
+    device: window-688-tall
+    setup:
+      - {rightClick: 'p[title="Move (1)"]'}
+      - {wait: 400}
+      - {clickText: Edit positions}
+      - {wait: 900}
+      - {click: '#cluster-grip-bar'}
+      - {wait: 400}
+      - {clickText: Rotate to vertical}
+      - {wait: 600}
+      - {click: '#cluster-grip-left'}
+      - {wait: 400}
+      - {clickText: Rotate to horizontal}
+      - {wait: 600}
+      - {click: '#toolbar-edit-apply'}
+      - {wait: 900}
+    crop: {rect: [0, 100, 400, 740]}
+    fade: [r, t]
   - id: touch-tools-show-cluster
     replaces: img/controls/touch-tools-show-cluster.png
-    dpr: 1
-    kind: ui
+    alt: >-
+      Edit positions with a mouse: the buttons beside the logo are drawn faint (hidden by default on a computer) and
+      their grip menu is open — Move, Rotate to vertical, Reset position, Reset all positions, Show cluster and Show
+      all. 1: Show cluster.
     caption: A cluster's grip menu, with Show cluster and Show all.
-    crop:
-      rect:
-      - 0
-      - 0
-      - 390
-      - 370
-    fade: []
-    alt: 'Edit positions with a mouse: the buttons beside the logo are drawn faint (hidden by default on a computer) and their
-      grip menu is open — Move, Rotate to vertical, Reset position, Reset all positions, Show cluster and Show all'
-    from: img/controls/touch-tools-show-cluster.png
+    setup:
+      - {rightClick: 'p[title="Move (1)"]'}
+      - {wait: 400}
+      - {clickText: Edit positions}
+      - {wait: 900}
+      - {click: '#cluster-grip-touch'}
+      - {wait: 600}
+    crop: {rect: [0, 0, 520, 380]}
+    fade: [r, b]
+    annotate:
+      - {n: 1, at: {text: Show cluster}, shape: box, label: show it, badge: r, key: '**Show cluster** brings back the buttons beside the logo — **show it**.'}
   - id: edit-positions
     replaces: img/controls/edit-positions.png
     caption: 'Edit positions on a computer: the bottom toolbar.'
@@ -315,21 +341,17 @@ shots:
     - t
   - id: edit-positions-top-right
     replaces: img/controls/edit-positions-top-right.png
-    dpr: 1
-    kind: ui
+    alt: >-
+      Edit positions reaching the top right: the scene notes, notifications and peers buttons in the top-right group
+      each carry a red −, with a green + for the next place in the group and a grip under it.
     caption: Edit positions reaching the top right of the screen.
-    crop:
-      rect:
-      - 752
-      - 0
-      - 688
-      - 130
-    fade:
-    - l
-    - b
-    alt: 'Edit positions reaching the top right: the notifications and Explorer buttons in the top-right group each carry a
-      red −, with a green + for the next place in the group.'
-    from: img/controls/edit-positions-top-right.png
+    setup:
+      - {rightClick: 'p[title="Move (1)"]'}
+      - {wait: 400}
+      - {clickText: Edit positions}
+      - {wait: 900}
+    crop: {rect: [752, 0, 688, 130]}
+    fade: [l, b]
   - id: edit-positions-connect-bar
     replaces: img/controls/edit-positions-connect-bar.png
     caption: The Connect bar in Edit positions.
@@ -347,16 +369,12 @@ shots:
     - b
   - id: connect-bar-menu
     replaces: img/controls/connect-bar-menu.png
-    dpr: 1
-    kind: ui
+    alt: >-
+      The floating Connect bar right-clicked outside Edit positions: its menu reads Move, Pin to top row, Reset
+      position and Reset all positions (the last two greyed while the bar is in its default place).
     caption: The Connect bar's right-click menu, outside Edit positions.
-    crop:
-      rect:
-      - 0
-      - 0
-      - 510
-      - 215
-    fade: []
-    alt: 'The floating Connect bar right-clicked outside Edit positions: its menu reads Move, Pin to top row, Reset position
-      and Reset all positions (the last two greyed while the bar is in its default place)'
-    from: img/controls/connect-bar-menu.png
+    setup:
+      - {rightClick: [463, 30]}
+      - {wait: 600}
+    crop: {rect: [440, 0, 560, 230]}
+    fade: [l, r, b]

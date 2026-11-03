@@ -1,20 +1,36 @@
 {
  "id": "edit-positions-top-right",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.503Z",
+ "spec": "77918b45d504",
+ "dpr": 2,
+ "shotAt": "2026-11-03T11:10:06.561Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.2",
+  "sha": "de3014f8"
  },
- "from": "img/controls/edit-positions-top-right.png",
- "width": 688,
- "height": 130,
+ "uiHits": [
+  "span.hud-edit-grip",
+  "svg.lucide",
+  "button.hud-edit-remove",
+  "div#hud-tr.tp-ui",
+  "button.hud-edit-grip",
+  "button#cluster-grip-top.cl-grip",
+  "button.hud-cell",
+  "div.relative",
+  "svg.h-full",
+  "path"
+ ],
+ "width": 1376,
+ "height": 260,
  "crop": {
   "x": 752,
   "y": 0,
   "w": 688,
   "h": 130
  },
- "cut": [],
+ "cut": [
+  "l",
+  "b"
+ ],
  "fade": [
   "l",
   "b"

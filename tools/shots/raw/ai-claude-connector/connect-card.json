@@ -1,0 +1,55 @@
+{
+ "id": "connect-card",
+ "spec": "d1a437859c5b",
+ "dpr": 2,
+ "shotAt": "2026-11-03T11:05:08.988Z",
+ "app": {
+  "version": "1.54.2",
+  "sha": "de3014f8"
+ },
+ "uiHits": [
+  "div.connect-pill",
+  "h2#wc-title-s2.wc-title",
+  "section#ai-welcome.aw",
+  "section#connect-claude.cc",
+  "div.ai-composer",
+  "input.tp-field",
+  "span.cc-mark",
+  "p.cc-desc",
+  "div.cc-row",
+  "li#connect-claude-step-1.svelte-1t9wty8",
+  "ol#connect-claude-steps.cc-steps",
+  "h3#connect-claude-title.cc-title"
+ ],
+ "width": 1040,
+ "height": 920,
+ "crop": {
+  "x": 915,
+  "y": 50,
+  "w": 520,
+  "h": 460
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 709.0625,
+   "y": 305,
+   "w": 262.9375,
+   "h": 64
+  },
+  "2": {
+   "x": 104,
+   "y": 432,
+   "w": 307.3125,
+   "h": 64
+  },
+  "3": {
+   "x": 104,
+   "y": 635,
+   "w": 198.75,
+   "h": 64
+  }
+ },
+ "kind": "ui"
+}

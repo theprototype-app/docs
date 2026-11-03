@@ -16,7 +16,7 @@ const { recordLoop } = require('./lib/loop.cjs');
 const { cutSides, resolveFade } = require('./lib/fade.cjs');
 const { kindOf } = require('./lib/rules.cjs');
 const { mdFile, placeFigure } = require('./lib/place.cjs');
-const { ROOT } = require('./lib/spec.cjs');
+const { ROOT, specHash } = require('./lib/spec.cjs');
 
 // --place: swap each finished figure into its docs page (lib/place.cjs)
 function place(pageName, spec, shot, file, snippet) {
@@ -43,6 +43,11 @@ async function uiInside(page, crop) {
 	}, crop);
 }
 
+// a step that never settles (a load waiting on a dialog, say) must not hold a release battery forever:
+// each still gets SHOTS_TIMEOUT seconds after the app is up, then it fails like any other broken shot
+const SHOT_TIMEOUT = 1000 * +(process.env.SHOTS_TIMEOUT || 240);
+const limit = (p, what) => Promise.race([p, new Promise((_, no) => setTimeout(() => no(new Error(`${what}: nothing after ${SHOT_TIMEOUT / 1000} s (a step hung)`)), SHOT_TIMEOUT).unref())]);
+
 const args = process.argv.slice(2);
 const rawOnly = args.includes('--raw-only');
 const stillsOnly = args.includes('--stills');
@@ -54,7 +59,7 @@ async function still(page, pageName, shot, dpr) {
 	const tiles = shot.variants && shot.compose ? shot.variants : [null];
 	const dir = path.join(RAW, pageName);
 	fs.mkdirSync(dir, { recursive: true });
-	const meta = { id: shot.id, dpr, shotAt: new Date().toISOString(), app: await page.evaluate(() => fetch('/version.json').then((r) => r.json()).catch(() => ({}))) };
+	const meta = { id: shot.id, spec: specHash(shot), dpr, shotAt: new Date().toISOString(), app: await page.evaluate(() => fetch('/version.json').then((r) => r.json()).catch(() => ({}))) };
 	const tileMeta = [];
 	for (const [i, v] of tiles.entries()) {
 		if (v) await runSteps(page, v.steps || [v]);
@@ -101,7 +106,7 @@ async function recrop(pageName, shot) {
 		if (!a.at.rect) throw new Error(`callout ${a.n}: a re-cropped shot needs rect anchors (in the source file's pixels)`);
 		anchors[a.n] = { x: a.at.rect[0] - x, y: a.at.rect[1] - y, w: a.at.rect[2], h: a.at.rect[3] };
 	}
-	const meta = { id: shot.id, dpr, shotAt: fs.statSync(src).mtime.toISOString(), app: { version: shot.app || 'earlier' }, from: shot.from,
+	const meta = { id: shot.id, spec: specHash(shot), dpr, shotAt: fs.statSync(src).mtime.toISOString(), app: { version: shot.app || 'earlier' }, from: shot.from,
 		width: w, height: h, crop: { x, y, w, h }, cut: shot.cut || [], fade: resolveFade(shot.fade, shot.cut || [], false), anchors, kind: shot.kind || 'ui' };
 	fs.writeFileSync(path.join(dir, shot.id + '.json'), JSON.stringify(meta, null, 1) + '\n');
 }
@@ -134,8 +139,10 @@ async function recrop(pageName, shot) {
 				}
 				const opened = await openApp(browser, { device: shot.device, dpr, theme: shot.theme, storage: shot.storage });
 				ctx = opened.ctx;
-				await runSteps(opened.page, [...(shot.scene || []), ...(shot.setup || [])]);
-				await still(opened.page, pageName, shot, dpr);
+				await limit((async () => {
+					await runSteps(opened.page, [...(shot.scene || []), ...(shot.setup || [])]);
+					await still(opened.page, pageName, shot, dpr);
+				})(), 'the shot');
 				if (opened.errors.length) console.log(`   page errors: ${opened.errors.slice(0, 3).join(' | ')}`);
 				if (!rawOnly) {
 					const r = await annotateShot(pageName, shot);

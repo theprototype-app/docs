@@ -1,21 +1,50 @@
 {
  "id": "window-over-sidebar-hint",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.506Z",
+ "spec": "984e5edf40d5",
+ "dpr": 2,
+ "shotAt": "2026-11-03T11:08:09.165Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.2",
+  "sha": "de3014f8"
  },
- "from": "img/controls/window-over-sidebar-hint.png",
- "width": 620,
- "height": 584,
+ "uiHits": [
+  "input.cx-input",
+  "button.cx-btn",
+  "div.connect-pill",
+  "button#connect-rooms-button.hud-cell",
+  "button#connect-info-button.hud-cell",
+  "button.sb-tab",
+  "header.wc-head",
+  "div.ins-filter",
+  "div#inspector.tp-ui",
+  "svg.lucide",
+  "button.sec-panel-head",
+  "div.tp-ui"
+ ],
+ "width": 1240,
+ "height": 1168,
  "crop": {
-  "x": 0,
-  "y": 0,
+  "x": 820,
+  "y": 40,
   "w": 620,
   "h": 584
  },
- "cut": [],
- "fade": [],
- "anchors": {},
+ "cut": [
+  "l",
+  "t",
+  "b"
+ ],
+ "fade": [
+  "l",
+  "b"
+ ],
+ "anchors": {
+  "1": {
+   "x": 836.75,
+   "y": 830.5,
+   "w": 166.5,
+   "h": 55
+  }
+ },
  "kind": "ui"
 }

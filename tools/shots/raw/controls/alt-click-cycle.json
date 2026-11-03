@@ -1,26 +1,40 @@
 {
  "id": "alt-click-cycle",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.497Z",
+ "spec": "205f57348af0",
+ "dpr": 2,
+ "shotAt": "2026-11-03T11:19:56.494Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.2",
+  "sha": "de3014f8"
  },
- "from": "img/controls/alt-click-cycle.png",
- "width": 688,
- "height": 480,
+ "uiHits": [],
+ "width": 1120,
+ "height": 840,
  "crop": {
-  "x": 500,
-  "y": 130,
-  "w": 688,
-  "h": 480
+  "x": 437,
+  "y": 262,
+  "w": 560,
+  "h": 420
  },
- "cut": [],
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
  "fade": [
   "l",
   "r",
   "t",
   "b"
  ],
- "anchors": {},
- "kind": "ui"
+ "anchors": {
+  "1": {
+   "x": 594,
+   "y": 404,
+   "w": 145.71875,
+   "h": 45.875
+  }
+ },
+ "kind": "view"
 }

@@ -1,21 +1,48 @@
 {
  "id": "layout-editor",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.606Z",
+ "spec": "f9a507d55975",
+ "dpr": 2,
+ "shotAt": "2026-11-03T11:17:15.354Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.2",
+  "sha": "de3014f8"
  },
- "from": "img/touch/layout-editor.png",
- "width": 320,
- "height": 693,
+ "uiHits": [
+  "div#touch-layout-editor.tle",
+  "div.tle-panel",
+  "span#touch-layout-selected.tle-sel",
+  "span.svelte-1j5vmzv",
+  "div.tle-item",
+  "input#touch-layout-opacity.svelte-1j5vmzv",
+  "div.tle-row",
+  "input#touch-layout-hide.tp-check",
+  "span.tle-num",
+  "label.tle-check",
+  "span.tle-grip"
+ ],
+ "width": 780,
+ "height": 1792,
  "crop": {
   "x": 0,
   "y": 0,
-  "w": 320,
-  "h": 693
+  "w": 390,
+  "h": 896
  },
  "cut": [],
  "fade": [],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 477.90625,
+   "y": 48,
+   "w": 123.28125,
+   "h": 41
+  },
+  "2": {
+   "x": 572,
+   "y": 1552,
+   "w": 152,
+   "h": 152
+  }
+ },
  "kind": "ui"
 }

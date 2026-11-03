@@ -1,20 +1,37 @@
 {
  "id": "phone-more-show-switches-light",
- "dpr": 2.9,
- "shotAt": "2026-10-27T07:46:24.532Z",
+ "spec": "3fe9c38373f5",
+ "dpr": 2,
+ "shotAt": "2026-11-03T11:15:00.563Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.2",
+  "sha": "de3014f8"
  },
- "from": "img/interface/phone-more-show-switches-light.png",
- "width": 1131,
- "height": 1595,
+ "uiHits": [
+  "button#ps-sheet-handle.ps-handle",
+  "div.ps-head",
+  "div#ps-more-sheet.ps-body",
+  "p#ps-more-hint.ps-hint",
+  "nav#ps-bar.ps-bar",
+  "h2.ps-title",
+  "button#ps-tile-arroom.ps-tile",
+  "div.ps-tiles",
+  "div.ps-switch",
+  "button#ps-bar-reset.ps-btn",
+  "button#ps-add.ps-tab",
+  "span.ps-gi"
+ ],
+ "width": 780,
+ "height": 1100,
  "crop": {
   "x": 0,
-  "y": 1003,
-  "w": 1131,
-  "h": 1595
+  "y": 346,
+  "w": 390,
+  "h": 550
  },
- "cut": [],
+ "cut": [
+  "t"
+ ],
  "fade": [
   "t"
  ],

@@ -78,6 +78,16 @@ and motions come as free CC0 packs, and a character downloads with its clips for
 - The packs CI lints the licence of **every file**: each one needs a CC0 record, and a VRM must say CC0 in its
   own meta.
 
+![The Free assets (CC0) window on its Motion tab: a search box, All categories and the resolution, then a grid of humanoid clips from the Motion pack — Crouch_Fwd_Loop, Crouch_Idle_Loop, Dance_Loop… — each with Add to Explorer. 1: the Motion tab. 2: Add to Explorer.](img/characters-and-motion/motion-tab.webp){ .shot .fade-b width="580" height="616" loading=lazy }
+/// caption
+Asset Browser ▸ Motion lists the 87 clips of the Motion pack.
+///
+
+<div class="shot-key" markdown>
+1. The **Motion** tab of the Asset Browser.
+2. **Add to Explorer**, **then drag** the clip onto a character (or pick it in Apply clip…).
+</div>
+
 ## Animation clips are their own files (`.tpanim`)
 
 A clip is a small file in the Explorer (kind **Animation clips**, the standing-figure icon). The model
