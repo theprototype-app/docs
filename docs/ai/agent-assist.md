@@ -8,6 +8,12 @@ Every call works like the agent's other tools: everyone in the session sees the 
 step (Ctrl+Z, or **Undo** on the call's line in **Agent activity**), and a viewer's agent cannot use the tools that change
 things.
 
+!!! tip "Try it"
+    **Templates ▸ Agent workshop** opens a plain room (a floor, a table with a lamp, a crate, a ball and a door). Ask for
+    a curvy vase on the table, a handrail along the edge, a star-shaped sign above the door, a wood floor or a glass
+    ball, then say *"undo that"*. While Claude is connected, the **Connect Claude** row says so until it has used one of
+    these tools.
+
 ## Undo that (`undo_last`)
 
 `undo_last` takes back the agent's **own** last call, or its last few with `count` (up to 20, newest first). It never

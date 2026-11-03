@@ -59,7 +59,8 @@ from your library, a free CC0 material by name or an https image — node shader
 change to the whole scene's look asks the host first. Say ["undo that"](ai/agent-assist.md#undo-that-undo_last) and
 the agent takes back its own last step, or tells you who changed it since. It can also set the point a thing turns about
 and put images into your library. On claude.ai the new tools come as five: `create_shape`, `edit_shape`, `set_look`,
-`assets` and `undo_last` ([tool families](ai/claude-connector.md#tool-families)).
+`assets` and `undo_last` ([tool families](ai/claude-connector.md#tool-families)). To try them, open
+**Templates ▸ Agent workshop**, a plain room with a table, a lamp and a door to ask things of.
 
 **1.55 — give the AI pictures and shaders.** [Generate 3D model from a picture](ai/pictures-and-shaders.md#picture-3d-model):
 a photo, an Explorer image or the viewport, with Meshy or a ComfyUI workflow; location data is removed on your device, and
