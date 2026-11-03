@@ -7,6 +7,10 @@ with the scene.
 
 For the node-by-node reference, see [Shader Nodes](https://docs.theprototype.app/shader-nodes.md).
 
+!!! tip "Write the GLSL yourself"
+    The **`</>`** button shows the GLSL a graph compiles to, the graph as JSON, and **Your GLSL**: your own
+    vertex + fragment pair. Rules, limits and where it runs: [Give the AI pictures and shaders](https://docs.theprototype.app/ai/pictures-and-shaders.md#your-own-glsl).
+
 ## Opening it
 
 The Shader editor is a tab in the bottom dock, beside the Node editor, Explorer, UV

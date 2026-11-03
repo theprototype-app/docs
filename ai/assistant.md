@@ -10,6 +10,10 @@ Everything it does is a normal edit: it **replicates live to everyone in the ses
     OpenAI-compatible / self-hosted endpoint). Nothing is sent anywhere until you add a
     provider and a key in **Settings ▸ Tools & connections**. See [AI Providers](https://docs.theprototype.app/ai/providers.md).
 
+!!! tip "Pictures"
+    Attach a picture with **+** and ask about it, or ask the assistant to make it a 3D model. Which models
+    can see pictures, and the limits: [Give the AI pictures and shaders](https://docs.theprototype.app/ai/pictures-and-shaders.md).
+
 ## Turning it on
 
 1. Open **Settings ▸ Tools & connections** and press **Add chat provider** (Grok, Gemini or a custom endpoint).
