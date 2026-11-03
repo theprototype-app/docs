@@ -155,6 +155,9 @@ GLB. (Other hosted providers with the same task-based REST shape can be added as
 
 - **Add menu → ✨ Generate 3D model…** — a small dialog: pick a provider, type a prompt,
   optional name, **Generate**. The mesh lands where you opened the menu.
+- **From a picture** — the same dialog takes a photo, an Explorer picture or the viewport (Meshy, or a
+  ComfyUI workflow with `{{IMAGE}}` in a LoadImage node). Meshy asks first (credits, and that the picture
+  goes to Meshy). See [Give the AI pictures and shaders](pictures-and-shaders.md).
 - **AI assistant** — just ask (“add a treasure chest by the wall”). The assistant calls
   `generate_mesh` when no primitive fits; it returns immediately and the mesh appears when
   ready. It won't block the conversation.

@@ -167,8 +167,10 @@ peer**. Scale controls how fine it is. Good for grime, clouds, and — wired int
 ### GLSL expression
 
 The escape hatch when the curated set will not do it. Write an expression using `a`, `b`
-and `c` for the wired inputs and say which type it returns. It is inserted as written, so
-a mistake here shows up as a compile error in the tab's error strip.
+and `c` for the wired inputs and say which type it returns. It is one expression on one line:
+names, numbers, brackets and operators (`abs(a) * 0.5 + (b > 0.0 ? c : 1.0)`), with no `;`,
+braces, `#`, comments or loops, and its brackets must match. A mistake shows up as a compile
+error in the tab's error strip. For whole programs, use [your own GLSL](ai/pictures-and-shaders.md#your-own-glsl).
 
 ### Surface
 
