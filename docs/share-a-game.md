@@ -5,7 +5,10 @@ a game, an invite to play together — opens the **play view**: a small player m
 the game's rules, HUD and touch controls, and none of the editor, so a shared game starts noticeably faster, most of all
 on a phone.
 
-<!-- 94-routes: screenshots img/share-a-game/ come from the 94 proof run (client-plugin smoke:play) — re-shoot from the 1.57 preview -->
+!!! tip "Start from Topple tower"
+    **Templates ▸ Topple tower** is a tiny game set up for sharing: no modules or packs to download, so its play link
+    starts fast on a phone, and nothing on top of the screen for the play view's buttons to cover. Change it, publish it,
+    send the play link.
 
 | You want… | Share | Who can open it |
 |---|---|---|
@@ -18,7 +21,8 @@ on a phone.
 
 Publish a scene (**Menu ▸ Publish / Export ▸ Publish**, see [Publish & Export](publish-export.md#publish-the-play-link))
 and you get its play link, `https://theprototype.app/p/‹id›`, with a **QR code** for a phone or a headset. The
-community page's **▶ Play** button and its **3D preview** open the same play view.
+community page's **▶ Play** button and its **3D preview** open the same play view. The first time, a note under the link
+says what it opens and where the link for playing together is; it goes once you copy or open the link.
 
 The play view shows a start card with **▶ Play** (and **Enter VR** in a headset's browser), a fullscreen button, the
 *Made with ThePrototype* badge and two links into the full app:
@@ -50,6 +54,22 @@ https://theprototype.app/oembed?url=https://theprototype.app/s/‹id›&maxwidth
 ```
 
 Details (sizes, what is accepted) are in [Community ▸ oEmbed](community.md#paste-a-link-get-a-game-oembed).
+
+## Follow the game from your page
+
+For site builders: the play view tells the page that frames it what it is doing, with `postMessage`:
+
+```js
+window.addEventListener('message', (e) => {
+  if (e.data?.type !== 'tp-play') return;
+  // e.data.event: 'first-frame' | 'loaded' | 'playing' | 'stopped' | 'error'
+  console.log(e.data.event, e.data.detail);
+});
+```
+
+Inside the play view, `window.tpPlay` gives a script the same information: `version` (1), `state` (`booting`,
+`loading`, `ready`, `playing` or `error`, mirrored on `<html data-tp-play="…">` for CSS), `ready` and `loaded`
+(promises), `sceneId`, `openInEditorUrl()`, `remixUrl()` and `timings`.
 
 ## Play together from a link
 

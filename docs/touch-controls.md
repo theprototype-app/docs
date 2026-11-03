@@ -4,10 +4,14 @@ On a phone or tablet, Play shows a **move stick** on the left, a **look drag** o
 buttons** — Jump, Throw, Grab, Use… — exactly the actions the game needs. Every control can be moved, resized and faded,
 and any button can wear your own pressed and released images.
 
-![Sky Run in Play on a folded phone: the stage name, the timer and the coins at the top, the move stick in the lower left and the Jump button in the lower right, over the first platform of the level.](img/touch-controls/sky-run-phone.webp){ .shot width="390" height="896" loading=lazy }
+![Sky Run in Play on a folded phone: the ✕, the Playing chip and the Menu pill along the top, the game's bar with the stage name, the timer and the coins below them, the move stick in the lower left and the Jump button in the lower right, over the first platform of the level.](img/touch-controls/sky-run-phone.webp){ .shot width="390" height="896" loading=lazy }
 /// caption
 Sky Run on a folded phone.
 ///
+
+On a narrow phone the game's own bar (stage, timer, score) sits **below** the ✕, the **Playing** chip and the **Menu**
+pill, and anything the game puts at the very bottom moves up above the play view's links, so nothing the game shows is
+hidden behind the app's buttons (*since 1.57*).
 
 ![The touch controls layout editor on a folded phone, with the Jump button selected: This game or All games, Hide, Size and Opacity sliders, Default place, Reset, Cancel and Save at the top, the move stick and the Jump button below with their names. 1: save for this game or all games. 2: the selected Jump button.](img/touch-controls/layout-editor.webp){ .shot width="390" height="896" loading=lazy }
 /// caption
