@@ -1,23 +1,47 @@
 {
  "id": "pop-out-dock",
- "dpr": 1,
- "shotAt": "2026-10-29T08:56:54.344Z",
+ "spec": "760e17a582db",
+ "dpr": 2,
+ "shotAt": "2026-11-03T12:04:31.974Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.2",
+  "sha": "de3014f8"
  },
- "from": "img/interface/pop-out-dock.png",
- "width": 688,
- "height": 600,
+ "uiHits": [
+  "div.pw-head",
+  "button.gt-head",
+  "button#graph-tree-flow-scene.gt-row",
+  "p.gt-empty",
+  "aside.flex",
+  "span.flex-1",
+  "input#palette-filter.rounded-sm",
+  "p.text-center",
+  "p.mt-1",
+  "div.family-mono",
+  "div.touch-pan-y",
+  "button.tp-crumb"
+ ],
+ "width": 1376,
+ "height": 1200,
  "crop": {
   "x": 0,
   "y": 0,
   "w": 688,
   "h": 600
  },
- "cut": [],
- "fade": [
+ "cut": [
   "r"
  ],
- "anchors": {},
+ "fade": [
+  "b"
+ ],
+ "anchors": {
+  "1": {
+   "x": 76,
+   "y": 15,
+   "w": 348.0625,
+   "h": 36
+  }
+ },
  "kind": "ui"
 }

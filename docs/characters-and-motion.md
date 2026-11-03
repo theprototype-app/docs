@@ -164,10 +164,15 @@ A file without these extras (a `.vrma` from another tool, an animation `.glb`) i
 
 ## Game-ready clips (Animation window ▸ clip tools)
 
-![The clip tools in the Animation window](img/characters-and-motion/clip-tools.webp){ .shot width="223" height="329" loading=lazy }
+![The clip tools in the Animation window for the Knight's Walking_A clip: fps, frames and length with seamless loop, In place or Moving, loop, speed, Rename, Loop it and Remove, the playhead and in / out markers, Mark in, Mark out, Trim and Split at playhead. 1: the loop seam. 2: Loop it and Remove.](img/characters-and-motion/clip-tools.webp){ .shot width="372" height="443" loading=lazy }
 /// caption
 The clip tools in the Animation window.
 ///
+
+<div class="shot-key" markdown>
+1. The **loop seam**: "seamless loop", or how far the loop jumps.
+2. **Loop it** makes a new clip that loops without a jump; **Remove** takes the clip off the character (the file stays).
+</div>
 
 Select a character and open the **Animation** window. Under its clips, the clip tools show for the
 clip that is playing:
@@ -206,10 +211,15 @@ These settings belong to the character (another character using the same clip fi
 
 ## Animation states (a locomotion state machine)
 
-![The Animation states window for a Knight: Move, Jump and Fall states with their clips, loop and entry, and the Move to Jump transitions with their conditions.](img/characters-and-motion/animation-states.webp){ .shot width="360" height="472" loading=lazy }
+![The Animation states window for the Knight after Replace with the Locomotion preset: the states Move (a blend by speed of Idle, Walking_A and Running_A, the entry), Jump and Fall with their clips and loop, then the transitions Move to Jump with their conditions. 1: the Locomotion preset. 2: the state playing now.](img/characters-and-motion/animation-states.webp){ .shot width="404" height="472" loading=lazy }
 /// caption
 The Animation states window for a Knight.
 ///
+
+<div class="shot-key" markdown>
+1. **Replace with the Locomotion preset**: idle, walk and run blended by speed, jump and fall, from this character's own clips.
+2. The **state playing now** is outlined (here Move, standing still).
+</div>
 
 Animation window ▸ **Animation states…** opens the states window for the selected character.
 

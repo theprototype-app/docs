@@ -5,36 +5,47 @@ defaults:
   dpr: 2
   format: webp
 shots:
+# 83-batch3 (V11): real two-peer shots from the rig (lib/rig.cjs `peers:`), no longer re-crops of older captures.
+# The cloud build lists people in the project's OTHER rooms under the panel (cross-scene presence) — on production
+# those can be real accounts, so the shots hide that block.
 - id: status-dot-phone
   replaces: img/connection/status-dot-phone.png
-  dpr: 2.9
-  kind: ui
-  caption: 'A phone''s crowded top bar: the chip keeps the connection dot.'
-  crop:
-    rect:
-    - 0
-    - 0
-    - 1131
-    - 174
+  device: n6-folded
+  peers:
+    - {name: Mia}
+  setup:
+    - {camera: {pos: [4, 3, 6], target: [0, 1, 0]}}
+    - {wait: 4000}
+  crop: {rect: [0, 0, 390, 120]}
   fade: []
-  alt: 'The phone''s top bar when it is crowded: the logo, the connection chip with a green dot, ▾ and the microphone, then
-    the bell and the peers'
-  from: img/connection/status-dot-phone.png
+  alt: >-
+    The top bar of a folded phone with one other person connected: the logo, the connection chip with its dot, ▾ and
+    the microphone, then the bell and the peers button with 2. 1: the connection dot.
+  caption: 'A folded phone''s top bar: the chip keeps the connection dot.'
+  annotate:
+    - {n: 1, at: {selector: '.ps-dot'}, shape: circle, label: connected, badge: b, key: 'The **dot**: its colour is the connection state (the table above).'}
 - id: peers-panel-desktop
   replaces: img/connection/peers-panel-desktop.png
-  dpr: 1
-  kind: ui
-  caption: The Connected panel on a computer.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 515
-    - 385
+  storage: {username: Alexandra, usernameCustom: '1'}
+  peers:
+    - {name: Maximilian, role: edit}
+    - {name: Bo, role: view}
+    - {name: Guinevere, role: edit}
+  setup:
+    - {css: '#cross-scene-presence{display:none!important}'}
+    - {camera: {pos: [4, 3, 6], target: [0, 1, 0]}}
+    - {eval: "window.__stores.peersPanelOpen.set(true)"}
+    - {wait: 2000}
+  crop: {selector: '#peers-popover', pad: 8}
   fade: []
-  alt: 'The Connected panel on a computer: five people, one row each — avatar, name, the scene they are in and their p-number
-    underneath, and Editor or Viewer with Go to or Watch on the right'
-  from: img/connection/peers-panel-desktop.png
+  alt: >-
+    The Connected panel on a computer with four people, one row each: an avatar, the name, the scene they are in, the
+    ping and their short id underneath, then their role (Admin, Editor or Viewer) and Watch on the right. 1: you. 2: a
+    person's role list.
+  caption: The Connected panel on a computer.
+  annotate:
+    - {n: 1, at: {text: (you)}, shape: box, label: you, badge: r, key: '**(you)**: your own row; the host is **Admin**.'}
+    - {n: 2, at: {selector: '.role-btn', nth: 0}, shape: box, label: role, badge: t, key: 'A person''s **role** (Editor or Viewer): the host changes it here.'}
 - id: guests-see
   replaces: img/connection/guests-see.png
   alt: >-

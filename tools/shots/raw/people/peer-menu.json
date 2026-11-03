@@ -1,21 +1,41 @@
 {
  "id": "peer-menu",
- "dpr": 1,
- "shotAt": "2026-10-29T08:56:54.344Z",
+ "spec": "086836240232",
+ "dpr": 2,
+ "shotAt": "2026-11-03T12:28:37.719Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/people/peer-menu.png",
- "width": 414,
- "height": 849,
+ "uiHits": [
+  "div.fixed",
+  "div.ctx-scroll",
+  "div.ctx-section",
+  "svg.lucide",
+  "span.flex",
+  "div.cursor-pointer",
+  "path",
+  "span.flex-1"
+ ],
+ "width": 872,
+ "height": 1698,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 414,
+  "x": 976,
+  "y": 51,
+  "w": 436,
   "h": 849
  },
- "cut": [],
+ "cut": [
+  "b"
+ ],
  "fade": [],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 444,
+   "y": 1235,
+   "w": 400.6875,
+   "h": 57
+  }
+ },
  "kind": "ui"
 }

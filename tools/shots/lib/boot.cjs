@@ -23,7 +23,7 @@ function launch() {
 }
 
 /** @param {import('playwright').Browser} browser */
-async function openApp(browser, { device = 'desktop', dpr = 2, theme = 'dark', storage = {}, url = APP_URL, video, motion = false } = {}) {
+async function openApp(browser, { device = 'desktop', dpr = 2, theme = 'dark', storage = {}, url = APP_URL, video, motion = false, init = [] } = {}) {
 	const ctx = await browser.newContext({
 		...DEVICES[device],
 		deviceScaleFactor: dpr,
@@ -42,6 +42,8 @@ async function openApp(browser, { device = 'desktop', dpr = 2, theme = 'dark', s
 		set('errorReports:send', 'false');
 		for (const [k, v] of Object.entries(s)) set(k, v);
 	}, { theme, ...storage });
+	// rig `xr:` (lib/rig.cjs) and the like: scripts that must run before the app's first module
+	for (const content of [].concat(init)) await ctx.addInitScript({ content });
 	const page = await ctx.newPage();
 	const errors = [];
 	page.on('pageerror', (e) => errors.push(e.message));

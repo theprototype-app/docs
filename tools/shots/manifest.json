@@ -59,13 +59,16 @@
   "img/ai-build-with-an-agent/agent-activity.webp": {
    "page": "ai-build-with-an-agent",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 500,
-   "height": 440,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-29T08:56:54.343Z"
+   "height": 214,
+   "badges": 2,
+   "labels": [
+    "steps so far",
+    "undo it"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T12:49:39.006Z"
   },
   "img/ai-claude-connector/connect-card.webp": {
    "page": "ai-claude-connector",
@@ -135,35 +138,35 @@
   "img/avatars/characters.webp": {
    "page": "avatars",
    "kind": "view",
-   "dpr": 1,
-   "width": 1536,
-   "height": 1536,
+   "dpr": 2,
+   "width": 1440,
+   "height": 540,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.475Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T12:41:51.878Z"
   },
   "img/avatars/knocked-off.webp": {
    "page": "avatars",
    "kind": "view",
-   "dpr": 1,
-   "width": 1280,
-   "height": 720,
+   "dpr": 2,
+   "width": 1440,
+   "height": 560,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.477Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T12:43:40.508Z"
   },
   "img/avatars/peer-character.webp": {
    "page": "avatars",
    "kind": "view",
-   "dpr": 1,
-   "width": 1280,
+   "dpr": 2,
+   "width": 960,
    "height": 720,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.478Z"
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T11:59:36.284Z"
   },
   "img/avatars/studio-desktop.webp": {
    "page": "avatars",
@@ -323,24 +326,27 @@
   "img/characters-and-motion/animation-states.webp": {
    "page": "characters-and-motion",
    "kind": "ui",
-   "dpr": 1,
-   "width": 360,
+   "dpr": 2,
+   "width": 404,
    "height": 472,
-   "badges": 0,
+   "badges": 2,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-31T14:06:04.426Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T12:39:58.233Z"
   },
   "img/characters-and-motion/clip-tools.webp": {
    "page": "characters-and-motion",
    "kind": "ui",
-   "dpr": 1,
-   "width": 223,
-   "height": 329,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-31T14:06:04.426Z"
+   "dpr": 2,
+   "width": 372,
+   "height": 443,
+   "badges": 2,
+   "labels": [
+    "loop seam",
+    "loop it"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T12:49:56.241Z"
   },
   "img/characters-and-motion/motion-tab.webp": {
    "page": "characters-and-motion",
@@ -548,24 +554,29 @@
   "img/connection/peers-panel-desktop.webp": {
    "page": "connection",
    "kind": "ui",
-   "dpr": 1,
-   "width": 515,
-   "height": 385,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.497Z"
+   "dpr": 2,
+   "width": 393,
+   "height": 278,
+   "badges": 2,
+   "labels": [
+    "you",
+    "role"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T12:28:03.551Z"
   },
   "img/connection/status-dot-phone.webp": {
    "page": "connection",
    "kind": "ui",
-   "dpr": 2.9,
+   "dpr": 2,
    "width": 390,
-   "height": 60,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.497Z"
+   "height": 120,
+   "badges": 1,
+   "labels": [
+    "connected"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T12:15:16.696Z"
   },
   "img/controls/alt-click-cycle.webp": {
    "page": "controls",
@@ -583,13 +594,15 @@
   "img/controls/behaviour-view-knobs.webp": {
    "page": "controls",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
-   "height": 460,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.498Z"
+   "height": 524,
+   "badges": 1,
+   "labels": [
+    "drag it"
+   ],
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T12:52:34.895Z"
   },
   "img/controls/budget-chip-edit-positions.webp": {
    "page": "controls",
@@ -1188,13 +1201,15 @@
   "img/interface/pop-out-dock.webp": {
    "page": "interface",
    "kind": "ui",
-   "dpr": 1,
+   "dpr": 2,
    "width": 688,
    "height": 600,
-   "badges": 0,
-   "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-29T08:56:54.344Z"
+   "badges": 1,
+   "labels": [
+    "its tabs"
+   ],
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T12:04:31.974Z"
   },
   "img/interface/profile-menu-pinned-sidebar.webp": {
    "page": "interface",
@@ -1980,13 +1995,13 @@
   "img/people/peer-menu.webp": {
    "page": "people",
    "kind": "ui",
-   "dpr": 1,
-   "width": 414,
+   "dpr": 2,
+   "width": 436,
    "height": 849,
-   "badges": 0,
+   "badges": 1,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-29T08:56:54.344Z"
+   "app": "1.54.3",
+   "shotAt": "2026-11-03T12:28:37.719Z"
   },
   "img/performance/budget-chip.webp": {
    "page": "performance",
@@ -2508,8 +2523,8 @@
    "height": 320,
    "badges": 0,
    "labels": [],
-   "app": "earlier",
-   "shotAt": "2026-10-27T07:46:24.607Z"
+   "app": "1.54.2",
+   "shotAt": "2026-11-03T12:01:54.191Z"
   },
   "img/tours/welcome-question.webp": {
    "page": "tours",

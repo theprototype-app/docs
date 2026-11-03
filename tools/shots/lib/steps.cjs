@@ -2,6 +2,8 @@
 // app, so a moved panel moves its callout. Store names are the core debug hooks (1.45.1):
 // `window.__stores` = sceneStore/appStore/flowStore exports + named rows of src/lib/debugHooks.js.
 
+const { showCanvas } = require('./rig.cjs');
+
 const get = (st) => { let v; st.subscribe((x) => (v = x))(); return v; };
 
 /** in the page: find objects by name under objectsGroup */
@@ -55,10 +57,37 @@ async function waitFrames(page, ms = 600) {
 	await page.evaluate(() => new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r))));
 }
 
-async function runSteps(page, steps) {
+/**
+ * @param {any} page @param {any[]} steps
+ * @param {{peers?: any[], popup?: any}} [env] the rig's other pages (lib/rig.cjs): guests by name, a popped-out window
+ */
+async function runSteps(page, steps, env = {}) {
 	await ensureHelpers(page);
 	for (const st of steps) {
-		if (st.create || st.light) {
+		if (st.on !== undefined) {
+			// steps in a guest's page (rig `peers:`), by its name
+			const g = (env.peers || []).find((p) => p.name === st.on);
+			if (!g) throw new Error('no peer ' + st.on + ' (peers: ' + (env.peers || []).map((p) => p.name).join(', ') + ')');
+			await runSteps(g.page, st.steps || [], env);
+		} else if (st.popup) {
+			// the steps open a window (window.open): wait for it; `capture: popup` shoots it
+			const [win] = await Promise.all([page.context().waitForEvent('page', { timeout: 30000 }), runSteps(page, st.popup, env)]);
+			await win.waitForLoadState('domcontentloaded');
+			await win.waitForTimeout(st.wait ?? 3000);
+			env.popup = win;
+		} else if (st.canvas) {
+			await showCanvas(page, st.canvas);
+		} else if (st.xr) {
+			// rig `xr:` — Enter VR the way a person does (the Play button with a headset present), until it presents
+			if (st.xr !== 'enter') throw new Error('xr step: only "enter"');
+			await page.click('#play-button');
+			await page.waitForFunction(() => {
+				let r;
+				window.__stores.globalRenderer.subscribe((v) => (r = v))();
+				return !!r?.xr?.isPresenting;
+			}, null, { timeout: 30000 });
+			await page.waitForTimeout(st.wait ?? 2000);
+		} else if (st.create || st.light) {
 			// /create <Kind> [args] or /light <kind>; the new object is selected — name and place it
 			const cmd = st.create ? `/create ${st.create}` : `/light ${st.light}`;
 			await page.evaluate(async ({ cmd, st }) => {

@@ -5,18 +5,37 @@ defaults:
   dpr: 2
   format: webp
 shots:
+# 83-batch3 (V11): a real agent page from the rig (lib/rig.cjs `agent: true`) joins and builds through tpAgent
 - id: agent-activity
   replaces: img/ai/agent-activity.png
-  alt: Agent activity in the AI assistant window
+  storage: {username: Alexandra, usernameCustom: '1'}
+  peers:
+    - name: Claude
+      agent: true
+      setup:
+        - {wait: 3000}
+        - eval: >-
+            window.tpAgent.exec('create_objects', {objects: [
+            {kind: 'primitive', primitive: 'Sphere', name: 'Rock1', position: [0.9, 0.25, 0.3], scale: [0.5, 0.35, 0.45], color: '#7a7a80'},
+            {kind: 'primitive', primitive: 'Sphere', name: 'Rock2', position: [-0.8, 0.25, 0.5], scale: [0.45, 0.3, 0.4], color: '#6d6d74'},
+            {kind: 'primitive', primitive: 'Sphere', name: 'Rock3', position: [0.1, 0.25, -0.9], scale: [0.5, 0.3, 0.5], color: '#80808a'}]})
+        - {wait: 1500}
+        - eval: >-
+            window.tpAgent.exec('create_objects', {objects: [{kind: 'primitive', primitive: 'Cone', name: 'Flame',
+            position: [0, 0.5, 0], scale: [0.4, 0.8, 0.4], color: '#ff8a3d'}]})
+  setup:
+    - {camera: {pos: [3, 2.4, 4], target: [0, 0.4, 0]}}
+    - {wait: 2000}
+    - {eval: "window.__stores.aiAssistantHidden.set('')"}
+    - {wait: 1500}
+  crop: {selector: '#ai-assistant-window', maxHeight: 214}
+  fade: [b]
+  alt: >-
+    The AI assistant window with Agent activity open: under the agent's name, Claude, two timed lines — created 3
+    objects (Rock1, Rock2 +1) and created 1 object (Flame) — each with Undo. 1: the number of steps so far. 2: Undo
+    for one step.
   caption: Agent activity in the AI assistant window.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 500
-    - 440
-  fade: []
-  kind: ui
-  dpr: 1
-  from: img/ai/agent-activity.png
+  annotate:
+    - {n: 1, at: {selector: '.alog-count'}, shape: box, label: steps so far, badge: l, key: '**Agent activity** counts the steps; under each agent''s name, one line per step it took (click a line to select what it touched).'}
+    - {n: 2, at: {selector: '.alog-undo', nth: 1}, shape: box, label: undo it, badge: l, key: '**Undo** takes back that one step, for everybody.'}
 md: ai/build-with-an-agent.md
