@@ -23,6 +23,8 @@ community page's **▶ Play** button and its **3D preview** open the same play v
 The play view shows a start card with **▶ Play** (and **Enter VR** in a headset's browser), a fullscreen button, the
 *Made with ThePrototype* badge and two links into the full app:
 
+![The play view's start card over the scene: Play, Accessibility, the hint Click to look around · Esc to pause, and Sign in on theprototype.app with Playing needs no account under it; along the bottom the fullscreen button, Open in theprototype.app and Remix.](img/share-a-game/play-start-card.webp){ .shot width="640" height="360" loading=lazy }
+
 - **Open in theprototype.app ↗** — the same scene in the editor, to look at how it is made.
 - **Remix** — the same scene in the editor as **your copy**: change it, then **Publish** it as a remix (the original
   author is credited on its page).
@@ -58,6 +60,8 @@ editor:
    the **Person** tab.
 2. Choose the **Role**, how long the invite lasts and how many people may use it, then **Create invite link**.
 3. Copy the **Play link — opens straight into the game, no editor** and send it.
+
+![The Invite to this session sheet on its Person tab: Up to 5 people · expires in 30 min · View, then three fields with Copy buttons — Link, Play link — opens straight into the game, no editor, and For a chat.](img/share-a-game/invite-play-link.webp){ .shot width="440" height="515" loading=lazy }
 
 Everyone who opens it joins your session in the play view and gets the scene from you — it does not need to be
 published. The ordinary **Link** above it still opens the full editor, for people who should build with you. A play
