@@ -106,7 +106,8 @@ What you get:
 
 | | |
 |---|---|
-| Loops | `while` and `do` are refused; a `for` loop declares its `int` counter and counts up to a number or a `#define` above it (up to 1024 per loop). The whole stage may take **65536 loop steps in all**: nested loops multiply, loops one after another add, and a function called inside a loop counts its own loops each time |
+| Loops | `while` and `do` are refused; a `for` loop declares its `int` counter and counts up to a number or a `#define` above it (up to 1024 per loop) |
+| Work | one pixel (or vertex) may do about **32768 operations**: each call and operator counts one, a loop counts its body once per step, a function counts what it runs, and both sides of a branch count. A 128-step raymarch is about 10000 |
 | Parameters | no `out` or `inout` parameters: return the value instead |
 | Size | 64 KB per stage, plain ASCII outside comments, no backslashes or carriage returns |
 | Preprocessor | `#define NAME 32` (a name for a whole number, once) and two `#include`s: `<tonemapping_fragment>` and `<colorspace_fragment>`. No `#if`, `#ifdef`, `#undef` or other directives |
