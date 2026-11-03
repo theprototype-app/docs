@@ -2,10 +2,10 @@
  "id": "peer-character",
  "spec": "88ac993fca9f",
  "dpr": 2,
- "shotAt": "2026-11-03T11:59:36.284Z",
+ "shotAt": "2026-11-03T17:21:00.567Z",
  "app": {
-  "version": "1.54.2",
-  "sha": "de3014f8"
+  "version": "1.55.0",
+  "sha": "34c6810f"
  },
  "uiHits": [],
  "width": 1920,

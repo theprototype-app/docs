@@ -2,10 +2,10 @@
  "id": "knife-polyline",
  "spec": "6d01765ffeee",
  "dpr": 2,
- "shotAt": "2026-11-03T13:52:40.090Z",
+ "shotAt": "2026-11-03T17:56:29.012Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.55.0",
+  "sha": "34c6810f"
  },
  "uiHits": [
   "div.tbx-tabs",

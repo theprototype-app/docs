@@ -115,8 +115,8 @@
     "click opens",
     "casement"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:07:45.555Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T17:20:17.582Z"
   },
   "img/architecture/house.webp": {
    "page": "architecture",
@@ -130,8 +130,8 @@
     "window",
     "spiral stair"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:07:11.878Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T17:19:43.814Z"
   },
   "img/architecture/wall-geometry.webp": {
    "page": "architecture",
@@ -152,8 +152,8 @@
    "height": 540,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T12:41:51.878Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T17:22:44.963Z"
   },
   "img/avatars/knocked-off.webp": {
    "page": "avatars",
@@ -163,8 +163,8 @@
    "height": 560,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T12:43:40.508Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T17:24:31.286Z"
   },
   "img/avatars/peer-character.webp": {
    "page": "avatars",
@@ -174,8 +174,8 @@
    "height": 720,
    "badges": 0,
    "labels": [],
-   "app": "1.54.2",
-   "shotAt": "2026-11-03T11:59:36.284Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T17:21:00.567Z"
   },
   "img/avatars/studio-desktop.webp": {
    "page": "avatars",
@@ -185,8 +185,8 @@
    "height": 835,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:51:13.620Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T17:20:33.081Z"
   },
   "img/building-in-vr/asset-browser-packs.webp": {
    "page": "building-in-vr",
@@ -249,8 +249,8 @@
    "height": 600,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:33:12.147Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T17:24:52.557Z"
   },
   "img/camera/camera-object.webp": {
    "page": "camera",
@@ -522,8 +522,8 @@
    "labels": [
     "opening kept"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:43:29.380Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T17:32:38.729Z"
   },
   "img/colliders/physics-section.webp": {
    "page": "colliders",
@@ -599,8 +599,8 @@
     "you",
     "role"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T12:28:03.551Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T17:35:04.699Z"
   },
   "img/connection/status-dot-phone.webp": {
    "page": "connection",
@@ -967,8 +967,8 @@
     "head-race",
     "fountain"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:57:15.281Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T17:42:51.295Z"
   },
   "img/free-assets/browser-materials.webp": {
    "page": "free-assets",
@@ -1401,8 +1401,8 @@
     "why it failed",
     "retry"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:39:25.739Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T17:53:39.287Z"
   },
   "img/loading/modern-loading.webp": {
    "page": "loading",
@@ -1414,8 +1414,8 @@
    "labels": [
     "arrived so far"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:39:10.253Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T17:53:22.651Z"
   },
   "img/lod/lod-distance.webp": {
    "page": "lod",
@@ -1482,8 +1482,8 @@
    "height": 500,
    "badges": 3,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:31:50.496Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T17:55:35.850Z"
   },
   "img/measure-align/measure-edit.webp": {
    "page": "measure-align",
@@ -1495,8 +1495,8 @@
    "labels": [
     "picked up"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T15:06:54.489Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T17:56:01.893Z"
   },
   "img/measure-align/measure-items.webp": {
    "page": "measure-align",
@@ -1547,8 +1547,8 @@
    "labels": [
     "corners so far"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:52:40.090Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T17:56:29.012Z"
   },
   "img/mesh-editing/live-symmetry.webp": {
    "page": "mesh-editing",
@@ -1573,8 +1573,8 @@
    "labels": [
     "mitered corner"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:52:53.969Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T17:57:07.620Z"
   },
   "img/mesh-editing/solidify.webp": {
    "page": "mesh-editing",
@@ -2093,14 +2093,14 @@
    "page": "particles",
    "kind": "view",
    "dpr": 2,
-   "width": 1011,
+   "width": 992,
    "height": 600,
    "badges": 1,
    "labels": [
     "emitter"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:08:33.376Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T18:10:19.997Z"
   },
   "img/people/peer-menu.webp": {
    "page": "people",
@@ -2157,8 +2157,8 @@
     "floats as",
     "at its draft"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:46:07.879Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T18:12:43.584Z"
   },
   "img/physics/flying-setting.webp": {
    "page": "physics",
@@ -2192,8 +2192,8 @@
    "labels": [
     "floats"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T15:07:14.371Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T18:12:28.941Z"
   },
   "img/prefabs/tag-filter.webp": {
    "page": "prefabs",
@@ -2229,8 +2229,8 @@
    "height": 560,
    "badges": 1,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:46:34.339Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T18:13:38.321Z"
   },
   "img/profiler/report-a-problem.webp": {
    "page": "profiler",
@@ -2397,8 +2397,8 @@
    "height": 720,
    "badges": 2,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T15:07:33.790Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T18:17:56.873Z"
   },
   "img/scatter/select-tool.webp": {
    "page": "scatter",
@@ -2411,8 +2411,8 @@
     "selection tools",
     "picked"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:15:13.462Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T18:18:10.728Z"
   },
   "img/settings/home-phone.webp": {
    "page": "settings",
@@ -2470,8 +2470,8 @@
    "labels": [
     "smooth surface"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:15:30.087Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T18:19:02.594Z"
   },
   "img/simulation/jiggle.webp": {
    "page": "simulation",
@@ -2483,8 +2483,8 @@
    "labels": [
     "lags behind"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:49:23.487Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T18:20:24.467Z"
   },
   "img/simulation/tank-pours-into-pool.webp": {
    "page": "simulation",
@@ -2496,8 +2496,8 @@
    "labels": [
     "pour lands"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:49:09.650Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T18:20:10.406Z"
   },
   "img/simulation/tank-spill.webp": {
    "page": "simulation",
@@ -2558,8 +2558,8 @@
    "labels": [
     "scatter what"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:58:59.780Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T18:21:08.727Z"
   },
   "img/timeline/phone-sheet.webp": {
    "page": "timeline",
@@ -2774,8 +2774,8 @@
    "height": 400,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:52:11.864Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T18:26:39.734Z"
   },
   "img/water/lava.webp": {
    "page": "water",
@@ -2785,8 +2785,8 @@
    "height": 600,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:21:18.302Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T18:27:26.552Z"
   },
   "img/water/pool.webp": {
    "page": "water",
@@ -2825,8 +2825,8 @@
    "labels": [
     "which one"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:53:08.204Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T18:28:06.972Z"
   },
   "img/water/underwater-aquarium.webp": {
    "page": "water",
@@ -2838,8 +2838,8 @@
    "labels": [
     "bubbles"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T15:08:43.927Z"
+   "app": "1.55.0",
+   "shotAt": "2026-11-03T18:27:46.904Z"
   }
  }
 }

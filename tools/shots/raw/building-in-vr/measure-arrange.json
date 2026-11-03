@@ -2,10 +2,10 @@
  "id": "measure-arrange",
  "spec": "36e84bbf980c",
  "dpr": 2,
- "shotAt": "2026-11-03T14:33:12.147Z",
+ "shotAt": "2026-11-03T17:24:52.557Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.55.0",
+  "sha": "34c6810f"
  },
  "uiHits": [],
  "width": 1480,
