@@ -83,6 +83,9 @@ trees by the fire"*) — it never reads out ids or numbers. Good things to say:
 | Ask your tab to join a session from a link you give it: nothing happens until you press **Join** on the card in the tab (see below) | |
 | Write small code behaviours | Do more than you can: a **viewer's** Claude can look but not build, and locked objects stay locked |
 | Take a picture of the scene to check its work, and save the open scene as a new version in your Library (see below) | Keep working after you close the tab |
+| Make shapes the basic objects cannot — a vase on a lathe, a rail along a path, an extruded sign, a mesh from its own points — and reshape or model them ([Shapes and modelling](agent-geometry.md)) | Fetch an image from your computer or your local network |
+| Change materials and textures, node shaders, UV mapping and the scene's post effects; a change to the whole scene's look asks you first with **Allow** / **Deny** in the tab ([Materials and looks](agent-look.md)) | |
+| Set the point a thing turns about, and put an image into your library from an https address or one it draws ([Undo, pivots and images](agent-assist.md)) | |
 
 ### Joining a session from a link
 
@@ -128,9 +131,27 @@ Every step Claude takes is a line labelled **Claude (connector)** in **Agent act
 own **Undo**. Anyone in the session sees the changes as they happen, and anyone with edit access
 can undo them from their own screen.
 
+Or just say **"undo that"**: Claude takes back its own last step. If someone has changed the same things since,
+it changes nothing and tells you who changed what.
+
 **Screenshots** have a 4:3 shape whatever your window's shape, except the *current* view, which keeps your canvas. Claude
 can pick the angle (front, back, left, right, top, below, iso, or a yaw and pitch), a camera position and target, the objects to
 frame, a zoom (0.1-10) and a margin (0.5-4). It is told which camera it used, and your own view never moves.
+
+### Tool families
+
+To keep its list short, Claude on claude.ai reaches the newer tools in **families**: one tool with an `action`. They do
+exactly what the agent tools of the same job do, with the same limits:
+
+| family | actions | the agent tools behind them |
+|---|---|---|
+| `create_shape` | `lathe`, `tube`, `extrude`, `mesh` | `create_lathe`, `create_tube`, `extrude_shape`, `create_mesh` ([Shapes and modelling](agent-geometry.md)) |
+| `edit_shape` | `params`, `mesh`, `pivot`, `pivot_group` | `set_geometry`, `edit_mesh`, `set_pivot`, `create_pivot` |
+| `set_look` | `material`, `list_materials`, `get_material`, `shader`, `edit_shader`, `assign_shader`, `shader_nodes`, `post`, `get_post`, `post_graph`, `unwrap`, `uv` | `set_material` … `set_uv` ([Materials and looks](agent-look.md)) |
+| `assets` | `image` | `add_image` ([Undo, pivots and images](agent-assist.md)) |
+
+`undo_last` is a tool of its own. A look-only connection can still use the actions that only read (`list_materials`,
+`get_material`, `shader_nodes`, `get_post`).
 
 ## Stop it
 
