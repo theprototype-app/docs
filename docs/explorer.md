@@ -36,6 +36,32 @@ Drag files from your computer anywhere onto the Explorer panel:
 
 Items are capped at **25 MB** each. Images and models get generated thumbnails; audio and text show icon cards.
 
+### Add files… and New file
+
+*Since 1.54.3.* Phones and the Quest browser have no drag and drop, so the Explorer also opens your device's own file
+picker. **Add files…** is in the right-click menu of the grid background, of a folder, of a mounted
+project and of a folder inside one, and an empty folder shows it as a button under *Nothing here yet*. The files you pick
+land where the same files dropped there would: in that folder, in a mounted project's unsaved changes until you press
+**Save**. The same rules apply as for a drop — the 25 MB cap, a `.tp` added as a folder,
+and [the question about files you already have](#importing-files). Where nothing can be added (the read-only Scene view,
+a session you can only view) the entry does not appear.
+
+![The Explorer's right-click menu with Add files… and New file opened on Script, Note, JSON and Text](img/explorer/add-files-menu.webp)
+
+**New file ▸** (in the same menus of the grid background and of a folder) creates a text file from a template and opens
+it in the code editor:
+
+| Entry | Starts as |
+|---|---|
+| **Script (.js)** | a behaviour with its handlers stubbed out — bind it to a [Behaviour node](nodes/behaviour.md) to run it |
+| **Note (.md)** | a Markdown note with a heading, which everyone in the session can edit together |
+| **JSON (.json)** | an empty JSON object, for settings or data a script reads |
+| **Text (.txt)** | an empty plain text file |
+
+New file is greyed out for a viewer: only editors can change files.
+
+![An empty folder on a phone: Nothing here yet, with the Add files… button under it](img/explorer/add-files-empty-phone.webp){ width="390" }
+
 **Importing something you already have.** A file is identified by its contents, so re-importing the same bytes is not a new file. The app tells you what it already has and lets you skip it, reveal it, or — for a scene — take a real copy. The rule lives in **Settings ▸ Explorer ▸ "When importing files already in your library"** (Ask / Skip them / Import as copies); see [Projects](projects.md#importing-something-you-already-have).
 
 **Big models are optimized as they come in** (1.37): over 50k triangles or with a texture over 2048 px, an import gets

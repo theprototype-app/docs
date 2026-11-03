@@ -328,12 +328,30 @@ There are **no AI settings in VR**: the provider and [voice typing](ai/assistant
     - Voice needs a browser that can record audio (Quest Browser, Chrome, Edge, Safari) and microphone permission. A
       recording stops itself after 60 seconds.
 
-## The sleeve palette
+## The sleeve palette (experimental) { #the-sleeve-palette }
 
 **Settings ▸ VR ▸ Editing ▸ Sleeve palette** (experimental, off by default; also radial **Settings ▸ Editing**) puts a strip
-of ghost primitives along the forearm of your other hand (not the menu hand), like a bracer. Point at one and **trigger-drag** it off: it follows your
-controller, the stick scales it and your wrist turns it; release the trigger to place it (one undo step). **Grip-drop** an
-object of yours onto the strip to keep it as a personal slot — those are saved on this device only.
+of ghost primitives along the forearm of your other hand (not the menu hand), like a bracer: Box, Wedge, Stairs, Sphere,
+Cylinder and Torus, then your own slots.
+
+**Taking a shape.** Point at a slot and pull the **trigger** (a **pinch** with tracked hands), or reach over with your
+taking hand and **grip** — or pinch — right at a slot.
+
+**Pulling it out** (*since 1.54.3*). The shape starts at ghost size in your hand and **grows to its true size as you draw
+your hand away from the sleeve wrist** — full size about 40 cm out. It is held out along your hand's ray, far enough that
+it never fills your view. Reaching full size **latches** it with a click you feel in the controller; from then on it is
+held like any grab: the **grip-move sticks reel it** in and out (forward and back) and **scale it** (left and right).
+Let go of the button to place it, as one undo step, with the same snapping as a grip-grab drop.
+
+**Cancelling.** Bring your hand back to your **wrist** — or let go before it has latched — and the shape shrinks and
+flies back into its slot; nothing is added.
+
+**In a miniature world** ([shrink the world](building-in-vr.md#shrink-the-world-miniature-mode)) the shape grows to its
+size *in that world* — as small as the shrunk world around it — and lands at its true size in the scene: a 1 m box is a
+1 m box when you scale the world back up.
+
+**Your own slots.** **Grip-drop** an object of yours onto the strip to keep it as a personal slot — those are saved on
+this device only — and take it out the same way.
 
 ## Hand models
 
