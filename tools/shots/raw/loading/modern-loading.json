@@ -1,21 +1,35 @@
 {
  "id": "modern-loading",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.544Z",
+ "spec": "0536536800ff",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:39:10.253Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/loading/modern-loading.png",
- "width": 380,
- "height": 300,
+ "uiHits": [],
+ "width": 920,
+ "height": 720,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 380,
-  "h": 300
+  "x": 490,
+  "y": 379,
+  "w": 460,
+  "h": 360
  },
- "cut": [],
- "fade": [],
- "anchors": {},
- "kind": "ui"
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
+ "fade": "vignette",
+ "anchors": {
+  "1": {
+   "x": 436,
+   "y": 356.4688855227655,
+   "w": 48,
+   "h": 48
+  }
+ },
+ "kind": "view"
 }

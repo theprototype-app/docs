@@ -1,21 +1,35 @@
 {
  "id": "tank-pours-into-pool",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.598Z",
+ "spec": "cadd103a64d6",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:49:09.650Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/simulation/tank-pours-into-pool.png",
- "width": 968,
- "height": 553,
+ "uiHits": [],
+ "width": 2180,
+ "height": 1160,
  "crop": {
-  "x": 66,
-  "y": 63,
-  "w": 968,
-  "h": 553
+  "x": 200,
+  "y": 100,
+  "w": 1090,
+  "h": 580
  },
- "cut": [],
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
  "fade": "vignette",
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 408.52873951934544,
+   "y": 400.51932015458556,
+   "w": 48,
+   "h": 48
+  }
+ },
  "kind": "view"
 }

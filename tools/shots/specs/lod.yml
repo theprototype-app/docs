@@ -5,17 +5,20 @@ defaults:
   dpr: 2
   format: webp
 shots:
+# 83-batch3: Configure Scene ▸ View ▸ Level of detail (SceneLodSection: the slider row #scene-lod-bias)
 - id: lod-distance
   replaces: img/lod/lod-distance.png
-  alt: 'Configure Scene ▸ Level of detail: the LOD distance slider, shared with everyone in the scene'
-  caption: Configure Scene ▸ Level of detail.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 307
-    - 152
-  fade: []
   kind: ui
-  dpr: 1
-  from: img/lod/lod-distance.png
+  setup:
+    - {section: View}
+    - {eval: "document.getElementById('scene-lod-bias')?.scrollIntoView({block: 'center'})"}
+    - {wait: 600}
+  crop: {selector: 'section.sec-panel:has(#scene-lod-bias)', pad: 10}
+  fade: []
+  alt: >-
+    Configure Scene ▸ Level of detail: the LOD distance slider at 1, marked Shared, with the note that above 1 keeps
+    full detail further away. 1: the LOD distance slider. 2: Shared, for everyone in the scene.
+  caption: Configure Scene ▸ Level of detail.
+  annotate:
+    - {n: 1, at: {selector: 'section.sec-panel:has(#scene-lod-bias) input[type="range"]'}, shape: underline, badge: l, key: '**LOD distance**: above 1 keeps full detail further away, below 1 switches to lighter levels sooner.'}
+    - {n: 2, at: {text: Shared, within: 'section.sec-panel:has(#scene-lod-bias)'}, shape: box, pad: 3, badge: r, key: '**Shared**: the setting is part of the scene, the same for everyone in it.'}

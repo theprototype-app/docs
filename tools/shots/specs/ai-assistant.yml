@@ -5,33 +5,58 @@ defaults:
   dpr: 2
   format: webp
 shots:
-- id: voice-typing-settings
-  replaces: img/ai/voice-typing-settings.png
-  alt: The Voice typing setting in the AI assistant's settings, set to Groq.
-  caption: The Voice typing setting in the AI assistant's settings.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 688
-    - 248
-  fade:
-  - r
-  kind: ui
-  dpr: 1
-  from: img/ai/voice-typing-settings.png
-- id: assistant-mic
-  replaces: img/ai/assistant-mic.png
-  alt: The assistant window with the mic button next to Send
-  caption: The assistant window with the mic button next to Send.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 500
-    - 440
-  fade: []
-  kind: ui
-  dpr: 1
-  from: img/ai/assistant-mic.png
+  # 83-batch3: Settings ▸ Tools & connections ▸ Voice typing ▸ Set up (59 T4: the provider picker and the server form
+  # are that sub-page now), Groq picked, a placeholder key so the status reads Ready; in a 688 px window, so the
+  # settings sheet is one column wide at 1:1
+  - id: voice-typing-settings
+    replaces: img/ai/voice-typing-settings.png
+    device: window-688-tall
+    setup:
+      - {eval: "(() => { const S = window.__stores; S.settingsSection.set('ai'); S.settingsOpen.set(true); })()"}
+      - {wait: 1500}
+      - {click: '#tool-chat-voice-configure'}
+      - {wait: 1000}
+      - {click: '#ai-stt-preset-groq'}
+      - {wait: 500}
+      - {eval: "window.__stores.aiStt.setSttConfig({ apiKey: 'gsk-docs-placeholder' })"}
+      - {wait: 800}
+      # the whole page (provider … Test connection) is taller than an 840 px window: the shot is the provider and
+      # the server's first fields, scrolled to the top of the page
+      - {eval: "document.getElementById('row-stt-preset')?.scrollIntoView({block: 'start'})"}
+      - {wait: 500}
+    crop:
+      union:
+        - {selector: '#row-stt-preset'}
+        - {selector: '#row-stt-key'}
+      pad: 8
+    fade: []
+    kind: ui
+    alt: >-
+      The voice typing settings set to Groq: the Voice typing provider with OpenAI, Groq and Self-hosted and a Ready
+      badge, then the voice typing server's Base URL and API key. 1: the provider. 2: the API key.
+    caption: The Voice typing settings, set to Groq.
+    annotate:
+      - {n: 1, at: {selector: '#ai-stt-preset'}, shape: box, label: provider, badge: b, key: 'The **provider**: OpenAI, Groq or Self-hosted; the badge says **Ready** once it has what it needs.'}
+      - {n: 2, at: {selector: '#ai-stt-key'}, shape: box, pad: 3, badge: b, key: 'The **API key** for that provider; it stays on this device. Further down, **Test connection** sends half a second of silence.'}
+  # the AI window with a provider (never called) and a short thread, and a voice typing server so the mic is live
+  - id: assistant-mic
+    replaces: img/ai/assistant-mic.png
+    setup:
+      - eval: >-
+          (() => { const S = window.__stores; S.aiProviders.addAiProvider({ preset: 'custom', label: 'Mock', baseUrl: 'https://example.invalid/v1', apiKey: 'k', model: 'mock' });
+          S.aiProviders.setAiEnabled(true); S.aiStt.applySttPreset('groq'); S.aiStt.setSttConfig({ apiKey: 'gsk-docs-placeholder' });
+          S.aiAssistant.aiMessages.set([{ role: 'user', content: 'make a campfire ring with six rocks' },
+          { role: 'assistant', content: 'Done — six grey rocks in a ring with an orange cone flame in the middle.' },
+          { role: 'user', content: 'make the flame taller' }]); })()
+      - {eval: "window.__stores.aiAssistantHidden.set('')"}
+      - {wait: 1500}
+    crop: {selector: '#ai-assistant-window'}
+    fade: []
+    kind: ui
+    alt: >-
+      The AI assistant window: two of your messages and the assistant's answer, the provider picker, the input Ask
+      the assistant…, the mic button and Send. 1: the mic button.
+    caption: The assistant window with the mic button next to Send.
+    annotate:
+      - {n: 1, at: {selector: '#ai-mic'}, shape: box, pad: 3, badge: t, key: 'The **mic**: click to listen, click again to stop; the words land in the input for you to fix before **Send**.'}
 md: ai/assistant.md

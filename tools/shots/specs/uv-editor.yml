@@ -5,19 +5,38 @@ defaults:
   dpr: 2
   format: webp
 shots:
+# 83-batch3: the Smart unwrap (xatlas) module installed from the production module gallery (moduleGallery +
+# userModules.installUrl, the Browse ▸ Install path), then Unwrap ▸ Smart (xatlas) from the UV editor's own menu
+# on a sphere (core's uv-smart-unwrap fixture, /create Sphere 1 24 16). The floating UV window is 640 px wide.
 - id: smart-unwrap
   replaces: img/uv-editor/smart-unwrap.png
-  alt: 'A sphere unwrapped with Smart (xatlas): seams placed automatically, pieces packed without overlaps'
-  caption: A sphere unwrapped with Smart (xatlas).
-  crop:
-    rect:
-    - 356
-    - 0
-    - 688
-    - 900
-  fade:
-  - l
-  - r
   kind: ui
-  dpr: 1
-  from: img/uv-editor/smart-unwrap.png
+  # the floating UV window (a fresh device docks it)
+  storage: {uvDocked: 'false'}
+  setup:
+    - eval: >-
+        (async () => {
+          const s = window.__stores, g = s.moduleGallery;
+          await g.loadModuleGallery(true);
+          let list; g.galleryModules.subscribe((v) => (list = v))();
+          const e = list.find((m) => /smart-unwrap|xatlas/i.test((m.id || '') + ' ' + (m.name || '')));
+          if (!e) throw new Error('no Smart unwrap in the module gallery');
+          await s.userModules.installUrl(g.galleryInstallUrl(e));
+        })()
+    - {wait: 4000}
+    - {create: 'Sphere 1 24 16', name: Ball, at: [0, 1, 0], keepSelected: true}
+    - {closePanels: true}
+    - {eval: "window.__stores.uvEditorClose.set(false)"}
+    - {wait: 2000}
+    - {click: '#uv-unwrap'}
+    - {wait: 500}
+    - {clickText: Smart (xatlas)}
+    - {wait: 5000}
+  crop: {selector: '#uv-window', maxHeight: 860}
+  fade: [b]
+  alt: >-
+    The UV editor after Unwrap ▸ Smart (xatlas) on a sphere: the sphere's surface cut into islands along seams the
+    module chose, packed into the 0 to 1 square with no overlaps. 1: the Unwrap menu.
+  caption: A sphere unwrapped with Smart (xatlas).
+  annotate:
+    - {n: 1, at: {selector: '#uv-unwrap'}, shape: box, pad: 3, label: Smart (xatlas), badge: b, key: '**Unwrap ▸ Smart (xatlas)**, added by the module.'}

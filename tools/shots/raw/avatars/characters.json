@@ -1,21 +1,26 @@
 {
  "id": "characters",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.475Z",
+ "spec": "1c7cc7e3d453",
+ "dpr": 2,
+ "shotAt": "2026-11-03T12:41:51.878Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/avatars/characters.png",
- "width": 1536,
- "height": 1536,
+ "uiHits": [],
+ "width": 2880,
+ "height": 1080,
  "crop": {
   "x": 0,
-  "y": 0,
-  "w": 1536,
-  "h": 1536
+  "y": 170,
+  "w": 1440,
+  "h": 540
  },
- "cut": [],
- "fade": [],
+ "cut": [
+  "t",
+  "b"
+ ],
+ "fade": "vignette",
  "anchors": {},
  "kind": "view"
 }

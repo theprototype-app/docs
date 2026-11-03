@@ -1,25 +1,51 @@
 page: nodes-gate
-defaults:
-  device: desktop
-  theme: dark
-  dpr: 2
-  format: webp
+defaults: {device: desktop, theme: dark, dpr: 2, format: webp}
+# 83-batch3 (V11): built live — the example's nodes made and wired by the app's own create_flow_nodes, laid out
+# in columns at 1:1 in the docked Node editor, the crop a box over the cards (#docs-nodes)
 shots:
 - id: gate-group
   replaces: img/nodes/gate-group.png
-  alt: 'A Gate with four inputs inside a group: the group shows sockets a to d'
-  caption: A Gate with four inputs inside a group.
-  crop:
-    rect:
-    - 296
-    - 200
-    - 688
-    - 520
-  fade:
-  - l
-  - r
-  - t
+  setup:
+  - eval: >-
+      (async () => { const S = window.__stores, D = window.__docs;
+      const sel = (name) => { const o = D.byName(name); if (!o) throw new Error('no object ' + name); return {selected: o.uuid}; };
+      const r = await S.aiTools.executeAiTool('create_flow_nodes', {graph: 'scene',
+      nodes: [{ref: 't1', type: 'toggle', data: {on: true}},
+      {ref: 't2', type: 'toggle', data: {on: false}},
+      {ref: 't3', type: 'toggle', data: {on: true}},
+      {ref: 't4', type: 'toggle', data: {on: false}},
+      {ref: 'gate', type: 'gate', data: {op: 'and'}}],
+      edges: [{from: 't1', to: 'gate', toHandle: 'a'},
+      {from: 't2', to: 'gate', toHandle: 'b'}]}, {physics: true});
+      if (!r || r.error || r.partial) throw new Error('create_flow_nodes: ' + JSON.stringify(r && (r.errors || r.error || r.warning)));
+      window.__docsNodes = {...(window.__docsNodes || {}), ...Object.fromEntries(r.created.map((c) => [c.ref, c.id]))};
+      const id = window.__docsNodes; S.nodesHandler.setNodeData(id.gate, {sockets: 4}, 'scene');
+      for (const [t, h] of [['t3', 'c'], ['t4', 'd']]) S.nodesHandler.createFlowEdge({id: 'e-' + id[t] + '-' + id.gate + '.' + h, source: id[t], target: id.gate, targetHandle: h}, 'scene');
+      window.__docsCols = [['t1','t2','t3','t4'],['gate']]; })()
+  - {eval: "window.__stores.dockMenu.dockTab('flow'); window.__stores.bottomDock.bottomDockActive.set('flow'); window.__stores.bottomDock.dockHeight.set(700); window.__stores.activeGraphId.set('scene')"}
+  - {wait: 2500}
+  - {css: '.svelte-flow__controls,.svelte-flow__minimap{visibility:hidden!important}'}
+  - eval: >-
+      (async () => { const S = window.__stores, ids = window.__docsNodes, cols = window.__docsCols;
+      if (!window.__flowViewport) throw new Error('the node editor is not open');
+      const card = (ref) => { const el = document.querySelector('.svelte-flow__node[data-id="' + ids[ref] + '"]'); if (!el) throw new Error('no card for ' + ref); return el; };
+      cols.forEach((col, c) => { let y = 0; for (const ref of col) { S.nodesHandler.moveFlowNode(ids[ref], {x: c * 220, y}, 'scene'); y += card(ref).offsetHeight + 40; } });
+      await new Promise((r) => setTimeout(r, 800));
+      await window.__flowViewport.setViewport({x: 56, y: 56, zoom: 1});
+      await new Promise((r) => setTimeout(r, 800));
+      const rs = Object.keys(ids).map((ref) => card(ref).getBoundingClientRect());
+      const x = Math.min(...rs.map((r) => r.left)), y = Math.min(...rs.map((r) => r.top));
+      const d = document.getElementById('docs-nodes') || document.body.appendChild(Object.assign(document.createElement('div'), {id: 'docs-nodes'}));
+      Object.assign(d.style, {position: 'fixed', pointerEvents: 'none', left: x + 'px', top: y + 'px', width: Math.max(...rs.map((r) => r.right)) - x + 'px', height: Math.max(...rs.map((r) => r.bottom)) - y + 'px'}); })()
+  - {wait: 1000}
+  - {click: '.svelte-flow__node-gate .node-card > div:first-child'}
+  - {wait: 500}
+  - {eval: "if (!window.__stores.nodeEditorActions.runNodeAction('group')) throw new Error('no group action: is the node editor mounted?')"}
+  - {wait: 1500}
+  crop: {union: [{selector: '.svelte-flow__node-toggle', nth: 0}, {selector: '.svelte-flow__node-toggle', nth: 3}, {selector: '.svelte-flow__node-group'}], pad: 16}
+  fade: []
   kind: ui
-  dpr: 1
-  from: img/nodes/gate-group.png
+  alt: >-
+    Four Toggles wired into a group that holds a Gate with four inputs: the group card shows the sockets a to d
+  caption: 'A Gate with four inputs, grouped: the group shows sockets a to d.'
 md: nodes/gate.md

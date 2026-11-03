@@ -1,3 +1,7 @@
+# docs/scatter.md — scatter on any mesh (Add scatter, Fill) and the Select tool.
+# Shoot: e2e-slot -- node tools/shots/shoot.cjs scatter     Re-annotate: node tools/shots/annotate.cjs scatter
+# 83-batch3: real captures (were re-crops of the 51 evidence). Recipes: core tests/e2e scatter-surface (the real
+# Add scatter button on a sphere) and scatter-select (two models painted, the Select tool, a real box drag).
 page: scatter
 defaults:
   device: desktop
@@ -5,33 +9,67 @@ defaults:
   dpr: 2
   format: webp
 shots:
-- id: add-scatter
-  replaces: img/scatter/add-scatter.png
-  alt: 'Properties ▸ Scatter on a sphere: 200 cones fill it, with the Fill rows below'
-  caption: Properties ▸ Scatter on a sphere.
-  crop:
-    rect:
-    - 592
-    - 0
-    - 688
-    - 720
-  fade:
-  - l
-  kind: ui
-  dpr: 1
-  from: img/scatter/add-scatter.png
-- id: select-tool
-  replaces: img/scatter/select-tool.png
-  alt: 'The Select tool: seven instances picked, the gizmo on them and the selection commands in the toolbox'
-  caption: The Select tool.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 688
-    - 720
-  fade:
-  - r
-  kind: ui
-  dpr: 1
-  from: img/scatter/select-tool.png
+  - id: add-scatter
+    replaces: img/scatter/add-scatter.png
+    alt: >-
+      Properties ▸ Scatter on a sphere after Add scatter: 200 cones cover it, and the section lists the Cone model with
+      its tint, sink and collider, then the Fill rows (Count 200, Spacing, Slope, Height). 1: the scattered cones. 2: the
+      Fill rows.
+    caption: Properties ▸ Scatter on a sphere.
+    storage: {'inspector:sec:Scatter': open}
+    scene:
+      - {create: Sphere, name: Sphere, at: [0, 1.2, 0], scale: 1.2, color: '#9aa3ad'}
+      - {eval: "delete window.__docs.byName('Sphere').userData.physics"}
+      # the sphere right of the view's middle, so it shows in the column beside the panel
+      - {camera: {pos: [-1.5, 2.8, 5.6], target: [-1.5, 1.1, 0]}}
+    setup:
+      - {select: Sphere}
+      - {eval: "window.__stores.inspectorKind.set('selection'); window.__stores.inspectorClose.set(false)"}
+      - {wait: 1500}
+      - {eval: "document.querySelector('#scatter-add')?.scrollIntoView({block: 'center'})"}
+      - {wait: 400}
+      - {click: '#scatter-add'}
+      - {wait: 2500}
+      - {eval: "document.querySelector('[id$=\"-mode-count\"]')?.scrollIntoView({block: 'center'})"}
+      # the camera once selecting has finished framing the sphere (set at once, it ended up inside the cones)
+      - {wait: 1500}
+      - {camera: {pos: [-2.6, 5.5, 18.2], target: [-2.6, 1.1, 0]}}
+      - {wait: 800}
+    crop: {around: {selector: '[id$="-mode-count"]'}, size: [688, 720], offset: [-170, -60], ui: true}
+    fade: []
+    annotate:
+      - {n: 1, at: {object: Sphere}, shape: circle, badge: tl, key: 'Add scatter covers the mesh with **200 cones** at once (Count mode).'}
+      - {n: 2, at: {union: [{selector: '[id$="-mode-count"]'}, {text: Remove fill}]}, shape: bracket, badge: l, key: 'The **Fill** rows: Count or Density, Spacing, and the Slope and Height masks.'}
+
+  - id: select-tool
+    replaces: img/scatter/select-tool.png
+    alt: >-
+      The Sculpt toolbox's Select tool on a terrain painted with cones and boxes: a box drag picked seven cones, ringed
+      in orange, with the gizmo on them and the selection commands (Move, Turn, Size, Bigger, Re-roll, Delete, To
+      objects) in the toolbox. 1: the selection commands. 2: the picked instances.
+    caption: The Select tool.
+    scene:
+      - eval: >-
+          (async () => { const S = window.__stores, g = window.__docs.get(S.objectsGroup);
+          S.commandsHandler.sceneCommand('/create Terrain 24 48'); await new Promise((r) => setTimeout(r, 400));
+          const t = g.children[g.children.length - 1]; t.name = 'Terrain'; const u = t.uuid; const ts = S.terrainSculpt, tp = S.terrainPaint;
+          const stroke = async (x, z, n) => { ts.beginStroke(u); for (let i = 0; i < n; i++) { ts.strokeMove(u, x, z, 0.05); await new Promise((r) => setTimeout(r, 10)); } ts.endStroke(); };
+          ts.enterSculpt(u); ts.sculptOp.set('scatter'); ts.sculptRadius.set(3); tp.scatterDensity.set(1);
+          tp.scatterSource.set({kind: 'primitive', type: 'Cone'}); S.scatterEdit.setScatterTool('paint');
+          await stroke(0, 0, 6); await stroke(-6, -6, 6);
+          tp.scatterSource.set({kind: 'primitive', type: 'Box'}); await stroke(0, 0, 6);
+          S.scatterEdit.scatterAffects.set('p:Cone'); S.scatterEdit.setScatterTool('select'); })()
+      - {wait: 800}
+      # top-down, the terrain's middle left of the view's centre: it shares the column with the toolbox
+      - {camera: {pos: [4.4, 22, 3], target: [3.9, 0, 0]}}
+    setup:
+      # a real box drag over the middle of the cones
+      - {press: {object: Terrain, point: center, dx: -70, dy: -70}}
+      - {moveTo: {object: Terrain, point: center}, steps: 4}
+      - {moveTo: {object: Terrain, point: center, dx: 70, dy: 70}, steps: 4}
+      - {release: true}
+      - {wait: 800}
+    crop: {around: {selector: '#sculpt-toolbar'}, size: [688, 700], offset: [245, 0], ui: true}
+    annotate:
+      - {n: 1, at: {selector: '#sculpt-scatter-selection'}, shape: box, label: selection tools, badge: r, key: 'The **selection tools**: move, turn and size with the gizmo, or step them; Re-roll, Delete, To objects.'}
+      - {n: 2, at: {object: Terrain, point: center}, shape: circle, label: picked, badge: tr, key: 'The **picked** instances, ringed; only the model in Affects can be picked.'}

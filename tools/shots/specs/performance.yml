@@ -5,35 +5,51 @@ defaults:
   dpr: 2
   format: webp
 shots:
+# 83-batch3 (V11): built live — a scene over the Quest budget on purpose: four point lights (the budget is 2) and six
+# knots. The chip reads it; a click on the chip opens Statistics on its Budget section.
 - id: budget-chip
   replaces: img/performance/budget-chip.png
-  dpr: 1
+  scene: &heavy
+  - {create: TorusKnot, name: Knot 1, at: [-3, 1, 0]}
+  - {create: TorusKnot, name: Knot 2, at: [-1, 1, -1]}
+  - {create: TorusKnot, name: Knot 3, at: [1, 1, 0]}
+  - {create: TorusKnot, name: Knot 4, at: [3, 1, -1]}
+  - {create: TorusKnot, name: Knot 5, at: [-2, 1, 2]}
+  - {create: TorusKnot, name: Knot 6, at: [2, 1, 2]}
+  - {light: point, name: Lamp 1, at: [-3, 3, 2]}
+  - {light: point, name: Lamp 2, at: [3, 3, 2]}
+  - {light: point, name: Lamp 3, at: [-3, 3, -2]}
+  - {light: point, name: Lamp 4, at: [3, 3, -2]}
+  setup:
+  - {eval: "window.__stores.budgetMeter.setBudgetTarget('quest')"}
+  - {camera: {pos: [0, 4, 10], target: [0, 1, 0]}}
+  - {wait: 3000}
+  crop: {union: [{selector: '#controls-pill'}, {selector: '#budget-chip-wrap'}], pad: 12}
+  fade: []
   kind: ui
   caption: The budget chip sits beside the toolbar.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 652
-    - 80
-  fade: &id001 []
-  alt: The budget chip beside the toolbar, reading Quest 200% in red for the Race scene
-  from: img/performance/budget-chip.png
+  alt: >-
+    The budget chip beside the toolbar, reading Quest over 100 % in red: the scene has four point lights, more than
+    the two a Quest's budget allows.
 - id: statistics-budget
   replaces: img/performance/statistics-budget.png
-  dpr: 1
+  scene: *heavy
+  setup:
+  - {eval: "window.__stores.budgetMeter.setBudgetTarget('quest')"}
+  - {camera: {pos: [0, 4, 10], target: [0, 1, 0]}}
+  - {wait: 3000}
+  - {click: '#budget-chip'}
+  - {wait: 2000}
+  crop: {selector: '#stats-window', maxHeight: 560}
+  fade: [b]
   kind: ui
   caption: Statistics ▸ Budget against the Quest limits.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 404
-    - 484
-  fade: *id001
-  alt: 'Statistics ▸ Budget for the Race scene on Quest: draw calls, triangles, texture memory, lights, shadow-casting lights
-    and shadow draws against the budget, and the heaviest objects with what optimizing them on import would save'
-  from: img/performance/statistics-budget.png
+  alt: >-
+    Statistics ▸ Budget on Quest for six knots and four point lights: draw calls, triangles, texture memory, lights in
+    red, shadow-casting lights and shadow draws against the budget, then the heaviest objects. 1: the share of the
+    tightest budget.
+  annotate:
+  - {n: 1, at: {selector: '#stats-budget-percent'}, shape: box, pad: 3, badge: l, key: 'How much of the **tightest budget** the scene uses: over 100 % is red.'}
 - id: configure-scene-quality
   replaces: img/performance/configure-scene-quality.png
   caption: Configure Scene opens with Quality first.

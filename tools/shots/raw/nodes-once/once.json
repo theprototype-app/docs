@@ -1,23 +1,36 @@
 {
  "id": "once",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.570Z",
+ "spec": "8851961babc2",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:01:38.204Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/nodes/once.png",
- "width": 688,
- "height": 639,
+ "uiHits": [
+  "div.svelte-flow__pane",
+  "div.flex",
+  "div.relative",
+  "span.overflow-hidden",
+  "span",
+  "p.text-[10px]",
+  "button.nodrag",
+  "span.text-text-muted",
+  "select.nodrag",
+  "input.dn-input",
+  "div.dn-wrap",
+  "input.nodrag"
+ ],
+ "width": 1244,
+ "height": 772,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 688,
-  "h": 639
+  "x": 208,
+  "y": 284,
+  "w": 622,
+  "h": 386
  },
  "cut": [],
- "fade": [
-  "r"
- ],
+ "fade": [],
  "anchors": {},
  "kind": "ui"
 }

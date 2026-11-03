@@ -1,26 +1,46 @@
 {
  "id": "measure-items",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.548Z",
+ "spec": "d8d1e164bbba",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:13:37.643Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/measure-align/measure-items.png",
- "width": 688,
- "height": 500,
+ "uiHits": [],
+ "width": 1376,
+ "height": 1000,
  "crop": {
-  "x": 420,
-  "y": 220,
+  "x": 412,
+  "y": 207,
   "w": 688,
   "h": 500
  },
- "cut": [],
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
  "fade": [
   "l",
   "r",
   "t",
   "b"
  ],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 915.140625,
+   "y": 393.703125,
+   "w": 82.84375,
+   "h": 41.59375
+  },
+  "2": {
+   "x": 192.71875,
+   "y": 620.671875,
+   "w": 174.25,
+   "h": 41.59375
+  }
+ },
  "kind": "ui"
 }

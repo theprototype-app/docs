@@ -232,22 +232,30 @@ shots:
   fade: []
   alt: 'The Objects window dragged over the dock''s tab bar: it is see-through, the tab bar is outlined and a caret marks
     the slot after the Node editor tab'
+# 83-batch3 (V11): a real second browser window (lib/rig.cjs `popup:` + `capture: popup`): the dock tab menu's
+# Pop out the whole dock, from a small app window so the popped-out one is 688 wide too
 - id: pop-out-dock
   replaces: img/interface/pop-out-dock.png
-  app: earlier
+  device: window-688
+  setup:
+    - {create: Box, name: Crate, at: [0, 0.5, 0]}
+    - {eval: "window.__stores.dockMenu.dockTab('flow'); window.__stores.dockMenu.dockTab('timeline')"}
+    - {wait: 1500}
+    - {eval: "window.__stores.bottomDock.bottomDockActive.set('flow')"}
+    - {wait: 1000}
+    - popup:
+        - {rightClick: {text: Node editor}}
+        - {wait: 600}
+        - {clickText: Pop out the whole dock}
+  capture: popup
+  crop: {rect: [0, 0, 688, 600]}
+  fade: [b]
+  alt: >-
+    A popped-out dock in its own browser window: the Node editor and the Timeline as its tabs, the Node editor open with
+    its flows list, node palette and graph. 1: the window's tabs.
   caption: A popped-out dock is its own browser window.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 688
-    - 600
-  dpr: 1
-  kind: ui
-  fade:
-  - r
-  alt: 'A popped-out dock: the Node editor and the Timeline as tabs in their own window'
-  from: img/interface/pop-out-dock.png
+  annotate:
+    - {n: 1, at: {union: [{text: Node editor}, {text: Timeline}]}, shape: box, label: its tabs, badge: r, key: 'The dock''s **tabs**, now in their own window: drag it to another monitor.'}
 - id: focus-mode-viewport-toggle
   replaces: img/interface/focus-mode-viewport-toggle.png
   device: window-688-tall

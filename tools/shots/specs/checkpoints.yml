@@ -1,41 +1,76 @@
+# docs/checkpoints.md — the Checkpoints timeline and the large-scene notice.
+# Shoot: e2e-slot -- node tools/shots/shoot.cjs checkpoints     Re-annotate: node tools/shots/annotate.cjs checkpoints
+# 83-batch3: real captures (were re-crops of the 36 B14 / 50-window evidence). Recipe: core tests/e2e/checkpoints.
 page: checkpoints
 defaults:
   device: desktop
   theme: dark
   dpr: 2
   format: webp
+  # automatic rows off: only the two named checkpoints the shot makes
+  storage: {'checkpoints:auto': 'false'}
 shots:
-- id: timeline-compare
-  replaces: img/checkpoints/timeline-compare.png
-  alt: The Checkpoints timeline comparing two checkpoints with the swipe slider
-  caption: The Checkpoints timeline comparing two checkpoints with the swipe slider.
-  crop:
-    rect:
-    - 60
-    - 40
-    - 688
-    - 600
-  fade:
-  - r
-  - t
-  - b
-  kind: ui
-  dpr: 1
-  from: img/checkpoints/timeline-compare.png
-- id: large-scene-notice
-  replaces: img/checkpoints/large-scene-notice.png
-  alt: The notice when a large scene skips its automatic checkpoint
-  caption: The notice when a large scene skips its automatic checkpoint.
-  crop:
-    rect:
-    - 296
-    - 0
-    - 688
-    - 500
-  fade:
-  - l
-  - r
-  - b
-  kind: ui
-  dpr: 1
-  from: img/checkpoints/large-scene-notice.png
+  - id: timeline-compare
+    replaces: img/checkpoints/timeline-compare.png
+    device: window-688-tall
+    alt: >-
+      The Checkpoints timeline in a small window, comparing Blockout v1 with With cone: the two pictures one over the
+      other with a swipe divider, Objects 2 → 3 (+1), the sizes and how far apart they are, and the two picked rows
+      below. 1: the swipe slider. 2: what changed.
+    caption: The Checkpoints timeline comparing two checkpoints with the swipe slider.
+    scene:
+      - {eval: "window.__stores.checkpoints.autoCheckpoints.set(false)"}
+      - {create: Box, name: Crate, at: [-0.8, 0.5, 0], color: '#c9a26b'}
+      - {create: Sphere, name: Ball, at: [0.9, 0.6, 0.3], scale: 0.6, color: '#e8d6a8'}
+      - {camera: {pos: [3.4, 3, 4.4], target: [0, 0.5, 0]}}
+      - eval: >-
+          (async () => { const C = window.__stores.checkpoints; await C.saveCheckpoint({name: 'Blockout v1'});
+          const row = window.__docs.get(C.checkpoints).find((r) => r.name === 'Blockout v1');
+          C.setCheckpointNote(row.id, 'the first pass'); C.pinCheckpoint(row.id, true); })()
+      - {create: Cone, name: Cone, at: [0, 0.5, -1.2], color: '#81b29a'}
+      - {eval: "window.__stores.checkpoints.saveCheckpoint({name: 'With cone'})"}
+      - {wait: 600}
+    setup:
+      - {eval: "window.__stores.checkpointsOpen.set(true)"}
+      - {wait: 1200}
+      - {click: '#checkpoint-compare'}
+      - {wait: 400}
+      - {eval: "document.querySelectorAll('.cp-pick')[0].click(); document.querySelectorAll('.cp-pick')[1].click()"}
+      - {wait: 800}
+      - eval: >-
+          (() => { const r = document.querySelector('#checkpoint-compare-split'); r.value = '35';
+          r.dispatchEvent(new Event('input', {bubbles: true})); r.dispatchEvent(new Event('change', {bubbles: true})); })()
+      - {wait: 600}
+    crop: {selector: 'dialog:has(#checkpoint-timeline)'}
+    annotate:
+      - {n: 1, at: {selector: '#checkpoint-compare-split'}, shape: box, label: swipe, badge: t, key: 'Drag the **swipe** slider to wipe between the older and the newer picture.'}
+      - {n: 2, at: {selector: '#checkpoint-compare-view div.flex-wrap'}, shape: underline, label: what changed, badge: b, key: '**What changed**: object count, size and time between the two.'}
+
+  # a real 4.8 M-triangle scene (two very dense spheres) against the Desktop target's 4 M line; the notice is a toast,
+  # so the toasts the shot driver hides are shown again for this one
+  - id: large-scene-notice
+    replaces: img/checkpoints/large-scene-notice.png
+    alt: >-
+      The notice when a large scene skips its automatic checkpoint: Automatic checkpoints are paused, this scene is very
+      large, named checkpoints still work, with a Settings link, over two dense spheres. 1: Settings, where large scenes
+      can be let in.
+    caption: The notice when a large scene skips its automatic checkpoint.
+    storage: {'checkpoints:auto': 'true'}
+    scene:
+      - {create: Sphere, name: Dense A, at: [-1, 0.8, 0], scale: 0.8, color: '#8a7fd1'}
+      - {create: Sphere, name: Dense B, at: [1, 0.8, 0], scale: 0.8, color: '#6c8cd5'}
+      - eval: >-
+          (() => { const S = window.__stores; for (const n of ['Dense A', 'Dense B']) { const o = window.__docs.byName(n);
+          o.geometry.dispose(); o.geometry = new S.THREE.SphereGeometry(0.5, 1100, 1100); } })()
+      - {camera: {pos: [0, 3.2, 6.4], target: [0, 0.8, 0]}}
+      - {wait: 2000}
+    setup:
+      - {css: '.toasts-stack,.tp-toast{display:revert!important}'}
+      - {store: {toastStore: []}}
+      - eval: >-
+          (async () => { const C = window.__stores.checkpoints; C.autoCheckpoints.set(true); C.checkpointsDebug.resetLargeNotice();
+          C.checkpointsDebug.resetAutoClock(0); await C.checkpointsDebug.maybeAuto(); })()
+      - {wait: 1200}
+    crop: {around: {selector: '.tp-toast'}, size: [688, 460], offset: [0, 170], ui: true}
+    annotate:
+      - {n: 1, at: {text: Settings, within: '.tp-toast'}, shape: underline, label: keep them on, badge: r, key: '**Keep them on**: **Settings ▸ Scene** has the switch that keeps automatic checkpoints for large scenes too.'}

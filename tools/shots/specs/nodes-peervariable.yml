@@ -1,23 +1,54 @@
 page: nodes-peervariable
-defaults:
-  device: desktop
-  theme: dark
-  dpr: 2
-  format: webp
+defaults: {device: desktop, theme: dark, dpr: 2, format: webp}
+# 83-batch3 (V11): built live — the example's nodes made and wired by the app's own create_flow_nodes, laid out
+# in columns at 1:1 in the docked Node editor, the crop a box over the cards (#docs-nodes)
 shots:
 - id: peervariable
   replaces: img/nodes/peervariable.png
-  alt: 'The example''s nodes: On Hit (who me) on the Bell, a Set Variable (rings, add, player) beside a Number, and a Player
-    Variable (rings, mine) driving a HUD Text'
-  caption: The example's nodes.
-  crop:
-    rect:
-    - 32
-    - 0
-    - 1032
-    - 405
+  setup:
+  - {create: Sphere, name: Bell, at: [0, 1, 0]}
+  - eval: >-
+      (() => { const H = window.__stores.hudDocs;
+      H.hudDocs.update((d) => ({...d, scene: H.normalizeHudDoc({screens: [{id: 'main', name: 'Main', elements: [{id: 'el-rings', kind: 'text', label: 'Rings'}]}]})})); })()
+  - {wait: 800}
+  - eval: >-
+      (async () => { const S = window.__stores, D = window.__docs;
+      const sel = (name) => { const o = D.byName(name); if (!o) throw new Error('no object ' + name); return {selected: o.uuid}; };
+      const r = await S.aiTools.executeAiTool('create_flow_nodes', {graph: 'scene',
+      nodes: [{ref: 'hit', type: 'onhit', data: {who: 'me'}},
+      {ref: 'num', type: 'number', data: {value: 1}},
+      {ref: 'pv', type: 'peervariable', data: {name: 'rings', read: 'mine'}},
+      {ref: 'sel', type: 'objectselector', data: sel('Bell')},
+      {ref: 'set', type: 'setvariable', data: {name: 'rings', op: 'add', scope: 'player'}},
+      {ref: 'txt', type: 'hudtext', data: {element: 'el-rings', format: 'Rings: {v}'}}],
+      edges: [{from: 'hit', to: 'sel'},
+      {from: 'hit', to: 'set', toHandle: 'trigger'},
+      {from: 'num', to: 'set', toHandle: 'value'},
+      {from: 'pv', to: 'txt', toHandle: 'value'}]}, {physics: true});
+      if (!r || r.error || r.partial) throw new Error('create_flow_nodes: ' + JSON.stringify(r && (r.errors || r.error || r.warning)));
+      window.__docsNodes = {...(window.__docsNodes || {}), ...Object.fromEntries(r.created.map((c) => [c.ref, c.id]))};
+      window.__docsCols = [['hit','num','pv'],['sel','set','txt']]; })()
+  - {eval: "window.__stores.dockMenu.dockTab('flow'); window.__stores.bottomDock.bottomDockActive.set('flow'); window.__stores.bottomDock.dockHeight.set(700); window.__stores.activeGraphId.set('scene')"}
+  - {wait: 2500}
+  - {css: '.svelte-flow__controls,.svelte-flow__minimap{visibility:hidden!important}'}
+  - eval: >-
+      (async () => { const S = window.__stores, ids = window.__docsNodes, cols = window.__docsCols;
+      if (!window.__flowViewport) throw new Error('the node editor is not open');
+      const card = (ref) => { const el = document.querySelector('.svelte-flow__node[data-id="' + ids[ref] + '"]'); if (!el) throw new Error('no card for ' + ref); return el; };
+      cols.forEach((col, c) => { let y = 0; for (const ref of col) { S.nodesHandler.moveFlowNode(ids[ref], {x: c * 220, y}, 'scene'); y += card(ref).offsetHeight + 40; } });
+      await new Promise((r) => setTimeout(r, 800));
+      await window.__flowViewport.setViewport({x: 56, y: 56, zoom: 1});
+      await new Promise((r) => setTimeout(r, 800));
+      const rs = Object.keys(ids).map((ref) => card(ref).getBoundingClientRect());
+      const x = Math.min(...rs.map((r) => r.left)), y = Math.min(...rs.map((r) => r.top));
+      const d = document.getElementById('docs-nodes') || document.body.appendChild(Object.assign(document.createElement('div'), {id: 'docs-nodes'}));
+      Object.assign(d.style, {position: 'fixed', pointerEvents: 'none', left: x + 'px', top: y + 'px', width: Math.max(...rs.map((r) => r.right)) - x + 'px', height: Math.max(...rs.map((r) => r.bottom)) - y + 'px'}); })()
+  - {wait: 1000}
+  crop: {selector: '#docs-nodes', pad: 16}
   fade: []
   kind: ui
-  dpr: 1.5
-  from: img/nodes/peervariable.png
+  alt: >-
+    The example's nodes: On Hit (who me) on the Bell's Object Selector and into the trigger of a Set Variable
+    (rings, add, player) with a Number 1 as its value, and a Player Variable (rings, mine) driving a HUD Text
+  caption: 'Each player''s own bell rings, on their own HUD.'
 md: nodes/peervariable.md

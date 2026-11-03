@@ -5,35 +5,57 @@ defaults:
   dpr: 2
   format: webp
 shots:
+# 83-batch3 (V11): a real rigged character — the app's own Knight (/avatars/knight.glb) with four clips from
+# /avatars/clips.glb, the recipe of core's tpanim-states suite — instead of re-crops of an older capture
 - id: clip-tools
   replaces: img/characters-and-motion/clip-tools.png
-  alt: The clip tools in the Animation window
-  caption: The clip tools in the Animation window.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 223
-    - 329
+  scene: &knight
+  - eval: >-
+      (async () => { const s = window.__stores;
+      const knight = await (await fetch('/avatars/knight.glb')).arrayBuffer();
+      const id = await s.fileHandler.importFile(new File([knight], 'knight.glb'), 'Knight');
+      const clips = await (await fetch('/avatars/clips.glb')).arrayBuffer();
+      const items = await s.explorer.importFiles([new File([clips], 'clips.glb')], null);
+      for (const want of ['Idle', 'Walking_A', 'Running_A', 'Jump_Idle']) {
+        const item = items.find((i) => i.name.endsWith(want + '.tpanim'));
+        s.clipAssets.assignClipAsset(id, { hash: item.hash, name: want }); }
+      s.objectActions.selectObject(id); s.animationClose.set(false); })()
+  - {wait: 4000}
+  setup:
+    - {eval: "window.__stores.bottomDock.dockHeight.set(640)"}
+    - {wait: 1200}
+    - {eval: "[...document.querySelectorAll('button')].find((b) => /^Walking_A/.test(b.textContent.trim())).click()"}
+    - {wait: 1500}
+  # widened to the right (the dock's empty sheet) so the callouts sit beside the narrow column, not on it
+  crop: {union: [{selector: '#clip-apply-to'}, {selector: '#clip-split'}, {selector: '#clip-seam', offset: [190, 0]}], pad: 10}
   fade: []
-  kind: ui
-  dpr: 1
-  from: img/characters-and-motion/clip-tools.png
+  alt: >-
+    The clip tools in the Animation window for the Knight's Walking_A clip: fps, frames and length with seamless loop,
+    In place or Moving, loop, speed, Rename, Loop it and Remove, the playhead and in / out markers, Mark in, Mark out,
+    Trim and Split at playhead. 1: the loop seam. 2: Loop it and Remove.
+  caption: The clip tools in the Animation window.
+  annotate:
+    - {n: 1, at: {selector: '#clip-seam'}, shape: underline, label: loop seam, badge: r, key: 'The **loop seam**: "seamless loop", or how far the loop jumps.'}
+    - {n: 2, at: {union: [{selector: '#clip-loop-it'}, {selector: '#clip-remove'}]}, shape: box, label: loop it, badge: r, key: '**Loop it** makes a new clip that loops without a jump; **Remove** takes the clip off the character (the file stays).'}
 - id: animation-states
   replaces: img/characters-and-motion/animation-states.png
-  alt: 'The Animation states window for a Knight: Move, Jump and Fall states with their clips, loop and entry, and the Move
-    to Jump transitions with their conditions.'
-  caption: The Animation states window for a Knight.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 360
-    - 472
+  scene: *knight
+  setup:
+    - {click: '#anim-states-open'}
+    - {wait: 1500}
+    - {click: '#anim-states-preset'}
+    - {wait: 2500}
+  # a strip of the 3D view on the left holds the badges
+  crop: {union: [{selector: '#anim-states'}, {selector: '#anim-states', offset: [-44, 0]}]}
   fade: []
-  kind: ui
-  dpr: 1
-  from: img/characters-and-motion/animation-states.png
+  alt: >-
+    The Animation states window for the Knight after Replace with the Locomotion preset: the states Move (a blend by
+    speed of Idle, Walking_A and Running_A, the entry), Jump and Fall with their clips and loop, then the transitions
+    Move to Jump with their conditions. 1: the Locomotion preset. 2: the state playing now.
+  caption: The Animation states window for a Knight.
+  annotate:
+    - {n: 1, at: {selector: '#anim-states-preset'}, shape: box, badge: l, key: '**Replace with the Locomotion preset**: idle, walk and run blended by speed, jump and fall, from this character''s own clips.'}
+    - {n: 2, at: {selector: '#anim-states [data-state="move"]'}, shape: box, badge: l, key: 'The **state playing now** is outlined (here Move, standing still).'}
 # fix-batch-3 row l (owner 2026-11-02 → 83-start): the Asset Browser's Motion tab, shot on production
 - id: motion-tab
   alt: >-

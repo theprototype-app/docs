@@ -1,21 +1,49 @@
 {
  "id": "presets-wood",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.546Z",
+ "spec": "8b85512b9d9f",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:31:24.002Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/materials/presets-wood.png",
- "width": 304,
- "height": 450,
+ "uiHits": [
+  "div#inspector.tp-ui",
+  "div.sec-panel-body",
+  "div.mp-head",
+  "span.mp-title",
+  "button.mp-swatch",
+  "div.mp-row",
+  "button#select-material.ts-btn",
+  "span.color-picker",
+  "span.mp-ball",
+  "span.mp-label",
+  "span.ts-label",
+  "div.picker"
+ ],
+ "width": 622,
+ "height": 428,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 304,
-  "h": 450
+  "x": 1125,
+  "y": 411,
+  "w": 311,
+  "h": 214
  },
  "cut": [],
  "fade": [],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 24,
+   "y": 92.625,
+   "w": 96,
+   "h": 106.375
+  },
+  "2": {
+   "x": 458,
+   "y": 20.625,
+   "w": 64,
+   "h": 64
+  }
+ },
  "kind": "ui"
 }

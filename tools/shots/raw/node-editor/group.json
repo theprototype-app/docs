@@ -1,25 +1,55 @@
 {
  "id": "group",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.557Z",
+ "spec": "b763c0fe9650",
+ "dpr": 2,
+ "shotAt": "2026-11-03T15:03:52.619Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/node-editor/group.png",
- "width": 688,
- "height": 420,
+ "uiHits": [
+  "nav#flow-scope-chip.tp-crumbs",
+  "button#palette-toggle.palette-tab",
+  "button#palette-side.palette-tab",
+  "div.svelte-flow__pane",
+  "button.tp-crumb",
+  "div.flex",
+  "div.relative",
+  "li.tp-crumb-li",
+  "span",
+  "ol.tp-crumbs-list",
+  "path.svelte-flow__edge-interaction",
+  "span.max-w-full"
+ ],
+ "width": 1376,
+ "height": 840,
  "crop": {
-  "x": 296,
-  "y": 300,
+  "x": 168,
+  "y": 209,
   "w": 688,
   "h": 420
  },
  "cut": [],
- "fade": [
-  "l",
-  "r",
-  "t"
- ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 48,
+   "y": 308.9090576171875,
+   "w": 218.18182373046875,
+   "h": 142.5455322265625
+  },
+  "2": {
+   "x": 1109.8182373046875,
+   "y": 308.9090576171875,
+   "w": 218.1817626953125,
+   "h": 142.5455322265625
+  },
+  "3": {
+   "x": 8,
+   "y": 10,
+   "w": 305.53125,
+   "h": 48
+  }
+ },
  "kind": "ui"
 }

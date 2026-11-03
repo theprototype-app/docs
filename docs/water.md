@@ -5,10 +5,14 @@ patterns (**caustics**) on the floor, foam on the wave crests and along the shor
 underwater fog when your camera goes inside, and bubbles that rise and pop at the surface. Everyone in the session sees
 the same water, and the waves move in step on every screen.
 
-![A pool in daylight: caustics on the floor, a ball and a crate in the water](img/water/pool.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+![A pool in daylight: light caustics ripple on the ground under the water, with a ball and a crate floating in it. 1: the caustics on the pool floor.](img/water/pool.webp){ .shot .vignette width="1120" height="600" loading=lazy }
 /// caption
 A pool in daylight.
 ///
+
+<div class="shot-key" markdown>
+1. **Caustics**: the light the surface focuses onto the floor, moving with the waves.
+</div>
 
 ## Where it is
 
@@ -64,7 +68,7 @@ that used to do little:
 | **Toxic** | bright green and glowing |
 | **Ice** | frozen solid |
 
-![The Lava preset: a glowing, opaque tank](img/water/lava.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+![A water tank with the Lava preset: glowing orange and black, opaque, its surface heaving slowly.](img/water/lava.webp){ .shot .vignette width="1000" height="600" loading=lazy }
 /// caption
 The Lava preset.
 ///
@@ -74,10 +78,14 @@ The Lava preset.
 Put the camera inside the water and the view fogs over in the water's **underwater colour**, as far as its
 **visibility** reaches. Bubbles rise past you and pop at the surface.
 
-![Inside the Aquarium preset: bubbles rising through blue-green water](img/water/underwater-aquarium.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+![The camera inside the Aquarium example: blue-green water with fog, a column of bubbles rising from the air stone past the plants, clownfish, blue tangs and a rock. 1: the bubbles from the air stone.](img/water/underwater-aquarium.webp){ .shot .vignette width="880" height="520" loading=lazy }
 /// caption
 Inside the Aquarium preset.
 ///
+
+<div class="shot-key" markdown>
+1. The **bubbles** rise from the air stone; underwater the view takes the water's fog and tint.
+</div>
 
 ## Things in the water
 
@@ -95,10 +103,15 @@ Since 1.25 a click selects what is **inside or behind** the water — a fish in 
 passes through ▸ Water** (on by default) turns this off for a scene. See
 [Inside and behind water](controls.md#inside-and-behind-water).
 
-![Configure Scene ▸ Advanced ▸ Selection passes through, with the 1 of 3 · Aquarium water chip in the tank](img/water/selection-passes-through.webp){ .shot .fade-l width="688" height="720" loading=lazy }
+![Configure Scene ▸ Advanced ▸ Selection passes through, with Water ticked, beside the Aquarium example, where an Alt+click in the tank shows the chip 1 of 2 · Aquarium water. 1: the Water switch. 2: the Alt+click chip.](img/water/selection-passes-through.webp){ .shot .fade-l .fade-t width="673" height="585" loading=lazy }
 /// caption
 Configure Scene ▸ Advanced ▸ Selection passes through.
 ///
+
+<div class="shot-key" markdown>
+1. With **Water** ticked, a click in a tank selects what is inside it, not the water.
+2. <kbd>Alt</kbd>+click still reaches the water: the chip says **which one** you have.
+</div>
 
 The selected object is drawn un-refracted, exactly under its outline; the rest of the water still refracts. (Before,
 the outline sat beside the refracted fish.)
@@ -119,10 +132,15 @@ gets a spout on its rim.
 - Drops arc out, **splash into water** (a ripple) and **settle** where they land, then dry up.
 - Each player sees their own drops; the settings are shared. An emitter is one draw call, cheap enough for a Quest.
 
-![Two pour emitters arcing drops over a water tank](img/water/pour-emitters.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+![A water tank with two pour emitters: one on the tank's own rim and a separate spout to its left, each arcing a stream of blue drops onto the ground. 1: the spout. 2: the rim pour.](img/water/pour-emitters.webp){ .shot .vignette width="1120" height="600" loading=lazy }
 /// caption
 Two pour emitters arcing drops over a water tank.
 ///
+
+<div class="shot-key" markdown>
+1. A **spout** (Add ▸ Water ▸ Pour): a marker that pours wherever you put it.
+2. A tank's own **pour** starts on its rim.
+</div>
 
 For particle water that pools, splashes and flows, use a [Fluid emitter](fluids.md#fluid-emitter).
 

@@ -5,31 +5,56 @@ defaults:
   dpr: 2
   format: webp
 shots:
+# 83-batch3: the Inspector's Material section (MaterialPresetsRow: #material-presets, .mp-swatch / .mp-label)
 - id: presets-wood
   replaces: img/materials/presets-wood.png
-  alt: The Presets row with Wood applied
-  caption: The Presets row with Wood applied.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 304
-    - 450
-  fade: []
   kind: ui
-  dpr: 1
-  from: img/materials/presets-wood.png
+  setup:
+    - {create: Box, name: Crate, at: [0, 0.5, 0]}
+    - {select: Crate}
+    - {eval: "window.__stores.inspectorKind.set('selection'); window.__stores.inspectorClose.set(false)"}
+    - {wait: 1500}
+    - {eval: "document.getElementById('material-presets')?.scrollIntoView({block: 'center'})"}
+    - {wait: 600}
+    - {click: '#material-presets .mp-swatch[title^="Wood "]'}
+    - {wait: 1000}
+  crop: {union: [{selector: '#material-presets'}, {selector: '#select-material'}], pad: 10}
+  fade: []
+  alt: >-
+    The Material section's Presets row: the eight built-in swatches Wood, Metal, Plastic, Glass, Stone, Rubber, Fish
+    scales and Neon, with Wood outlined because the box wears it, and + and the pencil above. 1: Wood, applied.
+    2: + saves the current look.
+  caption: The Presets row with Wood applied.
+  annotate:
+    - {n: 1, at: {selector: '#material-presets .mp-swatch[title^="Wood "]'}, shape: box, pad: 3, badge: b, key: 'The swatch of the preset the object wears is **outlined**.'}
+    - {n: 2, at: {selector: '#material-preset-save'}, shape: box, pad: 3, badge: l, key: '**+** saves the current look as your own preset.'}
 - id: presets-edit
   replaces: img/materials/presets-edit.png
-  alt: 'Editing your presets: rename, download and delete on your own swatches'
-  caption: Editing your presets.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 304
-    - 511
-  fade: []
   kind: ui
-  dpr: 1
-  from: img/materials/presets-edit.png
+  setup:
+    - {create: Box, name: Crate, at: [0, 0.5, 0], color: '#b5523b'}
+    - eval: >-
+        (async () => {
+          const s = window.__stores, o = window.__docs.byName('Crate');
+          await s.materialPresets.saveObjectMaterialAsPreset(o.uuid, 'Red brick');
+          o.material.color.set('#2fb5a8');
+          await s.materialPresets.saveObjectMaterialAsPreset(o.uuid, 'Teal');
+        })()
+    - {select: Crate}
+    - {eval: "window.__stores.inspectorKind.set('selection'); window.__stores.inspectorClose.set(false)"}
+    - {wait: 1500}
+    - {eval: "document.getElementById('material-presets')?.scrollIntoView({block: 'center'})"}
+    - {wait: 600}
+    - {click: '#material-preset-edit'}
+    - {wait: 400}
+    - {click: '#material-presets .mp-mine .mp-swatch[title^="Red brick "]'}
+    - {wait: 600}
+  crop: {selector: '#material-presets', pad: 10}
+  fade: []
+  alt: >-
+    Editing your presets: the pencil is pressed, your own swatch Red brick is picked and the bar under the row has
+    its rename, download and delete buttons, with Import beside. 1: the pencil. 2: rename, download and delete.
+  caption: Editing your presets.
+  annotate:
+    - {n: 1, at: {selector: '#material-preset-edit'}, shape: box, pad: 3, badge: l, key: 'The **pencil** starts editing; the tick finishes.'}
+    - {n: 2, at: {union: [{selector: '[data-preset-rename]'}, {selector: '[data-preset-delete]'}]}, shape: box, pad: 3, badge: r, key: '**Rename**, **download** as a `.matpreset.json` file, and **delete** (it asks first).'}

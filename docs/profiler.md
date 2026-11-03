@@ -121,10 +121,14 @@ its edge button, like the Explorer's. The **right** one has two tabs:
 double-click resets it. On a very wide screen the graph and the list sit side by side and the bar resizes the columns.
 The sidebars, the tab and the split are remembered on this device.
 
-![The Profiler docked on a computer, cut at the column: the timeline and the Tree with Heavy crate picked, and Details on the right for the frame at 2.1 s.](img/profiler/details-sidebar.webp){ .shot .fade-l width="688" height="438" loading=lazy }
+![The Profiler docked on a computer, cut at the column: the Tree with Heavy crate picked, and the Details sidebar on the right for the picked frame, with the picked object's draw calls, triangles and meshes. 1: the picked object.](img/profiler/details-sidebar.webp){ .shot .fade-l width="688" height="560" loading=lazy }
 /// caption
 The Tree in the middle, Details for the picked frame on the right.
 ///
+
+<div class="shot-key" markdown>
+1. The **picked object**: its draw calls, triangles, meshes, materials and CPU time.
+</div>
 
 On a phone the Profiler opens with both sidebars hidden, so the graph gets the screen.
 

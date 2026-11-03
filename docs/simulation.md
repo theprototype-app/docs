@@ -10,10 +10,14 @@ the open scene, rivers and pipes, see [Fluids](fluids.md).
 A glass tank of particle fluid. Move or tilt the tank and the fluid sloshes; pour more in, drain it out; toys dropped in
 float and are pushed around.
 
-![A fluid tank with the smooth surface look](img/simulation/fluid-tank.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+![A fluid tank on the grid with the smooth surface look: a glass box half full of blue water whose surface catches the light. 1: the smooth surface.](img/simulation/fluid-tank.webp){ .shot .vignette width="1000" height="560" loading=lazy }
 /// caption
 A fluid tank with the smooth surface look.
 ///
+
+<div class="shot-key" markdown>
+1. The **smooth surface** look: the particles drawn as one liquid surface.
+</div>
 
 ### Where it is
 
@@ -38,10 +42,14 @@ A fluid tank with the smooth surface look.
 | **Max spilled drops** · **Drop lifetime** | the limits on spilled fluid, so it never builds up |
 | **Refill** | starts the tank again, filled to its **Fill** level |
 
-![The Drops look, with a ball pushed around by the fluid](img/simulation/fluid-tank-drops.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+![The same tank with the Drops look and a red fluid: hundreds of round drops, with a ball dropped in and pushed about by them. 1: the ball in the fluid.](img/simulation/fluid-tank-drops.webp){ .shot .vignette width="1000" height="560" loading=lazy }
 /// caption
 The Drops look.
 ///
+
+<div class="shot-key" markdown>
+1. A ball dropped in is **pushed about** by the drops (on the player running the simulation).
+</div>
 
 ### Spilling
 
@@ -50,10 +58,15 @@ over the rim, falls, splashes into any water below and settles. The tank holds l
 again. The simulation transport's **Pause** holds the tank and its spilled drops still, and **Reset** refills it (see
 [The simulation controls HUD](physics.md#the-simulation-controls-hud)).
 
-![Fluid tank toy: the Honey tank tipped, its honey spilled onto the table](img/simulation/tank-spill.webp){ .shot .fade-r .fade-t .fade-b width="688" height="640" loading=lazy }
+![Fluid tank toy on its table, with the Honey tank tipped towards the right: its honey has poured over the rim onto the table top and settled there. 1: the tipped Honey tank. 2: the spilled honey.](img/simulation/tank-spill.webp){ .shot .vignette width="1000" height="600" loading=lazy }
 /// caption
 Fluid tank toy.
 ///
+
+<div class="shot-key" markdown>
+1. The **tipped tank** of honey: it pours out over its rim and holds less afterwards.
+2. The **spilled** honey settles on the table top; Refill fills the tank again.
+</div>
 
 ### Pouring into a pool
 
@@ -69,10 +82,14 @@ tank and any [water object](water.md) (tank, pool, round pool, ocean) whose surf
 - Everyone's tank pours the same water from the same settings, so everyone sees the pour land and ripple in the same
   place. Nothing extra is sent over the network. The ripples and droplets are a local picture, like every water ripple.
 
-![A pour inside a tank landing on the pool's surface and rippling it](img/simulation/tank-pours-into-pool.webp){ .shot .vignette width="968" height="553" loading=lazy }
+![Two fluid tanks standing in a pool: the left one pours from a nozzle inside it onto the pool's surface, which ripples where the pour lands; the right one keeps the water it holds. 1: where the pour lands.](img/simulation/tank-pours-into-pool.webp){ .shot .vignette width="1090" height="580" loading=lazy }
 /// caption
 A pour inside a tank landing on the pool's surface and rippling it.
 ///
+
+<div class="shot-key" markdown>
+1. The **pour** lands on the pool's surface inside the tank, joins the pool and ripples it.
+</div>
 
 ### GPU fluid
 
@@ -113,10 +130,14 @@ against 35–37 ms on the processor, including sending the particles to the card
 lands or is hit, and sags and sways in the wind. A rigged (skinned) model swings its bone chains instead: tails, hair,
 antennae.
 
-![A block leaning and wobbling under Jiggle](img/simulation/jiggle.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+![A tall block with a Jiggle node, caught just after it was dragged sideways: it leans back against the move and wobbles like jelly. 1: the lean of the jiggle.](img/simulation/jiggle.webp){ .shot .vignette width="900" height="560" loading=lazy }
 /// caption
 A block leaning and wobbling under Jiggle.
 ///
+
+<div class="shot-key" markdown>
+1. The top **lags behind** the move, then overshoots and wobbles back.
+</div>
 
 Add it from the node editor: **Effects ▸ Jiggle**. Put it in an object's own graph, or wire it to an
 [Object Selector](nodes/objectselector.md). Every setting is on the [Jiggle node page](nodes/jiggle.md).

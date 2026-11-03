@@ -28,35 +28,47 @@ shots:
     - 688
     - 840
   fade: []
+# 83-batch3: recording-bar and result are real captures now (were re-crops of the 36-share evidence): the same ball,
+# the dialog's own Start recording, the bar mid-take and the result card after it (core tests/e2e/recording.test.cjs)
 - id: recording-bar
   replaces: img/recording/recording-bar.png
-  dpr: 1
-  kind: ui
   caption: The recording bar sits above the toolbar while a take runs.
-  crop:
-    rect:
-    - 296
-    - 640
-    - 688
-    - 160
-  fade:
-  - l
-  - r
-  - t
-  alt: The recording bar above the toolbar
-  from: img/recording/recording-bar.png
+  alt: >-
+    The recording bar above the toolbar while a turntable take runs: the red dot, Recording, the progress bar, the
+    seconds done of the take's length, and Cancel.
+  setup:
+  - {create: Sphere, name: Ball, at: [0, 1, 0], color: '#6c8cd5'}
+  - {eval: window.__stores.recordingStores.recordingOpen.set(true)}
+  - {wait: 1200}
+  - {click: '#recording-start'}
+  - {wait: 900}
+  settle: 100
+  crop: {selector: '#recording-bar', pad: 24}
 - id: result
   replaces: img/recording/result.png
-  dpr: 1
-  kind: ui
+  device: window-688-tall
   caption: The finished take, with Download, Show in Explorer and Record again.
-  crop:
-    rect:
-    - 30
-    - 60
-    - 688
-    - 700
-  fade:
-  - r
-  alt: 'The finished take: Download, Show in Explorer, Record again'
-  from: img/recording/result.png
+  alt: >-
+    The finished take in the Recording dialog, in a small window: the video of the turning ball, its file name, length,
+    size and frame rate, Saved to Explorer ▸ Recordings, and the Download, Show in Explorer and Record again buttons.
+    1: Download. 2: Record again.
+  setup:
+  - {create: Sphere, name: Ball, at: [0, 1, 0], color: '#6c8cd5'}
+  - {eval: window.__stores.recordingStores.recordingOpen.set(true)}
+  - {wait: 1200}
+  - {click: '#recording-start'}
+  - eval: >-
+      new Promise((resolve, reject) => { const t0 = Date.now(); const t = setInterval(() => {
+      if (document.querySelector('#recording-result')) { clearInterval(t); resolve(); }
+      else if (Date.now() - t0 > 40000) { clearInterval(t); reject(new Error('no recording result')); } }, 200); })
+  # show a frame of the take (headless leaves an unplayed video black)
+  - eval: >-
+      new Promise((resolve) => { const v = document.querySelector('#recording-result video, dialog video'); if (!v) return resolve();
+      v.addEventListener('seeked', () => resolve(), {once: true}); v.currentTime = 3; setTimeout(resolve, 4000); })
+  - {wait: 1500}
+  crop: {selector: 'dialog:has(#recording-result)', pad: 40}
+  # the dialog fills the 688 px window: its sides are the window's, not a cut
+  fade: []
+  annotate:
+  - {n: 1, at: {selector: '#recording-download'}, shape: box, label: save file, badge: b, key: '**Download** to **save file** (.webm); it is in the Explorer already.'}
+  - {n: 2, at: {selector: '#recording-again'}, shape: box, label: new take, badge: b, key: '**Record again** goes back to the settings for a new take.'}

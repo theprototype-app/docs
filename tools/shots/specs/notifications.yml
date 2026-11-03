@@ -4,76 +4,144 @@ defaults:
   theme: dark
   dpr: 2
   format: webp
+  storage: {username: Alex, usernameCustom: '1'}
+  scene:
+  - {create: Box, name: Door, at: [0, 1, 0], scale: [1, 2, 0.2], color: '#a0785a'}
+  - {create: Box, name: Crate, at: [2.2, 0.5, 0.6], color: '#c9a26b'}
+  - {create: Cylinder, name: Pillar, at: [-2.2, 1, 0.4], scale: [0.5, 2, 0.5], color: '#8d99ae'}
+# 83-batch3 (V11): built live. Notes go in through the app's own note store (annotationsHandler — what Add note ▸
+# Save writes), replies through its addReply, chat lines through the chat box itself. The boot hides toasts for every
+# shot; the toast shot takes that style back out.
 shots:
 - id: undo-toast
   replaces: img/notes/undo-toast.png
-  dpr: 1
+  setup:
+  - {eval: "document.querySelectorAll('style').forEach((s) => { if (s.textContent.includes('.tp-toast,#toasts,.toasts-stack{display:none')) s.remove(); })"}
+  # the offer lasts 8 s; a longer one for the shot, so the capture never races it
+  - {eval: "window.__stores.undoToast.undoTiming.ms = 120000"}
+  - {eval: "window.__stores.sceneTemplates.confirmClearScene(); 0"}
+  - {wait: 1200}
+  - {clickText: Clear objects}
+  - {wait: 2000}
+  crop: {selector: '.tp-toast--undo', pad: 8}
+  fade: []
   kind: ui
+  alt: >-
+    The toast after clearing the scene: 3 objects cleared., with Undo, and the thin bar along its bottom draining for
+    the time the offer lasts. 1: Undo.
   caption: A toast with Undo, after clearing the scene.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 420
-    - 62
-  fade: &id001 []
-  alt: The toast after clearing the scene, with Undo
-  from: img/notes/undo-toast.png
+  annotate:
+  - {n: 1, at: {text: Undo, within: '.tp-toast--undo'}, shape: box, pad: 3, badge: r, key: '**Undo** puts back exactly what was there, for everyone in the session.'}
 - id: note-card
   replaces: img/notes/note-card.png
-  dpr: 1
+  setup:
+  - &notes
+    eval: >-
+      (() => { const S = window.__stores, A = S.annotationsHandler, D = window.__docs;
+      const on = (name) => { const o = D.byName(name); if (!o) throw new Error('no object ' + name); return o.uuid; };
+      const now = Date.now();
+      const notes = [
+      ['docs-n1', 'Door', 'Is this door too narrow?', 'Two players get stuck here.', 'mechanics', '#f59e0b', [0, 0.8, 0.2]],
+      ['docs-n2', 'Door', 'Hinge side', 'Swap it so it opens away from the hall.', 'mechanics', '#f59e0b', [0.4, 0, 0.2]],
+      ['docs-n3', 'Crate', 'Crate texture', 'Too clean: add scuffs and a stencil.', 'art', '#3b82f6', [0, 0.5, 0]],
+      ['docs-n4', 'Pillar', 'Pillar colour', 'Match the stone of the stairs.', 'art', '#3b82f6', [0, 0.5, 0]],
+      ['docs-n5', 'Crate', 'Push it?', 'Should players be able to push the crate?', 'mechanics', '#22c55e', [0.5, 0, 0]],
+      ['docs-n6', 'Pillar', 'Light here', 'A torch on this pillar would help.', 'lighting', '#a855f7', [0, 0.8, 0.5]]];
+      notes.forEach(([id, obj, name, text, label, color, offset], i) => A.setAnnotation({id, objectUuid: on(obj), offset, name, text, label, color,
+      author: i % 2 ? 'Mia' : 'Alex', authorKey: i % 2 ? 'docs-mia' : A.myAuthorKey(), ts: now - (6 - i) * 3600000})); })()
+  - {camera: {pos: [1.4, 2.6, 7], target: [-1.6, 1, 0]}}
+  - {eval: "window.__stores.notesDrawerOpen.set(true)"}
+  - {wait: 1200}
+  - {eval: "window.__stores.annotationsHandler.activeAnnotation.set({id: 'docs-n1', mode: 'edit'})"}
+  - {wait: 1500}
+  crop: {union: [{selector: '.note-card'}, {selector: '#notes-drawer'}], pad: 8, maxHeight: 820}
+  fade: []
   kind: ui
+  alt: >-
+    Editing the note Is this door too narrow? beside the notes drawer, which groups the scene's six notes by label:
+    art, lighting and mechanics. 1: the note being edited. 2: a label group.
   caption: Editing a note beside the notes drawer.
-  crop:
-    rect:
-    - 152
-    - 0
-    - 688
-    - 820
-  fade:
-  - l
-  alt: Editing a scene note, with the notes drawer grouping the scene's notes by label
-  from: img/notes/note-card.png
+  annotate:
+  - {n: 1, at: {selector: '.note-card .note-title'}, shape: box, label: editing, badge: r, key: 'The **note card**: name, description, pin colour and shape, label, a saved camera view, Follow.'}
+  - {n: 2, at: {text: mechanics, within: '#notes-drawer'}, shape: box, label: by label, badge: b, key: 'The drawer **groups** the notes by label; each group has ‹ › to step through it.'}
+# Mia joins; the host writes the note, Mia answers it from her own page, the host answers back
 - id: note-thread
   replaces: img/notes/note-thread.png
-  dpr: 1
+  peers:
+  - {name: Mia}
+  setup:
+  - {css: '#cross-scene-presence{display:none!important}'}
+  - *notes
+  - {wait: 1500}
+  - on: Mia
+    steps:
+    - {eval: "if (!window.__stores.annotationsHandler.addReply('docs-n1', 'Yes, widen it to 1.2 m')) throw new Error('the note never reached Mia')"}
+  - {wait: 1500}
+  - {eval: "window.__stores.annotationsHandler.addReply('docs-n1', 'Done: 1.2 m, and the frame too')"}
+  - {wait: 800}
+  - on: Mia
+    steps:
+    - {eval: "window.__stores.annotationsHandler.addReply('docs-n1', 'Two of us fit now')"}
+  - {wait: 1500}
+  - {camera: {pos: [0.6, 2.2, 6], target: [0, 1.2, 0]}}
+  - {eval: "window.__stores.annotationsHandler.activeAnnotation.set({id: 'docs-n1', mode: 'view'})"}
+  - {wait: 1500}
+  # room either side of the card for the badges
+  crop: {union: [{selector: '.note-card'}, {selector: '.note-card', offset: [-44, 0]}, {selector: '.note-card', offset: [44, 0]}], pad: 4}
+  fade: []
   kind: ui
+  alt: >-
+    The note Is this door too narrow? with a thread of three replies from Mia and Alex, each with its author and time,
+    the Reply box, then Delete, Follow and Edit. 1: the replies. 2: the Reply box.
   caption: A note with a thread of replies.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 300
-    - 265
-  fade: *id001
-  alt: A note with a thread of replies and the Reply box
-  from: img/notes/note-thread.png
+  annotate:
+  - {n: 1, at: {text: 'Yes, widen it to 1.2 m'}, shape: underline, badge: r, key: 'The **replies**, each with its author and time; **×** deletes your own.'}
+  - {n: 2, at: {selector: '#note-reply-input'}, shape: box, badge: l, key: 'The **Reply** box: Enter sends.'}
 - id: note-page-phone
   replaces: img/notes/note-page-phone.png
-  dpr: 2.9
-  kind: ui
-  caption: A note as a page of the notes on a folded phone.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 1131
-    - 1392
+  device: n6-folded
+  setup:
+  - *notes
+  - {camera: {pos: [1.4, 2.6, 7], target: [0, 1, 0]}}
+  - {eval: "window.__stores.notesDrawerOpen.set(true)"}
+  - {wait: 1500}
+  - {eval: "window.__stores.annotationsHandler.openAnnotation('docs-n3')"}
+  - {wait: 2000}
+  crop: {rect: [0, 416, 390, 480]}
   fade: []
-  alt: 'A note open as a page of the notes on a folded phone: ‹ 5/14 › in its header, Reply, then Delete, Follow and Edit
-    above the bottom bar'
-  from: img/notes/note-page-phone.png
+  kind: ui
+  alt: >-
+    A note open as a page of the Notes tab on a folded phone: ‹ › and its place among the six notes in its header, the note's text, label and
+    author, Reply, then Delete, Follow and Edit above the bottom bar. 1: ‹ › through the notes.
+  caption: A note as a page of the notes on a folded phone.
+  annotate:
+  - {n: 1, at: {union: [{selector: '#note-prev'}, {selector: '#note-next'}]}, shape: box, badge: b, key: '**‹ ›** step through all the scene''s notes; closing the page returns to the list.'}
+# Mia @mentions the host in the chat; the host answers with a shortcode, which the send turns into an emoji
 - id: chat-mentions
   replaces: img/notes/chat-mentions.png
-  dpr: 1
+  peers:
+  - {name: Mia}
+  setup:
+  - {css: '#cross-scene-presence{display:none!important}'}
+  - on: Mia
+    steps:
+    - &chatOpen {eval: "window.__stores.chatHidden.set('')"}
+    - {wait: 800}
+    - {eval: "(() => { const i = document.getElementById('message'); i.value = '@Alex look at this'; i.dispatchEvent(new Event('input', {bubbles: true})); })()"}
+    - {click: '#send'}
+  - {wait: 1500}
+  - *chatOpen
+  - {wait: 800}
+  - {eval: "(() => { const i = document.getElementById('message'); i.value = 'nice :+1: on my way'; i.dispatchEvent(new Event('input', {bubbles: true})); })()"}
+  - {click: '#send'}
+  - {wait: 1500}
+  crop: {selector: '#chat-window'}
+  fade: []
   kind: ui
+  alt: >-
+    The chat: Mia's line that mentions Alex is ringed, the @Alex in a colour, and Alex's answer, where :+1: became an
+    emoji. 1: the ringed line. 2: the emoji.
   caption: In the chat, a line that mentions you is ringed.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 500
-    - 420
-  fade: *id001
-  alt: 'The chat: a line that mentions you is ringed, and :+1: became an emoji'
-  from: img/notes/chat-mentions.png
+  annotate:
+  - {n: 1, at: {selector: '.chat-mentions-me'}, shape: box, label: mentions you, badge: b, key: 'A line that **mentions you** is ringed; the @name shows in that person''s colour.'}
+  - {n: 2, at: {selector: '.chat-mine .chat-text'}, shape: underline, label: emoji, badge: b, key: '**Shortcodes** such as `:+1:` turn into emoji when you send.'}

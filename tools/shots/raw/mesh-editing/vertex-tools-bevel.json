@@ -1,21 +1,59 @@
 {
  "id": "vertex-tools-bevel",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.554Z",
+ "spec": "266b521917af",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:24:37.906Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/mesh-editing/vertex-tools-bevel.png",
- "width": 212,
- "height": 852,
+ "uiHits": [
+  "div.toolbox-header",
+  "div.tbx-tabs",
+  "div.toolbox-body",
+  "button#mesh-mode-vertices.tbx-tab",
+  "span.tbx-label",
+  "button#mesh-weld.tbx-btn",
+  "button#mesh-connect.tbx-btn",
+  "button#mesh-delete-verts.tbx-btn",
+  "div.dn-wrap",
+  "button#bevel-dir-out.px-2",
+  "label.flex",
+  "button#mesh-adjust-revert.tbx-cmd"
+ ],
+ "width": 644,
+ "height": 880,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 212,
-  "h": 852
+  "x": 12,
+  "y": 76,
+  "w": 322,
+  "h": 440
  },
- "cut": [],
- "fade": [],
- "anchors": {},
+ "cut": [
+  "b"
+ ],
+ "fade": [
+  "b"
+ ],
+ "anchors": {
+  "1": {
+   "x": 178,
+   "y": 265,
+   "w": 72,
+   "h": 72
+  },
+  "2": {
+   "x": 144.59375,
+   "y": 605.8125,
+   "w": 171.40625,
+   "h": 40.8125
+  },
+  "3": {
+   "x": 94.21875,
+   "y": 710.625,
+   "w": 160,
+   "h": 32
+  }
+ },
  "kind": "ui"
 }

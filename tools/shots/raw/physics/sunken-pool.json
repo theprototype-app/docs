@@ -1,21 +1,35 @@
 {
  "id": "sunken-pool",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.582Z",
+ "spec": "306b5f9164f4",
+ "dpr": 2,
+ "shotAt": "2026-11-03T15:07:14.371Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/physics/sunken-pool.png",
- "width": 1126,
- "height": 569,
+ "uiHits": [],
+ "width": 2080,
+ "height": 840,
  "crop": {
-  "x": 77,
-  "y": 65,
-  "w": 1126,
-  "h": 569
+  "x": 263,
+  "y": 165,
+  "w": 1040,
+  "h": 420
  },
- "cut": [],
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
  "fade": "vignette",
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 339.3290477507187,
+   "y": 397.70955938762245,
+   "w": 269.78480094390443,
+   "h": 249.29678272887634
+  }
+ },
  "kind": "view"
 }

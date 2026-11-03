@@ -1,21 +1,44 @@
 {
  "id": "status-dot-phone",
- "dpr": 2.9,
- "shotAt": "2026-10-27T07:46:24.497Z",
+ "spec": "7132a9dcc547",
+ "dpr": 2,
+ "shotAt": "2026-11-03T12:15:16.696Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/connection/status-dot-phone.png",
- "width": 1131,
- "height": 174,
+ "uiHits": [
+  "button#logo-menu.burger",
+  "img.h-7",
+  "button#ps-connect-chip.ps-chip-main",
+  "svg.lucide",
+  "span.ps-dot",
+  "button#ps-mic.ps-chip-mic",
+  "path",
+  "button#notif-bell.hud-cell",
+  "button#peers-trigger.hud-cell",
+  "svg.h-full",
+  "div.relative"
+ ],
+ "width": 780,
+ "height": 240,
  "crop": {
   "x": 0,
   "y": 0,
-  "w": 1131,
-  "h": 174
+  "w": 390,
+  "h": 120
  },
- "cut": [],
+ "cut": [
+  "b"
+ ],
  "fade": [],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 242,
+   "y": 72,
+   "w": 28,
+   "h": 28
+  }
+ },
  "kind": "ui"
 }

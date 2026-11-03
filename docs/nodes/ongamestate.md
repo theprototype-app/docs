@@ -38,7 +38,7 @@ Keep each player's best score when a game ends:
 4. Every time the game reaches `over`, each player's device keeps the higher of its saved best
    and the final score.
 
-![On Game State (over) pulses a Store Value whose value comes from Get Variable score](../img/nodes-ongamestate/ongamestate.webp){ .shot width="688" height="473" loading=lazy }
+![On Game State (over, enter) wired into the trigger of a Store Value (mygame-best, max), whose value comes from a Get Variable named score](../img/nodes-ongamestate/ongamestate.webp){ .shot width="402" height="306" loading=lazy }
 /// caption
 On Game State (over) pulses a Store Value whose value comes from Get Variable score.
 ///

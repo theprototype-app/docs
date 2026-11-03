@@ -361,10 +361,14 @@ Since 1.25 that holds for **every slider and number field inside a node** — ev
 behaviour's [Open view](behaviours.md#the-live-node-view): a drag changes the value, never the node and never the whole
 graph, and the behaviour view no longer flickers the cursor.
 
-![A behaviour's Open view in the node editor: the params' knobs on the left drag their value, not the graph](img/controls/behaviour-view-knobs.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="460" loading=lazy }
+![A behaviour's Open view in the node editor, for a small waves_spawner behaviour: its params waves, size, interval and speed as knobs with sliders on the left, wired into its handlers. 1: a param's knob, which drags its value.](img/controls/behaviour-view-knobs.webp){ .shot .fade-r width="688" height="524" loading=lazy }
 /// caption
 In a behaviour's Open view, a param's knob drags its value, not the graph.
 ///
+
+<div class="shot-key" markdown>
+1. A **param knob**: **drag it** to change the value (it writes the source), never the graph.
+</div>
 
 Fields that hold a distance or an angle also accept a typed **unit** (`12cm`, `4in`,
 `90deg`) — see [Units](units.md).

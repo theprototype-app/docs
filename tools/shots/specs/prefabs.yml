@@ -5,35 +5,89 @@ defaults:
   dpr: 2
   format: webp
 shots:
+# 83-batch3: core's prefab-propagation recipe — a Lamp prefab, two placed copies, an edit on one applied back to
+# the prefab (prefabLinks.applyInstanceToPrefab) → the "Update 1 instance" toast. boot.cjs hides toasts for every
+# shot; this one removes that style tag.
 - id: update-toast
   replaces: img/prefabs/update-toast.png
-  alt: After editing the Lamp prefab, a toast offers to update the other instance in the scene
-  caption: After editing the Lamp prefab.
-  crop:
-    rect:
-    - 296
-    - 0
-    - 688
-    - 800
-  fade:
-  - l
-  - r
   kind: ui
-  dpr: 1
-  from: img/prefabs/update-toast.png
+  setup:
+    - eval: >-
+        (async () => {
+          const s = window.__stores;
+          let g; s.objectsGroup.subscribe((v) => (g = v))();
+          s.commandsHandler.sceneCommand('/create cylinder');
+          await new Promise((r) => setTimeout(r, 500));
+          const src = g.children[g.children.length - 1];
+          src.name = 'Lamp'; src.scale.set(0.3, 1.6, 0.3); src.material.color.set('#e8c15a');
+          await s.prefabs.loadPrefabs();
+          const entry = await s.prefabs.savePrefab(src.uuid, 'Lamp');
+          s.objectActions.deleteObjectsByUuid([src.uuid]);
+          const one = s.prefabs.instantiatePrefab(entry, { x: -1.5, y: 0.8, z: 0 });
+          s.prefabs.instantiatePrefab(entry, { x: 1.5, y: 0.8, z: 0 });
+          await new Promise((r) => setTimeout(r, 800));
+          const o = g.getObjectByProperty('uuid', one.uuid);
+          o.material.color.set('#ff7a3d');
+          s.objectActions.commitTransform?.(o);
+          s.clearToast();
+          window.__docsLampOne = one.uuid;
+        })()
+    - {wait: 800}
+    - {eval: "document.querySelectorAll('style').forEach((t) => { if (t.textContent.includes('.tp-toast,#toasts,.toasts-stack')) t.remove(); })"}
+    - {eval: "window.__stores.prefabLinks.applyInstanceToPrefab(window.__docsLampOne)"}
+    - {wait: 1500}
+  crop: {selector: '.toasts-stack', pad: 10}
+  fade: []
+  alt: >-
+    After an edit to one copy of the Lamp prefab is applied back to it, a toast says Updated "Lamp", 1 other instance
+    in this scene, with Update 1 instance, Update, reset overrides and Undo. 1: Update 1 instance. 2: Update, reset
+    overrides.
+  caption: After editing the Lamp prefab.
+  annotate:
+    - {n: 1, at: {text: Update 1 instance}, shape: box, pad: 3, badge: b, key: '**Update 1 instance**: the other copy takes the new version and keeps its own changes.'}
+    - {n: 2, at: {text: 'Update, reset overrides'}, shape: box, pad: 3, label: exact copy, badge: b, key: '**Update, reset overrides**: the copy becomes an **exact copy** of the prefab.'}
+# core's prefab-library recipe: four prefabs, tags through prefabLibrary.setPrefabTags, the Explorer on its Prefabs
+# view, the "seat" chip pressed. The floating Explorer opens 720 px wide: narrowed to the column for the shot.
 - id: tag-filter
   replaces: img/prefabs/tag-filter.png
-  alt: The Prefabs tab filtered by the seat tag
-  caption: The Prefabs tab filtered by the seat tag.
-  crop:
-    rect:
-    - 296
-    - 0
-    - 688
-    - 800
-  fade:
-  - l
-  - r
   kind: ui
-  dpr: 1
-  from: img/prefabs/tag-filter.png
+  # the floating Explorer window (a fresh device docks it)
+  storage: {explorerDocked: 'false'}
+  setup:
+    - eval: >-
+        (async () => {
+          const s = window.__stores;
+          await s.prefabs.loadPrefabs();
+          let g; s.objectsGroup.subscribe((v) => (g = v))();
+          const made = {}, uuids = [];
+          for (const [name, kind, color] of [['Oak chair', 'box', '#a0703a'], ['Steel chair', 'box', '#9aa3ad'], ['Bench', 'box', '#8a5a2b'], ['Lamp', 'cylinder', '#e8c15a']]) {
+            s.commandsHandler.sceneCommand('/create ' + kind);
+            await new Promise((r) => setTimeout(r, 400));
+            const o = g.children[g.children.length - 1];
+            o.material.color.set(color); uuids.push(o.uuid);
+            made[name] = (await s.prefabs.savePrefab(o.uuid, name)).id;
+          }
+          await s.prefabLibrary.setPrefabTags(made['Oak chair'], ['seat', 'wood']);
+          await s.prefabLibrary.setPrefabTags(made['Steel chair'], ['seat', 'metal']);
+          await s.prefabLibrary.setPrefabTags(made['Bench'], ['seat', 'wood']);
+          await s.prefabLibrary.setPrefabTags(made['Lamp'], ['metal']);
+          s.objectActions.deleteObjectsByUuid(uuids);
+          s.clearToast();
+        })()
+    - {css: '#explorer-window{width:680px!important;height:460px!important}'}
+    - {eval: "window.__stores.explorerClose.set(false)"}
+    - {wait: 1200}
+    - {click: '#prefabs-folder'}
+    - {wait: 800}
+    - {eval: "window.__stores.prefabLibrary.toggleTagFilter('seat')"}
+    - {wait: 1000}
+  crop: {selector: '#explorer-window', maxHeight: 440}
+  fade: [b]
+  alt: >-
+    The Explorer's Prefabs view filtered by the seat tag: the tag chips seat, wood and metal under the breadcrumb
+    with seat pressed, and only the three seats shown (Oak chair, Steel chair, Bench). 1: the pressed seat chip.
+    2: Clear.
+  caption: The Prefabs tab filtered by the seat tag.
+  annotate:
+    - {n: 1, at: {selector: '#prefab-tag-bar .chip[aria-pressed="true"]'}, shape: box, pad: 3, label: pressed tag, badge: b, key: 'A pressed **tag chip** filters the tab; pressed chips combine (*seat* + *wood*).'}
+    - {n: 2, at: {selector: '#prefab-tag-clear'}, shape: box, pad: 3, badge: b, key: '**Clear** resets the filter.'}

@@ -1,25 +1,41 @@
 {
  "id": "tank-spill",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.599Z",
+ "spec": "3e82432f1c05",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:48:51.083Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/simulation/tank-spill.png",
- "width": 688,
- "height": 640,
+ "uiHits": [],
+ "width": 2000,
+ "height": 1200,
  "crop": {
-  "x": 0,
-  "y": 40,
-  "w": 688,
-  "h": 640
+  "x": 261,
+  "y": 107,
+  "w": 1000,
+  "h": 600
  },
- "cut": [],
- "fade": [
+ "cut": [
+  "l",
   "r",
   "t",
   "b"
  ],
- "anchors": {},
- "kind": "ui"
+ "fade": "vignette",
+ "anchors": {
+  "1": {
+   "x": 760.3087592655602,
+   "y": 279.19290076728703,
+   "w": 48,
+   "h": 48
+  },
+  "2": {
+   "x": 1106.1090416030104,
+   "y": 687.5679331037985,
+   "w": 48,
+   "h": 48
+  }
+ },
+ "kind": "view"
 }

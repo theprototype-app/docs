@@ -1,20 +1,27 @@
 {
  "id": "settings-search",
+ "spec": "cc1052d55a96",
  "dpr": 2,
- "shotAt": "2026-10-27T07:46:24.611Z",
+ "shotAt": "2026-11-03T14:52:11.864Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/vr/settings-search.png",
- "width": 768,
- "height": 768,
+ "uiHits": [],
+ "width": 800,
+ "height": 800,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 768,
-  "h": 768
+  "x": 550,
+  "y": 250,
+  "w": 400,
+  "h": 400
  },
- "cut": [],
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
  "fade": [],
  "anchors": {},
  "kind": "ui"

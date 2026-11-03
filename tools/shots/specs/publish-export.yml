@@ -5,66 +5,99 @@ defaults:
   dpr: 2
   format: webp
 shots:
-- id: itch-mini-golf
-  replaces: img/export/itch-mini-golf.png
-  alt: 'Mini Golf exported for itch.io: the game''s start card, playing in the itch.io frame.'
-  caption: Mini Golf exported for itch.io.
-  crop:
-    rect:
-    - 296
-    - 80
-    - 688
-    - 560
-  fade:
-  - l
-  - r
-  - t
-  - b
-  kind: ui
-  dpr: 1
-  from: img/export/itch-mini-golf.png
-- id: export-tab
-  replaces: img/export/export-tab.png
-  alt: The Export tab with the itch.io preset selected
-  caption: The Export tab with the itch.io preset selected.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 688
-    - 550
-  fade:
-  - r
-  kind: ui
-  dpr: 1
-  from: img/export/export-tab.png
-- id: gallery-tab
-  replaces: img/export/gallery-tab.png
-  alt: 'The Community gallery tab after Build submission zip: the two GitHub steps'
-  caption: The Community gallery tab after Build submission zip.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 688
-    - 700
-  fade:
-  - r
-  - b
-  kind: ui
-  dpr: 1
-  from: img/export/gallery-tab.png
-- id: save-options-optimize-for
-  replaces: img/saving/save-options-optimize-for.png
-  alt: 'Save options with Optimize for: Full quality or For Quest / web'
-  caption: Save options with Optimize for.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 544
-    - 816
-  fade: []
-  kind: ui
-  dpr: 1
-  from: img/saving/save-options-optimize-for.png
+  - id: itch-mini-golf
+    replaces: img/export/itch-mini-golf.png
+    # stays a re-crop: the shot is the exported zip running inside itch.io's own game frame, a third-party page
+    # (an upload to an itch.io project) that a docs run neither owns nor drives
+    alt: 'Mini Golf exported for itch.io: the game''s start card, playing in the itch.io frame.'
+    caption: Mini Golf exported for itch.io.
+    crop:
+      rect:
+      - 296
+      - 80
+      - 688
+      - 560
+    fade:
+    - l
+    - r
+    - t
+    - b
+    kind: ui
+    dpr: 1
+    from: img/export/itch-mini-golf.png
+  # 83-batch3: the Publish / Export dialog (a <dialog> box, #publish-export-modal) in a 688 px window, so the whole
+  # box is one column wide at 1:1
+  - id: export-tab
+    replaces: img/export/export-tab.png
+    device: window-688-tall
+    scene:
+      - eval: >-
+          (async () => { const S = window.__stores, D = window.__docs; await S.sceneTemplates.loadTemplatesIndex();
+          const g = D.get(S.sceneTemplates.games).find((x) => x.slug === 'mini-golf'); await S.sceneTemplates.loadRemoteScene(g, {}); })()
+      - {wait: 9000}
+    setup:
+      - {eval: "window.__stores.exportStores.openPublishExport('export')"}
+      - {wait: 2000}
+      - {click: '#publish-export-tab-export'}
+      - {wait: 800}
+      - {click: '#export-preset-itch'}
+      - {eval: "const i = document.querySelector('#export-title'); i.value = 'Mini Golf'; i.dispatchEvent(new Event('input', { bubbles: true }))"}
+      # the size estimate comes from the build's manifest
+      - {wait: 5000}
+    crop: {selector: '#publish-export-modal'}
+    fade: []
+    kind: ui
+    alt: >-
+      The Export tab of Publish / Export with the itch.io preset selected: the three presets itch.io, Static host and
+      Embed, the title Mini Golf, the viewport size, the cover image and CDN boxes, the size estimate, the itch.io
+      upload notes and Build & download zip. 1: the itch.io preset.
+    caption: The Export tab with the itch.io preset selected.
+    annotate:
+      - {n: 1, at: {selector: '#export-preset-itch'}, shape: box, label: preset, badge: b, key: 'The **itch.io** **preset**: a zip with `index.html` at its root, and the viewport size to type into itch.io.'}
+  - id: gallery-tab
+    replaces: img/export/gallery-tab.png
+    device: window-688-tall
+    scene:
+      - {create: Box, name: Tower, at: [0, 0.5, 0]}
+      - {create: Sphere, name: Ball, at: [1.2, 0.5, 0]}
+    setup:
+      - {eval: "window.__stores.exportStores.openPublishExport('export')"}
+      - {wait: 2000}
+      - {click: '#publish-export-tab-gallery'}
+      - {wait: 2500}
+      - eval: >-
+          const f = (s, v, ev = 'input') => { const i = document.querySelector(s); i.value = v; i.dispatchEvent(new Event(ev, { bubbles: true })); };
+          f('#gallery-title', 'Sky Castle'); f('#gallery-author', '@your-handle'); f('#gallery-description', 'A tower and a ball to start from.');
+          f('#gallery-tags', 'showcase, building'); f('#gallery-license', 'CC-BY-4.0', 'change')
+      - {click: '#gallery-mine'}
+      - {wait: 500}
+      - {click: '#gallery-build'}
+      - {wait: 4000}
+      - {eval: "document.querySelector('#gallery-result').scrollIntoView({ block: 'end' })"}
+      - {wait: 800}
+    crop: {selector: '#publish-export-modal'}
+    fade: []
+    kind: ui
+    alt: >-
+      The Community gallery tab after Build submission zip: the card's fields above, then the line that the
+      submission zip was downloaded and the two GitHub steps, Upload the folder on GitHub and Copy the gallery.json
+      row, with the row itself below. 1: Upload the folder on GitHub. 2: Copy the gallery.json row.
+    caption: The Community gallery tab after Build submission zip.
+    annotate:
+      - {n: 1, at: {selector: '#gallery-open-upload'}, shape: box, badge: r, key: '**Upload the folder on GitHub** (**step one**): drag in the three files; GitHub forks the repository and offers *Propose changes*.'}
+      - {n: 2, at: {selector: '#gallery-copy-row'}, shape: box, badge: r, key: '**Copy the gallery.json row** (**step two**): add it to the `entries` list on the same pull request.'}
+  - id: save-options-optimize-for
+    replaces: img/saving/save-options-optimize-for.png
+    setup:
+      - {eval: "window.__stores.saveOptions.saveOptionsOpen.set(true)"}
+      - {wait: 1500}
+    crop: {selector: '#save-options-modal'}
+    fade: []
+    kind: ui
+    alt: >-
+      Save options: Save as Project or Scene, then Optimize for with Full quality or For Quest / web, then what a
+      scene file includes (Assets, Imported packs, Flow graph), with Cancel and Save at the bottom. 1: the Optimize
+      for choice.
+    caption: Save options with Optimize for.
+    annotate:
+      - {n: 1, at: {selector: '#export-preset'}, shape: box, label: Optimize for, badge: b, key: '**Optimize for**: **Full quality**, or **For Quest / web** — KTX2 textures at most 2048 px and an LOD chain, much smaller.'}

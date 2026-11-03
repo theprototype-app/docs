@@ -5,87 +5,159 @@ defaults:
   dpr: 2
   format: webp
 shots:
-- id: game-hud-waves
-  replaces: img/vr/game-hud-waves.png
-  alt: 'Waves in a headset: the score up left, the wave in the middle, more readouts below'
-  caption: Waves in a headset.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 640
-    - 640
-  fade: []
-  kind: ui
-  dpr: 1
-  from: img/vr/game-hud-waves.png
-- id: radial-root
-  replaces: img/vr/radial-root.png
-  alt: 'The first ring: Objects, Add, Scene, Tools, Redo, Undo, Chat, Settings around a Close hub'
-  caption: The first ring.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 720
-    - 720
-  fade: []
-  kind: ui
-  dpr: 2
-  from: img/vr/radial-root.png
-- id: settings-ring
-  replaces: img/vr/settings-ring.png
-  alt: 'The Settings ring: Comfort, Body, Controls, Display, Editing, Microphone, All settings, Exit VR'
-  caption: The Settings ring.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 720
-    - 720
-  fade: []
-  kind: ui
-  dpr: 2
-  from: img/vr/settings-ring.png
-- id: settings-panel
-  replaces: img/vr/settings-panel.png
-  alt: The All settings panel on its Comfort tab
-  caption: The All settings panel on its Comfort tab.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 720
-    - 720
-  fade: []
-  kind: ui
-  dpr: 2
-  from: img/vr/settings-panel.png
-- id: settings-search
-  replaces: img/vr/settings-search.png
-  alt: 'The Search tab: "turn" finds four rows'
-  caption: The Search tab.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 768
-    - 768
-  fade: []
-  kind: ui
-  dpr: 2
-  from: img/vr/settings-search.png
-- id: ai-panel
-  replaces: img/vr/ai-panel.png
-  alt: The AI Assistant panel in the headset
-  caption: The AI Assistant panel in the headset.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 768
-    - 768
-  fade: []
-  kind: ui
-  dpr: 2
-  from: img/vr/ai-panel.png
+  # 83-batch3 (V11): every shot here is a real VR entry on an emulated Quest 3 (IWER, lib/rig.cjs `xr:`). IWER is
+  # mono by default, so the page canvas is the one eye: a 90° view, 450 CSS px from the middle to the top edge.
+  # The radial ring and the Settings / AI panels are meshes posed from the menu hand (VRMenu.svelte,
+  # menuPoseFromController: the ring sits at the stick, tilted -0.3π from the grip axis; a panel 0.2 m above). The
+  # menu-hand (right) controller is pitched +0.3π so the ring or panel faces the head square on, at D metres
+  # straight ahead; the controller models are hidden so nothing stands in front of it; the crop is the middle.
+  - id: game-hud-waves
+    replaces: img/vr/game-hud-waves.png
+    xr: {head: [0, 1.6, 0]}
+    # Waves needs two modules: the load waits on the modules dialog, so it is started without an await
+    scene:
+      - eval: >-
+          window.__wl = 'running'; (async () => { const S = window.__stores, D = window.__docs; await S.sceneTemplates.loadTemplatesIndex();
+          const g = D.get(S.sceneTemplates.games).find((x) => x.slug === 'waves'); await S.sceneTemplates.loadRemoteScene(g, {origin: 'games'}); })(); 0
+      - {wait: 6000}
+      - {clickText: Install (2)}
+      - {wait: 20000}
+    setup:
+      - {xr: enter, wait: 5000}
+      # start the round the way the start button does: the kit round (race-touch-vr.test.cjs's handle)
+      - eval: >-
+          (async () => { await window.__stores.moduleSDK.initModules([{ id: 'docskit', name: 'docs kit handle', version: '1.0.0',
+          description: '', register(api) { window.__docsKit = api.kit; } }]); window.__docsKit.round.start(); })()
+      - {wait: 6000}
+    crop: {rect: [400, 130, 640, 640]}
+    fade: []
+    kind: view
+    alt: >-
+      Waves in a headset: the arena ahead, the game's HUD on a curved band in front of you — the score card up and to
+      the left, the wave and level in the middle, more readouts below — and the pistol on the pedestal.
+    caption: Waves in a headset.
+  - id: radial-root
+    replaces: img/vr/radial-root.png
+    xr: {head: [0, 1.6, 0]}
+    storage: {vrMenuHand: right}
+    setup:
+      - {xr: enter, wait: 4000}
+      - eval: >-
+          (() => { const d = window.__iwer.device, th = 0.3 * Math.PI, a = 0.014, b = -0.05, D = 0.32, m = d.controllers.right;
+          m.position.set(0, 1.6 - (a * Math.cos(th) - b * Math.sin(th)), -D - (a * Math.sin(th) + b * Math.cos(th)));
+          m.quaternion.set(Math.sin(th / 2), 0, 0, Math.cos(th / 2));
+          const p = d.controllers.left; p.position.set(-0.35, 0.9, 0.1); p.quaternion.set(Math.sin(-0.6), 0, 0, Math.cos(-0.6));
+          const r = window.__docs.get(window.__stores.globalRenderer);
+          for (const i of [0, 1]) for (const o of [r.xr.getControllerGrip(i), ...r.xr.getController(i).children])
+          Object.defineProperty(o, 'visible', { get: () => false, set: () => {}, configurable: true }); })()
+      - {eval: "(() => { const S = window.__stores; S.vrRadialMenu.resetRings(); S.vrMenuOpen.set(true); })()"}
+      - {wait: 2000}
+    crop: {rect: [570, 267, 390, 390]}
+    fade: []
+    kind: ui
+    alt: >-
+      The first ring of the VR menu, eight sectors around a Close hub: Objects at the top, then Add, Scene, Tools,
+      Redo, Undo, Chat and Settings going round; the sectors with a › open another ring.
+    caption: The first ring.
+  - id: settings-ring
+    replaces: img/vr/settings-ring.png
+    xr: {head: [0, 1.6, 0]}
+    storage: {vrMenuHand: right}
+    setup:
+      - {xr: enter, wait: 4000}
+      - eval: >-
+          (() => { const d = window.__iwer.device, th = 0.3 * Math.PI, a = 0.014, b = -0.05, D = 0.32, m = d.controllers.right;
+          m.position.set(0, 1.6 - (a * Math.cos(th) - b * Math.sin(th)), -D - (a * Math.sin(th) + b * Math.cos(th)));
+          m.quaternion.set(Math.sin(th / 2), 0, 0, Math.cos(th / 2));
+          const p = d.controllers.left; p.position.set(-0.35, 0.9, 0.1); p.quaternion.set(Math.sin(-0.6), 0, 0, Math.cos(-0.6));
+          const r = window.__docs.get(window.__stores.globalRenderer);
+          for (const i of [0, 1]) for (const o of [r.xr.getControllerGrip(i), ...r.xr.getController(i).children])
+          Object.defineProperty(o, 'visible', { get: () => false, set: () => {}, configurable: true }); })()
+      - {eval: "(() => { const S = window.__stores; S.vrRadialMenu.resetRings(); S.vrRadialMenu.pushRing('settings'); S.vrMenuOpen.set(true); })()"}
+      - {wait: 2000}
+    crop: {rect: [570, 267, 390, 390]}
+    fade: []
+    kind: ui
+    alt: >-
+      The Settings ring of the VR menu: Comfort, Body, Controls, Display, Editing, Microphone, All settings and Exit
+      VR around a Back hub, each with its icon.
+    caption: The Settings ring.
+  - id: settings-panel
+    replaces: img/vr/settings-panel.png
+    xr: {head: [0, 1.6, 0]}
+    storage: {vrMenuHand: right}
+    setup:
+      - {xr: enter, wait: 4000}
+      - eval: >-
+          (() => { const d = window.__iwer.device, th = 0.3 * Math.PI, a = 0.014 + 0.2, b = -0.05, D = 0.425, m = d.controllers.right;
+          m.position.set(0, 1.6 - (a * Math.cos(th) - b * Math.sin(th)), -D - (a * Math.sin(th) + b * Math.cos(th)));
+          m.quaternion.set(Math.sin(th / 2), 0, 0, Math.cos(th / 2));
+          const p = d.controllers.left; p.position.set(-0.35, 0.9, 0.1); p.quaternion.set(Math.sin(-0.6), 0, 0, Math.cos(-0.6));
+          const r = window.__docs.get(window.__stores.globalRenderer);
+          for (const i of [0, 1]) for (const o of [r.xr.getControllerGrip(i), ...r.xr.getController(i).children])
+          Object.defineProperty(o, 'visible', { get: () => false, set: () => {}, configurable: true }); })()
+      - {eval: "(() => { const S = window.__stores; S.vrMenuOpen.set(false); S.vrSettingsSchema.vrSettingsPage.set('comfort'); S.vrSettingsPanelOpen.set(true); })()"}
+      - {wait: 2000}
+    crop: {rect: [550, 250, 400, 400]}
+    fade: []
+    kind: ui
+    alt: >-
+      The All settings panel in the headset on its Comfort tab: the title Settings · Comfort, the row of page tabs,
+      then the comfort rows with their values and switches, and Back to menu at the bottom.
+    caption: The All settings panel on its Comfort tab.
+  - id: settings-search
+    replaces: img/vr/settings-search.png
+    xr: {head: [0, 1.6, 0]}
+    storage: {vrMenuHand: right}
+    setup:
+      - {xr: enter, wait: 4000}
+      - eval: >-
+          (() => { const d = window.__iwer.device, th = 0.3 * Math.PI, a = 0.014 + 0.2, b = -0.05, D = 0.425, m = d.controllers.right;
+          m.position.set(0, 1.6 - (a * Math.cos(th) - b * Math.sin(th)), -D - (a * Math.sin(th) + b * Math.cos(th)));
+          m.quaternion.set(Math.sin(th / 2), 0, 0, Math.cos(th / 2));
+          const p = d.controllers.left; p.position.set(-0.35, 0.9, 0.1); p.quaternion.set(Math.sin(-0.6), 0, 0, Math.cos(-0.6));
+          const r = window.__docs.get(window.__stores.globalRenderer);
+          for (const i of [0, 1]) for (const o of [r.xr.getControllerGrip(i), ...r.xr.getController(i).children])
+          Object.defineProperty(o, 'visible', { get: () => false, set: () => {}, configurable: true }); })()
+      - eval: >-
+          (() => { const S = window.__stores; S.vrMenuOpen.set(false); S.vrSettingsSchema.vrSettingsQuery.set('turn');
+          S.vrSettingsSchema.vrSettingsPage.set('search'); S.vrSettingsPanelOpen.set(true); })()
+      - {wait: 2000}
+    crop: {rect: [550, 250, 400, 400]}
+    fade: []
+    kind: ui
+    alt: >-
+      The Search tab of the All settings panel in the headset: the query row reads turn, and the results below are
+      Turning, Snap angle, Smooth speed and Mirror turn, each with its value.
+    caption: The Search tab.
+  - id: ai-panel
+    replaces: img/vr/ai-panel.png
+    xr: {head: [0, 1.6, 0]}
+    storage: {vrMenuHand: right}
+    setup:
+      - {xr: enter, wait: 4000}
+      # a provider (never called: nothing is sent) so the panel is ready, and a short thread to show
+      - eval: >-
+          (() => { const S = window.__stores; S.aiProviders.addAiProvider({ preset: 'custom', label: 'Mock', baseUrl: 'https://example.invalid/v1', apiKey: 'k', model: 'mock' });
+          S.aiProviders.setAiEnabled(true);
+          S.aiAssistant.aiMessages.set([{ role: 'user', content: 'make a campfire ring with six rocks' },
+          { role: 'assistant', content: 'Done — six grey rocks in a ring with an orange cone flame in the middle.' },
+          { role: 'user', content: 'make the flame taller' }]); })()
+      - eval: >-
+          (() => { const d = window.__iwer.device, th = 0.3 * Math.PI, a = 0.014 + 0.2, b = -0.05, D = 0.425, m = d.controllers.right;
+          m.position.set(0, 1.6 - (a * Math.cos(th) - b * Math.sin(th)), -D - (a * Math.sin(th) + b * Math.cos(th)));
+          m.quaternion.set(Math.sin(th / 2), 0, 0, Math.cos(th / 2));
+          const p = d.controllers.left; p.position.set(-0.35, 0.9, 0.1); p.quaternion.set(Math.sin(-0.6), 0, 0, Math.cos(-0.6));
+          const r = window.__docs.get(window.__stores.globalRenderer);
+          for (const i of [0, 1]) for (const o of [r.xr.getControllerGrip(i), ...r.xr.getController(i).children])
+          Object.defineProperty(o, 'visible', { get: () => false, set: () => {}, configurable: true }); })()
+      - {eval: "(() => { const S = window.__stores; S.vrMenuOpen.set(false); S.vrAiPanelOpen.set(true); })()"}
+      - {wait: 2500}
+    crop: {rect: [550, 250, 400, 400]}
+    fade: []
+    kind: ui
+    alt: >-
+      The AI Assistant panel in the headset: your messages as violet chips on the right, make a campfire ring with
+      six rocks and make the flame taller, the assistant's answer under the first, and the Ask AI row with the mic at
+      the bottom.
+    caption: The AI Assistant panel in the headset.

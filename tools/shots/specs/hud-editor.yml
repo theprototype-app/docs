@@ -5,19 +5,38 @@ defaults:
   dpr: 2
   format: webp
 shots:
-- id: hud-editor
-  replaces: img/hud/hud-editor.png
-  alt: 'The HUD editor on the Stars Room''s menu screen: the stage in the middle, with the selected button.'
-  caption: The HUD editor on the Stars Room's menu screen.
-  crop:
-    rect:
-    - 376
-    - 0
-    - 688
-    - 638
-  fade:
-  - l
-  - r
-  kind: ui
-  dpr: 1
-  from: img/hud/hud-editor.png
+  # 83-batch3: Stars Room from Templates ▸ Games, the HUD editor docked at the bottom, its Menu screen, the start
+  # button selected through the editor's own selection store (hudDocs.hudSelection, per document key)
+  - id: hud-editor
+    replaces: img/hud/hud-editor.png
+    scene:
+      - eval: >-
+          (async () => { const S = window.__stores, D = window.__docs; await S.sceneTemplates.loadTemplatesIndex();
+          const g = D.get(S.sceneTemplates.games).find((x) => x.slug === 'stars-room'); await S.sceneTemplates.loadRemoteScene(g, {}); })()
+      - {wait: 9000}
+    setup:
+      - {eval: "const S = window.__stores; S.hudEditorClose.set(false); S.bottomDock.activateDock('hud'); S.bottomDock.dockHeight.set(720)"}
+      - {wait: 2500}
+      # a screen's button reads "<name><element count>" (.hud-screen-name + .hud-hint), so it is found by its first text
+      - eval: >-
+          (() => { const b = [...document.querySelectorAll('.hud-screen-name')].find((x) => /^menu$/i.test(x.firstChild?.textContent.trim() ?? ''));
+          if (!b) throw new Error('no Menu screen: ' + [...document.querySelectorAll('.hud-screen-name')].map((x) => x.textContent.trim()).join(', ')); b.click(); })()
+      - {wait: 1000}
+      # the editor's selection is its own state (hudSelection only mirrors it): select by a click on the stage
+      - {click: '#hud-board [data-hud-item="start-btn"]'}
+      - {wait: 1200}
+    # the toolbar down to the bottom of the menu card, around the selected button
+    crop:
+      union:
+        - {selector: '#hud-board [data-hud-item="start-btn"]', offset: [-200, -330]}
+        - {selector: '#hud-board [data-hud-item="start-btn"]', offset: [200, 230]}
+    fade: [l, r, b]
+    kind: ui
+    alt: >-
+      The HUD editor on the Stars Room's menu screen: the toolbar with the arrange buttons and Snap along the top, and
+      the stage below with the menu card, its title, Start round, Restart round, More stars, Resume and Quit to free
+      play, the start button selected. 1: the selected start button. 2: the Snap box.
+    caption: The HUD editor on the Stars Room's menu screen.
+    annotate:
+      - {n: 1, at: {selector: '#hud-board [data-hud-item="start-btn"]'}, shape: box, label: selected, badge: r, key: 'The **selected** element: drag it to move, drag its corner grip to resize; its fields fill the Properties pane.'}
+      - {n: 2, at: {text: Snap}, shape: box, label: snapping, badge: b, key: '**Snapping**: to the grid, the stage centre lines and other elements'' edges.'}

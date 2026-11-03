@@ -1,21 +1,43 @@
 {
  "id": "save-options-optimize-for",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.590Z",
+ "spec": "8bf956ff8e76",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:11:55.584Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/saving/save-options-optimize-for.png",
- "width": 544,
- "height": 816,
+ "uiHits": [
+  "dialog#save-options-modal.tp-ui",
+  "header.wc-head",
+  "div.md-body",
+  "footer.md-foot",
+  "section.tp-ui",
+  "div.sec-card",
+  "div.so-body",
+  "div.sec-card-head",
+  "p#row-save-format-desc.sr-desc",
+  "div#row-export-preset.tp-ui",
+  "p#row-export-preset-desc.sr-desc",
+  "h3.sec-title"
+ ],
+ "width": 1040,
+ "height": 1584,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 544,
-  "h": 816
+  "x": 460,
+  "y": 54,
+  "w": 520,
+  "h": 792
  },
  "cut": [],
  "fade": [],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 503.59375,
+   "y": 615.09375,
+   "w": 452.40625,
+   "h": 76
+  }
+ },
  "kind": "ui"
 }

@@ -312,10 +312,14 @@ A session downloads as a **`.tpscene`**, a whole project as a **`.tp`**, and bot
 New in 1.31: drag any object — a pack item, one of your Library models, a prefab — from **Explorer ▸ Packs** or
 **Explorer ▸ Library** onto the viewport, and a **ghost** shows where it will land and how big it is before you let go.
 
-![Dragging the Duck from the starter pack: a box ghost with its size beside the pointer](img/explorer/place-box-ghost.webp){ .shot .fade-l .fade-r width="688" height="560" loading=lazy }
+![Dragging the Duck from the starter pack in the Explorer onto the viewport: a box ghost where it will land, and beside the pointer a chip with its name, width × depth × height, triangles and download size. 1: the size.](img/explorer/place-box-ghost.webp){ .shot .fade-l .fade-r .fade-t width="600" height="360" loading=lazy }
 /// caption
 Dragging the Duck from the starter pack.
 ///
+
+<div class="shot-key" markdown>
+1. Its **size** (width × depth × height in metres), triangles and download size.
+</div>
 
 - **Drag.** Press on a card and drag it over the 3D view. The ghost sits **on** whatever is under the pointer — the
   floor, a table, the side of a wall — and follows the grid when [grid snapping](snapping.md) is on; hold
@@ -344,10 +348,14 @@ Beside the pointer you see the item's **width × depth × height in metres**, it
 - Hovering the viewport during a drag **starts the download**, so the drop is quick. A placed pack item shows your
   [Placeholder Style](loading.md) until its file arrives. The ghost is yours alone — nobody else sees it.
 
-![Once loaded, the ghost is a see-through copy of the real model](img/explorer/place-model-ghost.webp){ .shot .fade-l .fade-r width="688" height="560" loading=lazy }
+![The same drag once the Duck has downloaded: the ghost is a see-through copy of the real model where it will land, with the size chip beside the pointer. 1: the see-through model.](img/explorer/place-model-ghost.webp){ .shot .fade-l .fade-r .fade-t width="600" height="360" loading=lazy }
 /// caption
 Once loaded, the ghost is a see-through copy of the real model.
 ///
+
+<div class="shot-key" markdown>
+1. The **ghost**: a see-through copy of the model, only on your screen.
+</div>
 
 ### The Placement preview setting
 
@@ -359,10 +367,14 @@ Once loaded, the ghost is a see-through copy of the real model.
   (50,000 on a computer, 15,000 on a phone or headset).
 - **Show dimensions** — the size, triangles and download size beside the pointer.
 
-![Settings ▸ Scene ▸ Performance ▸ Placement preview](img/explorer/place-settings.webp){ .shot .fade-l .fade-r width="688" height="280" loading=lazy }
+![Settings ▸ Scene ▸ Performance ▸ Placement preview: Full model, Within budget or Box only, then Preview triangle budget and Show dimensions. 1: the preview choice.](img/explorer/place-settings.webp){ .shot width="674" height="277" loading=lazy }
 /// caption
 Settings ▸ Scene ▸ Performance ▸ Placement preview.
 ///
+
+<div class="shot-key" markdown>
+1. **Placement preview**: **what shows** as the ghost of a dragged item.
+</div>
 
 ### Downloaded pack items and Delete cache
 
@@ -372,10 +384,14 @@ frees its download — the item **stays in the pack** and downloads again the ne
 ▸ **Delete downloads** frees the whole pack's, and [Storage](#storage) lists **Pack downloads** per pack with **Clear
 all pack downloads**.
 
-![A pack item's menu: Delete cache with its size](img/explorer/place-delete-cache.webp){ .shot .fade-l .fade-r width="688" height="340" loading=lazy }
+![A pack item's menu in the Explorer, opened on the Duck after it was placed once: Duplicate, Share with peers, Properties, Rename and Delete cache with its size. 1: Delete cache.](img/explorer/place-delete-cache.webp){ .shot width="430" height="268" loading=lazy }
 /// caption
 A pack item's menu.
 ///
+
+<div class="shot-key" markdown>
+1. **Delete cache** **frees it**: the download goes; the item stays in the pack.
+</div>
 
 ### Images, audio and text
 

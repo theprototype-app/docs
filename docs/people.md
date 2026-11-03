@@ -13,10 +13,14 @@ find them, look at their character, mute or hide them for yourself — and, if y
 - or focus it (<kbd>Tab</kbd>) and press the context-menu key or <kbd>Shift</kbd>+<kbd>F10</kbd>.
 - In a headset: radial menu ▸ **Tools ▸ People**.
 
-![The peer menu on a person in the Connected panel](img/people/peer-menu.webp){ .shot width="414" height="849" loading=lazy }
+![The peer menu open on Mia in the Connected panel, whose rows are you, Claude with the robot and AI, and Mia. The menu's groups: Profile, Find (Go to, Watch), Character, Talk (Mute voice), For you only (Hide), Moderation (Change role, Show their recent changes, Remove from session, Remove and block) and More (Report). 1: Moderation, for the host or an admin.](img/people/peer-menu.webp){ .shot width="436" height="849" loading=lazy }
 /// caption
 The peer menu on a person in the Connected panel.
 ///
+
+<div class="shot-key" markdown>
+1. **Moderation**: change their role, see their recent changes, remove them (and block them) — for the host or an admin.
+</div>
 
 ## What is in it
 

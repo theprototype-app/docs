@@ -5,67 +5,100 @@ defaults:
   dpr: 2
   format: webp
 shots:
+# 83-batch3: real drags from Explorer ▸ Packs ▸ The Prototype (the starter pack from the packs CDN), the recipe of
+# core's place-drag suite: press on the Duck card, travel past the drag threshold, then hover the viewport (a real
+# pointer drag: the ghost, its chip and the dims follow the pointer). The shot is taken mid-drag (the mouse is held).
+# The moves aim at the card by a mark, not by its text: once the drag starts, the chip also says "Duck". The pointer
+# ends at a fixed point of the viewport (720, 360), so the ghost and the chip sit in the middle of the crop.
 - id: place-box-ghost
   replaces: img/explorer/place-box-ghost.png
-  alt: 'Dragging the Duck from the starter pack: a box ghost with its size beside the pointer'
-  caption: Dragging the Duck from the starter pack.
-  crop:
-    rect:
-    - 156
-    - 0
-    - 688
-    - 560
-  fade:
-  - l
-  - r
   kind: ui
-  dpr: 1
-  from: img/explorer/place-box-ghost.png
+  scene: &starter
+    - {eval: "window.__stores.dockMenu.dockTab('explorer'); window.__stores.bottomDock.bottomDockActive.set('explorer')"}
+    - {wait: 1500}
+    - {eval: "window.__stores.packs.loadPacks()"}
+    - {wait: 1500}
+    - {eval: "window.__stores.explorer.activeFolder.set('pack:default')"}
+    - {wait: 3000}
+  setup:
+    # Box only: the ghost stays the measured box (a first drag would swap to the model once it has downloaded)
+    - {eval: "window.__stores.placementPrefs.placementPreview.set('box')"}
+    - &markDuck {eval: "[...document.querySelectorAll('[data-card-id]')].find((e) => e.textContent.includes('Duck'))?.setAttribute('data-docs', 'duck')"}
+    - {press: {selector: '[data-docs="duck"]'}}
+    - {moveTo: {selector: '[data-docs="duck"]', dx: 14, dy: 8}, steps: 4}
+    - {moveTo: {selector: '[data-docs="duck"]', dx: 34, dy: 12}, steps: 4}
+    - {moveTo: [720, 360], steps: 14}
+    - {wait: 1500}
+  crop: {around: {rect: [700, 340, 40, 40]}, size: [600, 360], offset: [40, 20], ui: true}
+  fade: [l, r, t]
+  alt: >-
+    Dragging the Duck from the starter pack in the Explorer onto the viewport: a box ghost where it will land, and
+    beside the pointer a chip with its name, width × depth × height, triangles and download size. 1: the size.
+  caption: Dragging the Duck from the starter pack.
+  annotate:
+    - {n: 1, at: {selector: '#place-drag-dims'}, shape: underline, badge: l, key: 'Its **size** (width × depth × height in metres), triangles and download size.'}
 - id: place-model-ghost
   replaces: img/explorer/place-model-ghost.png
-  alt: Once loaded, the ghost is a see-through copy of the real model
-  caption: Once loaded, the ghost is a see-through copy of the real model.
-  crop:
-    rect:
-    - 156
-    - 0
-    - 688
-    - 560
-  fade:
-  - l
-  - r
   kind: ui
-  dpr: 1
-  from: img/explorer/place-model-ghost.png
+  scene: *starter
+  setup:
+    - {eval: "window.__stores.placementPrefs.placementPreview.set('full')"}
+    - *markDuck
+    - {press: {selector: '[data-docs="duck"]'}}
+    - {moveTo: {selector: '[data-docs="duck"]', dx: 14, dy: 8}, steps: 4}
+    - {moveTo: {selector: '[data-docs="duck"]', dx: 34, dy: 12}, steps: 4}
+    - {moveTo: [720, 360], steps: 14}
+    # hovering the viewport starts the download; once loaded the ghost becomes the model
+    - {wait: 8000}
+    - {moveTo: [724, 362], steps: 2}
+    - {wait: 1500}
+  crop: {around: {rect: [700, 340, 40, 40]}, size: [600, 360], offset: [40, 20], ui: true}
+  fade: [l, r, t]
+  alt: >-
+    The same drag once the Duck has downloaded: the ghost is a see-through copy of the real model where it will land,
+    with the size chip beside the pointer. 1: the see-through model.
+  caption: Once loaded, the ghost is a see-through copy of the real model.
+  annotate:
+    - {n: 1, at: {rect: [672, 282, 70, 70]}, shape: circle, label: the model, badge: l, key: 'The **ghost**: a see-through copy of the model, only on your screen.'}
 - id: place-settings
   replaces: img/explorer/place-settings.png
-  alt: Settings ▸ Scene ▸ Performance ▸ Placement preview
-  caption: Settings ▸ Scene ▸ Performance ▸ Placement preview.
-  crop:
-    rect:
-    - 6
-    - 0
-    - 688
-    - 280
-  fade:
-  - l
-  - r
   kind: ui
-  dpr: 1
-  from: img/explorer/place-settings.png
+  setup:
+    - {eval: "const s=window.__stores; s.settingsSection.set('scene'); s.settingsOpen.set(true)"}
+    - {wait: 1500}
+    - {eval: "document.getElementById('row-placement-preview').scrollIntoView({block: 'center'})"}
+    - {wait: 800}
+  crop: {union: [{selector: '#row-placement-preview'}, {selector: '#row-placement-dims'}], pad: 8}
+  fade: []
+  alt: >-
+    Settings ▸ Scene ▸ Performance ▸ Placement preview: Full model, Within budget or Box only, then Preview triangle
+    budget and Show dimensions. 1: the preview choice.
+  caption: Settings ▸ Scene ▸ Performance ▸ Placement preview.
+  annotate:
+    - {n: 1, at: {selector: '#placement-preview'}, shape: box, label: what shows, badge: b, key: '**Placement preview**: **what shows** as the ghost of a dragged item.'}
 - id: place-delete-cache
   replaces: img/explorer/place-delete-cache.png
-  alt: 'A pack item''s menu: Delete cache with its size'
-  caption: A pack item's menu.
-  crop:
-    rect:
-    - 6
-    - 0
-    - 688
-    - 340
-  fade:
-  - l
-  - r
   kind: ui
-  dpr: 1
-  from: img/explorer/place-delete-cache.png
+  scene: *starter
+  setup:
+    # place the Duck once (a real drop) so its download is held, then right-click its card
+    - {press: {text: Duck}}
+    - {moveTo: {text: Duck, dx: 14, dy: 8}, steps: 4}
+    - {moveTo: {text: Duck, dx: 34, dy: 12}, steps: 4}
+    - {moveTo: {text: Duck, dx: 330, dy: -300}, steps: 14}
+    - {wait: 8000}
+    - {release: true}
+    - {wait: 2000}
+    - {deselect: true}
+    - {rightClick: {text: Duck}}
+    - {wait: 800}
+    # its label carries the size ("Delete cache (1.2 MB)"): mark the row for an exact anchor
+    - {eval: "[...document.querySelectorAll('[role=\"menuitem\"]')].find((e) => /^Delete cache/.test(e.textContent.trim()))?.setAttribute('data-docs', 'delete-cache')"}
+  crop: {union: [{text: Duck, offset: [-60, -80]}, {selector: '[role="menu"]'}, {selector: '[role="menu"]', offset: [120, 0]}], pad: 10}
+  fade: []
+  alt: >-
+    A pack item's menu in the Explorer, opened on the Duck after it was placed once: Duplicate, Share with peers,
+    Properties, Rename and Delete cache with its size. 1: Delete cache.
+  caption: A pack item's menu.
+  annotate:
+    - {n: 1, at: {selector: '[data-docs="delete-cache"]'}, shape: box, label: frees it, badge: r, key: '**Delete cache** **frees it**: the download goes; the item stays in the pack.'}

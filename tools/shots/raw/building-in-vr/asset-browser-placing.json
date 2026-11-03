@@ -1,21 +1,36 @@
 {
  "id": "asset-browser-placing",
+ "spec": "fffadedc07ea",
  "dpr": 2,
- "shotAt": "2026-10-27T07:46:24.481Z",
+ "shotAt": "2026-11-03T13:38:55.744Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/building-in-vr/asset-browser-placing.png",
+ "uiHits": [],
  "width": 768,
  "height": 896,
  "crop": {
   "x": 0,
   "y": 0,
-  "w": 768,
-  "h": 896
+  "w": 384,
+  "h": 448
  },
  "cut": [],
  "fade": [],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 524,
+   "y": 240,
+   "w": 224,
+   "h": 158
+  },
+  "2": {
+   "x": 100,
+   "y": 836,
+   "w": 568,
+   "h": 44
+  }
+ },
  "kind": "ui"
 }

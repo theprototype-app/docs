@@ -1,21 +1,40 @@
 {
  "id": "undo-toast",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.574Z",
+ "spec": "04d87f9ad4d1",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:03:44.167Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/notes/undo-toast.png",
- "width": 420,
- "height": 62,
+ "uiHits": [
+  "div.my-1",
+  "svg.lucide",
+  "circle",
+  "div.tp-toast-body",
+  "div.tp-toast-text",
+  "div.tp-toast-main",
+  "button.tp-toast-action",
+  "div.tp-toast-actions",
+  "button.tp-toast-x"
+ ],
+ "width": 832,
+ "height": 164,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 420,
-  "h": 62
+  "x": 512,
+  "y": 73,
+  "w": 416,
+  "h": 82
  },
  "cut": [],
  "fade": [],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 94,
+   "y": 87.6875,
+   "w": 62.90625,
+   "h": 39
+  }
+ },
  "kind": "ui"
 }

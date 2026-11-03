@@ -1,18 +1,33 @@
 {
  "id": "sequence",
- "dpr": 1.5,
- "shotAt": "2026-10-27T07:46:24.572Z",
+ "spec": "af7a0d126a1a",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:02:57.266Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/nodes/sequence.png",
- "width": 1032,
- "height": 345,
+ "uiHits": [
+  "div.svelte-flow__pane",
+  "div.flex",
+  "div.relative",
+  "div.node-card",
+  "span.overflow-hidden",
+  "button.nodrag",
+  "span.text-text-muted",
+  "select.nodrag",
+  "input.dn-input",
+  "input.nodrag",
+  "div.svelte-flow__handle",
+  "path.svelte-flow__edge-interaction"
+ ],
+ "width": 1244,
+ "height": 518,
  "crop": {
-  "x": 32,
-  "y": 0,
-  "w": 1032,
-  "h": 345
+  "x": 208,
+  "y": 284,
+  "w": 622,
+  "h": 259
  },
  "cut": [],
  "fade": [],

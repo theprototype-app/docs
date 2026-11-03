@@ -46,7 +46,7 @@ A treasure chest that pays out only once:
 4. Add a **Key Press** (capture <kbd>R</kbd>); wire it → Once's **rearm**.
 5. Press Play and click the chest a few times: the Counter reads 1. Press <kbd>R</kbd> and the next click counts again.
 
-![On Click on the chest feeding a Once, with a Key Press wired to the Once's rearm; the Once's output runs on to a Counter past the right edge.](../img/nodes-once/once.webp){ .shot .fade-r width="688" height="639" loading=lazy }
+![On Click on the chest's Object Selector feeding a Once, with a Key Press for R wired to the Once's rearm; the Once's output runs on to a Counter](../img/nodes-once/once.webp){ .shot width="622" height="386" loading=lazy }
 /// caption
 On Click on the chest feeding a Once.
 ///

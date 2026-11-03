@@ -1,18 +1,33 @@
 {
  "id": "budget-chip",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.576Z",
+ "spec": "3effe48b981e",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:08:51.641Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/performance/budget-chip.png",
- "width": 652,
- "height": 80,
+ "uiHits": [
+  "p.hud-cell",
+  "svg.lucide",
+  "line",
+  "button#editor-mode-toggle.hud-cell",
+  "p#play-button.hud-play",
+  "path",
+  "p#explorer-slot.hud-cell",
+  "button#toolbar-customize.hud-cell",
+  "circle",
+  "button#budget-chip.bc-main",
+  "span.bc-target",
+  "span#budget-chip-percent.bc-pct"
+ ],
+ "width": 1292,
+ "height": 144,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 652,
-  "h": 80
+  "x": 470,
+  "y": 824,
+  "w": 646,
+  "h": 72
  },
  "cut": [],
  "fade": [],

@@ -35,10 +35,15 @@ A chase camera for a car:
    now stays behind the car and turns with it.
 5. To see through the camera, use [Set Active Camera](setcamera.md) or the camera's **Preview**.
 
-![A camera object, its viewing pyramid drawn, aimed at a cube by a Camera Rig](../img/nodes-camerarig/camera-rig.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+![A camera object, its viewing pyramid drawn, behind and above a box standing in for a car and aimed at it by a Camera Rig. 1: the camera. 2: the target.](../img/nodes-camerarig/camera-rig.webp){ .shot .vignette width="960" height="540" loading=lazy }
 /// caption
-A camera object.
+A Camera Rig keeps the camera behind the car, aimed at it.
 ///
+
+<div class="shot-key" markdown>
+1. The **camera object** the rig moves: its viewing pyramid shows where it looks.
+2. The **target** wired into the rig: the camera follows it and looks at it.
+</div>
 
 ## Limits
 

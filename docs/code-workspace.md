@@ -4,10 +4,14 @@ The code workspace is one place for every piece of code in a scene: a [Script](n
 [behaviour](behaviours.md), a `.js` script file from your Library, a module's own source (read-only), and the flow graph
 itself as JSON. Each source is a **tab**, and your edits stay in the tab until you save.
 
-![The code workspace docked beside the Explorer and the Node editor, with a Script node's code open](img/code-workspace/script-tab.webp){ .shot .fade-r .fade-t width="688" height="340" loading=lazy }
+![The code workspace docked as a tab beside the Node editor and the Explorer, with the Bob Script node's code open in its tab. 1: the dock's tabs.](img/code-workspace/script-tab.webp){ .shot .fade-r .fade-b width="688" height="380" loading=lazy }
 /// caption
 The code workspace docked beside the Explorer and the Node editor.
 ///
+
+<div class="shot-key" markdown>
+1. The dock's **tabs**: Code sits beside the Node editor and the Explorer.
+</div>
 
 ## Where it is
 
@@ -37,10 +41,14 @@ Saving checks the code first. If it does not parse, **nothing is applied**: the 
 the line (click it to jump there), and every node the code feeds shows an amber *edit not applied* badge while it keeps
 running the last good version.
 
-![A save refused: the banner names the line, and the nodes keep the last good version](img/code-workspace/parse-error.webp){ .shot .fade-r .fade-t width="688" height="340" loading=lazy }
+![A save refused: the red banner over the code names the line that does not parse, and says the nodes keep the last good version. 1: the banner.](img/code-workspace/parse-error.webp){ .shot .fade-r .fade-t width="688" height="340" loading=lazy }
 /// caption
 A save refused.
 ///
+
+<div class="shot-key" markdown>
+1. The **banner** names the line that does not parse: click it to jump there.
+</div>
 
 When the code is good, everything that runs it reloads — on every player's screen.
 
@@ -57,10 +65,14 @@ Since 1.42, when two or more people in a session open the same code — a Script
 or a [text document](#text-documents) — they type into **one shared text**. Everyone sees the others' typing as it
 happens, and two people typing in the same line both keep what they typed: nothing is overwritten.
 
-![Editing together: another person's caret and selection in their colour, labelled Peer 8c21, line 2.](img/code-workspace/editing-together.webp){ .shot .fade-r width="688" height="285" loading=lazy }
+![Editing together: Mia's caret and selection on line 2 in her colour, and the Editing with you strip under the toolbar naming her and her line. 1: the Editing with you strip.](img/code-workspace/editing-together.webp){ .shot .fade-r width="688" height="340" loading=lazy }
 /// caption
-Editing together.
+Editing together: another person's caret and selection show in their colour.
 ///
+
+<div class="shot-key" markdown>
+1. **Editing with you** shows **who is here**: everyone in the file and the line they are on.
+</div>
 
 - The other person's **caret** and **selection** show in their colour (hover the caret for their name). The strip under
   the toolbar, **Editing with you**, lists everyone in the file and the line they are on; a screen reader reads it as
@@ -86,10 +98,14 @@ its preview, double-click it, or right-click ▸ **Edit in the Code tab** — an
 second monitor and keep the 3D view full-size in the app. Desktop browsers only (hidden on phones, touch screens and in
 VR).
 
-![The code workspace in its own window, with Dock back in its header](img/code-workspace/pop-out-window.webp){ .shot .fade-r width="688" height="640" loading=lazy }
+![The code workspace in its own browser window: Code and Dock back in its header, the sidebars and the Bob Script node's code below. 1: Dock back.](img/code-workspace/pop-out-window.webp){ .shot width="688" height="640" loading=lazy }
 /// caption
 The code workspace in its own window.
 ///
+
+<div class="shot-key" markdown>
+1. **Dock back** closes the window and puts the editor back in the app.
+</div>
 
 - Everything stays live both ways: typing, <kbd>Ctrl</kbd>+<kbd>S</kbd> applying the script to the scene, the error
   banner and Problems, the sidebars, quick open, menus — and [editing together](#editing-together).
@@ -104,10 +120,16 @@ The code workspace in its own window.
 
 ## Sidebars
 
-![The code workspace: Open editors and the Project tree on the left, with the tab strip above the code.](img/code-workspace/sidebars.webp){ .shot .fade-r .fade-t width="688" height="650" loading=lazy }
+![The code workspace: Open editors and the Project tree on the left, with the tab strip above the code. 1: Open editors. 2: Project. 3: the tab strip.](img/code-workspace/sidebars.webp){ .shot width="688" height="520" loading=lazy }
 /// caption
 The code workspace.
 ///
+
+<div class="shot-key" markdown>
+1. **Open editors**: every open tab, in the strip's order.
+2. **Project**: Graphs, Files and Module sources, with a search box.
+3. The **tab strip**: one tab per open source.
+</div>
 
 ### Left: Open editors and Project
 
@@ -131,10 +153,15 @@ The code workspace.
 Since 1.46 the **Files** group of the Project tree is a real file tree: what you make here are ordinary
 [Explorer](explorer.md) files, so they follow the Explorer's sharing rules and everyone in the session sees them.
 
-![The Project tree's menu on a script: Rename, Move to, Cut, Delete, New file, New folder, Show in Explorer](img/code-workspace/files-menu.webp){ .shot .fade-r .fade-t width="688" height="450" loading=lazy }
+![The Project tree's menu on the wobble.js script file: Rename, Move to, Cut, Delete, New file, New folder and Show in Explorer. 1: the file. 2: the menu.](img/code-workspace/files-menu.webp){ .shot .fade-r .fade-t width="688" height="640" loading=lazy }
 /// caption
 The Project tree's menu on a script.
 ///
+
+<div class="shot-key" markdown>
+1. A **script file** in the Files group, right-clicked.
+2. Its **menu**: rename, move, cut, delete, or make a new file or folder beside it.
+</div>
 
 - **New file** (the page-with-plus button in the Project header, or the right-click menu) offers **Script** (a
   behaviour with the lifecycle functions ready to fill in), **Note** (`.md`) and **JSON**. A new script opens in a
@@ -196,10 +223,14 @@ return {};                                                  // anything left out
 - **Engine source** (toolbar) shows the built-in walker code it steers, read-only.
 - With no code saved, the Player behaves exactly as before.
 
-![Player: walk open in the code workspace, with Engine source in the toolbar and the Player code row in the Project tree](img/code-workspace/player-code.webp){ .shot .fade-r .fade-t .fade-b width="688" height="470" loading=lazy }
+![Player: walk open in the code workspace, with Engine source in the toolbar and the Player code row in the Project tree. 1: Engine source.](img/code-workspace/player-code.webp){ .shot .fade-b width="688" height="470" loading=lazy }
 /// caption
 Player: walk open in the code workspace.
 ///
+
+<div class="shot-key" markdown>
+1. **Engine source**: the built-in walker code the Player steers, read-only.
+</div>
 
 ## Code and files
 

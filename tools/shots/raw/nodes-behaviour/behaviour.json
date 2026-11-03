@@ -1,18 +1,33 @@
 {
  "id": "behaviour",
- "dpr": 1.5,
- "shotAt": "2026-10-27T07:46:24.560Z",
+ "spec": "767e3583fa68",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:42:13.713Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/nodes/behaviour.png",
- "width": 1032,
- "height": 222,
+ "uiHits": [
+  "div.svelte-flow__pane",
+  "div.flex",
+  "div.relative",
+  "button.nodrag",
+  "span.text-text-muted",
+  "select.nodrag",
+  "input.dn-input",
+  "div.dn-wrap",
+  "input.nodrag",
+  "div.svelte-flow__handle",
+  "path.svelte-flow__edge-interaction",
+  "div.behaviour-out"
+ ],
+ "width": 1300,
+ "height": 682,
  "crop": {
-  "x": 32,
-  "y": 0,
-  "w": 1032,
-  "h": 222
+  "x": 208,
+  "y": 284,
+  "w": 650,
+  "h": 341
  },
  "cut": [],
  "fade": [],

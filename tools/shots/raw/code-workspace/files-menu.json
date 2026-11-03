@@ -1,24 +1,48 @@
 {
  "id": "files-menu",
- "dpr": 1,
- "shotAt": "2026-10-29T08:56:54.344Z",
+ "spec": "b8a78f63f106",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:35:01.472Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/code-workspace/files-menu.png",
- "width": 688,
- "height": 450,
+ "uiHits": [
+  "div.fixed",
+  "div.ctx-scroll",
+  "svg.lucide",
+  "span.flex",
+  "div.cursor-pointer",
+  "span.flex-1",
+  "span.ctx-hint",
+  "span.ctx-chev"
+ ],
+ "width": 1376,
+ "height": 1280,
  "crop": {
   "x": 0,
-  "y": 450,
+  "y": 180,
   "w": 688,
-  "h": 450
+  "h": 640
  },
  "cut": [],
  "fade": [
   "r",
   "t"
  ],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 116,
+   "y": 853.75,
+   "w": 94.46875,
+   "h": 33
+  },
+  "2": {
+   "x": 402,
+   "y": 768,
+   "w": 376,
+   "h": 664
+  }
+ },
  "kind": "ui"
 }

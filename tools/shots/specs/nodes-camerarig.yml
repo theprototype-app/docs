@@ -1,22 +1,36 @@
 page: nodes-camerarig
-defaults:
-  device: desktop
-  theme: dark
-  dpr: 2
-  format: webp
+defaults: {device: desktop, theme: dark, dpr: 2, format: webp}
+# 83-batch3 (V11): built live — a camera object and a car (a box), the Camera Rig made and wired by the app's own
+# create_flow_nodes (rig → the camera's Object Selector, the car's selector → target). The camera is ALSO placed at
+# the rig's default offset (2 up, 5 back) and turned to the car, so the picture is right even if the rig only moves
+# it in Play.
 shots:
 - id: camera-rig
   replaces: img/nodes/camera-rig.png
-  alt: A camera object, its viewing pyramid drawn, aimed at a cube by a Camera Rig
-  caption: A camera object.
-  crop:
-    rect:
-    - 77
-    - 65
-    - 1126
-    - 569
+  setup:
+    - {create: Box, name: Car, at: [0, 0.5, 0], scale: [1, 0.6, 1.8]}
+    - {create: Camera, name: Chase cam, at: [0, 2.5, 5]}
+    - eval: >-
+        (async () => { const S = window.__stores, D = window.__docs;
+        const cam = D.byName('Chase cam'), car = D.byName('Car'); if (!cam || !car) throw new Error('no camera or car');
+        const M = cam.matrix.constructor; cam.quaternion.setFromRotationMatrix(new M().lookAt(cam.position, car.position, cam.up));
+        cam.updateMatrixWorld(true); S.objectActions?.commitTransform?.(cam);
+        const r = await S.aiTools.executeAiTool('create_flow_nodes', {graph: 'scene',
+        nodes: [{ref: 'rig', type: 'camerarig', data: {mode: 'both', space: 'target'}},
+        {ref: 'cam', type: 'objectselector', data: {selected: cam.uuid}},
+        {ref: 'car', type: 'objectselector', data: {selected: car.uuid}}],
+        edges: [{from: 'rig', to: 'cam'}, {from: 'car', to: 'rig', toHandle: 'target'}]}, {physics: true});
+        if (!r || r.error || r.partial) throw new Error('create_flow_nodes: ' + JSON.stringify(r && (r.errors || r.error || r.warning))); })()
+    - {camera: {pos: [11.9, 5.4, 6.0], target: [0, 1, 2.4]}}
+    - {wait: 3000}
+  crop: {around: {union: [{object: Car}, {object: Chase cam}]}, size: [960, 540]}
   fade: vignette
   kind: view
-  dpr: 1
-  from: img/nodes/camera-rig.png
+  alt: >-
+    A camera object, its viewing pyramid drawn, behind and above a box standing in for a car and aimed at it by a
+    Camera Rig. 1: the camera. 2: the target.
+  caption: A Camera Rig keeps the camera behind the car, aimed at it.
+  annotate:
+    - {n: 1, at: {object: Chase cam, point: center}, shape: circle, label: camera, badge: t, key: 'The **camera object** the rig moves: its viewing pyramid shows where it looks.'}
+    - {n: 2, at: {object: Car}, shape: box, label: target, badge: b, key: 'The **target** wired into the rig: the camera follows it and looks at it.'}
 md: nodes/camerarig.md

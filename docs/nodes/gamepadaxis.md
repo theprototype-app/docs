@@ -65,7 +65,7 @@ Show a sign while the left stick is pushed hard to the right:
 4. Push the stick right past halfway: the sign appears on **your** screen. Other players see it only when they push
    their own sticks.
 
-![A Gamepad Axis on lx with deadzone 0.5 wired into a Compare, then a Visibility node driving an Object Selector picking the Sign](../img/nodes-gamepadaxis/gamepadaxis.webp){ .shot width="688" height="220" loading=lazy }
+![A Gamepad Axis on lx with deadzone 0.5 wired into a Compare (gt 0), then a Visibility node driving an Object Selector picking the Sign](../img/nodes-gamepadaxis/gamepadaxis.webp){ .shot width="650" height="313" loading=lazy }
 /// caption
 A Gamepad Axis on lx with deadzone 0.5 wired into a Compare.
 ///

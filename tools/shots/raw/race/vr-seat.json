@@ -1,20 +1,27 @@
 {
  "id": "vr-seat",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.588Z",
+ "spec": "c5b2ff176d52",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:13:54.658Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/race/vr-seat.png",
- "width": 1126,
- "height": 569,
+ "uiHits": [],
+ "width": 2252,
+ "height": 1138,
  "crop": {
-  "x": 77,
-  "y": 65,
+  "x": 157,
+  "y": 165,
   "w": 1126,
   "h": 569
  },
- "cut": [],
+ "cut": [
+  "l",
+  "r",
+  "t",
+  "b"
+ ],
  "fade": "vignette",
  "anchors": {},
  "kind": "view"

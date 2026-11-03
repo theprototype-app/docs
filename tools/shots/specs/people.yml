@@ -5,17 +5,27 @@ defaults:
   dpr: 2
   format: webp
 shots:
+# 83-batch3 (V11): two guests from the rig (lib/rig.cjs) — an AI agent and a person — and the menu on the person
 - id: peer-menu
   replaces: img/people/peer-menu.png
-  dpr: 1
-  kind: ui
-  caption: The peer menu on a person in the Connected panel.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 414
-    - 849
+  storage: {username: Alexandra, usernameCustom: '1'}
+  peers:
+    - {name: Claude, agent: true}
+    - {name: Mia, role: edit}
+  setup:
+    - {css: '#cross-scene-presence{display:none!important}'}
+    - {camera: {pos: [4, 3, 6], target: [0, 1, 0]}}
+    - {eval: "window.__stores.peersPanelOpen.set(true)"}
+    - {wait: 2000}
+    - {rightClick: {text: Mia, dx: 140}}
+    - {wait: 800}
+  crop: {union: [{selector: '#peers-popover'}, {selector: '[role="menu"]'}], pad: 8}
   fade: []
-  alt: The peer menu on a person in the Connected panel
-  from: img/people/peer-menu.png
+  alt: >-
+    The peer menu open on Mia in the Connected panel, whose rows are you, Claude with the robot and AI, and Mia. The
+    menu's groups: Profile, Find (Go to, Watch), Character, Talk (Mute voice), For you only (Hide), Moderation (Change
+    role, Show their recent changes, Remove from session, Remove and block) and More (Report). 1: Moderation, for the
+    host or an admin.
+  caption: The peer menu on a person in the Connected panel.
+  annotate:
+    - {n: 1, at: {text: Moderation}, shape: box, badge: l, key: '**Moderation**: change their role, see their recent changes, remove them (and block them) — for the host or an admin.'}

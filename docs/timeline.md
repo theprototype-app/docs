@@ -10,10 +10,15 @@ undoable, and they play in exported and published games.
     The [Animation](animation.md) editor keys **one object's** clips. The Timeline arranges whole clips, shots and
     sounds into a scene-wide sequence.
 
-![The Timeline docked under the viewport: Camera, Animation, Audio and Event tracks with a Cam A → Cam B shot, a Door clip, whoosh.wav and a boom event](img/timeline/tracks.webp){ .shot .fade-r .fade-t width="688" height="400" loading=lazy }
+![The Timeline docked under the viewport, in a small window: the Intro sequence with Camera, Animation, Audio and Event tracks holding a Cam A → Cam B shot, a Door clip, whoosh.wav and a boom event. 1: + Track, which adds a track of any kind. 2: the boom event item.](img/timeline/tracks.webp){ .shot width="680" height="303" loading=lazy }
 /// caption
 The Timeline docked under the viewport.
 ///
+
+<div class="shot-key" markdown>
+1. **+ Track** adds a Camera, Animation, Audio or Event track.
+2. An **event** item: it pulses On Sequence Event in the game when the sequence passes it.
+</div>
 
 ## Opening it
 
@@ -48,10 +53,15 @@ The Timeline docked under the viewport.
 6. **Preview** with ▶ or <kbd>Space</kbd>. A preview is yours alone and does **not** fire graph events — events fire
    when the sequence plays in the game.
 
-![Scrubbing at 1.15 s: the viewport previews the shot through Cam A](img/timeline/scrub-shot.webp){ .shot .fade-l .fade-r .fade-t width="688" height="700" loading=lazy }
+![Scrubbing the Intro sequence at 1.15 s in a small window: the viewport looks through Cam A, half-way into the glide, with the Timeline below. 1: the playhead parked on the ruler. 2: the Previewing Cam A strip.](img/timeline/scrub-shot.webp){ .shot width="688" height="840" loading=lazy }
 /// caption
 Scrubbing at 1.15 s.
 ///
+
+<div class="shot-key" markdown>
+1. The **playhead**, parked at 1.15 s by a click on the ruler.
+2. The viewport looks through the **shot camera** at that moment; Exit gives you your own view back.
+</div>
 
 | Key | Does |
 |---|---|
@@ -85,10 +95,14 @@ A track's **…** menu renames it, moves it up or down, or deletes it; its speak
 The Timeline is a tab of the bottom sheet (**More ▸ Timeline**). The controls wrap onto extra rows, and the tracks
 scroll under them.
 
-![The Timeline as a tab of the bottom sheet on a folded phone](img/timeline/phone-sheet.webp){ .shot .fade-t width="390" height="550" loading=lazy }
+![The Timeline as a tab of the bottom sheet on a folded phone: the controls wrap onto two rows over the four tracks with a narrow name column. 1: the Timeline tab of the sheet.](img/timeline/phone-sheet.webp){ .shot width="390" height="670" loading=lazy }
 /// caption
 The Timeline as a tab of the bottom sheet on a folded phone.
 ///
+
+<div class="shot-key" markdown>
+1. The **Timeline** **sheet tab** in the bottom sheet (More ▸ Timeline opens it).
+</div>
 
 ## Limits
 
@@ -99,7 +113,7 @@ The Timeline as a tab of the bottom sheet on a folded phone.
 - A preview never fires graph events, so it cannot change the game state for one player only.
 - Scenes with sequences need 1.39 or later to show them; older versions open the scene without its sequences.
 
-![The Timeline in the light theme](img/timeline/tracks-light.webp){ .shot .fade-r .fade-t width="688" height="400" loading=lazy }
+![The Timeline in the light theme, in a small window: the Intro sequence with its Camera, Animation, Audio and Event tracks, a Cam A → Cam B shot, a Door clip, whoosh.wav and a boom event.](img/timeline/tracks-light.webp){ .shot width="672" height="303" loading=lazy }
 /// caption
 The Timeline in the light theme.
 ///

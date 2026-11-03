@@ -1,24 +1,36 @@
 {
  "id": "tracks-light",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.604Z",
+ "spec": "57df45b4d257",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:18:38.476Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/timeline/tracks-light.png",
- "width": 688,
- "height": 400,
+ "uiHits": [
+  "button#timeline-seq-select.ts-btn",
+  "div.tl-bar",
+  "div.dn-wrap",
+  "div.tl-root",
+  "div.tl-corner",
+  "div.tl-track-head",
+  "div.tl-grid",
+  "span.ts-label",
+  "span.dn-label",
+  "span.tl-track-name",
+  "input#timeline-duration.dn-input",
+  "button.tl-icon-btn"
+ ],
+ "width": 1344,
+ "height": 606,
  "crop": {
-  "x": 0,
-  "y": 500,
-  "w": 688,
-  "h": 400
+  "x": 8,
+  "y": 529,
+  "w": 672,
+  "h": 303
  },
  "cut": [],
- "fade": [
-  "r",
-  "t"
- ],
+ "fade": [],
  "anchors": {},
  "kind": "ui"
 }

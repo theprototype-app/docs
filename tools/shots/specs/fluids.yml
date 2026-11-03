@@ -1,3 +1,7 @@
+# docs/fluids.md — the Fluid emitter and the Water works example.
+# Shoot: e2e-slot -- node tools/shots/shoot.cjs fluids     Re-annotate: node tools/shots/annotate.cjs fluids
+# 83-batch3: real captures (were re-crops of the 36-fb evidence). The emitter is made by the real Add ▸ Water ▸ Fluid
+# item (addObjects.buildAddChildren, core tests/e2e/fluid-emitter.test.cjs). 3D shots on a remote slot (E2E_PC=).
 page: fluids
 defaults:
   device: desktop
@@ -5,32 +9,50 @@ defaults:
   dpr: 2
   format: webp
 shots:
-- id: fluid-emitter
-  replaces: img/fluids/fluid-emitter.png
-  alt: A Fluid emitter pouring a stream into a puddle, with its properties open
-  caption: A Fluid emitter pouring a stream into a puddle.
-  crop:
-    rect:
-    - 592
-    - 0
-    - 688
-    - 720
-  fade:
-  - l
-  kind: ui
-  dpr: 1
-  from: img/fluids/fluid-emitter.png
-- id: water-works
-  replaces: img/fluids/water-works.png
-  alt: 'Water works: the scoop wheel, the head-race, the fountain basin and the chute back to the pond'
-  caption: 'Water works: the scoop wheel.'
-  crop:
-    rect:
-    - 77
-    - 65
-    - 1126
-    - 569
-  fade: vignette
-  kind: view
-  dpr: 1
-  from: img/fluids/water-works.png
+  - id: fluid-emitter
+    replaces: img/fluids/fluid-emitter.png
+    alt: >-
+      A Fluid emitter 1.6 m above the floor pouring a stream of water into a puddle, selected, beside its Fluid emitter
+      properties: Emitting, the mode, Rate, Speed, Spread and the area. 1: the stream. 2: Rate per second.
+    caption: A Fluid emitter pouring a stream into a puddle.
+    storage: {'inspector:sec:Fluid emitter': open}
+    scene:
+      - eval: >-
+          (() => { const S = window.__stores; const water = S.addObjects.buildAddChildren(() => [0, 0, 0]).find((g) => g.label === 'Water');
+          water.children.find((c) => c.label === 'Fluid').action(); })()
+      # the emitter right of the view's middle, so it shows in the column beside the panel
+      - {camera: {pos: [-1.3, 2.1, 4.8], target: [-1.3, 0.8, 0]}}
+    setup:
+      - {wait: 6000}
+      - {select: Fluid emitter}
+      - {eval: "window.__stores.inspectorKind.set('selection'); window.__stores.inspectorClose.set(false)"}
+      - {wait: 1500}
+      - {eval: "document.querySelector('#fluid-emitter-rate')?.scrollIntoView({block: 'center'})"}
+      - {wait: 500}
+    crop: {around: {selector: '#fluid-emitter-rate'}, size: [688, 720], offset: [-170, 0], ui: true}
+    annotate:
+      - {n: 1, at: {object: Fluid emitter, point: center, offset: [0, 140]}, shape: arrow, label: stream, from: [-90, 30], key: 'The **stream**: real fluid particles that fall, pool and flow.'}
+      - {n: 2, at: {selector: '#fluid-emitter-rate'}, shape: box, label: rate, badge: l, key: '**Rate**: particles per second while it emits.'}
+
+  # Templates ▸ Examples ▸ Water works — a closed loop that starts on load
+  - id: water-works
+    replaces: img/fluids/water-works.png
+    alt: >-
+      Water works on its diorama: the scoop wheel lifting pond water into the head-race, the fountain basin it feeds,
+      and the chute that carries the water back to the pond. 1: the scoop wheel. 2: the head-race. 3: the fountain.
+    caption: 'Water works: the scoop wheel.'
+    kind: view
+    fade: vignette
+    scene:
+      - eval: >-
+          (async () => { const S = window.__stores, D = window.__docs; await S.sceneTemplates.loadTemplatesIndex();
+          const e = D.get(S.sceneTemplates.examples).find((x) => x.slug === 'water-works'); await S.sceneTemplates.loadRemoteScene(e, {}); })()
+      - {wait: 10000}
+    setup:
+      - {deselect: true}
+      - {wait: 1500}
+    crop: {around: {object: Plinth, offset: [0, -215]}, size: [1120, 600]}
+    annotate:
+      - {n: 1, at: {object: Noria wheel, point: center}, shape: circle, label: scoop wheel, badge: tl, key: 'The **scoop wheel** lifts pond water as it turns.'}
+      - {n: 2, at: {object: Head-race bed}, shape: underline, label: head-race, badge: t, key: 'The **head-race** carries it across to the fountain.'}
+      - {n: 3, at: {object: Fountain bowl}, shape: circle, label: fountain, badge: tr, key: 'The **fountain** basin; a chute takes the overflow back to the pond.'}

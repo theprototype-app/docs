@@ -1,24 +1,45 @@
 {
  "id": "smart-unwrap",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.608Z",
+ "spec": "d68997b6ca42",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:34:15.116Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/uv-editor/smart-unwrap.png",
- "width": 688,
- "height": 900,
+ "uiHits": [
+  "header.wc-head",
+  "div.ws-panel",
+  "span.wc-label",
+  "div.ui-section-label",
+  "span.h-7",
+  "button.flex",
+  "button#uv-add-slot.mt-1",
+  "p.px-2",
+  "div#uv-window.ui-panel",
+  "div.uv-slot",
+  "svg.lucide",
+  "button#uv-op-linked.uv-tool"
+ ],
+ "width": 1280,
+ "height": 920,
  "crop": {
-  "x": 356,
-  "y": 0,
-  "w": 688,
-  "h": 900
+  "x": 220,
+  "y": 140,
+  "w": 640,
+  "h": 460
  },
  "cut": [],
  "fade": [
-  "l",
-  "r"
+  "b"
  ],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 743.59375,
+   "y": 98,
+   "w": 141.34375,
+   "h": 40
+  }
+ },
  "kind": "ui"
 }

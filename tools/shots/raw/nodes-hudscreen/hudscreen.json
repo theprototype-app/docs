@@ -1,18 +1,33 @@
 {
  "id": "hudscreen",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.567Z",
+ "spec": "e248f3b25df2",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:59:45.715Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/nodes/hudscreen.png",
- "width": 688,
- "height": 635,
+ "uiHits": [
+  "div.svelte-flow__pane",
+  "div.flex",
+  "div.relative",
+  "span.h-2",
+  "select.nodrag",
+  "span.text-text-muted",
+  "div.dn-wrap",
+  "button.nodrag",
+  "span.overflow-hidden",
+  "input.dn-input",
+  "div.svelte-flow__handle",
+  "path.svelte-flow__edge-interaction"
+ ],
+ "width": 804,
+ "height": 872,
  "crop": {
-  "x": 21,
-  "y": 0,
-  "w": 688,
-  "h": 635
+  "x": 208,
+  "y": 284,
+  "w": 402,
+  "h": 436
  },
  "cut": [],
  "fade": [],

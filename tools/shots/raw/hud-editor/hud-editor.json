@@ -1,24 +1,53 @@
 {
  "id": "hud-editor",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.520Z",
+ "spec": "ea82e768cb7b",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:57:41.642Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/hud/hud-editor.png",
- "width": 688,
- "height": 638,
+ "uiHits": [
+  "div.dt-row",
+  "svg.lucide",
+  "div.hud-board-fit",
+  "div#hud-stage.hud-stage",
+  "rect",
+  "span.hud-sep",
+  "div.flex",
+  "div.hud-el",
+  "path",
+  "button.hud-el",
+  "label.hud-check",
+  "span.hud-wired"
+ ],
+ "width": 1190,
+ "height": 1186,
  "crop": {
-  "x": 376,
-  "y": 0,
-  "w": 688,
-  "h": 638
+  "x": 394,
+  "y": 169,
+  "w": 595,
+  "h": 593
  },
  "cut": [],
  "fade": [
   "l",
-  "r"
+  "r",
+  "b"
  ],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 400.6875,
+   "y": 660.0625,
+   "w": 390.625,
+   "h": 65.625
+  },
+  "2": {
+   "x": 464,
+   "y": 55.5,
+   "w": 89.8125,
+   "h": 33
+  }
+ },
  "kind": "ui"
 }

@@ -1,26 +1,55 @@
 {
  "id": "crop-desktop-light",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.520Z",
+ "spec": "9b4aa367aa40",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:11:22.443Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/image-editor/crop-desktop-light.png",
- "width": 688,
- "height": 700,
+ "uiHits": [
+  "header.wc-head",
+  "div.border-b",
+  "button#image-editor-undo.tp-ui",
+  "div#image-editor-window.ui-panel",
+  "button#image-editor-redo.tp-ui",
+  "div.flex",
+  "button.tp-ui",
+  "div.ws-tabs",
+  "button.ws-tab-btn",
+  "div.ws-resize",
+  "div#image-editor-tools.ie-pane",
+  "div.ui-section-label"
+ ],
+ "width": 1360,
+ "height": 1120,
  "crop": {
   "x": 180,
-  "y": 40,
-  "w": 688,
-  "h": 700
+  "y": 110,
+  "w": 680,
+  "h": 560
  },
  "cut": [],
- "fade": [
-  "l",
-  "r",
-  "t",
-  "b"
- ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 181.015625,
+   "y": 180,
+   "w": 469.96875,
+   "h": 41
+  },
+  "2": {
+   "x": 917.75,
+   "y": 508,
+   "w": 408.25,
+   "h": 97.625
+  },
+  "3": {
+   "x": 880,
+   "y": 621.625,
+   "w": 223.71875,
+   "h": 64
+  }
+ },
  "kind": "ui"
 }

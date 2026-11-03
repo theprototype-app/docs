@@ -9,10 +9,15 @@ credit for you.
 **dock** like Statistics or Chat (drag it onto the dock, or the dock's **+** ▸ Free assets). On a phone it opens as a
 bottom sheet.
 
-![The Asset Browser's Materials tab searching ambientCG for clay](img/free-assets/browser-materials.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="640" loading=lazy }
+![The Asset Browser on its Materials tab, searching ambientCG for clay: a grid of clay materials, each with Add and Apply, the category and the 1k / 2k / 4k pick above. 1: the Materials tab. 2: the search box.](img/free-assets/browser-materials.webp){ .shot .fade-b width="576" height="616" loading=lazy }
 /// caption
 The Asset Browser's Materials tab searching ambientCG for clay.
 ///
+
+<div class="shot-key" markdown>
+1. The **Materials** tab (from ambientCG); Models, HDRIs and Textures come from Poly Haven.
+2. **Search** by name or tag.
+</div>
 
 ## Finding an asset
 
@@ -33,10 +38,15 @@ The Asset Browser's Materials tab searching ambientCG for clay.
   swatches); *Apply* also puts it on the selected objects. Colour and normal maps are kept; roughness and metalness
   come from their maps.
 
-![A CC0 material applied to a box, credited in the Inspector](img/free-assets/material-applied.webp){ .shot .fade-l .fade-t .fade-b width="688" height="800" loading=lazy }
+![The Inspector of a box after Apply on an ambientCG clay material: the material is the newest of your presets, and under the presets its credit names the site, the authors and the CC0 licence. 1: the new preset. 2: the credit.](img/free-assets/material-applied.webp){ .shot width="311" height="244" loading=lazy }
 /// caption
 A CC0 material applied to a box.
 ///
+
+<div class="shot-key" markdown>
+1. **Apply** also saved it to your **material presets**.
+2. Its **credit**: site, authors, licence (CC0) and a link.
+</div>
 
 ## Credits
 
@@ -44,10 +54,14 @@ Every download keeps its source — site, authors, licence (CC0) and a link. You
 **Properties**, in the **Inspector** for a placed object or a CC0 material, and on the material swatch's tooltip. A
 model carries it inside the file, so a peer's copy — and the optimized copy the importer makes — has it too.
 
-![The Explorer's Properties naming a Poly Haven model's source](img/free-assets/explorer-credit.webp){ .shot .fade-l .fade-t width="688" height="400" loading=lazy }
+![The Explorer's Properties for a model added from Poly Haven: its size, folder (Poly Haven) and owner, then a credit line naming the site, the authors, the CC0 licence and a link. 1: the credit.](img/free-assets/explorer-credit.webp){ .shot .fade-t width="230" height="245" loading=lazy }
 /// caption
 The Explorer's Properties naming a Poly Haven model's source.
 ///
+
+<div class="shot-key" markdown>
+1. The **credit** stays with the file, for you and for every peer that gets a copy.
+</div>
 
 ## Offline and errors
 
@@ -65,7 +79,11 @@ window says so in plain words and offers *Try again*.
   person's **From ‹name›** swatch row too: it arrives in the background a few seconds after they connect (or after you
   save it), and travels only once.
 
-![The Asset Browser as a bottom sheet on a folded phone](img/free-assets/phone.webp){ .shot .fade-t width="390" height="550" loading=lazy }
+![The Asset Browser as a bottom sheet on a folded phone: the Models tab, two columns of Poly Haven models and the resolution pick set to 1k. 1: 1k, the phone's default.](img/free-assets/phone.webp){ .shot .fade-b width="390" height="560" loading=lazy }
 /// caption
 The Asset Browser as a bottom sheet on a folded phone.
 ///
+
+<div class="shot-key" markdown>
+1. **1k** is the **phone default** (and the Quest's): smaller downloads.
+</div>

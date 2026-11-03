@@ -1,18 +1,33 @@
 {
  "id": "flowfloat",
- "dpr": 1.5,
- "shotAt": "2026-10-27T07:46:24.563Z",
+ "spec": "274340683ca1",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:57:04.914Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/nodes/flowfloat.png",
- "width": 1032,
- "height": 309,
+ "uiHits": [
+  "div.svelte-flow__pane",
+  "div.flex",
+  "div.relative",
+  "div.svelte-flow__handle",
+  "div.node-card",
+  "span.overflow-hidden",
+  "select.nodrag",
+  "path.svelte-flow__edge-interaction",
+  "span.max-w-full",
+  "span",
+  "input.nodrag",
+  "input"
+ ],
+ "width": 1244,
+ "height": 432,
  "crop": {
-  "x": 32,
-  "y": 0,
-  "w": 1032,
-  "h": 309
+  "x": 208,
+  "y": 284,
+  "w": 622,
+  "h": 216
  },
  "cut": [],
  "fade": [],

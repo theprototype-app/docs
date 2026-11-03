@@ -10,10 +10,16 @@ setting; for running a simulation, gravity, joints and grabbing see [Physics & S
 
 Select an object and open **Properties ▸ Physics**:
 
-![The Physics section of an object's properties, with Show collider on and the green collider wireframe in the viewport](img/colliders/physics-section.webp){ .shot .fade-l width="688" height="780" loading=lazy }
+![A torus knot selected beside its Physics properties: Body Dynamic, Mass, Material, Bounciness, Friction, Collider set to Convex hull and Show collider ticked, with the green hull wireframe drawn round the knot. 1: the Collider choice. 2: Show collider. 3: the collider wireframe.](img/colliders/physics-section.webp){ .shot width="688" height="660" loading=lazy }
 /// caption
 The Physics section of an object's properties.
 ///
+
+<div class="shot-key" markdown>
+1. The **Collider**: the simple shape physics tests instead of your triangles.
+2. **Show collider** draws it as a green wireframe, on this device only.
+3. The **hull** wraps the knot: holes and dents are filled in.
+</div>
 
 | Row | Options / range | Default |
 |---|---|---|
@@ -77,10 +83,14 @@ a ball rolls through an arch's opening, falls into a pool or a tank, drives thro
 while **Body** is *Auto (scenery)* or *Static*. A group (an imported model) is merged into one mesh. Static **Arch** and
 **Corner** blocks use it automatically.
 
-![An arch with an exact mesh collider: the green wireframe follows the opening](img/colliders/exact-mesh.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+![A static arch with an exact mesh collider: the green wireframe follows the arch's opening, so a ball can roll through it. 1: the opening, kept by the exact mesh.](img/colliders/exact-mesh.webp){ .shot .vignette width="1000" height="600" loading=lazy }
 /// caption
 An arch with an exact mesh collider.
 ///
+
+<div class="shot-key" markdown>
+1. The **opening kept**: an exact mesh's wireframe follows every face of the arch.
+</div>
 
 **Limits.**
 
@@ -105,10 +115,14 @@ A dynamic arch, cup or U-shaped crate now keeps its openings. One undo restores 
 replicates to everyone. Fine-tune it afterwards with **Edit collider…** ([below](#custom-compound-colliders)). In VR it is
 **Decompose (auto)** in the [collider editor](#editing-a-collider-in-vr).
 
-![The same arch decomposed into convex pieces](img/colliders/decomposed.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+![The same arch, dynamic, after Decompose: its collider is a handful of convex pieces drawn as green wireframes, and the opening stays open. 1: one convex piece.](img/colliders/decomposed.webp){ .shot .vignette width="1000" height="600" loading=lazy }
 /// caption
 The same arch decomposed into convex pieces.
 ///
+
+<div class="shot-key" markdown>
+1. Each **convex piece** is a simple hull; together they keep the opening.
+</div>
 
 The result has to fit the custom-collider budget (about 400 points). Pieces past it are dropped, and the toast says so.
 
@@ -226,10 +240,15 @@ dynamic.
 The other body travels with the trigger, so every peer reads the same object. A contact with the ground plane reports an
 empty *other*.
 
-![On Impact and On Enter nodes with only with wired to Object Selectors, and other wired into Distance](img/colliders/contact-filter.webp){ .shot .fade-l .fade-r .fade-t width="688" height="420" loading=lazy }
+![The node editor: an On Impact node whose only with input is wired from the Target's Object Selector and whose other output feeds a Distance node, and an On Enter node on a sensor zone filtered to the Ball. 1: only with. 2: other, the body that was hit.](img/colliders/contact-filter.webp){ .shot width="659" height="361" loading=lazy }
 /// caption
 On Impact and On Enter nodes with only with wired to Object Selectors.
 ///
+
+<div class="shot-key" markdown>
+1. **only with**: an Object Selector wired here makes the node fire only when the other body is that object.
+2. **other** carries the body that was hit — here into a Distance node.
+</div>
 
 ## Editing a collider in VR
 

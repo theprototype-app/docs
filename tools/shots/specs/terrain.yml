@@ -1,67 +1,106 @@
+# docs/terrain.md — terrain paint layers and the Scatter brush.
+# Shoot: e2e-slot -- node tools/shots/shoot.cjs terrain     Re-annotate: node tools/shots/annotate.cjs terrain
+# 83-batch3: real captures (were re-crops of the 47 / 51 evidence). The terrain is painted and scattered through the
+# sculpt session's own stroke API (core tests/e2e/terrain-paint.test.cjs): two painted patches and a stand of cones.
+# 3D shots on a remote slot (E2E_PC=).
 page: terrain
 defaults:
   device: desktop
   theme: dark
   dpr: 2
   format: webp
+  scene:
+    - eval: >-
+        (async () => { const S = window.__stores, g = window.__docs.get(S.objectsGroup);
+        S.commandsHandler.sceneCommand('/create Terrain 24 48'); await new Promise((r) => setTimeout(r, 400));
+        const t = g.children[g.children.length - 1]; t.name = 'Terrain'; const u = t.uuid; const ts = S.terrainSculpt, tp = S.terrainPaint;
+        const stroke = async (x, z, n) => { ts.beginStroke(u); for (let i = 0; i < n; i++) { ts.strokeMove(u, x, z, 0.05); await new Promise((r) => setTimeout(r, 15)); } ts.endStroke(); };
+        ts.enterSculpt(u); ts.sculptOp.set('paint'); ts.sculptRadius.set(4); ts.sculptStrength.set(1);
+        tp.paintLayer.set(1); await stroke(-3, 1, 25);
+        tp.paintLayer.set(3); await stroke(2, 9, 25);
+        ts.sculptOp.set('scatter'); tp.scatterSource.set({kind: 'primitive', type: 'Cone'}); tp.scatterDensity.set(0.5);
+        tp.scatterScaleMin.set(0.8); tp.scatterScaleMax.set(1.2); tp.scatterErase.set(false);
+        await stroke(4, -5, 10); await stroke(7, -1, 10); })()
+    - {wait: 800}
+    # the painted patches left of the view's middle: they share the column with the toolbox on the left
+    - {camera: {pos: [8.5, 15, 9], target: [4.2, 0, 1]}}
 shots:
-- id: paint-layer
-  replaces: img/terrain/paint-layer.png
-  alt: A painted layer on a terrain
-  caption: A painted layer on a terrain.
-  crop:
-    rect:
-    - 77
-    - 65
-    - 1126
-    - 569
-  fade: vignette
-  kind: view
-  dpr: 1
-  from: img/terrain/paint-layer.png
-- id: inspector-paint
-  replaces: img/terrain/inspector-paint.png
-  alt: 'Properties of a terrain with its Terrain paint section: four layers, each with a colour and an image, Paint… and Clear
-    paint, and the Scatter section under it.'
-  caption: Properties of a terrain with its Terrain paint section.
-  crop:
-    rect:
-    - 592
-    - 0
-    - 688
-    - 720
-  fade:
-  - l
-  kind: ui
-  dpr: 1
-  from: img/terrain/inspector-paint.png
-- id: scatter-toolbox
-  replaces: img/terrain/scatter-toolbox.png
-  alt: The Scatter brush in the Sculpt toolbox, beside a terrain painted in patches of colour.
-  caption: The Scatter brush in the Sculpt toolbox.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 688
-    - 720
-  fade:
-  - r
-  kind: ui
-  dpr: 1
-  from: img/terrain/scatter-toolbox.png
-- id: scatter-collider
-  replaces: img/terrain/scatter-collider.png
-  alt: 'Properties ▸ Scatter: the Dodecahedron rocks set to Mesh hull, the cones left at None'
-  caption: Properties ▸ Scatter.
-  crop:
-    rect:
-    - 752
-    - 0
-    - 688
-    - 900
-  fade:
-  - l
-  kind: ui
-  dpr: 1
-  from: img/terrain/scatter-collider.png
+  - id: paint-layer
+    replaces: img/terrain/paint-layer.png
+    alt: >-
+      The Sculpt terrain toolbox with the Paint brush and layer 3 picked, beside a fresh patch of layer 3 painted onto
+      the terrain. 1: the Paint brush. 2: the layer it paints.
+    caption: A painted layer on a terrain.
+    setup:
+      - eval: >-
+          (async () => { const S = window.__stores, u = window.__docs.byName('Terrain').uuid, ts = S.terrainSculpt;
+          ts.sculptOp.set('paint'); S.terrainPaint.paintLayer.set(2); ts.beginStroke(u);
+          for (let i = 0; i < 25; i++) { ts.strokeMove(u, 0, -3, 0.05); await new Promise((r) => setTimeout(r, 15)); } ts.endStroke(); })()
+      - {wait: 1200}
+    # the toolbox at the left edge, the painted ground to its right: the toolbox widened right and down by offset
+    # copies of itself, so the crop starts below the header (no logo, no cut session bar); only the right side fades
+    crop: {union: [{selector: '#sculpt-toolbar'}, {selector: '#sculpt-toolbar', offset: [470, 90]}], pad: 10}
+    fade: [r]
+    annotate:
+      - {n: 1, at: {selector: '#sculpt-op-paint'}, shape: box, pad: 3, badge: t, key: 'The **Paint** brush paints the picked layer where you drag.'}
+      - {n: 2, at: {selector: '#sculpt-paint-layer-2'}, shape: box, pad: 3, badge: b, key: 'The **layer** it paints: four per terrain, each a colour and an optional image.'}
+
+  - id: inspector-paint
+    replaces: img/terrain/inspector-paint.png
+    alt: >-
+      Properties of a terrain: the Terrain paint section with four layers, each with a colour, an image picker and a
+      tile size, how much of the terrain each covers, Paint… and Clear paint, and the Scatter section under it with the
+      cones. 1: Paint…, which opens the brush on this terrain.
+    caption: Properties of a terrain with its Terrain paint section.
+    setup:
+      - {eval: "window.__stores.terrainSculpt.exitSculpt()"}
+      - {select: Terrain}
+      - {eval: "window.__stores.inspectorKind.set('selection'); window.__stores.inspectorClose.set(false)"}
+      - {wait: 1500}
+      - {eval: "document.querySelector('#terrain-paint-open')?.scrollIntoView({block: 'center'})"}
+      - {wait: 500}
+    crop: {union: [{selector: 'section.sec-panel:has(#terrain-paint-open)'}, {selector: 'section.sec-panel:has(#terrain-scatter-total)'}], pad: 6, maxHeight: 640}
+    annotate:
+      - {n: 1, at: {selector: '#terrain-paint-open'}, shape: box, pad: 2, label: paint brush, badge: r, key: '**Paint…** opens the Sculpt toolbox on this terrain with the Paint brush armed.'}
+
+  - id: scatter-toolbox
+    replaces: img/terrain/scatter-toolbox.png
+    alt: >-
+      The Scatter brush in the Sculpt toolbox: the Cone source, Paint and Erase, Density, Scale, Random rotation and Align
+      to slope, beside the terrain's painted patches and a stand of scattered cones. 1: what the brush scatters.
+    caption: The Scatter brush in the Sculpt toolbox.
+    setup:
+      - {eval: "window.__stores.terrainSculpt.sculptOp.set('scatter')"}
+      - {wait: 1000}
+    # as paint-layer: below the header, the toolbox widened right to the stand of cones
+    crop: {union: [{selector: '#sculpt-toolbar'}, {selector: '#sculpt-toolbar', offset: [496, 0]}], pad: 8}
+    fade: [r]
+    annotate:
+      - {n: 1, at: {selector: '#sculpt-scatter-source'}, shape: box, pad: 3, label: scatter what, badge: r, key: '**Scatter what**: a primitive, a Library model, a pack item or a prefab.'}
+
+  # its own terrain: rocks with a hull collider, cones with none (core tests/e2e/scatter-colliders.test.cjs)
+  - id: scatter-collider
+    replaces: img/terrain/scatter-collider.png
+    alt: >-
+      Properties ▸ Scatter on a terrain with two models: the Dodecahedron rocks with Collider set to Mesh hull, and the
+      cones left at None, with the instance total and the Scatter… button under them.
+    caption: Properties ▸ Scatter.
+    scene:
+      - eval: >-
+          (async () => { const S = window.__stores, g = window.__docs.get(S.objectsGroup);
+          S.commandsHandler.sceneCommand('/create Terrain 24 24'); await new Promise((r) => setTimeout(r, 400));
+          const t = g.children[g.children.length - 1]; t.name = 'Terrain'; const u = t.uuid; const ts = S.terrainSculpt, tp = S.terrainPaint;
+          ts.enterSculpt(u); ts.sculptOp.set('scatter'); tp.scatterAlign.set(false); tp.scatterErase.set(false);
+          tp.scatterSource.set({kind: 'primitive', type: 'Dodecahedron'}); tp.scatterDensity.set(1); tp.scatterScaleMin.set(0.6); tp.scatterScaleMax.set(1);
+          tp.scatterCollider.set('hull'); tp.beginScatterStroke(u); tp.scatterAt(u, 0, 0, 3); tp.endScatterStroke();
+          tp.scatterSource.set({kind: 'primitive', type: 'Cone'}); tp.scatterDensity.set(0.4); tp.scatterCollider.set('none');
+          tp.beginScatterStroke(u); tp.scatterAt(u, 2, 4, 3); tp.endScatterStroke(); ts.exitSculpt(); })()
+      - {wait: 800}
+      - {camera: {pos: [6, 9, 10], target: [0, 0, 1]}}
+    setup:
+      - {select: Terrain}
+      - {eval: "window.__stores.inspectorKind.set('selection'); window.__stores.inspectorClose.set(false)"}
+      - {wait: 1500}
+      - {eval: "document.querySelector('#terrain-scatter-total')?.scrollIntoView({block: 'center'})"}
+      - {wait: 500}
+    crop: {selector: 'section.sec-panel:has(#terrain-scatter-total)', pad: 6, maxHeight: 600}

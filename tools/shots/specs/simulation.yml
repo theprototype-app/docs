@@ -1,3 +1,7 @@
+# docs/simulation.md — the Fluid tank (looks, spilling, pouring into a pool) and Jiggle.
+# Shoot: e2e-slot -- node tools/shots/shoot.cjs simulation     Re-annotate: node tools/shots/annotate.cjs simulation
+# 83-batch3: real captures (were re-crops of the 36-sim / 1.40 evidence). Recipes: core tests/e2e sim-fluid,
+# tank-water-splash and sim-demos; Fluid tank toy is Templates ▸ Examples. 3D shots on a remote slot (E2E_PC=).
 page: simulation
 defaults:
   device: desktop
@@ -5,76 +9,132 @@ defaults:
   dpr: 2
   format: webp
 shots:
-- id: fluid-tank
-  replaces: img/simulation/fluid-tank.png
-  alt: A fluid tank with the smooth surface look
-  caption: A fluid tank with the smooth surface look.
-  crop:
-    rect:
-    - 77
-    - 65
-    - 1126
-    - 569
-  fade: vignette
-  kind: view
-  dpr: 1
-  from: img/simulation/fluid-tank.png
-- id: fluid-tank-drops
-  replaces: img/simulation/fluid-tank-drops.png
-  alt: The Drops look, with a ball pushed around by the fluid
-  caption: The Drops look.
-  crop:
-    rect:
-    - 77
-    - 65
-    - 1126
-    - 569
-  fade: vignette
-  kind: view
-  dpr: 1
-  from: img/simulation/fluid-tank-drops.png
-- id: tank-spill
-  replaces: img/simulation/tank-spill.png
-  alt: 'Fluid tank toy: the Honey tank tipped, its honey spilled onto the table'
-  caption: Fluid tank toy.
-  crop:
-    rect:
-    - 0
-    - 40
-    - 688
-    - 640
-  fade:
-  - r
-  - t
-  - b
-  kind: ui
-  dpr: 1
-  from: img/simulation/tank-spill.png
-- id: tank-pours-into-pool
-  replaces: img/simulation/tank-pours-into-pool.png
-  alt: A pour inside a tank landing on the pool's surface and rippling it
-  caption: A pour inside a tank landing on the pool's surface and rippling it.
-  crop:
-    rect:
-    - 66
-    - 63
-    - 968
-    - 553
-  fade: vignette
-  kind: view
-  dpr: 1
-  from: img/simulation/tank-pours-into-pool.png
-- id: jiggle
-  replaces: img/simulation/jiggle.png
-  alt: A block leaning and wobbling under Jiggle
-  caption: A block leaning and wobbling under Jiggle.
-  crop:
-    rect:
-    - 77
-    - 65
-    - 1126
-    - 569
-  fade: vignette
-  kind: view
-  dpr: 1
-  from: img/simulation/jiggle.png
+  - id: fluid-tank
+    replaces: img/simulation/fluid-tank.png
+    alt: >-
+      A fluid tank on the grid with the smooth surface look: a glass box half full of blue water whose surface catches
+      the light. 1: the smooth surface.
+    caption: A fluid tank with the smooth surface look.
+    kind: view
+    fade: vignette
+    scene:
+      - eval: >-
+          (async () => { const S = window.__stores, g = window.__docs.get(S.objectsGroup);
+          S.commandsHandler.sceneCommand('/create FluidTank 2.4 1.4 1.4'); await new Promise((r) => setTimeout(r, 400));
+          const t = g.children[g.children.length - 1]; t.position.set(0, 0.7, 0); t.updateMatrixWorld(true);
+          S.sim.setFluidFor(t.uuid, {quality: 'high'}); })()
+      - {camera: {pos: [0, 2.6, 4.6], target: [0, 0.6, 0]}}
+    setup:
+      - {deselect: true}
+      - {wait: 5000}
+    crop: {around: {object: Fluid tank}, size: [1000, 560]}
+    annotate:
+      - {n: 1, at: {object: Fluid tank, point: center}, shape: circle, label: smooth surface, badge: tr, key: 'The **smooth surface** look: the particles drawn as one liquid surface.'}
+
+  - id: fluid-tank-drops
+    replaces: img/simulation/fluid-tank-drops.png
+    alt: >-
+      The same tank with the Drops look and a red fluid: hundreds of round drops, with a ball dropped in and pushed
+      about by them. 1: the ball in the fluid.
+    caption: The Drops look.
+    kind: view
+    fade: vignette
+    scene:
+      - eval: >-
+          (async () => { const S = window.__stores, g = window.__docs.get(S.objectsGroup);
+          S.commandsHandler.sceneCommand('/create FluidTank 2.4 1.4 1.4'); await new Promise((r) => setTimeout(r, 400));
+          const t = g.children[g.children.length - 1]; t.position.set(0, 0.7, 0); t.updateMatrixWorld(true);
+          S.sim.setFluidFor(t.uuid, {quality: 'points', color: '#c0392b'});
+          await S.physics.warmup().catch(() => {}); })()
+      - {create: Sphere, name: Ball, at: [0.3, 2.2, 0], scale: 0.44, color: '#8fb3a0'}
+      - eval: >-
+          window.__stores.physics.setPhysicsFor(window.__docs.byName('Ball').uuid, {mode: 'dynamic', mass: 0.5, collider: 'sphere'})
+      - {camera: {pos: [0, 2.6, 4.6], target: [0, 0.6, 0]}}
+    setup:
+      - {deselect: true}
+      - {eval: "window.__stores.physics.toggleSimulation()"}
+      - {wait: 4500}
+    crop: {around: {object: Fluid tank}, size: [1000, 560]}
+    annotate:
+      - {n: 1, at: {object: Ball}, shape: circle, label: pushed about, badge: tr, key: 'A ball dropped in is **pushed about** by the drops (on the player running the simulation).'}
+
+  - id: tank-spill
+    replaces: img/simulation/tank-spill.png
+    alt: >-
+      Fluid tank toy on its table, with the Honey tank tipped towards the right: its honey has poured over the rim onto
+      the table top and settled there. 1: the tipped Honey tank. 2: the spilled honey.
+    caption: Fluid tank toy.
+    kind: view
+    fade: vignette
+    scene:
+      - eval: >-
+          (async () => { const S = window.__stores, D = window.__docs; await S.sceneTemplates.loadTemplatesIndex();
+          const e = D.get(S.sceneTemplates.examples).find((x) => x.slug === 'fluid-tank-toy'); await S.sceneTemplates.loadRemoteScene(e, {}); })()
+      - {wait: 6000}
+    setup:
+      # tip the Honey tank 65° towards +x (the gizmo's replicated path); honey is slow, so give it time to run out
+      - eval: >-
+          (() => { const S = window.__stores, o = window.__docs.byName('Honey tank'); o.rotation.z = -1.13; o.updateMatrixWorld(true);
+          S.objectActions?.commitTransform?.(o); })()
+      - {deselect: true}
+      - {camera: {pos: [1.6, 3.2, 5.4], target: [1.7, 0.7, 0]}}
+      - {wait: 15000}
+    crop: {around: {object: Honey tank, offset: [110, 20]}, size: [1000, 600]}
+    annotate:
+      - {n: 1, at: {object: Honey tank, point: top}, shape: circle, label: tipped tank, badge: l, key: 'The **tipped tank** of honey: it pours out over its rim and holds less afterwards.'}
+      - {n: 2, at: {object: Honey tank, point: center, offset: [170, 80]}, shape: circle, label: spilled honey, badge: br, key: 'The **spilled** honey settles on the table top; Refill fills the tank again.'}
+
+  - id: tank-pours-into-pool
+    replaces: img/simulation/tank-pours-into-pool.png
+    alt: >-
+      Two fluid tanks standing in a pool: the left one pours from a nozzle inside it onto the pool's surface, which
+      ripples where the pour lands; the right one keeps the water it holds. 1: where the pour lands.
+    caption: A pour inside a tank landing on the pool's surface and rippling it.
+    kind: view
+    fade: vignette
+    scene:
+      - eval: >-
+          (async () => { const S = window.__stores, g = window.__docs.get(S.objectsGroup); const last = () => g.children[g.children.length - 1];
+          const pool = S.waterActions.makeWater(S.addObjects.spawnAtPoint('/create Box 3 0.8 3', [0, 0.4, 0]), 'pool');
+          S.commandsHandler.sceneCommand('/create FluidTank 1.2 1.2 0.8'); await new Promise((r) => setTimeout(r, 400));
+          const pour = last(); pour.name = 'Pouring tank'; pour.position.set(-0.75, 0.6, 0); pour.updateMatrixWorld(true);
+          S.sim.setFluidFor(pour.uuid, {fill: 0.12, count: 2000, emitter: {on: true, rate: 700, speed: 2}, drain: {on: true, rate: 900, radius: 0.2}});
+          S.commandsHandler.sceneCommand('/create FluidTank 1.2 1.2 0.8'); await new Promise((r) => setTimeout(r, 400));
+          const rest = last(); rest.name = 'Resting tank'; rest.position.set(0.8, 0.6, 0); rest.updateMatrixWorld(true);
+          S.sim.setFluidFor(rest.uuid, {fill: 0.25, count: 1500}); })()
+      - {camera: {pos: [-0.2, 2.2, 3.4], target: [-0.1, 0.5, 0]}}
+    setup:
+      - {deselect: true}
+      - {wait: 7000}
+    # wider and higher, so the pour (top left of the left tank) sits inside the vignette's clear middle
+    crop: {around: {union: [{object: Pouring tank}, {object: Resting tank}]}, size: [1090, 580], offset: [-23, -38]}
+    annotate:
+      - {n: 1, at: {object: Pouring tank, point: center, offset: [-89, -111]}, shape: circle, label: pour lands, badge: r, key: 'The **pour** lands on the pool''s surface inside the tank, joins the pool and ripples it.'}
+
+  - id: jiggle
+    replaces: img/simulation/jiggle.png
+    alt: >-
+      A tall block with a Jiggle node, caught just after it was dragged sideways: it leans back against the move and
+      wobbles like jelly. 1: the lean of the jiggle.
+    caption: A block leaning and wobbling under Jiggle.
+    kind: view
+    fade: vignette
+    scene:
+      - {create: Box, name: Jelly, at: [0, 0.8, 0], scale: [1, 1.6, 1], color: '#c8603f'}
+      - eval: >-
+          (() => { const S = window.__stores, o = window.__docs.byName('Jelly');
+          S.flowGraphs.update((gs) => ({...gs, [o.uuid]: {nodes: [{id: 'jig1', type: 'jiggle', position: {x: 20, y: 20},
+            data: {stiffness: 80, damping: 0.1, amplitude: 0.15, frequency: 3}}], edges: []}})); })()
+      - {camera: {pos: [0.9, 2.5, 6.6], target: [1.2, 0.9, 0]}}
+    setup:
+      - {deselect: true}
+      - {wait: 1500}
+      # drag it 1.6 m sideways over 20 frames, then let go: it lags, then overshoots
+      - eval: >-
+          (async () => { const o = window.__docs.byName('Jelly');
+          for (let i = 0; i < 20; i++) { o.position.x += 0.08; o.updateMatrixWorld(true); await new Promise((r) => requestAnimationFrame(r)); } })()
+      - {wait: 120}
+    settle: 100
+    crop: {around: {object: Jelly, offset: [0, -40]}, size: [900, 560]}
+    annotate:
+      - {n: 1, at: {object: Jelly, point: top}, shape: circle, label: lags behind, badge: r, key: 'The top **lags behind** the move, then overshoots and wobbles back.'}

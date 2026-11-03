@@ -13,10 +13,15 @@ Select any mesh or placed model ▸ **Properties ▸ Scatter** (right after the 
 *Add pour emitter*) ▸ **Add scatter**. 200 instances of the brush's current model fill the whole surface. The instances
 belong to the object: move, turn or scale it and they come along, for everyone in the session.
 
-![Properties ▸ Scatter on a sphere: 200 cones fill it, with the Fill rows below](img/scatter/add-scatter.webp){ .shot .fade-l width="688" height="720" loading=lazy }
+![Properties ▸ Scatter on a sphere after Add scatter: 200 cones cover it, and the section lists the Cone model with its tint, sink and collider, then the Fill rows (Count 200, Spacing, Slope, Height). 1: the scattered cones. 2: the Fill rows.](img/scatter/add-scatter.webp){ .shot width="688" height="720" loading=lazy }
 /// caption
 Properties ▸ Scatter on a sphere.
 ///
+
+<div class="shot-key" markdown>
+1. Add scatter covers the mesh with **200 cones** at once (Count mode).
+2. The **Fill** rows: Count or Density, Spacing, and the Slope and Height masks.
+</div>
 
 On a Terrain the Scatter section stays where it was (after Terrain paint) with the same rows. **Add fill** adds another
 set; **Paint scatter…** (or **Scatter…** on a terrain) opens the scatter brush to paint by hand.
@@ -71,10 +76,15 @@ On a terrain, the scatter brush in the Sculpt toolbox has a row of **tools**:
 
 **Affects** (every tool but Paint) limits a tool to one model of a mix — erase only the boxes, turn only the trees.
 
-![The Select tool: seven instances picked, the gizmo on them and the selection commands in the toolbox](img/scatter/select-tool.webp){ .shot .fade-r width="688" height="720" loading=lazy }
+![The Sculpt toolbox's Select tool on a terrain painted with cones and boxes: a box drag picked seven cones, ringed in orange, with the gizmo on them and the selection commands (Move, Turn, Size, Bigger, Re-roll, Delete, To objects) in the toolbox. 1: the selection commands. 2: the picked instances.](img/scatter/select-tool.webp){ .shot .fade-r .fade-t .fade-b width="688" height="700" loading=lazy }
 /// caption
 The Select tool.
 ///
+
+<div class="shot-key" markdown>
+1. The **selection tools**: move, turn and size with the gizmo, or step them; Re-roll, Delete, To objects.
+2. The **picked** instances, ringed; only the model in Affects can be picked.
+</div>
 
 **Select**: click an instance; <kbd>Shift</kbd>/<kbd>Ctrl</kbd>+click adds or removes; drag a box to select everything
 inside it; <kbd>Ctrl</kbd>+<kbd>A</kbd> selects every instance of the Affects model. The gizmo's **Move** slides the

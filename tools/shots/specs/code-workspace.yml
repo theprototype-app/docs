@@ -4,116 +4,219 @@ defaults:
   theme: dark
   dpr: 2
   format: webp
+  scene:
+  - {create: Box, name: Crate, at: [0, 0.5, 0], color: '#c9a26b'}
+  - {create: Sphere, name: Ball, at: [2.4, 0.6, 0.8], scale: 0.8, color: '#6c8cd5'}
+# 83-batch3 (V11): every shot built live. A Script node (Bob, on the Crate) made by the app's own create_flow_nodes,
+# its code opened through the workspace's openCode; the crop is #docs-box, a box the setup lays over the docked
+# workspace's top-left corner (the dock is full-width, the column is 688).
 shots:
 - id: script-tab
   replaces: img/code-workspace/script-tab.png
-  alt: The code workspace docked beside the Explorer and the Node editor, with a Script node's code open
-  caption: The code workspace docked beside the Explorer and the Node editor.
-  crop:
-    rect:
-    - 0
-    - 380
-    - 688
-    - 340
-  fade:
-  - r
-  - t
+  setup:
+  - &boxfn
+    eval: >-
+      window.__docsBox = (r, w, h) => { const d = document.getElementById('docs-box') ||
+      document.body.appendChild(Object.assign(document.createElement('div'), {id: 'docs-box'}));
+      Object.assign(d.style, {position: 'fixed', pointerEvents: 'none', left: r.left + 'px', top: r.top + 'px',
+      width: Math.min(w, r.width) + 'px', height: Math.min(h, r.height) + 'px'}); }
+  - &script
+    eval: >-
+      (async () => { const S = window.__stores, D = window.__docs;
+      const crate = D.byName('Crate'); if (!crate) throw new Error('no Crate');
+      const r = await S.aiTools.executeAiTool('create_flow_nodes', {graph: 'scene',
+      nodes: [{ref: 'bob', type: 'script', data: {label: 'Bob', code: '// bob the crate up and down, and turn it\nobject.position.y = base.pos[1] + Math.sin(time * 2) * 0.5;\nobject.rotation.y = time * 0.5;\n'}},
+      {ref: 'sel', type: 'objectselector', data: {selected: crate.uuid}}],
+      edges: [{from: 'bob', to: 'sel'}]}, {physics: true});
+      if (!r || r.error || r.partial) throw new Error('create_flow_nodes: ' + JSON.stringify(r && (r.errors || r.error || r.warning)));
+      window.__docsScript = r.created.find((c) => c.ref === 'bob').id; })()
+  - &tabs {eval: "window.__stores.dockMenu.dockTab('flow'); window.__stores.dockMenu.dockTab('explorer'); window.__stores.bottomDock.dockHeight.set(600)"}
+  - {wait: 1500}
+  - &open {eval: "window.__stores.codeWorkspace.openCode({source: 'script', ref: {nodeId: window.__docsScript, graphId: 'scene'}}).then((id) => { if (!id) throw new Error('openCode opened nothing'); window.__docsTab = id; window.__stores.dockMenu.dockTab('code'); })"}
+  - {wait: 2500}
+  - {eval: "window.__stores.codeSidebars.toggleLeftSidebar(false); window.__stores.codeSidebars.toggleRightSidebar(false)"}
+  - {wait: 800}
+  # the box starts just above the dock's tab strip (room for the badge), so the tabs the callout names are in it
+  - eval: >-
+      (() => { const d = document.getElementById('code-ws-dock').getBoundingClientRect();
+      const t = [...document.querySelectorAll('.dt-tabs')].map((e) => e.getBoundingClientRect()).filter((r) => r.height > 0 && r.bottom <= d.top + 4).pop();
+      if (!t) throw new Error('no tab strip above the code dock');
+      window.__docsBox({left: d.left, top: t.top - 44, width: d.width, height: d.bottom - t.top + 44}, 688, 380); })()
+  crop: {selector: '#docs-box'}
+  fade: [r, b]
   kind: ui
-  dpr: 1
-  from: img/code-workspace/script-tab.png
+  alt: >-
+    The code workspace docked as a tab beside the Node editor and the Explorer, with the Bob Script node's code open
+    in its tab. 1: the dock's tabs.
+  caption: The code workspace docked beside the Explorer and the Node editor.
+  annotate:
+  - {n: 1, at: {union: [{selector: '.dt-tabs [data-dock-tab="flow"]'}, {selector: '.dt-tabs [data-dock-tab="code"]'}]}, shape: box, pad: 3, badge: t, key: 'The dock''s **tabs**: Code sits beside the Node editor and the Explorer.'}
 - id: parse-error
   replaces: img/code-workspace/parse-error.png
-  alt: 'A save refused: the banner names the line, and the nodes keep the last good version'
-  caption: A save refused.
-  crop:
-    rect:
-    - 0
-    - 380
-    - 688
-    - 340
-  fade:
-  - r
-  - t
+  setup:
+  - *boxfn
+  - *script
+  - *tabs
+  - {wait: 1500}
+  - *open
+  - {wait: 2500}
+  # break line 2 the way a person does: type an unclosed bracket at its end, then Ctrl+S
+  - {click: '#code-ws-dock .cm-content .cm-line:nth-child(2)'}
+  - {key: End, noFocus: true}
+  - {key: '(', noFocus: true}
+  - {key: Control+s, noFocus: true}
+  - {wait: 1500}
+  - &box340 {eval: "window.__docsBox(document.getElementById('code-ws-dock').getBoundingClientRect(), 688, 340)"}
+  crop: {selector: '#docs-box'}
+  fade: [r, t]
   kind: ui
-  dpr: 1
-  from: img/code-workspace/parse-error.png
+  alt: >-
+    A save refused: the red banner over the code names the line that does not parse, and says the nodes keep the last
+    good version. 1: the banner.
+  caption: A save refused.
+  annotate:
+  - {n: 1, at: {selector: '#code-ws-error .code-banner-text'}, shape: box, badge: l, key: 'The **banner** names the line that does not parse: click it to jump there.'}
 - id: editing-together
   replaces: img/code-workspace/editing-together.png
-  alt: 'Editing together: another person''s caret and selection in their colour, labelled Peer 8c21, line 2.'
-  caption: Editing together.
-  crop:
-    rect:
-    - 222
-    - 435
-    - 688
-    - 285
-  fade:
-  - r
+  storage: {username: Alex, usernameCustom: '1'}
+  peers:
+  - {name: Mia}
+  setup:
+  - {css: '#cross-scene-presence{display:none!important}'}
+  - *boxfn
+  - *script
+  - *tabs
+  - {wait: 1500}
+  - *open
+  - {wait: 2000}
+  - {eval: "window.__stores.codeSidebars.toggleLeftSidebar(false); window.__stores.codeSidebars.toggleRightSidebar(false)"}
+  # Mia opens the same Script node and selects most of line 2: her caret and selection show in the host's editor
+  - on: Mia
+    steps:
+    - {eval: "(() => { const S = window.__stores; const g = window.__docs.get(S.flowGraphs).scene; const n = g.nodes.find((x) => x.type === 'script'); if (!n) throw new Error('the script never reached Mia'); window.__docsScript = n.id; })()"}
+    - *tabs
+    - {wait: 1500}
+    - *open
+    - {wait: 2500}
+    - {click: '#code-ws-dock .cm-content .cm-line:nth-child(2)'}
+    - {key: End, noFocus: true}
+    - {keyDown: Shift}
+    - {key: Control+ArrowLeft, noFocus: true}
+    - {key: Control+ArrowLeft, noFocus: true}
+    - {keyUp: Shift}
+  - {wait: 2500}
+  - *box340
+  crop: {selector: '#docs-box'}
+  fade: [r]
   kind: ui
-  dpr: 1
-  from: img/code-workspace/editing-together.png
+  alt: >-
+    Editing together: Mia's caret and selection on line 2 in her colour, and the Editing with you strip under the
+    toolbar naming her and her line. 1: the Editing with you strip.
+  caption: 'Editing together: another person''s caret and selection show in their colour.'
+  annotate:
+  - {n: 1, at: {selector: '#code-ws-presence .code-presence-list'}, shape: box, label: who is here, badge: r, key: '**Editing with you** shows **who is here**: everyone in the file and the line they are on.'}
+# a real second browser window (lib/rig.cjs `popup:` + `capture: popup`), from a small app window so the popped-out
+# one opens near the column's width too (the interface page's pop-out-dock recipe)
 - id: pop-out-window
   replaces: img/code-workspace/pop-out-window.png
-  alt: The code workspace in its own window, with Dock back in its header
-  caption: The code workspace in its own window.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 688
-    - 640
-  fade:
-  - r
+  device: window-688
+  setup:
+  - *script
+  # a lower dock than the other shots: in a 600 px window a 600 px dock puts its toolbar (Pop out) under the top bar
+  - {eval: "window.__stores.dockMenu.dockTab('flow'); window.__stores.dockMenu.dockTab('explorer'); window.__stores.bottomDock.dockHeight.set(360)"}
+  - {wait: 1500}
+  - *open
+  - {wait: 2500}
+  - popup:
+    - {click: '#code-ws-popout'}
+    size: [688, 640]
+  capture: popup
+  crop: {rect: [0, 0, 688, 640]}
+  fade: []
   kind: ui
-  dpr: 1
-  from: img/code-workspace/pop-out-window.png
+  alt: >-
+    The code workspace in its own browser window: Code and Dock back in its header, the sidebars and the Bob Script
+    node's code below. 1: Dock back.
+  caption: The code workspace in its own window.
+  annotate:
+  - {n: 1, at: {selector: '#code-ws-dock-back'}, shape: box, pad: 3, clip: true, badge: b, key: '**Dock back** closes the window and puts the editor back in the app.'}
 - id: sidebars
   replaces: img/code-workspace/sidebars.png
-  alt: 'The code workspace: Open editors and the Project tree on the left, with the tab strip above the code.'
-  caption: The code workspace.
-  crop:
-    rect:
-    - 0
-    - 250
-    - 688
-    - 650
-  fade:
-  - r
-  - t
+  setup:
+  - *boxfn
+  - *script
+  - *tabs
+  - {wait: 1500}
+  - {eval: "window.__stores.codeFiles.createCodeFile({name: 'wobble', quiet: true}).then((r) => { if (!r || !r.ok) throw new Error('createCodeFile: ' + (r && r.reason)); })"}
+  - {wait: 1500}
+  - *open
+  - {wait: 2500}
+  - {eval: "window.__stores.codeSidebars.toggleLeftSidebar(true); window.__stores.bottomDock.dockHeight.set(560)"}
+  - {wait: 1200}
+  - {eval: "window.__docsBox(document.getElementById('code-ws-dock').getBoundingClientRect(), 688, 520)"}
+  crop: {selector: '#docs-box'}
+  fade: []
   kind: ui
-  dpr: 1
-  from: img/code-workspace/sidebars.png
+  alt: >-
+    The code workspace: Open editors and the Project tree on the left, with the tab strip above the code. 1: Open
+    editors. 2: Project. 3: the tab strip.
+  caption: The code workspace.
+  annotate:
+  - {n: 1, at: {selector: '#code-ws-open-editors'}, shape: box, pad: 3, badge: b, key: '**Open editors**: every open tab, in the strip''s order.'}
+  - {n: 2, at: {selector: '#code-ws-project'}, shape: box, pad: 3, clip: true, badge: r, key: '**Project**: Graphs, Files and Module sources, with a search box.'}
+  - {n: 3, at: {selector: '#code-ws-tabs'}, shape: underline, clip: true, badge: b, key: 'The **tab strip**: one tab per open source.'}
 - id: files-menu
   replaces: img/code-workspace/files-menu.png
-  alt: 'The Project tree''s menu on a script: Rename, Move to, Cut, Delete, New file, New folder, Show in Explorer'
-  caption: The Project tree's menu on a script.
-  crop:
-    rect:
-    - 0
-    - 450
-    - 688
-    - 450
-  fade:
-  - r
-  - t
+  setup:
+  - *boxfn
+  - *tabs
+  - {wait: 1500}
+  - {eval: "window.__stores.codeFiles.createCodeFile({name: 'wobble', quiet: true}).then((r) => { if (!r || !r.ok) throw new Error('createCodeFile: ' + (r && r.reason)); window.__stores.dockMenu.dockTab('code'); })"}
+  - {wait: 2500}
+  - {eval: "window.__stores.codeSidebars.toggleLeftSidebar(true); window.__stores.bottomDock.dockHeight.set(720)"}
+  - {wait: 1200}
+  # right-click the row's far end, so the menu (it opens at the pointer) leaves the file name in view
+  - {rightClick: {text: wobble.js, within: '#code-ws-project', dx: 120}}
+  - {wait: 800}
+  - eval: >-
+      (() => { const dock = document.getElementById('code-ws-dock').getBoundingClientRect();
+      const menu = document.querySelector('[role="menu"]'); if (!menu) throw new Error('no menu');
+      const m = menu.getBoundingClientRect();
+      window.__docsBox({left: dock.left, top: dock.top, width: 688, height: Math.max(300, m.bottom + 12 - dock.top)}, 688, 640); })()
+  crop: {selector: '#docs-box'}
+  fade: [r, t]
   kind: ui
-  dpr: 1
-  from: img/code-workspace/files-menu.png
+  alt: >-
+    The Project tree's menu on the wobble.js script file: Rename, Move to, Cut, Delete, New file, New folder and
+    Show in Explorer. 1: the file. 2: the menu.
+  caption: The Project tree's menu on a script.
+  annotate:
+  - {n: 1, at: {text: wobble.js, within: '#code-ws-project'}, shape: box, badge: r, key: 'A **script file** in the Files group, right-clicked.'}
+  - {n: 2, at: {selector: '[role="menu"]'}, shape: bracket, side: r, clip: true, badge: r, key: 'Its **menu**: rename, move, cut, delete, or make a new file or folder beside it.'}
 - id: player-code
   replaces: img/code-workspace/player-code.png
-  alt: 'Player: walk open in the code workspace, with Engine source in the toolbar and the Player code row in the Project
-    tree'
-  caption: 'Player: walk open in the code workspace.'
-  crop:
-    rect:
-    - 0
-    - 250
-    - 688
-    - 470
-  fade:
-  - r
-  - t
-  - b
+  # a 688 px app window: the workspace's toolbar (Engine source sits at its right end) fits the column
+  device: window-688-tall
+  setup:
+  - *boxfn
+  - eval: >-
+      (async () => { const S = window.__stores;
+      const r = await S.aiTools.executeAiTool('create_flow_nodes', {graph: 'scene', nodes: [{ref: 'player', type: 'charcontroller', data: {label: 'Player: walk', mode: 'walk'}}]}, {physics: true});
+      if (!r || r.error || r.partial) throw new Error('create_flow_nodes: ' + JSON.stringify(r && (r.errors || r.error || r.warning)));
+      window.__docsScript = r.created[0].id; })()
+  - *tabs
+  - {wait: 1500}
+  - *open
+  - {wait: 2500}
+  - {eval: "window.__stores.codeSidebars.toggleLeftSidebar(true)"}
+  - {wait: 1000}
+  - {eval: "window.__docsBox(document.getElementById('code-ws-dock').getBoundingClientRect(), 688, 470)"}
+  crop: {selector: '#docs-box'}
+  fade: [b]
   kind: ui
-  dpr: 1
-  from: img/code-workspace/player-code.png
+  alt: >-
+    Player: walk open in the code workspace, with Engine source in the toolbar and the Player code row in the Project
+    tree. 1: Engine source.
+  caption: 'Player: walk open in the code workspace.'
+  annotate:
+  - {n: 1, at: {selector: '#code-ws-engine'}, shape: box, badge: b, key: '**Engine source**: the built-in walker code the Player steers, read-only.'}

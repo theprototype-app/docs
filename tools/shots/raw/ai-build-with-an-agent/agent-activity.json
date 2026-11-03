@@ -1,21 +1,53 @@
 {
  "id": "agent-activity",
- "dpr": 1,
- "shotAt": "2026-10-29T08:56:54.343Z",
+ "spec": "fd5050e9af5c",
+ "dpr": 2,
+ "shotAt": "2026-11-03T12:49:39.006Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/ai/agent-activity.png",
- "width": 500,
- "height": 440,
+ "uiHits": [
+  "header.wc-head",
+  "button.alog-head",
+  "div.alog-body",
+  "div.min-h-0",
+  "h2#wc-title-s2.wc-title",
+  "rect",
+  "div.alog-who",
+  "span.alog-time",
+  "button.alog-text",
+  "h2#ai-welcome-title.aw-title",
+  "section#ai-welcome.aw",
+  "section#connect-claude.cc"
+ ],
+ "width": 1000,
+ "height": 428,
  "crop": {
-  "x": 0,
-  "y": 0,
+  "x": 925,
+  "y": 60,
   "w": 500,
-  "h": 440
+  "h": 214
  },
- "cut": [],
- "fade": [],
- "anchors": {},
+ "cut": [
+  "b"
+ ],
+ "fade": [
+  "b"
+ ],
+ "anchors": {
+  "1": {
+   "x": 920.78125,
+   "y": 97,
+   "w": 13.21875,
+   "h": 33
+  },
+  "2": {
+   "x": 909.5,
+   "y": 248,
+   "w": 76.5,
+   "h": 37
+  }
+ },
  "kind": "ui"
 }

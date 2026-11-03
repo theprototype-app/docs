@@ -5,7 +5,7 @@ stands under the person's viewpoint, **walks, runs, strafes, jumps and idles** w
 where they look, and — when they are in **VR** — reaches for their controllers with its arms. The classic floating head
 is still there as a choice.
 
-![Another person's character, a Knight, standing where their camera is](img/avatars/peer-character.webp){ .shot width="1280" height="720" loading=lazy }
+![Another person's character, a Knight in grey armour with a red cape, standing in the scene where their camera is, seen from a little to the side.](img/avatars/peer-character.webp){ .shot .vignette width="960" height="720" loading=lazy }
 /// caption
 Another person's character stands where their camera is.
 ///
@@ -15,7 +15,7 @@ Another person's character stands where their camera is.
 Nine characters ship with the app: **Knight**, **Mage**, **Rogue**, **Hooded rogue**, **Barbarian**, **Skeleton**,
 **Skeleton warrior**, **Skeleton mage** and **Skeleton rogue**, from Kay Lousberg's free CC0 KayKit packs.
 
-![The nine characters of the character picker, standing together in a three by three grid.](img/avatars/characters.webp){ .shot width="1536" height="1536" loading=lazy }
+![The nine characters standing side by side: Knight, Mage, Rogue, Hooded rogue, Barbarian, Skeleton, Skeleton warrior, Skeleton mage and Skeleton rogue.](img/avatars/characters.webp){ .shot .vignette width="1440" height="540" loading=lazy }
 /// caption
 The nine characters.
 ///
@@ -87,7 +87,7 @@ When someone gives no input for a while, everyone sees their character **knocked
 the head sways in a slow figure-8, and its eyes turn into spinning stars. Any key, click, mouse move or head move wakes
 them, and it fades out smoothly.
 
-![Eight characters knocked off, stars circling their heads and in their eyes](img/avatars/knocked-off.webp){ .shot width="1280" height="720" loading=lazy }
+![Eight characters knocked off after a while without input, stars circling their heads and in their eyes.](img/avatars/knocked-off.webp){ .shot .vignette width="1440" height="560" loading=lazy }
 /// caption
 Knocked off: stars circle the head.
 ///

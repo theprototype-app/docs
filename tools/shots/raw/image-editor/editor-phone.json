@@ -1,21 +1,49 @@
 {
  "id": "editor-phone",
+ "spec": "287ce41dd9b3",
  "dpr": 2,
- "shotAt": "2026-10-27T07:46:24.521Z",
+ "shotAt": "2026-11-03T13:50:47.687Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/image-editor/editor-phone.png",
+ "uiHits": [
+  "div.border-b",
+  "button.ws-tab-btn",
+  "div.ws-panel-head",
+  "div#image-editor-tools.ie-pane",
+  "nav#ps-bar.ps-bar",
+  "button#image-editor-undo.tp-ui",
+  "span.flex-1",
+  "div.ie-section",
+  "div#image-editor-aspect.tp-ui",
+  "button#image-editor-crop.tp-ui",
+  "button#ps-add.ps-tab",
+  "svg.lucide"
+ ],
  "width": 780,
- "height": 1688,
+ "height": 1792,
  "crop": {
   "x": 0,
   "y": 0,
-  "w": 780,
-  "h": 1688
+  "w": 390,
+  "h": 896
  },
  "cut": [],
  "fade": [],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 2,
+   "y": 893.125,
+   "w": 387,
+   "h": 88
+  },
+  "2": {
+   "x": 314.375,
+   "y": 1649,
+   "w": 151.21875,
+   "h": 120
+  }
+ },
  "kind": "ui"
 }

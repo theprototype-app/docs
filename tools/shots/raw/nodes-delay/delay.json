@@ -1,18 +1,33 @@
 {
  "id": "delay",
- "dpr": 1.5,
- "shotAt": "2026-10-27T07:46:24.563Z",
+ "spec": "1e904d18586b",
+ "dpr": 2,
+ "shotAt": "2026-11-03T14:42:44.435Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/nodes/delay.png",
- "width": 1032,
- "height": 270,
+ "uiHits": [
+  "div.svelte-flow__pane",
+  "div.flex",
+  "div.relative",
+  "button.nodrag",
+  "span.text-text-muted",
+  "select.nodrag",
+  "input.dn-input",
+  "input.nodrag",
+  "div.svelte-flow__handle",
+  "path.svelte-flow__edge-interaction",
+  "label.relative",
+  "div.node-card"
+ ],
+ "width": 1300,
+ "height": 694,
  "crop": {
-  "x": 32,
-  "y": 0,
-  "w": 1032,
-  "h": 270
+  "x": 208,
+  "y": 284,
+  "w": 650,
+  "h": 347
  },
  "cut": [],
  "fade": [],

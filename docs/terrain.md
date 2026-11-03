@@ -88,10 +88,15 @@ The same brush works on **any** mesh, not just terrain: right-click an object �
 Since 1.38 a Terrain can be **painted with four texture layers**. Select it ▸ right-click ▸ **Sculpt terrain** (or
 Inspector ▸ **Terrain paint ▸ Paint…**) and pick the **Paint** brush after Raise / Lower / Smooth / Flatten.
 
-![A painted layer on a terrain](img/terrain/paint-layer.webp){ .shot .vignette width="1126" height="569" loading=lazy }
+![The Sculpt terrain toolbox with the Paint brush and layer 3 picked, beside a fresh patch of layer 3 painted onto the terrain. 1: the Paint brush. 2: the layer it paints.](img/terrain/paint-layer.webp){ .shot .fade-r width="664" height="439" loading=lazy }
 /// caption
 A painted layer on a terrain.
 ///
+
+<div class="shot-key" markdown>
+1. The **Paint** brush paints the picked layer where you drag.
+2. The **layer** it paints: four per terrain, each a colour and an optional image.
+</div>
 
 - Pick a **layer (1–4)** in the toolbox, then drag on the terrain. Radius and Strength are the sculpt brush's.
 - Inspector ▸ **Terrain paint** sets, per layer, a **colour**, a **texture** (import a file or drop an Explorer image)
@@ -105,10 +110,14 @@ A painted layer on a terrain.
 - One drag = **one undo step**. Peers see the stroke while you paint and exactly your result when you let go; the
   paint is saved with the scene.
 
-![Properties of a terrain with its Terrain paint section: four layers, each with a colour and an image, Paint… and Clear paint, and the Scatter section under it.](img/terrain/inspector-paint.webp){ .shot .fade-l width="688" height="720" loading=lazy }
+![Properties of a terrain: the Terrain paint section with four layers, each with a colour, an image picker and a tile size, how much of the terrain each covers, Paint… and Clear paint, and the Scatter section under it with the cones. 1: Paint…, which opens the brush on this terrain.](img/terrain/inspector-paint.webp){ .shot width="303" height="565" loading=lazy }
 /// caption
 Properties of a terrain with its Terrain paint section.
 ///
+
+<div class="shot-key" markdown>
+1. **Paint…** opens the Sculpt toolbox on this terrain with the Paint brush armed.
+</div>
 
 ## Scatter
 
@@ -117,10 +126,14 @@ grass tufts — onto the terrain. Since 1.43 a set can also **fill** the terrain
 and painted-layer masks, mix several models, and be edited instance by instance: see [Scatter](scatter.md), which also
 covers scatter on any other object.
 
-![The Scatter brush in the Sculpt toolbox, beside a terrain painted in patches of colour.](img/terrain/scatter-toolbox.webp){ .shot .fade-r width="688" height="720" loading=lazy }
+![The Scatter brush in the Sculpt toolbox: the Cone source, Paint and Erase, Density, Scale, Random rotation and Align to slope, beside the terrain's painted patches and a stand of scattered cones. 1: what the brush scatters.](img/terrain/scatter-toolbox.webp){ .shot .fade-r width="686" height="539" loading=lazy }
 /// caption
 The Scatter brush in the Sculpt toolbox.
 ///
+
+<div class="shot-key" markdown>
+1. **Scatter what**: a primitive, a Library model, a pack item or a prefab.
+</div>
 
 | Control | What it does |
 |---|---|
@@ -161,7 +174,7 @@ model has a **Collider**:
 Scatter brush has a **Collider** pick too: it is what a *newly* scattered model starts with — painting more rocks into
 an existing set never changes that set's collider.
 
-![Properties ▸ Scatter: the Dodecahedron rocks set to Mesh hull, the cones left at None](img/terrain/scatter-collider.webp){ .shot .fade-l width="688" height="900" loading=lazy }
+![Properties ▸ Scatter on a terrain with two models: the Dodecahedron rocks with Collider set to Mesh hull, and the cones left at None, with the instance total and the Scatter… button under them.](img/terrain/scatter-collider.webp){ .shot width="303" height="478" loading=lazy }
 /// caption
 Properties ▸ Scatter.
 ///

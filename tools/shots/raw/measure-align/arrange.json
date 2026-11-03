@@ -1,23 +1,49 @@
 {
  "id": "arrange",
- "dpr": 1,
- "shotAt": "2026-10-27T07:46:24.546Z",
+ "spec": "99c8658f9013",
+ "dpr": 2,
+ "shotAt": "2026-11-03T13:32:17.764Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/measure-align/arrange.png",
- "width": 688,
- "height": 900,
+ "uiHits": [
+  "div#inspector.tp-ui",
+  "div.flex",
+  "svg.lucide",
+  "div.tp-ui",
+  "span.pr-label",
+  "div#arrange-section.flex",
+  "button.sec-panel-head",
+  "span.sec-title",
+  "div#arrange-align-to.tp-ui",
+  "button#arrange-align-x-min.tp-ui",
+  "button#arrange-align-y-min.tp-ui",
+  "button#arrange-align-z-min.tp-ui"
+ ],
+ "width": 622,
+ "height": 758,
  "crop": {
-  "x": 752,
-  "y": 0,
-  "w": 688,
-  "h": 900
+  "x": 1125,
+  "y": 294,
+  "w": 311,
+  "h": 379
  },
  "cut": [],
- "fade": [
-  "l"
- ],
- "anchors": {},
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 232,
+   "y": 91,
+   "w": 317.46875,
+   "h": 76
+  },
+  "2": {
+   "x": 328.15625,
+   "y": 655,
+   "w": 273.84375,
+   "h": 64
+  }
+ },
  "kind": "ui"
 }

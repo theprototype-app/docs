@@ -1,21 +1,49 @@
 {
  "id": "clip-tools",
- "dpr": 1,
- "shotAt": "2026-10-31T14:06:04.426Z",
+ "spec": "cfae3460e6e8",
+ "dpr": 2,
+ "shotAt": "2026-11-03T12:49:56.241Z",
  "app": {
-  "version": "earlier"
+  "version": "1.54.3",
+  "sha": "9c202d15"
  },
- "from": "img/characters-and-motion/clip-tools.png",
- "width": 223,
- "height": 329,
+ "uiHits": [
+  "div#animation-dock.fixed",
+  "div.flex",
+  "span.text-[10px]",
+  "span.min-w-0",
+  "button.flex",
+  "button#clip-play.ui-button-quiet",
+  "div#clip-tools.flex",
+  "button#clip-mode-inplace.tp-seg-btn",
+  "label.flex",
+  "button#clip-loop-it.ui-button-quiet",
+  "span.w-14",
+  "div#clip-trim.flex"
+ ],
+ "width": 744,
+ "height": 886,
  "crop": {
-  "x": 0,
-  "y": 0,
-  "w": 223,
-  "h": 329
+  "x": 6,
+  "y": 334,
+  "w": 372,
+  "h": 443
  },
  "cut": [],
  "fade": [],
- "anchors": {},
+ "anchors": {
+  "1": {
+   "x": 215.5625,
+   "y": 346,
+   "w": 128.8125,
+   "h": 26.65625
+  },
+  "2": {
+   "x": 20,
+   "y": 517.96875,
+   "w": 256.1875,
+   "h": 56
+  }
+ },
  "kind": "ui"
 }

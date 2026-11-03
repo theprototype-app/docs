@@ -94,6 +94,13 @@ const union = (boxes) => {
 function callout(a, t, W, H, s, seed) {
 	const opts = { seed, roughness: 0.9, bowing: 1, strokeWidth: 1, preserveVertices: false };
 	const pad = (a.pad ?? 7) * s;
+	// `clip: true`: mark only the part of the element the crop shows (a list or menu taller than the crop)
+	if (a.clip) {
+		const m = pad + 4 * s;
+		const x0 = Math.max(t.x, m), y0 = Math.max(t.y, m);
+		const x1 = Math.min(t.x + t.w, W - m), y1 = Math.min(t.y + t.h, H - m);
+		t = { x: x0, y: y0, w: Math.max(0, x1 - x0), h: Math.max(0, y1 - y0) };
+	}
 	const parts = [];
 	const boxes = [];
 	const shape = a.shape || 'circle';

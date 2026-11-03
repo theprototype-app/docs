@@ -21,9 +21,21 @@ re-shot after a release. The owner's rules (batch 1 review, 2026-10-29) hold for
 - **Two parts of one screen** that do not fit side by side in one crop are two tiles (`variants` with their own `crop`,
   `compose: row`), and the caption says they are cut from one screen. On an interface tile the name sits in a strip
   under the tile, never over a control.
-- **A state one headless browser cannot make** (two peers, a headset, a game mid-round) is re-cropped from the older
-  capture: `from:` the file, `dpr:` the file's own, and it follows every other rule. Those are owed a real dpr-2 shot;
-  the file stays in `docs/img` so the re-crop can be repeated.
+- **A state one page cannot make by itself** is made by the **rig** (`lib/rig.cjs`, roadmap 83 V11), so it re-shoots
+  on every release like any other still:
+  - `peers: [{name, role: edit|view, look: {character}, agent: true, device, storage, setup: [steps]}]` — real guest
+    pages in the same browser dial the shot's page and are approved with the role's own button. `agent: true` opens an
+    AI agent's page (the `agentApi` switch the agent bridge sets): it shows with the robot, and its
+    `window.tpAgent.exec(…)` edits land in Agent activity. Step `{on: <name>, steps: […]}` runs steps in a guest.
+  - `xr: {device, head}` — IWER (Meta's emulated Quest 3) owns `navigator.xr` before the app boots; step
+    `{xr: enter}` presses Play like a person in a headset. A panel drawn on a texture is shot with step
+    `{canvas: "<expression giving the canvas>"}` (a copy at its own pixels, `#docs-canvas`, then `crop: {selector:
+    '#docs-canvas'}`); the 3D view in the headset is the page's own canvas.
+  - step `{popup: [steps that open a window]}` + `capture: popup` — the shot is taken in the new browser window
+    (a popped-out panel or dock). From `device: window-688` the window is 688 wide too.
+  - Cross-scene presence (the people in a project's *other* rooms) can show real accounts on production: a shot with
+    guests hides `#cross-scene-presence`.
+  Only what no browser can draw stays a re-crop (`from:` the file, `dpr:` its own); those are listed in the summary.
 
 ## 2. Centred
 
@@ -87,7 +99,9 @@ Configure Scene ▸ View: how the scene is drawn on your screen.
 House style (owner, 2026-10-26): hand-drawn strokes, clean numbered badges, at most three handwritten words per
 callout, one warm accent; fade only a side the crop cut, a vignette on a 3D crop; loops 3–8 s, muted, ≤ 600 KB,
 paused under reduced motion; each still ≤ 250 KB. Shoot on a **remote** e2e slot (`E2E_PC=`): a pc slot draws no
-ambient occlusion.
+ambient occlusion. A remote slot tunnels every name `/etc/hosts` puts on the Deck back to it, `theprototype.app`
+included, so the deployed app's own calls there (the CC0 proxy behind Free assets) would fail: `shoot.cjs` and
+`probe.cjs` re-run themselves with `PW_REMOTE_EXPOSE='<loopback>'` (lib/remote.cjs) unless you set it.
 
 ## On a release (V12)
 

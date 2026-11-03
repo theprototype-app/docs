@@ -5,88 +5,131 @@ defaults:
   dpr: 2
   format: webp
 shots:
+# 83-batch3: a picture drawn on a canvas and added to the Library (explorer.addItemFromBytes), then opened with
+# imageEditor.openImageEditor — core's image-editor suite recipe. The floating editor opens 820 px wide: a css step
+# narrows it to the column (it is resizable, min 420).
 - id: editor-desktop
   replaces: img/image-editor/editor-desktop.png
-  alt: 'The Image editor on a computer: the picture on the left, the Edit page with Rotate and flip, Crop, Resize and Adjust
-    on the right'
-  caption: The Image editor on a computer.
-  crop:
-    rect:
-    - 300
-    - 40
-    - 688
-    - 700
-  fade:
-  - l
-  - r
-  - t
-  - b
   kind: ui
-  dpr: 1
-  from: img/image-editor/editor-desktop.png
+  scene: &picture
+    - eval: >-
+        (async () => {
+          const c = document.createElement('canvas'); c.width = 640; c.height = 420;
+          const x = c.getContext('2d');
+          const sky = x.createLinearGradient(0, 0, 0, 300); sky.addColorStop(0, '#2c4f86'); sky.addColorStop(1, '#f2a65a');
+          x.fillStyle = sky; x.fillRect(0, 0, 640, 420);
+          x.fillStyle = '#ffd56b'; x.beginPath(); x.arc(420, 250, 46, 0, Math.PI * 2); x.fill();
+          x.fillStyle = '#3d6b4a'; x.beginPath(); x.moveTo(0, 300); x.quadraticCurveTo(180, 220, 360, 300); x.quadraticCurveTo(500, 350, 640, 280); x.lineTo(640, 420); x.lineTo(0, 420); x.fill();
+          x.fillStyle = '#2a4d36'; x.beginPath(); x.moveTo(0, 360); x.quadraticCurveTo(260, 300, 640, 370); x.lineTo(640, 420); x.lineTo(0, 420); x.fill();
+          const blob = await new Promise((r) => c.toBlob(r, 'image/png'));
+          const rec = await window.__stores.explorer.addItemFromBytes(await blob.arrayBuffer(), 'sunset.png', null, { imported: true });
+          window.__docsImage = rec.id;
+        })()
+  setup:
+    - {css: '#image-editor-window{width:680px!important;height:780px!important}'}
+    - {eval: "window.__stores.imageEditor.openImageEditor(window.__docsImage)"}
+    - {wait: 2500}
+  crop: {selector: '#image-editor-window'}
+  fade: []
+  alt: >-
+    The Image editor on a computer: the picture on the left, and on the right the Edit page with Rotate and flip,
+    Crop, Resize and Adjust, Save and Save as copy above. 1: rotate and flip. 2: Crop. 3: the Adjust sliders.
+  caption: The Image editor on a computer.
+  annotate:
+    - {n: 1, at: {union: [{selector: '#image-editor-rotate-ccw'}, {selector: '#image-editor-flip-v'}]}, shape: box, pad: 3, badge: b, key: '**Rotate** 90° either way and **flip**.'}
+    - {n: 2, at: {selector: '#image-editor-crop'}, shape: box, pad: 3, badge: l, key: '**Crop…** draws a crop box over the picture.'}
+    - {n: 3, at: {union: [{selector: '#image-editor-brightness'}, {selector: '#image-editor-saturation'}]}, shape: bracket, badge: l, key: '**Adjust**: brightness, contrast and saturation.'}
 - id: crop-desktop-light
   replaces: img/image-editor/crop-desktop-light.png
-  alt: 'Cropping on a computer in the light theme: the crop box over the picture, with X, Y, W and H and Apply crop in the
-    sidebar'
-  caption: Cropping on a computer in the light theme.
-  crop:
-    rect:
-    - 180
-    - 40
-    - 688
-    - 700
-  fade:
-  - l
-  - r
-  - t
-  - b
+  theme: light
   kind: ui
-  dpr: 1
-  from: img/image-editor/crop-desktop-light.png
+  scene: *picture
+  setup:
+    - {css: &narrow '#image-editor-window{width:680px!important;height:560px!important}'}
+    - {eval: "window.__stores.imageEditor.openImageEditor(window.__docsImage)"}
+    - {wait: 2500}
+    - {click: '#image-editor-crop'}
+    - {wait: 500}
+    # a crop box drawn with the mouse (core §5)
+    - {press: {selector: '#image-editor-canvas-wrap', dx: -110, dy: -70}}
+    - {moveTo: {selector: '#image-editor-canvas-wrap', dx: 90, dy: 60}, steps: 12}
+    - {release: true}
+    - {wait: 600}
+  crop: {selector: '#image-editor-window'}
+  fade: []
+  alt: >-
+    Cropping on a computer in the light theme: the crop box drawn over the picture with its size badge, and in the
+    sidebar the crop shape, X, Y, W and H and Apply crop. 1: the crop box. 2: X, Y, W and H. 3: Apply crop.
+  caption: Cropping on a computer in the light theme.
+  annotate:
+    - {n: 1, at: {selector: '#image-editor-crop-badge'}, shape: underline, badge: b, key: 'The **crop box**: drag it or its corners; Enter applies, Esc cancels.'}
+    - {n: 2, at: {union: [{selector: '#image-editor-crop-x'}, {selector: '#image-editor-crop-h'}]}, shape: box, pad: 3, badge: l, key: '**X**, **Y**, **W**, **H**: the box in pixels.'}
+    - {n: 3, at: {selector: '#image-editor-crop-apply'}, shape: box, pad: 3, badge: l, key: '**Apply crop**.'}
 - id: versions-desktop
   replaces: img/image-editor/versions-desktop.png
-  alt: 'The Versions page: Restore original at the top, the current edit and the original below it'
-  caption: The Versions page.
-  crop:
-    rect:
-    - 300
-    - 40
-    - 688
-    - 700
-  fade:
-  - l
-  - r
-  - t
-  - b
   kind: ui
-  dpr: 1
-  from: img/image-editor/versions-desktop.png
+  scene: *picture
+  setup:
+    - {css: *narrow}
+    - {eval: "window.__stores.imageEditor.openImageEditor(window.__docsImage)"}
+    - {wait: 2500}
+    - {click: '#image-editor-rotate-cw'}
+    - {click: '#image-editor-save'}
+    - {wait: 2000}
+    - {click: '#image-editor-window [data-ws-mode="history"]'}
+    - {wait: 800}
+  crop: {selector: '#image-editor-window'}
+  fade: []
+  alt: >-
+    The Versions page after one Save: Restore original at the top, then the current edit and the original image
+    below it. 1: Restore original.
+  caption: The Versions page.
+  annotate:
+    - {n: 1, at: {selector: '#image-editor-restore-original'}, shape: box, pad: 3, badge: b, key: '**Restore original** puts the image back as it was imported; every Save keeps the version before it.'}
+# in a 688 px wide app window, so the whole dock is the column's width
 - id: docked
   replaces: img/image-editor/docked.png
-  alt: The Image editor as a tab in the bottom dock, beside Animation, Node editor, Explorer, Flow Code and UV editor
-  caption: The Image editor as a tab in the bottom dock.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 688
-    - 337
-  fade:
-  - r
+  device: window-688-tall
   kind: ui
-  dpr: 1
-  from: img/image-editor/docked.png
+  scene: *picture
+  setup:
+    - {eval: "const d=window.__stores.dockMenu; for (const k of ['flow', 'explorer']) d.dockTab(k)"}
+    - {wait: 1200}
+    - {eval: "window.__stores.imageEditor.openImageEditor(window.__docsImage)"}
+    - {wait: 2000}
+    # the window's own Dock button (setDocked(true) → activateDock), pressed in the DOM: at 688 px the floating
+    # window's header can sit where a pointer cannot reach it. Then fail loudly if no tab came of it.
+    - {eval: "document.getElementById('image-editor-dock-btn').click()"}
+    - {wait: 1500}
+    - {eval: "if (!document.querySelector('.dt-tabs [data-dock-tab=\"imageEditor\"], .dt-tabs [data-dock-half=\"imageEditor\"]')) throw new Error('no Image editor dock tab; tabs: ' + [...document.querySelectorAll('[data-dock-tab]')].map((e) => e.dataset.dockTab).join(', '))"}
+    # the strip scrolls sideways (6 tabs in 688 px): bring the new tab into view
+    - {eval: "document.querySelector('.dt-tabs [data-dock-tab=\"imageEditor\"]')?.scrollIntoView({block: 'nearest', inline: 'nearest'})"}
+    - {wait: 300}
+  crop: {union: [{selector: '.dt-tabs'}, {selector: '#image-editor-dock'}], pad: 8, maxHeight: 368}
+  fade: [b]
+  alt: >-
+    The Image editor as a tab in the bottom dock, beside the Node editor and the Explorer,
+    with the picture and its tools below the tabs. 1: the Image editor tab.
+  caption: The Image editor as a tab in the bottom dock.
+  annotate:
+    - {n: 1, at: {selector: '.dt-tabs [data-dock-tab="imageEditor"]'}, shape: box, pad: 3, label: docked, badge: b, key: 'Docked, the **Image editor** is one more tab in the bottom dock.'}
+# a phone: a sheet over the bottom, the Play bar left uncovered (core §11); the whole screen is the shot
 - id: editor-phone
   replaces: img/image-editor/editor-phone.png
-  alt: 'The Image editor on a phone: the picture at the top, the Edit page under it, the bottom bar with Play below'
-  caption: The Image editor on a phone.
-  crop:
-    rect:
-    - 0
-    - 0
-    - 780
-    - 1688
-  fade: []
+  device: n6-folded
   kind: ui
-  dpr: 2
-  from: img/image-editor/editor-phone.png
+  scene: *picture
+  setup:
+    - {eval: "window.__stores.imageEditor.openImageEditor(window.__docsImage)"}
+    - {wait: 2500}
+    - {click: '#image-editor-window [data-ws-mode="edit"]'}
+    - {wait: 800}
+  crop: {rect: [0, 0, 390, 896]}
+  fade: []
+  alt: >-
+    The Image editor on a phone: the picture at the top, the Edit page under it, and the bottom bar with Play below.
+    1: the Edit page. 2: Play, still reachable.
+  caption: The Image editor on a phone.
+  annotate:
+    - {n: 1, at: {selector: '#image-editor-window [data-ws-mode="edit"]'}, shape: underline, pad: -12, badge: b, key: 'The **Edit** and **Versions** pages switch under the picture.'}
+    - {n: 2, at: {selector: '#ps-play'}, shape: box, pad: 3, badge: t, key: 'The sheet leaves **Play** uncovered.'}

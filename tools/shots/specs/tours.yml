@@ -2,13 +2,17 @@
 page: tours
 defaults: {device: desktop, theme: dark, dpr: 2, format: webp}
 shots:
+  # 83-batch3 (V11): a real VR entry on an emulated Quest 3 (IWER, lib/rig.cjs `xr:`); the panel is a texture in the
+  # world, so the shot is that texture at its own pixels (#docs-canvas), what the headset draws on the panel
   - id: vr-welcome
     replaces: img/tours/vr-welcome.png
-    # a panel drawn on a headset texture: no headset here, so re-cropped from the existing capture (QUESTIONS Q1)
-    from: img/tours/vr-welcome.png
-    dpr: 2
+    xr: {}
+    storage: {toursUnderTest: 'true'}
+    setup:
+      - {xr: enter, wait: 4000}
+      - {canvas: "window.__stores.tourVR.tourVRDebug().canvas"}
+    crop: {selector: '#docs-canvas'}
     kind: ui
-    crop: {rect: [0, 0, 1024, 640]}
     fade: []
     alt: >-
       Step 1 of the VR welcome: the title Welcome to ThePrototype VR mode, a drawing of both controllers with their
