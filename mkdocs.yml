@@ -234,6 +234,7 @@ nav:
     - "Recipe: pixel art with Pixling": ai/pixling.md
     - "Recipe: Agents + Blender": ai/agents-and-blender.md
     - Shapes and modelling with an agent: ai/agent-geometry.md
+    - Worlds with an agent: ai/agent-world.md
     - Use theprototype from claude.ai and voice: ai/claude-connector.md
     - Providers: ai/providers.md
     - Local & Small Models: ai/local-models.md

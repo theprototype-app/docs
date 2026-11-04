@@ -108,10 +108,28 @@ For shapes that none of the other tools make.
 | `name`, `position`, `rotation`, `scale`, `color`, `physics` | as in `create_objects` |
 | `parentUuid` | a group to make it in: the position, rotation, scale and the vertices are then in the group's own space |
 | `castShadow`, `receiveShadow` | shadows, on by default |
+| `subdivide` | `1` or `2` smooths the mesh (Catmull-Clark subdivision, since 1.60): corners round off, so a box of six quads becomes a rounded pebble and a few quads become a soft, organic shape. Each level makes about four times the faces, and the result must still fit the limits. Smooth shading comes with it unless `smooth: false`. |
 
 The reply says how many triangles were made. A quad face stays one face in Edit Mesh, so the mesh is ready
 for `edit_mesh`. **Material slots last** through later `edit_mesh` calls; **vertex colours last** only while an edit
 keeps the number of vertices (an extrude, for example, drops them).
+
+### update_mesh: new data for a mesh (since 1.60)
+
+Changes a mesh `create_mesh` made, keeping its uuid, its place and its materials. The whole call is one undo step.
+
+| field | what it does |
+|---|---|
+| `uuid` | the mesh |
+| `mode` | `replace`: every vertex and face again, with the same fields and limits as `create_mesh` (`uvs`, `colors`, `faceMaterials`, `subdivide`) · `patch`: new positions for some vertices, keeping the faces |
+| `offset` | `patch`: the first vertex index to replace; `vertices[0]` lands there |
+| `vertices` | the new positions |
+| `uvs`, `colors` | `patch`: new values from `offset` on, as for vertices |
+| `smooth`, `subdivide` | as in `create_mesh` (a patch keeps the mesh's subdivision) |
+
+A patch needs the vertex list the mesh was made from. That list is kept in the tab that made the mesh, so after a
+reload, or for a mesh made somewhere else, use `replace`. Primitives change with `set_geometry`, and any mesh can be
+modelled with `edit_mesh`.
 
 ### create_shapes: many shapes in one step
 
