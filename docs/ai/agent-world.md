@@ -11,6 +11,12 @@ that change things; it can still search for assets.
 !!! note "New in 1.60"
     Everything on this page is new in 1.60.
 
+!!! tip "Try it"
+    **Templates ▸ Game plot** opens an empty plot (the ground, a start pad, a finish arch, a fire pit and four gems).
+    Ask for hills with a forest and a lake, a campfire with its crackle, a race HUD with a timer and a start on the pad,
+    then *"check my game"*. While Claude is connected, the **Connect Claude** row says so until it has used one of
+    these tools.
+
 ## Find and place assets
 
 ### search_assets: find something to build with

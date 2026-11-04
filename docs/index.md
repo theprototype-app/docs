@@ -52,6 +52,15 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.60 — an agent builds the game around your scene.** Claude (or any agent) can now make
+[hills, forests, water, fire and sound](ai/agent-world.md), find and place assets and save prefabs, give the game
+[a HUD, a sky with fog and a place to start](ai/agent-scene.md), and then [check the game](ai/agent-runtime.md): what
+would not work when someone presses Play and why a button did nothing. Point at a spot and say
+["put a lamp here"](ai/agent-spatial.md): it builds at your ping, stands things on the floor or flat on a wall, and
+keeps out of a headset wearer's way. A change to the whole scene's sky or light asks the host first. On claude.ai the
+connector gains four tools (`hud`, `game_setup`, `effects`, `run`): it sees them after it reconnects. To try it, open
+the **Game plot** template, connect Claude and ask for a forest on hills, a campfire that crackles and a race HUD.
+
 **1.59 — looks finished everywhere.** A material takes [normal, roughness, metalness, emission and AO maps](materials.md#maps)
 beside its colour image, with tiling, offset and rotation, and **Load a set of maps…** sorts a texture set into its
 slots by file name. Skies are [much sharper](camera.md#how-sharp-the-sky-is) — up to 4K, 8K for Meadow, a small one
