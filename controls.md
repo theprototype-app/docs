@@ -839,7 +839,7 @@ places keys belong to.
 - **Add** — the full primitive catalog (meshes, building blocks, [architecture](https://docs.theprototype.app/architecture.md) — walls, doors, windows and stairs — cameras, lights, [water](https://docs.theprototype.app/water.md), [effects](https://docs.theprototype.app/particles.md), a [fluid tank](https://docs.theprototype.app/simulation.md#fluid-tank)) plus empty groups; objects spawn at the clicked point.
 - **Undo / Redo**, **Ping here**.
 - **Selected ▸** — the selected object's own menu (shown only while something is selected).
-- **Tools** — Node editor, Draw mode (drag 3D strokes on surfaces, or click out an editable [spline](https://docs.theprototype.app/splines.md)), Measure distance, Simulate physics (and *Reset simulation* while one runs), [Recording…](https://docs.theprototype.app/recording.md) (a turntable or flythrough video).
+- **Tools** — Node editor, Draw mode (drag 3D strokes on surfaces, or click out an editable [spline](https://docs.theprototype.app/splines.md)), Measure distance, Simulate physics (and *Reset simulation* while one runs), [Recording…](https://docs.theprototype.app/recording.md) (export a Timeline, turntable or flythrough as MP4, WebM, GIF, WebP or PNG frames).
 - **Snapping** — position / rotation / scale steps, snap to surface, element snapping, *More snapping settings…* (see [Snapping](https://docs.theprototype.app/snapping.md)).
 - **View** — Show grid, Grid & axes settings…, Show helpers in Play (debug), the Mouse wheel mode, Scene look…, Screenshot.
 - **Module tools** — the toolboxes of installed modules.

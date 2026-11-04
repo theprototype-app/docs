@@ -57,6 +57,13 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.58 — film with your phone, share it as a video.** [Film with your phone](https://docs.theprototype.app/film.md) makes your phone the viewfinder
+of a camera in the scene: turn it to look around, walk or use the stick to move, zoom, tilt and pull focus, and press
+**●** — the take is recorded while the Timeline plays and lands on it as keyed [Property tracks](https://docs.theprototype.app/timeline.md#tracks),
+which **Smooth keys** evens out. [Export a Video or GIF](https://docs.theprototype.app/recording.md) now writes MP4, WebM, GIF, animated WebP or PNG
+frames, frame by frame, with a progress bar and Cancel while you keep working; a Film take has **Export video** right
+on its sheet. To try it, open **Templates ▸ Film set**, a small stage that keeps moving.
+
 **1.57 — shared games start fast.** Play links, embeds and pasted links now open the [play view](https://docs.theprototype.app/share-a-game.md): the
 game, its HUD and touch controls and none of the editor — about a third less to load, so a shared game's first picture
 comes several seconds sooner on a phone. **Invite ▸ Person** has a [Play link](https://docs.theprototype.app/share-a-game.md#play-together-from-a-link)
@@ -1525,7 +1532,7 @@ places keys belong to.
 - **Add** — the full primitive catalog (meshes, building blocks, [architecture](https://docs.theprototype.app/architecture.md) — walls, doors, windows and stairs — cameras, lights, [water](https://docs.theprototype.app/water.md), [effects](https://docs.theprototype.app/particles.md), a [fluid tank](https://docs.theprototype.app/simulation.md#fluid-tank)) plus empty groups; objects spawn at the clicked point.
 - **Undo / Redo**, **Ping here**.
 - **Selected ▸** — the selected object's own menu (shown only while something is selected).
-- **Tools** — Node editor, Draw mode (drag 3D strokes on surfaces, or click out an editable [spline](https://docs.theprototype.app/splines.md)), Measure distance, Simulate physics (and *Reset simulation* while one runs), [Recording…](https://docs.theprototype.app/recording.md) (a turntable or flythrough video).
+- **Tools** — Node editor, Draw mode (drag 3D strokes on surfaces, or click out an editable [spline](https://docs.theprototype.app/splines.md)), Measure distance, Simulate physics (and *Reset simulation* while one runs), [Recording…](https://docs.theprototype.app/recording.md) (export a Timeline, turntable or flythrough as MP4, WebM, GIF, WebP or PNG frames).
 - **Snapping** — position / rotation / scale steps, snap to surface, element snapping, *More snapping settings…* (see [Snapping](https://docs.theprototype.app/snapping.md)).
 - **View** — Show grid, Grid & axes settings…, Show helpers in Play (debug), the Mouse wheel mode, Scene look…, Screenshot.
 - **Module tools** — the toolboxes of installed modules.
@@ -7136,6 +7143,7 @@ undoable, and they play in exported and published games.
 | **Animation** | Starts one of an object's clips — one you authored in the [Animation](https://docs.theprototype.app/animation.md) editor, or one the model was imported with. |
 | **Audio** | Plays a sound from the Explorer, cut at the item's end. |
 | **Event** | Fires a named event into the node graph — the [On Sequence Event](https://docs.theprototype.app/nodes/onseqevent.md) node pulses. |
+| **Property** | *New in 1.58.* Keys one value over time — a camera's zoom, roll, focus or aperture. A [Film](https://docs.theprototype.app/film.md) take records these; each key shows as a diamond. |
 
 ## Building a sequence
 
@@ -7173,6 +7181,20 @@ undoable, and they play in exported and published games.
 
 A track's **…** menu renames it, moves it up or down, or deletes it; its speaker button mutes it.
 
+### Smoothing a recorded take
+
+A take filmed by hand wobbles. On a **Property** track, the **…** menu's **Smooth keys** evens out the wobble and keeps
+every key at its time, so cuts and markers stay where they were. It is one undo step; press it again to smooth more.
+
+![The Timeline in a small window holding a Film take: two property tracks, Field of view · Film camera and Dutch roll · Film camera, each a row of key diamonds recorded by hand. 1: a key. 2: the track menu with Smooth keys.](https://docs.theprototype.app/img/timeline/property-track.webp)
+*Figure: A Film take on the Timeline: the field of view and the roll, keyed.*
+
+1. A **key**: the value the take recorded at that moment.
+2. The track menu (**…**) has **Smooth keys**.
+
+From 1.58, a track made by a newer version of the app says *Made with a newer version of the app* and is kept as it
+is: it is shared and saved back unchanged, but this version cannot play or edit it.
+
 ## Playing it in the game
 
 - **[Play Sequence](https://docs.theprototype.app/nodes/playseq.md)** node (Animation group): wire a trigger in — On Click, On Enter, Key Press.
@@ -7205,9 +7227,158 @@ scroll under them.
   them mid-clip.
 - A preview never fires graph events, so it cannot change the game state for one player only.
 - Scenes with sequences need 1.39 or later to show them; older versions open the scene without its sequences.
+- Property tracks need 1.58 or later. 1.57 and older show one as an empty Event track, and saving the scene there loses
+  its keys.
 
 ![The Timeline in the light theme, in a small window: the Intro sequence with its Camera, Animation, Audio and Event tracks, a Cam A → Cam B shot, a Door clip, whoosh.wav and a boom event.](https://docs.theprototype.app/img/timeline/tracks-light.webp)
 *Figure: The Timeline in the light theme.*
+
+
+---
+
+Source: https://docs.theprototype.app/film/ (Markdown: https://docs.theprototype.app/film.md)
+
+# Film with your phone
+
+Your phone becomes the viewfinder of a camera in the scene. Hold it up and turn it to look
+around, use the stick to move, and press **●** to record. The shot is added to the
+[Timeline](https://docs.theprototype.app/timeline.md) while the Timeline plays, so you can film moving scenes.
+
+## Opening Film mode
+
+- **Phone:** **More ▸ Film with phone**.
+- **Any device:** right-click a camera ▸ **Film with this camera**, or press **Film** beside
+  **Preview** in the camera's Inspector section.
+
+Opened from **More**, Film asks which camera to film through. Pick one, or press
+**New camera here** to place a camera where you are looking.
+
+![Film's camera picker on a folded phone: Film camera, the scene's camera, and New camera here, which places a camera where you are looking.](https://docs.theprototype.app/img/film/picker.webp)
+*Figure: The camera picker on a folded OPPO Find N6.*
+The first time you open Film, a tip at the top says how to film. It goes away after your
+first shot, or when you press its **✕** (Settings ▸ Interface ▸ **Reset tips** brings it back).
+
+![Film mode on a folded phone, looking through the Film camera at the crate and the ball: the first-use tip at the top says how to film, the lens controls and the round record button sit at the bottom.](https://docs.theprototype.app/img/film/filming.webp)
+*Figure: Filming through the Film camera, with the first-use tip.*
+While you film, the rest of the editor is hidden. The 3D view is cropped to the camera's
+aspect ratio, so the picture on screen is exactly what gets recorded. Press **✕** (or **Esc**
+on a keyboard) to leave. Leaving does not move the camera object.
+
+## Looking around
+
+| Control | What it does |
+|---|---|
+| Turn and tilt the phone | The camera turns with it. It works in portrait and in landscape. |
+| **Recentre** (⌖, or **R**) | Makes the direction the phone points right now "straight ahead" for this camera. |
+| **Horizon lock** | Keeps the picture level however the phone leans. |
+| Drag the picture | Turns the view. This is the only way to look on a device without motion sensors, such as a desktop. |
+
+On an iPhone, press **Use phone motion** the first time and allow motion access. If you
+decline, you can still drag to look.
+
+## Moving
+
+- **Stick** (bottom left): moves along the floor in the direction you are looking.
+- **▲ / ▼**: rise and sink. **m/s** cycles the speed (0.5 to 8 metres per second).
+- On a keyboard: **W A S D** to move, **E / Q** to rise and sink.
+- **Mini-map** (🗺): a top-down map of the scene. Tap a spot to move the camera there.
+
+### Walk with the phone (Android)
+
+On an Android phone with Chrome and Google Play Services for AR, open the **settings**
+(the sliders button) and press **Track my movement**. Your real steps now move the
+camera. **Walk scale** sets how far the camera moves for each metre you walk:
+
+- 0.1 is good for a miniature set.
+- 20 lets you cross a city in a few steps.
+
+The stick, **Recentre** and the mini-map keep working while you walk. Press the
+**Walking** chip to stop.
+
+!!! note
+    While you walk, the phone's AR view shows the scene at the phone camera's own lens. Zoom
+    and dutch angle are still recorded, and you see them when you play the take back.
+
+## The lens
+
+- **Zoom:** pinch the picture, or drag the rail on the right edge. The lens buttons
+  **18 / 24 / 35 / 50 / 85 mm** jump straight to those lenses, and a pinch or drag that ends
+  close to one snaps to it.
+- **Settings ▸ Smoothing:** steadies a shaky hand. The recording keeps the steadied
+  movement, and the raw movement is saved alongside it.
+- **Settings ▸ Dutch:** tilts the picture on purpose. Double-click the slider to reset it.
+- **Settings ▸ Depth of field:** turns on focus and aperture. Tap something in the picture to
+  pull focus to it, and use **Aperture** to set how blurry the background gets (f/1.4 is very
+  blurry, f/16 keeps almost everything sharp). If the camera's [look](https://docs.theprototype.app/post-processing.md) has
+  no **Depth of field** effect yet, Film offers to add one.
+
+## Rigs
+
+Choose a rig in **Settings ▸ Rig**:
+
+- **Handheld:** the default.
+- **Tripod:** the camera stays in place and only turns.
+- **Track:** tap an object and the camera keeps it framed the way it was when you tapped,
+  even as you move.
+
+## Guides
+
+**Settings ▸ Guides** draws a rule-of-thirds grid, a safe area, and a level line that turns
+green when the picture is level. **Mask** shows a 16:9, 9:16 or 2.39:1 frame inside the
+shot. Guides are never recorded.
+
+## Recording
+
+1. Press **●**. With **3-2-1 countdown** turned on, the phone counts down and buzzes first.
+   The Timeline plays from its playhead while you film.
+2. Press **❚❚** to pause. The shot so far is added to the Timeline as a single undo step.
+3. Press **●** again and choose how to continue:
+
+    ![After a pause, Film asks how to continue: Cut (a new shot) or Move (fly there, same shot).](https://docs.theprototype.app/img/film/resume-ask.webp)
+
+    - **Cut** (the default) starts a new shot from where you are now.
+    - **Move** flies the camera from the last frame to where you are, then keeps recording
+      as the same shot.
+4. Press **Done** to finish. Your shots stay in the Timeline.
+
+While recording, press **Mark** (or **M**) to drop a marker on the Timeline.
+
+Open **N shots** to see this camera's shots:
+
+- **Retake** records a shot again. A retake that runs long trims the start of the next shot.
+- **Edit in Timeline** opens the take in the Timeline, where you can trim the shots and
+  **Smooth keys** (the track menu ⋯ of a property track) to take the handheld shake out.
+- **Export video** opens [Export a video or GIF](https://docs.theprototype.app/recording.md) on the take's timeline, set to MP4.
+
+![The shots sheet: three shots with Retake, Edit in Timeline and Export video.](https://docs.theprototype.app/img/film/shots-sheet.webp)
+*Figure: **N shots** lists this camera's shots.*
+### What gets recorded
+
+The camera's position and rotation are saved as Timeline keys. They are thinned out but stay
+within 1 cm and 0.5° of what you filmed. Zoom, dutch angle, focus and aperture each get
+their own track, but only if you changed them. The full-detail movement is kept as a hidden
+file in your Library.
+
+## Filming with others
+
+When you film in a shared session, everyone else sees the camera move as you film. They get
+a **Watch the shot** button that opens your live view in their camera preview window. Only
+**editors** can record; a view-only guest can film and be watched, but the **●** button is
+off for them.
+
+Others see your camera move, but nothing is saved until you record. When you stop filming,
+the camera goes back to where it stands.
+
+## On a phone without motion sensors, and on a computer
+
+Film works everywhere: where there is no gyroscope (or you decline motion access), drag the
+picture to look. On a computer, **W A S D** and **E / Q** move the camera.
+
+## Limits
+
+- A phone exports at most 20 seconds of video at a time (see [Export a video or GIF](https://docs.theprototype.app/recording.md#on-a-phone)).
+- Track my movement needs Android with Chrome and AR support; Quest's browser is not a target.
+- Walking drifts slowly over long takes: recentre now and then.
 
 
 ---
@@ -9443,59 +9614,87 @@ Light helpers, camera frustums and camera markers are editor furniture. They dis
 
 Source: https://docs.theprototype.app/recording/ (Markdown: https://docs.theprototype.app/recording.md)
 
-# Recording a Video
+# Export a Video or GIF
 
-Record a short video of the viewport while the recorder drives the camera: a **turntable** round your model, or a
-**flythrough** of your saved views. The result is a `.webm` file in your Explorer, ready to download and share.
+Turn a [Timeline](https://docs.theprototype.app/timeline.md), a **turntable** round your model or a **flythrough** of your saved views into a file:
+an **MP4** or **WebM** video, a **GIF** or **animated WebP** loop, or a **PNG sequence** with a transparent background.
+The export renders the scene **frame by frame**, so a 2-second clip at 30 fps has exactly 60 frames however slow the
+device is — a 4K export just takes longer.
 
-Right-click the viewport ▸ **Tools ▸ Recording…**
+Right-click the viewport ▸ **Tools ▸ Recording…**, or press **Export video** in [Film](https://docs.theprototype.app/film.md)'s shots sheet.
 
-![The Recording dialog: What to film set to Turntable, with Orbit, Turns, Direction, Size, Frame rate, Length, Quality and the Start recording button.](https://docs.theprototype.app/img/recording/turntable-dialog.webp)
-*Figure: The Recording dialog, in a small window.*
+![The Export dialog in a small window, set to Turntable: what to film, the format list (MP4 video), size, frame rate, length and quality, the frames and file size it will make, and the Export button. 1: Format. 2: Export.](https://docs.theprototype.app/img/recording/export-dialog.webp)
+*Figure: The Export dialog, in a small window.*
+
+1. **Format**: MP4, WebM, GIF, animated WebP or PNG frames.
+2. **Export** renders the take frame by frame.
+
 ## What to film
 
 | Mode | What the camera does | Options |
 |---|---|---|
-| **Turntable** | circles the selection (or the whole scene), starting from where you are looking | **Turns** (¼ – 3), **Direction**, **Frame it to fit** (otherwise it keeps your distance) |
-| **Flythrough** | flies through your saved camera views in order, passing through each one and blending the lens (field of view) between them | — |
+| **Timeline** | plays a sequence from its start: its camera shots (or your view where it has none) and its clips at every frame | **Timeline** — the length follows it |
+| **Turntable** | circles the selection (or the whole scene), starting from where you are looking | **Turns** (¼ – 3), **Direction**, **Frame it to fit** |
+| **Flythrough** | flies through your saved camera views in order, blending the lens between them | — |
 
 A flythrough needs at least two saved views: right-click the viewport ▸ **Camera bookmarks ▸ Save current view**.
 
-## Output
-
-| Option | Choices |
-|---|---|
-| **Size** | the viewport, 1280 × 720, 1920 × 1080, square 1080, vertical 1080 × 1920 |
-| **Frame rate** | 24 / 30 / 60 fps |
-| **Length** | 1 – 60 seconds |
-| **Quality** | low / medium / high |
-| **Hide editor helpers** | on by default: hides the grid, the gizmo, selection outlines and light and camera helpers for the take |
-
-The dialog estimates the file size before you start.
-
-## While it records
-
-A small bar shows the progress, with **Cancel**. The camera is yours alone: nothing is sent to anyone in the session, and
-your view comes back where it was afterwards.
-
-![The recording bar above the toolbar while a turntable take runs: the red dot, Recording, the progress bar, the seconds done of the take's length, and Cancel.](https://docs.theprototype.app/img/recording/recording-bar.webp)
-*Figure: The recording bar sits above the toolbar while a take runs.*
 ## The file
 
-The video is saved to **Explorer ▸ Recordings** (double-click it to play it) and offered as **Download**.
+| Format | Good for | Notes |
+|---|---|---|
+| **MP4 video** | phones, chat apps, video editors | H.264 where the browser has it |
+| **WebM video** | the web | smaller files |
+| **GIF loop** | anywhere a GIF goes | 256 colours and big files: use **Small (854 × 480)** and a few seconds; at most 50 fps |
+| **Animated WebP loop** | a modern GIF | full colour, transparency, much smaller files |
+| **PNG sequence (.zip)** | compositing in a video editor | one lossless PNG per frame, with transparency |
 
-![The finished take in the Recording dialog, in a small window: the video of the turning ball, its file name, length, size and frame rate, Saved to Explorer ▸ Recordings, and the Download, Show in Explorer and Record again buttons. 1: Download. 2: Record again.](https://docs.theprototype.app/img/recording/result.webp)
-*Figure: The finished take, with Download, Show in Explorer and Record again.*
+**Size**: the viewport, Phone 9:16 (1080 × 1920), Square, HD, Full HD, 4K, Small (854 × 480) or Small square.
+**Frame rate**: 12 – 60 fps. **Length**: 1 – 60 seconds. **Transparent background** (WebP and PNG only) drops the sky.
+**Hide editor helpers** (on by default) hides the grid, gizmo, outlines and helpers. The dialog shows the frame count
+and about how big the file will be before you start.
 
-1. **Download** to **save file** (.webm); it is in the Explorer already.
-2. **Record again** goes back to the settings for a new take.
+## While it renders
+
+The dialog closes and a bar at the bottom shows the progress: the percent, the frame, about how long is left, and
+**Cancel** (which stops it and saves nothing). **Hide** shrinks the bar to a small chip in the corner so you can keep
+working in the panels; **Details** brings it back. The 3D view shows the render until it is done, and your camera
+comes back where it was afterwards. Nothing is sent to anyone in the session.
+
+![The rendering bar above the toolbar while an export runs: the progress bar and percent, the frames done and the time left, Hide and Cancel.](https://docs.theprototype.app/img/recording/rendering-bar.webp)
+*Figure: The rendering bar while an export runs; you can keep working.*
+Hiding the browser tab pauses the export; no frames are lost. Starting VR or Play stops it.
+
+## The result
+
+Videos and loops are saved to **Explorer ▸ Recordings** and offered as **Download**; a PNG sequence is a .zip to
+download.
+
+![The finished export in the dialog, in a small window: the video of the turning ball, its file name, length, size, frame rate and frames, Saved to Explorer, and the Download, Show in Explorer and Export again buttons. 1: Download. 2: Export again.](https://docs.theprototype.app/img/recording/export-result.webp)
+*Figure: The finished MP4, with Download, Show in Explorer and Export again.*
+
+1. **Download** to **save file**; it is in the Explorer already.
+2. **Export again** goes back to the settings for a new take.
+
+## On a phone
+
+A long render heats a phone and slows it down, so on a phone:
+
+- an export is **at most 20 seconds**; a longer one is refused with the reason (shorten it, or export on a computer);
+- the size is at most **1920 px** on the long side; when the phone is running hot (the app has already lowered the
+  scene's quality to keep it smooth), it renders at **1280 px**, and the dialog says so.
+
+Keep the phone plugged in and the app in front while it renders.
 
 ## Limits
 
-- Not in VR or Play — the recorder drives the editor camera.
-- Hiding the browser tab stops the take.
-- Files over the Explorer's 25 MB item limit can still be downloaded but are not kept in the library.
-- A small viewport is rendered at a higher pixel ratio during the take (up to 3×), so a 1080p video stays sharp.
+- What moves on its own clock — flow-graph spins, physics — plays at its own pace during an export; the timeline, its
+  shots and clips, and the turntable / flythrough camera are frame-exact.
+- An imported model's own clips do not move in a timeline export (the same as scrubbing the Timeline); clips made in
+  the [Animation](https://docs.theprototype.app/animation.md) editor do.
+- No sound in exported videos yet.
+- Browsers without WebCodecs record the video **live** as WebM instead (keep the tab in front); the dialog says so.
+- GIF, WebP and PNG exports hold at most 1800 frames.
 
 !!! note
     This page is about video. **Performance** recordings — frame time and draw calls — are in the

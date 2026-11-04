@@ -48,6 +48,13 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.58 — film with your phone, share it as a video.** [Film with your phone](https://docs.theprototype.app/film.md) makes your phone the viewfinder
+of a camera in the scene: turn it to look around, walk or use the stick to move, zoom, tilt and pull focus, and press
+**●** — the take is recorded while the Timeline plays and lands on it as keyed [Property tracks](https://docs.theprototype.app/timeline.md#tracks),
+which **Smooth keys** evens out. [Export a Video or GIF](https://docs.theprototype.app/recording.md) now writes MP4, WebM, GIF, animated WebP or PNG
+frames, frame by frame, with a progress bar and Cancel while you keep working; a Film take has **Export video** right
+on its sheet. To try it, open **Templates ▸ Film set**, a small stage that keeps moving.
+
 **1.57 — shared games start fast.** Play links, embeds and pasted links now open the [play view](https://docs.theprototype.app/share-a-game.md): the
 game, its HUD and touch controls and none of the editor — about a third less to load, so a shared game's first picture
 comes several seconds sooner on a phone. **Invite ▸ Person** has a [Play link](https://docs.theprototype.app/share-a-game.md#play-together-from-a-link)
