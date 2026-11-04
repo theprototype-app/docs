@@ -147,12 +147,14 @@ exactly what the agent tools of the same job do, with the same limits:
 |---|---|---|
 | `create_shape` | `lathe`, `tube`, `extrude`, `mesh` | `create_lathe`, `create_tube`, `extrude_shape`, `create_mesh` ([Shapes and modelling](agent-geometry.md)) |
 | `edit_shape` | `params`, `mesh`, `update`, `pivot`, `pivot_group` | `set_geometry`, `edit_mesh`, `update_mesh`, `set_pivot`, `create_pivot` |
-| `set_look` | `material`, `list_materials`, `get_material`, `shader`, `edit_shader`, `assign_shader`, `shader_nodes`, `post`, `get_post`, `post_graph`, `unwrap`, `uv` | `set_material` … `set_uv` ([Materials and looks](agent-look.md)) |
+| `set_look` | `material`, `list_materials`, `get_material`, `shader`, `edit_shader`, `assign_shader`, `shader_nodes`, `post`, `get_post`, `post_graph`, `unwrap`, `uv`, `sky`, `light`, `environment` | `set_material` … `set_uv` ([Materials and looks](agent-look.md)); `set_sky`, `set_light`, `get_environment` ([HUD, sky and play](agent-scene.md)) |
+| `hud` | `create`, `list`, `update`, `panel` | `create_hud`, `list_hud`, `edit_hud`, `hud_panel` ([HUD, sky and play](agent-scene.md)) |
+| `game_setup` | `spawn`, `play_camera` | `place_spawn`, `set_play_camera` ([HUD, sky and play](agent-scene.md)) |
 | `assets` | `search`, `place`, `prefab`, `image` | `search_assets`, `place_asset`, `prefab` ([Worlds](agent-world.md)), `add_image` ([Undo, pivots and images](agent-assist.md)) |
 | `effects` | `terrain`, `scatter`, `water`, `particles`, `sound`, `music` | `terrain`, `scatter`, `water`, `create_particles`, `place_sound`, `set_music` ([Worlds with an agent](agent-world.md)) |
 
 `undo_last` is a tool of its own. A look-only connection can still use the actions that only read (`list_materials`,
-`get_material`, `shader_nodes`, `get_post`).
+`get_material`, `shader_nodes`, `get_post`, `environment`, `hud` `list`).
 
 **New in 1.59** — the same tools, with more in them:
 
