@@ -21,8 +21,8 @@ that change things; it can still search for assets.
 
 ### search_assets: find something to build with
 
-It searches the shared [library](../explorer.md), the [model packs](../packs.md), your [prefabs](../prefabs.md) and
-Poly Haven's CC0 materials and HDRIs, by words and kind. It only reads, so a viewer's agent can use it too.
+It searches the shared [library](../explorer.md), the [packs](../packs.md) (their models, and *since 1.61* the sounds in
+the sound packs), your [prefabs](../prefabs.md) and Poly Haven's CC0 materials and HDRIs, by words and kind. It only reads, so a viewer's agent can use it too.
 
 | field | what it does |
 |---|---|
@@ -35,9 +35,29 @@ Each result has an `id`, its name, kind, source, licence, its size when known, a
 other tools take:
 
 - `lib:<hash>` is a file in the shared library.
-- `pack:<pack>/<item>` is a model from a pack.
+- `pack:<pack>/<item>` is a model from a pack, or *since 1.61* a sound from a sound pack (`pack:audio-essentials/assets/fire-crackle.ogg`).
+  A pack sound is copied into the library the first time a tool uses it, like installing that one file.
 - `prefab:<id>` is one of your prefabs.
-- `cc0:polyhaven/<id>` is a CC0 material or HDRI. `set_material` (`cc0`) and the scene look take it.
+- `cc0:polyhaven/<id>` is a CC0 material or HDRI. `set_material` (`cc0`) and the scene look take it. *Since 1.61* an
+  HDRI id goes straight into `set_look` `sky {hdri: "cc0:polyhaven/<id>"}`: it is fetched into the library and lights
+  the scene.
+
+### assets upload: send a sound or an HDR sky
+
+*Since 1.61.* `assets` with `action: "upload"` (a local agent: `upload_asset`) puts a file the agent **holds as bytes**
+into the library and answers with its hash: music or ambience it generated, or a file it fetched itself. The bytes come
+from the agent, so a site that does not allow other origins (CORS) no longer matters.
+
+| field | what it does |
+|---|---|
+| `data` | the file as base64 |
+| `chunk` | `{id, index, total}` for a big file sent in parts (each part a multiple of 4 base64 characters); it lands when the last part arrives |
+| `name` | a name for the library (the extension comes from the bytes) |
+| `folder` | the Explorer folder (default `Sounds` or `Skies`) |
+
+What the bytes **are** decides, never the name: a sound (WAV, OGG, MP3, FLAC, M4A or WebM, up to 16 MB, decoded once to
+prove it is audio) or an HDR sky (Radiance `.hdr` or OpenEXR, up to 25 MB). Pictures go through `image`. Use the hash
+with `place_sound`, `set_music` or `set_look` `sky {hdri: {hash}}`.
 
 ### place_asset: put a model or prefab in the scene
 
@@ -71,13 +91,14 @@ Without `uuid` it makes a [terrain](../terrain.md) (`size` metres, at `position`
 | field | what it does |
 |---|---|
 | `size` | the edge length in metres, up to 200 (when making one) |
-| `height` | how high the noise hills reach, in metres |
+| `height` | the highest peak, in metres; the answer says the `peak` it reached (*since 1.61*; it used to scale the noise, which `amplitude` still does) |
 | `detail` | how close together the hills are (0.005 to 0.6) |
 | `octaves`, `ridged`, `warp` | rougher detail, sharp ridges, twisted shapes |
-| `edges` | `flat`, `island` (it falls away to the sides) or `bowl` |
+| `edges` | `flat`, `island` (the rim sinks to 0, so it rises out of water) or `bowl` (the rim is raised). Give `height` too: a flat terrain has no hills to shape. |
 | `seed` | another set of hills |
 | `ops` | sculpting and painting, in order (below) |
-| `layers` | up to 4 paint layers `{color, texture, tiling}`. `texture` is a library hash or a pattern name like `grass`, `sand` or `stone`. |
+| `layers` | up to 4 paint layers `{color, texture, tiling}`. `texture` is a library hash or a pattern name like `grass`, `sand` or `stone`. Layer 0 covers the ground until the others are painted. |
+| `paintBy` | *since 1.61*: `"height"` paints the layers for you over the final shape: layer 0 in the low ground, up to the last layer on the peaks (sand, grass, rock, snow) |
 | `force` | reshape a terrain that was sculpted by hand (the hand sculpting is lost) |
 
 Each entry in `ops` is `{op, at, radius, strength, …}`. `at` is `[x, z]` in metres from the terrain's centre. Up to 64
@@ -106,10 +127,14 @@ ones.
 | `rules` | where copies may go: `slope: [min°, max°]` (0 = level ground), `height: [min, max]` metres, `layer: {i, min}` (only where paint layer `i` is at least `min`) |
 | `randomRotation`, `tint`, `sink` | a random turn (on by default), colour variation 0 to 1, metres pushed into the ground |
 | `collider` | physics for the copies: `none` (default), `box`, `sphere` or `hull` |
-| `seed` | another arrangement |
+| `seed` | another arrangement (the same seed gives the same one) |
+| `avoid` | *since 1.61*: up to 16 places to keep clear — an object uuid (nothing lands on its footprint: a path, a house, a portal), `{uuid, radius}` (a clear circle round an object) or `{position, radius}` (a clear circle round a spot). `rules.avoid` takes the same list. |
+| `id` | *since 1.61*: a name for the set. All the assets of one call are one set. |
+| `source` | *since 1.61*: the uuid of an object you built, instead of `asset`: up to 200 **real copies** of it, each one editable, at the spots the rules pick |
 | `remove` | a set's id, to delete that set instead |
 
-It returns the set's id and how many copies were placed. A surface holds up to 8 sets.
+It returns the set's id and how many copies were placed (with `source`: the copies' uuids). A surface holds up to 8 sets.
+For one or a few copies in a row, or a mirror image, use `duplicate` ([Shapes and modelling](agent-geometry.md#duplicate-copies-and-mirror-images)).
 
 ## Water
 
@@ -121,11 +146,11 @@ a `preset` is given.
 | field | what it does |
 |---|---|
 | `kind` | `tank`, `pool`, `round`, `lake` or `ocean` (when making one) |
-| `size` | `[width, height, length]` in metres (`[radius, height]` for `round`) |
+| `size` | `[width, height, length]` in metres; for `round`, `[diameter, depth, diameter]` (*since 1.61*; `[radius, depth]` still works) |
 | `position` | the bottom centre of the water |
 | `preset` | `pool`, `aquarium`, `ocean`, `lake`, `river`, `lava`, `swamp`, `toxic` or `ice` |
 | `level` | how full, 0 to 1 |
-| `color`, `look` | the colour, and look fields like `shallowColor`, `deepColor`, `clarity`, `foam` |
+| `color`, `look` | `color` tints the whole body, shallow to deep; look fields like `shallowColor`, `deepColor`, `clarity`, `foam` set one thing each |
 | `waves`, `flow` | waves `{count, amplitude, wavelength, speed, direction}`, and a current |
 | `remove` | `true` makes it a plain object again |
 
@@ -138,7 +163,8 @@ New water is a static sensor: in Play, things fall in and float. It casts no sha
 `preset` is one of `sparkles`, `fire`, `smoke`, `dust`, `confetti`, `sparks`, `trail`, `wisps`, `fireflies`, `rain` or
 `snow`. These are the same presets as **Add ▸ Effects** ([Particles](../particles.md)).
 
-- Without `object` it places a small emitter at `position`. Rain and snow hang at cloud height over the point.
+- Without `object` it places an invisible emitter (an empty group, nothing drawn but the particles) at `position`.
+  Rain and snow hang at cloud height over the point.
 - With `object` it puts the particles on that object: a torch, a log, a car's exhaust.
 - `overrides` changes any particle field: `count`, `lifetime`, `speed`, `gravity`, `sizeStart`, `colorStart`,
   `colorEnd`, `opacity` and the rest. A field that does not exist is refused by name.
@@ -148,7 +174,7 @@ New water is a static sensor: in Play, things fall in and float. It casts no sha
 
 | field | what it does |
 |---|---|
-| `asset` | a library sound (`lib:<hash>`, or search with `kinds: ["sound"]`), or an **https** URL of a sound file |
+| `asset` | a library sound (`lib:<hash>`, or search with `kinds: ["sound"]`), a pack sound (`pack:<name>/<file>`, copied into the library on first use), the hash `assets upload` gave for the agent's own sound, or an **https** URL of a sound file |
 | `object` | put the sound on this object, or leave it out and give `position` |
 | `radius`, `volume` | how far it carries at full volume (metres), and how loud (0 to 1) |
 | `on` | play it once on `click`, `enter`, `exit`, `grab` or `hit` on the object. Without `on` it loops all the time, like a crackle or a river. |
@@ -158,7 +184,8 @@ The sound is a [Sound node](../audio.md) in the object's flow, so you can open i
 
 ### set_music: the scene's background music
 
-`asset` is a library sound or an https URL (`null` clears it). It also takes `volume` (0 to 1), `play: true` and
+`asset` is a library sound, a pack sound (`pack:<name>/<file>`), the hash of music the agent sent with `assets upload`,
+or an https URL (`null` clears it). It also takes `volume` (0 to 1), `play: true` and
 `stop: true`. Everyone hears the track in sync. Each person can still turn it down for themselves in
 [Music](../music.md).
 

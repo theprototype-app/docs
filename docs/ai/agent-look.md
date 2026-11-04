@@ -23,6 +23,9 @@ get a prompt with **Allow** and **Deny**, and nothing changes until you answer.
 2. The agent calls the same tool again with `{"confirmId": "…", "wait": 30}`. If you pressed Allow, the change
    runs inside that call, so it is still one undo step. If you pressed Deny, the call says so and nothing
    changed.
+3. Every answer carries a `status`: `pending` (no answer yet: ask again with the same `confirmId`), `allowed`,
+   `denied` or `expired`. *Since 1.61* the repeat works through the Claude connector's families too (it used to
+   open a new question each time), and going back to a checkpoint is asked as exactly that.
 
 A question stays open for 10 minutes. With the [Claude connector](claude-connector.md) the prompt appears in
 your own tab. The in-app Assistant in your own scene does not ask, because you are the one typing.
@@ -89,6 +92,10 @@ c -> out.emissive
 Errors come back in the result and nothing is written: an unknown type, a socket that does not exist, a graph
 with nothing connected, or the compiler's own message.
 
+*Since 1.61* there are three more UV nodes, `polarCoordinates` (distance and angle around a centre), `twirl` (a
+swirl, stronger further out) and `rotateUV` (wire **Time** into its `angle` to spin it). The `glsl` expression node
+keeps the type wired into `a`, `b` and `c` (float, vec2, vec3 or vec4) and returns the `type` it declares.
+
 The result lists the graph's **uniforms**. A float one, named `u_<nodeId>_<param>`, can be driven at run time
 by a **Set Shader Uniform** flow node on that object, for example `u_power_value` for a node `power`. Colours and
 vectors cannot, because flow sockets carry numbers.
@@ -113,6 +120,19 @@ camera's own look instead of the scene's.
 `postOutput` node.
 
 `set_post` and `create_post_graph` always ask first, including for a camera's own look.
+
+*Since 1.61* `set_post` and `get_post` say whether **this screen** draws the effects (`shownHere`). When it does not,
+`reason` says why: `quality tier` (a phone switched post effects off to stay smooth — by design), `switched off here`,
+`browser`, `wireframe` or `no effects`, and `how` says where to change it. `screenshot` with `postEffects: true` draws
+the picture through the same effects and answers `postEffects: "applied"`, or `"unavailable"` with the reason.
+
+### set_quality: ask for higher quality on the person's own device
+
+*New in 1.61.* When a phone hides the post effects to stay smooth, an agent does **not** change that on its own. It
+can ask with `set_quality {"level": "high"}` (also `medium`, `auto`): a card on **that person's own screen** says
+"Claude wants High quality on this device so the post effects show" with **Allow** and **Keep**. Only that device
+changes, never anybody else's. After Allow, the card's Undo or `set_quality {"level": "restore"}` puts the old preset
+back. On the person's own device it is the same switch as **Settings ▸ Scene ▸ Performance ▸ Quality preset**.
 
 ### uv_unwrap and set_uv: how textures sit on a surface
 

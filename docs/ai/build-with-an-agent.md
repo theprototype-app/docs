@@ -71,9 +71,9 @@ before a join, scene tools answer *not connected — join first*. Then call `con
 | shapes and modelling | `set_geometry`, `create_lathe`, `create_tube`, `extrude_shape`, `edit_mesh`, `create_mesh`, `create_shapes` — see [Shapes and modelling with an agent](agent-geometry.md) |
 | materials and looks | `set_material`, `list_materials`, `get_material`, `create_shader`, `edit_shader`, `assign_shader`, `describe_shader_nodes`, `set_post`, `get_post`, `create_post_graph`, `uv_unwrap`, `set_uv` — see [Materials and looks with an agent](agent-look.md) |
 | undo, pivots and images | `undo_last`, `set_pivot`, `create_pivot`, `add_image` — see [Undo, pivots and images with an agent](agent-assist.md) |
-| `status` | joined or waiting, its role and whether it can edit, who is connected, which scene it and the host are in (`withHost`), whether a scene is still arriving (`loading`), any code behaviour that is failing (`behaviourErrors`), whether it is paused because the host left (`hostAway`), which tools or modules are missing and why, and since 1.59 `sceneBudget`: how heavy the scene is (objects, meshes, triangles, draw calls, textures, lights, frame time) against the desktop or VR budget, with a green / amber / red tier and `over` naming each budget past green |
-| `screenshot` | a clean picture (no gizmo, grid or helpers) from a temporary camera — `iso`, `top`, `front`, `current`, or `focus` on one object — without moving anyone's view |
-| `wait_for_edit` | waits until someone else changes the scene |
+| `status` | joined or waiting, its role and whether it can edit, who is connected, which scene it and the host are in (`withHost`), whether a scene is still arriving (`loading`), any code behaviour that is failing (`behaviourErrors`), whether it is paused because the host left (`hostAway`), which tools or modules are missing and why, and since 1.59 `sceneBudget`: how heavy the scene is (objects, meshes, triangles, draw calls, textures, lights, frame time) against the desktop or VR budget, with a green / amber / red tier and `over` naming each budget past green; since 1.61 `top` (the objects drawing the most triangles and draw calls) and `vsync` (whether the frame time is just the display's refresh, a steady 16.7 ms on a 60 Hz screen, or frames miss it — a frame on the refresh never turns the tier amber or red), and `callsBySource` (the draw calls of your objects, of the rest of the view such as people and the grid, of shadows, of post effects, and of other views such as camera previews) |
+| `screenshot` | a clean picture (no gizmo, grid or helpers) from a temporary camera — `iso`, `top`, `front`, `current`, or `focus` on one object — without moving anyone's view; since 1.61 `postEffects: true` draws the scene's post effects too, or says why this screen does not; `view: "camera"` with a camera's `uuid` looks through one of the scene's cameras (its lens and framing); `hud: true` draws the game HUD on top; the people (avatars) are left out unless `avatars: true` (view `current` keeps them) |
+| `wait_for_edit` | waits until someone else changes the scene, or *since 1.61* pings a spot (the answer carries the `ping`) |
 | `describe_node_types` | what a flow node type takes and gives — input and output names with their types, params with defaults, one line on what it does — so edges are wired right the first time |
 | `what_can_you_do` | a short, speakable summary of what the agent can do in this session (a viewer hears that it can look but not build) |
 | `install_modules` | installs the modules the other peers run (games, tools) so the agent sees the same scene |
@@ -101,7 +101,8 @@ before a join, scene tools answer *not connected — join first*. Then call `con
   pattern, a type, or the objects near a point (since 1.48.1). Since 1.59 every mesh also has
   `mesh: {vertexCount, faceCount, bounds}` — `faceCount` in triangles, and `bounds` as two boxes, `local` (in the
   mesh's own space) and `world`, each `[[minX, minY, minZ], [maxX, maxY, maxZ]]` — so an agent can see a part's real
-  size and corners.
+  size and corners. Since 1.61 `near` and `bounds` take `by`: `origin` (where the object is, the default), `touches`
+  (any part of its world bounds, so a long wall reaching into the area counts) or `inside` (all of it).
 - Build lighter, or stop adding, while `status`'s `sceneBudget` is not green.
 - **Copies, facing and shadows** (since 1.59, on `create_objects` / `update_objects`):
     - `create_objects` with `from` (an object's uuid), `count` (1 to 100), `offset` (`[x, y, z]` from one copy to the
@@ -110,7 +111,8 @@ before a join, scene tools answer *not connected — join first*. Then call `con
       group, one undo step, uuids in order, and the same seed makes the same copies. This is copying, not
       [scatter](../scatter.md) over a surface.
     - `lookAt`: a world point `[x, y, z]` or another object's uuid. The object turns so its front (local +Z) faces it,
-      with +Y kept up. Lights point with `aim` instead.
+      with +Y kept up. Lights point with `aim` instead. Since 1.61 `front` (`+x`, `-x`, `+z`, `-z`, `+y`, `-y`) says
+      which local axis is the model's front, for `lookAt` and `face_user` alike: many models face +X or -Z.
     - `castShadow` / `receiveShadow` on any object; on a group or a model they apply to every mesh inside it.
 - Never fight a person: a locked object is skipped — the reply names the object and who is editing it — and the agent
   waits with `wait_for_edit`.
@@ -166,7 +168,9 @@ inlined in [/llms-full.txt](https://theprototype.app/llms-full.txt).
 
 **Versions.** `tpAgent.version` is the contract (1.x): new methods and fields are minor versions, a removed or changed
 one is a new major. Release 1.59 speaks contract **1.6.0** (the shape batch, mesh colours, copies, facing, shadows,
-mesh stats and the scene budget). A call written for 1.5 gives the same result, with one fix: a part made in a group
+mesh stats and the scene budget); release 1.61 speaks **1.8.0** (copy and mirror, model import, the device quality ask,
+post effects in screenshots, the budget's top contributors and vsync verdict, scatter `source` / `avoid`, and the
+additions listed under *New in 1.61* in [the Claude connector](claude-connector.md)). A call written for 1.5 gives the same result, with one fix: a part made in a group
 with no `position` now sits at the group's origin ([part by part](agent-geometry.md#building-a-model-part-by-part)). The `@theprototype/agent` package follows the app release it shipped with and says so in its
 `status` (`contractNote`) when the page speaks a different contract major — update it with
 `npx -y @theprototype/agent@latest`.

@@ -108,8 +108,10 @@ to ask you to open that scene first.
 
 ### Importing files
 
-Claude cannot import a model or file through the connector: it has no file on your computer to send. Drop the
-file into the tab yourself, then ask Claude to place or change it.
+Since 1.61 Claude can bring in a **3D model** with `create_shape` `import`: a glTF, GLB or OBJ it sends in parts, or
+one at a public **https** address. It goes into your library first, and its named parts can be animated
+([details](agent-geometry.md#import_shape-a-gltf-glb-or-obj-file)). Other files, and files on your computer, you drop
+into the tab yourself; then ask Claude to place or change them.
 
 ### Scripts, spin and particles
 
@@ -145,9 +147,9 @@ exactly what the agent tools of the same job do, with the same limits:
 
 | family | actions | the agent tools behind them |
 |---|---|---|
-| `create_shape` | `lathe`, `tube`, `extrude`, `mesh` | `create_lathe`, `create_tube`, `extrude_shape`, `create_mesh` ([Shapes and modelling](agent-geometry.md)) |
-| `edit_shape` | `params`, `mesh`, `update`, `pivot`, `pivot_group` | `set_geometry`, `edit_mesh`, `update_mesh`, `set_pivot`, `create_pivot` |
-| `set_look` | `material`, `list_materials`, `get_material`, `shader`, `edit_shader`, `assign_shader`, `shader_nodes`, `post`, `get_post`, `post_graph`, `unwrap`, `uv`, `sky`, `light`, `environment` | `set_material` … `set_uv` ([Materials and looks](agent-look.md)); `set_sky`, `set_light`, `get_environment` ([HUD, sky and play](agent-scene.md)) |
+| `create_shape` | `lathe`, `tube`, `extrude`, `mesh`, `import` | `create_lathe`, `create_tube`, `extrude_shape`, `create_mesh`, `import_shape` ([Shapes and modelling](agent-geometry.md)) |
+| `edit_shape` | `params`, `mesh`, `update`, `duplicate`, `pivot`, `pivot_group` | `set_geometry`, `edit_mesh`, `update_mesh`, `duplicate`, `set_pivot`, `create_pivot` |
+| `set_look` | `material`, `list_materials`, `get_material`, `shader`, `edit_shader`, `assign_shader`, `shader_nodes`, `post`, `get_post`, `post_graph`, `unwrap`, `uv`, `quality`, `sky`, `light`, `environment` | `set_material` … `set_uv`, `set_quality` ([Materials and looks](agent-look.md)); `set_sky`, `set_light`, `get_environment` ([HUD, sky and play](agent-scene.md)) |
 | `hud` | `create`, `list`, `update`, `panel` | `create_hud`, `list_hud`, `edit_hud`, `hud_panel` ([HUD, sky and play](agent-scene.md)) |
 | `game_setup` | `spawn`, `play_camera` | `place_spawn`, `set_play_camera` ([HUD, sky and play](agent-scene.md)) |
 | `assets` | `search`, `place`, `prefab`, `image` | `search_assets`, `place_asset`, `prefab` ([Worlds](agent-world.md)), `add_image` ([Undo, pivots and images](agent-assist.md)) |
@@ -190,6 +192,30 @@ Worlds ([Worlds with an agent](agent-world.md)):
 - `assets` `search` finds models, sounds, images and CC0 materials. `place` and `prefab` put them in the scene.
 - `set_look` `material` takes `pattern` (wood, brick, marble …). `create_shape` `mesh` takes `subdivide: 1-2`, and
   `edit_shape` `update` sends a mesh new vertices.
+
+**New in 1.61** — no new tool names, more in the families:
+
+- `edit_shape` `duplicate` copies an object in a row, or makes its mirror image (a left arm becomes the right one).
+- `create_shape` `import` brings in a glTF, GLB or OBJ model; `mesh` colours are sRGB with `#rrggbb` allowed.
+- `effects` `scatter` takes `source` (real copies of something Claude built) and `avoid` (keep paths clear).
+- `set_look` `quality` asks you, on your own device, for higher quality when a phone hides the post effects; `post`
+  says whether your screen draws them, and `screenshot` takes `postEffects: true`.
+- `status`'s `sceneBudget` names the heaviest objects (`top`) and says whether the frame time is just the screen's
+  refresh (`vsync`).
+- A `parentUuid` that names nothing is an error and makes nothing; groups stay groups after a restore.
+- `assets` `upload` sends a sound or an HDR sky as bytes (Claude's own music, or a file it fetched itself) and answers
+  with its hash. `assets` `search` lists the sounds of the sound packs, and `effects` `sound` / `music` take them.
+- `set_look` `sky` takes a Poly Haven HDRI from search.
+- `effects` `terrain`: `height` is the highest peak, layers show at once, and `paintBy: "height"` paints them low to
+  high. `scatter` keeps circles clear (`avoid` / `rules.avoid` with a `radius`) and takes an `id`.
+- `front` tells `lookAt` and `face_user` which way a model faces.
+- `screenshot`: `view: "camera"` looks through a scene camera, `hud: true` adds the game HUD, and people are left out
+  unless `avatars: true`.
+- Pressing **Allow** lets the change through on the first repeat; the answer says `pending`, `allowed`, `denied` or
+  `expired`. Pings mark the spot you clicked, and `wait_for_edit` wakes when you ping.
+- `list_scene` `near` / `bounds` take `by: "touches"` or `"inside"`; `sceneBudget` has `callsBySource` and never calls
+  a frame on the screen's refresh slow.
+- Claude keeps your names and ids as they are: object names, prefab ids and undo lines are not rewritten.
 
 Claude reads its tool list when it connects, so it sees these after the connector reconnects.
 
