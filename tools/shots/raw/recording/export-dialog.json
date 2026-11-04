@@ -1,0 +1,52 @@
+{
+ "id": "export-dialog",
+ "spec": "045c758cc098",
+ "dpr": 2,
+ "shotAt": "2026-11-04T01:52:15.315Z",
+ "app": {
+  "version": "1.57.0",
+  "sha": "03dbcbb4"
+ },
+ "uiHits": [
+  "dialog.tp-ui",
+  "header.wc-head",
+  "div.md-body",
+  "button#recording-mode-turntable.tp-seg-btn",
+  "label.svelte-cwk4o9",
+  "label.rec-check",
+  "div#recording-dialog.rec-wrap",
+  "div.rec-grid",
+  "button#recording-start.rec-go",
+  "p#recording-background-note.rec-note",
+  "button#recording-mode-flythrough.tp-seg-btn",
+  "select#recording-target.ui-input"
+ ],
+ "width": 1376,
+ "height": 1638,
+ "crop": {
+  "x": 0,
+  "y": 10,
+  "w": 688,
+  "h": 819
+ },
+ "cut": [
+  "l",
+  "r"
+ ],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 235.28125,
+   "y": 727.59375,
+   "w": 1053.4375,
+   "h": 60
+  },
+  "2": {
+   "x": 87.28125,
+   "y": 1295.15625,
+   "w": 1201.4375,
+   "h": 71
+  }
+ },
+ "kind": "ui"
+}

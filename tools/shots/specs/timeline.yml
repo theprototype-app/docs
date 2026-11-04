@@ -100,3 +100,26 @@ shots:
       tracks, a Cam A → Cam B shot, a Door clip, whoosh.wav and a boom event.
     caption: The Timeline in the light theme.
     crop: {selector: '.tl-root'}
+
+  # 68-int (1.58): a Film take's property tracks — the lens as keys, one diamond per key (core timeline.test.cjs 12)
+  - id: property-track
+    alt: >-
+      The Timeline in a small window holding a Film take: two property tracks, Field of view · Film camera and Dutch roll ·
+      Film camera, each a row of key diamonds recorded by hand. 1: a key. 2: the track menu with Smooth keys.
+    caption: "A Film take on the Timeline: the field of view and the roll, keyed."
+    setup:
+      - eval: >-
+          (() => { const S = window.__stores; const g = window.__docs.get(S.objectsGroup);
+          const cam = g.children.find((o) => o.name === 'Cam A');
+          const wob = (base, amp, n) => Array.from({length: n}, (_, i) => ({id: 'k' + i, t: i * 0.25,
+            v: base + Math.sin(i / 3) * amp * 3 + (i % 2 ? amp : -amp), i: 'linear', h: 'vector', src: 'rec'}));
+          S.sequences.createSequence('Take 1', {duration: 6, tracks: [
+            {id: 'tr-zoom', kind: 'prop', name: 'Field of view · Film camera', target: cam.uuid, path: 'camera.fov', type: 'number', keys: wob(45, 1.5, 21)},
+            {id: 'tr-roll', kind: 'prop', name: 'Dutch roll · Film camera', target: cam.uuid, path: 'camera.roll', type: 'number', keys: wob(0, 0.8, 21)}]}); })()
+      - {wait: 800}
+      - {click: '#timeline-fit'}
+      - {wait: 600}
+    crop: {union: [{selector: '.tl-root'}, {selector: '.tl-root', offset: [8, 0]}]}
+    annotate:
+      - {n: 1, at: {selector: '.tl-lane[data-track-id="tr-zoom"] .tl-key:nth-child(6)'}, shape: circle, label: key, badge: t, key: 'A **key**: the value the take recorded at that moment.'}
+      - {n: 2, at: {selector: '[data-track-menu="tr-zoom"]'}, shape: box, badge: r, key: 'The track menu (**…**) has **Smooth keys**.'}

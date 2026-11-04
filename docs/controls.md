@@ -906,7 +906,7 @@ places keys belong to.
 - **Add** — the full primitive catalog (meshes, building blocks, [architecture](architecture.md) — walls, doors, windows and stairs — cameras, lights, [water](water.md), [effects](particles.md), a [fluid tank](simulation.md#fluid-tank)) plus empty groups; objects spawn at the clicked point.
 - **Undo / Redo**, **Ping here**.
 - **Selected ▸** — the selected object's own menu (shown only while something is selected).
-- **Tools** — Node editor, Draw mode (drag 3D strokes on surfaces, or click out an editable [spline](splines.md)), Measure distance, Simulate physics (and *Reset simulation* while one runs), [Recording…](recording.md) (a turntable or flythrough video).
+- **Tools** — Node editor, Draw mode (drag 3D strokes on surfaces, or click out an editable [spline](splines.md)), Measure distance, Simulate physics (and *Reset simulation* while one runs), [Recording…](recording.md) (export a Timeline, turntable or flythrough as MP4, WebM, GIF, WebP or PNG frames).
 - **Snapping** — position / rotation / scale steps, snap to surface, element snapping, *More snapping settings…* (see [Snapping](snapping.md)).
 - **View** — Show grid, Grid & axes settings…, Show helpers in Play (debug), the Mouse wheel mode, Scene look…, Screenshot.
 - **Module tools** — the toolboxes of installed modules.

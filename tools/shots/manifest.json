@@ -941,6 +941,28 @@
    "app": "1.57.0",
    "shotAt": "2026-11-04T00:30:38.953Z"
   },
+  "img/film/filming.webp": {
+   "page": "film",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 390,
+   "height": 896,
+   "badges": 0,
+   "labels": [],
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:52:04.498Z"
+  },
+  "img/film/picker.webp": {
+   "page": "film",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 390,
+   "height": 896,
+   "badges": 0,
+   "labels": [],
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:49:46.643Z"
+  },
   "img/fluids/fluid-emitter.webp": {
    "page": "fluids",
    "kind": "ui",
@@ -2342,18 +2364,20 @@
    "app": "1.54.3",
    "shotAt": "2026-11-03T14:13:54.658Z"
   },
-  "img/recording/recording-bar.webp": {
+  "img/recording/export-dialog.webp": {
    "page": "recording",
    "kind": "ui",
    "dpr": 2,
-   "width": 434,
-   "height": 92,
-   "badges": 0,
-   "labels": [],
+   "width": 688,
+   "height": 819,
+   "badges": 2,
+   "labels": [
+    "format"
+   ],
    "app": "1.57.0",
-   "shotAt": "2026-11-04T01:04:00.837Z"
+   "shotAt": "2026-11-04T01:52:15.315Z"
   },
-  "img/recording/result.webp": {
+  "img/recording/export-result.webp": {
    "page": "recording",
    "kind": "ui",
    "dpr": 2,
@@ -2364,19 +2388,19 @@
     "save file",
     "new take"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:48:01.502Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:52:31.589Z"
   },
-  "img/recording/turntable-dialog.webp": {
+  "img/recording/rendering-bar.webp": {
    "page": "recording",
    "kind": "ui",
    "dpr": 2,
-   "width": 688,
-   "height": 840,
+   "width": 652,
+   "height": 92,
    "badges": 0,
    "labels": [],
    "app": "1.57.0",
-   "shotAt": "2026-11-04T01:03:48.590Z"
+   "shotAt": "2026-11-04T01:50:28.338Z"
   },
   "img/saving/save-options.webp": {
    "page": "saving",
@@ -2573,6 +2597,19 @@
    ],
    "app": "1.54.3",
    "shotAt": "2026-11-03T14:51:06.332Z"
+  },
+  "img/timeline/property-track.webp": {
+   "page": "timeline",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 680,
+   "height": 303,
+   "badges": 2,
+   "labels": [
+    "key"
+   ],
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:52:45.836Z"
   },
   "img/timeline/scrub-shot.webp": {
    "page": "timeline",

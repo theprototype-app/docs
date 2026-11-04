@@ -1,0 +1,49 @@
+{
+ "id": "property-track",
+ "spec": "bb688f890aca",
+ "dpr": 2,
+ "shotAt": "2026-11-04T01:52:45.836Z",
+ "app": {
+  "version": "1.57.0",
+  "sha": "03dbcbb4"
+ },
+ "uiHits": [
+  "button#timeline-seq-select.ts-btn",
+  "div.tl-bar",
+  "div.dn-wrap",
+  "div.tl-root",
+  "div.tl-corner",
+  "div.tl-track-head",
+  "div.tl-grid",
+  "span.ts-label",
+  "span.dn-label",
+  "span.tl-track-name",
+  "input#timeline-duration.dn-input",
+  "button.tl-icon-btn"
+ ],
+ "width": 1360,
+ "height": 606,
+ "crop": {
+  "x": 8,
+  "y": 529,
+  "w": 680,
+  "h": 303
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 532.1630249023438,
+   "y": 228.1004638671875,
+   "w": 19.7989501953125,
+   "h": 19.799072265625
+  },
+  "2": {
+   "x": 282,
+   "y": 215,
+   "w": 48,
+   "h": 48
+  }
+ },
+ "kind": "ui"
+}

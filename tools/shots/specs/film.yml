@@ -1,0 +1,41 @@
+# docs/film.md — Film with your phone (roadmap 68, 1.58).
+# Shoot: e2e-slot -- node tools/shots/shoot.cjs film     Re-annotate: node tools/shots/annotate.cjs film
+# A folded OPPO Find N6 (the owner's phone). The scene: a camera ("Film camera") in front of a crate and a ball;
+# More ▸ Film with phone opens the picker (core tests/e2e/film-mode.test.cjs drives the same path).
+page: film
+defaults:
+  device: n6-folded
+  theme: dark
+  dpr: 2
+  format: webp
+  scene:
+    - {create: Box, name: Crate, at: [0, 0.5, 0], color: '#e0794a'}
+    - {create: Sphere, name: Ball, at: [1.8, 0.5, -1.2], color: '#d94a6a'}
+    - {create: Camera, name: Film camera, at: [0, 1.6, 5.5]}
+    - {wait: 800}
+    - {click: '#ps-more'}
+    - {wait: 500}
+    - {click: '#ps-tile-film'}
+    - {wait: 1500}
+shots:
+  - id: picker
+    replaces: img/film/picker.png
+    alt: >-
+      Film's camera picker on a folded phone: Film camera, the scene's camera, and New camera here, which places a
+      camera where you are looking.
+    caption: The camera picker on a folded OPPO Find N6.
+    setup:
+      - {wait: 300}
+    crop: {rect: [0, 0, 390, 896]}
+    fade: []
+  - id: filming
+    alt: >-
+      Film mode on a folded phone, looking through the Film camera at the crate and the ball: the first-use tip at the
+      top says how to film, the lens controls and the round record button sit at the bottom.
+    caption: Filming through the Film camera, with the first-use tip.
+    setup:
+      - {click: '.film-pick-cam'}
+      - {wait: 2500}
+    # the whole phone screen (Film crops the 3D view to the camera's 16:9, which the default crop would follow)
+    crop: {rect: [0, 0, 390, 896]}
+    fade: []

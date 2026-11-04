@@ -1,0 +1,36 @@
+{
+ "id": "picker",
+ "spec": "4d1446da7fc6",
+ "dpr": 2,
+ "shotAt": "2026-11-04T01:49:46.643Z",
+ "app": {
+  "version": "1.57.0",
+  "sha": "03dbcbb4"
+ },
+ "uiHits": [
+  "nav#ps-bar.ps-bar",
+  "div.film-picker",
+  "button#ps-add.ps-tab",
+  "svg.lucide",
+  "h2#film-picker-title.svelte-tnf1oq",
+  "p.film-picker-desc",
+  "button.film-pick-cam",
+  "button#film-new-camera.film-pick-cam",
+  "button#ps-objects.ps-tab",
+  "button#ps-play.ps-tab",
+  "span.ps-live",
+  "path"
+ ],
+ "width": 780,
+ "height": 1792,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 390,
+  "h": 896
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}
