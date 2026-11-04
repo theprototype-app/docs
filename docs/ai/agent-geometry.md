@@ -1,8 +1,9 @@
 # Shapes and modelling with an agent
 
 An agent joined to your session ([Build with an AI agent](build-with-an-agent.md)) can do more than place
-boxes and spheres. Six tools let it change an object's shape in place, turn a profile into a vase, sweep a
-rail along a path, cut a sign out of an outline, build a mesh from raw data and model a mesh the way
+boxes and spheres. Nine tools let it change an object's shape in place, turn a profile into a vase, sweep a
+rail along a path, cut a sign out of an outline, build a mesh from raw data, copy or mirror an object, bring in a
+glTF / GLB / OBJ file, write [3D text](../3d-text.md) and model a mesh the way
 [Edit Mesh](../mesh-editing.md) does. The in-app [Assistant](assistant.md) has the same tools.
 
 Every call works like the agent's other tools:
@@ -190,6 +191,22 @@ so `animate_parts` or `update_objects` can move a lid or a wheel.
 The app reads what the file **is** from its bytes, not its name. A model is data: nothing in it runs. A file that points
 at other files (an external buffer or texture), or at anything but an embedded PNG / JPEG / WebP image, is refused. An
 `.obj`'s `.mtl` material library is not inside it, so its parts get plain materials; colour them with `set_material`.
+
+### create_text: 3D text (since 1.61)
+
+A sign, a title or a label. Over the connector this is `create_shape {action: "text"}`. The record travels and is saved, and every screen builds the letters from it. See [3D Text](../3d-text.md).
+
+| field | what it does |
+|---|---|
+| `text` | the words; `\n` starts a new line |
+| `font` | a bundled font (`sans`, `serif`, `mono`, `rounded`, `display`, or its name), any Google Fonts family name (fetched once and kept in the Library), or `{asset: "<hash>"}` for a Library font |
+| `size` | letter height in metres |
+| `solid`, `depth`, `bevel` | solid letters; giving `depth` or `bevel` also makes them solid. `bevel` is a width in metres, `false` for none, or `{size, thickness, segments}` |
+| `align`, `maxWidth`, `anchor`, `lineHeight`, `letterSpacing` | the layout of the block |
+| `color`, `sideColor`, `emissive`, `metalness`, `roughness`, `quality`, `outline` | the look |
+| `position`, `rotation`, `name` | where it goes |
+
+To change a text, call `set_geometry` (`edit_shape {action: "params"}`) with the same fields under `params`. `list_fonts` (`assets {action: "fonts"}`) lists the fonts you can use. Solid text holds up to 300 characters, or 80 on a phone or headset. A text is made one per call; `create_shapes` does not take text.
 
 ### edit_mesh: model a mesh
 
