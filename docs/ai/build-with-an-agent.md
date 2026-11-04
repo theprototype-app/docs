@@ -166,7 +166,8 @@ inlined in [/llms-full.txt](https://theprototype.app/llms-full.txt).
 
 **Versions.** `tpAgent.version` is the contract (1.x): new methods and fields are minor versions, a removed or changed
 one is a new major. Release 1.59 speaks contract **1.6.0** (the shape batch, mesh colours, copies, facing, shadows,
-mesh stats and the scene budget). A call written for 1.5 gives the same result, with one fix: a part made in a group
+mesh stats and the scene budget); release 1.61 speaks **1.8.0** (copy and mirror, model import, the device quality ask,
+post effects in screenshots, the budget's top contributors and vsync verdict, scatter `source` / `avoid`). A call written for 1.5 gives the same result, with one fix: a part made in a group
 with no `position` now sits at the group's origin ([part by part](agent-geometry.md#building-a-model-part-by-part)). The `@theprototype/agent` package follows the app release it shipped with and says so in its
 `status` (`contractNote`) when the page speaks a different contract major — update it with
 `npx -y @theprototype/agent@latest`.
