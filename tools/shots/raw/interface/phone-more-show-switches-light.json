@@ -2,10 +2,10 @@
  "id": "phone-more-show-switches-light",
  "spec": "3fe9c38373f5",
  "dpr": 2,
- "shotAt": "2026-11-04T00:40:26.941Z",
+ "shotAt": "2026-11-04T10:11:42.691Z",
  "app": {
-  "version": "1.57.0",
-  "sha": "a0546b7f"
+  "version": "1.58.0",
+  "sha": "676de06c"
  },
  "uiHits": [
   "button#ps-sheet-handle.ps-handle",

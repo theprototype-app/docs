@@ -2,10 +2,10 @@
  "id": "hold-setting",
  "spec": "6b5fe2b64e38",
  "dpr": 2,
- "shotAt": "2026-11-04T00:42:10.777Z",
+ "shotAt": "2026-11-04T10:13:32.292Z",
  "app": {
-  "version": "1.57.0",
-  "sha": "a0546b7f"
+  "version": "1.58.0",
+  "sha": "676de06c"
  },
  "uiHits": [
   "div#inspector.tp-ui",
@@ -32,7 +32,7 @@
  "anchors": {
   "1": {
    "x": 24,
-   "y": 87.21875,
+   "y": 88.21875,
    "w": 482,
    "h": 35.09375
   }

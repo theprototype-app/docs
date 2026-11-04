@@ -2,10 +2,10 @@
  "id": "settings-desktop",
  "spec": "e295ceb22e25",
  "dpr": 2,
- "shotAt": "2026-11-04T00:03:46.734Z",
+ "shotAt": "2026-11-04T09:36:16.153Z",
  "app": {
-  "version": "1.57.0",
-  "sha": "a0546b7f"
+  "version": "1.58.0",
+  "sha": "676de06c"
  },
  "uiHits": [
   "div#settings-main.settings-main",

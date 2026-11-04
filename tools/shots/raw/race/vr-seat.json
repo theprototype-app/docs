@@ -2,10 +2,10 @@
  "id": "vr-seat",
  "spec": "c5b2ff176d52",
  "dpr": 2,
- "shotAt": "2026-11-03T14:13:54.658Z",
+ "shotAt": "2026-11-04T10:36:13.859Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.58.0",
+  "sha": "676de06c"
  },
  "uiHits": [],
  "width": 2252,

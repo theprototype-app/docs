@@ -2,10 +2,10 @@
  "id": "flying-setting",
  "spec": "77983be5c3ab",
  "dpr": 2,
- "shotAt": "2026-11-04T00:59:06.628Z",
+ "shotAt": "2026-11-04T10:31:34.712Z",
  "app": {
-  "version": "1.57.0",
-  "sha": "a0546b7f"
+  "version": "1.58.0",
+  "sha": "676de06c"
  },
  "uiHits": [
   "div#inspector.tp-ui",
@@ -19,13 +19,13 @@
   "button.sec-panel-head",
   "span.sec-title",
   "span.tp-ui",
-  "div.ts-wrap"
+  "button#physics-play-interaction.ts-btn"
  ],
  "width": 606,
  "height": 690,
  "crop": {
   "x": 1129,
-  "y": 352,
+  "y": 351,
   "w": 303,
   "h": 345
  },
@@ -34,7 +34,7 @@
  "anchors": {
   "1": {
    "x": 224,
-   "y": 251.5625,
+   "y": 252.5625,
    "w": 370,
    "h": 76
   }

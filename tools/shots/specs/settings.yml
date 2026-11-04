@@ -37,3 +37,16 @@ shots:
       - {wait: 1500}
     crop: {rect: [0, 0, 390, 700]}
     fade: [b]
+  # 72 (1.59): Sky image quality's five choices (HdriSettings: #hdri-quality)
+  - id: sky-image-quality
+    alt: >-
+      Settings ▸ Scene: the Sky image quality row with its five choices Auto, Low (headset), Standard (1K), High (2K)
+      and Max (4K).
+    caption: Sky image quality, for this device only.
+    setup:
+      - {eval: "const s=window.__stores; s.settingsOpen.set(true); s.settingsSection.set('scene')"}
+      - {wait: 1500}
+      - {eval: "document.getElementById('hdri-quality')?.scrollIntoView({block: 'center'})"}
+      - {wait: 600}
+    crop: {selector: '#hdri-quality', pad: 12}
+    fade: []

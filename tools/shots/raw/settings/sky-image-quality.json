@@ -1,0 +1,33 @@
+{
+ "id": "sky-image-quality",
+ "spec": "d9fcb0dd2316",
+ "dpr": 2,
+ "shotAt": "2026-11-04T10:38:31.989Z",
+ "app": {
+  "version": "1.58.0",
+  "sha": "676de06c"
+ },
+ "uiHits": [
+  "div#row-hdri-quality.tp-ui",
+  "div.sr-body",
+  "div#hdri-quality.tp-ui",
+  "button#hdri-quality-auto.seg-opt",
+  "span",
+  "button#hdri-quality-low.seg-opt",
+  "button#hdri-quality-standard.seg-opt",
+  "button#hdri-quality-high.seg-opt",
+  "button#hdri-quality-max.seg-opt"
+ ],
+ "width": 1292,
+ "height": 124,
+ "crop": {
+  "x": 496,
+  "y": 421,
+  "w": 646,
+  "h": 62
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

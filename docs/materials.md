@@ -58,6 +58,11 @@ surface real detail: worn edges that shine, grooves between planks, a glowing pa
 A row shows only when the material type has that slot: a **Standard** or **Physical** material has all five, Phong,
 Lambert and Toon have Normal, Emission and AO, and Basic has only AO.
 
+![The Material section's Maps rows under the texture row: Normal, Roughness, Metalness, Emission and AO, each with a button to pick its image.](img/materials/maps.webp){ .shot width="311" height="271" loading=lazy }
+/// caption
+The Maps rows in the Material section.
+///
+
 - **Set…** picks an image from your device: PNG, JPEG or WebP (an iPhone HEIC photo is converted to a JPEG first).
   You can also drop an image from the [Explorer](explorer.md) or from your computer onto a row. Large images are
   scaled to 1024 pixels on the long side.

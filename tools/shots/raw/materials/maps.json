@@ -1,0 +1,36 @@
+{
+ "id": "maps",
+ "spec": "eaff8ec70fe3",
+ "dpr": 2,
+ "shotAt": "2026-11-04T10:14:43.641Z",
+ "app": {
+  "version": "1.58.0",
+  "sha": "676de06c"
+ },
+ "uiHits": [
+  "div#inspector.tp-ui",
+  "button.tp-ui",
+  "p.ui-section-label",
+  "span.map-label",
+  "div#map-slot-normalMap.map-row",
+  "div#map-slot-roughnessMap.map-row",
+  "div#map-slot-metalnessMap.map-row",
+  "div#map-slot-emissiveMap.map-row",
+  "div#map-slot-aoMap.map-row",
+  "button#map-set-load.tp-ui",
+  "div.tp-ui",
+  "button#map-set-normalMap.tp-ui"
+ ],
+ "width": 622,
+ "height": 542,
+ "crop": {
+  "x": 1125,
+  "y": 361,
+  "w": 311,
+  "h": 271
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

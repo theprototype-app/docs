@@ -2,15 +2,15 @@
  "id": "live-symmetry",
  "spec": "96e1bcd0779e",
  "dpr": 2,
- "shotAt": "2026-11-04T00:45:22.994Z",
+ "shotAt": "2026-11-04T10:17:10.500Z",
  "app": {
-  "version": "1.57.0",
-  "sha": "a0546b7f"
+  "version": "1.58.0",
+  "sha": "676de06c"
  },
  "uiHits": [
   "div.toolbox-header",
   "span.tbx-label",
-  "button#mesh-gran-shell.px-2",
+  "button#mesh-gran-object.px-2",
   "div.tbx-row",
   "div.toolbox-body",
   "svg.lucide",
@@ -19,7 +19,7 @@
   "button#mesh-sec-cleanup.tbx-sec-head",
   "span",
   "button#mesh-sec-display.tbx-sec-head",
-  "button#mesh-gran-object.px-2"
+  "button#mesh-op-loopcut.tbx-btn"
  ],
  "width": 1376,
  "height": 1400,

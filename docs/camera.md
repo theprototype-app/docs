@@ -262,6 +262,12 @@ our servers. The game menu's **Sky quality** row only counts while the scene's S
 **Settings ▸ Scene ▸ Performance ▸ Sky image quality** is for **this device only** — the scene and your peers are
 unaffected:
 
+![Settings ▸ Scene: the Sky image quality row with its five choices Auto, Low (headset), Standard (1K), High (2K) and Max (4K).](img/settings/sky-image-quality.webp){ .shot width="646" height="62" loading=lazy }
+/// caption
+Sky image quality, for this device only.
+///
+
+
 | Choice | What it does |
 |---|---|
 | **Auto** (the default) | follows the scene and the device, as above. In a headset, in VR, or once the scene is too heavy for effects, the light and reflections are also prepared at 512 px |

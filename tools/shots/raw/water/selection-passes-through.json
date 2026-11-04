@@ -2,10 +2,10 @@
  "id": "selection-passes-through",
  "spec": "ae92cbf795d0",
  "dpr": 2,
- "shotAt": "2026-11-04T01:15:04.797Z",
+ "shotAt": "2026-11-04T10:48:17.291Z",
  "app": {
-  "version": "1.57.0",
-  "sha": "a0546b7f"
+  "version": "1.58.0",
+  "sha": "676de06c"
  },
  "uiHits": [
   "svg.lucide",
@@ -13,21 +13,21 @@
   "button#budget-chip.bc-main",
   "span.bc-target",
   "span#budget-chip-percent.bc-pct",
+  "button#budget-chip-target.bc-caret",
   "div#inspector.tp-ui",
   "div.slider",
   "input.svelte-1xmlgu5",
   "span.appear",
   "div.wrapper",
-  "label.pr-label",
-  "div.tp-ui"
+  "label.pr-label"
  ],
  "width": 1348,
- "height": 1170,
+ "height": 1168,
  "crop": {
   "x": 767,
-  "y": 315,
+  "y": 316,
   "w": 674,
-  "h": 585
+  "h": 584
  },
  "cut": [
   "l",
@@ -40,14 +40,14 @@
  "anchors": {
   "1": {
    "x": 1238,
-   "y": 748.5625,
+   "y": 747.5625,
    "w": 80,
    "h": 48
   },
   "2": {
    "x": 635.4375,
-   "y": 211.40625,
-   "w": 284.4375,
+   "y": 209.40625,
+   "w": 271.625,
    "h": 45.875
   }
  },

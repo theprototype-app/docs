@@ -22,9 +22,9 @@ The first time you open Film, three short cards show how to film: **Look**, **Mo
 through them with **Next** and **Done**, or press **Don't show again**. To see them later, open the settings (the
 sliders button) and press **How to film**.
 
-![Film mode on a folded phone, looking through the Film camera at the crate and the ball, with the lens controls and the round record button at the bottom.](img/film/filming.webp){ .shot width="390" height="896" loading=lazy }
+![Film mode on a folded phone: Film camera with the motion pill (Touch) at the top, the first-use Look card (1 of 3) in the middle, the lens dial on the right, and the stick and the round record button at the bottom.](img/film/filming.webp){ .shot width="390" height="896" loading=lazy }
 /// caption
-Filming through the Film camera.
+Filming through the Film camera, with the first-use card.
 ///
 
 While you film, the rest of the editor is hidden, and so is every headset menu and panel, in any session. The 3D view
