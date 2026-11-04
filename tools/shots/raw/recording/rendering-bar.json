@@ -1,0 +1,32 @@
+{
+ "id": "rendering-bar",
+ "spec": "ed2412de0cee",
+ "dpr": 2,
+ "shotAt": "2026-11-04T01:50:28.338Z",
+ "app": {
+  "version": "1.57.0",
+  "sha": "03dbcbb4"
+ },
+ "uiHits": [
+  "div#recording-bar.rec-bar",
+  "span.rec-label",
+  "div.rec-fill",
+  "div#recording-progress.rec-track",
+  "span#recording-percent.rec-time",
+  "span#recording-time.rec-time",
+  "button#recording-shrink.rec-cancel",
+  "button#recording-cancel.rec-cancel"
+ ],
+ "width": 1304,
+ "height": 184,
+ "crop": {
+  "x": 18,
+  "y": 624,
+  "w": 652,
+  "h": 92
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

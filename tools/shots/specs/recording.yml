@@ -1,74 +1,63 @@
 page: recording
+# 68-int (1.58): the Recording dialog became Export a Video or GIF (65 M4): Turntable, Flythrough or Timeline, five
+# formats, a frame-exact render with a progress bar, Hide and Cancel. The old turntable-dialog / recording-bar /
+# result shots are gone with the live recorder they showed (core tests/e2e/video-export.test.cjs drives the same).
 defaults:
-  device: desktop
+  device: window-688-tall
   theme: dark
   dpr: 2
   format: webp
+  scene:
+    - {create: Sphere, name: Ball, at: [0, 1, 0], color: '#6c8cd5'}
+    - {eval: window.__stores.recordingStores.recordingOpen.set(true)}
+    - {wait: 1200}
 shots:
-- id: turntable-dialog
-  replaces: img/recording/turntable-dialog.png
-  device: window-688-tall
-  caption: The Recording dialog, in a small window.
-  alt: 'The Recording dialog: What to film set to Turntable, with Orbit, Turns, Direction, Size, Frame rate, Length, Quality
-    and the Start recording button.'
-  setup:
-  - create: Sphere
-    name: Ball
-    at:
-    - 0
-    - 1
-    - 0
-    color: '#6c8cd5'
-  - eval: window.__stores.recordingStores.recordingOpen.set(true)
-  - wait: 1200
-  crop:
-    rect:
-    - 0
-    - 0
-    - 688
-    - 840
-  fade: []
-# 83-batch3: recording-bar and result are real captures now (were re-crops of the 36-share evidence): the same ball,
-# the dialog's own Start recording, the bar mid-take and the result card after it (core tests/e2e/recording.test.cjs)
-- id: recording-bar
-  replaces: img/recording/recording-bar.png
-  caption: The recording bar sits above the toolbar while a take runs.
+- id: export-dialog
+  caption: The Export dialog, in a small window.
   alt: >-
-    The recording bar above the toolbar while a turntable take runs: the red dot, Recording, the progress bar, the
-    seconds done of the take's length, and Cancel.
+    The Export dialog in a small window, set to Turntable: what to film, the format list (MP4 video), size, frame rate,
+    length and quality, the frames and file size it will make, and the Export button. 1: Format. 2: Export.
+  crop: {selector: 'dialog:has(#recording-dialog)', pad: 40}
+  fade: []
+  annotate:
+  - {n: 1, at: {selector: '#recording-format'}, shape: box, label: format, badge: t, key: '**Format**: MP4, WebM, GIF, animated WebP or PNG frames.'}
+  - {n: 2, at: {selector: '#recording-start'}, shape: box, badge: t, key: '**Export** renders the take frame by frame.'}
+- id: rendering-bar
+  caption: The rendering bar while an export runs; you can keep working.
+  alt: >-
+    The rendering bar above the toolbar while an export runs: the progress bar and percent, the frames done and the
+    time left, Hide and Cancel.
   setup:
-  - {create: Sphere, name: Ball, at: [0, 1, 0], color: '#6c8cd5'}
-  - {eval: window.__stores.recordingStores.recordingOpen.set(true)}
-  - {wait: 1200}
+  - {eval: "const d = document.querySelector('#recording-duration'); d.value = '20'; d.dispatchEvent(new Event('change', {bubbles: true}))"}
+  - {wait: 300}
   - {click: '#recording-start'}
-  - {wait: 900}
+  - eval: >-
+      new Promise((resolve) => { const t0 = Date.now(); const t = setInterval(() => {
+      const p = Number(document.querySelector('#recording-progress')?.getAttribute('aria-valuenow') || 0);
+      if (p >= 20 || Date.now() - t0 > 30000) { clearInterval(t); resolve(); } }, 100); })
   settle: 100
   crop: {selector: '#recording-bar', pad: 24}
-- id: result
-  replaces: img/recording/result.png
-  device: window-688-tall
-  caption: The finished take, with Download, Show in Explorer and Record again.
+- id: export-result
+  caption: The finished MP4, with Download, Show in Explorer and Export again.
   alt: >-
-    The finished take in the Recording dialog, in a small window: the video of the turning ball, its file name, length,
-    size and frame rate, Saved to Explorer ▸ Recordings, and the Download, Show in Explorer and Record again buttons.
-    1: Download. 2: Record again.
+    The finished export in the dialog, in a small window: the video of the turning ball, its file name, length, size,
+    frame rate and frames, Saved to Explorer, and the Download, Show in Explorer and Export again buttons.
+    1: Download. 2: Export again.
   setup:
-  - {create: Sphere, name: Ball, at: [0, 1, 0], color: '#6c8cd5'}
-  - {eval: window.__stores.recordingStores.recordingOpen.set(true)}
-  - {wait: 1200}
+  - {eval: "const d = document.querySelector('#recording-duration'); d.value = '3'; d.dispatchEvent(new Event('change', {bubbles: true}))"}
+  - {wait: 300}
   - {click: '#recording-start'}
   - eval: >-
       new Promise((resolve, reject) => { const t0 = Date.now(); const t = setInterval(() => {
       if (document.querySelector('#recording-result')) { clearInterval(t); resolve(); }
-      else if (Date.now() - t0 > 40000) { clearInterval(t); reject(new Error('no recording result')); } }, 200); })
+      else if (Date.now() - t0 > 60000) { clearInterval(t); reject(new Error('no export result')); } }, 200); })
   # show a frame of the take (headless leaves an unplayed video black)
   - eval: >-
-      new Promise((resolve) => { const v = document.querySelector('#recording-result video, dialog video'); if (!v) return resolve();
-      v.addEventListener('seeked', () => resolve(), {once: true}); v.currentTime = 3; setTimeout(resolve, 4000); })
+      new Promise((resolve) => { const v = document.querySelector('#recording-result video'); if (!v) return resolve();
+      v.addEventListener('seeked', () => resolve(), {once: true}); v.currentTime = 1.5; setTimeout(resolve, 4000); })
   - {wait: 1500}
   crop: {selector: 'dialog:has(#recording-result)', pad: 40}
-  # the dialog fills the 688 px window: its sides are the window's, not a cut
   fade: []
   annotate:
-  - {n: 1, at: {selector: '#recording-download'}, shape: box, label: save file, badge: b, key: '**Download** to **save file** (.webm); it is in the Explorer already.'}
-  - {n: 2, at: {selector: '#recording-again'}, shape: box, label: new take, badge: b, key: '**Record again** goes back to the settings for a new take.'}
+  - {n: 1, at: {selector: '#recording-download'}, shape: box, label: save file, badge: b, key: '**Download** to **save file**; it is in the Explorer already.'}
+  - {n: 2, at: {selector: '#recording-again'}, shape: box, label: new take, badge: b, key: '**Export again** goes back to the settings for a new take.'}

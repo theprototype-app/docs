@@ -1,0 +1,36 @@
+{
+ "id": "filming",
+ "spec": "ea5f77697ea5",
+ "dpr": 2,
+ "shotAt": "2026-11-04T01:52:04.498Z",
+ "app": {
+  "version": "1.57.0",
+  "sha": "03dbcbb4"
+ },
+ "uiHits": [
+  "div#film-look.film-look",
+  "p#film-tip.film-chip",
+  "div#film-stick.film-stick",
+  "button#film-exit.film-btn",
+  "span.svelte-tnf1oq",
+  "span#film-sensor.film-chip",
+  "button#film-horizon.film-btn",
+  "button#film-record.film-record",
+  "span.film-record-mark",
+  "button#film-map-btn.film-btn",
+  "button#film-settings-btn.film-btn",
+  "span#film-focal.film-chip"
+ ],
+ "width": 780,
+ "height": 1792,
+ "crop": {
+  "x": 0,
+  "y": 0,
+  "w": 390,
+  "h": 896
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {},
+ "kind": "ui"
+}

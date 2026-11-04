@@ -35,6 +35,7 @@ The Timeline docked under the viewport.
 | **Animation** | Starts one of an object's clips — one you authored in the [Animation](animation.md) editor, or one the model was imported with. |
 | **Audio** | Plays a sound from the Explorer, cut at the item's end. |
 | **Event** | Fires a named event into the node graph — the [On Sequence Event](nodes/onseqevent.md) node pulses. |
+| **Property** | *New in 1.58.* Keys one value over time — a camera's zoom, roll, focus or aperture. A [Film](film.md) take records these; each key shows as a diamond. |
 
 ## Building a sequence
 
@@ -76,6 +77,24 @@ Scrubbing at 1.15 s.
 
 A track's **…** menu renames it, moves it up or down, or deletes it; its speaker button mutes it.
 
+### Smoothing a recorded take
+
+A take filmed by hand wobbles. On a **Property** track, the **…** menu's **Smooth keys** evens out the wobble and keeps
+every key at its time, so cuts and markers stay where they were. It is one undo step; press it again to smooth more.
+
+![The Timeline in a small window holding a Film take: two property tracks, Field of view · Film camera and Dutch roll · Film camera, each a row of key diamonds recorded by hand. 1: a key. 2: the track menu with Smooth keys.](img/timeline/property-track.webp){ .shot width="680" height="303" loading=lazy }
+/// caption
+A Film take on the Timeline: the field of view and the roll, keyed.
+///
+
+<div class="shot-key" markdown>
+1. A **key**: the value the take recorded at that moment.
+2. The track menu (**…**) has **Smooth keys**.
+</div>
+
+From 1.58, a track made by a newer version of the app says *Made with a newer version of the app* and is kept as it
+is: it is shared and saved back unchanged, but this version cannot play or edit it.
+
 ## Playing it in the game
 
 - **[Play Sequence](nodes/playseq.md)** node (Animation group): wire a trigger in — On Click, On Enter, Key Press.
@@ -112,6 +131,8 @@ The Timeline as a tab of the bottom sheet on a folded phone.
   them mid-clip.
 - A preview never fires graph events, so it cannot change the game state for one player only.
 - Scenes with sequences need 1.39 or later to show them; older versions open the scene without its sequences.
+- Property tracks need 1.58 or later. 1.57 and older show one as an empty Event track, and saving the scene there loses
+  its keys.
 
 ![The Timeline in the light theme, in a small window: the Intro sequence with its Camera, Animation, Audio and Event tracks, a Cam A → Cam B shot, a Door clip, whoosh.wav and a boom event.](img/timeline/tracks-light.webp){ .shot width="672" height="303" loading=lazy }
 /// caption

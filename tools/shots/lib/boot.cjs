@@ -27,6 +27,9 @@ async function openApp(browser, { device = 'desktop', dpr = 2, theme = 'dark', s
 	const ctx = await browser.newContext({
 		...DEVICES[device],
 		deviceScaleFactor: dpr,
+		// a lane's own dev server (APP_URL=https://localhost:<port>/) serves a self-signed certificate: shoot a release's
+		// new figures before it is deployed (release.sh re-shoots them from the preview anyway)
+		ignoreHTTPSErrors: /^https:\/\/(localhost|127\.0\.0\.1)[:/]/.test(url),
 		serviceWorkers: 'block',
 		reducedMotion: motion ? 'no-preference' : 'reduce',
 		colorScheme: theme === 'light' ? 'light' : 'dark',
