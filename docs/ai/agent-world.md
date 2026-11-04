@@ -106,10 +106,13 @@ ones.
 | `rules` | where copies may go: `slope: [min°, max°]` (0 = level ground), `height: [min, max]` metres, `layer: {i, min}` (only where paint layer `i` is at least `min`) |
 | `randomRotation`, `tint`, `sink` | a random turn (on by default), colour variation 0 to 1, metres pushed into the ground |
 | `collider` | physics for the copies: `none` (default), `box`, `sphere` or `hull` |
-| `seed` | another arrangement |
+| `seed` | another arrangement (the same seed gives the same one) |
+| `avoid` | *since 1.61*: up to 16 object uuids to keep clear — nothing lands on their footprint (a path, a house, a portal) |
+| `source` | *since 1.61*: the uuid of an object you built, instead of `asset`: up to 200 **real copies** of it, each one editable, at the spots the rules pick |
 | `remove` | a set's id, to delete that set instead |
 
-It returns the set's id and how many copies were placed. A surface holds up to 8 sets.
+It returns the set's id and how many copies were placed (with `source`: the copies' uuids). A surface holds up to 8 sets.
+For one or a few copies in a row, or a mirror image, use `duplicate` ([Shapes and modelling](agent-geometry.md#duplicate-copies-and-mirror-images)).
 
 ## Water
 
