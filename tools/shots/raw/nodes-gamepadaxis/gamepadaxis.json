@@ -2,10 +2,10 @@
  "id": "gamepadaxis",
  "spec": "a25c5b564b83",
  "dpr": 2,
- "shotAt": "2026-11-03T14:42:59.996Z",
+ "shotAt": "2026-11-04T00:49:21.687Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "div.svelte-flow__pane",

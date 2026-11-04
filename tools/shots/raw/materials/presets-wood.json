@@ -2,10 +2,10 @@
  "id": "presets-wood",
  "spec": "8b85512b9d9f",
  "dpr": 2,
- "shotAt": "2026-11-03T13:31:24.002Z",
+ "shotAt": "2026-11-04T00:42:50.683Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "div#inspector.tp-ui",

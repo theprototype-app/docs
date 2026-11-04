@@ -164,7 +164,7 @@ A file without these extras (a `.vrma` from another tool, an animation `.glb`) i
 
 ## Game-ready clips (Animation window ▸ clip tools)
 
-![The clip tools in the Animation window for the Knight's Walking_A clip: fps, frames and length with seamless loop, In place or Moving, loop, speed, Rename, Loop it and Remove, the playhead and in / out markers, Mark in, Mark out, Trim and Split at playhead. 1: the loop seam. 2: Loop it and Remove.](img/characters-and-motion/clip-tools.webp){ .shot width="372" height="443" loading=lazy }
+![The clip tools in the Animation window for the Knight's Walking_A clip: fps, frames and length with seamless loop, In place or Moving, loop, speed, Rename, Loop it and Remove, the playhead and in / out markers, Mark in, Mark out, Trim and Split at playhead. 1: the loop seam. 2: Loop it and Remove.](img/characters-and-motion/clip-tools.webp){ .shot width="370" height="443" loading=lazy }
 /// caption
 The clip tools in the Animation window.
 ///

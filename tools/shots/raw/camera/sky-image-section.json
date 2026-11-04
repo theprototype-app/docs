@@ -1,10 +1,11 @@
 {
  "id": "sky-image-section",
+ "spec": "5bdb60998f44",
  "dpr": 2,
- "shotAt": "2026-10-31T15:06:10.668Z",
+ "shotAt": "2026-11-04T00:17:39.696Z",
  "app": {
-  "version": "1.51.0",
-  "sha": "6fe31dae"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "div#budget-chip-wrap.tp-ui",

@@ -2,20 +2,19 @@
  "id": "status-dot-phone",
  "spec": "7132a9dcc547",
  "dpr": 2,
- "shotAt": "2026-11-03T12:15:16.696Z",
+ "shotAt": "2026-11-04T00:23:26.312Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "button#logo-menu.burger",
   "img.h-7",
   "button#ps-connect-chip.ps-chip-main",
   "svg.lucide",
-  "span.ps-dot",
   "button#ps-mic.ps-chip-mic",
-  "path",
   "button#notif-bell.hud-cell",
+  "path",
   "button#peers-trigger.hud-cell",
   "svg.h-full",
   "div.relative"
@@ -34,10 +33,10 @@
  "fade": [],
  "anchors": {
   "1": {
-   "x": 242,
-   "y": 72,
-   "w": 28,
-   "h": 28
+   "x": 206,
+   "y": 60,
+   "w": 16,
+   "h": 16
   }
  },
  "kind": "ui"

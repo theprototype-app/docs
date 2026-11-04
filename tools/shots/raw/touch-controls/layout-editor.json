@@ -2,10 +2,10 @@
  "id": "layout-editor",
  "spec": "f9a507d55975",
  "dpr": 2,
- "shotAt": "2026-11-03T11:17:15.354Z",
+ "shotAt": "2026-11-04T01:10:16.974Z",
  "app": {
-  "version": "1.54.2",
-  "sha": "de3014f8"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "div#touch-layout-editor.tle",
@@ -32,9 +32,9 @@
  "fade": [],
  "anchors": {
   "1": {
-   "x": 477.90625,
+   "x": 464.84375,
    "y": 48,
-   "w": 123.28125,
+   "w": 130.625,
    "h": 41
   },
   "2": {

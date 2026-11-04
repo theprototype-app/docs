@@ -2,10 +2,10 @@
  "id": "high-contrast",
  "spec": "871ff2a5a164",
  "dpr": 2,
- "shotAt": "2026-11-03T11:04:57.117Z",
+ "shotAt": "2026-11-04T00:04:09.959Z",
  "app": {
-  "version": "1.54.2",
-  "sha": "de3014f8"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "button.sb-tab",

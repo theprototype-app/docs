@@ -1,10 +1,11 @@
 {
  "id": "sidebars-both-sides-light",
+ "spec": "f7559384dbd9",
  "dpr": 2,
- "shotAt": "2026-10-31T14:41:51.453Z",
+ "shotAt": "2026-11-04T00:37:51.392Z",
  "app": {
-  "version": "1.51.0",
-  "sha": "6fe31dae"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "header.wc-head",

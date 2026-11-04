@@ -2,10 +2,10 @@
  "id": "hudscreen",
  "spec": "e248f3b25df2",
  "dpr": 2,
- "shotAt": "2026-11-03T13:59:45.715Z",
+ "shotAt": "2026-11-04T00:51:37.219Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "div.svelte-flow__pane",

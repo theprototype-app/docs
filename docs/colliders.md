@@ -240,7 +240,7 @@ dynamic.
 The other body travels with the trigger, so every peer reads the same object. A contact with the ground plane reports an
 empty *other*.
 
-![The node editor: an On Impact node whose only with input is wired from the Target's Object Selector and whose other output feeds a Distance node, and an On Enter node on a sensor zone filtered to the Ball. 1: only with. 2: other, the body that was hit.](img/colliders/contact-filter.webp){ .shot width="659" height="361" loading=lazy }
+![The node editor: an On Impact node whose only with input is wired from the Target's Object Selector and whose other output feeds a Distance node, and an On Enter node on a sensor zone filtered to the Ball. 1: only with. 2: other, the body that was hit.](img/colliders/contact-filter.webp){ .shot width="661" height="361" loading=lazy }
 /// caption
 On Impact and On Enter nodes with only with wired to Object Selectors.
 ///

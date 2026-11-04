@@ -2,10 +2,10 @@
  "id": "flying-setting",
  "spec": "77983be5c3ab",
  "dpr": 2,
- "shotAt": "2026-11-03T14:09:37.362Z",
+ "shotAt": "2026-11-04T00:59:06.628Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "div#inspector.tp-ui",

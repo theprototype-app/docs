@@ -2,10 +2,10 @@
  "id": "connect-bar-menu",
  "spec": "732eb037cdbc",
  "dpr": 2,
- "shotAt": "2026-11-03T11:10:33.152Z",
+ "shotAt": "2026-11-04T00:28:59.428Z",
  "app": {
-  "version": "1.54.2",
-  "sha": "de3014f8"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "div.fixed",

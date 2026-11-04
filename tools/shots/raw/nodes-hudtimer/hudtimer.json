@@ -2,10 +2,10 @@
  "id": "hudtimer",
  "spec": "fb8e05a30f35",
  "dpr": 2,
- "shotAt": "2026-11-03T14:00:34.754Z",
+ "shotAt": "2026-11-04T00:52:22.182Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "div.svelte-flow__pane",

@@ -2,10 +2,10 @@
  "id": "behaviour",
  "spec": "767e3583fa68",
  "dpr": 2,
- "shotAt": "2026-11-03T14:42:13.713Z",
+ "shotAt": "2026-11-04T00:47:39.071Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "div.svelte-flow__pane",

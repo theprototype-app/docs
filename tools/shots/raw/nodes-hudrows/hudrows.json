@@ -2,10 +2,10 @@
  "id": "hudrows",
  "spec": "867458682641",
  "dpr": 2,
- "shotAt": "2026-11-03T13:59:29.698Z",
+ "shotAt": "2026-11-04T00:51:22.482Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "div.svelte-flow__pane",

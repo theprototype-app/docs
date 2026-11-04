@@ -9,8 +9,8 @@
    "height": 620,
    "badges": 0,
    "labels": [],
-   "app": "1.54.2",
-   "shotAt": "2026-11-03T11:04:57.117Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:04:09.959Z"
   },
   "img/accessibility/scale-150-phone.webp": {
    "page": "accessibility",
@@ -20,8 +20,8 @@
    "height": 640,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:22:26.583Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:03:57.029Z"
   },
   "img/accessibility/settings-desktop.webp": {
    "page": "accessibility",
@@ -31,8 +31,8 @@
    "height": 590,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:22:12.960Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:03:46.734Z"
   },
   "img/ai-assistant/assistant-mic.webp": {
    "page": "ai-assistant",
@@ -42,8 +42,8 @@
    "height": 440,
    "badges": 1,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:37:36.257Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:04:33.301Z"
   },
   "img/ai-assistant/voice-typing-settings.webp": {
    "page": "ai-assistant",
@@ -55,8 +55,8 @@
    "labels": [
     "provider"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:32:53.346Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:04:23.210Z"
   },
   "img/ai-build-with-an-agent/agent-activity.webp": {
    "page": "ai-build-with-an-agent",
@@ -69,8 +69,8 @@
     "steps so far",
     "undo it"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T12:49:39.006Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:05:03.745Z"
   },
   "img/ai-claude-connector/connect-card.webp": {
    "page": "ai-claude-connector",
@@ -84,8 +84,8 @@
     "once only",
     "this page"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:50:42.759Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:05:16.653Z"
   },
   "img/appearance/themes.webp": {
    "page": "appearance",
@@ -101,8 +101,8 @@
     "bit",
     "High contrast"
    ],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:27:33.083Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:05:26.817Z"
   },
   "img/architecture/door-open.webp": {
    "page": "architecture",
@@ -115,8 +115,8 @@
     "click opens",
     "casement"
    ],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T17:20:17.582Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:06:17.904Z"
   },
   "img/architecture/house.webp": {
    "page": "architecture",
@@ -130,8 +130,8 @@
     "window",
     "spiral stair"
    ],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T17:19:43.814Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:05:45.754Z"
   },
   "img/architecture/wall-geometry.webp": {
    "page": "architecture",
@@ -141,8 +141,8 @@
    "height": 456,
    "badges": 3,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:37:49.747Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:05:59.671Z"
   },
   "img/avatars/characters.webp": {
    "page": "avatars",
@@ -152,8 +152,8 @@
    "height": 540,
    "badges": 0,
    "labels": [],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T17:22:44.963Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:10:41.256Z"
   },
   "img/avatars/knocked-off.webp": {
    "page": "avatars",
@@ -163,8 +163,8 @@
    "height": 560,
    "badges": 0,
    "labels": [],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T17:24:31.286Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:14:03.997Z"
   },
   "img/avatars/peer-character.webp": {
    "page": "avatars",
@@ -185,8 +185,8 @@
    "height": 835,
    "badges": 0,
    "labels": [],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T17:20:33.081Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:06:35.174Z"
   },
   "img/building-in-vr/asset-browser-packs.webp": {
    "page": "building-in-vr",
@@ -199,8 +199,8 @@
     "where from",
     "pin it"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:38:29.148Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:14:41.168Z"
   },
   "img/building-in-vr/asset-browser-placing.webp": {
    "page": "building-in-vr",
@@ -210,8 +210,8 @@
    "height": 448,
    "badges": 2,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:38:55.744Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:15:06.308Z"
   },
   "img/building-in-vr/logic-pad.webp": {
    "page": "building-in-vr",
@@ -224,8 +224,8 @@
     "change it",
     "the node"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:39:41.533Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:15:49.650Z"
   },
   "img/building-in-vr/logic-panel.webp": {
    "page": "building-in-vr",
@@ -238,8 +238,8 @@
     "which graph",
     "add a node"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:39:16.476Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:15:26.288Z"
   },
   "img/building-in-vr/measure-arrange.webp": {
    "page": "building-in-vr",
@@ -249,8 +249,8 @@
    "height": 600,
    "badges": 0,
    "labels": [],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T17:24:52.557Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:14:23.343Z"
   },
   "img/camera/camera-object.webp": {
    "page": "camera",
@@ -260,8 +260,8 @@
    "height": 840,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T15:04:45.176Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:17:05.076Z"
   },
   "img/camera/env-presets.webp": {
    "page": "camera",
@@ -305,8 +305,8 @@
     "Shaded + AO",
     "Wireframe"
    ],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:06:23.299Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:16:01.080Z"
   },
   "img/camera/sky-image-section.webp": {
    "page": "camera",
@@ -316,8 +316,8 @@
    "height": 800,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T15:06:10.668Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:17:39.696Z"
   },
   "img/camera/sky-meadow.webp": {
    "page": "camera",
@@ -340,8 +340,8 @@
    "height": 615,
    "badges": 2,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:06:42.183Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:16:16.325Z"
   },
   "img/characters-and-motion/animation-states.webp": {
    "page": "characters-and-motion",
@@ -351,22 +351,22 @@
    "height": 472,
    "badges": 2,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T12:39:58.233Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:18:12.850Z"
   },
   "img/characters-and-motion/clip-tools.webp": {
    "page": "characters-and-motion",
    "kind": "ui",
    "dpr": 2,
-   "width": 372,
+   "width": 370,
    "height": 443,
    "badges": 2,
    "labels": [
     "loop seam",
     "loop it"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T12:49:56.241Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:17:55.585Z"
   },
   "img/characters-and-motion/motion-tab.webp": {
    "page": "characters-and-motion",
@@ -379,8 +379,8 @@
     "motion",
     "then drag"
    ],
-   "app": "1.54.2",
-   "shotAt": "2026-11-03T11:06:01.290Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:18:27.405Z"
   },
   "img/checkpoints/large-scene-notice.webp": {
    "page": "checkpoints",
@@ -419,8 +419,8 @@
    "labels": [
     "who is here"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:41:41.068Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:20:00.501Z"
   },
   "img/code-workspace/files-menu.webp": {
    "page": "code-workspace",
@@ -430,8 +430,8 @@
    "height": 640,
    "badges": 2,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:35:01.472Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:20:49.891Z"
   },
   "img/code-workspace/parse-error.webp": {
    "page": "code-workspace",
@@ -441,8 +441,8 @@
    "height": 340,
    "badges": 1,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:41:06.323Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:19:25.384Z"
   },
   "img/code-workspace/player-code.webp": {
    "page": "code-workspace",
@@ -452,8 +452,8 @@
    "height": 470,
    "badges": 1,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:35:17.340Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:21:06.912Z"
   },
   "img/code-workspace/pop-out-window.webp": {
    "page": "code-workspace",
@@ -463,8 +463,8 @@
    "height": 640,
    "badges": 1,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T15:02:13.068Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:20:17.111Z"
   },
   "img/code-workspace/script-tab.webp": {
    "page": "code-workspace",
@@ -474,8 +474,8 @@
    "height": 380,
    "badges": 1,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T15:01:54.655Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:19:10.384Z"
   },
   "img/code-workspace/sidebars.webp": {
    "page": "code-workspace",
@@ -485,19 +485,19 @@
    "height": 520,
    "badges": 3,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:34:44.351Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:20:33.748Z"
   },
   "img/colliders/contact-filter.webp": {
    "page": "colliders",
    "kind": "ui",
    "dpr": 2,
-   "width": 659,
+   "width": 661,
    "height": 361,
    "badges": 2,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:36:08.484Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:22:13.135Z"
   },
   "img/colliders/decomposed.webp": {
    "page": "colliders",
@@ -509,8 +509,8 @@
    "labels": [
     "convex piece"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:35:53.227Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:21:56.514Z"
   },
   "img/colliders/exact-mesh.webp": {
    "page": "colliders",
@@ -548,8 +548,8 @@
    "labels": [
     "liked"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:44:52.630Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:22:59.097Z"
   },
   "img/community/play-link-heart.webp": {
    "page": "community",
@@ -561,8 +561,8 @@
    "labels": [
     "like it"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:36:28.834Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:22:32.365Z"
   },
   "img/community/your-games.webp": {
    "page": "community",
@@ -579,28 +579,28 @@
    "page": "connection",
    "kind": "ui",
    "dpr": 2,
-   "width": 542,
+   "width": 540,
    "height": 338,
    "badges": 1,
    "labels": [
     "guests see"
    ],
-   "app": "1.54.2",
-   "shotAt": "2026-11-03T11:06:11.771Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:24:31.986Z"
   },
   "img/connection/peers-panel-desktop.webp": {
    "page": "connection",
    "kind": "ui",
    "dpr": 2,
-   "width": 393,
+   "width": 398,
    "height": 278,
    "badges": 2,
    "labels": [
     "you",
     "role"
    ],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T17:35:04.699Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:24:20.154Z"
   },
   "img/connection/status-dot-phone.webp": {
    "page": "connection",
@@ -612,8 +612,8 @@
    "labels": [
     "connected"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T12:15:16.696Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:23:26.312Z"
   },
   "img/controls/alt-click-cycle.webp": {
    "page": "controls",
@@ -649,8 +649,8 @@
    "height": 130,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:46:49.159Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:27:35.356Z"
   },
   "img/controls/clusters-rotated.webp": {
    "page": "controls",
@@ -671,8 +671,8 @@
    "height": 230,
    "badges": 0,
    "labels": [],
-   "app": "1.54.2",
-   "shotAt": "2026-11-03T11:10:33.152Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:28:59.428Z"
   },
   "img/controls/copy-paste-section-menu.webp": {
    "page": "controls",
@@ -715,8 +715,8 @@
    "height": 90,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:47:16.323Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:28:46.533Z"
   },
   "img/controls/edit-positions-top-right.webp": {
    "page": "controls",
@@ -737,8 +737,8 @@
    "height": 130,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:47:02.740Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:28:19.006Z"
   },
   "img/controls/gizmo-modes.webp": {
    "page": "controls",
@@ -841,8 +841,8 @@
    "labels": [
     "add as tab"
    ],
-   "app": "1.54.2",
-   "shotAt": "2026-11-03T11:08:09.165Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:26:42.820Z"
   },
   "img/controls/window-place-without-docking.webp": {
    "page": "controls",
@@ -852,44 +852,44 @@
    "height": 584,
    "badges": 0,
    "labels": [],
-   "app": "1.54.2",
-   "shotAt": "2026-11-03T11:08:25.949Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:26:58.422Z"
   },
   "img/debugger/paused-dark.webp": {
    "page": "debugger",
    "kind": "ui",
    "dpr": 2,
    "width": 300,
-   "height": 341,
+   "height": 360,
    "badges": 1,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:45:10.880Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:29:17.588Z"
   },
   "img/debugger/paused-light.webp": {
    "page": "debugger",
    "kind": "ui",
    "dpr": 2,
    "width": 300,
-   "height": 341,
+   "height": 360,
    "badges": 1,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:45:29.102Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:29:34.381Z"
   },
   "img/edit-in-blender/card.webp": {
    "page": "edit-in-blender",
    "kind": "ui",
    "dpr": 2,
    "width": 616,
-   "height": 430,
+   "height": 414,
    "badges": 2,
    "labels": [
     "watch it",
     "this guide"
    ],
-   "app": "1.54.2",
-   "shotAt": "2026-11-03T11:10:44.946Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:29:45.780Z"
   },
   "img/explorer/place-box-ghost.webp": {
    "page": "explorer",
@@ -938,8 +938,8 @@
    "labels": [
     "what shows"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:08:42.752Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:30:38.953Z"
   },
   "img/fluids/fluid-emitter.webp": {
    "page": "fluids",
@@ -967,8 +967,8 @@
     "head-race",
     "fountain"
    ],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T17:42:51.295Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:31:44.283Z"
   },
   "img/free-assets/browser-materials.webp": {
    "page": "free-assets",
@@ -991,8 +991,8 @@
    "height": 245,
    "badges": 1,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:48:42.719Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:33:17.898Z"
   },
   "img/free-assets/material-applied.webp": {
    "page": "free-assets",
@@ -1030,8 +1030,8 @@
     "the rules",
     "the engine"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:49:48.122Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:34:35.378Z"
   },
   "img/game-rules/mini-golf.webp": {
    "page": "game-rules",
@@ -1045,8 +1045,8 @@
     "the rules",
     "the engine"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:38:13.373Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:33:56.402Z"
   },
   "img/hud-editor/hud-editor.webp": {
    "page": "hud-editor",
@@ -1127,8 +1127,8 @@
    "height": 543,
    "badges": 2,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:51:00.426Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:36:17.798Z"
   },
   "img/index/quick-start-add.webp": {
    "page": "index",
@@ -1141,8 +1141,8 @@
     "add",
     "a cube"
    ],
-   "app": "1.54.2",
-   "shotAt": "2026-11-03T11:10:57.273Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:36:29.832Z"
   },
   "img/interface/dialog-delete-flow.webp": {
    "page": "interface",
@@ -1152,8 +1152,8 @@
    "height": 303,
    "badges": 0,
    "labels": [],
-   "app": "1.54.2",
-   "shotAt": "2026-11-03T11:14:31.404Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:40:00.707Z"
   },
   "img/interface/dock-drop-objects.webp": {
    "page": "interface",
@@ -1174,8 +1174,8 @@
    "height": 840,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:42:10.048Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:38:05.733Z"
   },
   "img/interface/dock-split.webp": {
    "page": "interface",
@@ -1196,8 +1196,8 @@
    "height": 596,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:43:50.256Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:40:39.576Z"
   },
   "img/interface/drop-into-split-pane.webp": {
    "page": "interface",
@@ -1207,8 +1207,8 @@
    "height": 840,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:43:17.512Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:39:33.110Z"
   },
   "img/interface/focus-mode-pip.webp": {
    "page": "interface",
@@ -1240,8 +1240,8 @@
    "height": 180,
    "badges": 0,
    "labels": [],
-   "app": "1.54.2",
-   "shotAt": "2026-11-03T11:13:32.632Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:39:03.927Z"
   },
   "img/interface/phone-bar-drag-in.webp": {
    "page": "interface",
@@ -1262,8 +1262,8 @@
    "height": 550,
    "badges": 0,
    "labels": [],
-   "app": "1.54.2",
-   "shotAt": "2026-11-03T11:15:00.563Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:40:26.941Z"
   },
   "img/interface/pop-out-dock.webp": {
    "page": "interface",
@@ -1286,8 +1286,8 @@
    "height": 460,
    "badges": 0,
    "labels": [],
-   "app": "1.54.2",
-   "shotAt": "2026-11-03T11:11:12.881Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:36:42.900Z"
   },
   "img/interface/selection-toolbar-phone.webp": {
    "page": "interface",
@@ -1319,8 +1319,8 @@
    "height": 900,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:41:34.130Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:37:38.210Z"
   },
   "img/interface/sidebar-tab-menu.webp": {
    "page": "interface",
@@ -1330,8 +1330,8 @@
    "height": 330,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:41:17.652Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:37:10.250Z"
   },
   "img/interface/sidebar-tabs.webp": {
    "page": "interface",
@@ -1341,8 +1341,8 @@
    "height": 440,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:41:01.898Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:36:56.444Z"
   },
   "img/interface/sidebars-both-sides-light.webp": {
    "page": "interface",
@@ -1352,8 +1352,8 @@
    "height": 620,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:41:51.453Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:37:51.392Z"
   },
   "img/invites/request-ai-sheet.webp": {
    "page": "invites",
@@ -1363,8 +1363,8 @@
    "height": 475,
    "badges": 3,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:26:36.592Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:41:01.940Z"
   },
   "img/loading/back-to-start-view.webp": {
    "page": "loading",
@@ -1376,8 +1376,8 @@
    "labels": [
     "fly back"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T15:03:34.128Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:41:56.629Z"
   },
   "img/loading/hold-setting.webp": {
    "page": "loading",
@@ -1387,8 +1387,8 @@
    "height": 279,
    "badges": 1,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:52:08.990Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:42:10.777Z"
   },
   "img/loading/modern-failed.webp": {
    "page": "loading",
@@ -1401,8 +1401,8 @@
     "why it failed",
     "retry"
    ],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T17:53:39.287Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:41:31.770Z"
   },
   "img/loading/modern-loading.webp": {
    "page": "loading",
@@ -1414,8 +1414,8 @@
    "labels": [
     "arrived so far"
    ],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T17:53:22.651Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:41:17.003Z"
   },
   "img/lod/lod-distance.webp": {
    "page": "lod",
@@ -1425,8 +1425,8 @@
    "height": 157,
    "badges": 2,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:31:08.836Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:42:21.372Z"
   },
   "img/main-graph/properties.webp": {
    "page": "main-graph",
@@ -1449,8 +1449,8 @@
    "height": 250,
    "badges": 2,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:31:38.465Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:43:04.558Z"
   },
   "img/materials/presets-wood.webp": {
    "page": "materials",
@@ -1460,8 +1460,8 @@
    "height": 214,
    "badges": 2,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:31:24.002Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:42:50.683Z"
   },
   "img/measure-align/arrange.webp": {
    "page": "measure-align",
@@ -1471,8 +1471,8 @@
    "height": 379,
    "badges": 2,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:32:17.764Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:43:55.144Z"
   },
   "img/measure-align/measure-chain.webp": {
    "page": "measure-align",
@@ -1482,8 +1482,8 @@
    "height": 500,
    "badges": 3,
    "labels": [],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T17:55:35.850Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:43:16.295Z"
   },
   "img/measure-align/measure-edit.webp": {
    "page": "measure-align",
@@ -1495,8 +1495,8 @@
    "labels": [
     "picked up"
    ],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T17:56:01.893Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:43:42.421Z"
   },
   "img/measure-align/measure-items.webp": {
    "page": "measure-align",
@@ -1508,8 +1508,8 @@
    "labels": [
     "labels step aside"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:13:37.643Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:43:29.716Z"
   },
   "img/mesh-editing/boolean-subtract.webp": {
    "page": "mesh-editing",
@@ -1534,8 +1534,8 @@
    "labels": [
     "−1 to +1"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:24:25.853Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:44:30.905Z"
   },
   "img/mesh-editing/knife-polyline.webp": {
    "page": "mesh-editing",
@@ -1547,8 +1547,8 @@
    "labels": [
     "corners so far"
    ],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T17:56:29.012Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:44:06.511Z"
   },
   "img/mesh-editing/live-symmetry.webp": {
    "page": "mesh-editing",
@@ -1560,8 +1560,8 @@
    "labels": [
     "mirrored edits"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:53:07.867Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:45:22.994Z"
   },
   "img/mesh-editing/mitered-bevel.webp": {
    "page": "mesh-editing",
@@ -1573,8 +1573,8 @@
    "labels": [
     "mitered corner"
    ],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T17:57:07.620Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:44:42.212Z"
   },
   "img/mesh-editing/solidify.webp": {
    "page": "mesh-editing",
@@ -1586,8 +1586,8 @@
    "labels": [
     "thick walls"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:32:43.760Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:44:18.731Z"
   },
   "img/mesh-editing/vertex-tools-bevel.webp": {
    "page": "mesh-editing",
@@ -1600,8 +1600,8 @@
     "rounder",
     "bulge"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:24:37.906Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:44:54.347Z"
   },
   "img/modules/core-phone.webp": {
    "page": "modules",
@@ -1613,8 +1613,8 @@
    "labels": [
     "its action"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:53:21.601Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:45:34.672Z"
   },
   "img/node-editor/breadcrumb-siblings.webp": {
    "page": "node-editor",
@@ -1626,8 +1626,8 @@
    "labels": [
     "you are here"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:40:55.896Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:46:03.560Z"
   },
   "img/node-editor/cheat-sheet.webp": {
    "page": "node-editor",
@@ -1637,8 +1637,8 @@
    "height": 640,
    "badges": 2,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:40:38.726Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:45:48.381Z"
   },
   "img/node-editor/group.webp": {
    "page": "node-editor",
@@ -1670,8 +1670,8 @@
    "height": 347,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:55:09.028Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:47:18.945Z"
   },
   "img/nodes-behaviour/behaviour.webp": {
    "page": "nodes-behaviour",
@@ -1681,8 +1681,8 @@
    "height": 341,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:42:13.713Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:47:39.071Z"
   },
   "img/nodes-camerafollow/camerafollow.webp": {
    "page": "nodes-camerafollow",
@@ -1706,8 +1706,8 @@
     "camera",
     "target"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:42:28.142Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:48:05.871Z"
   },
   "img/nodes-charcontroller/charcontroller.webp": {
    "page": "nodes-charcontroller",
@@ -1717,8 +1717,8 @@
    "height": 274,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:56:16.192Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:48:21.128Z"
   },
   "img/nodes-coderef/coderef.webp": {
    "page": "nodes-coderef",
@@ -1728,8 +1728,8 @@
    "height": 145,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:56:30.897Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:48:36.311Z"
   },
   "img/nodes-delay/delay.webp": {
    "page": "nodes-delay",
@@ -1739,8 +1739,8 @@
    "height": 347,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:42:44.435Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:48:50.965Z"
   },
   "img/nodes-flowfloat/flowfloat.webp": {
    "page": "nodes-flowfloat",
@@ -1750,8 +1750,8 @@
    "height": 216,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:57:04.914Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:49:06.841Z"
   },
   "img/nodes-gamepadaxis/gamepadaxis.webp": {
    "page": "nodes-gamepadaxis",
@@ -1761,8 +1761,8 @@
    "height": 313,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:42:59.996Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:49:21.687Z"
   },
   "img/nodes-gamepadbutton/gamepadbutton.webp": {
    "page": "nodes-gamepadbutton",
@@ -1772,8 +1772,8 @@
    "height": 334,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:57:36.825Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:49:36.568Z"
   },
   "img/nodes-gametime/gametime.webp": {
    "page": "nodes-gametime",
@@ -1783,19 +1783,19 @@
    "height": 243,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:43:15.342Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:49:51.522Z"
   },
   "img/nodes-gate/gate-group.webp": {
    "page": "nodes-gate",
    "kind": "ui",
    "dpr": 2,
-   "width": 339,
+   "width": 336,
    "height": 440,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:58:10.507Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:50:08.115Z"
   },
   "img/nodes-getvariable/getvariable.webp": {
    "page": "nodes-getvariable",
@@ -1805,8 +1805,8 @@
    "height": 243,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:43:30.826Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:50:22.730Z"
   },
   "img/nodes-hudbar/hudbar.webp": {
    "page": "nodes-hudbar",
@@ -1827,8 +1827,8 @@
    "height": 228,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:58:57.785Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:50:52.496Z"
   },
   "img/nodes-hudlist/hudlist.webp": {
    "page": "nodes-hudlist",
@@ -1838,8 +1838,8 @@
    "height": 351,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:59:13.939Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:51:07.458Z"
   },
   "img/nodes-hudrows/hudrows.webp": {
    "page": "nodes-hudrows",
@@ -1849,8 +1849,8 @@
    "height": 213,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:59:29.698Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:51:22.482Z"
   },
   "img/nodes-hudscreen/hudscreen.webp": {
    "page": "nodes-hudscreen",
@@ -1860,8 +1860,8 @@
    "height": 436,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:59:45.715Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:51:37.219Z"
   },
   "img/nodes-hudset/hudset.webp": {
    "page": "nodes-hudset",
@@ -1871,8 +1871,8 @@
    "height": 186,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:43:46.875Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:51:52.185Z"
   },
   "img/nodes-hudtext/hudtext.webp": {
    "page": "nodes-hudtext",
@@ -1882,8 +1882,8 @@
    "height": 228,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:00:17.628Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:52:07.320Z"
   },
   "img/nodes-hudtimer/hudtimer.webp": {
    "page": "nodes-hudtimer",
@@ -1893,8 +1893,8 @@
    "height": 300,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:00:34.754Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:52:22.182Z"
   },
   "img/nodes-latch/latch.webp": {
    "page": "nodes-latch",
@@ -1904,8 +1904,8 @@
    "height": 243,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:44:02.175Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:52:36.884Z"
   },
   "img/nodes-leaderboard/leaderboard.webp": {
    "page": "nodes-leaderboard",
@@ -1915,8 +1915,8 @@
    "height": 598,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:44:18.304Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:52:52.310Z"
   },
   "img/nodes-movespeed/movespeed.webp": {
    "page": "nodes-movespeed",
@@ -1926,8 +1926,8 @@
    "height": 494,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:01:22.116Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:53:06.642Z"
   },
   "img/nodes-once/once.webp": {
    "page": "nodes-once",
@@ -1937,8 +1937,8 @@
    "height": 386,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:01:38.204Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:53:21.572Z"
   },
   "img/nodes-ongamestate/ongamestate.webp": {
    "page": "nodes-ongamestate",
@@ -1948,8 +1948,8 @@
    "height": 306,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:01:53.465Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:53:36.204Z"
   },
   "img/nodes-peervariable/peervariable.webp": {
    "page": "nodes-peervariable",
@@ -1959,8 +1959,8 @@
    "height": 616,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:02:10.352Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:53:52.294Z"
   },
   "img/nodes-possessnode/possessnode.webp": {
    "page": "nodes-possessnode",
@@ -1970,8 +1970,8 @@
    "height": 613,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:02:26.196Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:54:07.049Z"
   },
   "img/nodes-rotor/rotor.webp": {
    "page": "nodes-rotor",
@@ -1981,8 +1981,8 @@
    "height": 259,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:02:42.104Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:54:22.006Z"
   },
   "img/nodes-sequence/sequence.webp": {
    "page": "nodes-sequence",
@@ -1992,8 +1992,8 @@
    "height": 259,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:02:57.266Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:54:36.493Z"
   },
   "img/nodes-setgamestate/setgamestate.webp": {
    "page": "nodes-setgamestate",
@@ -2003,8 +2003,8 @@
    "height": 589,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:03:13.388Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:54:51.794Z"
   },
   "img/nodes-setvariable/setvariable.webp": {
    "page": "nodes-setvariable",
@@ -2014,8 +2014,8 @@
    "height": 381,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:03:29.519Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:55:06.665Z"
   },
   "img/notifications/chat-mentions.webp": {
    "page": "notifications",
@@ -2042,8 +2042,8 @@
     "editing",
     "by label"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:44:33.144Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:55:34.272Z"
   },
   "img/notifications/note-page-phone.webp": {
    "page": "notifications",
@@ -2053,8 +2053,8 @@
    "height": 480,
    "badges": 1,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:07:31.140Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:56:21.418Z"
   },
   "img/notifications/note-thread.webp": {
    "page": "notifications",
@@ -2064,8 +2064,8 @@
    "height": 299,
    "badges": 2,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:45:04.184Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:56:06.112Z"
   },
   "img/notifications/undo-toast.webp": {
    "page": "notifications",
@@ -2075,8 +2075,8 @@
    "height": 82,
    "badges": 1,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:03:44.167Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:55:20.772Z"
   },
   "img/particles/draw-as.webp": {
    "page": "particles",
@@ -2086,43 +2086,43 @@
    "height": 207,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:45:19.405Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:57:06.327Z"
   },
   "img/particles/wisps-trails.webp": {
    "page": "particles",
    "kind": "view",
    "dpr": 2,
-   "width": 992,
+   "width": 1094,
    "height": 600,
    "badges": 1,
    "labels": [
     "emitter"
    ],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T18:10:19.997Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:57:19.635Z"
   },
   "img/people/peer-menu.webp": {
    "page": "people",
    "kind": "ui",
    "dpr": 2,
-   "width": 436,
+   "width": 435,
    "height": 849,
    "badges": 1,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T12:28:37.719Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:57:53.250Z"
   },
   "img/performance/budget-chip.webp": {
    "page": "performance",
    "kind": "ui",
    "dpr": 2,
-   "width": 646,
+   "width": 647,
    "height": 72,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:08:51.641Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:58:09.316Z"
   },
   "img/performance/configure-scene-quality.webp": {
    "page": "performance",
@@ -2132,8 +2132,8 @@
    "height": 700,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T15:05:18.948Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:58:45.410Z"
   },
   "img/performance/statistics-budget.webp": {
    "page": "performance",
@@ -2143,8 +2143,8 @@
    "height": 460,
    "badges": 1,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:09:12.887Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:58:30.234Z"
   },
   "img/physics/floats.webp": {
    "page": "physics",
@@ -2157,8 +2157,8 @@
     "floats as",
     "at its draft"
    ],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T18:12:43.584Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:59:44.186Z"
   },
   "img/physics/flying-setting.webp": {
    "page": "physics",
@@ -2168,8 +2168,8 @@
    "height": 345,
    "badges": 1,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:09:37.362Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:59:06.628Z"
   },
   "img/physics/sim-on-load-setting.webp": {
    "page": "physics",
@@ -2179,8 +2179,8 @@
    "height": 279,
    "badges": 1,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:45:33.448Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:58:55.898Z"
   },
   "img/physics/sunken-pool.webp": {
    "page": "physics",
@@ -2192,8 +2192,8 @@
    "labels": [
     "floats"
    ],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T18:12:28.941Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T00:59:25.113Z"
   },
   "img/prefabs/tag-filter.webp": {
    "page": "prefabs",
@@ -2218,8 +2218,8 @@
    "labels": [
     "exact copy"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:15:50.489Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:00:01.895Z"
   },
   "img/profiler/details-sidebar.webp": {
    "page": "profiler",
@@ -2229,8 +2229,8 @@
    "height": 560,
    "badges": 1,
    "labels": [],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T18:13:38.321Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:00:39.735Z"
   },
   "img/profiler/report-a-problem.webp": {
    "page": "profiler",
@@ -2248,13 +2248,13 @@
    "kind": "ui",
    "dpr": 2,
    "width": 647,
-   "height": 724,
+   "height": 739,
    "badges": 1,
    "labels": [
     "preset"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:11:21.299Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:01:05.415Z"
   },
   "img/publish-export/gallery-tab.webp": {
    "page": "publish-export",
@@ -2264,8 +2264,8 @@
    "height": 739,
    "badges": 2,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:11:43.418Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:01:25.634Z"
   },
   "img/publish-export/itch-mini-golf.webp": {
    "page": "publish-export",
@@ -2288,8 +2288,8 @@
    "labels": [
     "Optimize for"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:11:55.584Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:01:35.890Z"
   },
   "img/race/menu.webp": {
    "page": "race",
@@ -2302,8 +2302,8 @@
     "start",
     "in a car"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:47:01.428Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:02:01.495Z"
   },
   "img/race/phone-pedals.webp": {
    "page": "race",
@@ -2317,8 +2317,8 @@
     "reset",
     "brake and gas"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:47:39.489Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:03:06.750Z"
   },
   "img/race/start.webp": {
    "page": "race",
@@ -2346,12 +2346,12 @@
    "page": "recording",
    "kind": "ui",
    "dpr": 2,
-   "width": 425,
+   "width": 434,
    "height": 92,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:14:08.712Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:04:00.837Z"
   },
   "img/recording/result.webp": {
    "page": "recording",
@@ -2375,8 +2375,8 @@
    "height": 840,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T15:05:35.491Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:03:48.590Z"
   },
   "img/saving/save-options.webp": {
    "page": "saving",
@@ -2386,8 +2386,8 @@
    "height": 792,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:14:40.182Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:04:30.501Z"
   },
   "img/scatter/add-scatter.webp": {
    "page": "scatter",
@@ -2397,8 +2397,8 @@
    "height": 720,
    "badges": 2,
    "labels": [],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T18:17:56.873Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:04:48.651Z"
   },
   "img/scatter/select-tool.webp": {
    "page": "scatter",
@@ -2411,8 +2411,8 @@
     "selection tools",
     "picked"
    ],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T18:18:10.728Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:05:02.937Z"
   },
   "img/settings/home-phone.webp": {
    "page": "settings",
@@ -2433,8 +2433,8 @@
    "height": 720,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:23:42.402Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:05:15.838Z"
   },
   "img/settings/rows-phone.webp": {
    "page": "settings",
@@ -2444,8 +2444,8 @@
    "height": 700,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:24:09.278Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:05:36.390Z"
   },
   "img/simulation/fluid-tank-drops.webp": {
    "page": "simulation",
@@ -2470,8 +2470,8 @@
    "labels": [
     "smooth surface"
    ],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T18:19:02.594Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:05:51.847Z"
   },
   "img/simulation/jiggle.webp": {
    "page": "simulation",
@@ -2483,8 +2483,8 @@
    "labels": [
     "lags behind"
    ],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T18:20:24.467Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:07:19.060Z"
   },
   "img/simulation/tank-pours-into-pool.webp": {
    "page": "simulation",
@@ -2496,8 +2496,8 @@
    "labels": [
     "pour lands"
    ],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T18:20:10.406Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:07:00.695Z"
   },
   "img/simulation/tank-spill.webp": {
    "page": "simulation",
@@ -2523,8 +2523,8 @@
    "labels": [
     "paint brush"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:49:53.731Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:07:50.520Z"
   },
   "img/terrain/paint-layer.webp": {
    "page": "terrain",
@@ -2534,8 +2534,8 @@
    "height": 439,
    "badges": 2,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:49:37.382Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:07:32.536Z"
   },
   "img/terrain/scatter-collider.webp": {
    "page": "terrain",
@@ -2545,8 +2545,8 @@
    "height": 478,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T14:50:22.357Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:08:21.565Z"
   },
   "img/terrain/scatter-toolbox.webp": {
    "page": "terrain",
@@ -2558,8 +2558,8 @@
    "labels": [
     "scatter what"
    ],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T18:21:08.727Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:08:05.132Z"
   },
   "img/timeline/phone-sheet.webp": {
    "page": "timeline",
@@ -2623,8 +2623,8 @@
     "which games",
     "selected"
    ],
-   "app": "1.54.2",
-   "shotAt": "2026-11-03T11:17:15.354Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:10:16.974Z"
   },
   "img/touch-controls/sky-run-phone.webp": {
    "page": "touch-controls",
@@ -2634,8 +2634,8 @@
    "height": 896,
    "badges": 0,
    "labels": [],
-   "app": "1.54.2",
-   "shotAt": "2026-11-03T11:16:45.362Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:09:47.276Z"
   },
   "img/tours/editor-tour.webp": {
    "page": "tours",
@@ -2645,8 +2645,8 @@
    "height": 500,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:24:26.543Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:10:40.760Z"
   },
   "img/tours/first-game-quest.webp": {
    "page": "tours",
@@ -2659,8 +2659,8 @@
     "3 steps",
     "add here"
    ],
-   "app": "1.54.2",
-   "shotAt": "2026-11-03T11:18:05.764Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:11:15.935Z"
   },
   "img/tours/settings-tours.webp": {
    "page": "tours",
@@ -2670,8 +2670,8 @@
    "height": 480,
    "badges": 0,
    "labels": [],
-   "app": "1.54.2",
-   "shotAt": "2026-11-03T11:17:39.940Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:10:51.857Z"
   },
   "img/tours/vr-welcome.webp": {
    "page": "tours",
@@ -2681,22 +2681,22 @@
    "height": 320,
    "badges": 0,
    "labels": [],
-   "app": "1.54.2",
-   "shotAt": "2026-11-03T12:01:54.191Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:10:30.153Z"
   },
   "img/tours/welcome-question.webp": {
    "page": "tours",
    "kind": "ui",
    "dpr": 2,
    "width": 632,
-   "height": 511,
+   "height": 528,
    "badges": 2,
    "labels": [
     "pick one",
     "or empty"
    ],
-   "app": "1.54.2",
-   "shotAt": "2026-11-03T11:17:51.562Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:11:02.529Z"
   },
   "img/uv-editor/smart-unwrap.webp": {
    "page": "uv-editor",
@@ -2708,8 +2708,8 @@
    "labels": [
     "Smart (xatlas)"
    ],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:34:15.116Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:11:36.607Z"
   },
   "img/vr/ai-panel.webp": {
    "page": "vr",
@@ -2785,8 +2785,8 @@
    "height": 600,
    "badges": 0,
    "labels": [],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T18:27:26.552Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:14:07.213Z"
   },
   "img/water/pool.webp": {
    "page": "water",
@@ -2825,8 +2825,8 @@
    "labels": [
     "which one"
    ],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T18:28:06.972Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:15:04.797Z"
   },
   "img/water/underwater-aquarium.webp": {
    "page": "water",
@@ -2838,8 +2838,8 @@
    "labels": [
     "bubbles"
    ],
-   "app": "1.55.0",
-   "shotAt": "2026-11-03T18:27:46.904Z"
+   "app": "1.57.0",
+   "shotAt": "2026-11-04T01:14:30.434Z"
   }
  }
 }

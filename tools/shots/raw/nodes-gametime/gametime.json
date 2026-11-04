@@ -2,10 +2,10 @@
  "id": "gametime",
  "spec": "14ffc3ef7c76",
  "dpr": 2,
- "shotAt": "2026-11-03T14:43:15.342Z",
+ "shotAt": "2026-11-04T00:49:51.522Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "div.svelte-flow__pane",

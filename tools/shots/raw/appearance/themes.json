@@ -1,10 +1,11 @@
 {
  "id": "themes",
+ "spec": "bd5a6d14f31a",
  "dpr": 2,
- "shotAt": "2026-10-31T14:27:33.083Z",
+ "shotAt": "2026-11-04T00:05:26.817Z",
  "app": {
-  "version": "1.51.0",
-  "sha": "6fe31dae"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "h2.ss-title",

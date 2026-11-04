@@ -2,10 +2,10 @@
  "id": "door-open",
  "spec": "60754d75fb3d",
  "dpr": 2,
- "shotAt": "2026-11-03T17:20:17.582Z",
+ "shotAt": "2026-11-04T00:06:17.904Z",
  "app": {
-  "version": "1.55.0",
-  "sha": "34c6810f"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [],
  "width": 2160,
