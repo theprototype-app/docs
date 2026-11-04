@@ -19,6 +19,8 @@ If someone is in the room **with** you, see [Colocation](colocation.md) — a sh
 
 **Refresh rate** — under **Settings ▸ VR ▸ Display** (or radial **Settings ▸ Display**) you can pick **Max / 90 / 120 Hz**. *Max* uses the highest your headset reports; 120 Hz needs the Quest 120 Hz system setting enabled and applies on VR entry.
 
+**The scene's look** — since 1.59 a scene's tone mapping, colour grading, LUT (approximately) and vignette show in the headset too; bloom, ambient occlusion and the other screen effects stay desktop-only (see [Scene look ▸ In a headset](post-processing.md#in-a-headset)). Sky images go up to High (2K) in a headset ([sky quality](camera.md#sky-quality-for-the-scene)).
+
 ## The controllers at a glance
 
 | Input | Does |

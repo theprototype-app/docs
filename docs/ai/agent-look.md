@@ -43,7 +43,7 @@ change by hand.
 | `params` | any other material number, such as `clearcoat`, `transmission`, `ior` (those need `MeshPhysicalMaterial`) |
 | `type` | swaps the material class first |
 | `maps` | texture slots `albedo`, `normal`, `roughness`, `metalness`, `emissive`, `ao`: a library image hash, an https URL, or `null` to clear |
-| `preset` | a preset name from `list_materials` |
+| `preset` | a [preset](../materials.md) by name: **Wood**, **Metal**, **Plastic**, **Glass**, **Stone**, **Rubber**, **Fish scales**, **Neon**, or one the person saved (`list_materials` names them all) |
 | `cc0` | fetches a free CC0 material by name, such as `"Wood051"` or `"brown planks"` |
 | `slot` | which material slot of a multi-material object (default 0) |
 | `faces` | gives just those faces their own new material slot ([how to pick faces](#picking-faces)) |
@@ -55,10 +55,15 @@ item first, the same as an upload, and the result lists it in `assets`. A plain 
 
 An object wearing a shader graph refuses `set_material`. Edit the shader, or take it off first.
 
+The maps are the same ones as the Inspector's [Maps](../materials.md#maps) rows. `update_objects` can set them too,
+through `materialParams`: the slots `map`, `normalMap`, `roughnessMap`, `metalnessMap`, `emissiveMap` and `aoMap` (a
+library image hash, or `null` to clear) and `texTransform` — `{repeat: [u, v], offset: [u, v], rotation}` (radians)
+for the tiling, offset and rotation of all the material's maps.
+
 ### list_materials and get_material: read what is there
 
 `list_materials` gives each object's slots (type, colour, numbers, which maps), its shader, and the preset
-names. `get_material` gives one object in full: each map's tiling, offset, rotation, size and hash, and its
+names: the eight starters and any the person saved. `get_material` gives one object in full: each map's tiling, offset, rotation, size and hash, and its
 shader graph as text with the uniforms a flow can drive. Viewers can use both.
 
 ### create_shader: a node shader, as text

@@ -18,29 +18,41 @@ Opened from **More**, Film asks which camera to film through. Pick one, or press
 The camera picker on a folded OPPO Find N6.
 ///
 
-The first time you open Film, a tip at the top says how to film. It goes away after your
-first shot, or when you press its **✕** (Settings ▸ Interface ▸ **Reset tips** brings it back).
+The first time you open Film, three short cards show how to film: **Look**, **Move** and **Record and cut**. Step
+through them with **Next** and **Done**, or press **Don't show again**. To see them later, open the settings (the
+sliders button) and press **How to film**.
 
-![Film mode on a folded phone, looking through the Film camera at the crate and the ball: the first-use tip at the top says how to film, the lens controls and the round record button sit at the bottom.](img/film/filming.webp){ .shot width="390" height="896" loading=lazy }
+![Film mode on a folded phone, looking through the Film camera at the crate and the ball, with the lens controls and the round record button at the bottom.](img/film/filming.webp){ .shot width="390" height="896" loading=lazy }
 /// caption
-Filming through the Film camera, with the first-use tip.
+Filming through the Film camera.
 ///
 
-While you film, the rest of the editor is hidden. The 3D view is cropped to the camera's
-aspect ratio, so the picture on screen is exactly what gets recorded. Press **✕** (or **Esc**
-on a keyboard) to leave. Leaving does not move the camera object.
+While you film, the rest of the editor is hidden, and so is every headset menu and panel, in any session. The 3D view
+is cropped to the camera's aspect ratio, so the picture on screen is exactly what gets recorded. Press **✕** (or
+**Esc** on a keyboard) to leave. Leaving does not move the camera object.
 
-## Looking around
+## How the camera moves
+
+The pill at the top, beside the camera's name, always says how the camera moves. Tap it to choose:
+
+| Choice | What it does |
+|---|---|
+| **Phone tilt** | Turn and tilt the phone to look around. It works in portrait and in landscape. |
+| **Touch** | Drag the picture to look, and use the stick to move. |
+| **Walk** | Your real steps move the camera (Android with AR, [below](#walk)). |
+| **Tripod** | The camera stays in place and only turns. The stick is hidden; the **Tripod ✕** chip goes back to handheld. |
+| **Keyboard + mouse** | On a computer: **W A S D** to move, drag to look. |
+
+The choice is remembered on this device. A phone without a gyroscope gets **Touch**: **Phone tilt** is greyed out with
+the reason. On an iPhone, Phone tilt shows **Use phone motion** beside the pill the first time: press it and allow
+motion access (if you decline, Touch still works).
+
+Whichever you choose:
 
 | Control | What it does |
 |---|---|
-| Turn and tilt the phone | The camera turns with it. It works in portrait and in landscape. |
 | **Recentre** (⌖, or **R**) | Makes the direction the phone points right now "straight ahead" for this camera. |
 | **Horizon lock** | Keeps the picture level however the phone leans. |
-| Drag the picture | Turns the view. This is the only way to look on a device without motion sensors, such as a desktop. |
-
-On an iPhone, press **Use phone motion** the first time and allow motion access. If you
-decline, you can still drag to look.
 
 ## Moving
 
@@ -49,21 +61,33 @@ decline, you can still drag to look.
 - On a keyboard: **W A S D** to move, **E / Q** to rise and sink.
 - **Mini-map** (🗺): a top-down map of the scene. Tap a spot to move the camera there.
 
-### Walk with the phone (Android)
+### Walk
 
-On an Android phone with Chrome and Google Play Services for AR, open the **settings**
-(the sliders button) and press **Track my movement**. Your real steps now move the
-camera. **Walk scale** sets how far the camera moves for each metre you walk:
+On an Android phone with Chrome and Google Play Services for AR, choose **Walk** in the pill. Your real steps now move
+the camera, and the chip at the top says **Walking ×1** (the scale). If Walk was your last choice, the pill says
+**Walk · tap to start** when you open Film: tap it, then Walk, to start (the phone has to be asked each time).
 
-- 0.1 is good for a miniature set.
-- 20 lets you cross a city in a few steps.
+The pill's sheet has a **While walking** part:
 
-The stick, **Recentre** and the mini-map keep working while you walk. Press the
-**Walking** chip to stop.
+- **Passthrough** — what you see behind the scene: **Off** (the scene's own sky, the default), **On** (the scene over
+  your room) or **Dimmed** (the room faint behind it). Only the live view changes, never the recorded take or its
+  export.
+- **Walking scale** — how far the camera moves for each metre you walk: **×0.5**, **×1**, **×2** or **×5**, and
+  **Fine scale** from ×0.1 (a miniature set) to ×20 (a city in a few steps). Tap the **Walking** chip at the top to
+  change it quickly while you walk.
+
+The stick, **Recentre** and the mini-map keep working while you walk. Press **✕** beside the Walking chip to stop.
 
 !!! note
-    While you walk, the phone's AR view shows the scene at the phone camera's own lens. Zoom
-    and dutch angle are still recorded, and you see them when you play the take back.
+    While you walk, the phone's AR view shows the scene at the phone camera's own lens. Zoom and dutch angle are still
+    recorded, and you see them when you play the take back.
+
+#### If tracking is lost
+
+If Walk cannot start (AR was not allowed, or could not start) or the phone loses track of the room while you film, Film
+does not leave you with a frozen view. The take **pauses at a mark**, a short message says why — for example *Tracking
+was lost — the take paused at a mark. Filming with the thumbstick now.* — and Film carries on with the stick and phone
+tilt. The message has a **Recentre** button. Your choice stays Walk, so you can start it again from the pill.
 
 ## The lens
 
@@ -83,7 +107,7 @@ The stick, **Recentre** and the mini-map keep working while you walk. Press the
 Choose a rig in **Settings ▸ Rig**:
 
 - **Handheld:** the default.
-- **Tripod:** the camera stays in place and only turns.
+- **Tripod:** the camera stays in place and only turns (the same as **Tripod** in the pill).
 - **Track:** tap an object and the camera keeps it framed the way it was when you tapped,
   even as you move.
 
@@ -109,17 +133,8 @@ shot. Guides are never recorded.
 
 While recording, press **Mark** (or **M**) to drop a marker on the Timeline.
 
-Open **N shots** to see this camera's shots:
-
-- **Retake** records a shot again. A retake that runs long trims the start of the next shot.
-- **Edit in Timeline** opens the take in the Timeline, where you can trim the shots and
-  **Smooth keys** (the track menu ⋯ of a property track) to take the handheld shake out.
-- **Export video** opens [Export a video or GIF](recording.md) on the take's timeline, set to MP4.
-
-![The shots sheet: three shots with Retake, Edit in Timeline and Export video.](img/film/shots-sheet.webp){ .shot width="390" height="896" loading=lazy }
-/// caption
-**N shots** lists this camera's shots.
-///
+From the first shot on, a **shots** pill (*1 shot*, *3 shots*) sits beside the record button: see
+[Your shots](#your-shots).
 
 ### What gets recorded
 
@@ -127,6 +142,34 @@ The camera's position and rotation are saved as Timeline keys. They are thinned 
 within 1 cm and 0.5° of what you filmed. Zoom, dutch angle, focus and aperture each get
 their own track, but only if you changed them. The full-detail movement is kept as a hidden
 file in your Library.
+
+## Your shots
+
+Press the **shots** pill to open **Shots on this camera**. Each row has a thumbnail, the shot's name (*Shot 1* until
+you rename it), its length, and how it was cut: *Cut*, or *Cut + 2 moves* when you resumed it with **Move**.
+
+![The shots sheet: three shots with Retake, Edit in Timeline and Export video.](img/film/shots-sheet.webp){ .shot width="390" height="896" loading=lazy }
+/// caption
+The shots sheet (shown here as it looked in 1.58).
+///
+
+- **Tap a row** to preview the shot, with play / pause and a scrub bar. **Done** goes back to the list.
+- **⋯** on a row opens its actions:
+    - **Preview** — the same as tapping the row.
+    - **Trim** — the preview with **In** and **Out** handles. They stop at the shot as it was recorded, so trimming
+      back out brings the cut part back.
+    - **Rename** — type a name and press <kbd>Enter</kbd>.
+    - **Retake** — records the shot again. A retake that runs long trims the start of the next shot.
+    - **Delete** — removes the shot; the message that confirms it has **Undo**.
+    - **Edit in timeline** — closes Film and opens the take in the [Timeline](timeline.md) at that shot, where you can trim it and
+      **Smooth keys** (the track menu ⋯ of a property track) to take the handheld shake out.
+- At the bottom: **Edit in timeline** for the whole take, and **Export all (N)**. Tick shots in the list and it
+  becomes **Export K selected**.
+- With more than one shot to export, Film asks how: **One video** (the shots joined in the order you recorded them)
+  or **One file per shot** (each goes to **Explorer ▸ Recordings**, one after another). It opens
+  [Export a video or GIF](recording.md), set to MP4.
+
+Preview, Trim, Retake and Delete wait while you are recording.
 
 ## Filming with others
 
@@ -140,12 +183,13 @@ the camera goes back to where it stands.
 
 ## On a phone without motion sensors, and on a computer
 
-Film works everywhere: where there is no gyroscope (or you decline motion access), drag the
-picture to look. On a computer, **W A S D** and **E / Q** move the camera.
+Film works everywhere: where there is no gyroscope (or you decline motion access), it uses **Touch** — drag the
+picture to look. On a computer it starts on **Keyboard + mouse**: **W A S D** and **E / Q** move the camera.
 
 ## Limits
 
 - A phone exports at most 20 seconds of video at a time (see [Export a video or GIF](recording.md#on-a-phone)).
-- Track my movement needs Android with Chrome and AR support; Quest's browser is not a target.
+- Walk needs Android with Chrome and AR support; Quest's browser is not a target. Where AR is not available, Walk is
+  not in the pill.
 - Walking drifts slowly over long takes: recentre now and then.
 

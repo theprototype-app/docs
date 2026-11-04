@@ -29,6 +29,7 @@ A **clip** owns a length, a loop mode (*once*, *loop* or *ping-pong*) and any nu
 | **Visibility** | `visible` — a *stepped* channel: it holds its value until the next key instead of fading |
 | **Look** | `opacity`, `color.r/g/b`, `metalness`, `roughness`, `Emission` |
 | **Lights** | `light.intensity` |
+| **Camera** | **Field of view** (`camera.fov`, in degrees) — on a perspective [camera object](camera.md#camera-objects); *new in 1.59* |
 
 A **key** is a value at a time. Click a channel row at the playhead to add one; drag it to move it; <kbd>Del</kbd> removes the selection. Whatever you change — adding a channel, typing a value, retiming, moving a marker — the object re-poses straight away, so you see the result without touching the timeline.
 
@@ -154,4 +155,23 @@ start it with [Play Sequence](nodes/playseq.md).
 
 ## Saving and export
 
-Clips are part of the object, so they travel in your `.tpscene` files and autosaves. Saving a **glTF** samples every clip into real keyframe tracks, so other tools play them back — with one exception: the **look** channels (opacity, colour, metalness, roughness, glow, light intensity) are not part of what glTF animation can carry, so they stay in the app.
+Clips are part of the object, so they travel in your `.tpscene` files and autosaves. Saving a **glTF** samples every clip into real keyframe tracks, so other tools play them back. Since 1.59 that includes the look channels too:
+
+| Channel | Leaves in the glTF file as |
+|---|---|
+| Position, rotation, scale | ordinary glTF animation |
+| Opacity, colour, metalness, roughness, Emission | the material's own values, through `KHR_animation_pointer` (Emission as `KHR_materials_emissive_strength`) |
+| Visible | `KHR_node_visibility`, through `KHR_animation_pointer` |
+| Light intensity | the light (`KHR_lights_punctual`), through `KHR_animation_pointer` |
+| Field of view | the camera, through `KHR_animation_pointer` |
+
+- **Camera objects export as real glTF cameras**, with their field of view (or orthographic size), clip planes and
+  framing, so a viewer can look through them — and a field-of-view clip has something to drive.
+- A viewer needs **`KHR_animation_pointer`** support to play the look channels (and `KHR_node_visibility` for
+  visibility). One without it still opens the file: the model moves, and its look just holds still. In the Animation
+  window, hover a look channel's name to see the same note.
+- **For Quest / web** ([Optimize for](publish-export.md#optimize-for-quest-web)) leaves the look channels out and says
+  so; a full-quality glTF keeps them.
+- **Re-importing the file does not bring look animation back**: the app reads the movement, not the pointer channels.
+  Keep the `.tpscene` as your working file.
+- Exporting **several objects** at once keeps every object's movement (before 1.59 such an export kept none).
