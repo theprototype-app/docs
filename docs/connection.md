@@ -55,7 +55,7 @@ at it for the full name), a second line with where they are and their role, and 
 **Go to** or the role list. On a computer the panel is 320–420 px wide and grows with long names, so nothing wraps or
 breaks. On a phone it opens as a sheet like the notifications: a grab bar on top, and a swipe down closes it.
 
-![The Connected panel on a computer with four people, one row each: an avatar, the name, the scene they are in, the ping and their short id underneath, then their role (Admin, Editor or Viewer) and Watch on the right. 1: you. 2: a person's role list.](img/connection/peers-panel-desktop.webp){ .shot width="389" height="278" loading=lazy }
+![The Connected panel on a computer with four people, one row each: an avatar, the name, the scene they are in, the ping and their short id underneath, then their role (Admin, Editor or Viewer) and Watch on the right. 1: you. 2: a person's role list.](img/connection/peers-panel-desktop.webp){ .shot width="395" height="278" loading=lazy }
 /// caption
 The Connected panel on a computer.
 ///

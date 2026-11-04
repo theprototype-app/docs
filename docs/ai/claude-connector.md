@@ -146,12 +146,17 @@ exactly what the agent tools of the same job do, with the same limits:
 | family | actions | the agent tools behind them |
 |---|---|---|
 | `create_shape` | `lathe`, `tube`, `extrude`, `mesh` | `create_lathe`, `create_tube`, `extrude_shape`, `create_mesh` ([Shapes and modelling](agent-geometry.md)) |
-| `edit_shape` | `params`, `mesh`, `pivot`, `pivot_group` | `set_geometry`, `edit_mesh`, `set_pivot`, `create_pivot` |
-| `set_look` | `material`, `list_materials`, `get_material`, `shader`, `edit_shader`, `assign_shader`, `shader_nodes`, `post`, `get_post`, `post_graph`, `unwrap`, `uv` | `set_material` … `set_uv` ([Materials and looks](agent-look.md)) |
-| `assets` | `image` | `add_image` ([Undo, pivots and images](agent-assist.md)) |
+| `edit_shape` | `params`, `mesh`, `update`, `pivot`, `pivot_group` | `set_geometry`, `edit_mesh`, `update_mesh`, `set_pivot`, `create_pivot` |
+| `set_look` | `material`, `list_materials`, `get_material`, `shader`, `edit_shader`, `assign_shader`, `shader_nodes`, `post`, `get_post`, `post_graph`, `unwrap`, `uv`, `sky`, `light`, `environment` | `set_material` … `set_uv` ([Materials and looks](agent-look.md)); `set_sky`, `set_light`, `get_environment` ([HUD, sky and play](agent-scene.md)) |
+| `hud` | `create`, `list`, `update`, `panel` | `create_hud`, `list_hud`, `edit_hud`, `hud_panel` ([HUD, sky and play](agent-scene.md)) |
+| `game_setup` | `spawn`, `play_camera` | `place_spawn`, `set_play_camera` ([HUD, sky and play](agent-scene.md)) |
+| `assets` | `search`, `place`, `prefab`, `image` | `search_assets`, `place_asset`, `prefab` ([Worlds](agent-world.md)), `add_image` ([Undo, pivots and images](agent-assist.md)) |
+| `effects` | `terrain`, `scatter`, `water`, `particles`, `sound`, `music` | `terrain`, `scatter`, `water`, `create_particles`, `place_sound`, `set_music` ([Worlds with an agent](agent-world.md)) |
+| `run` | `inspect`, `validate`, `logs` | `inspect_runtime`, `validate_scene`, `logs` ([Test and fix a game](agent-runtime.md)) |
 
 `undo_last` is a tool of its own. A look-only connection can still use the actions that only read (`list_materials`,
-`get_material`, `shader_nodes`, `get_post`).
+`get_material`, `shader_nodes`, `get_post`, `environment`, `hud` `list`, `assets` `search` and all of `run`).
+`playtest` (a test player) runs only on an agent's own page, so it is not on claude.ai.
 
 **New in 1.59** — the same tools, with more in them:
 
@@ -165,6 +170,26 @@ exactly what the agent tools of the same job do, with the same limits:
   ([details](build-with-an-agent.md#rules-a-good-agent-follows)).
 - `edit_shape` `pivot_group` takes `local`; `list_scene` gives each mesh's vertex and triangle count and its bounds;
   `status` says how heavy the scene is (`sceneBudget`); `set_look` names the material presets.
+
+**New in 1.60** — four families, so Claude can build a small game and check it:
+
+- `hud` makes the game's screen overlay: timers, scores, bars, buttons, images and panels ([HUD, sky and play](agent-scene.md)).
+- `game_setup` says where Play starts, turns on first-person walking or flying, and sets the view a scene opens with.
+- `set_look` `sky`, `light` and `environment` change the sky, fog, exposure, the sun and the ambient light. They change
+  everyone's view, so your tab asks the host first.
+- `run` tells Claude what the game does: `validate` lists what would not work when someone presses Play, each with its
+  fix; `inspect` says why something did not fire; `logs` reads the tab's recent errors
+  ([Test and fix a game](agent-runtime.md)).
+- `where_are_users` takes `pings`, and `create_objects` / `update_objects` take `at: {ping}`, `snap: "floor"`, `align`
+  and `face_user`: point at a spot and say "put a lamp here" ([Here, this and you](agent-spatial.md)).
+
+Worlds ([Worlds with an agent](agent-world.md)):
+
+- `effects` builds places: terrain with hills and paint, scatter (a forest, rocks), water, particles (fireflies are new),
+  positional sounds and the background music.
+- `assets` `search` finds models, sounds, images and CC0 materials. `place` and `prefab` put them in the scene.
+- `set_look` `material` takes `pattern` (wood, brick, marble …). `create_shape` `mesh` takes `subdivide: 1-2`, and
+  `edit_shape` `update` sends a mesh new vertices.
 
 Claude reads its tool list when it connects, so it sees these after the connector reconnects.
 

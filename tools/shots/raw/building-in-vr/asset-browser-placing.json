@@ -2,10 +2,10 @@
  "id": "asset-browser-placing",
  "spec": "fffadedc07ea",
  "dpr": 2,
- "shotAt": "2026-11-04T09:44:01.633Z",
+ "shotAt": "2026-11-04T13:33:56.547Z",
  "app": {
-  "version": "1.58.0",
-  "sha": "676de06c"
+  "version": "1.59.0",
+  "sha": "16f4bbdb"
  },
  "uiHits": [],
  "width": 768,

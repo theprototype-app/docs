@@ -2,10 +2,10 @@
  "id": "mitered-bevel",
  "spec": "ffe63800cd45",
  "dpr": 2,
- "shotAt": "2026-11-04T10:16:30.225Z",
+ "shotAt": "2026-11-04T14:11:24.239Z",
  "app": {
-  "version": "1.58.0",
-  "sha": "676de06c"
+  "version": "1.59.0",
+  "sha": "16f4bbdb"
  },
  "uiHits": [],
  "width": 1520,
