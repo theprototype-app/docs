@@ -203,6 +203,19 @@ Worlds ([Worlds with an agent](agent-world.md)):
 - `status`'s `sceneBudget` names the heaviest objects (`top`) and says whether the frame time is just the screen's
   refresh (`vsync`).
 - A `parentUuid` that names nothing is an error and makes nothing; groups stay groups after a restore.
+- `assets` `upload` sends a sound or an HDR sky as bytes (Claude's own music, or a file it fetched itself) and answers
+  with its hash. `assets` `search` lists the sounds of the sound packs, and `effects` `sound` / `music` take them.
+- `set_look` `sky` takes a Poly Haven HDRI from search.
+- `effects` `terrain`: `height` is the highest peak, layers show at once, and `paintBy: "height"` paints them low to
+  high. `scatter` keeps circles clear (`avoid` / `rules.avoid` with a `radius`) and takes an `id`.
+- `front` tells `lookAt` and `face_user` which way a model faces.
+- `screenshot`: `view: "camera"` looks through a scene camera, `hud: true` adds the game HUD, and people are left out
+  unless `avatars: true`.
+- Pressing **Allow** lets the change through on the first repeat; the answer says `pending`, `allowed`, `denied` or
+  `expired`. Pings mark the spot you clicked, and `wait_for_edit` wakes when you ping.
+- `list_scene` `near` / `bounds` take `by: "touches"` or `"inside"`; `sceneBudget` has `callsBySource` and never calls
+  a frame on the screen's refresh slow.
+- Claude keeps your names and ids as they are: object names, prefab ids and undo lines are not rewritten.
 
 Claude reads its tool list when it connects, so it sees these after the connector reconnects.
 

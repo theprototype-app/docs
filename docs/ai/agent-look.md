@@ -23,6 +23,9 @@ get a prompt with **Allow** and **Deny**, and nothing changes until you answer.
 2. The agent calls the same tool again with `{"confirmId": "…", "wait": 30}`. If you pressed Allow, the change
    runs inside that call, so it is still one undo step. If you pressed Deny, the call says so and nothing
    changed.
+3. Every answer carries a `status`: `pending` (no answer yet: ask again with the same `confirmId`), `allowed`,
+   `denied` or `expired`. *Since 1.61* the repeat works through the Claude connector's families too (it used to
+   open a new question each time), and going back to a checkpoint is asked as exactly that.
 
 A question stays open for 10 minutes. With the [Claude connector](claude-connector.md) the prompt appears in
 your own tab. The in-app Assistant in your own scene does not ask, because you are the one typing.
