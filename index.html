@@ -5582,11 +5582,74 @@
   
   
     <li class="md-nav__item">
+      <a href="ai/agent-scene/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HUD, sky and play with an agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ai/agent-assist/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Undo, pivots and images with an agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ai/agent-runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test and fix a game with an agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ai/agent-spatial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Here, this and you (pings)
   </span>
   
 
@@ -5692,6 +5755,27 @@
   
   <span class="md-ellipsis">
     Shapes and modelling with an agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ai/agent-world/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Worlds with an agent
   </span>
   
 
@@ -6094,6 +6178,14 @@ on a phone that gives the scene the whole height of the screen.</p>
 <a href="https://github.com/theprototype-app/core">github.com/theprototype-app/core</a> (also <strong>Settings ▸ About ▸ Source Code</strong>),
 with a contributing guide and an <code>llms.txt</code> for coding agents.</p>
 <h2 id="whats-new">What's new</h2>
+<p><strong>1.60 — an agent builds the game around your scene.</strong> Claude (or any agent) can now make
+<a href="ai/agent-world/">hills, forests, water, fire and sound</a>, find and place assets and save prefabs, give the game
+<a href="ai/agent-scene/">a HUD, a sky with fog and a place to start</a>, and then <a href="ai/agent-runtime/">check the game</a>: what
+would not work when someone presses Play and why a button did nothing. Point at a spot and say
+<a href="ai/agent-spatial/">"put a lamp here"</a>: it builds at your ping, stands things on the floor or flat on a wall, and
+keeps out of a headset wearer's way. A change to the whole scene's sky or light asks the host first. On claude.ai the
+connector gains four tools (<code>hud</code>, <code>game_setup</code>, <code>effects</code>, <code>run</code>): it sees them after it reconnects. To try it, open
+the <strong>Game plot</strong> template, connect Claude and ask for a forest on hills, a campfire that crackles and a race HUD.</p>
 <p><strong>1.59 — looks finished everywhere.</strong> A material takes <a href="materials/#maps">normal, roughness, metalness, emission and AO maps</a>
 beside its colour image, with tiling, offset and rotation, and <strong>Load a set of maps…</strong> sorts a texture set into its
 slots by file name. Skies are <a href="camera/#how-sharp-the-sky-is">much sharper</a> — up to 4K, 8K for Meadow, a small one

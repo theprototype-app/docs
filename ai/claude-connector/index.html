@@ -8,7 +8,7 @@
         <link rel="canonical" href="https://docs.theprototype.app/ai/claude-connector/">
       
       
-        <link rel="prev" href="../agent-geometry/">
+        <link rel="prev" href="../agent-world/">
       
       
         <link rel="next" href="../providers/">
@@ -5508,11 +5508,74 @@
   
   
     <li class="md-nav__item">
+      <a href="../agent-scene/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HUD, sky and play with an agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../agent-assist/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Undo, pivots and images with an agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test and fix a game with an agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-spatial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Here, this and you (pings)
   </span>
   
 
@@ -5618,6 +5681,27 @@
   
   <span class="md-ellipsis">
     Shapes and modelling with an agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-world/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Worlds with an agent
   </span>
   
 
@@ -6417,23 +6501,44 @@ exactly what the agent tools of the same job do, with the same limits:</p>
 </tr>
 <tr>
 <td><code>edit_shape</code></td>
-<td><code>params</code>, <code>mesh</code>, <code>pivot</code>, <code>pivot_group</code></td>
-<td><code>set_geometry</code>, <code>edit_mesh</code>, <code>set_pivot</code>, <code>create_pivot</code></td>
+<td><code>params</code>, <code>mesh</code>, <code>update</code>, <code>pivot</code>, <code>pivot_group</code></td>
+<td><code>set_geometry</code>, <code>edit_mesh</code>, <code>update_mesh</code>, <code>set_pivot</code>, <code>create_pivot</code></td>
 </tr>
 <tr>
 <td><code>set_look</code></td>
-<td><code>material</code>, <code>list_materials</code>, <code>get_material</code>, <code>shader</code>, <code>edit_shader</code>, <code>assign_shader</code>, <code>shader_nodes</code>, <code>post</code>, <code>get_post</code>, <code>post_graph</code>, <code>unwrap</code>, <code>uv</code></td>
-<td><code>set_material</code> … <code>set_uv</code> (<a href="../agent-look/">Materials and looks</a>)</td>
+<td><code>material</code>, <code>list_materials</code>, <code>get_material</code>, <code>shader</code>, <code>edit_shader</code>, <code>assign_shader</code>, <code>shader_nodes</code>, <code>post</code>, <code>get_post</code>, <code>post_graph</code>, <code>unwrap</code>, <code>uv</code>, <code>sky</code>, <code>light</code>, <code>environment</code></td>
+<td><code>set_material</code> … <code>set_uv</code> (<a href="../agent-look/">Materials and looks</a>); <code>set_sky</code>, <code>set_light</code>, <code>get_environment</code> (<a href="../agent-scene/">HUD, sky and play</a>)</td>
+</tr>
+<tr>
+<td><code>hud</code></td>
+<td><code>create</code>, <code>list</code>, <code>update</code>, <code>panel</code></td>
+<td><code>create_hud</code>, <code>list_hud</code>, <code>edit_hud</code>, <code>hud_panel</code> (<a href="../agent-scene/">HUD, sky and play</a>)</td>
+</tr>
+<tr>
+<td><code>game_setup</code></td>
+<td><code>spawn</code>, <code>play_camera</code></td>
+<td><code>place_spawn</code>, <code>set_play_camera</code> (<a href="../agent-scene/">HUD, sky and play</a>)</td>
 </tr>
 <tr>
 <td><code>assets</code></td>
-<td><code>image</code></td>
-<td><code>add_image</code> (<a href="../agent-assist/">Undo, pivots and images</a>)</td>
+<td><code>search</code>, <code>place</code>, <code>prefab</code>, <code>image</code></td>
+<td><code>search_assets</code>, <code>place_asset</code>, <code>prefab</code> (<a href="../agent-world/">Worlds</a>), <code>add_image</code> (<a href="../agent-assist/">Undo, pivots and images</a>)</td>
+</tr>
+<tr>
+<td><code>effects</code></td>
+<td><code>terrain</code>, <code>scatter</code>, <code>water</code>, <code>particles</code>, <code>sound</code>, <code>music</code></td>
+<td><code>terrain</code>, <code>scatter</code>, <code>water</code>, <code>create_particles</code>, <code>place_sound</code>, <code>set_music</code> (<a href="../agent-world/">Worlds with an agent</a>)</td>
+</tr>
+<tr>
+<td><code>run</code></td>
+<td><code>inspect</code>, <code>validate</code>, <code>logs</code></td>
+<td><code>inspect_runtime</code>, <code>validate_scene</code>, <code>logs</code> (<a href="../agent-runtime/">Test and fix a game</a>)</td>
 </tr>
 </tbody>
 </table>
 <p><code>undo_last</code> is a tool of its own. A look-only connection can still use the actions that only read (<code>list_materials</code>,
-<code>get_material</code>, <code>shader_nodes</code>, <code>get_post</code>).</p>
+<code>get_material</code>, <code>shader_nodes</code>, <code>get_post</code>, <code>environment</code>, <code>hud</code> <code>list</code>, <code>assets</code> <code>search</code> and all of <code>run</code>).
+<code>playtest</code> (a test player) runs only on an agent's own page, so it is not on claude.ai.</p>
 <p><strong>New in 1.59</strong> — the same tools, with more in them:</p>
 <ul>
 <li><code>create_shape</code> takes <code>{"shapes": [{"action": "lathe", "lathe": {…}}, …]}</code> with no <code>action</code>: up to 50 shapes in one
@@ -6446,6 +6551,26 @@ exactly what the agent tools of the same job do, with the same limits:</p>
   (<a href="../build-with-an-agent/#rules-a-good-agent-follows">details</a>).</li>
 <li><code>edit_shape</code> <code>pivot_group</code> takes <code>local</code>; <code>list_scene</code> gives each mesh's vertex and triangle count and its bounds;
   <code>status</code> says how heavy the scene is (<code>sceneBudget</code>); <code>set_look</code> names the material presets.</li>
+</ul>
+<p><strong>New in 1.60</strong> — four families, so Claude can build a small game and check it:</p>
+<ul>
+<li><code>hud</code> makes the game's screen overlay: timers, scores, bars, buttons, images and panels (<a href="../agent-scene/">HUD, sky and play</a>).</li>
+<li><code>game_setup</code> says where Play starts, turns on first-person walking or flying, and sets the view a scene opens with.</li>
+<li><code>set_look</code> <code>sky</code>, <code>light</code> and <code>environment</code> change the sky, fog, exposure, the sun and the ambient light. They change
+  everyone's view, so your tab asks the host first.</li>
+<li><code>run</code> tells Claude what the game does: <code>validate</code> lists what would not work when someone presses Play, each with its
+  fix; <code>inspect</code> says why something did not fire; <code>logs</code> reads the tab's recent errors
+  (<a href="../agent-runtime/">Test and fix a game</a>).</li>
+<li><code>where_are_users</code> takes <code>pings</code>, and <code>create_objects</code> / <code>update_objects</code> take <code>at: {ping}</code>, <code>snap: "floor"</code>, <code>align</code>
+  and <code>face_user</code>: point at a spot and say "put a lamp here" (<a href="../agent-spatial/">Here, this and you</a>).</li>
+</ul>
+<p>Worlds (<a href="../agent-world/">Worlds with an agent</a>):</p>
+<ul>
+<li><code>effects</code> builds places: terrain with hills and paint, scatter (a forest, rocks), water, particles (fireflies are new),
+  positional sounds and the background music.</li>
+<li><code>assets</code> <code>search</code> finds models, sounds, images and CC0 materials. <code>place</code> and <code>prefab</code> put them in the scene.</li>
+<li><code>set_look</code> <code>material</code> takes <code>pattern</code> (wood, brick, marble …). <code>create_shape</code> <code>mesh</code> takes <code>subdivide: 1-2</code>, and
+  <code>edit_shape</code> <code>update</code> sends a mesh new vertices.</li>
 </ul>
 <p>Claude reads its tool list when it connects, so it sees these after the connector reconnects.</p>
 <h2 id="stop-it">Stop it</h2>

@@ -37,6 +37,7 @@ Right-click empty space ▸ **Add ▸ Effects ▸** places a small marker object
 | **Snow** | flakes drifting down over an 8 × 8 m area, settling and fading on the ground | continuous |
 | **Ribbon trail** | one glowing band behind a moving object — a sword swish, a comet tail (since 1.27) | continuous |
 | **Magic wisps** | trails that curl off a moving object (since 1.27) | continuous |
+| **Fireflies** | slow glowing points that drift and blink over a meadow or a pond at night (since 1.60) | continuous |
 
 **Rain** and **Snow** (1.22) are weather: **Add ▸ Effects ▸ Rain** places the emitter up at cloud height, and the drops fall
 about 6 m to the ground below it, drifting with a little wind. Pair them with [Water](https://docs.theprototype.app/water.md) for a storm over the sea.

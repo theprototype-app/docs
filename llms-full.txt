@@ -57,6 +57,15 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.60 — an agent builds the game around your scene.** Claude (or any agent) can now make
+[hills, forests, water, fire and sound](https://docs.theprototype.app/ai/agent-world.md), find and place assets and save prefabs, give the game
+[a HUD, a sky with fog and a place to start](https://docs.theprototype.app/ai/agent-scene.md), and then [check the game](https://docs.theprototype.app/ai/agent-runtime.md): what
+would not work when someone presses Play and why a button did nothing. Point at a spot and say
+["put a lamp here"](https://docs.theprototype.app/ai/agent-spatial.md): it builds at your ping, stands things on the floor or flat on a wall, and
+keeps out of a headset wearer's way. A change to the whole scene's sky or light asks the host first. On claude.ai the
+connector gains four tools (`hud`, `game_setup`, `effects`, `run`): it sees them after it reconnects. To try it, open
+the **Game plot** template, connect Claude and ask for a forest on hills, a campfire that crackles and a race HUD.
+
 **1.59 — looks finished everywhere.** A material takes [normal, roughness, metalness, emission and AO maps](https://docs.theprototype.app/materials.md#maps)
 beside its colour image, with tiling, offset and rotation, and **Load a set of maps…** sorts a texture set into its
 slots by file name. Skies are [much sharper](https://docs.theprototype.app/camera.md#how-sharp-the-sky-is) — up to 4K, 8K for Meadow, a small one
@@ -8159,6 +8168,7 @@ Right-click empty space ▸ **Add ▸ Effects ▸** places a small marker object
 | **Snow** | flakes drifting down over an 8 × 8 m area, settling and fading on the ground | continuous |
 | **Ribbon trail** | one glowing band behind a moving object — a sword swish, a comet tail (since 1.27) | continuous |
 | **Magic wisps** | trails that curl off a moving object (since 1.27) | continuous |
+| **Fireflies** | slow glowing points that drift and blink over a meadow or a pond at night (since 1.60) | continuous |
 
 **Rain** and **Snow** (1.22) are weather: **Add ▸ Effects ▸ Rain** places the emitter up at cloud height, and the drops fall
 about 6 m to the ground below it, drifting with a little wind. Pair them with [Water](https://docs.theprototype.app/water.md) for a storm over the sea.
@@ -20681,6 +20691,8 @@ change by hand.
 | `maps` | texture slots `albedo`, `normal`, `roughness`, `metalness`, `emissive`, `ao`: a library image hash, an https URL, or `null` to clear |
 | `preset` | a [preset](https://docs.theprototype.app/materials.md) by name: **Wood**, **Metal**, **Plastic**, **Glass**, **Stone**, **Rubber**, **Fish scales**, **Neon**, or one the person saved (`list_materials` names them all) |
 | `cc0` | fetches a free CC0 material by name, such as `"Wood051"` or `"brown planks"` |
+| `pattern` | a texture drawn by name, put in the albedo slot (since 1.60): `wood`, `planks`, `brick`, `tiles`, `marble`, `stone`, `concrete`, `metal`, `grass`, `sand`, `fabric`, `checker`, `stripes`, `noise`, or `{name, colors, scale, seed, size}`. A map slot takes one as `{pattern: …}`. ([Textures by name](https://docs.theprototype.app/ai/agent-world.md#textures-by-name)) |
+| `patternScale` | how many times the pattern repeats across the surface |
 | `slot` | which material slot of a multi-material object (default 0) |
 | `faces` | gives just those faces their own new material slot ([how to pick faces](#picking-faces)) |
 
@@ -20854,6 +20866,189 @@ fill that face once.
 
 ---
 
+Source: https://docs.theprototype.app/ai/agent-scene/ (Markdown: https://docs.theprototype.app/ai/agent-scene.md)
+
+# HUD, sky and play with an agent
+
+An agent joined to your session ([Build with an AI agent](https://docs.theprototype.app/ai/build-with-an-agent.md)) can give a game its
+[HUD](https://docs.theprototype.app/hud-editor.md), set the [sky, fog and lights](https://docs.theprototype.app/camera.md#environment-presets), and say where Play
+starts. The in-app [Assistant](https://docs.theprototype.app/ai/assistant.md) has the same tools.
+
+Every call works like the agent's other tools:
+
+- You see the change at once, and so does everyone in the session.
+- **One call is one undo step.** Ctrl+Z takes it back, or press Undo on the call's line in the agent's
+  activity log.
+- Viewers cannot use the tools that change things. They can still use the ones that read (`list_hud`,
+  `get_environment`).
+- A tool returns the ids of everything it made, so the agent can wire them up next.
+
+**The sky and the scene light change the look of everything, so the agent asks first.** You get a prompt with
+**Allow** and **Deny**, and nothing changes until you answer. How the question works is described under
+[Materials and looks](https://docs.theprototype.app/ai/agent-look.md#when-the-agent-has-to-ask).
+
+## Reference
+
+### create_hud: screens and elements
+
+```json
+create_hud {"screens": [{"name": "Race", "showWhile": "playing", "elements": [
+  {"kind": "text", "text": "Lap 1/3", "anchor": "top-left", "x": 16, "y": 16},
+  {"kind": "timer", "anchor": "top-right", "duration": 90, "countDown": true}
+]}]}
+```
+
+| field | what it does |
+|---|---|
+| `screens` | up to 8 screens: `name` (a screen with that name gets the elements added), `elements`, `showWhile` (`menu`, `playing`, `paused`, `over`, or `""` = only when a HUD Screen node shows it), `input` (`menu` frees the mouse to click the screen in Play), `active` |
+| `elements` | up to 60 per call: `kind` (any [element kind](https://docs.theprototype.app/hud-editor.md#element-kinds), such as `text`, `bar`, `timer`, `button`, `image`, `slider`), `text`, `anchor`, `x` / `y` / `w` / `h` in pixels, `style`, and the kind's own fields (`bar`: `min`, `max`, `value`; `timer`: `duration`, `countDown` …) |
+| `camera` | a camera object's uuid: this HUD shows only while you look through that camera |
+
+**Anchors** are the nine places of the HUD editor: `top-left`, `top-center`, `top-right`, `middle-left`, `center`,
+`middle-right`, `bottom-left`, `bottom-center`, `bottom-right`. `top`, `bottom`, `left` and `right` work too.
+`x` and `y` move the element in from that edge.
+
+**Style** keys: `size`, `weight`, `font`, `color`, `bg`, `border`, `radius`, `pad`, `align`, `opacity`.
+
+A new screen becomes the one that shows, unless `active` is `false`. The result lists every element `id`. To show a
+live value, a flow node names that id in its `element` field: a **HUD Text**, **HUD Bar** or **HUD Timer** node
+([Driving the HUD from the graph](https://docs.theprototype.app/hud-editor.md#driving-the-hud-from-the-graph)), for example a Counter wired into a
+HUD Text.
+
+### hud_panel: a box with rows inside
+
+```json
+hud_panel {"screen": "Paused", "showWhile": "paused", "title": "Paused",
+  "rows": [{"kind": "button", "text": "Resume"}, {"kind": "slider", "text": "Volume"}, {"kind": "button", "text": "Quit"}]}
+```
+
+The panel is a backdrop with its rows laid out top-down inside it, with an optional `title` row. `anchor`, `x`, `y`,
+`w`, `pad`, `gap` and `style` place and size it. Up to 24 rows. The result gives the `panel` id and every row id.
+
+Moving the panel with `edit_hud` moves its rows with it, and removing it removes them.
+
+### edit_hud and list_hud
+
+`edit_hud` changes a HUD that exists:
+
+| field | what it does |
+|---|---|
+| `updates` | `[{id, …any element field}]`; `screen` moves the element to another screen. An element's `kind` cannot change. |
+| `remove` | element ids |
+| `screens` | `[{id or name, rename, showWhile, input, active, remove}]`. A HUD keeps at least one screen. |
+
+`list_hud` reads the HUD back: its screens, which one shows, every element with its id, text, place and size, and
+what each element is wired to in the flow graph.
+
+### set_sky: sky, background, fog and exposure
+
+| field | what it does |
+|---|---|
+| `preset` | a [look preset](https://docs.theprototype.app/camera.md#environment-presets) by name, such as `Daylight` or `Night` |
+| `hdri` | a [sky image](https://docs.theprototype.app/camera.md#sky-images-hdri): `clearsky`, `meadow`, `sunrise`, `starlight` or `photostudio`, or `{name, rotation, intensity, blur, background, quality, minQuality}`. `{hash}` is an HDR file in your library. A web address is refused. `null` removes the sky image. |
+| `background` | a colour, such as `"#0b1020"` or `"navy"` |
+| `gradient` | `{"top": colour, "bottom": colour}` |
+| `fog` | `{color, near, far}` in metres, or `{color, density}` (0.01 thin, 0.1 thick), or `null` for none |
+| `exposure` | 1 is normal, 0.5 darker, 2 brighter |
+
+`quality` and `minQuality` are the scene's [Sky quality](https://docs.theprototype.app/camera.md#sky-quality-for-the-scene): `auto`, `standard`,
+`high` or `max`.
+
+The app's fog is a linear fog, so a `density` becomes a fog that is gone by `2 ÷ density` metres. For example,
+`0.05` gives 40 metres.
+
+### set_light: the sun, ambient light and environment lights
+
+| field | what it does |
+|---|---|
+| `sun` | `{color, intensity, direction}`: `direction` is the way the light shines and must point downward, such as `[-1, -2, -1]`. `position` works too. `null` switches the sun off. |
+| `ambient` | `{sky, ground, intensity}`: the soft light from above and below. `null` switches it off. |
+| `add` | `[{kind, color, intensity, position, groundColor}]`, where `kind` is `directional`, `point` or `hemisphere`. Up to 8 environment lights. |
+| `update` / `remove` | change or remove environment lights by id (`get_environment` lists them) |
+
+The result lists each new light's id. Spot lights, area lights and lights you place as objects are made with
+`create_objects` (`kind: light`), which also takes `castShadow` and a `shadowQuality` of `low`, `medium` or `high`.
+
+### get_environment: read it all
+
+`get_environment` gives the look preset, exposure, background, sky image, fog, sun, ambient light, environment
+lights, the lights placed as objects, where Play starts, the opening view, and the names of the presets and
+skies. Viewers can use it.
+
+### place_spawn: where Play starts
+
+```json
+place_spawn {"position": [0, 0, 6], "facing": [0, 0, 0]}
+```
+
+| field | what it does |
+|---|---|
+| `position` | where the player's feet go |
+| `object` | an object's uuid: the player stands on top of it |
+| `facing` | a point the player looks toward. `yaw` (radians, 0 faces −Z) and `yawDegrees` work too. |
+| `clear` | `true` removes the spawn |
+
+This is the same [spawn point](https://docs.theprototype.app/physics.md) as **Configure Scene ▸ Physics ▸ Play**.
+
+### set_play_camera: first person and the opening view
+
+| field | what it does |
+|---|---|
+| `mode` | `first` adds a [Character Controller](https://docs.theprototype.app/nodes/charcontroller.md) (walking, or flying with `fly: true`), with `speed`, `jumpHeight` and `eyeHeight`. A second call changes it rather than adding another one. `none` removes it. |
+| `openingView` | what a person sees when they open the scene: `{position, target}`, `"spawn"` (just behind and above the player), `"frame"` (the whole scene), or `null` to forget it |
+
+The opening view is saved with the scene. Setting it does not move anyone's camera.
+
+`third`, `orbit` and `fixed` are not Play cameras the app has yet: Play always looks through the player's own
+eyes. The tool says so and names what works today: a **Possess Object** node on a click or a key for a chase
+or orbit camera, or a camera object with **Set Active Camera** for a fixed shot.
+
+## Cookbook
+
+### A race HUD
+
+> "Add a race HUD: the lap top left, a 90 second countdown top right, and a speed bar at the bottom."
+
+```json
+create_hud {"screens": [{"name": "Race", "showWhile": "playing", "elements": [
+  {"kind": "text", "text": "Lap 1/3", "anchor": "top-left", "x": 16, "y": 16, "style": {"size": 22, "weight": "700"}},
+  {"kind": "timer", "anchor": "top-right", "x": 16, "y": 16, "duration": 90, "countDown": true},
+  {"kind": "bar", "anchor": "bottom", "y": 24, "w": 320, "max": 100}
+]}]}
+```
+
+The screen shows only while the game is playing. To count laps, the agent wires a Counter into a **HUD Text**
+node whose `element` is the lap text's id, with `create_flow_nodes`.
+
+### A night scene with fog
+
+> "Make it night with a light fog, and put a warm lamp by the fire."
+
+```json
+set_sky {"hdri": "starlight", "fog": {"color": "#0b1020", "density": 0.04}, "exposure": 0.6}
+set_light {"sun": {"intensity": 0.15, "color": "#8899ff"},
+  "add": [{"kind": "point", "color": "#ffaa55", "intensity": 2, "position": [0, 1.5, 0]}]}
+```
+
+Both calls ask first. After you press **Allow**, the agent repeats each call with its `confirmId`. A dim blue sun
+reads as moonlight. The fog is gone by 50 metres.
+
+### A spawn the player starts at
+
+> "Start the player on the platform, facing the castle, and open the scene behind them."
+
+```json
+place_spawn {"object": "…platform uuid…", "facing": [0, 0, -40]}
+set_play_camera {"mode": "first", "openingView": "spawn"}
+```
+
+The player walks in first person from the platform, and anyone who opens the scene sees it from just behind
+where they will stand. A camera that follows behind the player in Play is not in the app yet (see
+[set_play_camera](#set_play_camera-first-person-and-the-opening-view)).
+
+
+---
+
 Source: https://docs.theprototype.app/ai/agent-assist/ (Markdown: https://docs.theprototype.app/ai/agent-assist.md)
 
 # Undo, pivots and images with an agent
@@ -20930,6 +21125,147 @@ to an https texture given to `set_material`.
 
 On claude.ai these tools are reached through the connector's [tool families](https://docs.theprototype.app/ai/claude-connector.md#tool-families):
 `edit_shape` (pivot, pivot_group), `assets` (image), and `undo_last` as itself.
+
+
+---
+
+Source: https://docs.theprototype.app/ai/agent-runtime/ (Markdown: https://docs.theprototype.app/ai/agent-runtime.md)
+
+# Test and fix a game with an agent
+
+An agent joined to your session ([Build with an AI agent](https://docs.theprototype.app/ai/build-with-an-agent.md)) and Claude on claude.ai
+([Use theprototype from claude.ai and voice](https://docs.theprototype.app/ai/claude-connector.md)) can now see what a game **does**, not only what is in
+the scene: why a node did not fire, what is wrong with the wiring, what the last errors were, and — on the agent's own
+page — what happens when a player walks in and clicks things. Added in 1.60.
+
+None of these tools change your scene, except that `playtest` plays the agent's own copy of it for a moment. On
+claude.ai they are grouped as **run** (`inspect`, `validate`, `logs`).
+
+## Why didn't it fire? (`inspect_runtime`)
+
+`inspect_runtime` reads the running game the way the app's debugger does, without being able to change it:
+
+- `node`: one flow node — when it last fired (seconds ago) and how often, what is wired into it and out of it, and in
+  plain words **why it has not fired**: an On Click that waits for its object to be clicked, an action whose source
+  never fired, an Object Selector wired the wrong way round, clicks switched off in Play.
+- `object`: every node that acts on one object, with the same answers.
+- With neither: an overview — who simulates the physics, the game state, round and variables, the kit pieces and what
+  they refused, and the nodes that fired most recently (`limit`).
+
+## What is wrong with this game? (`validate_scene`)
+
+`validate_scene` is a playability check. Each issue has a level (`error` or `warning`), a sentence, the node or object it
+is about and, where there is one, a fix:
+
+| Issue | What it means |
+| --- | --- |
+| reversed selector | an Object Selector is wired **into** an On Click; it has to come out of the click (or sit in the object's own graph) |
+| source with no object | an On Click / On Grab in the scene graph that reaches no object |
+| action with no source | an action node (Set Game State, Travel, Spawn, a kit action …) with nothing upstream that fires; actions only run from an event |
+| Game Start as an event | Game Start never fires; use On Game State instead |
+| HUD binding | a HUD node naming an element or screen that does not exist, or none at all |
+| walk with no spawn | Play walks on the ground but the scene has no spawn point |
+| clicks off | the scene has click nodes but Play's interaction is not set to click |
+| unlit | no light and no environment: the game will be black |
+| behaviour | a behaviour script with a problem (the line and what to change) |
+
+## The last errors (`logs`)
+
+`logs` returns the newest errors and warnings the page has seen (`count`, up to 50), and the toasts the people in the
+session were shown. `status` carries the last five too, so an agent sees a failure without asking.
+
+## Play it (`playtest`)
+
+`playtest` is a virtual player in the **agent's own** Play — never in yours, and never from claude.ai (the connector
+acts in your own tab, so there is no separate player to drive). Steps, up to 40 and 60 seconds in all:
+
+- `walk`: a point or a path, at walking speed · `look`: a point to face · `click` / `grab`: an object · `key`: a key code
+  (`KeyE`), with `hold` seconds · `hud`: a HUD button · `wait`: seconds.
+
+It answers with the nodes that fired (and on what), the game state before and after, the HUD values and any errors. It
+fires the same **source** events a player would (On Click, On Grab, On Enter, key presses), so an action node
+downstream runs exactly as in a real game. Firing an action node by itself does nothing, in a playtest as in Play.
+
+## Checkpoints (`undo_last`)
+
+Besides taking back its last call, `undo_last` can keep **named checkpoints** of the agent's own work:
+
+- `checkpoint: "before the doors"` remembers this point (up to 10; the oldest goes) · `checkpoints: true` lists them.
+- `restore: "before the doors"` takes back everything the agent did since, as **one** step on the agent's line in
+  **Agent activity**. When other people are in the session the host is asked first (**Allow** / **Deny**), the way a
+  whole-scene change is; if someone has changed the same objects since, it refuses and says who.
+
+## Also new for agents
+
+- **`list_scene`** takes `bounds: {min, max}` (objects inside a box) and pages with `limit` and `cursor` (the reply's
+  `nextCursor`), beside the name, type and `near` filters.
+- **Set Color, Visibility and Spin** nodes take a `target` object: a button's graph can hide a door without an Object
+  Selector chain.
+
+## Cookbook
+
+- **"The gate doesn't open":** `validate_scene`; for the node it names, `inspect_runtime {node}`; fix the wire; then
+  `playtest` the walk to the gate and the click.
+- **A collect-the-gems check:** `playtest` with a `walk` to each gem and a `click` on it, then compare the score in the
+  HUD values with the number of gems.
+- **Try something risky:** `undo_last {checkpoint: "safe"}`, build, and if it is wrong `undo_last {restore: "safe"}`.
+
+
+---
+
+Source: https://docs.theprototype.app/ai/agent-spatial/ (Markdown: https://docs.theprototype.app/ai/agent-spatial.md)
+
+# Here, this and you: pings and building around people
+
+*"Put a lamp here"*, *"hang it on this wall"*, *"a table at my hip height in front of me"*. Since 1.60 an agent
+([Build with an AI agent](https://docs.theprototype.app/ai/build-with-an-agent.md), [Claude on claude.ai and voice](https://docs.theprototype.app/ai/claude-connector.md)) knows where
+**here** is: you point at it with a **ping**, and it builds at your pings and around the people in the session.
+
+## Ping a spot
+
+Everyone in the session sees a ping as a short marker and hears its chime (your colour and sound, from
+**Settings ▸ Scene**):
+
+- **Desktop:** Ctrl+Alt+click the spot, or right-click it and choose **Ping**.
+- **Phone or tablet:** long-press the spot and choose **Ping** in the menu.
+- **VR:** click the controller stick (or **Ping** in the radial menu) where the ray lands.
+
+A ping on an object remembers **where on that object** it landed and which way the surface faces, so a ping on a table
+stays on the table if somebody moves it. Pings last two minutes for agents (the marker fades after a few seconds), at
+most four a second per person; a viewer may ping too.
+
+## How an agent uses it
+
+- `where_are_users` gives each person's **latest ping**, and with `pings: true` the recent ones: who, how long ago, the
+  point, the surface direction and the object it is on.
+- `create_objects` and `update_objects` take **`at: {ping: "latest"}`** (or a ping's id). On a floor or a table top
+  the thing stands on it.
+- **`align: "surface"`** backs it onto the pinged surface, facing out and upright on a wall: a painting, a sign, a
+  shelf.
+- **`snap: "floor"`** stands it on whatever is under it — terrain, a floor, a table — or the ground.
+- **`face_user`** turns it (around the vertical only) to face you, or the person named.
+- **`at: {user: "me", ahead: 1.5, right: 0}`** builds in front of a person as they stand now, facing them. Asking again
+  as they walk builds around them where they are.
+
+## Your size and your hands
+
+`where_are_users` also gives each person's **body** — eye height and, from it, height, shoulder, hip, knee and arm reach
+— and in VR the **room** (the play area your headset knows) and both **hands** with the distance between them. Sizes and
+positions take these as units: `"hip"`, `"0.5 reach"`, `"2 eye"`, `"room"`. *"As wide as my hands"* uses the hands'
+distance.
+
+## In a headset
+
+- Nothing an agent makes can appear inside a person in VR: 0.45 m around the head and through the body. The call is
+  refused and says why, so the agent places it in front of you instead.
+- What an agent makes fades in instead of popping.
+- Each thing the agent did shows as a small line under your view for a few seconds.
+
+## Cookbook
+
+- **"Put a lamp here":** ping the table, say it. The agent calls `create_objects` with `at: {ping: "latest"}`.
+- **"Hang this on the wall":** ping the wall; `align: "surface"`.
+- **"A stool in front of me at knee height":** `at: {user: "me", ahead: 1}` with a seat height of `"knee"`.
 
 
 ---
@@ -21283,10 +21619,28 @@ For shapes that none of the other tools make.
 | `name`, `position`, `rotation`, `scale`, `color`, `physics` | as in `create_objects` |
 | `parentUuid` | a group to make it in: the position, rotation, scale and the vertices are then in the group's own space |
 | `castShadow`, `receiveShadow` | shadows, on by default |
+| `subdivide` | `1` or `2` smooths the mesh (Catmull-Clark subdivision, since 1.60): corners round off, so a box of six quads becomes a rounded pebble and a few quads become a soft, organic shape. Each level makes about four times the faces, and the result must still fit the limits. Smooth shading comes with it unless `smooth: false`. |
 
 The reply says how many triangles were made. A quad face stays one face in Edit Mesh, so the mesh is ready
 for `edit_mesh`. **Material slots last** through later `edit_mesh` calls; **vertex colours last** only while an edit
 keeps the number of vertices (an extrude, for example, drops them).
+
+### update_mesh: new data for a mesh (since 1.60)
+
+Changes a mesh `create_mesh` made, keeping its uuid, its place and its materials. The whole call is one undo step.
+
+| field | what it does |
+|---|---|
+| `uuid` | the mesh |
+| `mode` | `replace`: every vertex and face again, with the same fields and limits as `create_mesh` (`uvs`, `colors`, `faceMaterials`, `subdivide`) · `patch`: new positions for some vertices, keeping the faces |
+| `offset` | `patch`: the first vertex index to replace; `vertices[0]` lands there |
+| `vertices` | the new positions |
+| `uvs`, `colors` | `patch`: new values from `offset` on, as for vertices |
+| `smooth`, `subdivide` | as in `create_mesh` (a patch keeps the mesh's subdivision) |
+
+A patch needs the vertex list the mesh was made from. That list is kept in the tab that made the mesh, so after a
+reload, or for a mesh made somewhere else, use `replace`. Primitives change with `set_geometry`, and any mesh can be
+modelled with `edit_mesh`.
 
 ### create_shapes: many shapes in one step
 
@@ -21429,6 +21783,241 @@ create_shapes {
 
 One undo step takes the whole lamp back. To swing the shade, `create_pivot` with the stem and the shade at a point
 `local` to the group (see [Undo, pivots and images](https://docs.theprototype.app/ai/agent-assist.md#several-parts-on-one-joint-create_pivot)).
+
+
+---
+
+Source: https://docs.theprototype.app/ai/agent-world/ (Markdown: https://docs.theprototype.app/ai/agent-world.md)
+
+# Worlds with an agent: terrain, water, effects and assets
+
+An agent joined to your session ([Build with an AI agent](https://docs.theprototype.app/ai/build-with-an-agent.md)), Claude on claude.ai
+([Use theprototype from claude.ai and voice](https://docs.theprototype.app/ai/claude-connector.md)) and the in-app [Assistant](https://docs.theprototype.app/ai/assistant.md) can build
+whole places: hills and a forest, a lake, a campfire with its crackle, and things from your library and the model packs.
+
+These tools work like the agent's other tools. Everyone in the session sees the change at once. One call is one undo
+step (Ctrl+Z, **Undo** on the call's line in **Agent activity**, or *"undo that"*). A viewer's agent cannot use the tools
+that change things; it can still search for assets.
+
+!!! note "New in 1.60"
+    Everything on this page is new in 1.60.
+
+!!! tip "Try it"
+    **Templates ▸ Game plot** opens an empty plot (the ground, a start pad, a finish arch, a fire pit and four gems).
+    Ask for hills with a forest and a lake, a campfire with its crackle, a race HUD with a timer and a start on the pad,
+    then *"check my game"*. While Claude is connected, the **Connect Claude** row says so until it has used one of
+    these tools.
+
+## Find and place assets
+
+### search_assets: find something to build with
+
+It searches the shared [library](https://docs.theprototype.app/explorer.md), the [model packs](https://docs.theprototype.app/packs.md), your [prefabs](https://docs.theprototype.app/prefabs.md) and
+Poly Haven's CC0 materials and HDRIs, by words and kind. It only reads, so a viewer's agent can use it too.
+
+| field | what it does |
+|---|---|
+| `query` | words, like `pine tree`, `wooden crate` or `campfire crackle`. Leave it empty to list everything of the kinds asked for. |
+| `kinds` | any of `model`, `material`, `hdri`, `sound`, `image`, `prefab` (default: all) |
+| `sources` | where to look (default: everywhere) |
+| `limit` | how many results (default 12) |
+
+Each result has an `id`, its name, kind, source, licence, its size when known, and which tool uses it. The id is what the
+other tools take:
+
+- `lib:<hash>` is a file in the shared library.
+- `pack:<pack>/<item>` is a model from a pack.
+- `prefab:<id>` is one of your prefabs.
+- `cc0:polyhaven/<id>` is a CC0 material or HDRI. `set_material` (`cc0`) and the scene look take it.
+
+### place_asset: put a model or prefab in the scene
+
+It places the model the same way dragging it from the Asset Browser does.
+
+| field | what it does |
+|---|---|
+| `asset` | an id from `search_assets` (`lib:`, `pack:` or `prefab:`) |
+| `position` | where it stands, in world metres |
+| `yaw` | a turn about the up axis, in radians |
+| `scale` | a size factor (1 = as made) |
+| `count`, `spacing` | a row of copies, `spacing` metres apart (default 2) |
+| `name` | a name for the new objects |
+
+It returns the new uuids. To bring in a model from a URL, the agent uses `import_model` instead.
+
+### prefab: keep a group of objects and stamp it again
+
+- `mode: "save"` with `objects` keeps them as a prefab, with their materials, flows and behaviours, and returns its id.
+  The prefab goes into **your** prefab library on this device. Saving changes nothing in the scene, so there is nothing
+  to undo.
+- `mode: "place"` with `prefab` (the id or the name) puts copies in the scene with new ids. `position`, `yaw`, `count`
+  and `spacing` work as in `place_asset`. One undo step removes them.
+
+## Shape the land
+
+### terrain: make or change a terrain
+
+Without `uuid` it makes a [terrain](https://docs.theprototype.app/terrain.md) (`size` metres, at `position`). With `uuid` it changes that terrain.
+
+| field | what it does |
+|---|---|
+| `size` | the edge length in metres, up to 200 (when making one) |
+| `height` | how high the noise hills reach, in metres |
+| `detail` | how close together the hills are (0.005 to 0.6) |
+| `octaves`, `ridged`, `warp` | rougher detail, sharp ridges, twisted shapes |
+| `edges` | `flat`, `island` (it falls away to the sides) or `bowl` |
+| `seed` | another set of hills |
+| `ops` | sculpting and painting, in order (below) |
+| `layers` | up to 4 paint layers `{color, texture, tiling}`. `texture` is a library hash or a pattern name like `grass`, `sand` or `stone`. |
+| `force` | reshape a terrain that was sculpted by hand (the hand sculpting is lost) |
+
+Each entry in `ops` is `{op, at, radius, strength, …}`. `at` is `[x, z]` in metres from the terrain's centre. Up to 64
+entries:
+
+- `raise` / `lower`: push the ground up or down. `height` gives the metres at the centre.
+- `smooth`: even out bumps. `flatten`: level the ground to the height at the centre.
+- `paint`: paint `layer` 0 to 3 over the area.
+- `passes`: repeat an op (up to 20).
+
+The sculpting is the same brush as [Sculpt terrain](https://docs.theprototype.app/terrain.md), and the whole call is still one undo step.
+
+### scatter: a forest, rocks, flowers
+
+`scatter` covers a terrain, or any mesh, with many cheap copies. The copies are seeded, so every peer sees the same
+ones.
+
+| field | what it does |
+|---|---|
+| `surface` | the terrain or mesh uuid |
+| `asset` | a primitive (`Box`, `Sphere`, `Cone`, `Cylinder`, `Capsule`, `Dodecahedron`) or a model id from `search_assets` (`lib:` or `pack:`) |
+| `assets` | up to 8 of those, mixed evenly |
+| `density` / `count` | copies per square metre (0.01 to 4, default 0.2), **or** an exact count (up to 8000) |
+| `scale` | `[min, max]` size factors (default `[0.8, 1.2]`), or one number |
+| `spacing` | the least distance between copies, in metres |
+| `rules` | where copies may go: `slope: [min°, max°]` (0 = level ground), `height: [min, max]` metres, `layer: {i, min}` (only where paint layer `i` is at least `min`) |
+| `randomRotation`, `tint`, `sink` | a random turn (on by default), colour variation 0 to 1, metres pushed into the ground |
+| `collider` | physics for the copies: `none` (default), `box`, `sphere` or `hull` |
+| `seed` | another arrangement |
+| `remove` | a set's id, to delete that set instead |
+
+It returns the set's id and how many copies were placed. A surface holds up to 8 sets.
+
+## Water
+
+### water: a pool, a lake, the sea
+
+Without `uuid` it makes a body of [water](https://docs.theprototype.app/water.md). With `uuid` it changes one, or turns an object into water when
+a `preset` is given.
+
+| field | what it does |
+|---|---|
+| `kind` | `tank`, `pool`, `round`, `lake` or `ocean` (when making one) |
+| `size` | `[width, height, length]` in metres (`[radius, height]` for `round`) |
+| `position` | the bottom centre of the water |
+| `preset` | `pool`, `aquarium`, `ocean`, `lake`, `river`, `lava`, `swamp`, `toxic` or `ice` |
+| `level` | how full, 0 to 1 |
+| `color`, `look` | the colour, and look fields like `shallowColor`, `deepColor`, `clarity`, `foam` |
+| `waves`, `flow` | waves `{count, amplitude, wavelength, speed, direction}`, and a current |
+| `remove` | `true` makes it a plain object again |
+
+New water is a static sensor: in Play, things fall in and float. It casts no shadow.
+
+## Effects and sound
+
+### create_particles: fire, smoke, sparkles, fireflies
+
+`preset` is one of `sparkles`, `fire`, `smoke`, `dust`, `confetti`, `sparks`, `trail`, `wisps`, `fireflies`, `rain` or
+`snow`. These are the same presets as **Add ▸ Effects** ([Particles](https://docs.theprototype.app/particles.md)).
+
+- Without `object` it places a small emitter at `position`. Rain and snow hang at cloud height over the point.
+- With `object` it puts the particles on that object: a torch, a log, a car's exhaust.
+- `overrides` changes any particle field: `count`, `lifetime`, `speed`, `gravity`, `sizeStart`, `colorStart`,
+  `colorEnd`, `opacity` and the rest. A field that does not exist is refused by name.
+- `remove: true` takes them off the object.
+
+### place_sound: a sound in the world
+
+| field | what it does |
+|---|---|
+| `asset` | a library sound (`lib:<hash>`, or search with `kinds: ["sound"]`), or an **https** URL of a sound file |
+| `object` | put the sound on this object, or leave it out and give `position` |
+| `radius`, `volume` | how far it carries at full volume (metres), and how loud (0 to 1) |
+| `on` | play it once on `click`, `enter`, `exit`, `grab` or `hit` on the object. Without `on` it loops all the time, like a crackle or a river. |
+| `loop` | loop or not |
+
+The sound is a [Sound node](https://docs.theprototype.app/audio.md) in the object's flow, so you can open it in the node editor and change it.
+
+### set_music: the scene's background music
+
+`asset` is a library sound or an https URL (`null` clears it). It also takes `volume` (0 to 1), `play: true` and
+`stop: true`. Everyone hears the track in sync. Each person can still turn it down for themselves in
+[Music](https://docs.theprototype.app/music.md).
+
+### Sounds and pictures from a URL
+
+A sound or texture given as a URL becomes a file in the library **first**, the same as an upload:
+
+- **https** only. Addresses on your computer or your local network are refused, also after a redirect.
+- The site must allow other origins (CORS).
+- There is a size limit: 16 MB.
+- The file's own bytes must be audio (WAV, OGG, MP3, FLAC, M4A or WebM) or an image. A web page with a `.wav` name is
+  refused.
+- A sound is decoded once to prove it plays. Nothing in the file is run.
+
+## Textures by name
+
+`set_material` takes `pattern`: `wood`, `planks`, `brick`, `tiles`, `marble`, `stone`, `concrete`, `metal`, `grass`,
+`sand`, `fabric`, `checker`, `stripes` or `noise`. The texture is drawn on the spot and stored in the library, so it
+reaches everyone like any other picture.
+
+- A plain name works, or `{name, colors, scale, seed, size}`. `colors` lists the colours dark first, `size` is 128 to
+  1024 pixels, and `seed` gives another variation.
+- `patternScale` repeats it across the surface.
+- `maps: {roughness: {pattern: "noise"}}` puts a pattern in another slot.
+- Terrain layers take the same names.
+
+See [Materials and looks](https://docs.theprototype.app/ai/agent-look.md).
+
+## Cookbook
+
+### Forest on hills
+
+1. `terrain` with `size: 60`, `height: 4`, `detail: 0.04`, `edges: "island"` and
+   `ops: [{op: "raise", at: [0, 0], radius: 12, height: 6}]`.
+2. Paint it: `layers: [{texture: "grass", tiling: 12}, {texture: "stone", tiling: 8}]`, then
+   `ops: [{op: "paint", at: [0, 0], radius: 8, layer: 1}]` for a rocky top.
+3. `search_assets` with `query: "pine tree"` and `kinds: ["model"]`. If nothing comes back, use `Cone`.
+4. `scatter` on the terrain with that asset, `density: 0.15`, `scale: [0.7, 1.5]`,
+   `rules: {slope: [0, 30], layer: {i: 0, min: 0.5}}` and `tint: 0.2`. The trees keep off the steep slopes and the rock.
+5. A second `scatter` of `Dodecahedron` with `count: 80`, `scale: [0.2, 0.6]` and `sink: 0.1` adds rocks.
+
+### Campfire with sound
+
+1. A ring of stones: `create_objects` with `from` and `count` (or a few `Dodecahedron`s), and two logs from `create_mesh`
+   or Cylinders.
+2. `create_particles` with `preset: "fire"` and `position` at the centre of the ring, then `preset: "smoke"` a little
+   above it.
+3. `place_sound` with `object` set to the fire's uuid, `asset` set to a crackle (`search_assets` `kinds: ["sound"]`, or
+   an https URL), `radius: 6` and `loop: true`.
+4. At night: `create_particles` with `preset: "fireflies"` nearby, and `set_look` for a dark sky.
+
+### Lake with a jetty
+
+1. `terrain` with `edges: "bowl"` and `height: 3`, or a `lower` op in the middle of a hill.
+2. `water` with `kind: "lake"`, `size: [24, 1.5, 24]`, its `position` at the bottom of the hollow, and `level: 0.8`.
+   Use `preset: "swamp"` for a murkier one.
+3. The jetty: a long `Box` on a few thin Cylinder posts, then `set_material` with `pattern: "planks"` and
+   `patternScale: 3` on its top.
+4. `scatter` reeds (`Cylinder`, `scale: [0.05, 0.12]`) with `rules: {height: [-0.5, 0.5]}` along the shore.
+5. `place_sound` with a water-lapping loop near the jetty.
+
+## On claude.ai
+
+On claude.ai these tools are reached through the connector's [tool families](https://docs.theprototype.app/ai/claude-connector.md#tool-families):
+
+- `assets` has `search`, `place`, `prefab` and `image`.
+- `effects` has `terrain`, `scatter`, `water`, `particles`, `sound` and `music`.
+- `set_look` `material` takes `pattern`.
 
 
 ---
@@ -21579,12 +22168,17 @@ exactly what the agent tools of the same job do, with the same limits:
 | family | actions | the agent tools behind them |
 |---|---|---|
 | `create_shape` | `lathe`, `tube`, `extrude`, `mesh` | `create_lathe`, `create_tube`, `extrude_shape`, `create_mesh` ([Shapes and modelling](https://docs.theprototype.app/ai/agent-geometry.md)) |
-| `edit_shape` | `params`, `mesh`, `pivot`, `pivot_group` | `set_geometry`, `edit_mesh`, `set_pivot`, `create_pivot` |
-| `set_look` | `material`, `list_materials`, `get_material`, `shader`, `edit_shader`, `assign_shader`, `shader_nodes`, `post`, `get_post`, `post_graph`, `unwrap`, `uv` | `set_material` … `set_uv` ([Materials and looks](https://docs.theprototype.app/ai/agent-look.md)) |
-| `assets` | `image` | `add_image` ([Undo, pivots and images](https://docs.theprototype.app/ai/agent-assist.md)) |
+| `edit_shape` | `params`, `mesh`, `update`, `pivot`, `pivot_group` | `set_geometry`, `edit_mesh`, `update_mesh`, `set_pivot`, `create_pivot` |
+| `set_look` | `material`, `list_materials`, `get_material`, `shader`, `edit_shader`, `assign_shader`, `shader_nodes`, `post`, `get_post`, `post_graph`, `unwrap`, `uv`, `sky`, `light`, `environment` | `set_material` … `set_uv` ([Materials and looks](https://docs.theprototype.app/ai/agent-look.md)); `set_sky`, `set_light`, `get_environment` ([HUD, sky and play](https://docs.theprototype.app/ai/agent-scene.md)) |
+| `hud` | `create`, `list`, `update`, `panel` | `create_hud`, `list_hud`, `edit_hud`, `hud_panel` ([HUD, sky and play](https://docs.theprototype.app/ai/agent-scene.md)) |
+| `game_setup` | `spawn`, `play_camera` | `place_spawn`, `set_play_camera` ([HUD, sky and play](https://docs.theprototype.app/ai/agent-scene.md)) |
+| `assets` | `search`, `place`, `prefab`, `image` | `search_assets`, `place_asset`, `prefab` ([Worlds](https://docs.theprototype.app/ai/agent-world.md)), `add_image` ([Undo, pivots and images](https://docs.theprototype.app/ai/agent-assist.md)) |
+| `effects` | `terrain`, `scatter`, `water`, `particles`, `sound`, `music` | `terrain`, `scatter`, `water`, `create_particles`, `place_sound`, `set_music` ([Worlds with an agent](https://docs.theprototype.app/ai/agent-world.md)) |
+| `run` | `inspect`, `validate`, `logs` | `inspect_runtime`, `validate_scene`, `logs` ([Test and fix a game](https://docs.theprototype.app/ai/agent-runtime.md)) |
 
 `undo_last` is a tool of its own. A look-only connection can still use the actions that only read (`list_materials`,
-`get_material`, `shader_nodes`, `get_post`).
+`get_material`, `shader_nodes`, `get_post`, `environment`, `hud` `list`, `assets` `search` and all of `run`).
+`playtest` (a test player) runs only on an agent's own page, so it is not on claude.ai.
 
 **New in 1.59** — the same tools, with more in them:
 
@@ -21598,6 +22192,26 @@ exactly what the agent tools of the same job do, with the same limits:
   ([details](https://docs.theprototype.app/ai/build-with-an-agent.md#rules-a-good-agent-follows)).
 - `edit_shape` `pivot_group` takes `local`; `list_scene` gives each mesh's vertex and triangle count and its bounds;
   `status` says how heavy the scene is (`sceneBudget`); `set_look` names the material presets.
+
+**New in 1.60** — four families, so Claude can build a small game and check it:
+
+- `hud` makes the game's screen overlay: timers, scores, bars, buttons, images and panels ([HUD, sky and play](https://docs.theprototype.app/ai/agent-scene.md)).
+- `game_setup` says where Play starts, turns on first-person walking or flying, and sets the view a scene opens with.
+- `set_look` `sky`, `light` and `environment` change the sky, fog, exposure, the sun and the ambient light. They change
+  everyone's view, so your tab asks the host first.
+- `run` tells Claude what the game does: `validate` lists what would not work when someone presses Play, each with its
+  fix; `inspect` says why something did not fire; `logs` reads the tab's recent errors
+  ([Test and fix a game](https://docs.theprototype.app/ai/agent-runtime.md)).
+- `where_are_users` takes `pings`, and `create_objects` / `update_objects` take `at: {ping}`, `snap: "floor"`, `align`
+  and `face_user`: point at a spot and say "put a lamp here" ([Here, this and you](https://docs.theprototype.app/ai/agent-spatial.md)).
+
+Worlds ([Worlds with an agent](https://docs.theprototype.app/ai/agent-world.md)):
+
+- `effects` builds places: terrain with hills and paint, scatter (a forest, rocks), water, particles (fireflies are new),
+  positional sounds and the background music.
+- `assets` `search` finds models, sounds, images and CC0 materials. `place` and `prefab` put them in the scene.
+- `set_look` `material` takes `pattern` (wood, brick, marble …). `create_shape` `mesh` takes `subdivide: 1-2`, and
+  `edit_shape` `update` sends a mesh new vertices.
 
 Claude reads its tool list when it connects, so it sees these after the connector reconnects.
 

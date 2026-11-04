@@ -45,6 +45,8 @@ change by hand.
 | `maps` | texture slots `albedo`, `normal`, `roughness`, `metalness`, `emissive`, `ao`: a library image hash, an https URL, or `null` to clear |
 | `preset` | a [preset](https://docs.theprototype.app/materials.md) by name: **Wood**, **Metal**, **Plastic**, **Glass**, **Stone**, **Rubber**, **Fish scales**, **Neon**, or one the person saved (`list_materials` names them all) |
 | `cc0` | fetches a free CC0 material by name, such as `"Wood051"` or `"brown planks"` |
+| `pattern` | a texture drawn by name, put in the albedo slot (since 1.60): `wood`, `planks`, `brick`, `tiles`, `marble`, `stone`, `concrete`, `metal`, `grass`, `sand`, `fabric`, `checker`, `stripes`, `noise`, or `{name, colors, scale, seed, size}`. A map slot takes one as `{pattern: …}`. ([Textures by name](https://docs.theprototype.app/ai/agent-world.md#textures-by-name)) |
+| `patternScale` | how many times the pattern repeats across the surface |
 | `slot` | which material slot of a multi-material object (default 0) |
 | `faces` | gives just those faces their own new material slot ([how to pick faces](#picking-faces)) |
 

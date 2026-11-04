@@ -11,7 +11,7 @@
         <link rel="prev" href="../agents-and-blender/">
       
       
-        <link rel="next" href="../claude-connector/">
+        <link rel="next" href="../agent-world/">
       
       
       <link rel="icon" href="../../logo.svg">
@@ -5508,11 +5508,74 @@
   
   
     <li class="md-nav__item">
+      <a href="../agent-scene/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HUD, sky and play with an agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../agent-assist/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Undo, pivots and images with an agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test and fix a game with an agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-spatial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Here, this and you (pings)
   </span>
   
 
@@ -5723,6 +5786,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#update_mesh-new-data-for-a-mesh-since-160" class="md-nav__link">
+    <span class="md-ellipsis">
+      update_mesh: new data for a mesh (since 1.60)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#create_shapes-many-shapes-in-one-step" class="md-nav__link">
     <span class="md-ellipsis">
       create_shapes: many shapes in one step
@@ -5809,6 +5881,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-world/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Worlds with an agent
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -6164,6 +6257,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#update_mesh-new-data-for-a-mesh-since-160" class="md-nav__link">
+    <span class="md-ellipsis">
+      update_mesh: new data for a mesh (since 1.60)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#create_shapes-many-shapes-in-one-step" class="md-nav__link">
     <span class="md-ellipsis">
       create_shapes: many shapes in one step
@@ -6512,11 +6614,54 @@ columns, lamp shades.</p>
 <td><code>castShadow</code>, <code>receiveShadow</code></td>
 <td>shadows, on by default</td>
 </tr>
+<tr>
+<td><code>subdivide</code></td>
+<td><code>1</code> or <code>2</code> smooths the mesh (Catmull-Clark subdivision, since 1.60): corners round off, so a box of six quads becomes a rounded pebble and a few quads become a soft, organic shape. Each level makes about four times the faces, and the result must still fit the limits. Smooth shading comes with it unless <code>smooth: false</code>.</td>
+</tr>
 </tbody>
 </table>
 <p>The reply says how many triangles were made. A quad face stays one face in Edit Mesh, so the mesh is ready
 for <code>edit_mesh</code>. <strong>Material slots last</strong> through later <code>edit_mesh</code> calls; <strong>vertex colours last</strong> only while an edit
 keeps the number of vertices (an extrude, for example, drops them).</p>
+<h3 id="update_mesh-new-data-for-a-mesh-since-160">update_mesh: new data for a mesh (since 1.60)</h3>
+<p>Changes a mesh <code>create_mesh</code> made, keeping its uuid, its place and its materials. The whole call is one undo step.</p>
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th>what it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uuid</code></td>
+<td>the mesh</td>
+</tr>
+<tr>
+<td><code>mode</code></td>
+<td><code>replace</code>: every vertex and face again, with the same fields and limits as <code>create_mesh</code> (<code>uvs</code>, <code>colors</code>, <code>faceMaterials</code>, <code>subdivide</code>) · <code>patch</code>: new positions for some vertices, keeping the faces</td>
+</tr>
+<tr>
+<td><code>offset</code></td>
+<td><code>patch</code>: the first vertex index to replace; <code>vertices[0]</code> lands there</td>
+</tr>
+<tr>
+<td><code>vertices</code></td>
+<td>the new positions</td>
+</tr>
+<tr>
+<td><code>uvs</code>, <code>colors</code></td>
+<td><code>patch</code>: new values from <code>offset</code> on, as for vertices</td>
+</tr>
+<tr>
+<td><code>smooth</code>, <code>subdivide</code></td>
+<td>as in <code>create_mesh</code> (a patch keeps the mesh's subdivision)</td>
+</tr>
+</tbody>
+</table>
+<p>A patch needs the vertex list the mesh was made from. That list is kept in the tab that made the mesh, so after a
+reload, or for a mesh made somewhere else, use <code>replace</code>. Primitives change with <code>set_geometry</code>, and any mesh can be
+modelled with <code>edit_mesh</code>.</p>
 <h3 id="create_shapes-many-shapes-in-one-step">create_shapes: many shapes in one step</h3>
 <p>Up to <strong>50</strong> shapes of any of the four kinds in one call and <strong>one undo step</strong> — the parts of a chair, a row of
 columns, a whole little building.</p>
