@@ -57,6 +57,14 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.57 — shared games start fast.** Play links, embeds and pasted links now open the [play view](https://docs.theprototype.app/share-a-game.md): the
+game, its HUD and touch controls and none of the editor — about a third less to load, so a shared game's first picture
+comes several seconds sooner on a phone. **Invite ▸ Person** has a [Play link](https://docs.theprototype.app/share-a-game.md#play-together-from-a-link)
+that brings friends into your session straight into the game. On a narrow phone the game's HUD now sits below the Play
+buttons ([touch controls](https://docs.theprototype.app/touch-controls.md)), the connection chip says **Connect** before you connect, and live public
+rooms have their own heading in the [Connected panel](https://docs.theprototype.app/connection.md#who-is-here-the-peers-panel). To try it, open
+**Templates ▸ Topple tower**, a tiny game set up for sharing.
+
 **1.56 — agents build the whole shape and the whole look.** An agent, the in-app Assistant and Claude on claude.ai can
 now [make shapes](https://docs.theprototype.app/ai/agent-geometry.md) the basic objects cannot (a vase on a lathe, a rail along a path, an extruded
 sign, a mesh from its own points), reshape and model them, and [dress them](https://docs.theprototype.app/ai/agent-look.md): materials and textures —
@@ -2166,8 +2174,12 @@ On a phone or tablet, Play shows a **move stick** on the left, a **look drag** o
 buttons** — Jump, Throw, Grab, Use… — exactly the actions the game needs. Every control can be moved, resized and faded,
 and any button can wear your own pressed and released images.
 
-![Sky Run in Play on a folded phone: the stage name, the timer and the coins at the top, the move stick in the lower left and the Jump button in the lower right, over the first platform of the level.](https://docs.theprototype.app/img/touch-controls/sky-run-phone.webp)
+![Sky Run in Play on a folded phone: the ✕, the Playing chip and the Menu pill along the top, the game's bar with the stage name, the timer and the coins below them, the move stick in the lower left and the Jump button in the lower right, over the first platform of the level.](https://docs.theprototype.app/img/touch-controls/sky-run-phone.webp)
 *Figure: Sky Run on a folded phone.*
+On a narrow phone the game's own bar (stage, timer, score) sits **below** the ✕, the **Playing** chip and the **Menu**
+pill, and anything the game puts at the very bottom moves up above the play view's links, so nothing the game shows is
+hidden behind the app's buttons (*since 1.57*).
+
 ![The touch controls layout editor on a folded phone, with the Jump button selected: This game or All games, Hide, Size and Opacity sliders, Default place, Reset, Cancel and Save at the top, the move stick and the Jump button below with their names. 1: save for this game or all games. 2: the selected Jump button.](https://docs.theprototype.app/img/touch-controls/layout-editor.webp)
 *Figure: The touch controls layout editor, Jump selected.*
 
@@ -3178,7 +3190,8 @@ chip — tap it for your ID, the join field, Info and Toasts. The signaling link
 
 Since 1.32 the connection status is a **coloured dot**. On a computer the full bar keeps your invite ID and the peer-ID
 field, with the dot at its left end. On a phone the chip at the top of the screen says the state beside the dot —
-**Connected**, **Connecting…** or **Offline** — whenever the top bar has room. When the bar is crowded (people are
+**Connect** (not connected yet, the same word as on a computer), **Connecting…**, **Connected** or **Offline** (the peer
+server cannot be reached) — whenever the top bar has room. When the bar is crowded (people are
 connected and you are in a call, so the peers button and the microphone take the space) it shrinks back to the dot and
 a ▾ (and the microphone while you are in a call).
 
@@ -3216,6 +3229,12 @@ Right-click a person (long-press on touch, <kbd>Shift</kbd>+<kbd>F10</kbd> from 
 their profile, Go to, Watch, Mute, Hide — and, for the host or an admin, **Remove from session** and **Remove and
 block**. See [Users and moderation](https://docs.theprototype.app/people.md). An AI agent shows a robot and "AI" instead of a character.
 
+**Public rooms in the panel** (*since 1.57*). On theprototype.app the panel also lists the live [public rooms](#public-rooms-theprototypeapp)
+and who is in them, under their own **Public rooms** heading below your session — *live rooms anyone can join, not part
+of your session*. The people listed there are not connected to you; **Watch** beside them is greyed with the reason.
+
+![The Connected panel on a folded phone: Peer (you) in an Untitled scene, then the Public rooms heading with the line Live rooms anyone can join — not part of your session, a room called Atrium and Someone Else in it, Playing, with Watch.](https://docs.theprototype.app/img/connection/public-rooms-phone.webp)
+*Figure: Public rooms under their own heading, apart from your session.*
 ### Inviting someone
 
 1. **Copy your invite link** (the 📋 button) and send it to a friend.
@@ -18572,11 +18591,12 @@ A scene link is `https://theprototype.app/?s=‹id›`, and the app treats it li
 ### Embedding a scene
 
 **Embed** on a public scene's page copies an `<iframe>` snippet for your own site or blog. The frame shows
-`/e/‹id›`, which opens the app with the scene already playing and with **no editor around it**: no menus, panels or
-toasts — just the viewport, the game's HUD and the touch controls. A small corner link, *Open in theprototype.app ↗*,
-opens the same scene in the full app in a new tab, and a ▶ button re-enters play after <kbd>Esc</kbd>.
+`/e/‹id›`, which opens the **play view** (*1.57*) with the scene already playing and **no editor in it**: no menus, panels or
+toasts — just the viewport, the game's HUD and the touch controls. Corner links, *Open in theprototype.app ↗* and
+*Remix*, open the same scene in the full app in a new tab, and a ▶ button re-enters play after <kbd>Esc</kbd>. Every
+way to share a game is on one page: [Share a Game](https://docs.theprototype.app/share-a-game.md).
 
-The same player is available on any scene link by adding **`&embed=1`**: `https://theprototype.app/?s=‹id›&play=1&embed=1`.
+The full app can still hide its editor on any scene link with **`&embed=1`**: `https://theprototype.app/?s=‹id›&play=1&embed=1`.
 The flag lasts for the life of the page.
 
 #### Paste a link, get a game (oEmbed)
@@ -18825,7 +18845,9 @@ A play link, an embed and an exported game all open the same **player**:
   **Enter VR** — with the hint *Click to look around · Esc to pause*. The click is needed: a browser only locks the
   pointer, goes fullscreen or enters VR after a real click.
 - A **fullscreen** button sits in the bottom-left corner where the page may go fullscreen.
-- A play link or embed also has *Open in theprototype.app ↗*, which opens the same scene in the full editor.
+- A play link or embed also has *Open in theprototype.app ↗*, which opens the same scene in the full editor, and
+  *Remix*, which opens it as your copy (*1.57*). Since 1.57 play links and embeds open the slim **play view** — see
+  [Share a Game](https://docs.theprototype.app/share-a-game.md).
 - The **Made with ThePrototype** badge — a small, semi-transparent TP logo with solid dark-grey accents, so a game's colours never tint it — sits in the bottom-right corner; hovering
   shows *Made with ThePrototype*, clicking opens theprototype.app in a new tab. It moves up out of the way of a game's
   touch buttons and is not drawn inside a VR headset.
@@ -18985,6 +19007,113 @@ Measured on a 65,024-triangle model with a 4096 px texture:
 | Texture memory after loading | 85.3 MB | 5.6 MB on a desktop GPU; ≈ 2.8 MB on a Quest |
 
 Imports get the same treatment on the way in: see [Importing Big Models](https://docs.theprototype.app/import-optimize.md).
+
+
+---
+
+Source: https://docs.theprototype.app/share-a-game/ (Markdown: https://docs.theprototype.app/share-a-game.md)
+
+# Share a Game
+
+*New in 1.57.* Every way of sharing a game made here — a link, an embed on your own site, a pasted link that turns into
+a game, an invite to play together — opens the **play view**: a small player made only for playing. It loads the scene,
+the game's rules, HUD and touch controls, and none of the editor, so a shared game starts noticeably faster, most of all
+on a phone.
+
+!!! tip "Start from Topple tower"
+    **Templates ▸ Topple tower** is a tiny game set up for sharing: no modules or packs to download, so its play link
+    starts fast on a phone, and nothing on top of the screen for the play view's buttons to cover. Change it, publish it,
+    send the play link.
+
+| You want… | Share | Who can open it |
+|---|---|---|
+| people to play your published game | the **play link** `https://theprototype.app/p/‹id›` | anyone with the link (public and unlisted scenes) |
+| the game on your own site or blog | the **Embed** snippet (an `<iframe>` of `/e/‹id›`) | public scenes |
+| the game to appear when you paste its link | the scene page link `https://theprototype.app/s/‹id›` in a site that reads **oEmbed** | public scenes |
+| friends to play **with you**, right now | the **Play link** from **Invite** | whoever you send it to, while the invite lasts |
+
+## The play link
+
+Publish a scene (**Menu ▸ Publish / Export ▸ Publish**, see [Publish & Export](https://docs.theprototype.app/publish-export.md#publish-the-play-link))
+and you get its play link, `https://theprototype.app/p/‹id›`, with a **QR code** for a phone or a headset. The
+community page's **▶ Play** button and its **3D preview** open the same play view. The first time, a note under the link
+says what it opens and where the link for playing together is; it goes once you copy or open the link.
+
+The play view shows a start card with **▶ Play** (and **Enter VR** in a headset's browser), a fullscreen button, the
+*Made with ThePrototype* badge and two links into the full app:
+
+![The play view's start card over the scene: Play, Accessibility, the hint Click to look around · Esc to pause, and Sign in on theprototype.app with Playing needs no account under it; along the bottom the fullscreen button, Open in theprototype.app and Remix.](https://docs.theprototype.app/img/share-a-game/play-start-card.webp)
+
+- **Open in theprototype.app ↗** — the same scene in the editor, to look at how it is made.
+- **Remix** — the same scene in the editor as **your copy**: change it, then **Publish** it as a remix (the original
+  author is credited on its page).
+
+Playing needs no account. Shared games run on a separate address, `play.theprototype.app`, where your sign-in, your
+autosaves and your AI keys do not exist — whatever a shared scene does, it cannot reach them. So the start card does not
+sign you in; it links to theprototype.app instead (*Sign in on theprototype.app ↗*). Likes work on the scene's page.
+
+## Embed it on your site
+
+**Embed** on a public scene's page (or the **Embed** preset in [Export](https://docs.theprototype.app/publish-export.md#embedding-on-your-own-site))
+copies an `<iframe>` of `https://theprototype.app/e/‹id›`. It is the same play view, sized by your frame; it asks for
+fullscreen, gamepad, pointer lock and VR access, so all of them work inside the frame. Only **public** scenes embed.
+
+## Paste a link, get a game (oEmbed)
+
+Paste a public scene's page link (`https://theprototype.app/s/‹id›`) into a site that reads **oEmbed** — Notion,
+WordPress, Discourse, Ghost and the sites that use Iframely — and the game plays in place. Developers can call the
+endpoint directly; it answers the same `/e/‹id›` frame:
+
+```
+https://theprototype.app/oembed?url=https://theprototype.app/s/‹id›&maxwidth=800&maxheight=600
+```
+
+Details (sizes, what is accepted) are in [Community ▸ oEmbed](https://docs.theprototype.app/community.md#paste-a-link-get-a-game-oembed).
+
+## Follow the game from your page
+
+For site builders: the play view tells the page that frames it what it is doing, with `postMessage`:
+
+```js
+window.addEventListener('message', (e) => {
+  if (e.data?.type !== 'tp-play') return;
+  // e.data.event: 'first-frame' | 'loaded' | 'playing' | 'stopped' | 'error'
+  console.log(e.data.event, e.data.detail);
+});
+```
+
+Inside the play view, `window.tpPlay` gives a script the same information: `version` (1), `state` (`booting`,
+`loading`, `ready`, `playing` or `error`, mirrored on `<html data-tp-play="…">` for CSS), `ready` and `loaded`
+(promises), `sceneId`, `openInEditorUrl()`, `remixUrl()` and `timings`.
+
+## Play together from a link
+
+You can invite people straight into the play view of the session you are in — they play with you, without seeing the
+editor:
+
+1. In the editor, open the invite sheet — the robot button **Request AI** on the Connect pill, or **Users ▸ New…** — and pick
+   the **Person** tab.
+2. Choose the **Role**, how long the invite lasts and how many people may use it, then **Create invite link**.
+3. Copy the **Play link — opens straight into the game, no editor** and send it.
+
+![The Invite to this session sheet on its Person tab: Up to 5 people · expires in 30 min · View, then three fields with Copy buttons — Link, Play link — opens straight into the game, no editor, and For a chat.](https://docs.theprototype.app/img/share-a-game/invite-play-link.webp)
+
+Everyone who opens it joins your session in the play view and gets the scene from you — it does not need to be
+published. The ordinary **Link** above it still opens the full editor, for people who should build with you. A play
+link of a published game can carry an invite too: `https://theprototype.app/p/‹id›#…` with the part after `#` from the
+invite joins your session on that game's page.
+
+The invite works like every invite: it is checked by your app, it can be **revoked** in **Users**, and the key in it
+(after the `#`) is never sent to a server.
+
+## Limits
+
+- Building tools — the Inspector, the node editor, the AI assistant, Settings — are not in the play view. *Open in
+  theprototype.app* or *Remix* opens them.
+- A self-hosted copy of the app has the same play view at `/play`; the community links (`/p/`, `/e/`, oEmbed) belong to
+  theprototype.app's community.
+- Old links keep working: `https://theprototype.app/?s=‹id›&play=1&embed=1` still opens the full app with the editor
+  hidden.
 
 
 ---

@@ -220,6 +220,7 @@ Every page in one file: https://docs.theprototype.app/llms-full.txt
 
 - [Publish, Play, Remix](https://docs.theprototype.app/community.md): Publish the scene you are looking at, hand somebody a link, and they can play it in their browser, open it in the editor, or remix it into something of their own. Contests give you a reason to…
 - [Publish & Export](https://docs.theprototype.app/publish-export.md): Publishing works as before — sign in, title, tags, license, visibility, contest (see Community). When it is done you get two links:
+- [Share a Game](https://docs.theprototype.app/share-a-game.md): Publish a scene (Menu ▸ Publish / Export ▸ Publish, see Publish & Export) and you get its play link, https://theprototype.app/p/‹id›, with a QR code for a phone or a headset. The community page's…
 
 ## VR
 

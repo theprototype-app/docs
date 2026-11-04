@@ -32,7 +32,9 @@ A play link, an embed and an exported game all open the same **player**:
   **Enter VR** — with the hint *Click to look around · Esc to pause*. The click is needed: a browser only locks the
   pointer, goes fullscreen or enters VR after a real click.
 - A **fullscreen** button sits in the bottom-left corner where the page may go fullscreen.
-- A play link or embed also has *Open in theprototype.app ↗*, which opens the same scene in the full editor.
+- A play link or embed also has *Open in theprototype.app ↗*, which opens the same scene in the full editor, and
+  *Remix*, which opens it as your copy (*1.57*). Since 1.57 play links and embeds open the slim **play view** — see
+  [Share a Game](https://docs.theprototype.app/share-a-game.md).
 - The **Made with ThePrototype** badge — a small, semi-transparent TP logo with solid dark-grey accents, so a game's colours never tint it — sits in the bottom-right corner; hovering
   shows *Made with ThePrototype*, clicking opens theprototype.app in a new tab. It moves up out of the way of a game's
   touch buttons and is not drawn inside a VR headset.

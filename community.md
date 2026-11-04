@@ -84,11 +84,12 @@ A scene link is `https://theprototype.app/?s=‹id›`, and the app treats it li
 ### Embedding a scene
 
 **Embed** on a public scene's page copies an `<iframe>` snippet for your own site or blog. The frame shows
-`/e/‹id›`, which opens the app with the scene already playing and with **no editor around it**: no menus, panels or
-toasts — just the viewport, the game's HUD and the touch controls. A small corner link, *Open in theprototype.app ↗*,
-opens the same scene in the full app in a new tab, and a ▶ button re-enters play after <kbd>Esc</kbd>.
+`/e/‹id›`, which opens the **play view** (*1.57*) with the scene already playing and **no editor in it**: no menus, panels or
+toasts — just the viewport, the game's HUD and the touch controls. Corner links, *Open in theprototype.app ↗* and
+*Remix*, open the same scene in the full app in a new tab, and a ▶ button re-enters play after <kbd>Esc</kbd>. Every
+way to share a game is on one page: [Share a Game](https://docs.theprototype.app/share-a-game.md).
 
-The same player is available on any scene link by adding **`&embed=1`**: `https://theprototype.app/?s=‹id›&play=1&embed=1`.
+The full app can still hide its editor on any scene link with **`&embed=1`**: `https://theprototype.app/?s=‹id›&play=1&embed=1`.
 The flag lasts for the life of the page.
 
 #### Paste a link, get a game (oEmbed)

@@ -22,7 +22,8 @@ chip — tap it for your ID, the join field, Info and Toasts. The signaling link
 
 Since 1.32 the connection status is a **coloured dot**. On a computer the full bar keeps your invite ID and the peer-ID
 field, with the dot at its left end. On a phone the chip at the top of the screen says the state beside the dot —
-**Connected**, **Connecting…** or **Offline** — whenever the top bar has room. When the bar is crowded (people are
+**Connect** (not connected yet, the same word as on a computer), **Connecting…**, **Connected** or **Offline** (the peer
+server cannot be reached) — whenever the top bar has room. When the bar is crowded (people are
 connected and you are in a call, so the peers button and the microphone take the space) it shrinks back to the dot and
 a ▾ (and the microphone while you are in a call).
 
@@ -60,6 +61,12 @@ Right-click a person (long-press on touch, <kbd>Shift</kbd>+<kbd>F10</kbd> from 
 their profile, Go to, Watch, Mute, Hide — and, for the host or an admin, **Remove from session** and **Remove and
 block**. See [Users and moderation](https://docs.theprototype.app/people.md). An AI agent shows a robot and "AI" instead of a character.
 
+**Public rooms in the panel** (*since 1.57*). On theprototype.app the panel also lists the live [public rooms](#public-rooms-theprototypeapp)
+and who is in them, under their own **Public rooms** heading below your session — *live rooms anyone can join, not part
+of your session*. The people listed there are not connected to you; **Watch** beside them is greyed with the reason.
+
+![The Connected panel on a folded phone: Peer (you) in an Untitled scene, then the Public rooms heading with the line Live rooms anyone can join — not part of your session, a room called Atrium and Someone Else in it, Playing, with Watch.](https://docs.theprototype.app/img/connection/public-rooms-phone.webp)
+*Figure: Public rooms under their own heading, apart from your session.*
 ### Inviting someone
 
 1. **Copy your invite link** (the 📋 button) and send it to a friend.

@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Connection", "url": "https://docs.theprototype.app/connection/", "description": "How peers find each other, how to invite someone into your scene, and how to point the app at a signaling server you trust.", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.55.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/status-dot-phone.webp", "caption": "A folded phone's top bar: the chip keeps the connection dot."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/peers-panel-desktop.webp", "caption": "The Connected panel on a computer."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/guests-see.webp", "caption": "Connect ▸ ▾ ▸ Info, where the host picks what guests see."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Connection", "url": "https://docs.theprototype.app/connection/", "description": "How peers find each other, how to invite someone into your scene, and how to point the app at a signaling server you trust.", "dateModified": "2026-11-04", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.57.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/status-dot-phone.webp", "caption": "A folded phone's top bar: the chip keeps the connection dot."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/peers-panel-desktop.webp", "caption": "The Connected panel on a computer."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/public-rooms-phone.webp", "caption": "Public rooms under their own heading, apart from your session."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/guests-see.webp", "caption": "Connect ▸ ▾ ▸ Info, where the host picks what guests see."}]}</script>
 </head>
   
   
@@ -5484,6 +5484,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../share-a-game/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Share a Game
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -6382,7 +6403,8 @@ chip — tap it for your ID, the join field, Info and Toasts. The signaling link
 <h3 id="the-status-dot">The status dot</h3>
 <p>Since 1.32 the connection status is a <strong>coloured dot</strong>. On a computer the full bar keeps your invite ID and the peer-ID
 field, with the dot at its left end. On a phone the chip at the top of the screen says the state beside the dot —
-<strong>Connected</strong>, <strong>Connecting…</strong> or <strong>Offline</strong> — whenever the top bar has room. When the bar is crowded (people are
+<strong>Connect</strong> (not connected yet, the same word as on a computer), <strong>Connecting…</strong>, <strong>Connected</strong> or <strong>Offline</strong> (the peer
+server cannot be reached) — whenever the top bar has room. When the bar is crowded (people are
 connected and you are in a call, so the peers button and the microphone take the space) it shrinks back to the dot and
 a ▾ (and the microphone while you are in a call).</p>
 <table>
@@ -6432,7 +6454,7 @@ at it for the full name), a second line with where they are and their role, and 
 <strong>Go to</strong> or the role list. On a computer the panel is 320–420 px wide and grows with long names, so nothing wraps or
 breaks. On a phone it opens as a sheet like the notifications: a grab bar on top, and a swipe down closes it.</p>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/connection/peers-panel-desktop.webp" data-desc-position="bottom"><img alt="The Connected panel on a computer with four people, one row each: an avatar, the name, the scene they are in, the ping and their short id underneath, then their role (Admin, Editor or Viewer) and Watch on the right. 1: you. 2: a person's role list." class="shot" height="278" loading="lazy" src="../img/connection/peers-panel-desktop.webp" width="393"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/connection/peers-panel-desktop.webp" data-desc-position="bottom"><img alt="The Connected panel on a computer with four people, one row each: an avatar, the name, the scene they are in, the ping and their short id underneath, then their role (Admin, Editor or Viewer) and Watch on the right. 1: you. 2: a person's role list." class="shot" height="278" loading="lazy" src="../img/connection/peers-panel-desktop.webp" width="398"></a></p>
 <figcaption>
 <p>The Connected panel on a computer.</p>
 </figcaption>
@@ -6446,6 +6468,15 @@ breaks. On a phone it opens as a sheet like the notifications: a grab bar on top
 <p>Right-click a person (long-press on touch, <kbd>Shift</kbd>+<kbd>F10</kbd> from the keyboard) for the <strong>peer menu</strong>:
 their profile, Go to, Watch, Mute, Hide — and, for the host or an admin, <strong>Remove from session</strong> and <strong>Remove and
 block</strong>. See <a href="../people/">Users and moderation</a>. An AI agent shows a robot and "AI" instead of a character.</p>
+<p><strong>Public rooms in the panel</strong> (<em>since 1.57</em>). On theprototype.app the panel also lists the live <a href="#public-rooms-theprototypeapp">public rooms</a>
+and who is in them, under their own <strong>Public rooms</strong> heading below your session — <em>live rooms anyone can join, not part
+of your session</em>. The people listed there are not connected to you; <strong>Watch</strong> beside them is greyed with the reason.</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/connection/public-rooms-phone.webp" data-desc-position="bottom"><img alt="The Connected panel on a folded phone: Peer (you) in an Untitled scene, then the Public rooms heading with the line Live rooms anyone can join — not part of your session, a room called Atrium and Someone Else in it, Playing, with Watch." class="shot" height="206" loading="lazy" src="../img/connection/public-rooms-phone.webp" width="390"></a></p>
+<figcaption>
+<p>Public rooms under their own heading, apart from your session.</p>
+</figcaption>
+</figure>
 <h3 id="inviting-someone">Inviting someone</h3>
 <ol>
 <li><strong>Copy your invite link</strong> (the 📋 button) and send it to a friend.</li>
@@ -6457,7 +6488,7 @@ block</strong>. See <a href="../people/">Users and moderation</a>. An AI agent s
 tab): it joins in one step with the role you chose, for a limited time. See <a href="../invites/">Invite people and agents</a>.</p>
 <h3 id="what-guests-see">What guests see</h3>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/connection/guests-see.webp" data-desc-position="bottom"><img alt="The Connect drawer's Info tab on a computer: the Session rows — State, Your ID, Guests see with its list, Host — and the Signaling server rows under them. 1: Guests see, which of your files a guest sees in the Explorer." class="shot" height="338" loading="lazy" src="../img/connection/guests-see.webp" width="542"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/connection/guests-see.webp" data-desc-position="bottom"><img alt="The Connect drawer's Info tab on a computer: the Session rows — State, Your ID, Guests see with its list, Host — and the Signaling server rows under them. 1: Guests see, which of your files a guest sees in the Explorer." class="shot" height="338" loading="lazy" src="../img/connection/guests-see.webp" width="540"></a></p>
 <figcaption>
 <p>Connect ▸ ▾ ▸ Info, where the host picks what guests see.</p>
 </figcaption>
@@ -6815,7 +6846,7 @@ never count as visits or errors.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-03
+    2026-11-04
   </span>
 
     
