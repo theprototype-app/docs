@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Camera & View", "url": "https://docs.theprototype.app/camera/", "description": "Everything about how the scene looks on your screen — the camera lens, render mode, shadows, the grid and the environment — lives in one place: Configure Scene.", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.57.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/render-modes.webp", "caption": "Shaded, Shaded + AO and Wireframe. AO darkens creases and the ground where objects touch it."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/view-section.webp", "caption": "Configure Scene ▸ View: how the scene is drawn on your screen."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/camera-object.webp", "caption": "A camera's properties, with its preview window at the lower left."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/env-presets.webp", "caption": "Studio, Daylight, Sunset and Night on the same three objects."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/sky-meadow.webp", "caption": "The Meadow sky image lighting a mirror sphere and a box."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/sky-image-section.webp", "caption": "Configure Scene ▸ Environment, with its Sky image section."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/grid-and-lights.webp", "caption": "Light helpers show where each light is and where it shines; they are editor-only."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Camera & View", "url": "https://docs.theprototype.app/camera/", "description": "Everything about how the scene looks on your screen — the camera lens, render mode, shadows, the grid and the environment — lives in one place: Configure Scene.", "dateModified": "2026-11-04", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.59.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/render-modes.webp", "caption": "Shaded, Shaded + AO and Wireframe. AO darkens creases and the ground where objects touch it."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/view-section.webp", "caption": "Configure Scene ▸ View: how the scene is drawn on your screen."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/camera-object.webp", "caption": "A camera's properties, with its preview window at the lower left."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/env-presets.webp", "caption": "Studio, Daylight, Sunset and Night on the same three objects."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/sky-meadow.webp", "caption": "The Meadow sky image lighting a mirror sphere and a box."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/sky-image-section.webp", "caption": "Configure Scene ▸ Environment, with its Sky image section."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/settings/sky-image-quality.webp", "caption": "Sky image quality, for this device only."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/grid-and-lights.webp", "caption": "Light helpers show where each light is and where it shines; they are editor-only."}]}</script>
 </head>
   
   
@@ -1612,9 +1612,33 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sky-image-quality" class="md-nav__link">
+  <a href="#how-sharp-the-sky-is" class="md-nav__link">
     <span class="md-ellipsis">
-      Sky image quality
+      How sharp the sky is
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How sharp the sky is">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sky-quality-for-the-scene" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sky quality for the scene
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sky-image-quality-this-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sky image quality (this device)
     </span>
   </a>
   
@@ -6173,9 +6197,33 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sky-image-quality" class="md-nav__link">
+  <a href="#how-sharp-the-sky-is" class="md-nav__link">
     <span class="md-ellipsis">
-      Sky image quality
+      How sharp the sky is
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How sharp the sky is">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sky-quality-for-the-scene" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sky quality for the scene
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sky-image-quality-this-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sky image quality (this device)
     </span>
   </a>
   
@@ -6589,9 +6637,61 @@ desktop whatever else is on. Editing any of these turns the preset into <em>Cust
 preset</strong> keeps it.</p>
 <p>A short tour points at the cards the first time you see them (<strong>Settings ▸ Interface ▸ Tours ▸ Reset all</strong> shows it
 again).</p>
-<h3 id="sky-image-quality">Sky image quality</h3>
-<p>How sharp the sky and its reflections are is a setting for <strong>this device only</strong> — <strong>Settings ▸ Scene ▸ Performance ▸
-Sky image quality</strong>:</p>
+<h3 id="how-sharp-the-sky-is">How sharp the sky is</h3>
+<p><em>New in 1.59.</em> The five skies come as <strong>UltraHDR</strong> images in several sizes: 1K, 2K and 4K, and 8K for <strong>Meadow</strong>. The
+small one shows first, so the scene is lit and has its sky after one small download; then, if your device should show
+more, the sharper one downloads and swaps in. <strong>The lighting always comes from the 1K file</strong> — the larger files only
+draw the sky you see — so objects look the same at every quality and nothing shifts at the swap.</p>
+<p>The sizes are for the five built-in skies, shown as the sky (<strong>Show as sky</strong> on) with no <strong>Sky blur</strong>. A sky you
+uploaded yourself shows as it is.</p>
+<h4 id="sky-quality-for-the-scene">Sky quality for the scene</h4>
+<p>While a built-in sky shows as the sky, two more rows sit under <strong>Tone mapping</strong>. They are shared, like every
+Environment setting:</p>
+<table>
+<thead>
+<tr>
+<th>Row</th>
+<th>Choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sky quality</strong></td>
+<td><strong>Auto</strong> (the default), <strong>Standard (1K)</strong>, <strong>High (2K)</strong> or <strong>Max (4K)</strong></td>
+</tr>
+<tr>
+<td><strong>Minimum quality</strong> (only while Sky quality is Auto)</td>
+<td><strong>Standard (1K)</strong>, <strong>High (2K)</strong> or <strong>Max (4K)</strong>: the least anyone gets, for a showcase that must not look blurry</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What Auto picks:</strong> <strong>High</strong> on a desktop; <strong>Standard</strong> in a headset, on a phone, on a slow connection or with Data
+Saver on, and when the <a href="../performance/#the-quality-governor">quality governor</a> has switched effects off on a loaded
+machine. Auto never picks Max by itself: 4K is several times the download for a difference most views never show.</p>
+<p><strong>Max</strong> is 4K, or the 8K Meadow (about 7 MB) on a device with 8 GB of memory or more that is not a phone. A file
+larger than the graphics card can hold steps down a size.</p>
+<p><strong>Which choice wins</strong>, in this order:</p>
+<ol>
+<li>A device set to <strong>Low (headset)</strong> in Settings (<a href="#sky-image-quality-this-device">below</a>) stays at Standard, whatever
+   the scene says.</li>
+<li>A scene set to <strong>Standard</strong>, <strong>High</strong> or <strong>Max</strong> gets it.</li>
+<li>A scene on <strong>Auto</strong> uses the player's pick in the game menu (<strong>Settings ▸ Sky quality</strong>), else this device's
+   <strong>Sky image quality</strong>, else Auto's own pick.</li>
+<li>The scene's <strong>Minimum quality</strong> raises that result.</li>
+<li>A headset never goes past <strong>High</strong>, even for a scene's Max or its minimum.</li>
+</ol>
+<p><strong>Exported games keep the option.</strong> An <a href="../publish-export/#export-a-game-in-a-zip">export</a> carries the 1K, 2K and 4K
+files (and the 8K Meadow for a scene set to Max), so players can pick theirs in the game menu without any download from
+our servers. The game menu's <strong>Sky quality</strong> row only counts while the scene's Sky quality is Auto.</p>
+<h3 id="sky-image-quality-this-device">Sky image quality (this device)</h3>
+<p><strong>Settings ▸ Scene ▸ Performance ▸ Sky image quality</strong> is for <strong>this device only</strong> — the scene and your peers are
+unaffected:</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/settings/sky-image-quality.webp" data-desc-position="bottom"><img alt="Settings ▸ Scene: the Sky image quality row with its five choices Auto, Low (headset), Standard (1K), High (2K) and Max (4K)." class="shot" height="62" loading="lazy" src="../img/settings/sky-image-quality.webp" width="646"></a></p>
+<figcaption>
+<p>Sky image quality, for this device only.</p>
+</figcaption>
+</figure>
 <table>
 <thead>
 <tr>
@@ -6602,19 +6702,18 @@ Sky image quality</strong>:</p>
 <tbody>
 <tr>
 <td><strong>Auto</strong> (the default)</td>
-<td><strong>Low</strong> in a headset, in VR, or once the scene is too heavy for effects; <strong>Full</strong> otherwise</td>
-</tr>
-<tr>
-<td><strong>Full (1k)</strong></td>
-<td>prepares the image at 1024 px</td>
+<td>follows the scene and the device, as above. In a headset, in VR, or once the scene is too heavy for effects, the light and reflections are also prepared at 512 px</td>
 </tr>
 <tr>
 <td><strong>Low (headset)</strong></td>
-<td>prepares it at 512 px — a quarter of the memory</td>
+<td>the sky stays at Standard whatever the scene says, and the light and reflections are prepared at 512 px — a quarter of the memory, softer reflections</td>
+</tr>
+<tr>
+<td><strong>Standard (1K)</strong>, <strong>High (2K)</strong>, <strong>Max (4K)</strong></td>
+<td>your own pick for scenes that leave Sky quality on Auto (a player's pick in a game's menu comes first)</td>
 </tr>
 </tbody>
 </table>
-<p>The scene and your peers are unaffected.</p>
 <h3 id="limits">Limits</h3>
 <ul>
 <li>Only equirectangular images (twice as wide as they are tall); cube-map files are not supported. An <code>.exr</code> must be RGB
@@ -6664,7 +6763,7 @@ Sky image quality</strong>:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-03
+    2026-11-04
   </span>
 
     

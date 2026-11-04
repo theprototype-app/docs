@@ -68,10 +68,10 @@ before a join, scene tools answer *not connected — join first*. Then call `con
 | tool / method | what it does |
 |---|---|
 | the app's tools | `create_objects`, `update_objects`, `delete_objects`, `group_objects`, `create_flow_nodes`, `update_flow_nodes`, `set_physics`, `create_joints`, `control_simulation`, behaviours where available, `generate_mesh` when the host has a provider — with their full JSON schemas |
-| shapes and modelling | `set_geometry`, `create_lathe`, `create_tube`, `extrude_shape`, `edit_mesh`, `create_mesh` — see [Shapes and modelling with an agent](https://docs.theprototype.app/ai/agent-geometry.md) |
+| shapes and modelling | `set_geometry`, `create_lathe`, `create_tube`, `extrude_shape`, `edit_mesh`, `create_mesh`, `create_shapes` — see [Shapes and modelling with an agent](https://docs.theprototype.app/ai/agent-geometry.md) |
 | materials and looks | `set_material`, `list_materials`, `get_material`, `create_shader`, `edit_shader`, `assign_shader`, `describe_shader_nodes`, `set_post`, `get_post`, `create_post_graph`, `uv_unwrap`, `set_uv` — see [Materials and looks with an agent](https://docs.theprototype.app/ai/agent-look.md) |
 | undo, pivots and images | `undo_last`, `set_pivot`, `create_pivot`, `add_image` — see [Undo, pivots and images with an agent](https://docs.theprototype.app/ai/agent-assist.md) |
-| `status` | joined or waiting, its role and whether it can edit, who is connected, which scene it and the host are in (`withHost`), whether a scene is still arriving (`loading`), any code behaviour that is failing (`behaviourErrors`), whether it is paused because the host left (`hostAway`), which tools or modules are missing and why |
+| `status` | joined or waiting, its role and whether it can edit, who is connected, which scene it and the host are in (`withHost`), whether a scene is still arriving (`loading`), any code behaviour that is failing (`behaviourErrors`), whether it is paused because the host left (`hostAway`), which tools or modules are missing and why, and since 1.59 `sceneBudget`: how heavy the scene is (objects, meshes, triangles, draw calls, textures, lights, frame time) against the desktop or VR budget, with a green / amber / red tier and `over` naming each budget past green |
 | `screenshot` | a clean picture (no gizmo, grid or helpers) from a temporary camera — `iso`, `top`, `front`, `current`, or `focus` on one object — without moving anyone's view |
 | `wait_for_edit` | waits until someone else changes the scene |
 | `describe_node_types` | what a flow node type takes and gives — input and output names with their types, params with defaults, one line on what it does — so edges are wired right the first time |
@@ -98,7 +98,20 @@ before a join, scene tools answer *not connected — join first*. Then call `con
   outputs; it does not move objects itself) or a per-frame hook such as `onTick` (repeat with `this.after`).
 - Inside a group, positions are **local to the group**, the way `list_scene` reports them (since 1.48.1).
 - `list_scene` shows a shape's sizes (a wall's thickness, a box's depth) and can be narrowed: names only, a name
-  pattern, a type, or the objects near a point (since 1.48.1).
+  pattern, a type, or the objects near a point (since 1.48.1). Since 1.59 every mesh also has
+  `mesh: {vertexCount, faceCount, bounds}` — `faceCount` in triangles, and `bounds` as two boxes, `local` (in the
+  mesh's own space) and `world`, each `[[minX, minY, minZ], [maxX, maxY, maxZ]]` — so an agent can see a part's real
+  size and corners.
+- Build lighter, or stop adding, while `status`'s `sceneBudget` is not green.
+- **Copies, facing and shadows** (since 1.59, on `create_objects` / `update_objects`):
+    - `create_objects` with `from` (an object's uuid), `count` (1 to 100), `offset` (`[x, y, z]` from one copy to the
+      next) and optionally `randomRot`, `randomScale` and a `seed` makes **copies**: a row of fence posts, a ring of
+      chairs with a little random turn and size. They are full copies (children, materials, flows) in the source's own
+      group, one undo step, uuids in order, and the same seed makes the same copies. This is copying, not
+      [scatter](https://docs.theprototype.app/scatter.md) over a surface.
+    - `lookAt`: a world point `[x, y, z]` or another object's uuid. The object turns so its front (local +Z) faces it,
+      with +Y kept up. Lights point with `aim` instead.
+    - `castShadow` / `receiveShadow` on any object; on a group or a model they apply to every mesh inside it.
 - Never fight a person: a locked object is skipped — the reply names the object and who is editing it — and the agent
   waits with `wait_for_edit`.
 
@@ -148,7 +161,9 @@ JavaScript in the page can use it: `tools()`, `systemPrompt()`, `exec(name, args
 inlined in [/llms-full.txt](https://theprototype.app/llms-full.txt).
 
 **Versions.** `tpAgent.version` is the contract (1.x): new methods and fields are minor versions, a removed or changed
-one is a new major. The `@theprototype/agent` package follows the app release it shipped with and says so in its
+one is a new major. Release 1.59 speaks contract **1.6.0** (the shape batch, mesh colours, copies, facing, shadows,
+mesh stats and the scene budget). A call written for 1.5 gives the same result, with one fix: a part made in a group
+with no `position` now sits at the group's origin ([part by part](https://docs.theprototype.app/ai/agent-geometry.md#building-a-model-part-by-part)). The `@theprototype/agent` package follows the app release it shipped with and says so in its
 `status` (`contractNote`) when the page speaks a different contract major — update it with
 `npx -y @theprototype/agent@latest`.
 

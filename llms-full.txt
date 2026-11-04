@@ -57,6 +57,21 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.59 — looks finished everywhere.** A material takes [normal, roughness, metalness, emission and AO maps](https://docs.theprototype.app/materials.md#maps)
+beside its colour image, with tiling, offset and rotation, and **Load a set of maps…** sorts a texture set into its
+slots by file name. Skies are [much sharper](https://docs.theprototype.app/camera.md#how-sharp-the-sky-is) — up to 4K, 8K for Meadow, a small one
+first and the sharp one swapped in — with a **Sky quality** per scene that players can change in a game's menu. A
+scene's [look now shows in a headset](https://docs.theprototype.app/post-processing.md#in-a-headset): tone mapping, colour grading, LUTs and vignette,
+with no extra pass. A glTF export carries [look animation](https://docs.theprototype.app/animation.md#saving-and-export) — fades, colours, lights and a
+camera's new **Field of view** channel — and the scene's cameras. [Film](https://docs.theprototype.app/film.md#how-the-camera-moves) lets you choose
+how the camera moves (Phone tilt, Touch, Walk, Tripod, Keyboard + mouse), sets what you see behind a walk and its scale,
+pauses at a mark when tracking is lost, and lists [your shots](https://docs.theprototype.app/film.md#your-shots) to preview, trim, rename and export
+one by one or joined. Agents [build models part by part](https://docs.theprototype.app/ai/agent-geometry.md#building-a-model-part-by-part): a part
+made in a group stays in the group's space, up to 50 shapes in one step, coloured as they are made, plus copies, facing
+and shadows. Also fixed: coming back to the browser on a phone no longer flashes
+["The 3D view has stopped"](https://docs.theprototype.app/performance.md#the-3d-view-has-stopped), and a harmless browser warning no longer pops up as
+"Something went wrong". To try it, pick the **Meadow** sky and set **Sky quality** to **Max**.
+
 **1.58 — film with your phone, share it as a video.** [Film with your phone](https://docs.theprototype.app/film.md) makes your phone the viewfinder
 of a camera in the scene: turn it to look around, walk or use the stick to move, zoom, tilt and pull focus, and press
 **●** — the take is recorded while the Timeline plays and lands on it as keyed [Property tracks](https://docs.theprototype.app/timeline.md#tracks),
@@ -458,7 +473,7 @@ new [Smart unwrap (xatlas)](https://docs.theprototype.app/modules.md#smart-unwra
 image](https://docs.theprototype.app/camera.md#sky-images-hdri) (an HDRI) can now be the scene's sky and its light: objects take its colours, shiny
 ones reflect it, water mirrors its clouds and the sun sits where the photo's sun is. Pick **Clear sky**, **Meadow**,
 **Sunrise**, **Starlight** or **Photo studio**, or upload your own `.hdr` / `.exr`, with Rotation, Image light, Sky blur
-and Tone mapping, and a [quality setting](https://docs.theprototype.app/camera.md#sky-image-quality) for headsets. **Add ▸
+and Tone mapping, and a [quality setting](https://docs.theprototype.app/camera.md#sky-image-quality-this-device) for headsets. **Add ▸
 [Architecture](https://docs.theprototype.app/architecture.md)** builds walls with doorways and windows, doors and casement windows that open in
 Interact and Play for everyone, and straight, L, U and spiral stairs, every number editable in the Inspector.
 [Math](https://docs.theprototype.app/nodes/math.md#more-than-two-inputs) and [Gate](https://docs.theprototype.app/nodes/gate.md#more-than-two-inputs) take up to eight inputs, the
@@ -2833,7 +2848,7 @@ cache uses the older Cache Storage, and where neither exists everything download
 | Workspace layouts | new | **Interface ▸ Windows & chrome ▸ Workspace layouts** — see [Workspace layouts](https://docs.theprototype.app/controls.md#workspace-layouts) |
 | Knocked-off idle | new | **Interface ▸ Avatars ▸ Knocked-off idle** — see [Knocked-off idle](https://docs.theprototype.app/avatars.md#knocked-off-idle) |
 | Density | new | **Interface ▸ Density** — see [above](#density) |
-| Sky image quality | new in 1.27 | **Scene ▸ Performance ▸ Sky image quality** — **Auto** / **Full (1k)** / **Low (headset)**, this device only; see [Sky image quality](https://docs.theprototype.app/camera.md#sky-image-quality) |
+| Sky image quality | new in 1.27, sizes in 1.59 | **Scene ▸ Performance ▸ Sky image quality** — **Auto** / **Low (headset)** / **Standard (1K)** / **High (2K)** / **Max (4K)**, this device only; see [Sky image quality](https://docs.theprototype.app/camera.md#sky-image-quality-this-device) |
 | World grab snapping | new in 1.28 | **VR ▸ Controls ▸ World grab snapping** — on by default, this device only; see [Snapping the world while you grab it](https://docs.theprototype.app/vr.md#snapping-the-world-while-you-grab-it) |
 | Placement preview | new in 1.31 | **Scene ▸ Performance ▸ Placement preview** — **Full model** / **Within budget** / **Box only**, plus the preview triangle budget and **Show dimensions**, this device only; see [The Placement preview setting](https://docs.theprototype.app/explorer.md#the-placement-preview-setting) |
 | Undock button | new in 1.32 | **Interface ▸ Windows & chrome ▸ Undock button** — **Active window** / **All as one tabbed group**, this device only; see [Docked windows](https://docs.theprototype.app/interface.md#docked-windows) |
@@ -4736,8 +4751,8 @@ Source: https://docs.theprototype.app/materials/ (Markdown: https://docs.theprot
 
 # Material Presets
 
-A **material preset** is a named look for an object's surface — colour, roughness, metalness, glow, transparency and up
-to two image maps (a texture and a normal map) — that you apply with one click. Eight come built in: **Wood**, **Metal**,
+A **material preset** is a named look for an object's surface — colour, roughness, metalness, glow, transparency and
+its image maps (a colour texture and the [maps](#maps) below) — that you apply with one click. Eight come built in: **Wood**, **Metal**,
 **Plastic**, **Glass**, **Stone**, **Rubber**, **Fish scales** and **Neon**. You can save your own, rename and delete them, and everyone
 in your session sees your presets and can use them.
 
@@ -4768,6 +4783,65 @@ in your session sees your presets and can use them.
 
 1. The **pencil** starts editing; the tick finishes.
 2. **Rename**, **download** as a `.matpreset.json` file, and **delete** (it asks first).
+
+## Maps
+
+*New in 1.59.* Beside its colour image (**Set texture…**), a material can carry five more image maps that give a
+surface real detail: worn edges that shine, grooves between planks, a glowing panel. They are in the same
+**Material** section, under the texture row, headed **Maps**:
+
+| Row | What the image says |
+|---|---|
+| **Normal** | small bumps and grooves that catch the light, without changing the shape |
+| **Roughness** | where the surface is rough or shiny (the image's green channel) |
+| **Metalness** | where the surface is metal (the blue channel) |
+| **Emission** | where the surface glows |
+| **AO** | ambient occlusion: darker creases and corners (the red channel) |
+
+A row shows only when the material type has that slot: a **Standard** or **Physical** material has all five, Phong,
+Lambert and Toon have Normal, Emission and AO, and Basic has only AO.
+
+![The Material section's Maps rows under the texture row: Normal, Roughness, Metalness, Emission and AO, each with a button to pick its image.](https://docs.theprototype.app/img/materials/maps.webp)
+*Figure: The Maps rows in the Material section.*
+- **Set…** picks an image from your device: PNG, JPEG or WebP (an iPhone HEIC photo is converted to a JPEG first).
+  You can also drop an image from the [Explorer](https://docs.theprototype.app/explorer.md) or from your computer onto a row. Large images are
+  scaled to 1024 pixels on the long side.
+- Once a map is set, its **thumbnail** replaces Set…: click it to choose another image, or press **Remove**. A map
+  that came with an imported model says *From the model*.
+- **Normal strength** (0 to 10, default 1) appears under Normal once it has a map, and **AO strength** (0 to 1) under
+  AO.
+- **Tiling** — **Tile U**, **Tile V**, **Offset U**, **Offset V** and **Rotation °** — appears once the material has
+  any map. It applies to all of the material's maps together, the colour image included. A negative tile mirrors
+  the image.
+
+### Load a set of maps…
+
+Texture sites and PBR tools hand you a material as several files: `wood_color.jpg`, `wood_normal.png`,
+`wood_roughness.jpg` and so on. **Load a set of maps…** (under the rows) picks them all at once and puts each file in
+the slot its name says. The **last** naming word in the file name decides, so `metal_plate_diff_1k.jpg` goes to the
+colour image even though it says *metal* first:
+
+| Slot | Words in the file name |
+|---|---|
+| Colour image | `color`, `colour`, `col`, `albedo`, `basecolor`, `diffuse`, `diff` |
+| Normal | `normal`, `nor`, `nrm`, `norm`, `normalgl`, `normaldx` |
+| Roughness | `roughness`, `rough`, `rgh` |
+| Metalness | `metalness`, `metallic`, `metal`, `mtl` |
+| Emission | `emissive`, `emission`, `emit`, `glow` |
+| AO | `ao`, `occlusion`, `ambientocclusion` |
+
+Words are separated by `_`, `-`, spaces, dots or a change of case (`woodNormal`). A file whose name says none of these
+is named in a message, so you can set it on its own row. The whole set is one undo step.
+
+### Shared, saved, undone
+
+- With [several objects selected](https://docs.theprototype.app/controls.md#editing-a-multi-selection) the heading says *applies to all N*, and
+  every change reaches all of them.
+- Everyone in the session sees maps the moment you set them, each change is one **Undo** step, and they are saved in
+  scenes, in your [presets](#using-presets) and in a glTF export.
+- An [AI agent](https://docs.theprototype.app/ai/agent-look.md) can set them too.
+- Removing a map that was loaded **compressed** (KTX2, for example from a [For Quest / web](https://docs.theprototype.app/publish-export.md#optimize-for-quest-web)
+  file) cannot be undone: there is no image to put back.
 
 ## Fish scales and the look tier
 
@@ -6633,11 +6707,31 @@ If you turn *look through it too* off and nothing is looking through that camera
 node has nothing visible to do — the card says so while you build, and it tells you
 once if you fire it anyway.
 
+## In a headset
+
+*New in 1.59.* A scene's look now shows in a [VR headset](https://docs.theprototype.app/vr.md) too. A headset cannot afford the desktop's extra
+full-screen passes, so the colour effects are worked into the way every object is drawn, with no extra rendering pass.
+Effects that need to read the pixels around each pixel, or the depth of the scene, stay desktop-only.
+
+| Effect | In a headset |
+|---|---|
+| Tone mapping | shown, exactly as on the desktop |
+| Hue / saturation | shown, exactly |
+| Brightness / contrast | shown, exactly |
+| Anti-aliasing (SMAA) | the headset's own anti-aliasing does this job |
+| LUT (colour grade) | **approximate**: a close fit of the grade, so a strong curve in the LUT is softened |
+| Vignette | **approximate**: drawn over each eye |
+| Ambient occlusion, Bloom, Depth of field, Film grain, Chromatic aberration, Pixelation, Scanlines, Dot screen | not shown |
+| A post effect you built as a graph | not shown |
+
+Open an effect's row in the stack and it says so: *Approximate in a headset.* or *Not shown in a headset.* Effects that
+show exactly carry no note. The look still comes from the scene, so a headset in a session grades the same way as the
+desktops beside it.
+
 ## Limits worth knowing
 
-- **Post-processing does not run in VR.** The effects are skipped in a headset; objects
-  still look the same, and materials made with the [Shader Graph](https://docs.theprototype.app/shader-graph.md) are
-  unaffected.
+- **In a headset only part of the look shows** — see [In a headset](#in-a-headset). Materials made with the
+  [Shader Graph](https://docs.theprototype.app/shader-graph.md) are unaffected.
 - **The camera preview inset (PiP) shows the plain image**, without the look.
 - **Sprites, billboarded avatar photo cards and particles** do not write depth, so effects
   that read depth do not affect them. A strong stylize effect makes that more visible than
@@ -6693,6 +6787,7 @@ A **clip** owns a length, a loop mode (*once*, *loop* or *ping-pong*) and any nu
 | **Visibility** | `visible` — a *stepped* channel: it holds its value until the next key instead of fading |
 | **Look** | `opacity`, `color.r/g/b`, `metalness`, `roughness`, `Emission` |
 | **Lights** | `light.intensity` |
+| **Camera** | **Field of view** (`camera.fov`, in degrees) — on a perspective [camera object](https://docs.theprototype.app/camera.md#camera-objects); *new in 1.59* |
 
 A **key** is a value at a time. Click a channel row at the playhead to add one; drag it to move it; <kbd>Del</kbd> removes the selection. Whatever you change — adding a channel, typing a value, retiming, moving a marker — the object re-poses straight away, so you see the result without touching the timeline.
 
@@ -6818,7 +6913,26 @@ start it with [Play Sequence](https://docs.theprototype.app/nodes/playseq.md).
 
 ## Saving and export
 
-Clips are part of the object, so they travel in your `.tpscene` files and autosaves. Saving a **glTF** samples every clip into real keyframe tracks, so other tools play them back — with one exception: the **look** channels (opacity, colour, metalness, roughness, glow, light intensity) are not part of what glTF animation can carry, so they stay in the app.
+Clips are part of the object, so they travel in your `.tpscene` files and autosaves. Saving a **glTF** samples every clip into real keyframe tracks, so other tools play them back. Since 1.59 that includes the look channels too:
+
+| Channel | Leaves in the glTF file as |
+|---|---|
+| Position, rotation, scale | ordinary glTF animation |
+| Opacity, colour, metalness, roughness, Emission | the material's own values, through `KHR_animation_pointer` (Emission as `KHR_materials_emissive_strength`) |
+| Visible | `KHR_node_visibility`, through `KHR_animation_pointer` |
+| Light intensity | the light (`KHR_lights_punctual`), through `KHR_animation_pointer` |
+| Field of view | the camera, through `KHR_animation_pointer` |
+
+- **Camera objects export as real glTF cameras**, with their field of view (or orthographic size), clip planes and
+  framing, so a viewer can look through them — and a field-of-view clip has something to drive.
+- A viewer needs **`KHR_animation_pointer`** support to play the look channels (and `KHR_node_visibility` for
+  visibility). One without it still opens the file: the model moves, and its look just holds still. In the Animation
+  window, hover a look channel's name to see the same note.
+- **For Quest / web** ([Optimize for](https://docs.theprototype.app/publish-export.md#optimize-for-quest-web)) leaves the look channels out and says
+  so; a full-quality glTF keeps them.
+- **Re-importing the file does not bring look animation back**: the app reads the movement, not the pointer channels.
+  Keep the `.tpscene` as your working file.
+- Exporting **several objects** at once keeps every object's movement (before 1.59 such an export kept none).
 
 
 ---
@@ -7255,26 +7369,38 @@ Opened from **More**, Film asks which camera to film through. Pick one, or press
 
 ![Film's camera picker on a folded phone: Film camera, the scene's camera, and New camera here, which places a camera where you are looking.](https://docs.theprototype.app/img/film/picker.webp)
 *Figure: The camera picker on a folded OPPO Find N6.*
-The first time you open Film, a tip at the top says how to film. It goes away after your
-first shot, or when you press its **✕** (Settings ▸ Interface ▸ **Reset tips** brings it back).
+The first time you open Film, three short cards show how to film: **Look**, **Move** and **Record and cut**. Step
+through them with **Next** and **Done**, or press **Don't show again**. To see them later, open the settings (the
+sliders button) and press **How to film**.
 
-![Film mode on a folded phone, looking through the Film camera at the crate and the ball: the first-use tip at the top says how to film, the lens controls and the round record button sit at the bottom.](https://docs.theprototype.app/img/film/filming.webp)
-*Figure: Filming through the Film camera, with the first-use tip.*
-While you film, the rest of the editor is hidden. The 3D view is cropped to the camera's
-aspect ratio, so the picture on screen is exactly what gets recorded. Press **✕** (or **Esc**
-on a keyboard) to leave. Leaving does not move the camera object.
+![Film mode on a folded phone: Film camera with the motion pill (Touch) at the top, the first-use Look card (1 of 3) in the middle, the lens dial on the right, and the stick and the round record button at the bottom.](https://docs.theprototype.app/img/film/filming.webp)
+*Figure: Filming through the Film camera, with the first-use card.*
+While you film, the rest of the editor is hidden, and so is every headset menu and panel, in any session. The 3D view
+is cropped to the camera's aspect ratio, so the picture on screen is exactly what gets recorded. Press **✕** (or
+**Esc** on a keyboard) to leave. Leaving does not move the camera object.
 
-## Looking around
+## How the camera moves
+
+The pill at the top, beside the camera's name, always says how the camera moves. Tap it to choose:
+
+| Choice | What it does |
+|---|---|
+| **Phone tilt** | Turn and tilt the phone to look around. It works in portrait and in landscape. |
+| **Touch** | Drag the picture to look, and use the stick to move. |
+| **Walk** | Your real steps move the camera (Android with AR, [below](#walk)). |
+| **Tripod** | The camera stays in place and only turns. The stick is hidden; the **Tripod ✕** chip goes back to handheld. |
+| **Keyboard + mouse** | On a computer: **W A S D** to move, drag to look. |
+
+The choice is remembered on this device. A phone without a gyroscope gets **Touch**: **Phone tilt** is greyed out with
+the reason. On an iPhone, Phone tilt shows **Use phone motion** beside the pill the first time: press it and allow
+motion access (if you decline, Touch still works).
+
+Whichever you choose:
 
 | Control | What it does |
 |---|---|
-| Turn and tilt the phone | The camera turns with it. It works in portrait and in landscape. |
 | **Recentre** (⌖, or **R**) | Makes the direction the phone points right now "straight ahead" for this camera. |
 | **Horizon lock** | Keeps the picture level however the phone leans. |
-| Drag the picture | Turns the view. This is the only way to look on a device without motion sensors, such as a desktop. |
-
-On an iPhone, press **Use phone motion** the first time and allow motion access. If you
-decline, you can still drag to look.
 
 ## Moving
 
@@ -7283,21 +7409,33 @@ decline, you can still drag to look.
 - On a keyboard: **W A S D** to move, **E / Q** to rise and sink.
 - **Mini-map** (🗺): a top-down map of the scene. Tap a spot to move the camera there.
 
-### Walk with the phone (Android)
+### Walk
 
-On an Android phone with Chrome and Google Play Services for AR, open the **settings**
-(the sliders button) and press **Track my movement**. Your real steps now move the
-camera. **Walk scale** sets how far the camera moves for each metre you walk:
+On an Android phone with Chrome and Google Play Services for AR, choose **Walk** in the pill. Your real steps now move
+the camera, and the chip at the top says **Walking ×1** (the scale). If Walk was your last choice, the pill says
+**Walk · tap to start** when you open Film: tap it, then Walk, to start (the phone has to be asked each time).
 
-- 0.1 is good for a miniature set.
-- 20 lets you cross a city in a few steps.
+The pill's sheet has a **While walking** part:
 
-The stick, **Recentre** and the mini-map keep working while you walk. Press the
-**Walking** chip to stop.
+- **Passthrough** — what you see behind the scene: **Off** (the scene's own sky, the default), **On** (the scene over
+  your room) or **Dimmed** (the room faint behind it). Only the live view changes, never the recorded take or its
+  export.
+- **Walking scale** — how far the camera moves for each metre you walk: **×0.5**, **×1**, **×2** or **×5**, and
+  **Fine scale** from ×0.1 (a miniature set) to ×20 (a city in a few steps). Tap the **Walking** chip at the top to
+  change it quickly while you walk.
+
+The stick, **Recentre** and the mini-map keep working while you walk. Press **✕** beside the Walking chip to stop.
 
 !!! note
-    While you walk, the phone's AR view shows the scene at the phone camera's own lens. Zoom
-    and dutch angle are still recorded, and you see them when you play the take back.
+    While you walk, the phone's AR view shows the scene at the phone camera's own lens. Zoom and dutch angle are still
+    recorded, and you see them when you play the take back.
+
+#### If tracking is lost
+
+If Walk cannot start (AR was not allowed, or could not start) or the phone loses track of the room while you film, Film
+does not leave you with a frozen view. The take **pauses at a mark**, a short message says why — for example *Tracking
+was lost — the take paused at a mark. Filming with the thumbstick now.* — and Film carries on with the stick and phone
+tilt. The message has a **Recentre** button. Your choice stays Walk, so you can start it again from the pill.
 
 ## The lens
 
@@ -7317,7 +7455,7 @@ The stick, **Recentre** and the mini-map keep working while you walk. Press the
 Choose a rig in **Settings ▸ Rig**:
 
 - **Handheld:** the default.
-- **Tripod:** the camera stays in place and only turns.
+- **Tripod:** the camera stays in place and only turns (the same as **Tripod** in the pill).
 - **Track:** tap an object and the camera keeps it framed the way it was when you tapped,
   even as you move.
 
@@ -7343,21 +7481,40 @@ shot. Guides are never recorded.
 
 While recording, press **Mark** (or **M**) to drop a marker on the Timeline.
 
-Open **N shots** to see this camera's shots:
+From the first shot on, a **shots** pill (*1 shot*, *3 shots*) sits beside the record button: see
+[Your shots](#your-shots).
 
-- **Retake** records a shot again. A retake that runs long trims the start of the next shot.
-- **Edit in Timeline** opens the take in the Timeline, where you can trim the shots and
-  **Smooth keys** (the track menu ⋯ of a property track) to take the handheld shake out.
-- **Export video** opens [Export a video or GIF](https://docs.theprototype.app/recording.md) on the take's timeline, set to MP4.
-
-![The shots sheet: three shots with Retake, Edit in Timeline and Export video.](https://docs.theprototype.app/img/film/shots-sheet.webp)
-*Figure: **N shots** lists this camera's shots.*
 ### What gets recorded
 
 The camera's position and rotation are saved as Timeline keys. They are thinned out but stay
 within 1 cm and 0.5° of what you filmed. Zoom, dutch angle, focus and aperture each get
 their own track, but only if you changed them. The full-detail movement is kept as a hidden
 file in your Library.
+
+## Your shots
+
+Press the **shots** pill to open **Shots on this camera**. Each row has a thumbnail, the shot's name (*Shot 1* until
+you rename it), its length, and how it was cut: *Cut*, or *Cut + 2 moves* when you resumed it with **Move**.
+
+![The shots sheet: three shots with Retake, Edit in Timeline and Export video.](https://docs.theprototype.app/img/film/shots-sheet.webp)
+*Figure: The shots sheet (shown here as it looked in 1.58).*
+- **Tap a row** to preview the shot, with play / pause and a scrub bar. **Done** goes back to the list.
+- **⋯** on a row opens its actions:
+    - **Preview** — the same as tapping the row.
+    - **Trim** — the preview with **In** and **Out** handles. They stop at the shot as it was recorded, so trimming
+      back out brings the cut part back.
+    - **Rename** — type a name and press <kbd>Enter</kbd>.
+    - **Retake** — records the shot again. A retake that runs long trims the start of the next shot.
+    - **Delete** — removes the shot; the message that confirms it has **Undo**.
+    - **Edit in timeline** — closes Film and opens the take in the [Timeline](https://docs.theprototype.app/timeline.md) at that shot, where you can trim it and
+      **Smooth keys** (the track menu ⋯ of a property track) to take the handheld shake out.
+- At the bottom: **Edit in timeline** for the whole take, and **Export all (N)**. Tick shots in the list and it
+  becomes **Export K selected**.
+- With more than one shot to export, Film asks how: **One video** (the shots joined in the order you recorded them)
+  or **One file per shot** (each goes to **Explorer ▸ Recordings**, one after another). It opens
+  [Export a video or GIF](https://docs.theprototype.app/recording.md), set to MP4.
+
+Preview, Trim, Retake and Delete wait while you are recording.
 
 ## Filming with others
 
@@ -7371,13 +7528,14 @@ the camera goes back to where it stands.
 
 ## On a phone without motion sensors, and on a computer
 
-Film works everywhere: where there is no gyroscope (or you decline motion access), drag the
-picture to look. On a computer, **W A S D** and **E / Q** move the camera.
+Film works everywhere: where there is no gyroscope (or you decline motion access), it uses **Touch** — drag the
+picture to look. On a computer it starts on **Keyboard + mouse**: **W A S D** and **E / Q** move the camera.
 
 ## Limits
 
 - A phone exports at most 20 seconds of video at a time (see [Export a video or GIF](https://docs.theprototype.app/recording.md#on-a-phone)).
-- Track my movement needs Android with Chrome and AR support; Quest's browser is not a target.
+- Walk needs Android with Chrome and AR support; Quest's browser is not a target. Where AR is not available, Walk is
+  not in the pill.
 - Walking drifts slowly over long takes: recentre now and then.
 
 
@@ -8971,7 +9129,7 @@ A `.tpscene` file is a zip bundle containing everything a scene needs:
 
 ## GLTF
 
-Turn it on first with **Save options ▸ Offer GLTF**. Exports the **selected objects** as standard GLTF — use this to take your work into other 3D tools. With nothing selected it asks first and offers **Export all** for the whole scene. Loading accepts `.gltf` back. Animated flow effects are parked at their base pose during export so the file stores clean transforms.
+Turn it on first with **Save options ▸ Offer GLTF**. Exports the **selected objects** as standard GLTF — use this to take your work into other 3D tools. With nothing selected it asks first and offers **Export all** for the whole scene. Loading accepts `.gltf` back. Animated flow effects are parked at their base pose during export so the file stores clean transforms. Animation clips leave as glTF animation — since 1.59 with their material, visibility, light and field-of-view channels, and camera objects as glTF cameras (see [Animation ▸ Saving and export](https://docs.theprototype.app/animation.md#saving-and-export)).
 
 ## JSON (legacy)
 
@@ -9564,18 +9722,59 @@ preset** keeps it.
 A short tour points at the cards the first time you see them (**Settings ▸ Interface ▸ Tours ▸ Reset all** shows it
 again).
 
-### Sky image quality
+### How sharp the sky is
 
-How sharp the sky and its reflections are is a setting for **this device only** — **Settings ▸ Scene ▸ Performance ▸
-Sky image quality**:
+*New in 1.59.* The five skies come as **UltraHDR** images in several sizes: 1K, 2K and 4K, and 8K for **Meadow**. The
+small one shows first, so the scene is lit and has its sky after one small download; then, if your device should show
+more, the sharper one downloads and swaps in. **The lighting always comes from the 1K file** — the larger files only
+draw the sky you see — so objects look the same at every quality and nothing shifts at the swap.
 
+The sizes are for the five built-in skies, shown as the sky (**Show as sky** on) with no **Sky blur**. A sky you
+uploaded yourself shows as it is.
+
+#### Sky quality for the scene
+
+While a built-in sky shows as the sky, two more rows sit under **Tone mapping**. They are shared, like every
+Environment setting:
+
+| Row | Choices |
+|---|---|
+| **Sky quality** | **Auto** (the default), **Standard (1K)**, **High (2K)** or **Max (4K)** |
+| **Minimum quality** (only while Sky quality is Auto) | **Standard (1K)**, **High (2K)** or **Max (4K)**: the least anyone gets, for a showcase that must not look blurry |
+
+**What Auto picks:** **High** on a desktop; **Standard** in a headset, on a phone, on a slow connection or with Data
+Saver on, and when the [quality governor](https://docs.theprototype.app/performance.md#the-quality-governor) has switched effects off on a loaded
+machine. Auto never picks Max by itself: 4K is several times the download for a difference most views never show.
+
+**Max** is 4K, or the 8K Meadow (about 7 MB) on a device with 8 GB of memory or more that is not a phone. A file
+larger than the graphics card can hold steps down a size.
+
+**Which choice wins**, in this order:
+
+1. A device set to **Low (headset)** in Settings ([below](#sky-image-quality-this-device)) stays at Standard, whatever
+   the scene says.
+2. A scene set to **Standard**, **High** or **Max** gets it.
+3. A scene on **Auto** uses the player's pick in the game menu (**Settings ▸ Sky quality**), else this device's
+   **Sky image quality**, else Auto's own pick.
+4. The scene's **Minimum quality** raises that result.
+5. A headset never goes past **High**, even for a scene's Max or its minimum.
+
+**Exported games keep the option.** An [export](https://docs.theprototype.app/publish-export.md#export-a-game-in-a-zip) carries the 1K, 2K and 4K
+files (and the 8K Meadow for a scene set to Max), so players can pick theirs in the game menu without any download from
+our servers. The game menu's **Sky quality** row only counts while the scene's Sky quality is Auto.
+
+### Sky image quality (this device)
+
+**Settings ▸ Scene ▸ Performance ▸ Sky image quality** is for **this device only** — the scene and your peers are
+unaffected:
+
+![Settings ▸ Scene: the Sky image quality row with its five choices Auto, Low (headset), Standard (1K), High (2K) and Max (4K).](https://docs.theprototype.app/img/settings/sky-image-quality.webp)
+*Figure: Sky image quality, for this device only.*
 | Choice | What it does |
 |---|---|
-| **Auto** (the default) | **Low** in a headset, in VR, or once the scene is too heavy for effects; **Full** otherwise |
-| **Full (1k)** | prepares the image at 1024 px |
-| **Low (headset)** | prepares it at 512 px — a quarter of the memory |
-
-The scene and your peers are unaffected.
+| **Auto** (the default) | follows the scene and the device, as above. In a headset, in VR, or once the scene is too heavy for effects, the light and reflections are also prepared at 512 px |
+| **Low (headset)** | the sky stays at Standard whatever the scene says, and the light and reflections are prepared at 512 px — a quarter of the memory, softer reflections |
+| **Standard (1K)**, **High (2K)**, **Max (4K)** | your own pick for scenes that leave Sky quality on Auto (a player's pick in a game's menu comes first) |
 
 ### Limits
 
@@ -10111,6 +10310,13 @@ this order:
 Still stuck? In Chrome or Edge, open `chrome://gpu` (`edge://gpu`) and look at the *WebGL2* line: *Hardware accelerated*
 is what the app needs; *Disabled* or *Unavailable* says the browser has switched it off. The page also sends one short
 [error report](https://docs.theprototype.app/privacy.md#anonymous-error-reports) about the missing WebGL, if reports are on.
+
+### "The 3D view has stopped"
+
+This card appears when the browser takes the page's graphics away while you are using it — after a graphics driver
+reset, for example. Your scene is still there: press **Save scene**, then **Reload**. Often the view comes back by
+itself. Since 1.59 the card waits until the view has stayed stopped for **3 seconds** on a page you can see, so a phone
+that hands the graphics back a moment after you return to the browser shows nothing at all.
 
 ## Budgets in CI
 
@@ -17777,7 +17983,8 @@ no jump.
     on the game board and the wrist card. Its **Settings** are per game and per device —
     music and sound effects on/off with their volumes, controller vibration, **Show FPS**,
     VR turning (snap / smooth / off and the snap angle), a comfort vignette and a quality
-    preset (Auto / Low / Medium / High). Your own Pause screen keeps working beside it; a
+    preset (Auto / Low / Medium / High), and since 1.59 a **Sky quality** (Auto / Standard / High / Max) that counts
+    while the scene's [sky quality](https://docs.theprototype.app/camera.md#sky-quality-for-the-scene) is Auto. Your own Pause screen keeps working beside it; a
     scene that is not a game still leaves play on Esc.
 
 ---
@@ -19184,7 +19391,9 @@ for: Full quality / For Quest / web**. Your last choice is remembered on this de
 - **For Quest / web**:
     - **GLTF** becomes one **`<name>-quest.glb`** with KTX2/Basis textures (at most 2048 px), compressed geometry
       (meshopt) and the LOD chain (MSFT_lod). Viewers need KTX2 + meshopt support (three.js, Babylon.js,
-      model-viewer); ThePrototype loads it back with the textures compressed on the GPU.
+      model-viewer); ThePrototype loads it back with the textures compressed on the GPU. The optimizer cannot keep
+      [look animation](https://docs.theprototype.app/animation.md#saving-and-export) (material, visibility, light and field-of-view channels), so
+      this file leaves it out and a note says so; a Full quality glTF keeps it.
     - **Scene** (`<name>-quest.tpscene`) keeps its format: textures are resized and a KTX2 copy of each rides in the
       file, and heavy objects get an LOD chain. ThePrototype puts the compressed textures on the GPU when it opens it;
       an older version opens it with the (resized) pictures.
@@ -19339,6 +19548,8 @@ shows you your controllers.
 If someone is in the room **with** you, see [Colocation](https://docs.theprototype.app/colocation.md) — a short calibration puts the same objects on the same real table for both of you.
 
 **Refresh rate** — under **Settings ▸ VR ▸ Display** (or radial **Settings ▸ Display**) you can pick **Max / 90 / 120 Hz**. *Max* uses the highest your headset reports; 120 Hz needs the Quest 120 Hz system setting enabled and applies on VR entry.
+
+**The scene's look** — since 1.59 a scene's tone mapping, colour grading, LUT (approximately) and vignette show in the headset too; bloom, ambient occlusion and the other screen effects stay desktop-only (see [Scene look ▸ In a headset](https://docs.theprototype.app/post-processing.md#in-a-headset)). Sky images go up to High (2K) in a headset ([sky quality](https://docs.theprototype.app/camera.md#sky-quality-for-the-scene)).
 
 ## The controllers at a glance
 
@@ -20316,10 +20527,10 @@ before a join, scene tools answer *not connected — join first*. Then call `con
 | tool / method | what it does |
 |---|---|
 | the app's tools | `create_objects`, `update_objects`, `delete_objects`, `group_objects`, `create_flow_nodes`, `update_flow_nodes`, `set_physics`, `create_joints`, `control_simulation`, behaviours where available, `generate_mesh` when the host has a provider — with their full JSON schemas |
-| shapes and modelling | `set_geometry`, `create_lathe`, `create_tube`, `extrude_shape`, `edit_mesh`, `create_mesh` — see [Shapes and modelling with an agent](https://docs.theprototype.app/ai/agent-geometry.md) |
+| shapes and modelling | `set_geometry`, `create_lathe`, `create_tube`, `extrude_shape`, `edit_mesh`, `create_mesh`, `create_shapes` — see [Shapes and modelling with an agent](https://docs.theprototype.app/ai/agent-geometry.md) |
 | materials and looks | `set_material`, `list_materials`, `get_material`, `create_shader`, `edit_shader`, `assign_shader`, `describe_shader_nodes`, `set_post`, `get_post`, `create_post_graph`, `uv_unwrap`, `set_uv` — see [Materials and looks with an agent](https://docs.theprototype.app/ai/agent-look.md) |
 | undo, pivots and images | `undo_last`, `set_pivot`, `create_pivot`, `add_image` — see [Undo, pivots and images with an agent](https://docs.theprototype.app/ai/agent-assist.md) |
-| `status` | joined or waiting, its role and whether it can edit, who is connected, which scene it and the host are in (`withHost`), whether a scene is still arriving (`loading`), any code behaviour that is failing (`behaviourErrors`), whether it is paused because the host left (`hostAway`), which tools or modules are missing and why |
+| `status` | joined or waiting, its role and whether it can edit, who is connected, which scene it and the host are in (`withHost`), whether a scene is still arriving (`loading`), any code behaviour that is failing (`behaviourErrors`), whether it is paused because the host left (`hostAway`), which tools or modules are missing and why, and since 1.59 `sceneBudget`: how heavy the scene is (objects, meshes, triangles, draw calls, textures, lights, frame time) against the desktop or VR budget, with a green / amber / red tier and `over` naming each budget past green |
 | `screenshot` | a clean picture (no gizmo, grid or helpers) from a temporary camera — `iso`, `top`, `front`, `current`, or `focus` on one object — without moving anyone's view |
 | `wait_for_edit` | waits until someone else changes the scene |
 | `describe_node_types` | what a flow node type takes and gives — input and output names with their types, params with defaults, one line on what it does — so edges are wired right the first time |
@@ -20346,7 +20557,20 @@ before a join, scene tools answer *not connected — join first*. Then call `con
   outputs; it does not move objects itself) or a per-frame hook such as `onTick` (repeat with `this.after`).
 - Inside a group, positions are **local to the group**, the way `list_scene` reports them (since 1.48.1).
 - `list_scene` shows a shape's sizes (a wall's thickness, a box's depth) and can be narrowed: names only, a name
-  pattern, a type, or the objects near a point (since 1.48.1).
+  pattern, a type, or the objects near a point (since 1.48.1). Since 1.59 every mesh also has
+  `mesh: {vertexCount, faceCount, bounds}` — `faceCount` in triangles, and `bounds` as two boxes, `local` (in the
+  mesh's own space) and `world`, each `[[minX, minY, minZ], [maxX, maxY, maxZ]]` — so an agent can see a part's real
+  size and corners.
+- Build lighter, or stop adding, while `status`'s `sceneBudget` is not green.
+- **Copies, facing and shadows** (since 1.59, on `create_objects` / `update_objects`):
+    - `create_objects` with `from` (an object's uuid), `count` (1 to 100), `offset` (`[x, y, z]` from one copy to the
+      next) and optionally `randomRot`, `randomScale` and a `seed` makes **copies**: a row of fence posts, a ring of
+      chairs with a little random turn and size. They are full copies (children, materials, flows) in the source's own
+      group, one undo step, uuids in order, and the same seed makes the same copies. This is copying, not
+      [scatter](https://docs.theprototype.app/scatter.md) over a surface.
+    - `lookAt`: a world point `[x, y, z]` or another object's uuid. The object turns so its front (local +Z) faces it,
+      with +Y kept up. Lights point with `aim` instead.
+    - `castShadow` / `receiveShadow` on any object; on a group or a model they apply to every mesh inside it.
 - Never fight a person: a locked object is skipped — the reply names the object and who is editing it — and the agent
   waits with `wait_for_edit`.
 
@@ -20396,7 +20620,9 @@ JavaScript in the page can use it: `tools()`, `systemPrompt()`, `exec(name, args
 inlined in [/llms-full.txt](https://theprototype.app/llms-full.txt).
 
 **Versions.** `tpAgent.version` is the contract (1.x): new methods and fields are minor versions, a removed or changed
-one is a new major. The `@theprototype/agent` package follows the app release it shipped with and says so in its
+one is a new major. Release 1.59 speaks contract **1.6.0** (the shape batch, mesh colours, copies, facing, shadows,
+mesh stats and the scene budget). A call written for 1.5 gives the same result, with one fix: a part made in a group
+with no `position` now sits at the group's origin ([part by part](https://docs.theprototype.app/ai/agent-geometry.md#building-a-model-part-by-part)). The `@theprototype/agent` package follows the app release it shipped with and says so in its
 `status` (`contractNote`) when the page speaks a different contract major — update it with
 `npx -y @theprototype/agent@latest`.
 
@@ -20453,7 +20679,7 @@ change by hand.
 | `params` | any other material number, such as `clearcoat`, `transmission`, `ior` (those need `MeshPhysicalMaterial`) |
 | `type` | swaps the material class first |
 | `maps` | texture slots `albedo`, `normal`, `roughness`, `metalness`, `emissive`, `ao`: a library image hash, an https URL, or `null` to clear |
-| `preset` | a preset name from `list_materials` |
+| `preset` | a [preset](https://docs.theprototype.app/materials.md) by name: **Wood**, **Metal**, **Plastic**, **Glass**, **Stone**, **Rubber**, **Fish scales**, **Neon**, or one the person saved (`list_materials` names them all) |
 | `cc0` | fetches a free CC0 material by name, such as `"Wood051"` or `"brown planks"` |
 | `slot` | which material slot of a multi-material object (default 0) |
 | `faces` | gives just those faces their own new material slot ([how to pick faces](#picking-faces)) |
@@ -20465,10 +20691,15 @@ item first, the same as an upload, and the result lists it in `assets`. A plain 
 
 An object wearing a shader graph refuses `set_material`. Edit the shader, or take it off first.
 
+The maps are the same ones as the Inspector's [Maps](https://docs.theprototype.app/materials.md#maps) rows. `update_objects` can set them too,
+through `materialParams`: the slots `map`, `normalMap`, `roughnessMap`, `metalnessMap`, `emissiveMap` and `aoMap` (a
+library image hash, or `null` to clear) and `texTransform` — `{repeat: [u, v], offset: [u, v], rotation}` (radians)
+for the tiling, offset and rotation of all the material's maps.
+
 ### list_materials and get_material: read what is there
 
 `list_materials` gives each object's slots (type, colour, numbers, which maps), its shader, and the preset
-names. `get_material` gives one object in full: each map's tiling, offset, rotation, size and hash, and its
+names: the eight starters and any the person saved. `get_material` gives one object in full: each map's tiling, offset, rotation, size and hash, and its
 shader graph as text with the uniforms a flow can drive. Viewers can use both.
 
 ### create_shader: a node shader, as text
@@ -20668,6 +20899,10 @@ that tilts at its joint, a door on its hinge. It is the same setting as the Insp
 the parts of an arm about a shoulder, a shade and a bulb about the lamp's joint. `at` is a point or `center`, `bottom` or
 `top` of the objects together; the objects stay where they are. Objects that share a parent group keep it (the pivot
 goes inside). Up to 500 objects.
+
+Since 1.59 the point can also be `local`: `[x, y, z]` in the space of the group the objects are already in — the
+numbers `list_scene` shows inside it (at the top of the scene that is world space). That is the easy way for parts an
+agent built [inside a group](https://docs.theprototype.app/ai/agent-geometry.md#building-a-model-part-by-part).
 
 ## Images into the library (`add_image`)
 
@@ -20953,6 +21188,21 @@ Every call works like the agent's other tools:
 - Viewers cannot use them. A view-only agent gets a refusal and nothing changes.
 - A tool that creates something returns the new object's **uuid**.
 
+## Building a model part by part
+
+*New in 1.59.* An agent can build a model the way you would: a group for the whole thing, and parts made inside it.
+
+- **Inside a group, everything is the group's own space.** With `parentUuid`, a part's `position`, `rotation` and
+  `scale` **and its own points** (a lathe profile, an outline, a tube's path, a mesh's vertices) are measured in the
+  group, the numbers `list_scene` shows for its children. No `position` puts the part at the group's origin. So a part
+  lands where it was asked even in a group that was moved or turned, and it turns with the group afterwards. (Before
+  1.59, a part made in a moved or turned group ended up in the wrong place.)
+- **Up to 50 shapes in one step** with `create_shapes` ([below](#create_shapes-many-shapes-in-one-step)): one call, one
+  undo step.
+- **Colour as you make it:** `create_mesh` takes a colour per vertex or a material per face, and a flat low-poly look
+  ([below](#create_mesh-a-mesh-from-raw-data)).
+- **Shadows:** every shape tool takes `castShadow` and `receiveShadow` (both on by default).
+
 ## Reference
 
 ### set_geometry: reshape in place
@@ -20978,7 +21228,9 @@ columns, lamp shades.
 | `profile` | `[[radius, height], …]` from bottom to top, 2 to 200 points, in metres. Start and end at radius 0 to close the bottom and the top. |
 | `segments` | steps around the axis, 3 to 128 (default 12; 32 or more looks round) |
 | `phiStart`, `phiLength` | a partial turn, in radians (default a full turn) |
-| `name`, `position`, `rotation`, `scale`, `color`, `parentUuid`, `physics` | as in `create_objects` (physics defaults to static) |
+| `name`, `position`, `rotation`, `scale`, `color`, `physics` | as in `create_objects` (physics defaults to static) |
+| `parentUuid` | a group to make it in: the position, rotation, scale and the profile are then in the group's own space |
+| `castShadow`, `receiveShadow` | shadows, on by default |
 
 The profile stays editable: the Inspector shows it as a lathe, and `set_geometry` changes `segments` or
 `phiLength` later.
@@ -20990,12 +21242,14 @@ A smooth tube through a list of points: rails, pipes, cables, handrails, tentacl
 
 | field | what it does |
 |---|---|
-| `path` | `[[x, y, z], …]`, 2 to 200 points, in **scene** space. The object is placed at the path's centre. |
+| `path` | `[[x, y, z], …]`, 2 to 200 points, in **scene** space — or in the group's own space with `parentUuid`. The object is placed at the path's centre. |
 | `radius` | one radius for every point (default 0.05 m) |
 | `radii` | one radius per point, for a tube that tapers |
 | `closed` | joins the ends into a loop (3 or more points) |
 | `radialSegments` | 3 to 32 (default 8) |
 | `name`, `color`, `physics` | as in `create_objects` |
+| `parentUuid` | a group to make it in: the path is then in the group's own space |
+| `castShadow`, `receiveShadow` | shadows, on by default |
 
 ### extrude_shape: a solid from an outline
 
@@ -21008,7 +21262,9 @@ A flat outline pushed out into a solid: signs, letters, logos, floor plans, gear
 | `depth` | thickness along +Z, in metres (default 0.2). The solid is centred on it, so it stands upright facing +Z. To lay it flat, rotate it by `[-1.5708, 0, 0]`. |
 | `bevel` | `true`, or `{thickness, size, segments}`, to round the edges |
 | `curveSegments` | 1 to 32 |
-| `name`, `position`, `rotation`, `scale`, `color`, `parentUuid`, `physics` | as in `create_objects` |
+| `name`, `position`, `rotation`, `scale`, `color`, `physics` | as in `create_objects` |
+| `parentUuid` | a group to make it in: the position, rotation, scale and the outline are then in the group's own space |
+| `castShadow`, `receiveShadow` | shadows, on by default |
 
 ### create_mesh: a mesh from raw data
 
@@ -21020,10 +21276,29 @@ For shapes that none of the other tools make.
 | `faces` | `[[i, j, k]` or `[i, j, k, l]`, …], up to 20,000. These are indices into `vertices`, counter-clockwise as seen from outside. A face can have up to 32 corners and is fanned from its first one, so keep faces convex. An index that does not exist is refused with the face's number. |
 | `uvs` | optional, one `[u, v]` per vertex |
 | `smooth` | smooth shading (the normals are always computed) |
-| `name`, `position`, `rotation`, `scale`, `color`, `parentUuid`, `physics` | as in `create_objects` |
+| `flatShading` | `true` for hard facets: one flat normal per triangle, the low-poly look |
+| `materials` | up to 16 material slots, each `{color, roughness, metalness, opacity, emissive, emissiveIntensity, name}` |
+| `faceMaterials` | the slot of each face (0 = the first), one per face in the order of `faces`: parts in different colours |
+| `colors` | one `[r, g, b]` (0 to 1) per vertex, in the order of `vertices`: a painted gradient, multiplied by the material colour |
+| `name`, `position`, `rotation`, `scale`, `color`, `physics` | as in `create_objects` |
+| `parentUuid` | a group to make it in: the position, rotation, scale and the vertices are then in the group's own space |
+| `castShadow`, `receiveShadow` | shadows, on by default |
 
 The reply says how many triangles were made. A quad face stays one face in Edit Mesh, so the mesh is ready
-for `edit_mesh`.
+for `edit_mesh`. **Material slots last** through later `edit_mesh` calls; **vertex colours last** only while an edit
+keeps the number of vertices (an extrude, for example, drops them).
+
+### create_shapes: many shapes in one step
+
+Up to **50** shapes of any of the four kinds in one call and **one undo step** — the parts of a chair, a row of
+columns, a whole little building.
+
+| field | what it does |
+|---|---|
+| `shapes` | `[{action, …}, …]`, 1 to 50 entries. `action` is `lathe`, `tube`, `extrude` or `mesh`, and the entry carries that tool's fields under the same name: `{"action": "mesh", "mesh": {…create_mesh's fields…}}`. `parentUuid` works in each entry. |
+
+Every entry is checked **before anything is made**: if one is wrong, nothing is made and the error names it
+(`shapes[3]: …`). The uuids come back **in the order given**.
 
 ### edit_mesh: model a mesh
 
@@ -21134,6 +21409,26 @@ The first call is the preview: one face, pointing up. The second call raises the
 only the inner part again, all in one undo step. Each step carries on with the previous step's selection,
 so the last extrude leaves the ring around the inner face where it is. To raise the ring as well, give that
 step its own `"select": {"normal": "up"}`.
+
+### A lamp, part by part, inside a group
+
+> "Build a little lamp on the table."
+
+The agent makes an empty group on the table with `create_objects`, then the parts inside it in one step. Every number
+is in the group's own space, so the lamp is right however the group is placed or turned:
+
+```json
+create_shapes {
+  "shapes": [
+    {"action": "lathe", "lathe": {"name": "Base", "parentUuid": "…", "profile": [[0, 0], [0.12, 0], [0.1, 0.03], [0, 0.03]], "segments": 32}},
+    {"action": "tube", "tube": {"name": "Stem", "parentUuid": "…", "path": [[0, 0.03, 0], [0, 0.3, 0], [0.08, 0.42, 0]], "radius": 0.01}},
+    {"action": "lathe", "lathe": {"name": "Shade", "parentUuid": "…", "position": [0.08, 0.38, 0], "profile": [[0.03, 0.08], [0.1, 0], [0.11, 0]], "segments": 32, "castShadow": false}}
+  ]
+}
+```
+
+One undo step takes the whole lamp back. To swing the shade, `create_pivot` with the stem and the shade at a point
+`local` to the group (see [Undo, pivots and images](https://docs.theprototype.app/ai/agent-assist.md#several-parts-on-one-joint-create_pivot)).
 
 
 ---
@@ -21290,6 +21585,21 @@ exactly what the agent tools of the same job do, with the same limits:
 
 `undo_last` is a tool of its own. A look-only connection can still use the actions that only read (`list_materials`,
 `get_material`, `shader_nodes`, `get_post`).
+
+**New in 1.59** — the same tools, with more in them:
+
+- `create_shape` takes `{"shapes": [{"action": "lathe", "lathe": {…}}, …]}` with no `action`: up to 50 shapes in one
+  call and one undo step, checked first, so nothing is made if one entry is wrong (the error names it, `shapes[3]`).
+- A shape made with `parentUuid` is placed in the **group's own space** — its position, rotation, scale and its points
+  — and with no position it sits at the group's origin. `mesh` also takes `colors`, `materials` + `faceMaterials` and
+  `flatShading` ([Shapes and modelling](https://docs.theprototype.app/ai/agent-geometry.md#building-a-model-part-by-part)).
+- `create_objects` makes copies of an object (`from`, `count`, `offset`, `randomRot`, `randomScale`, `seed`), and
+  `create_objects` / `update_objects` take `lookAt` and `castShadow` / `receiveShadow`
+  ([details](https://docs.theprototype.app/ai/build-with-an-agent.md#rules-a-good-agent-follows)).
+- `edit_shape` `pivot_group` takes `local`; `list_scene` gives each mesh's vertex and triangle count and its bounds;
+  `status` says how heavy the scene is (`sceneBudget`); `set_look` names the material presets.
+
+Claude reads its tool list when it connects, so it sees these after the connector reconnects.
 
 ## Stop it
 

@@ -149,6 +149,21 @@ exactly what the agent tools of the same job do, with the same limits:
 `undo_last` is a tool of its own. A look-only connection can still use the actions that only read (`list_materials`,
 `get_material`, `shader_nodes`, `get_post`).
 
+**New in 1.59** — the same tools, with more in them:
+
+- `create_shape` takes `{"shapes": [{"action": "lathe", "lathe": {…}}, …]}` with no `action`: up to 50 shapes in one
+  call and one undo step, checked first, so nothing is made if one entry is wrong (the error names it, `shapes[3]`).
+- A shape made with `parentUuid` is placed in the **group's own space** — its position, rotation, scale and its points
+  — and with no position it sits at the group's origin. `mesh` also takes `colors`, `materials` + `faceMaterials` and
+  `flatShading` ([Shapes and modelling](https://docs.theprototype.app/ai/agent-geometry.md#building-a-model-part-by-part)).
+- `create_objects` makes copies of an object (`from`, `count`, `offset`, `randomRot`, `randomScale`, `seed`), and
+  `create_objects` / `update_objects` take `lookAt` and `castShadow` / `receiveShadow`
+  ([details](https://docs.theprototype.app/ai/build-with-an-agent.md#rules-a-good-agent-follows)).
+- `edit_shape` `pivot_group` takes `local`; `list_scene` gives each mesh's vertex and triangle count and its bounds;
+  `status` says how heavy the scene is (`sceneBudget`); `set_look` names the material presets.
+
+Claude reads its tool list when it connects, so it sees these after the connector reconnects.
+
 ## Stop it
 
 - **Disconnect** (next to the chip, or in Settings ▸ Connected apps) stops Claude at once, including

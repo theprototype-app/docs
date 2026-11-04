@@ -192,7 +192,8 @@ no jump.
     on the game board and the wrist card. Its **Settings** are per game and per device —
     music and sound effects on/off with their volumes, controller vibration, **Show FPS**,
     VR turning (snap / smooth / off and the snap angle), a comfort vignette and a quality
-    preset (Auto / Low / Medium / High). Your own Pause screen keeps working beside it; a
+    preset (Auto / Low / Medium / High), and since 1.59 a **Sky quality** (Auto / Standard / High / Max) that counts
+    while the scene's [sky quality](https://docs.theprototype.app/camera.md#sky-quality-for-the-scene) is Auto. Your own Pause screen keeps working beside it; a
     scene that is not a game still leaves play on Esc.
 
 ---

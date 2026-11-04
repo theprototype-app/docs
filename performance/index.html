@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Performance & Budgets", "url": "https://docs.theprototype.app/performance/", "description": "How big a scene can get, how to see where it stands, and what the app does on its own when a scene is more than your machine can draw.", "dateModified": "2026-11-04", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.57.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/performance/budget-chip.webp", "caption": "The budget chip sits beside the toolbar."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/performance/statistics-budget.webp", "caption": "Statistics ▸ Budget against the Quest limits."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/performance/configure-scene-quality.webp", "caption": "Configure Scene opens with Quality first."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Performance & Budgets", "url": "https://docs.theprototype.app/performance/", "description": "How big a scene can get, how to see where it stands, and what the app does on its own when a scene is more than your machine can draw.", "dateModified": "2026-11-04", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.59.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/performance/budget-chip.webp", "caption": "The budget chip sits beside the toolbar."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/performance/statistics-budget.webp", "caption": "Statistics ▸ Budget against the Quest limits."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/performance/configure-scene-quality.webp", "caption": "Configure Scene opens with Quality first."}]}</script>
 </head>
   
   
@@ -1724,6 +1724,21 @@
       3D view does not start
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="3D view does not start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-3d-view-has-stopped" class="md-nav__link">
+    <span class="md-ellipsis">
+      "The 3D view has stopped"
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -6229,6 +6244,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="3D view does not start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-3d-view-has-stopped" class="md-nav__link">
+    <span class="md-ellipsis">
+      "The 3D view has stopped"
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -6314,7 +6344,7 @@ bar if you want it there. Since 1.39 you can move the chip anywhere, or hide it,
 <a href="../controls/#moving-the-clusters">Edit positions</a>; <strong>Customize toolbar… ▸ Budget chip</strong> shows it again. Opening its
 <strong>▾</strong> menu no longer makes it vanish.</p>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/performance/budget-chip.webp" data-desc-position="bottom"><img alt="The budget chip beside the toolbar, reading Quest over 100 % in red: the scene has four point lights, more than the two a Quest's budget allows." class="shot" height="72" loading="lazy" src="../img/performance/budget-chip.webp" width="647"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/performance/budget-chip.webp" data-desc-position="bottom"><img alt="The budget chip beside the toolbar, reading Quest over 100 % in red: the scene has four point lights, more than the two a Quest's budget allows." class="shot" height="72" loading="lazy" src="../img/performance/budget-chip.webp" width="646"></a></p>
 <figcaption>
 <p>The budget chip sits beside the toolbar.</p>
 </figcaption>
@@ -6552,6 +6582,11 @@ this order:</p>
 <p>Still stuck? In Chrome or Edge, open <code>chrome://gpu</code> (<code>edge://gpu</code>) and look at the <em>WebGL2</em> line: <em>Hardware accelerated</em>
 is what the app needs; <em>Disabled</em> or <em>Unavailable</em> says the browser has switched it off. The page also sends one short
 <a href="../privacy/#anonymous-error-reports">error report</a> about the missing WebGL, if reports are on.</p>
+<h3 id="the-3d-view-has-stopped">"The 3D view has stopped"</h3>
+<p>This card appears when the browser takes the page's graphics away while you are using it — after a graphics driver
+reset, for example. Your scene is still there: press <strong>Save scene</strong>, then <strong>Reload</strong>. Often the view comes back by
+itself. Since 1.59 the card waits until the view has stayed stopped for <strong>3 seconds</strong> on a page you can see, so a phone
+that hands the graphics back a moment after you return to the browser shows nothing at all.</p>
 <h2 id="budgets-in-ci">Budgets in CI</h2>
 <p>For contributors to the core repo: every Games-tab game and every General-tab level is held to
 the Quest budget on every pull request and before every release.</p>

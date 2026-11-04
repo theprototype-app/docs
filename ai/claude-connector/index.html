@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Use theprototype from claude.ai and voice", "url": "https://docs.theprototype.app/ai/claude-connector/", "description": "Add theprototype as a connector in claude.ai, press Connect Claude in your open theprototype tab, and talk Claude through building — in a chat on the web or desktop, in the Claude phone app, or…", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.57.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/ai-claude-connector/connect-card.webp", "caption": "The AI window's Connect Claude card, before you sign in."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Use theprototype from claude.ai and voice", "url": "https://docs.theprototype.app/ai/claude-connector/", "description": "Add theprototype as a connector in claude.ai, press Connect Claude in your open theprototype tab, and talk Claude through building — in a chat on the web or desktop, in the Claude phone app, or…", "dateModified": "2026-11-04", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.59.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/ai-claude-connector/connect-card.webp", "caption": "The AI window's Connect Claude card, before you sign in."}]}</script>
 </head>
   
   
@@ -6434,6 +6434,20 @@ exactly what the agent tools of the same job do, with the same limits:</p>
 </table>
 <p><code>undo_last</code> is a tool of its own. A look-only connection can still use the actions that only read (<code>list_materials</code>,
 <code>get_material</code>, <code>shader_nodes</code>, <code>get_post</code>).</p>
+<p><strong>New in 1.59</strong> — the same tools, with more in them:</p>
+<ul>
+<li><code>create_shape</code> takes <code>{"shapes": [{"action": "lathe", "lathe": {…}}, …]}</code> with no <code>action</code>: up to 50 shapes in one
+  call and one undo step, checked first, so nothing is made if one entry is wrong (the error names it, <code>shapes[3]</code>).</li>
+<li>A shape made with <code>parentUuid</code> is placed in the <strong>group's own space</strong> — its position, rotation, scale and its points
+  — and with no position it sits at the group's origin. <code>mesh</code> also takes <code>colors</code>, <code>materials</code> + <code>faceMaterials</code> and
+  <code>flatShading</code> (<a href="../agent-geometry/#building-a-model-part-by-part">Shapes and modelling</a>).</li>
+<li><code>create_objects</code> makes copies of an object (<code>from</code>, <code>count</code>, <code>offset</code>, <code>randomRot</code>, <code>randomScale</code>, <code>seed</code>), and
+  <code>create_objects</code> / <code>update_objects</code> take <code>lookAt</code> and <code>castShadow</code> / <code>receiveShadow</code>
+  (<a href="../build-with-an-agent/#rules-a-good-agent-follows">details</a>).</li>
+<li><code>edit_shape</code> <code>pivot_group</code> takes <code>local</code>; <code>list_scene</code> gives each mesh's vertex and triangle count and its bounds;
+  <code>status</code> says how heavy the scene is (<code>sceneBudget</code>); <code>set_look</code> names the material presets.</li>
+</ul>
+<p>Claude reads its tool list when it connects, so it sees these after the connector reconnects.</p>
 <h2 id="stop-it">Stop it</h2>
 <ul>
 <li><strong>Disconnect</strong> (next to the chip, or in Settings ▸ Connected apps) stops Claude at once, including
@@ -6476,7 +6490,7 @@ exactly what the agent tools of the same job do, with the same limits:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-03
+    2026-11-04
   </span>
 
     

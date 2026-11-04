@@ -196,18 +196,59 @@ preset** keeps it.
 A short tour points at the cards the first time you see them (**Settings ▸ Interface ▸ Tours ▸ Reset all** shows it
 again).
 
-### Sky image quality
+### How sharp the sky is
 
-How sharp the sky and its reflections are is a setting for **this device only** — **Settings ▸ Scene ▸ Performance ▸
-Sky image quality**:
+*New in 1.59.* The five skies come as **UltraHDR** images in several sizes: 1K, 2K and 4K, and 8K for **Meadow**. The
+small one shows first, so the scene is lit and has its sky after one small download; then, if your device should show
+more, the sharper one downloads and swaps in. **The lighting always comes from the 1K file** — the larger files only
+draw the sky you see — so objects look the same at every quality and nothing shifts at the swap.
 
+The sizes are for the five built-in skies, shown as the sky (**Show as sky** on) with no **Sky blur**. A sky you
+uploaded yourself shows as it is.
+
+#### Sky quality for the scene
+
+While a built-in sky shows as the sky, two more rows sit under **Tone mapping**. They are shared, like every
+Environment setting:
+
+| Row | Choices |
+|---|---|
+| **Sky quality** | **Auto** (the default), **Standard (1K)**, **High (2K)** or **Max (4K)** |
+| **Minimum quality** (only while Sky quality is Auto) | **Standard (1K)**, **High (2K)** or **Max (4K)**: the least anyone gets, for a showcase that must not look blurry |
+
+**What Auto picks:** **High** on a desktop; **Standard** in a headset, on a phone, on a slow connection or with Data
+Saver on, and when the [quality governor](https://docs.theprototype.app/performance.md#the-quality-governor) has switched effects off on a loaded
+machine. Auto never picks Max by itself: 4K is several times the download for a difference most views never show.
+
+**Max** is 4K, or the 8K Meadow (about 7 MB) on a device with 8 GB of memory or more that is not a phone. A file
+larger than the graphics card can hold steps down a size.
+
+**Which choice wins**, in this order:
+
+1. A device set to **Low (headset)** in Settings ([below](#sky-image-quality-this-device)) stays at Standard, whatever
+   the scene says.
+2. A scene set to **Standard**, **High** or **Max** gets it.
+3. A scene on **Auto** uses the player's pick in the game menu (**Settings ▸ Sky quality**), else this device's
+   **Sky image quality**, else Auto's own pick.
+4. The scene's **Minimum quality** raises that result.
+5. A headset never goes past **High**, even for a scene's Max or its minimum.
+
+**Exported games keep the option.** An [export](https://docs.theprototype.app/publish-export.md#export-a-game-in-a-zip) carries the 1K, 2K and 4K
+files (and the 8K Meadow for a scene set to Max), so players can pick theirs in the game menu without any download from
+our servers. The game menu's **Sky quality** row only counts while the scene's Sky quality is Auto.
+
+### Sky image quality (this device)
+
+**Settings ▸ Scene ▸ Performance ▸ Sky image quality** is for **this device only** — the scene and your peers are
+unaffected:
+
+![Settings ▸ Scene: the Sky image quality row with its five choices Auto, Low (headset), Standard (1K), High (2K) and Max (4K).](https://docs.theprototype.app/img/settings/sky-image-quality.webp)
+*Figure: Sky image quality, for this device only.*
 | Choice | What it does |
 |---|---|
-| **Auto** (the default) | **Low** in a headset, in VR, or once the scene is too heavy for effects; **Full** otherwise |
-| **Full (1k)** | prepares the image at 1024 px |
-| **Low (headset)** | prepares it at 512 px — a quarter of the memory |
-
-The scene and your peers are unaffected.
+| **Auto** (the default) | follows the scene and the device, as above. In a headset, in VR, or once the scene is too heavy for effects, the light and reflections are also prepared at 512 px |
+| **Low (headset)** | the sky stays at Standard whatever the scene says, and the light and reflections are prepared at 512 px — a quarter of the memory, softer reflections |
+| **Standard (1K)**, **High (2K)**, **Max (4K)** | your own pick for scenes that leave Sky quality on Auto (a player's pick in a game's menu comes first) |
 
 ### Limits
 

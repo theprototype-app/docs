@@ -13,6 +13,21 @@ Every call works like the agent's other tools:
 - Viewers cannot use them. A view-only agent gets a refusal and nothing changes.
 - A tool that creates something returns the new object's **uuid**.
 
+## Building a model part by part
+
+*New in 1.59.* An agent can build a model the way you would: a group for the whole thing, and parts made inside it.
+
+- **Inside a group, everything is the group's own space.** With `parentUuid`, a part's `position`, `rotation` and
+  `scale` **and its own points** (a lathe profile, an outline, a tube's path, a mesh's vertices) are measured in the
+  group, the numbers `list_scene` shows for its children. No `position` puts the part at the group's origin. So a part
+  lands where it was asked even in a group that was moved or turned, and it turns with the group afterwards. (Before
+  1.59, a part made in a moved or turned group ended up in the wrong place.)
+- **Up to 50 shapes in one step** with `create_shapes` ([below](#create_shapes-many-shapes-in-one-step)): one call, one
+  undo step.
+- **Colour as you make it:** `create_mesh` takes a colour per vertex or a material per face, and a flat low-poly look
+  ([below](#create_mesh-a-mesh-from-raw-data)).
+- **Shadows:** every shape tool takes `castShadow` and `receiveShadow` (both on by default).
+
 ## Reference
 
 ### set_geometry: reshape in place
@@ -38,7 +53,9 @@ columns, lamp shades.
 | `profile` | `[[radius, height], …]` from bottom to top, 2 to 200 points, in metres. Start and end at radius 0 to close the bottom and the top. |
 | `segments` | steps around the axis, 3 to 128 (default 12; 32 or more looks round) |
 | `phiStart`, `phiLength` | a partial turn, in radians (default a full turn) |
-| `name`, `position`, `rotation`, `scale`, `color`, `parentUuid`, `physics` | as in `create_objects` (physics defaults to static) |
+| `name`, `position`, `rotation`, `scale`, `color`, `physics` | as in `create_objects` (physics defaults to static) |
+| `parentUuid` | a group to make it in: the position, rotation, scale and the profile are then in the group's own space |
+| `castShadow`, `receiveShadow` | shadows, on by default |
 
 The profile stays editable: the Inspector shows it as a lathe, and `set_geometry` changes `segments` or
 `phiLength` later.
@@ -50,12 +67,14 @@ A smooth tube through a list of points: rails, pipes, cables, handrails, tentacl
 
 | field | what it does |
 |---|---|
-| `path` | `[[x, y, z], …]`, 2 to 200 points, in **scene** space. The object is placed at the path's centre. |
+| `path` | `[[x, y, z], …]`, 2 to 200 points, in **scene** space — or in the group's own space with `parentUuid`. The object is placed at the path's centre. |
 | `radius` | one radius for every point (default 0.05 m) |
 | `radii` | one radius per point, for a tube that tapers |
 | `closed` | joins the ends into a loop (3 or more points) |
 | `radialSegments` | 3 to 32 (default 8) |
 | `name`, `color`, `physics` | as in `create_objects` |
+| `parentUuid` | a group to make it in: the path is then in the group's own space |
+| `castShadow`, `receiveShadow` | shadows, on by default |
 
 ### extrude_shape: a solid from an outline
 
@@ -68,7 +87,9 @@ A flat outline pushed out into a solid: signs, letters, logos, floor plans, gear
 | `depth` | thickness along +Z, in metres (default 0.2). The solid is centred on it, so it stands upright facing +Z. To lay it flat, rotate it by `[-1.5708, 0, 0]`. |
 | `bevel` | `true`, or `{thickness, size, segments}`, to round the edges |
 | `curveSegments` | 1 to 32 |
-| `name`, `position`, `rotation`, `scale`, `color`, `parentUuid`, `physics` | as in `create_objects` |
+| `name`, `position`, `rotation`, `scale`, `color`, `physics` | as in `create_objects` |
+| `parentUuid` | a group to make it in: the position, rotation, scale and the outline are then in the group's own space |
+| `castShadow`, `receiveShadow` | shadows, on by default |
 
 ### create_mesh: a mesh from raw data
 
@@ -80,10 +101,29 @@ For shapes that none of the other tools make.
 | `faces` | `[[i, j, k]` or `[i, j, k, l]`, …], up to 20,000. These are indices into `vertices`, counter-clockwise as seen from outside. A face can have up to 32 corners and is fanned from its first one, so keep faces convex. An index that does not exist is refused with the face's number. |
 | `uvs` | optional, one `[u, v]` per vertex |
 | `smooth` | smooth shading (the normals are always computed) |
-| `name`, `position`, `rotation`, `scale`, `color`, `parentUuid`, `physics` | as in `create_objects` |
+| `flatShading` | `true` for hard facets: one flat normal per triangle, the low-poly look |
+| `materials` | up to 16 material slots, each `{color, roughness, metalness, opacity, emissive, emissiveIntensity, name}` |
+| `faceMaterials` | the slot of each face (0 = the first), one per face in the order of `faces`: parts in different colours |
+| `colors` | one `[r, g, b]` (0 to 1) per vertex, in the order of `vertices`: a painted gradient, multiplied by the material colour |
+| `name`, `position`, `rotation`, `scale`, `color`, `physics` | as in `create_objects` |
+| `parentUuid` | a group to make it in: the position, rotation, scale and the vertices are then in the group's own space |
+| `castShadow`, `receiveShadow` | shadows, on by default |
 
 The reply says how many triangles were made. A quad face stays one face in Edit Mesh, so the mesh is ready
-for `edit_mesh`.
+for `edit_mesh`. **Material slots last** through later `edit_mesh` calls; **vertex colours last** only while an edit
+keeps the number of vertices (an extrude, for example, drops them).
+
+### create_shapes: many shapes in one step
+
+Up to **50** shapes of any of the four kinds in one call and **one undo step** — the parts of a chair, a row of
+columns, a whole little building.
+
+| field | what it does |
+|---|---|
+| `shapes` | `[{action, …}, …]`, 1 to 50 entries. `action` is `lathe`, `tube`, `extrude` or `mesh`, and the entry carries that tool's fields under the same name: `{"action": "mesh", "mesh": {…create_mesh's fields…}}`. `parentUuid` works in each entry. |
+
+Every entry is checked **before anything is made**: if one is wrong, nothing is made and the error names it
+(`shapes[3]: …`). The uuids come back **in the order given**.
 
 ### edit_mesh: model a mesh
 
@@ -194,3 +234,23 @@ The first call is the preview: one face, pointing up. The second call raises the
 only the inner part again, all in one undo step. Each step carries on with the previous step's selection,
 so the last extrude leaves the ring around the inner face where it is. To raise the ring as well, give that
 step its own `"select": {"normal": "up"}`.
+
+### A lamp, part by part, inside a group
+
+> "Build a little lamp on the table."
+
+The agent makes an empty group on the table with `create_objects`, then the parts inside it in one step. Every number
+is in the group's own space, so the lamp is right however the group is placed or turned:
+
+```json
+create_shapes {
+  "shapes": [
+    {"action": "lathe", "lathe": {"name": "Base", "parentUuid": "…", "profile": [[0, 0], [0.12, 0], [0.1, 0.03], [0, 0.03]], "segments": 32}},
+    {"action": "tube", "tube": {"name": "Stem", "parentUuid": "…", "path": [[0, 0.03, 0], [0, 0.3, 0], [0.08, 0.42, 0]], "radius": 0.01}},
+    {"action": "lathe", "lathe": {"name": "Shade", "parentUuid": "…", "position": [0.08, 0.38, 0], "profile": [[0.03, 0.08], [0.1, 0], [0.11, 0]], "segments": 32, "castShadow": false}}
+  ]
+}
+```
+
+One undo step takes the whole lamp back. To swing the shade, `create_pivot` with the stem and the shade at a point
+`local` to the group (see [Undo, pivots and images](https://docs.theprototype.app/ai/agent-assist.md#several-parts-on-one-joint-create_pivot)).

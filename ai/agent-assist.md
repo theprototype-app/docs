@@ -42,6 +42,10 @@ the parts of an arm about a shoulder, a shade and a bulb about the lamp's joint.
 `top` of the objects together; the objects stay where they are. Objects that share a parent group keep it (the pivot
 goes inside). Up to 500 objects.
 
+Since 1.59 the point can also be `local`: `[x, y, z]` in the space of the group the objects are already in — the
+numbers `list_scene` shows inside it (at the top of the scene that is world space). That is the easy way for parts an
+agent built [inside a group](https://docs.theprototype.app/ai/agent-geometry.md#building-a-model-part-by-part).
+
 ## Images into the library (`add_image`)
 
 `add_image` puts one image into the shared library and returns its **hash**, which a texture slot takes

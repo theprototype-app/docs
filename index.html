@@ -62,7 +62,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Welcome", "url": "https://docs.theprototype.app/", "description": "ThePrototype is a collaborative 3D prototyping app that runs in your browser — sessions are peer-to-peer, and you need no account.", "dateModified": "2026-11-04", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.57.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/index/quick-start-add.webp", "caption": "Quick start, step 2 — right-click the empty view, then Add ▸ Mesh ▸ Cube."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Welcome", "url": "https://docs.theprototype.app/", "description": "ThePrototype is a collaborative 3D prototyping app that runs in your browser — sessions are peer-to-peer, and you need no account.", "dateModified": "2026-11-04", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.59.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/index/quick-start-add.webp", "caption": "Quick start, step 2 — right-click the empty view, then Add ▸ Mesh ▸ Cube."}]}</script>
 </head>
   
   
@@ -6094,6 +6094,20 @@ on a phone that gives the scene the whole height of the screen.</p>
 <a href="https://github.com/theprototype-app/core">github.com/theprototype-app/core</a> (also <strong>Settings ▸ About ▸ Source Code</strong>),
 with a contributing guide and an <code>llms.txt</code> for coding agents.</p>
 <h2 id="whats-new">What's new</h2>
+<p><strong>1.59 — looks finished everywhere.</strong> A material takes <a href="materials/#maps">normal, roughness, metalness, emission and AO maps</a>
+beside its colour image, with tiling, offset and rotation, and <strong>Load a set of maps…</strong> sorts a texture set into its
+slots by file name. Skies are <a href="camera/#how-sharp-the-sky-is">much sharper</a> — up to 4K, 8K for Meadow, a small one
+first and the sharp one swapped in — with a <strong>Sky quality</strong> per scene that players can change in a game's menu. A
+scene's <a href="post-processing/#in-a-headset">look now shows in a headset</a>: tone mapping, colour grading, LUTs and vignette,
+with no extra pass. A glTF export carries <a href="animation/#saving-and-export">look animation</a> — fades, colours, lights and a
+camera's new <strong>Field of view</strong> channel — and the scene's cameras. <a href="film/#how-the-camera-moves">Film</a> lets you choose
+how the camera moves (Phone tilt, Touch, Walk, Tripod, Keyboard + mouse), sets what you see behind a walk and its scale,
+pauses at a mark when tracking is lost, and lists <a href="film/#your-shots">your shots</a> to preview, trim, rename and export
+one by one or joined. Agents <a href="ai/agent-geometry/#building-a-model-part-by-part">build models part by part</a>: a part
+made in a group stays in the group's space, up to 50 shapes in one step, coloured as they are made, plus copies, facing
+and shadows. Also fixed: coming back to the browser on a phone no longer flashes
+<a href="performance/#the-3d-view-has-stopped">"The 3D view has stopped"</a>, and a harmless browser warning no longer pops up as
+"Something went wrong". To try it, pick the <strong>Meadow</strong> sky and set <strong>Sky quality</strong> to <strong>Max</strong>.</p>
 <p><strong>1.58 — film with your phone, share it as a video.</strong> <a href="film/">Film with your phone</a> makes your phone the viewfinder
 of a camera in the scene: turn it to look around, walk or use the stick to move, zoom, tilt and pull focus, and press
 <strong>●</strong> — the take is recorded while the Timeline plays and lands on it as keyed <a href="timeline/#tracks">Property tracks</a>,
@@ -6462,7 +6476,7 @@ new <a href="modules/#smart-unwrap-xatlas">Smart unwrap (xatlas)</a> module adds
 image</a> (an HDRI) can now be the scene's sky and its light: objects take its colours, shiny
 ones reflect it, water mirrors its clouds and the sun sits where the photo's sun is. Pick <strong>Clear sky</strong>, <strong>Meadow</strong>,
 <strong>Sunrise</strong>, <strong>Starlight</strong> or <strong>Photo studio</strong>, or upload your own <code>.hdr</code> / <code>.exr</code>, with Rotation, Image light, Sky blur
-and Tone mapping, and a <a href="camera/#sky-image-quality">quality setting</a> for headsets. <strong>Add ▸
+and Tone mapping, and a <a href="camera/#sky-image-quality-this-device">quality setting</a> for headsets. <strong>Add ▸
 <a href="architecture/">Architecture</a></strong> builds walls with doorways and windows, doors and casement windows that open in
 Interact and Play for everyone, and straight, L, U and spiral stairs, every number editable in the Inspector.
 <a href="nodes/math/#more-than-two-inputs">Math</a> and <a href="nodes/gate/#more-than-two-inputs">Gate</a> take up to eight inputs, the

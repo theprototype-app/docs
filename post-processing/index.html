@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Scene Look (Post-processing)", "url": "https://docs.theprototype.app/post-processing/", "description": "Grade the finished frame. A scene look is a stack of screen-space effects — ambient occlusion, colour grading, bloom, vignette, film grain, pixelation — applied over the whole viewport after the…", "dateModified": "2026-09-17"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Scene Look (Post-processing)", "url": "https://docs.theprototype.app/post-processing/", "description": "Grade the finished frame. A scene look is a stack of screen-space effects — ambient occlusion, colour grading, bloom, vignette, film grain, pixelation — applied over the whole viewport after the…", "dateModified": "2026-11-04"}</script>
 </head>
   
   
@@ -1251,6 +1251,15 @@
   <a href="#switching-looks-from-a-node-graph" class="md-nav__link">
     <span class="md-ellipsis">
       Switching looks from a node graph
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-a-headset" class="md-nav__link">
+    <span class="md-ellipsis">
+      In a headset
     </span>
   </a>
   
@@ -6223,6 +6232,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#in-a-headset" class="md-nav__link">
+    <span class="md-ellipsis">
+      In a headset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#limits-worth-knowing" class="md-nav__link">
     <span class="md-ellipsis">
       Limits worth knowing
@@ -6529,11 +6547,59 @@ same replicated trigger, so nobody's graph moves anybody else's view.</p>
 <p>If you turn <em>look through it too</em> off and nothing is looking through that camera, the
 node has nothing visible to do — the card says so while you build, and it tells you
 once if you fire it anyway.</p>
+<h2 id="in-a-headset">In a headset</h2>
+<p><em>New in 1.59.</em> A scene's look now shows in a <a href="../vr/">VR headset</a> too. A headset cannot afford the desktop's extra
+full-screen passes, so the colour effects are worked into the way every object is drawn, with no extra rendering pass.
+Effects that need to read the pixels around each pixel, or the depth of the scene, stay desktop-only.</p>
+<table>
+<thead>
+<tr>
+<th>Effect</th>
+<th>In a headset</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tone mapping</td>
+<td>shown, exactly as on the desktop</td>
+</tr>
+<tr>
+<td>Hue / saturation</td>
+<td>shown, exactly</td>
+</tr>
+<tr>
+<td>Brightness / contrast</td>
+<td>shown, exactly</td>
+</tr>
+<tr>
+<td>Anti-aliasing (SMAA)</td>
+<td>the headset's own anti-aliasing does this job</td>
+</tr>
+<tr>
+<td>LUT (colour grade)</td>
+<td><strong>approximate</strong>: a close fit of the grade, so a strong curve in the LUT is softened</td>
+</tr>
+<tr>
+<td>Vignette</td>
+<td><strong>approximate</strong>: drawn over each eye</td>
+</tr>
+<tr>
+<td>Ambient occlusion, Bloom, Depth of field, Film grain, Chromatic aberration, Pixelation, Scanlines, Dot screen</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td>A post effect you built as a graph</td>
+<td>not shown</td>
+</tr>
+</tbody>
+</table>
+<p>Open an effect's row in the stack and it says so: <em>Approximate in a headset.</em> or <em>Not shown in a headset.</em> Effects that
+show exactly carry no note. The look still comes from the scene, so a headset in a session grades the same way as the
+desktops beside it.</p>
 <h2 id="limits-worth-knowing">Limits worth knowing</h2>
 <ul>
-<li><strong>Post-processing does not run in VR.</strong> The effects are skipped in a headset; objects
-  still look the same, and materials made with the <a href="../shader-graph/">Shader Graph</a> are
-  unaffected.</li>
+<li><strong>In a headset only part of the look shows</strong> — see <a href="#in-a-headset">In a headset</a>. Materials made with the
+  <a href="../shader-graph/">Shader Graph</a> are unaffected.</li>
 <li><strong>The camera preview inset (PiP) shows the plain image</strong>, without the look.</li>
 <li><strong>Sprites, billboarded avatar photo cards and particles</strong> do not write depth, so effects
   that read depth do not affect them. A strong stylize effect makes that more visible than
@@ -6571,7 +6637,7 @@ stack deletes it.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-09-17
+    2026-11-04
   </span>
 
     

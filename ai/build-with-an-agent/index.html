@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Build with an AI agent", "url": "https://docs.theprototype.app/ai/build-with-an-agent/", "description": "You can invite an AI agent — Claude Code, Claude Desktop, or any tool that speaks MCP — into your session and build with it. Hand it a link, it joins like any other peer, and you watch the scene…", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.57.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/ai-build-with-an-agent/agent-activity.webp", "caption": "Agent activity in the AI assistant window."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Build with an AI agent", "url": "https://docs.theprototype.app/ai/build-with-an-agent/", "description": "You can invite an AI agent — Claude Code, Claude Desktop, or any tool that speaks MCP — into your session and build with it. Hand it a link, it joins like any other peer, and you watch the scene…", "dateModified": "2026-11-04", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.59.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/ai-build-with-an-agent/agent-activity.webp", "caption": "Agent activity in the AI assistant window."}]}</script>
 </head>
   
   
@@ -6203,7 +6203,7 @@ before a join, scene tools answer <em>not connected — join first</em>. Then ca
 </tr>
 <tr>
 <td>shapes and modelling</td>
-<td><code>set_geometry</code>, <code>create_lathe</code>, <code>create_tube</code>, <code>extrude_shape</code>, <code>edit_mesh</code>, <code>create_mesh</code> — see <a href="../agent-geometry/">Shapes and modelling with an agent</a></td>
+<td><code>set_geometry</code>, <code>create_lathe</code>, <code>create_tube</code>, <code>extrude_shape</code>, <code>edit_mesh</code>, <code>create_mesh</code>, <code>create_shapes</code> — see <a href="../agent-geometry/">Shapes and modelling with an agent</a></td>
 </tr>
 <tr>
 <td>materials and looks</td>
@@ -6215,7 +6215,7 @@ before a join, scene tools answer <em>not connected — join first</em>. Then ca
 </tr>
 <tr>
 <td><code>status</code></td>
-<td>joined or waiting, its role and whether it can edit, who is connected, which scene it and the host are in (<code>withHost</code>), whether a scene is still arriving (<code>loading</code>), any code behaviour that is failing (<code>behaviourErrors</code>), whether it is paused because the host left (<code>hostAway</code>), which tools or modules are missing and why</td>
+<td>joined or waiting, its role and whether it can edit, who is connected, which scene it and the host are in (<code>withHost</code>), whether a scene is still arriving (<code>loading</code>), any code behaviour that is failing (<code>behaviourErrors</code>), whether it is paused because the host left (<code>hostAway</code>), which tools or modules are missing and why, and since 1.59 <code>sceneBudget</code>: how heavy the scene is (objects, meshes, triangles, draw calls, textures, lights, frame time) against the desktop or VR budget, with a green / amber / red tier and <code>over</code> naming each budget past green</td>
 </tr>
 <tr>
 <td><code>screenshot</code></td>
@@ -6262,7 +6262,22 @@ before a join, scene tools answer <em>not connected — join first</em>. Then ca
   outputs; it does not move objects itself) or a per-frame hook such as <code>onTick</code> (repeat with <code>this.after</code>).</li>
 <li>Inside a group, positions are <strong>local to the group</strong>, the way <code>list_scene</code> reports them (since 1.48.1).</li>
 <li><code>list_scene</code> shows a shape's sizes (a wall's thickness, a box's depth) and can be narrowed: names only, a name
-  pattern, a type, or the objects near a point (since 1.48.1).</li>
+  pattern, a type, or the objects near a point (since 1.48.1). Since 1.59 every mesh also has
+  <code>mesh: {vertexCount, faceCount, bounds}</code> — <code>faceCount</code> in triangles, and <code>bounds</code> as two boxes, <code>local</code> (in the
+  mesh's own space) and <code>world</code>, each <code>[[minX, minY, minZ], [maxX, maxY, maxZ]]</code> — so an agent can see a part's real
+  size and corners.</li>
+<li>Build lighter, or stop adding, while <code>status</code>'s <code>sceneBudget</code> is not green.</li>
+<li><strong>Copies, facing and shadows</strong> (since 1.59, on <code>create_objects</code> / <code>update_objects</code>):<ul>
+<li><code>create_objects</code> with <code>from</code> (an object's uuid), <code>count</code> (1 to 100), <code>offset</code> (<code>[x, y, z]</code> from one copy to the
+  next) and optionally <code>randomRot</code>, <code>randomScale</code> and a <code>seed</code> makes <strong>copies</strong>: a row of fence posts, a ring of
+  chairs with a little random turn and size. They are full copies (children, materials, flows) in the source's own
+  group, one undo step, uuids in order, and the same seed makes the same copies. This is copying, not
+  <a href="../../scatter/">scatter</a> over a surface.</li>
+<li><code>lookAt</code>: a world point <code>[x, y, z]</code> or another object's uuid. The object turns so its front (local +Z) faces it,
+  with +Y kept up. Lights point with <code>aim</code> instead.</li>
+<li><code>castShadow</code> / <code>receiveShadow</code> on any object; on a group or a model they apply to every mesh inside it.</li>
+</ul>
+</li>
 <li>Never fight a person: a locked object is skipped — the reply names the object and who is editing it — and the agent
   waits with <code>wait_for_edit</code>.</li>
 </ul>
@@ -6316,7 +6331,9 @@ JavaScript in the page can use it: <code>tools()</code>, <code>systemPrompt()</c
 <a href="https://github.com/theprototype-app/core/blob/main/AGENT-SESSIONS.md">AGENT-SESSIONS.md</a> and
 inlined in <a href="https://theprototype.app/llms-full.txt">/llms-full.txt</a>.</p>
 <p><strong>Versions.</strong> <code>tpAgent.version</code> is the contract (1.x): new methods and fields are minor versions, a removed or changed
-one is a new major. The <code>@theprototype/agent</code> package follows the app release it shipped with and says so in its
+one is a new major. Release 1.59 speaks contract <strong>1.6.0</strong> (the shape batch, mesh colours, copies, facing, shadows,
+mesh stats and the scene budget). A call written for 1.5 gives the same result, with one fix: a part made in a group
+with no <code>position</code> now sits at the group's origin (<a href="../agent-geometry/#building-a-model-part-by-part">part by part</a>). The <code>@theprototype/agent</code> package follows the app release it shipped with and says so in its
 <code>status</code> (<code>contractNote</code>) when the page speaks a different contract major — update it with
 <code>npx -y @theprototype/agent@latest</code>.</p>
 <p>For a light peer without a browser (objects only), see the <a href="../console-agent/">Console Agent</a>
@@ -6341,7 +6358,7 @@ one is a new major. The <code>@theprototype/agent</code> package follows the app
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-03
+    2026-11-04
   </span>
 
     

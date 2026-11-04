@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Material Presets", "url": "https://docs.theprototype.app/materials/", "description": "A material preset is a named look for an object's surface — colour, roughness, metalness, glow, transparency and up to two image maps (a texture and a normal map) — that you apply with one click.…", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.57.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/materials/presets-wood.webp", "caption": "The Presets row with Wood applied."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/materials/presets-edit.webp", "caption": "Editing your presets."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Material Presets", "url": "https://docs.theprototype.app/materials/", "description": "A material preset is a named look for an object's surface — colour, roughness, metalness, glow, transparency and its image maps (a colour texture and the maps below) — that you apply with one…", "dateModified": "2026-11-04", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.59.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/materials/presets-wood.webp", "caption": "The Presets row with Wood applied."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/materials/presets-edit.webp", "caption": "Editing your presets."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/materials/maps.webp", "caption": "The Maps rows in the Material section."}]}</script>
 </head>
   
   
@@ -905,6 +905,39 @@
       Using presets
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load-a-set-of-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load a set of maps…
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared-saved-undone" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shared, saved, undone
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -5998,6 +6031,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Maps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#load-a-set-of-maps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Load a set of maps…
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared-saved-undone" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shared, saved, undone
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#fish-scales-and-the-look-tier" class="md-nav__link">
     <span class="md-ellipsis">
       Fish scales and the look tier
@@ -6048,8 +6114,8 @@
 
 
 <h1 id="material-presets">Material Presets</h1>
-<p>A <strong>material preset</strong> is a named look for an object's surface — colour, roughness, metalness, glow, transparency and up
-to two image maps (a texture and a normal map) — that you apply with one click. Eight come built in: <strong>Wood</strong>, <strong>Metal</strong>,
+<p>A <strong>material preset</strong> is a named look for an object's surface — colour, roughness, metalness, glow, transparency and
+its image maps (a colour texture and the <a href="#maps">maps</a> below) — that you apply with one click. Eight come built in: <strong>Wood</strong>, <strong>Metal</strong>,
 <strong>Plastic</strong>, <strong>Glass</strong>, <strong>Stone</strong>, <strong>Rubber</strong>, <strong>Fish scales</strong> and <strong>Neon</strong>. You can save your own, rename and delete them, and everyone
 in your session sees your presets and can use them.</p>
 <p><strong>Where:</strong> select an object and open its properties (double-click it, or right-click ▸ <strong>Properties</strong>). In the
@@ -6091,6 +6157,111 @@ in your session sees your presets and can use them.</p>
 <li><strong>Rename</strong>, <strong>download</strong> as a <code>.matpreset.json</code> file, and <strong>delete</strong> (it asks first).</li>
 </ol>
 </div>
+<h2 id="maps">Maps</h2>
+<p><em>New in 1.59.</em> Beside its colour image (<strong>Set texture…</strong>), a material can carry five more image maps that give a
+surface real detail: worn edges that shine, grooves between planks, a glowing panel. They are in the same
+<strong>Material</strong> section, under the texture row, headed <strong>Maps</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Row</th>
+<th>What the image says</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Normal</strong></td>
+<td>small bumps and grooves that catch the light, without changing the shape</td>
+</tr>
+<tr>
+<td><strong>Roughness</strong></td>
+<td>where the surface is rough or shiny (the image's green channel)</td>
+</tr>
+<tr>
+<td><strong>Metalness</strong></td>
+<td>where the surface is metal (the blue channel)</td>
+</tr>
+<tr>
+<td><strong>Emission</strong></td>
+<td>where the surface glows</td>
+</tr>
+<tr>
+<td><strong>AO</strong></td>
+<td>ambient occlusion: darker creases and corners (the red channel)</td>
+</tr>
+</tbody>
+</table>
+<p>A row shows only when the material type has that slot: a <strong>Standard</strong> or <strong>Physical</strong> material has all five, Phong,
+Lambert and Toon have Normal, Emission and AO, and Basic has only AO.</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/materials/maps.webp" data-desc-position="bottom"><img alt="The Material section's Maps rows under the texture row: Normal, Roughness, Metalness, Emission and AO, each with a button to pick its image." class="shot" height="271" loading="lazy" src="../img/materials/maps.webp" width="311"></a></p>
+<figcaption>
+<p>The Maps rows in the Material section.</p>
+</figcaption>
+</figure>
+<ul>
+<li><strong>Set…</strong> picks an image from your device: PNG, JPEG or WebP (an iPhone HEIC photo is converted to a JPEG first).
+  You can also drop an image from the <a href="../explorer/">Explorer</a> or from your computer onto a row. Large images are
+  scaled to 1024 pixels on the long side.</li>
+<li>Once a map is set, its <strong>thumbnail</strong> replaces Set…: click it to choose another image, or press <strong>Remove</strong>. A map
+  that came with an imported model says <em>From the model</em>.</li>
+<li><strong>Normal strength</strong> (0 to 10, default 1) appears under Normal once it has a map, and <strong>AO strength</strong> (0 to 1) under
+  AO.</li>
+<li><strong>Tiling</strong> — <strong>Tile U</strong>, <strong>Tile V</strong>, <strong>Offset U</strong>, <strong>Offset V</strong> and <strong>Rotation °</strong> — appears once the material has
+  any map. It applies to all of the material's maps together, the colour image included. A negative tile mirrors
+  the image.</li>
+</ul>
+<h3 id="load-a-set-of-maps">Load a set of maps…</h3>
+<p>Texture sites and PBR tools hand you a material as several files: <code>wood_color.jpg</code>, <code>wood_normal.png</code>,
+<code>wood_roughness.jpg</code> and so on. <strong>Load a set of maps…</strong> (under the rows) picks them all at once and puts each file in
+the slot its name says. The <strong>last</strong> naming word in the file name decides, so <code>metal_plate_diff_1k.jpg</code> goes to the
+colour image even though it says <em>metal</em> first:</p>
+<table>
+<thead>
+<tr>
+<th>Slot</th>
+<th>Words in the file name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Colour image</td>
+<td><code>color</code>, <code>colour</code>, <code>col</code>, <code>albedo</code>, <code>basecolor</code>, <code>diffuse</code>, <code>diff</code></td>
+</tr>
+<tr>
+<td>Normal</td>
+<td><code>normal</code>, <code>nor</code>, <code>nrm</code>, <code>norm</code>, <code>normalgl</code>, <code>normaldx</code></td>
+</tr>
+<tr>
+<td>Roughness</td>
+<td><code>roughness</code>, <code>rough</code>, <code>rgh</code></td>
+</tr>
+<tr>
+<td>Metalness</td>
+<td><code>metalness</code>, <code>metallic</code>, <code>metal</code>, <code>mtl</code></td>
+</tr>
+<tr>
+<td>Emission</td>
+<td><code>emissive</code>, <code>emission</code>, <code>emit</code>, <code>glow</code></td>
+</tr>
+<tr>
+<td>AO</td>
+<td><code>ao</code>, <code>occlusion</code>, <code>ambientocclusion</code></td>
+</tr>
+</tbody>
+</table>
+<p>Words are separated by <code>_</code>, <code>-</code>, spaces, dots or a change of case (<code>woodNormal</code>). A file whose name says none of these
+is named in a message, so you can set it on its own row. The whole set is one undo step.</p>
+<h3 id="shared-saved-undone">Shared, saved, undone</h3>
+<ul>
+<li>With <a href="../controls/#editing-a-multi-selection">several objects selected</a> the heading says <em>applies to all N</em>, and
+  every change reaches all of them.</li>
+<li>Everyone in the session sees maps the moment you set them, each change is one <strong>Undo</strong> step, and they are saved in
+  scenes, in your <a href="#using-presets">presets</a> and in a glTF export.</li>
+<li>An <a href="../ai/agent-look/">AI agent</a> can set them too.</li>
+<li>Removing a map that was loaded <strong>compressed</strong> (KTX2, for example from a <a href="../publish-export/#optimize-for-quest-web">For Quest / web</a>
+  file) cannot be undone: there is no image to put back.</li>
+</ul>
 <h2 id="fish-scales-and-the-look-tier">Fish scales and the look tier</h2>
 <p><strong>Fish scales</strong> is an iridescent look: a thin film over the surface shifts its colour with the viewing angle (the
 silver-blue flash of a turning fish), over a procedural relief of overlapping scales, with a light clear coat and a hint
@@ -6166,7 +6337,7 @@ material, so saving on a headset and opening on a desktop shows the full look ag
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-03
+    2026-11-04
   </span>
 
     

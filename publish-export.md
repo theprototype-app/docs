@@ -172,7 +172,9 @@ for: Full quality / For Quest / web**. Your last choice is remembered on this de
 - **For Quest / web**:
     - **GLTF** becomes one **`<name>-quest.glb`** with KTX2/Basis textures (at most 2048 px), compressed geometry
       (meshopt) and the LOD chain (MSFT_lod). Viewers need KTX2 + meshopt support (three.js, Babylon.js,
-      model-viewer); ThePrototype loads it back with the textures compressed on the GPU.
+      model-viewer); ThePrototype loads it back with the textures compressed on the GPU. The optimizer cannot keep
+      [look animation](https://docs.theprototype.app/animation.md#saving-and-export) (material, visibility, light and field-of-view channels), so
+      this file leaves it out and a note says so; a Full quality glTF keeps it.
     - **Scene** (`<name>-quest.tpscene`) keeps its format: textures are resized and a KTX2 copy of each rides in the
       file, and heavy objects get an LOD chain. ThePrototype puts the compressed textures on the GPU when it opens it;
       an older version opens it with the (resized) pictures.

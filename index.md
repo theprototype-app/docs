@@ -48,6 +48,21 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.59 — looks finished everywhere.** A material takes [normal, roughness, metalness, emission and AO maps](https://docs.theprototype.app/materials.md#maps)
+beside its colour image, with tiling, offset and rotation, and **Load a set of maps…** sorts a texture set into its
+slots by file name. Skies are [much sharper](https://docs.theprototype.app/camera.md#how-sharp-the-sky-is) — up to 4K, 8K for Meadow, a small one
+first and the sharp one swapped in — with a **Sky quality** per scene that players can change in a game's menu. A
+scene's [look now shows in a headset](https://docs.theprototype.app/post-processing.md#in-a-headset): tone mapping, colour grading, LUTs and vignette,
+with no extra pass. A glTF export carries [look animation](https://docs.theprototype.app/animation.md#saving-and-export) — fades, colours, lights and a
+camera's new **Field of view** channel — and the scene's cameras. [Film](https://docs.theprototype.app/film.md#how-the-camera-moves) lets you choose
+how the camera moves (Phone tilt, Touch, Walk, Tripod, Keyboard + mouse), sets what you see behind a walk and its scale,
+pauses at a mark when tracking is lost, and lists [your shots](https://docs.theprototype.app/film.md#your-shots) to preview, trim, rename and export
+one by one or joined. Agents [build models part by part](https://docs.theprototype.app/ai/agent-geometry.md#building-a-model-part-by-part): a part
+made in a group stays in the group's space, up to 50 shapes in one step, coloured as they are made, plus copies, facing
+and shadows. Also fixed: coming back to the browser on a phone no longer flashes
+["The 3D view has stopped"](https://docs.theprototype.app/performance.md#the-3d-view-has-stopped), and a harmless browser warning no longer pops up as
+"Something went wrong". To try it, pick the **Meadow** sky and set **Sky quality** to **Max**.
+
 **1.58 — film with your phone, share it as a video.** [Film with your phone](https://docs.theprototype.app/film.md) makes your phone the viewfinder
 of a camera in the scene: turn it to look around, walk or use the stick to move, zoom, tilt and pull focus, and press
 **●** — the take is recorded while the Timeline plays and lands on it as keyed [Property tracks](https://docs.theprototype.app/timeline.md#tracks),
@@ -449,7 +464,7 @@ new [Smart unwrap (xatlas)](https://docs.theprototype.app/modules.md#smart-unwra
 image](https://docs.theprototype.app/camera.md#sky-images-hdri) (an HDRI) can now be the scene's sky and its light: objects take its colours, shiny
 ones reflect it, water mirrors its clouds and the sun sits where the photo's sun is. Pick **Clear sky**, **Meadow**,
 **Sunrise**, **Starlight** or **Photo studio**, or upload your own `.hdr` / `.exr`, with Rotation, Image light, Sky blur
-and Tone mapping, and a [quality setting](https://docs.theprototype.app/camera.md#sky-image-quality) for headsets. **Add ▸
+and Tone mapping, and a [quality setting](https://docs.theprototype.app/camera.md#sky-image-quality-this-device) for headsets. **Add ▸
 [Architecture](https://docs.theprototype.app/architecture.md)** builds walls with doorways and windows, doors and casement windows that open in
 Interact and Play for everyone, and straight, L, U and spiral stairs, every number editable in the Inspector.
 [Math](https://docs.theprototype.app/nodes/math.md#more-than-two-inputs) and [Gate](https://docs.theprototype.app/nodes/gate.md#more-than-two-inputs) take up to eight inputs, the

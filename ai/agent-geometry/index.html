@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Shapes and modelling with an agent", "url": "https://docs.theprototype.app/ai/agent-geometry/", "description": "An agent joined to your session (Build with an AI agent) can do more than place boxes and spheres. Six tools let it change an object's shape in place, turn a profile into a vase, sweep a rail…", "dateModified": "2026-10-29"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Shapes and modelling with an agent", "url": "https://docs.theprototype.app/ai/agent-geometry/", "description": "An agent joined to your session (Build with an AI agent) can do more than place boxes and spheres. Six tools let it change an object's shape in place, turn a profile into a vase, sweep a rail…", "dateModified": "2026-11-04"}</script>
 </head>
   
   
@@ -5659,6 +5659,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#building-a-model-part-by-part" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building a model part by part
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
     <span class="md-ellipsis">
       Reference
@@ -5708,6 +5717,15 @@
   <a href="#create_mesh-a-mesh-from-raw-data" class="md-nav__link">
     <span class="md-ellipsis">
       create_mesh: a mesh from raw data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_shapes-many-shapes-in-one-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_shapes: many shapes in one step
     </span>
   </a>
   
@@ -5768,6 +5786,15 @@
   <a href="#a-tower-from-a-box-edit_mesh" class="md-nav__link">
     <span class="md-ellipsis">
       A tower from a box (edit_mesh)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-lamp-part-by-part-inside-a-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      A lamp, part by part, inside a group
     </span>
   </a>
   
@@ -6073,6 +6100,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#building-a-model-part-by-part" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building a model part by part
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
     <span class="md-ellipsis">
       Reference
@@ -6122,6 +6158,15 @@
   <a href="#create_mesh-a-mesh-from-raw-data" class="md-nav__link">
     <span class="md-ellipsis">
       create_mesh: a mesh from raw data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_shapes-many-shapes-in-one-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_shapes: many shapes in one step
     </span>
   </a>
   
@@ -6187,6 +6232,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#a-lamp-part-by-part-inside-a-group" class="md-nav__link">
+    <span class="md-ellipsis">
+      A lamp, part by part, inside a group
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6227,6 +6281,20 @@ rail along a path, cut a sign out of an outline, build a mesh from raw data and 
   activity log.</li>
 <li>Viewers cannot use them. A view-only agent gets a refusal and nothing changes.</li>
 <li>A tool that creates something returns the new object's <strong>uuid</strong>.</li>
+</ul>
+<h2 id="building-a-model-part-by-part">Building a model part by part</h2>
+<p><em>New in 1.59.</em> An agent can build a model the way you would: a group for the whole thing, and parts made inside it.</p>
+<ul>
+<li><strong>Inside a group, everything is the group's own space.</strong> With <code>parentUuid</code>, a part's <code>position</code>, <code>rotation</code> and
+  <code>scale</code> <strong>and its own points</strong> (a lathe profile, an outline, a tube's path, a mesh's vertices) are measured in the
+  group, the numbers <code>list_scene</code> shows for its children. No <code>position</code> puts the part at the group's origin. So a part
+  lands where it was asked even in a group that was moved or turned, and it turns with the group afterwards. (Before
+  1.59, a part made in a moved or turned group ended up in the wrong place.)</li>
+<li><strong>Up to 50 shapes in one step</strong> with <code>create_shapes</code> (<a href="#create_shapes-many-shapes-in-one-step">below</a>): one call, one
+  undo step.</li>
+<li><strong>Colour as you make it:</strong> <code>create_mesh</code> takes a colour per vertex or a material per face, and a flat low-poly look
+  (<a href="#create_mesh-a-mesh-from-raw-data">below</a>).</li>
+<li><strong>Shadows:</strong> every shape tool takes <code>castShadow</code> and <code>receiveShadow</code> (both on by default).</li>
 </ul>
 <h2 id="reference">Reference</h2>
 <h3 id="set_geometry-reshape-in-place">set_geometry: reshape in place</h3>
@@ -6286,8 +6354,16 @@ columns, lamp shades.</p>
 <td>a partial turn, in radians (default a full turn)</td>
 </tr>
 <tr>
-<td><code>name</code>, <code>position</code>, <code>rotation</code>, <code>scale</code>, <code>color</code>, <code>parentUuid</code>, <code>physics</code></td>
+<td><code>name</code>, <code>position</code>, <code>rotation</code>, <code>scale</code>, <code>color</code>, <code>physics</code></td>
 <td>as in <code>create_objects</code> (physics defaults to static)</td>
+</tr>
+<tr>
+<td><code>parentUuid</code></td>
+<td>a group to make it in: the position, rotation, scale and the profile are then in the group's own space</td>
+</tr>
+<tr>
+<td><code>castShadow</code>, <code>receiveShadow</code></td>
+<td>shadows, on by default</td>
 </tr>
 </tbody>
 </table>
@@ -6306,7 +6382,7 @@ columns, lamp shades.</p>
 <tbody>
 <tr>
 <td><code>path</code></td>
-<td><code>[[x, y, z], …]</code>, 2 to 200 points, in <strong>scene</strong> space. The object is placed at the path's centre.</td>
+<td><code>[[x, y, z], …]</code>, 2 to 200 points, in <strong>scene</strong> space — or in the group's own space with <code>parentUuid</code>. The object is placed at the path's centre.</td>
 </tr>
 <tr>
 <td><code>radius</code></td>
@@ -6327,6 +6403,14 @@ columns, lamp shades.</p>
 <tr>
 <td><code>name</code>, <code>color</code>, <code>physics</code></td>
 <td>as in <code>create_objects</code></td>
+</tr>
+<tr>
+<td><code>parentUuid</code></td>
+<td>a group to make it in: the path is then in the group's own space</td>
+</tr>
+<tr>
+<td><code>castShadow</code>, <code>receiveShadow</code></td>
+<td>shadows, on by default</td>
 </tr>
 </tbody>
 </table>
@@ -6361,8 +6445,16 @@ columns, lamp shades.</p>
 <td>1 to 32</td>
 </tr>
 <tr>
-<td><code>name</code>, <code>position</code>, <code>rotation</code>, <code>scale</code>, <code>color</code>, <code>parentUuid</code>, <code>physics</code></td>
+<td><code>name</code>, <code>position</code>, <code>rotation</code>, <code>scale</code>, <code>color</code>, <code>physics</code></td>
 <td>as in <code>create_objects</code></td>
+</tr>
+<tr>
+<td><code>parentUuid</code></td>
+<td>a group to make it in: the position, rotation, scale and the outline are then in the group's own space</td>
+</tr>
+<tr>
+<td><code>castShadow</code>, <code>receiveShadow</code></td>
+<td>shadows, on by default</td>
 </tr>
 </tbody>
 </table>
@@ -6393,13 +6485,57 @@ columns, lamp shades.</p>
 <td>smooth shading (the normals are always computed)</td>
 </tr>
 <tr>
-<td><code>name</code>, <code>position</code>, <code>rotation</code>, <code>scale</code>, <code>color</code>, <code>parentUuid</code>, <code>physics</code></td>
+<td><code>flatShading</code></td>
+<td><code>true</code> for hard facets: one flat normal per triangle, the low-poly look</td>
+</tr>
+<tr>
+<td><code>materials</code></td>
+<td>up to 16 material slots, each <code>{color, roughness, metalness, opacity, emissive, emissiveIntensity, name}</code></td>
+</tr>
+<tr>
+<td><code>faceMaterials</code></td>
+<td>the slot of each face (0 = the first), one per face in the order of <code>faces</code>: parts in different colours</td>
+</tr>
+<tr>
+<td><code>colors</code></td>
+<td>one <code>[r, g, b]</code> (0 to 1) per vertex, in the order of <code>vertices</code>: a painted gradient, multiplied by the material colour</td>
+</tr>
+<tr>
+<td><code>name</code>, <code>position</code>, <code>rotation</code>, <code>scale</code>, <code>color</code>, <code>physics</code></td>
 <td>as in <code>create_objects</code></td>
+</tr>
+<tr>
+<td><code>parentUuid</code></td>
+<td>a group to make it in: the position, rotation, scale and the vertices are then in the group's own space</td>
+</tr>
+<tr>
+<td><code>castShadow</code>, <code>receiveShadow</code></td>
+<td>shadows, on by default</td>
 </tr>
 </tbody>
 </table>
 <p>The reply says how many triangles were made. A quad face stays one face in Edit Mesh, so the mesh is ready
-for <code>edit_mesh</code>.</p>
+for <code>edit_mesh</code>. <strong>Material slots last</strong> through later <code>edit_mesh</code> calls; <strong>vertex colours last</strong> only while an edit
+keeps the number of vertices (an extrude, for example, drops them).</p>
+<h3 id="create_shapes-many-shapes-in-one-step">create_shapes: many shapes in one step</h3>
+<p>Up to <strong>50</strong> shapes of any of the four kinds in one call and <strong>one undo step</strong> — the parts of a chair, a row of
+columns, a whole little building.</p>
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th>what it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>shapes</code></td>
+<td><code>[{action, …}, …]</code>, 1 to 50 entries. <code>action</code> is <code>lathe</code>, <code>tube</code>, <code>extrude</code> or <code>mesh</code>, and the entry carries that tool's fields under the same name: <code>{"action": "mesh", "mesh": {…create_mesh's fields…}}</code>. <code>parentUuid</code> works in each entry.</td>
+</tr>
+</tbody>
+</table>
+<p>Every entry is checked <strong>before anything is made</strong>: if one is wrong, nothing is made and the error names it
+(<code>shapes[3]: …</code>). The uuids come back <strong>in the order given</strong>.</p>
 <h3 id="edit_mesh-model-a-mesh">edit_mesh: model a mesh</h3>
 <p>Runs <a href="../../mesh-editing/">Edit Mesh</a> operations on a selection of a mesh's faces or vertices.</p>
 <table>
@@ -6504,6 +6640,22 @@ plan.</p>
 only the inner part again, all in one undo step. Each step carries on with the previous step's selection,
 so the last extrude leaves the ring around the inner face where it is. To raise the ring as well, give that
 step its own <code>"select": {"normal": "up"}</code>.</p>
+<h3 id="a-lamp-part-by-part-inside-a-group">A lamp, part by part, inside a group</h3>
+<blockquote>
+<p>"Build a little lamp on the table."</p>
+</blockquote>
+<p>The agent makes an empty group on the table with <code>create_objects</code>, then the parts inside it in one step. Every number
+is in the group's own space, so the lamp is right however the group is placed or turned:</p>
+<div class="highlight"><pre><span></span><code><span class="err">crea</span><span class="kc">te</span><span class="err">_shapes</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"shapes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lathe"</span><span class="p">,</span><span class="w"> </span><span class="nt">"lathe"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Base"</span><span class="p">,</span><span class="w"> </span><span class="nt">"parentUuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"…"</span><span class="p">,</span><span class="w"> </span><span class="nt">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mf">0.12</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="mf">0.03</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.03</span><span class="p">]],</span><span class="w"> </span><span class="nt">"segments"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">}},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tube"</span><span class="p">,</span><span class="w"> </span><span class="nt">"tube"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stem"</span><span class="p">,</span><span class="w"> </span><span class="nt">"parentUuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"…"</span><span class="p">,</span><span class="w"> </span><span class="nt">"path"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.03</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.3</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mf">0.08</span><span class="p">,</span><span class="w"> </span><span class="mf">0.42</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">]],</span><span class="w"> </span><span class="nt">"radius"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">}},</span>
+<span class="w">    </span><span class="p">{</span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lathe"</span><span class="p">,</span><span class="w"> </span><span class="nt">"lathe"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shade"</span><span class="p">,</span><span class="w"> </span><span class="nt">"parentUuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"…"</span><span class="p">,</span><span class="w"> </span><span class="nt">"position"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.08</span><span class="p">,</span><span class="w"> </span><span class="mf">0.38</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="nt">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[[</span><span class="mf">0.03</span><span class="p">,</span><span class="w"> </span><span class="mf">0.08</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="mf">0.11</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">]],</span><span class="w"> </span><span class="nt">"segments"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="nt">"castShadow"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">}}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>One undo step takes the whole lamp back. To swing the shade, <code>create_pivot</code> with the stem and the shade at a point
+<code>local</code> to the group (see <a href="../agent-assist/#several-parts-on-one-joint-create_pivot">Undo, pivots and images</a>).</p>
 
 
 
@@ -6524,7 +6676,7 @@ step its own <code>"select": {"normal": "up"}</code>.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-10-29
+    2026-11-04
   </span>
 
     
