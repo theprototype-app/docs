@@ -51,7 +51,7 @@ yours in [Your games & stats](community.md#your-games-stats).
 
 ## Export: a game in a zip
 
-![The Export tab of Publish / Export with the itch.io preset selected: the three presets itch.io, Static host and Embed, the title Mini Golf, the viewport size, the cover image and CDN boxes, the size estimate, the itch.io upload notes and Build & download zip. 1: the itch.io preset.](img/publish-export/export-tab.webp){ .shot width="647" height="739" loading=lazy }
+![The Export tab of Publish / Export with the itch.io preset selected: the three presets itch.io, Static host and Embed, the title Mini Golf, the viewport size, the cover image and CDN boxes, the size estimate, the itch.io upload notes and Build & download zip. 1: the itch.io preset.](img/publish-export/export-tab.webp){ .shot width="647" height="724" loading=lazy }
 /// caption
 The Export tab with the itch.io preset selected.
 ///
@@ -183,7 +183,9 @@ for: Full quality / For Quest / web**. Your last choice is remembered on this de
 - **For Quest / web**:
     - **GLTF** becomes one **`<name>-quest.glb`** with KTX2/Basis textures (at most 2048 px), compressed geometry
       (meshopt) and the LOD chain (MSFT_lod). Viewers need KTX2 + meshopt support (three.js, Babylon.js,
-      model-viewer); ThePrototype loads it back with the textures compressed on the GPU.
+      model-viewer); ThePrototype loads it back with the textures compressed on the GPU. The optimizer cannot keep
+      [look animation](animation.md#saving-and-export) (material, visibility, light and field-of-view channels), so
+      this file leaves it out and a note says so; a Full quality glTF keeps it.
     - **Scene** (`<name>-quest.tpscene`) keeps its format: textures are resized and a KTX2 copy of each rides in the
       file, and heavy objects get an LOD chain. ThePrototype puts the compressed textures on the GPU when it opens it;
       an older version opens it with the (resized) pictures.

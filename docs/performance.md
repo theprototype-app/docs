@@ -42,7 +42,7 @@ bar if you want it there. Since 1.39 you can move the chip anywhere, or hide it,
 [Edit positions](controls.md#moving-the-clusters); **Customize toolbar… ▸ Budget chip** shows it again. Opening its
 **▾** menu no longer makes it vanish.
 
-![The budget chip beside the toolbar, reading Quest over 100 % in red: the scene has four point lights, more than the two a Quest's budget allows.](img/performance/budget-chip.webp){ .shot width="647" height="72" loading=lazy }
+![The budget chip beside the toolbar, reading Quest over 100 % in red: the scene has four point lights, more than the two a Quest's budget allows.](img/performance/budget-chip.webp){ .shot width="646" height="72" loading=lazy }
 /// caption
 The budget chip sits beside the toolbar.
 ///
@@ -265,6 +265,13 @@ this order:
 Still stuck? In Chrome or Edge, open `chrome://gpu` (`edge://gpu`) and look at the *WebGL2* line: *Hardware accelerated*
 is what the app needs; *Disabled* or *Unavailable* says the browser has switched it off. The page also sends one short
 [error report](privacy.md#anonymous-error-reports) about the missing WebGL, if reports are on.
+
+### "The 3D view has stopped"
+
+This card appears when the browser takes the page's graphics away while you are using it — after a graphics driver
+reset, for example. Your scene is still there: press **Save scene**, then **Reload**. Often the view comes back by
+itself. Since 1.59 the card waits until the view has stayed stopped for **3 seconds** on a page you can see, so a phone
+that hands the graphics back a moment after you return to the browser shows nothing at all.
 
 ## Budgets in CI
 

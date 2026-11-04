@@ -117,7 +117,7 @@ A `.tpscene` file is a zip bundle containing everything a scene needs:
 
 ## GLTF
 
-Turn it on first with **Save options ▸ Offer GLTF**. Exports the **selected objects** as standard GLTF — use this to take your work into other 3D tools. With nothing selected it asks first and offers **Export all** for the whole scene. Loading accepts `.gltf` back. Animated flow effects are parked at their base pose during export so the file stores clean transforms.
+Turn it on first with **Save options ▸ Offer GLTF**. Exports the **selected objects** as standard GLTF — use this to take your work into other 3D tools. With nothing selected it asks first and offers **Export all** for the whole scene. Loading accepts `.gltf` back. Animated flow effects are parked at their base pose during export so the file stores clean transforms. Animation clips leave as glTF animation — since 1.59 with their material, visibility, light and field-of-view channels, and camera objects as glTF cameras (see [Animation ▸ Saving and export](animation.md#saving-and-export)).
 
 ## JSON (legacy)
 

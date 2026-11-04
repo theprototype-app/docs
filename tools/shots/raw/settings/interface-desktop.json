@@ -2,10 +2,10 @@
  "id": "interface-desktop",
  "spec": "c2496e82ee59",
  "dpr": 2,
- "shotAt": "2026-11-04T01:05:15.838Z",
+ "shotAt": "2026-11-04T10:37:55.537Z",
  "app": {
-  "version": "1.57.0",
-  "sha": "a0546b7f"
+  "version": "1.58.0",
+  "sha": "676de06c"
  },
  "uiHits": [
   "dialog.tp-ui",

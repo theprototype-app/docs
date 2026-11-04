@@ -30,9 +30,9 @@ shots:
     fade: []
   - id: filming
     alt: >-
-      Film mode on a folded phone, looking through the Film camera at the crate and the ball: the first-use tip at the
-      top says how to film, the lens controls and the round record button sit at the bottom.
-    caption: Filming through the Film camera, with the first-use tip.
+      Film mode on a folded phone: Film camera with the motion pill (Touch) at the top, the first-use Look card (1 of 3)
+      in the middle, the lens dial on the right, and the stick and the round record button at the bottom.
+    caption: Filming through the Film camera, with the first-use card.
     setup:
       - {click: '.film-pick-cam'}
       - {wait: 2500}

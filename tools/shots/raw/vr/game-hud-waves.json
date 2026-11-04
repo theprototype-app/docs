@@ -2,10 +2,10 @@
  "id": "game-hud-waves",
  "spec": "920e9eeb4807",
  "dpr": 2,
- "shotAt": "2026-11-03T14:19:25.973Z",
+ "shotAt": "2026-11-04T10:45:41.510Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.58.0",
+  "sha": "676de06c"
  },
  "uiHits": [],
  "width": 1280,

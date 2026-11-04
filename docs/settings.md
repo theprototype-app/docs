@@ -128,7 +128,7 @@ cache uses the older Cache Storage, and where neither exists everything download
 | Workspace layouts | new | **Interface ▸ Windows & chrome ▸ Workspace layouts** — see [Workspace layouts](controls.md#workspace-layouts) |
 | Knocked-off idle | new | **Interface ▸ Avatars ▸ Knocked-off idle** — see [Knocked-off idle](avatars.md#knocked-off-idle) |
 | Density | new | **Interface ▸ Density** — see [above](#density) |
-| Sky image quality | new in 1.27 | **Scene ▸ Performance ▸ Sky image quality** — **Auto** / **Full (1k)** / **Low (headset)**, this device only; see [Sky image quality](camera.md#sky-image-quality) |
+| Sky image quality | new in 1.27, sizes in 1.59 | **Scene ▸ Performance ▸ Sky image quality** — **Auto** / **Low (headset)** / **Standard (1K)** / **High (2K)** / **Max (4K)**, this device only; see [Sky image quality](camera.md#sky-image-quality-this-device) |
 | World grab snapping | new in 1.28 | **VR ▸ Controls ▸ World grab snapping** — on by default, this device only; see [Snapping the world while you grab it](vr.md#snapping-the-world-while-you-grab-it) |
 | Placement preview | new in 1.31 | **Scene ▸ Performance ▸ Placement preview** — **Full model** / **Within budget** / **Box only**, plus the preview triangle budget and **Show dimensions**, this device only; see [The Placement preview setting](explorer.md#the-placement-preview-setting) |
 | Undock button | new in 1.32 | **Interface ▸ Windows & chrome ▸ Undock button** — **Active window** / **All as one tabbed group**, this device only; see [Docked windows](interface.md#docked-windows) |

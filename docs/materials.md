@@ -1,7 +1,7 @@
 # Material Presets
 
-A **material preset** is a named look for an object's surface — colour, roughness, metalness, glow, transparency and up
-to two image maps (a texture and a normal map) — that you apply with one click. Eight come built in: **Wood**, **Metal**,
+A **material preset** is a named look for an object's surface — colour, roughness, metalness, glow, transparency and
+its image maps (a colour texture and the [maps](#maps) below) — that you apply with one click. Eight come built in: **Wood**, **Metal**,
 **Plastic**, **Glass**, **Stone**, **Rubber**, **Fish scales** and **Neon**. You can save your own, rename and delete them, and everyone
 in your session sees your presets and can use them.
 
@@ -40,6 +40,68 @@ Editing your presets.
 1. The **pencil** starts editing; the tick finishes.
 2. **Rename**, **download** as a `.matpreset.json` file, and **delete** (it asks first).
 </div>
+
+## Maps
+
+*New in 1.59.* Beside its colour image (**Set texture…**), a material can carry five more image maps that give a
+surface real detail: worn edges that shine, grooves between planks, a glowing panel. They are in the same
+**Material** section, under the texture row, headed **Maps**:
+
+| Row | What the image says |
+|---|---|
+| **Normal** | small bumps and grooves that catch the light, without changing the shape |
+| **Roughness** | where the surface is rough or shiny (the image's green channel) |
+| **Metalness** | where the surface is metal (the blue channel) |
+| **Emission** | where the surface glows |
+| **AO** | ambient occlusion: darker creases and corners (the red channel) |
+
+A row shows only when the material type has that slot: a **Standard** or **Physical** material has all five, Phong,
+Lambert and Toon have Normal, Emission and AO, and Basic has only AO.
+
+![The Material section's Maps rows under the texture row: Normal, Roughness, Metalness, Emission and AO, each with a button to pick its image.](img/materials/maps.webp){ .shot width="311" height="271" loading=lazy }
+/// caption
+The Maps rows in the Material section.
+///
+
+- **Set…** picks an image from your device: PNG, JPEG or WebP (an iPhone HEIC photo is converted to a JPEG first).
+  You can also drop an image from the [Explorer](explorer.md) or from your computer onto a row. Large images are
+  scaled to 1024 pixels on the long side.
+- Once a map is set, its **thumbnail** replaces Set…: click it to choose another image, or press **Remove**. A map
+  that came with an imported model says *From the model*.
+- **Normal strength** (0 to 10, default 1) appears under Normal once it has a map, and **AO strength** (0 to 1) under
+  AO.
+- **Tiling** — **Tile U**, **Tile V**, **Offset U**, **Offset V** and **Rotation °** — appears once the material has
+  any map. It applies to all of the material's maps together, the colour image included. A negative tile mirrors
+  the image.
+
+### Load a set of maps…
+
+Texture sites and PBR tools hand you a material as several files: `wood_color.jpg`, `wood_normal.png`,
+`wood_roughness.jpg` and so on. **Load a set of maps…** (under the rows) picks them all at once and puts each file in
+the slot its name says. The **last** naming word in the file name decides, so `metal_plate_diff_1k.jpg` goes to the
+colour image even though it says *metal* first:
+
+| Slot | Words in the file name |
+|---|---|
+| Colour image | `color`, `colour`, `col`, `albedo`, `basecolor`, `diffuse`, `diff` |
+| Normal | `normal`, `nor`, `nrm`, `norm`, `normalgl`, `normaldx` |
+| Roughness | `roughness`, `rough`, `rgh` |
+| Metalness | `metalness`, `metallic`, `metal`, `mtl` |
+| Emission | `emissive`, `emission`, `emit`, `glow` |
+| AO | `ao`, `occlusion`, `ambientocclusion` |
+
+Words are separated by `_`, `-`, spaces, dots or a change of case (`woodNormal`). A file whose name says none of these
+is named in a message, so you can set it on its own row. The whole set is one undo step.
+
+### Shared, saved, undone
+
+- With [several objects selected](controls.md#editing-a-multi-selection) the heading says *applies to all N*, and
+  every change reaches all of them.
+- Everyone in the session sees maps the moment you set them, each change is one **Undo** step, and they are saved in
+  scenes, in your [presets](#using-presets) and in a glTF export.
+- An [AI agent](ai/agent-look.md) can set them too.
+- Removing a map that was loaded **compressed** (KTX2, for example from a [For Quest / web](publish-export.md#optimize-for-quest-web)
+  file) cannot be undone: there is no image to put back.
 
 ## Fish scales and the look tier
 

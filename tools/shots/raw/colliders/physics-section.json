@@ -2,10 +2,10 @@
  "id": "physics-section",
  "spec": "e6c8a15beed8",
  "dpr": 2,
- "shotAt": "2026-11-03T15:06:03.328Z",
+ "shotAt": "2026-11-04T09:50:55.355Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.58.0",
+  "sha": "676de06c"
  },
  "uiHits": [
   "label.tp-ui",
@@ -19,13 +19,13 @@
   "div.tp-ui",
   "p.mt-1",
   "input#inspector-search.sf-input",
-  "label#ins-toggle-lmrxfew-label.it-label"
+  "label#ins-toggle-y4auq1x-label.it-label"
  ],
  "width": 1376,
  "height": 1320,
  "crop": {
   "x": 742,
-  "y": 156,
+  "y": 155,
   "w": 688,
   "h": 660
  },
@@ -39,19 +39,19 @@
  "anchors": {
   "1": {
    "x": 970,
-   "y": 102.375,
+   "y": 103.375,
    "w": 205.9375,
    "h": 60
   },
   "2": {
    "x": 786,
-   "y": 1181.625,
+   "y": 1182.625,
    "w": 482,
    "h": 35.09375
   },
   "3": {
    "x": 140.4763354742754,
-   "y": 369.4516780617316,
+   "y": 371.4516780617316,
    "w": 413.3101488332504,
    "h": 419.14596914740787
   }

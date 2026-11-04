@@ -219,11 +219,31 @@ If you turn *look through it too* off and nothing is looking through that camera
 node has nothing visible to do — the card says so while you build, and it tells you
 once if you fire it anyway.
 
+## In a headset
+
+*New in 1.59.* A scene's look now shows in a [VR headset](vr.md) too. A headset cannot afford the desktop's extra
+full-screen passes, so the colour effects are worked into the way every object is drawn, with no extra rendering pass.
+Effects that need to read the pixels around each pixel, or the depth of the scene, stay desktop-only.
+
+| Effect | In a headset |
+|---|---|
+| Tone mapping | shown, exactly as on the desktop |
+| Hue / saturation | shown, exactly |
+| Brightness / contrast | shown, exactly |
+| Anti-aliasing (SMAA) | the headset's own anti-aliasing does this job |
+| LUT (colour grade) | **approximate**: a close fit of the grade, so a strong curve in the LUT is softened |
+| Vignette | **approximate**: drawn over each eye |
+| Ambient occlusion, Bloom, Depth of field, Film grain, Chromatic aberration, Pixelation, Scanlines, Dot screen | not shown |
+| A post effect you built as a graph | not shown |
+
+Open an effect's row in the stack and it says so: *Approximate in a headset.* or *Not shown in a headset.* Effects that
+show exactly carry no note. The look still comes from the scene, so a headset in a session grades the same way as the
+desktops beside it.
+
 ## Limits worth knowing
 
-- **Post-processing does not run in VR.** The effects are skipped in a headset; objects
-  still look the same, and materials made with the [Shader Graph](shader-graph.md) are
-  unaffected.
+- **In a headset only part of the look shows** — see [In a headset](#in-a-headset). Materials made with the
+  [Shader Graph](shader-graph.md) are unaffected.
 - **The camera preview inset (PiP) shows the plain image**, without the look.
 - **Sprites, billboarded avatar photo cards and particles** do not write depth, so effects
   that read depth do not affect them. A strong stylize effect makes that more visible than

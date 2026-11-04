@@ -58,3 +58,19 @@ shots:
   annotate:
     - {n: 1, at: {selector: '#material-preset-edit'}, shape: box, pad: 3, badge: l, key: 'The **pencil** starts editing; the tick finishes.'}
     - {n: 2, at: {union: [{selector: '[data-preset-rename]'}, {selector: '[data-preset-delete]'}]}, shape: box, pad: 3, badge: r, key: '**Rename**, **download** as a `.matpreset.json` file, and **delete** (it asks first).'}
+# 72 (1.59): the Material section's Maps rows (MaterialMapSlots: #material-maps)
+- id: maps
+  kind: ui
+  setup:
+    - {create: Box, name: Crate, at: [0, 0.5, 0]}
+    - {select: Crate}
+    - {eval: "window.__stores.inspectorKind.set('selection'); window.__stores.inspectorClose.set(false)"}
+    - {wait: 1500}
+    - {eval: "document.getElementById('material-maps')?.scrollIntoView({block: 'center'})"}
+    - {wait: 800}
+  crop: {selector: '#material-maps', pad: 10}
+  fade: []
+  alt: >-
+    The Material section's Maps rows under the texture row: Normal, Roughness, Metalness, Emission and AO, each
+    with a button to pick its image.
+  caption: The Maps rows in the Material section.

@@ -2,10 +2,10 @@
  "id": "settings-tours",
  "spec": "194c16f1b955",
  "dpr": 2,
- "shotAt": "2026-11-04T01:10:51.857Z",
+ "shotAt": "2026-11-04T10:44:01.542Z",
  "app": {
-  "version": "1.57.0",
-  "sha": "a0546b7f"
+  "version": "1.58.0",
+  "sha": "676de06c"
  },
  "uiHits": [
   "header.wc-head",

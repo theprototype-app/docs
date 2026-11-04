@@ -55,7 +55,7 @@ at it for the full name), a second line with where they are and their role, and 
 **Go to** or the role list. On a computer the panel is 320–420 px wide and grows with long names, so nothing wraps or
 breaks. On a phone it opens as a sheet like the notifications: a grab bar on top, and a swipe down closes it.
 
-![The Connected panel on a computer with four people, one row each: an avatar, the name, the scene they are in, the ping and their short id underneath, then their role (Admin, Editor or Viewer) and Watch on the right. 1: you. 2: a person's role list.](img/connection/peers-panel-desktop.webp){ .shot width="398" height="278" loading=lazy }
+![The Connected panel on a computer with four people, one row each: an avatar, the name, the scene they are in, the ping and their short id underneath, then their role (Admin, Editor or Viewer) and Watch on the right. 1: you. 2: a person's role list.](img/connection/peers-panel-desktop.webp){ .shot width="389" height="278" loading=lazy }
 /// caption
 The Connected panel on a computer.
 ///
@@ -91,7 +91,7 @@ tab): it joins in one step with the role you chose, for a limited time. See [Inv
 
 ### What guests see
 
-![The Connect drawer's Info tab on a computer: the Session rows — State, Your ID, Guests see with its list, Host — and the Signaling server rows under them. 1: Guests see, which of your files a guest sees in the Explorer.](img/connection/guests-see.webp){ .shot width="540" height="338" loading=lazy }
+![The Connect drawer's Info tab on a computer: the Session rows — State, Your ID, Guests see with its list, Host — and the Signaling server rows under them. 1: Guests see, which of your files a guest sees in the Explorer.](img/connection/guests-see.webp){ .shot width="542" height="338" loading=lazy }
 /// caption
 Connect ▸ ▾ ▸ Info, where the host picks what guests see.
 ///

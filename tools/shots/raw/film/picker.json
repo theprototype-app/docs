@@ -1,11 +1,11 @@
 {
  "id": "picker",
- "spec": "4d1446da7fc6",
+ "spec": "03301c53de56",
  "dpr": 2,
- "shotAt": "2026-11-04T01:49:46.643Z",
+ "shotAt": "2026-11-04T10:01:05.302Z",
  "app": {
-  "version": "1.57.0",
-  "sha": "03dbcbb4"
+  "version": "1.58.0",
+  "sha": "676de06c"
  },
  "uiHits": [
   "nav#ps-bar.ps-bar",
