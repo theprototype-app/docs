@@ -2,10 +2,10 @@
  "id": "add-scatter",
  "spec": "5efbe106370a",
  "dpr": 2,
- "shotAt": "2026-11-04T10:37:29.701Z",
+ "shotAt": "2026-11-04T14:37:01.106Z",
  "app": {
-  "version": "1.58.0",
-  "sha": "676de06c"
+  "version": "1.59.0",
+  "sha": "16f4bbdb"
  },
  "uiHits": [
   "button.sb-tab",
