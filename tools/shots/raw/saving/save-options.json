@@ -2,10 +2,10 @@
  "id": "save-options",
  "spec": "27ee80476df3",
  "dpr": 2,
- "shotAt": "2026-11-03T14:14:40.182Z",
+ "shotAt": "2026-11-04T01:04:30.501Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "dialog#save-options-modal.tp-ui",

@@ -2,10 +2,10 @@
  "id": "inspector-paint",
  "spec": "99e8dd8afde9",
  "dpr": 2,
- "shotAt": "2026-11-03T14:49:53.731Z",
+ "shotAt": "2026-11-04T01:07:50.520Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "div#inspector.tp-ui",
@@ -35,7 +35,7 @@
   "1": {
    "x": 12,
    "y": 444.1875,
-   "w": 135.65625,
+   "w": 136,
    "h": 64
   }
  },

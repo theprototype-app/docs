@@ -22,7 +22,8 @@ chip — tap it for your ID, the join field, Info and Toasts. The signaling link
 
 Since 1.32 the connection status is a **coloured dot**. On a computer the full bar keeps your invite ID and the peer-ID
 field, with the dot at its left end. On a phone the chip at the top of the screen says the state beside the dot —
-**Connected**, **Connecting…** or **Offline** — whenever the top bar has room. When the bar is crowded (people are
+**Connect** (not connected yet, the same word as on a computer), **Connecting…**, **Connected** or **Offline** (the peer
+server cannot be reached) — whenever the top bar has room. When the bar is crowded (people are
 connected and you are in a call, so the peers button and the microphone take the space) it shrinks back to the dot and
 a ▾ (and the microphone while you are in a call).
 
@@ -54,7 +55,7 @@ at it for the full name), a second line with where they are and their role, and 
 **Go to** or the role list. On a computer the panel is 320–420 px wide and grows with long names, so nothing wraps or
 breaks. On a phone it opens as a sheet like the notifications: a grab bar on top, and a swipe down closes it.
 
-![The Connected panel on a computer with four people, one row each: an avatar, the name, the scene they are in, the ping and their short id underneath, then their role (Admin, Editor or Viewer) and Watch on the right. 1: you. 2: a person's role list.](img/connection/peers-panel-desktop.webp){ .shot width="393" height="278" loading=lazy }
+![The Connected panel on a computer with four people, one row each: an avatar, the name, the scene they are in, the ping and their short id underneath, then their role (Admin, Editor or Viewer) and Watch on the right. 1: you. 2: a person's role list.](img/connection/peers-panel-desktop.webp){ .shot width="398" height="278" loading=lazy }
 /// caption
 The Connected panel on a computer.
 ///
@@ -67,6 +68,15 @@ The Connected panel on a computer.
 Right-click a person (long-press on touch, <kbd>Shift</kbd>+<kbd>F10</kbd> from the keyboard) for the **peer menu**:
 their profile, Go to, Watch, Mute, Hide — and, for the host or an admin, **Remove from session** and **Remove and
 block**. See [Users and moderation](people.md). An AI agent shows a robot and "AI" instead of a character.
+
+**Public rooms in the panel** (*since 1.57*). On theprototype.app the panel also lists the live [public rooms](#public-rooms-theprototypeapp)
+and who is in them, under their own **Public rooms** heading below your session — *live rooms anyone can join, not part
+of your session*. The people listed there are not connected to you; **Watch** beside them is greyed with the reason.
+
+![The Connected panel on a folded phone: Peer (you) in an Untitled scene, then the Public rooms heading with the line Live rooms anyone can join — not part of your session, a room called Atrium and Someone Else in it, Playing, with Watch.](img/connection/public-rooms-phone.webp){ .shot width="390" height="206" loading=lazy }
+/// caption
+Public rooms under their own heading, apart from your session.
+///
 
 ### Inviting someone
 
@@ -81,7 +91,7 @@ tab): it joins in one step with the role you chose, for a limited time. See [Inv
 
 ### What guests see
 
-![The Connect drawer's Info tab on a computer: the Session rows — State, Your ID, Guests see with its list, Host — and the Signaling server rows under them. 1: Guests see, which of your files a guest sees in the Explorer.](img/connection/guests-see.webp){ .shot width="542" height="338" loading=lazy }
+![The Connect drawer's Info tab on a computer: the Session rows — State, Your ID, Guests see with its list, Host — and the Signaling server rows under them. 1: Guests see, which of your files a guest sees in the Explorer.](img/connection/guests-see.webp){ .shot width="540" height="338" loading=lazy }
 /// caption
 Connect ▸ ▾ ▸ Info, where the host picks what guests see.
 ///

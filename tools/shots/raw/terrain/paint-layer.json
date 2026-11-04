@@ -2,10 +2,10 @@
  "id": "paint-layer",
  "spec": "f6d4190f5668",
  "dpr": 2,
- "shotAt": "2026-11-03T14:49:37.382Z",
+ "shotAt": "2026-11-04T01:07:32.536Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "svg.lucide",

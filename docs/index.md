@@ -52,6 +52,14 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.57 — shared games start fast.** Play links, embeds and pasted links now open the [play view](share-a-game.md): the
+game, its HUD and touch controls and none of the editor — about a third less to load, so a shared game's first picture
+comes several seconds sooner on a phone. **Invite ▸ Person** has a [Play link](share-a-game.md#play-together-from-a-link)
+that brings friends into your session straight into the game. On a narrow phone the game's HUD now sits below the Play
+buttons ([touch controls](touch-controls.md)), the connection chip says **Connect** before you connect, and live public
+rooms have their own heading in the [Connected panel](connection.md#who-is-here-the-peers-panel). To try it, open
+**Templates ▸ Topple tower**, a tiny game set up for sharing.
+
 **1.56 — agents build the whole shape and the whole look.** An agent, the in-app Assistant and Claude on claude.ai can
 now [make shapes](ai/agent-geometry.md) the basic objects cannot (a vase on a lathe, a rail along a path, an extruded
 sign, a mesh from its own points), reshape and model them, and [dress them](ai/agent-look.md): materials and textures —

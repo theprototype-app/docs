@@ -2,10 +2,10 @@
  "id": "export-tab",
  "spec": "0d6eae238223",
  "dpr": 2,
- "shotAt": "2026-11-03T14:11:21.299Z",
+ "shotAt": "2026-11-04T01:01:05.415Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "dialog#publish-export-modal.tp-ui",
@@ -22,19 +22,19 @@
   "div.ex-check"
  ],
  "width": 1294,
- "height": 1448,
+ "height": 1478,
  "crop": {
   "x": 21,
-  "y": 58,
+  "y": 50,
   "w": 647,
-  "h": 724
+  "h": 739
  },
  "cut": [],
  "fade": [],
  "anchors": {
   "1": {
    "x": 45.28125,
-   "y": 282,
+   "y": 282.8125,
    "w": 389.8125,
    "h": 129
   }

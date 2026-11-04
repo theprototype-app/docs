@@ -2,10 +2,10 @@
  "id": "budget-chip",
  "spec": "3effe48b981e",
  "dpr": 2,
- "shotAt": "2026-11-03T14:08:51.641Z",
+ "shotAt": "2026-11-04T00:58:09.316Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "p.hud-cell",
@@ -18,15 +18,15 @@
   "button#toolbar-customize.hud-cell",
   "circle",
   "button#budget-chip.bc-main",
-  "span.bc-target",
-  "span#budget-chip-percent.bc-pct"
+  "span.budget-dot",
+  "span.bc-target"
  ],
- "width": 1292,
+ "width": 1294,
  "height": 144,
  "crop": {
   "x": 470,
   "y": 824,
-  "w": 646,
+  "w": 647,
   "h": 72
  },
  "cut": [],

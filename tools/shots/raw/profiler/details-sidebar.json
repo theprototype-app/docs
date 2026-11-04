@@ -2,10 +2,10 @@
  "id": "details-sidebar",
  "spec": "e01c4a165e96",
  "dpr": 2,
- "shotAt": "2026-11-03T18:13:38.321Z",
+ "shotAt": "2026-11-04T01:00:39.735Z",
  "app": {
-  "version": "1.55.0",
-  "sha": "34c6810f"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "div.resize-cue",

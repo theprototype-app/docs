@@ -2,10 +2,10 @@
  "id": "charcontroller",
  "spec": "fb506b951b6e",
  "dpr": 2,
- "shotAt": "2026-11-03T13:56:16.192Z",
+ "shotAt": "2026-11-04T00:48:21.128Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "div.svelte-flow__pane",

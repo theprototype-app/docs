@@ -1,10 +1,11 @@
 {
  "id": "camera-object",
+ "spec": "46c2fb39035a",
  "dpr": 2,
- "shotAt": "2026-10-31T15:04:45.176Z",
+ "shotAt": "2026-11-04T00:17:05.076Z",
  "app": {
-  "version": "1.51.0",
-  "sha": "6fe31dae"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "div.pip-bar",

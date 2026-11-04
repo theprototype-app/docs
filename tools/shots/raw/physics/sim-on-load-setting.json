@@ -2,10 +2,10 @@
  "id": "sim-on-load-setting",
  "spec": "443641649b04",
  "dpr": 2,
- "shotAt": "2026-11-03T14:45:33.448Z",
+ "shotAt": "2026-11-04T00:58:55.898Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "div#inspector.tp-ui",

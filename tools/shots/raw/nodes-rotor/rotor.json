@@ -2,10 +2,10 @@
  "id": "rotor",
  "spec": "eb50e1c04fe5",
  "dpr": 2,
- "shotAt": "2026-11-03T14:02:42.104Z",
+ "shotAt": "2026-11-04T00:54:22.006Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "div.svelte-flow__pane",

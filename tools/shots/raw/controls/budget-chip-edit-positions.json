@@ -1,10 +1,11 @@
 {
  "id": "budget-chip-edit-positions",
+ "spec": "db5053ec29cd",
  "dpr": 2,
- "shotAt": "2026-10-31T14:46:49.159Z",
+ "shotAt": "2026-11-04T00:27:35.356Z",
  "app": {
-  "version": "1.51.0",
-  "sha": "6fe31dae"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "svg.lucide",

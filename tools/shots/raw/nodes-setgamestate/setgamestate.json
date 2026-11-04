@@ -2,10 +2,10 @@
  "id": "setgamestate",
  "spec": "61acdebdc50f",
  "dpr": 2,
- "shotAt": "2026-11-03T14:03:13.388Z",
+ "shotAt": "2026-11-04T00:54:51.794Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "div.svelte-flow__pane",

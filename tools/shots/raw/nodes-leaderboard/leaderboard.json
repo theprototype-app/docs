@@ -2,10 +2,10 @@
  "id": "leaderboard",
  "spec": "3625a0dd254f",
  "dpr": 2,
- "shotAt": "2026-11-03T14:44:18.304Z",
+ "shotAt": "2026-11-04T00:52:52.310Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.57.0",
+  "sha": "a0546b7f"
  },
  "uiHits": [
   "div.svelte-flow__pane",

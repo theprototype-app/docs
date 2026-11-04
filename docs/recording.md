@@ -36,7 +36,7 @@ The dialog estimates the file size before you start.
 A small bar shows the progress, with **Cancel**. The camera is yours alone: nothing is sent to anyone in the session, and
 your view comes back where it was afterwards.
 
-![The recording bar above the toolbar while a turntable take runs: the red dot, Recording, the progress bar, the seconds done of the take's length, and Cancel.](img/recording/recording-bar.webp){ .shot width="425" height="92" loading=lazy }
+![The recording bar above the toolbar while a turntable take runs: the red dot, Recording, the progress bar, the seconds done of the take's length, and Cancel.](img/recording/recording-bar.webp){ .shot width="434" height="92" loading=lazy }
 /// caption
 The recording bar sits above the toolbar while a take runs.
 ///

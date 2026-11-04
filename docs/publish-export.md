@@ -32,7 +32,9 @@ A play link, an embed and an exported game all open the same **player**:
   **Enter VR** — with the hint *Click to look around · Esc to pause*. The click is needed: a browser only locks the
   pointer, goes fullscreen or enters VR after a real click.
 - A **fullscreen** button sits in the bottom-left corner where the page may go fullscreen.
-- A play link or embed also has *Open in theprototype.app ↗*, which opens the same scene in the full editor.
+- A play link or embed also has *Open in theprototype.app ↗*, which opens the same scene in the full editor, and
+  *Remix*, which opens it as your copy (*1.57*). Since 1.57 play links and embeds open the slim **play view** — see
+  [Share a Game](share-a-game.md).
 - The **Made with ThePrototype** badge — a small, semi-transparent TP logo with solid dark-grey accents, so a game's colours never tint it — sits in the bottom-right corner; hovering
   shows *Made with ThePrototype*, clicking opens theprototype.app in a new tab. It moves up out of the way of a game's
   touch buttons and is not drawn inside a VR headset.
@@ -49,7 +51,7 @@ yours in [Your games & stats](community.md#your-games-stats).
 
 ## Export: a game in a zip
 
-![The Export tab of Publish / Export with the itch.io preset selected: the three presets itch.io, Static host and Embed, the title Mini Golf, the viewport size, the cover image and CDN boxes, the size estimate, the itch.io upload notes and Build & download zip. 1: the itch.io preset.](img/publish-export/export-tab.webp){ .shot width="647" height="724" loading=lazy }
+![The Export tab of Publish / Export with the itch.io preset selected: the three presets itch.io, Static host and Embed, the title Mini Golf, the viewport size, the cover image and CDN boxes, the size estimate, the itch.io upload notes and Build & download zip. 1: the itch.io preset.](img/publish-export/export-tab.webp){ .shot width="647" height="739" loading=lazy }
 /// caption
 The Export tab with the itch.io preset selected.
 ///

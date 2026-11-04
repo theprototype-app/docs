@@ -20,8 +20,9 @@ shots:
   - id: sky-run-phone
     replaces: img/touch-controls/sky-run-phone.webp
     alt: >-
-      Sky Run in Play on a folded phone: the stage name, the timer and the coins at the top, the move stick in the
-      lower left and the Jump button in the lower right, over the first platform of the level.
+      Sky Run in Play on a folded phone: the ✕, the Playing chip and the Menu pill along the top, the game's bar with
+      the stage name, the timer and the coins below them, the move stick in the lower left and the Jump button in the
+      lower right, over the first platform of the level.
     caption: Sky Run on a folded phone.
     crop: {rect: [0, 0, 390, 896]}
     fade: []
