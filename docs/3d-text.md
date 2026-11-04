@@ -43,7 +43,7 @@ Switch to **Solid** and these rows appear:
 | Row | What it does |
 |---|---|
 | **Depth** | How thick the letters are |
-| **Bevel** / **Bevel depth** / **Bevel steps** | The rounded edge: how wide, how deep, how smooth. A bevel of 0 means sharp edges |
+| **Bevel** / **Bevel depth** / **Bevel steps** | The rounded edge: how wide, how deep, how smooth. A bevel of 0 means sharp edges. The width stops at 6 % of the letter size, so thin strokes and small holes (a, e, g) stay whole |
 | **Curves** | Low, medium or high: how smooth the round parts are (more triangles) |
 | **Sides** | The colour of the sides. ↺ sets it back to a darker shade of the face colour |
 | **Metal** / **Roughness** | The material of face and sides |
