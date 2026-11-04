@@ -229,6 +229,8 @@ nav:
     - Build with an AI agent: ai/build-with-an-agent.md
     - Materials and looks with an agent: ai/agent-look.md
     - Undo, pivots and images with an agent: ai/agent-assist.md
+    - Test and fix a game with an agent: ai/agent-runtime.md
+    - Here, this and you (pings): ai/agent-spatial.md
     - Talk to your agent: ai/talk-to-your-agent.md
     - "Recipe: better models with img2threejs": ai/img2threejs.md
     - "Recipe: pixel art with Pixling": ai/pixling.md
