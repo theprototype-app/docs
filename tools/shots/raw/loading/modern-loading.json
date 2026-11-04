@@ -2,10 +2,10 @@
  "id": "modern-loading",
  "spec": "0536536800ff",
  "dpr": 2,
- "shotAt": "2026-11-04T14:07:41.165Z",
+ "shotAt": "2026-11-04T21:04:12.099Z",
  "app": {
-  "version": "1.59.0",
-  "sha": "16f4bbdb"
+  "version": "1.60.0",
+  "sha": "9c57479a"
  },
  "uiHits": [],
  "width": 920,

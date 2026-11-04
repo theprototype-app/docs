@@ -2,10 +2,10 @@
  "id": "rows-phone",
  "spec": "c189820c8edc",
  "dpr": 2,
- "shotAt": "2026-11-04T10:38:19.346Z",
+ "shotAt": "2026-11-04T21:29:01.466Z",
  "app": {
-  "version": "1.58.0",
-  "sha": "676de06c"
+  "version": "1.60.0",
+  "sha": "9c57479a"
  },
  "uiHits": [
   "header.wc-head",

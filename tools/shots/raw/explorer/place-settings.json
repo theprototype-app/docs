@@ -2,10 +2,10 @@
  "id": "place-settings",
  "spec": "e6e7832002f0",
  "dpr": 2,
- "shotAt": "2026-11-04T10:00:21.075Z",
+ "shotAt": "2026-11-04T20:50:13.821Z",
  "app": {
-  "version": "1.58.0",
-  "sha": "676de06c"
+  "version": "1.60.0",
+  "sha": "9c57479a"
  },
  "uiHits": [
   "div#settings-main.settings-main",
@@ -33,9 +33,9 @@
  "fade": [],
  "anchors": {
   "1": {
-   "x": 710.3125,
-   "y": 88.59375,
-   "w": 585.6875,
+   "x": 704,
+   "y": 88.90625,
+   "w": 592,
    "h": 76
   }
  },

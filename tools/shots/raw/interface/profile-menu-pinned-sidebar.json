@@ -2,10 +2,10 @@
  "id": "profile-menu-pinned-sidebar",
  "spec": "0dddacaa8175",
  "dpr": 2,
- "shotAt": "2026-11-04T10:07:32.215Z",
+ "shotAt": "2026-11-04T20:59:35.419Z",
  "app": {
-  "version": "1.58.0",
-  "sha": "676de06c"
+  "version": "1.60.0",
+  "sha": "9c57479a"
  },
  "uiHits": [
   "div.connect-pill",

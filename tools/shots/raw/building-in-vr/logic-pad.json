@@ -2,10 +2,10 @@
  "id": "logic-pad",
  "spec": "fc671b4bcdc6",
  "dpr": 2,
- "shotAt": "2026-11-04T09:44:47.754Z",
+ "shotAt": "2026-11-04T20:34:28.892Z",
  "app": {
-  "version": "1.58.0",
-  "sha": "676de06c"
+  "version": "1.60.0",
+  "sha": "9c57479a"
  },
  "uiHits": [],
  "width": 768,

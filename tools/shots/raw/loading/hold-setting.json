@@ -2,10 +2,10 @@
  "id": "hold-setting",
  "spec": "6b5fe2b64e38",
  "dpr": 2,
- "shotAt": "2026-11-04T10:13:32.292Z",
+ "shotAt": "2026-11-04T21:05:03.367Z",
  "app": {
-  "version": "1.58.0",
-  "sha": "676de06c"
+  "version": "1.60.0",
+  "sha": "9c57479a"
  },
  "uiHits": [
   "div#inspector.tp-ui",

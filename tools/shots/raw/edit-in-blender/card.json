@@ -2,10 +2,10 @@
  "id": "card",
  "spec": "1142d0b542ce",
  "dpr": 2,
- "shotAt": "2026-11-04T09:59:22.626Z",
+ "shotAt": "2026-11-04T20:49:19.546Z",
  "app": {
-  "version": "1.58.0",
-  "sha": "676de06c"
+  "version": "1.60.0",
+  "sha": "9c57479a"
  },
  "uiHits": [
   "dialog.tp-ui",
@@ -15,33 +15,33 @@
   "p.text-xs",
   "div#edit-in-blender.flex",
   "button#edit-in-blender-watch.tp-ui",
-  "div.flex",
-  "ol.ml-4",
+  "div.md-body",
   "li",
+  "ol.ml-4",
   "span.text-text-muted",
   "button#edit-in-blender-again.tp-ui"
  ],
  "width": 1232,
- "height": 860,
+ "height": 828,
  "crop": {
   "x": 412,
-  "y": 235,
+  "y": 243,
   "w": 616,
-  "h": 430
+  "h": 414
  },
  "cut": [],
  "fade": [],
  "anchors": {
   "1": {
    "x": 102,
-   "y": 690,
-   "w": 415.71875,
+   "y": 658,
+   "w": 416,
    "h": 64
   },
   "2": {
    "x": 820,
-   "y": 690,
-   "w": 158.125,
+   "y": 658,
+   "w": 158,
    "h": 64
   }
  },

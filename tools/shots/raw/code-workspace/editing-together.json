@@ -2,10 +2,10 @@
  "id": "editing-together",
  "spec": "e5d0b1bcf16a",
  "dpr": 2,
- "shotAt": "2026-11-04T09:49:27.083Z",
+ "shotAt": "2026-11-04T20:38:42.982Z",
  "app": {
-  "version": "1.58.0",
-  "sha": "676de06c"
+  "version": "1.60.0",
+  "sha": "9c57479a"
  },
  "uiHits": [
   "div.resize-cue",
@@ -35,9 +35,9 @@
  ],
  "anchors": {
   "1": {
-   "x": 199.3125,
+   "x": 198,
    "y": 202,
-   "w": 141.125,
+   "w": 146,
    "h": 33
   }
  },
