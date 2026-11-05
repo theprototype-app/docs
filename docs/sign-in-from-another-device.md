@@ -28,7 +28,7 @@ Go to **theprototype.app/link** and type the code. (Scanning the QR opens the sa
 can also open **account menu ▸ Devices ▸ Sign in another device**.
 
 The sheet shows which device is asking: its type, browser and system (for example *Quest Browser on Meta Quest*),
-roughly where it is (the country), and how long ago it asked.
+roughly where it is (the country, when it can be told), and how long ago it asked.
 
 **Approve only a device you are holding right now.** If someone sent you a code or a link and asked you to "confirm"
 it, press **Deny**: approving would sign *them* in as you. Nobody from theprototype will ever ask you for a code.
@@ -89,7 +89,7 @@ If neither works, see [Can't sign in?](https://theprototype.app/cant-sign-in).
 
 ## What is recorded
 
-For each code: the account that approved it, the device type, browser and system, the country and the first part of
+For each code: the account that approved it, the device type, browser and system, the country (when it can be told) and the first part of
 the IP address, and what happened (approved, denied, ran out). Never the code itself. These records are kept for 30
 days. The **Devices** list keeps each device's type, browser, system, country, how it signed in and when it was last
 used, until the device is signed out (then 30 more days) or has not been used for 35 days. See the
