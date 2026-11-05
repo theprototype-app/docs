@@ -2,10 +2,10 @@
  "id": "quick-start-add",
  "spec": "6ca7e913b0ae",
  "dpr": 2,
- "shotAt": "2026-11-04T10:07:17.180Z",
+ "shotAt": "2026-11-04T20:59:19.481Z",
  "app": {
-  "version": "1.58.0",
-  "sha": "676de06c"
+  "version": "1.60.0",
+  "sha": "9c57479a"
  },
  "uiHits": [
   "div.fixed",
@@ -16,8 +16,7 @@
   "span.flex-1",
   "span.flex",
   "div.ctx-scroll",
-  "div.cursor-pointer",
-  "span.ctx-chev"
+  "div.cursor-pointer"
  ],
  "width": 1376,
  "height": 880,
@@ -40,11 +39,11 @@
   "1": {
    "x": 112,
    "y": 104.5,
-   "w": 317,
+   "w": 312,
    "h": 39
   },
   "2": {
-   "x": 918.59375,
+   "x": 908,
    "y": 128.5,
    "w": 224,
    "h": 39

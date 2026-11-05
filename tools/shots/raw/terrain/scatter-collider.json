@@ -2,10 +2,10 @@
  "id": "scatter-collider",
  "spec": "0d9d2e4f4604",
  "dpr": 2,
- "shotAt": "2026-11-04T10:41:10.798Z",
+ "shotAt": "2026-11-04T21:31:54.804Z",
  "app": {
-  "version": "1.58.0",
-  "sha": "676de06c"
+  "version": "1.60.0",
+  "sha": "9c57479a"
  },
  "uiHits": [
   "button.sb-tab",

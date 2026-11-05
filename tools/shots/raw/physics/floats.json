@@ -2,10 +2,10 @@
  "id": "floats",
  "spec": "17741167410e",
  "dpr": 2,
- "shotAt": "2026-11-04T14:31:41.091Z",
+ "shotAt": "2026-11-04T21:22:52.837Z",
  "app": {
-  "version": "1.59.0",
-  "sha": "16f4bbdb"
+  "version": "1.60.0",
+  "sha": "9c57479a"
  },
  "uiHits": [
   "svg.lucide",
@@ -13,13 +13,13 @@
   "button#budget-chip.bc-main",
   "span.bc-target",
   "span#budget-chip-percent.bc-pct",
-  "button#budget-chip-target.bc-caret",
   "div.ins-filter",
   "div#inspector.tp-ui",
   "div#physics-decompose-row.ui-row",
   "label#physics-sensor-label.it-label",
   "div#physics-collides-row.ui-row",
-  "button.tp-seg-btn"
+  "button.tp-seg-btn",
+  "div#physics-freeze-rot.ui-row"
  ],
  "width": 1348,
  "height": 1440,
@@ -43,7 +43,7 @@
   "1": {
    "x": 920,
    "y": 690.1875,
-   "w": 138.25,
+   "w": 133.1875,
    "h": 60
   },
   "2": {

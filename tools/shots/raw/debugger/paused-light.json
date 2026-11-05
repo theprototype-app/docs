@@ -2,32 +2,32 @@
  "id": "paused-light",
  "spec": "6cb2409c37e6",
  "dpr": 2,
- "shotAt": "2026-11-04T09:59:10.240Z",
+ "shotAt": "2026-11-04T20:49:08.712Z",
  "app": {
-  "version": "1.58.0",
-  "sha": "676de06c"
+  "version": "1.60.0",
+  "sha": "9c57479a"
  },
  "uiHits": [
   "div.toolbox-header",
   "div.toolbox-body",
   "div.toolbox-status",
   "svg.lucide",
-  "span#debug-queue.text-text-muted",
-  "p.tbx-label",
-  "button.debug-node",
-  "button#debug-watch-focus.tbx-cmd",
-  "span.debug-node",
+  "span.text-text-muted",
+  "div.debug-wire",
   "select#debug-watch-kind.ui-input",
+  "p.tbx-label",
+  "span.debug-dot",
   "button#debug-bp-clear.tbx-cmd",
+  "div#flow-debugger.ui-panel",
   "span"
  ],
  "width": 600,
- "height": 682,
+ "height": 720,
  "crop": {
   "x": 1124,
   "y": 76,
   "w": 300,
-  "h": 341
+  "h": 360
  },
  "cut": [],
  "fade": [],

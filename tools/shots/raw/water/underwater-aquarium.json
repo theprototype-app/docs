@@ -2,10 +2,10 @@
  "id": "underwater-aquarium",
  "spec": "b2fa569ebbe0",
  "dpr": 2,
- "shotAt": "2026-11-04T10:47:57.081Z",
+ "shotAt": "2026-11-04T21:38:34.117Z",
  "app": {
-  "version": "1.58.0",
-  "sha": "676de06c"
+  "version": "1.60.0",
+  "sha": "9c57479a"
  },
  "uiHits": [],
  "width": 1760,

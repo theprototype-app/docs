@@ -2,13 +2,12 @@
  "id": "window-over-sidebar-hint",
  "spec": "984e5edf40d5",
  "dpr": 2,
- "shotAt": "2026-11-04T09:56:08.729Z",
+ "shotAt": "2026-11-04T20:46:07.893Z",
  "app": {
-  "version": "1.58.0",
-  "sha": "676de06c"
+  "version": "1.60.0",
+  "sha": "9c57479a"
  },
  "uiHits": [
-  "input.cx-input",
   "button.cx-btn",
   "div.connect-pill",
   "button#connect-rooms-button.hud-cell",
@@ -19,7 +18,8 @@
   "div#inspector.tp-ui",
   "svg.lucide",
   "button.sec-panel-head",
-  "div.tp-ui"
+  "div.tp-ui",
+  "div.sec-panel-body"
  ],
  "width": 1240,
  "height": 1168,
@@ -40,9 +40,9 @@
  ],
  "anchors": {
   "1": {
-   "x": 836.75,
+   "x": 831.84375,
    "y": 830.5,
-   "w": 166.5,
+   "w": 176.3125,
    "h": 55
   }
  },

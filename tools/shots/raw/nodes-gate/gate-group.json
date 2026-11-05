@@ -2,15 +2,13 @@
  "id": "gate-group",
  "spec": "b0282970dd2b",
  "dpr": 2,
- "shotAt": "2026-11-04T10:22:13.313Z",
+ "shotAt": "2026-11-04T21:13:08.291Z",
  "app": {
-  "version": "1.58.0",
-  "sha": "676de06c"
+  "version": "1.60.0",
+  "sha": "9c57479a"
  },
  "uiHits": [
   "div.svelte-flow__pane",
-  "div.node-card",
-  "div.svelte-flow__node",
   "span.h-2",
   "div.relative",
   "div.flex",
@@ -18,12 +16,12 @@
   "div.svelte-flow__handle",
   "path.svelte-flow__edge-interaction"
  ],
- "width": 678,
+ "width": 672,
  "height": 880,
  "crop": {
   "x": 208,
   "y": 284,
-  "w": 339,
+  "w": 336,
   "h": 440
  },
  "cut": [],

@@ -75,7 +75,7 @@ what each element is wired to in the flow graph.
 | field | what it does |
 |---|---|
 | `preset` | a [look preset](../camera.md#environment-presets) by name, such as `Daylight` or `Night` |
-| `hdri` | a [sky image](../camera.md#sky-images-hdri): `clearsky`, `meadow`, `sunrise`, `starlight` or `photostudio`, or `{name, rotation, intensity, blur, background, quality, minQuality}`. `{hash}` is an HDR file in your library. A web address is refused. `null` removes the sky image. |
+| `hdri` | a [sky image](../camera.md#sky-images-hdri): `clearsky`, `meadow`, `sunrise`, `starlight` or `photostudio`, or `{name, rotation, intensity, blur, background, quality, minQuality}`. `{hash}` is an HDR file in your library; *since 1.61* also `"cc0:polyhaven/<id>"` from `search_assets` (fetched into the library first), and an HDR the agent sends with `assets upload`. A web address is refused. `null` removes the sky image. |
 | `background` | a colour, such as `"#0b1020"` or `"navy"` |
 | `gradient` | `{"top": colour, "bottom": colour}` |
 | `fog` | `{color, near, far}` in metres, or `{color, density}` (0.01 thin, 0.1 thick), or `null` for none |

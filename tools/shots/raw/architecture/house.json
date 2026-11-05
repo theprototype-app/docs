@@ -2,10 +2,10 @@
  "id": "house",
  "spec": "12fdf58d52fa",
  "dpr": 2,
- "shotAt": "2026-11-04T13:27:44.972Z",
+ "shotAt": "2026-11-04T20:23:30.690Z",
  "app": {
-  "version": "1.59.0",
-  "sha": "16f4bbdb"
+  "version": "1.60.0",
+  "sha": "9c57479a"
  },
  "uiHits": [],
  "width": 2160,
