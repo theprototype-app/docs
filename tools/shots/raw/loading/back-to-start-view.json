@@ -2,22 +2,20 @@
  "id": "back-to-start-view",
  "spec": "0ee1eee9f484",
  "dpr": 2,
- "shotAt": "2026-11-04T21:04:49.920Z",
+ "shotAt": "2026-11-05T10:58:16.796Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
   "div.connect-pill",
   "button.cx-id",
   "span.cx-id-text",
-  "path",
   "svg.lucide",
   "button#connect-request-ai.hud-cell",
   "input.cx-input",
   "button#start-view-back.sv-card",
   "button.cx-btn",
-  "div.cx-connect",
   "button#connect-rooms-button.hud-cell",
   "button#connect-info-button.hud-cell"
  ],
@@ -41,9 +39,9 @@
  ],
  "anchors": {
   "1": {
-   "x": 558,
+   "x": 558.34375,
    "y": 130,
-   "w": 260,
+   "w": 259.3125,
    "h": 55.1875
   }
  },

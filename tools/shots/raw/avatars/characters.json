@@ -2,10 +2,10 @@
  "id": "characters",
  "spec": "1c7cc7e3d453",
  "dpr": 2,
- "shotAt": "2026-11-04T09:41:13.021Z",
+ "shotAt": "2026-11-05T10:25:46.225Z",
  "app": {
-  "version": "1.58.0",
-  "sha": "676de06c"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [],
  "width": 2880,

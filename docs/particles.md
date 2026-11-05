@@ -112,7 +112,7 @@ Draw as set to Trails.
   drawn as trails, and the Inspector says so.
 - In **Local** space a ribbon rides along with the object; switch **Space** to **World** for a trail that stays behind it.
 
-![The Magic wisps preset drawn as trails: pale purple streaks curling off a grey cube that sweeps from side to side. 1: the moving cube the trails come from.](img/particles/wisps-trails.webp){ .shot .vignette width="1002" height="600" loading=lazy }
+![The Magic wisps preset drawn as trails: pale purple streaks curling off a grey cube that sweeps from side to side. 1: the moving cube the trails come from.](img/particles/wisps-trails.webp){ .shot .vignette width="1079" height="600" loading=lazy }
 /// caption
 The Magic wisps preset.
 ///

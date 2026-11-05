@@ -2,10 +2,10 @@
  "id": "sidebar-tab-menu",
  "spec": "2aa55f709947",
  "dpr": 2,
- "shotAt": "2026-11-04T21:00:03.874Z",
+ "shotAt": "2026-11-05T10:52:56.660Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
   "div.fixed",

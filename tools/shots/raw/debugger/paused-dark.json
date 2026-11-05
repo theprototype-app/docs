@@ -2,41 +2,41 @@
  "id": "paused-dark",
  "spec": "decd9f3f10fd",
  "dpr": 2,
- "shotAt": "2026-11-04T20:48:51.245Z",
+ "shotAt": "2026-11-05T10:43:37.364Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
   "div.toolbox-header",
   "div.toolbox-body",
   "div.toolbox-status",
   "svg.lucide",
-  "span.text-text-muted",
-  "div.debug-wire",
-  "select#debug-watch-kind.ui-input",
+  "span#debug-queue.text-text-muted",
   "p.tbx-label",
-  "span.debug-dot",
+  "button.debug-node",
+  "button#debug-watch-focus.tbx-cmd",
+  "span.debug-node",
+  "select#debug-watch-kind.ui-input",
   "button#debug-bp-clear.tbx-cmd",
-  "div#flow-debugger.ui-panel",
   "span"
  ],
  "width": 600,
- "height": 720,
+ "height": 682,
  "crop": {
   "x": 1124,
   "y": 76,
   "w": 300,
-  "h": 360
+  "h": 341
  },
  "cut": [],
  "fade": [],
  "anchors": {
   "1": {
-   "x": 173.46875,
+   "x": 165.375,
    "y": 78.28125,
-   "w": 97.09375,
-   "h": 34
+   "w": 90.46875,
+   "h": 32
   }
  },
  "kind": "ui"

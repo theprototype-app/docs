@@ -2,10 +2,10 @@
  "id": "save-options-optimize-for",
  "spec": "8bf956ff8e76",
  "dpr": 2,
- "shotAt": "2026-11-04T21:24:51.711Z",
+ "shotAt": "2026-11-05T11:18:36.839Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
   "dialog#save-options-modal.tp-ui",
@@ -33,9 +33,9 @@
  "fade": [],
  "anchors": {
   "1": {
-   "x": 502,
+   "x": 503.59375,
    "y": 615.09375,
-   "w": 454,
+   "w": 452.40625,
    "h": 76
   }
  },

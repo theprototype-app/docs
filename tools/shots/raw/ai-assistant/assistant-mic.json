@@ -2,10 +2,10 @@
  "id": "assistant-mic",
  "spec": "2c7293294132",
  "dpr": 2,
- "shotAt": "2026-11-04T20:22:14.801Z",
+ "shotAt": "2026-11-05T10:21:24.487Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
   "header.wc-head",
@@ -33,7 +33,7 @@
  "fade": [],
  "anchors": {
   "1": {
-   "x": 772,
+   "x": 772.6875,
    "y": 794,
    "w": 64,
    "h": 64

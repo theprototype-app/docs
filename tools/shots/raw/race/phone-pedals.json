@@ -2,10 +2,10 @@
  "id": "phone-pedals",
  "spec": "509915694d84",
  "dpr": 2,
- "shotAt": "2026-11-04T21:26:23.638Z",
+ "shotAt": "2026-11-05T11:20:05.833Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
   "button#touch-btn-brake.touch-btn",

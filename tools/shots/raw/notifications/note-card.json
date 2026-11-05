@@ -2,10 +2,10 @@
  "id": "note-card",
  "spec": "e703edd006f5",
  "dpr": 2,
- "shotAt": "2026-11-04T21:18:35.842Z",
+ "shotAt": "2026-11-05T11:12:51.020Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
   "span.marker-num",
@@ -15,11 +15,11 @@
   "button.note-shape",
   "button.note-flat",
   "div.note-body",
-  "circle",
-  "span",
   "svg.lucide",
+  "span",
   "div.notes-body",
-  "span.notes-num"
+  "span.notes-num",
+  "div.note-swatches"
  ],
  "width": 892,
  "height": 1640,
@@ -44,7 +44,7 @@
   "2": {
    "x": 312,
    "y": 641.5,
-   "w": 141.90625,
+   "w": 140.5,
    "h": 33
   }
  },

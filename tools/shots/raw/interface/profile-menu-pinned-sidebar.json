@@ -2,13 +2,13 @@
  "id": "profile-menu-pinned-sidebar",
  "spec": "0dddacaa8175",
  "dpr": 2,
- "shotAt": "2026-11-04T20:59:35.419Z",
+ "shotAt": "2026-11-05T10:52:23.732Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
-  "div.connect-pill",
+  "svg.lucide",
   "span.pm-name",
   "span.pm-sub",
   "button.tp-ui",

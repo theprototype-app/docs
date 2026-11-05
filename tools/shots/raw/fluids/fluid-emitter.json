@@ -2,10 +2,10 @@
  "id": "fluid-emitter",
  "spec": "144e88ae42c9",
  "dpr": 2,
- "shotAt": "2026-11-04T20:51:25.724Z",
+ "shotAt": "2026-11-05T10:46:30.492Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
   "path",

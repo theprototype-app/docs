@@ -2,10 +2,10 @@
  "id": "filming",
  "spec": "ea5f77697ea5",
  "dpr": 2,
- "shotAt": "2026-11-04T20:51:08.145Z",
+ "shotAt": "2026-11-05T10:46:10.488Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
   "div#film-look.film-look",
@@ -15,11 +15,11 @@
   "p.film-help-body",
   "button#film-sensor.film-chip",
   "svg.lucide",
+  "div.film-title",
   "button#film-horizon.film-btn",
   "button#film-record.film-record",
   "span.film-record-mark",
-  "button#film-map-btn.film-btn",
-  "button#film-settings-btn.film-btn"
+  "button#film-map-btn.film-btn"
  ],
  "width": 780,
  "height": 1792,

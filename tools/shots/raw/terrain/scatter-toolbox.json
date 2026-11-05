@@ -2,10 +2,10 @@
  "id": "scatter-toolbox",
  "spec": "c6b1de4a8c62",
  "dpr": 2,
- "shotAt": "2026-11-04T21:31:38.969Z",
+ "shotAt": "2026-11-05T11:25:03.657Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
   "div.toolbox-header",
@@ -37,7 +37,7 @@
   "1": {
    "x": 34,
    "y": 372,
-   "w": 127.125,
+   "w": 130.5,
    "h": 72
   }
  },

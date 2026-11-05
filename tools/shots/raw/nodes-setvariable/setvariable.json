@@ -2,10 +2,10 @@
  "id": "setvariable",
  "spec": "7597d4ff3d8e",
  "dpr": 2,
- "shotAt": "2026-11-04T21:18:07.652Z",
+ "shotAt": "2026-11-05T11:12:23.192Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
   "div.svelte-flow__pane",
