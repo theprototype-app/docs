@@ -15,6 +15,10 @@ In a Quest's browser the page can also offer the browser's own **Enter VR** butt
 setting — see [Tours](https://docs.theprototype.app/tours.md#settings)). The first time you enter VR on a device, the [welcome tour](#welcome-tour)
 shows you your controllers.
 
+**Signing in on the headset** — skip typing a password in the headset: account menu ▸ **Sign in to cloud** ▸ **Sign in
+from another device** shows a code you approve from your phone or PC. See
+[Sign in from another device](https://docs.theprototype.app/sign-in-from-another-device.md#quest-sign-in-on-the-headset).
+
 If someone is in the room **with** you, see [Colocation](https://docs.theprototype.app/colocation.md) — a short calibration puts the same objects on the same real table for both of you.
 
 **Refresh rate** — under **Settings ▸ VR ▸ Display** (or radial **Settings ▸ Display**) you can pick **Max / 90 / 120 Hz**. *Max* uses the highest your headset reports; 120 Hz needs the Quest 120 Hz system setting enabled and applies on VR entry.

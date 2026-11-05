@@ -48,6 +48,12 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.62 — sign in from another device.** A headset or a borrowed browser shows a short code; open
+**theprototype.app/link** on a phone or computer where you are signed in and approve it — no typing passwords on a
+Quest. A sign-in made with a code lasts at most a day unless you trust the device, and **Account ▸ Devices** lists every
+device signed in to your account with Sign out for each. See [Sign in from another device](https://docs.theprototype.app/sign-in-from-another-device.md).
+Also: Bake to mesh, Undo, Redo in quick succession now bakes on your own screen too.
+
 **1.61 — write in 3D.** [Add ▸ Text](https://docs.theprototype.app/3d-text.md) puts words in the scene: **flat** letters with an outline, or
 **solid** letters with depth and a bevel, every setting live with one undo each. Six fonts are built in, and you can
 upload your own or type a **Google Fonts** name — the font is stored once in your Library and travels with the scene and
