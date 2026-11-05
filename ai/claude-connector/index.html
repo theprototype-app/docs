@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Use theprototype from claude.ai and voice", "url": "https://docs.theprototype.app/ai/claude-connector/", "description": "Add theprototype as a connector in claude.ai, press Connect Claude in your open theprototype tab, and talk Claude through building — in a chat on the web or desktop, in the Claude phone app, or…", "dateModified": "2026-11-04", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.59.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/ai-claude-connector/connect-card.webp", "caption": "The AI window's Connect Claude card, before you sign in."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Use theprototype from claude.ai and voice", "url": "https://docs.theprototype.app/ai/claude-connector/", "description": "Add theprototype as a connector in claude.ai, press Connect Claude in your open theprototype tab, and talk Claude through building — in a chat on the web or desktop, in the Claude phone app, or…", "dateModified": "2026-11-05", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.60.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/ai-claude-connector/connect-card.webp", "caption": "The AI window's Connect Claude card, before you sign in."}]}</script>
 </head>
   
   
@@ -920,6 +920,27 @@
   
   <span class="md-ellipsis">
     Splines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3d-text/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D Text
   </span>
   
 
@@ -6457,8 +6478,10 @@ In someone else's session it saves on the host. A viewer cannot save, a private 
 and Claude cannot write over a different scene: if the name it picks is taken, it is told to choose another or
 to ask you to open that scene first.</p>
 <h3 id="importing-files">Importing files</h3>
-<p>Claude cannot import a model or file through the connector: it has no file on your computer to send. Drop the
-file into the tab yourself, then ask Claude to place or change it.</p>
+<p>Since 1.61 Claude can bring in a <strong>3D model</strong> with <code>create_shape</code> <code>import</code>: a glTF, GLB or OBJ it sends in parts, or
+one at a public <strong>https</strong> address. It goes into your library first, and its named parts can be animated
+(<a href="../agent-geometry/#import_shape-a-gltf-glb-or-obj-file">details</a>). Other files, and files on your computer, you drop
+into the tab yourself; then ask Claude to place or change them.</p>
 <h3 id="scripts-spin-and-particles">Scripts, spin and particles</h3>
 <ul>
 <li><strong>Scripts</strong> run every frame in a sandbox, on a view of their object, starting again from the base pose. Write
@@ -6496,18 +6519,18 @@ exactly what the agent tools of the same job do, with the same limits:</p>
 <tbody>
 <tr>
 <td><code>create_shape</code></td>
-<td><code>lathe</code>, <code>tube</code>, <code>extrude</code>, <code>mesh</code></td>
-<td><code>create_lathe</code>, <code>create_tube</code>, <code>extrude_shape</code>, <code>create_mesh</code> (<a href="../agent-geometry/">Shapes and modelling</a>)</td>
+<td><code>lathe</code>, <code>tube</code>, <code>extrude</code>, <code>mesh</code>, <code>import</code></td>
+<td><code>create_lathe</code>, <code>create_tube</code>, <code>extrude_shape</code>, <code>create_mesh</code>, <code>import_shape</code> (<a href="../agent-geometry/">Shapes and modelling</a>)</td>
 </tr>
 <tr>
 <td><code>edit_shape</code></td>
-<td><code>params</code>, <code>mesh</code>, <code>update</code>, <code>pivot</code>, <code>pivot_group</code></td>
-<td><code>set_geometry</code>, <code>edit_mesh</code>, <code>update_mesh</code>, <code>set_pivot</code>, <code>create_pivot</code></td>
+<td><code>params</code>, <code>mesh</code>, <code>update</code>, <code>duplicate</code>, <code>pivot</code>, <code>pivot_group</code></td>
+<td><code>set_geometry</code>, <code>edit_mesh</code>, <code>update_mesh</code>, <code>duplicate</code>, <code>set_pivot</code>, <code>create_pivot</code></td>
 </tr>
 <tr>
 <td><code>set_look</code></td>
-<td><code>material</code>, <code>list_materials</code>, <code>get_material</code>, <code>shader</code>, <code>edit_shader</code>, <code>assign_shader</code>, <code>shader_nodes</code>, <code>post</code>, <code>get_post</code>, <code>post_graph</code>, <code>unwrap</code>, <code>uv</code>, <code>sky</code>, <code>light</code>, <code>environment</code></td>
-<td><code>set_material</code> … <code>set_uv</code> (<a href="../agent-look/">Materials and looks</a>); <code>set_sky</code>, <code>set_light</code>, <code>get_environment</code> (<a href="../agent-scene/">HUD, sky and play</a>)</td>
+<td><code>material</code>, <code>list_materials</code>, <code>get_material</code>, <code>shader</code>, <code>edit_shader</code>, <code>assign_shader</code>, <code>shader_nodes</code>, <code>post</code>, <code>get_post</code>, <code>post_graph</code>, <code>unwrap</code>, <code>uv</code>, <code>quality</code>, <code>sky</code>, <code>light</code>, <code>environment</code></td>
+<td><code>set_material</code> … <code>set_uv</code>, <code>set_quality</code> (<a href="../agent-look/">Materials and looks</a>); <code>set_sky</code>, <code>set_light</code>, <code>get_environment</code> (<a href="../agent-scene/">HUD, sky and play</a>)</td>
 </tr>
 <tr>
 <td><code>hud</code></td>
@@ -6572,6 +6595,32 @@ exactly what the agent tools of the same job do, with the same limits:</p>
 <li><code>set_look</code> <code>material</code> takes <code>pattern</code> (wood, brick, marble …). <code>create_shape</code> <code>mesh</code> takes <code>subdivide: 1-2</code>, and
   <code>edit_shape</code> <code>update</code> sends a mesh new vertices.</li>
 </ul>
+<p><strong>New in 1.61</strong> — no new tool names, more in the families:</p>
+<ul>
+<li><code>create_shape</code> <code>text</code> writes <a href="../../3d-text/">3D text</a>, flat or solid with a bevel; <code>edit_shape</code> <code>params</code> changes its
+  words and style, and <code>assets</code> <code>fonts</code> lists the fonts Claude may use (the bundled ones and those in your Library).</li>
+<li><code>edit_shape</code> <code>duplicate</code> copies an object in a row, or makes its mirror image (a left arm becomes the right one).</li>
+<li><code>create_shape</code> <code>import</code> brings in a glTF, GLB or OBJ model; <code>mesh</code> colours are sRGB with <code>#rrggbb</code> allowed.</li>
+<li><code>effects</code> <code>scatter</code> takes <code>source</code> (real copies of something Claude built) and <code>avoid</code> (keep paths clear).</li>
+<li><code>set_look</code> <code>quality</code> asks you, on your own device, for higher quality when a phone hides the post effects; <code>post</code>
+  says whether your screen draws them, and <code>screenshot</code> takes <code>postEffects: true</code>.</li>
+<li><code>status</code>'s <code>sceneBudget</code> names the heaviest objects (<code>top</code>) and says whether the frame time is just the screen's
+  refresh (<code>vsync</code>).</li>
+<li>A <code>parentUuid</code> that names nothing is an error and makes nothing; groups stay groups after a restore.</li>
+<li><code>assets</code> <code>upload</code> sends a sound or an HDR sky as bytes (Claude's own music, or a file it fetched itself) and answers
+  with its hash. <code>assets</code> <code>search</code> lists the sounds of the sound packs, and <code>effects</code> <code>sound</code> / <code>music</code> take them.</li>
+<li><code>set_look</code> <code>sky</code> takes a Poly Haven HDRI from search.</li>
+<li><code>effects</code> <code>terrain</code>: <code>height</code> is the highest peak, layers show at once, and <code>paintBy: "height"</code> paints them low to
+  high. <code>scatter</code> keeps circles clear (<code>avoid</code> / <code>rules.avoid</code> with a <code>radius</code>) and takes an <code>id</code>.</li>
+<li><code>front</code> tells <code>lookAt</code> and <code>face_user</code> which way a model faces.</li>
+<li><code>screenshot</code>: <code>view: "camera"</code> looks through a scene camera, <code>hud: true</code> adds the game HUD, and people are left out
+  unless <code>avatars: true</code>.</li>
+<li>Pressing <strong>Allow</strong> lets the change through on the first repeat; the answer says <code>pending</code>, <code>allowed</code>, <code>denied</code> or
+  <code>expired</code>. Pings mark the spot you clicked, and <code>wait_for_edit</code> wakes when you ping.</li>
+<li><code>list_scene</code> <code>near</code> / <code>bounds</code> take <code>by: "touches"</code> or <code>"inside"</code>; <code>sceneBudget</code> has <code>callsBySource</code> and never calls
+  a frame on the screen's refresh slow.</li>
+<li>Claude keeps your names and ids as they are: object names, prefab ids and undo lines are not rewritten.</li>
+</ul>
 <p>Claude reads its tool list when it connects, so it sees these after the connector reconnects.</p>
 <h2 id="stop-it">Stop it</h2>
 <ul>
@@ -6615,7 +6664,7 @@ exactly what the agent tools of the same job do, with the same limits:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-04
+    2026-11-05
   </span>
 
     

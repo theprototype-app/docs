@@ -48,6 +48,14 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.61 — write in 3D.** [Add ▸ Text](https://docs.theprototype.app/3d-text.md) puts words in the scene: **flat** letters with an outline, or
+**solid** letters with depth and a bevel, every setting live with one undo each. Six fonts are built in, and you can
+upload your own or type a **Google Fonts** name — the font is stored once in your Library and travels with the scene and
+the exported game. Solid text can be **baked to a mesh** you edit like any other. Claude writes too ("a solid HELLO with a
+bevel"), and an agent's diorama build brought [many fixes](https://docs.theprototype.app/ai/claude-connector.md): copies and mirror images, model
+import, pings that land where you point, and a card that asks before your phone turns its post effects back on. To try
+it, open the **Text sign** template.
+
 **1.60 — an agent builds the game around your scene.** Claude (or any agent) can now make
 [hills, forests, water, fire and sound](https://docs.theprototype.app/ai/agent-world.md), find and place assets and save prefabs, give the game
 [a HUD, a sky with fog and a place to start](https://docs.theprototype.app/ai/agent-scene.md), and then [check the game](https://docs.theprototype.app/ai/agent-runtime.md): what

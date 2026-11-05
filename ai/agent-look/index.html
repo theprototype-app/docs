@@ -936,6 +936,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../3d-text/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D Text
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../snapping/" class="md-nav__link">
         
   
@@ -5597,6 +5618,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#set_quality-ask-for-higher-quality-on-the-persons-own-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_quality: ask for higher quality on the person's own device
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#uv_unwrap-and-set_uv-how-textures-sit-on-a-surface" class="md-nav__link">
     <span class="md-ellipsis">
       uv_unwrap and set_uv: how textures sit on a surface
@@ -6248,6 +6278,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#set_quality-ask-for-higher-quality-on-the-persons-own-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_quality: ask for higher quality on the person's own device
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#uv_unwrap-and-set_uv-how-textures-sit-on-a-surface" class="md-nav__link">
     <span class="md-ellipsis">
       uv_unwrap and set_uv: how textures sit on a surface
@@ -6375,6 +6414,9 @@ get a prompt with <strong>Allow</strong> and <strong>Deny</strong>, and nothing 
 <li>The agent calls the same tool again with <code>{"confirmId": "…", "wait": 30}</code>. If you pressed Allow, the change
    runs inside that call, so it is still one undo step. If you pressed Deny, the call says so and nothing
    changed.</li>
+<li>Every answer carries a <code>status</code>: <code>pending</code> (no answer yet: ask again with the same <code>confirmId</code>), <code>allowed</code>,
+   <code>denied</code> or <code>expired</code>. <em>Since 1.61</em> the repeat works through the Claude connector's families too (it used to
+   open a new question each time), and going back to a checkpoint is asked as exactly that.</li>
 </ol>
 <p>A question stays open for 10 minutes. With the <a href="../claude-connector/">Claude connector</a> the prompt appears in
 your own tab. The in-app Assistant in your own scene does not ask, because you are the one typing.</p>
@@ -6492,6 +6534,9 @@ c -&gt; out.emissive
 </table>
 <p>Errors come back in the result and nothing is written: an unknown type, a socket that does not exist, a graph
 with nothing connected, or the compiler's own message.</p>
+<p><em>Since 1.61</em> there are three more UV nodes, <code>polarCoordinates</code> (distance and angle around a centre), <code>twirl</code> (a
+swirl, stronger further out) and <code>rotateUV</code> (wire <strong>Time</strong> into its <code>angle</code> to spin it). The <code>glsl</code> expression node
+keeps the type wired into <code>a</code>, <code>b</code> and <code>c</code> (float, vec2, vec3 or vec4) and returns the <code>type</code> it declares.</p>
 <p>The result lists the graph's <strong>uniforms</strong>. A float one, named <code>u_&lt;nodeId&gt;_&lt;param&gt;</code>, can be driven at run time
 by a <strong>Set Shader Uniform</strong> flow node on that object, for example <code>u_power_value</code> for a node <code>power</code>. Colours and
 vectors cannot, because flow sockets carry numbers.</p>
@@ -6508,6 +6553,16 @@ camera's own look instead of the scene's.</p>
 <p><code>create_post_graph</code> adds a custom effect: a <code>preset</code> such as <code>posterise</code>, or a graph as <code>text</code> ending at a
 <code>postOutput</code> node.</p>
 <p><code>set_post</code> and <code>create_post_graph</code> always ask first, including for a camera's own look.</p>
+<p><em>Since 1.61</em> <code>set_post</code> and <code>get_post</code> say whether <strong>this screen</strong> draws the effects (<code>shownHere</code>). When it does not,
+<code>reason</code> says why: <code>quality tier</code> (a phone switched post effects off to stay smooth — by design), <code>switched off here</code>,
+<code>browser</code>, <code>wireframe</code> or <code>no effects</code>, and <code>how</code> says where to change it. <code>screenshot</code> with <code>postEffects: true</code> draws
+the picture through the same effects and answers <code>postEffects: "applied"</code>, or <code>"unavailable"</code> with the reason.</p>
+<h3 id="set_quality-ask-for-higher-quality-on-the-persons-own-device">set_quality: ask for higher quality on the person's own device</h3>
+<p><em>New in 1.61.</em> When a phone hides the post effects to stay smooth, an agent does <strong>not</strong> change that on its own. It
+can ask with <code>set_quality {"level": "high"}</code> (also <code>medium</code>, <code>auto</code>): a card on <strong>that person's own screen</strong> says
+"Claude wants High quality on this device so the post effects show" with <strong>Allow</strong> and <strong>Keep</strong>. Only that device
+changes, never anybody else's. After Allow, the card's Undo or <code>set_quality {"level": "restore"}</code> puts the old preset
+back. On the person's own device it is the same switch as <strong>Settings ▸ Scene ▸ Performance ▸ Quality preset</strong>.</p>
 <h3 id="uv_unwrap-and-set_uv-how-textures-sit-on-a-surface">uv_unwrap and set_uv: how textures sit on a surface</h3>
 <p><code>uv_unwrap</code> makes new texture coordinates: <code>smart</code> (the default: flat islands by surface direction), <code>box</code>,
 <code>planar</code>, <code>cylindrical</code> or <code>spherical</code>. Use it when a texture smears on a model. <code>faces</code> limits it to those

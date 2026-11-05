@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Build with an AI agent", "url": "https://docs.theprototype.app/ai/build-with-an-agent/", "description": "You can invite an AI agent — Claude Code, Claude Desktop, or any tool that speaks MCP — into your session and build with it. Hand it a link, it joins like any other peer, and you watch the scene…", "dateModified": "2026-11-04", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.59.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/ai-build-with-an-agent/agent-activity.webp", "caption": "Agent activity in the AI assistant window."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Build with an AI agent", "url": "https://docs.theprototype.app/ai/build-with-an-agent/", "description": "You can invite an AI agent — Claude Code, Claude Desktop, or any tool that speaks MCP — into your session and build with it. Hand it a link, it joins like any other peer, and you watch the scene…", "dateModified": "2026-11-04", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.60.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/ai-build-with-an-agent/agent-activity.webp", "caption": "Agent activity in the AI assistant window."}]}</script>
 </head>
   
   
@@ -920,6 +920,27 @@
   
   <span class="md-ellipsis">
     Splines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3d-text/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D Text
   </span>
   
 
@@ -6299,15 +6320,15 @@ before a join, scene tools answer <em>not connected — join first</em>. Then ca
 </tr>
 <tr>
 <td><code>status</code></td>
-<td>joined or waiting, its role and whether it can edit, who is connected, which scene it and the host are in (<code>withHost</code>), whether a scene is still arriving (<code>loading</code>), any code behaviour that is failing (<code>behaviourErrors</code>), whether it is paused because the host left (<code>hostAway</code>), which tools or modules are missing and why, and since 1.59 <code>sceneBudget</code>: how heavy the scene is (objects, meshes, triangles, draw calls, textures, lights, frame time) against the desktop or VR budget, with a green / amber / red tier and <code>over</code> naming each budget past green</td>
+<td>joined or waiting, its role and whether it can edit, who is connected, which scene it and the host are in (<code>withHost</code>), whether a scene is still arriving (<code>loading</code>), any code behaviour that is failing (<code>behaviourErrors</code>), whether it is paused because the host left (<code>hostAway</code>), which tools or modules are missing and why, and since 1.59 <code>sceneBudget</code>: how heavy the scene is (objects, meshes, triangles, draw calls, textures, lights, frame time) against the desktop or VR budget, with a green / amber / red tier and <code>over</code> naming each budget past green; since 1.61 <code>top</code> (the objects drawing the most triangles and draw calls) and <code>vsync</code> (whether the frame time is just the display's refresh, a steady 16.7 ms on a 60 Hz screen, or frames miss it — a frame on the refresh never turns the tier amber or red), and <code>callsBySource</code> (the draw calls of your objects, of the rest of the view such as people and the grid, of shadows, of post effects, and of other views such as camera previews)</td>
 </tr>
 <tr>
 <td><code>screenshot</code></td>
-<td>a clean picture (no gizmo, grid or helpers) from a temporary camera — <code>iso</code>, <code>top</code>, <code>front</code>, <code>current</code>, or <code>focus</code> on one object — without moving anyone's view</td>
+<td>a clean picture (no gizmo, grid or helpers) from a temporary camera — <code>iso</code>, <code>top</code>, <code>front</code>, <code>current</code>, or <code>focus</code> on one object — without moving anyone's view; since 1.61 <code>postEffects: true</code> draws the scene's post effects too, or says why this screen does not; <code>view: "camera"</code> with a camera's <code>uuid</code> looks through one of the scene's cameras (its lens and framing); <code>hud: true</code> draws the game HUD on top; the people (avatars) are left out unless <code>avatars: true</code> (view <code>current</code> keeps them)</td>
 </tr>
 <tr>
 <td><code>wait_for_edit</code></td>
-<td>waits until someone else changes the scene</td>
+<td>waits until someone else changes the scene, or <em>since 1.61</em> pings a spot (the answer carries the <code>ping</code>)</td>
 </tr>
 <tr>
 <td><code>describe_node_types</code></td>
@@ -6349,7 +6370,8 @@ before a join, scene tools answer <em>not connected — join first</em>. Then ca
   pattern, a type, or the objects near a point (since 1.48.1). Since 1.59 every mesh also has
   <code>mesh: {vertexCount, faceCount, bounds}</code> — <code>faceCount</code> in triangles, and <code>bounds</code> as two boxes, <code>local</code> (in the
   mesh's own space) and <code>world</code>, each <code>[[minX, minY, minZ], [maxX, maxY, maxZ]]</code> — so an agent can see a part's real
-  size and corners.</li>
+  size and corners. Since 1.61 <code>near</code> and <code>bounds</code> take <code>by</code>: <code>origin</code> (where the object is, the default), <code>touches</code>
+  (any part of its world bounds, so a long wall reaching into the area counts) or <code>inside</code> (all of it).</li>
 <li>Build lighter, or stop adding, while <code>status</code>'s <code>sceneBudget</code> is not green.</li>
 <li><strong>Copies, facing and shadows</strong> (since 1.59, on <code>create_objects</code> / <code>update_objects</code>):<ul>
 <li><code>create_objects</code> with <code>from</code> (an object's uuid), <code>count</code> (1 to 100), <code>offset</code> (<code>[x, y, z]</code> from one copy to the
@@ -6358,7 +6380,8 @@ before a join, scene tools answer <em>not connected — join first</em>. Then ca
   group, one undo step, uuids in order, and the same seed makes the same copies. This is copying, not
   <a href="../../scatter/">scatter</a> over a surface.</li>
 <li><code>lookAt</code>: a world point <code>[x, y, z]</code> or another object's uuid. The object turns so its front (local +Z) faces it,
-  with +Y kept up. Lights point with <code>aim</code> instead.</li>
+  with +Y kept up. Lights point with <code>aim</code> instead. Since 1.61 <code>front</code> (<code>+x</code>, <code>-x</code>, <code>+z</code>, <code>-z</code>, <code>+y</code>, <code>-y</code>) says
+  which local axis is the model's front, for <code>lookAt</code> and <code>face_user</code> alike: many models face +X or -Z.</li>
 <li><code>castShadow</code> / <code>receiveShadow</code> on any object; on a group or a model they apply to every mesh inside it.</li>
 </ul>
 </li>
@@ -6416,7 +6439,9 @@ JavaScript in the page can use it: <code>tools()</code>, <code>systemPrompt()</c
 inlined in <a href="https://theprototype.app/llms-full.txt">/llms-full.txt</a>.</p>
 <p><strong>Versions.</strong> <code>tpAgent.version</code> is the contract (1.x): new methods and fields are minor versions, a removed or changed
 one is a new major. Release 1.59 speaks contract <strong>1.6.0</strong> (the shape batch, mesh colours, copies, facing, shadows,
-mesh stats and the scene budget). A call written for 1.5 gives the same result, with one fix: a part made in a group
+mesh stats and the scene budget); release 1.61 speaks <strong>1.8.0</strong> (copy and mirror, model import, the device quality ask,
+post effects in screenshots, the budget's top contributors and vsync verdict, scatter <code>source</code> / <code>avoid</code>, and the
+additions listed under <em>New in 1.61</em> in <a href="../claude-connector/">the Claude connector</a>). A call written for 1.5 gives the same result, with one fix: a part made in a group
 with no <code>position</code> now sits at the group's origin (<a href="../agent-geometry/#building-a-model-part-by-part">part by part</a>). The <code>@theprototype/agent</code> package follows the app release it shipped with and says so in its
 <code>status</code> (<code>contractNote</code>) when the page speaks a different contract major — update it with
 <code>npx -y @theprototype/agent@latest</code>.</p>

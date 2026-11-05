@@ -936,6 +936,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../3d-text/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D Text
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../snapping/" class="md-nav__link">
         
   
@@ -6418,7 +6439,7 @@ what each element is wired to in the flow graph.</p>
 </tr>
 <tr>
 <td><code>hdri</code></td>
-<td>a <a href="../../camera/#sky-images-hdri">sky image</a>: <code>clearsky</code>, <code>meadow</code>, <code>sunrise</code>, <code>starlight</code> or <code>photostudio</code>, or <code>{name, rotation, intensity, blur, background, quality, minQuality}</code>. <code>{hash}</code> is an HDR file in your library. A web address is refused. <code>null</code> removes the sky image.</td>
+<td>a <a href="../../camera/#sky-images-hdri">sky image</a>: <code>clearsky</code>, <code>meadow</code>, <code>sunrise</code>, <code>starlight</code> or <code>photostudio</code>, or <code>{name, rotation, intensity, blur, background, quality, minQuality}</code>. <code>{hash}</code> is an HDR file in your library; <em>since 1.61</em> also <code>"cc0:polyhaven/&lt;id&gt;"</code> from <code>search_assets</code> (fetched into the library first), and an HDR the agent sends with <code>assets upload</code>. A web address is refused. <code>null</code> removes the sky image.</td>
 </tr>
 <tr>
 <td><code>background</code></td>

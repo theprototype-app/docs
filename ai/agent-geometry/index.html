@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Shapes and modelling with an agent", "url": "https://docs.theprototype.app/ai/agent-geometry/", "description": "An agent joined to your session (Build with an AI agent) can do more than place boxes and spheres. Six tools let it change an object's shape in place, turn a profile into a vase, sweep a rail…", "dateModified": "2026-11-04"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Shapes and modelling with an agent", "url": "https://docs.theprototype.app/ai/agent-geometry/", "description": "An agent joined to your session (Build with an AI agent) can do more than place boxes and spheres. Nine tools let it change an object's shape in place, turn a profile into a vase, sweep a rail…", "dateModified": "2026-11-04"}</script>
 </head>
   
   
@@ -920,6 +920,27 @@
   
   <span class="md-ellipsis">
     Splines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3d-text/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D Text
   </span>
   
 
@@ -5804,6 +5825,33 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#duplicate-copies-and-mirror-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      duplicate: copies and mirror images
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import_shape-a-gltf-glb-or-obj-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      import_shape: a glTF, GLB or OBJ file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_text-3d-text-since-161" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_text: 3D text (since 1.61)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#edit_mesh-model-a-mesh" class="md-nav__link">
     <span class="md-ellipsis">
       edit_mesh: model a mesh
@@ -6275,6 +6323,33 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#duplicate-copies-and-mirror-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      duplicate: copies and mirror images
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#import_shape-a-gltf-glb-or-obj-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      import_shape: a glTF, GLB or OBJ file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_text-3d-text-since-161" class="md-nav__link">
+    <span class="md-ellipsis">
+      create_text: 3D text (since 1.61)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#edit_mesh-model-a-mesh" class="md-nav__link">
     <span class="md-ellipsis">
       edit_mesh: model a mesh
@@ -6373,8 +6448,9 @@
 
 <h1 id="shapes-and-modelling-with-an-agent">Shapes and modelling with an agent</h1>
 <p>An agent joined to your session (<a href="../build-with-an-agent/">Build with an AI agent</a>) can do more than place
-boxes and spheres. Six tools let it change an object's shape in place, turn a profile into a vase, sweep a
-rail along a path, cut a sign out of an outline, build a mesh from raw data and model a mesh the way
+boxes and spheres. Nine tools let it change an object's shape in place, turn a profile into a vase, sweep a
+rail along a path, cut a sign out of an outline, build a mesh from raw data, copy or mirror an object, bring in a
+glTF / GLB / OBJ file, write <a href="../../3d-text/">3D text</a> and model a mesh the way
 <a href="../../mesh-editing/">Edit Mesh</a> does. The in-app <a href="../assistant/">Assistant</a> has the same tools.</p>
 <p>Every call works like the agent's other tools:</p>
 <ul>
@@ -6397,6 +6473,12 @@ rail along a path, cut a sign out of an outline, build a mesh from raw data and 
 <li><strong>Colour as you make it:</strong> <code>create_mesh</code> takes a colour per vertex or a material per face, and a flat low-poly look
   (<a href="#create_mesh-a-mesh-from-raw-data">below</a>).</li>
 <li><strong>Shadows:</strong> every shape tool takes <code>castShadow</code> and <code>receiveShadow</code> (both on by default).</li>
+<li><strong>A group that is not there is an error</strong> (<em>since 1.61</em>): a <code>parentUuid</code> that names nothing makes nothing, and the
+  error says so. Before, the part was made at the middle of the scene with a warning. Any object can hold parts, a
+  restored group included; a light or a camera cannot.</li>
+<li><strong>Tiny parts</strong> (<em>since 1.61</em>): every primitive goes down to 1 mm (<code>0.001</code>).</li>
+<li><strong>Copies and mirror images</strong> with <code>duplicate</code> (<a href="#duplicate-copies-and-mirror-images">below</a>), and <strong>model files</strong>
+  with <code>import_shape</code> (<a href="#import_shape-a-gltf-glb-or-obj-file">below</a>).</li>
 </ul>
 <h2 id="reference">Reference</h2>
 <h3 id="set_geometry-reshape-in-place">set_geometry: reshape in place</h3>
@@ -6600,7 +6682,11 @@ columns, lamp shades.</p>
 </tr>
 <tr>
 <td><code>colors</code></td>
-<td>one <code>[r, g, b]</code> (0 to 1) per vertex, in the order of <code>vertices</code>: a painted gradient, multiplied by the material colour</td>
+<td>one colour per vertex, in the order of <code>vertices</code>: <code>[r, g, b]</code> (0 to 1) or <code>"#rrggbb"</code>. A painted gradient. Since 1.61 the numbers are <strong>sRGB</strong>, like a colour picker and material colours, and with <code>colors</code> and no <code>color</code> the material is <strong>white</strong>, so the vertex colours show as given (before, a random pastel tinted them).</td>
+</tr>
+<tr>
+<td><code>colorSpace</code></td>
+<td><code>"srgb"</code> (default) or <code>"linear"</code>, for <code>[r, g, b]</code> numbers that are already linear. Hex is always sRGB.</td>
 </tr>
 <tr>
 <td><code>name</code>, <code>position</code>, <code>rotation</code>, <code>scale</code>, <code>color</code>, <code>physics</code></td>
@@ -6681,6 +6767,130 @@ columns, a whole little building.</p>
 </table>
 <p>Every entry is checked <strong>before anything is made</strong>: if one is wrong, nothing is made and the error names it
 (<code>shapes[3]: …</code>). The uuids come back <strong>in the order given</strong>.</p>
+<p>A list that does not fit (<code>colors</code>, <code>vertices</code>, <code>uvs</code>) is refused with <strong>how many entries arrived</strong> and <strong>the index
+of the first bad one</strong>, for example <code>colors[5] (the first bad one of 8 entries): … got [2,0,0]</code>.</p>
+<h3 id="duplicate-copies-and-mirror-images">duplicate: copies and mirror images</h3>
+<p><em>New in 1.61.</em> Copies an object with everything in it — children, materials, behaviour, physics — the way
+Duplicate in the object menu does, so nothing is sent again. One undo step.</p>
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th>what it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uuid</code></td>
+<td>the object to copy</td>
+</tr>
+<tr>
+<td><code>count</code></td>
+<td>1 to 50 copies (default 1)</td>
+</tr>
+<tr>
+<td><code>offset</code></td>
+<td><code>[x, y, z]</code> metres between copies, in the parent's space (default: a row to the side)</td>
+</tr>
+<tr>
+<td><code>mirror</code></td>
+<td><code>"x"</code>, <code>"y"</code> or <code>"z"</code>: the copy is the mirror image across that plane through the <strong>parent's centre</strong>. In a group, that is the group's centre line, so a left ear becomes the right one; at the top of the scene it is the world's. The triangles are turned round so the copy still faces outward. A box, or a round shape with an even number of segments, is its own mirror image and keeps its editable size.</td>
+</tr>
+<tr>
+<td><code>parentUuid</code></td>
+<td>a group (or any object) for the copies; they keep their place in the world</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>the copies' name, numbered when there are several</td>
+</tr>
+</tbody>
+</table>
+<p>For tens or hundreds of copies spread over the ground, use <code>scatter</code> with <code>source</code> (<a href="../agent-world/#scatter-a-forest-rocks-flowers">Worlds</a>).</p>
+<h3 id="import_shape-a-gltf-glb-or-obj-file">import_shape: a glTF, GLB or OBJ file</h3>
+<p><em>New in 1.61.</em> Brings in a model made elsewhere: <strong>glTF 2.0</strong> (a <code>.glb</code>, or a <code>.gltf</code> with everything embedded) or a
+<strong>Wavefront <code>.obj</code></strong>. One undo step; everyone sees it.</p>
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th>what it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td>the file as base64</td>
+</tr>
+<tr>
+<td><code>chunk</code></td>
+<td><code>{id, index, total}</code> for a big file sent in parts, each a multiple of 4 base64 characters. The model is placed when the last part arrives.</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>an <strong>https</strong> address instead (25 MB at most). Local and private addresses are refused, and the server must allow cross-origin reads.</td>
+</tr>
+<tr>
+<td><code>name</code>, <code>position</code>, <code>rotation</code>, <code>scale</code>, <code>parentUuid</code></td>
+<td>as in <code>create_objects</code></td>
+</tr>
+<tr>
+<td><code>folder</code></td>
+<td>the Explorer folder (default <code>Imported models</code>)</td>
+</tr>
+<tr>
+<td><code>castShadow</code>, <code>receiveShadow</code></td>
+<td>for every mesh in it</td>
+</tr>
+</tbody>
+</table>
+<p>The file goes <strong>into your library first</strong> (shared with the session), so the scene never needs the address again. Its
+<strong>named parts</strong> (glTF nodes, OBJ <code>o</code> / <code>g</code> groups) become named children, and the reply lists them with their uuids,
+so <code>animate_parts</code> or <code>update_objects</code> can move a lid or a wheel.</p>
+<p>The app reads what the file <strong>is</strong> from its bytes, not its name. A model is data: nothing in it runs. A file that points
+at other files (an external buffer or texture), or at anything but an embedded PNG / JPEG / WebP image, is refused. An
+<code>.obj</code>'s <code>.mtl</code> material library is not inside it, so its parts get plain materials; colour them with <code>set_material</code>.</p>
+<h3 id="create_text-3d-text-since-161">create_text: 3D text (since 1.61)</h3>
+<p>A sign, a title or a label. Over the connector this is <code>create_shape {action: "text"}</code>. The record travels and is saved, and every screen builds the letters from it. See <a href="../../3d-text/">3D Text</a>.</p>
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th>what it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td>the words; <code>\n</code> starts a new line</td>
+</tr>
+<tr>
+<td><code>font</code></td>
+<td>a bundled font (<code>sans</code>, <code>serif</code>, <code>mono</code>, <code>rounded</code>, <code>display</code>, or its name), any Google Fonts family name (fetched once and kept in the Library), or <code>{asset: "&lt;hash&gt;"}</code> for a Library font</td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td>letter height in metres</td>
+</tr>
+<tr>
+<td><code>solid</code>, <code>depth</code>, <code>bevel</code></td>
+<td>solid letters; giving <code>depth</code> or <code>bevel</code> also makes them solid. <code>bevel</code> is a width in metres, <code>false</code> for none, or <code>{size, thickness, segments}</code></td>
+</tr>
+<tr>
+<td><code>align</code>, <code>maxWidth</code>, <code>anchor</code>, <code>lineHeight</code>, <code>letterSpacing</code></td>
+<td>the layout of the block</td>
+</tr>
+<tr>
+<td><code>color</code>, <code>sideColor</code>, <code>emissive</code>, <code>metalness</code>, <code>roughness</code>, <code>quality</code>, <code>outline</code></td>
+<td>the look</td>
+</tr>
+<tr>
+<td><code>position</code>, <code>rotation</code>, <code>name</code></td>
+<td>where it goes</td>
+</tr>
+</tbody>
+</table>
+<p>To change a text, call <code>set_geometry</code> (<code>edit_shape {action: "params"}</code>) with the same fields under <code>params</code>. <code>list_fonts</code> (<code>assets {action: "fonts"}</code>) lists the fonts you can use. Solid text holds up to 300 characters, or 80 on a phone or headset. A text is made one per call; <code>create_shapes</code> does not take text.</p>
 <h3 id="edit_mesh-model-a-mesh">edit_mesh: model a mesh</h3>
 <p>Runs <a href="../../mesh-editing/">Edit Mesh</a> operations on a selection of a mesh's faces or vertices.</p>
 <table>

@@ -936,6 +936,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../3d-text/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3D Text
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../snapping/" class="md-nav__link">
         
   
@@ -5762,6 +5783,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#assets-upload-send-a-sound-or-an-hdr-sky" class="md-nav__link">
+    <span class="md-ellipsis">
+      assets upload: send a sound or an HDR sky
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#place_asset-put-a-model-or-prefab-in-the-scene" class="md-nav__link">
     <span class="md-ellipsis">
       place_asset: put a model or prefab in the scene
@@ -6266,6 +6296,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#assets-upload-send-a-sound-or-an-hdr-sky" class="md-nav__link">
+    <span class="md-ellipsis">
+      assets upload: send a sound or an HDR sky
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#place_asset-put-a-model-or-prefab-in-the-scene" class="md-nav__link">
     <span class="md-ellipsis">
       place_asset: put a model or prefab in the scene
@@ -6499,8 +6538,8 @@ these tools.</p>
 </div>
 <h2 id="find-and-place-assets">Find and place assets</h2>
 <h3 id="search_assets-find-something-to-build-with">search_assets: find something to build with</h3>
-<p>It searches the shared <a href="../../explorer/">library</a>, the <a href="../../packs/">model packs</a>, your <a href="../../prefabs/">prefabs</a> and
-Poly Haven's CC0 materials and HDRIs, by words and kind. It only reads, so a viewer's agent can use it too.</p>
+<p>It searches the shared <a href="../../explorer/">library</a>, the <a href="../../packs/">packs</a> (their models, and <em>since 1.61</em> the sounds in
+the sound packs), your <a href="../../prefabs/">prefabs</a> and Poly Haven's CC0 materials and HDRIs, by words and kind. It only reads, so a viewer's agent can use it too.</p>
 <table>
 <thead>
 <tr>
@@ -6531,10 +6570,46 @@ Poly Haven's CC0 materials and HDRIs, by words and kind. It only reads, so a vie
 other tools take:</p>
 <ul>
 <li><code>lib:&lt;hash&gt;</code> is a file in the shared library.</li>
-<li><code>pack:&lt;pack&gt;/&lt;item&gt;</code> is a model from a pack.</li>
+<li><code>pack:&lt;pack&gt;/&lt;item&gt;</code> is a model from a pack, or <em>since 1.61</em> a sound from a sound pack (<code>pack:audio-essentials/assets/fire-crackle.ogg</code>).
+  A pack sound is copied into the library the first time a tool uses it, like installing that one file.</li>
 <li><code>prefab:&lt;id&gt;</code> is one of your prefabs.</li>
-<li><code>cc0:polyhaven/&lt;id&gt;</code> is a CC0 material or HDRI. <code>set_material</code> (<code>cc0</code>) and the scene look take it.</li>
+<li><code>cc0:polyhaven/&lt;id&gt;</code> is a CC0 material or HDRI. <code>set_material</code> (<code>cc0</code>) and the scene look take it. <em>Since 1.61</em> an
+  HDRI id goes straight into <code>set_look</code> <code>sky {hdri: "cc0:polyhaven/&lt;id&gt;"}</code>: it is fetched into the library and lights
+  the scene.</li>
 </ul>
+<h3 id="assets-upload-send-a-sound-or-an-hdr-sky">assets upload: send a sound or an HDR sky</h3>
+<p><em>Since 1.61.</em> <code>assets</code> with <code>action: "upload"</code> (a local agent: <code>upload_asset</code>) puts a file the agent <strong>holds as bytes</strong>
+into the library and answers with its hash: music or ambience it generated, or a file it fetched itself. The bytes come
+from the agent, so a site that does not allow other origins (CORS) no longer matters.</p>
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th>what it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td>the file as base64</td>
+</tr>
+<tr>
+<td><code>chunk</code></td>
+<td><code>{id, index, total}</code> for a big file sent in parts (each part a multiple of 4 base64 characters); it lands when the last part arrives</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>a name for the library (the extension comes from the bytes)</td>
+</tr>
+<tr>
+<td><code>folder</code></td>
+<td>the Explorer folder (default <code>Sounds</code> or <code>Skies</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>What the bytes <strong>are</strong> decides, never the name: a sound (WAV, OGG, MP3, FLAC, M4A or WebM, up to 16 MB, decoded once to
+prove it is audio) or an HDR sky (Radiance <code>.hdr</code> or OpenEXR, up to 25 MB). Pictures go through <code>image</code>. Use the hash
+with <code>place_sound</code>, <code>set_music</code> or <code>set_look</code> <code>sky {hdri: {hash}}</code>.</p>
 <h3 id="place_asset-put-a-model-or-prefab-in-the-scene">place_asset: put a model or prefab in the scene</h3>
 <p>It places the model the same way dragging it from the Asset Browser does.</p>
 <table>
@@ -6597,7 +6672,7 @@ other tools take:</p>
 </tr>
 <tr>
 <td><code>height</code></td>
-<td>how high the noise hills reach, in metres</td>
+<td>the highest peak, in metres; the answer says the <code>peak</code> it reached (<em>since 1.61</em>; it used to scale the noise, which <code>amplitude</code> still does)</td>
 </tr>
 <tr>
 <td><code>detail</code></td>
@@ -6609,7 +6684,7 @@ other tools take:</p>
 </tr>
 <tr>
 <td><code>edges</code></td>
-<td><code>flat</code>, <code>island</code> (it falls away to the sides) or <code>bowl</code></td>
+<td><code>flat</code>, <code>island</code> (the rim sinks to 0, so it rises out of water) or <code>bowl</code> (the rim is raised). Give <code>height</code> too: a flat terrain has no hills to shape.</td>
 </tr>
 <tr>
 <td><code>seed</code></td>
@@ -6621,7 +6696,11 @@ other tools take:</p>
 </tr>
 <tr>
 <td><code>layers</code></td>
-<td>up to 4 paint layers <code>{color, texture, tiling}</code>. <code>texture</code> is a library hash or a pattern name like <code>grass</code>, <code>sand</code> or <code>stone</code>.</td>
+<td>up to 4 paint layers <code>{color, texture, tiling}</code>. <code>texture</code> is a library hash or a pattern name like <code>grass</code>, <code>sand</code> or <code>stone</code>. Layer 0 covers the ground until the others are painted.</td>
+</tr>
+<tr>
+<td><code>paintBy</code></td>
+<td><em>since 1.61</em>: <code>"height"</code> paints the layers for you over the final shape: layer 0 in the low ground, up to the last layer on the peaks (sand, grass, rock, snow)</td>
 </tr>
 <tr>
 <td><code>force</code></td>
@@ -6687,7 +6766,19 @@ ones.</p>
 </tr>
 <tr>
 <td><code>seed</code></td>
-<td>another arrangement</td>
+<td>another arrangement (the same seed gives the same one)</td>
+</tr>
+<tr>
+<td><code>avoid</code></td>
+<td><em>since 1.61</em>: up to 16 places to keep clear — an object uuid (nothing lands on its footprint: a path, a house, a portal), <code>{uuid, radius}</code> (a clear circle round an object) or <code>{position, radius}</code> (a clear circle round a spot). <code>rules.avoid</code> takes the same list.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><em>since 1.61</em>: a name for the set. All the assets of one call are one set.</td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td><em>since 1.61</em>: the uuid of an object you built, instead of <code>asset</code>: up to 200 <strong>real copies</strong> of it, each one editable, at the spots the rules pick</td>
 </tr>
 <tr>
 <td><code>remove</code></td>
@@ -6695,7 +6786,8 @@ ones.</p>
 </tr>
 </tbody>
 </table>
-<p>It returns the set's id and how many copies were placed. A surface holds up to 8 sets.</p>
+<p>It returns the set's id and how many copies were placed (with <code>source</code>: the copies' uuids). A surface holds up to 8 sets.
+For one or a few copies in a row, or a mirror image, use <code>duplicate</code> (<a href="../agent-geometry/#duplicate-copies-and-mirror-images">Shapes and modelling</a>).</p>
 <h2 id="water">Water</h2>
 <h3 id="water-a-pool-a-lake-the-sea">water: a pool, a lake, the sea</h3>
 <p>Without <code>uuid</code> it makes a body of <a href="../../water/">water</a>. With <code>uuid</code> it changes one, or turns an object into water when
@@ -6714,7 +6806,7 @@ a <code>preset</code> is given.</p>
 </tr>
 <tr>
 <td><code>size</code></td>
-<td><code>[width, height, length]</code> in metres (<code>[radius, height]</code> for <code>round</code>)</td>
+<td><code>[width, height, length]</code> in metres; for <code>round</code>, <code>[diameter, depth, diameter]</code> (<em>since 1.61</em>; <code>[radius, depth]</code> still works)</td>
 </tr>
 <tr>
 <td><code>position</code></td>
@@ -6730,7 +6822,7 @@ a <code>preset</code> is given.</p>
 </tr>
 <tr>
 <td><code>color</code>, <code>look</code></td>
-<td>the colour, and look fields like <code>shallowColor</code>, <code>deepColor</code>, <code>clarity</code>, <code>foam</code></td>
+<td><code>color</code> tints the whole body, shallow to deep; look fields like <code>shallowColor</code>, <code>deepColor</code>, <code>clarity</code>, <code>foam</code> set one thing each</td>
 </tr>
 <tr>
 <td><code>waves</code>, <code>flow</code></td>
@@ -6748,7 +6840,8 @@ a <code>preset</code> is given.</p>
 <p><code>preset</code> is one of <code>sparkles</code>, <code>fire</code>, <code>smoke</code>, <code>dust</code>, <code>confetti</code>, <code>sparks</code>, <code>trail</code>, <code>wisps</code>, <code>fireflies</code>, <code>rain</code> or
 <code>snow</code>. These are the same presets as <strong>Add ▸ Effects</strong> (<a href="../../particles/">Particles</a>).</p>
 <ul>
-<li>Without <code>object</code> it places a small emitter at <code>position</code>. Rain and snow hang at cloud height over the point.</li>
+<li>Without <code>object</code> it places an invisible emitter (an empty group, nothing drawn but the particles) at <code>position</code>.
+  Rain and snow hang at cloud height over the point.</li>
 <li>With <code>object</code> it puts the particles on that object: a torch, a log, a car's exhaust.</li>
 <li><code>overrides</code> changes any particle field: <code>count</code>, <code>lifetime</code>, <code>speed</code>, <code>gravity</code>, <code>sizeStart</code>, <code>colorStart</code>,
   <code>colorEnd</code>, <code>opacity</code> and the rest. A field that does not exist is refused by name.</li>
@@ -6765,7 +6858,7 @@ a <code>preset</code> is given.</p>
 <tbody>
 <tr>
 <td><code>asset</code></td>
-<td>a library sound (<code>lib:&lt;hash&gt;</code>, or search with <code>kinds: ["sound"]</code>), or an <strong>https</strong> URL of a sound file</td>
+<td>a library sound (<code>lib:&lt;hash&gt;</code>, or search with <code>kinds: ["sound"]</code>), a pack sound (<code>pack:&lt;name&gt;/&lt;file&gt;</code>, copied into the library on first use), the hash <code>assets upload</code> gave for the agent's own sound, or an <strong>https</strong> URL of a sound file</td>
 </tr>
 <tr>
 <td><code>object</code></td>
@@ -6787,7 +6880,8 @@ a <code>preset</code> is given.</p>
 </table>
 <p>The sound is a <a href="../../audio/">Sound node</a> in the object's flow, so you can open it in the node editor and change it.</p>
 <h3 id="set_music-the-scenes-background-music">set_music: the scene's background music</h3>
-<p><code>asset</code> is a library sound or an https URL (<code>null</code> clears it). It also takes <code>volume</code> (0 to 1), <code>play: true</code> and
+<p><code>asset</code> is a library sound, a pack sound (<code>pack:&lt;name&gt;/&lt;file&gt;</code>), the hash of music the agent sent with <code>assets upload</code>,
+or an https URL (<code>null</code> clears it). It also takes <code>volume</code> (0 to 1), <code>play: true</code> and
 <code>stop: true</code>. Everyone hears the track in sync. Each person can still turn it down for themselves in
 <a href="../../music/">Music</a>.</p>
 <h3 id="sounds-and-pictures-from-a-url">Sounds and pictures from a URL</h3>

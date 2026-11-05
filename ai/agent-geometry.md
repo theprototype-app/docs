@@ -1,8 +1,9 @@
 # Shapes and modelling with an agent
 
 An agent joined to your session ([Build with an AI agent](https://docs.theprototype.app/ai/build-with-an-agent.md)) can do more than place
-boxes and spheres. Six tools let it change an object's shape in place, turn a profile into a vase, sweep a
-rail along a path, cut a sign out of an outline, build a mesh from raw data and model a mesh the way
+boxes and spheres. Nine tools let it change an object's shape in place, turn a profile into a vase, sweep a
+rail along a path, cut a sign out of an outline, build a mesh from raw data, copy or mirror an object, bring in a
+glTF / GLB / OBJ file, write [3D text](https://docs.theprototype.app/3d-text.md) and model a mesh the way
 [Edit Mesh](https://docs.theprototype.app/mesh-editing.md) does. The in-app [Assistant](https://docs.theprototype.app/ai/assistant.md) has the same tools.
 
 Every call works like the agent's other tools:
@@ -27,6 +28,12 @@ Every call works like the agent's other tools:
 - **Colour as you make it:** `create_mesh` takes a colour per vertex or a material per face, and a flat low-poly look
   ([below](#create_mesh-a-mesh-from-raw-data)).
 - **Shadows:** every shape tool takes `castShadow` and `receiveShadow` (both on by default).
+- **A group that is not there is an error** (*since 1.61*): a `parentUuid` that names nothing makes nothing, and the
+  error says so. Before, the part was made at the middle of the scene with a warning. Any object can hold parts, a
+  restored group included; a light or a camera cannot.
+- **Tiny parts** (*since 1.61*): every primitive goes down to 1 mm (`0.001`).
+- **Copies and mirror images** with `duplicate` ([below](#duplicate-copies-and-mirror-images)), and **model files**
+  with `import_shape` ([below](#import_shape-a-gltf-glb-or-obj-file)).
 
 ## Reference
 
@@ -104,7 +111,8 @@ For shapes that none of the other tools make.
 | `flatShading` | `true` for hard facets: one flat normal per triangle, the low-poly look |
 | `materials` | up to 16 material slots, each `{color, roughness, metalness, opacity, emissive, emissiveIntensity, name}` |
 | `faceMaterials` | the slot of each face (0 = the first), one per face in the order of `faces`: parts in different colours |
-| `colors` | one `[r, g, b]` (0 to 1) per vertex, in the order of `vertices`: a painted gradient, multiplied by the material colour |
+| `colors` | one colour per vertex, in the order of `vertices`: `[r, g, b]` (0 to 1) or `"#rrggbb"`. A painted gradient. Since 1.61 the numbers are **sRGB**, like a colour picker and material colours, and with `colors` and no `color` the material is **white**, so the vertex colours show as given (before, a random pastel tinted them). |
+| `colorSpace` | `"srgb"` (default) or `"linear"`, for `[r, g, b]` numbers that are already linear. Hex is always sRGB. |
 | `name`, `position`, `rotation`, `scale`, `color`, `physics` | as in `create_objects` |
 | `parentUuid` | a group to make it in: the position, rotation, scale and the vertices are then in the group's own space |
 | `castShadow`, `receiveShadow` | shadows, on by default |
@@ -142,6 +150,63 @@ columns, a whole little building.
 
 Every entry is checked **before anything is made**: if one is wrong, nothing is made and the error names it
 (`shapes[3]: …`). The uuids come back **in the order given**.
+
+A list that does not fit (`colors`, `vertices`, `uvs`) is refused with **how many entries arrived** and **the index
+of the first bad one**, for example `colors[5] (the first bad one of 8 entries): … got [2,0,0]`.
+
+### duplicate: copies and mirror images
+
+*New in 1.61.* Copies an object with everything in it — children, materials, behaviour, physics — the way
+Duplicate in the object menu does, so nothing is sent again. One undo step.
+
+| field | what it does |
+|---|---|
+| `uuid` | the object to copy |
+| `count` | 1 to 50 copies (default 1) |
+| `offset` | `[x, y, z]` metres between copies, in the parent's space (default: a row to the side) |
+| `mirror` | `"x"`, `"y"` or `"z"`: the copy is the mirror image across that plane through the **parent's centre**. In a group, that is the group's centre line, so a left ear becomes the right one; at the top of the scene it is the world's. The triangles are turned round so the copy still faces outward. A box, or a round shape with an even number of segments, is its own mirror image and keeps its editable size. |
+| `parentUuid` | a group (or any object) for the copies; they keep their place in the world |
+| `name` | the copies' name, numbered when there are several |
+
+For tens or hundreds of copies spread over the ground, use `scatter` with `source` ([Worlds](https://docs.theprototype.app/ai/agent-world.md#scatter-a-forest-rocks-flowers)).
+
+### import_shape: a glTF, GLB or OBJ file
+
+*New in 1.61.* Brings in a model made elsewhere: **glTF 2.0** (a `.glb`, or a `.gltf` with everything embedded) or a
+**Wavefront `.obj`**. One undo step; everyone sees it.
+
+| field | what it does |
+|---|---|
+| `data` | the file as base64 |
+| `chunk` | `{id, index, total}` for a big file sent in parts, each a multiple of 4 base64 characters. The model is placed when the last part arrives. |
+| `url` | an **https** address instead (25 MB at most). Local and private addresses are refused, and the server must allow cross-origin reads. |
+| `name`, `position`, `rotation`, `scale`, `parentUuid` | as in `create_objects` |
+| `folder` | the Explorer folder (default `Imported models`) |
+| `castShadow`, `receiveShadow` | for every mesh in it |
+
+The file goes **into your library first** (shared with the session), so the scene never needs the address again. Its
+**named parts** (glTF nodes, OBJ `o` / `g` groups) become named children, and the reply lists them with their uuids,
+so `animate_parts` or `update_objects` can move a lid or a wheel.
+
+The app reads what the file **is** from its bytes, not its name. A model is data: nothing in it runs. A file that points
+at other files (an external buffer or texture), or at anything but an embedded PNG / JPEG / WebP image, is refused. An
+`.obj`'s `.mtl` material library is not inside it, so its parts get plain materials; colour them with `set_material`.
+
+### create_text: 3D text (since 1.61)
+
+A sign, a title or a label. Over the connector this is `create_shape {action: "text"}`. The record travels and is saved, and every screen builds the letters from it. See [3D Text](https://docs.theprototype.app/3d-text.md).
+
+| field | what it does |
+|---|---|
+| `text` | the words; `\n` starts a new line |
+| `font` | a bundled font (`sans`, `serif`, `mono`, `rounded`, `display`, or its name), any Google Fonts family name (fetched once and kept in the Library), or `{asset: "<hash>"}` for a Library font |
+| `size` | letter height in metres |
+| `solid`, `depth`, `bevel` | solid letters; giving `depth` or `bevel` also makes them solid. `bevel` is a width in metres, `false` for none, or `{size, thickness, segments}` |
+| `align`, `maxWidth`, `anchor`, `lineHeight`, `letterSpacing` | the layout of the block |
+| `color`, `sideColor`, `emissive`, `metalness`, `roughness`, `quality`, `outline` | the look |
+| `position`, `rotation`, `name` | where it goes |
+
+To change a text, call `set_geometry` (`edit_shape {action: "params"}`) with the same fields under `params`. `list_fonts` (`assets {action: "fonts"}`) lists the fonts you can use. Solid text holds up to 300 characters, or 80 on a phone or headset. A text is made one per call; `create_shapes` does not take text.
 
 ### edit_mesh: model a mesh
 
