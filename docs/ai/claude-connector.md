@@ -195,6 +195,8 @@ Worlds ([Worlds with an agent](agent-world.md)):
 
 **New in 1.61** — no new tool names, more in the families:
 
+- `create_shape` `text` writes [3D text](../3d-text.md), flat or solid with a bevel; `edit_shape` `params` changes its
+  words and style, and `assets` `fonts` lists the fonts Claude may use (the bundled ones and those in your Library).
 - `edit_shape` `duplicate` copies an object in a row, or makes its mirror image (a left arm becomes the right one).
 - `create_shape` `import` brings in a glTF, GLB or OBJ model; `mesh` colours are sRGB with `#rrggbb` allowed.
 - `effects` `scatter` takes `source` (real copies of something Claude built) and `avoid` (keep paths clear).
