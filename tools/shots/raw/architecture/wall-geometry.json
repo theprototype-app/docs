@@ -2,10 +2,10 @@
  "id": "wall-geometry",
  "spec": "c299dc857dd9",
  "dpr": 2,
- "shotAt": "2026-11-04T20:23:46.897Z",
+ "shotAt": "2026-11-05T10:22:56.450Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
   "div#inspector.tp-ui",

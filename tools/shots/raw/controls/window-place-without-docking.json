@@ -2,12 +2,13 @@
  "id": "window-place-without-docking",
  "spec": "01a3a73355ac",
  "dpr": 2,
- "shotAt": "2026-11-04T20:46:25.225Z",
+ "shotAt": "2026-11-05T10:41:10.068Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
+  "input.cx-input",
   "button.cx-btn",
   "div.connect-pill",
   "button#connect-rooms-button.hud-cell",
@@ -18,8 +19,7 @@
   "div#inspector.tp-ui",
   "svg.lucide",
   "button.sec-panel-head",
-  "div.tp-ui",
-  "div.sec-panel-body"
+  "div.tp-ui"
  ],
  "width": 1240,
  "height": 1168,

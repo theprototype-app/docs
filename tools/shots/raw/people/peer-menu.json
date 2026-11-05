@@ -2,27 +2,28 @@
  "id": "peer-menu",
  "spec": "086836240232",
  "dpr": 2,
- "shotAt": "2026-11-04T21:20:58.341Z",
+ "shotAt": "2026-11-05T11:15:00.923Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
   "div.fixed",
   "div.ctx-scroll",
+  "path",
   "div.ctx-section",
+  "div.cursor-pointer",
   "svg.lucide",
   "span.flex",
-  "div.cursor-pointer",
-  "path",
-  "span.flex-1"
+  "span.flex-1",
+  "div.ctx-disabled"
  ],
- "width": 870,
+ "width": 872,
  "height": 1698,
  "crop": {
-  "x": 971,
+  "x": 976,
   "y": 51,
-  "w": 435,
+  "w": 436,
   "h": 849
  },
  "cut": [
@@ -33,7 +34,7 @@
   "1": {
    "x": 442,
    "y": 1235,
-   "w": 400,
+   "w": 400.6875,
    "h": 57
   }
  },

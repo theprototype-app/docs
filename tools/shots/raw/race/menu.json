@@ -2,10 +2,10 @@
  "id": "menu",
  "spec": "7ec83b4e42ab",
  "dpr": 2,
- "shotAt": "2026-11-04T21:25:18.487Z",
+ "shotAt": "2026-11-05T11:19:04.126Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
   "button.hud-el"

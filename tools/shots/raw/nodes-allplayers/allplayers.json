@@ -2,10 +2,10 @@
  "id": "allplayers",
  "spec": "b2bc73b19eed",
  "dpr": 2,
- "shotAt": "2026-11-04T21:10:19.455Z",
+ "shotAt": "2026-11-05T11:04:13.698Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
   "div.svelte-flow__pane",

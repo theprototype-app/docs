@@ -2,15 +2,16 @@
  "id": "first-game-quest",
  "spec": "f49b6f2c27ac",
  "dpr": 2,
- "shotAt": "2026-11-04T21:35:06.214Z",
+ "shotAt": "2026-11-05T11:28:26.001Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
   "div#tour-card.tour-card",
   "button#mobile-add-button.hud-fab",
   "button#ai-hud-button.hud-fab",
+  "h3#tour-title.tour-title",
   "p.tour-body",
   "p.tour-hint",
   "button#tour-skip.tour-link",
@@ -38,9 +39,9 @@
  ],
  "anchors": {
   "1": {
-   "x": 660.78125,
-   "y": 182,
-   "w": 49.21875,
+   "x": 661.25,
+   "y": 222,
+   "w": 48.75,
    "h": 33
   },
   "2": {

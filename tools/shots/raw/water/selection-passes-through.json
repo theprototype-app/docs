@@ -2,10 +2,10 @@
  "id": "selection-passes-through",
  "spec": "ae92cbf795d0",
  "dpr": 2,
- "shotAt": "2026-11-04T21:39:01.944Z",
+ "shotAt": "2026-11-05T11:32:04.338Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
   "svg.lucide",
@@ -13,13 +13,13 @@
   "button#budget-chip.bc-main",
   "span.bc-target",
   "span#budget-chip-percent.bc-pct",
+  "button#budget-chip-target.bc-caret",
   "div#inspector.tp-ui",
   "div.slider",
   "input.svelte-1xmlgu5",
   "span.appear",
   "div.wrapper",
-  "label.pr-label",
-  "div.tp-ui"
+  "label.pr-label"
  ],
  "width": 1348,
  "height": 1168,
@@ -47,7 +47,7 @@
   "2": {
    "x": 635.4375,
    "y": 209.40625,
-   "w": 284.4375,
+   "w": 271.625,
    "h": 45.875
   }
  },

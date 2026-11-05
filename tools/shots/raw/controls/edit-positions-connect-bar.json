@@ -2,10 +2,10 @@
  "id": "edit-positions-connect-bar",
  "spec": "d2aed1e23951",
  "dpr": 2,
- "shotAt": "2026-11-04T20:48:19.232Z",
+ "shotAt": "2026-11-05T10:43:06.314Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
   "span.hud-edit-grip",

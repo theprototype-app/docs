@@ -2,10 +2,10 @@
  "id": "script-tab",
  "spec": "be804566ea93",
  "dpr": 2,
- "shotAt": "2026-11-04T20:37:54.943Z",
+ "shotAt": "2026-11-05T10:33:13.611Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
   "div#code-ws-dock.code-ws",
@@ -38,7 +38,7 @@
   "1": {
    "x": 28,
    "y": 87,
-   "w": 578,
+   "w": 572.40625,
    "h": 44
   }
  },

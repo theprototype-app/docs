@@ -2,10 +2,10 @@
  "id": "statistics-budget",
  "spec": "f94ebf9c1e22",
  "dpr": 2,
- "shotAt": "2026-11-04T21:21:37.644Z",
+ "shotAt": "2026-11-05T11:15:38.279Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
   "div.ui-panel-header",
@@ -35,9 +35,9 @@
  ],
  "anchors": {
   "1": {
-   "x": 504.375,
+   "x": 524.25,
    "y": 98,
-   "w": 237.625,
+   "w": 217.75,
    "h": 29.3125
   }
  },

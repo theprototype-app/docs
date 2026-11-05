@@ -51,7 +51,7 @@ yours in [Your games & stats](community.md#your-games-stats).
 
 ## Export: a game in a zip
 
-![The Export tab of Publish / Export with the itch.io preset selected: the three presets itch.io, Static host and Embed, the title Mini Golf, the viewport size, the cover image and CDN boxes, the size estimate, the itch.io upload notes and Build & download zip. 1: the itch.io preset.](img/publish-export/export-tab.webp){ .shot width="647" height="739" loading=lazy }
+![The Export tab of Publish / Export with the itch.io preset selected: the three presets itch.io, Static host and Embed, the title Mini Golf, the viewport size, the cover image and CDN boxes, the size estimate, the itch.io upload notes and Build & download zip. 1: the itch.io preset.](img/publish-export/export-tab.webp){ .shot width="647" height="724" loading=lazy }
 /// caption
 The Export tab with the itch.io preset selected.
 ///

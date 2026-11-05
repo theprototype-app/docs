@@ -2,10 +2,10 @@
  "id": "editor-tour",
  "spec": "d3c72da5d7c4",
  "dpr": 2,
- "shotAt": "2026-11-04T21:34:27.672Z",
+ "shotAt": "2026-11-05T11:27:48.866Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
   "span.tour-name",

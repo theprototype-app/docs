@@ -2,10 +2,10 @@
  "id": "possessnode",
  "spec": "597927d90508",
  "dpr": 2,
- "shotAt": "2026-11-04T21:17:07.401Z",
+ "shotAt": "2026-11-05T11:11:23.462Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.61.0",
+  "sha": "fc6e2d26"
  },
  "uiHits": [
   "div.svelte-flow__pane",
