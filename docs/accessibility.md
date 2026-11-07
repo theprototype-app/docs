@@ -28,6 +28,9 @@ Every panel, sheet, dock, toolbar, menu, toast and the phone layout grows or shr
   have to resize them again.
 - The scale is applied before the app draws its first frame, so a reload never flashes the old size.
 - On a small phone, 150 % leaves less room for the scene; 120–130 % is often the best balance there.
+- *New in 1.63.* On a touch screen, small buttons, tabs and menu rows also answer a tap a little outside their drawn
+  edge (up to about 44 px), without growing and without taking a tap meant for the control next to them. If you want
+  them bigger on screen too, raise the UI scale.
 
 ![The Accessibility page at 150 % on a folded phone: bigger type and bigger controls, with nothing pushed off the screen.](img/accessibility/scale-150-phone.webp){ .shot .fade-b width="390" height="640" loading=lazy }
 /// caption

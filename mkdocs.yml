@@ -40,6 +40,7 @@ nav:
     - Image Editor: image-editor.md
     - Shader Graph: shader-graph.md
     - Shader Nodes: shader-nodes.md
+    - Pro Look: pro-look.md
     - Baked Light: baked-light.md
     - Scene Look (Post-processing): post-processing.md
     - Photo Mode: photo-mode.md

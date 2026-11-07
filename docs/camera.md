@@ -144,6 +144,7 @@ The **Environment** section sets the scene's lighting and sky. Pick a preset chi
 | **Sunset** | Warm, low sun. |
 | **Night** | Dim and cool. |
 | **Classic** | The pre-lighting look with the rig **off** — bring your own lights. |
+| **Product shot**, **Cinematic**, **Stylised** | *New in 1.63.* Pro presets: they also set the tone mapping and a stack of post effects. See [Pro Look](pro-look.md). |
 
 ![The same scene under four environment presets: Studio (neutral grey), Daylight (bright sky), Sunset (warm, low sun) and Night (dim and cool).](img/camera/env-presets.webp){ .shot width="1292" height="812" loading=lazy }
 /// caption
