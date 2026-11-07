@@ -9,7 +9,7 @@
 - **[Baked light](baked-light.md)** — soft corner shadows and bounced light, worked out once and saved with the scene.
 - **[Photo mode](photo-mode.md)** — a path-traced still of your view as a PNG.
 
-A quick way to try all of it: **New scene ▸ Templates ▸ Product shot**, press **Bake light**, then **Photo…**.
+A quick way to try all of it: open **Templates ▸ Product shot**, press **Bake light**, then **Photo…**.
 
 ## Pro presets
 
