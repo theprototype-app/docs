@@ -126,6 +126,17 @@ camera's own look instead of the scene's.
 `browser`, `wireframe` or `no effects`, and `how` says where to change it. `screenshot` with `postEffects: true` draws
 the picture through the same effects and answers `postEffects: "applied"`, or `"unavailable"` with the reason.
 
+### bake_light: baked corner shadows and bounced light
+
+*New in this version.* `bake_light` bakes [Baked Light](../baked-light.md) for everything that does not move:
+`{"do": "bake", "quality": "normal"}` (`draft`, `normal`, `high`) runs the bake on this device and waits up to `wait`
+seconds (default 60, max 120) for the result; a longer bake answers "still baking" and `{"do": "status"}` reports
+it later. `status` also says whether the bake is `stale` (things moved since), how many objects got corner shadows
+only (`aoOnly`, overlapping UVs) and the panel's notes, such as which objects were left out and why. `cancel` stops
+a running bake (nothing changes), `clear` removes the bake, and `strength` sets `light` (0-3) and `ao` (0-1).
+A bake, a clear and a strength change ask the host first like `set_post`, and each is one Undo step. Through the
+[Claude connector](claude-connector.md) the same thing is `set_look` with `action: "bake"` and the options under `bake`.
+
 ### set_quality: ask for higher quality on the person's own device
 
 *New in 1.61.* When a phone hides the post effects to stay smooth, an agent does **not** change that on its own. It
