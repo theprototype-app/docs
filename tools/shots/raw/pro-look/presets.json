@@ -1,0 +1,28 @@
+{
+ "id": "presets",
+ "spec": "c5ff0c2bf58b",
+ "dpr": 2,
+ "shotAt": "2026-11-07T20:30:00.964Z",
+ "app": {
+  "version": "1.62.0",
+  "sha": "5249f1ae"
+ },
+ "uiHits": [],
+ "kind": "view",
+ "tiles": [
+  {
+   "file": "presets--product.webp",
+   "caption": "Product shot"
+  },
+  {
+   "file": "presets--cinematic.webp",
+   "caption": "Cinematic"
+  },
+  {
+   "file": "presets--stylised.webp",
+   "caption": "Stylised"
+  }
+ ],
+ "compose": "row",
+ "fade": []
+}

@@ -16,11 +16,25 @@ A quick way to try all of it: open **Templates ▸ Product shot**, press **Bake 
 Open **Configure Scene ▸ Environment** and pick a preset chip. The three pro presets sit beside Studio, Daylight,
 Sunset and Night:
 
+![Configure Scene ▸ Environment with its preset chips. 1: the three pro presets — Product shot, Cinematic and Stylised.](img/pro-look/environment-chips.webp){ .shot width="335" height="198" loading=lazy }
+/// caption
+Configure Scene ▸ Environment: the pro presets sit beside the other preset chips.
+///
+
+<div class="shot-key" markdown>
+1. The **pro presets**: Product shot, Cinematic and Stylised.
+</div>
+
 | Preset | Look |
 |---|---|
 | **Product shot** | A clean studio: soft light from a photo studio, neutral tone mapping, gentle bloom, soft corner shadows. Made for showing one object off. |
 | **Cinematic** | Low warm sun, haze in the air with light shafts through it, a little lens flare, film grain and a dark vignette. |
 | **Stylised** | Bright, saturated and punchy, for games and toy-like scenes. |
+
+![The same pedestal with a red knot, a gold cube and a white ball under the three pro presets: Product shot (a clean grey studio with soft light), Cinematic (warm low sun, haze and a dark vignette) and Stylised (bright blue sky, saturated colours).](img/pro-look/presets.webp){ .shot width="1344" height="320" loading=lazy }
+/// caption
+Product shot, Cinematic and Stylised on the same objects — one press each.
+///
 
 One press changes the sky, the light, the exposure, the tone mapping and the post effects. **Undo** takes all of it back
 in one step. The preset is saved with the scene and everyone in the session sees it.
@@ -65,6 +79,22 @@ Film grain and chromatic aberration were already in the stack.
 **On** or **Off** to decide yourself. **New-frame weight**: lower is smoother, higher trails less.
 
 Scenes that use the older *Anti-aliasing (SMAA)* entry keep working unchanged.
+
+## Photo mode
+
+**Configure Scene ▸ Scene look ▸ Photo…** renders a path-traced still of your view — soft shadows, real reflections,
+glass — as a PNG. See [Photo Mode](photo-mode.md) for every setting, headsets and phones, and what a photo cannot show.
+
+![The Photo window. 1: Samples and Time limit, whichever comes first ends the render. 2: Size — Half, View or 2x. 3: Render photo.](img/pro-look/photo-window.webp){ .shot width="660" height="518" loading=lazy }
+/// caption
+Scene look ▸ Photo…: the settings of a path-traced still.
+///
+
+<div class="shot-key" markdown>
+1. **Samples** and **Time limit**.
+2. **Size**: Half, View or 2x.
+3. **Render photo**.
+</div>
 
 ## For AI apps
 

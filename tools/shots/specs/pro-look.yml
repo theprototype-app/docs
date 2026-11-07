@@ -1,0 +1,55 @@
+# docs/pro-look.md — the three pro presets (1.63, roadmap 98 P5/P6), the Environment chips, the Photo window.
+# Shoot: e2e-slot -- node tools/shots/shoot.cjs pro-look       Re-annotate: node tools/shots/annotate.cjs pro-look
+page: pro-look
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+  scene:
+    - {create: Cylinder, name: Pedestal, at: [0, 0.15, 0], scale: [1.6, 0.3, 1.6], color: '#e8e4de'}
+    - {create: TorusKnot, name: Knot, at: [0, 1.15, 0], scale: 0.55, color: '#c1272d'}
+    - {create: Box, name: Cube, at: [-0.75, 0.5, 0.4], scale: 0.35, color: '#e3b448'}
+    - {create: Sphere, name: Ball, at: [0.8, 0.55, 0.45], scale: 0.4, color: '#ffffff'}
+    - {camera: {pos: [4.6, 3.0, 6.2], target: [0, 0.8, 0]}}
+shots:
+  - id: presets
+    alt: >-
+      The same pedestal with a red knot, a gold cube and a white ball under the three pro presets: Product shot
+      (a clean grey studio with soft light), Cinematic (warm low sun, haze and a dark vignette) and Stylised
+      (bright blue sky, saturated colours).
+    caption: Product shot, Cinematic and Stylised on the same objects — one press each.
+    kind: view
+    crop: {around: {union: [{object: Pedestal}, {object: Knot}]}, size: [440, 320], offset: [0, -40]}
+    variants:
+      - {eval: "window.__stores.proPresets.applyProPreset('product')", suffix: product, caption: Product shot}
+      - {eval: "window.__stores.proPresets.applyProPreset('cinematic')", suffix: cinematic, caption: Cinematic}
+      - {eval: "window.__stores.proPresets.applyProPreset('stylised')", suffix: stylised, caption: Stylised}
+    compose: row
+
+  - id: environment-chips
+    caption: 'Configure Scene ▸ Environment: the pro presets sit beside the other preset chips.'
+    alt: >-
+      Configure Scene ▸ Environment with its preset chips. 1: the three pro presets — Product shot, Cinematic and
+      Stylised.
+    setup:
+      - {section: Environment}
+    crop: {selector: '#environment-presets', pad: 30}
+    fade: []
+    annotate:
+      - {n: 1, at: {union: [{text: Product shot, within: '#environment-presets', up: 1}, {text: Stylised, within: '#environment-presets', up: 1}]}, shape: box, pad: 4, badge: r, key: 'The **pro presets**: Product shot, Cinematic and Stylised.'}
+
+  - id: photo-window
+    caption: 'Scene look ▸ Photo…: the settings of a path-traced still.'
+    alt: >-
+      The Photo window. 1: Samples and Time limit, whichever comes first ends the render. 2: Size — Half, View or 2x.
+      3: Render photo.
+    setup:
+      - {section: Scene look}
+      - {click: '#scene-look-photo'}
+      - {wait: 1500}
+    crop: {selector: '#photo-dialog', pad: 10}
+    annotate:
+      - {n: 1, at: {union: [{selector: '#photo-samples'}, {selector: '#photo-seconds'}]}, shape: box, pad: 4, badge: l, key: '**Samples** and **Time limit**.'}
+      - {n: 2, at: {selector: '#photo-scale'}, shape: box, pad: 4, badge: r, key: '**Size**: Half, View or 2x.'}
+      - {n: 3, at: {selector: '#photo-start'}, shape: box, pad: 4, badge: r, key: '**Render photo**.'}

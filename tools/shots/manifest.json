@@ -2254,6 +2254,43 @@
    "app": "1.61.0",
    "shotAt": "2026-11-05T11:16:59.307Z"
   },
+  "img/pro-look/environment-chips.webp": {
+   "page": "pro-look",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 335,
+   "height": 198,
+   "badges": 1,
+   "labels": [],
+   "app": "1.62.0",
+   "shotAt": "2026-11-07T20:32:48.787Z"
+  },
+  "img/pro-look/photo-window.webp": {
+   "page": "pro-look",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 660,
+   "height": 518,
+   "badges": 3,
+   "labels": [],
+   "app": "1.62.0",
+   "shotAt": "2026-11-07T20:30:35.151Z"
+  },
+  "img/pro-look/presets.webp": {
+   "page": "pro-look",
+   "kind": "view",
+   "dpr": 2,
+   "width": 1344,
+   "height": 320,
+   "badges": 0,
+   "labels": [
+    "Product shot",
+    "Cinematic",
+    "Stylised"
+   ],
+   "app": "1.62.0",
+   "shotAt": "2026-11-07T20:30:00.964Z"
+  },
   "img/profiler/details-sidebar.webp": {
    "page": "profiler",
    "kind": "ui",
