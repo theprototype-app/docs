@@ -1,0 +1,55 @@
+{
+ "id": "photo-window",
+ "spec": "e1f6246fe899",
+ "dpr": 2,
+ "shotAt": "2026-11-07T20:30:35.151Z",
+ "app": {
+  "version": "1.62.0",
+  "sha": "5249f1ae"
+ },
+ "uiHits": [
+  "dialog#photo-dialog.tp-ui",
+  "header.wc-head",
+  "div.md-body",
+  "h2#md-title-c2.wc-title",
+  "p#photo-where.text-xs",
+  "label.pr-label",
+  "div.flex",
+  "button#photo-denoise.tp-ui",
+  "svg.lucide",
+  "button#photo-download.tp-ui",
+  "button#photo-start.tp-ui",
+  "button#photo-scale-0.5.seg-opt"
+ ],
+ "width": 1320,
+ "height": 1036,
+ "crop": {
+  "x": 390,
+  "y": 191,
+  "w": 660,
+  "h": 518
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 1140,
+   "y": 233.59375,
+   "w": 100,
+   "h": 128.8125
+  },
+  "2": {
+   "x": 170,
+   "y": 394,
+   "w": 326,
+   "h": 76
+  },
+  "3": {
+   "x": 66,
+   "y": 486,
+   "w": 286,
+   "h": 72
+  }
+ },
+ "kind": "ui"
+}
