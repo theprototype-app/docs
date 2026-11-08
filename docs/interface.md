@@ -114,6 +114,10 @@ and, at its far end, the **Full height** button (↕) and the **hide** button.
   The main menu always opens above sidebars. With one or both sides at full height the Connect bar stays a pill,
   centred between the logo and the corner buttons. The toolbar never slides under a full-height sidebar — see
   [The toolbar and sidebars](controls.md#the-toolbar-and-sidebars).
+- *New in 1.63.* **Floating windows, menus and the toolbar use the space between the open sidebars**, pinned to full
+  height or not, and the toolbar centres there. When the bottom dock leaves a sidebar less than about 240 px it hides
+  itself and comes back when there is room again; when two sidebars would leave too little room, the one opened first
+  hides. On an unfolded phone or a tablet the **Panels** button brings them back.
 - **The header lock** of Configure Scene and Properties sits beside **Full height** in the tab row while that panel is
   the tab in front — see [Panel headers](#panel-headers).
 - **A pinned Properties** (the pin in its header) follows your selection without pulling its tab over the Objects list
