@@ -48,7 +48,7 @@ The scene keeps one look, and each device builds as much of it as it can afford:
 | Device | What it leaves out or makes lighter |
 |---|---|
 | Computer | Nothing. |
-| Phone | Volumetric fog and god rays take fewer steps; ambient occlusion runs at half size. |
+| Phone | Volumetric fog and god rays take fewer steps; ambient occlusion runs at half size. When the phone runs short of time, [automatic quality](performance.md) first draws a lighter look — the colour grade, tone mapping, bloom and vignette stay — before it turns the look off. |
 | Headset | Volumetric fog, god rays and lens flare are left out. |
 
 So a phone and a computer in the same session look at the same scene, each at a cost that suits it. Nobody's device
