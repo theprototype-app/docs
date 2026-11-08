@@ -39,6 +39,10 @@ Everything that **does not move**:
   the floor.
 - The panel lists what was left out and why, for example *"2 objects left out: 1 moves with
   physics, 1 has an animation."*
+- **Big, detailed scenes** (a whole tavern of carved kit pieces) still fit in one lightmap: very detailed
+  objects are laid out by their own texture coordinates. Where those overlap, the object gets the soft
+  corner shadows but no baked light, and the panel says so. Only when even that is too much are the most
+  detailed small props left out. They still cast shadows onto the rest, and keep their normal lighting.
 
 The light that bounces comes from the scene's own lights (the sun, point and spot lights).
 Those lights and the sky still light the scene live as before, so moving objects and baked
