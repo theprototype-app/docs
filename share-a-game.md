@@ -24,7 +24,8 @@ and you get its play link, `https://theprototype.app/p/‹id›`, with a **QR co
 community page's **▶ Play** button and its **3D preview** open the same play view. The first time, a note under the link
 says what it opens and where the link for playing together is; it goes once you copy or open the link.
 
-The play view shows a start card with **▶ Play** (and **Enter VR** in a headset's browser), a fullscreen button, the
+The play view shows a start card with **▶ Play** (and **Enter VR** first in a headset's browser: on a headset the link
+waits for you to press it instead of starting flat), a fullscreen button, the
 *Made with ThePrototype* badge and two links into the full app:
 
 ![The play view's start card over the scene: Play, Accessibility, the hint Click to look around · Esc to pause, and Sign in on theprototype.app with Playing needs no account under it; along the bottom the fullscreen button, Open in theprototype.app and Remix.](https://docs.theprototype.app/img/share-a-game/play-start-card.webp)

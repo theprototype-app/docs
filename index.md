@@ -48,6 +48,13 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.63 — pro look.** Three [pro presets](https://docs.theprototype.app/pro-look.md) — **Product shot**, **Cinematic** and **Stylised** — set the sky,
+light, exposure and a whole stack of effects in one press, scaled to each device. [Baked light](https://docs.theprototype.app/baked-light.md) works out
+soft corner shadows and bounced light once and saves them with the scene; [Photo mode](https://docs.theprototype.app/photo-mode.md) renders a
+path-traced still (a PC in the session renders it for a headset). New effects: lens flare, god rays and volumetric fog;
+TRAA is the default anti-aliasing. To try it, open **Templates ▸ Product shot**. Also: windows and menus keep clear of the side columns, Android Back closes what is on top, and a
+play link on a headset waits for **Enter VR**.
+
 **1.62 — sign in from another device.** A headset or a borrowed browser shows a short code; open
 **theprototype.app/link** on a phone or computer where you are signed in and approve it — no typing passwords on a
 Quest. A sign-in made with a code lasts at most a day unless you trust the device, and **Account ▸ Devices** lists every

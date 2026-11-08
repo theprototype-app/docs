@@ -19,7 +19,9 @@ Voice*).
 A scene remembers which module each device came from. Open one on a machine that lacks the
 module and a dialog, **This scene uses modules**, lists what is *Not installed* or
 *Switched off* and offers **Install (n)**, **Enable (n)** or **Load anyway** — installing is
-per machine, so every player does it once. Load anyway keeps the devices as silent
+per machine, so every player does it once. *Since 1.63*, a play link installs a module from the official
+modules collection by itself, remembers a module you installed, and asks about any other module once per
+version. Load anyway keeps the devices as silent
 placeholders with their settings intact; they wake up the moment the module is installed.
 
 ## Cables

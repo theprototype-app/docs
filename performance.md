@@ -191,10 +191,15 @@ shadow pass draws every mesh a second time and so is where the cost actually is:
 3. Resolution 72%
 4. Ambient occlusion off
 5. Resolution 61%
-6. Scene look (post-processing) off
-7. Resolution 50%
-8. Fewer particles
-9. Your camera updates to peers halved
+6. Scene look lighter — volumetric fog, god rays, lens flare, TRAA and ambient occlusion go; the colour grade, tone
+   mapping, bloom and vignette stay *(new in 1.63)*
+7. Scene look (post-processing) off
+8. Resolution 50%
+9. Fewer particles
+10. Your camera updates to peers halved
+
+A look change (a [pro preset](https://docs.theprototype.app/pro-look.md), a new effect) does not count against the scene: the first frames after it,
+while its effects get ready, are left out of the measurement *(1.63)*.
 
 While it is acting, a **Reduced quality (scene is heavy)** chip sits beside the object count, and
 its tooltip names exactly which steps are in force. Click the chip to **hold** it there — useful

@@ -431,6 +431,16 @@ only).
 The logo menu fits a short screen — a landscape phone, or a docked Connect bar — and scrolls with a finger, with no
 visible scrollbar. On a folding phone it stays right through folding and unfolding with the page open.
 
+### Phones and tablets (1.63)
+
+- **Android Back closes what is on top**: a menu, a dialog, a window, the bottom panel or the Connect drawer closes with
+  the Back button or gesture, one at a time, before Back leaves the app. Play and shared play links keep their own Back.
+- **The keyboard does not cover the dialog**: a dialog with a text field moves up above the on-screen keyboard, and on a
+  touch screen it does not open the keyboard by itself.
+- **Long menus scroll**: the profile menu and other long menus stay on screen and scroll with a finger.
+- **Tablets**: with the Properties column pinned full height, the toolbar centres in the space beside it.
+- The *lowered the scene look* card waits at the bottom on a touch screen and hides while [Film](https://docs.theprototype.app/film.md) is open.
+
 ### Floating windows
 
 The toolboxes, the Explorer, the flow and animation windows and the panels all behave the same way: drag the header (or, since 1.35, any empty part of the window) to move, drag the bottom-right corner to resize. A window can never be sized past the edge of the screen — the resize corner always stays reachable — and **double-clicking** the corner resets it to its default size while leaving it where you parked it. Size and position are remembered per window.

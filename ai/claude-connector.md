@@ -189,6 +189,12 @@ Worlds ([Worlds with an agent](https://docs.theprototype.app/ai/agent-world.md))
 - `set_look` `material` takes `pattern` (wood, brick, marble …). `create_shape` `mesh` takes `subdivide: 1-2`, and
   `edit_shape` `update` sends a mesh new vertices.
 
+**New in 1.63** — no new tool names, more in the families:
+
+- `set_look` `preset` applies a [pro look](https://docs.theprototype.app/pro-look.md) (`product`, `cinematic`, `stylised`) in one Undo step.
+- `set_look` `bake` bakes [corner shadows and bounced light](https://docs.theprototype.app/baked-light.md) (`bake: {do, quality, wait, light, ao}`).
+- `run` `photo` renders a path-traced [photo](https://docs.theprototype.app/photo-mode.md) of your view; a PC in the session renders it for a headset.
+
 **New in 1.61** — no new tool names, more in the families:
 
 - `create_shape` `text` writes [3D text](https://docs.theprototype.app/3d-text.md), flat or solid with a bevel; `edit_shape` `params` changes its

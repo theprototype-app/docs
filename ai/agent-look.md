@@ -126,6 +126,30 @@ camera's own look instead of the scene's.
 `browser`, `wireframe` or `no effects`, and `how` says where to change it. `screenshot` with `postEffects: true` draws
 the picture through the same effects and answers `postEffects: "applied"`, or `"unavailable"` with the reason.
 
+### bake_light: baked corner shadows and bounced light
+
+*New in 1.63.* `bake_light` bakes [Baked Light](https://docs.theprototype.app/baked-light.md) for everything that does not move:
+`{"do": "bake", "quality": "normal"}` (`draft`, `normal`, `high`) runs the bake on this device and waits up to `wait`
+seconds (default 60, max 120) for the result; a longer bake answers "still baking" and `{"do": "status"}` reports
+it later. `status` also says whether the bake is `stale` (things moved since), how many objects got corner shadows
+only (`aoOnly`, overlapping UVs) and the panel's notes, such as which objects were left out and why. `cancel` stops
+a running bake (nothing changes), `clear` removes the bake, and `strength` sets `light` (0-3) and `ao` (0-1).
+A bake, a clear and a strength change ask the host first like `set_post`, and each is one Undo step. Through the
+[Claude connector](https://docs.theprototype.app/ai/claude-connector.md) the same thing is `set_look` with `action: "bake"` and the options under `bake`.
+
+### set_look_preset: a pro look in one call
+
+*New in 1.63.* `set_look_preset {"preset": "product"}` (or `cinematic`, `stylised`) applies a [pro preset](https://docs.theprototype.app/pro-look.md):
+the sky, light, exposure, tone mapping and post effects together, as one Undo step that everyone in the session sees. It
+asks the host first like `set_post`. Through the [Claude connector](https://docs.theprototype.app/ai/claude-connector.md) it is `set_look` with
+`action: "preset"`.
+
+### take_photo: a path-traced still
+
+*New in 1.63.* `take_photo` renders a [photo](https://docs.theprototype.app/photo-mode.md) of the person's view (`samples`, `seconds`, `denoise`;
+`save: true` files it under Scene shots) and answers with the image like a screenshot. On a headset or a phone a PC in
+the session renders it. Through the connector it is `run` with `action: "photo"`.
+
 ### set_quality: ask for higher quality on the person's own device
 
 *New in 1.61.* When a phone hides the post effects to stay smooth, an agent does **not** change that on its own. It

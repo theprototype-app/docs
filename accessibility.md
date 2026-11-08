@@ -25,6 +25,8 @@ Every panel, sheet, dock, toolbar, menu, toast and the phone layout grows or shr
   have to resize them again.
 - The scale is applied before the app draws its first frame, so a reload never flashes the old size.
 - On a small phone, 150 % leaves less room for the scene; 120–130 % is often the best balance there.
+- *New in 1.63.* The scale also grows the panel tab strips and menus, so a touch screen can have bigger targets
+  everywhere.
 
 ![The Accessibility page at 150 % on a folded phone: bigger type and bigger controls, with nothing pushed off the screen.](https://docs.theprototype.app/img/accessibility/scale-150-phone.webp)
 *Figure: UI scale at 150 % on a folded phone.*

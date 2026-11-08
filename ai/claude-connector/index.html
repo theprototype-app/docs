@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Use theprototype from claude.ai and voice", "url": "https://docs.theprototype.app/ai/claude-connector/", "description": "Add theprototype as a connector in claude.ai, press Connect Claude in your open theprototype tab, and talk Claude through building — in a chat on the web or desktop, in the Claude phone app, or…", "dateModified": "2026-11-05", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.61.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/ai-claude-connector/connect-card.webp", "caption": "The AI window's Connect Claude card, before you sign in."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Use theprototype from claude.ai and voice", "url": "https://docs.theprototype.app/ai/claude-connector/", "description": "Add theprototype as a connector in claude.ai, press Connect Claude in your open theprototype tab, and talk Claude through building — in a chat on the web or desktop, in the Claude phone app, or…", "dateModified": "2026-11-07", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.61.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/ai-claude-connector/connect-card.webp", "caption": "The AI window's Connect Claude card, before you sign in."}]}</script>
 </head>
   
   
@@ -1125,11 +1125,74 @@
   
   
     <li class="md-nav__item">
+      <a href="../../pro-look/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pro Look
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../baked-light/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Baked Light
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../post-processing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Scene Look (Post-processing)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../photo-mode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Photo Mode
   </span>
   
 
@@ -6616,6 +6679,12 @@ exactly what the agent tools of the same job do, with the same limits:</p>
 <li><code>set_look</code> <code>material</code> takes <code>pattern</code> (wood, brick, marble …). <code>create_shape</code> <code>mesh</code> takes <code>subdivide: 1-2</code>, and
   <code>edit_shape</code> <code>update</code> sends a mesh new vertices.</li>
 </ul>
+<p><strong>New in 1.63</strong> — no new tool names, more in the families:</p>
+<ul>
+<li><code>set_look</code> <code>preset</code> applies a <a href="../../pro-look/">pro look</a> (<code>product</code>, <code>cinematic</code>, <code>stylised</code>) in one Undo step.</li>
+<li><code>set_look</code> <code>bake</code> bakes <a href="../../baked-light/">corner shadows and bounced light</a> (<code>bake: {do, quality, wait, light, ao}</code>).</li>
+<li><code>run</code> <code>photo</code> renders a path-traced <a href="../../photo-mode/">photo</a> of your view; a PC in the session renders it for a headset.</li>
+</ul>
 <p><strong>New in 1.61</strong> — no new tool names, more in the families:</p>
 <ul>
 <li><code>create_shape</code> <code>text</code> writes <a href="../../3d-text/">3D text</a>, flat or solid with a bevel; <code>edit_shape</code> <code>params</code> changes its
@@ -6685,7 +6754,7 @@ exactly what the agent tools of the same job do, with the same limits:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-05
+    2026-11-07
   </span>
 
     

@@ -57,6 +57,13 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.63 — pro look.** Three [pro presets](https://docs.theprototype.app/pro-look.md) — **Product shot**, **Cinematic** and **Stylised** — set the sky,
+light, exposure and a whole stack of effects in one press, scaled to each device. [Baked light](https://docs.theprototype.app/baked-light.md) works out
+soft corner shadows and bounced light once and saves them with the scene; [Photo mode](https://docs.theprototype.app/photo-mode.md) renders a
+path-traced still (a PC in the session renders it for a headset). New effects: lens flare, god rays and volumetric fog;
+TRAA is the default anti-aliasing. To try it, open **Templates ▸ Product shot**. Also: windows and menus keep clear of the side columns, Android Back closes what is on top, and a
+play link on a headset waits for **Enter VR**.
+
 **1.62 — sign in from another device.** A headset or a borrowed browser shows a short code; open
 **theprototype.app/link** on a phone or computer where you are signed in and approve it — no typing passwords on a
 Quest. A sign-in made with a code lasts at most a day unless you trust the device, and **Account ▸ Devices** lists every
@@ -1162,6 +1169,16 @@ only).
 The logo menu fits a short screen — a landscape phone, or a docked Connect bar — and scrolls with a finger, with no
 visible scrollbar. On a folding phone it stays right through folding and unfolding with the page open.
 
+### Phones and tablets (1.63)
+
+- **Android Back closes what is on top**: a menu, a dialog, a window, the bottom panel or the Connect drawer closes with
+  the Back button or gesture, one at a time, before Back leaves the app. Play and shared play links keep their own Back.
+- **The keyboard does not cover the dialog**: a dialog with a text field moves up above the on-screen keyboard, and on a
+  touch screen it does not open the keyboard by itself.
+- **Long menus scroll**: the profile menu and other long menus stay on screen and scroll with a finger.
+- **Tablets**: with the Properties column pinned full height, the toolbar centres in the space beside it.
+- The *lowered the scene look* card waits at the bottom on a touch screen and hides while [Film](https://docs.theprototype.app/film.md) is open.
+
 ### Floating windows
 
 The toolboxes, the Explorer, the flow and animation windows and the panels all behave the same way: drag the header (or, since 1.35, any empty part of the window) to move, drag the bottom-right corner to resize. A window can never be sized past the edge of the screen — the resize corner always stays reachable — and **double-clicking** the corner resets it to its default size while leaving it where you parked it. Size and position are remembered per window.
@@ -1717,6 +1734,10 @@ and, at its far end, the **Full height** button (↕) and the **hide** button.
   The main menu always opens above sidebars. With one or both sides at full height the Connect bar stays a pill,
   centred between the logo and the corner buttons. The toolbar never slides under a full-height sidebar — see
   [The toolbar and sidebars](https://docs.theprototype.app/controls.md#the-toolbar-and-sidebars).
+- *New in 1.63.* **Floating windows, menus and the toolbar use the space between the open sidebars**, pinned to full
+  height or not, and the toolbar centres there. When the bottom dock leaves a sidebar less than about 240 px it hides
+  itself and comes back when there is room again; when two sidebars would leave too little room, the one opened first
+  hides. On an unfolded phone or a tablet the **Panels** button brings them back.
 - **The header lock** of Configure Scene and Properties sits beside **Full height** in the tab row while that panel is
   the tab in front — see [Panel headers](#panel-headers).
 - **A pinned Properties** (the pin in its header) follows your selection without pulling its tab over the Objects list
@@ -2621,6 +2642,8 @@ Every panel, sheet, dock, toolbar, menu, toast and the phone layout grows or shr
   have to resize them again.
 - The scale is applied before the app draws its first frame, so a reload never flashes the old size.
 - On a small phone, 150 % leaves less room for the scene; 120–130 % is often the best balance there.
+- *New in 1.63.* The scale also grows the panel tab strips and menus, so a touch screen can have bigger targets
+  everywhere.
 
 ![The Accessibility page at 150 % on a folded phone: bigger type and bigger controls, with nothing pushed off the screen.](https://docs.theprototype.app/img/accessibility/scale-150-phone.webp)
 *Figure: UI scale at 150 % on a folded phone.*
@@ -6725,6 +6748,212 @@ that moves geometry rather than shading it.
 
 ---
 
+Source: https://docs.theprototype.app/pro-look/ (Markdown: https://docs.theprototype.app/pro-look.md)
+
+# Pro Look
+
+*New in 1.63.* Make a scene look like a professional lit and shot it, mostly with one press each:
+
+- **[Pro presets](#pro-presets)** — Product shot, Cinematic and Stylised set the sky, the light, the exposure and a
+  whole stack of [post effects](https://docs.theprototype.app/post-processing.md) together.
+- **[Lens and film effects](#lens-and-film-effects)** — lens flare, god rays and volumetric fog join the look stack.
+- **[Smoother edges](#anti-aliasing)** — temporal anti-aliasing (TRAA) is the new default.
+- **[Baked light](https://docs.theprototype.app/baked-light.md)** — soft corner shadows and bounced light, worked out once and saved with the scene.
+- **[Photo mode](https://docs.theprototype.app/photo-mode.md)** — a path-traced still of your view as a PNG.
+
+A quick way to try all of it: open **Templates ▸ Product shot**, press **Bake light**, then **Photo…**.
+
+## Pro presets
+
+Open **Configure Scene ▸ Environment** and pick a preset chip. The three pro presets sit beside Studio, Daylight,
+Sunset and Night:
+
+![Configure Scene ▸ Environment with its preset chips. 1: the three pro presets — Product shot, Cinematic and Stylised.](https://docs.theprototype.app/img/pro-look/environment-chips.webp)
+*Figure: Configure Scene ▸ Environment: the pro presets sit beside the other preset chips.*
+
+1. The **pro presets**: Product shot, Cinematic and Stylised.
+
+| Preset | Look |
+|---|---|
+| **Product shot** | A clean studio: soft light from a photo studio, neutral tone mapping, gentle bloom, soft corner shadows. Made for showing one object off. |
+| **Cinematic** | Low warm sun, haze in the air with light shafts through it, a little lens flare, film grain and a dark vignette. |
+| **Stylised** | Bright, saturated and punchy, for games and toy-like scenes. |
+
+![The same pedestal with a red knot, a gold cube and a white ball under the three pro presets: Product shot (a clean grey studio with soft light), Cinematic (warm low sun, haze and a dark vignette) and Stylised (bright blue sky, saturated colours).](https://docs.theprototype.app/img/pro-look/presets.webp)
+*Figure: Product shot, Cinematic and Stylised on the same objects — one press each.*
+One press changes the sky, the light, the exposure, the tone mapping and the post effects. **Undo** takes all of it back
+in one step. The preset is saved with the scene and everyone in the session sees it.
+
+After picking one, everything stays yours to change: open **Scene look** and tune, remove or add effects as usual.
+
+### Each device draws its own share
+
+The scene keeps one look, and each device builds as much of it as it can afford:
+
+| Device | What it leaves out or makes lighter |
+|---|---|
+| Computer | Nothing. |
+| Phone | Volumetric fog and god rays take fewer steps; ambient occlusion runs at half size. When the phone runs short of time, [automatic quality](https://docs.theprototype.app/performance.md) first draws a lighter look — the colour grade, tone mapping, bloom and vignette stay — before it turns the look off. |
+| Headset | Volumetric fog, god rays and lens flare are left out. |
+
+So a phone and a computer in the same session look at the same scene, each at a cost that suits it. Nobody's device
+changes the scene for the others.
+
+## Lens and film effects
+
+Three new effects in **Scene look ▸ + Add effect ▸ Camera FX**. Each is off until you add it, and an effect that is
+switched off costs nothing.
+
+| Effect | What it does | Settings |
+|---|---|---|
+| **Lens flare** | Ghosts and a halo from bright spots, like a real camera lens. | Amount, threshold, ghost spacing, halo |
+| **God rays** | Shafts of light from the sky, blocked by the objects in front of it. | Amount, samples, length, decay, sky threshold |
+| **Volumetric fog** | Fog that is thicker near the ground, glowing around the sun. | Amount, colour, density, height falloff, base height, sun glow, steps, reach |
+
+Film grain and chromatic aberration were already in the stack.
+
+## Anti-aliasing
+
+**Scene look ▸ + Add effect ▸ Anti-aliasing** is now one entry with a **Method**:
+
+- **TRAA** (temporal, the default) blends the last few frames for the smoothest edges. Moving and animated characters
+  stay sharp: their motion is tracked so they do not smear.
+- **SMAA** smooths each frame on its own.
+
+**TRAA in Play**: **Auto** keeps it on for a computer and off on a phone, where fast motion could leave trails. Pick
+**On** or **Off** to decide yourself. **New-frame weight**: lower is smoother, higher trails less.
+
+Scenes that use the older *Anti-aliasing (SMAA)* entry keep working unchanged.
+
+## Photo mode
+
+**Configure Scene ▸ Scene look ▸ Photo…** renders a path-traced still of your view — soft shadows, real reflections,
+glass — as a PNG. See [Photo Mode](https://docs.theprototype.app/photo-mode.md) for every setting, headsets and phones, and what a photo cannot show.
+
+![The Photo window. 1: Samples and Time limit, whichever comes first ends the render. 2: Size — Half, View or 2x. 3: Render photo.](https://docs.theprototype.app/img/pro-look/photo-window.webp)
+*Figure: Scene look ▸ Photo…: the settings of a path-traced still.*
+
+1. **Samples** and **Time limit**.
+2. **Size**: Half, View or 2x.
+3. **Render photo**.
+
+## For AI apps
+
+An AI app uses the same features with actions on tools it already has:
+
+| Ask | Action |
+|---|---|
+| "Give it a cinematic look" | `set_look {action: "preset", preset: "cinematic"}` (or `product`, `stylised`) |
+| "Bake the lighting" | `set_look {action: "bake"}` |
+| "Take a nice photo of this" | `run {action: "photo"}` |
+
+The preset and the bake ask the host first, like any scene-wide change.
+
+
+---
+
+Source: https://docs.theprototype.app/baked-light/ (Markdown: https://docs.theprototype.app/baked-light.md)
+
+# Baked Light
+
+**Baked light** works out soft shadows in corners (ambient occlusion) and light bouncing off
+walls once, for everything in the scene that does not move, and saves the result with the
+scene. A red wall tints the floor beside it, and a crate sits in a soft shadow, without any
+cost while you play. It looks the same on a phone, in a headset, and on the desktop next to
+it.
+
+![The Baked light section in Configure Scene ▸ Scene look](https://docs.theprototype.app/img/baked-light/baked-light-dark.png)
+
+## Baking
+
+1. Arrange the scene first. A bake is a snapshot of where things are now.
+2. Open **Configure Scene ▸ Scene look** and find **Baked light**.
+3. Choose a **Quality** (Draft, Normal or High) and press **Bake light**.
+
+A progress bar shows how far it has got, and **Cancel** stops it at once. Nothing in the
+scene changes until a bake has finished. You can keep working while it runs: the bake
+happens in the background and never freezes the editor.
+
+When it finishes, everyone in the session sees the baked light, it is saved with the scene,
+and **Undo** takes the whole bake off in one step.
+
+Two sliders then tune it without baking again:
+
+- **Bounce light** — how strong the bounced light is (1 = as baked).
+- **Corner shadows** — how dark the ambient occlusion is.
+
+**Remove baked light** takes it off again (also one Undo step).
+
+## What gets baked
+
+Everything that **does not move**:
+
+- Left out: objects with a physics body that moves (dynamic or kinematic), objects moved by
+  a node graph or played by an animation clip, animated characters, instanced objects,
+  hidden objects, and anything spawned while a game runs.
+- Everything that is baked also **casts** onto everything else — a pillar's shadow lands on
+  the floor.
+- The panel lists what was left out and why, for example *"2 objects left out: 1 moves with
+  physics, 1 has an animation."*
+- **Big, detailed scenes** (a whole tavern of carved kit pieces) still fit in one lightmap: very detailed
+  objects are laid out by their own texture coordinates. Where those overlap, the object gets the soft
+  corner shadows but no baked light, and the panel says so. Only when even that is too much are the most
+  detailed small props left out. They still cast shadows onto the rest, and keep their normal lighting.
+
+The light that bounces comes from the scene's own lights (the sun, point and spot lights).
+Those lights and the sky still light the scene live as before, so moving objects and baked
+ones match. A scene with no lights bakes the corner shadows only.
+
+## When things move: "Out of date"
+
+If you move, delete or reshape a baked object, or change the lights, an **Out of date** chip
+appears next to the button. The old bake stays until you press **Bake again** — move things
+back and the chip goes away.
+
+## Lightmap UVs
+
+A bake needs a second set of texture coordinates that do not overlap. The app makes them for
+you: it uses the model's own second UV set when it has a clean one, and otherwise unwraps the
+object itself. Your model is never changed — the bake's coordinates live beside it and are
+rebuilt the same way on every device.
+
+If an object's UVs overlap and cannot be unwrapped cleanly, it gets the **corner shadows
+only**, and the panel says so in one line.
+
+## Devices
+
+| Device | Lightmap | Time limit | Download it shows |
+|---|---|---|---|
+| Desktop | up to 2048 px | 2 minutes | up to 16 MB |
+| Phone | up to 1024 px | 1 minute | up to 2 MB |
+| Headset | 512 px | 45 seconds | up to 1 MB |
+
+A bake made on a desktop also stores a small 512 px copy, which phones and headsets show when
+the full map is too big for them. A bake that hits the time limit keeps what it has and says
+so; **Bake again** on a faster device for a cleaner result.
+
+## Asking an AI to bake
+
+The [Claude connector](https://docs.theprototype.app/ai/claude-connector.md) and the in-app assistant can bake too: ask it to
+*"bake the light"* once the layout is done. It uses **set_look** with the **bake** action
+(`do`: bake, status, cancel, clear or strength), asks the host first like any scene-wide look
+change, and can tell you when the bake is out of date.
+
+## Limits worth knowing
+
+- **Moving objects are not baked.** They are still lit live and still receive the live
+  shadows, but they get no baked corner shadows.
+- **A bake is one bounce.** The light bounces once off the surfaces it hits; the sky is not
+  baked (it stays live).
+- **Objects drawn by a [Shader Graph](https://docs.theprototype.app/shader-graph.md)** and materials that cannot take a
+  lightmap are not baked (they still cast onto others).
+- **A GLTF export does not carry the bake.** Save a **Scene (`.tpscene`)** to keep it. The
+  lightmap is saved in the scene and shows in **Scene ▸ textures**.
+- Scenes saved before this version open exactly as they did.
+
+
+---
+
 Source: https://docs.theprototype.app/post-processing/ (Markdown: https://docs.theprototype.app/post-processing.md)
 
 # Scene Look (Post-processing)
@@ -6770,8 +6999,8 @@ Press **+ Add effect** and pick one from its family:
 | Colour grading | Tone mapping, Hue / saturation, Brightness / contrast, LUT |
 | Stylize | Dot screen |
 | Shader graph | a post effect you built as a node graph — see [below](#a-post-effect-you-build-yourself) |
-| Camera FX | Bloom, Vignette, Film grain, Chromatic aberration, Pixelation, Scanlines |
-| Anti-aliasing | SMAA |
+| Camera FX | Bloom, Vignette, Film grain, Chromatic aberration, Pixelation, Scanlines, Lens flare, God rays, Volumetric fog |
+| Anti-aliasing | Anti-aliasing (TRAA or SMAA) |
 
 Each row has a grip to **drag it up or down**, a checkbox to switch it off without losing
 its settings, and a **✕** to remove it. Click a row's name to open its parameters.
@@ -6959,10 +7188,10 @@ Effects that need to read the pixels around each pixel, or the depth of the scen
 | Tone mapping | shown, exactly as on the desktop |
 | Hue / saturation | shown, exactly |
 | Brightness / contrast | shown, exactly |
-| Anti-aliasing (SMAA) | the headset's own anti-aliasing does this job |
+| Anti-aliasing (TRAA or SMAA) | the headset's own anti-aliasing does this job |
 | LUT (colour grade) | **approximate**: a close fit of the grade, so a strong curve in the LUT is softened |
 | Vignette | **approximate**: drawn over each eye |
-| Ambient occlusion, Bloom, Depth of field, Film grain, Chromatic aberration, Pixelation, Scanlines, Dot screen | not shown |
+| Ambient occlusion, Bloom, Depth of field, Film grain, Chromatic aberration, Pixelation, Scanlines, Dot screen, Lens flare, God rays, Volumetric fog | not shown |
 | A post effect you built as a graph | not shown |
 
 Open an effect's row in the stack and it says so: *Approximate in a headset.* or *Not shown in a headset.* Effects that
@@ -6991,6 +7220,72 @@ If someone using a newer build adds an effect this one does not know, it is show
 list as **unsupported** and left completely alone — it is still saved, still shared, and
 still there for people whose version does understand it. Nothing you do to the rest of the
 stack deletes it.
+
+
+---
+
+Source: https://docs.theprototype.app/photo-mode/ (Markdown: https://docs.theprototype.app/photo-mode.md)
+
+# Photo Mode
+
+A **photo** is a path-traced still of your current view: soft shadows, real reflections, glass
+that bends light, and glowing surfaces that light the room around them. It comes out as a PNG.
+
+## Taking a photo
+
+1. Frame the view you want.
+2. Open **Configure Scene ▸ Scene look** and press **Photo…**.
+3. Press **Render photo**.
+
+The still sharpens while it renders. You can keep working: your view never moves, and nobody
+else in the session is affected. Press **Stop** at any time to keep the still so far.
+
+When it is done:
+
+- **Download PNG** saves the file.
+- **Save to scene shots** files it in the [Explorer](https://docs.theprototype.app/explorer.md) under *Scene shots ▸ the
+  scene's name*. It is an ordinary Library file: it is shared with the session like your
+  other files, and Undo removes it again.
+
+## Settings
+
+| Setting | What it does |
+|---|---|
+| Samples | 1 to 2048 (default 256). More samples, less noise. |
+| Time limit | 2 to 600 seconds (default 60). The render stops at whichever comes first. |
+| Denoise | Smooths the noise that is left (on by default). |
+| Size | **Half**, **View** (the size of your 3D view) or **2x** (at most 4096 pixels). |
+
+## Headsets and phones
+
+Path tracing is too heavy for a headset or a phone.
+
+- **With a PC in the same session**, the PC renders your view and sends the PNG back. The person
+  on the PC sees *Rendering a photo for you… Stop*. A photo asked of someone else is capped at
+  512 samples, 90 seconds and 2048 pixels.
+- **With no PC**, you get the best normal still of the view and a plain *not on this device*.
+- On a phone you can switch on **Try here anyway**. It is slow and warms the phone.
+
+## What a photo cannot show
+
+A photo draws the scene's objects and lights, not everything the editor draws. The window lists
+this too, under **What photos cannot show**.
+
+| In the scene | In a photo |
+|---|---|
+| PBR materials, glass, emissive surfaces, 3D text, scattered objects | Yes |
+| Basic, Lambert, Phong and Toon materials | A matte material with the same colour and texture. Basic counts as self-lit. |
+| [Shader-graph](https://docs.theprototype.app/shader-graph.md) materials | The object's base material. The graph's colours, patterns and movement are not drawn. |
+| Your own GLSL shaders | Left out |
+| Flat text, particles, lines, sprites | Left out |
+| [Scene look](https://docs.theprototype.app/post-processing.md) effects (bloom, grade, vignette …) | Not applied: the photo is the clean render with the scene's tone mapping and exposure |
+| Water | A still, glassy surface |
+| Hemisphere and ambient light | Replaced by sky light in the same colours |
+
+## For AI apps
+
+An AI app takes a photo with `run {action: "photo"}` (samples, seconds, denoise, and
+`save: true` to file it under Scene shots). It sees the result like a screenshot.
 
 
 ---
@@ -9902,6 +10197,7 @@ The **Environment** section sets the scene's lighting and sky. Pick a preset chi
 | **Sunset** | Warm, low sun. |
 | **Night** | Dim and cool. |
 | **Classic** | The pre-lighting look with the rig **off** — bring your own lights. |
+| **Product shot**, **Cinematic**, **Stylised** | *New in 1.63.* Pro presets: they also set the tone mapping and a stack of post effects. See [Pro Look](https://docs.theprototype.app/pro-look.md). |
 
 ![The same scene under four environment presets: Studio (neutral grey), Daylight (bright sky), Sunset (warm, low sun) and Night (dim and cool).](https://docs.theprototype.app/img/camera/env-presets.webp)
 *Figure: Studio, Daylight, Sunset and Night on the same three objects.*
@@ -10488,10 +10784,15 @@ shadow pass draws every mesh a second time and so is where the cost actually is:
 3. Resolution 72%
 4. Ambient occlusion off
 5. Resolution 61%
-6. Scene look (post-processing) off
-7. Resolution 50%
-8. Fewer particles
-9. Your camera updates to peers halved
+6. Scene look lighter — volumetric fog, god rays, lens flare, TRAA and ambient occlusion go; the colour grade, tone
+   mapping, bloom and vignette stay *(new in 1.63)*
+7. Scene look (post-processing) off
+8. Resolution 50%
+9. Fewer particles
+10. Your camera updates to peers halved
+
+A look change (a [pro preset](https://docs.theprototype.app/pro-look.md), a new effect) does not count against the scene: the first frames after it,
+while its effects get ready, are left out of the measurement *(1.63)*.
 
 While it is acting, a **Reduced quality (scene is heavy)** chip sits beside the object count, and
 its tooltip names exactly which steps are in force. Click the chip to **hold** it there — useful
@@ -17669,7 +17970,9 @@ Voice*).
 A scene remembers which module each device came from. Open one on a machine that lacks the
 module and a dialog, **This scene uses modules**, lists what is *Not installed* or
 *Switched off* and offers **Install (n)**, **Enable (n)** or **Load anyway** — installing is
-per machine, so every player does it once. Load anyway keeps the devices as silent
+per machine, so every player does it once. *Since 1.63*, a play link installs a module from the official
+modules collection by itself, remembers a module you installed, and asks about any other module once per
+version. Load anyway keeps the devices as silent
 placeholders with their settings intact; they wake up the moment the module is installed.
 
 ## Cables
@@ -19689,7 +19992,8 @@ and you get its play link, `https://theprototype.app/p/‹id›`, with a **QR co
 community page's **▶ Play** button and its **3D preview** open the same play view. The first time, a note under the link
 says what it opens and where the link for playing together is; it goes once you copy or open the link.
 
-The play view shows a start card with **▶ Play** (and **Enter VR** in a headset's browser), a fullscreen button, the
+The play view shows a start card with **▶ Play** (and **Enter VR** first in a headset's browser: on a headset the link
+waits for you to press it instead of starting flat), a fullscreen button, the
 *Made with ThePrototype* badge and two links into the full app:
 
 ![The play view's start card over the scene: Play, Accessibility, the hint Click to look around · Esc to pause, and Sign in on theprototype.app with Playing needs no account under it; along the bottom the fullscreen button, Open in theprototype.app and Remix.](https://docs.theprototype.app/img/share-a-game/play-start-card.webp)
@@ -21011,6 +21315,30 @@ camera's own look instead of the scene's.
 `reason` says why: `quality tier` (a phone switched post effects off to stay smooth — by design), `switched off here`,
 `browser`, `wireframe` or `no effects`, and `how` says where to change it. `screenshot` with `postEffects: true` draws
 the picture through the same effects and answers `postEffects: "applied"`, or `"unavailable"` with the reason.
+
+### bake_light: baked corner shadows and bounced light
+
+*New in 1.63.* `bake_light` bakes [Baked Light](https://docs.theprototype.app/baked-light.md) for everything that does not move:
+`{"do": "bake", "quality": "normal"}` (`draft`, `normal`, `high`) runs the bake on this device and waits up to `wait`
+seconds (default 60, max 120) for the result; a longer bake answers "still baking" and `{"do": "status"}` reports
+it later. `status` also says whether the bake is `stale` (things moved since), how many objects got corner shadows
+only (`aoOnly`, overlapping UVs) and the panel's notes, such as which objects were left out and why. `cancel` stops
+a running bake (nothing changes), `clear` removes the bake, and `strength` sets `light` (0-3) and `ao` (0-1).
+A bake, a clear and a strength change ask the host first like `set_post`, and each is one Undo step. Through the
+[Claude connector](https://docs.theprototype.app/ai/claude-connector.md) the same thing is `set_look` with `action: "bake"` and the options under `bake`.
+
+### set_look_preset: a pro look in one call
+
+*New in 1.63.* `set_look_preset {"preset": "product"}` (or `cinematic`, `stylised`) applies a [pro preset](https://docs.theprototype.app/pro-look.md):
+the sky, light, exposure, tone mapping and post effects together, as one Undo step that everyone in the session sees. It
+asks the host first like `set_post`. Through the [Claude connector](https://docs.theprototype.app/ai/claude-connector.md) it is `set_look` with
+`action: "preset"`.
+
+### take_photo: a path-traced still
+
+*New in 1.63.* `take_photo` renders a [photo](https://docs.theprototype.app/photo-mode.md) of the person's view (`samples`, `seconds`, `denoise`;
+`save: true` files it under Scene shots) and answers with the image like a screenshot. On a headset or a phone a PC in
+the session renders it. Through the connector it is `run` with `action: "photo"`.
 
 ### set_quality: ask for higher quality on the person's own device
 
@@ -22566,6 +22894,12 @@ Worlds ([Worlds with an agent](https://docs.theprototype.app/ai/agent-world.md))
 - `assets` `search` finds models, sounds, images and CC0 materials. `place` and `prefab` put them in the scene.
 - `set_look` `material` takes `pattern` (wood, brick, marble …). `create_shape` `mesh` takes `subdivide: 1-2`, and
   `edit_shape` `update` sends a mesh new vertices.
+
+**New in 1.63** — no new tool names, more in the families:
+
+- `set_look` `preset` applies a [pro look](https://docs.theprototype.app/pro-look.md) (`product`, `cinematic`, `stylised`) in one Undo step.
+- `set_look` `bake` bakes [corner shadows and bounced light](https://docs.theprototype.app/baked-light.md) (`bake: {do, quality, wait, light, ao}`).
+- `run` `photo` renders a path-traced [photo](https://docs.theprototype.app/photo-mode.md) of your view; a PC in the session renders it for a headset.
 
 **New in 1.61** — no new tool names, more in the families:
 

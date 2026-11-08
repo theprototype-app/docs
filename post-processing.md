@@ -41,8 +41,8 @@ Press **+ Add effect** and pick one from its family:
 | Colour grading | Tone mapping, Hue / saturation, Brightness / contrast, LUT |
 | Stylize | Dot screen |
 | Shader graph | a post effect you built as a node graph — see [below](#a-post-effect-you-build-yourself) |
-| Camera FX | Bloom, Vignette, Film grain, Chromatic aberration, Pixelation, Scanlines |
-| Anti-aliasing | SMAA |
+| Camera FX | Bloom, Vignette, Film grain, Chromatic aberration, Pixelation, Scanlines, Lens flare, God rays, Volumetric fog |
+| Anti-aliasing | Anti-aliasing (TRAA or SMAA) |
 
 Each row has a grip to **drag it up or down**, a checkbox to switch it off without losing
 its settings, and a **✕** to remove it. Click a row's name to open its parameters.
@@ -230,10 +230,10 @@ Effects that need to read the pixels around each pixel, or the depth of the scen
 | Tone mapping | shown, exactly as on the desktop |
 | Hue / saturation | shown, exactly |
 | Brightness / contrast | shown, exactly |
-| Anti-aliasing (SMAA) | the headset's own anti-aliasing does this job |
+| Anti-aliasing (TRAA or SMAA) | the headset's own anti-aliasing does this job |
 | LUT (colour grade) | **approximate**: a close fit of the grade, so a strong curve in the LUT is softened |
 | Vignette | **approximate**: drawn over each eye |
-| Ambient occlusion, Bloom, Depth of field, Film grain, Chromatic aberration, Pixelation, Scanlines, Dot screen | not shown |
+| Ambient occlusion, Bloom, Depth of field, Film grain, Chromatic aberration, Pixelation, Scanlines, Dot screen, Lens flare, God rays, Volumetric fog | not shown |
 | A post effect you built as a graph | not shown |
 
 Open an effect's row in the stack and it says so: *Approximate in a headset.* or *Not shown in a headset.* Effects that
