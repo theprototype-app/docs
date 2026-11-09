@@ -84,6 +84,23 @@ A level table with unlocks and stars.
 Progress is saved **per device**: every player keeps the stars they saw earned. The table feeds
 the pause menu's level picker automatically.
 
+*Since 1.64* the levels come from the scene's one **Levels table** (Configure Scene ▸ Levels) — the
+same list portals and Claude use; see [Levels and progress](levels-and-progress.md). New nodes:
+
+- **Back to checkpoint** — puts *this* player back at their last checkpoint (or the level start).
+  Mark the chain *Per player* so a press moves only whoever pressed it.
+- **New game** — starts over for *this* player: forgets the saved progress on this device, resets
+  what the game keeps across levels, and goes to the first level.
+- **Last checkpoint** (value) — the name of the checkpoint (or portal) this player last passed;
+  empty when none.
+
+*Go to level* and *Next level* move **everyone** (group travel); a portal moves only the player who
+walks through it.
+
+Someone joining a session late sees the room as it is: pickups already taken stay hidden and cannot
+be taken again. Loading or clearing a scene on your own before joining no longer resets the room's
+game.
+
 ### Score
 
 - **Add score** — points to the shared score and to the player who earned them; counted **once**

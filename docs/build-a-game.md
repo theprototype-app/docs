@@ -238,7 +238,10 @@ and the Jam Room play this way. The editor grid is hidden in Play either way.
 
 ## 8. A second level
 
-One scene is one level; a game can have many.
+One scene is one level; a game can have many. *Since 1.64* the
+[Levels table, portals, checkpoints and loading screens](levels-and-progress.md) do most of
+what follows for you — one list of levels that portals, the Kit: Levels nodes and Claude all
+use, and progress an exported game remembers. The steps below are the hand-wired way.
 
 1. Build your first level, then in the **Explorer** right-click the file grid and
    choose **Save scene…** — type the name right there in the grid and press Enter. It
@@ -272,7 +275,7 @@ Two helpers that come with it:
 ## Where to go next
 
 - **Templates ▸ Games ▸ Towers** — a finished game made the same way: twelve levels of
-  co-op stacking with a Menu, HUD and Pause screen, Game Start and HUD Button nodes, physics
+  co-op stacking with a Menu, HUD and Pause screen, Start camera and HUD Button nodes, physics
   grabbing, limited reach and 1-3 stars a level. Load it and pull it apart; it is authored
   entirely as scene data, so everything in it is editable.
 - **Templates ▸ Games ▸ Stars Room** — a smaller one to read: a zero-gravity room where
@@ -293,6 +296,8 @@ Two helpers that come with it:
   drag the dots until no edges cross, on a flat board or around a **3D globe**. Each mode has
   30 levels that unlock as you solve them; your progress is kept on this device with
   `api.storage` (the level grid's **Reset progress** clears it). Every peer sees the same board.
+- **[Levels and progress](levels-and-progress.md)** — a Levels table, portals, checkpoints,
+  loading screens and saved progress; **Templates ▸ Two levels and a portal** shows them all.
 - **[Node System](node-system.md)** — the logic nodes this example leans on: Latch,
   Delay, Sequence, Counter and the Game group.
 - **[Physics & Simulation](physics.md)** — grabbing, throwing and colliders for the
