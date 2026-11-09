@@ -202,7 +202,7 @@ no jump.
 
 Add **End the game** to a button (or drive it from your own logic) to finish with an
 outcome, and **Back to the menu** to return. Because the menu screen is bound to
-`while: menu` it comes back by itself — and a **Game Start** node naming your gameplay
+`while: menu` it comes back by itself — and a **Start camera** node (called *Game Start* before 1.64) naming your gameplay
 camera puts a late arrival on the right view even though they never saw the transition.
 
 That's the loop: menu → play → score → pause → end → menu.

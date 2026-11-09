@@ -25,7 +25,7 @@ never sent over the network, so each player gets exactly one pulse per change.
 - **It is not a replay.** A player who joins mid-round receives the current state, not the
   pulses they missed. Anything that has to be right for a late arrival — which screen shows,
   which camera you look through — is better bound to the state itself: a HUD screen's **while**
-  setting ([HUD Editor](../hud-editor.md)), a [Game Start](gamestart.md) node, or
+  setting ([HUD Editor](../hud-editor.md)), a [Start camera](gamestart.md) node, or
   [Game Time](gametime.md) `playing`.
 
 ## Practical example

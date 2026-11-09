@@ -43,11 +43,12 @@ manually...** takes a typed id. A name that matches no element shows amber.
 A one-minute round clock, as the node is meant to be used:
 
 1. In the HUD editor, add a **Timer** element to the playing screen.
-2. Add a **Game Start** and a **HUD Timer** picking the Timer element; wire Game Start → HUD Timer's **start**.
+2. Add an [On Play start](onplaystart.md) and a **HUD Timer** picking the Timer element; wire On Play start → HUD
+   Timer's **start**.
 3. Set duration 60, format `{v}s`, and turn **autostart** off.
 4. Every round, the clock counts down from 60s on every player's screen.
 
 ![A Game Start wired into the start of a HUD Timer, with duration 60, format "{v}s" and autostart off](../img/nodes-hudtimer/hudtimer.webp){ .shot width="402" height="300" loading=lazy }
 /// caption
-A Game Start wired into a HUD Timer's start.
+An event wired into a HUD Timer's start. The picture is from before 1.64: where it shows Game Start, use On Play start.
 ///

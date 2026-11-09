@@ -96,7 +96,7 @@ screen, **✕** hides the window (the *Preview window while selected* row brings
 1.34 it resizes too: drag the grip in its top-left corner (the picture keeps the camera's framing), or double-click the
 grip for the default size. The size is remembered.
 
-A game uses cameras through the [Set Active Camera](nodes/setcamera.md) node, the [Game Start](nodes/gamestart.md) node's
+A game uses cameras through the [Set Active Camera](nodes/setcamera.md) node, the [Start camera](nodes/gamestart.md) node's
 camera, [Set Look](nodes/setlook.md) for each camera's own [look](post-processing.md), and since 1.27 the
 [Camera Rig](nodes/camerarig.md) node, which makes a camera follow or watch an object.
 

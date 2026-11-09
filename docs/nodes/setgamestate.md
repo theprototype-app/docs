@@ -36,7 +36,7 @@ does nothing; put an event node such as [All Players](allplayers.md) between the
   the variables.
 
 HUD screens set to show **while** a state (see [HUD Editor](../hud-editor.md)) and
-[Game Start](gamestart.md) nodes react to the state by themselves; [On Game State](ongamestate.md)
+[Start camera](gamestart.md) nodes react to the state by themselves; [On Game State](ongamestate.md)
 pulses when it changes.
 
 ## In multiplayer
