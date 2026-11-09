@@ -52,7 +52,7 @@ The cheat sheet.
 | <kbd>M</kbd> | Mute: the node does nothing until unmuted (drawn faded) |
 | <kbd>H</kbd> | Collapse / expand a card (a note collapses to its title) |
 | <kbd>Ctrl</kbd>+<kbd>G</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd> | Group / ungroup |
-| <kbd>Tab</kbd> | Open the selected group, or leave the one you are in |
+| <kbd>Tab</kbd> | With one node selected, search what can follow it and wire your pick to its output (*since 1.64*, [Drag a wire into space](node-system.md#drag-a-wire-into-space)); open the selected group; with nothing selected, leave the group you are in |
 | <kbd>Esc</kbd> | Leave the group you are in |
 | <kbd>N</kbd> / <kbd>Shift</kbd>+<kbd>N</kbd> | Add a note at the cursor / a note framing the selection |
 | <kbd>Q</kbd> / <kbd>E</kbd> | Align the selection into a column / a row |
