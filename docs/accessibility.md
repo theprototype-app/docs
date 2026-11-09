@@ -79,7 +79,7 @@ toast a crossed circle, and the draw-call count shows ▲ or ✕ before the numb
 strip).
 
 In the node editor every socket type has a colour **and a shape** — number disc, vector3 diamond, boolean square, color
-hexagon, object pentagon, event arrow, effect star, anything else a capsule. The ⚙ panel's **Socket types** legend shows
+hexagon, object pentagon, event arrow, effect star, anything else a capsule. The node editor's **Settings** (cog) panel's **Socket types** legend shows
 both, and while you drag a wire a socket that cannot take it becomes a red cross. See [Node System](node-system.md).
 
 ## Motion

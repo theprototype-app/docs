@@ -242,13 +242,13 @@ Right-click a file or a folder for **Duplicate** (**Duplicate folder**), **Copy*
 Images open zoomable (**−** / **＋** / **1:1**, drag to pan) with a pencil button that opens the
 [Image editor](image-editor.md), sounds open with a player, and 3D models open on a turntable with an **animation transport** — play, step a frame with <kbd>,</kbd> and <kbd>.</kbd>, scrub, pick a clip — and a mesh-stats line. The **←** / **→** buttons page through the folder without closing the window, and **⌐** goes up a level.
 
-The window's **⚙** holds two things worth knowing: **Opacity** fades the window so you can model against a reference picture, and **Passthrough** lets clicks reach the scene underneath while the header stays live to move it or switch it back. **Allow multiple windows** opens each file in a window of its own instead of re-pointing the one you have.
+The window's **Settings** (cog) holds two things worth knowing: **Opacity** fades the window so you can model against a reference picture, and **Passthrough** lets clicks reach the scene underneath while the header stays live to move it or switch it back. **Allow multiple windows** opens each file in a window of its own instead of re-pointing the one you have.
 
 ## Item properties (ⓘ)
 
-The ⓘ panel shows name, kind, size, folder path, added date and the content hash (copyable), plus per-kind details — image dimensions, audio duration and channels, text line count. For 3D objects it can embed a **rotatable inline 3D preview** with mesh stats (triangles / vertices / meshes) — enabled by the *3D model preview* toggle in the ⚙ tab. Double-clicking an object always opens the larger preview regardless of that toggle.
+The ⓘ panel shows name, kind, size, folder path, added date and the content hash (copyable), plus per-kind details — image dimensions, audio duration and channels, text line count. For 3D objects it can embed a **rotatable inline 3D preview** with mesh stats (triangles / vertices / meshes) — enabled by the *3D model preview* toggle in the **Settings** (cog) tab. Double-clicking an object always opens the larger preview regardless of that toggle.
 
-The **⚙ settings** tab holds local preferences: single-click opens folders, show path bar, 3D model preview, stack multiple drops on one spot, confirm before updating a prefab, hide built-in packs, and the *Import pack (.zip)* button.
+The **Settings** (cog) tab holds local preferences: single-click opens folders, show path bar, 3D model preview, stack multiple drops on one spot, confirm before updating a prefab, hide built-in packs, and the *Import pack (.zip)* button.
 
 ## Prefabs that are files
 

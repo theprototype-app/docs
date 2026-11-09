@@ -106,7 +106,7 @@ The breadcrumb bar in the docked Node editor.
 2. The **list**: every other flow at this level, the current one ticked.
 </div>
 
-On a phone the minimap is off by default; **⚙ Settings ▸ Minimap** turns it on.
+On a phone the minimap is off by default; **Settings ▸ Minimap** (the cog tab of the side panel) turns it on.
 
 ## Tidy graph
 
@@ -144,7 +144,7 @@ exactly as before.
 - Inside, **Group inputs** and **Group outputs** stand for the outside. Drag an inner socket onto their **＋ new** row to
   expose it as a group socket.
 - Draw a wire onto a group's socket from outside and it connects to the real socket inside.
-- Rename the group and its sockets in the properties panel (**⚙ ▸ Settings**).
+- Rename the group and its sockets in the properties panel (the cog ▸ **Settings**).
 - Groups nest, copy and paste with their contents, and undo and redo like every other edit.
 - <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd> ungroups: the nodes stay exactly where they were.
 

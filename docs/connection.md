@@ -10,7 +10,7 @@ The Connect panel is the bar at the top of the screen. Since 1.35 it is either *
 
 It has two halves:
 
-- **📋 Your ID** — the button on the left shows your own peer ID. Click it to **copy your invite link** (your app URL with your ID attached, e.g. `https://theprototype.app/#AB12CD`) to the clipboard. Until the connection to the signaling server is ready it reads *Generating…*.
+- **Your ID** — the button on the left shows your own peer ID. Click it to **copy your invite link** (your app URL with your ID attached, e.g. `https://theprototype.app/#AB12CD`) to the clipboard. Until the connection to the signaling server is ready it reads *Generating…*.
 - **Connect field** — paste a peer's ID into *Enter peer ID to connect* and press **Connect** to request a connection.
 
 Since 1.30, once you are connected the bar **collapses to a compact chip** — the status dot, the avatars of who is here
@@ -80,7 +80,7 @@ Public rooms under their own heading, apart from your session.
 
 ### Inviting someone
 
-1. **Copy your invite link** (the 📋 button) and send it to a friend.
+1. **Copy your invite link** (the **Your ID** button) and send it to a friend.
 2. When they open the link, their app automatically sends **you** a connection request.
 3. You get a **Connection request** toast — press **Approve** and you are connected.
 
@@ -201,7 +201,7 @@ Your room's panel has a **Room name**, a **Short description** and these switche
 | **Require approval to join** | **Join** becomes **Request to join**: the request lands on your approval card as *"‹name› wants to join ‹room›"*, and you approve or reject it as usual |
 | **Allow guests to join automatically (view-only)** | people who are not signed in may come in to watch. Off while approval is required or the room has a code |
 | **Enable room screenshot** | the list card shows a picture of your scene instead of a coloured initial |
-| **Room code** | list the room first, then type a code and **Set** it: someone who knows it gets in as a viewer **without** waiting for approval. A listed room with a code shows 🔒 |
+| **Room code** | list the room first, then type a code and **Set** it: someone who knows it gets in as a viewer **without** waiting for approval. A listed room with a code shows a lock |
 
 **When someone joins automatically** (*new in 1.44*) — a guest through *Allow guests to join automatically*, or
 anyone with the room code — you get a notice saying who came in, with **Turn off** (stops automatic joining) and
@@ -214,7 +214,7 @@ AI agents join as guests** (off by default). An [invite link](invites.md) always
 carries. "AI agent" is what the joining app says about itself, so this is about seeing who knocks, not security: an
 agent that hides it is just a guest, view-only like any other.
 
-Joining a coded room asks for the code (*"🔒 ‹room› needs a code"*). The right code goes straight in; a wrong one is
+Joining a coded room asks for the code (*"‹room› needs a code"*, with a lock). The right code goes straight in; a wrong one is
 refused, and five wrong codes lock that person out for ten minutes. If the room also requires approval, **Ask the host
 instead** sends an ordinary request. The code itself is never stored on the server or sent in the clear — only your
 device can check it, so a code set on another device of yours has to be set again here.

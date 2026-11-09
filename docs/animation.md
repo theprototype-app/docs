@@ -52,10 +52,10 @@ Rotation, scale and the look channels are absolute — only position works this 
 
 | Control | Does |
 |---|---|
-| ▶ / ⏸ | Play or pause **on every peer** |
-| ◀ | Play backwards from the playhead — press it again to pause where you are |
-| ⏹ | Stop and return to where playback started |
-| ⏮ / ⏭ | Jump to the start / end of the clip |
+| **Play** (▶) / **Pause** (❚❚) | Play or pause **on every peer** |
+| **Play backwards** (◀) | Play backwards from the playhead — press it again to pause where you are |
+| **Stop** | Stop and return to where playback started |
+| **To start** / **To end** | Jump to the start / end of the clip |
 | **A** / **B** | Set the loop start / end — playback stays inside that window while you work on one part |
 | **Speed** | Playback rate. It changes nothing in the data |
 | **Fit** | Frame the whole clip |

@@ -95,7 +95,7 @@ and labelled as such.
 
 **Click a row** (in the Tree or *Who draws most*) to pick that object: its numbers fill the
 [Details](#details-and-settings) sidebar, and it is selected in the scene with its settings open — straight to its
-[LOD section](lod.md) when it has a LOD group, which is often the fix. Switch off **⚙ Settings ▸ Select picked objects
+[LOD section](lod.md) when it has a LOD group, which is often the fix. Switch off **Settings ▸ Select picked objects
 in the scene** and a row only fills Details.
 
 !!! info "Triangles are what was drawn"
@@ -113,7 +113,7 @@ its edge button, like the Explorer's. The **right** one has two tabs:
   budget (150 / 300k), GPU time when the device measures it, the quality level, stalls and the heaviest CPU phases. From
   a **Detailed** recording it also shows how many materials were drawn, what each module or game cost, and the **picked
   object** — its draw calls, triangles, meshes, materials and CPU time.
-- **⚙ Settings** — *Timeline graphs* (FPS, Frame ms, Draw calls, Triangles, Quality; one always stays), *Quest budget
+- **Settings** (the cog) — *Timeline graphs* (FPS, Frame ms, Draw calls, Triangles, Quality; one always stays), *Quest budget
   lines*, *Follow a live stream*, *Select picked objects in the scene* (on by default) and *FPS and draw calls overlay*
   (the same switch as **Settings ▸ Interface**).
 

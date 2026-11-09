@@ -17,9 +17,9 @@ The object count in the status line carries a coloured dot:
 
 | Dot | Meaning |
 |---|---|
-| 🟢 Green | Within budget. Nothing to do. |
-| 🟡 Amber | Over the comfortable ceiling on at least one measure. Still fine, but worth knowing. |
-| 🔴 Red | Over the second ceiling. This is what the gateway and the auto-stops below read. |
+| Green | Within budget. Nothing to do. |
+| Amber | Over the comfortable ceiling on at least one measure. Still fine, but worth knowing. |
+| Red | Over the second ceiling. This is what the gateway and the auto-stops below read. |
 
 Hover it and it names what is over (*Scene budget: over on draw calls / frame, triangles /
 frame*). Click it and the **Statistics** window opens — the same window as the burger
@@ -51,9 +51,9 @@ The budget chip sits beside the toolbar.
 
 | Colour | Meaning |
 |---|---|
-| 🟢 Green | under 80 % of every budget |
-| 🟡 Amber | 80–100 % of at least one |
-| 🔴 Red | over a budget |
+| Green | under 80 % of every budget |
+| Amber | 80–100 % of at least one |
+| Red | over a budget |
 
 Lights and shadow-casting lights are small counts: at the budget is fine, over it is red. Pick the device from the
 chip's **▾** (or right-click / long-press the chip), or with the Quest / Phone / Desktop switch at the top of the Budget

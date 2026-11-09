@@ -21,7 +21,7 @@ greyed out until the next save drops it.
 ## Adding nodes
 
 - **Palette** — the left sidebar lists every node by group with a filter box; drag a node onto the canvas. The palette can be collapsed or moved to the other side with the tabs on its edge.
-- **Right-click the canvas** — a grouped Add menu, plus **🔍 Search nodes…**; just start typing while the menu is open to jump into search (<kbd>Arrow</kbd> keys + <kbd>Enter</kbd> to place, <kbd>Esc</kbd> back to the menu).
+- **Right-click the canvas** — a grouped Add menu, plus **Search nodes…**; just start typing while the menu is open to jump into search (<kbd>Arrow</kbd> keys + <kbd>Enter</kbd> to place, <kbd>Esc</kbd> back to the menu).
 - **Drag a wire into empty space** (*since 1.64*) — a search opens where you let go, listing only the nodes that fit the
   wire; see [Drag a wire into space](#drag-a-wire-into-space). With one node selected, <kbd>Tab</kbd> opens the same
   search for what can follow it.
@@ -115,12 +115,12 @@ work on it; its card says *resting until Play*. Play runs everything as before.
 The switch is in the node editor's controls and, as an optional button, on the [toolbar](controls.md#arranging-the-buttons).
 It is your own setting, on by default: it changes nothing for anyone else.
 
-## The right panel: ⓘ and ⚙
+## The right panel: Params and Settings
 
-The **⚙** tab button on the right edge opens the properties panel, which has two tabs:
+The **Settings** button (a cog) on the right edge opens the properties panel, which has two tabs:
 
 - **ⓘ Params** — the *selected node's* properties: since 1.23 every node lists them all here, including a Script's input values, a Behaviour's params and a module node's options, alongside extras such as a Slider's **Min/Max**, a Switcher's **items list** (add/remove entries) and a Number's **step**. A property with a wire into it shows the incoming value instead. See [Properties panel](main-graph.md#properties-panel).
-- **⚙ Settings** — with a node selected: its **Name** and a free-text **Note**. With nothing selected: graph settings — edge style (Bezier/Step/Straight), background (dots/lines/none), minimap, snap-to-grid + grid size, Fit / Reset view, and the socket color legend.
+- **Settings** (the cog) — with a node selected: its **Name** and a free-text **Note**. With nothing selected: graph settings — edge style (Bezier/Step/Straight), background (dots/lines/none), minimap, snap-to-grid + grid size, Fit / Reset view, and the socket color legend.
 
 ## Determinism and replication
 

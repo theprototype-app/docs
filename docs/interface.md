@@ -469,7 +469,7 @@ Project actions**:
   options; its **▾** opens [Save options](saving.md#save-options) — what to save and what the file includes.
   **Export…** opens Publish / Export.
 - **List** (the default on a folded phone) is one row per action — Templates, Import, Load, Save, Publish / Export —
-  with the **Project | Scene | ⚙** switch under Save; the **⚙** opens the same Save options.
+  with the **Project | Scene | Save options** switch under Save; the last one (a cog) opens the same Save options.
 - **Auto** is List on a phone and Compact everywhere else. Searching the settings for *burger* or *compact* finds it.
 
 ![The main menu's Project section in the Compact layout: New from template… across the top, then Load beside Save with its ▾, then Import beside Export…, and Cloud saves.](img/interface/menu-project-compact.webp){ .shot .fade-b width="330" height="180" loading=lazy }

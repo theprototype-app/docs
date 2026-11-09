@@ -89,7 +89,7 @@ The flow graph can drive the same properties: wire a [Mass](nodes/mass.md), [Bou
 You can start and stop the sim three ways:
 
 - **Press <kbd>P</kbd>** — toggles the simulation.
-- **Right-click the viewport ▸ Tools ▸ ▶ Simulate physics** (the same entry becomes *⏹ Stop simulation*, and *Pause* / *Reset* appear while it runs).
+- **Right-click the viewport ▸ Tools ▸ ▶ Simulate physics** (the same entry becomes *■ Stop simulation*, and *Pause* / *Reset* appear while it runs).
 - **The Simulation controls HUD** — a small transport at the bottom-right, if you've enabled it (see below).
 
 While running, dynamic objects fall under gravity and collide; **Reset** restores the initial layout without an undo entry, **Pause/Resume** freezes the sim, and **Stop** ends it — after which <kbd>Ctrl</kbd>+<kbd>Z</kbd> restores the layout you started from.
@@ -103,7 +103,7 @@ If nothing has physics when you press play, the app helps you out: with an objec
 
 ### The simulation controls HUD
 
-The bottom-right transport (▶ / ⏸ / ⏹ / ↺) is **off by default** so it isn't confused with the main play button. Turn it on in **Settings ▸ Scene ▸ Simulation controls**. The <kbd>P</kbd> shortcut works whether or not the HUD is visible; the first time you use <kbd>P</kbd> while it's hidden, a toast reminds you where to enable it.
+The bottom-right transport (**Play**, **Pause**, **Stop**, **Reset**) is **off by default** so it isn't confused with the main play button. Turn it on in **Settings ▸ Scene ▸ Simulation controls**. The <kbd>P</kbd> shortcut works whether or not the HUD is visible; the first time you use <kbd>P</kbd> while it's hidden, a toast reminds you where to enable it.
 
 In a scene that has [Start simulation on load](#start-simulation-on-load) on, the transport is always there. Since 1.25
 it drives **the whole simulation**: **Pause** holds everything still — the bodies, the [fluid tanks](simulation.md#fluid-tank),

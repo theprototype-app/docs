@@ -5,7 +5,7 @@ How to save and load your work: the recommended `.tpscene` bundle, the whole-pro
 The main menu (the logo button) has **Import** (bring 3D files into the scene), **Load** (open a saved file) and **Save** in its **Project** section. Since 1.32 that section has two layouts (see [The main menu's Project actions](interface.md#the-main-menus-project-actions)):
 
 - **Compact** (a computer or an unfolded phone): **New from template…**, then **Load** | **Save ▾**, then **Import** | **Export…**. **Save** saves straight away with your last-used options; **▾** opens [Save options](#save-options).
-- **List** (a folded phone): one row per action, with a format switch under **Save**: **Project | Scene | ⚙**. The **⚙** opens the same Save options.
+- **List** (a folded phone): one row per action, with a format switch under **Save**: **Project | Scene | Save options**. The last one (a cog) opens the same Save options.
 
 Either way you save one of two things:
 
@@ -127,7 +127,7 @@ A legacy scene format, hidden by default. Enable it via **Save options ▸ Offer
 
 **Menu ▸ Sessions** manages named in-browser save slots:
 
-- **💾 Save current scene** stores a named snapshot with a thumbnail. (<kbd>Ctrl</kbd>+<kbd>S</kbd> no longer does this — it saves the open scene to the Explorer.)
+- **Save current scene** stores a named snapshot with a thumbnail. (<kbd>Ctrl</kbd>+<kbd>S</kbd> no longer does this — it saves the open scene to the Explorer.)
 - **Load** restores a slot. With peers connected, loading is a *proposal* — everyone gets an Accept/Decline toast and the load only applies when all peers accept.
 - **⤵ Import objects…** cherry-picks individual objects out of a session into the current scene.
 - **⬇ .json / ⬇ .zip** downloads a session — the `.zip` variant bundles the scene's assets, like a `.tpscene`.

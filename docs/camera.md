@@ -4,7 +4,7 @@ Everything about how the scene *looks on your screen* — the camera lens, rende
 
 ## Opening Configure Scene
 
-Click **🎛️ Configure Scene** in the sidebar menu. It opens as a tab of the [sidebar](interface.md#sidebars) on the right
+Click **Configure Scene** in the sidebar menu. It opens as a tab of the [sidebar](interface.md#sidebars) on the right
 (drag its tab to the left to keep it there) with these sections:
 
 - **Quality** — the quality preset and the automatic-quality, shadow and model switches (your device only; see

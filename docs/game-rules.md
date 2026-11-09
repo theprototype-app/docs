@@ -14,7 +14,7 @@ Part of Mini Golf's Main graph at full size.
 ///
 
 <div class="shot-key" markdown>
-1. A **moment** ⚡ output — *holeSunk*, the ball in the cup — wired into a banner, a burst and a sound.
+1. A **moment** output (an event) — *holeSunk*, the ball in the cup — wired into a banner, a burst and a sound.
 2. **Code** opens **the rules** in the code workspace; edit them and press <kbd>Ctrl</kbd>+<kbd>S</kbd>.
 3. The **Code link** opens **the engine** (`minigolf/module.js`) read-only: the ball, the putting, the VR putter.
 </div>
@@ -33,7 +33,7 @@ Open a game from the **Games** tab, then open the **Node editor** (<kbd>N</kbd>)
 - **Its sockets** connect it to the rest of the graph:
     - **inputs** on the left — the menu buttons (*Tee off*, *Play again*…) are wired into them;
     - **outputs** on the right — its **state** (the words the HUD shows: *Hole 3 of 6 · Windmill*, *Strokes 2*,
-      */ 8 needed*…) and its **moments** ⚡ (a stroke, out of bounds, the ball in the cup, a goal, a portal opening),
+      */ 8 needed*…) and its **moments** (a stroke, out of bounds, the ball in the cup, a goal, a portal opening),
       wired into banners, sounds, sparkles, controller buzzes and [kit](game-kit.md) nodes (set score, win round).
 - **The engine** — what rules cannot be: a ball's physics body, the drag-to-putt arrow, a VR putter, a generated
   dungeon. It stays in the game's module, and the rules reach it as `kit.golf.*`, `kit.football.*`, `kit.realms.*`,

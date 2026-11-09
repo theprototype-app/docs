@@ -36,7 +36,7 @@ one blue". Use **Stop** to cancel a run in progress.
 
 ### The bottom-left button
 
-Once the assistant is enabled and a provider is set, a round **✨ button** appears at the
+Once the assistant is enabled and a provider is set, a round **AI assistant** button (a sparkles icon) appears at the
 bottom-left of the viewport (just below the **＋** add button). Click it to open or close
 the assistant window — the same window the quick prompt bar opens into.
 

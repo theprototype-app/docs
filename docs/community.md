@@ -52,7 +52,7 @@ need the Community destination, and the dialog says so if you pick both.
 
 ## A scene's page
 
-Every published scene has a page at `/s/‹id›`: the hero shot, the title, the author's `@handle`, the license, a **♥** like button (sign in to use it; the same like as the [hearts in the app](#hearts)), the summary, the tags, and four actions:
+Every published scene has a page at `/s/‹id›`: the hero shot, the title, the author's `@handle`, the license, a **heart** like button (sign in to use it; the same like as the [hearts in the app](#hearts)), the summary, the tags, and four actions:
 
 - **▶ Play** — opens the app with the scene loaded and Play mode already running.
 - **Open in ThePrototype** — the same, in the editor.
@@ -133,7 +133,7 @@ When a contest is open a notice row says so (*Contest: Make a mirror — 9 days 
 Like a published scene without leaving the app: the **heart** button sits on every card in **Templates ▸ Community**, on
 the start card of a **play link** (`/p/‹id›`) and in a published game's **pause menu** (<kbd>Esc</kbd>, top right).
 Press it and the count updates at once (and goes back if the like could not be saved). Signed out, it asks you to sign in
-(profile menu, top right). It is the same like as the ♥ on the scene's page — one like per person per scene.
+(profile menu, top right). It is the same like as the heart on the scene's page — one like per person per scene.
 
 ![A play link's start card over the scene: the orange Play button, the heart with its count beside it, and the hint Click to look around · Esc to pause. 1: the heart.](img/community/play-link-heart.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="640" height="420" loading=lazy }
 /// caption

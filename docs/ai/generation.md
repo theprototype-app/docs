@@ -6,7 +6,7 @@ replicated to everyone, undoable like any other object. You bring the generator:
 
 !!! note "This is opt-in"
     Nothing is generated until you add a **Mesh provider** in **Settings ▸ Tools & connections** and
-    a provider. Turning it on reveals **“✨ Generate 3D model…”** in the Add menu and lets
+    a provider. Turning it on reveals **“Generate 3D model…”** in the Add menu and lets
     the AI assistant call a `generate_mesh` tool.
 
 ## What to expect
@@ -153,7 +153,7 @@ GLB. (Other hosted providers with the same task-based REST shape can be added as
 
 ## Using it
 
-- **Add menu → ✨ Generate 3D model…** — a small dialog: pick a provider, type a prompt,
+- **Add menu → Generate 3D model…** — a small dialog: pick a provider, type a prompt,
   optional name, **Generate**. The mesh lands where you opened the menu.
 - **From a picture** — the same dialog takes a photo, an Explorer picture or the viewport (Meshy, or a
   ComfyUI workflow with `{{IMAGE}}` in a LoadImage node). Meshy asks first (credits, and that the picture
