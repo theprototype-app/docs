@@ -41,13 +41,65 @@ a phone it is a bottom sheet.
 6. **Resume** (<kbd>F8</kbd>) rejoins the live game. **Pause** (<kbd>F8</kbd> while running) pauses at any moment,
    without a breakpoint. Leaving Play always resumes.
 
-The debugger works in Play (and Test play). In the editor it only lists your breakpoints and watches.
+The debugger works in Play (and Test play). In the editor it lists your breakpoints and watches, and the
+[Console](#the-console).
 
 | Key | Does |
 |---|---|
 | <kbd>F9</kbd> | Breakpoint on / off for the selected nodes |
 | <kbd>F10</kbd> | Step: run the next event |
 | <kbd>F8</kbd> | Resume, or pause while running |
+
+## Why did this not fire?
+
+*New in 1.64.* The trigger nodes — [On Enter](nodes/onenter.md), [On Exit](nodes/onexit.md),
+[On Hover](nodes/onhover.md), [On Click](nodes/onclick.md), **Collect pickup** ([Game kit](game-kit.md#pickups)) and
+[Timer](nodes/timer.md) — remember their **last check** on this device: when it was, who or what it was about (*the
+player*, an object's name), and whether it fired or what blocked it.
+
+**On the node card** (while the node editor is open) one line says it:
+
+- *fired 2 s ago* — it fired;
+- *blocked: not the player* — something reached it in the last few seconds, and this stopped it;
+- *won't fire: physics is not running* — nothing has reached it yet, and this is why nothing can right now.
+
+**In the Debugger** (in Play), the node you are focused on — the one Play paused at, or one you clicked in the panel —
+gets the full sentence above its wires:
+
+> Last check 3 s ago · the player: blocked, the player (wants objects).
+>
+> Right now it cannot fire: physics is not running.
+
+With no check yet it says *No check yet: nothing has reached it on this device.*
+
+| Reason | What it means, and what to do |
+|---|---|
+| in Edit mode (use Play) | triggers do not fire while you edit — press Play (or Interact) |
+| physics is not running | sensor zones are checked by the physics world — start Play or a simulation |
+| checked on the physics peer | object sensor edges are only checked on the peer running the simulation; this device just hears the result |
+| no object to watch | wire the node into an [Object Selector](nodes/objectselector.md), or put it in the object's own flow |
+| its object is not a sensor | turn on Inspector ▸ **Physics ▸ Sensor** on the zone |
+| not the player | the node's **who** is *player*, and an object came in |
+| the player (wants objects) | the node's **who** is *objects*, and the player came in |
+| the filter did not match | something other than the **only with** object touched it |
+| still in its cooldown | it fired a moment ago; wait for its cooldown |
+| "enabled" is off | a boolean wired into **enabled** is false |
+| another player (who: me) | the node only listens to your own pointer, and it was someone else's |
+| its object is muted | the object's flow effects are switched off (or the node is muted) |
+| touch off, nothing wired | **Collect pickup** with *Collect on touch* off and no trigger wired in |
+| refused | the game kit said no — the card adds its reason (taken already, the round is over…) |
+| nothing wired into it | **Timer** has no input |
+
+Checks are **local to each device**: nothing is sent, and each player's card says what *their* device saw. That is the
+point — on a joiner, an On Enter of an object may well say *checked on the physics peer*.
+
+An AI agent asks the same question with `inspect_runtime` ([Test and fix a game](ai/agent-runtime.md)).
+
+## The Console
+
+*New in 1.64.* An [Announce](nodes/announce.md) in Edit draws no banner: its line goes to the Debugger's **Console**
+instead, newest first, with the time and the node that said it. Press the node's name to focus it and see its wires.
+Messages from modules show here too. **Clear console** empties it. In Play, Announce shows its banner as before.
 
 ## What "local" means
 
