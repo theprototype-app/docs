@@ -35,7 +35,7 @@ The light theme and every custom `.theme.json` restyle all of it; see [Themes & 
   row / Float, Reset position and Reset all); a floating bar with no room turns compact, and you can move or hide it —
   see [The Connect bar](controls.md#the-connect-bar).
 - **Top right**: scene notes, the notification bell (with a count) and the [peers panel](connection.md#who-is-here-the-peers-panel)
-  sit in one group beside your picture, which opens your profile menu (**Customize character**, **Profile settings**).
+  sit in one group beside your picture, which opens your [profile menu](#the-profile-menu).
   Since 1.33 that group is arranged with [Edit positions](controls.md#edit-positions) too; emptied, it leaves no box
   behind. Since 1.36 the profile menu opens under the profile button wherever it is, beside a pinned right sidebar too.
 - **Toasts** are calm cards under the Connect bar, at most three at a time; more collect behind **+N more**. See
@@ -47,6 +47,24 @@ The light theme and every custom `.theme.json` restyle all of it; see [Themes & 
 /// caption
 With a sidebar pinned at full height, the profile menu opens under its button, beside the sidebar.
 ///
+
+### The profile menu
+
+*Regrouped in 1.64.* Your picture at the top right opens the profile menu, in three groups:
+
+- **Profile** — **Customize character**, and **Edit profile…** (your picture and name; the Peer ID with a **Copy**
+  button beside it).
+- **Your stuff** — **Cloud saves**, **Your games & stats**, and on theprototype.app the community panels (and
+  **Staff** for staff accounts).
+- **Account** — **Sign-in methods ▸**, **Devices ▸** and **Sign out**, last. Signed out, this group is **Sign in**:
+  *Keep scenes in the cloud and open them on any device.*
+
+A line of links closes the menu: **Community**, **Account help** and the project's **GitHub star**. Opening the menu
+sends nothing to the server.
+
+On theprototype.app a signed-in account is asked once, at the top of the Account group, **Get product updates by
+email?** — **Yes** or **No thanks**. Either answer is kept with your account, so the card does not come back; change it
+later in **Settings ▸ Account ▸ Email** ([Settings](settings.md#account)).
 
 ## The command palette (Ctrl+K)
 
@@ -146,6 +164,10 @@ Drag a sidebar tab and a highlight shows what will happen before you let go — 
 
 Dragging a floating window onto a sidebar (or a screen edge), or a bottom-dock tab onto a sidebar, shows the same
 highlights, painted above every panel; the window you drag turns see-through so the highlight stays readable.
+
+**On a touch screen** (*since 1.64*) swipe a tab row sideways to scroll it; a vertical drag on the tabs does nothing. To
+move a tab, hold it still for a moment (the phone buzzes), then drag. Drag it well out of the row and let go away from
+the dock or a sidebar to make it a floating window. A mouse works as before.
 
 ![An Objects tab dragged out of the right sidebar into the 3D view: a dashed blue box reads Float here](img/interface/sidebar-drag-float-here.webp){ .shot .fade-l .fade-r .fade-t .fade-b width="688" height="480" loading=lazy }
 /// caption
@@ -304,11 +326,23 @@ A floating window dragged over a pane of a split dock.
 - **Dock all tabs:** a floating window with tabs has a dock button just left of **Close all tabs**. It puts every tab
   back in the dock. For a window with one tab, drag its tab to the dock, or use the window's **Dock** button.
 - **Move it by touch:** drag its tab bar — or any of its tab names — and the whole window follows your finger, on a phone
-  or an unfolded foldable alike. A tap on a tab still switches to it.
+  or an unfolded foldable alike. A tap on a tab still switches to it. *Since 1.64* the whole group also moves by its
+  **grip** at the start of the tab row.
 - **Hold a tab** (press and hold; right-click with a mouse) for that window's [window menu](controls.md#the-window-menu):
   **Float (undock)** takes it out of the group, just beside it; **Dock to bottom** and **Move to the left / right
   sidebar** move only that view (greyed out for windows that always float, such as a file preview); **Close** closes
   that view and the rest of the group stays.
+
+### Hiding buttons you do not use
+
+*Since 1.64* most chrome buttons can be hidden: the buttons on a sidebar, the bottom dock and floating tab groups, and the
+**Panels** button. Right-click one (or press and hold it on a touch screen) ▸ **Hide this button**. Bring it back from
+that strip's menu ▸ **Show buttons**, or **Settings ▸ Interface ▸ Customize buttons**, which lists them all as switches.
+The **+** button can never be hidden. Hidden buttons are saved with your
+[workspace layout](controls.md#workspace-layouts).
+
+The **Panels** button's menu (right-click, or press and hold) also shows or hides both sidebars; **Settings ▸ Interface ▸
+Panels button** (*Auto* / *On* / *Off*) still works.
 
 **Layouts…** (**Menu ▸ Layouts**) opens a regular dialog for your saved arrangements — on a folded phone, a
 [tab of the bottom dock](#the-dock-on-a-phone) — see [Workspace layouts](controls.md#workspace-layouts).
@@ -474,6 +508,12 @@ A confirmation is a dialog over the dimmed screen.
 
 Below 640 px wide — a folded phone — the app switches to a phone layout with less on screen and nothing missing. An
 unfolded phone and a computer share the desktop layout.
+
+**Easier to hit, same look** (*since 1.64*): on any touch screen, small buttons, tabs and menu rows answer a tap up to
+about 44 px around them without growing on screen, and never take a tap meant for something next to them — another
+button, a label, a row, a window you drag by its body, or a toast or window peeking out under a panel. On a tablet a
+floating window's body stays its drag handle, so controls there keep their exact size. A mouse is unchanged. To make
+controls bigger on screen too, raise the [UI scale](accessibility.md#ui-scale).
 
 - **Top**: the logo (main menu) on the left, a **Connect chip** in the middle and, on the right, the notification bell,
   the peers button (while someone is connected) and your picture. The chip shows the

@@ -68,6 +68,32 @@ Rows on a narrow screen: long choices wrap under the name, short ones stay besid
 | **This device** | the setting is kept only on this computer or headset |
 | **Shared** | other people see its effect — your ping colour and sound, your VR hands, shared materials |
 
+## Notifications
+
+*New in 1.64.* **Settings ▸ Interface ▸ Notifications** switches off the pop-ups and sounds you do not want, on this
+device. Each one is on until you switch it off.
+
+| Switch | What it turns off |
+|---|---|
+| People leaving | the pop-up when someone disconnects or is removed from the session |
+| Chat badge | the unread count on the Chat button, and its mention colour when someone @mentions you |
+| Ping sounds | the chime when someone else pings (the marker still shows; your own pings always chime). The row links to **Customize character**, where you pick your own ping sound |
+| AI assistant | the pop-up when the AI answers you or an agent starts building while the AI assistant is closed |
+| Auto quality | the pop-up when the app lowers the quality to keep it smooth (the quality still changes) |
+| Room invites | the pop-up when someone invites you to their room — on theprototype.app |
+| Contest reminders | the reminder, at most once a day, while a community contest is open — on theprototype.app |
+
+*What's new* after an update has its own switch (**Announce new versions**). Questions someone must answer — a
+connection request, a take-control or role request, an agent asking permission — and safety notices cannot be switched
+off. Search finds *notifications* and every switch by name. **Reset Interface** turns them all back on.
+
+## Account
+
+*New in 1.64, on theprototype.app.* **Settings ▸ Account ▸ Email ▸ Product updates** — product news by email, off by
+default. It is the same choice as the one-time *Get product updates by email?* card in the
+[profile menu](interface.md#the-profile-menu); switching it either way counts as your answer. Signed out, the switch is
+greyed out with a hint to sign in.
+
 ## Saving and resetting
 
 Changes save as you make them — there is no Save button; **Done** closes the window.
@@ -146,3 +172,6 @@ cache uses the older Cache Storage, and where neither exists everything download
 | Optimize for | new in 1.37 | **Export ▸ Optimize for** — **Full quality** / **For Quest / web** (replaces the *Compress textures — not in this release* row), this device only; the same as **Save options ▸ Optimize for**. See [Optimize for Quest / web](publish-export.md#optimize-for-quest-web) |
 | Send anonymous error reports | new in 1.39 | **Privacy ▸ Send anonymous error reports** — on by default; see [Privacy & Error Reports](privacy.md#anonymous-error-reports) |
 | Third-party licences | new in 1.39 | **About ▸ Third-party licences** — see [above](#third-party-licences) |
+| Notifications | new in 1.64 | **Interface ▸ Notifications** — people leaving, the chat badge, ping sounds, AI assistant and auto-quality pop-ups (and room invites and contest reminders on theprototype.app), this device only; see [above](#notifications) |
+| Customize buttons | new in 1.64 | **Interface ▸ Customize buttons** — every hideable chrome button as a switch; see [Hiding buttons you do not use](interface.md#hiding-buttons-you-do-not-use) |
+| Product updates by email | new in 1.64 (was a box on the sign-in sheet) | **Account ▸ Email ▸ Product updates**, on theprototype.app; see [above](#account) |

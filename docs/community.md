@@ -2,8 +2,8 @@
 
 Publish the scene you are looking at, hand somebody a link, and they can play it in their browser, open it in the editor, or remix it into something of their own. Contests give you a reason to publish every couple of weeks.
 
-Everything on this page lives on **theprototype.app** — the hosted app loads it as a cloud plugin. **Community** in the
-profile (avatar) menu, right under **♥ Support the project**, opens [theprototype.app/community](https://theprototype.app/community)
+Everything on this page lives on **theprototype.app** — the hosted app loads it as a cloud plugin. **Community**, in the
+line of links at the bottom of the [profile menu](interface.md#the-profile-menu), opens [theprototype.app/community](https://theprototype.app/community)
 in a new tab: the published scenes and the contests. Browsing, playing and remixing never need an account; publishing, liking, commenting and entering a contest do.
 
 !!! note "Self-hosted and local builds"
@@ -160,7 +160,7 @@ your own published scenes — unlisted ones too. A scene staff hid shows *Hidden
 
 ## Your games & stats
 
-Profile menu ▸ **📈 Your games & stats** shows how many people arrived from the **Made with ThePrototype** badge in your
+Profile menu ▸ **Your games & stats** shows how many people arrived from the **Made with ThePrototype** badge in your
 play links, embeds and exported builds — for the last **7 days**, **30 days** or **all time**, split by source (play
 link, itch.io, static host, embed). The [Publish](#publish) dialog shows the same count for the game you are publishing
 or updating.
@@ -219,9 +219,10 @@ Signed in, your own profile page has **Change handle**: type the new one (3–24
 
 Signing in and creating an account are one flow: the profile menu's **Sign in to cloud** opens one screen with GitHub, Google and,
 where it is on, an email code. Your first sign-in needs the **I agree to the Terms** box ticked (it links the
-[Terms](https://theprototype.app/terms) and the [Content policy](https://theprototype.app/content-policy)). Below it sits an optional
-box for feature-update emails; leaving that off changes nothing. An older account sees a small bar asking to accept the
-Terms once, and again if a new version comes out.
+[Terms](https://theprototype.app/terms) and the [Content policy](https://theprototype.app/content-policy)). That is the only box: *since 1.64* product updates by
+email are asked once afterwards, in the [profile menu](interface.md#the-profile-menu), and live in **Settings ▸
+Account ▸ Email**. An older account sees a small bar asking to accept the Terms once, and again if a new version comes
+out.
 
 The site and the app share one sign-in. **Sign in** in the site header offers the same GitHub and Google buttons; signed in, the menu under your name has **My profile**, **Open the app** and **Sign out**. Inside the app the same account is under the logo menu's profile block as **Sign in to cloud**.
 
@@ -238,9 +239,9 @@ account, you lose the way in. Link both now and either one gets you back: **Acco
 - If the provider account you pick already belongs to another account here, nothing changes: you stay signed in as you
   are, and the panel tells you.
 
-**Locked out?** The sign-in sheet has a **Can't sign in?** link, and the account menu's **Support** goes to the same page
-(`/cant-sign-in`). It says what to send to contact@theprototype.app and what we can and can't verify. **Sponsors** now has
-its own entry in the account menu. One identity per provider on an account; the review account can't link any.
+**Locked out?** The sign-in sheet has a **Can't sign in?** link, and **Account help** at the bottom of the profile menu
+goes to the same page (`/cant-sign-in`). It says what to send to contact@theprototype.app and what we can and can't
+verify. One identity per provider on an account; the review account can't link any.
 
 ## Reporting
 
