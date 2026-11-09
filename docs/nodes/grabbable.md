@@ -14,8 +14,10 @@ Lets players pick the connected object up and carry it **without a physics simul
 | returnAfter | 1 | seconds before it glides home |
 | returnTime | 0.6 | seconds the glide takes |
 
-In Play, aim the crosshair at it and press; the wheel moves it nearer or further. Everyone sees it carried. A dynamic
-physics body in a running simulation is still carried by the physics as before.
+In Play, aim the crosshair at it and press; the wheel moves it nearer or further. In VR (Interact), squeeze the grip
+on it. Everyone sees it carried, and **return** works the same from either: let go and it glides back. Catch it on its
+way back and it still goes home to the first spot. A dynamic physics body in a running simulation is still carried by
+the physics as before.
 
 ## Practical example
 
