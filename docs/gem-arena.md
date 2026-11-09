@@ -31,7 +31,7 @@ is needed.
 
 In the Scene flow:
 
-1. **Score** into a [Compare](nodes/compare.md) (`>=`, b = 3).
+1. **Score** into a [Compare](nodes/compare.md) **a** (op `gte`, b = 3).
 2. Compare into a [Gate](nodes/gate.md) set to **not**.
 3. Gate into a [Visibility](nodes/visibility.md) **on**, wired into an [Object Selector](nodes/objectselector.md) that
    picks the gate.
