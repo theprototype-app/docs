@@ -32,6 +32,7 @@ nav:
     - Architecture: architecture.md
     - Mesh Editing: mesh-editing.md
     - Splines: splines.md
+    - Paths: paths.md
     - 3D Text: 3d-text.md
     - Snapping: snapping.md
     - Measure, Align & Distribute: measure-align.md

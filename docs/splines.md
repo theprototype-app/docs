@@ -2,6 +2,9 @@
 
 Click out a path and get a solid tube that follows it — a road, a pipe, a cable, a river bed, a handrail. Splines stay **editable forever**: every one carries the points you placed, so you (or any peer, in any later session) can drag them, change the thickness point by point, insert and delete, and the tube rebuilds itself.
 
+To make something **walk** a route — a guard, an animal, a platform — use a [Path](paths.md) instead (*new in 1.64*):
+it has no tube, and its points carry waits, speeds and events.
+
 ## Drawing one
 
 Open the **Draw** toolbar (Tools ▸ Draw mode) and switch the tool from **Freehand** to **Spline**.
