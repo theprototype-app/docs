@@ -626,6 +626,18 @@ button's own menu has:
 The two **Lift** switches are also in a corner button's right-click menu, next to *Always on top*, and in **Settings ▸
 Interface ▸ Windows & chrome**.
 
+**Animate in editor** (*since 1.64*) is an optional toolbar button — add it from **Customize toolbar…**. Off, every
+object moved by a flow (Spin, Bounce, Orbit, Path patrol, Wander…) rests at its authored pose while you edit; Play runs
+everything as before. It is your own setting, on by default; the same switch is in the node editor's controls
+([Animate in editor](node-system.md#animate-in-editor)).
+
+### One banner for click-to-place tools
+
+*Since 1.64.* Tools that take your next click in the scene — placing Path points or waypoints, measuring, drawing or
+placing a spline, picking a flatten point — share **one banner** at the top of the viewport. It names the tool that owns
+your next click and what is still armed underneath: only the newest tool takes clicks; the others wait underneath.
+<kbd>Esc</kbd> leaves only the top tool, so a second <kbd>Esc</kbd> leaves the next one.
+
 ### The "…" button
 
 The **…** at the right end of the bar opens *Customize toolbar…*. Since 1.34 it is a button like any other: right-click
