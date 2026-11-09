@@ -99,7 +99,9 @@ nav:
         - Set Active Camera: nodes/setcamera.md
         - Camera Rig: nodes/camerarig.md
         - Set Look: nodes/setlook.md
-        - Game Start: nodes/gamestart.md
+        - Start camera: nodes/gamestart.md
+        - On Play start: nodes/onplaystart.md
+        - On Play stop: nodes/onplaystop.md
         - Travel to scene: nodes/travel.md
         - All Players: nodes/allplayers.md
         - Set Variable: nodes/setvariable.md
@@ -160,6 +162,7 @@ nav:
         - Set Shader Uniform: nodes/setuniform.md
       - Triggers:
         - On Click: nodes/onclick.md
+        - On Hover: nodes/onhover.md
         - On Grab: nodes/ongrab.md
         - Key Press: nodes/keypress.md
         - On Hit: nodes/onhit.md
@@ -167,6 +170,8 @@ nav:
         - Gamepad Button: nodes/gamepadbutton.md
         - Gamepad Axis: nodes/gamepadaxis.md
       - Animation:
+        - Hover Animate: nodes/hoveranimate.md
+        - Toggle Animation: nodes/toggleanim.md
         - Shake: nodes/shake.md
         - Spin: nodes/spin.md
         - Rotate / Motor: nodes/rotor.md
@@ -178,6 +183,7 @@ nav:
         - Rotate To: nodes/rotateto.md
         - Scale To: nodes/scaleto.md
         - Path Patrol: nodes/pathpatrol.md
+        - On Path Event: nodes/onpathevent.md
         - Follow Path: nodes/followpath.md
         - Wander: nodes/wander.md
         - Ambient Animal: nodes/ambientanimal.md

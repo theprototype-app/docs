@@ -1,6 +1,7 @@
 # On Enter
 
-Fires a pulse when something **enters** a trigger volume — the checkpoint, doorway and pressure-plate node.
+Fires a pulse when something **enters** a trigger volume — the checkpoint, doorway and pressure-plate node. The player
+counts too: whoever walks in, on any peer, fires it.
 
 **Output:** event (wire into a [Particles](particle.md) trigger, a [Counter](counter.md), a [Set Color](setcolor.md), or an [Object Selector](objectselector.md))
 
@@ -17,10 +18,19 @@ Scale a box over your doorway, make it a sensor, and hide it (Inspector ▸ visi
 
 While a simulation runs, the peer stepping the physics detects the overlap starting and pulses the node for **everyone** (the same replicated trigger stamp [On Click](onclick.md) uses). Each pair fires once per entry — re-entering fires again.
 
+*Since 1.64:*
+
+- **The player counts.** A player walking into the volume fires it, on whichever peer they play — joiners too — with
+  **other** = `player`. Use **who** to narrow it.
+- **A level of walls and floors works in Play.** A scene made only of static objects starts its physics world when Play
+  starts, so you do not need to run a simulation for a doorway to notice you.
+- Leaving Play while you stand inside does **not** fire [On Exit](onexit.md).
+
 ## Parameters
 
 | Parameter | Default | Meaning |
 |---|---|---|
+| who | any | **any** = objects and the player; **player** = only a player walking in; **objects** = only bodies |
 | pulse | 0.3 | how long the pulse stays high (seconds) |
 
 ## Targeting
@@ -45,3 +55,9 @@ A checkpoint that celebrates:
 
 !!! tip
     Pair with [On Exit](onexit.md) to know when the object leaves again — e.g. a door that opens on enter and closes on exit.
+    The [walk-up door recipe](../recipe-walk-up-door.md) builds exactly that around a door in one step.
+
+!!! tip "It does not fire?"
+    The card's live line says why — *blocked: not the player*, *won't fire: physics is not running*… — and the Flow
+    debugger says it in full. See [Why did this not fire?](../debugger.md#why-did-this-not-fire).
+
