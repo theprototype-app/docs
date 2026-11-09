@@ -85,7 +85,7 @@ With no check yet it says *No check yet: nothing has reached it on this device.*
 | still in its cooldown | it fired a moment ago; wait for its cooldown |
 | "enabled" is off | a boolean wired into **enabled** is false |
 | another player (who: me) | the node only listens to your own pointer, and it was someone else's |
-| its object is muted | the object's flow effects are switched off (or the node is muted) |
+| its object is muted | the object has **Disable flow effects** on (its right-click menu) — switch them back on |
 | touch off, nothing wired | **Collect pickup** with *Collect on touch* off and no trigger wired in |
 | refused | the game kit said no — the card adds its reason (taken already, the round is over…) |
 | nothing wired into it | **Timer** has no input |
