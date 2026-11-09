@@ -19,6 +19,13 @@ Press Play and click it: it swings open on its left edge, and shut on the next c
 the door and a character or a cart, or a Toggle on a wall switch — and the door opens while it is true and closes again
 after.
 
+**Opens when a player walks up ("On Near"):** use the [walk-up door recipe](recipe-walk-up-door.md) — right-click the
+node editor ▸ **Recipes ▸ Door (opens when you walk up)**. It adds a sensor zone round the door, with
+[On Enter](nodes/onenter.md) (who: *player*) to open and [On Exit](nodes/onexit.md) to close, so every player sees the
+same door. (A Proximity with **to: player** measures each player's own distance, so it suits a light for whoever is
+near rather than a shared door.) For a door that opens with a click in one step, there is the
+[click door recipe](recipe-door.md).
+
 ## A lamp you switch
 
 A lamp model with a Point light inside (or just a Point light). **On Click** into **[Light Switch](nodes/lightswitch.md)**
@@ -29,8 +36,8 @@ A lamp model with a Point light inside (or just a Point light). **On Click** int
 
 A small box on the wall by the door:
 
-1. **[Highlight](nodes/highlight.md)** (leave **on** unwired) — it lights up while you point at it, in VR or with the
-   Play crosshair.
+1. **[Highlight](nodes/highlight.md)** (leave **on** unwired) — it lights up while you point at it: the VR laser, the
+   Play crosshair, the mouse in Interact, or a finger resting on it on a phone.
 2. **On Click** into **[Press Button](nodes/pressbutton.md)** (axis -z for a button facing +z out of the wall) and
    into a **[Sound](nodes/sound.md)** node's trigger with a chime from the Explorer.
 

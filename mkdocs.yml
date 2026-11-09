@@ -236,6 +236,11 @@ nav:
     - Game Rules on the Main Graph: game-rules.md
     - Build a Game Loop: build-a-game.md
     - Levels and Progress: levels-and-progress.md
+    - Starter Recipes: starter-recipes.md
+    - "Recipe: a door you click": recipe-door.md
+    - "Recipe: a walk-up door": recipe-walk-up-door.md
+    - "Recipe: a bell": recipe-bell.md
+    - "Recipe: a guard": recipe-guard.md
     - "Recipe: a furnished room": furnished-room.md
     - "Recipe: a gem arena": gem-arena.md
     - Making Your Game Accessible: making-your-game-accessible.md
