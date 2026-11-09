@@ -52,6 +52,20 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.64 — flow you can shape.** [Starter recipes](starter-recipes.md) turn the selected object into a door you click, a
+door that opens as you walk up, a bell or a guard in one step. Trigger cards say
+[why they did not fire](debugger.md#why-did-this-not-fire) — *blocked: not the player*, *won't fire: physics is not
+running* — and the player now counts for [On Enter](nodes/onenter.md) and [On Exit](nodes/onexit.md). New nodes make a
+room feel alive (see [a furnished room](furnished-room.md)): [On Hover](nodes/onhover.md),
+[Toggle Animation](nodes/toggleanim.md), Oscillate, Move / Rotate / Scale To, light switches, wind, water, a cat,
+things to pick up, a button that presses in and a seat to sit on. [Paths](paths.md) give guards and platforms a route
+with waits and events; [Levels and progress](levels-and-progress.md) brings one Levels table, portals, checkpoints,
+loading screens and saved progress in exported games (try **Templates ▸ Two levels and a portal**). Drag a wire into
+empty space for a [search of the nodes that fit](node-system.md#drag-a-wire-into-space), and a backwards wire is flagged
+with a one-press fix. Also: small controls are easier to tap on touch screens, tab rows scroll with a swipe, the profile
+menu is regrouped, [Settings ▸ Interface ▸ Notifications](settings.md#notifications) switches pop-ups off, the fastest
+device in a session runs the physics, and the interface uses icons, not emoji.
+
 **1.63 — pro look.** Three [pro presets](pro-look.md) — **Product shot**, **Cinematic** and **Stylised** — set the sky,
 light, exposure and a whole stack of effects in one press, scaled to each device. [Baked light](baked-light.md) works out
 soft corner shadows and bounced light once and saves them with the scene; [Photo mode](photo-mode.md) renders a
