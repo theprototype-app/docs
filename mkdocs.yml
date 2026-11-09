@@ -112,6 +112,8 @@ nav:
         - Controller Buzz: nodes/hapticpulse.md
         - Game Music: nodes/gamemusic.md
         - Game Setting: nodes/gamesetting.md
+        - Grabbable: nodes/grabbable.md
+        - Sit Spot: nodes/sitspot.md
         - Point Grab: nodes/pointgrab.md
         - On Clap: nodes/onclap.md
         - Game Time: nodes/gametime.md
@@ -171,11 +173,18 @@ nav:
         - Float Along Flow: nodes/flowfloat.md
         - Bounce: nodes/bounce.md
         - Orbit: nodes/orbit.md
+        - Oscillate / Swing: nodes/oscillate.md
+        - Move To: nodes/moveto.md
+        - Rotate To: nodes/rotateto.md
+        - Scale To: nodes/scaleto.md
         - Path Patrol: nodes/pathpatrol.md
         - Follow Path: nodes/followpath.md
         - Wander: nodes/wander.md
+        - Ambient Animal: nodes/ambientanimal.md
         - Orient to Velocity: nodes/orientvelocity.md
         - Body Wave: nodes/bodywave.md
+        - Wind Sway: nodes/windsway.md
+        - Flowing Water: nodes/waterflow.md
         - Animation Finished: nodes/animfinished.md
         - Animation Marker: nodes/animmarker.md
         - Animation State: nodes/animstate.md
@@ -198,6 +207,11 @@ nav:
       - Effects:
         - Pulse: nodes/pulse.md
         - Blink: nodes/blink.md
+        - Light Switch: nodes/lightswitch.md
+        - Light Intensity: nodes/lightintensity.md
+        - Light Colour Cycle: nodes/lightcycle.md
+        - Highlight: nodes/highlight.md
+        - Press Button: nodes/pressbutton.md
         - Sound: nodes/sound.md
         - Particles: nodes/particle.md
         - Jiggle: nodes/jiggle.md
@@ -214,6 +228,7 @@ nav:
     - Play Here: play-here.md
     - Game Rules on the Main Graph: game-rules.md
     - Build a Game Loop: build-a-game.md
+    - "Recipe: a furnished room": furnished-room.md
     - Making Your Game Accessible: making-your-game-accessible.md
     - HUD Editor: hud-editor.md
     - Game Kit: game-kit.md

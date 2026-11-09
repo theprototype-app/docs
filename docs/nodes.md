@@ -61,6 +61,8 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**Controller Buzz**](nodes/hapticpulse.md) | Buzzes the VR controllers with a named pattern (tap, bump, success...) when a pulse arrives - only in Interact or Play, never while editing. |
 | [**Game Music**](nodes/gamemusic.md) | Plays a looping built-in music preset while you are in Interact or Play - always, or only during a round; wire 'on' to switch it by a condition. |
 | [**Game Setting**](nodes/gamesetting.md) | Declares one row in the game's Settings (a toggle, a range or a choice) and outputs this player's value - saved on this device for this game, never shared. |
+| [**Grabbable**](nodes/grabbable.md) | Lets players carry the connected object without a physics simulation; on letting go it stays or glides back home. |
+| [**Sit Spot**](nodes/sitspot.md) | Makes the connected object a seat: click it to sit on it facing its front, move to stand up. |
 | [**Point Grab**](nodes/pointgrab.md) | While 'enabled' reads off, players cannot pick objects up by pointing at them (the VR grip ray, the desktop carry); a hand touching an object still moves it. |
 | [**On Clap**](nodes/onclap.md) | Fires a pulse when a VR player brings both hands together and holds them - with where they met (point) and whether it was you (byMe); wire 'enabled' to a setting to switch it. |
 | [**Game Time**](nodes/gametime.md) | Seconds since the game (or the round) started, the same on every peer - a clock that pauses with the game. |
@@ -138,12 +140,19 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**Rotate / Motor**](nodes/rotor.md) | Turns the connected object about its own local axis (and its origin, so a wheel turns on its hub) at a set rpm with a spin-up. Paddles and scoops it turns carry water from Fluid emitters. On a dynamic physics body during a simulation it becomes a real motor: torque-limited, so a load slows it. |
 | [**Float Along Flow**](nodes/flowfloat.md) | Carries the connected object along a Flow path - a leaf, a toy boat - from where you placed it, at the path's speed, bobbing and turning with the current, looping at the end. Uses the nearest Flow path unless one is wired. |
 | [**Bounce**](nodes/bounce.md) | Bounces the connected object up and down off its resting height, like a dribbled ball. |
+| [**Oscillate / Swing**](nodes/oscillate.md) | Swings or bobs the connected object back and forth on one axis about its origin or a face - a hanging sign, a pendulum, a struck bell that dies away. |
+| [**Move To**](nodes/moveto.md) | Moves the connected object to a point and back with easing - a lift, a sliding door, a drawer - on a pulse, a toggle, a boolean or a number. |
+| [**Rotate To**](nodes/rotateto.md) | Turns the connected object to an angle and back about a face - a door on its hinge, a lid, a lever. |
+| [**Scale To**](nodes/scaleto.md) | Grows or shrinks the connected object to a size and back - a pop-up, a growing plant. |
 | [**Orbit**](nodes/orbit.md) | Circles the connected object around its resting position on the horizontal plane. |
 | [**Path patrol**](nodes/pathpatrol.md) | Walks the connected object along a series of waypoints you click into the scene, facing along the path. |
 | [**Follow Path**](nodes/followpath.md) | Moves the connected object along a smooth path - a drawn Spline, a Flow path or its own waypoints - at a speed, looping, ping-ponging or once, facing along it and leaning into the turns. An offset spreads several riders out along one path. |
 | [**Wander**](nodes/wander.md) | Drifts the connected object around a smooth, never-repeating target inside an area object (a water volume, a room) or a box around where it was placed - fish, birds, fireflies, idle drones. |
+| [**Ambient Animal**](nodes/ambientanimal.md) | Makes the connected object live: it wanders, rests, looks at the nearest player and can shy away; animated models play idle / walk / run. |
 | [**Orient to Velocity**](nodes/orientvelocity.md) | Turns the connected object to face the way it is moving, smoothly, leaning into turns - put it after Wander, Orbit or any mover so it looks where it goes. |
 | [**Body Wave**](nodes/bodywave.md) | Bends the connected object with a wave travelling along its body - a swimming fish, a snake, a flag, a tail - stronger and faster the faster it moves, curving into turns. A shader effect: physics and picking keep the rest pose. |
+| [**Wind Sway**](nodes/windsway.md) | Bends the connected object in gusts of wind - plants from their roots, a flag from its pole. A shader effect that adds to the others. |
+| [**Flowing Water**](nodes/waterflow.md) | Makes the connected surface flow - scrolling ripples and a gentle swell. Pair it with the Water material preset. |
 | [**Animation Finished**](nodes/animfinished.md) | Fires a pulse when the connected object's animation clip reaches its end. |
 | [**Animation Marker**](nodes/animmarker.md) | Fires a pulse when the connected object's animation passes a named marker. |
 | [**Animation State**](nodes/animstate.md) | Reads the connected object's animation transport as a number - playing, position or progress. |
@@ -177,6 +186,11 @@ object) and an **other** output (the body it touched) — see [Contact filters](
 |---|---|
 | [**Pulse**](nodes/pulse.md) | Throbs the connected object's scale in and out around its resting size. |
 | [**Blink**](nodes/blink.md) | Flashes the connected object on and off at a steady rate. |
+| [**Light Switch**](nodes/lightswitch.md) | Switches the lights in the connected object on and off with a fade, glowing parts too - a lamp you click. |
+| [**Light Intensity**](nodes/lightintensity.md) | Fades the lights in the connected object to a level - a dimmer. |
+| [**Light Colour Cycle**](nodes/lightcycle.md) | Walks the light's colour round the wheel or through a list - a disco light, a beacon. |
+| [**Highlight**](nodes/highlight.md) | Makes the connected object glow while you point at it (VR laser, Play crosshair) or while a boolean is true. |
+| [**Press Button**](nodes/pressbutton.md) | Pushes the connected object in and springs it back on each pulse - a button, a key, a pressure plate. |
 | [**Sound**](nodes/sound.md) | Plays an Explorer audio clip on the connected object when a pulse arrives - spatial, replicated, by content hash. |
 | [**Particles**](nodes/particle.md) | Emits a particle effect from the connected object - a preset burst, a stream, a trail. |
 | [**Jiggle**](nodes/jiggle.md) | Makes the connected object jiggle - it lags behind when moved, wobbles like jelly on impact and sways in the wind; skinned models swing their bone chains. |
