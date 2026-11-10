@@ -1,0 +1,52 @@
+page: starter-recipes
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+# 78-int (1.64): the Recipes rows of the node search on a selected object, and what one recipe puts in its flow.
+shots:
+- id: recipes-menu
+  setup:
+  - {create: Box, name: Bell, at: [0, 1, -4]}
+  - {select: [Bell]}
+  - {click: 'p[title="Node editor (N)"]'}
+  - {wait: 1500}
+  # an empty flow shows its empty-state card over the pane; a right-click on it opens the pane's search
+  - {rightClick: '#flow-empty-state'}
+  - {wait: 500}
+  - {type: recipes}
+  - {wait: 700}
+  crop: {selector: '[role="menu"]', pad: 44}
+  fade: []
+  kind: ui
+  alt: >-
+    The node search opened by a right-click in the Bell's flow, with "recipes" typed: Recipes ▸ Bell, Door (click to
+    open), Door (opens when you walk up) and Guard. 1: a Recipes row.
+  caption: The node search on a selected object, searched for "recipes".
+  annotate:
+  - {n: 1, at: {selector: '[role="menu"] .ctx-match'}, shape: box, pad: 3, badge: l, key: 'A **Recipes** row: pick it to put the whole recipe in the selected object''s flow.'}
+- id: guard-flow
+  device: window-688
+  setup:
+  - {create: Box, name: Guard, at: [0, 0.5, -4]}
+  - {select: [Guard]}
+  - eval: >-
+      (async () => { const S = window.__stores, D = window.__docs; const g = D.byName('Guard');
+      const r = await S.starterRecipes.insertStarterRecipe('guard', g.uuid);
+      if (!r || !r.ok) throw new Error('guard recipe: ' + JSON.stringify(r)); })()
+  - {wait: 800}
+  - {click: 'p[title="Node editor (N)"]'}
+  - {wait: 1800}
+  - {eval: "(() => { const b = [...document.querySelectorAll('.svelteFlow button')].find((x) => /fit/i.test(x.getAttribute('title') || x.getAttribute('aria-label') || '')); b?.click(); })()"}
+  - {wait: 800}
+  crop: {selector: '.svelteFlow'}
+  fade: []
+  kind: ui
+  alt: >-
+    The Guard's flow after the Guard recipe: Path patrol walking the guard along its route, a second Path patrol
+    carrying the sight zone with it, and On Enter (the player) on the sight zone pulsing Announce "Spotted!" and a
+    whistle Game sound. 1: On Enter on the sight zone.
+  caption: What the Guard recipe puts in the guard's flow.
+  annotate:
+  - {n: 1, at: {selector: '.svelte-flow__node-onenter'}, shape: box, pad: 4, badge: t, key: '**On Enter** fires when a player steps into the guard''s sight; Announce and the whistle follow.'}

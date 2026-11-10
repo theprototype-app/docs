@@ -1,0 +1,43 @@
+{
+ "id": "guard-flow",
+ "spec": "894dcbc39b21",
+ "dpr": 2,
+ "shotAt": "2026-11-10T04:11:38.962Z",
+ "app": {
+  "version": "1.63.0",
+  "sha": "93ae1c1a"
+ },
+ "uiHits": [
+  "div.svelte-flow__pane",
+  "span.ph-tab",
+  "svg.lucide",
+  "button#palette-toggle.tp-pane-handle",
+  "svg",
+  "button.svelte-flow__controls-button",
+  "path",
+  "button#flow-tidy.svelte-flow__controls-button",
+  "button#flow-animate-edit.svelte-flow__controls-button",
+  "div.relative",
+  "label.flex",
+  "select.nodrag"
+ ],
+ "width": 1024,
+ "height": 538,
+ "crop": {
+  "x": 168,
+  "y": 324,
+  "w": 512,
+  "h": 269
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 254.2813720703125,
+   "y": 278.37158203125,
+   "w": 100.409912109375,
+   "h": 98.6630859375
+  }
+ },
+ "kind": "ui"
+}

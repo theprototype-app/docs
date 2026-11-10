@@ -877,6 +877,17 @@
    "app": "1.61.0",
    "shotAt": "2026-11-05T10:43:56.121Z"
   },
+  "img/debugger/why-card.webp": {
+   "page": "debugger",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 148,
+   "height": 154,
+   "badges": 1,
+   "labels": [],
+   "app": "1.63.0",
+   "shotAt": "2026-11-10T04:10:58.673Z"
+  },
   "img/edit-in-blender/card.webp": {
    "page": "edit-in-blender",
    "kind": "ui",
@@ -1376,6 +1387,17 @@
    "labels": [],
    "app": "1.61.0",
    "shotAt": "2026-11-05T10:57:16.382Z"
+  },
+  "img/levels-and-progress/levels-table.webp": {
+   "page": "levels-and-progress",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 353,
+   "height": 448,
+   "badges": 1,
+   "labels": [],
+   "app": "1.63.0",
+   "shotAt": "2026-11-10T04:11:11.436Z"
   },
   "img/loading/back-to-start-view.webp": {
    "page": "loading",
@@ -2584,6 +2606,28 @@
    ],
    "app": "1.54.3",
    "shotAt": "2026-11-03T14:48:51.083Z"
+  },
+  "img/starter-recipes/guard-flow.webp": {
+   "page": "starter-recipes",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 512,
+   "height": 269,
+   "badges": 1,
+   "labels": [],
+   "app": "1.63.0",
+   "shotAt": "2026-11-10T04:11:38.962Z"
+  },
+  "img/starter-recipes/recipes-menu.webp": {
+   "page": "starter-recipes",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 360,
+   "height": 238,
+   "badges": 1,
+   "labels": [],
+   "app": "1.63.0",
+   "shotAt": "2026-11-10T04:11:25.331Z"
   },
   "img/terrain/inspector-paint.webp": {
    "page": "terrain",

@@ -12,8 +12,17 @@ Open **Configure Scene ▸ Levels**. Each row is a level:
 - **Start at**: the object the player arrives at (a Checkpoint, a Portal, or any object by name).
 - **Goal**: one line shown as the level starts.
 
-Drag rows to change the order; **Next level** follows it. **Unlock**: *All* (any level can be reached) or *In order* (a
-level opens when the one before it is finished).
+![Configure Scene's Levels table with two levels, each with its name, Scene (this scene), Start at (the spawn point) and an optional Goal, up / down and delete buttons, and Add level and Remove the table under it. 1: the level rows.](img/levels-and-progress/levels-table.webp){ .shot width="353" height="448" loading=lazy }
+/// caption
+The Levels table in Configure Scene.
+///
+
+<div class="shot-key" markdown>
+1. One **row per level**, in play order: its scene, where players start and an optional goal.
+</div>
+
+A row's up and down arrows change the order; **Next level** follows it. **Players may go to**: *Any level* (any level
+can be reached) or *In order* (a level opens when the one before it is finished).
 
 The table is saved with the scene and shared with everyone in the session. The **Kit: Levels** nodes (*Go to level*,
 *Next level*, *Finish level* — see [Game kit](game-kit.md#levels)) and every portal use this table, so there is only

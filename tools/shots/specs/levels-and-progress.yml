@@ -1,0 +1,26 @@
+page: levels-and-progress
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+# 78-int (1.64): Configure Scene ▸ Levels with two rows added.
+shots:
+- id: levels-table
+  setup:
+  - {section: Levels}
+  - {click: '#levels-add'}
+  - {wait: 500}
+  - {click: '#levels-add'}
+  - {wait: 800}
+  - {eval: "document.querySelector('#levels-section')?.scrollIntoView({block: 'center'})"}
+  - {wait: 500}
+  crop: {union: [{selector: '#levels-section ol'}, {selector: '#levels-add'}], pad: 48}
+  fade: []
+  kind: ui
+  alt: >-
+    Configure Scene's Levels table with two levels, each with its name, Scene (this scene), Start at (the spawn point)
+    and an optional Goal, up / down and delete buttons, and Add level and Remove the table under it. 1: the level rows.
+  caption: The Levels table in Configure Scene.
+  annotate:
+  - {n: 1, at: {selector: '#levels-section ol'}, shape: box, pad: 3, badge: l, key: 'One **row per level**, in play order: its scene, where players start and an optional goal.'}

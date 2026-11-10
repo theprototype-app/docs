@@ -1,0 +1,45 @@
+{
+ "id": "levels-table",
+ "spec": "ba844a68cf8e",
+ "dpr": 2,
+ "shotAt": "2026-11-10T04:11:11.436Z",
+ "app": {
+  "version": "1.63.0",
+  "sha": "93ae1c1a"
+ },
+ "uiHits": [
+  "div#sidebar-grip-right.sb-grip",
+  "div.ins-filter",
+  "div#inspector.tp-ui",
+  "label.tp-ui",
+  "div.flex",
+  "span.w-12",
+  "li.levels-row",
+  "span.w-5",
+  "label.flex",
+  "div#levels-section.flex",
+  "button#levels-add.tp-ui",
+  "span#levels-unlock-label.text-xs"
+ ],
+ "width": 706,
+ "height": 896,
+ "crop": {
+  "x": 1087,
+  "y": 109,
+  "w": 353,
+  "h": 448
+ },
+ "cut": [
+  "r"
+ ],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 96,
+   "y": 95.9375,
+   "w": 582,
+   "h": 624
+  }
+ },
+ "kind": "ui"
+}

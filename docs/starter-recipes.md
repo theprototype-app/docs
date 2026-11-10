@@ -18,6 +18,15 @@ search) ▸ **Recipes**:
 The entries are greyed out on the **Main** graph: a recipe goes into an object's **own** flow, so select the object
 first. A toast confirms what was added — *Added the door recipe — press Play to try it*.
 
+![The node search opened by a right-click in the Bell's flow, with "recipes" typed: Recipes ▸ Bell, Door (click to open), Door (opens when you walk up) and Guard. 1: a Recipes row.](img/starter-recipes/recipes-menu.webp){ .shot width="360" height="238" loading=lazy }
+/// caption
+The node search on a selected object, searched for "recipes".
+///
+
+<div class="shot-key" markdown>
+1. A **Recipes** row: pick it to put the whole recipe in the selected object's flow.
+</div>
+
 To see all four at work first, open **Templates ▸ Doors, a bell and a guard**: a yard with a door you click, a gate that
 opens when you walk up, a bell and a guard on its round. Press Play and try them, then open each object's flow to see
 what its recipe made.
@@ -35,5 +44,14 @@ what its recipe made.
 
 Nothing about a recipe is special afterwards: the nodes are normal nodes. Change a sound, a speed or a radius on their
 cards, or delete what you do not want.
+
+![The Guard's flow after the Guard recipe: Path patrol walking the guard along its route, a second Path patrol carrying the sight zone with it, and On Enter (the player) on the sight zone pulsing Announce "Spotted!" and a whistle Game sound. 1: On Enter on the sight zone.](img/starter-recipes/guard-flow.webp){ .shot width="512" height="269" loading=lazy }
+/// caption
+What the Guard recipe puts in the guard's flow.
+///
+
+<div class="shot-key" markdown>
+1. **On Enter** fires when a player steps into the guard's sight; Announce and the whistle follow.
+</div>
 
 More recipes made by hand: [a furnished room](furnished-room.md) and [a gem arena](gem-arena.md).

@@ -63,6 +63,15 @@ player*, an object's name), and whether it fired or what blocked it.
 - *blocked: not the player* — something reached it in the last few seconds, and this stopped it;
 - *won't fire: physics is not running* — nothing has reached it yet, and this is why nothing can right now.
 
+![An On Enter card wired to an Announce in a door's flow, in Edit mode, with the line under it saying why it cannot fire right now. 1: the card's line.](img/debugger/why-card.webp){ .shot width="148" height="154" loading=lazy }
+/// caption
+A trigger card says why it will not fire.
+///
+
+<div class="shot-key" markdown>
+1. The card's **line**: *won't fire* and the reason, *blocked* and what stopped it, or when it last fired.
+</div>
+
 **In the Debugger** (in Play), the node you are focused on — the one Play paused at, or one you clicked in the panel —
 gets the full sentence above its wires:
 
