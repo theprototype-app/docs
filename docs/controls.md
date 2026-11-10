@@ -862,7 +862,7 @@ The keys in the table are the **3D view's**: they fire while the 3D view has foc
 | <kbd>T</kbd> | Show / hide the tool dock (with nothing docked it opens [empty](interface.md#docked-windows), ready for a drop) |
 | <kbd>Ctrl</kbd>+<kbd>B</kbd> | Show / hide the left [sidebar](interface.md#sidebars) (its tabs stay open) |
 | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd> | Show / hide the right sidebar |
-| <kbd>Alt</kbd>+<kbd>E</kbd> / <kbd>F</kbd> / <kbd>A</kbd> / <kbd>U</kbd> / <kbd>S</kbd> / <kbd>H</kbd> | Explorer / Flow Code / Animation / UV editor / Shader editor / HUD editor |
+| <kbd>Alt</kbd>+<kbd>E</kbd> / <kbd>F</kbd> / <kbd>A</kbd> / <kbd>U</kbd> / <kbd>S</kbd> / <kbd>H</kbd> | Explorer / flow code (in the Code workspace) / Animation / UV editor / Shader editor / HUD editor |
 | <kbd>C</kbd> | Toggle chat (from the 3D view only) |
 | <kbd>Shift</kbd>+<kbd>A</kbd> | Add an object at the cursor (enable in Settings) |
 | <kbd>P</kbd> | Start / stop the physics [simulation](physics.md) |
@@ -900,7 +900,7 @@ for a cheat sheet of every panel's keys, the focused panel first.
 
 Since 1.25 this covers **every panel and tool window**, docked or floating: the Explorer, the Inspector, the node
 editor's chrome, a behaviour's graph view, the [code workspace](code-workspace.md), the HUD editor, Animation, UV,
-Shader, Flow Code, the Profiler, previews, chat… Clicking in one gives it the keyboard, and the panel that has the keys
+Shader, Code, the Profiler, previews, chat… Clicking in one gives it the keyboard, and the panel that has the keys
 shows an outline.
 
 - **<kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> / <kbd>Q</kbd> <kbd>E</kbd> never fly the camera from a panel**,

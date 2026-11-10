@@ -1254,17 +1254,6 @@
    "app": "1.51.0",
    "shotAt": "2026-10-31T14:42:43.256Z"
   },
-  "img/interface/menu-project-compact.webp": {
-   "page": "interface",
-   "kind": "ui",
-   "dpr": 2,
-   "width": 330,
-   "height": 180,
-   "badges": 0,
-   "labels": [],
-   "app": "1.61.0",
-   "shotAt": "2026-11-05T10:55:04.129Z"
-  },
   "img/interface/phone-bar-drag-in.webp": {
    "page": "interface",
    "kind": "ui",
