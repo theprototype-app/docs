@@ -46,7 +46,8 @@ shots:
           const t = g.children[g.children.length - 1]; t.position.set(0, 0.7, 0); t.updateMatrixWorld(true);
           S.sim.setFluidFor(t.uuid, {quality: 'points', color: '#c0392b'});
           await S.physics.warmup().catch(() => {}); })()
-      - {create: Sphere, name: Ball, at: [0.3, 2.2, 0], scale: 0.44, color: '#8fb3a0'}
+      # dropped on the tank's middle: off-centre, where it comes to rest swings from shot to shot
+      - {create: Sphere, name: Ball, at: [0, 2.2, 0], scale: 0.44, color: '#8fb3a0'}
       - eval: >-
           window.__stores.physics.setPhysicsFor(window.__docs.byName('Ball').uuid, {mode: 'dynamic', mass: 0.5, collider: 'sphere'})
       - {camera: {pos: [0, 2.6, 4.6], target: [0, 0.6, 0]}}
