@@ -2,40 +2,40 @@
  "id": "guests-see",
  "spec": "bfd8cde48f53",
  "dpr": 2,
- "shotAt": "2026-11-10T13:59:08.199Z",
+ "shotAt": "2026-11-10T20:29:53.931Z",
  "app": {
-  "version": "1.63.0",
-  "sha": "14a8550a"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "div.connect-pill",
-  "button.cxd-tab",
-  "div.cxd-body",
-  "p.ui-section-label",
-  "div.cxd-row",
-  "button#drawer-network-toggle.cxd-network",
-  "button.cx-id",
   "div.cxd-tabs",
+  "div.cxd-body",
+  "button.cxd-tab",
+  "p.ui-section-label",
   "span.cxd-key",
+  "div.cxd-row",
   "label.cxd-key",
+  "button#drawer-network-toggle.cxd-network",
+  "svg.lucide",
   "span.cxd-network-title",
-  "span.cxd-network-sum"
+  "button.cx-id"
  ],
- "width": 1084,
+ "width": 888,
  "height": 408,
  "crop": {
-  "x": 449,
+  "x": 498,
   "y": 44,
-  "w": 542,
+  "w": 444,
   "h": 204
  },
  "cut": [],
  "fade": [],
  "anchors": {
   "1": {
-   "x": 249.546875,
+   "x": 249.75,
    "y": 220,
-   "w": 784.90625,
+   "w": 588.5,
    "h": 64
   }
  },

@@ -2,24 +2,24 @@
  "id": "pop-out-window",
  "spec": "c0f96afe467f",
  "dpr": 2,
- "shotAt": "2026-11-05T10:34:24.401Z",
+ "shotAt": "2026-11-10T20:25:48.278Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "div.pw-head",
   "div#code-ws-popped.code-ws",
-  "button#code-ws-toggle-left.ui-button-quiet",
+  "div.flex",
   "span.code-tab-name",
   "span.code-muted",
   "div.tp-noscrollbar",
   "div.cm-gutter",
-  "div.flex",
   "span.code-tab-close",
   "div.cm-line",
   "div.cm-content",
-  "div#code-ws-tabs.code-strip"
+  "div#code-ws-tabs.code-strip",
+  "span.ͼz"
  ],
  "width": 1376,
  "height": 1280,
@@ -33,9 +33,9 @@
  "fade": [],
  "anchors": {
   "1": {
-   "x": 1184.59375,
+   "x": 1186,
    "y": 76,
-   "w": 183.40625,
+   "w": 182,
    "h": 40
   }
  },

@@ -27,7 +27,7 @@ involves none of our servers.
 1. **Open the app** in a desktop browser (VR headset browsers work too).
 2. **Create something** — right-click the empty viewport and pick **Add ▸ Mesh ▸ Cube**. (If you prefer <kbd>Shift</kbd>+<kbd>A</kbd> for the Add menu, switch on **Shift+A quick add** in **Settings ▸ Controls ▸ Keyboard & mouse**.)
 3. **Move it** — click the cube to select it, then use the gizmo (<kbd>1</kbd> move, <kbd>2</kbd> rotate, <kbd>3</kbd> scale).
-4. **Invite a friend** — open the Connect panel, copy your peer ID and send it to them. They paste it into their own Connect field and press **Connect**; you approve the request, and from then on you are editing the same scene together.
+4. **Invite a friend** — open the Connect panel, copy your peer ID and send it to them. They press **Join…**, paste it and press **Connect**; you approve the request, and from then on you are editing the same scene together. (**Invite** makes a link that skips the approval: see [Invite people and agents](invites.md).)
 
 ![The menu a right-click on the empty 3D view opens, with Add ▸ Mesh unfolded and Cube in its list. 1: Add. 2: Cube, the first thing to make.](img/index/quick-start-add.webp){ .shot .fade-b width="688" height="440" loading=lazy }
 /// caption
@@ -51,6 +51,14 @@ on a phone that gives the scene the whole height of the screen.
 with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
+
+**1.65 — [new menus and panels](menus-and-panels.md).** Chat and the AI assistant are one window with **Session** and
+**Assistant** tabs, one History for both, and chats that come back after a reload. Press anyone in People for their
+[Person card](people.md#the-person-card); the Connect bar leads with **Invite** and **Join…**, and you can
+[show your status](people.md#show-my-status). The file preview [pins to the dock](explorer.md#the-preview-window) and
+edits images in place (**View | Edit**), the [Timeline](timeline.md#sequences-tracks-and-properties) has Sequences and
+Properties panes, [Generate 3D](ai/generation.md#the-generate-window) is a dockable window with Jobs and History, and
+Sign-in methods, Devices and Connected apps moved into [Settings ▸ Account](settings.md#account).
 
 **1.64 — flow you can shape.** [Starter recipes](starter-recipes.md) turn the selected object into a door you click, a
 door that opens as you walk up, a bell or a guard in one step. Trigger cards say

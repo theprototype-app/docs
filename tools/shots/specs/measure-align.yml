@@ -12,7 +12,7 @@ shots:
   replaces: img/measure-align/measure-chain.png
   kind: ui
   setup:
-    - {create: 'Box 2 1 1', name: Box, at: [0, 0.5, 0]}
+    - {create: 'Box 2 1 1', name: Box, at: [0, 0.5, 0], color: '#e07a5f'}
     - {camera: {pos: [3.2, 3.0, 4.6], target: [0, 0.4, 0]}}
     - eval: >-
         const m = window.__stores.measure; m.startMeasure();
@@ -34,7 +34,7 @@ shots:
   replaces: img/measure-align/measure-items.png
   kind: ui
   setup:
-    - {create: 'Box 2 1 1', name: Box, at: [0, 0.5, 0]}
+    - {create: 'Box 2 1 1', name: Box, at: [0, 0.5, 0], color: '#e07a5f'}
     - eval: >-
         const mi = window.__stores.measureItems;
         mi.createMeasurement([[-1, 1, 0.5], [1, 1, 0.5], [1, 1, -0.5]]);
@@ -58,7 +58,7 @@ shots:
   replaces: img/measure-align/measure-edit.png
   kind: ui
   setup:
-    - {create: 'Box 2 1 1', name: Box, at: [2, 0.5, 0]}
+    - {create: 'Box 2 1 1', name: Box, at: [2, 0.5, 0], color: '#e07a5f'}
     - eval: >-
         const s = window.__stores;
         const item = s.measureItems.createMeasurement([[1, 1, 0.5], [3, 1, 0.5], [3, 1, -0.5]]);
@@ -81,9 +81,9 @@ shots:
   replaces: img/measure-align/arrange.png
   kind: ui
   setup:
-    - {create: Box, name: Crate, at: [-1.6, 0.5, 0]}
-    - {create: Sphere, name: Ball, at: [0.2, 1.4, 0.6]}
-    - {create: Cylinder, name: Can, at: [1.8, 0.8, -0.4]}
+    - {create: Box, name: Crate, at: [-1.6, 0.5, 0], color: '#e07a5f'}
+    - {create: Sphere, name: Ball, at: [0.2, 1.4, 0.6], color: '#6d9dc5'}
+    - {create: Cylinder, name: Can, at: [1.8, 0.8, -0.4], color: '#81b29a'}
     - {select: [Crate, Ball, Can]}
     - {eval: "window.__stores.inspectorKind.set('selection'); window.__stores.inspectorClose.set(false)"}
     - {wait: 1500}

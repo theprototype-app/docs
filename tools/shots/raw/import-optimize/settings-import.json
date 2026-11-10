@@ -2,10 +2,10 @@
  "id": "settings-import",
  "spec": "db48c13b0a53",
  "dpr": 2,
- "shotAt": "2026-11-04T10:07:04.450Z",
+ "shotAt": "2026-11-10T20:42:34.112Z",
  "app": {
-  "version": "1.58.0",
-  "sha": "676de06c"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "header.wc-head",

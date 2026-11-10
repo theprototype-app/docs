@@ -2,10 +2,10 @@
  "id": "knocked-off",
  "spec": "5ae549ba835e",
  "dpr": 2,
- "shotAt": "2026-11-10T13:48:19.146Z",
+ "shotAt": "2026-11-10T20:19:28.222Z",
  "app": {
-  "version": "1.63.0",
-  "sha": "14a8550a"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "span.sbh-tab"

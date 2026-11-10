@@ -475,7 +475,7 @@ visible scrollbar. On a folding phone it stays right through folding and unfoldi
 
 ### Floating windows
 
-The toolboxes, the Explorer, the flow and animation windows and the panels all behave the same way: drag the header (or, since 1.35, any empty part of the window) to move, drag the bottom-right corner to resize. A window can never be sized past the edge of the screen — the resize corner always stays reachable — and **double-clicking** the corner resets it to its default size while leaving it where you parked it. Size and position are remembered per window. *Since 1.64* Chat and the AI assistant resize the same way and keep their size, the text viewer and the 3D preview keep theirs, the corner is easier to grab with a finger, and a window that opens while a sidebar is open appears beside it rather than under it.
+The toolboxes, the Explorer, the flow and animation windows and the panels all behave the same way: drag the header (or, since 1.35, any empty part of the window) to move, drag the bottom-right corner to resize. A window can never be sized past the edge of the screen — the resize corner always stays reachable — and **double-clicking** the corner resets it to its default size while leaving it where you parked it. Size and position are remembered per window. *Since 1.64* Chat and the AI assistant (one Chat window since 1.65) resize the same way and keep their size, the text viewer and the 3D preview keep theirs, the corner is easier to grab with a finger, and a window that opens while a sidebar is open appears beside it rather than under it.
 
 A window also **keeps its header**: it cannot be dragged so far down that the header hides under the Controls pill, the bottom band on a touch or narrow screen, the dock, or a browser overlay — there is always something left to grab. A tall toolbox parked near the bottom scrolls its body instead of losing its head.
 
@@ -868,7 +868,7 @@ The keys in the table are the **3D view's**: they fire while the 3D view has foc
 | <kbd>Ctrl</kbd>+<kbd>B</kbd> | Show / hide the left [sidebar](interface.md#sidebars) (its tabs stay open) |
 | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd> | Show / hide the right sidebar |
 | <kbd>Alt</kbd>+<kbd>E</kbd> / <kbd>F</kbd> / <kbd>A</kbd> / <kbd>U</kbd> / <kbd>S</kbd> / <kbd>H</kbd> | Explorer / flow code (in the Code workspace) / Animation / UV editor / Shader editor / HUD editor |
-| <kbd>C</kbd> | Toggle chat (from the 3D view only) |
+| <kbd>C</kbd> | Toggle chat (from the 3D view only): opens the Chat window on its **Session** tab ([Chat and the AI assistant](menus-and-panels.md#chat-and-the-ai-assistant)) |
 | <kbd>Shift</kbd>+<kbd>A</kbd> | Add an object at the cursor (enable in Settings) |
 | <kbd>P</kbd> | Start / stop the physics [simulation](physics.md) |
 | <kbd>Ctrl</kbd>+<kbd>Enter</kbd> | Play / enter VR (right-click the play button for modes) |

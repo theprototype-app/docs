@@ -108,11 +108,8 @@ shots:
           (() => { const m = window.__docs.byName('Mirror').material; m.color.set('#ffffff'); m.metalness = 1; m.roughness = 0.04; m.needsUpdate = true; })()
       - {create: Box, name: Crate, at: [1.3, 0.6, 0.4], scale: 1.2, color: '#c9a26b'}
     setup:
-      - {section: Environment}
-      - {wait: 1200}
-      # the Meadow card (the sky image), as sky-image-section picks it
-      - {eval: "[...document.querySelectorAll('button')].filter((b) => b.textContent.includes('Meadow')).pop().click()"}
-      - {wait: 4000}
+      # the Meadow environment preset (its sky image; since 1.64 the bundled skies are presets, no picture cards)
+      - {env: meadow, envWait: 5000}
       - {closePanels: true}
       - {deselect: true}
       - {camera: {pos: [0.4, 2.3, 10], target: [0.1, 0.9, 0]}}

@@ -2,10 +2,10 @@
  "id": "maps",
  "spec": "eaff8ec70fe3",
  "dpr": 2,
- "shotAt": "2026-11-05T10:59:41.681Z",
+ "shotAt": "2026-11-10T20:49:47.819Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "div#inspector.tp-ui",

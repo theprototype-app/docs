@@ -42,7 +42,7 @@ bar if you want it there. Since 1.39 you can move the chip anywhere, or hide it,
 [Edit positions](controls.md#moving-the-clusters); **Customize toolbar… ▸ Budget chip** shows it again. Opening its
 **▾** menu no longer makes it vanish.
 
-![The budget chip beside the toolbar, reading Quest over 100 % in red: the scene has four point lights, more than the two a Quest's budget allows.](img/performance/budget-chip.webp){ .shot width="646" height="72" loading=lazy }
+![The budget chip beside the toolbar, reading Quest over 100 % in red: the scene has four point lights, more than the two a Quest's budget allows.](img/performance/budget-chip.webp){ .shot width="647" height="72" loading=lazy }
 /// caption
 The budget chip sits beside the toolbar.
 ///

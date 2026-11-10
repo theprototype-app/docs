@@ -1,31 +1,31 @@
 {
  "id": "versions-desktop",
- "spec": "798b528ba904",
+ "spec": "cd9b6b5d2c68",
  "dpr": 2,
- "shotAt": "2026-11-10T14:11:53.748Z",
+ "shotAt": "2026-11-10T18:26:23.234Z",
  "app": {
-  "version": "1.63.0",
-  "sha": "14a8550a"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
-  "header.wc-head",
-  "div.border-b",
-  "button.tp-ui",
-  "div#image-editor-window.ui-panel",
+  "div.ui-panel-header",
+  "div.ws-panel",
+  "img.ie-frame-img",
+  "div.min-h-0",
+  "div#image-preview-window.ui-panel",
+  "div.ws-resize",
+  "span.ph-tab",
+  "button#image-editor-undo.tp-ui",
+  "canvas#image-editor-canvas.absolute",
+  "button#image-editor-redo.tp-ui",
   "div.flex",
-  "button#image-editor-save-copy.tp-ui",
-  "button#image-editor-save.tp-ui",
-  "svg.lucide",
-  "path",
-  "div.ws-panel-head",
-  "button#image-editor-restore-original.tp-ui",
-  "img.ie-version-thumb"
+  "button.tp-ui"
  ],
  "width": 1360,
  "height": 1120,
  "crop": {
-  "x": 180,
-  "y": 110,
+  "x": 300,
+  "y": 130,
   "w": 680,
   "h": 560
  },

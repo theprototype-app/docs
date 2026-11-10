@@ -2,10 +2,10 @@
  "id": "rendering-bar",
  "spec": "ed2412de0cee",
  "dpr": 2,
- "shotAt": "2026-11-05T11:21:05.072Z",
+ "shotAt": "2026-11-10T21:14:20.547Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "div#recording-bar.rec-bar",
@@ -17,12 +17,12 @@
   "button#recording-shrink.rec-cancel",
   "button#recording-cancel.rec-cancel"
  ],
- "width": 1268,
+ "width": 1304,
  "height": 184,
  "crop": {
-  "x": 27,
+  "x": 18,
   "y": 624,
-  "w": 634,
+  "w": 652,
   "h": 92
  },
  "cut": [],

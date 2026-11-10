@@ -101,7 +101,7 @@ shots:
     scene: []
     setup:
       - {eval: "window.__stores.scenePhysics.setScenePhysics({holdCamera: true})"}
-      - {section: Start view}
+      - {section: 'Camera:Start view'}
       - {eval: "document.querySelector('[data-anchor=\"Start view\"]')?.scrollIntoView({block: 'center'})"}
       - {wait: 600}
     crop: {union: [{selector: '[data-anchor="Start view"]'}, {selector: 'div[data-keywords^="simulation physics start"]'}], pad: 12}

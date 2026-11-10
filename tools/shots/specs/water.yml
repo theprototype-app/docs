@@ -46,6 +46,8 @@ shots:
           (() => { const S = window.__stores;
           const o = S.waterActions.makeWater(S.addObjects.spawnAtPoint('/create Box 3 1.6 2', [0, 0.8, 0]), 'tank');
           S.waterActions.applyWaterPreset(o.uuid, 'lava'); })()
+      # the lava heaves with the water clock: held, so a re-shoot draws the same frame
+      - {eval: "window.__stores.waterRuntime.freezeWaterClock(120)"}
       - {camera: {pos: [3.4, 3.1, 4.8], target: [0, 0.8, 0]}}
     setup:
       - {deselect: true}

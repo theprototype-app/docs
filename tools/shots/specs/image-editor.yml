@@ -6,8 +6,8 @@ defaults:
   format: webp
 shots:
 # 83-batch3: a picture drawn on a canvas and added to the Library (explorer.addItemFromBytes), then opened with
-# imageEditor.openImageEditor — core's image-editor suite recipe. The floating editor opens 820 px wide: a css step
-# narrows it to the column (it is resizable, min 420).
+# imageEditor.openImageEditor — core's image-editor suite recipe. Since 1.65 the editor is the Preview window's Edit
+# view (#image-preview-window holds #image-editor-window): a css step sizes the window to the column.
 - id: editor-desktop
   replaces: img/image-editor/editor-desktop.png
   kind: ui
@@ -26,14 +26,14 @@ shots:
           window.__docsImage = rec.id;
         })()
   setup:
-    - {css: '#image-editor-window{width:680px!important;height:780px!important}'}
+    - {css: '#image-preview-window{width:680px!important;height:780px!important}'}
     - {eval: "window.__stores.imageEditor.openImageEditor(window.__docsImage)"}
     - {wait: 2500}
-  crop: {selector: '#image-editor-window'}
+  crop: {selector: '#image-preview-window'}
   fade: []
   alt: >-
-    The Image editor on a computer: the picture on the left, and on the right the Edit page with Rotate and flip,
-    Crop, Resize and Adjust, Save and Save as copy above. 1: rotate and flip. 2: Crop. 3: the Adjust sliders.
+    The Image editor on a computer, the Preview window on Edit: the filmstrip of the folder's images on the left, the
+    picture with Save above it, and on the right the Edit page with Rotate and flip, Crop, Resize and Adjust. 1: rotate and flip. 2: Crop. 3: the Adjust sliders.
   caption: The Image editor on a computer.
   annotate:
     - {n: 1, at: {union: [{selector: '#image-editor-rotate-ccw'}, {selector: '#image-editor-flip-v'}]}, shape: box, pad: 3, badge: b, key: '**Rotate** 90° either way and **flip**.'}
@@ -45,7 +45,7 @@ shots:
   kind: ui
   scene: *picture
   setup:
-    - {css: &narrow '#image-editor-window{width:680px!important;height:560px!important}'}
+    - {css: &narrow '#image-preview-window{width:680px!important;height:560px!important}'}
     - {eval: "window.__stores.imageEditor.openImageEditor(window.__docsImage)"}
     - {wait: 2500}
     - {click: '#image-editor-crop'}
@@ -55,7 +55,7 @@ shots:
     - {moveTo: {selector: '#image-editor-canvas-wrap', dx: 90, dy: 60}, steps: 12}
     - {release: true}
     - {wait: 600}
-  crop: {selector: '#image-editor-window'}
+  crop: {selector: '#image-preview-window'}
   fade: []
   alt: >-
     Cropping on a computer in the light theme: the crop box drawn over the picture with its size badge, and in the
@@ -78,7 +78,7 @@ shots:
     - {wait: 2000}
     - {click: '#image-editor-window [data-ws-mode="history"]'}
     - {wait: 800}
-  crop: {selector: '#image-editor-window'}
+  crop: {selector: '#image-preview-window'}
   fade: []
   alt: >-
     The Versions page after one Save: Restore original at the top, then the current edit and the original image
@@ -86,33 +86,32 @@ shots:
   caption: The Versions page.
   annotate:
     - {n: 1, at: {selector: '#image-editor-restore-original'}, shape: box, pad: 3, badge: b, key: '**Restore original** puts the image back as it was imported; every Save keeps the version before it.'}
-# in a 688 px wide app window, so the whole dock is the column's width
+# in a 688 px wide app window, so the whole dock is the column's width. 1.65: the Preview pinned to the dock (its pin,
+# pressed in the DOM: at 688 px the floating window's header can sit where a pointer cannot reach it), on Edit
 - id: docked
   replaces: img/image-editor/docked.png
   device: window-688-tall
   kind: ui
   scene: *picture
   setup:
-    - {eval: "const d=window.__stores.dockMenu; for (const k of ['flow', 'explorer']) d.dockTab(k)"}
+    - {eval: "window.__stores.dockMenu.dockTab('flow')"}
     - {wait: 1200}
     - {eval: "window.__stores.imageEditor.openImageEditor(window.__docsImage)"}
     - {wait: 2000}
-    # the window's own Dock button (setDocked(true) → activateDock), pressed in the DOM: at 688 px the floating
-    # window's header can sit where a pointer cannot reach it. Then fail loudly if no tab came of it.
-    - {eval: "document.getElementById('image-editor-dock-btn').click()"}
-    - {wait: 1500}
-    - {eval: "if (!document.querySelector('.dt-tabs [data-dock-tab=\"imageEditor\"], .dt-tabs [data-dock-half=\"imageEditor\"]')) throw new Error('no Image editor dock tab; tabs: ' + [...document.querySelectorAll('[data-dock-tab]')].map((e) => e.dataset.dockTab).join(', '))"}
-    # the strip scrolls sideways (6 tabs in 688 px): bring the new tab into view
-    - {eval: "document.querySelector('.dt-tabs [data-dock-tab=\"imageEditor\"]')?.scrollIntoView({block: 'nearest', inline: 'nearest'})"}
-    - {wait: 300}
-  crop: {union: [{selector: '.dt-tabs'}, {selector: '#image-editor-dock'}], pad: 8, maxHeight: 368}
+    - {eval: "document.getElementById('preview-pin').click()"}
+    - {wait: 1800}
+    - {eval: "if (document.getElementById('image-preview-window')?.dataset.previewPinned !== 'true') throw new Error('the preview did not pin to the dock')"}
+    - {eval: "document.querySelector('.dt-tabs [data-dock-tab=\"preview\"]')?.click()"}
+    - {wait: 1200}
+  crop: {union: [{selector: '.dt-tabs'}, {selector: '#image-preview-window'}], pad: 8, maxHeight: 368}
   fade: [b]
   alt: >-
-    The Image editor as a tab in the bottom dock, beside the Node editor and the Explorer,
-    with the picture and its tools below the tabs. 1: the Image editor tab.
-  caption: The Image editor as a tab in the bottom dock.
+    The Preview pinned as a tab of the bottom dock, beside the Node editor, open on Edit: the filmstrip on the left,
+    the picture, and the Edit page with the image tools. 1: the Preview tab. 2: Edit.
+  caption: The image editor in the docked Preview tab.
   annotate:
-    - {n: 1, at: {selector: '.dt-tabs [data-dock-tab="imageEditor"]'}, shape: box, pad: 3, label: docked, badge: b, key: 'Docked, the **Image editor** is one more tab in the bottom dock.'}
+    - {n: 1, at: {selector: '.dt-tabs [data-dock-tab="preview"]'}, shape: box, pad: 2, badge: l, key: 'Docked, the **Preview** is one more tab in the bottom dock; it follows the Explorer selection.'}
+    - {n: 2, at: {selector: '#preview-edit'}, shape: box, pad: 3, badge: b, key: '**Edit** on an image opens the editor in that tab.'}
 # a phone: a sheet over the bottom, the Play bar left uncovered (core §11); the whole screen is the shot
 - id: editor-phone
   replaces: img/image-editor/editor-phone.png
@@ -122,7 +121,8 @@ shots:
   setup:
     - {eval: "window.__stores.imageEditor.openImageEditor(window.__docsImage)"}
     - {wait: 2500}
-    - {click: '#image-editor-window [data-ws-mode="edit"]'}
+    # 1.65: the Edit page opens from the editor's edge tab (h.openWsMode's way)
+    - {click: '#image-editor-window .ws-root > [data-ws-secondary-toggle]'}
     - {wait: 800}
   crop: {rect: [0, 0, 390, 896]}
   fade: []
@@ -131,5 +131,5 @@ shots:
     1: the Edit page. 2: Play, still reachable.
   caption: The Image editor on a phone.
   annotate:
-    - {n: 1, at: {selector: '#image-editor-window [data-ws-mode="edit"]'}, shape: underline, pad: -12, badge: b, key: 'The **Edit** and **Versions** pages switch under the picture.'}
+    - {n: 1, at: {selector: '#image-editor-window .ws-panel-head [data-ws-mode="edit"]'}, shape: underline, pad: 2, badge: b, key: 'The **Edit** and **Versions** pages open under the picture, from the pencil tab at its edge.'}
     - {n: 2, at: {selector: '#ps-play'}, shape: box, pad: 3, badge: t, key: 'The sheet leaves **Play** uncovered.'}

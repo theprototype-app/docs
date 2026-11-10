@@ -42,6 +42,12 @@ defaults:
     - {wait: 1500}
     - {click: '#timeline-fit'}
     - {wait: 600}
+    # 1.65: the Sequences and Properties panes fold away here (menus-and-panels/timeline-panes shows them), so the
+    # tracks get the window's width
+    - {eval: "document.querySelectorAll('.tl-root .ws-root > [data-ws-primary-toggle][aria-expanded=\"true\"], .tl-root .ws-root > [data-ws-secondary-toggle][aria-expanded=\"true\"]').forEach((b) => b.click())"}
+    - {wait: 600}
+    - {click: '#timeline-fit'}
+    - {wait: 600}
 shots:
   - id: tracks
     replaces: img/timeline/tracks.png
@@ -50,8 +56,8 @@ shots:
       Event tracks holding a Cam A → Cam B shot, a Door clip, whoosh.wav and a boom event. 1: + Track, which adds a
       track of any kind. 2: the boom event item.
     caption: The Timeline docked under the viewport.
-    # to the window's right edge, so + Track is not flush with the image's
-    crop: {union: [{selector: '.tl-root'}, {selector: '.tl-root', offset: [8, 0]}]}
+    # to the window's right edge and a little above, so + Track is not flush with the image's edges
+    crop: {union: [{selector: '.tl-root'}, {selector: '.tl-root', offset: [8, -6]}]}
     annotate:
       - {n: 1, at: {selector: '#timeline-add-track'}, shape: box, pad: 3, badge: l, key: '**+ Track** adds a Camera, Animation, Audio or Event track.'}
       - {n: 2, at: {selector: '.tl-lane[data-track-kind="event"] .tl-item'}, shape: circle, label: event, badge: r, key: 'An **event** item: it pulses On Sequence Event in the game when the sequence passes it.'}
@@ -119,7 +125,7 @@ shots:
       - {wait: 800}
       - {click: '#timeline-fit'}
       - {wait: 600}
-    crop: {union: [{selector: '.tl-root'}, {selector: '.tl-root', offset: [8, 0]}]}
+    crop: {union: [{selector: '.tl-root'}, {selector: '.tl-root', offset: [8, -6]}]}
     annotate:
       - {n: 1, at: {selector: '.tl-lane[data-track-id="tr-zoom"] .tl-key:nth-child(6)'}, shape: circle, label: key, badge: t, key: 'A **key**: the value the take recorded at that moment.'}
       - {n: 2, at: {selector: '[data-track-menu="tr-zoom"]'}, shape: box, badge: r, key: 'The track menu (**…**) has **Smooth keys**.'}

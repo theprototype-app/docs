@@ -2,10 +2,10 @@
  "id": "cheat-sheet",
  "spec": "a1664a6893f2",
  "dpr": 2,
- "shotAt": "2026-11-10T14:23:17.572Z",
+ "shotAt": "2026-11-10T20:55:20.386Z",
  "app": {
-  "version": "1.63.0",
-  "sha": "14a8550a"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "header.sheet-head",

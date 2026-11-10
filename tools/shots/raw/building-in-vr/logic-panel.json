@@ -2,10 +2,10 @@
  "id": "logic-panel",
  "spec": "87422c7cf0b3",
  "dpr": 2,
- "shotAt": "2026-11-05T10:29:01.254Z",
+ "shotAt": "2026-11-10T20:20:52.775Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [],
  "width": 1280,

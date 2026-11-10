@@ -2,10 +2,10 @@
  "id": "why-card",
  "spec": "1d47c6690ea9",
  "dpr": 2,
- "shotAt": "2026-11-10T14:04:42.479Z",
+ "shotAt": "2026-11-10T20:35:19.944Z",
  "app": {
-  "version": "1.63.0",
-  "sha": "14a8550a"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "ol.tp-crumbs-list",

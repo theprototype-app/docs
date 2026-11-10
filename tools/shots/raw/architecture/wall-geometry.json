@@ -1,11 +1,11 @@
 {
  "id": "wall-geometry",
- "spec": "c299dc857dd9",
+ "spec": "9c46049f24ae",
  "dpr": 2,
- "shotAt": "2026-11-05T10:22:56.450Z",
+ "shotAt": "2026-11-10T20:08:19.704Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "div#inspector.tp-ui",

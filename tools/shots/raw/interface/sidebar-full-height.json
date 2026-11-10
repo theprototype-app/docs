@@ -2,10 +2,10 @@
  "id": "sidebar-full-height",
  "spec": "1658f239604f",
  "dpr": 2,
- "shotAt": "2026-11-10T14:14:11.894Z",
+ "shotAt": "2026-11-10T20:43:56.320Z",
  "app": {
-  "version": "1.63.0",
-  "sha": "14a8550a"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "button#toolbar-customize.hud-cell",

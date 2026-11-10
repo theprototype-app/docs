@@ -1,0 +1,49 @@
+{
+ "id": "chat-history",
+ "spec": "5c1cf05927fa",
+ "dpr": 2,
+ "shotAt": "2026-11-10T20:51:31.013Z",
+ "app": {
+  "version": "1.64.0",
+  "sha": "14f50a80"
+ },
+ "uiHits": [
+  "header.wc-head",
+  "div.chat-tabs",
+  "div.chist-head",
+  "div.chist-filter",
+  "div.chist-list",
+  "h2#wc-title-s1.wc-title",
+  "svg.lucide",
+  "label.tp-ui",
+  "button#chat-history-filter-all.seg-opt",
+  "button.chist-row",
+  "div#chat-window.ui-panel",
+  "span.svelte-1n63cl2"
+ ],
+ "width": 1000,
+ "height": 920,
+ "crop": {
+  "x": 925,
+  "y": 368,
+  "w": 500,
+  "h": 460
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 22,
+   "y": 268,
+   "w": 956,
+   "h": 76
+  },
+  "2": {
+   "x": 14,
+   "y": 552,
+   "w": 912,
+   "h": 96
+  }
+ },
+ "kind": "ui"
+}

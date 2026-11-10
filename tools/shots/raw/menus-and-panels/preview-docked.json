@@ -1,0 +1,59 @@
+{
+ "id": "preview-docked",
+ "spec": "92812e703f95",
+ "dpr": 2,
+ "shotAt": "2026-11-10T18:33:18.383Z",
+ "app": {
+  "version": "1.64.0",
+  "sha": "14f50a80"
+ },
+ "uiHits": [
+  "div#explorer-list.tp-ui",
+  "path",
+  "input#explorer-search.tp-field",
+  "button#explorer-mount-add.shrink-0",
+  "button#explorer-root-row.whitespace-nowrap",
+  "div#explorer-folder-list.flex",
+  "button#new-folder.whitespace-nowrap",
+  "div#explorer-roots-resize.my-0.5",
+  "svg.lucide",
+  "span.dt-half",
+  "button#prefabs-folder.whitespace-nowrap",
+  "button#packs-folder.whitespace-nowrap"
+ ],
+ "width": 1376,
+ "height": 764,
+ "crop": {
+  "x": 0,
+  "y": 459,
+  "w": 688,
+  "h": 382
+ },
+ "cut": [
+  "l",
+  "r",
+  "b"
+ ],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 226.5625,
+   "y": 89,
+   "w": 88.03125,
+   "h": 24
+  },
+  "2": {
+   "x": 576,
+   "y": 271,
+   "w": 192,
+   "h": 178
+  },
+  "3": {
+   "x": 1164,
+   "y": 135,
+   "w": 56,
+   "h": 56
+  }
+ },
+ "kind": "ui"
+}

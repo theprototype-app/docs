@@ -1,32 +1,32 @@
 {
  "id": "agent-activity",
- "spec": "fd5050e9af5c",
+ "spec": "95744216a1bb",
  "dpr": 2,
- "shotAt": "2026-11-05T10:21:55.509Z",
+ "shotAt": "2026-11-10T20:03:17.665Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
-  "header.wc-head",
   "button.alog-head",
   "div.alog-body",
   "div.min-h-0",
-  "h2#wc-title-s2.wc-title",
-  "rect",
+  "svg.lucide",
   "div.alog-who",
-  "span.alog-time",
   "button.alog-text",
-  "h2#ai-welcome-title.aw-title",
+  "span.alog-time",
   "section#ai-welcome.aw",
-  "section#connect-claude.cc"
+  "h2#ai-welcome-title.aw-title",
+  "section#connect-claude.cc",
+  "span.alog-title",
+  "h3#connect-claude-title.cc-title"
  ],
- "width": 1000,
+ "width": 996,
  "height": 428,
  "crop": {
-  "x": 925,
-  "y": 60,
-  "w": 500,
+  "x": 926,
+  "y": 147,
+  "w": 498,
   "h": 214
  },
  "cut": [
@@ -37,15 +37,15 @@
  ],
  "anchors": {
   "1": {
-   "x": 920.78125,
-   "y": 97,
-   "w": 13.21875,
+   "x": 918,
+   "y": 15,
+   "w": 14,
    "h": 33
   },
   "2": {
-   "x": 909.5,
-   "y": 248,
-   "w": 76.5,
+   "x": 910,
+   "y": 166,
+   "w": 74,
    "h": 37
   }
  },

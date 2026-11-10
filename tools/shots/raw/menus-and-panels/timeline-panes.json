@@ -1,0 +1,49 @@
+{
+ "id": "timeline-panes",
+ "spec": "df8d7d216aad",
+ "dpr": 2,
+ "shotAt": "2026-11-10T18:36:15.939Z",
+ "app": {
+  "version": "1.64.0",
+  "sha": "14f50a80"
+ },
+ "uiHits": [
+  "div.tl-pane-head",
+  "div.tl-seq-list",
+  "div.min-h-0",
+  "span.tl-pane-title",
+  "button.tl-seq-pick-btn",
+  "span.tl-seq-name",
+  "span.tl-seq-len",
+  "button#timeline-new.tp-ui",
+  "button.tl-icon-btn",
+  "button#timeline-home.tp-ui",
+  "svg.lucide",
+  "div.tl-bar"
+ ],
+ "width": 1360,
+ "height": 606,
+ "crop": {
+  "x": 8,
+  "y": 529,
+  "w": 680,
+  "h": 303
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 10,
+   "y": 72,
+   "w": 332,
+   "h": 60
+  },
+  "2": {
+   "x": 882,
+   "y": 8,
+   "w": 356,
+   "h": 48
+  }
+ },
+ "kind": "ui"
+}

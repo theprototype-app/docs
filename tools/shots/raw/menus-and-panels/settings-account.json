@@ -1,0 +1,42 @@
+{
+ "id": "settings-account",
+ "spec": "1b3a3033efe5",
+ "dpr": 2,
+ "shotAt": "2026-11-10T20:53:22.634Z",
+ "app": {
+  "version": "1.64.0",
+  "sha": "14f50a80"
+ },
+ "uiHits": [
+  "div#settings-main.settings-main",
+  "h2.ss-title",
+  "p.ss-desc",
+  "h3.tpc-sec-title",
+  "span.tpc-sr-name",
+  "p.tpc-sr-desc",
+  "div#row-cloud-signin-out.tp-ui",
+  "div#row-cloud-devices-out.tp-ui",
+  "div#row-cloud-apps-out.tp-ui",
+  "div#row-cloud-feature-updates.tp-ui",
+  "div#settings-sections"
+ ],
+ "width": 1368,
+ "height": 1194,
+ "crop": {
+  "x": 477,
+  "y": 158,
+  "w": 684,
+  "h": 597
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 28,
+   "y": 432,
+   "w": 1312,
+   "h": 634
+  }
+ },
+ "kind": "ui"
+}

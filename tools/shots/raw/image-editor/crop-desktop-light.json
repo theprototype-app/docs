@@ -1,31 +1,31 @@
 {
  "id": "crop-desktop-light",
- "spec": "9b4aa367aa40",
+ "spec": "f15e92eeb251",
  "dpr": 2,
- "shotAt": "2026-11-10T14:11:36.611Z",
+ "shotAt": "2026-11-10T18:26:06.655Z",
  "app": {
-  "version": "1.63.0",
-  "sha": "14a8550a"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
-  "header.wc-head",
-  "div.border-b",
+  "div.ui-panel-header",
+  "div.ws-panel",
+  "img.ie-frame-img",
+  "div.min-h-0",
+  "div#image-preview-window.ui-panel",
+  "div.ws-resize",
+  "span.ph-tab",
   "button#image-editor-undo.tp-ui",
-  "div#image-editor-window.ui-panel",
+  "canvas#image-editor-canvas.absolute",
   "button#image-editor-redo.tp-ui",
   "div.flex",
-  "button.tp-ui",
-  "svg.lucide",
-  "div.ws-panel-head",
-  "div.ui-section-label",
-  "div.ie-section",
-  "button#image-editor-aspect-free.seg-opt"
+  "button.tp-ui"
  ],
  "width": 1360,
  "height": 1120,
  "crop": {
-  "x": 180,
-  "y": 110,
+  "x": 300,
+  "y": 130,
   "w": 680,
   "h": 560
  },
@@ -33,7 +33,7 @@
  "fade": [],
  "anchors": {
   "1": {
-   "x": 197.015625,
+   "x": 309.015625,
    "y": 180,
    "w": 469.96875,
    "h": 41

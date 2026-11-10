@@ -2,24 +2,24 @@
  "id": "editing-together",
  "spec": "e5d0b1bcf16a",
  "dpr": 2,
- "shotAt": "2026-11-05T10:34:05.236Z",
+ "shotAt": "2026-11-10T20:25:31.700Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "div.resize-cue",
   "div#code-ws-dock.code-ws",
-  "rect",
+  "div.flex",
   "span.code-tab-name",
   "div#code-ws-tabs.code-strip",
-  "span.code-kind",
-  "span.code-muted",
-  "div.flex",
+  "button#code-ws-toggle-left.tp-pane-handle",
   "div#script-sockets.flex",
   "div.cm-gutterElement",
   "div.cm-gutter",
-  "span.code-tab-close"
+  "span.code-tab-close",
+  "span.code-kind",
+  "span.code-muted"
  ],
  "width": 1376,
  "height": 680,
@@ -35,9 +35,9 @@
  ],
  "anchors": {
   "1": {
-   "x": 199.3125,
+   "x": 198,
    "y": 202,
-   "w": 141.125,
+   "w": 146,
    "h": 33
   }
  },

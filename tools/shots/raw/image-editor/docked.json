@@ -1,25 +1,25 @@
 {
  "id": "docked",
- "spec": "8e0afeb7a857",
+ "spec": "09ec82f60094",
  "dpr": 2,
- "shotAt": "2026-11-10T14:12:09.801Z",
+ "shotAt": "2026-11-10T18:35:06.303Z",
  "app": {
-  "version": "1.63.0",
-  "sha": "14a8550a"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
-  "div#image-editor-dock.tp-themed",
+  "div.ui-panel-header",
+  "ul#image-editor-filmstrip.ie-strip",
+  "div.min-h-0",
   "svg.lucide",
-  "span.wc-sub",
-  "div.border-b",
-  "canvas#image-editor-canvas.absolute",
+  "button#preview-prev.ui-button-quiet",
+  "img.ie-frame-img",
+  "span.ie-frame-name",
   "button.tab-note",
-  "button#image-editor-redo.tp-ui",
-  "div.flex",
-  "span#image-editor-zoom.ie-zoom",
-  "button.tp-ui",
-  "span#image-editor-size.ie-info",
-  "button#dock-add-view.tab-note"
+  "span#preview-place.pv-place",
+  "button#preview-next.ui-button-quiet",
+  "button#preview-up.ui-button-quiet",
+  "div.flex"
  ],
  "width": 1376,
  "height": 700,
@@ -39,10 +39,16 @@
  ],
  "anchors": {
   "1": {
-   "x": 478.15625,
+   "x": 271.0625,
    "y": 15,
-   "w": 207.28125,
+   "w": 154.03125,
    "h": 44
+  },
+  "2": {
+   "x": 1113.53125,
+   "y": 79,
+   "w": 104.46875,
+   "h": 40
   }
  },
  "kind": "ui"

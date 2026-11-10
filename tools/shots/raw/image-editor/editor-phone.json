@@ -1,25 +1,25 @@
 {
  "id": "editor-phone",
- "spec": "287ce41dd9b3",
+ "spec": "0c1b7a890882",
  "dpr": 2,
- "shotAt": "2026-11-03T13:50:47.687Z",
+ "shotAt": "2026-11-10T18:35:20.029Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
-  "div.border-b",
-  "button.ws-tab-btn",
-  "div.ws-panel-head",
-  "div#image-editor-tools.ie-pane",
+  "div.ui-panel-header",
+  "div.flex",
+  "span.ph-tab",
+  "canvas#image-editor-canvas.absolute",
+  "div.ws-resize",
   "nav#ps-bar.ps-bar",
+  "button#preview-prev.ui-button-quiet",
   "button#image-editor-undo.tp-ui",
-  "span.flex-1",
-  "div.ie-section",
-  "div#image-editor-aspect.tp-ui",
-  "button#image-editor-crop.tp-ui",
-  "button#ps-add.ps-tab",
-  "svg.lucide"
+  "button.tp-pane-handle",
+  "button.ws-mode",
+  "div.ui-section-label",
+  "button#image-editor-rotate-ccw.tp-ui"
  ],
  "width": 780,
  "height": 1792,
@@ -33,10 +33,10 @@
  "fade": [],
  "anchors": {
   "1": {
-   "x": 2,
-   "y": 893.125,
-   "w": 387,
-   "h": 88
+   "x": 10,
+   "y": 1003.84375,
+   "w": 108.15625,
+   "h": 48
   },
   "2": {
    "x": 314.375,

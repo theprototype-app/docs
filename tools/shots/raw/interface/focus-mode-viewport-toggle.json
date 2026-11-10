@@ -1,10 +1,11 @@
 {
  "id": "focus-mode-viewport-toggle",
+ "spec": "0502433b9f87",
  "dpr": 2,
- "shotAt": "2026-10-31T14:42:43.256Z",
+ "shotAt": "2026-11-10T20:45:07.505Z",
  "app": {
-  "version": "1.51.0",
-  "sha": "6fe31dae"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "div#explorer-list.tp-ui",
@@ -15,10 +16,10 @@
   "svg.lucide",
   "button#packs-folder.whitespace-nowrap",
   "div.mb-1",
+  "button.tp-pane-handle",
   "div#explorer-grid.relative",
   "button#explorer-filter.ui-button-quiet",
-  "div.dt-row",
-  "p.es-desc"
+  "div.dt-row"
  ],
  "width": 1376,
  "height": 1680,

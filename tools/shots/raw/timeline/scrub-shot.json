@@ -1,25 +1,25 @@
 {
  "id": "scrub-shot",
- "spec": "4c1a7f8eef9a",
+ "spec": "3889c0c5f54c",
  "dpr": 2,
- "shotAt": "2026-11-10T14:48:28.353Z",
+ "shotAt": "2026-11-10T20:05:06.689Z",
  "app": {
-  "version": "1.63.0",
-  "sha": "14a8550a"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "svg.svelte-1lv41t3",
   "div.resize-cue",
   "div#timeline-dock.tp-ui",
-  "span.dn-label",
-  "div.tl-corner",
+  "button.tp-pane-handle",
   "path",
-  "div.tl-track-head",
   "div.tl-grid",
-  "input#timeline-duration.dn-input",
+  "div.tl-corner",
+  "div.tl-track-head",
   "span.tl-track-name",
   "button#touch-undo.tt-btn",
-  "button#touch-redo.tt-btn"
+  "button#touch-redo.tt-btn",
+  "p.hud-cell"
  ],
  "width": 1376,
  "height": 1680,
@@ -33,15 +33,15 @@
  "fade": [],
  "anchors": {
   "1": {
-   "x": 540.65625,
-   "y": 1216,
+   "x": 548.125,
+   "y": 1136,
    "w": 4,
    "h": 46
   },
   "2": {
-   "x": 414.09375,
+   "x": 416,
    "y": 130,
-   "w": 547.8125,
+   "w": 544,
    "h": 82.5
   }
  },

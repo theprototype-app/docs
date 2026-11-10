@@ -2,10 +2,10 @@
  "id": "ongamestate",
  "spec": "74e5bb80b1c0",
  "dpr": 2,
- "shotAt": "2026-11-05T11:10:51.843Z",
+ "shotAt": "2026-11-10T21:03:06.830Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "div.svelte-flow__pane",

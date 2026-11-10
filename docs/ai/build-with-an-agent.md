@@ -14,7 +14,7 @@ replicated to everyone and undoable, exactly like a person's edits.
     (objects, flow nodes, physics, and mesh generation through *your* provider).
 
 !!! tip "New in 1.50: talk to it from the app"
-    Chat with the agent in the AI assistant window, send it pictures, and let it import models and files from its own
+    Chat with the agent in the Chat window's **Assistant** tab, send it pictures, and let it import models and files from its own
     machine — see [Talk to your agent](talk-to-your-agent.md).
 
 ## For you, the person in the session
@@ -136,7 +136,7 @@ before a join, scene tools answer *not connected — join first*. Then call `con
   back, the agent asks to come in again — the ordinary approval card — and carries on.
 - To stop it, revoke its invite or use **Remove from session** on its row ([Users and moderation](../people.md)).
 
-![The AI assistant window with Agent activity open: under the agent's name, Claude, two timed lines — created 3 objects (Rock1, Rock2 +1) and created 1 object (Flame) — each with Undo. 1: the number of steps so far. 2: Undo for one step.](../img/ai-build-with-an-agent/agent-activity.webp){ .shot .fade-b width="500" height="214" loading=lazy }
+![The AI assistant window with Agent activity open: under the agent's name, Claude, two timed lines — created 3 objects (Rock1, Rock2 +1) and created 1 object (Flame) — each with Undo. 1: the number of steps so far. 2: Undo for one step.](../img/ai-build-with-an-agent/agent-activity.webp){ .shot .fade-b width="498" height="214" loading=lazy }
 /// caption
 Agent activity in the AI assistant window.
 ///

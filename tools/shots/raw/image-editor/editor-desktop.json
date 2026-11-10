@@ -1,33 +1,33 @@
 {
  "id": "editor-desktop",
- "spec": "74b18f1e62ce",
+ "spec": "8a4347f2938f",
  "dpr": 2,
- "shotAt": "2026-11-10T14:11:21.388Z",
+ "shotAt": "2026-11-10T18:25:52.098Z",
  "app": {
-  "version": "1.63.0",
-  "sha": "14a8550a"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
-  "div.border-b",
-  "header.wc-head",
-  "button#image-editor-undo.tp-ui",
-  "div#image-editor-window.ui-panel",
-  "button#image-editor-redo.tp-ui",
-  "div.flex",
-  "button.tp-ui",
+  "div.ws-panel",
+  "div.ui-panel-header",
+  "ul#image-editor-filmstrip.ie-strip",
+  "img.ie-frame-img",
+  "div.min-h-0",
+  "div#image-preview-window.ui-panel",
+  "div.ws-resize",
   "span.ph-tab",
-  "path",
-  "button.ws-mode",
-  "div.ie-section",
-  "button#image-editor-aspect-free.seg-opt"
+  "button#image-editor-undo.tp-ui",
+  "canvas#image-editor-canvas.absolute",
+  "button#image-editor-redo.tp-ui",
+  "div.flex"
  ],
  "width": 1360,
- "height": 1436,
+ "height": 1416,
  "crop": {
-  "x": 180,
-  "y": 110,
+  "x": 300,
+  "y": 120,
   "w": 680,
-  "h": 718
+  "h": 708
  },
  "cut": [],
  "fade": [],
