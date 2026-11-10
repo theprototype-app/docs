@@ -63,7 +63,9 @@ with waits and events; [Levels and progress](levels-and-progress.md) brings one 
 loading screens and saved progress in exported games (try **Templates ▸ Two levels and a portal**). Drag a wire into
 empty space for a [search of the nodes that fit](node-system.md#drag-a-wire-into-space), and a backwards wire is flagged
 with a one-press fix. Also: small controls are easier to tap on touch screens, tab rows scroll with a swipe, the profile
-menu is regrouped, [Settings ▸ Interface ▸ Notifications](settings.md#notifications) switches pop-ups off, the fastest
+menu is regrouped, floating windows have [Small, Half and Full sizes](controls.md#the-window-menu), on a folded
+phone Chat, the AI assistant and Free assets are [dock tabs](interface.md#the-dock-on-a-phone),
+[Settings ▸ Interface ▸ Notifications](settings.md#notifications) switches pop-ups off, the fastest
 device in a session runs the physics, and the interface uses icons, not emoji.
 
 **1.63 — pro look.** Three [pro presets](pro-look.md) — **Product shot**, **Cinematic** and **Stylised** — set the sky,

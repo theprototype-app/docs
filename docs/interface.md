@@ -670,12 +670,16 @@ editor and the other editors:
 | **Configure Scene** | the scene's settings | **More ▸ Scene**, or the main menu's **Configure Scene** |
 | **Layouts** | save and switch [workspace layouts](controls.md#workspace-layouts) | the main menu's **Layouts**, or the dock's **+** |
 | **Statistics** | the scene's [budgets](performance.md#what-the-statistics-window-counts) | **More ▸ Statistics** (since 1.34; before, a floating window) |
+| **Chat**, **AI assistant**, **Free assets** | the session chat, the [AI assistant](ai/assistant.md) and the free asset browser | their bar or More buttons (since 1.64; before, sheets over the view) |
 
 - **All tabs share one height.** Drag the dock's grab bar to resize it; swipe it down to minimize the dock.
-- **A tab's ✕** closes that panel. The dock's **+** lists every window, these six included, with a show/hide switch.
+- **A tab's ✕** closes that panel. The dock's **+** lists every window, these included, with a show/hide switch.
 - **More ▸ Statistics** (or Statistics on your bar) toggles like any bar button: tapped while its tab is in front, it
   minimizes the dock. With **Settings ▸ Interface ▸ Windows & chrome ▸ Allow undocking on touch screens** on, Statistics
   floats as before.
+- **Chat, the AI assistant and Free assets** (*since 1.64*) dock the same way. Docked somewhere else on the unfolded
+  phone (a sidebar or the bottom dock), they become tabs here when you fold it and go back where they were when you
+  unfold. **Back** closes the one in front. With **Allow undocking on touch screens** on, they open as before.
 - **Several can be open at once** — the properties no longer close when you open the notes.
 - **Play stays on top** of whatever is open.
 - **The main menu closes** as Configure Scene opens, since its tab is underneath the menu. On a computer the menu stays

@@ -475,7 +475,7 @@ visible scrollbar. On a folding phone it stays right through folding and unfoldi
 
 ### Floating windows
 
-The toolboxes, the Explorer, the flow and animation windows and the panels all behave the same way: drag the header (or, since 1.35, any empty part of the window) to move, drag the bottom-right corner to resize. A window can never be sized past the edge of the screen — the resize corner always stays reachable — and **double-clicking** the corner resets it to its default size while leaving it where you parked it. Size and position are remembered per window.
+The toolboxes, the Explorer, the flow and animation windows and the panels all behave the same way: drag the header (or, since 1.35, any empty part of the window) to move, drag the bottom-right corner to resize. A window can never be sized past the edge of the screen — the resize corner always stays reachable — and **double-clicking** the corner resets it to its default size while leaving it where you parked it. Size and position are remembered per window. *Since 1.64* Chat and the AI assistant resize the same way and keep their size, the text viewer and the 3D preview keep theirs, the corner is easier to grab with a finger, and a window that opens while a sidebar is open appears beside it rather than under it.
 
 A window also **keeps its header**: it cannot be dragged so far down that the header hides under the Controls pill, the bottom band on a touch or narrow screen, the dock, or a browser overlay — there is always something left to grab. A tall toolbox parked near the bottom scrolls its body instead of losing its head.
 
@@ -535,11 +535,16 @@ Right-click a floating window's header — or press and hold it on a touch scree
 | **Float (undock)** | on a tab of a window group: takes that window out of the group |
 | **Group with…** | lists the other open windows that can share tabs (the toolbox cannot; Statistics can since 1.39) |
 | **Bring to front** | puts it above the other floating windows |
+| **Size ▸ Small / Half / Full** | *since 1.64*: a third of the free area, half of it, or all of it (the space between the sidebars and the dock) |
 | **Reset size** | back to its default size, where it is |
 | **Close** | closes it |
 
 The same menu opens on a tab of a [floating window with tabs](interface.md#floating-windows-with-tabs). The header itself
 is unchanged.
+
+**Double-click the header** — or double-tap it on a touch screen — to step through **Half**, **Full** and **Small**. The
+Flow, Explorer, Profiler, Timeline, Animation, UV, Shader, HUD and Code editors size themselves and do not have these
+steps yet.
 
 ![The floating Objects window's header right-clicked: Dock to bottom, Move to left sidebar, Move to right sidebar, Float (undock) greyed because it already floats, Group with…, Bring to front, Reset size and Close.](img/controls/window-menu.webp){ .shot .fade-b width="688" height="620" loading=lazy }
 /// caption
