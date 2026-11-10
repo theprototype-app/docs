@@ -13,7 +13,7 @@ search) ▸ **Recipes**:
 | [Door (click to open)](recipe-door.md) | On Click opens and closes it: a quarter turn, shared and saved |
 | [Door (opens when you walk up)](recipe-walk-up-door.md) | a sensor zone around the door: walking in opens it, walking out closes it |
 | [Bell](recipe-bell.md) | click, point at or knock it: it swings and rings for everyone |
-| [Guard](recipe-guard.md) | walks a loop path around where it stands; says "Spotted!" when a player comes close |
+| [Guard](recipe-guard.md) | walks a loop path around where it stands; says "Spotted!" when a player steps into its sight |
 
 The entries are greyed out on the **Main** graph: a recipe goes into an object's **own** flow, so select the object
 first. A toast confirms what was added — *Added the door recipe — press Play to try it*.
