@@ -111,10 +111,13 @@ worst one, the JS heap where the browser reports it, meshes and how many are hid
 objects are still arriving, and a **Wire** table of per-message-type counts in and out over the
 last few seconds. The refresh button re-reads everything and resets the wire counters.
 
-!!! note "Two profiles"
+!!! note "Three profiles"
     The same scene is comfortable on a desktop and fatal on a headset, so the ceilings come in
-    two sets. The line at the top of the window says which you are being judged against —
-    **desktop** or **VR / mobile**.
+    sets. The line at the top of the window says which you are being judged against —
+    **desktop**, **VR** or (*since 1.64*) **phone**. A phone keeps the headset's limits for what a
+    scene holds (draw calls, triangles, memory, lights) but its own for frames: a steady 30 fps is
+    fine on a phone. While quality is already lowered to keep a heavy scene smooth, the dot beside
+    the object count is a calm grey note instead of a warning.
 
 The whole set rides along in the [diagnostics bundle](connection.md#diagnostics-you-can-copy).
 
