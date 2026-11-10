@@ -206,7 +206,7 @@ with the download blocked, the preset's flat colours show until the sky can load
 In VR the five skies are they are in the radial menu's **Scene ▸ Environment**. All five are CC0
 images from [Poly Haven](https://polyhaven.com).
 
-![Configure Scene ▸ Environment: the sky preset cards, Upload HDRI…, Rotation, Image light, Show as sky, Sky blur and Tone mapping.](img/camera/sky-image-section.webp){ .shot .fade-b width="340" height="800" loading=lazy }
+![Configure Scene ▸ Environment ▸ Sky image with the Meadow sky in use: None and Upload HDRI…, Rotation, Image light, Show as sky, Sky blur, Tone mapping, Sky quality and Minimum quality.](img/camera/sky-image-section.webp){ .shot width="311" height="395" loading=lazy }
 /// caption
 Configure Scene ▸ Environment, with its Sky image section.
 ///

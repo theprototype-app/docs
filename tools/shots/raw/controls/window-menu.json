@@ -1,18 +1,19 @@
 {
  "id": "window-menu",
+ "spec": "314327318f7e",
  "dpr": 2,
- "shotAt": "2026-10-31T14:48:25.570Z",
+ "shotAt": "2026-11-10T04:13:58.247Z",
  "app": {
-  "version": "1.51.0",
-  "sha": "6fe31dae"
+  "version": "1.63.0",
+  "sha": "93ae1c1a"
  },
  "uiHits": [
   "div.fixed",
   "div.cursor-pointer",
   "svg.lucide",
   "span.flex",
-  "div.ctx-scroll",
-  "span.flex-1"
+  "span.flex-1",
+  "div.ctx-scroll"
  ],
  "width": 1376,
  "height": 1240,

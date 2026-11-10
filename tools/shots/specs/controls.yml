@@ -251,7 +251,8 @@ shots:
     replaces: img/controls/window-menu.png
     caption: A floating window's header menu.
     alt: 'The floating Objects window''s header right-clicked: Dock to bottom, Move to left sidebar, Move to right sidebar,
-      Float (undock) greyed because it already floats, Group with…, Bring to front, Reset size and Close.'
+      Float (undock) greyed because it already floats, Group with… greyed with no other window open, Bring to front,
+      Reset size, Size greyed because the Objects list sizes itself, and Close.'
     setup:
     - click: p[title="Object list (O)"]
     - wait: 800

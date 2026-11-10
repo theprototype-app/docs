@@ -2,24 +2,24 @@
  "id": "configure-scene-quality",
  "spec": "9574e021ac0c",
  "dpr": 2,
- "shotAt": "2026-11-05T11:15:50.172Z",
+ "shotAt": "2026-11-10T04:14:35.520Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "93ae1c1a"
  },
  "uiHits": [
-  "header.wc-head",
   "div.ins-filter",
   "div#inspector.tp-ui",
-  "label.tp-ui",
+  "div.flex",
   "button.sec-panel-head",
+  "svg.lucide",
+  "h3#scene-group-device.ins-group-label",
   "span.pr-label",
-  "label#scene-auto-quality-label.it-label",
+  "div.sec-panel-body",
+  "div.tp-ui",
   "label#scene-lod-enabled-label.it-label",
   "label#scene-kit-instancing-label.it-label",
-  "button.chip",
-  "div.tp-ui",
-  "button#hdri-none.hdri-card"
+  "section.tp-ui"
  ],
  "width": 680,
  "height": 1400,

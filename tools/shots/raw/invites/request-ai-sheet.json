@@ -1,11 +1,11 @@
 {
  "id": "request-ai-sheet",
- "spec": "3ff570b02918",
+ "spec": "d5a89bebf859",
  "dpr": 2,
- "shotAt": "2026-11-05T10:57:16.382Z",
+ "shotAt": "2026-11-10T04:19:08.769Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "93ae1c1a"
  },
  "uiHits": [
   "dialog.tp-ui",
@@ -13,21 +13,21 @@
   "div.md-bar",
   "div.md-body",
   "h2#md-title-c1.wc-title",
-  "button#invite-tab-agent.tab",
+  "button#invite-tab-person.tab",
   "p.inv-lead",
-  "div#invite-sheet.inv",
-  "span#invite-role-label.inv-label",
   "div.inv-row",
-  "span#invite-uses-label.inv-label",
-  "div.inv-actions"
+  "div.inv-actions",
+  "div#invite-sheet.inv",
+  "svg.lucide",
+  "p.inv-note"
  ],
  "width": 928,
- "height": 950,
+ "height": 850,
  "crop": {
   "x": 488,
-  "y": 213,
+  "y": 238,
   "w": 464,
-  "h": 475
+  "h": 425
  },
  "cut": [],
  "fade": [],
@@ -35,19 +35,19 @@
   "1": {
    "x": 70,
    "y": 137.5,
-   "w": 238.0625,
+   "w": 240,
    "h": 78
   },
   "2": {
-   "x": 457.0625,
-   "y": 369.5,
-   "w": 392.9375,
-   "h": 260
+   "x": 70,
+   "y": 361.5,
+   "w": 788,
+   "h": 176
   },
   "3": {
-   "x": 526.34375,
-   "y": 661.5,
-   "w": 331.65625,
+   "x": 526,
+   "y": 561.5,
+   "w": 332,
    "h": 72
   }
  },

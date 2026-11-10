@@ -276,8 +276,8 @@
     "Sunset",
     "Night"
    ],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:07:09.598Z"
+   "app": "1.63.0",
+   "shotAt": "2026-11-10T04:13:18.323Z"
   },
   "img/camera/grid-and-lights.webp": {
    "page": "camera",
@@ -312,12 +312,12 @@
    "page": "camera",
    "kind": "ui",
    "dpr": 2,
-   "width": 340,
-   "height": 800,
+   "width": 311,
+   "height": 395,
    "badges": 0,
    "labels": [],
-   "app": "1.61.0",
-   "shotAt": "2026-11-05T10:31:31.468Z"
+   "app": "1.63.0",
+   "shotAt": "2026-11-10T04:16:41.974Z"
   },
   "img/camera/sky-meadow.webp": {
    "page": "camera",
@@ -828,8 +828,8 @@
    "height": 620,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:48:25.570Z"
+   "app": "1.63.0",
+   "shotAt": "2026-11-10T04:13:58.247Z"
   },
   "img/controls/window-over-sidebar-hint.webp": {
    "page": "controls",
@@ -1251,8 +1251,8 @@
    "height": 840,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:43:33.957Z"
+   "app": "1.63.0",
+   "shotAt": "2026-11-10T04:14:12.499Z"
   },
   "img/interface/focus-mode-viewport-toggle.webp": {
    "page": "interface",
@@ -1382,11 +1382,11 @@
    "kind": "ui",
    "dpr": 2,
    "width": 464,
-   "height": 475,
+   "height": 425,
    "badges": 3,
    "labels": [],
-   "app": "1.61.0",
-   "shotAt": "2026-11-05T10:57:16.382Z"
+   "app": "1.63.0",
+   "shotAt": "2026-11-10T04:19:08.769Z"
   },
   "img/levels-and-progress/levels-table.webp": {
    "page": "levels-and-progress",
@@ -2176,8 +2176,8 @@
    "height": 700,
    "badges": 0,
    "labels": [],
-   "app": "1.61.0",
-   "shotAt": "2026-11-05T11:15:50.172Z"
+   "app": "1.63.0",
+   "shotAt": "2026-11-10T04:14:35.520Z"
   },
   "img/performance/statistics-budget.webp": {
    "page": "performance",

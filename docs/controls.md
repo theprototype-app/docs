@@ -543,10 +543,10 @@ The same menu opens on a tab of a [floating window with tabs](interface.md#float
 is unchanged.
 
 **Double-click the header** — or double-tap it on a touch screen — to step through **Half**, **Full** and **Small**. The
-Flow, Explorer, Profiler, Timeline, Animation, UV, Shader, HUD and Code editors size themselves and do not have these
-steps yet.
+Objects list and the Flow, Explorer, Profiler, Timeline, Animation, UV, Shader, HUD and Code editors size themselves:
+their **Size** row is greyed for now.
 
-![The floating Objects window's header right-clicked: Dock to bottom, Move to left sidebar, Move to right sidebar, Float (undock) greyed because it already floats, Group with…, Bring to front, Reset size and Close.](img/controls/window-menu.webp){ .shot .fade-b width="688" height="620" loading=lazy }
+![The floating Objects window's header right-clicked: Dock to bottom, Move to left sidebar, Move to right sidebar, Float (undock) greyed because it already floats, Group with… greyed with no other window open, Bring to front, Reset size, Size greyed because the Objects list sizes itself, and Close.](img/controls/window-menu.webp){ .shot .fade-b width="688" height="620" loading=lazy }
 /// caption
 A floating window's header menu.
 ///

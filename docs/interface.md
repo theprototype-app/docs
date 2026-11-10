@@ -462,9 +462,9 @@ moving it never moves your main view.
 
 The PiP's keys are listed in **Settings ▸ Shortcuts ▸ Viewport picture-in-picture**, where they can be rebound.
 
-![Focus mode on the docked Flow Code window: it fills the whole window with its tab row and Exit focus along the top edge, and the Viewport picture-in-picture shows the scene in the bottom-right corner](img/interface/focus-mode-pip.webp){ .shot width="688" height="840" loading=lazy }
+![Focus mode on the docked Code window (its Main flow code tab): it fills the whole window with its tab row, Viewport and Exit focus along the top edge, and the Viewport picture-in-picture shows the scene in the bottom-right corner](img/interface/focus-mode-pip.webp){ .shot width="688" height="840" loading=lazy }
 /// caption
-Focus mode on the Flow Code window, in a small window.
+Focus mode on the Code window, in a small window.
 ///
 
 ## Menus
