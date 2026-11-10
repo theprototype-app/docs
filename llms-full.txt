@@ -36,7 +36,7 @@ involves none of our servers.
 1. **Open the app** in a desktop browser (VR headset browsers work too).
 2. **Create something** — right-click the empty viewport and pick **Add ▸ Mesh ▸ Cube**. (If you prefer <kbd>Shift</kbd>+<kbd>A</kbd> for the Add menu, switch on **Shift+A quick add** in **Settings ▸ Controls ▸ Keyboard & mouse**.)
 3. **Move it** — click the cube to select it, then use the gizmo (<kbd>1</kbd> move, <kbd>2</kbd> rotate, <kbd>3</kbd> scale).
-4. **Invite a friend** — open the Connect panel, copy your peer ID and send it to them. They paste it into their own Connect field and press **Connect**; you approve the request, and from then on you are editing the same scene together.
+4. **Invite a friend** — open the Connect panel, copy your peer ID and send it to them. They press **Join…**, paste it and press **Connect**; you approve the request, and from then on you are editing the same scene together. (**Invite** makes a link that skips the approval: see [Invite people and agents](https://docs.theprototype.app/invites.md).)
 
 ![The menu a right-click on the empty 3D view opens, with Add ▸ Mesh unfolded and Cube in its list. 1: Add. 2: Cube, the first thing to make.](https://docs.theprototype.app/img/index/quick-start-add.webp)
 *Figure: Quick start, step 2 — right-click the empty view, then Add ▸ Mesh ▸ Cube.*
@@ -56,6 +56,14 @@ on a phone that gives the scene the whole height of the screen.
 with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
+
+**1.65 — [new menus and panels](https://docs.theprototype.app/menus-and-panels.md).** Chat and the AI assistant are one window with **Session** and
+**Assistant** tabs, one History for both, and chats that come back after a reload. Press anyone in People for their
+[Person card](https://docs.theprototype.app/people.md#the-person-card); the Connect bar leads with **Invite** and **Join…**, and you can
+[show your status](https://docs.theprototype.app/people.md#show-my-status). The file preview [pins to the dock](https://docs.theprototype.app/explorer.md#the-preview-window) and
+edits images in place (**View | Edit**), the [Timeline](https://docs.theprototype.app/timeline.md#sequences-tracks-and-properties) has Sequences and
+Properties panes, [Generate 3D](https://docs.theprototype.app/ai/generation.md#the-generate-window) is a dockable window with Jobs and History, and
+Sign-in methods, Devices and Connected apps moved into [Settings ▸ Account](https://docs.theprototype.app/settings.md#account).
 
 **1.64 — flow you can shape.** [Starter recipes](https://docs.theprototype.app/starter-recipes.md) turn the selected object into a door you click, a
 door that opens as you walk up, a bell or a guard in one step. Trigger cards say
@@ -1197,7 +1205,7 @@ visible scrollbar. On a folding phone it stays right through folding and unfoldi
 
 ### Floating windows
 
-The toolboxes, the Explorer, the flow and animation windows and the panels all behave the same way: drag the header (or, since 1.35, any empty part of the window) to move, drag the bottom-right corner to resize. A window can never be sized past the edge of the screen — the resize corner always stays reachable — and **double-clicking** the corner resets it to its default size while leaving it where you parked it. Size and position are remembered per window. *Since 1.64* Chat and the AI assistant resize the same way and keep their size, the text viewer and the 3D preview keep theirs, the corner is easier to grab with a finger, and a window that opens while a sidebar is open appears beside it rather than under it.
+The toolboxes, the Explorer, the flow and animation windows and the panels all behave the same way: drag the header (or, since 1.35, any empty part of the window) to move, drag the bottom-right corner to resize. A window can never be sized past the edge of the screen — the resize corner always stays reachable — and **double-clicking** the corner resets it to its default size while leaving it where you parked it. Size and position are remembered per window. *Since 1.64* Chat and the AI assistant (one Chat window since 1.65) resize the same way and keep their size, the text viewer and the 3D preview keep theirs, the corner is easier to grab with a finger, and a window that opens while a sidebar is open appears beside it rather than under it.
 
 A window also **keeps its header**: it cannot be dragged so far down that the header hides under the Controls pill, the bottom band on a touch or narrow screen, the dock, or a browser overlay — there is always something left to grab. A tall toolbox parked near the bottom scrolls its body instead of losing its head.
 
@@ -1555,7 +1563,7 @@ The keys in the table are the **3D view's**: they fire while the 3D view has foc
 | <kbd>Ctrl</kbd>+<kbd>B</kbd> | Show / hide the left [sidebar](https://docs.theprototype.app/interface.md#sidebars) (its tabs stay open) |
 | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd> | Show / hide the right sidebar |
 | <kbd>Alt</kbd>+<kbd>E</kbd> / <kbd>F</kbd> / <kbd>A</kbd> / <kbd>U</kbd> / <kbd>S</kbd> / <kbd>H</kbd> | Explorer / flow code (in the Code workspace) / Animation / UV editor / Shader editor / HUD editor |
-| <kbd>C</kbd> | Toggle chat (from the 3D view only) |
+| <kbd>C</kbd> | Toggle chat (from the 3D view only): opens the Chat window on its **Session** tab ([Chat and the AI assistant](https://docs.theprototype.app/menus-and-panels.md#chat-and-the-ai-assistant)) |
 | <kbd>Shift</kbd>+<kbd>A</kbd> | Add an object at the cursor (enable in Settings) |
 | <kbd>P</kbd> | Start / stop the physics [simulation](https://docs.theprototype.app/physics.md) |
 | <kbd>Ctrl</kbd>+<kbd>Enter</kbd> | Play / enter VR (right-click the play button for modes) |
@@ -1709,7 +1717,9 @@ The light theme and every custom `.theme.json` restyle all of it; see [Themes & 
   button beside it).
 - **Your stuff** — **Cloud saves**, **Your games & stats**, and on theprototype.app the community panels (and
   **Staff** for staff accounts).
-- **Account** — **Sign-in methods ▸**, **Devices ▸** and **Sign out**, last. Signed out, this group is **Sign in**:
+- **Account** — your account card, **Sign out** last, and a **Manage** link to **Settings ▸ Account**, where
+  **Sign-in methods**, **Devices** and **Connected apps** live since 1.65 ([Settings ▸ Account](https://docs.theprototype.app/settings.md#account)).
+  The phone sheet has the same group. Signed out, this group is **Sign in**:
   *Keep scenes in the cloud and open them on any device.*
 
 A line of links closes the menu: **Community**, **Account help** and the project's **GitHub star**. Opening the menu
@@ -1830,7 +1840,8 @@ the dock or a sidebar to make it a floating window. A mouse works as before.
 #### Any window in a sidebar
 
 Every window that can be docked at the bottom can also be a sidebar tab — the Node editor, Animation, UV, Shader and
-HUD editors, the Explorer, the Profiler, Code, the Image editor, Objects, Statistics, Chat and the AI assistant:
+HUD editors, the Explorer, the Profiler, Code, the Preview, Objects, Statistics, Chat (since 1.65 with the AI assistant
+as its **Assistant** tab) and Generate 3D:
 
 - **Into a sidebar**: drag the floating window (by its header or any empty part) to the left or right edge or onto an
   open sidebar, drag its bottom-dock tab onto a sidebar, right-click its dock tab or its floating header ▸ **Move to the
@@ -1840,7 +1851,7 @@ HUD editors, the Explorer, the Profiler, Code, the Image editor, Objects, Statis
 **No second header.** A window in a sidebar shows no window header of its own: the sidebar tab is its header (name, ×,
 menu). Windows whose header carries tools keep a slim tools row without the title, ×, Dock or **+**: Objects (search),
 the Explorer (search and filters; its search hides when the sidebar is narrower than about 520 px, as in a narrow
-floating window), the Shader editor, Code, the Profiler, the Image editor (the file name) and Statistics (the budget dot
+floating window), the Shader editor, Code, the Profiler and Statistics (the budget dot
 and re-read).
 
 ![The right sidebar at full height, with Objects and Configure Scene as tabs: it runs from the top edge to the bottom, and the notes, bell and profile buttons have slid left of it.](https://docs.theprototype.app/img/interface/sidebar-full-height.webp)
@@ -1880,9 +1891,10 @@ Since 1.32 a window in the bottom dock has no **✕** or undock button of its ow
 - You can also drag a tab out of the strip — or right-click it ▸ **Undock into a floating window** — to undock that one
   window. A docked window moves by its tab, not by its header. The same menu has **Move to the left / right sidebar**
   (see [Any window in a sidebar](#any-window-in-a-sidebar)).
-- **The dock's +** lists every window that can live in the dock — the [Node editor](https://docs.theprototype.app/node-editor.md) and the
-  [Image editor](https://docs.theprototype.app/image-editor.md#in-the-dock) included, and since 1.33 also **Objects**, **Statistics**, **Chat** and
-  the **AI assistant** — the same list as the phone's **Windows** sheet. See
+- **The dock's +** lists every window that can live in the dock — the [Node editor](https://docs.theprototype.app/node-editor.md) included, since
+  1.33 also **Objects**, **Statistics** and **Chat**, and since 1.65 the **[Preview](https://docs.theprototype.app/explorer.md#the-preview-window)**
+  (which holds the [Image editor](https://docs.theprototype.app/image-editor.md#in-the-dock)) and **[Generate 3D](https://docs.theprototype.app/ai/generation.md#the-generate-window)**
+  — the same list as the phone's **Windows** sheet. See
   [The "+" menus](#the-menus) for what a pick does.
 - **An empty dock**: with nothing docked, <kbd>T</kbd> opens the dock **empty** — its tab strip with only **+** and the
   line *Press + or drag a tab here*. Drop a floating window on its strip or its body to dock it there; <kbd>T</kbd>
@@ -1909,7 +1921,9 @@ To close a docked window use its tab's **×**; to bring a floating window into t
 **Dock any window exactly where you want it**: drag a floating window by its header or any empty part of it — or tear
 a tab out of a tabbed window, or drag a whole tabbed window by its tab bar — onto the **dock's tab bar**. The window turns
 see-through, the tab bar is outlined and a **caret** shows the slot between the docked tabs where it will land; let go
-and it docks exactly there. This works for every editor and for Objects, Statistics, Chat and the AI assistant; file and model previews, the text viewer, What's new and the tool palettes stay floating. The bottom edge of
+and it docks exactly there. This works for every editor and for Objects, Statistics, Chat (with its Assistant tab) and Generate 3D; since 1.65 the
+file preview docks as the **Preview** tab with its pin ([Pin to dock](https://docs.theprototype.app/explorer.md#the-preview-window)), while the text
+viewer, What's new and the tool palettes stay floating. The bottom edge of
 the screen still docks a window at the end of the tabs (and is the only target while the dock is minimized; an
 [empty dock](#docked-windows) opened with <kbd>T</kbd> takes a drop anywhere on it). Since 1.35 this works by touch too,
 on an unfolded phone or a tablet.
@@ -2027,7 +2041,7 @@ the 3D view full-size in the app. Everything stays live: it is the same app in a
 - **Bring all windows back** (command palette, or any tab menu) puts every panel back in the app. Closing or reloading
   the app's tab closes its windows.
 - **Keys** in a popped-out window are the panel's own; undo and redo still reach the scene.
-- **Not for pop-out:** the Objects list, file previews, the Image editor and phone tabs. Phones, touch screens and VR
+- **Not for pop-out:** the Objects list, file previews (and the image editor in them) and phone tabs. Phones, touch screens and VR
   keep one window — the pop-out entries are hidden there.
 
 ## Focus mode
@@ -2271,7 +2285,7 @@ editor and the other editors:
 | **Configure Scene** | the scene's settings | **More ▸ Scene**, or the main menu's **Configure Scene** |
 | **Layouts** | save and switch [workspace layouts](https://docs.theprototype.app/controls.md#workspace-layouts) | the main menu's **Layouts**, or the dock's **+** |
 | **Statistics** | the scene's [budgets](https://docs.theprototype.app/performance.md#what-the-statistics-window-counts) | **More ▸ Statistics** (since 1.34; before, a floating window) |
-| **Chat**, **AI assistant**, **Free assets** | the session chat, the [AI assistant](https://docs.theprototype.app/ai/assistant.md) and the free asset browser | their bar or More buttons (since 1.64; before, sheets over the view) |
+| **Chat**, **Free assets** | the session chat and, on its **Assistant** tab since 1.65, the [AI assistant](https://docs.theprototype.app/ai/assistant.md); the free asset browser | their bar or More buttons (since 1.64; before, sheets over the view) |
 
 - **All tabs share one height.** Drag the dock's grab bar to resize it; swipe it down to minimize the dock.
 - **A tab's ✕** closes that panel. The dock's **+** lists every window, these included, with a show/hide switch.
@@ -2347,6 +2361,140 @@ Every toggle shows its state: a filled (tinted) button is on. Tapping a selected
 
 Every part shown here is on the **/kit** page of the app, in every state, and module panels can use the same parts — see
 [The UI kit](https://docs.theprototype.app/ui-kit.md).
+
+
+---
+
+Source: https://docs.theprototype.app/menus-and-panels/ (Markdown: https://docs.theprototype.app/menus-and-panels.md)
+
+# New menus and panels
+
+*New in 1.65.* Several windows and menus were rebuilt so that related things sit together: Chat and the AI assistant
+share one window, everyone in the session has a card, the file preview docks and edits images, the Timeline has panes,
+Generate 3D is a window, and your account has one page in Settings.
+
+Layouts and window positions saved by an earlier version open the new windows: a docked or placed AI assistant opens
+Chat on its **Assistant** tab, and an Image editor tab opens the **Preview**.
+
+## Chat and the AI assistant
+
+Chat and the AI assistant are one window with two tabs: **Session** for the people in this session, and **Assistant**
+for your own AI provider or an AI agent that joined. The Chat button (or <kbd>C</kbd>) opens it on **Session**, the AI
+button on **Assistant**. If the window is on the other tab, the button switches tabs; if its own tab is showing, it
+closes the window. A dot on a tab means something new arrived there. The clock button opens one **History** for both
+kinds of chat (**All | People | AI**, and a search), and chats come back after a reload. Your own provider's chats stay
+on this device. More: [Chat](https://docs.theprototype.app/notifications.md#chat) and [AI Assistant](https://docs.theprototype.app/ai/assistant.md#the-assistant-tab-of-the-chat-window).
+
+![The Chat window on its Session tab: Mia's line and your answer, the message field and Send below, and in the header the History clock and the close button. 1: the Session and Assistant tabs. 2: the History button.](https://docs.theprototype.app/img/menus-and-panels/chat-session.webp)
+*Figure: Chat and the AI assistant share one window, here on its Session tab.*
+
+1. **Session** is the chat with the people in this session, **Assistant** your AI provider or an agent that joined. The Chat button (or <kbd>C</kbd>) opens Session, the AI button Assistant.
+2. The clock opens **History**: every chat of both kinds, kept on this device.
+
+![The same Chat window on its Assistant tab: your request for a campfire ring and the assistant's answer, the Talk to picker set to Mock, the field Ask the assistant…, and Send. 1: the Assistant tab. 2: the provider picker.](https://docs.theprototype.app/img/menus-and-panels/chat-assistant.webp)
+*Figure: The Assistant tab of the Chat window.*
+
+1. The **Assistant** tab: the window the AI button opens.
+2. **Talk to**: your own **provider**, or an AI agent in the session.
+
+![History open over the Chat window: Search chats and New chat at the top, the All, People and AI filter, then the rows: this scene's session, a chat with the Mock provider, and the session log of the scene Campfire meadow with Mia and Theo. 1: the All, People and AI filter. 2: a past scene's chat.](https://docs.theprototype.app/img/menus-and-panels/chat-history.webp)
+*Figure: One History for both kinds of chat.*
+
+1. **All**, **People** or **AI**; the search above looks through every chat.
+2. The chat of a **past scene**: it opens read-only on the Session tab.
+
+## People
+
+### The Person card
+
+Press anyone in the People list for their **Person card**: who they are (role, status, device, how long they have
+been here), what they are doing now, their connection over the last minute, and every action of the peer menu as
+buttons. The **People** arrow goes back to the list. See [The Person card](https://docs.theprototype.app/people.md#the-person-card).
+
+![Mia's Person card in the Connected popover: the People back arrow, her avatar, name, role and how long she has been here, Now with where she is, her Connection over the last minute, and the peer menu's actions as buttons in groups. 1: back to the list. 2: Now and Connection.](https://docs.theprototype.app/img/menus-and-panels/person-card.webp)
+*Figure: A Person card in the People popover.*
+
+1. The **People** arrow goes back to the list.
+2. **Now** (what they hold, or where they are) and their **Connection** over the last minute; the action buttons follow.
+
+### Invite and Join…
+
+The Connect bar leads with **Invite** and **Join…**. **Invite** opens the invite sheet on **Person**, with **AI agent**
+as its second tab (it replaces the *Request AI* button). **Join…** opens the field that takes a pasted invite link or
+a peer id. Someone who joins with your invite is announced by name (*Guest 2 joined with your invite*), not by an id.
+See [The Connect panel](https://docs.theprototype.app/connection.md#the-connect-panel) and [Invite people and agents](https://docs.theprototype.app/invites.md).
+
+![The idle Connect bar: Ready and your peer id with its copy button, then the Invite and Join… buttons, Browse public rooms and the drawer arrow. 1: Invite. 2: Join….](https://docs.theprototype.app/img/menus-and-panels/connect-invite-join.webp)
+*Figure: The Connect bar leads with Invite and Join….*
+
+1. **Invite** opens the invite sheet: **Person** or **AI agent**.
+2. **Join…** opens the field for an invite link or a peer id.
+
+### Show my status
+
+Let others see whether you are **Available**, **Busy** or **Away**: switch on **Settings ▸ Interface ▸ Show my
+status** (off by default), then pick your status on your own card. See [Show my status](https://docs.theprototype.app/people.md#show-my-status).
+
+![Your own Person card with Show my status on: Alex (you) with the Admin badge and Busy, Your status with Available, Busy and Away, Now in Untitled scene, and the buttons Edit profile, Change character and Copy peer id. 1: Your status.](https://docs.theprototype.app/img/menus-and-panels/my-status.webp)
+*Figure: Your own card, with Show my status switched on.*
+
+1. **Your status**: **Available**, **Busy** or **Away**, shown beside your name for everyone.
+
+## Preview and the image editor
+
+The file preview can pin to the dock: the **pin** in its header makes it the **Preview** tab, which shows whatever you
+select in the Explorer. **View | Edit** in the header switches an image in your Library into the image editor, in the
+same window, with a filmstrip of the folder's images on the left. The separate Image editor window and its dock tab
+are gone. Unsaved edits are never dropped without asking. See [The preview window](https://docs.theprototype.app/explorer.md#the-preview-window)
+and [Image Editor](https://docs.theprototype.app/image-editor.md).
+
+![The bottom dock split in a small window: the Explorer on the left with sunset.png, noon.png and night.png in the Library, and the pinned Preview on the right showing noon.png, the file picked in the Explorer. 1: the Preview tab. 2: the picked file. 3: the pin, now on.](https://docs.theprototype.app/img/menus-and-panels/preview-docked.webp)
+*Figure: The Preview pinned to the dock beside the Explorer, in a small window.*
+
+1. Pinned, the preview is the **Preview** tab; with the Explorer docked too, the dock splits.
+2. It **follows** the file you select in the Explorer.
+3. The pin again unpins it.
+
+![The Preview window on Edit for sunset.png: View and Edit and the pin in its header, the filmstrip of the folder's images on the left, the picture with Save in the middle, and the Edit page with Rotate and flip, Crop and Resize on the right. 1: View and Edit. 2: the filmstrip. 3: Pin to dock.](https://docs.theprototype.app/img/menus-and-panels/preview-edit.webp)
+*Figure: The Preview on Edit.*
+
+1. **View | Edit**: on an image in your Library, **Edit** turns the preview into the image editor.
+2. The filmstrip: the images in **this folder**; press one to edit it.
+3. **Pin to dock** makes it the **Preview** tab.
+
+## Timeline and Generate 3D
+
+The [Timeline](https://docs.theprototype.app/timeline.md#sequences-tracks-and-properties) has three panes: **Sequences** on the left, the tracks in
+the middle, and **Properties** on the right with a **Sequence** tab (with its frame rate) and an **Item** tab. Each
+side pane hides with its edge tab.
+
+![The Timeline docked in a small window, in three panes: Sequences on the left with Intro, the tracks in the middle, and Properties on the right on its Sequence tab with the name, length, frame rate, Autoplay and Loop. 1: Sequences. 2: the Sequence and Item tabs.](https://docs.theprototype.app/img/menus-and-panels/timeline-panes.webp)
+*Figure: The Timeline's three panes, in a small window.*
+
+1. The **Sequences** pane: pick, add, rename, duplicate or delete one.
+2. **Properties**: **Sequence** (with its frame rate) and **Item**, the selected item's fields. Each side pane hides with its edge tab.
+
+**Generate 3D model** is a window now, not a dialog: dock it like any other. Its **Jobs** and **History** survive a
+reload, and a running job carries on after a reload without being sent again, so it is not charged twice. See
+[The Generate window](https://docs.theprototype.app/ai/generation.md#the-generate-window).
+
+![The Generate 3D model window: the provider, the Prompt and Name fields and Generate, then the Jobs tab with a running job, a mossy stone lantern at 42 percent with Cancel, and a done one, a weathered wooden treasure chest, with Reopen. 1: Jobs and History. 2: the running job.](https://docs.theprototype.app/img/menus-and-panels/generate-jobs.webp)
+*Figure: The Generate window, with a job running in Jobs.*
+
+1. **Jobs** and **History** (the prompts you asked for) survive a reload.
+2. A running job **carries on** after a reload without being sent again, so it is not charged twice.
+
+## Settings ▸ Account
+
+On theprototype.app, **Sign-in methods**, **Devices** and **Connected apps** moved into **Settings ▸ Account**, beside
+**Email**. The profile menu keeps the email-updates question and **Sign out**, with a **Manage** link to the new page.
+Settings search finds every row. **Revoke** for an AI app you connected now lives in **Settings ▸ Account ▸ Connected
+apps**. See [Settings ▸ Account](https://docs.theprototype.app/settings.md#account).
+
+![Settings ▸ Account while signed out: Email with Product updates, Sign-in methods, Devices and Connected apps, each saying what signing in from the profile menu adds. 1: Sign-in methods, Devices and Connected apps.](https://docs.theprototype.app/img/menus-and-panels/settings-account.webp)
+*Figure: Settings ▸ Account, signed out.*
+
+1. **Sign-in methods**, **Devices** and **Connected apps** **moved here** from the profile menu; signed in, each lists yours.
 
 
 ---
@@ -2918,6 +3066,7 @@ Since 1.26 Settings has a new layout. No setting was lost or changed meaning: ev
     | **General** | Interface, Accessibility, Controls, Input, Touch controls, Shortcuts |
     | **Workspace** | Scene, Explorer, Node types, Export |
     | **Devices & services** | VR, Tools & connections, Connection, Privacy |
+    | **Account** | Account (on theprototype.app) |
 
     A dot on **About & what's new** means there is an update you have not read. <kbd>↑</kbd> / <kbd>↓</kbd> walk the menu.
 
@@ -2982,7 +3131,21 @@ off. Search finds *notifications* and every switch by name. **Reset Interface** 
 
 ## Account
 
-*New in 1.64, on theprototype.app.* **Settings ▸ Account ▸ Email ▸ Product updates** — product news by email, off by
+*On theprototype.app.* **Settings ▸ Account** holds your account: its emails, the ways you sign in, your devices and
+the apps you connected. Since 1.65 it has four groups:
+
+| Group | What it holds |
+|---|---|
+| **Email** | **Product updates** (below) |
+| **Sign-in methods** | the providers you sign in with; **Link** a second one ([Sign in from another device](https://docs.theprototype.app/sign-in-from-another-device.md#if-you-lose-your-github-or-google-account)) |
+| **Devices** | every device signed in to your account, with **Sign out** ([Sign in from another device](https://docs.theprototype.app/sign-in-from-another-device.md)) |
+| **Connected apps** | the AI apps you connected with the [connector](https://docs.theprototype.app/ai/claude-connector.md) (Claude, Claude Code and others), each with its last use and **Revoke**; **Disconnect everything** (**Disconnect all**) ends them all, and this tab's own link |
+
+Sign-in methods and Devices used to be in the profile menu, and Connected apps was a settings page of
+its own. The [profile menu](https://docs.theprototype.app/interface.md#the-profile-menu) keeps the email-updates question and **Sign out**, with a
+**Manage** link to this page. Settings search finds every row.
+
+*New in 1.64.* **Settings ▸ Account ▸ Email ▸ Product updates** — product news by email, off by
 default. It is the same choice as the one-time *Get product updates by email?* card in the
 [profile menu](https://docs.theprototype.app/interface.md#the-profile-menu); switching it either way counts as your answer. Signed out, the switch is
 greyed out with a hint to sign in.
@@ -3068,6 +3231,9 @@ cache uses the older Cache Storage, and where neither exists everything download
 | Notifications | new in 1.64 | **Interface ▸ Notifications** — people leaving, the chat badge, ping sounds, AI assistant and auto-quality pop-ups (and room invites and contest reminders on theprototype.app), this device only; see [above](#notifications) |
 | Customize buttons | new in 1.64 | **Interface ▸ Customize buttons** — every hideable chrome button as a switch; see [Hiding buttons you do not use](https://docs.theprototype.app/interface.md#hiding-buttons-you-do-not-use) |
 | Product updates by email | new in 1.64 (was a box on the sign-in sheet) | **Account ▸ Email ▸ Product updates**, on theprototype.app; see [above](#account) |
+| Sign-in methods · Devices | the profile menu (until 1.64) | **Account ▸ Sign-in methods** and **Account ▸ Devices**, on theprototype.app; see [above](#account) |
+| Connected apps | its own page, **Settings ▸ Connected apps** (until 1.64) | **Account ▸ Connected apps**; see [above](#account) |
+| Show my status | new in 1.65 | **Interface ▸ Show my status** — off by default, this device only: Available, Busy or Away beside your name in People; see [Show my status](https://docs.theprototype.app/people.md#show-my-status) |
 
 
 ---
@@ -3110,7 +3276,7 @@ Buttons for a feature whose tool is not set up stay where they are. Press one an
 right row: *"Generate 3D model needs a Mesh provider: set one up in Settings ▸ Tools & connections."* The quick prompt bar,
 the mic and *Edit in Blender* work the same way.
 
-The AI button is different: it always opens the AI window, which offers Connect Claude or your own provider.
+The AI button is different: it always opens the Chat window on its **Assistant** tab, which offers Connect Claude or your own provider.
 
 The assistant reads the same status. Ask it for something this device has not set up and it tells you what is needed
 instead of guessing. Agents see the same through `status().missingTools`.
@@ -3400,10 +3566,15 @@ ThePrototype is peer-to-peer: once two browsers connect they talk **directly** o
 
 The Connect panel is the bar at the top of the screen. Since 1.35 it is either **pinned** — a full-width bar along the top edge, the default on a touch screen — or **floating** — the centred pill, the default with a mouse; switch with the **Pinned / Float** button in its drawer's header (see [The Connect bar](https://docs.theprototype.app/controls.md#the-connect-bar)). A floating bar with no room on the top row shrinks to a compact dot and chevron, and grows back when room returns. You can move it anywhere and hide it in [Edit positions](https://docs.theprototype.app/controls.md#the-connect-bar) or by unticking **Connect bar** in *Customize toolbar…*; on a folded phone the Connect chip stays.
 
-It has two halves:
+Since 1.65 it shows your ID, then two verbs, **Invite** and **Join…**:
 
 - **Your ID** — the button on the left shows your own peer ID. Click it to **copy your invite link** (your app URL with your ID attached, e.g. `https://theprototype.app/#AB12CD`) to the clipboard. Until the connection to the signaling server is ready it reads *Generating…*.
-- **Connect field** — paste a peer's ID into *Enter peer ID to connect* and press **Connect** to request a connection.
+- **Invite** — opens the invite sheet on **Person**, with **AI agent** as its second tab (it replaces the robot
+  *Request AI* button). See [Invite people and agents](https://docs.theprototype.app/invites.md).
+- **Join…** — opens the join field. Paste an **invite link** or type a **peer id**, and press **Connect**. <kbd>Esc</kbd>
+  in an empty field, or the **✕**, folds it back. The field no longer shows all the time.
+
+Before you connect, the bar says **Ready** beside the status dot while the peer server answers (not *Offline*).
 
 Since 1.30, once you are connected the bar **collapses to a compact chip** — the status dot, the avatars of who is here
 and your mic; click it to open the full bar again (its collapse button folds it back). On a phone the bar is always the
@@ -3416,9 +3587,9 @@ are folded under one **Network** row, which opens by itself when the connection 
 
 ### The status dot
 
-Since 1.32 the connection status is a **coloured dot**. On a computer the full bar keeps your invite ID and the peer-ID
-field, with the dot at its left end. On a phone the chip at the top of the screen says the state beside the dot —
-**Connect** (not connected yet, the same word as on a computer), **Connecting…**, **Connected** or **Offline** (the peer
+Since 1.32 the connection status is a **coloured dot**. On a computer the full bar keeps your invite ID, **Invite** and
+**Join…**, with the dot at its left end. On a phone the chip at the top of the screen says the state beside the dot —
+**Connect** (not connected yet), **Connecting…**, **Connected** or **Offline** (the peer
 server cannot be reached) — whenever the top bar has room. When the bar is crowded (people are
 connected and you are in a call, so the peers button and the microphone take the space) it shrinks back to the dot and
 a ▾ (and the microphone while you are in a call).
@@ -3478,10 +3649,10 @@ of your session*. The people listed there are not connected to you; **Watch** be
 2. When they open the link, their app automatically sends **you** a connection request.
 3. You get a **Connection request** toast — press **Approve** and you are connected.
 
-Or do it by ID: they paste your ID into their Connect field and press Connect; the same approval toast appears on your side.
+Or do it by ID: they press **Join…**, type your ID and press **Connect**; the same approval toast appears on your side.
 
 To skip the approval card, send an **invite link** instead (**Connect ▸ Invite**, a *Person* or an *AI agent*
-tab): it joins in one step with the role you chose, for a limited time. See [Invite people and agents](https://docs.theprototype.app/invites.md).
+tab): the other side opens it, or pastes it into **Join…**, and it joins in one step with the role you chose, for a limited time. See [Invite people and agents](https://docs.theprototype.app/invites.md).
 
 ### What guests see
 
@@ -3782,8 +3953,9 @@ join. The code is made on your device; the link goes nowhere else.
       `claude mcp add theprototype -- npx -y @theprototype/agent mcp '<link>'`;
     - a **sentence for any chat** — "Join my theprototype session and build with me: ‹link›".
 
-Whoever opens the link joins **straight away**, with the role the link carries. The sheet and Users then say who used
-it — "Used by Claude (E6F54)".
+Whoever opens the link joins **straight away**, with the role the link carries. Since 1.65 they can also paste it into
+**Connect bar ▸ Join…** in a tab that is already open. The sheet and Users then say who used it — "Used by Claude
+(E6F54)" — and the join is announced by name (*Guest 2 joined with your invite (view-only).*), not by an id.
 
 Who can make invites: whoever can approve joins — admins on theprototype.app, anyone in the open-source build.
 
@@ -3837,7 +4009,8 @@ your phone or computer, check which device is asking, and approve it.
 
 !!! info "New in 1.62"
     Sign in from another device, and **Account ▸ Devices**: every device signed in to your account, with a Sign out
-    for each.
+    for each. Since 1.65 Devices and Sign-in methods live in **Settings ▸ Account** (the account menu's **Manage** opens
+    it).
 
 It works in every direction: a Quest from your PC or phone, a PC from your phone, a phone from your PC, one browser
 from another.
@@ -3856,7 +4029,7 @@ from another.
 ## On the device where you are signed in
 
 Go to **theprototype.app/link** and type the code. (Scanning the QR opens the same page with the code filled in.) You
-can also open **account menu ▸ Devices ▸ Sign in another device**.
+can also open **Settings ▸ Account ▸ Devices ▸ Sign in another device**.
 
 The sheet shows which device is asking: its type, browser and system (for example *Quest Browser on Meta Quest*),
 roughly where it is (the country, when it can be told), and how long ago it asked.
@@ -3880,7 +4053,7 @@ You can only choose right after signing in. To change your mind later, sign the 
 
 ## See and sign out your devices
 
-**Account menu ▸ Devices** lists every device signed in to your account, however it signed in (GitHub, Google or a
+**Settings ▸ Account ▸ Devices** (account menu ▸ **Manage**) lists every device signed in to your account, however it signed in (GitHub, Google or a
 code), with where it was and when it was last used. *This device* is the one you are using.
 
 - **Sign out** next to a device signs it out. It is refused the next time it talks to the server, usually within
@@ -3911,7 +4084,7 @@ code), with where it was and when it was last used. *This device* is the one you
 
 There is no password to reset: your account opens with GitHub or Google. Two things keep you able to get back in:
 
-- **Link a second way in.** Account menu ▸ **Sign-in methods** ▸ **Link** the other provider. If you lose one, the
+- **Link a second way in.** **Settings ▸ Account ▸ Sign-in methods** ▸ **Link** the other provider. If you lose one, the
   other still opens the same account.
 - **Keep one device signed in.** A device that is still signed in can sign in a new one with a code, even if you can no
   longer sign in with GitHub or Google. Then link a new provider from **Sign-in methods**.
@@ -3939,6 +4112,25 @@ find them, look at their character, mute or hide them for yourself — and, if y
 !!! info "New in 1.48"
     The peer menu, Hide, and Remove / Remove and block with Allow back.
 
+## The Person card
+
+*New in 1.65.* Press anyone in the People list (the **Connected** panel) for their **Person card**. The panel flips to
+that person; the **People** arrow (or <kbd>Esc</kbd>) goes back to the list. The card holds, in one place:
+
+- **who**: their picture, name, role, status, device and how long they have been here;
+- **Now**: the object they are editing (with **Show**), or the scene they are in;
+- **Connection**: its quality, and the round-trip time over the last minute;
+- **every action** of the peer menu below, as buttons in the same groups.
+
+**View profile** in the peer menu opens the same card; **View character** still shows their character on a turntable.
+Your own row opens **Your card**.
+
+### Show my status
+
+Let others see whether you are **Available**, **Busy** or **Away**. Switch on **Settings ▸ Interface ▸ Show my status**
+(off by default, kept on this device), then pick your status on your own card. Everyone in the session sees it beside
+your name in People. Turning it off hides it from everyone.
+
 ## Open the peer menu
 
 - **Right-click** a person's row,
@@ -3955,7 +4147,7 @@ find them, look at their character, mute or hide them for yourself — and, if y
 
 | group | entries |
 |---|---|
-| **Profile** | **View profile** — picture, name, peer id, role, device (desktop / phone / VR), app version, connection quality, how they joined (host / invite / approval / guest) and their character on a small turntable · **Copy peer id** |
+| **Profile** | **View profile** — opens their [Person card](#the-person-card) · **Copy peer id** |
 | **Find** | **Go to** flies your camera to their avatar (in another scene: travels there) · **Watch** follows their view · **Show what they're editing** selects (read-only) and frames the object they have selected |
 | **Character** | **View character** · **Copy their look** puts on their character and colours (change it back in Change character) |
 | **Talk** | **Mute voice** (for you) · **Request access** (someone in a private scene) · **Ask to join my scene** (rooms on theprototype.app) |
@@ -4212,7 +4404,7 @@ The header's **Thumbnails / List** toggle switches views. The list has sortable 
 - **Single-click** selects an item and shows its details in the **ⓘ Properties** panel.
 - **Double-click** opens it in a **preview window** (below); text files open in the [Code tab](https://docs.theprototype.app/code-workspace.md#text-documents), shared live with everyone who opens them (<kbd>Ctrl</kbd>+<kbd>S</kbd> saves back to the item).
 - **Right-click** an item for Open, Download, Share, Rename, Delete, Properties (and *Copy contents* for text files,
-  **Edit image…** for images — see [The Image editor](https://docs.theprototype.app/image-editor.md)).
+  **Edit image…** for images, which opens the preview on **Edit** — see [The Image editor](https://docs.theprototype.app/image-editor.md)).
 - The search box filters the whole library by name; the breadcrumb path bar (toggleable) shows where you are.
 
 **Keyboard navigation** in the grid: arrow keys move the selection, <kbd>Enter</kbd> opens, <kbd>Backspace</kbd> goes up a level, <kbd>Esc</kbd> clears the selection, <kbd>Delete</kbd> deletes the selection.
@@ -4278,10 +4470,20 @@ Right-click a file or a folder for **Duplicate** (**Duplicate folder**), **Copy*
 
 ### The preview window
 
-Images open zoomable (**−** / **＋** / **1:1**, drag to pan) with a pencil button that opens the
-[Image editor](https://docs.theprototype.app/image-editor.md), sounds open with a player, and 3D models open on a turntable with an **animation transport** — play, step a frame with <kbd>,</kbd> and <kbd>.</kbd>, scrub, pick a clip — and a mesh-stats line. The **←** / **→** buttons page through the folder without closing the window, and **⌐** goes up a level.
+The preview is one window for any file: an image, a sound, a 3D model, a text file or a folder. Images open zoomable
+(**−** / **＋** / **1:1**, drag to pan), sounds open with a player, and 3D models open on a turntable with an **animation transport** — play, step a frame with <kbd>,</kbd> and <kbd>.</kbd>, scrub, pick a clip — and a mesh-stats line. Text files show read only (the first 256 KB); double-click opens them in the code editor. The **←** / **→** buttons (or keys) page through the folder without closing the window, <kbd>Enter</kbd> goes into a folder, and **⌐** or <kbd>Backspace</kbd> goes up a level. Keys never fire while you type in a field.
 
-The window's **Settings** (cog) holds two things worth knowing: **Opacity** fades the window so you can model against a reference picture, and **Passthrough** lets clicks reach the scene underneath while the header stays live to move it or switch it back. **Allow multiple windows** opens each file in a window of its own instead of re-pointing the one you have.
+**View | Edit** (*1.65*). On an image in your Library, **Edit** in the header opens the [Image editor](https://docs.theprototype.app/image-editor.md)
+in the same window, with a filmstrip of the folder's images on the left; **View** goes back. Unsaved edits are never
+dropped silently: switching image, going back to View or closing asks first. The separate Image editor window is gone.
+
+**Pin to dock** (*1.65*). The **pin** in the header docks the preview as the **Preview** tab, and it then follows
+whatever you select in the Explorer: click a file and it shows there. If the Explorer is the docked tab in front, the
+dock splits so you see both. Drag the tab out (or **Undock**) and it keeps following as a floating window. Press the pin
+again to stop following. You can also open it from **+** on the dock's tab strip ▸ **Preview**.
+
+The window's **Settings** (cog) holds two things worth knowing: **Opacity** fades the window so you can model against a reference picture, and **Passthrough** lets clicks reach the scene underneath while the header stays live to move it or switch it back. **Allow multiple windows** opens each file in a window of its own instead of re-pointing the one you have; then only
+the first preview window docks and follows the Explorer, and one window edits at a time.
 
 ## Item properties (ⓘ)
 
@@ -4904,11 +5106,10 @@ settings** override them — see [Importing Big Models](https://docs.theprototyp
 **Configure Scene ▸ Level of detail ▸ LOD distance** moves every chain in the scene at once and is shared with everyone
 in it: above 1 keeps full detail further away, below 1 switches to the lighter levels sooner.
 
-![Configure Scene ▸ Level of detail: the LOD distance slider at 1, marked Shared, with the note that above 1 keeps full detail further away. 1: the LOD distance slider. 2: Shared, for everyone in the scene.](https://docs.theprototype.app/img/lod/lod-distance.webp)
+![Configure Scene ▸ Level of detail, in the scene's settings group: the LOD distance slider at 1, with the note that above 1 keeps full detail further away. 1: the LOD distance slider.](https://docs.theprototype.app/img/lod/lod-distance.webp)
 *Figure: Configure Scene ▸ Level of detail.*
 
 1. **LOD distance**: above 1 keeps full detail further away, below 1 switches to lighter levels sooner.
-2. **Shared**: the setting is part of the scene, the same for everyone in it.
 
 ## Pack items with LODs
 
@@ -6510,7 +6711,13 @@ New in 1.32: the **Image editor** crops, rotates, flips, resizes and adjusts a p
 [Explorer](https://docs.theprototype.app/explorer.md) library. When you save, every texture made from that picture updates for everyone in the
 session.
 
-![The Image editor on a computer: the picture on the left, and on the right the Edit page with Rotate and flip, Crop, Resize and Adjust, Save and Save as copy above. 1: rotate and flip. 2: Crop. 3: the Adjust sliders.](https://docs.theprototype.app/img/image-editor/editor-desktop.webp)
+!!! note "Since 1.65 the editor is the Preview's Edit view"
+    The Image editor is no longer a window or a dock tab of its own. It is the **Edit** face of the
+    [file preview](https://docs.theprototype.app/explorer.md#the-preview-window): **View | Edit** in the preview's header switches between looking at
+    a file and editing it, in the same window. A saved layout that had the Image editor opens the **Preview** instead.
+    See [New menus and panels](https://docs.theprototype.app/menus-and-panels.md#preview-and-the-image-editor).
+
+![The Image editor on a computer, the Preview window on Edit: the filmstrip of the folder's images on the left, the picture with Save above it, and on the right the Edit page with Rotate and flip, Crop, Resize and Adjust. 1: rotate and flip. 2: Crop. 3: the Adjust sliders.](https://docs.theprototype.app/img/image-editor/editor-desktop.webp)
 *Figure: The Image editor on a computer.*
 
 1. **Rotate** 90° either way and **flip**.
@@ -6520,9 +6727,17 @@ session.
 ## Opening it
 
 - Right-click an image in the Explorer ▸ **Edit image…**
-- The **pencil** button in an image's [preview window](https://docs.theprototype.app/explorer.md#the-preview-window).
+- **Edit** in the header of an image's [preview](https://docs.theprototype.app/explorer.md#the-preview-window) (**View | Edit**). **View** goes back.
 - **Edit** beside a texture in the Inspector (**Material ▸ Texture**).
-- The dock's **+** ▸ **Image editor** opens it as a dock tab — see [In the dock](#in-the-dock).
+- In the docked **Preview** tab — see [In the dock](#in-the-dock).
+
+Only images in your Library can be edited, not pack items or files inside a mounted project.
+
+## The images filmstrip
+
+The **images filmstrip** on the left lists the images in the folder. Click one to edit it, or press <kbd>[</kbd> /
+<kbd>]</kbd> (or <kbd>Ctrl</kbd>+<kbd>←</kbd> / <kbd>Ctrl</kbd>+<kbd>→</kbd>) for the previous or next image.
+<kbd>Esc</kbd> cancels a crop, or goes back to View. Keys never fire while you type in a field.
 
 ## Looking at the picture
 
@@ -6557,7 +6772,9 @@ The sidebar on the right has two pages: **Edit** and **Versions**.
 - **Save as copy** writes *name copy.png* beside it. The original and its textures stay as they were, and the editor
   carries on with the copy.
 - The editor has its own **Undo** and **Redo** (<kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd>)
-  for edits you have not saved yet. They never touch the scene's undo. Closing with unsaved edits asks first.
+  for edits you have not saved yet. They never touch the scene's undo.
+- Unsaved edits are never dropped silently: switching image, going back to View, closing, or a pinned preview
+  following another file asks first.
 
 ## Versions
 
@@ -6586,30 +6803,28 @@ large. Only a file over 64 MB is turned away, because a phone cannot decode it.
 
 ## In the dock
 
-The Image editor can live in the bottom dock like the other editors: pick **Image editor** from the dock's **+** menu
-while it is closed (on a phone, the **Windows** sheet), press its header's **Dock** button, or drag it onto the dock's tab bar. The dock's
-**Undock** button floats it again; floating stays the default.
+*Since 1.65* the editor docks with the preview. Press the **pin** in the preview's header (**Pin to dock**): the
+preview docks as the **Preview** tab and follows the file you select in the Explorer. On an image, **Edit** opens the
+editor in that tab. You can also press **+** on the dock's tab strip and pick **Preview**. The **Image editor** entry
+of the dock's **+** menu is gone. See [The preview window](https://docs.theprototype.app/explorer.md#the-preview-window).
 
-- Opened from the **+** with no image, it tells you to open one from the Explorer (right-click an image ▸ **Edit
-  image…**). Opening an image while it is docked brings the dock tab forward.
-- Closing the tab with unsaved edits asks first, as the window does.
+![The Preview pinned as a tab of the bottom dock, beside the Node editor, open on Edit: the filmstrip on the left, the picture, and the Edit page with the image tools. 1: the Preview tab. 2: Edit.](https://docs.theprototype.app/img/image-editor/docked.webp)
+*Figure: The image editor in the docked Preview tab.*
 
-![The Image editor as a tab in the bottom dock, beside the Node editor and the Explorer, with the picture and its tools below the tabs. 1: the Image editor tab.](https://docs.theprototype.app/img/image-editor/docked.webp)
-*Figure: The Image editor as a tab in the bottom dock.*
-
-1. Docked, the **Image editor** is one more tab in the bottom dock.
+1. Docked, the **Preview** is one more tab in the bottom dock; it follows the Explorer selection.
+2. **Edit** on an image opens the editor in that tab.
 
 ## On a phone
 
-The editor is a full-width sheet between the top bar and the bottom bar, so **Play** stays tappable. The Edit and
+The editor (the preview's Edit view) is a full-width sheet between the top bar and the bottom bar, so **Play** stays tappable. The Edit and
 Versions pages sit under the picture instead of beside it, and **Crop…** scrolls its **Apply crop** button into view.
-Since 1.32 they start **closed**, so the picture gets the screen: tap ✎ (Edit) or ⟲ (Versions) under the picture to
-open one, and it stays open next time.
+Since 1.32 they start **closed**, so the picture gets the screen: tap the pencil tab at the picture's edge to open
+them, and pick **Edit** or **Versions** at the top of the page; it stays open next time.
 
 ![The Image editor on a phone: the picture at the top, the Edit page under it, and the bottom bar with Play below. 1: the Edit page. 2: Play, still reachable.](https://docs.theprototype.app/img/image-editor/editor-phone.webp)
 *Figure: The Image editor on a phone.*
 
-1. The **Edit** and **Versions** pages switch under the picture.
+1. The **Edit** and **Versions** pages open under the picture, from the pencil tab at its edge.
 2. The sheet leaves **Play** uncovered.
 
 ## Limits
@@ -7028,10 +7243,10 @@ A quick way to try all of it: open **Templates ▸ Product shot**, press **Bake 
 Open **Configure Scene ▸ Environment** and pick a preset chip. The three pro presets sit beside Studio, Daylight,
 Sunset and Night:
 
-![Configure Scene ▸ Environment with its preset chips. 1: the three pro presets — Product shot, Cinematic and Stylised.](https://docs.theprototype.app/img/pro-look/environment-chips.webp)
-*Figure: Configure Scene ▸ Environment: the pro presets sit beside the other preset chips.*
+![Configure Scene ▸ Environment with its preset chips, More open below them. 1: the pro presets Product shot and Stylised; Cinematic sits in the first row.](https://docs.theprototype.app/img/pro-look/environment-chips.webp)
+*Figure: Configure Scene ▸ Environment: the pro presets sit with the other preset chips, two of them under More.*
 
-1. The **pro presets**: Product shot, Cinematic and Stylised.
+1. The **pro presets**: Cinematic in the row, Product shot and Stylised under **More**.
 
 | Preset | Look |
 |---|---|
@@ -8045,6 +8260,24 @@ undoable, and they play in exported and published games.
 - On a phone it opens as a tab of the bottom sheet: **More ▸ Timeline**.
 - A [Play Sequence](https://docs.theprototype.app/nodes/playseq.md) node's **Open in Timeline** link jumps to its sequence.
 
+## Sequences, tracks and Properties
+
+*Since 1.65* the Timeline has three panes.
+
+- **Sequences** (left): every cutscene in the scene. Click one to edit it; double-click renames it. The **⋯** button (or
+  a right-click) duplicates it, deletes it or grows it to fit its items. **+** adds a new one. A small play mark means
+  Autoplay is on, and a loop mark means Loop is on.
+- **Tracks** (middle): the transport (start, play, stop, time), snapping, camera previews, **Fit** and **+ Track** sit
+  above the tracks.
+- **Properties** (right) has two tabs:
+    - **Sequence**: Name, Length, **Frame rate** (type 1-120, or pick 24 / 25 / 30 / 60), Autoplay, Loop, and how many
+      tracks and items it has. The frame rate is the grid items snap to and the time readout counts in.
+    - **Item**: the picked item's fields (start, length, camera / clip / sound / event name, caption). Picking an item
+      opens this tab. Clearing the pick puts it away again, unless you opened the tab yourself.
+
+Each side pane hides with its edge tab and can be resized. Every edit is one undo step, and everyone in the session sees
+it.
+
 ## Tracks
 
 | Track | What an item does |
@@ -8057,10 +8290,10 @@ undoable, and they play in exported and published games.
 
 ## Building a sequence
 
-1. **New sequence** (or the **+** next to the sequence picker). Set its **Length**.
+1. **+** in the **Sequences** pane adds a sequence. Set its **Length** in **Properties ▸ Sequence**.
 2. **+ Track** ▸ Camera / Animation / Audio / Event.
 3. **Double-click a lane** to add an item at that time. It picks the selected camera or animated object (or the first
-   one); audio takes the first sound in the Explorer. Select the item and finish it in the strip below the tracks:
+   one); audio takes the first sound in the Explorer. Select the item and finish it in **Properties ▸ Item**:
    time, length, camera(s), object + clip + speed, sound + gain + **caption**, event name.
    An audio clip's **Caption** (one line, up to 200 characters) shows at the bottom of the screen while the clip plays
    for anyone with captions on ([Accessibility](https://docs.theprototype.app/accessibility.md#captions)).
@@ -8110,7 +8343,7 @@ is: it is shared and saved back unchanged, but this version cannot play or edit 
 - **[Play Sequence](https://docs.theprototype.app/nodes/playseq.md)** node (Animation group): wire a trigger in — On Click, On Enter, Key Press.
   Actions: *play*, *stop*, *toggle*, *restart*. Every player runs the sequence from the same moment, and each player's
   own view cuts to the shots.
-- **Autoplay** (the switch beside Length): the sequence starts when a player enters Play — and when an exported game
+- **Autoplay** (in **Properties ▸ Sequence**): the sequence starts when a player enters Play — and when an exported game
   opens. **Loop** repeats it.
 - **[On Sequence Event](https://docs.theprototype.app/nodes/onseqevent.md)** node: pulses when a running sequence passes an event with that name
   (blank = any), or **`end`** when it finishes. Wire it to Play Animation, Set Game State, a Sound.
@@ -8122,7 +8355,8 @@ is: it is shared and saved back unchanged, but this version cannot play or edit 
 ## On a phone
 
 The Timeline is a tab of the bottom sheet (**More ▸ Timeline**). The controls wrap onto extra rows, and the tracks
-scroll under them.
+scroll under them. On a phone or a touch handheld (folded or unfolded), the Sequences and Properties panes start hidden
+and the top bar keeps a sequence picker.
 
 ![The Timeline as a tab of the bottom sheet on a folded phone: the controls wrap onto two rows over the four tracks with a narrow name column. 1: the Timeline tab of the sheet.](https://docs.theprototype.app/img/timeline/phone-sheet.webp)
 *Figure: The Timeline as a tab of the bottom sheet on a folded phone.*
@@ -10839,7 +11073,10 @@ If there are no notes yet, the drawer tells you to select an object and add one 
 
 ## Chat
 
-<kbd>C</kbd> (from the 3D view) or the chat button opens the session's text chat.
+<kbd>C</kbd> (from the 3D view) or the chat button opens the session's text chat: the **Session** tab of the Chat
+window. Since 1.65 the [AI assistant](https://docs.theprototype.app/ai/assistant.md) is the window's other tab, **Assistant**. If the window is open on
+the other tab, the button switches to its tab; if its own tab is showing, the button closes the window. A dot on a tab
+means something new arrived there while you were on the other tab.
 
 - **@mentions** — type `@` and a name; <kbd>Tab</kbd> takes the first suggestion. The name shows in that person's
   colour, a line that mentions *you* is ringed, and the chat button's badge turns to the accent colour.
@@ -10848,6 +11085,11 @@ If there are no notes yet, the drawer tells you to select an object and add one 
 - **Unread badge** — the chat button counts the messages that arrived while the chat was closed.
 - **History** — someone who joins the session sees the conversation so far. A session saved in the
   [Sessions manager](https://docs.theprototype.app/saving.md#sessions-manager) keeps its chat; an exported `.tpscene` never contains it.
+- **Kept on this device** (*1.65*) — the session chat is kept on this device per scene and comes back after a reload.
+  The clock button opens **History**, one list for both tabs: under **People**, the chat of each scene you have been
+  in on this device, this scene's first (a past scene's chat opens read only; **Back to live chat** returns); under
+  **AI**, the assistant's chats. Filter with **All | People | AI**, or search. Rows this device keeps can be removed
+  with the bin button.
 
 ![The chat: Mia's line that mentions Alex is ringed, the @Alex in a colour, and Alex's answer, where :+1: became an emoji. 1: the ringed line. 2: the emoji.](https://docs.theprototype.app/img/notifications/chat-mentions.webp)
 *Figure: In the chat, a line that mentions you is ringed.*
@@ -21439,7 +21681,8 @@ The site and the app share one sign-in. **Sign in** in the site header offers th
 ### Sign-in methods and "Can't sign in?"
 
 *New in 1.54.1.* theprototype.app has no passwords: you sign in with GitHub or Google. If you lose access to that one
-account, you lose the way in. Link both now and either one gets you back: **Account menu ▸ Sign-in methods**.
+account, you lose the way in. Link both now and either one gets you back: **Settings ▸ Account ▸ Sign-in methods**
+(account menu ▸ **Manage**; it was in the account menu itself until 1.64).
 
 ![Account menu ▸ Sign-in methods](https://docs.theprototype.app/img/community/sign-in-methods.png)
 
@@ -22639,21 +22882,27 @@ Once enabled, there are a few ways to reach it.
 ### The quick prompt bar
 
 Press <kbd>`</kbd> (backtick, top-left of most keyboards) to pop up a prompt bar at the
-bottom of the viewport. Type a request, press <kbd>Enter</kbd>, and the assistant window
-opens so you can watch it work. Press <kbd>`</kbd> again or <kbd>Esc</kbd> to dismiss the
+bottom of the viewport. Type a request, press <kbd>Enter</kbd>, and the Chat window
+opens on its **Assistant** tab so you can watch it work. Press <kbd>`</kbd> again or <kbd>Esc</kbd> to dismiss the
 bar. It stays hidden until you summon it, so it never gets in the way.
 
-### The assistant window
+### The Assistant tab of the Chat window
 
-A floating, draggable window (it tabs and docks like Chat and the Explorer). It keeps the
-conversation, so you can refine across turns — "make them taller", "now paint the front
-one blue". Use **Stop** to cancel a run in progress.
+*Since 1.65* the assistant is not a window of its own: it is the **Assistant** tab of the one **Chat** window, beside
+**Session** (the people in this session). The window floats, docks in a sidebar or the bottom dock, and on a phone
+opens as one sheet. It keeps the conversation, so you can refine across turns — "make them taller", "now paint the
+front one blue". Use **Stop** to cancel a run in progress.
+
+The clock button opens **History**: your own provider's chats kept on this device and AI agent chats saved in the
+scene, next to the session chats. Your own provider's chats stay on this device (they are never sent to the session)
+and come back after a reload. See [Chat and the AI assistant](https://docs.theprototype.app/menus-and-panels.md#chat-and-the-ai-assistant).
 
 ### The bottom-left button
 
 Once the assistant is enabled and a provider is set, a round **AI assistant** button (a sparkles icon) appears at the
-bottom-left of the viewport (just below the **＋** add button). Click it to open or close
-the assistant window — the same window the quick prompt bar opens into.
+bottom-left of the viewport (just below the **＋** add button). Click it to open the Chat window on its **Assistant**
+tab — the same tab the quick prompt bar opens into. If the window is on **Session**, the button switches to
+**Assistant**; if **Assistant** is already showing, it closes the window.
 
 ### In VR
 
@@ -22678,7 +22927,7 @@ Talk to the assistant instead of typing. Set up a speech-to-text provider in **S
 1. The **provider**: OpenAI, Groq or Self-hosted; the badge says **Ready** once it has what it needs.
 2. The **API key** for that provider; it stays on this device. Further down, **Test connection** sends half a second of silence.
 
-The assistant window then has a **mic** button next to **Send**: click to listen, click again to stop. The words land in
+The **Assistant** tab then has a **mic** button next to **Send**: click to listen, click again to stop. The words land in
 the input, so you can fix them before sending. (In VR they are sent as soon as you let go.)
 
 ![The AI assistant window: two of your messages and the assistant's answer, the provider picker, the input Ask the assistant…, the mic button and Send. 1: the mic button.](https://docs.theprototype.app/img/ai-assistant/assistant-mic.webp)
@@ -22787,7 +23036,7 @@ replicated to everyone and undoable, exactly like a person's edits.
     (objects, flow nodes, physics, and mesh generation through *your* provider).
 
 !!! tip "New in 1.50: talk to it from the app"
-    Chat with the agent in the AI assistant window, send it pictures, and let it import models and files from its own
+    Chat with the agent in the Chat window's **Assistant** tab, send it pictures, and let it import models and files from its own
     machine — see [Talk to your agent](https://docs.theprototype.app/ai/talk-to-your-agent.md).
 
 ## For you, the person in the session
@@ -23651,7 +23900,7 @@ takes in between. The agent's terminal stays a second window onto the same conve
 
 ## Pick the agent
 
-Open the AI assistant window and choose the agent in the target list at the top, for example
+Open the Chat window's **Assistant** tab (the AI button) and choose the agent in the target list at the top, for example
 **Claude · agent via MCP** or **grok-3-mini · agent REPL**. Your configured assistants stay in the same list; a
 session can use both.
 
@@ -23746,7 +23995,7 @@ does not bundle or run it; your agent does, on your own machine and your own mod
 
 img2threejs rebuilds an object from **one picture** as procedural three.js code: a `THREE.Group` made of primitives and
 generated geometry, with a hierarchy of **pivots and sockets** (a lid that opens, a flame that flickers, a spot to hang a
-pot). With the AI assistant window and the `import_model` tool, the result lands in your scene as an ordinary model that
+pot). With the Chat window's **Assistant** tab and the `import_model` tool, the result lands in your scene as an ordinary model that
 every peer sees, saves with the scene and undoes in one step.
 
 ## 1. Install the skill beside the agent bridge
@@ -23760,7 +24009,7 @@ Needs Node.js ≥ 18, Git and Python ≥ 3.10. Restart the agent. Connect it to 
 (`npx @theprototype/agent …`) and tell it to listen.
 
 ## 2. Send a picture in the chat
-In the AI assistant window pick your agent, then press **+** → *From device* / *Camera* (phones) / *From Explorer*, paste,
+In the Chat window's **Assistant** tab pick your agent, then press **+** → *From device* / *Camera* (phones) / *From Explorer*, paste,
 or drop the picture on the window. It is shrunk on your device (long edge 1568 px, about 1 MB) and its **location data
 is removed before it is sent**. The agent sees the picture, and the bridge also saves it to a temporary file whose path
 comes with your message — that path is what the skill takes.
@@ -24519,8 +24768,9 @@ like your own edits.
 ## Connect your tab (each time you build)
 
 1. Open theprototype.app, sign in, and open or join the scene you want to work on.
-2. Press the **AI** button and press **Connect Claude** (also in **Settings ▸ Connected apps**).
-   A chip reads **Claude connected · this tab**. The AI button always opens the window; signed out,
+2. Press the **AI** button and press **Connect Claude** (also in **Settings ▸ Account ▸ Connected apps**).
+   A chip reads **Claude connected · this tab**. The AI button always opens the Chat window on its **Assistant** tab
+   (since 1.65 the AI assistant is a tab of the one Chat window); signed out,
    the same card offers **Sign in to connect**, which opens your profile menu at the top right, the one place to
    sign in. With no AI provider set up, the window also offers **Use your own AI provider** (**Open settings**).
    Working with a local model or your own key while signed out? **Sign in to connect** stays in the window's header.
@@ -24726,11 +24976,12 @@ Claude reads its tool list when it connects, so it sees these after the connecto
 
 ## Stop it
 
-- **Disconnect** (next to the chip, or in Settings ▸ Connected apps) stops Claude at once, including
+- **Disconnect** (next to the chip, or in **Settings ▸ Account ▸ Connected apps**) stops Claude at once, including
   a step it is in the middle of. Press Connect Claude again to continue.
-- **Revoke** in **Settings ▸ Connected apps** removes the connector's access to your account
-  completely; claude.ai has to be approved again before it can work in any tab. You can also
-  remove the connector in claude.ai's settings.
+- **Revoke** in **Settings ▸ Account ▸ Connected apps** removes the connector's access to your account
+  completely; the AI app (claude.ai) has to be approved again before it can work in any tab. **Disconnect
+  everything** there does it for every connected app at once. You can also remove the connector in claude.ai's
+  settings.
 
 ## Privacy and limits
 
@@ -25093,9 +25344,10 @@ GLB. (Other hosted providers with the same task-based REST shape can be added as
 
 ## Using it
 
-- **Add menu → Generate 3D model…** — a small dialog: pick a provider, type a prompt,
-  optional name, **Generate**. The mesh lands where you opened the menu.
-- **From a picture** — the same dialog takes a photo, an Explorer picture or the viewport (Meshy, or a
+- **Add menu → Generate 3D model…** — the **Generate** window: pick a provider, type a prompt,
+  optional name, **Generate**. The mesh lands where you opened the menu. You can also open it from the dock's
+  **+** ▸ **Generate 3D**. See [The Generate window](#the-generate-window) below.
+- **From a picture** — the same window takes a photo, an Explorer picture or the viewport (Meshy, or a
   ComfyUI workflow with `{{IMAGE}}` in a LoadImage node). Meshy asks first (credits, and that the picture
   goes to Meshy). See [Give the AI pictures and shaders](https://docs.theprototype.app/ai/pictures-and-shaders.md).
 - **AI assistant** — just ask (“add a treasure chest by the wall”). The assistant calls
@@ -25104,6 +25356,21 @@ GLB. (Other hosted providers with the same task-based REST shape can be added as
 - **Console agent** — pass `--mesh-kind comfyui --mesh-url … --mesh-workflow path/to.json`
   (or `AGENT_MESH_*` env vars) and the agent's `generate_mesh` tool works the same way,
   pushing the GLB into the session. See [Console Agent](https://docs.theprototype.app/ai/console-agent.md).
+
+### The Generate window
+
+*Since 1.65* the generator is a window, not a dialog. It stays open while you work, and you can dock it as a
+bottom-dock tab or a sidebar tab. On a phone it is a sheet. The form has not changed: provider, an optional picture
+(device, camera, viewport, Explorer), prompt, name. The credits line and the picture consent work as before.
+
+- **Jobs**: every generation on this device. A running job shows its progress and a **Cancel** button. A finished job
+  has **Reopen**, which selects the model, or places it again from Explorer ▸ Generated if you deleted it. A failed or
+  cancelled job has **Retry**, which is a new generation and uses credits again. **Clear finished** tidies the list.
+- **History**: the prompts you generated, newest first. Tap one to put it back in the form.
+- The jobs and the history survive a reload. A job that was still running carries on where it was: it is **not** sent
+  to the provider again, so it is not charged twice.
+- Pictures are never kept, so a picture job's **Retry** asks you to pick the picture again. Jobs and history stay on
+  this device (40 jobs, 30 prompts). Closing the window does not stop running jobs.
 
 ## Limits
 
@@ -25143,7 +25410,8 @@ Location data (EXIF, GPS) is removed from every picture **on your device, before
    pictures as it is. A ComfyUI workflow takes them when it has a `{{IMAGE}}` placeholder in a
    **LoadImage** node (see [3D Generation](https://docs.theprototype.app/ai/generation.md)).
 2. **Add menu ▸ Generate 3D model…** and pick the picture: **From device…**, **Camera** (on a phone),
-   **Viewport**, or **From Explorer…**. You can also paste or drop a picture onto the dialog. In the
+   **Viewport**, or **From Explorer…**. You can also paste or drop a picture onto the window (a dockable
+   window since 1.65, see [The Generate window](https://docs.theprototype.app/ai/generation.md#the-generate-window)). In the
    Explorer, a picture's menu has **Make a 3D model…**.
 3. A prompt is optional. With Meshy's *Refine* mode it becomes the texture prompt.
 4. Press **Generate**.

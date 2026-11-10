@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Timeline (Cutscenes)", "url": "https://docs.theprototype.app/timeline/", "description": "Sequences are part of the scene: they are saved with it, shared live with everyone in the session (late joiners too), undoable, and they play in exported and published games.", "dateModified": "2026-11-04", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.63.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/timeline/tracks.webp", "caption": "The Timeline docked under the viewport."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/timeline/scrub-shot.webp", "caption": "Scrubbing at 1.15 s."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/timeline/property-track.webp", "caption": "A Film take on the Timeline: the field of view and the roll, keyed."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/timeline/phone-sheet.webp", "caption": "The Timeline as a tab of the bottom sheet on a folded phone."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/timeline/tracks-light.webp", "caption": "The Timeline in the light theme."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Timeline (Cutscenes)", "url": "https://docs.theprototype.app/timeline/", "description": "Sequences are part of the scene: they are saved with it, shared live with everyone in the session (late joiners too), undoable, and they play in exported and published games.", "dateModified": "2026-11-10", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.64.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/timeline/tracks.webp", "caption": "The Timeline docked under the viewport."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/timeline/scrub-shot.webp", "caption": "Scrubbing at 1.15 s."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/timeline/property-track.webp", "caption": "A Film take on the Timeline: the field of view and the roll, keyed."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/timeline/phone-sheet.webp", "caption": "The Timeline as a tab of the bottom sheet on a folded phone."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/timeline/tracks-light.webp", "caption": "The Timeline in the light theme."}]}</script>
 </head>
   
   
@@ -353,6 +353,27 @@
   
   <span class="md-ellipsis">
     The Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menus-and-panels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    New menus and panels
   </span>
   
 
@@ -1323,6 +1344,15 @@
   <a href="#opening-it" class="md-nav__link">
     <span class="md-ellipsis">
       Opening it
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequences-tracks-and-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sequences, tracks and Properties
     </span>
   </a>
   
@@ -6829,6 +6859,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sequences-tracks-and-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sequences, tracks and Properties
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tracks" class="md-nav__link">
     <span class="md-ellipsis">
       Tracks
@@ -6922,7 +6961,7 @@ undoable, and they play in exported and published games.</p>
 sounds into a scene-wide sequence.</p>
 </div>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/timeline/tracks.webp" data-desc-position="bottom"><img alt="The Timeline docked under the viewport, in a small window: the Intro sequence with Camera, Animation, Audio and Event tracks holding a Cam A → Cam B shot, a Door clip, whoosh.wav and a boom event. 1: + Track, which adds a track of any kind. 2: the boom event item." class="shot" height="303" loading="lazy" src="../img/timeline/tracks.webp" width="680"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/timeline/tracks.webp" data-desc-position="bottom"><img alt="The Timeline docked under the viewport, in a small window: the Intro sequence with Camera, Animation, Audio and Event tracks holding a Cam A → Cam B shot, a Door clip, whoosh.wav and a boom event. 1: + Track, which adds a track of any kind. 2: the boom event item." class="shot" height="309" loading="lazy" src="../img/timeline/tracks.webp" width="680"></a></p>
 <figcaption>
 <p>The Timeline docked under the viewport.</p>
 </figcaption>
@@ -6940,6 +6979,24 @@ sounds into a scene-wide sequence.</p>
 <li>On a phone it opens as a tab of the bottom sheet: <strong>More ▸ Timeline</strong>.</li>
 <li>A <a href="../nodes/playseq/">Play Sequence</a> node's <strong>Open in Timeline</strong> link jumps to its sequence.</li>
 </ul>
+<h2 id="sequences-tracks-and-properties">Sequences, tracks and Properties</h2>
+<p><em>Since 1.65</em> the Timeline has three panes.</p>
+<ul>
+<li><strong>Sequences</strong> (left): every cutscene in the scene. Click one to edit it; double-click renames it. The <strong>⋯</strong> button (or
+  a right-click) duplicates it, deletes it or grows it to fit its items. <strong>+</strong> adds a new one. A small play mark means
+  Autoplay is on, and a loop mark means Loop is on.</li>
+<li><strong>Tracks</strong> (middle): the transport (start, play, stop, time), snapping, camera previews, <strong>Fit</strong> and <strong>+ Track</strong> sit
+  above the tracks.</li>
+<li><strong>Properties</strong> (right) has two tabs:<ul>
+<li><strong>Sequence</strong>: Name, Length, <strong>Frame rate</strong> (type 1-120, or pick 24 / 25 / 30 / 60), Autoplay, Loop, and how many
+  tracks and items it has. The frame rate is the grid items snap to and the time readout counts in.</li>
+<li><strong>Item</strong>: the picked item's fields (start, length, camera / clip / sound / event name, caption). Picking an item
+  opens this tab. Clearing the pick puts it away again, unless you opened the tab yourself.</li>
+</ul>
+</li>
+</ul>
+<p>Each side pane hides with its edge tab and can be resized. Every edit is one undo step, and everyone in the session sees
+it.</p>
 <h2 id="tracks">Tracks</h2>
 <table>
 <thead>
@@ -6973,10 +7030,10 @@ sounds into a scene-wide sequence.</p>
 </table>
 <h2 id="building-a-sequence">Building a sequence</h2>
 <ol>
-<li><strong>New sequence</strong> (or the <strong>+</strong> next to the sequence picker). Set its <strong>Length</strong>.</li>
+<li><strong>+</strong> in the <strong>Sequences</strong> pane adds a sequence. Set its <strong>Length</strong> in <strong>Properties ▸ Sequence</strong>.</li>
 <li><strong>+ Track</strong> ▸ Camera / Animation / Audio / Event.</li>
 <li><strong>Double-click a lane</strong> to add an item at that time. It picks the selected camera or animated object (or the first
-   one); audio takes the first sound in the Explorer. Select the item and finish it in the strip below the tracks:
+   one); audio takes the first sound in the Explorer. Select the item and finish it in <strong>Properties ▸ Item</strong>:
    time, length, camera(s), object + clip + speed, sound + gain + <strong>caption</strong>, event name.
    An audio clip's <strong>Caption</strong> (one line, up to 200 characters) shows at the bottom of the screen while the clip plays
    for anyone with captions on (<a href="../accessibility/#captions">Accessibility</a>).</li>
@@ -7047,7 +7104,7 @@ sounds into a scene-wide sequence.</p>
 <p>A take filmed by hand wobbles. On a <strong>Property</strong> track, the <strong>…</strong> menu's <strong>Smooth keys</strong> evens out the wobble and keeps
 every key at its time, so cuts and markers stay where they were. It is one undo step; press it again to smooth more.</p>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/timeline/property-track.webp" data-desc-position="bottom"><img alt="The Timeline in a small window holding a Film take: two property tracks, Field of view · Film camera and Dutch roll · Film camera, each a row of key diamonds recorded by hand. 1: a key. 2: the track menu with Smooth keys." class="shot" height="303" loading="lazy" src="../img/timeline/property-track.webp" width="680"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/timeline/property-track.webp" data-desc-position="bottom"><img alt="The Timeline in a small window holding a Film take: two property tracks, Field of view · Film camera and Dutch roll · Film camera, each a row of key diamonds recorded by hand. 1: a key. 2: the track menu with Smooth keys." class="shot" height="309" loading="lazy" src="../img/timeline/property-track.webp" width="680"></a></p>
 <figcaption>
 <p>A Film take on the Timeline: the field of view and the roll, keyed.</p>
 </figcaption>
@@ -7065,7 +7122,7 @@ is: it is shared and saved back unchanged, but this version cannot play or edit 
 <li><strong><a href="../nodes/playseq/">Play Sequence</a></strong> node (Animation group): wire a trigger in — On Click, On Enter, Key Press.
   Actions: <em>play</em>, <em>stop</em>, <em>toggle</em>, <em>restart</em>. Every player runs the sequence from the same moment, and each player's
   own view cuts to the shots.</li>
-<li><strong>Autoplay</strong> (the switch beside Length): the sequence starts when a player enters Play — and when an exported game
+<li><strong>Autoplay</strong> (in <strong>Properties ▸ Sequence</strong>): the sequence starts when a player enters Play — and when an exported game
   opens. <strong>Loop</strong> repeats it.</li>
 <li><strong><a href="../nodes/onseqevent/">On Sequence Event</a></strong> node: pulses when a running sequence passes an event with that name
   (blank = any), or <strong><code>end</code></strong> when it finishes. Wire it to Play Animation, Set Game State, a Sound.</li>
@@ -7077,7 +7134,8 @@ is: it is shared and saved back unchanged, but this version cannot play or edit 
 </div>
 <h2 id="on-a-phone">On a phone</h2>
 <p>The Timeline is a tab of the bottom sheet (<strong>More ▸ Timeline</strong>). The controls wrap onto extra rows, and the tracks
-scroll under them.</p>
+scroll under them. On a phone or a touch handheld (folded or unfolded), the Sequences and Properties panes start hidden
+and the top bar keeps a sequence picker.</p>
 <figure>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/timeline/phone-sheet.webp" data-desc-position="bottom"><img alt="The Timeline as a tab of the bottom sheet on a folded phone: the controls wrap onto two rows over the four tracks with a narrow name column. 1: the Timeline tab of the sheet." class="shot" height="670" loading="lazy" src="../img/timeline/phone-sheet.webp" width="390"></a></p>
 <figcaption>
@@ -7126,7 +7184,7 @@ scroll under them.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-04
+    2026-11-10
   </span>
 
     

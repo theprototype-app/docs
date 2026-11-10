@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Connection", "url": "https://docs.theprototype.app/connection/", "description": "How peers find each other, how to invite someone into your scene, and how to point the app at a signaling server you trust.", "dateModified": "2026-11-10", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.63.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/status-dot-phone.webp", "caption": "A folded phone's top bar: the chip keeps the connection dot."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/peers-panel-desktop.webp", "caption": "The Connected panel on a computer."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/public-rooms-phone.webp", "caption": "Public rooms under their own heading, apart from your session."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/guests-see.webp", "caption": "Connect ▸ ▾ ▸ Info, where the host picks what guests see."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Connection", "url": "https://docs.theprototype.app/connection/", "description": "How peers find each other, how to invite someone into your scene, and how to point the app at a signaling server you trust.", "dateModified": "2026-11-10", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.64.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/status-dot-phone.webp", "caption": "A folded phone's top bar: the chip keeps the connection dot."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/peers-panel-desktop.webp", "caption": "The Connected panel on a computer."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/public-rooms-phone.webp", "caption": "Public rooms under their own heading, apart from your session."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/guests-see.webp", "caption": "Connect ▸ ▾ ▸ Info, where the host picks what guests see."}]}</script>
 </head>
   
   
@@ -355,6 +355,27 @@
   
   <span class="md-ellipsis">
     The Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menus-and-panels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    New menus and panels
   </span>
   
 
@@ -7210,11 +7231,15 @@
 <p>ThePrototype is peer-to-peer: once two browsers connect they talk <strong>directly</strong> over WebRTC, and the whole scene replicates between them. The only shared infrastructure is a small <strong>signaling server</strong> (PeerJS) used to introduce peers to each other — it never sees your scene data.</p>
 <h2 id="the-connect-panel">The Connect panel</h2>
 <p>The Connect panel is the bar at the top of the screen. Since 1.35 it is either <strong>pinned</strong> — a full-width bar along the top edge, the default on a touch screen — or <strong>floating</strong> — the centred pill, the default with a mouse; switch with the <strong>Pinned / Float</strong> button in its drawer's header (see <a href="../controls/#the-connect-bar">The Connect bar</a>). A floating bar with no room on the top row shrinks to a compact dot and chevron, and grows back when room returns. You can move it anywhere and hide it in <a href="../controls/#the-connect-bar">Edit positions</a> or by unticking <strong>Connect bar</strong> in <em>Customize toolbar…</em>; on a folded phone the Connect chip stays.</p>
-<p>It has two halves:</p>
+<p>Since 1.65 it shows your ID, then two verbs, <strong>Invite</strong> and <strong>Join…</strong>:</p>
 <ul>
 <li><strong>Your ID</strong> — the button on the left shows your own peer ID. Click it to <strong>copy your invite link</strong> (your app URL with your ID attached, e.g. <code>https://theprototype.app/#AB12CD</code>) to the clipboard. Until the connection to the signaling server is ready it reads <em>Generating…</em>.</li>
-<li><strong>Connect field</strong> — paste a peer's ID into <em>Enter peer ID to connect</em> and press <strong>Connect</strong> to request a connection.</li>
+<li><strong>Invite</strong> — opens the invite sheet on <strong>Person</strong>, with <strong>AI agent</strong> as its second tab (it replaces the robot
+  <em>Request AI</em> button). See <a href="../invites/">Invite people and agents</a>.</li>
+<li><strong>Join…</strong> — opens the join field. Paste an <strong>invite link</strong> or type a <strong>peer id</strong>, and press <strong>Connect</strong>. <kbd>Esc</kbd>
+  in an empty field, or the <strong>✕</strong>, folds it back. The field no longer shows all the time.</li>
 </ul>
+<p>Before you connect, the bar says <strong>Ready</strong> beside the status dot while the peer server answers (not <em>Offline</em>).</p>
 <p>Since 1.30, once you are connected the bar <strong>collapses to a compact chip</strong> — the status dot, the avatars of who is here
 and your mic; click it to open the full bar again (its collapse button folds it back). On a phone the bar is always the
 chip — tap it for your ID, the join field, Info and Toasts. The signaling link's attempt count is in the drawer's
@@ -7223,9 +7248,9 @@ chip — tap it for your ID, the join field, Info and Toasts. The signaling link
 session · 3 people</strong> (it no longer says <em>Offline</em> while the connection works). The signaling server and relay details
 are folded under one <strong>Network</strong> row, which opens by itself when the connection has trouble.</p>
 <h3 id="the-status-dot">The status dot</h3>
-<p>Since 1.32 the connection status is a <strong>coloured dot</strong>. On a computer the full bar keeps your invite ID and the peer-ID
-field, with the dot at its left end. On a phone the chip at the top of the screen says the state beside the dot —
-<strong>Connect</strong> (not connected yet, the same word as on a computer), <strong>Connecting…</strong>, <strong>Connected</strong> or <strong>Offline</strong> (the peer
+<p>Since 1.32 the connection status is a <strong>coloured dot</strong>. On a computer the full bar keeps your invite ID, <strong>Invite</strong> and
+<strong>Join…</strong>, with the dot at its left end. On a phone the chip at the top of the screen says the state beside the dot —
+<strong>Connect</strong> (not connected yet), <strong>Connecting…</strong>, <strong>Connected</strong> or <strong>Offline</strong> (the peer
 server cannot be reached) — whenever the top bar has room. When the bar is crowded (people are
 connected and you are in a call, so the peers button and the microphone take the space) it shrinks back to the dot and
 a ▾ (and the microphone while you are in a call).</p>
@@ -7312,12 +7337,12 @@ of your session</em>. The people listed there are not connected to you; <strong>
 <li>When they open the link, their app automatically sends <strong>you</strong> a connection request.</li>
 <li>You get a <strong>Connection request</strong> toast — press <strong>Approve</strong> and you are connected.</li>
 </ol>
-<p>Or do it by ID: they paste your ID into their Connect field and press Connect; the same approval toast appears on your side.</p>
+<p>Or do it by ID: they press <strong>Join…</strong>, type your ID and press <strong>Connect</strong>; the same approval toast appears on your side.</p>
 <p>To skip the approval card, send an <strong>invite link</strong> instead (<strong>Connect ▸ Invite</strong>, a <em>Person</em> or an <em>AI agent</em>
-tab): it joins in one step with the role you chose, for a limited time. See <a href="../invites/">Invite people and agents</a>.</p>
+tab): the other side opens it, or pastes it into <strong>Join…</strong>, and it joins in one step with the role you chose, for a limited time. See <a href="../invites/">Invite people and agents</a>.</p>
 <h3 id="what-guests-see">What guests see</h3>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/connection/guests-see.webp" data-desc-position="bottom"><img alt="The Connect drawer's Info tab on a computer: the Session rows — State, Your ID, Guests see with its list, Host — and the Signaling server rows under them. 1: Guests see, which of your files a guest sees in the Explorer." class="shot" height="204" loading="lazy" src="../img/connection/guests-see.webp" width="542"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/connection/guests-see.webp" data-desc-position="bottom"><img alt="The Connect drawer's Info tab on a computer: the Session rows — State, Your ID, Guests see with its list, Host — and the Signaling server rows under them. 1: Guests see, which of your files a guest sees in the Explorer." class="shot" height="204" loading="lazy" src="../img/connection/guests-see.webp" width="444"></a></p>
 <figcaption>
 <p>Connect ▸ ▾ ▸ Info, where the host picks what guests see.</p>
 </figcaption>

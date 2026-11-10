@@ -218,7 +218,8 @@ The site and the app share one sign-in. **Sign in** in the site header offers th
 ### Sign-in methods and "Can't sign in?"
 
 *New in 1.54.1.* theprototype.app has no passwords: you sign in with GitHub or Google. If you lose access to that one
-account, you lose the way in. Link both now and either one gets you back: **Account menu ▸ Sign-in methods**.
+account, you lose the way in. Link both now and either one gets you back: **Settings ▸ Account ▸ Sign-in methods**
+(account menu ▸ **Manage**; it was in the account menu itself until 1.64).
 
 ![Account menu ▸ Sign-in methods](https://docs.theprototype.app/img/community/sign-in-methods.png)
 

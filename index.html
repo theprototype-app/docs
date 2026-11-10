@@ -62,7 +62,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Welcome", "url": "https://docs.theprototype.app/", "description": "ThePrototype is a collaborative 3D prototyping app that runs in your browser — sessions are peer-to-peer, and you need no account.", "dateModified": "2026-11-10", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.63.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/index/quick-start-add.webp", "caption": "Quick start, step 2 — right-click the empty view, then Add ▸ Mesh ▸ Cube."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Welcome", "url": "https://docs.theprototype.app/", "description": "ThePrototype is a collaborative 3D prototyping app that runs in your browser — sessions are peer-to-peer, and you need no account.", "dateModified": "2026-11-10", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.64.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/index/quick-start-add.webp", "caption": "Quick start, step 2 — right-click the empty view, then Add ▸ Mesh ▸ Cube."}]}</script>
 </head>
   
   
@@ -429,6 +429,27 @@
   
   <span class="md-ellipsis">
     The Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="menus-and-panels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    New menus and panels
   </span>
   
 
@@ -6867,7 +6888,7 @@ involves none of our servers.</p>
 <li><strong>Open the app</strong> in a desktop browser (VR headset browsers work too).</li>
 <li><strong>Create something</strong> — right-click the empty viewport and pick <strong>Add ▸ Mesh ▸ Cube</strong>. (If you prefer <kbd>Shift</kbd>+<kbd>A</kbd> for the Add menu, switch on <strong>Shift+A quick add</strong> in <strong>Settings ▸ Controls ▸ Keyboard &amp; mouse</strong>.)</li>
 <li><strong>Move it</strong> — click the cube to select it, then use the gizmo (<kbd>1</kbd> move, <kbd>2</kbd> rotate, <kbd>3</kbd> scale).</li>
-<li><strong>Invite a friend</strong> — open the Connect panel, copy your peer ID and send it to them. They paste it into their own Connect field and press <strong>Connect</strong>; you approve the request, and from then on you are editing the same scene together.</li>
+<li><strong>Invite a friend</strong> — open the Connect panel, copy your peer ID and send it to them. They press <strong>Join…</strong>, paste it and press <strong>Connect</strong>; you approve the request, and from then on you are editing the same scene together. (<strong>Invite</strong> makes a link that skips the approval: see <a href="invites/">Invite people and agents</a>.)</li>
 </ol>
 <figure>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/index/quick-start-add.webp" data-desc-position="bottom"><img alt="The menu a right-click on the empty 3D view opens, with Add ▸ Mesh unfolded and Cube in its list. 1: Add. 2: Cube, the first thing to make." class="shot fade-b" height="440" loading="lazy" src="img/index/quick-start-add.webp" width="688"></a></p>
@@ -6892,6 +6913,13 @@ on a phone that gives the scene the whole height of the screen.</p>
 <a href="https://github.com/theprototype-app/core">github.com/theprototype-app/core</a> (also <strong>Settings ▸ About ▸ Source Code</strong>),
 with a contributing guide and an <code>llms.txt</code> for coding agents.</p>
 <h2 id="whats-new">What's new</h2>
+<p><strong>1.65 — <a href="menus-and-panels/">new menus and panels</a>.</strong> Chat and the AI assistant are one window with <strong>Session</strong> and
+<strong>Assistant</strong> tabs, one History for both, and chats that come back after a reload. Press anyone in People for their
+<a href="people/#the-person-card">Person card</a>; the Connect bar leads with <strong>Invite</strong> and <strong>Join…</strong>, and you can
+<a href="people/#show-my-status">show your status</a>. The file preview <a href="explorer/#the-preview-window">pins to the dock</a> and
+edits images in place (<strong>View | Edit</strong>), the <a href="timeline/#sequences-tracks-and-properties">Timeline</a> has Sequences and
+Properties panes, <a href="ai/generation/#the-generate-window">Generate 3D</a> is a dockable window with Jobs and History, and
+Sign-in methods, Devices and Connected apps moved into <a href="settings/#account">Settings ▸ Account</a>.</p>
 <p><strong>1.64 — flow you can shape.</strong> <a href="starter-recipes/">Starter recipes</a> turn the selected object into a door you click, a
 door that opens as you walk up, a bell or a guard in one step. Trigger cards say
 <a href="debugger/#why-did-this-not-fire">why they did not fire</a> — <em>blocked: not the player</em>, <em>won't fire: physics is not

@@ -114,7 +114,10 @@ If there are no notes yet, the drawer tells you to select an object and add one 
 
 ## Chat
 
-<kbd>C</kbd> (from the 3D view) or the chat button opens the session's text chat.
+<kbd>C</kbd> (from the 3D view) or the chat button opens the session's text chat: the **Session** tab of the Chat
+window. Since 1.65 the [AI assistant](https://docs.theprototype.app/ai/assistant.md) is the window's other tab, **Assistant**. If the window is open on
+the other tab, the button switches to its tab; if its own tab is showing, the button closes the window. A dot on a tab
+means something new arrived there while you were on the other tab.
 
 - **@mentions** — type `@` and a name; <kbd>Tab</kbd> takes the first suggestion. The name shows in that person's
   colour, a line that mentions *you* is ringed, and the chat button's badge turns to the accent colour.
@@ -123,6 +126,11 @@ If there are no notes yet, the drawer tells you to select an object and add one 
 - **Unread badge** — the chat button counts the messages that arrived while the chat was closed.
 - **History** — someone who joins the session sees the conversation so far. A session saved in the
   [Sessions manager](https://docs.theprototype.app/saving.md#sessions-manager) keeps its chat; an exported `.tpscene` never contains it.
+- **Kept on this device** (*1.65*) — the session chat is kept on this device per scene and comes back after a reload.
+  The clock button opens **History**, one list for both tabs: under **People**, the chat of each scene you have been
+  in on this device, this scene's first (a past scene's chat opens read only; **Back to live chat** returns); under
+  **AI**, the assistant's chats. Filter with **All | People | AI**, or search. Rows this device keeps can be removed
+  with the bin button.
 
 ![The chat: Mia's line that mentions Alex is ringed, the @Alex in a colour, and Alex's answer, where :+1: became an emoji. 1: the ringed line. 2: the emoji.](https://docs.theprototype.app/img/notifications/chat-mentions.webp)
 *Figure: In the chat, a line that mentions you is ringed.*

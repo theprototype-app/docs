@@ -6,7 +6,8 @@ your phone or computer, check which device is asking, and approve it.
 
 !!! info "New in 1.62"
     Sign in from another device, and **Account ▸ Devices**: every device signed in to your account, with a Sign out
-    for each.
+    for each. Since 1.65 Devices and Sign-in methods live in **Settings ▸ Account** (the account menu's **Manage** opens
+    it).
 
 It works in every direction: a Quest from your PC or phone, a PC from your phone, a phone from your PC, one browser
 from another.
@@ -25,7 +26,7 @@ from another.
 ## On the device where you are signed in
 
 Go to **theprototype.app/link** and type the code. (Scanning the QR opens the same page with the code filled in.) You
-can also open **account menu ▸ Devices ▸ Sign in another device**.
+can also open **Settings ▸ Account ▸ Devices ▸ Sign in another device**.
 
 The sheet shows which device is asking: its type, browser and system (for example *Quest Browser on Meta Quest*),
 roughly where it is (the country, when it can be told), and how long ago it asked.
@@ -49,7 +50,7 @@ You can only choose right after signing in. To change your mind later, sign the 
 
 ## See and sign out your devices
 
-**Account menu ▸ Devices** lists every device signed in to your account, however it signed in (GitHub, Google or a
+**Settings ▸ Account ▸ Devices** (account menu ▸ **Manage**) lists every device signed in to your account, however it signed in (GitHub, Google or a
 code), with where it was and when it was last used. *This device* is the one you are using.
 
 - **Sign out** next to a device signs it out. It is refused the next time it talks to the server, usually within
@@ -80,7 +81,7 @@ code), with where it was and when it was last used. *This device* is the one you
 
 There is no password to reset: your account opens with GitHub or Google. Two things keep you able to get back in:
 
-- **Link a second way in.** Account menu ▸ **Sign-in methods** ▸ **Link** the other provider. If you lose one, the
+- **Link a second way in.** **Settings ▸ Account ▸ Sign-in methods** ▸ **Link** the other provider. If you lose one, the
   other still opens the same account.
 - **Keep one device signed in.** A device that is still signed in can sign in a new one with a code, even if you can no
   longer sign in with GitHub or Google. Then link a new provider from **Sign-in methods**.

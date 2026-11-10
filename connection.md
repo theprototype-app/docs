@@ -8,10 +8,15 @@ ThePrototype is peer-to-peer: once two browsers connect they talk **directly** o
 
 The Connect panel is the bar at the top of the screen. Since 1.35 it is either **pinned** — a full-width bar along the top edge, the default on a touch screen — or **floating** — the centred pill, the default with a mouse; switch with the **Pinned / Float** button in its drawer's header (see [The Connect bar](https://docs.theprototype.app/controls.md#the-connect-bar)). A floating bar with no room on the top row shrinks to a compact dot and chevron, and grows back when room returns. You can move it anywhere and hide it in [Edit positions](https://docs.theprototype.app/controls.md#the-connect-bar) or by unticking **Connect bar** in *Customize toolbar…*; on a folded phone the Connect chip stays.
 
-It has two halves:
+Since 1.65 it shows your ID, then two verbs, **Invite** and **Join…**:
 
 - **Your ID** — the button on the left shows your own peer ID. Click it to **copy your invite link** (your app URL with your ID attached, e.g. `https://theprototype.app/#AB12CD`) to the clipboard. Until the connection to the signaling server is ready it reads *Generating…*.
-- **Connect field** — paste a peer's ID into *Enter peer ID to connect* and press **Connect** to request a connection.
+- **Invite** — opens the invite sheet on **Person**, with **AI agent** as its second tab (it replaces the robot
+  *Request AI* button). See [Invite people and agents](https://docs.theprototype.app/invites.md).
+- **Join…** — opens the join field. Paste an **invite link** or type a **peer id**, and press **Connect**. <kbd>Esc</kbd>
+  in an empty field, or the **✕**, folds it back. The field no longer shows all the time.
+
+Before you connect, the bar says **Ready** beside the status dot while the peer server answers (not *Offline*).
 
 Since 1.30, once you are connected the bar **collapses to a compact chip** — the status dot, the avatars of who is here
 and your mic; click it to open the full bar again (its collapse button folds it back). On a phone the bar is always the
@@ -24,9 +29,9 @@ are folded under one **Network** row, which opens by itself when the connection 
 
 ### The status dot
 
-Since 1.32 the connection status is a **coloured dot**. On a computer the full bar keeps your invite ID and the peer-ID
-field, with the dot at its left end. On a phone the chip at the top of the screen says the state beside the dot —
-**Connect** (not connected yet, the same word as on a computer), **Connecting…**, **Connected** or **Offline** (the peer
+Since 1.32 the connection status is a **coloured dot**. On a computer the full bar keeps your invite ID, **Invite** and
+**Join…**, with the dot at its left end. On a phone the chip at the top of the screen says the state beside the dot —
+**Connect** (not connected yet), **Connecting…**, **Connected** or **Offline** (the peer
 server cannot be reached) — whenever the top bar has room. When the bar is crowded (people are
 connected and you are in a call, so the peers button and the microphone take the space) it shrinks back to the dot and
 a ▾ (and the microphone while you are in a call).
@@ -86,10 +91,10 @@ of your session*. The people listed there are not connected to you; **Watch** be
 2. When they open the link, their app automatically sends **you** a connection request.
 3. You get a **Connection request** toast — press **Approve** and you are connected.
 
-Or do it by ID: they paste your ID into their Connect field and press Connect; the same approval toast appears on your side.
+Or do it by ID: they press **Join…**, type your ID and press **Connect**; the same approval toast appears on your side.
 
 To skip the approval card, send an **invite link** instead (**Connect ▸ Invite**, a *Person* or an *AI agent*
-tab): it joins in one step with the role you chose, for a limited time. See [Invite people and agents](https://docs.theprototype.app/invites.md).
+tab): the other side opens it, or pastes it into **Join…**, and it joins in one step with the role you chose, for a limited time. See [Invite people and agents](https://docs.theprototype.app/invites.md).
 
 ### What guests see
 

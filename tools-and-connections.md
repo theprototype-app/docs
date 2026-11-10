@@ -34,7 +34,7 @@ Buttons for a feature whose tool is not set up stay where they are. Press one an
 right row: *"Generate 3D model needs a Mesh provider: set one up in Settings ▸ Tools & connections."* The quick prompt bar,
 the mic and *Edit in Blender* work the same way.
 
-The AI button is different: it always opens the AI window, which offers Connect Claude or your own provider.
+The AI button is different: it always opens the Chat window on its **Assistant** tab, which offers Connect Claude or your own provider.
 
 The assistant reads the same status. Ask it for something this device has not set up and it tells you what is needed
 instead of guessing. Agents see the same through `status().missingTools`.

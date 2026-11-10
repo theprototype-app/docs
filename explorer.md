@@ -176,7 +176,7 @@ The header's **Thumbnails / List** toggle switches views. The list has sortable 
 - **Single-click** selects an item and shows its details in the **ⓘ Properties** panel.
 - **Double-click** opens it in a **preview window** (below); text files open in the [Code tab](https://docs.theprototype.app/code-workspace.md#text-documents), shared live with everyone who opens them (<kbd>Ctrl</kbd>+<kbd>S</kbd> saves back to the item).
 - **Right-click** an item for Open, Download, Share, Rename, Delete, Properties (and *Copy contents* for text files,
-  **Edit image…** for images — see [The Image editor](https://docs.theprototype.app/image-editor.md)).
+  **Edit image…** for images, which opens the preview on **Edit** — see [The Image editor](https://docs.theprototype.app/image-editor.md)).
 - The search box filters the whole library by name; the breadcrumb path bar (toggleable) shows where you are.
 
 **Keyboard navigation** in the grid: arrow keys move the selection, <kbd>Enter</kbd> opens, <kbd>Backspace</kbd> goes up a level, <kbd>Esc</kbd> clears the selection, <kbd>Delete</kbd> deletes the selection.
@@ -242,10 +242,20 @@ Right-click a file or a folder for **Duplicate** (**Duplicate folder**), **Copy*
 
 ### The preview window
 
-Images open zoomable (**−** / **＋** / **1:1**, drag to pan) with a pencil button that opens the
-[Image editor](https://docs.theprototype.app/image-editor.md), sounds open with a player, and 3D models open on a turntable with an **animation transport** — play, step a frame with <kbd>,</kbd> and <kbd>.</kbd>, scrub, pick a clip — and a mesh-stats line. The **←** / **→** buttons page through the folder without closing the window, and **⌐** goes up a level.
+The preview is one window for any file: an image, a sound, a 3D model, a text file or a folder. Images open zoomable
+(**−** / **＋** / **1:1**, drag to pan), sounds open with a player, and 3D models open on a turntable with an **animation transport** — play, step a frame with <kbd>,</kbd> and <kbd>.</kbd>, scrub, pick a clip — and a mesh-stats line. Text files show read only (the first 256 KB); double-click opens them in the code editor. The **←** / **→** buttons (or keys) page through the folder without closing the window, <kbd>Enter</kbd> goes into a folder, and **⌐** or <kbd>Backspace</kbd> goes up a level. Keys never fire while you type in a field.
 
-The window's **Settings** (cog) holds two things worth knowing: **Opacity** fades the window so you can model against a reference picture, and **Passthrough** lets clicks reach the scene underneath while the header stays live to move it or switch it back. **Allow multiple windows** opens each file in a window of its own instead of re-pointing the one you have.
+**View | Edit** (*1.65*). On an image in your Library, **Edit** in the header opens the [Image editor](https://docs.theprototype.app/image-editor.md)
+in the same window, with a filmstrip of the folder's images on the left; **View** goes back. Unsaved edits are never
+dropped silently: switching image, going back to View or closing asks first. The separate Image editor window is gone.
+
+**Pin to dock** (*1.65*). The **pin** in the header docks the preview as the **Preview** tab, and it then follows
+whatever you select in the Explorer: click a file and it shows there. If the Explorer is the docked tab in front, the
+dock splits so you see both. Drag the tab out (or **Undock**) and it keeps following as a floating window. Press the pin
+again to stop following. You can also open it from **+** on the dock's tab strip ▸ **Preview**.
+
+The window's **Settings** (cog) holds two things worth knowing: **Opacity** fades the window so you can model against a reference picture, and **Passthrough** lets clicks reach the scene underneath while the header stays live to move it or switch it back. **Allow multiple windows** opens each file in a window of its own instead of re-pointing the one you have; then only
+the first preview window docks and follows the Explorer, and one window edits at a time.
 
 ## Item properties (ⓘ)
 

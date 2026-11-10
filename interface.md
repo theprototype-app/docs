@@ -53,7 +53,9 @@ The light theme and every custom `.theme.json` restyle all of it; see [Themes & 
   button beside it).
 - **Your stuff** — **Cloud saves**, **Your games & stats**, and on theprototype.app the community panels (and
   **Staff** for staff accounts).
-- **Account** — **Sign-in methods ▸**, **Devices ▸** and **Sign out**, last. Signed out, this group is **Sign in**:
+- **Account** — your account card, **Sign out** last, and a **Manage** link to **Settings ▸ Account**, where
+  **Sign-in methods**, **Devices** and **Connected apps** live since 1.65 ([Settings ▸ Account](https://docs.theprototype.app/settings.md#account)).
+  The phone sheet has the same group. Signed out, this group is **Sign in**:
   *Keep scenes in the cloud and open them on any device.*
 
 A line of links closes the menu: **Community**, **Account help** and the project's **GitHub star**. Opening the menu
@@ -174,7 +176,8 @@ the dock or a sidebar to make it a floating window. A mouse works as before.
 #### Any window in a sidebar
 
 Every window that can be docked at the bottom can also be a sidebar tab — the Node editor, Animation, UV, Shader and
-HUD editors, the Explorer, the Profiler, Code, the Image editor, Objects, Statistics, Chat and the AI assistant:
+HUD editors, the Explorer, the Profiler, Code, the Preview, Objects, Statistics, Chat (since 1.65 with the AI assistant
+as its **Assistant** tab) and Generate 3D:
 
 - **Into a sidebar**: drag the floating window (by its header or any empty part) to the left or right edge or onto an
   open sidebar, drag its bottom-dock tab onto a sidebar, right-click its dock tab or its floating header ▸ **Move to the
@@ -184,7 +187,7 @@ HUD editors, the Explorer, the Profiler, Code, the Image editor, Objects, Statis
 **No second header.** A window in a sidebar shows no window header of its own: the sidebar tab is its header (name, ×,
 menu). Windows whose header carries tools keep a slim tools row without the title, ×, Dock or **+**: Objects (search),
 the Explorer (search and filters; its search hides when the sidebar is narrower than about 520 px, as in a narrow
-floating window), the Shader editor, Code, the Profiler, the Image editor (the file name) and Statistics (the budget dot
+floating window), the Shader editor, Code, the Profiler and Statistics (the budget dot
 and re-read).
 
 ![The right sidebar at full height, with Objects and Configure Scene as tabs: it runs from the top edge to the bottom, and the notes, bell and profile buttons have slid left of it.](https://docs.theprototype.app/img/interface/sidebar-full-height.webp)
@@ -224,9 +227,10 @@ Since 1.32 a window in the bottom dock has no **✕** or undock button of its ow
 - You can also drag a tab out of the strip — or right-click it ▸ **Undock into a floating window** — to undock that one
   window. A docked window moves by its tab, not by its header. The same menu has **Move to the left / right sidebar**
   (see [Any window in a sidebar](#any-window-in-a-sidebar)).
-- **The dock's +** lists every window that can live in the dock — the [Node editor](https://docs.theprototype.app/node-editor.md) and the
-  [Image editor](https://docs.theprototype.app/image-editor.md#in-the-dock) included, and since 1.33 also **Objects**, **Statistics**, **Chat** and
-  the **AI assistant** — the same list as the phone's **Windows** sheet. See
+- **The dock's +** lists every window that can live in the dock — the [Node editor](https://docs.theprototype.app/node-editor.md) included, since
+  1.33 also **Objects**, **Statistics** and **Chat**, and since 1.65 the **[Preview](https://docs.theprototype.app/explorer.md#the-preview-window)**
+  (which holds the [Image editor](https://docs.theprototype.app/image-editor.md#in-the-dock)) and **[Generate 3D](https://docs.theprototype.app/ai/generation.md#the-generate-window)**
+  — the same list as the phone's **Windows** sheet. See
   [The "+" menus](#the-menus) for what a pick does.
 - **An empty dock**: with nothing docked, <kbd>T</kbd> opens the dock **empty** — its tab strip with only **+** and the
   line *Press + or drag a tab here*. Drop a floating window on its strip or its body to dock it there; <kbd>T</kbd>
@@ -253,7 +257,9 @@ To close a docked window use its tab's **×**; to bring a floating window into t
 **Dock any window exactly where you want it**: drag a floating window by its header or any empty part of it — or tear
 a tab out of a tabbed window, or drag a whole tabbed window by its tab bar — onto the **dock's tab bar**. The window turns
 see-through, the tab bar is outlined and a **caret** shows the slot between the docked tabs where it will land; let go
-and it docks exactly there. This works for every editor and for Objects, Statistics, Chat and the AI assistant; file and model previews, the text viewer, What's new and the tool palettes stay floating. The bottom edge of
+and it docks exactly there. This works for every editor and for Objects, Statistics, Chat (with its Assistant tab) and Generate 3D; since 1.65 the
+file preview docks as the **Preview** tab with its pin ([Pin to dock](https://docs.theprototype.app/explorer.md#the-preview-window)), while the text
+viewer, What's new and the tool palettes stay floating. The bottom edge of
 the screen still docks a window at the end of the tabs (and is the only target while the dock is minimized; an
 [empty dock](#docked-windows) opened with <kbd>T</kbd> takes a drop anywhere on it). Since 1.35 this works by touch too,
 on an unfolded phone or a tablet.
@@ -371,7 +377,7 @@ the 3D view full-size in the app. Everything stays live: it is the same app in a
 - **Bring all windows back** (command palette, or any tab menu) puts every panel back in the app. Closing or reloading
   the app's tab closes its windows.
 - **Keys** in a popped-out window are the panel's own; undo and redo still reach the scene.
-- **Not for pop-out:** the Objects list, file previews, the Image editor and phone tabs. Phones, touch screens and VR
+- **Not for pop-out:** the Objects list, file previews (and the image editor in them) and phone tabs. Phones, touch screens and VR
   keep one window — the pop-out entries are hidden there.
 
 ## Focus mode
@@ -615,7 +621,7 @@ editor and the other editors:
 | **Configure Scene** | the scene's settings | **More ▸ Scene**, or the main menu's **Configure Scene** |
 | **Layouts** | save and switch [workspace layouts](https://docs.theprototype.app/controls.md#workspace-layouts) | the main menu's **Layouts**, or the dock's **+** |
 | **Statistics** | the scene's [budgets](https://docs.theprototype.app/performance.md#what-the-statistics-window-counts) | **More ▸ Statistics** (since 1.34; before, a floating window) |
-| **Chat**, **AI assistant**, **Free assets** | the session chat, the [AI assistant](https://docs.theprototype.app/ai/assistant.md) and the free asset browser | their bar or More buttons (since 1.64; before, sheets over the view) |
+| **Chat**, **Free assets** | the session chat and, on its **Assistant** tab since 1.65, the [AI assistant](https://docs.theprototype.app/ai/assistant.md); the free asset browser | their bar or More buttons (since 1.64; before, sheets over the view) |
 
 - **All tabs share one height.** Drag the dock's grab bar to resize it; swipe it down to minimize the dock.
 - **A tab's ✕** closes that panel. The dock's **+** lists every window, these included, with a show/hide switch.

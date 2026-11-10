@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Sign in from Another Device", "url": "https://docs.theprototype.app/sign-in-from-another-device/", "description": "Typing a GitHub or Google password on a headset, or in someone else's browser, is slow and risky. Instead, sign the new device in from a device where you are already signed in: the new device…", "dateModified": "2026-11-05"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Sign in from Another Device", "url": "https://docs.theprototype.app/sign-in-from-another-device/", "description": "Typing a GitHub or Google password on a headset, or in someone else's browser, is slow and risky. Instead, sign the new device in from a device where you are already signed in: the new device…", "dateModified": "2026-11-10"}</script>
 </head>
   
   
@@ -355,6 +355,27 @@
   
   <span class="md-ellipsis">
     The Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menus-and-panels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    New menus and panels
   </span>
   
 
@@ -6924,7 +6945,8 @@ your phone or computer, check which device is asking, and approve it.</p>
 <div class="admonition info">
 <p class="admonition-title">New in 1.62</p>
 <p>Sign in from another device, and <strong>Account ▸ Devices</strong>: every device signed in to your account, with a Sign out
-for each.</p>
+for each. Since 1.65 Devices and Sign-in methods live in <strong>Settings ▸ Account</strong> (the account menu's <strong>Manage</strong> opens
+it).</p>
 </div>
 <p>It works in every direction: a Quest from your PC or phone, a PC from your phone, a phone from your PC, one browser
 from another.</p>
@@ -6940,7 +6962,7 @@ from another.</p>
 <p><strong>Cancel</strong> ends the code at once. If it runs out, or the other device says no, press <strong>Get a new code</strong>.</p>
 <h2 id="on-the-device-where-you-are-signed-in">On the device where you are signed in</h2>
 <p>Go to <strong>theprototype.app/link</strong> and type the code. (Scanning the QR opens the same page with the code filled in.) You
-can also open <strong>account menu ▸ Devices ▸ Sign in another device</strong>.</p>
+can also open <strong>Settings ▸ Account ▸ Devices ▸ Sign in another device</strong>.</p>
 <p>The sheet shows which device is asking: its type, browser and system (for example <em>Quest Browser on Meta Quest</em>),
 roughly where it is (the country, when it can be told), and how long ago it asked.</p>
 <p><strong>Approve only a device you are holding right now.</strong> If someone sent you a code or a link and asked you to "confirm"
@@ -6955,7 +6977,7 @@ screen. Leave it off on a shared or borrowed browser: it signs itself out the ne
 computer, and it stays signed in like a normal sign-in (as long as you keep using it).</p>
 <p>You can only choose right after signing in. To change your mind later, sign the device out (below) and sign it in again.</p>
 <h2 id="see-and-sign-out-your-devices">See and sign out your devices</h2>
-<p><strong>Account menu ▸ Devices</strong> lists every device signed in to your account, however it signed in (GitHub, Google or a
+<p><strong>Settings ▸ Account ▸ Devices</strong> (account menu ▸ <strong>Manage</strong>) lists every device signed in to your account, however it signed in (GitHub, Google or a
 code), with where it was and when it was last used. <em>This device</em> is the one you are using.</p>
 <ul>
 <li><strong>Sign out</strong> next to a device signs it out. It is refused the next time it talks to the server, usually within
@@ -7006,7 +7028,7 @@ code), with where it was and when it was last used. <em>This device</em> is the 
 <h2 id="if-you-lose-your-github-or-google-account">If you lose your GitHub or Google account</h2>
 <p>There is no password to reset: your account opens with GitHub or Google. Two things keep you able to get back in:</p>
 <ul>
-<li><strong>Link a second way in.</strong> Account menu ▸ <strong>Sign-in methods</strong> ▸ <strong>Link</strong> the other provider. If you lose one, the
+<li><strong>Link a second way in.</strong> <strong>Settings ▸ Account ▸ Sign-in methods</strong> ▸ <strong>Link</strong> the other provider. If you lose one, the
   other still opens the same account.</li>
 <li><strong>Keep one device signed in.</strong> A device that is still signed in can sign in a new one with a code, even if you can no
   longer sign in with GitHub or Google. Then link a new provider from <strong>Sign-in methods</strong>.</li>
@@ -7038,7 +7060,7 @@ used, until the device is signed out (then 30 more days) or has not been used fo
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-05
+    2026-11-10
   </span>
 
     

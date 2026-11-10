@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Settings", "url": "https://docs.theprototype.app/settings/", "description": "Since 1.35 Settings opens beside your work: an open sidebar, the docked windows and the Node editor stay where they are on a computer and an unfolded phone. On a folded phone Settings is a…", "dateModified": "2026-11-10", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.63.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/settings/interface-desktop.webp", "caption": "Settings on a computer, the grouped menu beside the page."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/settings/home-phone.webp", "caption": "On a phone, Settings opens on the list of categories."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/settings/rows-phone.webp", "caption": "Rows on a narrow screen: long choices wrap under the name, short ones stay beside it."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/settings/notifications.webp", "caption": "The Notifications switches in Settings ▸ Interface."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Settings", "url": "https://docs.theprototype.app/settings/", "description": "Since 1.35 Settings opens beside your work: an open sidebar, the docked windows and the Node editor stay where they are on a computer and an unfolded phone. On a folded phone Settings is a…", "dateModified": "2026-11-10", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.64.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/settings/interface-desktop.webp", "caption": "Settings on a computer, the grouped menu beside the page."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/settings/home-phone.webp", "caption": "On a phone, Settings opens on the list of categories."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/settings/rows-phone.webp", "caption": "Rows on a narrow screen: long choices wrap under the name, short ones stay beside it."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/settings/notifications.webp", "caption": "The Notifications switches in Settings ▸ Interface."}]}</script>
 </head>
   
   
@@ -355,6 +355,27 @@
   
   <span class="md-ellipsis">
     The Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menus-and-panels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    New menus and panels
   </span>
   
 
@@ -7003,6 +7024,10 @@ you close it.</p>
 <td><strong>Devices &amp; services</strong></td>
 <td>VR, Tools &amp; connections, Connection, Privacy</td>
 </tr>
+<tr>
+<td><strong>Account</strong></td>
+<td>Account (on theprototype.app)</td>
+</tr>
 </tbody>
 </table>
 <p>A dot on <strong>About &amp; what's new</strong> means there is an update you have not read. <kbd>↑</kbd> / <kbd>↓</kbd> walk the menu.</p>
@@ -7117,7 +7142,38 @@ device. Each one is on until you switch it off.</p>
 connection request, a take-control or role request, an agent asking permission — and safety notices cannot be switched
 off. Search finds <em>notifications</em> and every switch by name. <strong>Reset Interface</strong> turns them all back on.</p>
 <h2 id="account">Account</h2>
-<p><em>New in 1.64, on theprototype.app.</em> <strong>Settings ▸ Account ▸ Email ▸ Product updates</strong> — product news by email, off by
+<p><em>On theprototype.app.</em> <strong>Settings ▸ Account</strong> holds your account: its emails, the ways you sign in, your devices and
+the apps you connected. Since 1.65 it has four groups:</p>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>What it holds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Email</strong></td>
+<td><strong>Product updates</strong> (below)</td>
+</tr>
+<tr>
+<td><strong>Sign-in methods</strong></td>
+<td>the providers you sign in with; <strong>Link</strong> a second one (<a href="../sign-in-from-another-device/#if-you-lose-your-github-or-google-account">Sign in from another device</a>)</td>
+</tr>
+<tr>
+<td><strong>Devices</strong></td>
+<td>every device signed in to your account, with <strong>Sign out</strong> (<a href="../sign-in-from-another-device/">Sign in from another device</a>)</td>
+</tr>
+<tr>
+<td><strong>Connected apps</strong></td>
+<td>the AI apps you connected with the <a href="../ai/claude-connector/">connector</a> (Claude, Claude Code and others), each with its last use and <strong>Revoke</strong>; <strong>Disconnect everything</strong> (<strong>Disconnect all</strong>) ends them all, and this tab's own link</td>
+</tr>
+</tbody>
+</table>
+<p>Sign-in methods and Devices used to be in the profile menu, and Connected apps was a settings page of
+its own. The <a href="../interface/#the-profile-menu">profile menu</a> keeps the email-updates question and <strong>Sign out</strong>, with a
+<strong>Manage</strong> link to this page. Settings search finds every row.</p>
+<p><em>New in 1.64.</em> <strong>Settings ▸ Account ▸ Email ▸ Product updates</strong> — product news by email, off by
 default. It is the same choice as the one-time <em>Get product updates by email?</em> card in the
 <a href="../interface/#the-profile-menu">profile menu</a>; switching it either way counts as your answer. Signed out, the switch is
 greyed out with a hint to sign in.</p>
@@ -7309,6 +7365,21 @@ cache uses the older Cache Storage, and where neither exists everything download
 <td>Product updates by email</td>
 <td>new in 1.64 (was a box on the sign-in sheet)</td>
 <td><strong>Account ▸ Email ▸ Product updates</strong>, on theprototype.app; see <a href="#account">above</a></td>
+</tr>
+<tr>
+<td>Sign-in methods · Devices</td>
+<td>the profile menu (until 1.64)</td>
+<td><strong>Account ▸ Sign-in methods</strong> and <strong>Account ▸ Devices</strong>, on theprototype.app; see <a href="#account">above</a></td>
+</tr>
+<tr>
+<td>Connected apps</td>
+<td>its own page, <strong>Settings ▸ Connected apps</strong> (until 1.64)</td>
+<td><strong>Account ▸ Connected apps</strong>; see <a href="#account">above</a></td>
+</tr>
+<tr>
+<td>Show my status</td>
+<td>new in 1.65</td>
+<td><strong>Interface ▸ Show my status</strong> — off by default, this device only: Available, Busy or Away beside your name in People; see <a href="../people/#show-my-status">Show my status</a></td>
 </tr>
 </tbody>
 </table>

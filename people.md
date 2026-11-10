@@ -6,6 +6,25 @@ find them, look at their character, mute or hide them for yourself — and, if y
 !!! info "New in 1.48"
     The peer menu, Hide, and Remove / Remove and block with Allow back.
 
+## The Person card
+
+*New in 1.65.* Press anyone in the People list (the **Connected** panel) for their **Person card**. The panel flips to
+that person; the **People** arrow (or <kbd>Esc</kbd>) goes back to the list. The card holds, in one place:
+
+- **who**: their picture, name, role, status, device and how long they have been here;
+- **Now**: the object they are editing (with **Show**), or the scene they are in;
+- **Connection**: its quality, and the round-trip time over the last minute;
+- **every action** of the peer menu below, as buttons in the same groups.
+
+**View profile** in the peer menu opens the same card; **View character** still shows their character on a turntable.
+Your own row opens **Your card**.
+
+### Show my status
+
+Let others see whether you are **Available**, **Busy** or **Away**. Switch on **Settings ▸ Interface ▸ Show my status**
+(off by default, kept on this device), then pick your status on your own card. Everyone in the session sees it beside
+your name in People. Turning it off hides it from everyone.
+
 ## Open the peer menu
 
 - **Right-click** a person's row,
@@ -22,7 +41,7 @@ find them, look at their character, mute or hide them for yourself — and, if y
 
 | group | entries |
 |---|---|
-| **Profile** | **View profile** — picture, name, peer id, role, device (desktop / phone / VR), app version, connection quality, how they joined (host / invite / approval / guest) and their character on a small turntable · **Copy peer id** |
+| **Profile** | **View profile** — opens their [Person card](#the-person-card) · **Copy peer id** |
 | **Find** | **Go to** flies your camera to their avatar (in another scene: travels there) · **Watch** follows their view · **Show what they're editing** selects (read-only) and frames the object they have selected |
 | **Character** | **View character** · **Copy their look** puts on their character and colours (change it back in Change character) |
 | **Talk** | **Mute voice** (for you) · **Request access** (someone in a private scene) · **Ask to join my scene** (rooms on theprototype.app) |

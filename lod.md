@@ -66,11 +66,10 @@ settings** override them — see [Importing Big Models](https://docs.theprototyp
 **Configure Scene ▸ Level of detail ▸ LOD distance** moves every chain in the scene at once and is shared with everyone
 in it: above 1 keeps full detail further away, below 1 switches to the lighter levels sooner.
 
-![Configure Scene ▸ Level of detail: the LOD distance slider at 1, marked Shared, with the note that above 1 keeps full detail further away. 1: the LOD distance slider. 2: Shared, for everyone in the scene.](https://docs.theprototype.app/img/lod/lod-distance.webp)
+![Configure Scene ▸ Level of detail, in the scene's settings group: the LOD distance slider at 1, with the note that above 1 keeps full detail further away. 1: the LOD distance slider.](https://docs.theprototype.app/img/lod/lod-distance.webp)
 *Figure: Configure Scene ▸ Level of detail.*
 
 1. **LOD distance**: above 1 keeps full detail further away, below 1 switches to lighter levels sooner.
-2. **Shared**: the setting is part of the scene, the same for everyone in it.
 
 ## Pack items with LODs
 

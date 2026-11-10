@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Use theprototype from claude.ai and voice", "url": "https://docs.theprototype.app/ai/claude-connector/", "description": "Add theprototype as a connector in claude.ai, press Connect Claude in your open theprototype tab, and talk Claude through building — in a chat on the web or desktop, in the Claude phone app, or…", "dateModified": "2026-11-10", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.61.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/ai-claude-connector/connect-card.webp", "caption": "The AI window's Connect Claude card, before you sign in."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Use theprototype from claude.ai and voice", "url": "https://docs.theprototype.app/ai/claude-connector/", "description": "Add theprototype as a connector in claude.ai, press Connect Claude in your open theprototype tab, and talk Claude through building — in a chat on the web or desktop, in the Claude phone app, or…", "dateModified": "2026-11-10", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.64.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/ai-claude-connector/connect-card.webp", "caption": "The AI window's Connect Claude card, before you sign in."}]}</script>
 </head>
   
   
@@ -353,6 +353,27 @@
   
   <span class="md-ellipsis">
     The Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../menus-and-panels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    New menus and panels
   </span>
   
 
@@ -7065,8 +7086,9 @@ instead — it gives Claude Code or Claude Desktop the same tools over a session
 <h2 id="connect-your-tab-each-time-you-build">Connect your tab (each time you build)</h2>
 <ol>
 <li>Open theprototype.app, sign in, and open or join the scene you want to work on.</li>
-<li>Press the <strong>AI</strong> button and press <strong>Connect Claude</strong> (also in <strong>Settings ▸ Connected apps</strong>).
-   A chip reads <strong>Claude connected · this tab</strong>. The AI button always opens the window; signed out,
+<li>Press the <strong>AI</strong> button and press <strong>Connect Claude</strong> (also in <strong>Settings ▸ Account ▸ Connected apps</strong>).
+   A chip reads <strong>Claude connected · this tab</strong>. The AI button always opens the Chat window on its <strong>Assistant</strong> tab
+   (since 1.65 the AI assistant is a tab of the one Chat window); signed out,
    the same card offers <strong>Sign in to connect</strong>, which opens your profile menu at the top right, the one place to
    sign in. With no AI provider set up, the window also offers <strong>Use your own AI provider</strong> (<strong>Open settings</strong>).
    Working with a local model or your own key while signed out? <strong>Sign in to connect</strong> stays in the window's header.</li>
@@ -7074,7 +7096,7 @@ instead — it gives Claude Code or Claude Desktop the same tools over a session
    flicker"</em>, <em>"What can you do here?"</em></li>
 </ol>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/ai-claude-connector/connect-card.webp" data-desc-position="bottom"><img alt="The AI assistant window, signed out: Choose how the assistant thinks, with the Connect Claude card — Sign in to connect, step 1 Add theprototype to Claude with the connector address and How it works, step 2 sign in and press Connect Claude. 1: Sign in to connect. 2: Add to Claude. 3: How it works." class="shot" height="616" loading="lazy" src="../../img/ai-claude-connector/connect-card.webp" width="520"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/ai-claude-connector/connect-card.webp" data-desc-position="bottom"><img alt="The AI assistant window, signed out: Choose how the assistant thinks, with the Connect Claude card — Sign in to connect, step 1 Add theprototype to Claude with the connector address and How it works, step 2 sign in and press Connect Claude. 1: Sign in to connect. 2: Add to Claude. 3: How it works." class="shot" height="574" loading="lazy" src="../../img/ai-claude-connector/connect-card.webp" width="518"></a></p>
 <figcaption>
 <p>The AI window's Connect Claude card, before you sign in.</p>
 </figcaption>
@@ -7338,11 +7360,12 @@ exactly what the agent tools of the same job do, with the same limits:</p>
 <p>Claude reads its tool list when it connects, so it sees these after the connector reconnects.</p>
 <h2 id="stop-it">Stop it</h2>
 <ul>
-<li><strong>Disconnect</strong> (next to the chip, or in Settings ▸ Connected apps) stops Claude at once, including
+<li><strong>Disconnect</strong> (next to the chip, or in <strong>Settings ▸ Account ▸ Connected apps</strong>) stops Claude at once, including
   a step it is in the middle of. Press Connect Claude again to continue.</li>
-<li><strong>Revoke</strong> in <strong>Settings ▸ Connected apps</strong> removes the connector's access to your account
-  completely; claude.ai has to be approved again before it can work in any tab. You can also
-  remove the connector in claude.ai's settings.</li>
+<li><strong>Revoke</strong> in <strong>Settings ▸ Account ▸ Connected apps</strong> removes the connector's access to your account
+  completely; the AI app (claude.ai) has to be approved again before it can work in any tab. <strong>Disconnect
+  everything</strong> there does it for every connected app at once. You can also remove the connector in claude.ai's
+  settings.</li>
 </ul>
 <h2 id="privacy-and-limits">Privacy and limits</h2>
 <ul>

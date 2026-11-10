@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Users & Moderation", "url": "https://docs.theprototype.app/people/", "description": "Everyone in your session is listed in the Connected panel (the people button, top right). Each person has a menu: find them, look at their character, mute or hide them for yourself — and, if you…", "dateModified": "2026-11-05", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.63.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/people/peer-menu.webp", "caption": "The peer menu on a person in the Connected panel."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Users & Moderation", "url": "https://docs.theprototype.app/people/", "description": "Everyone in your session is listed in the Connected panel (the people button, top right). Each person has a menu: find them, look at their character, mute or hide them for yourself — and, if you…", "dateModified": "2026-11-10", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.64.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/people/peer-menu.webp", "caption": "The peer menu on a person in the Connected panel."}]}</script>
 </head>
   
   
@@ -355,6 +355,27 @@
   
   <span class="md-ellipsis">
     The Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menus-and-panels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    New menus and panels
   </span>
   
 
@@ -688,6 +709,30 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#the-person-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Person card
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Person card">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#show-my-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show my status
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#open-the-peer-menu" class="md-nav__link">
@@ -6787,6 +6832,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#the-person-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Person card
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Person card">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#show-my-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show my status
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#open-the-peer-menu" class="md-nav__link">
     <span class="md-ellipsis">
       Open the peer menu
@@ -6852,6 +6921,21 @@ find them, look at their character, mute or hide them for yourself — and, if y
 <p class="admonition-title">New in 1.48</p>
 <p>The peer menu, Hide, and Remove / Remove and block with Allow back.</p>
 </div>
+<h2 id="the-person-card">The Person card</h2>
+<p><em>New in 1.65.</em> Press anyone in the People list (the <strong>Connected</strong> panel) for their <strong>Person card</strong>. The panel flips to
+that person; the <strong>People</strong> arrow (or <kbd>Esc</kbd>) goes back to the list. The card holds, in one place:</p>
+<ul>
+<li><strong>who</strong>: their picture, name, role, status, device and how long they have been here;</li>
+<li><strong>Now</strong>: the object they are editing (with <strong>Show</strong>), or the scene they are in;</li>
+<li><strong>Connection</strong>: its quality, and the round-trip time over the last minute;</li>
+<li><strong>every action</strong> of the peer menu below, as buttons in the same groups.</li>
+</ul>
+<p><strong>View profile</strong> in the peer menu opens the same card; <strong>View character</strong> still shows their character on a turntable.
+Your own row opens <strong>Your card</strong>.</p>
+<h3 id="show-my-status">Show my status</h3>
+<p>Let others see whether you are <strong>Available</strong>, <strong>Busy</strong> or <strong>Away</strong>. Switch on <strong>Settings ▸ Interface ▸ Show my status</strong>
+(off by default, kept on this device), then pick your status on your own card. Everyone in the session sees it beside
+your name in People. Turning it off hides it from everyone.</p>
 <h2 id="open-the-peer-menu">Open the peer menu</h2>
 <ul>
 <li><strong>Right-click</strong> a person's row,</li>
@@ -6881,7 +6965,7 @@ find them, look at their character, mute or hide them for yourself — and, if y
 <tbody>
 <tr>
 <td><strong>Profile</strong></td>
-<td><strong>View profile</strong> — picture, name, peer id, role, device (desktop / phone / VR), app version, connection quality, how they joined (host / invite / approval / guest) and their character on a small turntable · <strong>Copy peer id</strong></td>
+<td><strong>View profile</strong> — opens their <a href="#the-person-card">Person card</a> · <strong>Copy peer id</strong></td>
 </tr>
 <tr>
 <td><strong>Find</strong></td>
@@ -6963,7 +7047,7 @@ out of your own door while your tab stays open; the peer menu's <strong>Remove a
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-05
+    2026-11-10
   </span>
 
     

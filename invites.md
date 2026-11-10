@@ -41,8 +41,9 @@ join. The code is made on your device; the link goes nowhere else.
       `claude mcp add theprototype -- npx -y @theprototype/agent mcp '<link>'`;
     - a **sentence for any chat** — "Join my theprototype session and build with me: ‹link›".
 
-Whoever opens the link joins **straight away**, with the role the link carries. The sheet and Users then say who used
-it — "Used by Claude (E6F54)".
+Whoever opens the link joins **straight away**, with the role the link carries. Since 1.65 they can also paste it into
+**Connect bar ▸ Join…** in a tab that is already open. The sheet and Users then say who used it — "Used by Claude
+(E6F54)" — and the join is announced by name (*Guest 2 joined with your invite (view-only).*), not by an id.
 
 Who can make invites: whoever can approve joins — admins on theprototype.app, anyone in the open-source build.
 

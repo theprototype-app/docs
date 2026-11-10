@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Notifications & Notes", "url": "https://docs.theprototype.app/notifications/", "description": "The top-right cluster next to your avatar holds two history surfaces — the notification center and the scene-notes drawer — plus the tools for leaving notes on objects, chatting and pinging things…", "dateModified": "2026-11-10", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.61.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/notifications/undo-toast.webp", "caption": "A toast with Undo, after clearing the scene."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/notifications/note-card.webp", "caption": "Editing a note beside the notes drawer."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/notifications/note-thread.webp", "caption": "A note with a thread of replies."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/notifications/note-page-phone.webp", "caption": "A note as a page of the notes on a folded phone."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/notifications/chat-mentions.webp", "caption": "In the chat, a line that mentions you is ringed."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Notifications & Notes", "url": "https://docs.theprototype.app/notifications/", "description": "The top-right cluster next to your avatar holds two history surfaces — the notification center and the scene-notes drawer — plus the tools for leaving notes on objects, chatting and pinging things…", "dateModified": "2026-11-10", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.64.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/notifications/undo-toast.webp", "caption": "A toast with Undo, after clearing the scene."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/notifications/note-card.webp", "caption": "Editing a note beside the notes drawer."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/notifications/note-thread.webp", "caption": "A note with a thread of replies."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/notifications/note-page-phone.webp", "caption": "A note as a page of the notes on a folded phone."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/notifications/chat-mentions.webp", "caption": "In the chat, a line that mentions you is ringed."}]}</script>
 </head>
   
   
@@ -353,6 +353,27 @@
   
   <span class="md-ellipsis">
     The Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menus-and-panels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    New menus and panels
   </span>
   
 
@@ -7084,7 +7105,10 @@ camera to the note, with the card opening on a double click: handy for walking t
 card in the way.</p>
 <p>If there are no notes yet, the drawer tells you to select an object and add one from its context menu.</p>
 <h2 id="chat">Chat</h2>
-<p><kbd>C</kbd> (from the 3D view) or the chat button opens the session's text chat.</p>
+<p><kbd>C</kbd> (from the 3D view) or the chat button opens the session's text chat: the <strong>Session</strong> tab of the Chat
+window. Since 1.65 the <a href="../ai/assistant/">AI assistant</a> is the window's other tab, <strong>Assistant</strong>. If the window is open on
+the other tab, the button switches to its tab; if its own tab is showing, the button closes the window. A dot on a tab
+means something new arrived there while you were on the other tab.</p>
 <ul>
 <li><strong>@mentions</strong> — type <code>@</code> and a name; <kbd>Tab</kbd> takes the first suggestion. The name shows in that person's
   colour, a line that mentions <em>you</em> is ringed, and the chat button's badge turns to the accent colour.</li>
@@ -7093,9 +7117,14 @@ card in the way.</p>
 <li><strong>Unread badge</strong> — the chat button counts the messages that arrived while the chat was closed.</li>
 <li><strong>History</strong> — someone who joins the session sees the conversation so far. A session saved in the
   <a href="../saving/#sessions-manager">Sessions manager</a> keeps its chat; an exported <code>.tpscene</code> never contains it.</li>
+<li><strong>Kept on this device</strong> (<em>1.65</em>) — the session chat is kept on this device per scene and comes back after a reload.
+  The clock button opens <strong>History</strong>, one list for both tabs: under <strong>People</strong>, the chat of each scene you have been
+  in on this device, this scene's first (a past scene's chat opens read only; <strong>Back to live chat</strong> returns); under
+  <strong>AI</strong>, the assistant's chats. Filter with <strong>All | People | AI</strong>, or search. Rows this device keeps can be removed
+  with the bin button.</li>
 </ul>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/notifications/chat-mentions.webp" data-desc-position="bottom"><img alt="The chat: Mia's line that mentions Alex is ringed, the @Alex in a colour, and Alex's answer, where :+1: became an emoji. 1: the ringed line. 2: the emoji." class="shot" height="420" loading="lazy" src="../img/notifications/chat-mentions.webp" width="500"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/notifications/chat-mentions.webp" data-desc-position="bottom"><img alt="The chat: Mia's line that mentions Alex is ringed, the @Alex in a colour, and Alex's answer, where :+1: became an emoji. 1: the ringed line. 2: the emoji." class="shot" height="460" loading="lazy" src="../img/notifications/chat-mentions.webp" width="500"></a></p>
 <figcaption>
 <p>In the chat, a line that mentions you is ringed.</p>
 </figcaption>

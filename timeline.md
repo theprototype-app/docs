@@ -23,6 +23,24 @@ undoable, and they play in exported and published games.
 - On a phone it opens as a tab of the bottom sheet: **More ▸ Timeline**.
 - A [Play Sequence](https://docs.theprototype.app/nodes/playseq.md) node's **Open in Timeline** link jumps to its sequence.
 
+## Sequences, tracks and Properties
+
+*Since 1.65* the Timeline has three panes.
+
+- **Sequences** (left): every cutscene in the scene. Click one to edit it; double-click renames it. The **⋯** button (or
+  a right-click) duplicates it, deletes it or grows it to fit its items. **+** adds a new one. A small play mark means
+  Autoplay is on, and a loop mark means Loop is on.
+- **Tracks** (middle): the transport (start, play, stop, time), snapping, camera previews, **Fit** and **+ Track** sit
+  above the tracks.
+- **Properties** (right) has two tabs:
+    - **Sequence**: Name, Length, **Frame rate** (type 1-120, or pick 24 / 25 / 30 / 60), Autoplay, Loop, and how many
+      tracks and items it has. The frame rate is the grid items snap to and the time readout counts in.
+    - **Item**: the picked item's fields (start, length, camera / clip / sound / event name, caption). Picking an item
+      opens this tab. Clearing the pick puts it away again, unless you opened the tab yourself.
+
+Each side pane hides with its edge tab and can be resized. Every edit is one undo step, and everyone in the session sees
+it.
+
 ## Tracks
 
 | Track | What an item does |
@@ -35,10 +53,10 @@ undoable, and they play in exported and published games.
 
 ## Building a sequence
 
-1. **New sequence** (or the **+** next to the sequence picker). Set its **Length**.
+1. **+** in the **Sequences** pane adds a sequence. Set its **Length** in **Properties ▸ Sequence**.
 2. **+ Track** ▸ Camera / Animation / Audio / Event.
 3. **Double-click a lane** to add an item at that time. It picks the selected camera or animated object (or the first
-   one); audio takes the first sound in the Explorer. Select the item and finish it in the strip below the tracks:
+   one); audio takes the first sound in the Explorer. Select the item and finish it in **Properties ▸ Item**:
    time, length, camera(s), object + clip + speed, sound + gain + **caption**, event name.
    An audio clip's **Caption** (one line, up to 200 characters) shows at the bottom of the screen while the clip plays
    for anyone with captions on ([Accessibility](https://docs.theprototype.app/accessibility.md#captions)).
@@ -88,7 +106,7 @@ is: it is shared and saved back unchanged, but this version cannot play or edit 
 - **[Play Sequence](https://docs.theprototype.app/nodes/playseq.md)** node (Animation group): wire a trigger in — On Click, On Enter, Key Press.
   Actions: *play*, *stop*, *toggle*, *restart*. Every player runs the sequence from the same moment, and each player's
   own view cuts to the shots.
-- **Autoplay** (the switch beside Length): the sequence starts when a player enters Play — and when an exported game
+- **Autoplay** (in **Properties ▸ Sequence**): the sequence starts when a player enters Play — and when an exported game
   opens. **Loop** repeats it.
 - **[On Sequence Event](https://docs.theprototype.app/nodes/onseqevent.md)** node: pulses when a running sequence passes an event with that name
   (blank = any), or **`end`** when it finishes. Wire it to Play Animation, Set Game State, a Sound.
@@ -100,7 +118,8 @@ is: it is shared and saved back unchanged, but this version cannot play or edit 
 ## On a phone
 
 The Timeline is a tab of the bottom sheet (**More ▸ Timeline**). The controls wrap onto extra rows, and the tracks
-scroll under them.
+scroll under them. On a phone or a touch handheld (folded or unfolded), the Sequences and Properties panes start hidden
+and the top bar keeps a sequence picker.
 
 ![The Timeline as a tab of the bottom sheet on a folded phone: the controls wrap onto two rows over the four tracks with a narrow name column. 1: the Timeline tab of the sheet.](https://docs.theprototype.app/img/timeline/phone-sheet.webp)
 *Figure: The Timeline as a tab of the bottom sheet on a folded phone.*

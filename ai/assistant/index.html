@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Assistant", "url": "https://docs.theprototype.app/ai/assistant/", "description": "Build and rearrange the scene by describing what you want. The assistant turns a prompt into real objects — primitives, lights and groups — placed, colored and named for you. Everything it does is…", "dateModified": "2026-11-10", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.61.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/ai-assistant/voice-typing-settings.webp", "caption": "The Voice typing settings, set to Groq."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/ai-assistant/assistant-mic.webp", "caption": "The assistant window with the mic button next to Send."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Assistant", "url": "https://docs.theprototype.app/ai/assistant/", "description": "Build and rearrange the scene by describing what you want. The assistant turns a prompt into real objects — primitives, lights and groups — placed, colored and named for you. Everything it does is…", "dateModified": "2026-11-10", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.64.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/ai-assistant/voice-typing-settings.webp", "caption": "The Voice typing settings, set to Groq."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/ai-assistant/assistant-mic.webp", "caption": "The assistant window with the mic button next to Send."}]}</script>
 </head>
   
   
@@ -353,6 +353,27 @@
   
   <span class="md-ellipsis">
     The Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../menus-and-panels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    New menus and panels
   </span>
   
 
@@ -6224,9 +6245,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-assistant-window" class="md-nav__link">
+  <a href="#the-assistant-tab-of-the-chat-window" class="md-nav__link">
     <span class="md-ellipsis">
-      The assistant window
+      The Assistant tab of the Chat window
     </span>
   </a>
   
@@ -6875,9 +6896,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-assistant-window" class="md-nav__link">
+  <a href="#the-assistant-tab-of-the-chat-window" class="md-nav__link">
     <span class="md-ellipsis">
-      The assistant window
+      The Assistant tab of the Chat window
     </span>
   </a>
   
@@ -7007,17 +7028,22 @@ can see pictures, and the limits: <a href="../pictures-and-shaders/">Give the AI
 <p>Once enabled, there are a few ways to reach it.</p>
 <h3 id="the-quick-prompt-bar">The quick prompt bar</h3>
 <p>Press <kbd><code>&lt;/kbd&gt; (backtick, top-left of most keyboards) to pop up a prompt bar at the
-bottom of the viewport. Type a request, press &lt;kbd&gt;Enter&lt;/kbd&gt;, and the assistant window
-opens so you can watch it work. Press &lt;kbd&gt;</code></kbd> again or <kbd>Esc</kbd> to dismiss the
+bottom of the viewport. Type a request, press &lt;kbd&gt;Enter&lt;/kbd&gt;, and the Chat window
+opens on its **Assistant** tab so you can watch it work. Press &lt;kbd&gt;</code></kbd> again or <kbd>Esc</kbd> to dismiss the
 bar. It stays hidden until you summon it, so it never gets in the way.</p>
-<h3 id="the-assistant-window">The assistant window</h3>
-<p>A floating, draggable window (it tabs and docks like Chat and the Explorer). It keeps the
-conversation, so you can refine across turns — "make them taller", "now paint the front
-one blue". Use <strong>Stop</strong> to cancel a run in progress.</p>
+<h3 id="the-assistant-tab-of-the-chat-window">The Assistant tab of the Chat window</h3>
+<p><em>Since 1.65</em> the assistant is not a window of its own: it is the <strong>Assistant</strong> tab of the one <strong>Chat</strong> window, beside
+<strong>Session</strong> (the people in this session). The window floats, docks in a sidebar or the bottom dock, and on a phone
+opens as one sheet. It keeps the conversation, so you can refine across turns — "make them taller", "now paint the
+front one blue". Use <strong>Stop</strong> to cancel a run in progress.</p>
+<p>The clock button opens <strong>History</strong>: your own provider's chats kept on this device and AI agent chats saved in the
+scene, next to the session chats. Your own provider's chats stay on this device (they are never sent to the session)
+and come back after a reload. See <a href="../../menus-and-panels/#chat-and-the-ai-assistant">Chat and the AI assistant</a>.</p>
 <h3 id="the-bottom-left-button">The bottom-left button</h3>
 <p>Once the assistant is enabled and a provider is set, a round <strong>AI assistant</strong> button (a sparkles icon) appears at the
-bottom-left of the viewport (just below the <strong>＋</strong> add button). Click it to open or close
-the assistant window — the same window the quick prompt bar opens into.</p>
+bottom-left of the viewport (just below the <strong>＋</strong> add button). Click it to open the Chat window on its <strong>Assistant</strong>
+tab — the same tab the quick prompt bar opens into. If the window is on <strong>Session</strong>, the button switches to
+<strong>Assistant</strong>; if <strong>Assistant</strong> is already showing, it closes the window.</p>
 <h3 id="in-vr">In VR</h3>
 <p>Radial menu ▸ <strong>Tools ▸ AI</strong> opens the same conversation on a panel in the headset, where you can type or hold a button
 and talk — see <a href="../../vr/#the-ai-assistant-in-vr">The AI assistant in VR</a>.</p>
@@ -7067,10 +7093,10 @@ and talk — see <a href="../../vr/#the-ai-assistant-in-vr">The AI assistant in 
 <li>The <strong>API key</strong> for that provider; it stays on this device. Further down, <strong>Test connection</strong> sends half a second of silence.</li>
 </ol>
 </div>
-<p>The assistant window then has a <strong>mic</strong> button next to <strong>Send</strong>: click to listen, click again to stop. The words land in
+<p>The <strong>Assistant</strong> tab then has a <strong>mic</strong> button next to <strong>Send</strong>: click to listen, click again to stop. The words land in
 the input, so you can fix them before sending. (In VR they are sent as soon as you let go.)</p>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/ai-assistant/assistant-mic.webp" data-desc-position="bottom"><img alt="The AI assistant window: two of your messages and the assistant's answer, the provider picker, the input Ask the assistant…, the mic button and Send. 1: the mic button." class="shot" height="440" loading="lazy" src="../../img/ai-assistant/assistant-mic.webp" width="500"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../img/ai-assistant/assistant-mic.webp" data-desc-position="bottom"><img alt="The AI assistant window: two of your messages and the assistant's answer, the provider picker, the input Ask the assistant…, the mic button and Send. 1: the mic button." class="shot" height="382" loading="lazy" src="../../img/ai-assistant/assistant-mic.webp" width="498"></a></p>
 <figcaption>
 <p>The assistant window with the mic button next to Send.</p>
 </figcaption>

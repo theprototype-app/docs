@@ -4,7 +4,13 @@ New in 1.32: the **Image editor** crops, rotates, flips, resizes and adjusts a p
 [Explorer](https://docs.theprototype.app/explorer.md) library. When you save, every texture made from that picture updates for everyone in the
 session.
 
-![The Image editor on a computer: the picture on the left, and on the right the Edit page with Rotate and flip, Crop, Resize and Adjust, Save and Save as copy above. 1: rotate and flip. 2: Crop. 3: the Adjust sliders.](https://docs.theprototype.app/img/image-editor/editor-desktop.webp)
+!!! note "Since 1.65 the editor is the Preview's Edit view"
+    The Image editor is no longer a window or a dock tab of its own. It is the **Edit** face of the
+    [file preview](https://docs.theprototype.app/explorer.md#the-preview-window): **View | Edit** in the preview's header switches between looking at
+    a file and editing it, in the same window. A saved layout that had the Image editor opens the **Preview** instead.
+    See [New menus and panels](https://docs.theprototype.app/menus-and-panels.md#preview-and-the-image-editor).
+
+![The Image editor on a computer, the Preview window on Edit: the filmstrip of the folder's images on the left, the picture with Save above it, and on the right the Edit page with Rotate and flip, Crop, Resize and Adjust. 1: rotate and flip. 2: Crop. 3: the Adjust sliders.](https://docs.theprototype.app/img/image-editor/editor-desktop.webp)
 *Figure: The Image editor on a computer.*
 
 1. **Rotate** 90° either way and **flip**.
@@ -14,9 +20,17 @@ session.
 ## Opening it
 
 - Right-click an image in the Explorer ▸ **Edit image…**
-- The **pencil** button in an image's [preview window](https://docs.theprototype.app/explorer.md#the-preview-window).
+- **Edit** in the header of an image's [preview](https://docs.theprototype.app/explorer.md#the-preview-window) (**View | Edit**). **View** goes back.
 - **Edit** beside a texture in the Inspector (**Material ▸ Texture**).
-- The dock's **+** ▸ **Image editor** opens it as a dock tab — see [In the dock](#in-the-dock).
+- In the docked **Preview** tab — see [In the dock](#in-the-dock).
+
+Only images in your Library can be edited, not pack items or files inside a mounted project.
+
+## The images filmstrip
+
+The **images filmstrip** on the left lists the images in the folder. Click one to edit it, or press <kbd>[</kbd> /
+<kbd>]</kbd> (or <kbd>Ctrl</kbd>+<kbd>←</kbd> / <kbd>Ctrl</kbd>+<kbd>→</kbd>) for the previous or next image.
+<kbd>Esc</kbd> cancels a crop, or goes back to View. Keys never fire while you type in a field.
 
 ## Looking at the picture
 
@@ -51,7 +65,9 @@ The sidebar on the right has two pages: **Edit** and **Versions**.
 - **Save as copy** writes *name copy.png* beside it. The original and its textures stay as they were, and the editor
   carries on with the copy.
 - The editor has its own **Undo** and **Redo** (<kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd>)
-  for edits you have not saved yet. They never touch the scene's undo. Closing with unsaved edits asks first.
+  for edits you have not saved yet. They never touch the scene's undo.
+- Unsaved edits are never dropped silently: switching image, going back to View, closing, or a pinned preview
+  following another file asks first.
 
 ## Versions
 
@@ -80,30 +96,28 @@ large. Only a file over 64 MB is turned away, because a phone cannot decode it.
 
 ## In the dock
 
-The Image editor can live in the bottom dock like the other editors: pick **Image editor** from the dock's **+** menu
-while it is closed (on a phone, the **Windows** sheet), press its header's **Dock** button, or drag it onto the dock's tab bar. The dock's
-**Undock** button floats it again; floating stays the default.
+*Since 1.65* the editor docks with the preview. Press the **pin** in the preview's header (**Pin to dock**): the
+preview docks as the **Preview** tab and follows the file you select in the Explorer. On an image, **Edit** opens the
+editor in that tab. You can also press **+** on the dock's tab strip and pick **Preview**. The **Image editor** entry
+of the dock's **+** menu is gone. See [The preview window](https://docs.theprototype.app/explorer.md#the-preview-window).
 
-- Opened from the **+** with no image, it tells you to open one from the Explorer (right-click an image ▸ **Edit
-  image…**). Opening an image while it is docked brings the dock tab forward.
-- Closing the tab with unsaved edits asks first, as the window does.
+![The Preview pinned as a tab of the bottom dock, beside the Node editor, open on Edit: the filmstrip on the left, the picture, and the Edit page with the image tools. 1: the Preview tab. 2: Edit.](https://docs.theprototype.app/img/image-editor/docked.webp)
+*Figure: The image editor in the docked Preview tab.*
 
-![The Image editor as a tab in the bottom dock, beside the Node editor and the Explorer, with the picture and its tools below the tabs. 1: the Image editor tab.](https://docs.theprototype.app/img/image-editor/docked.webp)
-*Figure: The Image editor as a tab in the bottom dock.*
-
-1. Docked, the **Image editor** is one more tab in the bottom dock.
+1. Docked, the **Preview** is one more tab in the bottom dock; it follows the Explorer selection.
+2. **Edit** on an image opens the editor in that tab.
 
 ## On a phone
 
-The editor is a full-width sheet between the top bar and the bottom bar, so **Play** stays tappable. The Edit and
+The editor (the preview's Edit view) is a full-width sheet between the top bar and the bottom bar, so **Play** stays tappable. The Edit and
 Versions pages sit under the picture instead of beside it, and **Crop…** scrolls its **Apply crop** button into view.
-Since 1.32 they start **closed**, so the picture gets the screen: tap ✎ (Edit) or ⟲ (Versions) under the picture to
-open one, and it stays open next time.
+Since 1.32 they start **closed**, so the picture gets the screen: tap the pencil tab at the picture's edge to open
+them, and pick **Edit** or **Versions** at the top of the page; it stays open next time.
 
 ![The Image editor on a phone: the picture at the top, the Edit page under it, and the bottom bar with Play below. 1: the Edit page. 2: Play, still reachable.](https://docs.theprototype.app/img/image-editor/editor-phone.webp)
 *Figure: The Image editor on a phone.*
 
-1. The **Edit** and **Versions** pages switch under the picture.
+1. The **Edit** and **Versions** pages open under the picture, from the pencil tab at its edge.
 2. The sheet leaves **Play** uncovered.
 
 ## Limits

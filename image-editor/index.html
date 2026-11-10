@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Image Editor", "url": "https://docs.theprototype.app/image-editor/", "description": "New in 1.32: the Image editor crops, rotates, flips, resizes and adjusts a picture in your Explorer library. When you save, every texture made from that picture updates for everyone in the session.", "dateModified": "2026-11-10", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.63.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/image-editor/editor-desktop.webp", "caption": "The Image editor on a computer."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/image-editor/crop-desktop-light.webp", "caption": "Cropping on a computer in the light theme."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/image-editor/versions-desktop.webp", "caption": "The Versions page."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/image-editor/docked.webp", "caption": "The Image editor as a tab in the bottom dock."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/image-editor/editor-phone.webp", "caption": "The Image editor on a phone."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Image Editor", "url": "https://docs.theprototype.app/image-editor/", "description": "New in 1.32: the Image editor crops, rotates, flips, resizes and adjusts a picture in your Explorer library. When you save, every texture made from that picture updates for everyone in the session.", "dateModified": "2026-11-10", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.64.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/image-editor/editor-desktop.webp", "caption": "The Image editor on a computer."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/image-editor/crop-desktop-light.webp", "caption": "Cropping on a computer in the light theme."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/image-editor/versions-desktop.webp", "caption": "The Versions page."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/image-editor/docked.webp", "caption": "The image editor in the docked Preview tab."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/image-editor/editor-phone.webp", "caption": "The Image editor on a phone."}]}</script>
 </head>
   
   
@@ -353,6 +353,27 @@
   
   <span class="md-ellipsis">
     The Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menus-and-panels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    New menus and panels
   </span>
   
 
@@ -1134,6 +1155,15 @@
   <a href="#opening-it" class="md-nav__link">
     <span class="md-ellipsis">
       Opening it
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-images-filmstrip" class="md-nav__link">
+    <span class="md-ellipsis">
+      The images filmstrip
     </span>
   </a>
   
@@ -6850,6 +6880,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-images-filmstrip" class="md-nav__link">
+    <span class="md-ellipsis">
+      The images filmstrip
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#looking-at-the-picture" class="md-nav__link">
     <span class="md-ellipsis">
       Looking at the picture
@@ -6957,8 +6996,15 @@
 <p>New in 1.32: the <strong>Image editor</strong> crops, rotates, flips, resizes and adjusts a picture in your
 <a href="../explorer/">Explorer</a> library. When you save, every texture made from that picture updates for everyone in the
 session.</p>
+<div class="admonition note">
+<p class="admonition-title">Since 1.65 the editor is the Preview's Edit view</p>
+<p>The Image editor is no longer a window or a dock tab of its own. It is the <strong>Edit</strong> face of the
+<a href="../explorer/#the-preview-window">file preview</a>: <strong>View | Edit</strong> in the preview's header switches between looking at
+a file and editing it, in the same window. A saved layout that had the Image editor opens the <strong>Preview</strong> instead.
+See <a href="../menus-and-panels/#preview-and-the-image-editor">New menus and panels</a>.</p>
+</div>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/image-editor/editor-desktop.webp" data-desc-position="bottom"><img alt="The Image editor on a computer: the picture on the left, and on the right the Edit page with Rotate and flip, Crop, Resize and Adjust, Save and Save as copy above. 1: rotate and flip. 2: Crop. 3: the Adjust sliders." class="shot" height="718" loading="lazy" src="../img/image-editor/editor-desktop.webp" width="680"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/image-editor/editor-desktop.webp" data-desc-position="bottom"><img alt="The Image editor on a computer, the Preview window on Edit: the filmstrip of the folder's images on the left, the picture with Save above it, and on the right the Edit page with Rotate and flip, Crop, Resize and Adjust. 1: rotate and flip. 2: Crop. 3: the Adjust sliders." class="shot" height="708" loading="lazy" src="../img/image-editor/editor-desktop.webp" width="680"></a></p>
 <figcaption>
 <p>The Image editor on a computer.</p>
 </figcaption>
@@ -6973,10 +7019,15 @@ session.</p>
 <h2 id="opening-it">Opening it</h2>
 <ul>
 <li>Right-click an image in the Explorer ▸ <strong>Edit image…</strong></li>
-<li>The <strong>pencil</strong> button in an image's <a href="../explorer/#the-preview-window">preview window</a>.</li>
+<li><strong>Edit</strong> in the header of an image's <a href="../explorer/#the-preview-window">preview</a> (<strong>View | Edit</strong>). <strong>View</strong> goes back.</li>
 <li><strong>Edit</strong> beside a texture in the Inspector (<strong>Material ▸ Texture</strong>).</li>
-<li>The dock's <strong>+</strong> ▸ <strong>Image editor</strong> opens it as a dock tab — see <a href="#in-the-dock">In the dock</a>.</li>
+<li>In the docked <strong>Preview</strong> tab — see <a href="#in-the-dock">In the dock</a>.</li>
 </ul>
+<p>Only images in your Library can be edited, not pack items or files inside a mounted project.</p>
+<h2 id="the-images-filmstrip">The images filmstrip</h2>
+<p>The <strong>images filmstrip</strong> on the left lists the images in the folder. Click one to edit it, or press <kbd>[</kbd> /
+<kbd>]</kbd> (or <kbd>Ctrl</kbd>+<kbd>←</kbd> / <kbd>Ctrl</kbd>+<kbd>→</kbd>) for the previous or next image.
+<kbd>Esc</kbd> cancels a crop, or goes back to View. Keys never fire while you type in a field.</p>
 <h2 id="looking-at-the-picture">Looking at the picture</h2>
 <p>The picture fills the canvas. Scroll or pinch to zoom, drag to pan, and use <strong>Fit</strong> or <strong>1:1</strong> in the toolbar. The
 toolbar also shows the picture's size and format, and how many textures were made from it.</p>
@@ -7013,7 +7064,9 @@ toolbar also shows the picture's size and format, and how many textures were mad
 <li><strong>Save as copy</strong> writes <em>name copy.png</em> beside it. The original and its textures stay as they were, and the editor
   carries on with the copy.</li>
 <li>The editor has its own <strong>Undo</strong> and <strong>Redo</strong> (<kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd>)
-  for edits you have not saved yet. They never touch the scene's undo. Closing with unsaved edits asks first.</li>
+  for edits you have not saved yet. They never touch the scene's undo.</li>
+<li>Unsaved edits are never dropped silently: switching image, going back to View, closing, or a pinned preview
+  following another file asks first.</li>
 </ul>
 <h2 id="versions">Versions</h2>
 <p>The <strong>Versions</strong> page lists every saved state of this image with a thumbnail, date and size, and <strong>Restore</strong> on each.
@@ -7040,30 +7093,27 @@ paint over your strokes.</p>
 object — and it is scaled down to fit 1024 px on its longest side and applied. Since 1.32 nothing is refused for being
 large. Only a file over 64 MB is turned away, because a phone cannot decode it.</p>
 <h2 id="in-the-dock">In the dock</h2>
-<p>The Image editor can live in the bottom dock like the other editors: pick <strong>Image editor</strong> from the dock's <strong>+</strong> menu
-while it is closed (on a phone, the <strong>Windows</strong> sheet), press its header's <strong>Dock</strong> button, or drag it onto the dock's tab bar. The dock's
-<strong>Undock</strong> button floats it again; floating stays the default.</p>
-<ul>
-<li>Opened from the <strong>+</strong> with no image, it tells you to open one from the Explorer (right-click an image ▸ <strong>Edit
-  image…</strong>). Opening an image while it is docked brings the dock tab forward.</li>
-<li>Closing the tab with unsaved edits asks first, as the window does.</li>
-</ul>
+<p><em>Since 1.65</em> the editor docks with the preview. Press the <strong>pin</strong> in the preview's header (<strong>Pin to dock</strong>): the
+preview docks as the <strong>Preview</strong> tab and follows the file you select in the Explorer. On an image, <strong>Edit</strong> opens the
+editor in that tab. You can also press <strong>+</strong> on the dock's tab strip and pick <strong>Preview</strong>. The <strong>Image editor</strong> entry
+of the dock's <strong>+</strong> menu is gone. See <a href="../explorer/#the-preview-window">The preview window</a>.</p>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/image-editor/docked.webp" data-desc-position="bottom"><img alt="The Image editor as a tab in the bottom dock, beside the Node editor and the Explorer, with the picture and its tools below the tabs. 1: the Image editor tab." class="shot fade-b" height="349" loading="lazy" src="../img/image-editor/docked.webp" width="688"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/image-editor/docked.webp" data-desc-position="bottom"><img alt="The Preview pinned as a tab of the bottom dock, beside the Node editor, open on Edit: the filmstrip on the left, the picture, and the Edit page with the image tools. 1: the Preview tab. 2: Edit." class="shot fade-b" height="349" loading="lazy" src="../img/image-editor/docked.webp" width="688"></a></p>
 <figcaption>
-<p>The Image editor as a tab in the bottom dock.</p>
+<p>The image editor in the docked Preview tab.</p>
 </figcaption>
 </figure>
 <div class="shot-key">
 <ol>
-<li>Docked, the <strong>Image editor</strong> is one more tab in the bottom dock.</li>
+<li>Docked, the <strong>Preview</strong> is one more tab in the bottom dock; it follows the Explorer selection.</li>
+<li><strong>Edit</strong> on an image opens the editor in that tab.</li>
 </ol>
 </div>
 <h2 id="on-a-phone">On a phone</h2>
-<p>The editor is a full-width sheet between the top bar and the bottom bar, so <strong>Play</strong> stays tappable. The Edit and
+<p>The editor (the preview's Edit view) is a full-width sheet between the top bar and the bottom bar, so <strong>Play</strong> stays tappable. The Edit and
 Versions pages sit under the picture instead of beside it, and <strong>Crop…</strong> scrolls its <strong>Apply crop</strong> button into view.
-Since 1.32 they start <strong>closed</strong>, so the picture gets the screen: tap ✎ (Edit) or ⟲ (Versions) under the picture to
-open one, and it stays open next time.</p>
+Since 1.32 they start <strong>closed</strong>, so the picture gets the screen: tap the pencil tab at the picture's edge to open
+them, and pick <strong>Edit</strong> or <strong>Versions</strong> at the top of the page; it stays open next time.</p>
 <figure>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/image-editor/editor-phone.webp" data-desc-position="bottom"><img alt="The Image editor on a phone: the picture at the top, the Edit page under it, and the bottom bar with Play below. 1: the Edit page. 2: Play, still reachable." class="shot" height="896" loading="lazy" src="../img/image-editor/editor-phone.webp" width="390"></a></p>
 <figcaption>
@@ -7072,7 +7122,7 @@ open one, and it stays open next time.</p>
 </figure>
 <div class="shot-key">
 <ol>
-<li>The <strong>Edit</strong> and <strong>Versions</strong> pages switch under the picture.</li>
+<li>The <strong>Edit</strong> and <strong>Versions</strong> pages open under the picture, from the pencil tab at its edge.</li>
 <li>The sheet leaves <strong>Play</strong> uncovered.</li>
 </ol>
 </div>

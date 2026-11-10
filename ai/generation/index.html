@@ -369,6 +369,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../menus-and-panels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    New menus and panels
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../touch-controls/" class="md-nav__link">
         
   
@@ -6634,6 +6655,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Using it">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-generate-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Generate window
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -6949,6 +6985,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Using it">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-generate-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Generate window
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -7155,9 +7206,10 @@ error. If you hit this, prefer the self-hosted ComfyUI path (same-origin via you
 <hr>
 <h2 id="using-it">Using it</h2>
 <ul>
-<li><strong>Add menu → Generate 3D model…</strong> — a small dialog: pick a provider, type a prompt,
-  optional name, <strong>Generate</strong>. The mesh lands where you opened the menu.</li>
-<li><strong>From a picture</strong> — the same dialog takes a photo, an Explorer picture or the viewport (Meshy, or a
+<li><strong>Add menu → Generate 3D model…</strong> — the <strong>Generate</strong> window: pick a provider, type a prompt,
+  optional name, <strong>Generate</strong>. The mesh lands where you opened the menu. You can also open it from the dock's
+  <strong>+</strong> ▸ <strong>Generate 3D</strong>. See <a href="#the-generate-window">The Generate window</a> below.</li>
+<li><strong>From a picture</strong> — the same window takes a photo, an Explorer picture or the viewport (Meshy, or a
   ComfyUI workflow with <code>{{IMAGE}}</code> in a LoadImage node). Meshy asks first (credits, and that the picture
   goes to Meshy). See <a href="../pictures-and-shaders/">Give the AI pictures and shaders</a>.</li>
 <li><strong>AI assistant</strong> — just ask (“add a treasure chest by the wall”). The assistant calls
@@ -7166,6 +7218,20 @@ error. If you hit this, prefer the self-hosted ComfyUI path (same-origin via you
 <li><strong>Console agent</strong> — pass <code>--mesh-kind comfyui --mesh-url … --mesh-workflow path/to.json</code>
   (or <code>AGENT_MESH_*</code> env vars) and the agent's <code>generate_mesh</code> tool works the same way,
   pushing the GLB into the session. See <a href="../console-agent/">Console Agent</a>.</li>
+</ul>
+<h3 id="the-generate-window">The Generate window</h3>
+<p><em>Since 1.65</em> the generator is a window, not a dialog. It stays open while you work, and you can dock it as a
+bottom-dock tab or a sidebar tab. On a phone it is a sheet. The form has not changed: provider, an optional picture
+(device, camera, viewport, Explorer), prompt, name. The credits line and the picture consent work as before.</p>
+<ul>
+<li><strong>Jobs</strong>: every generation on this device. A running job shows its progress and a <strong>Cancel</strong> button. A finished job
+  has <strong>Reopen</strong>, which selects the model, or places it again from Explorer ▸ Generated if you deleted it. A failed or
+  cancelled job has <strong>Retry</strong>, which is a new generation and uses credits again. <strong>Clear finished</strong> tidies the list.</li>
+<li><strong>History</strong>: the prompts you generated, newest first. Tap one to put it back in the form.</li>
+<li>The jobs and the history survive a reload. A job that was still running carries on where it was: it is <strong>not</strong> sent
+  to the provider again, so it is not charged twice.</li>
+<li>Pictures are never kept, so a picture job's <strong>Retry</strong> asks you to pick the picture again. Jobs and history stay on
+  this device (40 jobs, 30 prompts). Closing the window does not stop running jobs.</li>
 </ul>
 <h2 id="limits">Limits</h2>
 <ul>

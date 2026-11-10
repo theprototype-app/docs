@@ -14,7 +14,7 @@ replicated to everyone and undoable, exactly like a person's edits.
     (objects, flow nodes, physics, and mesh generation through *your* provider).
 
 !!! tip "New in 1.50: talk to it from the app"
-    Chat with the agent in the AI assistant window, send it pictures, and let it import models and files from its own
+    Chat with the agent in the Chat window's **Assistant** tab, send it pictures, and let it import models and files from its own
     machine — see [Talk to your agent](https://docs.theprototype.app/ai/talk-to-your-agent.md).
 
 ## For you, the person in the session

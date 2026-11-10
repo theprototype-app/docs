@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Explorer", "url": "https://docs.theprototype.app/explorer/", "description": "The Explorer is the session's file library — import files, organize them into folders, preview them, share them with the people you are connected to, and drag them straight into the scene.", "dateModified": "2026-11-10", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.63.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/file-history-tabs.jpg", "caption": "Properties and File history share the right-hand panel as tabs."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-box-ghost.webp", "caption": "Dragging the Duck from the starter pack."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-model-ghost.webp", "caption": "Once loaded, the ghost is a see-through copy of the real model."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-settings.webp", "caption": "Settings ▸ Scene ▸ Performance ▸ Placement preview."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-delete-cache.webp", "caption": "A pack item's menu."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Explorer", "url": "https://docs.theprototype.app/explorer/", "description": "The Explorer is the session's file library — import files, organize them into folders, preview them, share them with the people you are connected to, and drag them straight into the scene.", "dateModified": "2026-11-10", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.64.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/file-history-tabs.jpg", "caption": "Properties and File history share the right-hand panel as tabs."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-box-ghost.webp", "caption": "Dragging the Duck from the starter pack."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-model-ghost.webp", "caption": "Once loaded, the ghost is a see-through copy of the real model."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-settings.webp", "caption": "Settings ▸ Scene ▸ Performance ▸ Placement preview."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/explorer/place-delete-cache.webp", "caption": "A pack item's menu."}]}</script>
 </head>
   
   
@@ -353,6 +353,27 @@
   
   <span class="md-ellipsis">
     The Interface
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menus-and-panels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    New menus and panels
   </span>
   
 
@@ -7565,7 +7586,7 @@ the same three answers: a generated mesh is as heavy as any other.</p>
 <li><strong>Single-click</strong> selects an item and shows its details in the <strong>ⓘ Properties</strong> panel.</li>
 <li><strong>Double-click</strong> opens it in a <strong>preview window</strong> (below); text files open in the <a href="../code-workspace/#text-documents">Code tab</a>, shared live with everyone who opens them (<kbd>Ctrl</kbd>+<kbd>S</kbd> saves back to the item).</li>
 <li><strong>Right-click</strong> an item for Open, Download, Share, Rename, Delete, Properties (and <em>Copy contents</em> for text files,
-  <strong>Edit image…</strong> for images — see <a href="../image-editor/">The Image editor</a>).</li>
+  <strong>Edit image…</strong> for images, which opens the preview on <strong>Edit</strong> — see <a href="../image-editor/">The Image editor</a>).</li>
 <li>The search box filters the whole library by name; the breadcrumb path bar (toggleable) shows where you are.</li>
 </ul>
 <p><strong>Keyboard navigation</strong> in the grid: arrow keys move the selection, <kbd>Enter</kbd> opens, <kbd>Backspace</kbd> goes up a level, <kbd>Esc</kbd> clears the selection, <kbd>Delete</kbd> deletes the selection.</p>
@@ -7623,9 +7644,17 @@ open has unsaved changes, or has never been saved at all, the app asks first: <e
 <p>A shared file travels as a row with its own identity beside its content hash. When you duplicate a shared file — or a whole shared folder — peers who already hold the bytes make the copy from their own disk: ten copies, zero transfers. Deleting a copy removes only that copy; editing one gives it new bytes, which are sent once. A scene copy is the exception, because its new name makes it a new file: it transfers once.</p>
 </div>
 <h3 id="the-preview-window">The preview window</h3>
-<p>Images open zoomable (<strong>−</strong> / <strong>＋</strong> / <strong>1:1</strong>, drag to pan) with a pencil button that opens the
-<a href="../image-editor/">Image editor</a>, sounds open with a player, and 3D models open on a turntable with an <strong>animation transport</strong> — play, step a frame with <kbd>,</kbd> and <kbd>.</kbd>, scrub, pick a clip — and a mesh-stats line. The <strong>←</strong> / <strong>→</strong> buttons page through the folder without closing the window, and <strong>⌐</strong> goes up a level.</p>
-<p>The window's <strong>Settings</strong> (cog) holds two things worth knowing: <strong>Opacity</strong> fades the window so you can model against a reference picture, and <strong>Passthrough</strong> lets clicks reach the scene underneath while the header stays live to move it or switch it back. <strong>Allow multiple windows</strong> opens each file in a window of its own instead of re-pointing the one you have.</p>
+<p>The preview is one window for any file: an image, a sound, a 3D model, a text file or a folder. Images open zoomable
+(<strong>−</strong> / <strong>＋</strong> / <strong>1:1</strong>, drag to pan), sounds open with a player, and 3D models open on a turntable with an <strong>animation transport</strong> — play, step a frame with <kbd>,</kbd> and <kbd>.</kbd>, scrub, pick a clip — and a mesh-stats line. Text files show read only (the first 256 KB); double-click opens them in the code editor. The <strong>←</strong> / <strong>→</strong> buttons (or keys) page through the folder without closing the window, <kbd>Enter</kbd> goes into a folder, and <strong>⌐</strong> or <kbd>Backspace</kbd> goes up a level. Keys never fire while you type in a field.</p>
+<p><strong>View | Edit</strong> (<em>1.65</em>). On an image in your Library, <strong>Edit</strong> in the header opens the <a href="../image-editor/">Image editor</a>
+in the same window, with a filmstrip of the folder's images on the left; <strong>View</strong> goes back. Unsaved edits are never
+dropped silently: switching image, going back to View or closing asks first. The separate Image editor window is gone.</p>
+<p><strong>Pin to dock</strong> (<em>1.65</em>). The <strong>pin</strong> in the header docks the preview as the <strong>Preview</strong> tab, and it then follows
+whatever you select in the Explorer: click a file and it shows there. If the Explorer is the docked tab in front, the
+dock splits so you see both. Drag the tab out (or <strong>Undock</strong>) and it keeps following as a floating window. Press the pin
+again to stop following. You can also open it from <strong>+</strong> on the dock's tab strip ▸ <strong>Preview</strong>.</p>
+<p>The window's <strong>Settings</strong> (cog) holds two things worth knowing: <strong>Opacity</strong> fades the window so you can model against a reference picture, and <strong>Passthrough</strong> lets clicks reach the scene underneath while the header stays live to move it or switch it back. <strong>Allow multiple windows</strong> opens each file in a window of its own instead of re-pointing the one you have; then only
+the first preview window docks and follows the Explorer, and one window edits at a time.</p>
 <h2 id="item-properties-i">Item properties (ⓘ)</h2>
 <p>The ⓘ panel shows name, kind, size, folder path, added date and the content hash (copyable), plus per-kind details — image dimensions, audio duration and channels, text line count. For 3D objects it can embed a <strong>rotatable inline 3D preview</strong> with mesh stats (triangles / vertices / meshes) — enabled by the <em>3D model preview</em> toggle in the <strong>Settings</strong> (cog) tab. Double-clicking an object always opens the larger preview regardless of that toggle.</p>
 <p>The <strong>Settings</strong> (cog) tab holds local preferences: single-click opens folders, show path bar, 3D model preview, stack multiple drops on one spot, confirm before updating a prefab, hide built-in packs, and the <em>Import pack (.zip)</em> button.</p>

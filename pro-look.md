@@ -16,10 +16,10 @@ A quick way to try all of it: open **Templates ▸ Product shot**, press **Bake 
 Open **Configure Scene ▸ Environment** and pick a preset chip. The three pro presets sit beside Studio, Daylight,
 Sunset and Night:
 
-![Configure Scene ▸ Environment with its preset chips. 1: the three pro presets — Product shot, Cinematic and Stylised.](https://docs.theprototype.app/img/pro-look/environment-chips.webp)
-*Figure: Configure Scene ▸ Environment: the pro presets sit beside the other preset chips.*
+![Configure Scene ▸ Environment with its preset chips, More open below them. 1: the pro presets Product shot and Stylised; Cinematic sits in the first row.](https://docs.theprototype.app/img/pro-look/environment-chips.webp)
+*Figure: Configure Scene ▸ Environment: the pro presets sit with the other preset chips, two of them under More.*
 
-1. The **pro presets**: Product shot, Cinematic and Stylised.
+1. The **pro presets**: Cinematic in the row, Product shot and Stylised under **More**.
 
 | Preset | Look |
 |---|---|
