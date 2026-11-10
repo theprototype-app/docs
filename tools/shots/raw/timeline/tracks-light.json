@@ -1,25 +1,25 @@
 {
  "id": "tracks-light",
- "spec": "57df45b4d257",
+ "spec": "d14fbcf7ced6",
  "dpr": 2,
- "shotAt": "2026-11-03T14:18:38.476Z",
+ "shotAt": "2026-11-10T20:05:35.757Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
-  "button#timeline-seq-select.ts-btn",
   "div.tl-bar",
-  "div.dn-wrap",
-  "div.tl-root",
+  "div.tl-main",
+  "span.ph-tab",
+  "svg.lucide",
+  "button#timeline-home.tp-ui",
   "div.tl-corner",
+  "path",
   "div.tl-track-head",
   "div.tl-grid",
-  "span.ts-label",
-  "span.dn-label",
+  "button#timeline-play.tp-ui",
   "span.tl-track-name",
-  "input#timeline-duration.dn-input",
-  "button.tl-icon-btn"
+  "button#timeline-stop.tp-ui"
  ],
  "width": 1344,
  "height": 606,

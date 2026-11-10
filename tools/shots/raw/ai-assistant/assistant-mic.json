@@ -2,39 +2,38 @@
  "id": "assistant-mic",
  "spec": "2c7293294132",
  "dpr": 2,
- "shotAt": "2026-11-05T10:21:24.487Z",
+ "shotAt": "2026-11-10T20:12:46.286Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
-  "header.wc-head",
   "div.min-h-0",
   "div.ai-composer",
-  "h2#wc-title-s2.wc-title",
   "ul.flex",
   "li.ai-msg",
   "select#ai-target.tp-field",
   "input.tp-field",
-  "div#ai-assistant-window.ui-panel",
-  "span.ai-signin-long",
   "button#chat-attach.chat-attach-btn",
-  "button#ai-header-signin.tp-ui"
+  "svg.lucide",
+  "button#ai-mic.ai-mic",
+  "button#ai-send.tp-ui",
+  "button#mic-button.hud-fab"
  ],
- "width": 1000,
- "height": 880,
+ "width": 996,
+ "height": 764,
  "crop": {
-  "x": 925,
-  "y": 60,
-  "w": 500,
-  "h": 440
+  "x": 926,
+  "y": 445,
+  "w": 498,
+  "h": 382
  },
  "cut": [],
  "fade": [],
  "anchors": {
   "1": {
-   "x": 772.6875,
-   "y": 794,
+   "x": 770,
+   "y": 680,
    "w": 64,
    "h": 64
   }

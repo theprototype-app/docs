@@ -13,13 +13,13 @@ shots:
   replaces: img/architecture/house.png
   kind: view
   scene: &house
-    - {create: 'Wall 6 2.8 0.2 3', name: Front, at: [-3, 0, 0]}
-    - {create: 'Wall 4 2.8 0.2 0', name: Left side, at: [-3, 0, 0], rot: [0, 90, 0]}
-    - {create: 'Wall 4 2.8 0.2 0', name: Right side, at: [3, 0, 0], rot: [0, 90, 0]}
-    - {create: 'Door 1 2.1 0', name: Door, at: [0, 0, 0]}
-    - {create: 'Window 1.2 1.2 0.9 1', name: Window L, at: [-2, 0, 0]}
-    - {create: 'Window 1.2 1.2 0.9 0', name: Window R, at: [2, 0, 0]}
-    - {create: 'Staircase 3 1 16 0.18', name: Stair, at: [0.6, 0, -2.2]}
+    - {create: 'Wall 6 2.8 0.2 3', name: Front, at: [-3, 0, 0], color: '#f2cc8f'}
+    - {create: 'Wall 4 2.8 0.2 0', name: Left side, at: [-3, 0, 0], rot: [0, 90, 0], color: '#e07a5f'}
+    - {create: 'Wall 4 2.8 0.2 0', name: Right side, at: [3, 0, 0], rot: [0, 90, 0], color: '#e07a5f'}
+    - {create: 'Door 1 2.1 0', name: Door, at: [0, 0, 0], color: '#5fb0b7'}
+    - {create: 'Window 1.2 1.2 0.9 1', name: Window L, at: [-2, 0, 0], color: '#b8b2a7'}
+    - {create: 'Window 1.2 1.2 0.9 0', name: Window R, at: [2, 0, 0], color: '#b8b2a7'}
+    - {create: 'Staircase 3 1 16 0.18', name: Stair, at: [0.6, 0, -2.2], color: '#81b29a'}
     - {deselect: true}
   setup:
     - {camera: {pos: [5.2, 3.4, 8.4], target: [0, 1.2, -1.2]}}
@@ -38,7 +38,7 @@ shots:
   replaces: img/architecture/wall-geometry.png
   kind: ui
   setup:
-    - {create: 'Wall 6 2.8 0.2 3', name: Front, at: [-3, 0, 0]}
+    - {create: 'Wall 6 2.8 0.2 3', name: Front, at: [-3, 0, 0], color: '#f2cc8f'}
     - {select: Front}
     - {eval: "window.__stores.inspectorKind.set('selection'); window.__stores.inspectorClose.set(false)"}
     - {wait: 1500}

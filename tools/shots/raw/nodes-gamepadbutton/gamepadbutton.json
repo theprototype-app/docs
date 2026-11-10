@@ -2,10 +2,10 @@
  "id": "gamepadbutton",
  "spec": "198b1f3a63de",
  "dpr": 2,
- "shotAt": "2026-11-05T11:06:43.397Z",
+ "shotAt": "2026-11-10T20:59:07.067Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "div.svelte-flow__pane",

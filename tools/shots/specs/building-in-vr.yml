@@ -14,8 +14,8 @@ shots:
     xr: {head: [0, 1.6, 0]}
     storage: {vrMenuHand: right}
     scene:
-      - {create: Box, name: Block, at: [0, 0.5, -2.5], scale: [2, 1, 1]}
-      - {create: Box, name: Crate, at: [-1.8, 0.25, -3], scale: 0.5}
+      - {create: Box, name: Block, at: [0, 0.5, -2.5], scale: [2, 1, 1], color: '#f2cc8f'}
+      - {create: Box, name: Crate, at: [-1.8, 0.25, -3], scale: 0.5, color: '#e07a5f'}
     setup:
       - {xr: enter, wait: 4000}
       - {select: [Block, Crate]}

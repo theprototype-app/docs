@@ -2,45 +2,45 @@
  "id": "chat-mentions",
  "spec": "6ab8d9007068",
  "dpr": 2,
- "shotAt": "2026-11-05T11:14:02.352Z",
+ "shotAt": "2026-11-10T21:06:21.516Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "header.wc-head",
+  "div.chat-tabs",
   "div#chat-messages.h-full",
   "div#chat-input.chat-composer",
   "h2#wc-title-s1.wc-title",
+  "svg.lucide",
   "ul#messages.flex",
-  "span.chat-av",
+  "li.chat-message",
+  "span.pav",
   "input#message.tp-field",
   "div#chat-window.ui-panel",
-  "li.chat-message",
-  "span.min-w-0",
-  "span.chat-text",
-  "button#send.tp-ui"
+  "span.svelte-1n63cl2"
  ],
  "width": 1000,
- "height": 840,
+ "height": 920,
  "crop": {
   "x": 925,
-  "y": 465,
+  "y": 368,
   "w": 500,
-  "h": 420
+  "h": 460
  },
  "cut": [],
  "fade": [],
  "anchors": {
   "1": {
    "x": 30,
-   "y": 278,
+   "y": 350,
    "w": 940,
    "h": 79
   },
   "2": {
    "x": 94,
-   "y": 417,
+   "y": 489,
    "w": 876,
    "h": 39
   }

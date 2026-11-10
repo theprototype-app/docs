@@ -18,7 +18,7 @@ search) ▸ **Recipes**:
 The entries are greyed out on the **Main** graph: a recipe goes into an object's **own** flow, so select the object
 first. A toast confirms what was added — *Added the door recipe — press Play to try it*.
 
-![The node search opened by a right-click in the Bell's flow, with "recipes" typed: Recipes ▸ Bell, Door (click to open), Door (opens when you walk up) and Guard. 1: a Recipes row.](img/starter-recipes/recipes-menu.webp){ .shot width="367" height="238" loading=lazy }
+![The node search opened by a right-click in the Bell's flow, with "recipes" typed: Recipes ▸ Bell, Door (click to open), Door (opens when you walk up) and Guard. 1: a Recipes row.](img/starter-recipes/recipes-menu.webp){ .shot width="360" height="238" loading=lazy }
 /// caption
 The node search on a selected object, searched for "recipes".
 ///

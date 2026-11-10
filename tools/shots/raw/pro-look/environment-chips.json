@@ -1,44 +1,42 @@
 {
  "id": "environment-chips",
- "spec": "ef565dc52a30",
+ "spec": "9f1566fe9d16",
  "dpr": 2,
- "shotAt": "2026-11-07T20:32:48.787Z",
+ "shotAt": "2026-11-10T20:04:36.069Z",
  "app": {
-  "version": "1.62.0",
-  "sha": "5249f1ae"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "div#sidebar-grip-right.sb-grip",
   "div#inspector.tp-ui",
-  "button.sec-panel-head",
   "svg.lucide",
-  "span",
-  "div#environment-presets.tp-ui",
-  "div.sec-panel-body",
-  "span.pr-label",
-  "span.sec-title",
   "button.chip",
-  "input.pr-range",
-  "span.tp-ui"
+  "p#env-preset-why.env-why",
+  "span.env-info-k",
+  "button#environment-more-toggle.env-more-btn",
+  "p.ui-section-label",
+  "div#environment-more.env-more",
+  "div#environment-more-pro.tp-ui",
+  "span.pr-label",
+  "span.sec-title"
  ],
- "width": 670,
- "height": 396,
+ "width": 642,
+ "height": 822,
  "crop": {
-  "x": 1105,
-  "y": 199,
-  "w": 335,
-  "h": 198
+  "x": 1119,
+  "y": 175,
+  "w": 321,
+  "h": 411
  },
- "cut": [
-  "r"
- ],
+ "cut": [],
  "fade": [],
  "anchors": {
   "1": {
-   "x": 60,
-   "y": 276,
-   "w": 540,
-   "h": 60
+   "x": 50,
+   "y": 718.0625,
+   "w": 412,
+   "h": 52
   }
  },
  "kind": "ui"

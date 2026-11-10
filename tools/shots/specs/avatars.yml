@@ -11,6 +11,8 @@ shots:
   alt: 'Customize character on a computer, two parts of one screen side by side: your character on a lit disc in the studio,
     labelled You, and the drawer with Show in scene, Surprise me, the character presets, head, hat and colours.'
   caption: Customize character on a computer. The studio is on the left of the screen, the drawer on the right.
+  # Auto picks the character from the peer id, a new one each boot: a fixed pick keeps the re-shoot the same
+  storage: {avatarConfig: '{"character":"mage"}'}
   setup:
   - eval: window.__stores.characterModalOpen.set(true)
   - wait: 4000

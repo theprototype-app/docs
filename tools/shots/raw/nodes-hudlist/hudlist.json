@@ -2,10 +2,10 @@
  "id": "hudlist",
  "spec": "88e9381061b7",
  "dpr": 2,
- "shotAt": "2026-11-05T11:08:16.897Z",
+ "shotAt": "2026-11-10T21:00:37.405Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "div.svelte-flow__pane",

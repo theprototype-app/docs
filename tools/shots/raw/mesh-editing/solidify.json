@@ -2,10 +2,10 @@
  "id": "solidify",
  "spec": "5b4bb5af1a36",
  "dpr": 2,
- "shotAt": "2026-11-05T11:01:03.925Z",
+ "shotAt": "2026-11-10T20:53:47.237Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "div.toolbox-header",
@@ -17,9 +17,9 @@
   "span.dn-label",
   "button#mesh-sec-gizmo.tbx-sec-head",
   "label.flex",
-  "button#mesh-gran-face.px-2",
   "button#mesh-sel-grow.tbx-cmd",
-  "button#mesh-op-extrude.tbx-btn"
+  "button#mesh-op-extrude.tbx-btn",
+  "button#mesh-space-local.px-2"
  ],
  "width": 1376,
  "height": 1280,
@@ -46,9 +46,9 @@
    "h": 48
   },
   "2": {
-   "x": 1060.25,
+   "x": 1074.5,
    "y": 930,
-   "w": 175.75,
+   "w": 161.5,
    "h": 40.8125
   }
  },

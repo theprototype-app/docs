@@ -10,7 +10,7 @@ session.
     a file and editing it, in the same window. A saved layout that had the Image editor opens the **Preview** instead.
     See [New menus and panels](menus-and-panels.md#preview-and-the-image-editor).
 
-![The Image editor on a computer: the picture on the left, and on the right the Edit page with Rotate and flip, Crop, Resize and Adjust, Save and Save as copy above. 1: rotate and flip. 2: Crop. 3: the Adjust sliders.](img/image-editor/editor-desktop.webp){ .shot width="680" height="718" loading=lazy }
+![The Image editor on a computer, the Preview window on Edit: the filmstrip of the folder's images on the left, the picture with Save above it, and on the right the Edit page with Rotate and flip, Crop, Resize and Adjust. 1: rotate and flip. 2: Crop. 3: the Adjust sliders.](img/image-editor/editor-desktop.webp){ .shot width="680" height="708" loading=lazy }
 /// caption
 The Image editor on a computer.
 ///
@@ -113,14 +113,22 @@ preview docks as the **Preview** tab and follows the file you select in the Expl
 editor in that tab. You can also press **+** on the dock's tab strip and pick **Preview**. The **Image editor** entry
 of the dock's **+** menu is gone. See [The preview window](explorer.md#the-preview-window).
 
-<!-- shot: image-editor/docked — re-shoot for 1.65: the docked Preview tab on an image, Edit on, the images filmstrip on the left (the old shot showed the retired Image editor tab) -->
+![The Preview pinned as a tab of the bottom dock, beside the Node editor, open on Edit: the filmstrip on the left, the picture, and the Edit page with the image tools. 1: the Preview tab. 2: Edit.](img/image-editor/docked.webp){ .shot .fade-b width="688" height="349" loading=lazy }
+/// caption
+The image editor in the docked Preview tab.
+///
+
+<div class="shot-key" markdown>
+1. Docked, the **Preview** is one more tab in the bottom dock; it follows the Explorer selection.
+2. **Edit** on an image opens the editor in that tab.
+</div>
 
 ## On a phone
 
 The editor (the preview's Edit view) is a full-width sheet between the top bar and the bottom bar, so **Play** stays tappable. The Edit and
 Versions pages sit under the picture instead of beside it, and **Crop…** scrolls its **Apply crop** button into view.
-Since 1.32 they start **closed**, so the picture gets the screen: tap ✎ (Edit) or ⟲ (Versions) under the picture to
-open one, and it stays open next time.
+Since 1.32 they start **closed**, so the picture gets the screen: tap the pencil tab at the picture's edge to open
+them, and pick **Edit** or **Versions** at the top of the page; it stays open next time.
 
 ![The Image editor on a phone: the picture at the top, the Edit page under it, and the bottom bar with Play below. 1: the Edit page. 2: Play, still reachable.](img/image-editor/editor-phone.webp){ .shot width="390" height="896" loading=lazy }
 /// caption
@@ -128,7 +136,7 @@ The Image editor on a phone.
 ///
 
 <div class="shot-key" markdown>
-1. The **Edit** and **Versions** pages switch under the picture.
+1. The **Edit** and **Versions** pages open under the picture, from the pencil tab at its edge.
 2. The sheet leaves **Play** uncovered.
 </div>
 

@@ -1,11 +1,11 @@
 {
  "id": "smart-unwrap",
- "spec": "d68997b6ca42",
+ "spec": "412cd6ddbf27",
  "dpr": 2,
- "shotAt": "2026-11-05T11:28:49.337Z",
+ "shotAt": "2026-11-10T20:06:13.816Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "header.wc-head",
@@ -16,10 +16,10 @@
   "button.flex",
   "button#uv-add-slot.mt-1",
   "p.px-2",
+  "div.min-h-0",
   "div#uv-window.ui-panel",
   "div.uv-slot",
-  "svg.lucide",
-  "button#uv-op-linked.uv-tool"
+  "button#uv-tool-lasso.uv-tool"
  ],
  "width": 1280,
  "height": 920,
@@ -35,9 +35,9 @@
  ],
  "anchors": {
   "1": {
-   "x": 743.59375,
+   "x": 1129.5,
    "y": 98,
-   "w": 141.34375,
+   "w": 132,
    "h": 40
   }
  },

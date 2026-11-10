@@ -1,11 +1,11 @@
 {
  "id": "lava",
- "spec": "a9c59a19acb9",
+ "spec": "73aa0c466e72",
  "dpr": 2,
- "shotAt": "2026-11-10T14:54:37.098Z",
+ "shotAt": "2026-11-10T20:10:49.918Z",
  "app": {
-  "version": "1.63.0",
-  "sha": "14a8550a"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [],
  "width": 2000,

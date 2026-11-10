@@ -2,22 +2,24 @@
  "id": "back-to-start-view",
  "spec": "0ee1eee9f484",
  "dpr": 2,
- "shotAt": "2026-11-05T10:58:16.796Z",
+ "shotAt": "2026-11-10T20:48:24.976Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "div.connect-pill",
+  "span#connect-ready.cx-ready",
   "button.cx-id",
   "span.cx-id-text",
-  "svg.lucide",
-  "button#connect-request-ai.hud-cell",
-  "input.cx-input",
   "button#start-view-back.sv-card",
-  "button.cx-btn",
+  "button#connect-invite.cx-invite",
+  "svg.lucide",
+  "span.svelte-1b9hig2",
+  "button#connect-join.cx-join",
+  "path",
   "button#connect-rooms-button.hud-cell",
-  "button#connect-info-button.hud-cell"
+  "circle"
  ],
  "width": 1376,
  "height": 280,
@@ -39,9 +41,9 @@
  ],
  "anchors": {
   "1": {
-   "x": 558.34375,
+   "x": 558,
    "y": 130,
-   "w": 259.3125,
+   "w": 260,
    "h": 55.1875
   }
  },

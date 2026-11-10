@@ -1,0 +1,55 @@
+{
+ "id": "preview-edit",
+ "spec": "52d4e4bf0063",
+ "dpr": 2,
+ "shotAt": "2026-11-10T18:33:00.554Z",
+ "app": {
+  "version": "1.64.0",
+  "sha": "14f50a80"
+ },
+ "uiHits": [
+  "div.ui-panel-header",
+  "div.ws-panel",
+  "img.ie-frame-img",
+  "span.ie-frame-name",
+  "div.min-h-0",
+  "div#image-preview-window.ui-panel",
+  "div.ws-resize",
+  "svg.lucide",
+  "button#image-editor-undo.tp-ui",
+  "canvas#image-editor-canvas.absolute",
+  "button#image-editor-redo.tp-ui",
+  "div.flex"
+ ],
+ "width": 1360,
+ "height": 1200,
+ "crop": {
+  "x": 300,
+  "y": 130,
+  "w": 680,
+  "h": 600
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 981.25,
+   "y": 21,
+   "w": 218.75,
+   "h": 40
+  },
+  "2": {
+   "x": 4,
+   "y": 82,
+   "w": 220,
+   "h": 739
+  },
+  "3": {
+   "x": 1218,
+   "y": 13,
+   "w": 56,
+   "h": 56
+  }
+ },
+ "kind": "ui"
+}

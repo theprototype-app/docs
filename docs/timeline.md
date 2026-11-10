@@ -10,7 +10,7 @@ undoable, and they play in exported and published games.
     The [Animation](animation.md) editor keys **one object's** clips. The Timeline arranges whole clips, shots and
     sounds into a scene-wide sequence.
 
-![The Timeline docked under the viewport, in a small window: the Intro sequence with Camera, Animation, Audio and Event tracks holding a Cam A → Cam B shot, a Door clip, whoosh.wav and a boom event. 1: + Track, which adds a track of any kind. 2: the boom event item.](img/timeline/tracks.webp){ .shot width="680" height="303" loading=lazy }
+![The Timeline docked under the viewport, in a small window: the Intro sequence with Camera, Animation, Audio and Event tracks holding a Cam A → Cam B shot, a Door clip, whoosh.wav and a boom event. 1: + Track, which adds a track of any kind. 2: the boom event item.](img/timeline/tracks.webp){ .shot width="680" height="309" loading=lazy }
 /// caption
 The Timeline docked under the viewport.
 ///
@@ -100,7 +100,7 @@ A track's **…** menu renames it, moves it up or down, or deletes it; its speak
 A take filmed by hand wobbles. On a **Property** track, the **…** menu's **Smooth keys** evens out the wobble and keeps
 every key at its time, so cuts and markers stay where they were. It is one undo step; press it again to smooth more.
 
-![The Timeline in a small window holding a Film take: two property tracks, Field of view · Film camera and Dutch roll · Film camera, each a row of key diamonds recorded by hand. 1: a key. 2: the track menu with Smooth keys.](img/timeline/property-track.webp){ .shot width="680" height="303" loading=lazy }
+![The Timeline in a small window holding a Film take: two property tracks, Field of view · Film camera and Dutch roll · Film camera, each a row of key diamonds recorded by hand. 1: a key. 2: the track menu with Smooth keys.](img/timeline/property-track.webp){ .shot width="680" height="309" loading=lazy }
 /// caption
 A Film take on the Timeline: the field of view and the roll, keyed.
 ///

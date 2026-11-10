@@ -1,11 +1,11 @@
 {
  "id": "lod-distance",
- "spec": "2d877967e634",
+ "spec": "e7ebd6a51d44",
  "dpr": 2,
- "shotAt": "2026-11-05T10:58:42.011Z",
+ "shotAt": "2026-11-10T20:04:11.027Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "div#inspector.tp-ui",
@@ -18,8 +18,8 @@
   "section.tp-ui",
   "span.sec-title",
   "input.pr-range",
-  "span.tp-ui",
-  "div.dn-wrap"
+  "div.dn-wrap",
+  "input#scene-lod-bias.dn-input"
  ],
  "width": 622,
  "height": 314,
@@ -34,15 +34,9 @@
  "anchors": {
   "1": {
    "x": 232,
-   "y": 111.78125,
+   "y": 111.9375,
    "w": 222,
    "h": 32
-  },
-  "2": {
-   "x": 299,
-   "y": 35.78125,
-   "w": 103.59375,
-   "h": 40
   }
  },
  "kind": "ui"

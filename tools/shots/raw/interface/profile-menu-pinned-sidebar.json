@@ -2,10 +2,10 @@
  "id": "profile-menu-pinned-sidebar",
  "spec": "0dddacaa8175",
  "dpr": 2,
- "shotAt": "2026-11-10T14:13:08.049Z",
+ "shotAt": "2026-11-10T20:43:00.225Z",
  "app": {
-  "version": "1.63.0",
-  "sha": "14a8550a"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "span.pm-name",

@@ -49,11 +49,12 @@ shots:
       objects) in the toolbox. 1: the selection commands. 2: the picked instances.
     caption: The Select tool.
     scene:
+      # each stroke's seed (drawn from Math.random when it starts) is held, so a re-shoot paints the same instances
       - eval: >-
           (async () => { const S = window.__stores, g = window.__docs.get(S.objectsGroup);
           S.commandsHandler.sceneCommand('/create Terrain 24 48'); await new Promise((r) => setTimeout(r, 400));
           const t = g.children[g.children.length - 1]; t.name = 'Terrain'; const u = t.uuid; const ts = S.terrainSculpt, tp = S.terrainPaint;
-          const stroke = async (x, z, n) => { ts.beginStroke(u); for (let i = 0; i < n; i++) { ts.strokeMove(u, x, z, 0.05); await new Promise((r) => setTimeout(r, 10)); } ts.endStroke(); };
+          const stroke = async (x, z, n) => { const R = Math.random; Math.random = () => 0.37; ts.beginStroke(u); ts.strokeMove(u, x, z, 0.05); Math.random = R; for (let i = 1; i < n; i++) { ts.strokeMove(u, x, z, 0.05); await new Promise((r) => setTimeout(r, 10)); } ts.endStroke(); };
           ts.enterSculpt(u); ts.sculptOp.set('scatter'); ts.sculptRadius.set(3); tp.scatterDensity.set(1);
           tp.scatterSource.set({kind: 'primitive', type: 'Cone'}); S.scatterEdit.setScatterTool('paint');
           await stroke(0, 0, 6); await stroke(-6, -6, 6);
@@ -71,5 +72,5 @@ shots:
       - {wait: 800}
     crop: {around: {selector: '#sculpt-toolbar'}, size: [688, 700], offset: [245, 0], ui: true}
     annotate:
-      - {n: 1, at: {selector: '#sculpt-scatter-selection'}, shape: box, label: selection tools, badge: r, key: 'The **selection tools**: move, turn and size with the gizmo, or step them; Re-roll, Delete, To objects.'}
+      - {n: 1, at: {union: [{selector: '#sculpt-scatter-selection'}, {text: To objects, within: '#sculpt-toolbar'}]}, shape: box, label: selection tools, badge: r, key: 'The **selection tools**: move, turn and size with the gizmo, or step them; Re-roll, Delete, To objects.'}
       - {n: 2, at: {object: Terrain, point: center}, shape: circle, label: picked, badge: tr, key: 'The **picked** instances, ringed; only the model in Affects can be picked.'}

@@ -1,47 +1,47 @@
 {
  "id": "tracks",
- "spec": "b0b245e9453c",
+ "spec": "9e3cf2bd3fe5",
  "dpr": 2,
- "shotAt": "2026-11-03T14:50:36.248Z",
+ "shotAt": "2026-11-10T20:10:38.180Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
-  "button#timeline-seq-select.ts-btn",
+  "div.resize-cue",
   "div.tl-bar",
-  "div.dn-wrap",
-  "div.tl-root",
+  "span.ph-tab",
+  "svg.lucide",
+  "div.tl-main",
   "div.tl-corner",
   "div.tl-track-head",
+  "path",
   "div.tl-grid",
-  "span.ts-label",
-  "span.dn-label",
+  "button#timeline-play.tp-ui",
   "span.tl-track-name",
-  "input#timeline-duration.dn-input",
-  "button.tl-icon-btn"
+  "span#timeline-time.tl-time"
  ],
  "width": 1360,
- "height": 606,
+ "height": 618,
  "crop": {
   "x": 8,
-  "y": 529,
+  "y": 523,
   "w": 680,
-  "h": 303
+  "h": 309
  },
  "cut": [],
  "fade": [],
  "anchors": {
   "1": {
-   "x": 1182.65625,
-   "y": 80,
-   "w": 161.34375,
+   "x": 1170,
+   "y": 12,
+   "w": 162,
    "h": 64
   },
   "2": {
-   "x": 717.71875,
-   "y": 418,
-   "w": 112.90625,
+   "x": 720.3125,
+   "y": 350,
+   "w": 112,
    "h": 50
   }
  },

@@ -2,10 +2,10 @@
  "id": "movespeed",
  "spec": "df420105e5f1",
  "dpr": 2,
- "shotAt": "2026-11-05T11:10:20.248Z",
+ "shotAt": "2026-11-10T21:02:36.965Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "div.svelte-flow__pane",

@@ -2,10 +2,10 @@
  "id": "core-phone",
  "spec": "174f2be4e0f0",
  "dpr": 2,
- "shotAt": "2026-11-05T11:02:24.607Z",
+ "shotAt": "2026-11-10T20:55:04.821Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "header.wc-head",
@@ -19,7 +19,7 @@
   "div#module-card-pong.mm-row",
   "div#module-card-vrsleeve.mm-row",
   "div#module-card-towers.mm-row",
-  "p.mm-desc"
+  "div.mm-desc-wrap"
  ],
  "width": 780,
  "height": 1792,
@@ -41,7 +41,7 @@
   "2": {
    "x": 66,
    "y": 1013.125,
-   "w": 336.40625,
+   "w": 336,
    "h": 88
   },
   "3": {

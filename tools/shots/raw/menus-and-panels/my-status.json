@@ -1,0 +1,43 @@
+{
+ "id": "my-status",
+ "spec": "57d0790f3162",
+ "dpr": 2,
+ "shotAt": "2026-11-10T20:52:18.069Z",
+ "app": {
+  "version": "1.64.0",
+  "sha": "14f50a80"
+ },
+ "uiHits": [
+  "div.peers-backdrop",
+  "header.wc-head",
+  "section#person-card.pc",
+  "h2#wc-title-c1.wc-title",
+  "div.pc-top",
+  "button#person-card-back.pc-back",
+  "span.pav",
+  "div.pc-hero",
+  "div.pc-k",
+  "button#person-presence-available.seg-opt",
+  "span",
+  "path"
+ ],
+ "width": 796,
+ "height": 848,
+ "crop": {
+  "x": 968,
+  "y": 51,
+  "w": 398,
+  "h": 424
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 38,
+   "y": 393,
+   "w": 720,
+   "h": 76
+  }
+ },
+ "kind": "ui"
+}

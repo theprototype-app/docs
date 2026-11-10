@@ -1,0 +1,49 @@
+{
+ "id": "generate-jobs",
+ "spec": "31bb12b60c2d",
+ "dpr": 2,
+ "shotAt": "2026-11-10T20:53:11.003Z",
+ "app": {
+  "version": "1.64.0",
+  "sha": "14f50a80"
+ },
+ "uiHits": [
+  "div.mg-form",
+  "div.mg-lists",
+  "div.mg-body",
+  "div.ui-panel-header",
+  "select#mesh-gen-provider.ui-input",
+  "span#mesh-gen-tip.mg-small",
+  "button#mesh-gen-file.ui-button-quiet",
+  "span#mesh-gen-limits.mg-small",
+  "textarea#mesh-gen-prompt.ui-input",
+  "input#mesh-gen-name.ui-input",
+  "p#mesh-gen-credits.mg-small",
+  "button#mesh-gen-submit.tp-ui"
+ ],
+ "width": 840,
+ "height": 1476,
+ "crop": {
+  "x": 200,
+  "y": 90,
+  "w": 420,
+  "h": 738
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 26,
+   "y": 943,
+   "w": 234,
+   "h": 80
+  },
+  "2": {
+   "x": 26,
+   "y": 1137,
+   "w": 788,
+   "h": 114
+  }
+ },
+ "kind": "ui"
+}

@@ -1,0 +1,309 @@
+# docs/menus-and-panels.md — what 1.65 rebuilt ("New menus and panels"): one Chat window, the Person card, Invite and
+# Join… on the Connect bar, the Preview with View | Edit and Pin to dock, the Timeline panes and the Generate window.
+# Shoot: e2e-slot -- node tools/shots/shoot.cjs menus-and-panels     Re-annotate: node tools/shots/annotate.cjs menus-and-panels
+# Settings ▸ Account and the profile menu's Manage link need a signed-in cloud account, which a headless preview page
+# cannot have: those two are not shot (the page links to Settings ▸ Account instead).
+page: menus-and-panels
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+  storage: {username: Alex, usernameCustom: '1'}
+shots:
+# ---- Chat and the AI assistant: one window, two tabs, one History ----------------------------------------------------
+# Mia (a rig guest) says a line; the host answers in the chat box itself (notifications/chat-mentions' recipe)
+- id: chat-session
+  peers:
+  - {name: Mia}
+  setup:
+  - {css: '#cross-scene-presence{display:none!important}'}
+  - on: Mia
+    steps:
+    - &chatOpen {eval: "window.__stores.chatTab.set('session'); window.__stores.chatHidden.set('')"}
+    - {wait: 800}
+    - {eval: "(() => { const i = document.getElementById('message'); i.value = 'the bridge is done, come and look'; i.dispatchEvent(new Event('input', {bubbles: true})); })()"}
+    - {click: '#send'}
+  - {wait: 1500}
+  - *chatOpen
+  - {wait: 800}
+  - {eval: "(() => { const i = document.getElementById('message'); i.value = 'on my way'; i.dispatchEvent(new Event('input', {bubbles: true})); })()"}
+  - {click: '#send'}
+  - {wait: 1500}
+  crop: {selector: '#chat-window'}
+  fade: []
+  kind: ui
+  alt: >-
+    The Chat window on its Session tab: Mia's line and your answer, the message field and Send below, and in the header
+    the History clock and the close button. 1: the Session and Assistant tabs. 2: the History button.
+  caption: Chat and the AI assistant share one window, here on its Session tab.
+  annotate:
+  - {n: 1, at: {union: [{selector: '#chat-tab-session'}, {selector: '#chat-tab-assistant'}]}, shape: box, pad: 1, badge: r, key: '**Session** is the chat with the people in this session, **Assistant** your AI provider or an agent that joined. The Chat button (or <kbd>C</kbd>) opens Session, the AI button Assistant.'}
+  - {n: 2, at: {selector: '#ai-history-btn'}, shape: box, pad: 3, badge: l, key: 'The clock opens **History**: every chat of both kinds, kept on this device.'}
+# the Assistant tab with a provider of your own (never called) and a short thread
+- id: chat-assistant
+  setup:
+  - eval: >-
+      (() => { const S = window.__stores; S.aiProviders.addAiProvider({ preset: 'custom', label: 'Mock', baseUrl: 'https://example.invalid/v1', apiKey: 'k', model: 'mock' });
+      S.aiProviders.setAiEnabled(true);
+      S.aiAssistant.aiMessages.set([{ role: 'user', content: 'make a campfire ring with six rocks' },
+      { role: 'assistant', content: 'Done: six grey rocks in a ring with an orange cone flame in the middle.' }]); })()
+  - {eval: "window.__stores.chatTab.set('assistant'); window.__stores.chatHidden.set('')"}
+  - {wait: 1500}
+  crop: {selector: '#chat-window'}
+  fade: []
+  kind: ui
+  alt: >-
+    The same Chat window on its Assistant tab: your request for a campfire ring and the assistant's answer, the Talk to
+    picker set to Mock, the field Ask the assistant…, and Send. 1: the Assistant tab. 2: the provider picker.
+  caption: The Assistant tab of the Chat window.
+  annotate:
+  - {n: 1, at: {selector: '#chat-tab-assistant'}, shape: underline, badge: b, key: 'The **Assistant** tab: the window the AI button opens.'}
+  - {n: 2, at: {selector: '#ai-target'}, shape: box, pad: 2, label: provider, badge: t, key: '**Talk to**: your own **provider**, or an AI agent in the session.'}
+# History's rows come from the device's saves (chatSaves): a past scene's session log and one provider chat
+- id: chat-history
+  setup:
+  - eval: >-
+      (() => { const S = window.__stores; S.aiProviders.addAiProvider({ preset: 'custom', label: 'Mock', baseUrl: 'https://example.invalid/v1', apiKey: 'k', model: 'mock' });
+      S.aiProviders.setAiEnabled(true); })()
+  - {eval: "window.__stores.chatTab.set('session'); window.__stores.chatHidden.set('')"}
+  - {wait: 1500}
+  - eval: >-
+      (() => { const C = window.__stores.chatSaves; const now = Date.now();
+      C.sessionLogs.set([{key: 'meadow', title: 'Campfire meadow', updatedAt: now - 86400000 * 2, count: 14, people: ['Mia', 'Theo']}]);
+      C.aiChats.set([{id: 'docs-ai-1', title: 'make a campfire ring with six rocks', provider: 'Mock', updatedAt: now - 86400000, count: 4}]); })()
+  - {click: '#ai-history-btn'}
+  - {wait: 1200}
+  # the search field takes the focus; its ring is not what the shot is about
+  - {eval: "document.activeElement?.blur()"}
+  - {wait: 300}
+  crop: {selector: '#chat-window'}
+  fade: []
+  kind: ui
+  alt: >-
+    History open over the Chat window: Search chats and New chat at the top, the All, People and AI filter, then the
+    rows: this scene's session, a chat with the Mock provider, and the session log of the scene Campfire meadow with
+    Mia and Theo. 1: the All, People and AI filter. 2: a past scene's chat.
+  caption: One History for both kinds of chat.
+  annotate:
+  - {n: 1, at: {selector: '#chat-history-filter'}, shape: box, pad: 2, badge: t, key: '**All**, **People** or **AI**; the search above looks through every chat.'}
+  - {n: 2, at: {selector: '.chist-row[data-chat="meadow"]'}, shape: box, pad: 1, label: past scene, badge: b, key: 'The chat of a **past scene**: it opens read-only on the Session tab.'}
+
+# ---- People: the Person card, Invite and Join…, your status -----------------------------------------------------------
+- id: person-card
+  peers:
+  - {name: Mia, role: edit}
+  setup:
+  - {css: '#cross-scene-presence{display:none!important}'}
+  - {eval: "window.__stores.peersPanelOpen.set(true)"}
+  - {wait: 1500}
+  - {click: '#peers-popover .peers-row:not([title="Your card"]) .peer-name'}
+  - {wait: 2500}
+  crop: {selector: '#peers-popover', pad: 8}
+  fade: []
+  kind: ui
+  alt: >-
+    Mia's Person card in the Connected popover: the People back arrow, her avatar, name, role and how long she has been
+    here, Now with where she is, her Connection over the last minute, and the peer menu's actions as buttons in groups.
+    1: back to the list. 2: Now and Connection.
+  caption: A Person card in the People popover.
+  annotate:
+  - {n: 1, at: {selector: '#person-card-back'}, shape: box, pad: 2, badge: r, key: 'The **People** arrow goes back to the list.'}
+  - {n: 2, at: {union: [{selector: '#person-card-now'}, {selector: '#person-card-connection'}]}, shape: box, pad: 2, badge: b, key: '**Now** (what they hold, or where they are) and their **Connection** over the last minute; the action buttons follow.'}
+- id: connect-invite-join
+  setup:
+  - {wait: 1500}
+  # room under the bar for the badges
+  crop: {union: [{selector: '#connect-status'}, {selector: '#connect-info-button'}, {selector: '#connect-invite', offset: [0, 44]}], pad: 14}
+  fade: []
+  kind: ui
+  alt: >-
+    The idle Connect bar: Ready and your peer id with its copy button, then the Invite and Join… buttons, Browse public
+    rooms and the drawer arrow. 1: Invite. 2: Join….
+  caption: The Connect bar leads with Invite and Join….
+  annotate:
+  - {n: 1, at: {selector: '#connect-invite'}, shape: box, pad: 2, badge: b, key: '**Invite** opens the invite sheet: **Person** or **AI agent**.'}
+  - {n: 2, at: {selector: '#connect-join'}, shape: box, pad: 2, badge: b, key: '**Join…** opens the field for an invite link or a peer id.'}
+# Settings ▸ Interface ▸ Show my status on (its localStorage key), then your own row: your card with the picker
+- id: my-status
+  storage: {username: Alex, usernameCustom: '1', 'people:presence': '1', 'people:presenceValue': busy}
+  setup:
+  - {eval: "window.__stores.peersPanelOpen.set(true)"}
+  - {wait: 1500}
+  - {click: '#peers-popover .peers-row[title="Your card"]'}
+  - {wait: 1200}
+  crop: {selector: '#peers-popover', pad: 8}
+  fade: []
+  kind: ui
+  alt: >-
+    Your own Person card with Show my status on: Alex (you) with the Admin badge and Busy, Your status with Available,
+    Busy and Away, Now in Untitled scene, and the buttons Edit profile, Change character and Copy peer id. 1: Your status.
+  caption: Your own card, with Show my status switched on.
+  annotate:
+  - {n: 1, at: {selector: '#person-presence'}, shape: box, pad: 2, badge: b, key: '**Your status**: **Available**, **Busy** or **Away**, shown beside your name for everyone.'}
+
+# ---- Preview and the image editor ---------------------------------------------------------------------------------------
+# three pictures in the Library (image-editor.yml's recipe, three skies), opened with imageEditor.openImageEditor: the
+# Preview window on Edit. The window opens 520 × 420; a css step makes it the column's width.
+- id: preview-edit
+  scene: &pictures
+  - eval: >-
+      (async () => {
+        const mk = async (name, a, b, sun) => { const c = document.createElement('canvas'); c.width = 640; c.height = 420; const x = c.getContext('2d');
+          const g = x.createLinearGradient(0, 0, 0, 300); g.addColorStop(0, a); g.addColorStop(1, b); x.fillStyle = g; x.fillRect(0, 0, 640, 420);
+          x.fillStyle = sun; x.beginPath(); x.arc(420, 250, 46, 0, Math.PI * 2); x.fill();
+          x.fillStyle = '#3d6b4a'; x.beginPath(); x.moveTo(0, 300); x.quadraticCurveTo(180, 220, 360, 300); x.quadraticCurveTo(500, 350, 640, 280); x.lineTo(640, 420); x.lineTo(0, 420); x.fill();
+          const blob = await new Promise((r) => c.toBlob(r, 'image/png'));
+          return window.__stores.explorer.addItemFromBytes(await blob.arrayBuffer(), name, null, { imported: true }); };
+        const r = await mk('sunset.png', '#2c4f86', '#f2a65a', '#ffd56b');
+        await mk('noon.png', '#3f8fd8', '#bfe3ff', '#fff6c8');
+        await mk('night.png', '#0b1530', '#33407a', '#e8ecff');
+        window.__docsImage = r.id;
+      })()
+  setup:
+  - {css: '#image-preview-window{width:680px!important;height:600px!important}'}
+  - {eval: "window.__stores.imageEditor.openImageEditor(window.__docsImage)"}
+  - {wait: 2500}
+  crop: {selector: '#image-preview-window'}
+  fade: []
+  kind: ui
+  alt: >-
+    The Preview window on Edit for sunset.png: View and Edit and the pin in its header, the filmstrip of the folder's
+    images on the left, the picture with Save in the middle, and the Edit page with Rotate and flip, Crop and Resize on
+    the right. 1: View and Edit. 2: the filmstrip. 3: Pin to dock.
+  caption: The Preview on Edit.
+  annotate:
+  - {n: 1, at: {union: [{selector: '#preview-view'}, {selector: '#preview-edit'}]}, shape: box, pad: 3, badge: b, key: '**View | Edit**: on an image in your Library, **Edit** turns the preview into the image editor.'}
+  - {n: 2, at: {selector: '#image-editor-filmstrip'}, shape: bracket, side: r, label: this folder, badge: r, key: 'The filmstrip: the images in **this folder**; press one to edit it.'}
+  - {n: 3, at: {selector: '#preview-pin'}, shape: box, pad: 3, badge: b, key: '**Pin to dock** makes it the **Preview** tab.'}
+# pinned beside the docked Explorer (the dock splits), in a 688 px window; a second picture picked in the Explorer
+- id: preview-docked
+  device: window-688-tall
+  scene: *pictures
+  setup:
+  - {eval: "window.__stores.dockMenu.dockTab('explorer')"}
+  - {wait: 1200}
+  - {eval: "window.__stores.imageEditor.openImageEditor(window.__docsImage)"}
+  - {wait: 2000}
+  - {click: '#preview-view'}
+  - {wait: 800}
+  # pressed in the DOM: at 688 px the floating window's header can sit where a pointer cannot reach it
+  - {eval: "document.getElementById('preview-pin').click()"}
+  - {wait: 1800}
+  - {click: '#explorer-list .explorer-card[title="noon.png"]'}
+  - {wait: 1500}
+  # a strip of the 3D view above the tabs, for the first badge
+  crop: {union: [{selector: '.dt-tabs', offset: [0, -34]}, {selector: '#explorer-list'}, {selector: '#image-preview-window'}], pad: 6}
+  fade: []
+  kind: ui
+  alt: >-
+    The bottom dock split in a small window: the Explorer on the left with sunset.png, noon.png and night.png in the
+    Library, and the pinned Preview on the right showing noon.png, the file picked in the Explorer. 1: the Preview tab.
+    2: the picked file. 3: the pin, now on.
+  caption: The Preview pinned to the dock beside the Explorer, in a small window.
+  annotate:
+  - {n: 1, at: {selector: ':is([data-dock-tab="preview"], [data-dock-half="preview"])'}, shape: box, pad: 1, badge: t, key: 'Pinned, the preview is the **Preview** tab; with the Explorer docked too, the dock splits.'}
+  - {n: 2, at: {selector: '#explorer-list .explorer-card[title="noon.png"]'}, shape: box, pad: 2, label: follows, badge: b, key: 'It **follows** the file you select in the Explorer.'}
+  - {n: 3, at: {selector: '#preview-pin'}, shape: box, pad: 2, badge: b, key: 'The pin again unpins it.'}
+
+# ---- Timeline and Generate 3D -------------------------------------------------------------------------------------------
+# timeline.yml's scene (Cam A, Cam B, a Door clip, whoosh.wav, the Intro sequence), docked in a 688 px window;
+# the Properties pane opened on its Sequence tab (h.openWsMode's way: the edge tab first)
+- id: timeline-panes
+  device: window-688-tall
+  scene:
+  - eval: >-
+      (async () => { const S = window.__stores, D = window.__docs; const g = D.get(S.objectsGroup);
+      const before = new Set(g.children.map((o) => o.uuid));
+      const make = async (cmd, name, pos) => { S.commandsHandler.sceneCommand(cmd); let o = null;
+        for (let i = 0; i < 40 && !o; i++) { await new Promise((r) => setTimeout(r, 100)); o = g.children.find((x) => !before.has(x.uuid)); }
+        before.add(o.uuid); o.name = name; o.position.set(...pos); o.updateMatrix(); o.updateMatrixWorld(true); return o; };
+      const camA = await make('/create Camera', 'Cam A', [0, 2, 8]);
+      const camB = await make('/create Camera', 'Cam B', [6, 3, 4]);
+      const door = await make('/create Box', 'Door', [2, 1, 0]);
+      door.scale.set(1, 2, 0.2);
+      const ap = S.animationPreview; const tr = ap.addTrack(door.uuid, 'rot.y', door);
+      ap.updateKey(door.uuid, tr, 0, {t: 0, v: 0}); ap.updateKey(door.uuid, tr, 1, {t: 1, v: Math.PI / 2});
+      ap.updateAnim(door.uuid, {duration: 1, loop: 'once'});
+      const rate = 8000, n = 3200, buf = new ArrayBuffer(44 + n * 2), v = new DataView(buf);
+      const w = (o, s) => { for (let i = 0; i < s.length; i++) v.setUint8(o + i, s.charCodeAt(i)); };
+      w(0, 'RIFF'); v.setUint32(4, 36 + n * 2, true); w(8, 'WAVE'); w(12, 'fmt '); v.setUint32(16, 16, true);
+      v.setUint16(20, 1, true); v.setUint16(22, 1, true); v.setUint32(24, rate, true); v.setUint32(28, rate * 2, true);
+      v.setUint16(32, 2, true); v.setUint16(34, 16, true); w(36, 'data'); v.setUint32(40, n * 2, true);
+      for (let i = 0; i < n; i++) v.setInt16(44 + i * 2, Math.round(Math.sin((i / rate) * 2 * Math.PI * 440) * 12000), true);
+      const snd = await S.explorer.addItemFromBytes(buf, 'whoosh.wav');
+      S.objectActions.applySelectionSet([], false);
+      const Q = S.sequences; const id = Q.createSequence('Intro'); Q.updateSequence(id, {duration: 6});
+      const t = (k) => Q.addTrack(id, k);
+      Q.addItem(id, t('camera'), {t: 0.1, dur: 2, camera: camA.uuid, to: camB.uuid});
+      Q.addItem(id, t('anim'), {t: 1, dur: 2, target: door.uuid});
+      Q.addItem(id, t('audio'), {t: 0.5, dur: 2, sound: snd.hash, name: 'whoosh.wav'});
+      Q.addItem(id, t('event'), {t: 2.4, name: 'boom'}); })()
+  - {wait: 800}
+  - {eval: "window.__stores.dockMenu.setDockViewShown('timeline', true)"}
+  - {wait: 1500}
+  setup:
+  - {eval: "(() => { const t = document.querySelector('.tl-root .ws-panel-head [data-ws-mode=\"sequence\"]'); if (!t || !t.offsetParent) document.querySelector('.tl-root .ws-root > [data-ws-secondary-toggle]')?.click(); })()"}
+  - {wait: 600}
+  - {click: '.tl-root .ws-panel-head [data-ws-mode="sequence"]'}
+  - {wait: 600}
+  - {click: '#timeline-fit'}
+  - {wait: 600}
+  crop: {union: [{selector: '.tl-root'}, {selector: '.tl-root', offset: [8, 0]}]}
+  fade: []
+  kind: ui
+  alt: >-
+    The Timeline docked in a small window, in three panes: Sequences on the left with Intro, the tracks in the middle,
+    and Properties on the right on its Sequence tab with the name, length, frame rate, Autoplay and Loop. 1: Sequences.
+    2: the Sequence and Item tabs.
+  caption: The Timeline's three panes, in a small window.
+  annotate:
+  - {n: 1, at: {selector: '#timeline-sequences .tl-seq-row'}, shape: box, pad: 3, badge: b, key: 'The **Sequences** pane: pick, add, rename, duplicate or delete one.'}
+  - {n: 2, at: {selector: '.tl-root .ws-panel-head .ws-modes'}, shape: box, pad: 2, badge: b, key: '**Properties**: **Sequence** (with its frame rate) and **Item**, the selected item''s fields. Each side pane hides with its edge tab.'}
+# a hosted Meshy provider with a placeholder key (never called) and two jobs from earlier: one running, one done. The
+# running job's heartbeat is kept fresh, so this page never claims it (meshJobs.resumeMeshJobs).
+- id: generate-jobs
+  setup:
+  - eval: >-
+      (() => { const S = window.__stores, M = S.meshJobs, now = Date.now();
+      S.meshProviders.addMeshProvider({ kind: 'meshy', apiKey: 'msy-docs-placeholder' });
+      const jobs = () => [
+        { id: 'docs-run', prompt: 'a mossy stone lantern', provider: 'Meshy (hosted)', status: 'running', progress: 0.42, at: now - 50000, tab: 'docs-other-tab', beat: Date.now() },
+        { id: 'docs-done', prompt: 'a weathered wooden treasure chest', provider: 'Meshy (hosted)', status: 'done', progress: 1, at: now - 900000, cardHidden: true } ];
+      M.meshJobs.set(jobs());
+      setInterval(() => M.meshJobs.update((l) => l.map((j) => j.id === 'docs-run' ? { ...j, beat: Date.now() } : j)), 2000);
+      S.meshGenModalOpen.set({}); })()
+  - {css: '#mesh-gen-window{height:740px!important}'}
+  - {wait: 2000}
+  - {eval: "document.activeElement?.blur()"}
+  - {wait: 300}
+  crop: {selector: '#mesh-gen-window'}
+  fade: []
+  kind: ui
+  alt: >-
+    The Generate 3D model window: the provider, the Prompt and Name fields and Generate, then the Jobs tab with a
+    running job, a mossy stone lantern at 42 percent with Cancel, and a done one, a weathered wooden treasure chest,
+    with Reopen. 1: Jobs and History. 2: the running job.
+  caption: The Generate window, with a job running in Jobs.
+  annotate:
+  - {n: 1, at: {union: [{selector: '#mesh-gen-tab-jobs'}, {selector: '#mesh-gen-tab-history'}]}, shape: box, pad: 2, badge: r, key: '**Jobs** and **History** (the prompts you asked for) survive a reload.'}
+  - {n: 2, at: {selector: '.mg-job[data-job-id="docs-run"]'}, shape: box, pad: 2, label: carries on, badge: b, key: 'A running job **carries on** after a reload without being sent again, so it is not charged twice.'}
+
+# ---- Settings ▸ Account -------------------------------------------------------------------------------------------------
+# signed out (a headless preview page has no account): the page shows its four groups, each saying what signing in adds
+- id: settings-account
+  setup:
+  - {eval: "(() => { const S = window.__stores; S.settingsSection.set('account'); S.settingsOpen.set(true); })()"}
+  - {wait: 2500}
+  - {eval: "document.activeElement?.blur()"}
+  - {wait: 300}
+  # down to above the footer, so the bracket's badge sits under it
+  crop: {union: [{selector: 'h2.ss-title'}, {selector: 'h3.tpc-sec-title', nth: 3, offset: [0, 130]}], pad: 12}
+  fade: []
+  kind: ui
+  alt: >-
+    Settings ▸ Account while signed out: Email with Product updates, Sign-in methods, Devices and Connected apps, each
+    saying what signing in from the profile menu adds. 1: Sign-in methods, Devices and Connected apps.
+  caption: Settings ▸ Account, signed out.
+  annotate:
+  - {n: 1, at: {union: [{selector: 'h3.tpc-sec-title', nth: 1}, {selector: 'h3.tpc-sec-title', nth: 3, offset: [0, 78]}]}, shape: bracket, pad: 2, label: moved here, badge: b, key: '**Sign-in methods**, **Devices** and **Connected apps** **moved here** from the profile menu; signed in, each lists yours.'}

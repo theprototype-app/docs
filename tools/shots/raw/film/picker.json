@@ -2,10 +2,10 @@
  "id": "picker",
  "spec": "03301c53de56",
  "dpr": 2,
- "shotAt": "2026-11-10T14:06:36.888Z",
+ "shotAt": "2026-11-10T20:37:05.834Z",
  "app": {
-  "version": "1.63.0",
-  "sha": "14a8550a"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "nav#ps-bar.ps-bar",

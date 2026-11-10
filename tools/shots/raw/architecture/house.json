@@ -1,11 +1,11 @@
 {
  "id": "house",
- "spec": "12fdf58d52fa",
+ "spec": "4d7ab07baa41",
  "dpr": 2,
- "shotAt": "2026-11-10T13:43:30.378Z",
+ "shotAt": "2026-11-10T20:08:05.317Z",
  "app": {
-  "version": "1.63.0",
-  "sha": "14a8550a"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [],
  "width": 2160,

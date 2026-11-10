@@ -1,31 +1,31 @@
 {
  "id": "select-tool",
- "spec": "41bf23a6da1d",
+ "spec": "cbf28c3c5ba9",
  "dpr": 2,
- "shotAt": "2026-11-10T14:43:55.530Z",
+ "shotAt": "2026-11-10T20:11:34.566Z",
  "app": {
-  "version": "1.63.0",
-  "sha": "14a8550a"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "span.sbh-tab",
   "img.h-7",
-  "div.toolbox-body",
-  "svg.lucide",
+  "div.toolbox-header",
   "span.tbx-label",
+  "button#sculpt-op-raise.tbx-btn",
+  "button#sculpt-op-paint.tbx-btn",
   "button#sculpt-scatter-source.ts-btn",
   "button#sculpt-scatter-paint.tbx-btn",
+  "button#sculpt-scatter-scale.tbx-btn",
+  "span",
   "div#sculpt-scatter-selection.tbx-row",
-  "button#sculpt-scatter-turn-left.tbx-cmd",
-  "button#sculpt-scatter-delete.tbx-cmd",
-  "label.flex",
-  "div.tbx-row"
+  "button#sculpt-scatter-turn-left.tbx-cmd"
  ],
  "width": 1376,
  "height": 1400,
  "crop": {
   "x": 0,
-  "y": 23,
+  "y": 34,
   "w": 688,
   "h": 700
  },
@@ -42,13 +42,13 @@
  "anchors": {
   "1": {
    "x": 42,
-   "y": 782,
+   "y": 760,
    "w": 312,
-   "h": 32
+   "h": 258.5625
   },
   "2": {
    "x": 989.3767227496627,
-   "y": 759.5659873441134,
+   "y": 737.5659873441134,
    "w": 48,
    "h": 48
   }

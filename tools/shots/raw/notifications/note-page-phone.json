@@ -2,10 +2,10 @@
  "id": "note-page-phone",
  "spec": "1488f211a870",
  "dpr": 2,
- "shotAt": "2026-11-05T11:13:35.492Z",
+ "shotAt": "2026-11-10T21:05:54.119Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "button.sg-handle",
@@ -15,11 +15,11 @@
   "nav#ps-bar.ps-bar",
   "div.tp-ui",
   "span.note-num",
+  "p.note-desc",
   "span.note-chip",
   "input#note-reply-input.ui-input",
-  "svg.lucide",
-  "button#ps-add.ps-tab",
-  "div.note-meta"
+  "button.note-danger",
+  "button#ps-add.ps-tab"
  ],
  "width": 780,
  "height": 960,
@@ -35,9 +35,9 @@
  "fade": [],
  "anchors": {
   "1": {
-   "x": 492.125,
+   "x": 489.75,
    "y": 230.78125,
-   "w": 154.75,
+   "w": 157.125,
    "h": 41.5625
   }
  },

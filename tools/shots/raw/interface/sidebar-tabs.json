@@ -2,10 +2,10 @@
  "id": "sidebar-tabs",
  "spec": "2b0ae8838810",
  "dpr": 2,
- "shotAt": "2026-11-10T14:13:23.465Z",
+ "shotAt": "2026-11-10T20:43:14.021Z",
  "app": {
-  "version": "1.63.0",
-  "sha": "14a8550a"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "button.sb-tab",

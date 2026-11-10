@@ -1,0 +1,49 @@
+{
+ "id": "person-card",
+ "spec": "aa3564d4df35",
+ "dpr": 2,
+ "shotAt": "2026-11-10T20:51:55.724Z",
+ "app": {
+  "version": "1.64.0",
+  "sha": "14f50a80"
+ },
+ "uiHits": [
+  "div.peers-backdrop",
+  "header.wc-head",
+  "section#person-card.pc",
+  "svg.lucide",
+  "span.pav",
+  "div.pc-k",
+  "svg.pc-spark",
+  "button.pc-act",
+  "button#person-card-back.pc-back",
+  "span.truncate",
+  "span.pc-av",
+  "div.pc-hero"
+ ],
+ "width": 796,
+ "height": 1236,
+ "crop": {
+  "x": 968,
+  "y": 51,
+  "w": 398,
+  "h": 618
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 38,
+   "y": 110,
+   "w": 158,
+   "h": 64
+  },
+  "2": {
+   "x": 38,
+   "y": 351,
+   "w": 720,
+   "h": 227
+  }
+ },
+ "kind": "ui"
+}

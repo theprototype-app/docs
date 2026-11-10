@@ -1,25 +1,25 @@
 {
  "id": "phone-sheet",
- "spec": "8b0771d92814",
+ "spec": "f0d65eb0d3a0",
  "dpr": 2,
- "shotAt": "2026-11-03T14:51:06.332Z",
+ "shotAt": "2026-11-10T20:05:21.770Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "button.sg-handle",
   "div#timeline-dock.tp-ui",
   "nav#ps-bar.ps-bar",
-  "span.ts-label",
-  "span#timeline-time.tl-time",
-  "label.tl-flag",
-  "button#timeline-add-track.tp-ui",
-  "div.tl-corner",
-  "div.tl-track-head",
+  "div.ws-hdr",
+  "button#timeline-seq-select.ts-btn",
+  "div.tl-bar",
   "div.tl-grid",
-  "button#timeline-autoplay.tp-ui",
-  "svg.lucide"
+  "div.tl-track-head",
+  "button.ws-hdr-btn",
+  "div.tl-corner",
+  "svg.lucide",
+  "span.tl-track-name"
  ],
  "width": 780,
  "height": 1340,
@@ -35,7 +35,7 @@
   "1": {
    "x": 28,
    "y": 15,
-   "w": 161.15625,
+   "w": 162,
    "h": 44
   }
  },

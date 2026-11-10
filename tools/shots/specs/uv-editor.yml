@@ -39,4 +39,4 @@ shots:
     module chose, packed into the 0 to 1 square with no overlaps. 1: the Unwrap menu.
   caption: A sphere unwrapped with Smart (xatlas).
   annotate:
-    - {n: 1, at: {selector: '#uv-unwrap'}, shape: box, pad: 3, label: Smart (xatlas), badge: b, key: '**Unwrap ▸ Smart (xatlas)**, added by the module.'}
+    - {n: 1, at: {selector: '#uv-unwrap'}, shape: box, pad: 3, label: Smart (xatlas), labelSide: l, badge: b, key: '**Unwrap ▸ Smart (xatlas)**, added by the module.'}

@@ -1,19 +1,19 @@
 {
  "id": "measure-edit",
- "spec": "dc7b5eb7c782",
+ "spec": "9bf1ddf652ca",
  "dpr": 2,
- "shotAt": "2026-11-10T14:21:04.126Z",
+ "shotAt": "2026-11-10T20:09:57.243Z",
  "app": {
-  "version": "1.63.0",
-  "sha": "14a8550a"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "span.cb-hint",
   "button#toolbar-customize.hud-cell",
-  "div#capture-banner.capture-banner",
   "button#budget-chip.bc-main",
   "kbd.cb-key",
-  "svg.lucide",
+  "button#capture-banner-done.cb-done",
+  "div#capture-banner.capture-banner",
   "button#budget-chip-target.bc-caret",
   "div#hud-stack-right.tp-ui",
   "button#chat-button.hud-fab",
@@ -39,15 +39,15 @@
  ],
  "anchors": {
   "1": {
-   "x": 532.359375,
+   "x": 530.796875,
    "y": 708.359375,
-   "w": 82.84375,
+   "w": 85.96875,
    "h": 41.59375
   },
   "2": {
-   "x": 1229.84375,
+   "x": 1226,
    "y": 86,
-   "w": 130.15625,
+   "w": 134,
    "h": 40
   }
  },

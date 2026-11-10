@@ -37,5 +37,5 @@ shots:
   caption: Agent activity in the AI assistant window.
   annotate:
     - {n: 1, at: {selector: '.alog-count'}, shape: box, label: steps so far, badge: l, key: '**Agent activity** counts the steps; under each agent''s name, one line per step it took (click a line to select what it touched).'}
-    - {n: 2, at: {selector: '.alog-undo', nth: 1}, shape: box, label: undo it, badge: l, key: '**Undo it**: takes back that one step, for everybody.'}
+    - {n: 2, at: {selector: '.alog-undo', nth: 1}, shape: box, pad: 3, label: undo it, badge: l, key: '**Undo it**: takes back that one step, for everybody.'}
 md: ai/build-with-an-agent.md

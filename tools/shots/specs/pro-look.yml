@@ -28,16 +28,20 @@ shots:
     compose: row
 
   - id: environment-chips
-    caption: 'Configure Scene ▸ Environment: the pro presets sit beside the other preset chips.'
+    caption: 'Configure Scene ▸ Environment: the pro presets sit with the other preset chips, two of them under More.'
     alt: >-
-      Configure Scene ▸ Environment with its preset chips. 1: the three pro presets — Product shot, Cinematic and
-      Stylised.
+      Configure Scene ▸ Environment with its preset chips, More open below them. 1: the pro presets Product shot and
+      Stylised; Cinematic sits in the first row.
     setup:
       - {section: Environment}
-    crop: {selector: '#environment-presets', pad: 30}
+      - {wait: 800}
+      # Product shot and Stylised sit under More since 1.64
+      - {click: '#environment-more-toggle'}
+      - {wait: 600}
+    crop: {union: [{selector: '#environment-presets'}, {selector: '#environment-more'}], pad: 16}
     fade: []
     annotate:
-      - {n: 1, at: {union: [{text: Product shot, within: '#environment-presets', up: 1}, {text: Stylised, within: '#environment-presets', up: 1}]}, shape: box, pad: 4, badge: r, key: 'The **pro presets**: Product shot, Cinematic and Stylised.'}
+      - {n: 1, at: {union: [{text: Product shot, within: '#environment-more', up: 1}, {text: Stylised, within: '#environment-more', up: 1}]}, shape: box, pad: 4, badge: r, key: 'The **pro presets**: Cinematic in the row, Product shot and Stylised under **More**.'}
 
   - id: photo-window
     caption: 'Scene look ▸ Photo…: the settings of a path-traced still.'

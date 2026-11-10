@@ -11,7 +11,7 @@ shots:
       press Connect Claude. 1: Sign in to connect. 2: Add to Claude. 3: How it works.
     caption: The AI window's Connect Claude card, before you sign in.
     setup:
-      - {eval: "window.__stores.aiAssistantHidden.set(false)"}
+      - {eval: "window.__stores.aiAssistantHidden.set('')"}
       - {wait: 1500}
     crop: {selector: '#ai-assistant-window', pad: 10}
     fade: []

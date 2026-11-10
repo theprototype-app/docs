@@ -1,0 +1,49 @@
+{
+ "id": "connect-invite-join",
+ "spec": "179aa87a8da6",
+ "dpr": 2,
+ "shotAt": "2026-11-10T20:52:05.900Z",
+ "app": {
+  "version": "1.64.0",
+  "sha": "14f50a80"
+ },
+ "uiHits": [
+  "div.connect-pill",
+  "span#connect-status.cx-status-dot",
+  "span#connect-ready.cx-ready",
+  "button.cx-id",
+  "span.cx-id-text",
+  "svg.lucide",
+  "button#connect-invite.cx-invite",
+  "circle",
+  "span.svelte-1b9hig2",
+  "button#connect-join.cx-join",
+  "button#connect-rooms-button.hud-cell",
+  "path"
+ ],
+ "width": 870,
+ "height": 208,
+ "crop": {
+  "x": 507,
+  "y": 0,
+  "w": 435,
+  "h": 104
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 324.25,
+   "y": 28,
+   "w": 162,
+   "h": 64
+  },
+  "2": {
+   "x": 498.25,
+   "y": 28,
+   "w": 162,
+   "h": 64
+  }
+ },
+ "kind": "ui"
+}

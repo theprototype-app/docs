@@ -55,6 +55,9 @@ async function joinPeers(browser, host, peers, openApp, dpr) {
 		const id = await peerIdOf(page);
 		const squeezed = page.locator('#connect-squeeze-dot');
 		if (await squeezed.isVisible().catch(() => false)) await squeezed.click();
+		// 1.65: the idle Connect bar shows Invite and Join…; the dial field opens with Join…
+		const join = page.locator('#connect-join');
+		if (await join.isVisible().catch(() => false)) await join.click();
 		await page.locator('input[placeholder="Enter peer ID to connect"]').fill(hostId);
 		await page.getByRole('button', { name: 'Connect', exact: true }).click();
 		const label = ROLE_BUTTON[g.role || 'edit'];

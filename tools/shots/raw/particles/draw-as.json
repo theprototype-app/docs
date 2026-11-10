@@ -2,10 +2,10 @@
  "id": "draw-as",
  "spec": "1f7f8bf18554",
  "dpr": 2,
- "shotAt": "2026-11-10T14:35:05.503Z",
+ "shotAt": "2026-11-10T21:06:34.854Z",
  "app": {
-  "version": "1.63.0",
-  "sha": "14a8550a"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "div#inspector.tp-ui",

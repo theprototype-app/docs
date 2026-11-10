@@ -109,7 +109,7 @@ tab): the other side opens it, or pastes it into **Join…**, and it joins in on
 
 ### What guests see
 
-![The Connect drawer's Info tab on a computer: the Session rows — State, Your ID, Guests see with its list, Host — and the Signaling server rows under them. 1: Guests see, which of your files a guest sees in the Explorer.](img/connection/guests-see.webp){ .shot width="542" height="204" loading=lazy }
+![The Connect drawer's Info tab on a computer: the Session rows — State, Your ID, Guests see with its list, Host — and the Signaling server rows under them. 1: Guests see, which of your files a guest sees in the Explorer.](img/connection/guests-see.webp){ .shot width="444" height="204" loading=lazy }
 /// caption
 Connect ▸ ▾ ▸ Info, where the host picks what guests see.
 ///

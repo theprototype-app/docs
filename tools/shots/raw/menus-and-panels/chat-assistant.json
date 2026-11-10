@@ -1,0 +1,49 @@
+{
+ "id": "chat-assistant",
+ "spec": "c9dc937e9e69",
+ "dpr": 2,
+ "shotAt": "2026-11-10T20:51:18.509Z",
+ "app": {
+  "version": "1.64.0",
+  "sha": "14f50a80"
+ },
+ "uiHits": [
+  "header.wc-head",
+  "div.chat-tabs",
+  "div.min-h-0",
+  "div.ai-composer",
+  "h2#wc-title-s1.wc-title",
+  "svg.lucide",
+  "ul.flex",
+  "li.ai-msg",
+  "select#ai-target.tp-field",
+  "input.tp-field",
+  "div#chat-window.ui-panel",
+  "span.svelte-1n63cl2"
+ ],
+ "width": 1000,
+ "height": 920,
+ "crop": {
+  "x": 925,
+  "y": 368,
+  "w": 500,
+  "h": 460
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 196,
+   "y": 82,
+   "w": 194,
+   "h": 72
+  },
+  "2": {
+   "x": 22,
+   "y": 758,
+   "w": 956,
+   "h": 64
+  }
+ },
+ "kind": "ui"
+}

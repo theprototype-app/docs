@@ -148,7 +148,7 @@ means something new arrived there while you were on the other tab.
   **AI**, the assistant's chats. Filter with **All | People | AI**, or search. Rows this device keeps can be removed
   with the bin button.
 
-![The chat: Mia's line that mentions Alex is ringed, the @Alex in a colour, and Alex's answer, where :+1: became an emoji. 1: the ringed line. 2: the emoji.](img/notifications/chat-mentions.webp){ .shot width="500" height="420" loading=lazy }
+![The chat: Mia's line that mentions Alex is ringed, the @Alex in a colour, and Alex's answer, where :+1: became an emoji. 1: the ringed line. 2: the emoji.](img/notifications/chat-mentions.webp){ .shot width="500" height="460" loading=lazy }
 /// caption
 In the chat, a line that mentions you is ringed.
 ///

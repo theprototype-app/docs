@@ -2,16 +2,16 @@
  "id": "edit-positions-top-right",
  "spec": "77918b45d504",
  "dpr": 2,
- "shotAt": "2026-11-03T11:10:06.561Z",
+ "shotAt": "2026-11-10T19:03:30.415Z",
  "app": {
-  "version": "1.54.2",
-  "sha": "de3014f8"
+  "version": "1.64.0",
+  "sha": "14f50a80"
  },
  "uiHits": [
   "span.hud-edit-grip",
-  "svg.lucide",
   "button.hud-edit-remove",
   "div#hud-tr.tp-ui",
+  "svg.lucide",
   "button.hud-edit-grip",
   "button#cluster-grip-top.cl-grip",
   "button.hud-cell",

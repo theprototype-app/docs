@@ -76,7 +76,7 @@ The Voice typing settings, set to Groq.
 The **Assistant** tab then has a **mic** button next to **Send**: click to listen, click again to stop. The words land in
 the input, so you can fix them before sending. (In VR they are sent as soon as you let go.)
 
-![The AI assistant window: two of your messages and the assistant's answer, the provider picker, the input Ask the assistant…, the mic button and Send. 1: the mic button.](../img/ai-assistant/assistant-mic.webp){ .shot width="500" height="440" loading=lazy }
+![The AI assistant window: two of your messages and the assistant's answer, the provider picker, the input Ask the assistant…, the mic button and Send. 1: the mic button.](../img/ai-assistant/assistant-mic.webp){ .shot width="498" height="382" loading=lazy }
 /// caption
 The assistant window with the mic button next to Send.
 ///
