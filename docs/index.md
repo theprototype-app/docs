@@ -215,7 +215,7 @@ a minute.
 **1.48 — AI agents in your session.** Send Claude (or any MCP agent) your session link and build together:
 `claude mcp add theprototype -- npx -y @theprototype/agent mcp '<link>'` and it joins as a peer, builds with the app's
 own tools — objects, flow nodes, physics — checks its work with screenshots, and lists every step in the AI assistant
-window for everyone to select or undo ([Build with an AI agent](ai/build-with-an-agent.md)). **Connect ▸ Request AI**
+window for everyone to select or undo ([Build with an AI agent](ai/build-with-an-agent.md)). **Connect ▸ Invite ▸ AI agent**
 makes [invite links](invites.md) for agents and people: View or Edit, 10 minutes to a day, one or more uses, revocable,
 no approval card. Right-click anyone in the Connected panel for the new [peer menu](people.md) — profile, Go to, Hide —
 and, for the host or an admin, **Remove** or **Remove and block** with **Allow back**.

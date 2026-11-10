@@ -11,7 +11,7 @@ getting-started:
   - interface        # sidebars, dock, windows, the phone bar
   - touch-controls   # phone (N6 folded shots)
   - connection       # the Connect bar, status dot (phone), guests
-  - invites          # Connect ▸ Invite, Request AI
+  - invites          # Connect ▸ Invite (Person | AI agent)
 
 # 2. Every page the app links to (core v1.54.2), with where the link is
 app-linked:

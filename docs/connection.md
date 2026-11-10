@@ -18,6 +18,10 @@ and your mic; click it to open the full bar again (its collapse button folds it 
 chip — tap it for your ID, the join field, Info and Toasts. The signaling link's attempt count is in the drawer's
 **Info** tab.
 
+*New in 1.64:* the drawer says the state once, in words: **Ready · not in a session**, **Hosting · 2 people** or **In a
+session · 3 people** (it no longer says *Offline* while the connection works). The signaling server and relay details
+are folded under one **Network** row, which opens by itself when the connection has trouble.
+
 ### The status dot
 
 Since 1.32 the connection status is a **coloured dot**. On a computer the full bar keeps your invite ID and the peer-ID
@@ -65,6 +69,15 @@ The Connected panel on a computer.
 2. A person's **role** (Editor or Viewer): the host changes it here.
 </div>
 
+*New in 1.64:* every row shows its **⋯** menu and **Go to** without hovering, and the number of people is counted once,
+on the peers button. Each person has **one avatar everywhere** (the chip, this panel, chat): their photo, or their
+colour with their initial, ringed in the same colour as their cursor and their selection locks.
+
+**Your name.** When you join a session you are asked what others should call you; the name is remembered on this
+device (**Not now** skips it for this join). Anyone without a name shows as **Guest 1**, **Guest 2**… instead of
+"Peer". A person who joins no longer appears inside your view: an avatar close to your camera fades out, and a joiner
+whose view would open on top of someone arrives a step to the side.
+
 Right-click a person (long-press on touch, <kbd>Shift</kbd>+<kbd>F10</kbd> from the keyboard) for the **peer menu**:
 their profile, Go to, Watch, Mute, Hide — and, for the host or an admin, **Remove from session** and **Remove and
 block**. See [Users and moderation](people.md). An AI agent shows a robot and "AI" instead of a character.
@@ -86,7 +99,7 @@ Public rooms under their own heading, apart from your session.
 
 Or do it by ID: they paste your ID into their Connect field and press Connect; the same approval toast appears on your side.
 
-To skip the approval card, send an **invite link** instead (**Connect ▸ Request AI**, a *Person* or an *AI agent*
+To skip the approval card, send an **invite link** instead (**Connect ▸ Invite**, a *Person* or an *AI agent*
 tab): it joins in one step with the role you chose, for a limited time. See [Invite people and agents](invites.md).
 
 ### What guests see
