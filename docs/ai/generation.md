@@ -153,9 +153,10 @@ GLB. (Other hosted providers with the same task-based REST shape can be added as
 
 ## Using it
 
-- **Add menu → Generate 3D model…** — a small dialog: pick a provider, type a prompt,
-  optional name, **Generate**. The mesh lands where you opened the menu.
-- **From a picture** — the same dialog takes a photo, an Explorer picture or the viewport (Meshy, or a
+- **Add menu → Generate 3D model…** — the **Generate** window: pick a provider, type a prompt,
+  optional name, **Generate**. The mesh lands where you opened the menu. You can also open it from the dock's
+  **+** ▸ **Generate 3D**. See [The Generate window](#the-generate-window) below.
+- **From a picture** — the same window takes a photo, an Explorer picture or the viewport (Meshy, or a
   ComfyUI workflow with `{{IMAGE}}` in a LoadImage node). Meshy asks first (credits, and that the picture
   goes to Meshy). See [Give the AI pictures and shaders](pictures-and-shaders.md).
 - **AI assistant** — just ask (“add a treasure chest by the wall”). The assistant calls
@@ -164,6 +165,21 @@ GLB. (Other hosted providers with the same task-based REST shape can be added as
 - **Console agent** — pass `--mesh-kind comfyui --mesh-url … --mesh-workflow path/to.json`
   (or `AGENT_MESH_*` env vars) and the agent's `generate_mesh` tool works the same way,
   pushing the GLB into the session. See [Console Agent](console-agent.md).
+
+### The Generate window
+
+*Since 1.65* the generator is a window, not a dialog. It stays open while you work, and you can dock it as a
+bottom-dock tab or a sidebar tab. On a phone it is a sheet. The form has not changed: provider, an optional picture
+(device, camera, viewport, Explorer), prompt, name. The credits line and the picture consent work as before.
+
+- **Jobs**: every generation on this device. A running job shows its progress and a **Cancel** button. A finished job
+  has **Reopen**, which selects the model, or places it again from Explorer ▸ Generated if you deleted it. A failed or
+  cancelled job has **Retry**, which is a new generation and uses credits again. **Clear finished** tidies the list.
+- **History**: the prompts you generated, newest first. Tap one to put it back in the form.
+- The jobs and the history survive a reload. A job that was still running carries on where it was: it is **not** sent
+  to the provider again, so it is not charged twice.
+- Pictures are never kept, so a picture job's **Retry** asks you to pick the picture again. Jobs and history stay on
+  this device (40 jobs, 30 prompts). Closing the window does not stop running jobs.
 
 ## Limits
 

@@ -33,8 +33,9 @@ like your own edits.
 ## Connect your tab (each time you build)
 
 1. Open theprototype.app, sign in, and open or join the scene you want to work on.
-2. Press the **AI** button and press **Connect Claude** (also in **Settings ▸ Connected apps**).
-   A chip reads **Claude connected · this tab**. The AI button always opens the window; signed out,
+2. Press the **AI** button and press **Connect Claude** (also in **Settings ▸ Account ▸ Connected apps**).
+   A chip reads **Claude connected · this tab**. The AI button always opens the Chat window on its **Assistant** tab
+   (since 1.65 the AI assistant is a tab of the one Chat window); signed out,
    the same card offers **Sign in to connect**, which opens your profile menu at the top right, the one place to
    sign in. With no AI provider set up, the window also offers **Use your own AI provider** (**Open settings**).
    Working with a local model or your own key while signed out? **Sign in to connect** stays in the window's header.
@@ -244,11 +245,12 @@ Claude reads its tool list when it connects, so it sees these after the connecto
 
 ## Stop it
 
-- **Disconnect** (next to the chip, or in Settings ▸ Connected apps) stops Claude at once, including
+- **Disconnect** (next to the chip, or in **Settings ▸ Account ▸ Connected apps**) stops Claude at once, including
   a step it is in the middle of. Press Connect Claude again to continue.
-- **Revoke** in **Settings ▸ Connected apps** removes the connector's access to your account
-  completely; claude.ai has to be approved again before it can work in any tab. You can also
-  remove the connector in claude.ai's settings.
+- **Revoke** in **Settings ▸ Account ▸ Connected apps** removes the connector's access to your account
+  completely; the AI app (claude.ai) has to be approved again before it can work in any tab. **Disconnect
+  everything** there does it for every connected app at once. You can also remove the connector in claude.ai's
+  settings.
 
 ## Privacy and limits
 

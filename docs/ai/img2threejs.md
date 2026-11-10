@@ -5,7 +5,7 @@ does not bundle or run it; your agent does, on your own machine and your own mod
 
 img2threejs rebuilds an object from **one picture** as procedural three.js code: a `THREE.Group` made of primitives and
 generated geometry, with a hierarchy of **pivots and sockets** (a lid that opens, a flame that flickers, a spot to hang a
-pot). With the AI assistant window and the `import_model` tool, the result lands in your scene as an ordinary model that
+pot). With the Chat window's **Assistant** tab and the `import_model` tool, the result lands in your scene as an ordinary model that
 every peer sees, saves with the scene and undoes in one step.
 
 ## 1. Install the skill beside the agent bridge
@@ -19,7 +19,7 @@ Needs Node.js ≥ 18, Git and Python ≥ 3.10. Restart the agent. Connect it to 
 (`npx @theprototype/agent …`) and tell it to listen.
 
 ## 2. Send a picture in the chat
-In the AI assistant window pick your agent, then press **+** → *From device* / *Camera* (phones) / *From Explorer*, paste,
+In the Chat window's **Assistant** tab pick your agent, then press **+** → *From device* / *Camera* (phones) / *From Explorer*, paste,
 or drop the picture on the window. It is shrunk on your device (long edge 1568 px, about 1 MB) and its **location data
 is removed before it is sent**. The agent sees the picture, and the bridge also saves it to a temporary file whose path
 comes with your message — that path is what the skill takes.

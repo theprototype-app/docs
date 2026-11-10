@@ -9,7 +9,7 @@ takes in between. The agent's terminal stays a second window onto the same conve
 
 ## Pick the agent
 
-Open the AI assistant window and choose the agent in the target list at the top, for example
+Open the Chat window's **Assistant** tab (the AI button) and choose the agent in the target list at the top, for example
 **Claude · agent via MCP** or **grok-3-mini · agent REPL**. Your configured assistants stay in the same list; a
 session can use both.
 

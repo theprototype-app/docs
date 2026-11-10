@@ -24,21 +24,27 @@ Once enabled, there are a few ways to reach it.
 ### The quick prompt bar
 
 Press <kbd>`</kbd> (backtick, top-left of most keyboards) to pop up a prompt bar at the
-bottom of the viewport. Type a request, press <kbd>Enter</kbd>, and the assistant window
-opens so you can watch it work. Press <kbd>`</kbd> again or <kbd>Esc</kbd> to dismiss the
+bottom of the viewport. Type a request, press <kbd>Enter</kbd>, and the Chat window
+opens on its **Assistant** tab so you can watch it work. Press <kbd>`</kbd> again or <kbd>Esc</kbd> to dismiss the
 bar. It stays hidden until you summon it, so it never gets in the way.
 
-### The assistant window
+### The Assistant tab of the Chat window
 
-A floating, draggable window (it tabs and docks like Chat and the Explorer). It keeps the
-conversation, so you can refine across turns — "make them taller", "now paint the front
-one blue". Use **Stop** to cancel a run in progress.
+*Since 1.65* the assistant is not a window of its own: it is the **Assistant** tab of the one **Chat** window, beside
+**Session** (the people in this session). The window floats, docks in a sidebar or the bottom dock, and on a phone
+opens as one sheet. It keeps the conversation, so you can refine across turns — "make them taller", "now paint the
+front one blue". Use **Stop** to cancel a run in progress.
+
+The clock button opens **History**: your own provider's chats kept on this device and AI agent chats saved in the
+scene, next to the session chats. Your own provider's chats stay on this device (they are never sent to the session)
+and come back after a reload. See [Chat and the AI assistant](../menus-and-panels.md#chat-and-the-ai-assistant).
 
 ### The bottom-left button
 
 Once the assistant is enabled and a provider is set, a round **AI assistant** button (a sparkles icon) appears at the
-bottom-left of the viewport (just below the **＋** add button). Click it to open or close
-the assistant window — the same window the quick prompt bar opens into.
+bottom-left of the viewport (just below the **＋** add button). Click it to open the Chat window on its **Assistant**
+tab — the same tab the quick prompt bar opens into. If the window is on **Session**, the button switches to
+**Assistant**; if **Assistant** is already showing, it closes the window.
 
 ### In VR
 
@@ -67,7 +73,7 @@ The Voice typing settings, set to Groq.
 2. The **API key** for that provider; it stays on this device. Further down, **Test connection** sends half a second of silence.
 </div>
 
-The assistant window then has a **mic** button next to **Send**: click to listen, click again to stop. The words land in
+The **Assistant** tab then has a **mic** button next to **Send**: click to listen, click again to stop. The words land in
 the input, so you can fix them before sending. (In VR they are sent as soon as you let go.)
 
 ![The AI assistant window: two of your messages and the assistant's answer, the provider picker, the input Ask the assistant…, the mic button and Send. 1: the mic button.](../img/ai-assistant/assistant-mic.webp){ .shot width="500" height="440" loading=lazy }

@@ -24,6 +24,7 @@ Settings on a computer, the grouped menu beside the page.
     | **General** | Interface, Accessibility, Controls, Input, Touch controls, Shortcuts |
     | **Workspace** | Scene, Explorer, Node types, Export |
     | **Devices & services** | VR, Tools & connections, Connection, Privacy |
+    | **Account** | Account (on theprototype.app) |
 
     A dot on **About & what's new** means there is an update you have not read. <kbd>↑</kbd> / <kbd>↓</kbd> walk the menu.
 
@@ -98,7 +99,21 @@ off. Search finds *notifications* and every switch by name. **Reset Interface** 
 
 ## Account
 
-*New in 1.64, on theprototype.app.* **Settings ▸ Account ▸ Email ▸ Product updates** — product news by email, off by
+*On theprototype.app.* **Settings ▸ Account** holds your account: its emails, the ways you sign in, your devices and
+the apps you connected. Since 1.65 it has four groups:
+
+| Group | What it holds |
+|---|---|
+| **Email** | **Product updates** (below) |
+| **Sign-in methods** | the providers you sign in with; **Link** a second one ([Sign in from another device](sign-in-from-another-device.md#if-you-lose-your-github-or-google-account)) |
+| **Devices** | every device signed in to your account, with **Sign out** ([Sign in from another device](sign-in-from-another-device.md)) |
+| **Connected apps** | the AI apps you connected with the [connector](ai/claude-connector.md) (Claude, Claude Code and others), each with its last use and **Revoke**; **Disconnect everything** (**Disconnect all**) ends them all, and this tab's own link |
+
+Sign-in methods and Devices used to be in the profile menu, and Connected apps was a settings page of
+its own. The [profile menu](interface.md#the-profile-menu) keeps the email-updates question and **Sign out**, with a
+**Manage** link to this page. Settings search finds every row.
+
+*New in 1.64.* **Settings ▸ Account ▸ Email ▸ Product updates** — product news by email, off by
 default. It is the same choice as the one-time *Get product updates by email?* card in the
 [profile menu](interface.md#the-profile-menu); switching it either way counts as your answer. Signed out, the switch is
 greyed out with a hint to sign in.
@@ -184,3 +199,6 @@ cache uses the older Cache Storage, and where neither exists everything download
 | Notifications | new in 1.64 | **Interface ▸ Notifications** — people leaving, the chat badge, ping sounds, AI assistant and auto-quality pop-ups (and room invites and contest reminders on theprototype.app), this device only; see [above](#notifications) |
 | Customize buttons | new in 1.64 | **Interface ▸ Customize buttons** — every hideable chrome button as a switch; see [Hiding buttons you do not use](interface.md#hiding-buttons-you-do-not-use) |
 | Product updates by email | new in 1.64 (was a box on the sign-in sheet) | **Account ▸ Email ▸ Product updates**, on theprototype.app; see [above](#account) |
+| Sign-in methods · Devices | the profile menu (until 1.64) | **Account ▸ Sign-in methods** and **Account ▸ Devices**, on theprototype.app; see [above](#account) |
+| Connected apps | its own page, **Settings ▸ Connected apps** (until 1.64) | **Account ▸ Connected apps**; see [above](#account) |
+| Show my status | new in 1.65 | **Interface ▸ Show my status** — off by default, this device only: Available, Busy or Away beside your name in People; see [Show my status](people.md#show-my-status) |
