@@ -4,8 +4,9 @@ Everything about how the scene *looks on your screen* — the camera lens, rende
 
 ## Opening Configure Scene
 
-Click **🎛️ Configure Scene** in the sidebar menu. It opens as a tab of the [sidebar](https://docs.theprototype.app/interface.md#sidebars) on the right
-(drag its tab to the left to keep it there) with these sections:
+Click **Configure Scene** in the sidebar menu. It opens as a tab of the [sidebar](https://docs.theprototype.app/interface.md#sidebars) on the right
+(drag its tab to the left to keep it there). *Since 1.64* its sections are in two groups: **The scene** (shared,
+everyone sees them) and **This device** (only you), and only Environment and Scene look start open:
 
 - **Quality** — the quality preset and the automatic-quality, shadow and model switches (your device only; see
   [The Quality preset](https://docs.theprototype.app/performance.md#the-quality-preset)).
@@ -16,6 +17,9 @@ Click **🎛️ Configure Scene** in the sidebar menu. It opens as a tab of the 
 - **Background** and **Fog** (shared).
 
 A dot appears next to the menu item while the panel is open; click it again to close.
+
+**Who changed it** (*since 1.64*): under each shared section a small line says who changed it last and when — a person
+by name, an AI agent, or *Claude (AI)* through the connector. Loading a scene or joining does not count as a change.
 
 !!! note "Shared vs. this device"
     The **Environment**, **Background** and **Fog** settings replicate to everyone. The **View** and **Camera** sections — render mode, lens and clip planes — are **local to your device**, so you can zoom, wireframe or dim shadows without changing what your peers see.
@@ -86,7 +90,7 @@ screen, **✕** hides the window (the *Preview window while selected* row brings
 1.34 it resizes too: drag the grip in its top-left corner (the picture keeps the camera's framing), or double-click the
 grip for the default size. The size is remembered.
 
-A game uses cameras through the [Set Active Camera](https://docs.theprototype.app/nodes/setcamera.md) node, the [Game Start](https://docs.theprototype.app/nodes/gamestart.md) node's
+A game uses cameras through the [Set Active Camera](https://docs.theprototype.app/nodes/setcamera.md) node, the [Start camera](https://docs.theprototype.app/nodes/gamestart.md) node's
 camera, [Set Look](https://docs.theprototype.app/nodes/setlook.md) for each camera's own [look](https://docs.theprototype.app/post-processing.md), and since 1.27 the
 [Camera Rig](https://docs.theprototype.app/nodes/camerarig.md) node, which makes a camera follow or watch an object.
 
@@ -140,6 +144,12 @@ The **Environment** section sets the scene's lighting and sky. Pick a preset chi
 *Figure: Studio, Daylight, Sunset and Night on the same three objects.*
 [Try it](https://theprototype.app/)
 
+*Since 1.64* the section shows **six preset pills plus More** (a preset picked from More takes the sixth pill while it is
+applied), and a line that says what the preset is for and what it sets. After you edit a value it reads, for example,
+*Studio · Modified: sun*, with a **Reset** button that puts the whole preset back in one undo step, for everyone. A
+**dot** beside a row (Exposure, Sky light, Sky / ground, Sun, Sun color, Background, Fog) marks a value that differs from
+the preset; press the dot to put just that value back.
+
 Since 1.27 five more chips — **Clear sky**, **Meadow**, **Sunrise**, **Starlight** and **Photo studio** — use a real sky
 photo; see [Sky images](#sky-images-hdri).
 
@@ -161,8 +171,9 @@ sky.
 
 1. The sky image lights the scene and shows in every reflection: the **sky reflected** in the mirror sphere.
 
-It lives in **Configure Scene ▸ Environment ▸ Sky image (HDRI)**, under the preset chips and the Exposure slider. Click
-a card to switch to that sky; like every Environment setting, everyone in the session sees it.
+It lives in **Configure Scene ▸ Environment**. The skies are presets: pick one from the six preset pills or **More**;
+like every Environment setting, everyone in the session sees it. (*Since 1.64* the sky picture cards and their tour are
+gone; the small **None** and **Upload HDRI…** chips stay.)
 
 Since 1.53 a sky downloads the first time you pick it and stays [on this device](https://docs.theprototype.app/settings.md#downloads-kept-on-this-device). Offline or
 with the download blocked, the preset's flat colours show until the sky can load. Exported games still carry their sky.
@@ -175,10 +186,10 @@ with the download blocked, the preset's flat colours show until the sky can load
 | **Starlight** | dusk under the stars |
 | **Photo studio** | softbox lighting over a plain grey backdrop — light only; reflections show the studio |
 
-The five skies are also preset chips, and in VR they are in the radial menu's **Scene ▸ Environment**. All five are CC0
+In VR the five skies are they are in the radial menu's **Scene ▸ Environment**. All five are CC0
 images from [Poly Haven](https://polyhaven.com).
 
-![Configure Scene ▸ Environment: the sky preset cards, Upload HDRI…, Rotation, Image light, Show as sky, Sky blur and Tone mapping.](https://docs.theprototype.app/img/camera/sky-image-section.webp)
+![Configure Scene ▸ Environment ▸ Sky image with the Meadow sky in use: None and Upload HDRI…, Rotation, Image light, Show as sky, Sky blur, Tone mapping, Sky quality and Minimum quality.](https://docs.theprototype.app/img/camera/sky-image-section.webp)
 *Figure: Configure Scene ▸ Environment, with its Sky image section.*
 | Row | What it does |
 |---|---|
@@ -188,9 +199,9 @@ images from [Poly Haven](https://polyhaven.com).
 | **Show as sky** | off keeps the image's light and reflections but shows the colour sky instead |
 | **Sky blur** | softens the background — handy behind a product shot |
 | **Tone mapping** | **ACES Filmic** (the default), **AgX** or **Neutral**: how the bright image is fitted to the screen |
-| **None** (the first card) | back to the colour sky and the light rig |
+| **None** | back to the colour sky and the light rig |
 
-**Exposure**, above the cards, brightens or darkens the whole picture, and while a sky image shows it works on the
+**Exposure** brightens or darkens the whole picture, and while a sky image shows it works on the
 desktop whatever else is on. Editing any of these turns the preset into *Custom*, like any other sky edit; **Save
 preset** keeps it.
 

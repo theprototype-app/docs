@@ -48,6 +48,22 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.64 — flow you can shape.** [Starter recipes](https://docs.theprototype.app/starter-recipes.md) turn the selected object into a door you click, a
+door that opens as you walk up, a bell or a guard in one step. Trigger cards say
+[why they did not fire](https://docs.theprototype.app/debugger.md#why-did-this-not-fire) — *blocked: not the player*, *won't fire: physics is not
+running* — and the player now counts for [On Enter](https://docs.theprototype.app/nodes/onenter.md) and [On Exit](https://docs.theprototype.app/nodes/onexit.md). New nodes make a
+room feel alive (see [a furnished room](https://docs.theprototype.app/furnished-room.md)): [On Hover](https://docs.theprototype.app/nodes/onhover.md),
+[Toggle Animation](https://docs.theprototype.app/nodes/toggleanim.md), Oscillate, Move / Rotate / Scale To, light switches, wind, water, a cat,
+things to pick up, a button that presses in and a seat to sit on. [Paths](https://docs.theprototype.app/paths.md) give guards and platforms a route
+with waits and events; [Levels and progress](https://docs.theprototype.app/levels-and-progress.md) brings one Levels table, portals, checkpoints,
+loading screens and saved progress in exported games (try **Templates ▸ Two levels and a portal**). Drag a wire into
+empty space for a [search of the nodes that fit](https://docs.theprototype.app/node-system.md#drag-a-wire-into-space), and a backwards wire is flagged
+with a one-press fix. Also: small controls are easier to tap on touch screens, tab rows scroll with a swipe, the profile
+menu is regrouped, floating windows have [Small, Half and Full sizes](https://docs.theprototype.app/controls.md#the-window-menu), on a folded
+phone Chat, the AI assistant and Free assets are [dock tabs](https://docs.theprototype.app/interface.md#the-dock-on-a-phone),
+[Settings ▸ Interface ▸ Notifications](https://docs.theprototype.app/settings.md#notifications) switches pop-ups off, the fastest
+device in a session runs the physics, and the interface uses icons, not emoji.
+
 **1.63 — pro look.** Three [pro presets](https://docs.theprototype.app/pro-look.md) — **Product shot**, **Cinematic** and **Stylised** — set the sky,
 light, exposure and a whole stack of effects in one press, scaled to each device. [Baked light](https://docs.theprototype.app/baked-light.md) works out
 soft corner shadows and bounced light once and saves them with the scene; [Photo mode](https://docs.theprototype.app/photo-mode.md) renders a
@@ -197,7 +213,7 @@ a minute.
 **1.48 — AI agents in your session.** Send Claude (or any MCP agent) your session link and build together:
 `claude mcp add theprototype -- npx -y @theprototype/agent mcp '<link>'` and it joins as a peer, builds with the app's
 own tools — objects, flow nodes, physics — checks its work with screenshots, and lists every step in the AI assistant
-window for everyone to select or undo ([Build with an AI agent](https://docs.theprototype.app/ai/build-with-an-agent.md)). **Connect ▸ Request AI**
+window for everyone to select or undo ([Build with an AI agent](https://docs.theprototype.app/ai/build-with-an-agent.md)). **Connect ▸ Invite ▸ AI agent**
 makes [invite links](https://docs.theprototype.app/invites.md) for agents and people: View or Edit, 10 minutes to a day, one or more uses, revocable,
 no approval card. Right-click anyone in the Connected panel for the new [peer menu](https://docs.theprototype.app/people.md) — profile, Go to, Hide —
 and, for the host or an admin, **Remove** or **Remove and block** with **Allow back**.

@@ -6,7 +6,7 @@ Sound in ThePrototype comes in a few flavors: one shared background track for th
 
 Every scene can have **one shared background track**, synced to the same point in the loop for everyone.
 
-To set it, open **🎛️ Configure Scene ▸ Music**:
+To set it, open **Configure Scene ▸ Music**:
 
 1. Import an audio file into your [Explorer](https://docs.theprototype.app/explorer.md) library (drag an `.mp3`, `.wav` or `.ogg` onto the Explorer).
 2. In the Music section, pick it from the **Scene track (shared)** dropdown. Choosing a track pushes its bytes to your peers automatically.

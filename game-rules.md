@@ -29,7 +29,7 @@ Open a game from the **Games** tab, then open the **Node editor** (<kbd>N</kbd>)
 - **Its sockets** connect it to the rest of the graph:
     - **inputs** on the left — the menu buttons (*Tee off*, *Play again*…) are wired into them;
     - **outputs** on the right — its **state** (the words the HUD shows: *Hole 3 of 6 · Windmill*, *Strokes 2*,
-      */ 8 needed*…) and its **moments** ⚡ (a stroke, out of bounds, the ball in the cup, a goal, a portal opening),
+      */ 8 needed*…) and its **moments** (a stroke, out of bounds, the ball in the cup, a goal, a portal opening),
       wired into banners, sounds, sparkles, controller buzzes and [kit](https://docs.theprototype.app/game-kit.md) nodes (set score, win round).
 - **The engine** — what rules cannot be: a ball's physics body, the drag-to-putt arrow, a VR putter, a generated
   dungeon. It stays in the game's module, and the rules reach it as `kit.golf.*`, `kit.football.*`, `kit.realms.*`,

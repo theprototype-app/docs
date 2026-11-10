@@ -27,6 +27,9 @@ Every panel, sheet, dock, toolbar, menu, toast and the phone layout grows or shr
 - On a small phone, 150 % leaves less room for the scene; 120–130 % is often the best balance there.
 - *New in 1.63.* The scale also grows the panel tab strips and menus, so a touch screen can have bigger targets
   everywhere.
+- *New in 1.64.* On a touch screen, small buttons, tabs and menu rows also answer a tap a little outside their drawn
+  edge (up to about 44 px), without growing and without taking a tap meant for the control next to them — see
+  [On a phone](https://docs.theprototype.app/interface.md#on-a-phone). If you want them bigger on screen too, raise the UI scale.
 
 ![The Accessibility page at 150 % on a folded phone: bigger type and bigger controls, with nothing pushed off the screen.](https://docs.theprototype.app/img/accessibility/scale-150-phone.webp)
 *Figure: UI scale at 150 % on a folded phone.*
@@ -67,7 +70,7 @@ toast a crossed circle, and the draw-call count shows ▲ or ✕ before the numb
 strip).
 
 In the node editor every socket type has a colour **and a shape** — number disc, vector3 diamond, boolean square, color
-hexagon, object pentagon, event arrow, effect star, anything else a capsule. The ⚙ panel's **Socket types** legend shows
+hexagon, object pentagon, event arrow, effect star, anything else a capsule. The node editor's **Settings** (cog) panel's **Socket types** legend shows
 both, and while you drag a wire a socket that cannot take it becomes a red cross. See [Node System](https://docs.theprototype.app/node-system.md).
 
 ## Motion

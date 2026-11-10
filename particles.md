@@ -17,7 +17,7 @@ Right-click an object ▸ **Effects ▸** and pick a preset. It attaches immedia
 Select an object and open its **Particles** section:
 
 - With no emitter yet: the **Add emitter…** dropdown attaches a preset.
-- With one attached: tweak every property (below), swap the preset, **💥 Burst now**, or **Remove emitter**.
+- With one attached: tweak every property (below), swap the preset, **Burst now**, or **Remove emitter**.
 
 ### As a standalone object
 
@@ -48,7 +48,7 @@ its old look.
 ## Continuous, burst, and on-impact
 
 - **Continuous** emitters (Sparkles, Fire, Smoke) emit forever.
-- **Burst** emitters (Dust puff, Confetti, Sparks) fire all their particles at once, then wait for the next trigger. They auto-fire once when you attach them so you get instant feedback; after that, replay them with **💥 Burst now** or wire an event into the [Particles node](https://docs.theprototype.app/nodes/particle.md).
+- **Burst** emitters (Dust puff, Confetti, Sparks) fire all their particles at once, then wait for the next trigger. They auto-fire once when you attach them so you get instant feedback; after that, replay them with **Burst now** or wire an event into the [Particles node](https://docs.theprototype.app/nodes/particle.md).
 - **On impact (physics)** emitters fire automatically when a [physics simulation](https://docs.theprototype.app/physics.md) lands the object on the ground or another object — a dust puff exactly when the crate hits the floor. Set the object's body to **Dynamic**, set the emitter's **Emission** to *On impact*, and press <kbd>P</kbd>. Every peer sees the same burst. Small settling bounces are filtered out (the object has to be actually falling), and a rolling object won't machine-gun bursts.
 
 !!! tip "Throwing things"

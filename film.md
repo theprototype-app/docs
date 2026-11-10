@@ -53,7 +53,7 @@ Whichever you choose:
 - **Stick** (bottom left): moves along the floor in the direction you are looking.
 - **▲ / ▼**: rise and sink. **m/s** cycles the speed (0.5 to 8 metres per second).
 - On a keyboard: **W A S D** to move, **E / Q** to rise and sink.
-- **Mini-map** (🗺): a top-down map of the scene. Tap a spot to move the camera there.
+- **Mini-map**: a top-down map of the scene. Tap a spot to move the camera there.
 
 ### Walk
 

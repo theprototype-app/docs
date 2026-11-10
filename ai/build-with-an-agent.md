@@ -24,7 +24,7 @@ replicated to everyone and undoable, exactly like a person's edits.
       you press **Approve** on the request card — it carries a robot badge. On theprototype.app
       with accounts, Approve may admit it **view-only**: a view-only agent cannot change anything
       (it is told so plainly). Give it **Editor** in Users ▸ role, or use an invite instead.
-    - *Invite (recommended):* **Connect ▸ Request AI** makes a single-use, short-lived link that
+    - *Invite (recommended):* **Connect ▸ Invite ▸ AI agent** makes a single-use, short-lived link that
       joins in one step with the role you pick (Edit by default) and shows you the ready-made
       command to paste into your agent. See [Invite people and agents](https://docs.theprototype.app/invites.md).
 2. **Tell the agent what to build**, in its own chat: *"Join my theprototype session and build a

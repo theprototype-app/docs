@@ -16,6 +16,12 @@ True while two things are within a radius of each other — a distance sensor wi
 | Parameter | Default | Where |
 |---|---|---|
 | radius | 3 | number field on the card |
+| to | object | **object** = the object wired into **b**; **player** = *your* player's body (feet to eye) — *since 1.64* |
+
+With **to: player** each peer measures from **a** to its own player, so the output can differ between players: a sign
+that lights for whoever stands close. For one shared reaction — a door everyone sees open — use a sensor zone and
+[On Enter](https://docs.theprototype.app/nodes/onenter.md) instead (the [walk-up door recipe](https://docs.theprototype.app/recipe-walk-up-door.md)); the
+[Guard recipe](https://docs.theprototype.app/recipe-guard.md) uses **to: player** for a warning each player hears for themselves.
 
 ## Practical example
 

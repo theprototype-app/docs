@@ -1,8 +1,12 @@
-# Game Start
+# Start camera
 
-Fires once when the game starts (Play, or a round reset) - the place to spawn, reset counters and arm timers.
+The camera every player looks through when the game state becomes *playing* — a late joiner too. A **setting**, not an
+event: it never pulses.
 
-**Output:** event
+*Renamed in 1.64* — it used to be called **Game Start**, which read like an event. Old scenes load unchanged. To react
+when Play begins, use [On Play start](https://docs.theprototype.app/nodes/onplaystart.md) (or [On Game State](https://docs.theprototype.app/nodes/ongamestate.md)).
+
+**Output:** none (a setting)
 
 ## Inputs
 
@@ -18,4 +22,6 @@ Fires once when the game starts (Play, or a round reset) - the place to spawn, r
 
 ## Practical example
 
-Wire **Game Start** into a **Spawn** node's trigger and into a **Set Variable** that zeroes the score: every round begins from the same clean slate on every peer.
+Put **Start camera** in the Scene flow and wire an [Object Selector](https://docs.theprototype.app/nodes/objectselector.md) picking your intro camera into
+**camera**: whoever presses Play, or joins later, starts looking through it. For "spawn the gems and zero the score when
+Play starts", wire [On Play start](https://docs.theprototype.app/nodes/onplaystart.md) into the Spawn and the Set Variable.

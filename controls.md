@@ -443,7 +443,7 @@ visible scrollbar. On a folding phone it stays right through folding and unfoldi
 
 ### Floating windows
 
-The toolboxes, the Explorer, the flow and animation windows and the panels all behave the same way: drag the header (or, since 1.35, any empty part of the window) to move, drag the bottom-right corner to resize. A window can never be sized past the edge of the screen — the resize corner always stays reachable — and **double-clicking** the corner resets it to its default size while leaving it where you parked it. Size and position are remembered per window.
+The toolboxes, the Explorer, the flow and animation windows and the panels all behave the same way: drag the header (or, since 1.35, any empty part of the window) to move, drag the bottom-right corner to resize. A window can never be sized past the edge of the screen — the resize corner always stays reachable — and **double-clicking** the corner resets it to its default size while leaving it where you parked it. Size and position are remembered per window. *Since 1.64* Chat and the AI assistant resize the same way and keep their size, the text viewer and the 3D preview keep theirs, the corner is easier to grab with a finger, and a window that opens while a sidebar is open appears beside it rather than under it.
 
 A window also **keeps its header**: it cannot be dragged so far down that the header hides under the Controls pill, the bottom band on a touch or narrow screen, the dock, or a browser overlay — there is always something left to grab. A tall toolbox parked near the bottom scrolls its body instead of losing its head.
 
@@ -496,13 +496,18 @@ Right-click a floating window's header — or press and hold it on a touch scree
 | **Float (undock)** | on a tab of a window group: takes that window out of the group |
 | **Group with…** | lists the other open windows that can share tabs (the toolbox cannot; Statistics can since 1.39) |
 | **Bring to front** | puts it above the other floating windows |
+| **Size ▸ Small / Half / Full** | *since 1.64*: a third of the free area, half of it, or all of it (the space between the sidebars and the dock) |
 | **Reset size** | back to its default size, where it is |
 | **Close** | closes it |
 
 The same menu opens on a tab of a [floating window with tabs](https://docs.theprototype.app/interface.md#floating-windows-with-tabs). The header itself
 is unchanged.
 
-![The floating Objects window's header right-clicked: Dock to bottom, Move to left sidebar, Move to right sidebar, Float (undock) greyed because it already floats, Group with…, Bring to front, Reset size and Close.](https://docs.theprototype.app/img/controls/window-menu.webp)
+**Double-click the header** — or double-tap it on a touch screen — to step through **Half**, **Full** and **Small**. The
+Objects list and the Flow, Explorer, Profiler, Timeline, Animation, UV, Shader, HUD and Code editors size themselves:
+their **Size** row is greyed for now.
+
+![The floating Objects window's header right-clicked: Dock to bottom, Move to left sidebar, Move to right sidebar, Float (undock) greyed because it already floats, Group with… greyed with no other window open, Bring to front, Reset size, Size greyed because the Objects list sizes itself, and Close.](https://docs.theprototype.app/img/controls/window-menu.webp)
 *Figure: A floating window's header menu.*
 For the bottom dock's own buttons — **Undock**, **Split**, closing a view from its tab, **Dock all tabs** on a floating
 window — and for docking a window into an exact slot by dropping it on the dock's tab bar, see
@@ -583,6 +588,18 @@ button's own menu has:
 
 The two **Lift** switches are also in a corner button's right-click menu, next to *Always on top*, and in **Settings ▸
 Interface ▸ Windows & chrome**.
+
+**Animate in editor** (*since 1.64*) is an optional toolbar button — add it from **Customize toolbar…**. Off, every
+object moved by a flow (Spin, Bounce, Orbit, Path patrol, Wander…) rests at its authored pose while you edit; Play runs
+everything as before. It is your own setting, on by default; the same switch is in the node editor's controls
+([Animate in editor](https://docs.theprototype.app/node-system.md#animate-in-editor)).
+
+### One banner for click-to-place tools
+
+*Since 1.64.* Tools that take your next click in the scene — placing Path points or waypoints, measuring, drawing or
+placing a spline, picking a flatten point — share **one banner** at the top of the viewport. It names the tool that owns
+your next click and what is still armed underneath: only the newest tool takes clicks; the others wait underneath.
+<kbd>Esc</kbd> leaves only the top tool, so a second <kbd>Esc</kbd> leaves the next one.
 
 ### The "…" button
 
@@ -783,7 +800,7 @@ The keys in the table are the **3D view's**: they fire while the 3D view has foc
 | <kbd>T</kbd> | Show / hide the tool dock (with nothing docked it opens [empty](https://docs.theprototype.app/interface.md#docked-windows), ready for a drop) |
 | <kbd>Ctrl</kbd>+<kbd>B</kbd> | Show / hide the left [sidebar](https://docs.theprototype.app/interface.md#sidebars) (its tabs stay open) |
 | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd> | Show / hide the right sidebar |
-| <kbd>Alt</kbd>+<kbd>E</kbd> / <kbd>F</kbd> / <kbd>A</kbd> / <kbd>U</kbd> / <kbd>S</kbd> / <kbd>H</kbd> | Explorer / Flow Code / Animation / UV editor / Shader editor / HUD editor |
+| <kbd>Alt</kbd>+<kbd>E</kbd> / <kbd>F</kbd> / <kbd>A</kbd> / <kbd>U</kbd> / <kbd>S</kbd> / <kbd>H</kbd> | Explorer / flow code (in the Code workspace) / Animation / UV editor / Shader editor / HUD editor |
 | <kbd>C</kbd> | Toggle chat (from the 3D view only) |
 | <kbd>Shift</kbd>+<kbd>A</kbd> | Add an object at the cursor (enable in Settings) |
 | <kbd>P</kbd> | Start / stop the physics [simulation](https://docs.theprototype.app/physics.md) |
@@ -821,7 +838,7 @@ for a cheat sheet of every panel's keys, the focused panel first.
 
 Since 1.25 this covers **every panel and tool window**, docked or floating: the Explorer, the Inspector, the node
 editor's chrome, a behaviour's graph view, the [code workspace](https://docs.theprototype.app/code-workspace.md), the HUD editor, Animation, UV,
-Shader, Flow Code, the Profiler, previews, chat… Clicking in one gives it the keyboard, and the panel that has the keys
+Shader, Code, the Profiler, previews, chat… Clicking in one gives it the keyboard, and the panel that has the keys
 shows an outline.
 
 - **<kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> / <kbd>Q</kbd> <kbd>E</kbd> never fly the camera from a panel**,

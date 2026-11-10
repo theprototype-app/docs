@@ -89,16 +89,20 @@ The flow graph can drive the same properties: wire a [Mass](https://docs.theprot
 You can start and stop the sim three ways:
 
 - **Press <kbd>P</kbd>** — toggles the simulation.
-- **Right-click the viewport ▸ Tools ▸ ▶ Simulate physics** (the same entry becomes *⏹ Stop simulation*, and *Pause* / *Reset* appear while it runs).
+- **Right-click the viewport ▸ Tools ▸ ▶ Simulate physics** (the same entry becomes *■ Stop simulation*, and *Pause* / *Reset* appear while it runs).
 - **The Simulation controls HUD** — a small transport at the bottom-right, if you've enabled it (see below).
 
 While running, dynamic objects fall under gravity and collide; **Reset** restores the initial layout without an undo entry, **Pause/Resume** freezes the sim, and **Stop** ends it — after which <kbd>Ctrl</kbd>+<kbd>Z</kbd> restores the layout you started from.
+
+*Since 1.64* a level made **only of static objects** — walls, floors, a sensor doorway — runs its physics world when
+Play starts, so walls stop you and [On Enter](https://docs.theprototype.app/nodes/onenter.md) zones notice you without a simulation of your own. For
+gravity, jumps and climbing onto boxes, add a [Character Controller](https://docs.theprototype.app/nodes/charcontroller.md) node set to walk.
 
 If nothing has physics when you press play, the app helps you out: with an object selected it simulates just that object at mass 1 and tells you *"No Mass nodes wired — simulating the selected object with mass 1"*; with nothing selected it prompts you to wire a Mass node or select something first.
 
 ### The simulation controls HUD
 
-The bottom-right transport (▶ / ⏸ / ⏹ / ↺) is **off by default** so it isn't confused with the main play button. Turn it on in **Settings ▸ Scene ▸ Simulation controls**. The <kbd>P</kbd> shortcut works whether or not the HUD is visible; the first time you use <kbd>P</kbd> while it's hidden, a toast reminds you where to enable it.
+The bottom-right transport (**Play**, **Pause**, **Stop**, **Reset**) is **off by default** so it isn't confused with the main play button. Turn it on in **Settings ▸ Scene ▸ Simulation controls**. The <kbd>P</kbd> shortcut works whether or not the HUD is visible; the first time you use <kbd>P</kbd> while it's hidden, a toast reminds you where to enable it.
 
 In a scene that has [Start simulation on load](#start-simulation-on-load) on, the transport is always there. Since 1.25
 it drives **the whole simulation**: **Pause** holds everything still — the bodies, the [fluid tanks](https://docs.theprototype.app/simulation.md#fluid-tank),
@@ -304,7 +308,13 @@ Physics uses an **authoritative** model: the peer who starts the run is the only
 - **Someone joining mid-run is told the run is happening**, so their grab and their [knock](#the-knock) work from the first second instead of after the next restart.
 - **Watching peers interpolate.** The simulating peer sends about ten poses a second per moving body; everyone else eases between them instead of snapping, so a fast throw looks smooth rather than stepped. It costs nothing on the wire and never changes *where* an object ends up — only how it gets there.
 - **A throw you make is applied exactly.** When you are not the peer running the simulation, releasing an object sends the release velocity itself, so the object leaves your hand immediately and in the direction you threw it rather than being reconstructed from position updates.
-- The sim uses a fixed timestep, so it runs at the same speed for everyone even when a browser tab is throttled in the background.
+- **The fastest device runs the physics** (*since 1.64*). While a simulation runs, every peer reports its frame time;
+  when another device is clearly faster (at most 60 % of the runner's frame time, for 3 s), the run moves there —
+  bodies keep their speed, and Stop's undo and Reset still go back to where the run began. It never moves to an AI
+  agent's tab or a view-only peer, and not while the runner walks on its own world in Play.
+- The sim uses a fixed timestep, so it runs at the same speed for everyone even when a browser tab is throttled in the
+  background. *Since 1.64* a slow device that runs the physics alone keeps real time too — it takes more catch-up steps
+  per frame, sized from what a step costs on that device — instead of falling into slow motion.
 - Kinematic platforms that are themselves animated by the flow graph need no extra traffic — every peer computes their motion identically.
 
 !!! tip

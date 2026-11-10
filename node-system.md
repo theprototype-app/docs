@@ -21,7 +21,13 @@ greyed out until the next save drops it.
 ## Adding nodes
 
 - **Palette** — the left sidebar lists every node by group with a filter box; drag a node onto the canvas. The palette can be collapsed or moved to the other side with the tabs on its edge.
-- **Right-click the canvas** — a grouped Add menu, plus **🔍 Search nodes…**; just start typing while the menu is open to jump into search (<kbd>Arrow</kbd> keys + <kbd>Enter</kbd> to place, <kbd>Esc</kbd> back to the menu).
+- **Right-click the canvas** — a grouped Add menu, plus **Search nodes…**; just start typing while the menu is open to jump into search (<kbd>Arrow</kbd> keys + <kbd>Enter</kbd> to place, <kbd>Esc</kbd> back to the menu).
+- **Drag a wire into empty space** (*since 1.64*) — a search opens where you let go, listing only the nodes that fit the
+  wire; see [Drag a wire into space](#drag-a-wire-into-space). With one node selected, <kbd>Tab</kbd> opens the same
+  search for what can follow it.
+- **Recipes** (*since 1.64*) — the same right-click menu (and the node search) has a **Recipes** entry: a door, a
+  walk-up door, a bell and a guard, built into the selected object's flow in one step. See
+  [Starter recipes](https://docs.theprototype.app/starter-recipes.md).
 
 Right-click a **node** for Open code, Group, Duplicate, Mute, Disconnect all, Delete and more; right-click an **edge** to disconnect it. <kbd>Delete</kbd>/<kbd>Backspace</kbd> removes the selection. Groups, notes, the node editor's own shortcuts and the full menus are on [Node editor: keyboard, groups and notes](https://docs.theprototype.app/node-editor.md).
 
@@ -62,6 +68,27 @@ turns into a red **cross**. See [Accessibility](https://docs.theprototype.app/ac
 
 Sensible conversions are allowed automatically: numbers ↔ booleans, numbers → vectors, events → numbers/booleans, and vector3 ↔ object (so a Vector3 literal can stand in for an object as a world point). **Effect** sockets only connect to other effect sockets.
 
+### Drag a wire into space
+
+*Since 1.64.* Let go of a wire anywhere on the node editor's background and a search opens right there, listing only
+the nodes that fit: **exact matches first**, then the ones the wire **converts** into (an event wire into a number input
+counts its pulses, for example), and **Show all nodes** last. Picking one adds the node *and* the wire, and a single
+undo takes both away. It works with touch too.
+
+**<kbd>Tab</kbd>** opens the same search: with one node selected it lists what can follow it and wires your pick to its
+output. <kbd>Tab</kbd> still enters a selected group, and still leaves the group you are in when nothing is selected
+([Groups](https://docs.theprototype.app/node-editor.md#groups)).
+
+### Backwards wires
+
+Triggers feed the [Object Selector](https://docs.theprototype.app/nodes/objectselector.md), never the reverse. A wire **from** an Object Selector
+**into** On Click — or On Grab, On Hit, On Impact, On Enter / On Exit, Animation Finished / Marker / State — means the
+trigger never fires. *Since 1.64* such a wire is drawn **dashed red** with a warning chip. The chip explains the
+problem and offers **Reverse wire**, which fixes it in one undo step; the wire's right-click menu offers Reverse as well.
+
+**My click does nothing?** Look for a dashed red wire first, then read the trigger's card: it says why it did not fire
+([Why did this not fire?](https://docs.theprototype.app/debugger.md#why-did-this-not-fire)).
+
 ## How values flow
 
 ```
@@ -75,12 +102,25 @@ sources (Input) → logic → effect nodes → Object Selector
 
 Cards show live value readouts, updated several times a second.
 
-## The right panel: ⓘ and ⚙
+**Live state on node cards** (*since 1.64*). While the node editor is open, cards also say what they are doing right
+now, under their title: *count 3*, *on*, *fired 1.2 s ago*, *to point 3*, *placing points*, *resting until Play*.
+Trigger nodes say why they did not fire — *blocked: not the player*, *won't fire: in Edit mode (use Play)*.
 
-The **⚙** tab button on the right edge opens the properties panel, which has two tabs:
+## Animate in editor
+
+*Since 1.64.* Flow motion — Spin, Bounce, Orbit, Path patrol, Wander and the other movers — plays while you edit, so you
+see the scene alive. Switch **Animate in editor** off and every flow-moved object rests at its authored pose while you
+work on it; its card says *resting until Play*. Play runs everything as before.
+
+The switch is in the node editor's controls and, as an optional button, on the [toolbar](https://docs.theprototype.app/controls.md#arranging-the-buttons).
+It is your own setting, on by default: it changes nothing for anyone else.
+
+## The right panel: Params and Settings
+
+The **Settings** button (a cog) on the right edge opens the properties panel, which has two tabs:
 
 - **ⓘ Params** — the *selected node's* properties: since 1.23 every node lists them all here, including a Script's input values, a Behaviour's params and a module node's options, alongside extras such as a Slider's **Min/Max**, a Switcher's **items list** (add/remove entries) and a Number's **step**. A property with a wire into it shows the incoming value instead. See [Properties panel](https://docs.theprototype.app/main-graph.md#properties-panel).
-- **⚙ Settings** — with a node selected: its **Name** and a free-text **Note**. With nothing selected: graph settings — edge style (Bezier/Step/Straight), background (dots/lines/none), minimap, snap-to-grid + grid size, Fit / Reset view, and the socket color legend.
+- **Settings** (the cog) — with a node selected: its **Name** and a free-text **Note**. With nothing selected: graph settings — edge style (Bezier/Step/Straight), background (dots/lines/none), minimap, snap-to-grid + grid size, Fit / Reset view, and the socket color legend.
 
 ## Determinism and replication
 
@@ -101,9 +141,10 @@ toast — or reload without `#safe`.
 
 ## Flow Code: the graph as text
 
-**Flow Code** (the dock's **＋** menu, or <kbd>Alt</kbd>+<kbd>F</kbd>) shows the graph the editor is
-showing as text you can read, edit and **Apply**. (The [code workspace](https://docs.theprototype.app/code-workspace.md#graph-json) can also open it as
-JSON in a tab, beside the graph's scripts.) A **Text | JSON** toggle above it picks the
+**Flow Code** (<kbd>Alt</kbd>+<kbd>F</kbd>) shows the graph the editor is showing as text you can read, edit and
+**Apply**. *Since 1.64* it is not its own window: it opens in the [code workspace](https://docs.theprototype.app/code-workspace.md#flow-code) from the
+graph's **flow code** entry in the Project tree, and **Save** (<kbd>Ctrl</kbd>+<kbd>S</kbd>) applies it. (The code
+workspace can also open the graph as [JSON](https://docs.theprototype.app/code-workspace.md#graph-json) in a tab, beside the graph's scripts.) A **Text | JSON** toggle above it picks the
 format; your choice is remembered on this device. Switching format drops edits you have not
 applied.
 

@@ -143,11 +143,11 @@ exactly what the agent tools of the same job do, with the same limits:
 
 | family | actions | the agent tools behind them |
 |---|---|---|
-| `create_shape` | `lathe`, `tube`, `extrude`, `mesh`, `import` | `create_lathe`, `create_tube`, `extrude_shape`, `create_mesh`, `import_shape` ([Shapes and modelling](https://docs.theprototype.app/ai/agent-geometry.md)) |
+| `create_shape` | `lathe`, `tube`, `extrude`, `mesh`, `import`, `text`, `path` | `create_lathe`, `create_tube`, `extrude_shape`, `create_mesh`, `import_shape`, `create_text` ([Shapes and modelling](https://docs.theprototype.app/ai/agent-geometry.md)), `create_path` ([Paths](https://docs.theprototype.app/paths.md#for-agents)) |
 | `edit_shape` | `params`, `mesh`, `update`, `duplicate`, `pivot`, `pivot_group` | `set_geometry`, `edit_mesh`, `update_mesh`, `duplicate`, `set_pivot`, `create_pivot` |
 | `set_look` | `material`, `list_materials`, `get_material`, `shader`, `edit_shader`, `assign_shader`, `shader_nodes`, `post`, `get_post`, `post_graph`, `unwrap`, `uv`, `quality`, `sky`, `light`, `environment` | `set_material` … `set_uv`, `set_quality` ([Materials and looks](https://docs.theprototype.app/ai/agent-look.md)); `set_sky`, `set_light`, `get_environment` ([HUD, sky and play](https://docs.theprototype.app/ai/agent-scene.md)) |
 | `hud` | `create`, `list`, `update`, `panel` | `create_hud`, `list_hud`, `edit_hud`, `hud_panel` ([HUD, sky and play](https://docs.theprototype.app/ai/agent-scene.md)) |
-| `game_setup` | `spawn`, `play_camera` | `place_spawn`, `set_play_camera` ([HUD, sky and play](https://docs.theprototype.app/ai/agent-scene.md)) |
+| `game_setup` | `spawn`, `play_camera`, `levels`, `portal`, `checkpoint`, `loading` | `place_spawn`, `set_play_camera`, `set_levels`, `set_portal`, `set_checkpoint`, `set_loading` ([HUD, sky and play](https://docs.theprototype.app/ai/agent-scene.md)) |
 | `assets` | `search`, `place`, `prefab`, `image` | `search_assets`, `place_asset`, `prefab` ([Worlds](https://docs.theprototype.app/ai/agent-world.md)), `add_image` ([Undo, pivots and images](https://docs.theprototype.app/ai/agent-assist.md)) |
 | `effects` | `terrain`, `scatter`, `water`, `particles`, `sound`, `music` | `terrain`, `scatter`, `water`, `create_particles`, `place_sound`, `set_music` ([Worlds with an agent](https://docs.theprototype.app/ai/agent-world.md)) |
 | `run` | `inspect`, `validate`, `logs` | `inspect_runtime`, `validate_scene`, `logs` ([Test and fix a game](https://docs.theprototype.app/ai/agent-runtime.md)) |
@@ -188,6 +188,21 @@ Worlds ([Worlds with an agent](https://docs.theprototype.app/ai/agent-world.md))
 - `assets` `search` finds models, sounds, images and CC0 materials. `place` and `prefab` put them in the scene.
 - `set_look` `material` takes `pattern` (wood, brick, marble …). `create_shape` `mesh` takes `subdivide: 1-2`, and
   `edit_shape` `update` sends a mesh new vertices.
+
+**New in 1.64** — no new tool names, more in the families and the nodes:
+
+- `game_setup` `levels`, `portal`, `checkpoint` and `loading` build a game of several levels: the one Levels table,
+  doorways, respawn pads and the loading screen ([Levels and progress](https://docs.theprototype.app/levels-and-progress.md),
+  [reference](https://docs.theprototype.app/ai/agent-scene.md#levels-portals-checkpoints-and-loading-screens)).
+- `create_shape` `path` makes a [Path](https://docs.theprototype.app/paths.md) with waits, speeds and events per point, and can set objects walking
+  it (`walkers`, spread by `offset`).
+- `create_flow_nodes` knows the new nodes: On Hover, Hover Animate, Toggle Animation, On Play start / stop, On Path
+  Event, and the room nodes of [a furnished room](https://docs.theprototype.app/furnished-room.md) (Oscillate, Move / Rotate / Scale To, Light
+  Switch, Wind Sway, Flowing Water, Ambient Animal, Grabbable, Highlight, Press Button, Sit Spot). Everyday words find
+  them (door, lamp, cat, fish, seat, button, hover, wind, river, pickup), and `describe_node_types` documents every
+  input and setting.
+- `run` `inspect` shows the game kit's round, score and pickups; a kit action that cannot run is refused with its
+  reason, and a behaviour handler that throws is rolled back (`rolledBack: true`).
 
 **New in 1.63** — no new tool names, more in the families:
 

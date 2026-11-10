@@ -64,7 +64,15 @@ A round's whole life: an intro countdown, play, a time limit, pause, won or lost
 - Values: **Round phase** (menu, intro, playing, paused, won, lost, results), **Round playing?**,
   **Round time**, **Time left**, **Intro countdown**, **Round number**, **Round outcome**.
 - Events: **On round start**, **On go**, **On round paused** / **resumed**, **On round won** /
-  **lost**, **On results**, **On back to menu**.
+  **lost**, **On results**, **On back to menu**. *On round start*, *On go*, *On round lost* and
+  *On results* pulse on every peer, whoever pressed the button.
+
+**When a press does nothing.** *Since 1.64* a round action that cannot run right now is **refused
+with its reason**, never silently. *Win round* or *Lose round* during the results says "the round
+already ended (results): start or restart a new one first"; in the menu it says "no round is
+running (in the menu): start one first". From code the call answers
+`{ ok: false, refused: true, reason }`; the reason also appears in the session's log — the
+Debug console and an AI agent's `logs` — on every peer, including the one that pressed.
 
 The round drives the app's shared game state, so HUD screens bound to a state and the
 [pause menu](https://docs.theprototype.app/build-a-game.md#6-a-pause-menu-you-can-actually-click) keep working — and the pause menu's **Restart** restarts a kit
@@ -84,6 +92,23 @@ A level table with unlocks and stars.
 Progress is saved **per device**: every player keeps the stars they saw earned. The table feeds
 the pause menu's level picker automatically.
 
+*Since 1.64* the levels come from the scene's one **Levels table** (Configure Scene ▸ Levels) — the
+same list portals and Claude use; see [Levels and progress](https://docs.theprototype.app/levels-and-progress.md). New nodes:
+
+- **Back to checkpoint** — puts *this* player back at their last checkpoint (or the level start).
+  Mark the chain *Per player* so a press moves only whoever pressed it.
+- **New game** — starts over for *this* player: forgets the saved progress on this device, resets
+  what the game keeps across levels, and goes to the first level.
+- **Last checkpoint** (value) — the name of the checkpoint (or portal) this player last passed;
+  empty when none.
+
+*Go to level* and *Next level* move **everyone** (group travel); a portal moves only the player who
+walks through it.
+
+Someone joining a session late sees the room as it is: pickups already taken stay hidden and cannot
+be taken again. Loading or clearing a scene on your own before joining no longer resets the room's
+game.
+
 ### Score
 
 - **Add score** — points to the shared score and to the player who earned them; counted **once**
@@ -91,20 +116,27 @@ the pause menu's level picker automatically.
   itself).
 - Values: **Score** (shared), **My score** (each peer reads its own), **Best score** (the best
   this device has seen for this game and level), **Leader**.
+
+Any player key counts for **Set score** and **Leader**: a peer id, or a name of your own such as
+`red-team` or `lab`. Leader is whoever holds the most points, whatever kind of key it is.
 - Events: **On score**, **On new best**.
 
 ### Pickups
 
-- **Collect pickup** — takes a pickup once for everybody (wire an On Click or On Enter into it):
-  its points go to the shared score and to the player who took it, and it comes back after
-  *respawn* seconds (0 = never). A second take before it is back is refused. Inside a pickup's
-  own object flow, an unwired pickup means that object.
+- **Collect pickup** — takes a pickup once for everybody: its points go to the shared score and
+  to the player who took it, and it comes back after *respawn* seconds (0 = never). A second take
+  before it is back is refused. The pickup is the object wired into **pickup**, else the object
+  whose flow holds the node. *Since 1.64* **Collect on touch** (on by default) takes it when a
+  player walks over it — no On Enter, no code; or switch it off and wire an On Click or On Enter
+  into it. Its card says why it did not fire (*won't fire: touch off, nothing wired*,
+  *blocked: refused…* — see [Why did this not fire?](https://docs.theprototype.app/debugger.md#why-did-this-not-fire)).
 - **Reset pickups** puts every pickup back (a new round does this by itself).
 - Values: **Pickup available?** (wire it into a Visibility node to hide a taken pickup),
   **Pickups taken**, **Pickups left**.
 - Events: **On pickup**, **On pickup back**, **On all pickups taken** (a "collect them all" win).
 
-A pickup a module or behaviour registers can also be taken just by **walking into it**.
+A pickup a module or behaviour registers can also be taken just by **walking into it**. The
+[gem arena recipe](https://docs.theprototype.app/gem-arena.md) is a whole collect-them-all game made of these nodes alone.
 
 ### Spawner
 
@@ -113,10 +145,15 @@ tags and data, drawn on every peer. They are not saved and do not appear in the 
 
 - **Spawn entities** — make *count* entities of a *kind*, drawn as copies of the *template*
   object, at a place (unwired: where the template stands), spread out, with hit points, a speed
-  (above 0 they get a mover) and how long a dead one stays before it is removed.
+  (above 0 they get a mover) and how long a dead one stays before it is removed
+  (**remove after death**, default 1 s). A spawned thing that dies stops counting at once
+  (*Entities alive*, *On all entities dead*). From code, `removeAfter: null` (or a negative
+  number) keeps the dead in place — a body that should stay on the floor.
 - **Remove entity**, **Clear entities** (of a kind, or all).
 - Value: **Entities alive** (of a kind, or all).
 - Events: **On entity spawned**, **On entity removed**, **On all entities dead** — the wave is over.
+  They pulse on every peer. *On all entities dead* pulses once, when the last one dies, not again
+  as the bodies are removed.
 
 A new round clears the entities.
 

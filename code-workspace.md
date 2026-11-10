@@ -18,6 +18,7 @@ It opens by itself when you ask for code:
 - a double-click on a `.js` file in the [Explorer](https://docs.theprototype.app/explorer.md), or right-click it ▸ **Open in code editor**;
 - the dock's **＋** menu ▸ **Code**, or the optional `{}` toolbar button (add it with *Customize the toolbar*);
 - **Graph JSON** in the workspace's header opens the graph the Node editor is showing.
+- <kbd>Alt</kbd>+<kbd>F</kbd> opens the graph's [flow code](#flow-code).
 
 It docks as a tab at the bottom, beside the Node editor and the Explorer, or floats as a window (the dock's **Undock** button to float,
 the window's **Dock** to put it back). Everything on this page works in both. In a narrow window or on a phone the
@@ -120,7 +121,8 @@ VR).
   **✕** closes it (unsaved files ask first).
 - **Project** lists every script in the scene as a tree, with a search box:
     - **Graphs** — per graph (Main first, then each object's), its Script nodes, Behaviour nodes and the
-      [Player's code](#the-players-code), plus `graph.json` (the whole graph as editable [JSON](#graph-json)).
+      [Player's code](#the-players-code), plus a **flow code** entry (the graph as editable [text](#flow-code)) and
+      `graph.json` (the whole graph as editable [JSON](#graph-json)).
     - **Files** — the text files in your Library (`.js` `.md` `.json` `.txt` `.cfg`) and their folders, with how
       many nodes run each script. You can make and manage them right here — see [Files and folders](#files-and-folders).
     - **Module sources** — the module and kit files the game uses, **read-only** (see [Module code](#module-code)).
@@ -232,6 +234,15 @@ Invalid JSON, two nodes with the same id or a wire to a node that does not exist
 is one undo step and reaches every peer. ([Flow Code](https://docs.theprototype.app/node-system.md#flow-code-the-graph-as-text) shows the same graph as
 compact text.)
 
+## Flow code
+
+*New in 1.64.* Flow code is no longer its own window: in the **Project** tree each graph has a **flow code** entry
+beside `graph.json`. Open it, edit the text and press **Save** (<kbd>Ctrl</kbd>+<kbd>S</kbd>).
+<kbd>Alt</kbd>+<kbd>F</kbd> opens it. The text format is described in
+[Flow Code: the graph as text](https://docs.theprototype.app/node-system.md#flow-code-the-graph-as-text).
+
+![The Code workspace docked at the bottom, dark theme: the Project tree on the left lists Graphs ▸ Main graph with a flow code entry above graph.json, and the Outline pane is on the right.](https://docs.theprototype.app/img/code-workspace/flow-code-entry.jpg)
+*Figure: Each graph in the Project tree has a flow code entry beside graph.json.*
 ## Live
 
 The **Live** checkbox on a node or behaviour tab applies inline edits as you type instead of on

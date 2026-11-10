@@ -16,7 +16,7 @@ A new Behaviour node has no sockets. They appear when the file declares them:
 |---|---|---|
 | `inputs: ['tap']` | an input **▸ tap** on the left | event — a pulse runs the `tap` handler in `on`, on the authority |
 | `outputs: ['taps']` where `taps` is a `state` field | an output on the right, with the live value beside it | typed by the field's starting value (`0` → number) |
-| `outputs: ['done']` where `done` is not a state field | an output marked **⚡** | event — fired by `this.emit('done')` |
+| `outputs: ['done']` where `done` is not a state field | an output marked **ϟ** | event — fired by `this.emit('done')` |
 
 Change the declaration, save, and the sockets follow. See
 [For module and game authors](https://docs.theprototype.app/module-sdk.md#for-module-and-game-authors-123) for the details.

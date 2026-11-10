@@ -10,13 +10,17 @@ The Connect panel is the bar at the top of the screen. Since 1.35 it is either *
 
 It has two halves:
 
-- **📋 Your ID** — the button on the left shows your own peer ID. Click it to **copy your invite link** (your app URL with your ID attached, e.g. `https://theprototype.app/#AB12CD`) to the clipboard. Until the connection to the signaling server is ready it reads *Generating…*.
+- **Your ID** — the button on the left shows your own peer ID. Click it to **copy your invite link** (your app URL with your ID attached, e.g. `https://theprototype.app/#AB12CD`) to the clipboard. Until the connection to the signaling server is ready it reads *Generating…*.
 - **Connect field** — paste a peer's ID into *Enter peer ID to connect* and press **Connect** to request a connection.
 
 Since 1.30, once you are connected the bar **collapses to a compact chip** — the status dot, the avatars of who is here
 and your mic; click it to open the full bar again (its collapse button folds it back). On a phone the bar is always the
 chip — tap it for your ID, the join field, Info and Toasts. The signaling link's attempt count is in the drawer's
 **Info** tab.
+
+*New in 1.64:* the drawer says the state once, in words: **Ready · not in a session**, **Hosting · 2 people** or **In a
+session · 3 people** (it no longer says *Offline* while the connection works). The signaling server and relay details
+are folded under one **Network** row, which opens by itself when the connection has trouble.
 
 ### The status dot
 
@@ -57,6 +61,15 @@ breaks. On a phone it opens as a sheet like the notifications: a grab bar on top
 1. **(you)**: your own row; the host is **Admin**.
 2. A person's **role** (Editor or Viewer): the host changes it here.
 
+*New in 1.64:* every row shows its **⋯** menu and **Go to** without hovering, and the number of people is counted once,
+on the peers button. Each person has **one avatar everywhere** (the chip, this panel, chat): their photo, or their
+colour with their initial, ringed in the same colour as their cursor and their selection locks.
+
+**Your name.** When you join a session you are asked what others should call you; the name is remembered on this
+device (**Not now** skips it for this join). Anyone without a name shows as **Guest 1**, **Guest 2**… instead of
+"Peer". A person who joins no longer appears inside your view: an avatar close to your camera fades out, and a joiner
+whose view would open on top of someone arrives a step to the side.
+
 Right-click a person (long-press on touch, <kbd>Shift</kbd>+<kbd>F10</kbd> from the keyboard) for the **peer menu**:
 their profile, Go to, Watch, Mute, Hide — and, for the host or an admin, **Remove from session** and **Remove and
 block**. See [Users and moderation](https://docs.theprototype.app/people.md). An AI agent shows a robot and "AI" instead of a character.
@@ -69,13 +82,13 @@ of your session*. The people listed there are not connected to you; **Watch** be
 *Figure: Public rooms under their own heading, apart from your session.*
 ### Inviting someone
 
-1. **Copy your invite link** (the 📋 button) and send it to a friend.
+1. **Copy your invite link** (the **Your ID** button) and send it to a friend.
 2. When they open the link, their app automatically sends **you** a connection request.
 3. You get a **Connection request** toast — press **Approve** and you are connected.
 
 Or do it by ID: they paste your ID into their Connect field and press Connect; the same approval toast appears on your side.
 
-To skip the approval card, send an **invite link** instead (**Connect ▸ Request AI**, a *Person* or an *AI agent*
+To skip the approval card, send an **invite link** instead (**Connect ▸ Invite**, a *Person* or an *AI agent*
 tab): it joins in one step with the role you chose, for a limited time. See [Invite people and agents](https://docs.theprototype.app/invites.md).
 
 ### What guests see
@@ -186,7 +199,7 @@ Your room's panel has a **Room name**, a **Short description** and these switche
 | **Require approval to join** | **Join** becomes **Request to join**: the request lands on your approval card as *"‹name› wants to join ‹room›"*, and you approve or reject it as usual |
 | **Allow guests to join automatically (view-only)** | people who are not signed in may come in to watch. Off while approval is required or the room has a code |
 | **Enable room screenshot** | the list card shows a picture of your scene instead of a coloured initial |
-| **Room code** | list the room first, then type a code and **Set** it: someone who knows it gets in as a viewer **without** waiting for approval. A listed room with a code shows 🔒 |
+| **Room code** | list the room first, then type a code and **Set** it: someone who knows it gets in as a viewer **without** waiting for approval. A listed room with a code shows a lock |
 
 **When someone joins automatically** (*new in 1.44*) — a guest through *Allow guests to join automatically*, or
 anyone with the room code — you get a notice saying who came in, with **Turn off** (stops automatic joining) and
@@ -199,7 +212,7 @@ AI agents join as guests** (off by default). An [invite link](https://docs.thepr
 carries. "AI agent" is what the joining app says about itself, so this is about seeing who knocks, not security: an
 agent that hides it is just a guest, view-only like any other.
 
-Joining a coded room asks for the code (*"🔒 ‹room› needs a code"*). The right code goes straight in; a wrong one is
+Joining a coded room asks for the code (*"‹room› needs a code"*, with a lock). The right code goes straight in; a wrong one is
 refused, and five wrong codes lock that person out for ten minutes. If the room also requires approval, **Ask the host
 instead** sends an ordinary request. The code itself is never stored on the server or sent in the clear — only your
 device can check it, so a code set on another device of yours has to be set again here.

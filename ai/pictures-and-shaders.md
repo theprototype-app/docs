@@ -20,7 +20,7 @@ Location data (EXIF, GPS) is removed from every picture **on your device, before
 1. Set up a mesh provider: **Settings ▸ Tools & connections ▸ Mesh providers**. Meshy (hosted) takes
    pictures as it is. A ComfyUI workflow takes them when it has a `{{IMAGE}}` placeholder in a
    **LoadImage** node (see [3D Generation](https://docs.theprototype.app/ai/generation.md)).
-2. **Add menu ▸ ✨ Generate 3D model…** and pick the picture: **From device…**, **Camera** (on a phone),
+2. **Add menu ▸ Generate 3D model…** and pick the picture: **From device…**, **Camera** (on a phone),
    **Viewport**, or **From Explorer…**. You can also paste or drop a picture onto the dialog. In the
    Explorer, a picture's menu has **Make a 3D model…**.
 3. A prompt is optional. With Meshy's *Refine* mode it becomes the texture prompt.

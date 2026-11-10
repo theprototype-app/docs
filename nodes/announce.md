@@ -25,5 +25,9 @@ The banner is **local**: every player's own graph fires it from the shared trigg
 sees it at the same moment without anything extra crossing the network. A new banner replaces the
 one showing.
 
+*Since 1.64* the banner shows only in **Play** (and in a headset). In Edit the line goes to the
+[Debugger](https://docs.theprototype.app/debugger.md) panel's **Console** instead, with the time and the node that said it — press the row to
+focus the node.
+
 !!! tip
     Don't announce the end of a round over a results screen — the screen already carries the words.

@@ -10,7 +10,8 @@ A delay line: outputs its input as it was a set number of seconds ago.
 |---|---|---|
 | a | number | the signal to delay |
 
-Unwired, it simply outputs its own `a` value.
+Unwired, it simply outputs its own `a` value — *since 1.64* its card says *won't fire: nothing wired into it*
+([Why did this not fire?](https://docs.theprototype.app/debugger.md#why-did-this-not-fire)).
 
 ## Parameters
 

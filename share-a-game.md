@@ -77,7 +77,7 @@ Inside the play view, `window.tpPlay` gives a script the same information: `vers
 You can invite people straight into the play view of the session you are in — they play with you, without seeing the
 editor:
 
-1. In the editor, open the invite sheet — the robot button **Request AI** on the Connect pill, or **Users ▸ New…** — and pick
+1. In the editor, open the invite sheet — the **Invite** button (person-plus) on the Connect pill, or **Users ▸ New…** — and pick
    the **Person** tab.
 2. Choose the **Role**, how long the invite lasts and how many people may use it, then **Create invite link**.
 3. Copy the **Play link — opens straight into the game, no editor** and send it.

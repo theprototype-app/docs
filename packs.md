@@ -12,13 +12,13 @@ Packs are **local**: loading or importing one never syncs it to your peers. Only
 
 ## Importing a pack (.zip)
 
-Right-click empty space in the Packs view and choose **＋ Import pack (.zip)**, or use the same button in the Explorer's ⚙ settings tab. The zip's assets are stored as regular Explorer items (deduplicated by content hash), so imported packs persist across sessions.
+Right-click empty space in the Packs view and choose **＋ Import pack (.zip)**, or use the same button in the Explorer's **Settings** (cog) tab. The zip's assets are stored as regular Explorer items (deduplicated by content hash), so imported packs persist across sessions.
 
 GitHub's *Download ZIP* archives work as-is — a single wrapper folder around the pack is handled automatically.
 
 ## Loading from a URL
 
-Right-click in the Packs view and choose **🔗 Load pack from URL**. Accepted:
+Right-click in the Packs view and choose **Load pack from URL**. Accepted:
 
 - a direct **.zip** URL, or
 - a **GitHub repository link** (`https://github.com/user/repo`) — the main-branch zip is fetched automatically.
@@ -27,8 +27,8 @@ The host must allow cross-origin requests (CORS); if a URL fails, try a direct `
 
 ## Hiding, deleting, attribution
 
-- **Built-in packs** can't be deleted (they're bundled), but right-click ▸ **🙈 Hide pack** removes one from view — reversible via *Show N hidden packs* in the ⚙ tab, which also has a *Hide built-in packs* toggle.
-- **Imported packs** can be right-click ▸ **🗑 Delete**d (their item files stay in your library).
+- **Built-in packs** can't be deleted (they're bundled), but right-click ▸ **Hide pack** removes one from view — reversible via *Show N hidden packs* in the **Settings** (cog) tab, which also has a *Hide built-in packs* toggle.
+- **Imported packs** can be right-click ▸ **Delete**d (their item files stay in your library).
 - New in 1.31: a pack **item**'s menu has **Delete cache (size)** in place of Delete — it frees that item's download on
   this device and the item stays in the pack; a pack's menu has **Delete downloads**. Downloaded items carry a ✓ and the
   Packs filter has **Downloaded**. See [Placing objects](https://docs.theprototype.app/explorer.md#downloaded-pack-items-and-delete-cache).

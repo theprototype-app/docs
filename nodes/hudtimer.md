@@ -43,7 +43,8 @@ manually...** takes a typed id. A name that matches no element shows amber.
 A one-minute round clock, as the node is meant to be used:
 
 1. In the HUD editor, add a **Timer** element to the playing screen.
-2. Add a **Game Start** and a **HUD Timer** picking the Timer element; wire Game Start → HUD Timer's **start**.
+2. Add an [On Play start](https://docs.theprototype.app/nodes/onplaystart.md) and a **HUD Timer** picking the Timer element; wire On Play start → HUD
+   Timer's **start**.
 3. Set duration 60, format `{v}s`, and turn **autostart** off.
 4. Every round, the clock counts down from 60s on every player's screen.
 

@@ -36,7 +36,7 @@ does nothing; put an event node such as [All Players](https://docs.theprototype.
   the variables.
 
 HUD screens set to show **while** a state (see [HUD Editor](https://docs.theprototype.app/hud-editor.md)) and
-[Game Start](https://docs.theprototype.app/nodes/gamestart.md) nodes react to the state by themselves; [On Game State](https://docs.theprototype.app/nodes/ongamestate.md)
+[Start camera](https://docs.theprototype.app/nodes/gamestart.md) nodes react to the state by themselves; [On Game State](https://docs.theprototype.app/nodes/ongamestate.md)
 pulses when it changes.
 
 ## In multiplayer

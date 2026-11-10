@@ -4,7 +4,7 @@ The top-right cluster next to your avatar holds two history surfaces — the **n
 
 ## Notification center
 
-A **🔔 bell** button sits in the top-right chrome. Click it to open a dropdown listing recent notifications, newest first. When it's collapsed, a red badge shows the unread count (`9+` above nine).
+A **bell** button sits in the top-right chrome. Click it to open a dropdown listing recent notifications, newest first. When it's collapsed, a red badge shows the unread count (`9+` above nine).
 
 Every toast the app shows — connection events, simulation start/stop, imports, warnings — is recorded here with a relative timestamp (*just now*, *5m ago*, *2h ago*, *1d ago*), so a message you missed while it was on screen is never lost. The list keeps the most recent **50** entries and survives reloads. Opening the panel clears the unread badge; **Clear all** empties the history.
 
@@ -90,7 +90,7 @@ world.
 
 ### The scene-notes drawer
 
-The **📝 notes** button in the top-right chrome (just left of the bell) opens a right-docked drawer listing **every note in the scene**, grouped by **label**:
+The **Notes** button in the top-right chrome (just left of the bell) opens a right-docked drawer listing **every note in the scene**, grouped by **label**:
 
 - Each group can be collapsed, and has **‹ ›** arrows to step through its notes one at a time — a review tour.
 - Each row shows the note's name and text, which object it is on, and who wrote it. **Click a row** to fly to the note

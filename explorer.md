@@ -192,6 +192,9 @@ The header's **Thumbnails / List** toggle switches views. The list has sortable 
 
 On a phone the Explorer is a tab of the bottom dock, like Properties, Objects and the other windows — see [The dock on a phone](https://docs.theprototype.app/interface.md#the-dock-on-a-phone).
 Its sidebar starts hidden so the files get the screen; open it with its edge button and it stays open next time.
+*New in 1.64:* on a folded phone the Explorer shows a header instead of side panes — **Folder tree**, **Files**,
+**Properties**, **File history** and **Settings**, one at a time; tap the view in front again to go back. See
+[On a phone](https://docs.theprototype.app/interface.md#on-a-phone).
 
 ### Selecting several
 
@@ -242,14 +245,25 @@ Right-click a file or a folder for **Duplicate** (**Duplicate folder**), **Copy*
 Images open zoomable (**−** / **＋** / **1:1**, drag to pan) with a pencil button that opens the
 [Image editor](https://docs.theprototype.app/image-editor.md), sounds open with a player, and 3D models open on a turntable with an **animation transport** — play, step a frame with <kbd>,</kbd> and <kbd>.</kbd>, scrub, pick a clip — and a mesh-stats line. The **←** / **→** buttons page through the folder without closing the window, and **⌐** goes up a level.
 
-The window's **⚙** holds two things worth knowing: **Opacity** fades the window so you can model against a reference picture, and **Passthrough** lets clicks reach the scene underneath while the header stays live to move it or switch it back. **Allow multiple windows** opens each file in a window of its own instead of re-pointing the one you have.
+The window's **Settings** (cog) holds two things worth knowing: **Opacity** fades the window so you can model against a reference picture, and **Passthrough** lets clicks reach the scene underneath while the header stays live to move it or switch it back. **Allow multiple windows** opens each file in a window of its own instead of re-pointing the one you have.
 
 ## Item properties (ⓘ)
 
-The ⓘ panel shows name, kind, size, folder path, added date and the content hash (copyable), plus per-kind details — image dimensions, audio duration and channels, text line count. For 3D objects it can embed a **rotatable inline 3D preview** with mesh stats (triangles / vertices / meshes) — enabled by the *3D model preview* toggle in the ⚙ tab. Double-clicking an object always opens the larger preview regardless of that toggle.
+The ⓘ panel shows name, kind, size, folder path, added date and the content hash (copyable), plus per-kind details — image dimensions, audio duration and channels, text line count. For 3D objects it can embed a **rotatable inline 3D preview** with mesh stats (triangles / vertices / meshes) — enabled by the *3D model preview* toggle in the **Settings** (cog) tab. Double-clicking an object always opens the larger preview regardless of that toggle.
 
-The **⚙ settings** tab holds local preferences: single-click opens folders, show path bar, 3D model preview, stack multiple drops on one spot, confirm before updating a prefab, hide built-in packs, and the *Import pack (.zip)* button.
+The **Settings** (cog) tab holds local preferences: single-click opens folders, show path bar, 3D model preview, stack multiple drops on one spot, confirm before updating a prefab, hide built-in packs, and the *Import pack (.zip)* button.
 
+## File history
+
+*New in 1.64.* The right-hand panels — **Properties**, **File history** and **Settings** — are tabs behind one handle
+on the window's edge (see [Windows with side panes](https://docs.theprototype.app/interface.md#windows-with-side-panes)). Pick a file, then the
+**File history** tab:
+
+- an **image** lists its saved versions — the original and the last saves, kept on this device — each with **Restore**;
+- a **scene** shows its **Version history**.
+
+![The Explorer docked at the bottom, dark theme: the folder tree on the left, an empty Library in the middle, and on the right the Properties and File history tabs behind one handle, with Properties in front.](https://docs.theprototype.app/img/explorer/file-history-tabs.jpg)
+*Figure: Properties and File history share the right-hand panel as tabs.*
 ## Prefabs that are files
 
 Right-click an object in the viewport ▸ **Save as…** and choose the format. **Prefab** is the classic snapshot; **Prefab (.glb)** and **Prefab (.tpscene)** make a prefab that *is* a file — the `.glb` carries geometry, materials and baked animation, the `.tpscene` also carries animation clips, object flow graphs, shader graphs and joints — so it can be dragged into the Library, shared, and exported as the exact bytes it was saved as (**Export ▸ The original file**). The last two entries, **glTF binary (.glb)** and **glTF (.gltf)**, are plain downloads. See [Prefabs](https://docs.theprototype.app/prefabs.md).
@@ -305,7 +319,7 @@ The chip in the Explorer header reads *used / granted* for everything this app k
 
 ## Files in and out
 
-A session downloads as a **`.tpscene`**, a whole project as a **`.tp`**, and both import back — from the logo menu's **Load**, from the Sessions manager, or by dropping them on the Explorer. Right-click a scene ▸ **Download (.tpscene)**; the Library root's menu has **Export project (.tp)** and a folder's has **Export folder as .tp**; **Import project as folder (.tp)…** adds a `.tp` file's contents to your library as one folder without opening anything. See [Projects](https://docs.theprototype.app/projects.md#the-tp-file).
+A session downloads as a **`.tpscene`**, a whole project as a **`.tp`**, and both import back — from the logo menu's **Open…**, from the Sessions manager, or by dropping them on the Explorer. Right-click a scene ▸ **Download (.tpscene)**; the Library root's menu has **Export project (.tp)** and a folder's has **Export folder as .tp**; **Import project as folder (.tp)…** adds a `.tp` file's contents to your library as one folder without opening anything. See [Projects](https://docs.theprototype.app/projects.md#the-tp-file).
 
 ## Placing objects
 

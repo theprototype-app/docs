@@ -63,9 +63,9 @@ Drag on the terrain surface to sculpt. A ring cursor follows your pointer, huggi
 
 | Control | What it does |
 |---|---|
-| **⛰ Raise** | Pushes the surface up under the brush. |
-| **⛏ Lower** | Pushes it down. |
-| **〰 Smooth** | Relaxes bumps toward the local average — softens what you've made. |
+| **Raise** | Pushes the surface up under the brush. |
+| **Lower** | Pushes it down. |
+| **Smooth** | Relaxes bumps toward the local average — softens what you've made. |
 | **▭ Flatten** | Pulls the surface toward the height where you first touched down. |
 | **Radius** | Brush size, 0.5 – 8 m (default 3). |
 | **Strength** | How fast the brush moves the surface, 0.05 – 1 (default 0.5). |

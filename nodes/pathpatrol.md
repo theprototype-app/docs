@@ -1,34 +1,49 @@
 # Path patrol
 
-Walks the connected object along a series of waypoints you click into the scene, facing along the path.
+Walks the connected object along a [Path](https://docs.theprototype.app/paths.md) object — stopping, speeding up, jumping and firing events where
+the Path's points say, looping, ping-ponging, walking once or picking random points. Every player sees the walker in the
+same place at the same moment.
 
-**Output:** effect (wire into an [Object Selector](https://docs.theprototype.app/nodes/objectselector.md))
+**Output:** effect (wire into an [Object Selector](https://docs.theprototype.app/nodes/objectselector.md), or leave it in an object's own flow)
 
 ## Inputs
 
-None.
-
-## Parameters
-
-| Parameter | Default | Where |
+| Handle | Type | Meaning |
 |---|---|---|
-| waypoints | none (needs 2+) | **Capture clicks** button on the card, then click points in the viewport; **Clear** resets |
-| speed | 1 | slider on the card (0.1–5) |
-| mode | loop | `loop` (closes the circuit) or `ping-pong` (walks back and forth) |
+| path | object | a Path object (instead of picking one on the card) |
+| trigger | event | starts a walk on a Path whose **Walk** is *Once* |
 
-The object moves at constant speed along the whole polyline and turns to face its direction of travel. Waypoints are absolute world positions, so the patrol route stays put even if you drag the object.
+## On the card
+
+| Control | Meaning |
+|---|---|
+| path | the Path to walk; **New Path** adds one in the scene and picks it, **Edit path** opens its points |
+| offset (s) | starts this walker that many seconds along, so several guards can share one Path |
+| face along the path | turns the walker the way it is going |
+
+Every timing — waits, speeds, eases, jumps, events and the walk mode — lives on the **Path**, so one Path can be shared
+by several walkers. While the node editor is open, the card shows where the walker is: *walking to 3*, *waiting at 2*.
+
+## Patrols made before 1.64
+
+A Path patrol saved before 1.64 has **clicked waypoints** instead of a Path. It keeps walking them exactly as before
+(speed, loop or ping-pong on the card, **Capture clicks** and **Clear** still work). Its card offers
+**Convert to a Path**: the waypoints become a Path you can edit — waits, speeds, events — and the walk stays exactly the
+same. One undo step.
 
 ## Practical example
 
 A guard on rounds:
 
-1. Add a **Path patrol** node and an **Object Selector** targeting the guard object; wire them.
-2. Press **Capture clicks** on the card, then click 4–5 spots on the ground around your building. A **Placing waypoints**
-   box counts your points and has **Undo last point**; press **Done** (or Esc) when you have them all.
-3. Set mode `loop`: the guard now walks the circuit endlessly — on every peer, at the same point of the route.
+1. Select the guard. **Add ▸ Path** and draw a loop round the building (see [Paths](https://docs.theprototype.app/paths.md)); set **Walk** to
+   *Loop* and tick **Closed**.
+2. In the guard's own flow add **Path patrol** and pick the Path on its card.
+3. Give the point by the gate a **Wait** of 2 s: the guard stops there on every lap, on every peer.
 
-While you place points the object holds still on your screen, so you can still click it. Placing also ends when you
-deselect the object, click the object itself (that selects it), click the node editor, press Play or mute the node.
+A second guard with the same Path and **offset** 10 walks the same round ten seconds ahead. The
+[Guard recipe](https://docs.theprototype.app/recipe-guard.md) builds a square round and a "Spotted!" warning in one step.
 
 !!! tip
-    While a patrol is active the waypoints own the object's position — pause it by disconnecting the edge (right-click ▸ Disconnect), and the object returns to its resting spot.
+    While a patrol is active the Path owns the object's position — pause it by disconnecting the edge (right-click ▸
+    Disconnect), and the object returns to its resting spot. Switch off **Animate in editor** to see every walker rest at
+    its authored pose while you build ([Node system](https://docs.theprototype.app/node-system.md#animate-in-editor)).
