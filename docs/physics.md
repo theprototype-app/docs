@@ -95,9 +95,8 @@ You can start and stop the sim three ways:
 While running, dynamic objects fall under gravity and collide; **Reset** restores the initial layout without an undo entry, **Pause/Resume** freezes the sim, and **Stop** ends it — after which <kbd>Ctrl</kbd>+<kbd>Z</kbd> restores the layout you started from.
 
 *Since 1.64* a level made **only of static objects** — walls, floors, a sensor doorway — runs its physics world when
-Play starts, so [On Enter](nodes/onenter.md) zones notice you without a simulation of your own. Add a
-[Character Controller](nodes/charcontroller.md) node set to walk and its walls stop you too; without one, walking keeps
-the eye-height pin on the ground plane.
+Play starts, so walls stop you and [On Enter](nodes/onenter.md) zones notice you without a simulation of your own. For
+gravity, jumps and climbing onto boxes, add a [Character Controller](nodes/charcontroller.md) node set to walk.
 
 If nothing has physics when you press play, the app helps you out: with an object selected it simulates just that object at mass 1 and tells you *"No Mass nodes wired — simulating the selected object with mass 1"*; with nothing selected it prompts you to wire a Mass node or select something first.
 
