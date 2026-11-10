@@ -4,7 +4,7 @@ New in 1.32: the **Image editor** crops, rotates, flips, resizes and adjusts a p
 [Explorer](explorer.md) library. When you save, every texture made from that picture updates for everyone in the
 session.
 
-![The Image editor on a computer: the picture on the left, and on the right the Edit page with Rotate and flip, Crop, Resize and Adjust, Save and Save as copy above. 1: rotate and flip. 2: Crop. 3: the Adjust sliders.](img/image-editor/editor-desktop.webp){ .shot width="680" height="780" loading=lazy }
+![The Image editor on a computer: the picture on the left, and on the right the Edit page with Rotate and flip, Crop, Resize and Adjust, Save and Save as copy above. 1: rotate and flip. 2: Crop. 3: the Adjust sliders.](img/image-editor/editor-desktop.webp){ .shot width="680" height="718" loading=lazy }
 /// caption
 The Image editor on a computer.
 ///

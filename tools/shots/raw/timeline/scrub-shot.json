@@ -2,12 +2,13 @@
  "id": "scrub-shot",
  "spec": "4c1a7f8eef9a",
  "dpr": 2,
- "shotAt": "2026-11-04T21:32:22.864Z",
+ "shotAt": "2026-11-10T14:48:28.353Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
+  "svg.svelte-1lv41t3",
   "div.resize-cue",
   "div#timeline-dock.tp-ui",
   "span.dn-label",
@@ -18,8 +19,7 @@
   "input#timeline-duration.dn-input",
   "span.tl-track-name",
   "button#touch-undo.tt-btn",
-  "button#touch-redo.tt-btn",
-  "p.hud-cell"
+  "button#touch-redo.tt-btn"
  ],
  "width": 1376,
  "height": 1680,
@@ -39,9 +39,9 @@
    "h": 46
   },
   "2": {
-   "x": 416,
+   "x": 414.09375,
    "y": 130,
-   "w": 544,
+   "w": 547.8125,
    "h": 82.5
   }
  },

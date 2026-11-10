@@ -124,11 +124,18 @@ the game — does not load. The lint names the line, on every peer. It refuses:
 
 Loops run under the loop guard: a runaway handler throws and the game goes on.
 
+## When a handler throws
+
+*Since 1.64* a handler that throws is **rolled back**: its changes to the behaviour's state, the
+`after()` timers it set and the events it emitted are undone, as if it never ran. Kit calls it had
+already sent stay sent. The error names the handler and says "(its changes were rolled back)"; an
+AI agent reads the same line, with `rolledBack: true`.
+
 ## The live node view
 
-**Open view** draws the behaviour as read-only nodes, derived from the code: ⚡ events → ƒ
+**Open view** draws the behaviour as read-only nodes, derived from the code: ϟ events → ƒ
 handlers and methods → ▣ state, with ⊕ kit calls (named exactly like the **Kit:** nodes),
-⏱ timers, ✋ payload actions, and ◆ params.
+◷ timers, ↦ payload actions, and ◆ params. A handler that uses `this.rand()` carries a ⚄ tag.
 
 - **Live values**, ten times a second.
 - A **glow** on whatever just fired — on every peer, not only the one running it.

@@ -1,11 +1,11 @@
 {
  "id": "request-ai-sheet",
- "spec": "3ff570b02918",
+ "spec": "d5a89bebf859",
  "dpr": 2,
- "shotAt": "2026-11-05T10:57:16.382Z",
+ "shotAt": "2026-11-10T14:17:51.561Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "dialog.tp-ui",
@@ -13,7 +13,7 @@
   "div.md-bar",
   "div.md-body",
   "h2#md-title-c1.wc-title",
-  "button#invite-tab-agent.tab",
+  "button#invite-tab-person.tab",
   "p.inv-lead",
   "div#invite-sheet.inv",
   "span#invite-role-label.inv-label",
@@ -39,10 +39,10 @@
    "h": 78
   },
   "2": {
-   "x": 457.0625,
-   "y": 369.5,
-   "w": 392.9375,
-   "h": 260
+   "x": 70,
+   "y": 461.5,
+   "w": 788,
+   "h": 176
   },
   "3": {
    "x": 526.34375,

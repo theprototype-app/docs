@@ -2,10 +2,10 @@
  "id": "place-delete-cache",
  "spec": "dd93cfa4ffaa",
  "dpr": 2,
- "shotAt": "2026-11-03T13:46:17.733Z",
+ "shotAt": "2026-11-10T14:06:21.902Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "div.fixed",
@@ -15,12 +15,12 @@
   "span.flex-1",
   "span.ctx-hint"
  ],
- "width": 860,
+ "width": 858,
  "height": 538,
  "crop": {
-  "x": 333,
+  "x": 325,
   "y": 632,
-  "w": 430,
+  "w": 429,
   "h": 269
  },
  "cut": [
@@ -31,7 +31,7 @@
   "1": {
    "x": 234,
    "y": 452,
-   "w": 353.5625,
+   "w": 352,
    "h": 64
   }
  },

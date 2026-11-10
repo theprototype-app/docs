@@ -2,24 +2,24 @@
  "id": "camera-object",
  "spec": "46c2fb39035a",
  "dpr": 2,
- "shotAt": "2026-11-04T09:46:13.786Z",
+ "shotAt": "2026-11-10T13:51:40.275Z",
  "app": {
-  "version": "1.58.0",
-  "sha": "676de06c"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "div.pip-bar",
   "button.pip-btn",
-  "header.wc-head",
+  "div#hud-stack-right.tp-ui",
   "div.ins-filter",
   "div#inspector.tp-ui",
-  "svg.lucide",
+  "label.tp-ui",
   "input#name.ui-input",
-  "button#select-group.ts-btn",
+  "span.ts-label",
   "button.sec-panel-head",
-  "span.pr-label",
-  "div.ui-row",
-  "button.ui-chip"
+  "div.sec-panel-body",
+  "div.tp-ui",
+  "span.w-20"
  ],
  "width": 1376,
  "height": 1680,

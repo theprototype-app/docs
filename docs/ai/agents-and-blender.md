@@ -14,7 +14,7 @@ You need Blender on the same computer as Claude Code, with the blender-mcp add-o
     claude mcp add blender -- uvx blender-mcp
     ```
 
-3. In theprototype: **Settings ▸ Tools & connections ▸ Agents ▸ Coding agents ▸ Set up**, or Connect ▸ Request AI. Create an
+3. In theprototype: **Settings ▸ Tools & connections ▸ Agents ▸ Coding agents ▸ Set up**, or Connect ▸ Invite ▸ AI agent. Create an
    invite with **Edit** and paste the MCP command it gives you:
 
     ```bash

@@ -103,7 +103,7 @@ Since 1.25 a click selects what is **inside or behind** the water — a fish in 
 passes through ▸ Water** (on by default) turns this off for a scene. See
 [Inside and behind water](controls.md#inside-and-behind-water).
 
-![Configure Scene ▸ Advanced ▸ Selection passes through, with Water ticked, beside the Aquarium example, where an Alt+click in the tank shows the chip 1 of 2 · Aquarium water. 1: the Water switch. 2: the Alt+click chip.](img/water/selection-passes-through.webp){ .shot .fade-l .fade-t width="673" height="584" loading=lazy }
+![Configure Scene ▸ Advanced ▸ Selection passes through, with Water ticked, beside the Aquarium example, where an Alt+click in the tank shows the chip 1 of 2 · Aquarium water. 1: the Water switch. 2: the Alt+click chip.](img/water/selection-passes-through.webp){ .shot .fade-l .fade-t .fade-b width="673" height="720" loading=lazy }
 /// caption
 Configure Scene ▸ Advanced ▸ Selection passes through.
 ///

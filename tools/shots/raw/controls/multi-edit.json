@@ -1,24 +1,25 @@
 {
  "id": "multi-edit",
+ "spec": "4a8f5dd3cb80",
  "dpr": 2,
- "shotAt": "2026-10-31T14:48:10.986Z",
+ "shotAt": "2026-11-10T14:00:19.337Z",
  "app": {
-  "version": "1.51.0",
-  "sha": "6fe31dae"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
-  "header.wc-head",
   "div.ins-filter",
   "div#inspector.tp-ui",
-  "label.tp-ui",
   "div#selection-multi-banner.ins-banner",
-  "div.flex",
   "button.sec-panel-head",
   "div.sec-panel-body",
   "div.tp-ui",
   "span.pr-label",
   "p.text-[length:var(--fs-badge)]",
-  "input#inspector-search.sf-input"
+  "span.sec-title",
+  "span.dn-label",
+  "input.dn-input",
+  "span.tp-ui"
  ],
  "width": 1376,
  "height": 1400,

@@ -2,10 +2,10 @@
  "id": "properties",
  "spec": "c8ad650ffca2",
  "dpr": 2,
- "shotAt": "2026-11-03T14:40:09.904Z",
+ "shotAt": "2026-11-10T14:19:43.447Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "nav#flow-scope-chip.tp-crumbs",
@@ -44,7 +44,7 @@
    "x": 976,
    "y": 16,
    "w": 188,
-   "h": 48
+   "h": 52.28125
   }
  },
  "kind": "ui"

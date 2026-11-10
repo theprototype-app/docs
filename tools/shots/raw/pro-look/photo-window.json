@@ -2,24 +2,24 @@
  "id": "photo-window",
  "spec": "e1f6246fe899",
  "dpr": 2,
- "shotAt": "2026-11-07T20:30:35.151Z",
+ "shotAt": "2026-11-10T14:38:58.379Z",
  "app": {
-  "version": "1.62.0",
-  "sha": "5249f1ae"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "dialog#photo-dialog.tp-ui",
   "header.wc-head",
   "div.md-body",
-  "h2#md-title-c2.wc-title",
+  "h2#md-title-c1.wc-title",
   "p#photo-where.text-xs",
   "label.pr-label",
   "div.flex",
   "button#photo-denoise.tp-ui",
   "svg.lucide",
   "button#photo-download.tp-ui",
-  "button#photo-start.tp-ui",
-  "button#photo-scale-0.5.seg-opt"
+  "label.flex",
+  "button#photo-start.tp-ui"
  ],
  "width": 1320,
  "height": 1036,
@@ -39,15 +39,15 @@
    "h": 128.8125
   },
   "2": {
-   "x": 170,
+   "x": 273.21875,
    "y": 394,
-   "w": 326,
+   "w": 328.78125,
    "h": 76
   },
   "3": {
    "x": 66,
    "y": 486,
-   "w": 286,
+   "w": 287.34375,
    "h": 72
   }
  },

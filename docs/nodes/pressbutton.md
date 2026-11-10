@@ -26,6 +26,7 @@ Pushes the connected object in along one of its own axes and springs it back eac
 
 A doorbell that feels pressable in VR:
 
-1. Give the button **Highlight** (unwired) — it lights up under your laser.
+1. Give the button **Highlight** (unwired) — it lights up under your laser, the Play crosshair, the mouse in Interact or
+   a phone tap.
 2. Give it an **On Click** wired into **Press Button** (axis -z on a wall) and into a [Sound](sound.md) node's trigger.
 3. Point and pull the trigger: it lights, sinks in, springs back and rings for everyone.

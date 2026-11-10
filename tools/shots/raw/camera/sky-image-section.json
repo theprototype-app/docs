@@ -1,42 +1,36 @@
 {
  "id": "sky-image-section",
- "spec": "5bdb60998f44",
+ "spec": "49f769c71258",
  "dpr": 2,
- "shotAt": "2026-11-05T10:31:31.468Z",
+ "shotAt": "2026-11-10T13:52:11.110Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
-  "div#budget-chip-wrap.tp-ui",
-  "header.wc-head",
-  "div.ins-filter",
   "div#inspector.tp-ui",
-  "label.tp-ui",
-  "svg.lucide",
-  "button.chip",
+  "div.tp-ui",
+  "p.ui-section-label",
+  "button#hdri-none.hdri-chip",
+  "label.pr-label",
+  "label#hdri-background-label.it-label",
   "span.pr-label",
-  "button#hdri-none.hdri-card",
-  "img.svelte-1ctxc59",
-  "button#hdri-upload.ui-button-quiet",
-  "div.tp-ui"
+  "p.text-[length:var(--fs-badge)]",
+  "div.sec-panel-body",
+  "button#hdri-upload.hdri-chip",
+  "input.pr-range",
+  "button#hdri-tonemapping.ts-btn"
  ],
- "width": 680,
- "height": 1600,
+ "width": 622,
+ "height": 790,
  "crop": {
-  "x": 1100,
-  "y": 56,
-  "w": 340,
-  "h": 800
+  "x": 1125,
+  "y": 300,
+  "w": 311,
+  "h": 395
  },
- "cut": [
-  "l",
-  "t",
-  "b"
- ],
- "fade": [
-  "b"
- ],
+ "cut": [],
+ "fade": [],
  "anchors": {},
  "kind": "ui"
 }

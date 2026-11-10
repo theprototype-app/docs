@@ -2,24 +2,24 @@
  "id": "phone",
  "spec": "be58989ddfe2",
  "dpr": 2,
- "shotAt": "2026-11-03T13:10:55.743Z",
+ "shotAt": "2026-11-10T14:09:38.986Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "div.ui-panel-header",
   "div.ab-top",
   "div#asset-browser-grid-wrap.min-h-0",
-  "svg.lucide",
   "button#asset-browser-tab-models.tab",
-  "div.ab-filters",
+  "button#asset-browser-tab-motion.tab",
   "label.tp-ui",
   "button#asset-browser-res-1k.seg-opt",
   "li.ab-card",
-  "ul#asset-browser-grid.ab-grid",
-  "span",
-  "img.svelte-1ep2xup"
+  "img.svelte-1ep2xup",
+  "p.ab-name",
+  "button.tp-ui",
+  "span.flex-1"
  ],
  "width": 780,
  "height": 1120,
@@ -37,8 +37,8 @@
  ],
  "anchors": {
   "1": {
-   "x": 26,
-   "y": 330,
+   "x": 24,
+   "y": 374,
    "w": 60.75,
    "h": 76
   }

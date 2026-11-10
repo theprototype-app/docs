@@ -1,10 +1,11 @@
 {
  "id": "env-presets",
+ "spec": "3bbae296a9ac",
  "dpr": 2,
- "shotAt": "2026-10-31T14:07:09.598Z",
+ "shotAt": "2026-11-10T04:13:18.323Z",
  "app": {
-  "version": "1.51.0",
-  "sha": "6fe31dae"
+  "version": "1.63.0",
+  "sha": "93ae1c1a"
  },
  "uiHits": [],
  "kind": "view",

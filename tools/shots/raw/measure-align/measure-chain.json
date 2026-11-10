@@ -2,10 +2,10 @@
  "id": "measure-chain",
  "spec": "0ef08aa08bd4",
  "dpr": 2,
- "shotAt": "2026-11-05T10:59:53.988Z",
+ "shotAt": "2026-11-10T14:20:39.486Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [],
  "width": 1376,

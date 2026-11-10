@@ -49,3 +49,27 @@ shots:
   caption: The Debugger in the light theme.
   annotate:
   - {n: 1, at: {union: [{selector: '#debug-step'}, {selector: '#debug-resume'}]}, shape: box, pad: 3, badge: l, key: '**Step** (F10) runs the next event; **Resume** (F8) rejoins the live game.'}
+# 78-int (1.64) F26: a trigger card says why it did not fire. An On Enter into an Announce on a door, in
+# Edit (no Play, no physics): its card's line under it.
+- id: why-card
+  setup:
+  - {create: Box, name: Door, at: [0, 1, -4]}
+  - {select: [Door]}
+  - eval: >-
+      (async () => { const S = window.__stores, D = window.__docs;
+      const r = await S.aiTools.executeAiTool('create_flow_nodes', {graph: D.byName('Door').uuid,
+      nodes: [{ref: 'enter', type: 'onenter'}, {ref: 'say', type: 'announce', data: {text: 'Welcome'}}],
+      edges: [{from: 'enter', to: 'say', toHandle: 'trigger'}]}, {physics: true});
+      if (!r || r.error || r.partial) throw new Error('create_flow_nodes: ' + JSON.stringify(r && (r.errors || r.error || r.warning))); })()
+  - {select: [Door]}
+  - {click: 'p[title="Node editor (N)"]'}
+  - {wait: 2500}
+  crop: {union: [{selector: '.svelte-flow__node-onenter'}, {selector: '.flow-live-state'}], pad: 48}
+  fade: []
+  kind: ui
+  alt: >-
+    An On Enter card wired to an Announce in a door's flow, in Edit mode, with the line under it saying why it cannot fire right
+    now. 1: the card's line.
+  caption: A trigger card says why it will not fire.
+  annotate:
+  - {n: 1, at: {selector: '.flow-live-state'}, shape: box, pad: 3, badge: r, key: 'The card''s **line**: *won''t fire* and the reason, *blocked* and what stopped it, or when it last fired.'}

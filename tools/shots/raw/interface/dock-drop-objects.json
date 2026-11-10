@@ -1,12 +1,14 @@
 {
  "id": "dock-drop-objects",
+ "spec": "c51fb2906735",
  "dpr": 2,
- "shotAt": "2026-10-31T14:42:27.452Z",
+ "shotAt": "2026-11-10T14:14:58.731Z",
  "app": {
-  "version": "1.51.0",
-  "sha": "6fe31dae"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
+  "svg.svelte-1lv41t3",
   "div.resize-cue",
   "div#explorer-list.tp-ui",
   "button#explorer-mount-add.shrink-0",
@@ -17,8 +19,7 @@
   "button#touch-undo.tt-btn",
   "button#touch-redo.tt-btn",
   "p.hud-cell",
-  "button.rounded-sm",
-  "div.tp-ui"
+  "path"
  ],
  "width": 1376,
  "height": 1680,

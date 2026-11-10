@@ -29,7 +29,7 @@ is about and, where there is one, a fix:
 | reversed selector | an Object Selector is wired **into** an On Click; it has to come out of the click (or sit in the object's own graph) |
 | source with no object | an On Click / On Grab in the scene graph that reaches no object |
 | action with no source | an action node (Set Game State, Travel, Spawn, a kit action …) with nothing upstream that fires; actions only run from an event |
-| Game Start as an event | Game Start never fires; use On Game State instead |
+| Game Start as an event | Start camera (called Game Start before 1.64) never fires; use On Play start or On Game State instead |
 | HUD binding | a HUD node naming an element or screen that does not exist, or none at all |
 | walk with no spawn | Play walks on the ground but the scene has no spawn point |
 | clicks off | the scene has click nodes but Play's interaction is not set to click |

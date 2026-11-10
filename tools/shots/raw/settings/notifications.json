@@ -1,0 +1,43 @@
+{
+ "id": "notifications",
+ "spec": "b4a2f33ce838",
+ "dpr": 2,
+ "shotAt": "2026-11-10T14:44:54.983Z",
+ "app": {
+  "version": "1.63.0",
+  "sha": "14a8550a"
+ },
+ "uiHits": [
+  "header.wc-head",
+  "div#settings-main.settings-main",
+  "div#row-notify-peerLeft.tp-ui",
+  "div#row-notify-chat.tp-ui",
+  "div#row-notify-pingSound.tp-ui",
+  "div#row-notify-agent.tp-ui",
+  "span.sr-name",
+  "div.sr-text",
+  "p#row-notify-peerLeft-desc.sr-desc",
+  "p#row-notify-chat-desc.sr-desc",
+  "p#row-notify-pingSound-desc.sr-desc",
+  "button#notify-ping-character.iface-link"
+ ],
+ "width": 1376,
+ "height": 552,
+ "crop": {
+  "x": 475,
+  "y": 131,
+  "w": 688,
+  "h": 276
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 66,
+   "y": 452.25,
+   "w": 239.375,
+   "h": 37.6875
+  }
+ },
+ "kind": "ui"
+}

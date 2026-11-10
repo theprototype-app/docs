@@ -2,16 +2,19 @@
  "id": "connect-bar-menu",
  "spec": "732eb037cdbc",
  "dpr": 2,
- "shotAt": "2026-11-05T10:43:18.850Z",
+ "shotAt": "2026-11-10T14:03:52.879Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "div.fixed",
   "div.ctx-scroll",
   "div.ctx-section",
   "div.cursor-pointer",
+  "path",
+  "svg.lucide",
+  "span.flex",
   "span.flex-1"
  ],
  "width": 1120,

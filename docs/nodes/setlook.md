@@ -28,6 +28,6 @@ once, and suggests a [Set Active Camera](setcamera.md) node.
 
 ## Practical example
 
-A dream sequence: a **Game Start** pulse into **Set Look** with the *Dream cam* wired into `camera` — every player cuts
+A dream sequence: an [On Play start](onplaystart.md) pulse into **Set Look** with the *Dream cam* wired into `camera` — every player cuts
 to that camera with its soft-focus look. A second Set Look with **on** false on the round's end turns it off again.
 See [Switching looks from a node graph](../post-processing.md#switching-looks-from-a-node-graph).

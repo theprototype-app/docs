@@ -17,9 +17,9 @@ The object count in the status line carries a coloured dot:
 
 | Dot | Meaning |
 |---|---|
-| 🟢 Green | Within budget. Nothing to do. |
-| 🟡 Amber | Over the comfortable ceiling on at least one measure. Still fine, but worth knowing. |
-| 🔴 Red | Over the second ceiling. This is what the gateway and the auto-stops below read. |
+| Green | Within budget. Nothing to do. |
+| Amber | Over the comfortable ceiling on at least one measure. Still fine, but worth knowing. |
+| Red | Over the second ceiling. This is what the gateway and the auto-stops below read. |
 
 Hover it and it names what is over (*Scene budget: over on draw calls / frame, triangles /
 frame*). Click it and the **Statistics** window opens — the same window as the burger
@@ -51,9 +51,9 @@ The budget chip sits beside the toolbar.
 
 | Colour | Meaning |
 |---|---|
-| 🟢 Green | under 80 % of every budget |
-| 🟡 Amber | 80–100 % of at least one |
-| 🔴 Red | over a budget |
+| Green | under 80 % of every budget |
+| Amber | 80–100 % of at least one |
+| Red | over a budget |
 
 Lights and shadow-casting lights are small counts: at the budget is fine, over it is red. Pick the device from the
 chip's **▾** (or right-click / long-press the chip), or with the Quest / Phone / Desktop switch at the top of the Budget
@@ -66,6 +66,10 @@ shadow-casting lights and shadow draws, each against the device, and **Heaviest 
 largest share of a budget, with their triangles, calls and texture memory, and what
 [optimizing them on import](import-optimize.md) would save (≈, by your **Settings ▸ Import** numbers). Click a row to
 select that object.
+
+*Since 1.64* Statistics also has a **Baked light** line: the lightmap atlas size, its memory and how many objects are
+baked out of those shown (for example *256 px · < 0.1 MB · 3 baked / 3 shown*), or *none* for an unbaked scene — a bake
+leaves draw calls and triangles as they were and only adds texture memory. See [Baked light](baked-light.md).
 
 ![Statistics ▸ Budget on Quest for six knots and four point lights: draw calls, triangles, texture memory, lights in red, shadow-casting lights and shadow draws against the budget, then the heaviest objects. 1: the share of the tightest budget.](img/performance/statistics-budget.webp){ .shot .fade-b width="380" height="460" loading=lazy }
 /// caption
@@ -107,10 +111,13 @@ worst one, the JS heap where the browser reports it, meshes and how many are hid
 objects are still arriving, and a **Wire** table of per-message-type counts in and out over the
 last few seconds. The refresh button re-reads everything and resets the wire counters.
 
-!!! note "Two profiles"
+!!! note "Three profiles"
     The same scene is comfortable on a desktop and fatal on a headset, so the ceilings come in
-    two sets. The line at the top of the window says which you are being judged against —
-    **desktop** or **VR / mobile**.
+    sets. The line at the top of the window says which you are being judged against —
+    **desktop**, **VR** or (*since 1.64*) **phone**. A phone keeps the headset's limits for what a
+    scene holds (draw calls, triangles, memory, lights) but its own for frames: a steady 30 fps is
+    fine on a phone. While quality is already lowered to keep a heavy scene smooth, the dot beside
+    the object count is a calm grey note instead of a warning.
 
 The whole set rides along in the [diagnostics bundle](connection.md#diagnostics-you-can-copy).
 
@@ -176,8 +183,9 @@ and a panel explains it rather than leaving you looking at a tab that appears to
   [the quality governor](#the-quality-governor)), **High**, **Medium** (shadows off, 72 % resolution) or **Low**
   (shadows, ambient occlusion and the scene look off, 50 % resolution). These are the same levels a game's own
   **Quality** setting uses; a game's setting wins while you play it.
-- **Reduce quality when the scene is heavy**, **Shadows**, **Simplify distant models** and **Draw repeated kit pieces
-  together** — the same switches as **Settings ▸ Scene ▸ Performance**, which has the **Quality preset** row too.
+- **Shadows**, **Simplify distant models** and **Draw repeated kit pieces together** — the same switches as
+  **Settings ▸ Scene ▸ Performance**, which has the **Quality preset** row too. *Since 1.64* **Reduce quality when the
+  scene is heavy** is only in Settings; Configure Scene has a line that says what **Auto** does instead.
 
 The preset is saved on this device only; it is never sent to peers or saved in a scene.
 

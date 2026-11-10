@@ -149,6 +149,9 @@ async function runSteps(page, steps, env = {}) {
 			// keys reach the 3D view only while it has the keyboard
 			if (!st.noFocus) await page.evaluate(() => { const c = document.querySelector('canvas'); c?.setAttribute('tabindex', c.getAttribute('tabindex') ?? '0'); c?.focus(); });
 			await page.keyboard.press(st.key);
+		} else if (st.type) {
+			// text into whatever has the keyboard now (a search field a right-click opened, say)
+			await page.keyboard.type(st.type, { delay: 30 });
 		} else if (st.wait) {
 			await page.waitForTimeout(st.wait);
 		} else if (st.css) {

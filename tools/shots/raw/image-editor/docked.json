@@ -2,10 +2,10 @@
  "id": "docked",
  "spec": "8e0afeb7a857",
  "dpr": 2,
- "shotAt": "2026-11-03T14:57:57.291Z",
+ "shotAt": "2026-11-10T14:12:09.801Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "div#image-editor-dock.tp-themed",
@@ -16,10 +16,10 @@
   "button.tab-note",
   "button#image-editor-redo.tp-ui",
   "div.flex",
-  "p.hud-cell",
   "span#image-editor-zoom.ie-zoom",
   "button.tp-ui",
-  "button#editor-mode-toggle.hud-cell"
+  "span#image-editor-size.ie-info",
+  "button#dock-add-view.tab-note"
  ],
  "width": 1376,
  "height": 700,

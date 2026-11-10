@@ -123,19 +123,14 @@ shots:
   - id: sky-image-section
     replaces: img/camera/sky-image-section.png
     caption: Configure Scene ▸ Environment, with its Sky image section.
-    alt: 'Configure Scene ▸ Environment: the sky preset cards, Upload HDRI…, Rotation, Image light, Show as sky, Sky blur and
-      Tone mapping.'
+    alt: 'Configure Scene ▸ Environment ▸ Sky image with the Meadow sky in use: None and Upload HDRI…, Rotation, Image
+      light, Show as sky, Sky blur, Tone mapping, Sky quality and Minimum quality.'
     setup:
+    # 1.64: no picture cards any more; the rows show only with a sky image in use, which the Meadow preset brings
+    - env: meadow
     - section: Environment
     - wait: 1200
-    # the Meadow card, not the Meadow preset above it: the rows it shows only exist with a sky image chosen
-    - eval: "[...document.querySelectorAll('button')].filter((b) => b.textContent.includes('Meadow')).pop().click()"
-    - wait: 3000
-    crop:
-      rect:
-      - 1100
-      - 56
-      - 340
-      - 800
-    fade:
-    - b
+    - eval: "document.querySelector('#env-hdri')?.scrollIntoView({block: 'center'})"
+    - wait: 800
+    crop: {selector: '#env-hdri', pad: 10}
+    fade: []

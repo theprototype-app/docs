@@ -333,7 +333,7 @@ shots:
 - id: focus-mode-pip
   replaces: img/interface/focus-mode-pip.png
   device: window-688-tall
-  caption: Focus mode on the Flow Code window, in a small window.
+  caption: Focus mode on the Code window, in a small window.
   setup:
   - eval: window.__stores.dockMenu.dockTab('flowcode')
   - wait: 1200
@@ -346,8 +346,8 @@ shots:
     - 688
     - 840
   fade: []
-  alt: 'Focus mode on the docked Flow Code window: it fills the whole window with its tab row and Exit focus along the top
-    edge, and the Viewport picture-in-picture shows the scene in the bottom-right corner'
+  alt: 'Focus mode on the docked Code window (its Main flow code tab): it fills the whole window with its tab row, Viewport
+    and Exit focus along the top edge, and the Viewport picture-in-picture shows the scene in the bottom-right corner'
 - id: dialog-delete-flow
   replaces: img/interface/dialog-delete-flow.png
   caption: A confirmation is a dialog over the dimmed screen.

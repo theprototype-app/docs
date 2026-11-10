@@ -95,7 +95,7 @@ and labelled as such.
 
 **Click a row** (in the Tree or *Who draws most*) to pick that object: its numbers fill the
 [Details](#details-and-settings) sidebar, and it is selected in the scene with its settings open — straight to its
-[LOD section](lod.md) when it has a LOD group, which is often the fix. Switch off **⚙ Settings ▸ Select picked objects
+[LOD section](lod.md) when it has a LOD group, which is often the fix. Switch off **Settings ▸ Select picked objects
 in the scene** and a row only fills Details.
 
 !!! info "Triangles are what was drawn"
@@ -113,7 +113,7 @@ its edge button, like the Explorer's. The **right** one has two tabs:
   budget (150 / 300k), GPU time when the device measures it, the quality level, stalls and the heaviest CPU phases. From
   a **Detailed** recording it also shows how many materials were drawn, what each module or game cost, and the **picked
   object** — its draw calls, triangles, meshes, materials and CPU time.
-- **⚙ Settings** — *Timeline graphs* (FPS, Frame ms, Draw calls, Triangles, Quality; one always stays), *Quest budget
+- **Settings** (the cog) — *Timeline graphs* (FPS, Frame ms, Draw calls, Triangles, Quality; one always stays), *Quest budget
   lines*, *Follow a live stream*, *Select picked objects in the scene* (on by default) and *FPS and draw calls overlay*
   (the same switch as **Settings ▸ Interface**).
 
@@ -207,7 +207,16 @@ the live view below to keep a copy on the desktop.
 
 ### Watching a headset live
 
-On the desktop, the **Live** button in the Profiler tab's header (beside Import and Compare) opens the Live profiler. It lists the other peers **in your room** — the same scene
+*Changed in 1.64.* The live profile is the **first row of the Profiler's list**, marked *live*; recordings are marked
+*recorded*. The separate Live profiler window is gone: the **Live** button in the Profiler's header (beside Import and
+Compare) opens the same row.
+
+![The Profiler docked at the bottom, dark theme: Light and Detailed, Record, Last 30 s, Import, Compare and Live along its header; the first row of the list on the left is Live, marked live; the Details and Settings tabs are on the right.](img/profiler/live-row.jpg){ .shot .fade-t width="688" height="430" loading=lazy }
+/// caption
+The live profile is the first row of the Profiler's list.
+///
+
+On the desktop, the live row lists the other peers **in your room** — the same scene
 as you; a peer in another room is not offered. Press **Watch** and that peer's frame time, draw
 calls, triangles and quality level stream to you twice a second, drawn against the Quest budget
 lines. A light stream is small (about 2 KB a second).

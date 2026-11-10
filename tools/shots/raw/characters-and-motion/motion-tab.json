@@ -2,10 +2,10 @@
  "id": "motion-tab",
  "spec": "e99f524a98f6",
  "dpr": 2,
- "shotAt": "2026-11-05T10:32:25.137Z",
+ "shotAt": "2026-11-10T13:53:04.130Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "div.ui-panel-header",
@@ -16,10 +16,10 @@
   "svg.lucide",
   "div.ab-thumb",
   "p.ab-by",
-  "button.tp-ui",
   "div.tabs-list",
   "input#asset-browser-search.sf-input",
-  "button#asset-browser-tab-hdris.tab"
+  "button#asset-browser-tab-hdris.tab",
+  "button#asset-browser-tab-textures.tab"
  ],
  "width": 1160,
  "height": 1232,
@@ -40,14 +40,14 @@
  ],
  "anchors": {
   "1": {
-   "x": 740.53125,
+   "x": 700.53125,
    "y": 106,
    "w": 88.125,
-   "h": 80
+   "h": 68
   },
   "2": {
    "x": 58,
-   "y": 716.3125,
+   "y": 704.3125,
    "w": 327.3125,
    "h": 64
   }

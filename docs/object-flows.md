@@ -11,7 +11,7 @@ The editor's scope **follows your selection**: select an object and the Flow edi
 
 ## Creating and deleting a flow
 
-Select an object that has no flow yet — the editor shows **"<name> has no flow yet"** with a one-click **Create flow** button (adding a node from the palette creates it too). To remove one, open the object's flow and press the 🗑 at the right end of the breadcrumb bar; a **Delete this flow?** dialog says how many nodes will be removed for everyone. Deleting a flow is undoable — <kbd>Ctrl+Z</kbd> restores the whole graph.
+Select an object that has no flow yet — the editor shows **"<name> has no flow yet"** with a one-click **Create flow** button (adding a node from the palette creates it too). To remove one, open the object's flow and press the bin (**Delete**) at the right end of the breadcrumb bar; a **Delete this flow?** dialog says how many nodes will be removed for everyone. Deleting a flow is undoable — <kbd>Ctrl+Z</kbd> restores the whole graph.
 
 ## No Object Selector needed
 

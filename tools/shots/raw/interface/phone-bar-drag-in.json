@@ -2,10 +2,10 @@
  "id": "phone-bar-drag-in",
  "spec": "8dbbc190ab79",
  "dpr": 2,
- "shotAt": "2026-11-03T11:14:47.054Z",
+ "shotAt": "2026-11-10T14:16:58.789Z",
  "app": {
-  "version": "1.54.2",
-  "sha": "de3014f8"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "button#ps-sheet-handle.ps-handle",
@@ -15,8 +15,8 @@
   "nav#ps-bar.ps-bar",
   "h2.ps-title",
   "div.ps-tiles",
-  "button#ps-tile-shader.ps-tile",
-  "button#ps-tile-profiler.ps-tile",
+  "button#ps-tile-uv.ps-tile",
+  "button#ps-tile-code.ps-tile",
   "h3.ps-sec",
   "button#ps-more-inspect.ps-tile",
   "button#ps-more-undo.ps-tile"

@@ -2,10 +2,10 @@
  "id": "peers-panel-desktop",
  "spec": "5989098cea90",
  "dpr": 2,
- "shotAt": "2026-11-05T10:38:21.838Z",
+ "shotAt": "2026-11-10T13:58:57.532Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "div.peers-backdrop",
@@ -13,34 +13,34 @@
   "div.peers-body",
   "div.peers-row",
   "h2#wc-title-c1.wc-title",
-  "svg.h-full",
+  "span.pav",
   "span.truncate",
   "span.scene-chip",
-  "div.peer-meta",
   "div.peer-name",
-  "span.peer-you",
-  "span.role-badge"
+  "div.peer-meta",
+  "span.svelte-173ze8w",
+  "span.peer-you"
  ],
- "width": 786,
+ "width": 872,
  "height": 556,
  "crop": {
-  "x": 973,
+  "x": 930,
   "y": 51,
-  "w": 393,
+  "w": 436,
   "h": 278
  },
  "cut": [],
  "fade": [],
  "anchors": {
   "1": {
-   "x": 264.6875,
+   "x": 265.03125,
    "y": 128,
    "w": 50.65625,
    "h": 33
   },
   "2": {
-   "x": 451.75,
-   "y": 247.46875,
+   "x": 401.75,
+   "y": 247.5,
    "w": 136.25,
    "h": 40
   }

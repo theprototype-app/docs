@@ -2,12 +2,14 @@
  "id": "characters",
  "spec": "1c7cc7e3d453",
  "dpr": 2,
- "shotAt": "2026-11-05T10:25:46.225Z",
+ "shotAt": "2026-11-10T13:46:31.341Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
- "uiHits": [],
+ "uiHits": [
+  "svg.svelte-1lv41t3"
+ ],
  "width": 2880,
  "height": 1080,
  "crop": {

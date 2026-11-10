@@ -1,0 +1,43 @@
+{
+ "id": "why-card",
+ "spec": "1d47c6690ea9",
+ "dpr": 2,
+ "shotAt": "2026-11-10T14:04:42.479Z",
+ "app": {
+  "version": "1.63.0",
+  "sha": "14a8550a"
+ },
+ "uiHits": [
+  "ol.tp-crumbs-list",
+  "div.svelte-flow__pane",
+  "div.svelte-flow__handle",
+  "div.flex",
+  "div.relative",
+  "span.text-[10px]",
+  "label.flex",
+  "span",
+  "label.relative",
+  "span.max-w-full",
+  "input.nodrag",
+  "span.node-note"
+ ],
+ "width": 296,
+ "height": 308,
+ "crop": {
+  "x": 693,
+  "y": 604,
+  "w": 148,
+  "h": 154
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 95.193115234375,
+   "y": 200.82958984375,
+   "w": 104.82958984375,
+   "h": 11.1817626953125
+  }
+ },
+ "kind": "ui"
+}

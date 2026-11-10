@@ -52,7 +52,7 @@ The cheat sheet.
 | <kbd>M</kbd> | Mute: the node does nothing until unmuted (drawn faded) |
 | <kbd>H</kbd> | Collapse / expand a card (a note collapses to its title) |
 | <kbd>Ctrl</kbd>+<kbd>G</kbd> / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd> | Group / ungroup |
-| <kbd>Tab</kbd> | Open the selected group, or leave the one you are in |
+| <kbd>Tab</kbd> | With one node selected, search what can follow it and wire your pick to its output (*since 1.64*, [Drag a wire into space](node-system.md#drag-a-wire-into-space)); open the selected group; with nothing selected, leave the group you are in |
 | <kbd>Esc</kbd> | Leave the group you are in |
 | <kbd>N</kbd> / <kbd>Shift</kbd>+<kbd>N</kbd> | Add a note at the cursor / a note framing the selection |
 | <kbd>Q</kbd> / <kbd>E</kbd> | Align the selection into a column / a row |
@@ -106,7 +106,7 @@ The breadcrumb bar in the docked Node editor.
 2. The **list**: every other flow at this level, the current one ticked.
 </div>
 
-On a phone the minimap is off by default; **⚙ Settings ▸ Minimap** turns it on.
+On a phone the minimap is off by default; **Settings ▸ Minimap** (the cog tab of the side panel) turns it on.
 
 ## Tidy graph
 
@@ -144,7 +144,7 @@ exactly as before.
 - Inside, **Group inputs** and **Group outputs** stand for the outside. Drag an inner socket onto their **＋ new** row to
   expose it as a group socket.
 - Draw a wire onto a group's socket from outside and it connects to the real socket inside.
-- Rename the group and its sockets in the properties panel (**⚙ ▸ Settings**).
+- Rename the group and its sockets in the properties panel (the cog ▸ **Settings**).
 - Groups nest, copy and paste with their contents, and undo and redo like every other edit.
 - <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd> ungroups: the nodes stay exactly where they were.
 

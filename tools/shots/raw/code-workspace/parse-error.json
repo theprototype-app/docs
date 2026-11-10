@@ -2,24 +2,24 @@
  "id": "parse-error",
  "spec": "8b6f74251a8d",
  "dpr": 2,
- "shotAt": "2026-11-05T10:33:30.751Z",
+ "shotAt": "2026-11-10T13:54:09.753Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "div.resize-cue",
   "div#code-ws-dock.code-ws",
-  "rect",
+  "div.flex",
   "header.cs-head",
   "button.cs-row",
   "div#code-ws-open-editors.cs-scroll",
   "svg.lucide",
-  "div.flex",
   "input#code-ws-project-search.svelte-1l4ymyb",
   "path",
   "div.cs-leaf-wrap",
-  "span.code-tab-name"
+  "span.code-tab-name",
+  "div#code-ws-tabs.code-strip"
  ],
  "width": 1376,
  "height": 680,
@@ -38,8 +38,8 @@
   "1": {
    "x": 460,
    "y": 208,
-   "w": 269.90625,
-   "h": 33
+   "w": 282.96875,
+   "h": 37.59375
   }
  },
  "kind": "ui"

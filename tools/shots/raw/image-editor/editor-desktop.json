@@ -2,10 +2,10 @@
  "id": "editor-desktop",
  "spec": "74b18f1e62ce",
  "dpr": 2,
- "shotAt": "2026-11-03T13:30:12.517Z",
+ "shotAt": "2026-11-10T14:11:21.388Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "div.border-b",
@@ -15,38 +15,38 @@
   "button#image-editor-redo.tp-ui",
   "div.flex",
   "button.tp-ui",
-  "div.ws-tabs",
-  "button.ws-tab-btn",
-  "div.ws-resize",
-  "span.flex-1",
-  "div.ui-section-label"
+  "span.ph-tab",
+  "path",
+  "button.ws-mode",
+  "div.ie-section",
+  "button#image-editor-aspect-free.seg-opt"
  ],
  "width": 1360,
- "height": 1560,
+ "height": 1436,
  "crop": {
   "x": 180,
   "y": 110,
   "w": 680,
-  "h": 780
+  "h": 718
  },
  "cut": [],
  "fade": [],
  "anchors": {
   "1": {
    "x": 880,
-   "y": 240,
+   "y": 248,
    "w": 280,
    "h": 64
   },
   "2": {
    "x": 880,
-   "y": 504,
+   "y": 512,
    "w": 460,
    "h": 64
   },
   "3": {
    "x": 1226,
-   "y": 1068.40625,
+   "y": 1076.40625,
    "w": 100,
    "h": 208.8125
   }

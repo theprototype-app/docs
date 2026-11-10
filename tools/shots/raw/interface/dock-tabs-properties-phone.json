@@ -2,23 +2,23 @@
  "id": "dock-tabs-properties-phone",
  "spec": "a10a3853c8ec",
  "dpr": 2,
- "shotAt": "2026-11-05T10:56:50.235Z",
+ "shotAt": "2026-11-10T14:17:26.721Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "button.sg-handle",
-  "header.wc-head",
   "div.ins-filter",
   "div#inspector.tp-ui",
   "nav#ps-bar.ps-bar",
   "button.tab-note",
-  "svg.lucide",
   "label.tp-ui",
   "input#name.ui-input",
-  "button#select-group.ts-btn",
   "div.flex",
+  "button#select-group.ts-btn",
+  "button.sec-panel-head",
+  "button#model-source-replace.tp-ui",
   "button#ps-add.ps-tab"
  ],
  "width": 780,

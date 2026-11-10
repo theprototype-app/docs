@@ -2,10 +2,10 @@
  "id": "window-over-sidebar-hint",
  "spec": "984e5edf40d5",
  "dpr": 2,
- "shotAt": "2026-11-05T10:40:53.205Z",
+ "shotAt": "2026-11-10T14:01:30.067Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "input.cx-input",
@@ -14,12 +14,12 @@
   "button#connect-rooms-button.hud-cell",
   "button#connect-info-button.hud-cell",
   "button.sb-tab",
-  "header.wc-head",
   "div.ins-filter",
   "div#inspector.tp-ui",
   "svg.lucide",
+  "h3#scene-group-shared.ins-group-label",
   "button.sec-panel-head",
-  "div.tp-ui"
+  "span"
  ],
  "width": 1240,
  "height": 1168,

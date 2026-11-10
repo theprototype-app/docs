@@ -2,10 +2,10 @@
  "id": "sky-run-phone",
  "spec": "aa7005093485",
  "dpr": 2,
- "shotAt": "2026-11-05T11:26:53.473Z",
+ "shotAt": "2026-11-10T14:49:42.753Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "button#touch-btn-jump.touch-btn"

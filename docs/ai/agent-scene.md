@@ -133,6 +133,22 @@ The opening view is saved with the scene. Setting it does not move anyone's came
 eyes. The tool says so and names what works today: a **Possess Object** node on a click or a key for a chase
 or orbit camera, or a camera object with **Set Active Camera** for a fixed shot.
 
+### Levels, portals, checkpoints and loading screens
+
+*Since 1.64.* Four `game_setup` actions build a game of several levels around the one
+[Levels table](../levels-and-progress.md). Each call is one undo step.
+
+| action | what it does |
+|---|---|
+| `levels` | the Levels table: `levels` (in play order, each `{name, scene, spawn, goal}`), `keep` (what carries from level to level: score, inventory, health, or `"var:<name>"`), `unlock` (all, or in order). `add`, `update` and `remove` change single rows; `clear: true` removes the table; no field reads it. |
+| `portal` | place or change a Portal: `position` or `at: {ping: "latest"}`, `yaw`, and where it goes — a `level` (id or name), a `scene` + `spawn`, or `back: true`; `transition` (`fade`, `iris`, `card`, `none`), `show`, and its own `loading` |
+| `checkpoint` | place or change a Checkpoint: `position` / `at`, `label`, `show` (`false` = no message) |
+| `loading` | the Levels table's loading screen: `preset` (`fade`, `bar`, `logo`, `image`, `item`), `background`, `image`, `logo`, `textColor`, `bar {style, color}`, `tips`, `title`; `clear: true` = the default bar. Needs a Levels table. |
+
+```json
+game_setup {"action": "portal", "at": {"ping": "latest"}, "level": "Tower top", "transition": "card"}
+```
+
 ## Cookbook
 
 ### A race HUD

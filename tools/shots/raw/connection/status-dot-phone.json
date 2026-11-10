@@ -2,22 +2,23 @@
  "id": "status-dot-phone",
  "spec": "7132a9dcc547",
  "dpr": 2,
- "shotAt": "2026-11-04T00:23:26.312Z",
+ "shotAt": "2026-11-10T13:58:15.935Z",
  "app": {
-  "version": "1.57.0",
-  "sha": "a0546b7f"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "button#logo-menu.burger",
   "img.h-7",
   "button#ps-connect-chip.ps-chip-main",
-  "svg.lucide",
   "button#ps-mic.ps-chip-mic",
+  "div.relative",
   "button#notif-bell.hud-cell",
+  "svg.lucide",
   "path",
   "button#peers-trigger.hud-cell",
-  "svg.h-full",
-  "div.relative"
+  "span.pav",
+  "svg.h-full"
  ],
  "width": 780,
  "height": 240,
