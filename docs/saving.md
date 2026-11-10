@@ -2,9 +2,9 @@
 
 How to save and load your work: the recommended `.tpscene` bundle, the whole-project `.tp`, GLTF interchange, named sessions, and autosave.
 
-The main menu (the logo button) has **Import** (bring 3D files into the scene), **Load** (open a saved file) and **Save** in its **Project** section. Since 1.32 that section has two layouts (see [The main menu's Project actions](interface.md#the-main-menus-project-actions)):
+The main menu (the logo button) has **Import** (bring 3D files into the scene), **Open…** (open a saved file; called **Load** before 1.64) and **Save** in its **File** section (**Project** before 1.64). Since 1.32 that section has two layouts (see [The File section's layouts](interface.md#the-main-menus-project-actions)):
 
-- **Compact** (a computer or an unfolded phone): **New from template…**, then **Load** | **Save ▾**, then **Import** | **Export…**. **Save** saves straight away with your last-used options; **▾** opens [Save options](#save-options).
+- **Compact** (a computer or an unfolded phone): **New from template…**, then **Open…** beside the Save row, then **Import** | **Export…**. **Save** saves straight away with your last-used options ([Save options](#save-options)). *New in 1.64:* **Save** is greyed until something changed, and **Save as…** opens the formats.
 - **List** (a folded phone): one row per action, with a format switch under **Save**: **Project | Scene | Save options**. The last one (a cog) opens the same Save options.
 
 Either way you save one of two things:

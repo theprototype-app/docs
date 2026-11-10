@@ -23,8 +23,8 @@ The light theme and every custom `.theme.json` restyle all of it; see [Themes & 
   fold into a **»** button at the end of the bar — see [When the buttons do not fit](controls.md#when-the-buttons-do-not-fit).
   Since 1.35 the whole bar, each corner stack, the buttons beside the logo, the top-right group and the Connect bar can
   be dragged anywhere on the screen, and the bar turned vertical — see [Edit positions](controls.md#edit-positions).
-- **The logo** (top-left) opens the main menu, grouped as Project · Scene · Collaborate · App — see
-  [The main menu's Project actions](#the-main-menus-project-actions). A press anywhere outside the menu closes it;
+- **The logo** (top-left) opens the main menu, grouped as File · Scene · Versions · Window · Help — see
+  [The main menu](#the-main-menu). A press anywhere outside the menu closes it;
   pressing another button (a bottom-bar tab, the bell, Play) closes it and does that button's job in the same press,
   and pressing the 3D view only closes it — nothing gets selected or deselected.
 - **The Connect bar** (top centre) shows your ID — click it to copy your invite link — and the field to join someone,
@@ -72,12 +72,13 @@ later in **Settings ▸ Account ▸ Email** ([Settings](settings.md#account)).
 (Explorer, Objects, the Profiler…), **menu items** and **every setting**. Type a few letters, move with
 <kbd>↑</kbd> <kbd>↓</kbd>, press <kbd>Enter</kbd> to run it; <kbd>Esc</kbd> or a click outside closes it. Picking a
 setting opens Settings already searching for that row. The palette is listed in the shortcut sheet (<kbd>?</kbd>) and
-can be rebound there like any shortcut.
+can be rebound there like any shortcut. *New in 1.64.* The palette is always drawn as a panel, the field above the list,
+on every screen size; **Search commands…** at the top of the [main menu](#the-main-menu) opens it too.
 
 ## Windows and tabs
 
 Every docked or floating window — Explorer, Objects, Chat, AI assistant, Notes, the Notification centre, the node
-editor, Flow code, Animation, UV, Shader, HUD editor, Profiler, the Code workspace — has the same header: icon, title,
+editor, Animation, UV, Shader, HUD editor, Profiler, the Code workspace — has the same header: icon, title,
 the window's own actions, then pin and close in the same places. Windows in one group, and the views in the bottom dock,
 share **one tab strip**: pill tabs with the view's icon and their own **✕** to close that view. More tabs than fit
 scroll sideways (the wheel or a swipe; the strip fades where more tabs are hidden) while **+** stays in place, and the
@@ -120,15 +121,21 @@ and, at its far end, the **Full height** button (↕) and the **hide** button.
   (*Add as tab* lights up), or right-click its header ▸ **Move to the left / right sidebar** — it becomes a tab of that
   side. Hold <kbd>Ctrl</kbd> (<kbd>Cmd</kbd> on a Mac) while you drag to place it floating over the sidebar instead —
   see [Moving a floating window](controls.md#moving-a-floating-window).
-- **Resize** by dragging the sidebar's inner edge; a double-click resets it. All tabs of a side share the width. The
+- *New in 1.64.* **The handle**: each column has one handle on its inner edge (the grip icon). Tap or click it to hide
+  or show the column; drag it up or down along the edge to move it — the place is remembered. On a computer the handles
+  show only while a column is hidden; on a tablet they also show while it is open. **Settings ▸ Interface ▸ Show
+  viewport sidebar handles** (*Auto* / *On* / *Off*) and **Dim at rest** set how they show. The **Panels** button
+  cycles through both columns, the left one, the right one and none.
+- **Resize** by dragging the sidebar's inner edge; a double-click resets it. On a computer, drag the edge well past
+  the smallest width to close the column. All tabs of a side share the width. The
   logo and the profile button move with the edge as you drag. On a touch screen the edge is easy to grab, the sidebar
   stops at its minimum width (250 px), and its content never scrolls sideways — rows that do not fit wrap onto a second
   line.
 - **Full height**: press **↕** and the sidebar runs from the top edge to the bottom edge. The buttons in that top corner
   (the logo and menu on the left; notes, notifications and your profile on the right) move inward at once — since 1.36
   they jump to their new place instead of sliding, the Connect bar too — and the bottom dock
-  gets narrower so it sits beside the sidebar, never under it — every docked view, Statistics, Chat, Objects, the Live
-  profiler, the AI assistant and the Shader editor included. Press it again to fit the sidebar under the top buttons.
+  gets narrower so it sits beside the sidebar, never under it — every docked view, Statistics, Chat, Objects, the AI
+  assistant and the Shader editor included. Press it again to fit the sidebar under the top buttons.
   The main menu always opens above sidebars. With one or both sides at full height the Connect bar stays a pill,
   centred between the logo and the corner buttons. The toolbar never slides under a full-height sidebar — see
   [The toolbar and sidebars](controls.md#the-toolbar-and-sidebars).
@@ -176,9 +183,8 @@ Dragging a tab into the 3D view: drop it to float the window.
 
 #### Any window in a sidebar
 
-Every window that can be docked at the bottom can also be a sidebar tab — the Node editor, Flow Code, Animation, UV,
-Shader and HUD editors, the Explorer, the Profiler, Code, the Image editor, Objects, Statistics, the Live profiler, Chat
-and the AI assistant:
+Every window that can be docked at the bottom can also be a sidebar tab — the Node editor, Animation, UV, Shader and
+HUD editors, the Explorer, the Profiler, Code, the Image editor, Objects, Statistics, Chat and the AI assistant:
 
 - **Into a sidebar**: drag the floating window (by its header or any empty part) to the left or right edge or onto an
   open sidebar, drag its bottom-dock tab onto a sidebar, right-click its dock tab or its floating header ▸ **Move to the
@@ -235,8 +241,8 @@ Since 1.32 a window in the bottom dock has no **✕** or undock button of its ow
   window. A docked window moves by its tab, not by its header. The same menu has **Move to the left / right sidebar**
   (see [Any window in a sidebar](#any-window-in-a-sidebar)).
 - **The dock's +** lists every window that can live in the dock — the [Node editor](node-editor.md) and the
-  [Image editor](image-editor.md#in-the-dock) included, and since 1.33 also **Objects**, **Statistics**, the **Live
-  profiler**, **Chat** and the **AI assistant** — the same list as the phone's **Windows** sheet. See
+  [Image editor](image-editor.md#in-the-dock) included, and since 1.33 also **Objects**, **Statistics**, **Chat** and
+  the **AI assistant** — the same list as the phone's **Windows** sheet. See
   [The "+" menus](#the-menus) for what a pick does.
 - **An empty dock**: with nothing docked, <kbd>T</kbd> opens the dock **empty** — its tab strip with only **+** and the
   line *Press + or drag a tab here*. Drop a floating window on its strip or its body to dock it there; <kbd>T</kbd>
@@ -266,8 +272,7 @@ The dock's + menu, in a small window: each row says where that window is now.
 **Dock any window exactly where you want it**: drag a floating window by its header or any empty part of it — or tear
 a tab out of a tabbed window, or drag a whole tabbed window by its tab bar — onto the **dock's tab bar**. The window turns
 see-through, the tab bar is outlined and a **caret** shows the slot between the docked tabs where it will land; let go
-and it docks exactly there. This works for every editor and for Objects, Statistics, the Live profiler, Chat and the AI
-assistant; file and model previews, the text viewer, What's new and the tool palettes stay floating. The bottom edge of
+and it docks exactly there. This works for every editor and for Objects, Statistics, Chat and the AI assistant; file and model previews, the text viewer, What's new and the tool palettes stay floating. The bottom edge of
 the screen still docks a window at the end of the tabs (and is the only target while the dock is minimized; an
 [empty dock](#docked-windows) opened with <kbd>T</kbd> takes a drop anywhere on it). Since 1.35 this works by touch too,
 on an unfolded phone or a tablet.
@@ -332,6 +337,17 @@ A floating window dragged over a pane of a split dock.
   **Float (undock)** takes it out of the group, just beside it; **Dock to bottom** and **Move to the left / right
   sidebar** move only that view (greyed out for windows that always float, such as a file preview); **Close** closes
   that view and the rest of the group stays.
+
+### Windows with side panes
+
+*New in 1.64.* The Node editor, Shader, Animation, UV and HUD editors, the Explorer, the Profiler and Code have side
+panes. A side pane hides and shows with the **arrow handle** on its edge. The handles take no room: with the panes
+hidden, the window's content is full width.
+
+- A window with several right-hand panels shows them as **tabs behind one handle** — in the Explorer, **Properties**,
+  **File history** and **Settings**.
+- **Lock** a window's panes from the handle's menu, so a stray tap cannot hide them.
+- In a narrow docked window the panes become a header instead — see [The dock on a phone](#the-dock-on-a-phone).
 
 ### Hiding buttons you do not use
 
@@ -459,23 +475,40 @@ then **Focus**, **Ping** and **Add note**, then the editing modes. Rarer work is
 (align to ground, origin, pivot…), **Mesh ▸** (convert, boolean…), **Physics & effects ▸** (joints, particles, flow
 effects), **Prefab ▸** on a placed prefab copy, and **Save as… ▸**. Every action and its shortcut is still there.
 
-### The main menu's Project actions
+### The main menu
 
-The **Project** section at the top of the main menu has two layouts, picked in **Settings ▸ Interface ▸ Lists & menus ▸
-Project actions**:
+*Regrouped in 1.64.* The logo opens the main menu, grouped **File · Scene · Versions · Window · Help**. **Search
+commands…** (<kbd>Ctrl</kbd>+<kbd>K</kbd>, the [command palette](#the-command-palette-ctrlk)) sits on top, and
+**Settings** with the app's version at the bottom — the version opens What's new.
+
+- **File**: **Load** is now **Open…**. On the Save row, **Save** is greyed until something changed; **Save as…** opens
+  the formats.
+- **Scene**: **Clear scene…** is the last row, on its own.
+- **Versions**: the checkpoints, and **Sessions** with them.
+- **Window**: **Windows ▸** lists every panel with its shortcut and a mark when it is open; a click brings it forward.
+  It also has **Focus mode**, **Full screen**, **Reset positions and sizes**, **Close all floating windows** and three
+  switches:
+    - **Snap to edges** — a dragged window snaps flush to the screen edges within 16 px.
+    - **Lock layout** — windows cannot be dragged, resized or torn off.
+    - **Remember layout per scene** — each saved scene reopens with the window layout it was left in.
+- **Help** has **Keyboard shortcuts** (<kbd>?</kbd>).
+
+![The main menu open from the logo, dark theme: Search commands… with Ctrl+K on top; File with New from template…, Open…, Save as…, Import and Export…; Scene with Configure Scene, Free assets (CC0), Modules, Layouts and Clear scene… on its own; Versions with Save checkpoint…, Checkpoints and Sessions; Window with Windows ▸ and Statistics; Help with Docs; Settings and the version at the bottom.](img/interface/main-menu.jpg){ .shot .fade-r width="688" height="430" loading=lazy }
+/// caption
+The main menu, grouped File · Scene · Versions · Window · Help.
+///
+
+#### The File section's layouts { #the-main-menus-project-actions }
+
+The File section has two layouts, picked in **Settings ▸ Interface ▸ Lists & menus ▸ Project actions**:
 
 - **Compact** (the default on a computer and an unfolded phone) is a two-column grid: **New from template…** across the
-  top, then **Load** | **Save ▾**, then **Import** | **Export…**. **Save** saves straight away with your last-used
-  options; its **▾** opens [Save options](saving.md#save-options) — what to save and what the file includes.
+  top, then **Open…** beside the Save row (**Save** and **Save as…**), then **Import** | **Export…**. **Save** saves
+  straight away with your last-used options ([Save options](saving.md#save-options)); **Save as…** opens the formats.
   **Export…** opens Publish / Export.
-- **List** (the default on a folded phone) is one row per action — Templates, Import, Load, Save, Publish / Export —
+- **List** (the default on a folded phone) is one row per action — Templates, Import, Open…, Save, Publish / Export —
   with the **Project | Scene | Save options** switch under Save; the last one (a cog) opens the same Save options.
 - **Auto** is List on a phone and Compact everywhere else. Searching the settings for *burger* or *compact* finds it.
-
-![The main menu's Project section in the Compact layout: New from template… across the top, then Load beside Save with its ▾, then Import beside Export…, and Cloud saves.](img/interface/menu-project-compact.webp){ .shot .fade-b width="330" height="180" loading=lazy }
-/// caption
-The main menu's Project section in the Compact layout.
-///
 
 ## Dialogs
 
@@ -550,6 +583,11 @@ controls bigger on screen too, raise the [UI scale](accessibility.md#ui-scale).
 - **Docked windows open with their sidebars hidden**: the Explorer, Node editor, UV editor, HUD editor, Profiler, Image
   editor and Code workspace give the screen to their work area (folded or unfolded). Open a side panel with its edge
   button or tab; it stays open next time, for that window.
+- *New in 1.64.* **A narrow docked window shows a header instead of side panes** — on a folded phone, or in one half of
+  a split dock. One row names every view (in the Explorer: **Folder tree**, **Files**, **Properties**, **File
+  history**, **Settings**) and one shows at a time. Tap the view in front again to go back. The Animation tab works the
+  same way (**Channels**, **Timeline**, **Key**, **Clip**). In a split dock, a header that does not fit scrolls sideways
+  (drag it) instead of running into the other half.
 - **The dock's +** at the end of its tab strip opens a **Windows** sheet: every window — the six dock panels included —
   with a show/hide switch. With floating windows allowed on the phone (**Settings ▸ Interface ▸ Windows & chrome ▸ Allow
   undocking on touch screens**), **+** works as on a computer — a menu that adds a window to the dock.
@@ -561,6 +599,11 @@ controls bigger on screen too, raise the [UI scale](accessibility.md#ui-scale).
   logo while they are open.
 
 Touch targets are at least 44 px, switches 51 × 31, and text fields use 16 px text so the browser never zooms.
+
+![The Explorer docked on a folded phone, dark theme: under its search field a header row names Folder tree, Files, Properties and File history, and the Settings view shows below it, above the bottom bar.](img/interface/phone-dock-header.jpg){ .shot .fade-t width="390" height="874" loading=lazy }
+/// caption
+The Explorer on a folded phone: one header row names every view, one shows at a time.
+///
 
 ### The phone bar and More
 
@@ -583,8 +626,8 @@ More open on a folded phone, with Move being dragged onto the bottom bar.
 
 **What can go on the bar** — everything in More:
 
-- **Windows**: Add, More, Objects, Statistics, Chat, Explorer, Node editor, Animation, Scene, AI assistant, Notes, Flow
-  Code, Shader editor, UV editor, HUD editor, Profiler, Code;
+- **Windows**: Add, More, Objects, Statistics, Chat, Explorer, Node editor, Animation, Scene, AI assistant, Notes,
+  Shader editor, UV editor, HUD editor, Profiler, Code;
 - **Edit**: Inspect, Move, Rotate, Scale, Undo, Redo, Select multiple, Interact mode. Move, Rotate, Scale and Inspect work
   on the selection and look pressed while active;
 - **Tools & View**: snapping, view and camera, and **Focus mode** (see [Focus mode](#focus-mode)).

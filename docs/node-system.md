@@ -141,9 +141,10 @@ toast — or reload without `#safe`.
 
 ## Flow Code: the graph as text
 
-**Flow Code** (the dock's **＋** menu, or <kbd>Alt</kbd>+<kbd>F</kbd>) shows the graph the editor is
-showing as text you can read, edit and **Apply**. (The [code workspace](code-workspace.md#graph-json) can also open it as
-JSON in a tab, beside the graph's scripts.) A **Text | JSON** toggle above it picks the
+**Flow Code** (<kbd>Alt</kbd>+<kbd>F</kbd>) shows the graph the editor is showing as text you can read, edit and
+**Apply**. *Since 1.64* it is not its own window: it opens in the [code workspace](code-workspace.md#flow-code) from the
+graph's **flow code** entry in the Project tree, and **Save** (<kbd>Ctrl</kbd>+<kbd>S</kbd>) applies it. (The code
+workspace can also open the graph as [JSON](code-workspace.md#graph-json) in a tab, beside the graph's scripts.) A **Text | JSON** toggle above it picks the
 format; your choice is remembered on this device. Switching format drops edits you have not
 applied.
 

@@ -207,7 +207,16 @@ the live view below to keep a copy on the desktop.
 
 ### Watching a headset live
 
-On the desktop, the **Live** button in the Profiler tab's header (beside Import and Compare) opens the Live profiler. It lists the other peers **in your room** — the same scene
+*Changed in 1.64.* The live profile is the **first row of the Profiler's list**, marked *live*; recordings are marked
+*recorded*. The separate Live profiler window is gone: the **Live** button in the Profiler's header (beside Import and
+Compare) opens the same row.
+
+![The Profiler docked at the bottom, dark theme: Light and Detailed, Record, Last 30 s, Import, Compare and Live along its header; the first row of the list on the left is Live, marked live; the Details and Settings tabs are on the right.](img/profiler/live-row.jpg){ .shot .fade-t width="688" height="430" loading=lazy }
+/// caption
+The live profile is the first row of the Profiler's list.
+///
+
+On the desktop, the live row lists the other peers **in your room** — the same scene
 as you; a peer in another room is not offered. Press **Watch** and that peer's frame time, draw
 calls, triangles and quality level stream to you twice a second, drawn against the Quest budget
 lines. A light stream is small (about 2 KB a second).
