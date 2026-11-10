@@ -50,3 +50,18 @@ shots:
       - {wait: 600}
     crop: {selector: '#hdri-quality', pad: 12}
     fade: []
+  # 78-int (1.64) profile-notify: Settings ▸ Interface ▸ Notifications, the per-kind switches (on this device)
+  - id: notifications
+    alt: >-
+      Settings ▸ Interface ▸ Notifications: switches marked This device for People leaving, Chat badge and Ping sounds,
+      whose line links to Customize character. 1: the Customize character link.
+    caption: The Notifications switches in Settings ▸ Interface.
+    setup:
+      - {eval: "const s=window.__stores; s.settingsSection.set('interface'); s.settingsOpen.set(true)"}
+      - {wait: 1500}
+      - {eval: "document.querySelector('[id^=row-notify-]')?.scrollIntoView({block: 'start'})"}
+      - {wait: 700}
+    crop: {union: [{selector: '[id^="row-notify-"]'}, {selector: '[id^="row-notify-"]', nth: 4}], pad: 15}
+    fade: []
+    annotate:
+      - {n: 1, at: {selector: '#notify-ping-character'}, shape: box, pad: 3, badge: r, key: '**Ping sounds** links to Customize character, where you pick your own ping.'}

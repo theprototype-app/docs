@@ -83,6 +83,15 @@ device. Each one is on until you switch it off.
 | Room invites | the pop-up when someone invites you to their room — on theprototype.app |
 | Contest reminders | the reminder, at most once a day, while a community contest is open — on theprototype.app |
 
+![Settings ▸ Interface ▸ Notifications: switches marked This device for People leaving, Chat badge and Ping sounds, whose line links to Customize character. 1: the Customize character link.](img/settings/notifications.webp){ .shot width="688" height="276" loading=lazy }
+/// caption
+The Notifications switches in Settings ▸ Interface.
+///
+
+<div class="shot-key" markdown>
+1. **Ping sounds** links to Customize character, where you pick your own ping.
+</div>
+
 *What's new* after an update has its own switch (**Announce new versions**). Questions someone must answer — a
 connection request, a take-control or role request, an agent asking permission — and safety notices cannot be switched
 off. Search finds *notifications* and every switch by name. **Reset Interface** turns them all back on.

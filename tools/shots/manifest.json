@@ -2519,6 +2519,17 @@
    "app": "1.61.0",
    "shotAt": "2026-11-05T11:22:13.450Z"
   },
+  "img/settings/notifications.webp": {
+   "page": "settings",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 688,
+   "height": 276,
+   "badges": 1,
+   "labels": [],
+   "app": "1.63.0",
+   "shotAt": "2026-11-10T04:23:37.443Z"
+  },
   "img/settings/rows-phone.webp": {
    "page": "settings",
    "kind": "ui",
