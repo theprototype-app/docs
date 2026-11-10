@@ -50,5 +50,5 @@ A one-minute round clock, as the node is meant to be used:
 
 ![A Game Start wired into the start of a HUD Timer, with duration 60, format "{v}s" and autostart off](../img/nodes-hudtimer/hudtimer.webp){ .shot width="402" height="300" loading=lazy }
 /// caption
-An event wired into a HUD Timer's start. The picture is from before 1.64: where it shows Game Start, use On Play start.
+A Game Start wired into a HUD Timer's start.
 ///

@@ -9,7 +9,7 @@ The **HUD** is the 2D layer over the game — a score, a health bar, a start men
 Press <kbd>Alt</kbd>+<kbd>H</kbd>, or the **＋** in the bottom dock's tab strip ▸ **HUD editor** (the toolbar can carry a
 HUD button too — see [The toolbar](controls.md#the-toolbar)). Like every editor window it docks at the bottom or floats.
 
-![The HUD editor on the Stars Room's menu screen: the toolbar with the arrange buttons and Snap along the top, and the stage below with the menu card, its title, Start round, Restart round, More stars, Resume and Quit to free play, the start button selected. 1: the selected start button. 2: the Snap box.](img/hud-editor/hud-editor.webp){ .shot .fade-l .fade-r .fade-b width="595" height="593" loading=lazy }
+![The HUD editor on the Stars Room's menu screen: the toolbar with the arrange buttons and Snap along the top, and the stage below with the menu card, its title, Start round, Restart round, More stars, Resume and Quit to free play, the start button selected. 1: the selected start button. 2: the Snap box.](img/hud-editor/hud-editor.webp){ .shot .fade-l .fade-r .fade-b width="600" height="594" loading=lazy }
 /// caption
 The HUD editor on the Stars Room's menu screen.
 ///

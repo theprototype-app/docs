@@ -2,23 +2,21 @@
  "id": "place-model-ghost",
  "spec": "7c53249ce162",
  "dpr": 2,
- "shotAt": "2026-11-03T14:24:01.176Z",
+ "shotAt": "2026-11-10T14:05:40.490Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "div.dt-row",
-  "svg.lucide",
   "p.hud-cell",
-  "circle",
+  "svg.lucide",
   "button#editor-mode-toggle.hud-cell",
   "p#play-button.hud-play",
   "p#explorer-slot.hud-cell",
-  "path",
-  "span.budget-dot",
-  "span.bc-target",
+  "button#toolbar-customize.hud-cell",
   "button#budget-chip.bc-main",
+  "span.bc-target",
   "span#budget-chip-percent.bc-pct"
  ],
  "width": 1200,

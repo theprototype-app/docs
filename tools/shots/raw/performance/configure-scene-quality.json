@@ -2,10 +2,10 @@
  "id": "configure-scene-quality",
  "spec": "9574e021ac0c",
  "dpr": 2,
- "shotAt": "2026-11-10T04:14:35.520Z",
+ "shotAt": "2026-11-10T14:36:47.002Z",
  "app": {
   "version": "1.63.0",
-  "sha": "93ae1c1a"
+  "sha": "14a8550a"
  },
  "uiHits": [
   "div.ins-filter",

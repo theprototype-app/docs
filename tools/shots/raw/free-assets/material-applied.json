@@ -2,10 +2,10 @@
  "id": "material-applied",
  "spec": "5d6dcd14c765",
  "dpr": 2,
- "shotAt": "2026-11-03T15:06:41.458Z",
+ "shotAt": "2026-11-10T14:08:38.466Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "div#inspector.tp-ui",
@@ -33,7 +33,7 @@
  "fade": [],
  "anchors": {
   "1": {
-   "x": 336,
+   "x": 440,
    "y": 215,
    "w": 96,
    "h": 106.375

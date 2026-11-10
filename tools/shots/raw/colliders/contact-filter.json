@@ -2,10 +2,10 @@
  "id": "contact-filter",
  "spec": "159977b83278",
  "dpr": 2,
- "shotAt": "2026-11-05T10:36:22.260Z",
+ "shotAt": "2026-11-10T13:57:00.511Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "div.svelte-flow__pane",
@@ -15,17 +15,17 @@
   "span.overflow-hidden",
   "select.nodrag",
   "path.svelte-flow__edge-interaction",
+  "label.flex",
   "span.h-2",
   "div.node-card",
   "span",
-  "p.text-[10px]",
-  "span.font-mono"
+  "p.text-[10px]"
  ],
  "width": 1318,
  "height": 722,
  "crop": {
   "x": 471,
-  "y": 471,
+  "y": 459,
   "w": 659,
   "h": 361
  },
@@ -34,13 +34,13 @@
  "anchors": {
   "1": {
    "x": 55,
-   "y": 56,
+   "y": 55.70001220703125,
    "w": 143.268798828125,
-   "h": 142.903076171875
+   "h": 142.90313720703125
   },
   "2": {
    "x": 955,
-   "y": 182,
+   "y": 181.699951171875,
    "w": 305.35302734375,
    "h": 160.7906494140625
   }

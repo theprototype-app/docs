@@ -1,11 +1,11 @@
 {
  "id": "why-card",
- "spec": "90914f62e4c5",
+ "spec": "1d47c6690ea9",
  "dpr": 2,
- "shotAt": "2026-11-10T04:10:58.673Z",
+ "shotAt": "2026-11-10T14:04:42.479Z",
  "app": {
   "version": "1.63.0",
-  "sha": "93ae1c1a"
+  "sha": "14a8550a"
  },
  "uiHits": [
   "ol.tp-crumbs-list",
@@ -19,7 +19,7 @@
   "label.relative",
   "span.max-w-full",
   "input.nodrag",
-  "span.svelte-1bgpml9"
+  "span.node-note"
  ],
  "width": 296,
  "height": 308,

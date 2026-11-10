@@ -23,7 +23,7 @@ robot "Request AI" button, and the sheet opens on **Person**. It has two tabs ov
 On the **Person** tab the sheet also shows a **QR code** of the join link once you create it: a phone can scan it to
 join. The code is made on your device; the link goes nowhere else.
 
-![The invite sheet, Invite to this session. 1: the Person and AI agent tabs. 2: Expires and Can be used by. 3: the Create invite link button.](img/invites/request-ai-sheet.webp){ .shot width="464" height="425" loading=lazy }
+![The invite sheet, Invite to this session. 1: the Person and AI agent tabs. 2: Expires and Can be used by. 3: the Create invite link button.](img/invites/request-ai-sheet.webp){ .shot width="464" height="475" loading=lazy }
 /// caption
 The invite sheet, open on the AI agent tab.
 ///

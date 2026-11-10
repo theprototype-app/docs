@@ -2,10 +2,10 @@
  "id": "sky-image-section",
  "spec": "49f769c71258",
  "dpr": 2,
- "shotAt": "2026-11-10T04:16:41.974Z",
+ "shotAt": "2026-11-10T13:52:11.110Z",
  "app": {
   "version": "1.63.0",
-  "sha": "93ae1c1a"
+  "sha": "14a8550a"
  },
  "uiHits": [
   "div#inspector.tp-ui",

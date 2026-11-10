@@ -2,10 +2,10 @@
  "id": "request-ai-sheet",
  "spec": "d5a89bebf859",
  "dpr": 2,
- "shotAt": "2026-11-10T04:19:08.769Z",
+ "shotAt": "2026-11-10T14:17:51.561Z",
  "app": {
   "version": "1.63.0",
-  "sha": "93ae1c1a"
+  "sha": "14a8550a"
  },
  "uiHits": [
   "dialog.tp-ui",
@@ -15,19 +15,19 @@
   "h2#md-title-c1.wc-title",
   "button#invite-tab-person.tab",
   "p.inv-lead",
-  "div.inv-row",
-  "div.inv-actions",
   "div#invite-sheet.inv",
-  "svg.lucide",
-  "p.inv-note"
+  "span#invite-role-label.inv-label",
+  "div.inv-row",
+  "span#invite-uses-label.inv-label",
+  "div.inv-actions"
  ],
  "width": 928,
- "height": 850,
+ "height": 950,
  "crop": {
   "x": 488,
-  "y": 238,
+  "y": 213,
   "w": 464,
-  "h": 425
+  "h": 475
  },
  "cut": [],
  "fade": [],
@@ -35,19 +35,19 @@
   "1": {
    "x": 70,
    "y": 137.5,
-   "w": 240,
+   "w": 238.0625,
    "h": 78
   },
   "2": {
    "x": 70,
-   "y": 361.5,
+   "y": 461.5,
    "w": 788,
    "h": 176
   },
   "3": {
-   "x": 526,
-   "y": 561.5,
-   "w": 332,
+   "x": 526.34375,
+   "y": 661.5,
+   "w": 331.65625,
    "h": 72
   }
  },

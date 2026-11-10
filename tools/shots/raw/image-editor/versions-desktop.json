@@ -2,10 +2,10 @@
  "id": "versions-desktop",
  "spec": "798b528ba904",
  "dpr": 2,
- "shotAt": "2026-11-03T13:30:28.863Z",
+ "shotAt": "2026-11-10T14:11:53.748Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "header.wc-head",
@@ -15,11 +15,11 @@
   "div.flex",
   "button#image-editor-save-copy.tp-ui",
   "button#image-editor-save.tp-ui",
-  "div.ws-tabs",
-  "button.ws-tab-btn",
-  "div.ws-resize",
-  "div#image-editor-history.ie-pane",
-  "button#image-editor-restore-original.tp-ui"
+  "svg.lucide",
+  "path",
+  "div.ws-panel-head",
+  "button#image-editor-restore-original.tp-ui",
+  "img.ie-version-thumb"
  ],
  "width": 1360,
  "height": 1120,
@@ -34,7 +34,7 @@
  "anchors": {
   "1": {
    "x": 880,
-   "y": 162,
+   "y": 170,
    "w": 460,
    "h": 64
   }

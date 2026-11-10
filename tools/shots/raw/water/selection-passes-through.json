@@ -2,51 +2,53 @@
  "id": "selection-passes-through",
  "spec": "ae92cbf795d0",
  "dpr": 2,
- "shotAt": "2026-11-05T11:32:04.338Z",
+ "shotAt": "2026-11-10T14:55:18.126Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "svg.lucide",
-  "p.hud-cell",
-  "button#budget-chip.bc-main",
+  "span.budget-dot",
   "span.bc-target",
   "span#budget-chip-percent.bc-pct",
   "button#budget-chip-target.bc-caret",
+  "div.ins-filter",
   "div#inspector.tp-ui",
-  "div.slider",
-  "input.svelte-1xmlgu5",
-  "span.appear",
-  "div.wrapper",
-  "label.pr-label"
+  "span.sec-title",
+  "button.sec-panel-head",
+  "section.tp-ui",
+  "p.ui-section-label",
+  "div.tp-ui"
  ],
  "width": 1348,
- "height": 1168,
+ "height": 1440,
  "crop": {
   "x": 767,
-  "y": 316,
+  "y": 137,
   "w": 674,
-  "h": 584
+  "h": 720
  },
  "cut": [
   "l",
-  "t"
+  "t",
+  "b"
  ],
  "fade": [
   "l",
-  "t"
+  "t",
+  "b"
  ],
  "anchors": {
   "1": {
    "x": 1238,
-   "y": 747.5625,
+   "y": 747.875,
    "w": 80,
    "h": 48
   },
   "2": {
    "x": 635.4375,
-   "y": 209.40625,
+   "y": 567.40625,
    "w": 271.625,
    "h": 45.875
   }

@@ -2,24 +2,24 @@
  "id": "paint-layer",
  "spec": "f6d4190f5668",
  "dpr": 2,
- "shotAt": "2026-11-05T11:24:34.981Z",
+ "shotAt": "2026-11-10T14:47:15.389Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
-  "svg.lucide",
+  "svg.svelte-1lv41t3",
+  "span.sbh-tab",
+  "span.toolbox-title",
   "span.tbx-label",
+  "svg.lucide",
   "button#sculpt-op-paint.tbx-btn",
   "div.toolbox-body",
   "span.layer-chip",
   "button#sculpt-gizmo.tbx-btn",
   "span",
-  "span.toolbox-title",
   "button#sculpt-op-scatter.tbx-btn",
-  "span.text-[length:var(--fs-badge)]",
-  "div.toolbox-status",
-  "div.toolbox-header"
+  "span.text-[length:var(--fs-badge)]"
  ],
  "width": 1328,
  "height": 878,

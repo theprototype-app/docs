@@ -401,7 +401,7 @@ frees its download — the item **stays in the pack** and downloads again the ne
 ▸ **Delete downloads** frees the whole pack's, and [Storage](#storage) lists **Pack downloads** per pack with **Clear
 all pack downloads**.
 
-![A pack item's menu in the Explorer, opened on the Duck after it was placed once: Duplicate, Share with peers, Properties, Rename and Delete cache with its size. 1: Delete cache.](img/explorer/place-delete-cache.webp){ .shot width="430" height="268" loading=lazy }
+![A pack item's menu in the Explorer, opened on the Duck after it was placed once: Duplicate, Share with peers, Properties, Rename and Delete cache with its size. 1: Delete cache.](img/explorer/place-delete-cache.webp){ .shot width="429" height="268" loading=lazy }
 /// caption
 A pack item's menu.
 ///

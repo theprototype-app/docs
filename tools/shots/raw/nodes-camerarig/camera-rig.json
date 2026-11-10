@@ -2,10 +2,10 @@
  "id": "camera-rig",
  "spec": "a8fb385789f8",
  "dpr": 2,
- "shotAt": "2026-11-04T21:11:06.469Z",
+ "shotAt": "2026-11-10T14:25:42.104Z",
  "app": {
-  "version": "1.60.0",
-  "sha": "9c57479a"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [],
  "width": 1920,

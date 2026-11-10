@@ -2,10 +2,10 @@
  "id": "jiggle",
  "spec": "fa7ca575b218",
  "dpr": 2,
- "shotAt": "2026-11-05T11:24:21.715Z",
+ "shotAt": "2026-11-10T14:46:33.621Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [],
  "width": 1800,

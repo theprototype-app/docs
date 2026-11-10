@@ -2,10 +2,10 @@
  "id": "levels-table",
  "spec": "ba844a68cf8e",
  "dpr": 2,
- "shotAt": "2026-11-10T04:11:11.436Z",
+ "shotAt": "2026-11-10T14:18:05.262Z",
  "app": {
   "version": "1.63.0",
-  "sha": "93ae1c1a"
+  "sha": "14a8550a"
  },
  "uiHits": [
   "div#sidebar-grip-right.sb-grip",

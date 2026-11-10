@@ -31,7 +31,7 @@ The Presets row with Wood applied.
 - **A friend's presets** — when someone in the session has saved presets, they appear under **From ‹name›**. Click one
   to apply it; while editing (pencil), the copy button saves it into your own library.
 
-![Editing your presets: the pencil is pressed, your own swatch Red brick is picked and the bar under the row has its rename, download and delete buttons, with Import beside. 1: the pencil. 2: rename, download and delete.](img/materials/presets-edit.webp){ .shot width="311" height="250" loading=lazy }
+![Editing your presets: the pencil is pressed, your own swatch Red brick is picked and the bar under the row has its rename, download and delete buttons, with Import beside. 1: the pencil. 2: rename, download and delete.](img/materials/presets-edit.webp){ .shot width="311" height="312" loading=lazy }
 /// caption
 Editing your presets.
 ///

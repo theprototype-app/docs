@@ -2,10 +2,10 @@
  "id": "crop-desktop-light",
  "spec": "9b4aa367aa40",
  "dpr": 2,
- "shotAt": "2026-11-03T13:11:22.443Z",
+ "shotAt": "2026-11-10T14:11:36.611Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "header.wc-head",
@@ -15,11 +15,11 @@
   "button#image-editor-redo.tp-ui",
   "div.flex",
   "button.tp-ui",
-  "div.ws-tabs",
-  "button.ws-tab-btn",
-  "div.ws-resize",
-  "div#image-editor-tools.ie-pane",
-  "div.ui-section-label"
+  "svg.lucide",
+  "div.ws-panel-head",
+  "div.ui-section-label",
+  "div.ie-section",
+  "button#image-editor-aspect-free.seg-opt"
  ],
  "width": 1360,
  "height": 1120,
@@ -33,20 +33,20 @@
  "fade": [],
  "anchors": {
   "1": {
-   "x": 181.015625,
+   "x": 197.015625,
    "y": 180,
    "w": 469.96875,
    "h": 41
   },
   "2": {
    "x": 917.75,
-   "y": 508,
+   "y": 516,
    "w": 408.25,
    "h": 97.625
   },
   "3": {
    "x": 880,
-   "y": 621.625,
+   "y": 629.625,
    "w": 223.71875,
    "h": 64
   }

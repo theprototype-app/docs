@@ -2,10 +2,10 @@
  "id": "browser-materials",
  "spec": "4efe749bc22c",
  "dpr": 2,
- "shotAt": "2026-11-03T13:47:20.493Z",
+ "shotAt": "2026-11-10T14:08:00.350Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "div.ui-panel-header",
@@ -15,11 +15,11 @@
   "p.ab-foot",
   "img.svelte-1ep2xup",
   "p.ab-by",
-  "button.tp-ui",
   "div.tabs-list",
   "input#asset-browser-search.sf-input",
   "button#asset-browser-tab-hdris.tab",
-  "button#asset-browser-tab-textures.tab"
+  "button#asset-browser-tab-textures.tab",
+  "button#asset-browser-tab-materials.tab"
  ],
  "width": 1152,
  "height": 1232,
@@ -35,14 +35,14 @@
  ],
  "anchors": {
   "1": {
-   "x": 440.0625,
+   "x": 416.0625,
    "y": 106,
    "w": 119.125,
-   "h": 80
+   "h": 68
   },
   "2": {
    "x": 104,
-   "y": 206,
+   "y": 194,
    "w": 298,
    "h": 60
   }

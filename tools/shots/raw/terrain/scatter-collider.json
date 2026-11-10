@@ -2,24 +2,24 @@
  "id": "scatter-collider",
  "spec": "0d9d2e4f4604",
  "dpr": 2,
- "shotAt": "2026-11-05T11:25:17.584Z",
+ "shotAt": "2026-11-10T14:48:00.525Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "button.sb-tab",
-  "header.wc-head",
   "div.ins-filter",
   "div#inspector.tp-ui",
   "svg.lucide",
   "label.tp-ui",
+  "div.flex",
   "button#terrain-scatter-add-p:Dodecahedron.ts-btn",
   "div.dn-wrap",
-  "div.flex",
   "button#scatter-fill-p_Dodecahedron-start.tp-ui",
   "span.min-w-0",
-  "button#terrain-scatter-add-p:Cone.ts-btn"
+  "button#terrain-scatter-add-p:Cone.ts-btn",
+  "span.dn-label"
  ],
  "width": 606,
  "height": 956,

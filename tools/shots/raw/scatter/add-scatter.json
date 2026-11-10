@@ -2,24 +2,24 @@
  "id": "add-scatter",
  "spec": "5efbe106370a",
  "dpr": 2,
- "shotAt": "2026-11-05T11:21:49.338Z",
+ "shotAt": "2026-11-10T14:43:42.309Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
+  "button#mic-button.hud-fab",
+  "div#hud-stack-right.tp-ui",
   "button.sb-tab",
-  "header.wc-head",
   "div.ins-filter",
   "div#inspector.tp-ui",
   "span.sb-tab-label",
-  "h2#wc-title-c1.wc-title",
-  "label.tp-ui",
+  "svg.lucide",
+  "p.text-[10px]",
   "button#bubbles-add.tp-ui",
   "button#pour-add.tp-ui",
   "span.sec-title",
-  "div.flex",
-  "span.ts-label"
+  "div.flex"
  ],
  "width": 1376,
  "height": 1440,

@@ -2,23 +2,24 @@
  "id": "layout-editor",
  "spec": "f9a507d55975",
  "dpr": 2,
- "shotAt": "2026-11-05T11:27:22.871Z",
+ "shotAt": "2026-11-10T14:50:22.372Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "div#touch-layout-editor.tle",
   "div.tle-panel",
   "span#touch-layout-selected.tle-sel",
   "span.svelte-1j5vmzv",
+  "button#touch-layout-default-item.tle-btn",
   "div.tle-item",
   "input#touch-layout-opacity.svelte-1j5vmzv",
+  "button#touch-layout-cancel.tle-btn",
   "div.tle-row",
+  "button#touch-layout-save.tle-btn",
   "input#touch-layout-hide.tp-check",
-  "span.tle-num",
-  "label.tle-check",
-  "span.tle-grip"
+  "span.tle-num"
  ],
  "width": 780,
  "height": 1792,

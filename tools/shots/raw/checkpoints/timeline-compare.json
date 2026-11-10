@@ -2,10 +2,10 @@
  "id": "timeline-compare",
  "spec": "59d571cfa0ca",
  "dpr": 2,
- "shotAt": "2026-11-03T14:33:50.791Z",
+ "shotAt": "2026-11-10T13:53:20.237Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "dialog.tp-ui",

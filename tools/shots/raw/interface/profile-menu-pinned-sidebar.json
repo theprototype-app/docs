@@ -2,24 +2,24 @@
  "id": "profile-menu-pinned-sidebar",
  "spec": "0dddacaa8175",
  "dpr": 2,
- "shotAt": "2026-11-05T10:52:23.732Z",
+ "shotAt": "2026-11-10T14:13:08.049Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
-  "svg.lucide",
   "span.pm-name",
   "span.pm-sub",
+  "div.pm-group",
   "button.tp-ui",
   "span.nr-icon",
-  "button#cloud-signin-btn",
-  "div.tp-cloud-account",
-  "a#cloud-star-link",
-  "a#cloud-support-link",
-  "a#cloud-sponsor-link",
-  "a#cloud-community-link",
-  "div.cloud-slot"
+  "button#cloud-signin-btn.tpc-btn",
+  "div.tpc-desc",
+  "span.tpc-pm-link-text",
+  "div.cloud-slot",
+  "svg.lucide",
+  "span.nr-desc",
+  "a#cloud-community-link"
  ],
  "width": 1376,
  "height": 920,

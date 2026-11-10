@@ -2,24 +2,24 @@
  "id": "fluid-emitter",
  "spec": "144e88ae42c9",
  "dpr": 2,
- "shotAt": "2026-11-05T10:46:30.492Z",
+ "shotAt": "2026-11-10T14:07:14.954Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
-  "path",
-  "p.hud-cell",
-  "svg.lucide",
-  "button#toolbar-customize.hud-cell",
-  "button#budget-chip.bc-main",
-  "span.bc-target",
   "span#budget-chip-percent.bc-pct",
-  "header.wc-head",
+  "svg.lucide",
+  "button#mic-button.hud-fab",
+  "button#chat-button.hud-fab",
+  "path",
   "div.ins-filter",
+  "p.ui-section-label",
   "div.sec-panel-body",
   "div.flex",
-  "button.sec-panel-head"
+  "button.sec-panel-head",
+  "label#fluid-emitter-on-label.it-label",
+  "div.ui-row"
  ],
  "width": 1120,
  "height": 1440,

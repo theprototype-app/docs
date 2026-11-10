@@ -2,17 +2,18 @@
  "id": "touch-tools-show-cluster",
  "spec": "79f4c0280960",
  "dpr": 2,
- "shotAt": "2026-11-03T11:09:39.948Z",
+ "shotAt": "2026-11-10T14:02:58.636Z",
  "app": {
-  "version": "1.54.2",
-  "sha": "de3014f8"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "div.fixed",
   "div.ctx-scroll",
   "div.ctx-section",
-  "span.flex-1",
-  "div.cursor-pointer"
+  "svg.lucide",
+  "div.cursor-pointer",
+  "span.flex-1"
  ],
  "width": 1040,
  "height": 760,
@@ -32,9 +33,9 @@
  ],
  "anchors": {
   "1": {
-   "x": 370,
+   "x": 422,
    "y": 591.5,
-   "w": 324.3125,
+   "w": 272.3125,
    "h": 39
   }
  },

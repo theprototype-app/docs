@@ -2,10 +2,10 @@
  "id": "window-menu",
  "spec": "314327318f7e",
  "dpr": 2,
- "shotAt": "2026-11-10T04:13:58.247Z",
+ "shotAt": "2026-11-10T14:01:59.558Z",
  "app": {
   "version": "1.63.0",
-  "sha": "93ae1c1a"
+  "sha": "14a8550a"
  },
  "uiHits": [
   "div.fixed",

@@ -2,10 +2,10 @@
  "id": "details-sidebar",
  "spec": "e01c4a165e96",
  "dpr": 2,
- "shotAt": "2026-11-05T11:17:39.014Z",
+ "shotAt": "2026-11-10T14:39:24.657Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "div.resize-cue",
@@ -17,9 +17,9 @@
   "td.num",
   "div#profiler-dock.tp-themed",
   "button.pf-sort",
-  "div.ws-tabs",
-  "button.ws-tab-btn",
-  "div.ws-resize"
+  "svg.lucide",
+  "span.ph-tab",
+  "div.tp-scroll-thumb"
  ],
  "width": 1376,
  "height": 1120,
@@ -36,7 +36,7 @@
  "anchors": {
   "1": {
    "x": 898,
-   "y": 834.34375,
+   "y": 833.34375,
    "w": 444,
    "h": 254
   }

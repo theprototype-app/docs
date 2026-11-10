@@ -14,7 +14,7 @@ Part of Mini Golf's Main graph at full size.
 ///
 
 <div class="shot-key" markdown>
-1. A **moment** output (an event) — *holeSunk*, the ball in the cup — wired into a banner, a burst and a sound.
+1. A **moment** ⚡ output — *holeSunk*, the ball in the cup — wired into a banner, a burst and a sound.
 2. **Code** opens **the rules** in the code workspace; edit them and press <kbd>Ctrl</kbd>+<kbd>S</kbd>.
 3. The **Code link** opens **the engine** (`minigolf/module.js`) read-only: the ball, the putting, the VR putter.
 </div>

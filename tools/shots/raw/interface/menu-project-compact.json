@@ -2,24 +2,24 @@
  "id": "menu-project-compact",
  "spec": "e5e19f9f99a4",
  "dpr": 2,
- "shotAt": "2026-11-05T10:55:04.129Z",
+ "shotAt": "2026-11-10T14:15:43.709Z",
  "app": {
-  "version": "1.61.0",
-  "sha": "fc6e2d26"
+  "version": "1.63.0",
+  "sha": "14a8550a"
  },
  "uiHits": [
   "nav#sidebar70.app-sidebar",
+  "button#open-command-palette.side-row",
   "div.side-label",
   "button#open-templates.side-row",
   "button#project-load.side-row",
   "button#project-import.side-row",
-  "rect",
+  "button#tp-cloud-saves-row.side-row",
   "svg.lucide",
   "path",
   "span.side-ico",
-  "span.pa-label",
-  "button#project-save.side-row",
-  "button#open-publish-export.side-row"
+  "span.flex-1",
+  "span.pa-label"
  ],
  "width": 660,
  "height": 360,

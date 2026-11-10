@@ -7,7 +7,7 @@ on variables in a watch list.
 It is **yours alone**. The other players in the session keep playing, and nothing you set in the debugger is saved
 into the scene or sent to anyone.
 
-![The Debugger paused at the Counter: the Key Press wire into it shows a pulse, its output wire into Set Variable reads its count, the watch list follows the score variable and the Counter's breakpoint is listed. 1: Paused at.](img/debugger/paused-dark.webp){ .shot width="300" height="341" loading=lazy }
+![The Debugger paused at the Counter: the Key Press wire into it shows a pulse, its output wire into Set Variable reads its count, the watch list follows the score variable and the Counter's breakpoint is listed. 1: Paused at.](img/debugger/paused-dark.webp){ .shot width="300" height="398" loading=lazy }
 /// caption
 The Debugger paused at a Counter.
 ///
@@ -122,7 +122,7 @@ While you are paused, **your** view is frozen and events queue up for you; the s
     Breakpoints are off in VR — on a headset the game just keeps running. [Module](modules.md) code keeps running while
     you are paused.
 
-![The Debugger in the light theme, paused at the Counter: Step and Resume in its header, the wires, the watch list and the breakpoint list. 1: Step and Resume.](img/debugger/paused-light.webp){ .shot width="300" height="341" loading=lazy }
+![The Debugger in the light theme, paused at the Counter: Step and Resume in its header, the wires, the watch list and the breakpoint list. 1: Step and Resume.](img/debugger/paused-light.webp){ .shot width="300" height="398" loading=lazy }
 /// caption
 The Debugger in the light theme.
 ///

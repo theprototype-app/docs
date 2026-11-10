@@ -182,7 +182,7 @@ ground* ticked flew on a desktop.) **Configure Scene ▸ Play ▸ Flying**:
 | **Allowed** | <kbd>Q</kbd> / <kbd>E</kbd> on a desktop, the **Up** / **Down** touch buttons, and in VR Interact, flying with the stick along where the controller points |
 | **Removed** | nobody flies in this scene, even if a game module or a Character Controller node in fly mode asks for it |
 
-![Configure Scene ▸ Physics ▸ Play: Pointer, Limit grab reach, Flying set to Allowed, the simulation switch and the spawn point. 1: the Flying choice, Off, Allowed or Removed.](img/physics/flying-setting.webp){ .shot width="303" height="345" loading=lazy }
+![Configure Scene ▸ Physics ▸ Play: Pointer, Limit grab reach, Flying set to Allowed, the simulation switch and the spawn point. 1: the Flying choice, Off, Allowed or Removed.](img/physics/flying-setting.webp){ .shot width="303" height="409" loading=lazy }
 /// caption
 Configure Scene ▸ Physics ▸ Play mode.
 ///
