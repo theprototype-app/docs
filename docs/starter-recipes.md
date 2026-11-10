@@ -18,6 +18,10 @@ search) ▸ **Recipes**:
 The entries are greyed out on the **Main** graph: a recipe goes into an object's **own** flow, so select the object
 first. A toast confirms what was added — *Added the door recipe — press Play to try it*.
 
+To see all four at work first, open **Templates ▸ Doors, a bell and a guard**: a yard with a door you click, a gate that
+opens when you walk up, a bell and a guard on its round. Press Play and try them, then open each object's flow to see
+what its recipe made.
+
 ## What a recipe does
 
 - The nodes go into the selected object's own flow (a flow is made if it has none), below whatever it already holds.
