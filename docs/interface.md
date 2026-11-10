@@ -145,8 +145,10 @@ and, at its far end, the **Full height** button (↕) and the **hide** button.
   hides. On an unfolded phone or a tablet the **Panels** button brings them back.
 - **The header lock** of Configure Scene and Properties sits beside **Full height** in the tab row while that panel is
   the tab in front — see [Panel headers](#panel-headers).
-- **A pinned Properties** (the pin in its header) follows your selection without pulling its tab over the Objects list
-  when the two share a side; double-click an object (or pick **Properties** in its menu) to bring it forward.
+- **A pinned Properties** follows your selection without pulling its tab over the Objects list when the two share a
+  side; double-click an object (or pick **Properties** in its menu) to bring it forward. *Since 1.64* the panel has one
+  header: the pin is a button in the sidebar strip (on a phone, the first item of the tab's long-press menu, with the
+  header lock in the grab bar), and the filter box says what it filters.
 
 ![A sidebar on the right with two tabs, Objects and Configure Scene (in front), and the Full height button at the end of its tab strip](img/interface/sidebar-tabs.webp){ .shot .fade-b width="340" height="440" loading=lazy }
 /// caption

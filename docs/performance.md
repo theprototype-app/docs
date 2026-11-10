@@ -67,6 +67,10 @@ largest share of a budget, with their triangles, calls and texture memory, and w
 [optimizing them on import](import-optimize.md) would save (≈, by your **Settings ▸ Import** numbers). Click a row to
 select that object.
 
+*Since 1.64* Statistics also has a **Baked light** line: the lightmap atlas size, its memory and how many objects are
+baked out of those shown (for example *256 px · < 0.1 MB · 3 baked / 3 shown*), or *none* for an unbaked scene — a bake
+leaves draw calls and triangles as they were and only adds texture memory. See [Baked light](baked-light.md).
+
 ![Statistics ▸ Budget on Quest for six knots and four point lights: draw calls, triangles, texture memory, lights in red, shadow-casting lights and shadow draws against the budget, then the heaviest objects. 1: the share of the tightest budget.](img/performance/statistics-budget.webp){ .shot .fade-b width="380" height="460" loading=lazy }
 /// caption
 Statistics ▸ Budget against the Quest limits.
@@ -176,8 +180,9 @@ and a panel explains it rather than leaving you looking at a tab that appears to
   [the quality governor](#the-quality-governor)), **High**, **Medium** (shadows off, 72 % resolution) or **Low**
   (shadows, ambient occlusion and the scene look off, 50 % resolution). These are the same levels a game's own
   **Quality** setting uses; a game's setting wins while you play it.
-- **Reduce quality when the scene is heavy**, **Shadows**, **Simplify distant models** and **Draw repeated kit pieces
-  together** — the same switches as **Settings ▸ Scene ▸ Performance**, which has the **Quality preset** row too.
+- **Shadows**, **Simplify distant models** and **Draw repeated kit pieces together** — the same switches as
+  **Settings ▸ Scene ▸ Performance**, which has the **Quality preset** row too. *Since 1.64* **Reduce quality when the
+  scene is heavy** is only in Settings; Configure Scene has a line that says what **Auto** does instead.
 
 The preset is saved on this device only; it is never sent to peers or saved in a scene.
 
