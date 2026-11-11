@@ -2,10 +2,10 @@
  "id": "edit-positions",
  "spec": "288c044f2c4c",
  "dpr": 2,
- "shotAt": "2026-11-10T20:33:49.275Z",
+ "shotAt": "2026-11-11T13:16:59.230Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "button#cluster-grip-bar.cl-grip",

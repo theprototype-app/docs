@@ -2,32 +2,31 @@
  "id": "hud-editor",
  "spec": "ea82e768cb7b",
  "dpr": 2,
- "shotAt": "2026-11-10T14:11:09.263Z",
+ "shotAt": "2026-11-11T13:25:29.795Z",
  "app": {
-  "version": "1.63.0",
-  "sha": "14a8550a"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "div.dt-row",
-  "button#hud-arrange-align-vcenter.hud-btn",
+  "svg.lucide",
   "div.hud-board-fit",
   "div#hud-stage.hud-stage",
   "rect",
-  "button#hud-arrange-distribute-h.hud-btn",
   "div.flex",
-  "button#hud-arrange-distribute-v.hud-btn",
-  "path",
-  "button.hud-btn",
   "div.hud-el",
-  "svg.lucide"
+  "button.hud-el",
+  "div.hud-item",
+  "label.hud-check",
+  "span.hud-wired"
  ],
- "width": 1200,
- "height": 1188,
+ "width": 1194,
+ "height": 1186,
  "crop": {
-  "x": 396,
-  "y": 168,
-  "w": 600,
-  "h": 594
+  "x": 390,
+  "y": 169,
+  "w": 597,
+  "h": 593
  },
  "cut": [],
  "fade": [
@@ -37,14 +36,14 @@
  ],
  "anchors": {
   "1": {
-   "x": 400,
-   "y": 659.4000244140625,
-   "w": 400,
-   "h": 67.2000732421875
+   "x": 399.125,
+   "y": 659.175048828125,
+   "w": 393.75,
+   "h": 66.14990234375
   },
   "2": {
-   "x": 444,
-   "y": 57.5,
+   "x": 456,
+   "y": 55.5,
    "w": 89.8125,
    "h": 33
   }

@@ -2,10 +2,10 @@
  "id": "my-status",
  "spec": "57d0790f3162",
  "dpr": 2,
- "shotAt": "2026-11-10T20:52:18.069Z",
+ "shotAt": "2026-11-11T13:38:03.299Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "div.peers-backdrop",

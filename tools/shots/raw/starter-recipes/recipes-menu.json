@@ -2,10 +2,10 @@
  "id": "recipes-menu",
  "spec": "0f76ffb42a92",
  "dpr": 2,
- "shotAt": "2026-11-10T21:18:11.839Z",
+ "shotAt": "2026-11-11T14:06:16.483Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "div.fixed",
@@ -17,12 +17,12 @@
   "input.ctx-filter-input",
   "div.ctx-grip"
  ],
- "width": 720,
+ "width": 734,
  "height": 476,
  "crop": {
   "x": 756,
   "y": 0,
-  "w": 360,
+  "w": 367,
   "h": 238
  },
  "cut": [
@@ -33,7 +33,7 @@
   "1": {
    "x": 100,
    "y": 92,
-   "w": 520,
+   "w": 534.03125,
    "h": 64
   }
  },

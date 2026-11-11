@@ -2,10 +2,10 @@
  "id": "coderef",
  "spec": "03946b4ee384",
  "dpr": 2,
- "shotAt": "2026-11-10T20:58:06.687Z",
+ "shotAt": "2026-11-11T13:44:31.228Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "div.svelte-flow__pane",

@@ -2,10 +2,10 @@
  "id": "guests-see",
  "spec": "bfd8cde48f53",
  "dpr": 2,
- "shotAt": "2026-11-10T20:29:53.931Z",
+ "shotAt": "2026-11-11T13:12:48.814Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "div.connect-pill",
@@ -21,21 +21,21 @@
   "span.cxd-network-title",
   "button.cx-id"
  ],
- "width": 888,
+ "width": 890,
  "height": 408,
  "crop": {
-  "x": 498,
+  "x": 497,
   "y": 44,
-  "w": 444,
+  "w": 445,
   "h": 204
  },
  "cut": [],
  "fade": [],
  "anchors": {
   "1": {
-   "x": 249.75,
+   "x": 250.640625,
    "y": 220,
-   "w": 588.5,
+   "w": 590.71875,
    "h": 64
   }
  },

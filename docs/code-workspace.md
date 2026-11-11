@@ -25,7 +25,7 @@ It opens by itself when you ask for code:
 - <kbd>Alt</kbd>+<kbd>F</kbd> opens the graph's [flow code](#flow-code).
 
 It docks as a tab at the bottom, beside the Node editor and the Explorer, or floats as a window (the dock's **Undock** button to float,
-the window's **Dock** to put it back). Everything on this page works in both. In a narrow window or on a phone the
+the **Dock** button in the window's header to put it back). Everything on this page works in both. In a narrow window or on a phone the
 [sidebars](#sidebars) open **over** the editor, one at a time (toggle buttons in the header); on a phone they start
 hidden, and one you open stays open next time.
 
@@ -95,9 +95,9 @@ its preview, double-click it, or right-click ▸ **Edit in the Code tab** — an
 
 ## Pop out to its own window
 
-**Pop out** (↗) in the workspace header opens the whole code workspace in its **own browser window** — drag it to a
+**Pop out** (↗) in the floating window's header opens the whole code workspace in its **own browser window** — drag it to a
 second monitor and keep the 3D view full-size in the app. Desktop browsers only (hidden on phones, touch screens and in
-VR).
+VR). *Since 1.66* Code docked or in a sidebar has no header row: **Undock** it first, then pop it out.
 
 ![The code workspace in its own browser window: Code and Dock back in its header, the sidebars and the Bob Script node's code below. 1: Dock back.](img/code-workspace/pop-out-window.webp){ .shot width="688" height="640" loading=lazy }
 /// caption

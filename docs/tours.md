@@ -9,7 +9,7 @@ half-way — you take the headset off, or reload the page — picks up where you
 
 The first time you open the app, the Welcome card asks **What do you want to do?**
 
-![The Welcome card on a first visit: the question What do you want to do? over four answers — Play a game, Remix a game, Start from a template and Describe it — with the Empty scene link under them. 1: the question. 2: Empty scene.](img/tours/welcome-question.webp){ .shot width="632" height="528" loading=lazy }
+![The Welcome card on a first visit: the question What do you want to do? over four answers — Play a game, Remix a game, Start from a template and Describe it — with the Empty scene link under them. 1: the question. 2: Empty scene.](img/tours/welcome-question.webp){ .shot width="632" height="511" loading=lazy }
 /// caption
 The Welcome card asks one question on your first visit.
 ///

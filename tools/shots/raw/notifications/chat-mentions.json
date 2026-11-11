@@ -2,10 +2,10 @@
  "id": "chat-mentions",
  "spec": "6ab8d9007068",
  "dpr": 2,
- "shotAt": "2026-11-10T21:06:21.516Z",
+ "shotAt": "2026-11-11T13:53:40.725Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "header.wc-head",

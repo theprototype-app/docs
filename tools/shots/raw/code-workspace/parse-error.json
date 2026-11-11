@@ -2,24 +2,24 @@
  "id": "parse-error",
  "spec": "8b6f74251a8d",
  "dpr": 2,
- "shotAt": "2026-11-10T20:24:55.674Z",
+ "shotAt": "2026-11-11T13:07:46.314Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "div.resize-cue",
   "div#code-ws-dock.code-ws",
-  "div.flex",
   "header.cs-head",
-  "button.cs-row",
+  "path",
   "div#code-ws-open-editors.cs-scroll",
   "svg.lucide",
+  "button.cs-row",
+  "span.cs-name",
   "input#code-ws-project-search.svelte-1l4ymyb",
-  "path",
-  "div.cs-leaf-wrap",
+  "span.cs-dirty",
   "span.code-tab-name",
-  "div#code-ws-tabs.code-strip"
+  "span.code-kind"
  ],
  "width": 1376,
  "height": 680,
@@ -37,8 +37,8 @@
  "anchors": {
   "1": {
    "x": 460,
-   "y": 208,
-   "w": 286,
+   "y": 144,
+   "w": 282.96875,
    "h": 37.59375
   }
  },

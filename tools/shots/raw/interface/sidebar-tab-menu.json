@@ -2,17 +2,18 @@
  "id": "sidebar-tab-menu",
  "spec": "2aa55f709947",
  "dpr": 2,
- "shotAt": "2026-11-10T20:43:27.961Z",
+ "shotAt": "2026-11-11T13:27:59.707Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "div.fixed",
   "div.cursor-pointer",
+  "div.ctx-scroll",
   "span.flex",
-  "span.flex-1",
-  "div.ctx-scroll"
+  "svg.lucide",
+  "span.flex-1"
  ],
  "width": 1040,
  "height": 660,

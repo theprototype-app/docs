@@ -2,10 +2,10 @@
  "id": "explorer-credit",
  "spec": "045de959e9ce",
  "dpr": 2,
- "shotAt": "2026-11-10T21:33:08.004Z",
+ "shotAt": "2026-11-11T13:23:37.774Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "span.ph-tab",

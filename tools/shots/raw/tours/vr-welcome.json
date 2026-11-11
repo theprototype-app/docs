@@ -2,10 +2,10 @@
  "id": "vr-welcome",
  "spec": "40afd8859e2a",
  "dpr": 2,
- "shotAt": "2026-11-10T21:21:50.302Z",
+ "shotAt": "2026-11-11T14:10:12.944Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [],
  "width": 1024,

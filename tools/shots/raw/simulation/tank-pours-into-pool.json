@@ -2,10 +2,10 @@
  "id": "tank-pours-into-pool",
  "spec": "cadd103a64d6",
  "dpr": 2,
- "shotAt": "2026-11-10T21:17:40.452Z",
+ "shotAt": "2026-11-11T14:05:48.049Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [],
  "width": 2180,

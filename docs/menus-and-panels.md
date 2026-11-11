@@ -71,7 +71,7 @@ as its second tab (it replaces the *Request AI* button). **Join…** opens the f
 a peer id. Someone who joins with your invite is announced by name (*Guest 2 joined with your invite*), not by an id.
 See [The Connect panel](connection.md#the-connect-panel) and [Invite people and agents](invites.md).
 
-![The idle Connect bar: Ready and your peer id with its copy button, then the Invite and Join… buttons, Browse public rooms and the drawer arrow. 1: Invite. 2: Join….](img/menus-and-panels/connect-invite-join.webp){ .shot width="435" height="104" loading=lazy }
+![The idle Connect bar: Ready and your peer id with its copy button, then the Invite and Join… buttons, Browse public rooms and the drawer arrow. 1: Invite. 2: Join….](img/menus-and-panels/connect-invite-join.webp){ .shot width="436" height="104" loading=lazy }
 /// caption
 The Connect bar leads with Invite and Join….
 ///

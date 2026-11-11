@@ -52,6 +52,14 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.66 — polish on the new menus and panels.** Properties [follows your selection without taking
+over](interface.md#sidebars) and keeps the last object when you deselect; its lock and pin are gone and the filter box
+is [always on top](interface.md#panel-headers). Configure Scene moves to the other sidebar on its own, sidebar tabs keep
+their whole names with a **…** list when they overflow, and every floating window has an icon **Dock** button and,
+where it can, **Pop out**. The main menu puts **Layouts** on top of Window, lays Help out two to a row, and the version
+number (with a dot when there is news) opens the release notes. **Report a bug** is [one view](profiler.md#report-a-bug)
+with a picture to mark up, the last 30 s of frames and **Send** or **Save on this device**.
+
 **1.65 — [new menus and panels](menus-and-panels.md).** Chat and the AI assistant are one window with **Session** and
 **Assistant** tabs, one History for both, and chats that come back after a reload. Press anyone in People for their
 [Person card](people.md#the-person-card); the Connect bar leads with **Invite** and **Join…**, and you can

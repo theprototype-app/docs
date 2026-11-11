@@ -2,10 +2,10 @@
  "id": "versions-desktop",
  "spec": "cd9b6b5d2c68",
  "dpr": 2,
- "shotAt": "2026-11-10T18:26:23.234Z",
+ "shotAt": "2026-11-11T13:26:14.472Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "div.ui-panel-header",

@@ -2,10 +2,10 @@
  "id": "view-section",
  "spec": "9717b0acaad3",
  "dpr": 2,
- "shotAt": "2026-11-10T20:21:42.784Z",
+ "shotAt": "2026-11-11T13:04:10.587Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "div#drawer-label.tp-ui",
@@ -17,8 +17,8 @@
   "label#override-post-label.it-label",
   "div.sec-panel-body",
   "div.tp-ui",
-  "label#ins-toggle-efxhah8-label.it-label",
-  "label#ins-toggle-u1i6m1e-label.it-label",
+  "label#ins-toggle-kvoxw1p-label.it-label",
+  "label#ins-toggle-5zecac9-label.it-label",
   "div.flex"
  ],
  "width": 622,
@@ -35,7 +35,7 @@
   "1": {
    "x": 20,
    "y": 153.9375,
-   "w": 496,
+   "w": 488.375,
    "h": 52
   },
   "2": {

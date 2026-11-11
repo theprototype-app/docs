@@ -2,24 +2,24 @@
  "id": "knife-polyline",
  "spec": "6d01765ffeee",
  "dpr": 2,
- "shotAt": "2026-11-10T20:53:34.888Z",
+ "shotAt": "2026-11-11T13:39:35.851Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "div.tbx-tabs",
   "span.tbx-label",
-  "button#mesh-gran-shell.px-2",
+  "button#mesh-gran-object.px-2",
   "div.tbx-row",
   "button#mesh-proportional.tbx-btn",
   "svg.lucide",
   "button#mesh-op-solidify.tbx-btn",
   "button#mesh-op-delete.tbx-btn",
-  "span.dn-label",
-  "div.toolbox-body",
-  "button#mesh-sec-gizmo.tbx-sec-head",
-  "div#mesh-gizmo-row.tbx-row"
+  "span",
+  "button#mesh-gizmo-toggle.tbx-btn",
+  "input#mesh-snap-enabled.tbx-check",
+  "div.dn-wrap"
  ],
  "width": 1376,
  "height": 1400,
@@ -47,7 +47,7 @@
   },
   "2": {
    "x": 958,
-   "y": 1158,
+   "y": 1126,
    "w": 312,
    "h": 37.3125
   }

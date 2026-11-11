@@ -2,10 +2,10 @@
  "id": "fluid-tank",
  "spec": "a53f01c8d481",
  "dpr": 2,
- "shotAt": "2026-11-10T21:16:31.786Z",
+ "shotAt": "2026-11-11T14:04:37.717Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [],
  "width": 2000,

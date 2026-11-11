@@ -2,24 +2,24 @@
  "id": "focus-mode-pip",
  "spec": "2881880c6dc9",
  "dpr": 2,
- "shotAt": "2026-11-10T04:14:12.499Z",
+ "shotAt": "2026-11-11T13:31:03.542Z",
  "app": {
-  "version": "1.63.0",
-  "sha": "93ae1c1a"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "div#code-ws-dock.code-ws",
+  "span.ph-tab",
   "div.tp-ui",
-  "div.flex",
-  "button#code-ws-toggle-left.tp-pane-handle",
+  "div#code-tab-code-1.code-tab",
+  "div.cm-gutterElement",
   "div.cm-gutter",
-  "span.code-kind",
-  "div#code-ws-toolbar.flex",
+  "div.cm-line",
   "div.cm-content",
   "div.dt-row",
+  "div#code-ws-tabs.code-strip",
   "button#focus-pip-toggle.tp-ui",
-  "button.tp-ui",
-  "button#code-ws-save.ui-button-quiet"
+  "div#focus-exit.focus-exit"
  ],
  "width": 1376,
  "height": 1680,

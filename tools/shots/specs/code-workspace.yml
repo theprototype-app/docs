@@ -127,8 +127,11 @@ shots:
   - {wait: 1500}
   - *open
   - {wait: 2500}
+  # 1.66 (uir-polish G1): docked Code has no header, so Pop out lives in the FLOATING window's header (as the page says)
+  - {eval: "window.__stores.bottomDock.armDockMode('code', false)"}
+  - {wait: 2000}
   - popup:
-    - {click: '#code-ws-popout'}
+    - {click: '#code-ws-window #code-ws-popout'}
     size: [688, 640]
   capture: popup
   crop: {rect: [0, 0, 688, 640]}

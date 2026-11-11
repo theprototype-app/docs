@@ -2,10 +2,10 @@
  "id": "window-over-sidebar-hint",
  "spec": "984e5edf40d5",
  "dpr": 2,
- "shotAt": "2026-11-10T20:32:11.541Z",
+ "shotAt": "2026-11-11T13:15:07.638Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "button#connect-join.cx-join",
@@ -40,9 +40,9 @@
  ],
  "anchors": {
   "1": {
-   "x": 831.84375,
+   "x": 836.75,
    "y": 830.5,
-   "w": 176.3125,
+   "w": 166.5,
    "h": 55
   }
  },

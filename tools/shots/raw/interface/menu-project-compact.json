@@ -2,10 +2,10 @@
  "id": "menu-project-compact",
  "spec": "e5e19f9f99a4",
  "dpr": 2,
- "shotAt": "2026-11-10T20:45:18.955Z",
+ "shotAt": "2026-11-11T13:30:14.514Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "nav#sidebar70.app-sidebar",

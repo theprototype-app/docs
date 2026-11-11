@@ -2,10 +2,10 @@
  "id": "timeline-panes",
  "spec": "df8d7d216aad",
  "dpr": 2,
- "shotAt": "2026-11-10T18:36:15.939Z",
+ "shotAt": "2026-11-11T13:38:53.724Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "div.tl-pane-head",
@@ -41,7 +41,7 @@
   "2": {
    "x": 882,
    "y": 8,
-   "w": 356,
+   "w": 404,
    "h": 48
   }
  },
