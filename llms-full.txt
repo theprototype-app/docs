@@ -57,6 +57,14 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.66 — polish on the new menus and panels.** Properties [follows your selection without taking
+over](https://docs.theprototype.app/interface.md#sidebars) and keeps the last object when you deselect; its lock and pin are gone and the filter box
+is [always on top](https://docs.theprototype.app/interface.md#panel-headers). Configure Scene moves to the other sidebar on its own, sidebar tabs keep
+their whole names with a **…** list when they overflow, and every floating window has an icon **Dock** button and,
+where it can, **Pop out**. The main menu puts **Layouts** on top of Window, lays Help out two to a row, and the version
+number (with a dot when there is news) opens the release notes. **Report a bug** is [one view](https://docs.theprototype.app/profiler.md#report-a-bug)
+with a picture to mark up, the last 30 s of frames and **Send** or **Save on this device**.
+
 **1.65 — [new menus and panels](https://docs.theprototype.app/menus-and-panels.md).** Chat and the AI assistant are one window with **Session** and
 **Assistant** tabs, one History for both, and chats that come back after a reload. Press anyone in People for their
 [Person card](https://docs.theprototype.app/people.md#the-person-card); the Connect bar leads with **Invite** and **Join…**, and you can
@@ -796,7 +804,7 @@ If the guess is still wrong on your hardware, pick it yourself: right-click the 
 ## Selection
 
 - **Click** an object to select it — the transform gizmo attaches.
-- **Double-click** it to open its properties (right-click ▸ *Properties* and the object list do the same). Pin the properties panel if you'd rather it followed every selection.
+- **Double-click** it to open its properties (right-click ▸ *Properties* and the object list do the same). Once open, Properties follows every selection, without pulling its tab over another one you picked, and keeps the last object when you deselect.
 - **New objects do not open the properties.** Adding a primitive, placing a pack item or prefab, or pasting selects the new object but leaves the properties panel closed; if the panel is already open, it switches to the new object.
 - **Click empty space** to deselect.
 - **Shift+click** adds or removes objects from a multi-selection (the last-picked object is the primary).
@@ -1742,7 +1750,9 @@ on every screen size; **Search commands…** at the top of the [main menu](#the-
 
 Every docked or floating window — Explorer, Objects, Chat, AI assistant, Notes, the Notification centre, the node
 editor, Animation, UV, Shader, HUD editor, Profiler, the Code workspace — has the same header: icon, title,
-the window's own actions, then pin and close in the same places. Windows in one group, and the views in the bottom dock,
+the window's own actions, then pin and close in the same places. *Since 1.66* every **floating** window's header
+also has a **Dock** button (the dock icon: puts it in the bottom dock) and, where the panel can live in a browser
+window of its own, a **Pop out** button; a window in the dock or a sidebar does not show them. Windows in one group, and the views in the bottom dock,
 share **one tab strip**: pill tabs with the view's icon and their own **✕** to close that view. More tabs than fit
 scroll sideways (the wheel or a swipe; the strip fades where more tabs are hidden) while **+** stays in place, and the
 strip **keeps its scroll** when you pick a tab. Moving, docking and tabbing are described in
@@ -1806,12 +1816,16 @@ and, at its far end, the **Full height** button (↕) and the **hide** button.
   height or not, and the toolbar centres there. When the bottom dock leaves a sidebar less than about 240 px it hides
   itself and comes back when there is room again; when two sidebars would leave too little room, the one opened first
   hides. On an unfolded phone or a tablet the **Panels** button brings them back.
-- **The header lock** of Configure Scene and Properties sits beside **Full height** in the tab row while that panel is
-  the tab in front — see [Panel headers](#panel-headers).
-- **A pinned Properties** follows your selection without pulling its tab over the Objects list when the two share a
-  side; double-click an object (or pick **Properties** in its menu) to bring it forward. *Since 1.64* the panel has one
-  header: the pin is a button in the sidebar strip (on a phone, the first item of the tab's long-press menu, with the
-  header lock in the grab bar), and the filter box says what it filters.
+- *Changed in 1.66.* **Properties follows your selection without taking over.** Selecting an object never pulls the
+  Properties tab over another tab of its sidebar; double-click the object (or pick **Properties** in its menu) to bring
+  it forward. **Deselecting keeps the last object** in Properties on a computer, so you can still read and change it;
+  the panel closes when that object leaves the scene. The lock and pin buttons are gone — see
+  [Panel headers](#panel-headers).
+- *New in 1.66.* **Configure Scene and Properties move on their own.** Drag Configure Scene to the other sidebar (or
+  pick **Move to the left / right side** in its tab menu) and Properties stays where it was; each side then shows its own.
+- *New in 1.66.* **Tabs keep their whole name**, at the size of the dock's tabs. When they no longer fit, the mouse
+  wheel scrolls the tab row and a **…** button at its end lists every tab. In a **+** menu, a window that is open
+  somewhere else reads **Move here** when you point at it.
 
 ![A sidebar on the right with two tabs, Objects and Configure Scene (in front), and the Full height button at the end of its tab strip](https://docs.theprototype.app/img/interface/sidebar-tabs.webp)
 *Figure: Two windows as tabs in one sidebar; Full height is at the end of the tab strip.*
@@ -1864,16 +1878,10 @@ are kept on this device and saved in [workspace layouts](https://docs.theprototy
 *Figure: A sidebar on each side, in the Light theme. The two are shown together, cut from one screen.*
 #### Panel headers
 
-The Properties and Configure Scene headers — the panel's name and the **Filter properties** box — have a **lock**
-button. On a computer or an unfolded phone it sits in the sidebar's tab row, next to **Full height**, while that panel
-is the tab in front; on a phone it stays in the panel header, beside the pin.
-
-- **Locked** (the default): the header stays on top while you scroll the properties.
-- **Unlocked**: the header scrolls away with the properties, giving the whole panel to them — handy on a phone.
-
-Each of the two panels remembers its own choice on this device, in a sidebar and in the phone's dock alike.
-**Settings ▸ Interface ▸ Windows & chrome ▸ Sticky panel headers** sets both at once (it shows a mixed state while they
-differ); searching Settings for *sticky header* finds it.
+The Properties and Configure Scene headers — the filter box — **always stay on top** while you scroll the properties,
+and the scroll bar runs below them. In Properties the filter box shows the selected object's **name**; type in it to
+filter. *Since 1.66* there is no header lock or pin (and no *Sticky panel headers* setting): the header is always
+sticky, and Properties follows your selection as described in [Sidebars](#sidebars).
 
 Every value in these two panels can be copied, pasted and reset from a right-click — see
 [Copy, paste and reset values](https://docs.theprototype.app/controls.md#copy-paste-and-reset-values).
@@ -2111,19 +2119,22 @@ effects), **Prefab ▸** on a placed prefab copy, and **Save as… ▸**. Every 
 
 *Regrouped in 1.64.* The logo opens the main menu, grouped **File · Scene · Versions · Window · Help**. **Search
 commands…** (<kbd>Ctrl</kbd>+<kbd>K</kbd>, the [command palette](#the-command-palette-ctrlk)) sits on top, and
-**Settings** with the app's version at the bottom — the version opens What's new.
+**Settings** with the app's version at the bottom — the version opens the release notes (*since 1.66* the menu has no
+*What's new* row; a **dot** on the version means this version's notes are still unread).
 
 - **File**: **Load** is now **Open…**. On the Save row, **Save** is greyed until something changed; **Save as…** opens
   the formats.
 - **Scene**: **Clear scene…** is the last row, on its own.
 - **Versions**: the checkpoints, and **Sessions** with them.
-- **Window**: **Windows ▸** lists every panel with its shortcut and a mark when it is open; a click brings it forward.
+- **Window**: **Layouts** on top (*since 1.66*), then **Windows ▸**, which lists every panel with its shortcut and a mark when it is open; a click brings it forward.
   It also has **Focus mode**, **Full screen**, **Reset positions and sizes**, **Close all floating windows** and three
   switches:
     - **Snap to edges** — a dragged window snaps flush to the screen edges within 16 px.
     - **Lock layout** — windows cannot be dragged, resized or torn off.
     - **Remember layout per scene** — each saved scene reopens with the window layout it was left in.
-- **Help** has **Keyboard shortcuts** (<kbd>?</kbd>).
+- **Help** has **Docs**, **Keyboard shortcuts** (<kbd>?</kbd>), the **Tour** and **Report a bug** — two to a row on a
+  computer and an unfolded phone (*since 1.66*), one per row on a folded phone. See
+  [Report a bug](https://docs.theprototype.app/profiler.md#report-a-bug).
 
 ![The main menu open from the logo, dark theme: Search commands… with Ctrl+K on top; File with New from template…, Open…, Save as…, Import and Export…; Scene with Configure Scene, Free assets (CC0), Modules, Layouts and Clear scene… on its own; Versions with Save checkpoint…, Checkpoints and Sessions; Window with Windows ▸ and Statistics; Help with Docs; Settings and the version at the bottom.](https://docs.theprototype.app/img/interface/main-menu.jpg)
 *Figure: The main menu, grouped File · Scene · Versions · Window · Help.*
@@ -3215,7 +3226,7 @@ cache uses the older Cache Storage, and where neither exists everything download
 | Placement preview | new in 1.31 | **Scene ▸ Performance ▸ Placement preview** — **Full model** / **Within budget** / **Box only**, plus the preview triangle budget and **Show dimensions**, this device only; see [The Placement preview setting](https://docs.theprototype.app/explorer.md#the-placement-preview-setting) |
 | Undock button | new in 1.32 | **Interface ▸ Windows & chrome ▸ Undock button** — **Active window** / **All as one tabbed group**, this device only; see [Docked windows](https://docs.theprototype.app/interface.md#docked-windows) |
 | Project actions | new in 1.32 | **Interface ▸ Lists & menus ▸ Project actions** — **Auto** / **Compact** / **List**, this device only: how the main menu lays out New from template, Load, Save, Import and Export; Auto is List on a phone and Compact elsewhere. See [The main menu's Project actions](https://docs.theprototype.app/interface.md#the-main-menus-project-actions) |
-| Sticky panel headers | new in 1.33 | **Interface ▸ Windows & chrome ▸ Sticky panel headers** — keeps the Properties and Configure Scene headers on top while you scroll, or lets them scroll away; both panels at once (mixed while they differ), this device only. See [Panel headers](https://docs.theprototype.app/interface.md#panel-headers) |
+| Sticky panel headers | new in 1.33, removed in 1.66 | gone: the Properties and Configure Scene headers always stay on top. See [Panel headers](https://docs.theprototype.app/interface.md#panel-headers) |
 | Lift corner buttons above docked panels | new in 1.33 | **Interface ▸ Windows & chrome ▸ Lift corner buttons above docked panels** — off by default, beside *Lift toolbar above docked panels*; this device only. See [The toolbar](https://docs.theprototype.app/controls.md#the-toolbar) |
 | Selection toolbar · Dock tab row · Grab handle | new in 1.33 | **Interface** — the phone's Show switches, all on by default, this device only; also at the bottom of **More** on a phone. See [The phone bar and More](https://docs.theprototype.app/interface.md#the-phone-bar-and-more) |
 | Distant scatter | new in 1.43 | **Scene ▸ Performance ▸ Distant scatter** — **Auto** / **Headset** / **Phone** / **Desktop** / **All**, this device only: far scattered models fade out to stay inside the device's budget; nearby instances and colliders never thin. See [Distant scatter](https://docs.theprototype.app/scatter.md#distant-scatter-each-device) |
@@ -11571,18 +11582,22 @@ opens `.tpprof` files, several at once, including the exports the operators' per
 script writes from [sent reports](#send-performance-reports). An imported recording is an
 ordinary recording from then on: rename it, pin it, compare it.
 
-## Report a problem
+## Report a bug { #report-a-bug }
 
-When something is wrong, **Menu ▸ Report a problem** sends it to the theprototype team with a
-picture of what you saw. In a headset it is the radial menu's **Tools ▸ Profile ▸ Report a problem**.
+<a id="report-a-problem"></a><a id="report-this-moment"></a>
+When something is wrong — a bug, a hitch, a corner where the frame rate drops — **Menu ▸ Help ▸ Report a bug** sends
+it to the theprototype team with a picture of what you saw. *Since 1.66* this is the one report view: *Report a
+problem* and *Report this moment* were merged into it. In a headset it is the radial menu's **Tools ▸ Profile ▸
+Report a problem** (or **Report moment**).
 
-**On a desktop or the Quest browser** the picture is taken the moment you press it. Then:
+**On a desktop, a phone or the Quest browser** the picture and the numbers are of the moment you pressed. Then:
 
 1. **Drag on the picture** to box what is wrong (**×** removes a box).
-2. Say **what happened**.
-3. Choose whether to **include the last 30 s of frame data**.
-4. Tick **Send this to the theprototype team** and press **Send** — or press **Save on this device** instead, and it
-   lands in the Profiler's [recordings](#the-recordings-list).
+2. Keep or untick **Include the last 30 s** — it shows the frames, fps and stalls it would add.
+3. Say **what happened** (a long note makes the card scroll).
+4. When you are signed in, **Send as** *your name* lets staff reply to you; untick it to send without your account.
+5. Press **Send** — it always goes to the developers — or **Save on this device** to keep it as a Profiler
+   [recording](#the-recordings-list) and send nothing.
 
 ![Report a problem: a box drawn on the picture, a note, and the Send box ticked](https://docs.theprototype.app/img/profiler/report-a-problem.webp)
 *Figure: Report a problem: box what is wrong, add a note, choose whether to send it.*
@@ -11590,25 +11605,7 @@ picture of what you saw. In a headset it is the radial menu's **Tools ▸ Profil
 that <kbd>Enter</kbd> sends it.
 
 **What is sent:** the picture, your note and boxes, the app version and your device (and the frame data, if ticked),
-with your account so the team can reply. Nothing is sent without the box ticked, and sending needs you to be signed in
-(profile menu, top right).
-
-## Report this moment
-
-When something feels wrong — a hitch, a corner of a level where the frame rate drops, something
-drawn wrongly — one press keeps the evidence:
-
-- **On the desktop**: **Menu ▸ Report this moment**. A small dialog shows a picture of what the
-  viewport showed, the last few seconds' numbers (frames, median fps, stalls) and an optional
-  **What happened?** note. **Save** keeps it as a recording. When performance reports are
-  available in this build, a box offers to send it as well (**Save and send**).
-- **In a headset**: the radial menu's **Tools ▸ Profile ▸ Report moment** captures the moment
-  the same way, with an optional note.
-
-The data and the picture are of the moment you pressed, not of the time spent typing. You get the
-last 30 seconds of light data, what your eye saw and your note, saved as a recording the Profiler
-opens. It is sent only when you tick the box, or when
-[Send performance reports](#send-performance-reports) is on.
+with your account only when **Send as** is ticked. Nothing leaves the device unless you press **Send**.
 
 ## Profiling the headset from the desktop
 
@@ -12328,7 +12325,7 @@ It opens by itself when you ask for code:
 - <kbd>Alt</kbd>+<kbd>F</kbd> opens the graph's [flow code](#flow-code).
 
 It docks as a tab at the bottom, beside the Node editor and the Explorer, or floats as a window (the dock's **Undock** button to float,
-the window's **Dock** to put it back). Everything on this page works in both. In a narrow window or on a phone the
+the **Dock** button in the window's header to put it back). Everything on this page works in both. In a narrow window or on a phone the
 [sidebars](#sidebars) open **over** the editor, one at a time (toggle buttons in the header); on a phone they start
 hidden, and one you open stays open next time.
 
@@ -12390,9 +12387,9 @@ its preview, double-click it, or right-click ▸ **Edit in the Code tab** — an
 
 ## Pop out to its own window
 
-**Pop out** (↗) in the workspace header opens the whole code workspace in its **own browser window** — drag it to a
+**Pop out** (↗) in the floating window's header opens the whole code workspace in its **own browser window** — drag it to a
 second monitor and keep the 3D view full-size in the app. Desktop browsers only (hidden on phones, touch screens and in
-VR).
+VR). *Since 1.66* Code docked or in a sidebar has no header row: **Undock** it first, then pop it out.
 
 ![The code workspace in its own browser window: Code and Dock back in its header, the sidebars and the Bob Script node's code below. 1: Dock back.](https://docs.theprototype.app/img/code-workspace/pop-out-window.webp)
 *Figure: The code workspace in its own window.*

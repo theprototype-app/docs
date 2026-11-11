@@ -34,7 +34,7 @@ If the guess is still wrong on your hardware, pick it yourself: right-click the 
 ## Selection
 
 - **Click** an object to select it — the transform gizmo attaches.
-- **Double-click** it to open its properties (right-click ▸ *Properties* and the object list do the same). Pin the properties panel if you'd rather it followed every selection.
+- **Double-click** it to open its properties (right-click ▸ *Properties* and the object list do the same). Once open, Properties follows every selection, without pulling its tab over another one you picked, and keeps the last object when you deselect.
 - **New objects do not open the properties.** Adding a primitive, placing a pack item or prefab, or pasting selects the new object but leaves the properties panel closed; if the panel is already open, it switches to the new object.
 - **Click empty space** to deselect.
 - **Shift+click** adds or removes objects from a multi-selection (the last-picked object is the primary).

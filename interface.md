@@ -78,7 +78,9 @@ on every screen size; **Search commands…** at the top of the [main menu](#the-
 
 Every docked or floating window — Explorer, Objects, Chat, AI assistant, Notes, the Notification centre, the node
 editor, Animation, UV, Shader, HUD editor, Profiler, the Code workspace — has the same header: icon, title,
-the window's own actions, then pin and close in the same places. Windows in one group, and the views in the bottom dock,
+the window's own actions, then pin and close in the same places. *Since 1.66* every **floating** window's header
+also has a **Dock** button (the dock icon: puts it in the bottom dock) and, where the panel can live in a browser
+window of its own, a **Pop out** button; a window in the dock or a sidebar does not show them. Windows in one group, and the views in the bottom dock,
 share **one tab strip**: pill tabs with the view's icon and their own **✕** to close that view. More tabs than fit
 scroll sideways (the wheel or a swipe; the strip fades where more tabs are hidden) while **+** stays in place, and the
 strip **keeps its scroll** when you pick a tab. Moving, docking and tabbing are described in
@@ -142,12 +144,16 @@ and, at its far end, the **Full height** button (↕) and the **hide** button.
   height or not, and the toolbar centres there. When the bottom dock leaves a sidebar less than about 240 px it hides
   itself and comes back when there is room again; when two sidebars would leave too little room, the one opened first
   hides. On an unfolded phone or a tablet the **Panels** button brings them back.
-- **The header lock** of Configure Scene and Properties sits beside **Full height** in the tab row while that panel is
-  the tab in front — see [Panel headers](#panel-headers).
-- **A pinned Properties** follows your selection without pulling its tab over the Objects list when the two share a
-  side; double-click an object (or pick **Properties** in its menu) to bring it forward. *Since 1.64* the panel has one
-  header: the pin is a button in the sidebar strip (on a phone, the first item of the tab's long-press menu, with the
-  header lock in the grab bar), and the filter box says what it filters.
+- *Changed in 1.66.* **Properties follows your selection without taking over.** Selecting an object never pulls the
+  Properties tab over another tab of its sidebar; double-click the object (or pick **Properties** in its menu) to bring
+  it forward. **Deselecting keeps the last object** in Properties on a computer, so you can still read and change it;
+  the panel closes when that object leaves the scene. The lock and pin buttons are gone — see
+  [Panel headers](#panel-headers).
+- *New in 1.66.* **Configure Scene and Properties move on their own.** Drag Configure Scene to the other sidebar (or
+  pick **Move to the left / right side** in its tab menu) and Properties stays where it was; each side then shows its own.
+- *New in 1.66.* **Tabs keep their whole name**, at the size of the dock's tabs. When they no longer fit, the mouse
+  wheel scrolls the tab row and a **…** button at its end lists every tab. In a **+** menu, a window that is open
+  somewhere else reads **Move here** when you point at it.
 
 ![A sidebar on the right with two tabs, Objects and Configure Scene (in front), and the Full height button at the end of its tab strip](https://docs.theprototype.app/img/interface/sidebar-tabs.webp)
 *Figure: Two windows as tabs in one sidebar; Full height is at the end of the tab strip.*
@@ -200,16 +206,10 @@ are kept on this device and saved in [workspace layouts](https://docs.theprototy
 *Figure: A sidebar on each side, in the Light theme. The two are shown together, cut from one screen.*
 #### Panel headers
 
-The Properties and Configure Scene headers — the panel's name and the **Filter properties** box — have a **lock**
-button. On a computer or an unfolded phone it sits in the sidebar's tab row, next to **Full height**, while that panel
-is the tab in front; on a phone it stays in the panel header, beside the pin.
-
-- **Locked** (the default): the header stays on top while you scroll the properties.
-- **Unlocked**: the header scrolls away with the properties, giving the whole panel to them — handy on a phone.
-
-Each of the two panels remembers its own choice on this device, in a sidebar and in the phone's dock alike.
-**Settings ▸ Interface ▸ Windows & chrome ▸ Sticky panel headers** sets both at once (it shows a mixed state while they
-differ); searching Settings for *sticky header* finds it.
+The Properties and Configure Scene headers — the filter box — **always stay on top** while you scroll the properties,
+and the scroll bar runs below them. In Properties the filter box shows the selected object's **name**; type in it to
+filter. *Since 1.66* there is no header lock or pin (and no *Sticky panel headers* setting): the header is always
+sticky, and Properties follows your selection as described in [Sidebars](#sidebars).
 
 Every value in these two panels can be copied, pasted and reset from a right-click — see
 [Copy, paste and reset values](https://docs.theprototype.app/controls.md#copy-paste-and-reset-values).
@@ -447,19 +447,22 @@ effects), **Prefab ▸** on a placed prefab copy, and **Save as… ▸**. Every 
 
 *Regrouped in 1.64.* The logo opens the main menu, grouped **File · Scene · Versions · Window · Help**. **Search
 commands…** (<kbd>Ctrl</kbd>+<kbd>K</kbd>, the [command palette](#the-command-palette-ctrlk)) sits on top, and
-**Settings** with the app's version at the bottom — the version opens What's new.
+**Settings** with the app's version at the bottom — the version opens the release notes (*since 1.66* the menu has no
+*What's new* row; a **dot** on the version means this version's notes are still unread).
 
 - **File**: **Load** is now **Open…**. On the Save row, **Save** is greyed until something changed; **Save as…** opens
   the formats.
 - **Scene**: **Clear scene…** is the last row, on its own.
 - **Versions**: the checkpoints, and **Sessions** with them.
-- **Window**: **Windows ▸** lists every panel with its shortcut and a mark when it is open; a click brings it forward.
+- **Window**: **Layouts** on top (*since 1.66*), then **Windows ▸**, which lists every panel with its shortcut and a mark when it is open; a click brings it forward.
   It also has **Focus mode**, **Full screen**, **Reset positions and sizes**, **Close all floating windows** and three
   switches:
     - **Snap to edges** — a dragged window snaps flush to the screen edges within 16 px.
     - **Lock layout** — windows cannot be dragged, resized or torn off.
     - **Remember layout per scene** — each saved scene reopens with the window layout it was left in.
-- **Help** has **Keyboard shortcuts** (<kbd>?</kbd>).
+- **Help** has **Docs**, **Keyboard shortcuts** (<kbd>?</kbd>), the **Tour** and **Report a bug** — two to a row on a
+  computer and an unfolded phone (*since 1.66*), one per row on a folded phone. See
+  [Report a bug](https://docs.theprototype.app/profiler.md#report-a-bug).
 
 ![The main menu open from the logo, dark theme: Search commands… with Ctrl+K on top; File with New from template…, Open…, Save as…, Import and Export…; Scene with Configure Scene, Free assets (CC0), Modules, Layouts and Clear scene… on its own; Versions with Save checkpoint…, Checkpoints and Sessions; Window with Windows ▸ and Statistics; Help with Docs; Settings and the version at the bottom.](https://docs.theprototype.app/img/interface/main-menu.jpg)
 *Figure: The main menu, grouped File · Scene · Versions · Window · Help.*

@@ -142,18 +142,22 @@ opens `.tpprof` files, several at once, including the exports the operators' per
 script writes from [sent reports](#send-performance-reports). An imported recording is an
 ordinary recording from then on: rename it, pin it, compare it.
 
-## Report a problem
+## Report a bug { #report-a-bug }
 
-When something is wrong, **Menu ▸ Report a problem** sends it to the theprototype team with a
-picture of what you saw. In a headset it is the radial menu's **Tools ▸ Profile ▸ Report a problem**.
+<a id="report-a-problem"></a><a id="report-this-moment"></a>
+When something is wrong — a bug, a hitch, a corner where the frame rate drops — **Menu ▸ Help ▸ Report a bug** sends
+it to the theprototype team with a picture of what you saw. *Since 1.66* this is the one report view: *Report a
+problem* and *Report this moment* were merged into it. In a headset it is the radial menu's **Tools ▸ Profile ▸
+Report a problem** (or **Report moment**).
 
-**On a desktop or the Quest browser** the picture is taken the moment you press it. Then:
+**On a desktop, a phone or the Quest browser** the picture and the numbers are of the moment you pressed. Then:
 
 1. **Drag on the picture** to box what is wrong (**×** removes a box).
-2. Say **what happened**.
-3. Choose whether to **include the last 30 s of frame data**.
-4. Tick **Send this to the theprototype team** and press **Send** — or press **Save on this device** instead, and it
-   lands in the Profiler's [recordings](#the-recordings-list).
+2. Keep or untick **Include the last 30 s** — it shows the frames, fps and stalls it would add.
+3. Say **what happened** (a long note makes the card scroll).
+4. When you are signed in, **Send as** *your name* lets staff reply to you; untick it to send without your account.
+5. Press **Send** — it always goes to the developers — or **Save on this device** to keep it as a Profiler
+   [recording](#the-recordings-list) and send nothing.
 
 ![Report a problem: a box drawn on the picture, a note, and the Send box ticked](https://docs.theprototype.app/img/profiler/report-a-problem.webp)
 *Figure: Report a problem: box what is wrong, add a note, choose whether to send it.*
@@ -161,25 +165,7 @@ picture of what you saw. In a headset it is the radial menu's **Tools ▸ Profil
 that <kbd>Enter</kbd> sends it.
 
 **What is sent:** the picture, your note and boxes, the app version and your device (and the frame data, if ticked),
-with your account so the team can reply. Nothing is sent without the box ticked, and sending needs you to be signed in
-(profile menu, top right).
-
-## Report this moment
-
-When something feels wrong — a hitch, a corner of a level where the frame rate drops, something
-drawn wrongly — one press keeps the evidence:
-
-- **On the desktop**: **Menu ▸ Report this moment**. A small dialog shows a picture of what the
-  viewport showed, the last few seconds' numbers (frames, median fps, stalls) and an optional
-  **What happened?** note. **Save** keeps it as a recording. When performance reports are
-  available in this build, a box offers to send it as well (**Save and send**).
-- **In a headset**: the radial menu's **Tools ▸ Profile ▸ Report moment** captures the moment
-  the same way, with an optional note.
-
-The data and the picture are of the moment you pressed, not of the time spent typing. You get the
-last 30 seconds of light data, what your eye saw and your note, saved as a recording the Profiler
-opens. It is sent only when you tick the box, or when
-[Send performance reports](#send-performance-reports) is on.
+with your account only when **Send as** is ticked. Nothing leaves the device unless you press **Send**.
 
 ## Profiling the headset from the desktop
 
