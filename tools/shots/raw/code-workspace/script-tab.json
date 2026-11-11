@@ -2,24 +2,24 @@
  "id": "script-tab",
  "spec": "be804566ea93",
  "dpr": 2,
- "shotAt": "2026-11-10T20:24:40.614Z",
+ "shotAt": "2026-11-11T13:07:29.597Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "svg.svelte-1lv41t3",
   "span.sbh-tab",
   "div#code-ws-dock.code-ws",
+  "span.ph-tab",
   "svg.lucide",
-  "div.flex",
-  "span.code-tab-name",
+  "div#code-tab-code-1.code-tab",
   "span.code-kind",
-  "button#code-ws-toggle-left.tp-pane-handle",
-  "div.cm-gutterElement",
+  "span.code-muted",
+  "p.code-muted",
   "div.cm-gutter",
-  "button.tab-note",
-  "span.code-tab-close"
+  "div.cm-gutterElement",
+  "button.tab-note"
  ],
  "width": 1376,
  "height": 760,
@@ -38,7 +38,7 @@
   "1": {
    "x": 28,
    "y": 87,
-   "w": 578,
+   "w": 572.40625,
    "h": 44
   }
  },

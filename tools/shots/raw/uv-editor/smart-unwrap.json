@@ -2,10 +2,10 @@
  "id": "smart-unwrap",
  "spec": "412cd6ddbf27",
  "dpr": 2,
- "shotAt": "2026-11-10T20:06:13.816Z",
+ "shotAt": "2026-11-11T14:11:30.594Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "header.wc-head",
@@ -19,7 +19,7 @@
   "div.min-h-0",
   "div#uv-window.ui-panel",
   "div.uv-slot",
-  "button#uv-tool-lasso.uv-tool"
+  "button#uv-tool-paint.uv-tool"
  ],
  "width": 1280,
  "height": 920,
@@ -35,9 +35,9 @@
  ],
  "anchors": {
   "1": {
-   "x": 1129.5,
+   "x": 1121.59375,
    "y": 98,
-   "w": 132,
+   "w": 141.34375,
    "h": 40
   }
  },

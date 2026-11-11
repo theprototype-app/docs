@@ -1,15 +1,17 @@
 {
  "id": "pop-out-window",
- "spec": "c0f96afe467f",
+ "spec": "661407523161",
  "dpr": 2,
- "shotAt": "2026-11-10T20:25:48.278Z",
+ "shotAt": "2026-11-11T14:29:28.011Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.1",
+  "sha": "d56f7f54"
  },
  "uiHits": [
   "div.pw-head",
   "div#code-ws-popped.code-ws",
+  "svg.lucide",
+  "span.ph-tab",
   "div.flex",
   "span.code-tab-name",
   "span.code-muted",
@@ -17,9 +19,7 @@
   "div.cm-gutter",
   "span.code-tab-close",
   "div.cm-line",
-  "div.cm-content",
-  "div#code-ws-tabs.code-strip",
-  "span.ͼz"
+  "div.cm-content"
  ],
  "width": 1376,
  "height": 1280,

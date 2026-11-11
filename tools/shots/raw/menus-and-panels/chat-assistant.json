@@ -2,10 +2,10 @@
  "id": "chat-assistant",
  "spec": "c9dc937e9e69",
  "dpr": 2,
- "shotAt": "2026-11-10T20:51:18.509Z",
+ "shotAt": "2026-11-11T13:36:50.947Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "header.wc-head",
@@ -33,9 +33,9 @@
  "fade": [],
  "anchors": {
   "1": {
-   "x": 196,
+   "x": 198.125,
    "y": 82,
-   "w": 194,
+   "w": 194.5625,
    "h": 72
   },
   "2": {

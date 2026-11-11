@@ -2,10 +2,10 @@
  "id": "window-place-without-docking",
  "spec": "01a3a73355ac",
  "dpr": 2,
- "shotAt": "2026-11-10T20:32:27.382Z",
+ "shotAt": "2026-11-11T13:15:24.597Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "button#connect-join.cx-join",

@@ -2,23 +2,23 @@
  "id": "sidebars",
  "spec": "ce31b0230cf4",
  "dpr": 2,
- "shotAt": "2026-11-10T20:26:05.814Z",
+ "shotAt": "2026-11-11T13:09:00.674Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "div.resize-cue",
   "div#code-ws-dock.code-ws",
-  "div.flex",
   "button.cs-row",
   "path",
   "div#code-ws-open-editors.cs-scroll",
-  "header.cs-head",
-  "svg.lucide",
+  "div#code-ws-left-split.cs-split",
+  "label.cs-search",
   "div#code-ws-project.cs-scroll",
   "span.cs-name",
   "input#code-ws-project-search.svelte-1l4ymyb",
+  "svg.lucide",
   "span.cs-detail"
  ],
  "width": 1376,
@@ -34,20 +34,20 @@
  "anchors": {
   "1": {
    "x": 16,
-   "y": 128,
+   "y": 64,
    "w": 418,
-   "h": 301.46875
+   "h": 323.21875
   },
   "2": {
    "x": 16,
-   "y": 563.46875,
+   "y": 521.21875,
    "w": 418,
-   "h": 540.53125
+   "h": 582.78125
   },
   "3": {
    "x": 444,
-   "y": 82,
-   "w": 1952,
+   "y": 18,
+   "w": 1920,
    "h": 52
   }
  },

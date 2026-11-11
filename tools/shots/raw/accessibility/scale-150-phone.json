@@ -2,10 +2,10 @@
  "id": "scale-150-phone",
  "spec": "f3270f241327",
  "dpr": 2,
- "shotAt": "2026-11-10T20:12:06.132Z",
+ "shotAt": "2026-11-11T12:55:03.344Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "header.wc-head",

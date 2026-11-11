@@ -2,10 +2,10 @@
  "id": "environment-chips",
  "spec": "9f1566fe9d16",
  "dpr": 2,
- "shotAt": "2026-11-10T20:04:36.069Z",
+ "shotAt": "2026-11-11T13:57:49.331Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "div#sidebar-grip-right.sb-grip",
@@ -35,7 +35,7 @@
   "1": {
    "x": 50,
    "y": 718.0625,
-   "w": 412,
+   "w": 411,
    "h": 52
   }
  },

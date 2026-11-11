@@ -2,10 +2,10 @@
  "id": "dock-tabs-properties-phone",
  "spec": "a10a3853c8ec",
  "dpr": 2,
- "shotAt": "2026-11-10T20:46:55.708Z",
+ "shotAt": "2026-11-11T13:32:04.330Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "button.sg-handle",

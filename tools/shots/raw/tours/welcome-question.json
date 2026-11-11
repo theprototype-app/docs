@@ -2,46 +2,46 @@
  "id": "welcome-question",
  "spec": "1a44c76601cd",
  "dpr": 2,
- "shotAt": "2026-11-10T21:30:18.327Z",
+ "shotAt": "2026-11-11T14:10:50.964Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "div#welcome-overlay.welcome-card",
   "img.h-8",
   "p.welcome-lead",
+  "h3#welcome-question.welcome-q",
   "span.welcome-ico",
-  "span.welcome-choice-title",
-  "span.welcome-choice-sub",
   "button#welcome-play.welcome-choice",
+  "span.welcome-choice-sub",
+  "div.welcome-choices",
+  "span.welcome-choice-title",
+  "p.welcome-quiet",
   "label.welcome-check",
-  "h2.welcome-title",
-  "p.welcome-ver",
-  "button#welcome-template.welcome-choice",
-  "div.welcome-foot"
+  "h2.welcome-title"
  ],
  "width": 1264,
- "height": 1056,
+ "height": 1022,
  "crop": {
   "x": 404,
-  "y": 186,
+  "y": 194,
   "w": 632,
-  "h": 528
+  "h": 511
  },
  "cut": [],
  "fade": [],
  "anchors": {
   "1": {
    "x": 74,
-   "y": 292,
+   "y": 276,
    "w": 428,
    "h": 48
   },
   "2": {
-   "x": 557.71875,
-   "y": 869.6875,
-   "w": 148.5625,
+   "x": 562.625,
+   "y": 834.890625,
+   "w": 138.75,
    "h": 37.5
   }
  },

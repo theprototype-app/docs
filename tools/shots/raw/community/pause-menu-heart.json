@@ -2,10 +2,10 @@
  "id": "pause-menu-heart",
  "spec": "39dcaa0609dc",
  "dpr": 2,
- "shotAt": "2026-11-10T20:28:31.868Z",
+ "shotAt": "2026-11-11T13:11:27.852Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "div#game-shell-menu.gs-backdrop",
@@ -28,9 +28,9 @@
  "fade": [],
  "anchors": {
   "1": {
-   "x": 802.5,
+   "x": 802.9375,
    "y": 95.375,
-   "w": 111.5,
+   "w": 111.0625,
    "h": 67.1875
   }
  },

@@ -2,24 +2,24 @@
  "id": "back-to-start-view",
  "spec": "0ee1eee9f484",
  "dpr": 2,
- "shotAt": "2026-11-10T20:48:24.976Z",
+ "shotAt": "2026-11-11T13:33:46.151Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "div.connect-pill",
+  "span#connect-status.cx-status-dot",
   "span#connect-ready.cx-ready",
   "button.cx-id",
   "span.cx-id-text",
   "button#start-view-back.sv-card",
   "button#connect-invite.cx-invite",
+  "circle",
   "svg.lucide",
   "span.svelte-1b9hig2",
   "button#connect-join.cx-join",
-  "path",
-  "button#connect-rooms-button.hud-cell",
-  "circle"
+  "button#connect-rooms-button.hud-cell"
  ],
  "width": 1376,
  "height": 280,
@@ -41,9 +41,9 @@
  ],
  "anchors": {
   "1": {
-   "x": 558,
+   "x": 558.34375,
    "y": 130,
-   "w": 260,
+   "w": 259.3125,
    "h": 55.1875
   }
  },

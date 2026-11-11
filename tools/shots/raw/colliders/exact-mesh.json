@@ -2,10 +2,10 @@
  "id": "exact-mesh",
  "spec": "9b6ae34af10e",
  "dpr": 2,
- "shotAt": "2026-11-10T20:27:05.456Z",
+ "shotAt": "2026-11-11T13:10:05.059Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [],
  "width": 2000,

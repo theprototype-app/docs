@@ -2,10 +2,10 @@
  "id": "sidebars-both-sides-light",
  "spec": "f7559384dbd9",
  "dpr": 2,
- "shotAt": "2026-11-10T20:44:09.688Z",
+ "shotAt": "2026-11-11T13:28:47.882Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "header.wc-head",
@@ -27,7 +27,7 @@
   "p.mb-1",
   "div.tp-ui",
   "label#override-shaders-label.it-label",
-  "label#ins-toggle-ikx717c-label.it-label",
+  "label#ins-toggle-d70pm36-label.it-label",
   "span.sec-title"
  ],
  "kind": "ui",

@@ -2,16 +2,17 @@
  "id": "dock-plus-menu",
  "spec": "6d4b023fb8c1",
  "dpr": 2,
- "shotAt": "2026-11-10T20:44:23.985Z",
+ "shotAt": "2026-11-11T13:29:05.792Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "div.fixed",
   "svg.lucide",
   "span.flex",
   "div.cursor-pointer",
+  "rect",
   "span.flex-1",
   "span.ctx-hint"
  ],

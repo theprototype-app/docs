@@ -2,10 +2,10 @@
  "id": "details-sidebar",
  "spec": "e01c4a165e96",
  "dpr": 2,
- "shotAt": "2026-11-10T21:10:59.181Z",
+ "shotAt": "2026-11-11T13:58:32.674Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "div.resize-cue",
@@ -19,7 +19,7 @@
   "button.pf-sort",
   "svg.lucide",
   "span.ph-tab",
-  "div.tp-scroll-thumb"
+  "div.min-h-0"
  ],
  "width": 1376,
  "height": 1120,

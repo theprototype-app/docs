@@ -2,10 +2,10 @@
  "id": "latch",
  "spec": "190a2540cbee",
  "dpr": 2,
- "shotAt": "2026-11-10T21:02:07.327Z",
+ "shotAt": "2026-11-11T13:49:04.163Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "div.svelte-flow__pane",

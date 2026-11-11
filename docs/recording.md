@@ -49,7 +49,7 @@ The dialog closes and a bar at the bottom shows the progress: the percent, the f
 working in the panels; **Details** brings it back. The 3D view shows the render until it is done, and your camera
 comes back where it was afterwards. Nothing is sent to anyone in the session.
 
-![The rendering bar above the toolbar while an export runs: the progress bar and percent, the frames done and the time left, Hide and Cancel.](img/recording/rendering-bar.webp){ .shot width="652" height="92" loading=lazy }
+![The rendering bar above the toolbar while an export runs: the progress bar and percent, the frames done and the time left, Hide and Cancel.](img/recording/rendering-bar.webp){ .shot width="634" height="92" loading=lazy }
 /// caption
 The rendering bar while an export runs; you can keep working.
 ///

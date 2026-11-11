@@ -2,10 +2,10 @@
  "id": "crop-desktop-light",
  "spec": "f15e92eeb251",
  "dpr": 2,
- "shotAt": "2026-11-10T18:26:06.655Z",
+ "shotAt": "2026-11-11T13:25:57.999Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.65.0",
+  "sha": "a71c3ad8"
  },
  "uiHits": [
   "div.ui-panel-header",
@@ -33,7 +33,7 @@
  "fade": [],
  "anchors": {
   "1": {
-   "x": 309.015625,
+   "x": 293.015625,
    "y": 180,
    "w": 469.96875,
    "h": 41
