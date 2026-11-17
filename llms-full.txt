@@ -3419,12 +3419,18 @@ A build (`npm run build`) ships a **Content-Security-Policy** as a `<meta>` tag 
 app itself (plus WebAssembly), so an injected script does not run. `npm run dev` ships no policy and needs no setup.
 
 One directive cannot travel in a `<meta>` tag: `frame-ancestors` (who may put the app in an iframe). The build writes
-it to `build/_headers`, which Cloudflare Pages reads as is. On any other server, send the same header yourself, for
-example in nginx:
+it to `build/_headers`, which Cloudflare Pages reads as is. By default only the app's own site may frame the editor;
+the play page (`/play`, which play links and embeds open) and `/discord` may be framed by any site, and with
+`VITE_PLAY_ORIGIN` set the play origin may be. On any other server, send the same headers yourself, for example in
+nginx:
 
 ```nginx
-add_header Content-Security-Policy "frame-ancestors *" always;
+add_header Content-Security-Policy "frame-ancestors 'self'" always;
 add_header X-Content-Type-Options nosniff always;
+location /play {
+    add_header Content-Security-Policy "frame-ancestors *" always;
+    add_header X-Content-Type-Options nosniff always;
+}
 ```
 
 Build-time settings (in `.env`, see `.env.example`):
@@ -3807,6 +3813,12 @@ A momentary network blip no longer throws you out, either. A peer that drops for
 
 !!! note
     How many peers work for you depends on your uplink, since each one sends to every other. Voice chat and live gestures are the bandwidth-hungry parts — a large scene is sent once per joiner, not continuously.
+
+### Versions in a session
+
+When someone joins, their app and yours first agree that they speak the same session version, before any scene data is exchanged. Most updates do not change it, so people on different app versions keep working together as before. When an update does change it, the two apps do not connect: the person on the older version sees *This session uses a newer version. Reload to update.* with a **Reload** button, and people on the newer version see that person in **People** as needing to reload. After reloading, join again as usual.
+
+Each person's app also accepts a generous, bounded amount of messages and data per second from each other person, well above sharing a large file or moving hundreds of objects at once. Anything far beyond that is skipped with one notice, the connection stays up, and the counts are in [Diagnostics](#diagnostics-you-can-copy).
 
 ## Smoother movement on a bad connection
 
@@ -25879,6 +25891,14 @@ export default {
 	register(api) { /* wire everything here */ }
 };
 ```
+
+### Which api you have: `api.version`
+
+`api.version` is the module api's contract number: **2** since 1.67 (absent before: read it as 1). Feature-probe
+with `(api.version ?? 1) >= 2`. Version 2 adds nothing else; it comes with one notice: the raw renderer a module can
+still reach today (the `renderer` handed to a shader backend or a post effect hook) is leaving the contract, because a
+future view will switch renderers while the app runs. Use the look and post calls instead (`api.registerPostEffect`,
+the scene look, `api.quality`); if your module needs a renderer feature, ask for an SDK call.
 
 ### Nodes and effects
 

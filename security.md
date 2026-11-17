@@ -42,12 +42,18 @@ A build (`npm run build`) ships a **Content-Security-Policy** as a `<meta>` tag 
 app itself (plus WebAssembly), so an injected script does not run. `npm run dev` ships no policy and needs no setup.
 
 One directive cannot travel in a `<meta>` tag: `frame-ancestors` (who may put the app in an iframe). The build writes
-it to `build/_headers`, which Cloudflare Pages reads as is. On any other server, send the same header yourself, for
-example in nginx:
+it to `build/_headers`, which Cloudflare Pages reads as is. By default only the app's own site may frame the editor;
+the play page (`/play`, which play links and embeds open) and `/discord` may be framed by any site, and with
+`VITE_PLAY_ORIGIN` set the play origin may be. On any other server, send the same headers yourself, for example in
+nginx:
 
 ```nginx
-add_header Content-Security-Policy "frame-ancestors *" always;
+add_header Content-Security-Policy "frame-ancestors 'self'" always;
 add_header X-Content-Type-Options nosniff always;
+location /play {
+    add_header Content-Security-Policy "frame-ancestors *" always;
+    add_header X-Content-Type-Options nosniff always;
+}
 ```
 
 Build-time settings (in `.env`, see `.env.example`):

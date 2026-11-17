@@ -239,6 +239,12 @@ A momentary network blip no longer throws you out, either. A peer that drops for
 !!! note
     How many peers work for you depends on your uplink, since each one sends to every other. Voice chat and live gestures are the bandwidth-hungry parts — a large scene is sent once per joiner, not continuously.
 
+### Versions in a session
+
+When someone joins, their app and yours first agree that they speak the same session version, before any scene data is exchanged. Most updates do not change it, so people on different app versions keep working together as before. When an update does change it, the two apps do not connect: the person on the older version sees *This session uses a newer version. Reload to update.* with a **Reload** button, and people on the newer version see that person in **People** as needing to reload. After reloading, join again as usual.
+
+Each person's app also accepts a generous, bounded amount of messages and data per second from each other person, well above sharing a large file or moving hundreds of objects at once. Anything far beyond that is skipped with one notice, the connection stays up, and the counts are in [Diagnostics](#diagnostics-you-can-copy).
+
 ## Smoother movement on a bad connection
 
 *New in 1.44.* Avatars, VR hands, objects being dragged or held, possessed rides and physics bodies travel on a
