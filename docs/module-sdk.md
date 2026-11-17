@@ -65,6 +65,14 @@ export default {
 };
 ```
 
+### Which api you have: `api.version`
+
+`api.version` is the module api's contract number: **2** since 1.67 (absent before: read it as 1). Feature-probe
+with `(api.version ?? 1) >= 2`. Version 2 adds nothing else; it comes with one notice: the raw renderer a module can
+still reach today (the `renderer` handed to a shader backend or a post effect hook) is leaving the contract, because a
+future view will switch renderers while the app runs. Use the look and post calls instead (`api.registerPostEffect`,
+the scene look, `api.quality`); if your module needs a renderer feature, ask for an SDK call.
+
 ### Nodes and effects
 
 ```js
