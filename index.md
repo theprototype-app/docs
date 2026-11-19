@@ -48,6 +48,11 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.68 — [share a moment](https://docs.theprototype.app/share-a-moment.md).** While you play, the last 10 s of the game view is kept: press
+**F8**, the clapperboard in the Play bar or a controller's View button, [trim 3-10 s](https://docs.theprototype.app/share-a-moment.md#trim-and-make-the-file)
+and save or share a GIF or MP4. It is off in VR and on low-memory devices, **Settings ▸ Privacy** turns it off, and
+players of a [published game](https://docs.theprototype.app/share-a-moment.md#published-games) get it only when the author allows it.
+
 **1.66 — polish on the new menus and panels.** Properties [follows your selection without taking
 over](https://docs.theprototype.app/interface.md#sidebars) and keeps the last object when you deselect; its lock and pin are gone and the filter box
 is [always on top](https://docs.theprototype.app/interface.md#panel-headers). Configure Scene moves to the other sidebar on its own, sidebar tabs keep

@@ -162,6 +162,7 @@ Only dynamic objects can be picked up, objects another peer has locked are refus
 | Limit grab reach · Reach (m) | off by default; when on, you can only pick up objects within this distance of your body (0.5–5 m, 1.3 when switched on) — [Towers](https://docs.theprototype.app/games.md#towers) uses it so high pieces need steps |
 | Flying | **Off** (default) / **Allowed** / **Removed** — see [Flying](#flying) |
 | Start the simulation when play mode opens | for scenes that are games rather than models |
+| Players of the published game can share moments | off by default; when on, players of the published game (play link, embed, export) can [share a moment](https://docs.theprototype.app/share-a-moment.md) — the last 10 s as a GIF or MP4. In the editor everyone can. Since 1.68 |
 | Playing banner | while you play, a small bar at the top says *Playing · Press Esc to stop* (with a Stop button). **Show** (default), **Hide** (also on a phone), or **Custom** — your own words, up to 80 characters. In a game it says *Press Esc for the menu* and the game's **Menu · Esc** button stays. Since 1.30 |
 | Spawn point | where desktop play starts. **Set to the view's focus** stores the point the view orbits around, facing the way the camera looks at it; **Clear** removes it |
 
