@@ -94,3 +94,7 @@ Keep the phone plugged in and the app in front while it renders.
 !!! note
     This page is about video. **Performance** recordings — frame time and draw calls — are in the
     [Profiler](profiler.md).
+
+## See also
+
+- [Share a Moment](share-a-moment.md): while you play, the last 10 seconds are kept — press F8 to make a GIF or MP4 of what just happened.
