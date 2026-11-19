@@ -64,7 +64,7 @@ To allow it: open **Configure Scene ▸ Play** and tick
 **Players of the published game can share moments (the last 10 s)**. In the editor, everyone who plays the scene can
 always share moments.
 
-The **Topple tower** starter (*New* ▸ templates) comes with it on, so a game made from it can be shared, moments
+**Templates ▸ Topple tower** comes with it on, so a game made from it can be shared, moments
 included, straight away.
 
 ## Limits
