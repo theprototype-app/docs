@@ -64,6 +64,7 @@ nav:
     - Projects: projects.md
   - Viewport:
     - Camera & View: camera.md
+    - Cinematic View: cinematic-view.md
     - Export a Video or GIF: recording.md
     - Share a Moment: share-a-moment.md
     - Notifications & Notes: notifications.md

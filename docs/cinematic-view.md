@@ -1,0 +1,90 @@
+# Cinematic View
+
+*New in 1.69.* **Preview**, at the top right of the 3D view, switches the viewport to the **Cinematic view**: the
+same live scene, drawn with light that bounces between surfaces, reflections on shiny surfaces, softer shadows and
+a gentle glow. You keep working while it is on: select, move things with the gizmo, undo, run flows and physics,
+press Play, and the people in your session keep editing with you.
+
+![The Product shot template in the standard view: a red knot, a gold cube and a glass ball on a white pedestal.](img/cinematic-view/standard-view.webp){ .shot width="800" height="456" loading=lazy }
+
+![The same scene in the Cinematic view (Standard): the knot bounces red light onto the pedestal and shows in its top, and the shadows are softer.](img/cinematic-view/cinematic-standard.webp){ .shot width="800" height="456" loading=lazy }
+
+The standard view (top) and the Cinematic view at Standard quality (bottom).
+
+## Turn it on and off
+
+| Where | How |
+|---|---|
+| Viewport | press **Preview** at the top right |
+| Keyboard | <kbd>Shift</kbd>+<kbd>Z</kbd> in the 3D view (rebind it in **Settings ▸ Shortcuts**) |
+
+It is a setting of **this computer**. Other people in the session keep their own view, nothing is sent to them, and
+the scene file does not change. If you leave it on, it comes back on by itself a few seconds after the app loads.
+
+## Quality
+
+The arrow beside **Preview** opens the quality menu:
+
+![The Preview switch with its quality menu open: Basic, Standard, High.](img/cinematic-view/switch-menu.webp){ .shot width="336" height="477" loading=lazy }
+
+| Step | What it adds |
+|---|---|
+| **Basic** | soft contact shadows (ambient occlusion), smoothing and glow, no bounced light |
+| **Standard** (the default) | bounced light and reflections at half resolution, on top of Basic |
+| **High** | bounced light and reflections at full resolution; offered up to a 1440p-sized window |
+
+When frames get slow (below about 30 frames a second for two seconds), the view **steps down by itself** one step and
+a small note says so. It does not step back up on its own: pick the step in the menu again to try it.
+
+## What it does not show yet
+
+This is the first version. A few things are drawn as **plain stand-ins** while the view is on, and a note under the
+switch names the ones in your scene:
+
+- [shader graph](shader-graph.md) materials and hand-written shaders (they show their base colour),
+- [water](water.md) surfaces and fluid tanks,
+- particle effects,
+- 3D text,
+- painted terrain layers,
+- jiggle (the object shows, without the wobble).
+
+The grid also fades less with distance than in the standard view.
+
+Switch the view off to see them as usual. Nothing in the scene is changed.
+
+## Photo, video and VR
+
+- **Photo mode** and **video takes** are made through the Cinematic view while it is on. A path-traced photo needs
+  the standard view: Photo mode says so, so switch the view off first.
+- **Entering VR** turns the view off first; VR always uses the standard view.
+
+## Which devices get it
+
+The switch appears only where it can work:
+
+- a **desktop or laptop** computer,
+- **Chrome or Edge** with WebGPU on a hardware graphics card (not a software one).
+
+Phones, tablets and VR headsets do not get the switch and **download nothing extra** for it. If the graphics card
+fails while the view is on (a shader that does not compile, a lost device), it switches back to the standard view by
+itself, tells you why, and stays off for the rest of the session.
+
+## What it costs
+
+Measured on 2026-11-20, frame time against the standard view in the same window (1586x906 at 125 %), no vsync, on a
+desktop PC with an RTX 4090:
+
+| Scene | Standard view | Basic | Standard | High |
+|---|---|---|---|---|
+| Tavern interior | 4.5 ms | 6.2 ms (1.4x) | 6.3 ms (1.4x) | 6.0 ms (1.3x) |
+| Castle courtyard | 2.9 ms | 3.4 ms (1.2x) | 3.7 ms (1.3x) | 3.7 ms (1.3x) |
+| Product shot | 1.0 ms | 1.6 ms (1.6x) | 2.0 ms (2.0x) | 2.3 ms (2.3x) |
+
+On a Steam Deck (a 1920x1080 window), Standard holds in the Castle courtyard and the Product shot; in the Tavern it
+steps down to Basic by itself, and High steps down in every scene. On a handheld, pick **Basic**.
+
+## See also
+
+- [Camera & View](camera.md#render-mode-view): the Shaded / Shaded + AO / Wireframe render modes
+- [Pro Look](pro-look.md) and [Scene Look](post-processing.md): the look every viewer sees, saved with the scene
+- [Photo Mode](photo-mode.md)
