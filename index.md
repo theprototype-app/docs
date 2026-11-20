@@ -48,6 +48,12 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.69 — the [Cinematic view](https://docs.theprototype.app/cinematic-view.md).** **Preview** at the top right of the 3D view (or
+<kbd>Shift</kbd>+<kbd>Z</kbd>) draws your scene with bounced light, reflections, softer shadows and glow while you keep
+editing, in three quality steps. It is on this computer only, steps down by itself when frames get slow, and is
+offered on desktops with Chrome or Edge; phones, tablets and headsets download nothing for it. Shader-graph materials,
+water, particles and 3D text show as plain stand-ins for now.
+
 **1.68 — [share a moment](https://docs.theprototype.app/share-a-moment.md).** While you play, the last 10 s of the game view is kept: press
 **F8**, the clapperboard in the Play bar or a controller's View button, [trim 3-10 s](https://docs.theprototype.app/share-a-moment.md#trim-and-make-the-file)
 and save or share a GIF or MP4. It is off in VR and on low-memory devices, **Settings ▸ Privacy** turns it off, and

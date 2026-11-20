@@ -72,6 +72,7 @@ Every page in one file: https://docs.theprototype.app/llms-full.txt
 ## Viewport
 
 - [Camera & View](https://docs.theprototype.app/camera.md): Everything about how the scene looks on your screen — the camera lens, render mode, shadows, the grid and the environment — lives in one place: Configure Scene.
+- [Cinematic View](https://docs.theprototype.app/cinematic-view.md): The standard view (top) and the Cinematic view at Standard quality (bottom).
 - [Export a Video or GIF](https://docs.theprototype.app/recording.md): Turn a Timeline, a turntable round your model or a flythrough of your saved views into a file: an MP4 or WebM video, a GIF or animated WebP loop, or a PNG sequence with a transparent background.…
 - [Share a Moment](https://docs.theprototype.app/share-a-moment.md): Nothing has to be started beforehand, and nothing is sent anywhere: the moment stays in your browser tab until you make a file of it.
 - [Notifications & Notes](https://docs.theprototype.app/notifications.md): The top-right cluster next to your avatar holds two history surfaces — the notification center and the scene-notes drawer — plus the tools for leaving notes on objects, chatting and pinging things…

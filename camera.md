@@ -41,6 +41,9 @@ Three per-device render modes under **Viewport — this device**:
 <kbd>Z</kbd> in the 3D view cycles them: Shaded → Shaded + AO → Wireframe (Shaded + AO is skipped when the scene's own
 look already sets ambient occlusion). Rebind it in **Settings ▸ Shortcuts**.
 
+On a desktop with Chrome or Edge, **Preview** at the top right (<kbd>Shift</kbd>+<kbd>Z</kbd>) switches to the
+[Cinematic view](https://docs.theprototype.app/cinematic-view.md): bounced light and reflections, on this computer only.
+
 Ambient occlusion and wireframe are **desktop-only** and never shown to peers. AO detail follows your shadow-quality setting (below), so lowering shadow quality also lightens the AO cost.
 
 These are SHADING modes — they are not how you see the scene's own look. A
