@@ -71,14 +71,14 @@ itself, tells you why, and stays off for the rest of the session.
 
 ## What it costs
 
-Measured on 2026-11-20, frame time against the standard view in the same window (1586x906 at 125 %), no vsync, on a
-desktop PC with an RTX 4090:
+Measured on 2026-11-20 in real Chrome 156 on a desktop PC with an RTX 4090 (the same window as the standard view,
+no vsync), median frame time:
 
 | Scene | Standard view | Basic | Standard | High |
 |---|---|---|---|---|
-| Tavern interior | 4.5 ms | 6.2 ms (1.4x) | 6.3 ms (1.4x) | 6.0 ms (1.3x) |
-| Castle courtyard | 2.9 ms | 3.4 ms (1.2x) | 3.7 ms (1.3x) | 3.7 ms (1.3x) |
-| Product shot | 1.0 ms | 1.6 ms (1.6x) | 2.0 ms (2.0x) | 2.3 ms (2.3x) |
+| Tavern interior | 4.2 ms | 5.6 ms (1.3x) | 5.8 ms (1.4x) | 5.9 ms (1.4x) |
+| Castle courtyard | 2.8 ms | 3.3 ms (1.2x) | 3.7 ms (1.3x) | 3.6 ms (1.3x) |
+| Product shot | 1.1 ms | 1.5 ms (1.4x) | 1.9 ms (1.7x) | 2.4 ms (2.2x) |
 
 On a Steam Deck (a 1920x1080 window), Standard holds in the Castle courtyard and the Product shot; in the Tavern it
 steps down to Basic by itself, and High steps down in every scene. On a handheld, pick **Basic**.
