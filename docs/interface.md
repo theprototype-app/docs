@@ -126,8 +126,9 @@ and, at its far end, the **Full height** button (↕) and the **hide** button.
   side. Hold <kbd>Ctrl</kbd> (<kbd>Cmd</kbd> on a Mac) while you drag to place it floating over the sidebar instead —
   see [Moving a floating window](controls.md#moving-a-floating-window).
 - *New in 1.64.* **The handle**: each column has one handle on its inner edge (the grip icon). Tap or click it to hide
-  or show the column; drag it up or down along the edge to move it — the place is remembered. On a computer the handles
-  show only while a column is hidden; on a tablet they also show while it is open. **Settings ▸ Interface ▸ Show
+  or show the column; drag it up or down along the edge to move it — the place is remembered. On every layout a handle
+  shows only while its column is hidden; to hide an open column, right-click (long-press) its header for **Hide**,
+  **Switch sidebar side** and **Lock**, or press <kbd>Ctrl</kbd>+<kbd>B</kbd>. **Settings ▸ Interface ▸ Show
   viewport sidebar handles** (*Auto* / *On* / *Off*) and **Dim at rest** set how they show. The **Panels** button
   cycles through both columns, the left one, the right one and none.
 - **Resize** by dragging the sidebar's inner edge; a double-click resets it. On a computer, drag the edge well past
@@ -354,7 +355,8 @@ hidden, the window's content is full width.
 
 - A window with several right-hand panels shows them as **tabs behind one handle** — in the Explorer, **Properties**,
   **File history** and **Settings**.
-- **Lock** a window's panes from the handle's menu, so a stray tap cannot hide them.
+- A pane's handle shows only while the pane is hidden. To hide an open pane, right-click (long-press) its top band for
+  **Hide**; **Lock** in the same menu keeps a stray tap from hiding it.
 - In a narrow docked window the panes become a header instead — see [The dock on a phone](#the-dock-on-a-phone).
 
 ### Hiding buttons you do not use
