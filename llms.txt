@@ -237,6 +237,9 @@ Every page in one file: https://docs.theprototype.app/llms-full.txt
 
 - [The Games Tab](https://docs.theprototype.app/games.md): The five games added in 1.20 are built into the app — they need no module download — and play on the desktop and in VR.
 - [Play Here](https://docs.theprototype.app/play-here.md): Play is a sandbox, as always: what changes during Play is not kept.
+- [Test with Players](https://docs.theprototype.app/test-with-players.md)
+- [Make an Enemy](https://docs.theprototype.app/make-an-enemy.md): The enemy fires events; wire them to what your game needs with On NPC Event:
+- [Navigation](https://docs.theprototype.app/navigation.md): A scene with no navigation nodes downloads none of it. The first time you add an enemy or a navigation node, the module installs from the module gallery (about 660 KB) and every player who opens…
 - [Game Rules on the Main Graph](https://docs.theprototype.app/game-rules.md): Every game rebuilt in 1.23 has one readable script that is its rules, sitting on the game's Main graph. Open the game, open the node editor, and the whole game is in front of you: the rules in the…
 - [Build a Game Loop](https://docs.theprototype.app/build-a-game.md): A complete worked example — a start menu, a walking character, collectibles that count into the HUD, a hold-to-peek map, a pause menu you can click, and a second level to travel to. Everything is…
 - [Levels and Progress](https://docs.theprototype.app/levels-and-progress.md): Open Configure Scene ▸ Levels. Each row is a level:

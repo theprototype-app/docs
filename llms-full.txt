@@ -20010,6 +20010,201 @@ Play is a sandbox, as always: what changes during Play is not kept.
 
 ---
 
+Source: https://docs.theprototype.app/test-with-players/ (Markdown: https://docs.theprototype.app/test-with-players.md)
+
+# Test with players
+
+*New in 1.72.* Try a multiplayer game with no second person and no second device. **Test with players** starts
+1 to 3 simulated players in this tab. Each one is a complete copy of the app: it joins your session the way a
+friend would and gets your scene, your logic and your HUD. Watch it in a small view, or take it over and play as it.
+
+## Where it is
+
+| Where | How |
+|---|---|
+| Play button | right-click **Play** ▸ **Test with players…** |
+| Phone | long-press **Play** ▸ **Test with players…** |
+
+## Run a test
+
+![The Test with players sheet: Players set to 2, player 1 a Player and player 2 a Viewer, and the Start test button. 1: how many players. 2: each player's role. 3: Start test.](https://docs.theprototype.app/img/test-with-players/sheet.webp)
+*Figure: Right-click Play ▸ Test with players… opens this sheet.*
+
+1. **Players**: how many simulated players join (up to 3; 1 on a phone or a headset).
+2. A **role** for each one: Player, Viewer or Editor.
+3. **Start test** adds them to your session.
+
+1. Choose how many players (1 to 3; 1 on a phone or a headset) and a role for each one:
+    - **Player**: joins and goes straight into Play. It can press, trigger and score. It cannot change the scene.
+    - **Viewer**: watches. Everything it tries to change is refused, exactly as for a real view-only guest.
+    - **Editor**: may do anything a guest editor may.
+2. Press **Start test**. A strip at the bottom shows each player's view and its state: loading, joining, joined or
+   playing. The players start one after another, so the second one appears a few seconds after the first. A player
+   that cannot start is tried once more and then shows **Did not start**.
+3. Press the gamepad button on a view to **Drive** it. The view gets bigger and takes your keyboard, so the keys
+   you press are that player's keys. Press it again to hand the keyboard back.
+4. **Stop test** (on the strip, or right-click **Play** ▸ **Stop test**) removes them all. Nothing stays behind:
+   no rows in People, no saves and no settings changes. The simulated players never write to your storage.
+
+## Good for
+
+- Checking that a win or lose condition fires for one player and that everyone sees it.
+- Checking that a viewer really cannot edit.
+- Checking that a HUD reads right for a second player.
+- Seeing what a joiner sees when they arrive mid-round.
+- Checking that an [enemy](https://docs.theprototype.app/make-an-enemy.md) chases whoever is nearest.
+
+## Limits
+
+- A test runs in a session of your own. If other people are connected, leave the session first.
+- The simulated players make no sound and do not use a headset view.
+- Each one is a whole app: about 35 MB of script memory, measured on a computer, plus its own 3D view. On a slower
+  computer, 3 players can make the editor slower while the test runs.
+- On a headset you can enter and leave VR while a test runs; the players stay joined.
+
+
+---
+
+Source: https://docs.theprototype.app/make-an-enemy/ (Markdown: https://docs.theprototype.app/make-an-enemy.md)
+
+# Make an enemy
+
+*New in 1.72.* Any object can be an enemy: a guard that walks its round, notices you, chases you round the walls,
+attacks when it reaches you and gives up when it loses you. It needs the [Navigation](https://docs.theprototype.app/navigation.md) module, which
+installs the first time you use it.
+
+## Make one
+
+![The Make this an enemy sheet for the Guard: Patrol, sight angle and range, hearing, chase and attack ranges, walk and chase speeds, give up after, the Make enemy button and the two view toggles. 1: the patrol Path. 2: Make enemy. 3: the view toggles.](https://docs.theprototype.app/img/make-an-enemy/sheet.webp)
+*Figure: Right-click an object ▸ Make this an enemy… opens this sheet.*
+
+1. **Patrol**: guard this spot, an existing Path, or a new loop around it.
+2. **Make enemy** sets it up (one undo step).
+3. **Navmesh overlay** and **NPC debug view (Play)**, on your screen only.
+
+1. Right-click the object ▸ **Make this an enemy…** (it is also in the empty-space menu's **Selected ▸**). The first
+   time, the Navigation module installs from the gallery.
+2. Set it up in the sheet:
+    - **Patrol**: **None** (it guards this spot, facing the way you left it), an existing [Path](https://docs.theprototype.app/paths.md), or
+      **New loop around it** (a square Path you can then edit).
+    - **Sight angle** and **Sight range**: its view cone. Walls block it.
+    - **Hearing**: how far a normal noise carries to it.
+    - **Chase range**, **Attack range** and **Attack every**.
+    - **Walk speed**, **Chase speed** and **Give up after**.
+    - **View (this device)**: **Navmesh overlay** and **NPC debug view (Play)**.
+3. Press **Make enemy**. Press **Play** to try it.
+
+**Update enemy** changes it later and **Not an enemy** makes it an ordinary object again. Each is one undo step
+(with **New loop around it**: two, the Path and then the enemy).
+
+## What it does in Play
+
+| State | What you see |
+|---|---|
+| Patrol / guard | It walks its Path, or stands at its spot facing the way you left it. |
+| Alert | It heard a noise: it turns, walks to where the noise was and looks around. |
+| Chase | It saw you inside its cone: it runs after you, round walls. |
+| Attack | It reached you on the same level: it attacks every few seconds. |
+| Lost / give up | It has not seen or heard you for **Give up after** seconds. |
+| Return | It walks back to its round. |
+
+## Make it do something
+
+The enemy fires events; wire them to what your game needs with **On NPC Event**:
+
+- `spotted` ▸ an Announce "Spotted!" and a whistle.
+- `attack` ▸ take a life, or send the player back to a checkpoint.
+- `gaveup` ▸ an Announce "It lost you".
+
+The **A guard on patrol** template has the first and the last wired up.
+
+## Tips
+
+- Give the guard a short, closed Path round something it can hide behind, so the player has a reason to sneak.
+- Crates you can push block it; pushing one out of a doorway frees the way.
+- **View ▸ NPC debug view** shows each enemy's path and state while you play; nobody else sees it, and it is never
+  in an exported game.
+- An enemy in a headset session hunts the person in the headset too.
+- Use [Test with players](https://docs.theprototype.app/test-with-players.md) to check it chases whoever is nearest.
+
+
+---
+
+Source: https://docs.theprototype.app/navigation/ (Markdown: https://docs.theprototype.app/navigation.md)
+
+# Navigation
+
+*New in 1.72.* The **Navigation** module lets things walk round your scene on their own: enemies that patrol and
+chase, a pet that follows you, a crowd that wanders. It works out where the floor is (a *navmesh*) from your scene's
+colliders and finds a way round walls, crates and steps.
+
+A scene with no navigation nodes downloads none of it. The first time you add an enemy or a navigation node, the
+module installs from the module gallery (about 660 KB) and every player who opens the scene is asked to install it too.
+
+## The quickest way in
+
+- Right-click any object ▸ **Make this an enemy…** sets up a guard in one sheet. See [Make an enemy](https://docs.theprototype.app/make-an-enemy.md).
+- **Templates ▸ A guard on patrol**: a walled yard with a guard that walks its round, spots you and chases you.
+
+## Nodes
+
+Find them in the node editor under **Navigation**.
+
+| Node | What it does |
+|---|---|
+| **Enemy (NPC)** | The whole guard: patrol or stand guard, see, hear, chase, attack, give up and walk back. The sheet builds this one. |
+| **Move To** | Walk the object to another object, the shortest way round; `arrived` fires when it is there. |
+| **Chase** | Follow an object, or the nearest player, and stop a set distance away. |
+| **Flee** | Run from an object, or the nearest player, until it is far enough away. |
+| **Wander** | Stroll to random walkable spots around its home, pausing between. |
+| **Patrol (Path)** | Walk a [Path](https://docs.theprototype.app/paths.md)'s points, in a loop or back and forth. Edit the Path and it follows the new line. |
+| **Make Noise** | A pulse makes a noise at a spot (or at the player); enemies in hearing range come to look. Louder noises carry further. |
+| **On NPC Event** | Fires on `spotted`, `heard`, `attack`, `lost`, `gaveup`, `returned`, `unreachable` or `arrived`, for one enemy or any. |
+| **NPC State** | Reads an enemy's state (idle, patrol, alert, chase, attack, return), or 1/0 for chasing, alert and reachable. |
+| **Navmesh** | The bake settings: cell size, agent radius and height, climb and slope. One in the scene graph; without it the defaults bake. |
+
+Every moving node has an **enabled** input: wire a Latch or a Gate into it to switch it on and off. An object may
+carry several; the highest one in the table above wins while it is enabled.
+
+## The navmesh
+
+The walkable area is baked from the static colliders and the terrain. You do not press anything:
+
+- Move a wall and the navmesh bakes again after a short pause.
+- A dynamic body (a crate you can push) is a **moving obstacle**: push it out of a doorway and the way is free again
+  within a second, with no rebake.
+- **View ▸ Navmesh overlay** draws the walkable area (green) and the moving obstacles (red) on your screen.
+
+## When a place cannot be reached
+
+Nothing jitters at a wall. When the place it wants is unreachable (a cage, a ledge, the far side of a closed door),
+the walker goes to the closest point it can reach and stops. **View ▸ NPC debug view** shows the reason on its label:
+**off mesh**, **blocked** or **too far**, and **On NPC Event** fires `unreachable` so a game can react.
+
+## Multiplayer
+
+One player's browser runs the walkers (the lowest id among the players in Play) and everyone else sees them move
+smoothly from about 10 updates a second. If that player leaves, the next one takes over.
+
+## Limits (per device)
+
+| Device | Walkers moving at once | Triangles read into one bake | Rebake on edit |
+|---|---|---|---|
+| Computer | 64 | 600 k | up to 2.5 s |
+| Phone | 24 | 200 k | up to 4 s |
+| Headset | 24 | 200 k | up to 4 s |
+
+Over the limit, the extra walkers stand still and a message says so once. A bigger scene bakes its first part and
+says which meshes to hide or simplify. Phone and headset limits are first estimates; they will be updated once they
+are measured on the devices.
+
+## Agents
+
+An agent can make an enemy too: `game_setup` with `npc` builds the same guard as the sheet.
+
+
+---
+
 Source: https://docs.theprototype.app/game-rules/ (Markdown: https://docs.theprototype.app/game-rules.md)
 
 # Game rules on the Main graph
