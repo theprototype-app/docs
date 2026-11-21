@@ -2,10 +2,10 @@
  "id": "peers-panel-desktop",
  "spec": "5989098cea90",
  "dpr": 2,
- "shotAt": "2026-11-11T13:12:37.340Z",
+ "shotAt": "2026-11-21T16:26:45.413Z",
  "app": {
-  "version": "1.65.0",
-  "sha": "a71c3ad8"
+  "version": "1.71.0",
+  "sha": "57db5fb4"
  },
  "uiHits": [
   "div.peers-backdrop",
@@ -24,7 +24,7 @@
  "width": 872,
  "height": 556,
  "crop": {
-  "x": 930,
+  "x": 946,
   "y": 51,
   "w": 436,
   "h": 278

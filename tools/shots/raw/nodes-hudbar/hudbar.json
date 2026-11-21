@@ -2,32 +2,32 @@
  "id": "hudbar",
  "spec": "be69a5341846",
  "dpr": 2,
- "shotAt": "2026-11-03T13:58:42.144Z",
+ "shotAt": "2026-11-21T17:02:08.584Z",
  "app": {
-  "version": "1.54.3",
-  "sha": "9c202d15"
+  "version": "1.71.0",
+  "sha": "57db5fb4"
  },
  "uiHits": [
   "div.svelte-flow__pane",
-  "div.node-card",
   "div.flex",
   "div.relative",
-  "span.h-2",
   "span",
   "input.nodrag",
-  "span.overflow-hidden",
+  "span.max-w-[18rem]",
   "span.flex",
   "div.svelte-flow__handle",
   "path.svelte-flow__edge-interaction",
-  "button.nodrag"
+  "span.truncate",
+  "button.nodrag",
+  "span.hud-live"
  ],
  "width": 804,
- "height": 528,
+ "height": 576,
  "crop": {
   "x": 208,
   "y": 284,
   "w": 402,
-  "h": 264
+  "h": 288
  },
  "cut": [],
  "fade": [],

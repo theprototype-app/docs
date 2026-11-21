@@ -2,10 +2,10 @@
  "id": "add-scatter",
  "spec": "5efbe106370a",
  "dpr": 2,
- "shotAt": "2026-11-11T14:03:03.268Z",
+ "shotAt": "2026-11-21T17:18:45.403Z",
  "app": {
-  "version": "1.65.0",
-  "sha": "a71c3ad8"
+  "version": "1.71.0",
+  "sha": "57db5fb4"
  },
  "uiHits": [
   "button#mic-button.hud-fab",

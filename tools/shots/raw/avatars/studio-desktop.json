@@ -2,10 +2,10 @@
  "id": "studio-desktop",
  "spec": "9cbfd0f3fe3a",
  "dpr": 2,
- "shotAt": "2026-11-11T12:57:48.785Z",
+ "shotAt": "2026-11-21T16:10:19.526Z",
  "app": {
-  "version": "1.65.0",
-  "sha": "a71c3ad8"
+  "version": "1.71.0",
+  "sha": "57db5fb4"
  },
  "uiHits": [
   "button#budget-chip.bc-main",

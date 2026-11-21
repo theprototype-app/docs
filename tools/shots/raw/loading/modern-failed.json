@@ -2,10 +2,10 @@
  "id": "modern-failed",
  "spec": "d641fe45366d",
  "dpr": 2,
- "shotAt": "2026-11-11T13:33:18.868Z",
+ "shotAt": "2026-11-21T16:48:09.601Z",
  "app": {
-  "version": "1.65.0",
-  "sha": "a71c3ad8"
+  "version": "1.71.0",
+  "sha": "57db5fb4"
  },
  "uiHits": [
   "div.my-1",

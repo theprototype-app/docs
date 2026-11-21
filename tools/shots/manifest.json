@@ -9,8 +9,8 @@
    "height": 620,
    "badges": 0,
    "labels": [],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T12:55:16.586Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:07:35.395Z"
   },
   "img/accessibility/scale-150-phone.webp": {
    "page": "accessibility",
@@ -152,8 +152,8 @@
    "height": 540,
    "badges": 0,
    "labels": [],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:00:01.542Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:12:57.260Z"
   },
   "img/avatars/knocked-off.webp": {
    "page": "avatars",
@@ -163,8 +163,8 @@
    "height": 560,
    "badges": 0,
    "labels": [],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:01:47.489Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:15:00.239Z"
   },
   "img/avatars/peer-character.webp": {
    "page": "avatars",
@@ -174,8 +174,8 @@
    "height": 720,
    "badges": 0,
    "labels": [],
-   "app": "1.64.0",
-   "shotAt": "2026-11-10T18:41:39.527Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:10:53.708Z"
   },
   "img/avatars/studio-desktop.webp": {
    "page": "avatars",
@@ -185,8 +185,8 @@
    "height": 835,
    "badges": 0,
    "labels": [],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T12:57:48.785Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:10:19.526Z"
   },
   "img/building-in-vr/asset-browser-packs.webp": {
    "page": "building-in-vr",
@@ -210,8 +210,8 @@
    "height": 448,
    "badges": 2,
    "labels": [],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:02:54.010Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:16:11.359Z"
   },
   "img/building-in-vr/logic-pad.webp": {
    "page": "building-in-vr",
@@ -463,8 +463,8 @@
    "height": 640,
    "badges": 1,
    "labels": [],
-   "app": "1.65.1",
-   "shotAt": "2026-11-11T14:29:28.011Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:22:27.738Z"
   },
   "img/code-workspace/script-tab.webp": {
    "page": "code-workspace",
@@ -509,8 +509,8 @@
    "labels": [
     "convex piece"
    ],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:10:25.809Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:24:21.028Z"
   },
   "img/colliders/exact-mesh.webp": {
    "page": "colliders",
@@ -522,8 +522,8 @@
    "labels": [
     "opening kept"
    ],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:10:05.059Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:23:59.461Z"
   },
   "img/colliders/physics-section.webp": {
    "page": "colliders",
@@ -599,8 +599,8 @@
     "you",
     "role"
    ],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:12:37.340Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:26:45.413Z"
   },
   "img/connection/status-dot-phone.webp": {
    "page": "connection",
@@ -704,8 +704,8 @@
    "height": 840,
    "badges": 0,
    "labels": [],
-   "app": "1.51.0",
-   "shotAt": "2026-10-31T14:46:34.741Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:30:28.029Z"
   },
   "img/controls/edit-positions-connect-bar.webp": {
    "page": "controls",
@@ -726,8 +726,8 @@
    "height": 130,
    "badges": 0,
    "labels": [],
-   "app": "1.64.0",
-   "shotAt": "2026-11-10T19:03:30.415Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:31:47.905Z"
   },
   "img/controls/edit-positions.webp": {
    "page": "controls",
@@ -828,8 +828,8 @@
    "height": 620,
    "badges": 0,
    "labels": [],
-   "app": "1.63.0",
-   "shotAt": "2026-11-10T14:01:59.558Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:30:12.188Z"
   },
   "img/controls/window-over-sidebar-hint.webp": {
    "page": "controls",
@@ -985,8 +985,8 @@
     "stream",
     "rate"
    ],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:21:23.710Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:35:49.927Z"
   },
   "img/fluids/water-works.webp": {
    "page": "fluids",
@@ -1000,8 +1000,8 @@
     "head-race",
     "fountain"
    ],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:21:48.695Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:36:14.055Z"
   },
   "img/free-assets/browser-materials.webp": {
    "page": "free-assets",
@@ -1194,8 +1194,8 @@
    "height": 840,
    "badges": 0,
    "labels": [],
-   "app": "1.63.0",
-   "shotAt": "2026-11-10T14:14:58.731Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:44:10.131Z"
   },
   "img/interface/dock-plus-menu.webp": {
    "page": "interface",
@@ -1216,8 +1216,8 @@
    "height": 840,
    "badges": 0,
    "labels": [],
-   "app": "1.63.0",
-   "shotAt": "2026-11-10T14:15:57.903Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:45:17.669Z"
   },
   "img/interface/dock-tabs-properties-phone.webp": {
    "page": "interface",
@@ -1238,8 +1238,8 @@
    "height": 840,
    "badges": 0,
    "labels": [],
-   "app": "1.63.0",
-   "shotAt": "2026-11-10T14:16:14.962Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:45:34.903Z"
   },
   "img/interface/focus-mode-pip.webp": {
    "page": "interface",
@@ -1317,8 +1317,8 @@
    "height": 460,
    "badges": 0,
    "labels": [],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:27:27.766Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:42:00.158Z"
   },
   "img/interface/selection-toolbar-phone.webp": {
    "page": "interface",
@@ -1443,8 +1443,8 @@
     "why it failed",
     "retry"
    ],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:33:18.868Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:48:09.601Z"
   },
   "img/loading/modern-loading.webp": {
    "page": "loading",
@@ -1456,8 +1456,8 @@
    "labels": [
     "arrived so far"
    ],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:33:02.565Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:47:51.701Z"
   },
   "img/lod/lod-distance.webp": {
    "page": "lod",
@@ -1480,8 +1480,8 @@
    "labels": [
     "selected"
    ],
-   "app": "1.63.0",
-   "shotAt": "2026-11-10T14:19:43.447Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:49:24.295Z"
   },
   "img/materials/maps.webp": {
    "page": "materials",
@@ -1644,8 +1644,8 @@
    "height": 618,
    "badges": 2,
    "labels": [],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:37:34.330Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:52:39.873Z"
   },
   "img/menus-and-panels/preview-docked.webp": {
    "page": "menus-and-panels",
@@ -1746,8 +1746,8 @@
    "labels": [
     "mirrored edits"
    ],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:40:59.748Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:56:10.835Z"
   },
   "img/mesh-editing/mitered-bevel.webp": {
    "page": "mesh-editing",
@@ -1864,11 +1864,11 @@
    "kind": "ui",
    "dpr": 2,
    "width": 650,
-   "height": 341,
+   "height": 325,
    "badges": 0,
    "labels": [],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:43:26.485Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:58:39.927Z"
   },
   "img/nodes-camerafollow/camerafollow.webp": {
    "page": "nodes-camerafollow",
@@ -1999,22 +1999,22 @@
    "kind": "ui",
    "dpr": 2,
    "width": 402,
-   "height": 264,
+   "height": 288,
    "badges": 0,
    "labels": [],
-   "app": "1.54.3",
-   "shotAt": "2026-11-03T13:58:42.144Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:02:08.584Z"
   },
   "img/nodes-hudinput/hudinput.webp": {
    "page": "nodes-hudinput",
    "kind": "ui",
    "dpr": 2,
    "width": 402,
-   "height": 228,
+   "height": 252,
    "badges": 0,
    "labels": [],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:47:03.388Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:02:25.741Z"
   },
   "img/nodes-hudlist/hudlist.webp": {
    "page": "nodes-hudlist",
@@ -2024,63 +2024,63 @@
    "height": 351,
    "badges": 0,
    "labels": [],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:47:20.415Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:02:42.682Z"
   },
   "img/nodes-hudrows/hudrows.webp": {
    "page": "nodes-hudrows",
    "kind": "ui",
    "dpr": 2,
    "width": 402,
-   "height": 213,
+   "height": 237,
    "badges": 0,
    "labels": [],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:47:40.607Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:02:59.836Z"
   },
   "img/nodes-hudscreen/hudscreen.webp": {
    "page": "nodes-hudscreen",
    "kind": "ui",
    "dpr": 2,
    "width": 402,
-   "height": 436,
+   "height": 484,
    "badges": 0,
    "labels": [],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:47:57.522Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:03:16.997Z"
   },
   "img/nodes-hudset/hudset.webp": {
    "page": "nodes-hudset",
    "kind": "ui",
    "dpr": 2,
    "width": 402,
-   "height": 186,
+   "height": 234,
    "badges": 0,
    "labels": [],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:48:14.398Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:03:33.937Z"
   },
   "img/nodes-hudtext/hudtext.webp": {
    "page": "nodes-hudtext",
    "kind": "ui",
    "dpr": 2,
    "width": 622,
-   "height": 228,
+   "height": 252,
    "badges": 0,
    "labels": [],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:48:31.186Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:03:51.782Z"
   },
   "img/nodes-hudtimer/hudtimer.webp": {
    "page": "nodes-hudtimer",
    "kind": "ui",
    "dpr": 2,
    "width": 402,
-   "height": 300,
+   "height": 324,
    "badges": 0,
    "labels": [],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:48:47.624Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:04:09.412Z"
   },
   "img/nodes-latch/latch.webp": {
    "page": "nodes-latch",
@@ -2101,8 +2101,8 @@
    "height": 598,
    "badges": 0,
    "labels": [],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:49:21.411Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:04:43.237Z"
   },
   "img/nodes-movespeed/movespeed.webp": {
    "page": "nodes-movespeed",
@@ -2145,8 +2145,8 @@
    "height": 616,
    "badges": 0,
    "labels": [],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:50:28.443Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:05:51.257Z"
   },
   "img/nodes-possessnode/possessnode.webp": {
    "page": "nodes-possessnode",
@@ -2279,14 +2279,14 @@
    "page": "particles",
    "kind": "view",
    "dpr": 2,
-   "width": 1020,
+   "width": 1043,
    "height": 600,
    "badges": 1,
    "labels": [
     "emitter"
    ],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:54:09.985Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:09:40.541Z"
   },
   "img/people/peer-menu.webp": {
    "page": "people",
@@ -2318,8 +2318,8 @@
    "height": 700,
    "badges": 0,
    "labels": [],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:55:41.613Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:11:12.644Z"
   },
   "img/performance/statistics-budget.webp": {
    "page": "performance",
@@ -2351,11 +2351,11 @@
    "kind": "ui",
    "dpr": 2,
    "width": 303,
-   "height": 409,
+   "height": 451,
    "badges": 1,
    "labels": [],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:56:07.905Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:11:39.589Z"
   },
   "img/physics/sim-on-load-setting.webp": {
    "page": "physics",
@@ -2378,8 +2378,8 @@
    "labels": [
     "floats"
    ],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T13:56:28.158Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:12:00.160Z"
   },
   "img/prefabs/tag-filter.webp": {
    "page": "prefabs",
@@ -2540,8 +2540,8 @@
     "reset",
     "brake and gas"
    ],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T14:01:09.736Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:16:47.708Z"
   },
   "img/race/start.webp": {
    "page": "race",
@@ -2622,8 +2622,8 @@
    "height": 720,
    "badges": 2,
    "labels": [],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T14:03:03.268Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:18:45.403Z"
   },
   "img/scatter/select-tool.webp": {
    "page": "scatter",
@@ -2704,8 +2704,8 @@
    "labels": [
     "pushed about"
    ],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T14:04:55.217Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:20:40.979Z"
   },
   "img/simulation/fluid-tank.webp": {
    "page": "simulation",
@@ -2717,8 +2717,8 @@
    "labels": [
     "smooth surface"
    ],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T14:04:37.717Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:20:22.691Z"
   },
   "img/simulation/jiggle.webp": {
    "page": "simulation",
@@ -2730,8 +2730,8 @@
    "labels": [
     "lags behind"
    ],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T14:06:02.559Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:21:53.984Z"
   },
   "img/simulation/tank-pours-into-pool.webp": {
    "page": "simulation",
@@ -2743,8 +2743,8 @@
    "labels": [
     "pour lands"
    ],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T14:05:48.049Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:21:38.378Z"
   },
   "img/simulation/tank-spill.webp": {
    "page": "simulation",
@@ -2803,8 +2803,8 @@
    "height": 439,
    "badges": 2,
    "labels": [],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T14:06:46.351Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:22:41.468Z"
   },
   "img/terrain/scatter-collider.webp": {
    "page": "terrain",
@@ -2827,8 +2827,8 @@
    "labels": [
     "scatter what"
    ],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T14:07:17.810Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:23:12.923Z"
   },
   "img/timeline/phone-sheet.webp": {
    "page": "timeline",
@@ -2867,8 +2867,8 @@
     "playhead",
     "shot camera"
    ],
-   "app": "1.64.0",
-   "shotAt": "2026-11-10T20:05:06.689Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:24:00.007Z"
   },
   "img/timeline/tracks-light.webp": {
    "page": "timeline",
@@ -2916,8 +2916,8 @@
    "height": 896,
    "badges": 0,
    "labels": [],
-   "app": "1.64.0",
-   "shotAt": "2026-11-10T21:21:05.669Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:25:18.810Z"
   },
   "img/tours/editor-tour.webp": {
    "page": "tours",
@@ -3107,8 +3107,8 @@
    "labels": [
     "which one"
    ],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T14:14:55.422Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:30:57.370Z"
   },
   "img/water/underwater-aquarium.webp": {
    "page": "water",
@@ -3120,8 +3120,8 @@
    "labels": [
     "bubbles"
    ],
-   "app": "1.65.0",
-   "shotAt": "2026-11-11T14:14:34.514Z"
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T17:30:35.313Z"
   }
  }
 }

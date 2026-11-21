@@ -2,32 +2,32 @@
  "id": "behaviour",
  "spec": "767e3583fa68",
  "dpr": 2,
- "shotAt": "2026-11-11T13:43:26.485Z",
+ "shotAt": "2026-11-21T16:58:39.927Z",
  "app": {
-  "version": "1.65.0",
-  "sha": "a71c3ad8"
+  "version": "1.71.0",
+  "sha": "57db5fb4"
  },
  "uiHits": [
   "div.svelte-flow__pane",
   "div.flex",
   "div.relative",
   "button.nodrag",
-  "span.text-text-muted",
   "select.nodrag",
+  "span.text-text-muted",
   "input.dn-input",
-  "div.dn-wrap",
   "input.nodrag",
   "div.svelte-flow__handle",
   "path.svelte-flow__edge-interaction",
-  "div.behaviour-out"
+  "div.behaviour-out",
+  "span.overflow-hidden"
  ],
  "width": 1300,
- "height": 682,
+ "height": 650,
  "crop": {
   "x": 208,
   "y": 284,
   "w": 650,
-  "h": 341
+  "h": 325
  },
  "cut": [],
  "fade": [],

@@ -2,12 +2,14 @@
  "id": "jiggle",
  "spec": "fa7ca575b218",
  "dpr": 2,
- "shotAt": "2026-11-11T14:06:02.559Z",
+ "shotAt": "2026-11-21T17:21:53.984Z",
  "app": {
-  "version": "1.65.0",
-  "sha": "a71c3ad8"
+  "version": "1.71.0",
+  "sha": "57db5fb4"
  },
- "uiHits": [],
+ "uiHits": [
+  "p#cinematic-hint.cine-first"
+ ],
  "width": 1800,
  "height": 1120,
  "crop": {

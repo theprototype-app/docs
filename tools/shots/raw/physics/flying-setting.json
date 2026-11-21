@@ -2,10 +2,10 @@
  "id": "flying-setting",
  "spec": "77983be5c3ab",
  "dpr": 2,
- "shotAt": "2026-11-11T13:56:07.905Z",
+ "shotAt": "2026-11-21T17:11:39.589Z",
  "app": {
-  "version": "1.65.0",
-  "sha": "a71c3ad8"
+  "version": "1.71.0",
+  "sha": "57db5fb4"
  },
  "uiHits": [
   "div#inspector.tp-ui",
@@ -13,21 +13,21 @@
   "svg.lucide",
   "span.pr-label",
   "div.tp-ui",
-  "label#physics-play-reach-on-label.it-label",
-  "label#physics-sim-on-play-label.it-label",
   "div.sec-panel-body",
+  "label#physics-sim-on-play-label.it-label",
+  "label#physics-play-moments-label.it-label",
   "button#physics-spawn-set.tp-ui",
   "button.sec-panel-head",
   "span.sec-title",
   "button#physics-play-interaction.ts-btn"
  ],
  "width": 606,
- "height": 818,
+ "height": 902,
  "crop": {
   "x": 1129,
   "y": 336,
   "w": 303,
-  "h": 409
+  "h": 451
  },
  "cut": [],
  "fade": [],

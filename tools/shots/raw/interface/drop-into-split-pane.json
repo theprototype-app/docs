@@ -2,10 +2,10 @@
  "id": "drop-into-split-pane",
  "spec": "5583eea6a685",
  "dpr": 2,
- "shotAt": "2026-11-10T14:16:14.962Z",
+ "shotAt": "2026-11-21T16:45:34.903Z",
  "app": {
-  "version": "1.63.0",
-  "sha": "14a8550a"
+  "version": "1.71.0",
+  "sha": "57db5fb4"
  },
  "uiHits": [
   "svg.svelte-1lv41t3",

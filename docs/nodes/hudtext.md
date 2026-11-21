@@ -51,7 +51,7 @@ A button that counts its own presses:
 3. Wire HUD Button → Counter's **pulse**, and Counter → HUD Text's **value**.
 4. Set the format to `Presses: {v}`. Press Play and click the button: the text counts up, for every player.
 
-![A HUD Button wired into the pulse of a Counter, and the Counter into the value of a HUD Text with the format "Presses: {v}"](../img/nodes-hudtext/hudtext.webp){ .shot width="622" height="228" loading=lazy }
+![A HUD Button wired into the pulse of a Counter, and the Counter into the value of a HUD Text with the format "Presses: {v}"](../img/nodes-hudtext/hudtext.webp){ .shot width="622" height="252" loading=lazy }
 /// caption
 A HUD Button wired into a Counter, the Counter into a HUD Text.
 ///

@@ -2,32 +2,32 @@
  "id": "hudscreen",
  "spec": "e248f3b25df2",
  "dpr": 2,
- "shotAt": "2026-11-11T13:47:57.522Z",
+ "shotAt": "2026-11-21T17:03:16.997Z",
  "app": {
-  "version": "1.65.0",
-  "sha": "a71c3ad8"
+  "version": "1.71.0",
+  "sha": "57db5fb4"
  },
  "uiHits": [
   "div.svelte-flow__pane",
   "div.flex",
   "div.relative",
   "span.h-2",
-  "select.nodrag",
-  "span.text-text-muted",
-  "div.dn-wrap",
   "button.nodrag",
-  "span.overflow-hidden",
-  "input.dn-input",
-  "div.svelte-flow__handle",
-  "path.svelte-flow__edge-interaction"
+  "span.text-text-muted",
+  "select.nodrag",
+  "div.dn-wrap",
+  "input.nodrag",
+  "span.hud-ep-name",
+  "span.max-w-[18rem]",
+  "input.dn-input"
  ],
  "width": 804,
- "height": 872,
+ "height": 968,
  "crop": {
   "x": 208,
   "y": 284,
   "w": 402,
-  "h": 436
+  "h": 484
  },
  "cut": [],
  "fade": [],

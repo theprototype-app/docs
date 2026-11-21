@@ -2,10 +2,10 @@
  "id": "leaderboard",
  "spec": "3625a0dd254f",
  "dpr": 2,
- "shotAt": "2026-11-11T13:49:21.411Z",
+ "shotAt": "2026-11-21T17:04:43.237Z",
  "app": {
-  "version": "1.65.0",
-  "sha": "a71c3ad8"
+  "version": "1.71.0",
+  "sha": "57db5fb4"
  },
  "uiHits": [
   "div.svelte-flow__pane",
@@ -14,12 +14,12 @@
   "input.nodrag",
   "span",
   "button.nodrag",
-  "span.overflow-hidden",
+  "span.max-w-[18rem]",
   "span.flex",
   "div.svelte-flow__handle",
   "path.svelte-flow__edge-interaction",
-  "span.hud-live",
-  "div.hud-ep"
+  "span.truncate",
+  "span.hud-ep-name"
  ],
  "width": 804,
  "height": 1196,
