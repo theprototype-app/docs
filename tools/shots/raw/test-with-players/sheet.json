@@ -1,0 +1,55 @@
+{
+ "id": "sheet",
+ "spec": "97ddea186b8c",
+ "dpr": 2,
+ "shotAt": "2026-11-21T16:25:38.606Z",
+ "app": {
+  "version": "1.71.0",
+  "sha": "302ea429"
+ },
+ "uiHits": [
+  "dialog#test-players-sheet.tp-ui",
+  "header.wc-head",
+  "div.md-body",
+  "footer.md-foot",
+  "h2#md-title-c1.wc-title",
+  "p.tps-lead",
+  "span#test-players-count-label.tps-label",
+  "div.tps-row",
+  "span#test-player-role-label-1.tps-label",
+  "p.tps-hint",
+  "button#test-player-role-1-player.seg-opt",
+  "button#test-player-role-2-player.seg-opt"
+ ],
+ "width": 936,
+ "height": 886,
+ "crop": {
+  "x": 486,
+  "y": 229,
+  "w": 468,
+  "h": 443
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 603.125,
+   "y": 313.78125,
+   "w": 238.875,
+   "h": 76
+  },
+  "2": {
+   "x": 695.53125,
+   "y": 547.375,
+   "w": 138.46875,
+   "h": 60
+  },
+  "3": {
+   "x": 608.4375,
+   "y": 734.96875,
+   "w": 233.5625,
+   "h": 72
+  }
+ },
+ "kind": "ui"
+}
