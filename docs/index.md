@@ -52,7 +52,7 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
-**1.71 — [convert to code](node-editor.md#convert-a-node-to-code).** Right-click a Math, Compare, Gate, Select, Map
+**1.71 — [the Code tab](node-editor.md#the-code-tab-since-171) and [convert to code](node-editor.md#convert-a-node-to-code).** The Nodes editor shows the graph as code, read-only (press a line to select its node). Right-click a Math, Compare, Gate, Select, Map
 Range, Random or HUD Text node ▸ **Convert to code**: it becomes a Script node that does the same thing, every wire
 kept, and **Convert back** returns it while the code is unchanged. Custom nodes keep their definitions in saved scenes,
 the animation and grab trigger nodes fire again, and games built with nodes and [behaviours](behaviours.md) work more

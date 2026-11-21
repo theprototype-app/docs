@@ -213,6 +213,32 @@ When Convert says no, one line says why and nothing changes:
 | "This HUD Text already has a format script in front of it" | it is converted already |
 | **Convert back** greyed out: "The code was edited since Convert to code, so the built-in cannot do what it does now" | an edited script is yours now |
 
+## The Code tab (since 1.71)
+
+The **Code** tab in the Nodes editor's side panel shows the current flow graph as code, read-only. Each node is
+one line: the node type, the settings you changed from its defaults, and what is wired into it. Sources come
+first, so you can read a graph top to bottom the way it runs.
+
+```js
+// Scene flow · generated from the graph · read-only
+export default flow(({ latch, onclick, visibility }) => {
+	const press = onclick({ label: 'Press' }); // #j1
+	const latch1 = latch({}, { set: press }); // #j2
+	visibility({}, { on: latch1 }); // #j3
+});
+```
+
+- Press a node's line to select that node and bring it into view; select a card and its line is highlighted.
+- **Copy** puts the whole text on the clipboard (to paste into a chat with an AI, a bug report, or notes).
+- A wire from a named output reads `node.output` (`click.byMe`); an input with no name reads `in`; several
+  wires into one input read as a list `[a, b]`.
+- The code is generated from the graph and changes as the graph changes. You still edit the graph itself (or
+  [convert a node to code](#convert-a-node-to-code) to write your own).
+- On a phone the tab opens as a full-width sheet. In VR, the Logic panel has a **Code** button: press a line
+  with the laser to select that node, and the wrist pad shows its values.
+- It only changes what your screen shows: nothing is sent to the others in the session. To hide it on this
+  browser, set `localStorage['flag:codeView'] = '0'` in the browser console.
+
 ## Node types you never use
 
 **Settings ▸ Node types** lists every node type, module nodes included, with a switch for each and one for each group.
