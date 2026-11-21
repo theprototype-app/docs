@@ -44,11 +44,13 @@ switch names the ones in your scene:
 - [shader graph](shader-graph.md) materials and hand-written shaders (they show their base colour),
 - [water](water.md) surfaces and fluid tanks,
 - particle effects,
-- 3D text,
 - painted terrain layers,
 - jiggle (the object shows, without the wobble).
 
 The grid also fades less with distance than in the standard view.
+
+Text shows as in the standard view (since 1.71): 3D text, names over people, ping names and path numbers keep their
+font, colour and outline. Raised (extruded) 3D text is real geometry and is lit by the scene; flat text is not.
 
 Switch the view off to see them as usual. Nothing in the scene is changed.
 
@@ -66,8 +68,9 @@ The switch appears only where it can work:
 - **Chrome or Edge** with WebGPU on a hardware graphics card (not a software one).
 
 Phones, tablets and VR headsets do not get the switch and **download nothing extra** for it. If the graphics card
-fails while the view is on (a shader that does not compile, a lost device), it switches back to the standard view by
-itself, tells you why, and stays off for the rest of the session.
+fails while the view is on or while it starts (a shader that does not compile, a lost device, the browser dropping
+the graphics device), it switches back to the standard view by itself and tells you why. **Preview** then stays on
+screen greyed out, with the reason under it (press it to read it again), until you reload the page.
 
 ## What it costs
 

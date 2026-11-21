@@ -74,7 +74,8 @@ before a join, scene tools answer *not connected — join first*. Then call `con
 | `status` | joined or waiting, its role and whether it can edit, who is connected, which scene it and the host are in (`withHost`), whether a scene is still arriving (`loading`), any code behaviour that is failing (`behaviourErrors`), whether it is paused because the host left (`hostAway`), which tools or modules are missing and why, and since 1.59 `sceneBudget`: how heavy the scene is (objects, meshes, triangles, draw calls, textures, lights, frame time) against the desktop or VR budget, with a green / amber / red tier and `over` naming each budget past green; since 1.61 `top` (the objects drawing the most triangles and draw calls) and `vsync` (whether the frame time is just the display's refresh, a steady 16.7 ms on a 60 Hz screen, or frames miss it — a frame on the refresh never turns the tier amber or red), and `callsBySource` (the draw calls of your objects, of the rest of the view such as people and the grid, of shadows, of post effects, and of other views such as camera previews) |
 | `screenshot` | a clean picture (no gizmo, grid or helpers) from a temporary camera — `iso`, `top`, `front`, `current`, or `focus` on one object — without moving anyone's view; since 1.61 `postEffects: true` draws the scene's post effects too, or says why this screen does not; `view: "camera"` with a camera's `uuid` looks through one of the scene's cameras (its lens and framing); `hud: true` draws the game HUD on top; the people (avatars) are left out unless `avatars: true` (view `current` keeps them) |
 | `wait_for_edit` | waits until someone else changes the scene, or *since 1.61* pings a spot (the answer carries the `ping`) |
-| `describe_node_types` | what a flow node type takes and gives — input and output names with their types, params with defaults, one line on what it does — so edges are wired right the first time |
+| `describe_node_types` | what a flow node type takes and gives — input and output names with their types, params with defaults, one line on what it does — so edges are wired right the first time; since 1.71 each card also has a `code` line showing how that type reads in the graph's code, for example `latch({ perRound?, initial? }, { set: event, reset: event, toggle: event }) -> boolean` |
+| `list_scene {"flow": "scene"}` | since 1.71 also returns `code`: the graph as read-only code, the same text as the [Code tab](../node-editor.md#the-code-tab-since-171) |
 | `what_can_you_do` | a short, speakable summary of what the agent can do in this session (a viewer hears that it can look but not build) |
 | `install_modules` | installs the modules the other peers run (games, tools) so the agent sees the same scene |
 | `pending_offers` / `accept_offer` | answers questions the app asks (for example an admin-role offer) |
@@ -116,6 +117,61 @@ before a join, scene tools answer *not connected — join first*. Then call `con
     - `castShadow` / `receiveShadow` on any object; on a group or a model they apply to every mesh inside it.
 - Never fight a person: a locked object is skipped — the reply names the object and who is editing it — and the agent
   waits with `wait_for_edit`.
+
+### Rules as a behaviour (since 1.71)
+
+The split that makes an agent's game work, the same rule `describe_node_types` hands it:
+
+- **Rules, state, scoring and rounds go in a [behaviour](../behaviours.md)**: one JavaScript module, run on one peer,
+  sent to everyone; a player who joins later gets its state.
+- **Wiring, triggers and what to show are nodes**: an On Click / On Enter / Key Press into the behaviour's inputs, its
+  outputs into Visibility, HUD Text or Set Game State.
+- **Edges stay in one graph.** A behaviour made without a target lives in the scene graph, so the nodes wired to it
+  go there too, with an Object Selector naming the object.
+- **A value never fires an event.** A Latch, Gate or Compare wired into an event input does nothing;
+  `validate_scene` says so and names the fix.
+
+`describe_node_types {recipe: ""}` lists six worked builds and `{recipe: "<name>"}` gives one's steps. They come from
+the tasks agents failed in the results eval, and each is replayed against its task before a release:
+
+| Recipe | What it builds |
+| --- | --- |
+| `pause-key` | P pauses, P again resumes: a behaviour with one `pressed` input and `pause` / `resume` outputs into two Set Game State nodes (not a Latch: it fires on every change) |
+| `shared-toggle` | a button switches a lamp off and on for everybody (On Click, Latch, Light Switch, all in the button's graph) |
+| `pickup` | walk into a coin: it disappears for everyone and the walker gets the point (a sensor and Collect pickup) |
+| `once-per-round` | a star lights once per round and goes dark on a new round (a Latch with **Reset each round**) |
+| `zone-damage` | standing in spikes drains health and 0 health respawns the player (a behaviour with `enter` / `exit` inputs and a timer) |
+| `remembered-state` | clicked lanterns stay lit, and someone joining later sees exactly the lit ones (the state lives in a behaviour) |
+
+The pause, for example, is two calls:
+
+```js
+// create_behaviour
+export default behaviour({
+  name: 'PauseKey',
+  state: { paused: false },
+  inputs: ['pressed'],
+  outputs: ['pause', 'resume'],
+  on: {
+    pressed() { this.state.paused = !this.state.paused; this.emit(this.state.paused ? 'pause' : 'resume'); }
+  }
+});
+```
+
+```text
+// create_flow_nodes {graph: "scene"}
+k = keypress {code: "KeyP"}
+p = setgamestate {state: "paused"}
+r = setgamestate {state: "playing"}
+k -> <behaviour>.pressed
+<behaviour>.pause -> p.trigger
+<behaviour>.resume -> r.trigger
+```
+
+Also since 1.71: every node setting can be set from `create_flow_nodes` / `update_flow_nodes` (Reset each round on
+Latch and Once, Who on On Enter / On Exit, To on Proximity were silently dropped before), `update_flow_nodes` takes
+`convert: [{id, to: "code" | "back"}]` ([Convert to code](../node-editor.md#convert-a-node-to-code)), and
+`validate_scene` names wiring mistakes with a one-line fix. Agent contract 1.11.0.
 
 ## What you see while it works
 
@@ -174,6 +230,15 @@ additions listed under *New in 1.61* in [the Claude connector](claude-connector.
 with no `position` now sits at the group's origin ([part by part](agent-geometry.md#building-a-model-part-by-part)). The `@theprototype/agent` package follows the app release it shipped with and says so in its
 `status` (`contractNote`) when the page speaks a different contract major — update it with
 `npx -y @theprototype/agent@latest`.
+
+**Does what the agent built work?** `npm run eval:results` in `tools/agent` (the app repository) plays what an agent
+built through the Claude connector across 15 game tasks (doors, stars, scores, timers, pickups, health, checkpoints,
+shared and late-joiner state). Each task starts from a small game scene; a fresh agent gets a spoken-style request and
+only the connector's tools, then the check plays the result as a player (Play, walk, click, keys, a new round, a
+reload, and a second person for the sync tasks). A task scores 1 (works), 0.5 (works for one person only, or only
+after a reload) or 0. 1.68 scored 10 / 15; 1.71's fixes 13.4 / 15. It costs model tokens, so it is not part of the
+release tests: `npm run eval:smoke` runs five hand-built answers with no model, `npm run eval:recipes` replays the six
+recipes above, and `--replay <run dir>` re-scores a past run's builds.
 
 For a light peer without a browser (objects only), see the [Console Agent](console-agent.md)
 (`--engine=wire`).

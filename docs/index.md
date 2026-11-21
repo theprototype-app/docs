@@ -52,6 +52,14 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.71 — [the Code tab](node-editor.md#the-code-tab-since-171) and [convert to code](node-editor.md#convert-a-node-to-code).** The Nodes editor shows the graph as code, read-only (press a line to select its node). Right-click a Math, Compare, Gate, Select, Map
+Range, Random or HUD Text node ▸ **Convert to code**: it becomes a Script node that does the same thing, every wire
+kept, and **Convert back** returns it while the code is unchanged. Custom nodes keep their definitions in saved scenes,
+the animation and grab trigger nodes fire again, and games built with nodes and [behaviours](behaviours.md) work more
+often (a held key fires once, [Collect pickup](game-kit.md#pickups) can hide what was taken). AI agents get six
+[worked builds](ai/build-with-an-agent.md#rules-as-a-behaviour-since-171). The [Cinematic view](cinematic-view.md)
+shows 3D text and labels, and the editor downloads about 145 KB less before it starts.
+
 **1.69 — the [Cinematic view](cinematic-view.md).** **Preview** at the top right of the 3D view (or
 <kbd>Shift</kbd>+<kbd>Z</kbd>) draws your scene with bounced light, reflections, softer shadows and glow while you keep
 editing, in three quality steps. It is on this computer only, steps down by itself when frames get slow, and is
