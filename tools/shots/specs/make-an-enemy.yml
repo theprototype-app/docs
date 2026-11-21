@@ -1,0 +1,34 @@
+page: make-an-enemy
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+# 61-int (1.72): the "Make this an enemy" sheet (the navigation module's toolbox), opened from the object menu. The
+# first open installs the module from the gallery (the ask is answered in the steps).
+shots:
+- id: sheet
+  setup:
+  - {create: Box, name: Guard, at: [0, 0.5, -4]}
+  - {select: [Guard]}
+  - eval: >-
+      (() => { const m = window.__stores.objectMenu, g = window.__docs.byName('Guard');
+      const item = m.flattenMenuItems(m.buildObjectMenuItems(g.uuid)).find((i) => /Make this an enemy/.test(i.label ?? ''));
+      if (!item) throw new Error('no Make this an enemy row'); item.action(); })()
+  - {wait: 1200}
+  - {clickText: 'Install Navigation'}
+  - {wait: 9000}
+  - {eval: "(() => { const b = document.querySelector('#nav-sheet-apply'); if (!b) throw new Error('no enemy sheet'); b.closest('.toolbox-body').parentElement.id = 'docs-enemy-sheet'; })()"}
+  - {wait: 400}
+  crop: {selector: '#docs-enemy-sheet', pad: 24}
+  fade: []
+  kind: ui
+  alt: >-
+    The Make this an enemy sheet for the Guard: Patrol, sight angle and range, hearing, chase and attack ranges,
+    walk and chase speeds, give up after, the Make enemy button and the two view toggles. 1: the patrol Path. 2: Make
+    enemy. 3: the view toggles.
+  caption: Right-click an object ▸ Make this an enemy… opens this sheet.
+  annotate:
+  - {n: 1, at: {selector: '#nav-sheet-path'}, shape: box, pad: 3, badge: t, key: '**Patrol**: guard this spot, an existing Path, or a new loop around it.'}
+  - {n: 2, at: {selector: '#nav-sheet-apply'}, shape: box, pad: 3, badge: l, key: '**Make enemy** sets it up (one undo step).'}
+  - {n: 3, at: {selector: '#nav-sheet-debug'}, shape: box, pad: 3, badge: l, key: '**Navmesh overlay** and **NPC debug view (Play)**, on your screen only.'}

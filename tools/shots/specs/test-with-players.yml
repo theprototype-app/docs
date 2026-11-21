@@ -1,0 +1,29 @@
+page: test-with-players
+defaults:
+  device: desktop
+  theme: dark
+  dpr: 2
+  format: webp
+# 61-int (1.72): the Test with players sheet, opened from the Play button's right-click menu.
+shots:
+- id: sheet
+  setup:
+  - {rightClick: '#play-button'}
+  - {wait: 500}
+  - {clickText: 'Test with players…'}
+  - {wait: 1200}
+  - {click: '#test-players-count-2'}
+  - {click: '#test-player-role-1-player'}
+  - {click: '#test-player-role-2-viewer'}
+  - {wait: 400}
+  crop: {selector: '#test-players-sheet', pad: 24}
+  fade: []
+  kind: ui
+  alt: >-
+    The Test with players sheet: Players set to 2, player 1 a Player and player 2 a Viewer, and the Start test button.
+    1: how many players. 2: each player's role. 3: Start test.
+  caption: Right-click Play ▸ Test with players… opens this sheet.
+  annotate:
+  - {n: 1, at: {selector: '#test-players-count'}, shape: box, pad: 3, badge: l, key: '**Players**: how many simulated players join (up to 3; 1 on a phone or a headset).'}
+  - {n: 2, at: {selector: '#test-player-role-2-viewer'}, shape: box, pad: 3, badge: r, key: 'A **role** for each one: Player, Viewer or Editor.'}
+  - {n: 3, at: {selector: '#test-players-start'}, shape: box, pad: 3, badge: r, key: '**Start test** adds them to your session.'}
