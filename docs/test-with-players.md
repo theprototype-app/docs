@@ -13,6 +13,17 @@ friend would and gets your scene, your logic and your HUD. Watch it in a small v
 
 ## Run a test
 
+![The Test with players sheet: Players set to 2, player 1 a Player and player 2 a Viewer, and the Start test button. 1: how many players. 2: each player's role. 3: Start test.](img/test-with-players/sheet.webp){ .shot width="468" height="443" loading=lazy }
+/// caption
+Right-click Play ▸ Test with players… opens this sheet.
+///
+
+<div class="shot-key" markdown>
+1. **Players**: how many simulated players join (up to 3; 1 on a phone or a headset).
+2. A **role** for each one: Player, Viewer or Editor.
+3. **Start test** adds them to your session.
+</div>
+
 1. Choose how many players (1 to 3; 1 on a phone or a headset) and a role for each one:
     - **Player**: joins and goes straight into Play. It can press, trigger and score. It cannot change the scene.
     - **Viewer**: watches. Everything it tries to change is refused, exactly as for a real view-only guest.

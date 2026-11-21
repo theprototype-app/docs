@@ -29,6 +29,6 @@ shots:
     enemy. 3: the view toggles.
   caption: Right-click an object ▸ Make this an enemy… opens this sheet.
   annotate:
-  - {n: 1, at: {selector: '#nav-sheet-path'}, shape: box, pad: 3, badge: r, key: '**Patrol**: guard this spot, an existing Path, or a new loop around it.'}
-  - {n: 2, at: {selector: '#nav-sheet-apply'}, shape: box, pad: 3, badge: r, key: '**Make enemy** sets it up (one undo step).'}
-  - {n: 3, at: {selector: '#nav-sheet-debug'}, shape: box, pad: 3, badge: r, key: '**Navmesh overlay** and **NPC debug view (Play)**, on your screen only.'}
+  - {n: 1, at: {selector: '#nav-sheet-path'}, shape: box, pad: 3, badge: t, key: '**Patrol**: guard this spot, an existing Path, or a new loop around it.'}
+  - {n: 2, at: {selector: '#nav-sheet-apply'}, shape: box, pad: 3, badge: l, key: '**Make enemy** sets it up (one undo step).'}
+  - {n: 3, at: {selector: '#nav-sheet-debug'}, shape: box, pad: 3, badge: l, key: '**Navmesh overlay** and **NPC debug view (Play)**, on your screen only.'}

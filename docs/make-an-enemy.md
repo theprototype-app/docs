@@ -6,6 +6,17 @@ installs the first time you use it.
 
 ## Make one
 
+![The Make this an enemy sheet for the Guard: Patrol, sight angle and range, hearing, chase and attack ranges, walk and chase speeds, give up after, the Make enemy button and the two view toggles. 1: the patrol Path. 2: Make enemy. 3: the view toggles.](img/make-an-enemy/sheet.webp){ .shot width="336" height="502" loading=lazy }
+/// caption
+Right-click an object ▸ Make this an enemy… opens this sheet.
+///
+
+<div class="shot-key" markdown>
+1. **Patrol**: guard this spot, an existing Path, or a new loop around it.
+2. **Make enemy** sets it up (one undo step).
+3. **Navmesh overlay** and **NPC debug view (Play)**, on your screen only.
+</div>
+
 1. Right-click the object ▸ **Make this an enemy…** (it is also in the empty-space menu's **Selected ▸**). The first
    time, the Navigation module installs from the gallery.
 2. Set it up in the sheet:
