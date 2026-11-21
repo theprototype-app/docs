@@ -136,7 +136,13 @@ A script with typed sockets also gets `api`:
 | `api.raycast(from, dir, max?)` | the first object hit, `{uuid, name, point, distance}`, or `null` (`max` defaults to 100 m) | any script |
 | `api.keys()` | the keys held **on this device**, e.g. `['KeyW', 'Space']` | scripts **without outputs** (effects) |
 | `api.spawn('/create sphere')` | `true` when the object is created | scripts **without outputs** (effects) |
+| `api.self()` | this node's id, `{ id }` (1.71, `api.version` 2) | any script |
+| `api.stamp(input)` | when the newest pulse arrived on one of this node's inputs, in synced seconds; `null` = never (1.71, `api.version` 2) | any script |
 
+- `api.version` says what the api offers: **2** (since 1.71) adds `api.self()` and `api.stamp()`. Both read state
+  every player shares, so a value script that uses them stays the same everywhere. Check before using them:
+  `if ((api.version ?? 1) >= 2) …`. A node made with [Convert to code](https://docs.theprototype.app/node-editor.md#convert-a-node-to-code)
+  uses them.
 - `api.keys()` is local input: each player holds different keys, so it is only for things that one
   player drives (a paddle whose position then reaches everyone). A value script that calls it is refused.
 - `api.spawn()` takes a `/create …` command. Every player runs every effect script, so only the room's

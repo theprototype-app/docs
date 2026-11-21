@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Node Editor: Keyboard, Groups & Notes", "url": "https://docs.theprototype.app/node-editor/", "description": "Since 1.23 the node editor has its own keyboard: shortcuts go to the panel you are working in, so the same letter can mean one thing among the nodes and another in the 3D view. Nodes can be…", "dateModified": "2026-11-10", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/node-editor/cheat-sheet.webp", "caption": "The cheat sheet."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/node-editor/breadcrumb-siblings.webp", "caption": "The breadcrumb bar in the docked Node editor."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/node-editor/tidy-waves-main.webp", "caption": "Part of Waves' Main graph at full size."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/node-editor/group.webp", "caption": "Inside a group."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Node Editor: Keyboard, Groups & Notes", "url": "https://docs.theprototype.app/node-editor/", "description": "Since 1.23 the node editor has its own keyboard: shortcuts go to the panel you are working in, so the same letter can mean one thing among the nodes and another in the 3D view. Nodes can be…", "dateModified": "2026-11-21", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/node-editor/cheat-sheet.webp", "caption": "The cheat sheet."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/node-editor/breadcrumb-siblings.webp", "caption": "The breadcrumb bar in the docked Node editor."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/node-editor/tidy-waves-main.webp", "caption": "Part of Waves' Main graph at full size."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/node-editor/group.webp", "caption": "Inside a group."}]}</script>
 </head>
   
   
@@ -1998,6 +1998,24 @@
   <a href="#right-click-menus" class="md-nav__link">
     <span class="md-ellipsis">
       Right-click menus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convert-a-node-to-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convert a node to code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-code-tab-since-171" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Code tab (since 1.71)
     </span>
   </a>
   
@@ -7024,6 +7042,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#convert-a-node-to-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convert a node to code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-code-tab-since-171" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Code tab (since 1.71)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#node-types-you-never-use" class="md-nav__link">
     <span class="md-ellipsis">
       Node types you never use
@@ -7303,6 +7339,76 @@ dragging the frame carries them, and moving a framed node stretches the frame to
 <li><strong>A selection:</strong> the same for the whole set, plus <strong>Align</strong> (column, row, distribute).</li>
 <li><strong>A group:</strong> open it, ungroup, export it.</li>
 </ul>
+<h2 id="convert-a-node-to-code">Convert a node to code</h2>
+<p>Since 1.71, seven built-in nodes can turn into a <a href="../nodes/script/">Script</a> node that does exactly the same thing, so
+you can read how they work or take them further in code: <strong>Math, Compare, Gate, Select, Map Range, Random and HUD
+Text</strong>.</p>
+<ul>
+<li><strong>Desktop:</strong> right-click the node ▸ <strong>Convert to code</strong>. The node keeps its place, its name and every wire; wires
+  that left it now leave the script's <code>out</code> socket.</li>
+<li><strong>Phone and VR:</strong> select the node and open its sheet (the <strong>Params</strong> tab) ▸ <strong>Convert to code</strong>. There the converted
+  code is shown read-only; edit it on a desktop.</li>
+<li><strong>HUD Text</strong> is a display, so it stays: a new Script beside it builds the text and feeds the HUD Text's <code>format</code>
+  input. Converting back removes that script.</li>
+<li>The script starts with a <code>// convertedFrom: &lt;type&gt;</code> comment and a <code>params</code> line holding the node's settings. Change
+  <code>params</code> or the code freely: it is an ordinary Script node.</li>
+<li><strong>Convert back</strong> (same menu, same sheet) returns the built-in node with its exact settings, as long as the code is
+  unchanged. After an edit it is greyed out and says why. Undo (<kbd>Ctrl</kbd>+<kbd>Z</kbd>) reverses either step in
+  one go.</li>
+<li>Everyone in the session sees the same node, and someone who joins later gets it too. <strong>Random</strong> keeps its seed: the
+  converted script makes the same numbers on every computer. <strong>Select</strong> passes on exactly what is wired into the chosen
+  slot (a number, text, a list), like the built-in.</li>
+</ul>
+<p>When Convert says no, one line says why and nothing changes:</p>
+<table>
+<thead>
+<tr>
+<th>Message</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"<type> has no code form yet (Convert to code takes: math, compare, gate, select, maprange, random, hudtext)"</type></td>
+<td>the other nodes have no code form yet</td>
+</tr>
+<tr>
+<td>"This node feeds a group's socket: ungroup it first" / "A group socket feeds this node: ungroup it first"</td>
+<td>the group's socket would lose its wire</td>
+</tr>
+<tr>
+<td>"This HUD Text already has a format script in front of it"</td>
+<td>it is converted already</td>
+</tr>
+<tr>
+<td><strong>Convert back</strong> greyed out: "The code was edited since Convert to code, so the built-in cannot do what it does now"</td>
+<td>an edited script is yours now</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-code-tab-since-171">The Code tab (since 1.71)</h2>
+<p>The <strong>Code</strong> tab in the Nodes editor's side panel shows the current flow graph as code, read-only. Each node is
+one line: the node type, the settings you changed from its defaults, and what is wired into it. Sources come
+first, so you can read a graph top to bottom the way it runs.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Scene flow · generated from the graph · read-only</span>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">flow</span><span class="p">(({</span><span class="w"> </span><span class="nx">latch</span><span class="p">,</span><span class="w"> </span><span class="nx">onclick</span><span class="p">,</span><span class="w"> </span><span class="nx">visibility</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">press</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">onclick</span><span class="p">({</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">'Press'</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// #j1</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">latch1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">latch</span><span class="p">({},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">set</span><span class="o">:</span><span class="w"> </span><span class="nx">press</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// #j2</span>
+<span class="w">    </span><span class="nx">visibility</span><span class="p">({},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">on</span><span class="o">:</span><span class="w"> </span><span class="nx">latch1</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// #j3</span>
+<span class="p">});</span>
+</code></pre></div>
+<ul>
+<li>Press a node's line to select that node and bring it into view; select a card and its line is highlighted.</li>
+<li><strong>Copy</strong> puts the whole text on the clipboard (to paste into a chat with an AI, a bug report, or notes).</li>
+<li>A wire from a named output reads <code>node.output</code> (<code>click.byMe</code>); an input with no name reads <code>in</code>; several
+  wires into one input read as a list <code>[a, b]</code>.</li>
+<li>The code is generated from the graph and changes as the graph changes. You still edit the graph itself (or
+  <a href="#convert-a-node-to-code">convert a node to code</a> to write your own).</li>
+<li>On a phone the tab opens as a full-width sheet. In VR, the Logic panel has a <strong>Code</strong> button: press a line
+  with the laser to select that node, and the wrist pad shows its values.</li>
+<li>It only changes what your screen shows: nothing is sent to the others in the session. To hide it on this
+  browser, set <code>localStorage['flag:codeView'] = '0'</code> in the browser console.</li>
+</ul>
 <h2 id="node-types-you-never-use">Node types you never use</h2>
 <p><strong>Settings ▸ Node types</strong> lists every node type, module nodes included, with a switch for each and one for each group.
 A type you switch off leaves the palette, the add menus and the node search <strong>on this device</strong>; nodes of that type
@@ -7336,7 +7442,7 @@ already in a graph keep working. <strong>Turn all on</strong> brings them all ba
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-10
+    2026-11-21
   </span>
 
     

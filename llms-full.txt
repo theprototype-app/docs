@@ -57,6 +57,14 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.71 — [the Code tab](https://docs.theprototype.app/node-editor.md#the-code-tab-since-171) and [convert to code](https://docs.theprototype.app/node-editor.md#convert-a-node-to-code).** The Nodes editor shows the graph as code, read-only (press a line to select its node). Right-click a Math, Compare, Gate, Select, Map
+Range, Random or HUD Text node ▸ **Convert to code**: it becomes a Script node that does the same thing, every wire
+kept, and **Convert back** returns it while the code is unchanged. Custom nodes keep their definitions in saved scenes,
+the animation and grab trigger nodes fire again, and games built with nodes and [behaviours](https://docs.theprototype.app/behaviours.md) work more
+often (a held key fires once, [Collect pickup](https://docs.theprototype.app/game-kit.md#pickups) can hide what was taken). AI agents get six
+[worked builds](https://docs.theprototype.app/ai/build-with-an-agent.md#rules-as-a-behaviour-since-171). The [Cinematic view](https://docs.theprototype.app/cinematic-view.md)
+shows 3D text and labels, and the editor downloads about 145 KB less before it starts.
+
 **1.69 — the [Cinematic view](https://docs.theprototype.app/cinematic-view.md).** **Preview** at the top right of the 3D view (or
 <kbd>Shift</kbd>+<kbd>Z</kbd>) draws your scene with bounced light, reflections, softer shadows and glow while you keep
 editing, in three quality steps. It is on this computer only, steps down by itself when frames get slow, and is
@@ -10950,11 +10958,13 @@ switch names the ones in your scene:
 - [shader graph](https://docs.theprototype.app/shader-graph.md) materials and hand-written shaders (they show their base colour),
 - [water](https://docs.theprototype.app/water.md) surfaces and fluid tanks,
 - particle effects,
-- 3D text,
 - painted terrain layers,
 - jiggle (the object shows, without the wobble).
 
 The grid also fades less with distance than in the standard view.
+
+Text shows as in the standard view (since 1.71): 3D text, names over people, ping names and path numbers keep their
+font, colour and outline. Raised (extruded) 3D text is real geometry and is lit by the scene; flat text is not.
 
 Switch the view off to see them as usual. Nothing in the scene is changed.
 
@@ -10972,8 +10982,9 @@ The switch appears only where it can work:
 - **Chrome or Edge** with WebGPU on a hardware graphics card (not a software one).
 
 Phones, tablets and VR headsets do not get the switch and **download nothing extra** for it. If the graphics card
-fails while the view is on (a shader that does not compile, a lost device), it switches back to the standard view by
-itself, tells you why, and stays off for the rest of the session.
+fails while the view is on or while it starts (a shader that does not compile, a lost device, the browser dropping
+the graphics device), it switches back to the standard view by itself and tells you why. **Preview** then stays on
+screen greyed out, with the reason under it (press it to read it again), until you reload the page.
 
 ## What it costs
 
@@ -12360,6 +12371,62 @@ dragging the frame carries them, and moving a framed node stretches the frame to
   paste, mute, collapse, frame, disconnect, delete, and **Breakpoint (pause Play here)** for the [Debugger](https://docs.theprototype.app/debugger.md).
 - **A selection:** the same for the whole set, plus **Align** (column, row, distribute).
 - **A group:** open it, ungroup, export it.
+
+## Convert a node to code
+
+Since 1.71, seven built-in nodes can turn into a [Script](https://docs.theprototype.app/nodes/script.md) node that does exactly the same thing, so
+you can read how they work or take them further in code: **Math, Compare, Gate, Select, Map Range, Random and HUD
+Text**.
+
+- **Desktop:** right-click the node ▸ **Convert to code**. The node keeps its place, its name and every wire; wires
+  that left it now leave the script's `out` socket.
+- **Phone and VR:** select the node and open its sheet (the **Params** tab) ▸ **Convert to code**. There the converted
+  code is shown read-only; edit it on a desktop.
+- **HUD Text** is a display, so it stays: a new Script beside it builds the text and feeds the HUD Text's `format`
+  input. Converting back removes that script.
+- The script starts with a `// convertedFrom: <type>` comment and a `params` line holding the node's settings. Change
+  `params` or the code freely: it is an ordinary Script node.
+- **Convert back** (same menu, same sheet) returns the built-in node with its exact settings, as long as the code is
+  unchanged. After an edit it is greyed out and says why. Undo (<kbd>Ctrl</kbd>+<kbd>Z</kbd>) reverses either step in
+  one go.
+- Everyone in the session sees the same node, and someone who joins later gets it too. **Random** keeps its seed: the
+  converted script makes the same numbers on every computer. **Select** passes on exactly what is wired into the chosen
+  slot (a number, text, a list), like the built-in.
+
+When Convert says no, one line says why and nothing changes:
+
+| Message | Why |
+| --- | --- |
+| "<type> has no code form yet (Convert to code takes: math, compare, gate, select, maprange, random, hudtext)" | the other nodes have no code form yet |
+| "This node feeds a group's socket: ungroup it first" / "A group socket feeds this node: ungroup it first" | the group's socket would lose its wire |
+| "This HUD Text already has a format script in front of it" | it is converted already |
+| **Convert back** greyed out: "The code was edited since Convert to code, so the built-in cannot do what it does now" | an edited script is yours now |
+
+## The Code tab (since 1.71)
+
+The **Code** tab in the Nodes editor's side panel shows the current flow graph as code, read-only. Each node is
+one line: the node type, the settings you changed from its defaults, and what is wired into it. Sources come
+first, so you can read a graph top to bottom the way it runs.
+
+```js
+// Scene flow · generated from the graph · read-only
+export default flow(({ latch, onclick, visibility }) => {
+	const press = onclick({ label: 'Press' }); // #j1
+	const latch1 = latch({}, { set: press }); // #j2
+	visibility({}, { on: latch1 }); // #j3
+});
+```
+
+- Press a node's line to select that node and bring it into view; select a card and its line is highlighted.
+- **Copy** puts the whole text on the clipboard (to paste into a chat with an AI, a bug report, or notes).
+- A wire from a named output reads `node.output` (`click.byMe`); an input with no name reads `in`; several
+  wires into one input read as a list `[a, b]`.
+- The code is generated from the graph and changes as the graph changes. You still edit the graph itself (or
+  [convert a node to code](#convert-a-node-to-code) to write your own).
+- On a phone the tab opens as a full-width sheet. In VR, the Logic panel has a **Code** button: press a line
+  with the laser to select that node, and the wrist pad shows its values.
+- It only changes what your screen shows: nothing is sent to the others in the session. To hide it on this
+  browser, set `localStorage['flag:codeView'] = '0'` in the browser console.
 
 ## Node types you never use
 
@@ -15842,7 +15909,13 @@ A script with typed sockets also gets `api`:
 | `api.raycast(from, dir, max?)` | the first object hit, `{uuid, name, point, distance}`, or `null` (`max` defaults to 100 m) | any script |
 | `api.keys()` | the keys held **on this device**, e.g. `['KeyW', 'Space']` | scripts **without outputs** (effects) |
 | `api.spawn('/create sphere')` | `true` when the object is created | scripts **without outputs** (effects) |
+| `api.self()` | this node's id, `{ id }` (1.71, `api.version` 2) | any script |
+| `api.stamp(input)` | when the newest pulse arrived on one of this node's inputs, in synced seconds; `null` = never (1.71, `api.version` 2) | any script |
 
+- `api.version` says what the api offers: **2** (since 1.71) adds `api.self()` and `api.stamp()`. Both read state
+  every player shares, so a value script that uses them stays the same everywhere. Check before using them:
+  `if ((api.version ?? 1) >= 2) …`. A node made with [Convert to code](https://docs.theprototype.app/node-editor.md#convert-a-node-to-code)
+  uses them.
 - `api.keys()` is local input: each player holds different keys, so it is only for things that one
   player drives (a paddle whose position then reaches everyone). A value script that calls it is refused.
 - `api.spawn()` takes a `/create …` command. Every player runs every effect script, so only the room's
@@ -15898,6 +15971,14 @@ Defined by you in the **Node Designer** (right-click the canvas ▸ **Custom ▸
 | Code | runs every frame: `object`, `base` (`{pos, rot, scale, visible}`), `data`, `time` |
 
 **Save for everyone** replicates the definition to all peers; existing instances re-render and re-run live. Edit later via **Edit definition** on any instance.
+
+## Saved with the scene
+
+Since 1.71 the custom node definitions a scene uses (from the Node designer) are **saved in the scene file** and in the
+automatic save, and come back when you open the scene, with nobody else in the room. Before, a scene opened on its own
+showed its custom nodes with no sockets and they did nothing. Opening a scene adds its definitions to the room's (a
+definition with the same id is replaced by the file's). Older versions still open such a file; they ignore the saved
+definitions.
 
 ## Practical example
 
@@ -21196,6 +21277,9 @@ Any player key counts for **Set score** and **Leader**: a peer id, or a name of 
   player walks over it — no On Enter, no code; or switch it off and wire an On Click or On Enter
   into it. Its card says why it did not fire (*won't fire: touch off, nothing wired*,
   *blocked: refused…* — see [Why did this not fire?](https://docs.theprototype.app/debugger.md#why-did-this-not-fire)).
+  *Since 1.71* **Hide when collected** (on for new pickups) hides a taken pickup for everyone until it comes
+  back; switch it off to show it yourself. A pickup taken with a node-only Collect counts for the player who took
+  it, not the session host.
 - **Reset pickups** puts every pickup back (a new round does this by itself).
 - Values: **Pickup available?** (wire it into a Visibility node to hide a taken pickup),
   **Pickups taken**, **Pickups left**.
@@ -21347,7 +21431,7 @@ is won. (Adapted from `static/behaviours/waves-spawner.js` in the core repo; its
 | `params` | Numbers you want to tune: a literal (`waves: 5`) or `{value, min, max, step, unit}`. Read as `this.params.waves`. Each one becomes a knob in the node view. |
 | `state` | Plain JSON the game keeps — every peer can read it. |
 | `on` | Event handlers: `start` (once per session), `load` (1.23: once on every peer, read-only; since 1.48.1 a joiner runs it once the host's scene has arrived, and editing the behaviour releases what its last `load` registered), every kit event (`go`, `won`, `lost`, `died`, `damaged`, `spawned`, `emptied`, `scored`, `collected`, `stuck`, `grabRefused`…, or the full `'piece.event'` name), and `grabRequest` — the grab veto, see below. |
-| `inputs` / `outputs` | (1.23, optional) Sockets on the node: event inputs that run the handler of the same name, and outputs that carry a state field or an event fired by `this.emit(name)`. |
+| `inputs` / `outputs` | (1.23, optional) Sockets on the node: event inputs that run the handler of the same name, and outputs that carry a state field or an event fired by `this.emit(name)`. Since 1.71 the handler hears who fired it, `on.pressed({by})` (a peer id, `''` when unknown), for per-person results such as a coin for the toucher; and an input fed by a held key runs once per press, so a P toggle does not pause and resume in one press. |
 | methods | Any other function in the file (`startWave` above), called as `this.startWave(…)`. |
 
 Inside the file, `this` offers:
@@ -23304,7 +23388,8 @@ before a join, scene tools answer *not connected — join first*. Then call `con
 | `status` | joined or waiting, its role and whether it can edit, who is connected, which scene it and the host are in (`withHost`), whether a scene is still arriving (`loading`), any code behaviour that is failing (`behaviourErrors`), whether it is paused because the host left (`hostAway`), which tools or modules are missing and why, and since 1.59 `sceneBudget`: how heavy the scene is (objects, meshes, triangles, draw calls, textures, lights, frame time) against the desktop or VR budget, with a green / amber / red tier and `over` naming each budget past green; since 1.61 `top` (the objects drawing the most triangles and draw calls) and `vsync` (whether the frame time is just the display's refresh, a steady 16.7 ms on a 60 Hz screen, or frames miss it — a frame on the refresh never turns the tier amber or red), and `callsBySource` (the draw calls of your objects, of the rest of the view such as people and the grid, of shadows, of post effects, and of other views such as camera previews) |
 | `screenshot` | a clean picture (no gizmo, grid or helpers) from a temporary camera — `iso`, `top`, `front`, `current`, or `focus` on one object — without moving anyone's view; since 1.61 `postEffects: true` draws the scene's post effects too, or says why this screen does not; `view: "camera"` with a camera's `uuid` looks through one of the scene's cameras (its lens and framing); `hud: true` draws the game HUD on top; the people (avatars) are left out unless `avatars: true` (view `current` keeps them) |
 | `wait_for_edit` | waits until someone else changes the scene, or *since 1.61* pings a spot (the answer carries the `ping`) |
-| `describe_node_types` | what a flow node type takes and gives — input and output names with their types, params with defaults, one line on what it does — so edges are wired right the first time |
+| `describe_node_types` | what a flow node type takes and gives — input and output names with their types, params with defaults, one line on what it does — so edges are wired right the first time; since 1.71 each card also has a `code` line showing how that type reads in the graph's code, for example `latch({ perRound?, initial? }, { set: event, reset: event, toggle: event }) -> boolean` |
+| `list_scene {"flow": "scene"}` | since 1.71 also returns `code`: the graph as read-only code, the same text as the [Code tab](https://docs.theprototype.app/node-editor.md#the-code-tab-since-171) |
 | `what_can_you_do` | a short, speakable summary of what the agent can do in this session (a viewer hears that it can look but not build) |
 | `install_modules` | installs the modules the other peers run (games, tools) so the agent sees the same scene |
 | `pending_offers` / `accept_offer` | answers questions the app asks (for example an admin-role offer) |
@@ -23346,6 +23431,61 @@ before a join, scene tools answer *not connected — join first*. Then call `con
     - `castShadow` / `receiveShadow` on any object; on a group or a model they apply to every mesh inside it.
 - Never fight a person: a locked object is skipped — the reply names the object and who is editing it — and the agent
   waits with `wait_for_edit`.
+
+### Rules as a behaviour (since 1.71)
+
+The split that makes an agent's game work, the same rule `describe_node_types` hands it:
+
+- **Rules, state, scoring and rounds go in a [behaviour](https://docs.theprototype.app/behaviours.md)**: one JavaScript module, run on one peer,
+  sent to everyone; a player who joins later gets its state.
+- **Wiring, triggers and what to show are nodes**: an On Click / On Enter / Key Press into the behaviour's inputs, its
+  outputs into Visibility, HUD Text or Set Game State.
+- **Edges stay in one graph.** A behaviour made without a target lives in the scene graph, so the nodes wired to it
+  go there too, with an Object Selector naming the object.
+- **A value never fires an event.** A Latch, Gate or Compare wired into an event input does nothing;
+  `validate_scene` says so and names the fix.
+
+`describe_node_types {recipe: ""}` lists six worked builds and `{recipe: "<name>"}` gives one's steps. They come from
+the tasks agents failed in the results eval, and each is replayed against its task before a release:
+
+| Recipe | What it builds |
+| --- | --- |
+| `pause-key` | P pauses, P again resumes: a behaviour with one `pressed` input and `pause` / `resume` outputs into two Set Game State nodes (not a Latch: it fires on every change) |
+| `shared-toggle` | a button switches a lamp off and on for everybody (On Click, Latch, Light Switch, all in the button's graph) |
+| `pickup` | walk into a coin: it disappears for everyone and the walker gets the point (a sensor and Collect pickup) |
+| `once-per-round` | a star lights once per round and goes dark on a new round (a Latch with **Reset each round**) |
+| `zone-damage` | standing in spikes drains health and 0 health respawns the player (a behaviour with `enter` / `exit` inputs and a timer) |
+| `remembered-state` | clicked lanterns stay lit, and someone joining later sees exactly the lit ones (the state lives in a behaviour) |
+
+The pause, for example, is two calls:
+
+```js
+// create_behaviour
+export default behaviour({
+  name: 'PauseKey',
+  state: { paused: false },
+  inputs: ['pressed'],
+  outputs: ['pause', 'resume'],
+  on: {
+    pressed() { this.state.paused = !this.state.paused; this.emit(this.state.paused ? 'pause' : 'resume'); }
+  }
+});
+```
+
+```text
+// create_flow_nodes {graph: "scene"}
+k = keypress {code: "KeyP"}
+p = setgamestate {state: "paused"}
+r = setgamestate {state: "playing"}
+k -> <behaviour>.pressed
+<behaviour>.pause -> p.trigger
+<behaviour>.resume -> r.trigger
+```
+
+Also since 1.71: every node setting can be set from `create_flow_nodes` / `update_flow_nodes` (Reset each round on
+Latch and Once, Who on On Enter / On Exit, To on Proximity were silently dropped before), `update_flow_nodes` takes
+`convert: [{id, to: "code" | "back"}]` ([Convert to code](https://docs.theprototype.app/node-editor.md#convert-a-node-to-code)), and
+`validate_scene` names wiring mistakes with a one-line fix. Agent contract 1.11.0.
 
 ## What you see while it works
 
@@ -23400,6 +23540,15 @@ additions listed under *New in 1.61* in [the Claude connector](https://docs.thep
 with no `position` now sits at the group's origin ([part by part](https://docs.theprototype.app/ai/agent-geometry.md#building-a-model-part-by-part)). The `@theprototype/agent` package follows the app release it shipped with and says so in its
 `status` (`contractNote`) when the page speaks a different contract major — update it with
 `npx -y @theprototype/agent@latest`.
+
+**Does what the agent built work?** `npm run eval:results` in `tools/agent` (the app repository) plays what an agent
+built through the Claude connector across 15 game tasks (doors, stars, scores, timers, pickups, health, checkpoints,
+shared and late-joiner state). Each task starts from a small game scene; a fresh agent gets a spoken-style request and
+only the connector's tools, then the check plays the result as a player (Play, walk, click, keys, a new round, a
+reload, and a second person for the sync tasks). A task scores 1 (works), 0.5 (works for one person only, or only
+after a reload) or 0. 1.68 scored 10 / 15; 1.71's fixes 13.4 / 15. It costs model tokens, so it is not part of the
+release tests: `npm run eval:smoke` runs five hand-built answers with no model, `npm run eval:recipes` replays the six
+recipes above, and `--replay <run dir>` re-scores a past run's builds.
 
 For a light peer without a browser (objects only), see the [Console Agent](https://docs.theprototype.app/ai/console-agent.md)
 (`--engine=wire`).

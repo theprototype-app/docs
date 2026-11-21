@@ -130,6 +130,9 @@ Any player key counts for **Set score** and **Leader**: a peer id, or a name of 
   player walks over it — no On Enter, no code; or switch it off and wire an On Click or On Enter
   into it. Its card says why it did not fire (*won't fire: touch off, nothing wired*,
   *blocked: refused…* — see [Why did this not fire?](https://docs.theprototype.app/debugger.md#why-did-this-not-fire)).
+  *Since 1.71* **Hide when collected** (on for new pickups) hides a taken pickup for everyone until it comes
+  back; switch it off to show it yourself. A pickup taken with a node-only Collect counts for the player who took
+  it, not the session host.
 - **Reset pickups** puts every pickup back (a new round does this by itself).
 - Values: **Pickup available?** (wire it into a Visibility node to hide a taken pickup),
   **Pickups taken**, **Pickups left**.

@@ -20,6 +20,14 @@ Defined by you in the **Node Designer** (right-click the canvas ▸ **Custom ▸
 
 **Save for everyone** replicates the definition to all peers; existing instances re-render and re-run live. Edit later via **Edit definition** on any instance.
 
+## Saved with the scene
+
+Since 1.71 the custom node definitions a scene uses (from the Node designer) are **saved in the scene file** and in the
+automatic save, and come back when you open the scene, with nobody else in the room. Before, a scene opened on its own
+showed its custom nodes with no sockets and they did nothing. Opening a scene adds its definitions to the room's (a
+definition with the same id is replaced by the file's). Older versions still open such a file; they ignore the saved
+definitions.
+
 ## Practical example
 
 Build a "Wobble" node once, use it everywhere:
