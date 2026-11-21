@@ -215,5 +215,6 @@ Sculpting is its own mode, separate from the vertex/edge/face **mesh edit** mode
 
 They never overlap — entering one doesn't affect the other. Sculpting never changes the number of vertices, so shape a mesh first and sculpt it after.
 
-!!! warning "Desktop only"
-    Terrain sculpting is a desktop feature. It isn't available in VR yet.
+!!! note "In a headset"
+    Terrain sculpting works in VR too (since 1.28): see [Sculpting terrain in VR](vr.md#sculpting-terrain-in-vr).
+    Sculpting any other mesh is a desktop feature.

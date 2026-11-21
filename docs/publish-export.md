@@ -102,7 +102,8 @@ module scripts there); for a quick local look, run `npx serve .` in the folder.
   export.
 - An exported game is **single player** — multiplayer is off.
 - Models the scene loads from absolute web addresses (the Khronos sample models, for example) still load from there.
-- Texture compression is not available yet: textures go into the zip exactly as authored.
+- Textures go into the zip exactly as authored, unless **Optimize for** is **For Quest / web**
+  ([below](#optimize-for-quest-web)): then they are resized and a compressed KTX2 copy of each rides along.
 
 ## Publishing on itch.io
 

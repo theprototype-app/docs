@@ -6,7 +6,9 @@ keeps your original next to it.
 
 ## What happens on import
 
-When you import a model with **more than 50,000 triangles** or a **texture larger than 2048 px**:
+When you import a model with **more than 50,000 triangles** or a **texture larger than 2048 px**
+(a texture you set on an object by hand is a different path: it is stored at up to 1024 px, see
+[Image editor](image-editor.md#in-the-dock)):
 
 - **Textures** are resized to at most 2048 px and given a **GPU-compressed copy (KTX2 / Basis)**. Your scene, saves and
   peers still get an ordinary picture; the graphics card holds the compressed copy — about a sixth to an eighth of the
