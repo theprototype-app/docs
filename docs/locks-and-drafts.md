@@ -1,6 +1,6 @@
 # Locks and drafts
 
-*New in 1.7X.* When several people edit one scene, an object you are working on is yours until you let go:
+*New in 1.73.* When several people edit one scene, an object you are working on is yours until you let go:
 nobody else can change it in the meantime, and everyone can see who has it. Objects you keep in
 **Local objects** are drafts: they stay on your device until you share them.
 
@@ -31,8 +31,9 @@ Someone who joins later sees everything each person is holding.
 - If you hold an object for 5 minutes without changing it, you are asked **Still editing ‹name›?**. Choose
   **Keep holding** or **Release**; with no answer the object is released 30 seconds later. This never happens while
   you are alone in the session.
-- If your connection to someone drops and comes back, both of you let go of what you held. Select the object again
-  to keep editing.
+- Your locks survive a short network drop: if your connection to someone drops and comes back, you both still hold
+  what you held, and you can keep editing. If you both took the same object while the connection was down, the one
+  who took it first keeps it and the other is told.
 
 ## Lock mode
 

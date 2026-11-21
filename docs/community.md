@@ -172,7 +172,7 @@ Your games: visits over 30 days.
 
 ### Play statistics
 
-*New in 1.7X.* Each published game has a **Play statistics** section under its row in **Your games & stats** (closed
+*New in 1.73.* Each published game has a **Play statistics** section under its row in **Your games & stats** (closed
 by default; its summary line shows the plays and the median time), and a **Plays** total sits beside Visits. It shows,
 for 7 days, 30 days or all time:
 
