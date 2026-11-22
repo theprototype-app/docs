@@ -467,6 +467,12 @@ degrees.
 for clipboard permission; <kbd>Ctrl</kbd>+<kbd>V</kbd> over a field never asks. Text boxes (names, banner text) keep the
 browser's own text menu.
 
+### Pick a colour from the screen
+
+*New in 1.74.* Beside a colour field, a dropper button (*Pick a colour from the screen*) takes a colour from anywhere on
+the screen: the 3D view, a reference image, another panel. With a colour field focused, <kbd>I</kbd> does the same, and
+<kbd>Esc</kbd> cancels. It works in Chrome and Edge on a computer; where the browser cannot do it, there is no button.
+
 ### Text selection
 
 Dragging across a menu, a toolbar or a panel does not paint a text selection, and a drag that starts in the 3D view or
@@ -878,6 +884,7 @@ The keys in the table are the **3D view's**: they fire while the 3D view has foc
 | <kbd>Tab</kbd> | Enter [mesh edit](mesh-editing.md) mode — inside it <kbd>Tab</kbd> cycles Vertices / Edges / Faces; <kbd>Esc</kbd> exits |
 | <kbd>I</kbd> | [Edit / Interact](#edit-and-interact) mode — in Interact, clicks play with the scene instead of selecting |
 | <kbd>M</kbd> | Toggle element [snapping](snapping.md) |
+| <kbd>B</kbd> (hold) | While moving: snap the nearest corner onto a corner or edge middle — see [Corner to corner](snapping.md#corner-to-corner-hold-b) |
 | <kbd>O</kbd> | Toggle the object list |
 | <kbd>N</kbd> | Toggle the node editor |
 | <kbd>T</kbd> | Show / hide the tool dock (with nothing docked it opens [empty](interface.md#docked-windows), ready for a drop) |

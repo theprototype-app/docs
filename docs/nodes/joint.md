@@ -1,13 +1,13 @@
 # Joint
 
-Attaches two objects to each other when an event fires — a hinge, or a rigid weld.
+Attaches two objects to each other when an event fires — a hinge, a rigid weld, a ball joint, a slider, a spring or a rope.
 
 **Inputs:** `trigger` (event) · `a` (object, the anchor) · `b` (object, the attached)
 **Output:** effect (wire into an [Object Selector](objectselector.md))
 
 ## How it works
 
-On the rising edge of `trigger` the two objects are joined, exactly as if you had used **Physics ▸ Weld** or **Physics ▸ Hinge** from the object menu: the joint becomes part of the scene, replicates to every peer, appears in saves, and can be undone with <kbd>Ctrl</kbd>+<kbd>Z</kbd>.
+On the rising edge of `trigger` the two objects are joined, exactly as if you had used the object menu's **Physics** entries (**Weld together**, **Hinge**, **Ball joint**…): the joint becomes part of the scene, replicates to every peer, appears in saves, and can be undone with <kbd>Ctrl</kbd>+<kbd>Z</kbd>.
 
 That is the difference between this and the rest of the physics nodes — [Impulse](impulse.md) and [Set Velocity](setvelocity.md) act on a running simulation and leave nothing behind, while Joint *authors scene data*.
 
@@ -15,10 +15,13 @@ That is the difference between this and the rest of the physics nodes — [Impul
 
 | Parameter | Default | Meaning |
 |---|---|---|
-| kind | revolute | `revolute` = a hinge that turns about one axis; `weld` = rigidly fixed together |
-| axis | y | which axis the hinge turns about |
+| kind | revolute | `revolute` = a hinge that turns about one axis; `weld` = rigidly fixed together; `ball` = swings and twists every way; `slider` = moves along one axis; `spring` = pulls back to the distance it was made at; `rope` = can get no further apart than it was made at (the last four *since 1.74*) |
+| axis | y | which axis the hinge turns about or the slider moves along |
 | vel | 0 | motor speed (rad/s) — leave at 0 for a free-swinging hinge |
 | maxForce | 100 | how hard the motor may push to reach that speed |
+
+Spring stiffness, rope length and slider limits are tuned afterwards in **Properties ▸ Physics ▸ Joints** (see
+[Tuning a joint](../physics.md#tuning-a-joint)).
 
 ## Choosing the objects
 

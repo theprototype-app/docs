@@ -1,17 +1,21 @@
 # Get Variable
 
-Reads a named shared variable as a number — the read side of [Set Variable](setvariable.md),
+Reads a named shared variable as a number, or as text — the read side of [Set Variable](setvariable.md),
 live on every player's screen.
 
-**Output:** number (shown live on the card)
+**Output:** number, or text (shown live on the card)
 
 ## Parameters
 
 | Parameter | Default | Options |
 |---|---|---|
 | name | `score` | the variable to read — the same name the Set Variable writes |
+| output | number | `number`, or `text` (*since 1.74*) for a variable that holds words |
 
-A name nothing has written yet reads as 0.
+A name nothing has written yet reads as 0 (as text: empty).
+
+With output **text** it reads a variable a Set Variable with op `text` wrote. Wire it into a
+[HUD Text](hudtext.md)'s **format** socket to show the words, or use a [Game Value](gamevalue.md).
 
 ## What it reads
 
