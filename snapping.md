@@ -49,6 +49,19 @@ By default an object snaps by its own origin. Often that is the wrong point: you
 
 With exactly one object selected, choose **Pick snap origin**, then click a point on it. That point becomes the anchor for your drags — snapping now moves *it* onto the target. The anchor is temporary and purely local: it is not part of the object, it is never replicated or saved, and it does not touch the object's real [origin](https://docs.theprototype.app/controls.md#each-objects-origin).
 
+## Corner to corner (hold B)
+
+*New in 1.74.* While you drag an object with the move gizmo, **hold** <kbd>B</kbd>. The corner of your object nearest to
+the spot under the pointer snaps onto a corner, or the middle of an edge, of the object under the pointer: a shelf
+lands flush in the corner of a wall, a tile meets the next tile.
+
+- Release <kbd>B</kbd> and the drag goes back to your usual snapping.
+- The grid snap still applies to the axes the corner does not set.
+- Your saved snap settings are not changed.
+- <kbd>B</kbd> in a text field types a B.
+
+**Settings ▸ Shortcuts** lists the key as *Hold while moving*.
+
 ## Inside mesh edit
 
 Element snapping applies to the mesh tools' gizmo drags too, so a vertex can be dropped precisely onto another vertex — which is what you want when closing a seam by hand.

@@ -75,8 +75,8 @@ per-provider opt-in** — the *Physics tools (advanced)* checkbox in the provide
 next to *Stream responses*. It gates:
 
 - `set_physics` — body params (dynamic mass / static scenery / bounciness / friction /
-  collider shape),
-- `create_joints` — welds and hinges (with motors),
+  collider shape; since 1.74 gravity scale and drag),
+- `create_joints` — welds and hinges (with motors), and since 1.74 ball joints, sliders, springs and ropes,
 - `control_simulation` — the assistant **may start the simulation on its own** after a
   physics build, so the result comes alive without you pressing Play,
 - the physics *node* types (mass, bounciness, friction, angular velocity, motor) inside

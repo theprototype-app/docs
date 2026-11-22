@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Camera & View", "url": "https://docs.theprototype.app/camera/", "description": "Everything about how the scene looks on your screen — the camera lens, render mode, shadows, the grid and the environment — lives in one place: Configure Scene.", "dateModified": "2026-11-20", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/render-modes.webp", "caption": "Shaded, Shaded + AO and Wireframe. AO darkens creases and the ground where objects touch it."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/view-section.webp", "caption": "Configure Scene ▸ View: how the scene is drawn on your screen."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/camera-object.webp", "caption": "A camera's properties, with its preview window at the lower left."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/env-presets.webp", "caption": "Studio, Daylight, Sunset and Night on the same three objects."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/sky-meadow.webp", "caption": "The Meadow sky image lighting a mirror sphere and a box."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/sky-image-section.webp", "caption": "Configure Scene ▸ Environment, with its Sky image section."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/settings/sky-image-quality.webp", "caption": "Sky image quality, for this device only."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/grid-and-lights.webp", "caption": "Light helpers show where each light is and where it shines; they are editor-only."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Camera & View", "url": "https://docs.theprototype.app/camera/", "description": "Everything about how the scene looks on your screen — the camera lens, render mode, shadows, the grid and the environment — lives in one place: Configure Scene.", "dateModified": "2026-11-22", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/render-modes.webp", "caption": "Shaded, Shaded + AO and Wireframe. AO darkens creases and the ground where objects touch it."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/view-section.webp", "caption": "Configure Scene ▸ View: how the scene is drawn on your screen."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/camera-object.webp", "caption": "A camera's properties, with its preview window at the lower left."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/env-presets.webp", "caption": "Studio, Daylight, Sunset and Night on the same three objects."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/sky-meadow.webp", "caption": "The Meadow sky image lighting a mirror sphere and a box."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/sky-image-section.webp", "caption": "Configure Scene ▸ Environment, with its Sky image section."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/settings/sky-image-quality.webp", "caption": "Sky image quality, for this device only."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/grid-and-lights.webp", "caption": "Light helpers show where each light is and where it shines; they are editor-only."}]}</script>
 </head>
   
   
@@ -1083,6 +1083,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../arrange/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arrays, Layers &amp; Tidy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../reference-images/" class="md-nav__link">
         
   
@@ -1767,6 +1788,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Environment presets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fog-kinds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fog kinds
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1778,6 +1814,15 @@
   
     <nav class="md-nav" aria-label="Sky images (HDRI)">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cube-map-skies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cube-map skies
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#how-sharp-the-sky-is" class="md-nav__link">
@@ -3243,6 +3288,90 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/gamevalue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Value
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/camerashake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Camera Shake
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/screenflash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screen Flash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/hitpause/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hit Pause
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3509,6 +3638,27 @@
   
   <span class="md-ellipsis">
     HUD Button
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/hudvisible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Show / Hide Element
   </span>
   
 
@@ -7129,6 +7279,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Environment presets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fog-kinds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fog kinds
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -7140,6 +7305,15 @@
   
     <nav class="md-nav" aria-label="Sky images (HDRI)">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cube-map-skies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cube-map skies
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#how-sharp-the-sky-is" class="md-nav__link">
@@ -7494,7 +7668,41 @@ the preset; press the dot to put just that value back.</p>
 photo; see <a href="#sky-images-hdri">Sky images</a>.</p>
 <p>An <strong>Exposure</strong> slider tunes overall brightness. The lit presets add a sun that casts shadows, with a shadow-catcher disc under the scene so shadows land even on the infinite grid.</p>
 <p>Environment is a <strong>shared, latest-wins</strong> setting — the most recent change wins for everyone. You can also <strong>save</strong>, <strong>export</strong> and <strong>import</strong> custom presets (stored locally), and adopt presets other peers have shared.</p>
-<p>Below Environment, <strong>Background</strong> sets the clear color and <strong>Fog</strong> adds distance fog (color + near/far), both shared. A fog you set by hand keeps exactly the near and far you typed; a preset's fog still grows with a big scene.</p>
+<p>Below Environment, <strong>Background</strong> sets the clear color and <strong>Fog</strong> adds fog, both shared. A fog you set by hand keeps exactly the near and far you typed; a preset's fog still grows with a big scene.</p>
+<h3 id="fog-kinds">Fog kinds</h3>
+<p><em>New in 1.74.</em> The Fog rows start with <strong>Kind</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Kind</th>
+<th>Rows</th>
+<th>What it looks like</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Linear (near to far)</strong> (the default)</td>
+<td>Near, Far</td>
+<td>no fog up to Near, full fog colour from Far</td>
+</tr>
+<tr>
+<td><strong>Distance</strong></td>
+<td>Density</td>
+<td>fog that thickens the further you look, with no hard edge — a hazy valley, a dusty hall</td>
+</tr>
+<tr>
+<td><strong>Height (ground fog)</strong></td>
+<td>Density, Ground height, Thickness</td>
+<td>fog lying on the ground: thickest at <strong>Ground height</strong>, thinning out over <strong>Thickness</strong> metres above it. Looking down into it fogs more than looking across above it, and a tower top stands clear</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Density 0.01 is a light haze, 0.1 is thick; Thickness 2-6 m reads as ground fog, 20 m and more as a low cloud.</li>
+<li>Peers on an app older than 1.74 see a linear fog from Near to Far instead.</li>
+<li>The <a href="../cinematic-view/">Cinematic view</a> draws Distance fog; Height fog is listed in its <em>Not shown</em> chip.</li>
+<li>Agents set it with <code>set_sky</code> fog <code>{kind, density, base, thickness}</code>.</li>
+</ul>
 <h2 id="sky-images-hdri">Sky images (HDRI)</h2>
 <p>Since 1.27 a sky image — an HDRI, a 360° photo that keeps the real brightness of the sun and the sky — can be the
 scene's sky <strong>and</strong> its light. Every object picks up the image's colours and brightness, shiny objects reflect it, and
@@ -7564,7 +7772,7 @@ images from <a href="https://polyhaven.com">Poly Haven</a>.</p>
 <tbody>
 <tr>
 <td><strong>Upload HDRI…</strong></td>
-<td>use your own equirectangular <code>.hdr</code> or <code>.exr</code> file (up to 25 MB; 1k–2k is plenty). It is added to the <a href="../explorer/">Explorer</a>, your peers download it from you automatically, and it is saved inside <code>.tpscene</code> files and exports</td>
+<td>use your own sky (up to 25 MB; 1k–2k is plenty): an equirectangular <code>.hdr</code> or <code>.exr</code>, a <a href="#cube-map-skies">cube map</a>, or an equirectangular <code>.png</code> / <code>.jpg</code> / <code>.webp</code>. It is added to the <a href="../explorer/">Explorer</a>, your peers download it from you automatically, and it is saved inside <code>.tpscene</code> files and exports</td>
 </tr>
 <tr>
 <td><strong>Rotation</strong></td>
@@ -7597,6 +7805,18 @@ desktop whatever else is on. Editing any of these turns the preset into <em>Cust
 preset</strong> keeps it.</p>
 <p>A short tour points at the cards the first time you see them (<strong>Settings ▸ Interface ▸ Tours ▸ Reset all</strong> shows it
 again).</p>
+<h3 id="cube-map-skies">Cube-map skies</h3>
+<p><em>New in 1.74.</em> <strong>Upload HDRI…</strong> also takes a sky made of six square faces, and turns it into an equirectangular
+<code>.hdr</code> (at most 2048 × 1024) that is stored and shared like any uploaded sky:</p>
+<ul>
+<li><strong>one image</strong> laid out as a <strong>cross</strong> (4:3 or 3:4) or a <strong>strip</strong> of six faces (6:1 or 1:6, in the order +X −X +Y −Y
+  +Z −Z), in <code>.hdr</code>, <code>.exr</code>, <code>.png</code>, <code>.jpg</code> or <code>.webp</code>;</li>
+<li><strong>six files</strong> picked together, named by face: <code>px nx py ny pz nz</code> (also <code>posx</code>… <code>negz</code>, or <code>right left top bottom
+  front back</code>).</li>
+</ul>
+<p>The cross centre is the front (+Z) face, as in three.js and most skybox tools; nothing is mirrored. A <code>.png</code> or <code>.jpg</code>
+sky has no light brighter than white, so it lights the scene more flatly than an <code>.hdr</code>. A toast names the converted
+file; the original faces are not kept. Agents can upload a cube-map cross or strip with <code>assets upload</code> the same way.</p>
 <h3 id="how-sharp-the-sky-is">How sharp the sky is</h3>
 <p><em>New in 1.59.</em> The five skies come as <strong>UltraHDR</strong> images in several sizes: 1K, 2K and 4K, and 8K for <strong>Meadow</strong>. The
 small one shows first, so the scene is lit and has its sky after one small download; then, if your device should show
@@ -7676,8 +7896,7 @@ unaffected:</p>
 </table>
 <h3 id="limits">Limits</h3>
 <ul>
-<li>Only equirectangular images (twice as wide as they are tall); cube-map files are not supported. An <code>.exr</code> must be RGB
-  or RGBA.</li>
+<li>An <code>.exr</code> must be RGB or RGBA.</li>
 <li>Files over 25 MB are refused — your peers could not receive them.</li>
 <li>Someone on an app older than 1.27 in the same session sees the preset's flat colours instead of the image.</li>
 <li>A <a href="../post-processing/">scene look</a> with its own <a href="../post-processing/#tone-mapping">Tone mapping</a> effect keeps its own curve.</li>
@@ -7723,7 +7942,7 @@ unaffected:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-20
+    2026-11-22
   </span>
 
     

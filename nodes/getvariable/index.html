@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Get Variable", "url": "https://docs.theprototype.app/nodes/getvariable/", "description": "Reads a named shared variable as a number — the read side of Set Variable, live on every player's screen.", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/nodes-getvariable/getvariable.webp", "caption": "Get Variable score into a Compare (less than 10)."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Get Variable", "url": "https://docs.theprototype.app/nodes/getvariable/", "description": "Reads a named shared variable as a number, or as text — the read side of Set Variable, live on every player's screen.", "dateModified": "2026-11-22", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/nodes-getvariable/getvariable.webp", "caption": "Get Variable score into a Compare (less than 10)."}]}</script>
 </head>
   
   
@@ -1067,6 +1067,27 @@
   
   <span class="md-ellipsis">
     Measure, Align &amp; Distribute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arrange/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arrays, Layers &amp; Tidy
   </span>
   
 
@@ -3112,6 +3133,90 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gamevalue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Value
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../camerashake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Camera Shake
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../screenflash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screen Flash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hitpause/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hit Pause
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3378,6 +3483,27 @@
   
   <span class="md-ellipsis">
     HUD Button
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hudvisible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Show / Hide Element
   </span>
   
 
@@ -6979,9 +7105,9 @@
 
 
 <h1 id="get-variable">Get Variable</h1>
-<p>Reads a named shared variable as a number — the read side of <a href="../setvariable/">Set Variable</a>,
+<p>Reads a named shared variable as a number, or as text — the read side of <a href="../setvariable/">Set Variable</a>,
 live on every player's screen.</p>
-<p><strong>Output:</strong> number (shown live on the card)</p>
+<p><strong>Output:</strong> number, or text (shown live on the card)</p>
 <h2 id="parameters">Parameters</h2>
 <table>
 <thead>
@@ -6997,9 +7123,16 @@ live on every player's screen.</p>
 <td><code>score</code></td>
 <td>the variable to read — the same name the Set Variable writes</td>
 </tr>
+<tr>
+<td>output</td>
+<td>number</td>
+<td><code>number</code>, or <code>text</code> (<em>since 1.74</em>) for a variable that holds words</td>
+</tr>
 </tbody>
 </table>
-<p>A name nothing has written yet reads as 0.</p>
+<p>A name nothing has written yet reads as 0 (as text: empty).</p>
+<p>With output <strong>text</strong> it reads a variable a Set Variable with op <code>text</code> wrote. Wire it into a
+<a href="../hudtext/">HUD Text</a>'s <strong>format</strong> socket to show the words, or use a <a href="../gamevalue/">Game Value</a>.</p>
 <h2 id="what-it-reads">What it reads</h2>
 <p>Get Variable reads the <strong>shared</strong> variables: the ones a Set Variable with scope <code>shared</code> writes,
 and the shared count of the Collectibles module. They travel with the game state, so every
@@ -7048,7 +7181,7 @@ variable</strong> in the HUD editor: it wires a Get Variable into a <a href="../
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-03
+    2026-11-22
   </span>
 
     

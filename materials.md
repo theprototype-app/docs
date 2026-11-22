@@ -130,7 +130,8 @@ material, so saving on a headset and opening on a desktop shows the full look ag
 - Applying a preset keeps the object's **Side** (front / back / double) and **Wireframe** setting.
 - **Glass** is a see-through, clear-coated surface rather than true refraction, so it stays cheap on a Quest. Raise
   **Transmission** on a Physical material for real refraction on a desktop.
-- Very metallic surfaces look darker than in other tools, because the scene has no image-based lighting yet; the
-  **Metal** preset is tuned for that.
+- Very metallic surfaces look dark under a colour sky, because a colour sky gives them nothing to reflect; the
+  **Metal** preset is tuned for that. A [sky image](https://docs.theprototype.app/camera.md#sky-images-hdri) (the Clear sky, Meadow, Sunrise,
+  Starlight and Photo studio presets, or your own) lights the scene and shows in every reflection.
 - [Water](https://docs.theprototype.app/water.md) objects draw their own water surface: a preset changes only the material they show before the water
   is ready. Use the **Water** section's look presets for water.

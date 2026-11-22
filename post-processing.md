@@ -41,7 +41,7 @@ Press **+ Add effect** and pick one from its family:
 | Colour grading | Tone mapping, Hue / saturation, Brightness / contrast, LUT |
 | Stylize | Dot screen |
 | Shader graph | a post effect you built as a node graph — see [below](#a-post-effect-you-build-yourself) |
-| Camera FX | Bloom, Vignette, Film grain, Chromatic aberration, Pixelation, Scanlines, Lens flare, God rays, Volumetric fog |
+| Camera FX | Bloom, Depth of field, Vignette, Film grain, Chromatic aberration, Pixelation, Scanlines, Lens flare, God rays, Volumetric fog |
 | Anti-aliasing | Anti-aliasing (TRAA or SMAA) |
 
 Each row has a grip to **drag it up or down**, a checkbox to switch it off without losing

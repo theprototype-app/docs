@@ -62,7 +62,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Welcome", "url": "https://docs.theprototype.app/", "description": "ThePrototype is a collaborative 3D prototyping app that runs in your browser — sessions are peer-to-peer, and you need no account.", "dateModified": "2026-11-21", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/index/quick-start-add.webp", "caption": "Quick start, step 2 — right-click the empty view, then Add ▸ Mesh ▸ Cube."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Welcome", "url": "https://docs.theprototype.app/", "description": "ThePrototype is a collaborative 3D prototyping app that runs in your browser — sessions are peer-to-peer, and you need no account.", "dateModified": "2026-11-22", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/index/quick-start-add.webp", "caption": "Quick start, step 2 — right-click the empty view, then Add ▸ Mesh ▸ Cube."}]}</script>
 </head>
   
   
@@ -1143,6 +1143,27 @@
   
   <span class="md-ellipsis">
     Measure, Align &amp; Distribute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="arrange/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arrays, Layers &amp; Tidy
   </span>
   
 
@@ -3115,6 +3136,90 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nodes/gamevalue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Value
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nodes/camerashake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Camera Shake
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nodes/screenflash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screen Flash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nodes/hitpause/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hit Pause
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3381,6 +3486,27 @@
   
   <span class="md-ellipsis">
     HUD Button
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nodes/hudvisible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Show / Hide Element
   </span>
   
 
@@ -7039,6 +7165,24 @@ on a phone that gives the scene the whole height of the screen.</p>
 <a href="https://github.com/theprototype-app/core">github.com/theprototype-app/core</a> (also <strong>Settings ▸ About ▸ Source Code</strong>),
 with a contributing guide and an <code>llms.txt</code> for coding agents.</p>
 <h2 id="whats-new">What's new</h2>
+<p><strong>1.74 — games and play.</strong></p>
+<ul>
+<li><strong>Game values and game feel</strong>: a <a href="nodes/gamevalue/">Game Value</a> node shows the score, a clock, stars or lives in the
+  HUD with no code; HUD buttons get a sound and a value, <a href="nodes/hudvisible/">Show / Hide Element</a> and text or flag
+  variables join them, and <a href="hud-editor/#game-feel-shake-flash-and-hit-pause">Camera Shake, Screen Flash and Hit Pause</a>
+  make hits feel strong.</li>
+<li><strong>Physics per object and new joints</strong>: each body can have its own <a href="colliders/#gravity-and-damping">gravity scale and drag</a>,
+  and <a href="physics/#joints">ball, slider, spring and rope joints</a> join weld and hinge, tuned in a Joints panel and kept
+  across a reload.</li>
+<li><strong>Arrange big scenes</strong>: live <a href="arrange/#repeat-an-object-arrays">arrays</a>, <a href="snapping/#corner-to-corner-hold-b">corner to corner</a>
+  snapping with <kbd>B</kbd>, <a href="arrange/#layers">layers</a>, and Select similar, Rename and Randomise.</li>
+<li><strong>Play</strong>: a <a href="touch-controls/#a-layout-that-travels-with-your-game">touch layout saved with the scene</a>,
+  <a href="notifications/#info-points-for-visitors">info points</a> for visitors, a screen that
+  <a href="physics/#the-screen-stays-awake">stays awake</a> while you play, and a <a href="controls/#pick-a-colour-from-the-screen">colour dropper</a>.</li>
+<li><strong>Paper cuts</strong>: <a href="controls/#rounded-boxes">rounded boxes</a>, repeated meshes saved once
+  (<a href="saving/#scene-tpscene-recommended">Saving</a>), <a href="camera/#fog-kinds">fog kinds</a>, <a href="camera/#cube-map-skies">cube-map skies</a>
+  and <a href="nodes/script/#firing-an-event">Script events</a>.</li>
+</ul>
 <p><strong>1.71 — <a href="node-editor/#the-code-tab-since-171">the Code tab</a> and <a href="node-editor/#convert-a-node-to-code">convert to code</a>.</strong> The Nodes editor shows the graph as code, read-only (press a line to select its node). Right-click a Math, Compare, Gate, Select, Map
 Range, Random or HUD Text node ▸ <strong>Convert to code</strong>: it becomes a Script node that does the same thing, every wire
 kept, and <strong>Convert back</strong> returns it while the code is unchanged. Custom nodes keep their definitions in saved scenes,
@@ -7723,7 +7867,7 @@ for your machine <a href="performance/">reduces quality or pauses instead of fre
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-21
+    2026-11-22
   </span>
 
     

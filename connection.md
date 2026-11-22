@@ -129,7 +129,7 @@ another app, keeps its link for up to a minute.
 
 ### A link in a tab that is already open
 
-You do not have to reload to follow an invite. Paste the link into the **address bar** of the tab that is already running the app and press <kbd>Enter</kbd>: the app dials that session on the spot, with your scene and your session id intact. (The Connect field takes a bare ID, not a link.)
+You do not have to reload to follow an invite. Paste the link into the **address bar** of the tab that is already running the app and press <kbd>Enter</kbd>: the app dials that session on the spot, with your scene and your session id intact. (Since 1.65 you can also paste it into **Connect bar ▸ Join…**, which takes a peer ID or an invite link.)
 
 A few cases ask first, or refuse with a message:
 

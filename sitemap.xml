@@ -29,6 +29,10 @@
          <lastmod>2026-11-22</lastmod>
     </url>
     <url>
+         <loc>https://docs.theprototype.app/arrange/</loc>
+         <lastmod>2026-11-22</lastmod>
+    </url>
+    <url>
          <loc>https://docs.theprototype.app/audio/</loc>
          <lastmod>2026-11-22</lastmod>
     </url>
@@ -565,6 +569,10 @@
          <lastmod>2026-11-22</lastmod>
     </url>
     <url>
+         <loc>https://docs.theprototype.app/nodes/camerashake/</loc>
+         <lastmod>2026-11-22</lastmod>
+    </url>
+    <url>
          <loc>https://docs.theprototype.app/nodes/charcontroller/</loc>
          <lastmod>2026-11-22</lastmod>
     </url>
@@ -661,6 +669,10 @@
          <lastmod>2026-11-22</lastmod>
     </url>
     <url>
+         <loc>https://docs.theprototype.app/nodes/gamevalue/</loc>
+         <lastmod>2026-11-22</lastmod>
+    </url>
+    <url>
          <loc>https://docs.theprototype.app/nodes/gate/</loc>
          <lastmod>2026-11-22</lastmod>
     </url>
@@ -678,6 +690,10 @@
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/highlight/</loc>
+         <lastmod>2026-11-22</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.theprototype.app/nodes/hitpause/</loc>
          <lastmod>2026-11-22</lastmod>
     </url>
     <url>
@@ -718,6 +734,10 @@
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/hudtimer/</loc>
+         <lastmod>2026-11-22</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.theprototype.app/nodes/hudvisible/</loc>
          <lastmod>2026-11-22</lastmod>
     </url>
     <url>
@@ -938,6 +958,10 @@
     </url>
     <url>
          <loc>https://docs.theprototype.app/nodes/scaleto/</loc>
+         <lastmod>2026-11-22</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.theprototype.app/nodes/screenflash/</loc>
          <lastmod>2026-11-22</lastmod>
     </url>
     <url>

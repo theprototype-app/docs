@@ -64,6 +64,8 @@ moves. The card that opens has:
 | **Label** | a group name such as *mechanics* or *art* — suggestions come from the labels already in the scene; the drawer groups notes by it |
 | **Camera ▸ Save camera view** | stores your current view with the note; **Update saved view** replaces it, **✕** forgets it |
 | **Follow the pin when opened** | opening the note flies the camera to it and keeps following the pin as its object moves; <kbd>Esc</kbd> stops following |
+| **Show to visitors in Play** | *since 1.74*: makes the note an [info point](#info-points-for-visitors) for people who play the scene |
+| **Add picture** | *since 1.74*: one picture shown with the note (PNG, JPEG or WebP); **Replace picture** swaps it |
 
 **Save** keeps it, **Delete** removes it. Notes replicate to every peer with your name attached.
 
@@ -111,6 +113,29 @@ camera to the note, with the card opening on a double click: handy for walking t
 card in the way.
 
 If there are no notes yet, the drawer tells you to select an object and add one from its context menu.
+
+### Info points for visitors
+
+*New in 1.74.* A note can be an **info point**: a short text, with a picture if you like, for people who visit your
+scene in Play — a museum label, a stop on a tour, a hint in a level.
+
+1. Write a note on any object as usual: name, text and, if you like, **Save camera view**.
+2. Switch on **Show to visitors in Play**.
+3. Press **Add picture** to add one picture.
+
+In the play view (a shared play link, an embed, an exported game) an **Info points** button with the count sits in the
+bottom-left player bar. It lists the points, and each one opens a card with the name, text, picture and **Show the
+view**, which flies to the view you saved (not while a game is being played). The pins of info points stay clickable in
+the view; other notes are not shown in Play.
+
+- **Keyboard**: <kbd>Tab</kbd> to **Info points**, <kbd>Enter</kbd> opens the list (focus on the first point),
+  <kbd>Enter</kbd> opens a point, the previous and next buttons step between points, and <kbd>Esc</kbd> closes and
+  returns to the button.
+- **Screen readers** hear a named button with the count, a labelled list and a labelled card.
+- It works with no live session: the notes travel inside the scene file.
+
+A note still needs an object to sit on; put it on the ground or on an empty object to place it freely. A note holds one
+picture, made smaller to fit (longest side 960 px).
 
 ## Chat
 

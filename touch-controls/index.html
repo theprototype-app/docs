@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Touch Controls", "url": "https://docs.theprototype.app/touch-controls/", "description": "On a phone or tablet, Play shows a move stick on the left, a look drag on the right and the game's own action buttons — Jump, Throw, Grab, Use… — exactly the actions the game needs. Every control…", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.71.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/touch-controls/sky-run-phone.webp", "caption": "Sky Run on a folded phone."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/touch-controls/layout-editor.webp", "caption": "The touch controls layout editor, Jump selected."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Touch Controls", "url": "https://docs.theprototype.app/touch-controls/", "description": "On a phone or tablet, Play shows a move stick on the left, a look drag on the right and the game's own action buttons — Jump, Throw, Grab, Use… — exactly the actions the game needs. Every control…", "dateModified": "2026-11-22", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.71.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/touch-controls/sky-run-phone.webp", "caption": "Sky Run on a folded phone."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/touch-controls/layout-editor.webp", "caption": "The touch controls layout editor, Jump selected."}]}</script>
 </head>
   
   
@@ -470,6 +470,21 @@
       Arranging them
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Arranging them">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-layout-that-travels-with-your-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      A layout that travels with your game
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1181,6 +1196,27 @@
   
   <span class="md-ellipsis">
     Measure, Align &amp; Distribute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arrange/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arrays, Layers &amp; Tidy
   </span>
   
 
@@ -3153,6 +3189,90 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/gamevalue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Value
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/camerashake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Camera Shake
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/screenflash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screen Flash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/hitpause/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hit Pause
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3419,6 +3539,27 @@
   
   <span class="md-ellipsis">
     HUD Button
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/hudvisible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Show / Hide Element
   </span>
   
 
@@ -7003,6 +7144,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Arranging them">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-layout-that-travels-with-your-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      A layout that travels with your game
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -7162,9 +7318,19 @@ declare their own.</p>
 <li><strong>Drag</strong> any control to move it. <strong>Select</strong> it to change its <strong>Size</strong> and <strong>Opacity</strong> or <strong>Hide</strong> it — resize also with
   the round corner grip, or by pinching it with a second finger. <strong>Default place</strong> puts it back.</li>
 <li><strong>This game / All games</strong> chooses where <strong>Save</strong> stores the layout; a game's own layout wins over the all-games one.</li>
+<li><strong>For players</strong> (<em>since 1.74</em>) saves the layout <strong>in the scene</strong>, for everyone who plays it. It shows only to people who
+  can edit the scene, never in the play view or for a viewer. See below.</li>
 <li><strong>Reset</strong> returns to the default arrangement; <strong>Cancel</strong> (or <kbd>Esc</kbd>) discards your changes.</li>
 </ul>
-<p>Layouts are saved <strong>on this device</strong> — they never travel to other players or into the scene.</p>
+<p><strong>This game</strong> and <strong>All games</strong> layouts are saved <strong>on this device</strong>.</p>
+<h3 id="a-layout-that-travels-with-your-game">A layout that travels with your game</h3>
+<p><em>Since 1.74.</em> Arrange the stick and buttons, pick <strong>For players</strong> and press <strong>Save</strong>. The layout is saved <strong>in the
+scene</strong>, so everyone who opens it — in the editor, in a shared play link, in an exported game — starts from your
+arrangement. <strong>Reset</strong> with <strong>For players</strong> picked removes it from the scene.</p>
+<p>A player's own layout still wins: anything they arranged on their device (<strong>This game</strong> or <strong>All games</strong>) replaces your
+placement for that control, and controls they never moved keep yours.</p>
+<p>A scene holds one such layout. It stores where each control sits (as a part of the screen), its size and its opacity —
+not the <a href="#button-looks">button looks</a>, which stay on each device.</p>
 <h2 id="button-looks">Button looks</h2>
 <p><strong>Settings ▸ Touch controls ▸ Button looks</strong> lists every button with a preview of both states. For each button: a
 <strong>Released</strong> and a <strong>Pressed</strong> image (<strong>Upload</strong> a PNG or SVG of up to 160 KB, or pick an image from the
@@ -7264,7 +7430,7 @@ Mac included — while a mouse wheel keeps zooming as before. <strong>Settings �
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-03
+    2026-11-22
   </span>
 
     

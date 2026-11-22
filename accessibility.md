@@ -83,7 +83,9 @@ both, and while you drag a wire a socket that cannot take it becomes a red cross
   (<kbd>F</kbd>, saved views, note jumps) and pulsing indicators — even when your device setting is off.
 - *Full* keeps every animation, even when your device asks for reduced motion.
 
-Games play normally either way: this covers the editor's own interface and camera moves. For VR comfort see the
+Games play normally either way: this covers the editor's own interface and camera moves. The one exception (since
+1.74): with *Reduce*, a game's [Camera Shake](https://docs.theprototype.app/nodes/camerashake.md) is a quarter as strong and its
+[Screen Flash](https://docs.theprototype.app/nodes/screenflash.md) a third. For VR comfort see the
 [VR Guide](https://docs.theprototype.app/vr.md#comfort-for-everyone).
 
 ## Keyboard navigation

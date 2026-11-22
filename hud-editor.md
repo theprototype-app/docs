@@ -89,7 +89,7 @@ A small mark on an element on the stage means something is wired to it — a but
 
 | Kind | What it is |
 |---|---|
-| **Button** | fires an event when pressed. Give it an action, or read it with a [HUD Button](https://docs.theprototype.app/nodes/hudbutton.md) node |
+| **Button** | fires an event when pressed. Give it an action, or read it with a [HUD Button](https://docs.theprototype.app/nodes/hudbutton.md) node. *Since 1.74*: **sound** plays a press sound for the player who pressed (*none* by default), and **value** is what the button passes on to its HUD Button node |
 | **Slider** | drag for a number |
 | **Toggle** | on or off (reads as 1 or 0) |
 | **Dropdown** | one of a list (read its index or its text) |
@@ -114,6 +114,25 @@ play an animation, play a sound, fire particles, apply an impulse, toggle an obj
 pane lists them back in plain language. Behind the scenes an action is ordinary flow nodes, so you can open the node
 editor and extend it.
 
+## Show a game value
+
+*Since 1.74* a **Game Value** node (node palette ▸ Game) shows the common game values with no code: the score, your
+score, the best score, the round's clock, the time left, the countdown, the round, the level and its name, stars,
+lives, a variable, a stored value or a value a module publishes. It writes the value as words in the format you pick:
+
+| Format | Example |
+|---|---|
+| number | `3` |
+| time | `1:04`, or `1:04.2` with 1 decimal |
+| fraction | `3 / 10` (needs a max) |
+| percent | `30 %` |
+| stars | `★★☆` |
+| text | a level name as it is |
+
+**prefix** and **suffix** wrap it (`Coins ` … ` pts`), and **when empty** replaces a 0 or a blank value (`Best —`,
+`not cleared yet`). Wire its output into a **HUD Text**'s **format** socket; its **value** output is the raw number, for
+a **HUD Bar**. Every read is local and needs no network. See [Game Value](https://docs.theprototype.app/nodes/gamevalue.md).
+
 ## Driving the HUD from the graph
 
 | Node | Does |
@@ -122,12 +141,30 @@ editor and extend it.
 | **HUD Text** | puts a value into a Text element — a live score |
 | **HUD Timer** | runs a Timer element's countdown on the shared clock — duration, display format, start automatically or on a pulse |
 | **HUD Bar** | drives a bar's (or radial's, icon row's, hotbar's) value from a number |
-| **HUD Button** | fires a pulse when a button is pressed |
+| **HUD Button** | fires a pulse when a button is pressed. With no element and a **screen** picked, one node answers every button on that screen, and its **value** output says which one (*since 1.74*) |
+| **Show / Hide Element** | shows, hides or toggles **one** element on a pulse, or follows a wired **visible** (above 0 = shown); per player, like screens (*since 1.74*) |
+| **Game Value** | writes a game value as words for a HUD Text — see [Show a game value](#show-a-game-value) |
 | **HUD List** / **HUD Rows** | fill a list, or append rows to it — a log, a scoreboard feed |
 | **HUD Input** / **HUD Set Input** | read what a player typed, picked or dragged — or set it |
 
 An element's own value in the properties pane is only the preview and the fallback — a node driving it always wins at
 runtime. See the [HUD nodes](https://docs.theprototype.app/nodes.md#hud).
+
+## Game feel: shake, flash and hit pause
+
+*Since 1.74* three Game nodes make hits and pickups feel strong. Each fires on a pulse and works on each player's own
+screen; nothing is saved in the scene.
+
+| Node | Does |
+|---|---|
+| [**Camera Shake**](https://docs.theprototype.app/nodes/camerashake.md) | shakes the Play camera: strength, seconds, frequency. Never in VR, never the editor camera |
+| [**Screen Flash**](https://docs.theprototype.app/nodes/screenflash.md) | a colour over the screen that fades out: colour, strength, seconds. It never blocks clicks |
+| [**Hit Pause**](https://docs.theprototype.app/nodes/hitpause.md) | holds the picture for 20 to 500 ms. The game, the clock and physics keep running |
+
+**who** picks who sees it: *me* (the default) is only the player whose press or hit made the pulse; *everyone* is every
+player. A pulse that went through a Delay no longer knows whose it was, so use *everyone* there.
+
+With [reduced motion](https://docs.theprototype.app/accessibility.md#motion) on, the shake is a quarter as strong and the flash a third.
 
 ## In VR
 

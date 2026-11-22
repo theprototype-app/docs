@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Flow Nodes", "url": "https://docs.theprototype.app/nodes/", "description": "Every node the Flow editor offers, grouped exactly as the palette groups them. Each node's one-line description is the same text the editor shows in its info pane (and the palette's tooltip) when…", "dateModified": "2026-11-10"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Flow Nodes", "url": "https://docs.theprototype.app/nodes/", "description": "Every node the Flow editor offers, grouped exactly as the palette groups them. Each node's one-line description is the same text the editor shows in its info pane (and the palette's tooltip) when…", "dateModified": "2026-11-22"}</script>
 </head>
   
   
@@ -1067,6 +1067,27 @@
   
   <span class="md-ellipsis">
     Measure, Align &amp; Distribute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arrange/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arrays, Layers &amp; Tidy
   </span>
   
 
@@ -3198,6 +3219,90 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gamevalue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Value
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="camerashake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Camera Shake
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="screenflash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screen Flash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hitpause/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hit Pause
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3464,6 +3569,27 @@
   
   <span class="md-ellipsis">
     HUD Button
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hudvisible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Show / Hide Element
   </span>
   
 
@@ -7321,6 +7447,22 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 <td>Reads what Store Value saved on this device, as a number or text - the read side of a best score; each player sees their own.</td>
 </tr>
 <tr>
+<td><a href="gamevalue/"><strong>Game Value</strong></a></td>
+<td>Reads one game value (score, round clock, best, level, stars, lives, a variable, a stored or a published value) and writes it as text - a number, a clock (1:04.2), 3 / 10, a percent or stars - for HUD Text; its value output feeds HUD Bar.</td>
+</tr>
+<tr>
+<td><a href="camerashake/"><strong>Camera Shake</strong></a></td>
+<td>Shakes the Play camera on a trigger (strength, seconds, frequency) - on this device only, never in VR; who: me = the player who made the pulse, everyone = every player. Reduced motion turns it down.</td>
+</tr>
+<tr>
+<td><a href="screenflash/"><strong>Screen Flash</strong></a></td>
+<td>Flashes a colour over the screen that fades out (a hit, a pickup) - on this device; who: me or everyone. Reduced motion keeps it faint.</td>
+</tr>
+<tr>
+<td><a href="hitpause/"><strong>Hit Pause</strong></a></td>
+<td>Holds this device's picture for a few milliseconds on a trigger (a hit-stop). The game, the clock and physics keep running.</td>
+</tr>
+<tr>
 <td><a href="announce/"><strong>Announce</strong></a></td>
 <td>Shows a big banner - 'Ring 2 reached', 'GOAL!' - on every screen and in VR when a pulse arrives in Play; {v} in the text shows a wired number. In Edit it draws no banner: the line goes to the Debugger's Console with its time and this node.</td>
 </tr>
@@ -7425,6 +7567,10 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 <tr>
 <td><a href="hudbutton/"><strong>HUD Button</strong></a></td>
 <td>Fires a pulse when a HUD button is pressed - the on-screen counterpart of On Click.</td>
+</tr>
+<tr>
+<td><a href="hudvisible/"><strong>Show / Hide Element</strong></a></td>
+<td>Shows, hides or toggles ONE HUD element on a trigger, or follows a wired visible value (above 0 = shown) - per player, like a screen.</td>
 </tr>
 <tr>
 <td><a href="hudtimer/"><strong>HUD Timer</strong></a></td>
@@ -7543,7 +7689,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 </tr>
 <tr>
 <td><a href="setuniform/"><strong>Set Shader Uniform</strong></a></td>
-<td>Writes one number inside an object's shader graph, so a trigger, a</td>
+<td>Writes a number, a colour or a vector inside an object's shader graph, so a trigger, a timer or a counter can drive how the material looks.</td>
 </tr>
 </tbody>
 </table>
@@ -7786,7 +7932,7 @@ object) and an <strong>other</strong> output (the body it touched) — see <a hr
 </tr>
 <tr>
 <td><a href="joint/"><strong>Joint</strong></a></td>
-<td>Attaches two objects to each other when an event fires - a hinge, or a rigid weld.</td>
+<td>Attaches two objects to each other when an event fires - a hinge, a rigid weld, a ball joint, a slider along an axis, a spring or a rope.</td>
 </tr>
 </tbody>
 </table>
@@ -7934,7 +8080,7 @@ every peer counts once. The <a href="../game-kit/#the-pieces">Game kit</a> page 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-10
+    2026-11-22
   </span>
 
     

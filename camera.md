@@ -160,7 +160,22 @@ An **Exposure** slider tunes overall brightness. The lit presets add a sun that 
 
 Environment is a **shared, latest-wins** setting — the most recent change wins for everyone. You can also **save**, **export** and **import** custom presets (stored locally), and adopt presets other peers have shared.
 
-Below Environment, **Background** sets the clear color and **Fog** adds distance fog (color + near/far), both shared. A fog you set by hand keeps exactly the near and far you typed; a preset's fog still grows with a big scene.
+Below Environment, **Background** sets the clear color and **Fog** adds fog, both shared. A fog you set by hand keeps exactly the near and far you typed; a preset's fog still grows with a big scene.
+
+### Fog kinds
+
+*New in 1.74.* The Fog rows start with **Kind**:
+
+| Kind | Rows | What it looks like |
+|---|---|---|
+| **Linear (near to far)** (the default) | Near, Far | no fog up to Near, full fog colour from Far |
+| **Distance** | Density | fog that thickens the further you look, with no hard edge — a hazy valley, a dusty hall |
+| **Height (ground fog)** | Density, Ground height, Thickness | fog lying on the ground: thickest at **Ground height**, thinning out over **Thickness** metres above it. Looking down into it fogs more than looking across above it, and a tower top stands clear |
+
+- Density 0.01 is a light haze, 0.1 is thick; Thickness 2-6 m reads as ground fog, 20 m and more as a low cloud.
+- Peers on an app older than 1.74 see a linear fog from Near to Far instead.
+- The [Cinematic view](https://docs.theprototype.app/cinematic-view.md) draws Distance fog; Height fog is listed in its *Not shown* chip.
+- Agents set it with `set_sky` fog `{kind, density, base, thickness}`.
 
 ## Sky images (HDRI)
 
@@ -196,7 +211,7 @@ images from [Poly Haven](https://polyhaven.com).
 *Figure: Configure Scene ▸ Environment, with its Sky image section.*
 | Row | What it does |
 |---|---|
-| **Upload HDRI…** | use your own equirectangular `.hdr` or `.exr` file (up to 25 MB; 1k–2k is plenty). It is added to the [Explorer](https://docs.theprototype.app/explorer.md), your peers download it from you automatically, and it is saved inside `.tpscene` files and exports |
+| **Upload HDRI…** | use your own sky (up to 25 MB; 1k–2k is plenty): an equirectangular `.hdr` or `.exr`, a [cube map](#cube-map-skies), or an equirectangular `.png` / `.jpg` / `.webp`. It is added to the [Explorer](https://docs.theprototype.app/explorer.md), your peers download it from you automatically, and it is saved inside `.tpscene` files and exports |
 | **Rotation** | turns the sky; the sun and its shadows turn with it |
 | **Image light** | how strongly the image lights objects (the sky itself is unchanged) |
 | **Show as sky** | off keeps the image's light and reflections but shows the colour sky instead |
@@ -210,6 +225,20 @@ preset** keeps it.
 
 A short tour points at the cards the first time you see them (**Settings ▸ Interface ▸ Tours ▸ Reset all** shows it
 again).
+
+### Cube-map skies
+
+*New in 1.74.* **Upload HDRI…** also takes a sky made of six square faces, and turns it into an equirectangular
+`.hdr` (at most 2048 × 1024) that is stored and shared like any uploaded sky:
+
+- **one image** laid out as a **cross** (4:3 or 3:4) or a **strip** of six faces (6:1 or 1:6, in the order +X −X +Y −Y
+  +Z −Z), in `.hdr`, `.exr`, `.png`, `.jpg` or `.webp`;
+- **six files** picked together, named by face: `px nx py ny pz nz` (also `posx`… `negz`, or `right left top bottom
+  front back`).
+
+The cross centre is the front (+Z) face, as in three.js and most skybox tools; nothing is mirrored. A `.png` or `.jpg`
+sky has no light brighter than white, so it lights the scene more flatly than an `.hdr`. A toast names the converted
+file; the original faces are not kept. Agents can upload a cube-map cross or strip with `assets upload` the same way.
 
 ### How sharp the sky is
 
@@ -267,8 +296,7 @@ unaffected:
 
 ### Limits
 
-- Only equirectangular images (twice as wide as they are tall); cube-map files are not supported. An `.exr` must be RGB
-  or RGBA.
+- An `.exr` must be RGB or RGBA.
 - Files over 25 MB are refused — your peers could not receive them.
 - Someone on an app older than 1.27 in the same session sees the preset's flat colours instead of the image.
 - A [scene look](https://docs.theprototype.app/post-processing.md) with its own [Tone mapping](https://docs.theprototype.app/post-processing.md#tone-mapping) effect keeps its own curve.

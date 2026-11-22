@@ -31,6 +31,9 @@ Select an object and open **Properties ▸ Physics**:
 | **Sensor** | no collision, fires On Enter / On Exit | off |
 | **Lock rotation** (Dynamic only) | X · Y · Z | off |
 | **Lock position** (Dynamic only) | X · Y · Z | off |
+| **Gravity scale** (Dynamic only) | −5 – 5 | 1 — how strongly gravity pulls this body: 0 floats in place, below 0 rises |
+| **Drag** (Dynamic only) | 0 – 5 | the scene's drag — slows its movement over time |
+| **Spin drag** (Dynamic only) | 0 – 5 | the scene's spin drag — slows its spinning over time |
 | **Floats** (Dynamic only) | Auto · Foam · Cork · Wood · Ice · Rubber · Stone · Metal · From mass ÷ volume · Off | Auto — see [Things float](https://docs.theprototype.app/physics.md#things-float) |
 | **Show collider — this device** | draws the collider as a wireframe | off |
 
@@ -166,13 +169,23 @@ A **Dynamic** body can be pinned per axis:
 
 ## Gravity and damping
 
-Gravity is a **scene** setting: **Configure Scene ▸ Physics ▸ World ▸ Gravity**, from −20 to 5 (positive falls *up*),
-shared by every object. There is no per-object gravity scale; to make one object float, put it in [water](https://docs.theprototype.app/physics.md#things-float), lock its Y
-position, or push it with an [Impulse](https://docs.theprototype.app/nodes/impulse.md) or [Set Velocity](https://docs.theprototype.app/nodes/setvelocity.md) node.
+Gravity is a **scene** setting: **Configure Scene ▸ Physics ▸ World ▸ Gravity**, from −20 to 5 (positive falls *up*).
+Since 1.74 each **Dynamic** body can change how much of it it feels: **Properties ▸ Physics ▸ Gravity scale**
+(−5 to 5). 1 is normal, 0 makes the object hang in the air where it is when the simulation starts, 0.2 makes it drift
+down like a feather, and a value below 0 makes it rise like a balloon. A jump pad that feels floaty, a moon section in
+one corner of a level, a lantern that rises: each is one number on one object, no water and no nodes.
 
-**Drag** and **spin drag** (linear and angular damping) and **Continuous collision** are scene-wide too, under
-**Defaults (advanced)**. A body thrown or knocked faster than about 5 m/s switches continuous collision on for itself until it settles, so a hard
-throw does not pass through a thin wall.
+**Drag** and **spin drag** (linear and angular damping) slow a body's movement and spinning over time. The scene's
+values are under **Configure Scene ▸ Physics ▸ Defaults (advanced)**; **Properties ▸ Physics ▸ Drag / Spin drag**
+override them for one Dynamic body (a parachute: Drag 3; a coin that stops spinning quickly: Spin drag 2). The small
+mark beside a row means the object has its own value; press it to go back to the scene's.
+
+**Continuous collision** is scene-wide too, with a [per-object pick](https://docs.theprototype.app/physics.md#continuous-collision-per-object). A body thrown or knocked faster than about 5 m/s
+switches continuous collision on for itself until it settles, so a hard throw does not pass through a thin wall.
+
+All three values replicate to everyone, undo, save with the object and take effect at once during a running
+simulation. A scene that never sets them behaves exactly as before. The agent tool `set_physics` takes
+`gravityScale`, `linearDamping` and `angularDamping`.
 
 ## Seeing the collider
 

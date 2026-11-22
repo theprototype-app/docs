@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Joint", "url": "https://docs.theprototype.app/nodes/joint/", "description": "Attaches two objects to each other when an event fires — a hinge, or a rigid weld.", "dateModified": "2026-08-23"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Joint", "url": "https://docs.theprototype.app/nodes/joint/", "description": "Attaches two objects to each other when an event fires — a hinge, a rigid weld, a ball joint, a slider, a spring or a rope.", "dateModified": "2026-11-22"}</script>
 </head>
   
   
@@ -1067,6 +1067,27 @@
   
   <span class="md-ellipsis">
     Measure, Align &amp; Distribute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arrange/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arrays, Layers &amp; Tidy
   </span>
   
 
@@ -3043,6 +3064,90 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gamevalue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Value
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../camerashake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Camera Shake
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../screenflash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screen Flash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hitpause/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hit Pause
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3309,6 +3414,27 @@
   
   <span class="md-ellipsis">
     HUD Button
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hudvisible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Show / Hide Element
   </span>
   
 
@@ -7015,11 +7141,11 @@
 
 
 <h1 id="joint">Joint</h1>
-<p>Attaches two objects to each other when an event fires — a hinge, or a rigid weld.</p>
+<p>Attaches two objects to each other when an event fires — a hinge, a rigid weld, a ball joint, a slider, a spring or a rope.</p>
 <p><strong>Inputs:</strong> <code>trigger</code> (event) · <code>a</code> (object, the anchor) · <code>b</code> (object, the attached)
 <strong>Output:</strong> effect (wire into an <a href="../objectselector/">Object Selector</a>)</p>
 <h2 id="how-it-works">How it works</h2>
-<p>On the rising edge of <code>trigger</code> the two objects are joined, exactly as if you had used <strong>Physics ▸ Weld</strong> or <strong>Physics ▸ Hinge</strong> from the object menu: the joint becomes part of the scene, replicates to every peer, appears in saves, and can be undone with <kbd>Ctrl</kbd>+<kbd>Z</kbd>.</p>
+<p>On the rising edge of <code>trigger</code> the two objects are joined, exactly as if you had used the object menu's <strong>Physics</strong> entries (<strong>Weld together</strong>, <strong>Hinge</strong>, <strong>Ball joint</strong>…): the joint becomes part of the scene, replicates to every peer, appears in saves, and can be undone with <kbd>Ctrl</kbd>+<kbd>Z</kbd>.</p>
 <p>That is the difference between this and the rest of the physics nodes — <a href="../impulse/">Impulse</a> and <a href="../setvelocity/">Set Velocity</a> act on a running simulation and leave nothing behind, while Joint <em>authors scene data</em>.</p>
 <h2 id="parameters">Parameters</h2>
 <table>
@@ -7034,12 +7160,12 @@
 <tr>
 <td>kind</td>
 <td>revolute</td>
-<td><code>revolute</code> = a hinge that turns about one axis; <code>weld</code> = rigidly fixed together</td>
+<td><code>revolute</code> = a hinge that turns about one axis; <code>weld</code> = rigidly fixed together; <code>ball</code> = swings and twists every way; <code>slider</code> = moves along one axis; <code>spring</code> = pulls back to the distance it was made at; <code>rope</code> = can get no further apart than it was made at (the last four <em>since 1.74</em>)</td>
 </tr>
 <tr>
 <td>axis</td>
 <td>y</td>
-<td>which axis the hinge turns about</td>
+<td>which axis the hinge turns about or the slider moves along</td>
 </tr>
 <tr>
 <td>vel</td>
@@ -7053,6 +7179,8 @@
 </tr>
 </tbody>
 </table>
+<p>Spring stiffness, rope length and slider limits are tuned afterwards in <strong>Properties ▸ Physics ▸ Joints</strong> (see
+<a href="../../physics/#tuning-a-joint">Tuning a joint</a>).</p>
 <h2 id="choosing-the-objects">Choosing the objects</h2>
 <p><code>a</code> is the <strong>anchor</strong> and <code>b</code> is the thing <strong>attached</strong> to it. Wire an <a href="../objectselector/">Object Selector</a> into each. If you leave <code>a</code> unwired it falls back to the node's own target (the Object Selector it feeds, or its owner object), so the minimum wiring is one selector into <code>b</code>.</p>
 <div class="admonition warning">
@@ -7094,7 +7222,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-08-23
+    2026-11-22
   </span>
 
     

@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Set Variable", "url": "https://docs.theprototype.app/nodes/setvariable/", "description": "Writes a named number when a pulse arrives — a score, lives, a difficulty. With scope shared it is one number the whole game shares, with no object needed to hold it; with scope player it is your…", "dateModified": "2026-11-03", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/nodes-setvariable/setvariable.webp", "caption": "A point to the shared score for each click on the coin."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Set Variable", "url": "https://docs.theprototype.app/nodes/setvariable/", "description": "Writes a named number when a pulse arrives — a score, lives, a difficulty. With scope shared it is one number the whole game shares, with no object needed to hold it; with scope player it is your…", "dateModified": "2026-11-22", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/nodes-setvariable/setvariable.webp", "caption": "A point to the shared score for each click on the coin."}]}</script>
 </head>
   
   
@@ -1067,6 +1067,27 @@
   
   <span class="md-ellipsis">
     Measure, Align &amp; Distribute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arrange/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arrays, Layers &amp; Tidy
   </span>
   
 
@@ -2780,6 +2801,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#flags-and-words-since-174" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flags and words (since 1.74)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#shared-or-per-player" class="md-nav__link">
     <span class="md-ellipsis">
       Shared or per player
@@ -3121,6 +3151,90 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gamevalue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Value
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../camerashake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Camera Shake
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../screenflash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screen Flash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hitpause/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hit Pause
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3387,6 +3501,27 @@
   
   <span class="md-ellipsis">
     HUD Button
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hudvisible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Show / Hide Element
   </span>
   
 
@@ -6956,6 +7091,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#flags-and-words-since-174" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flags and words (since 1.74)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#shared-or-per-player" class="md-nav__link">
     <span class="md-ellipsis">
       Shared or per player
@@ -7018,12 +7162,12 @@ is one number the whole game shares, with no object needed to hold it; with scop
 </tr>
 <tr>
 <td>value</td>
-<td>number</td>
-<td>the amount to set, add or subtract — wire a <a href="../number/">Number</a>, a <a href="../counter/">Counter</a>, a <a href="../math/">Math</a> result (unwired: 0)</td>
+<td>any</td>
+<td>the amount to set, add or subtract — wire a <a href="../number/">Number</a>, a <a href="../counter/">Counter</a>, a <a href="../math/">Math</a> result (unwired: 0); for op <code>text</code>, the words</td>
 </tr>
 </tbody>
 </table>
-<p>The card has no field for the value: wire one in. The HUD editor's <strong>Actions ▸ Set a variable</strong>
+<p>The card has no field for a number: wire one in. The HUD editor's <strong>Actions ▸ Set a variable</strong>
 builds a Set Variable that adds 1 to <code>score</code>.</p>
 <h2 id="parameters">Parameters</h2>
 <table>
@@ -7043,7 +7187,12 @@ builds a Set Variable that adds 1 to <code>score</code>.</p>
 <tr>
 <td>op</td>
 <td>set</td>
-<td><code>set</code> (replace), <code>add</code>, <code>subtract</code></td>
+<td><code>set</code> (replace), <code>add</code>, <code>subtract</code>, <code>toggle</code>, <code>text</code> (both <em>since 1.74</em>, see below)</td>
+</tr>
+<tr>
+<td>text</td>
+<td>(empty)</td>
+<td>the words op <code>text</code> stores when nothing is wired into <strong>value</strong></td>
 </tr>
 <tr>
 <td>scope</td>
@@ -7052,6 +7201,13 @@ builds a Set Variable that adds 1 to <code>score</code>.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="flags-and-words-since-174">Flags and words (since 1.74)</h2>
+<ul>
+<li>Op <strong>toggle</strong> flips a flag between 0 and 1, once per event: a door that is open or shut, a switch, a "has the key".</li>
+<li>Op <strong>text</strong> stores words: wired into <strong>value</strong>, or typed in the <strong>text</strong> field. A player name, the last message,
+  the name of the next level. Read them back with a <a href="../getvariable/">Get Variable</a> set to output <strong>text</strong>.</li>
+</ul>
+<p>Text is for <strong>shared</strong> variables only. Player variables hold numbers.</p>
 <h2 id="shared-or-per-player">Shared or per player</h2>
 <table>
 <thead>
@@ -7135,7 +7291,7 @@ it.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-03
+    2026-11-22
   </span>
 
     

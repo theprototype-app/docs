@@ -68,9 +68,23 @@ Open the layout editor from **Settings ▸ Touch controls ▸ Edit layout**, or 
 - **Drag** any control to move it. **Select** it to change its **Size** and **Opacity** or **Hide** it — resize also with
   the round corner grip, or by pinching it with a second finger. **Default place** puts it back.
 - **This game / All games** chooses where **Save** stores the layout; a game's own layout wins over the all-games one.
+- **For players** (*since 1.74*) saves the layout **in the scene**, for everyone who plays it. It shows only to people who
+  can edit the scene, never in the play view or for a viewer. See below.
 - **Reset** returns to the default arrangement; **Cancel** (or <kbd>Esc</kbd>) discards your changes.
 
-Layouts are saved **on this device** — they never travel to other players or into the scene.
+**This game** and **All games** layouts are saved **on this device**.
+
+### A layout that travels with your game
+
+*Since 1.74.* Arrange the stick and buttons, pick **For players** and press **Save**. The layout is saved **in the
+scene**, so everyone who opens it — in the editor, in a shared play link, in an exported game — starts from your
+arrangement. **Reset** with **For players** picked removes it from the scene.
+
+A player's own layout still wins: anything they arranged on their device (**This game** or **All games**) replaces your
+placement for that control, and controls they never moved keep yours.
+
+A scene holds one such layout. It stores where each control sits (as a part of the screen), its size and its opacity —
+not the [button looks](#button-looks), which stay on each device.
 
 ## Button looks
 

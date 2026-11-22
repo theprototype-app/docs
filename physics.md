@@ -20,7 +20,8 @@ The rest of the section — the **collider** shape, the **material** (bounciness
 axes** and **Show collider** — is described on its own page: **[Colliders](https://docs.theprototype.app/colliders.md)**. In short: the collider shape
 is inferred from the object (a sphere rolls, a ramp is a ramp), a *Sensor* stops colliding and fires
 [On Enter](https://docs.theprototype.app/nodes/onenter.md) / [On Exit](https://docs.theprototype.app/nodes/onexit.md) instead, and every one of these settings can be changed while
-the simulation runs. A dynamic object can also [float](#things-float) in water.
+the simulation runs. A dynamic object can also [float](#things-float) in water, and since 1.74 it can have its own
+[gravity scale and drag](https://docs.theprototype.app/colliders.md#gravity-and-damping): a feather, a balloon, a parachute.
 
 To give a whole selection physics at once, **Configure Scene ▸ Physics** lists every object that will get a body
 (*dynamic · 1 kg*, *static*, *collider only*; click a row to select it) and has an **Enable physics on selection** button
@@ -168,6 +169,15 @@ Only dynamic objects can be picked up, objects another peer has locked are refus
 
 A module can override these for its own world by publishing them on its scene group.
 
+### The screen stays awake
+
+*Since 1.74.* While you play, film ([Film mode](https://docs.theprototype.app/film.md)), [record a video](https://docs.theprototype.app/recording.md), or watch another player (for
+example while someone else wears the headset), the screen does not dim or lock. A paused game and leaving Play let it
+sleep again. There is no setting.
+
+It needs a browser with Screen Wake Lock: Chrome, Edge, Safari 16.4 (iOS 18.4), Firefox 126 or the Quest Browser.
+Elsewhere nothing changes.
+
 ### Flying
 
 Since 1.26 players **walk** in Play unless the game allows flying. (Before, every scene without *Keep players on the
@@ -277,15 +287,57 @@ fall **into** them instead of landing on top. For a tank of particle fluid you c
 
 ## Joints
 
-Joints tie two objects together so they move as one, or hinge around an axis. Select **exactly two objects**, then use their right-click menu ▸ **Physics**:
+Joints tie two objects together. Select **exactly two objects**, then use their right-click menu ▸ **Physics**, or
+**Properties ▸ Physics ▸ Joints ▸ Add joint**. The **first** object you selected is the base (*a*), the second is the
+attached one (*b*).
 
-| Entry | Joint |
-|---|---|
-| **Weld together** | A fixed joint — the two move as one rigid body during simulations. |
-| **Hinge (X / Y / Z axis)** | A revolute joint about the first object's local axis, anchored at the second object — a door, a lever, a wheel. |
-| **Detach joints (N)** | Removes joints touching the selection. |
+| Entry | Joint | Use it for |
+|---|---|---|
+| **Weld together** | Fixed: the two move as one rigid body | a handle on a crate, a statue on its plinth |
+| **Hinge (X / Y / Z axis)** | Turns about the first object's local axis, at the second object's origin | a door, a lever, a wheel |
+| **Ball joint** | Swings and twists every way about the second object's origin | a wrecking ball on a rod, a ragdoll shoulder |
+| **Slider ▸ X / Y / Z axis** | Moves only along the first object's local axis | a piston, a drawer, a lift |
+| **Spring** | Pulls the two origins back to the distance they had when joined | a bouncy seat, a car's suspension |
+| **Rope** | The two origins can get no further apart than they were when joined; closer is free | a hanging lamp, a swinging sign |
+| **Detach joints (N)** | Removes joints touching the selection | |
 
-Joints replicate to everyone, undo as a single step, persist in saved scenes and `.tpscene` files, and are removed automatically if one of their objects is deleted. Hinges can also be motorized programmatically (for example by the drivable-car module) to spin under power, or [driven to an angle](https://docs.theprototype.app/module-sdk.md#for-module-authors-joints-and-your-own-physics-world) to steer.
+Ball joint, Slider, Spring and Rope are new in 1.74.
+
+Joints replicate to everyone, undo as a single step, persist in saved scenes and `.tpscene` files and, since 1.74,
+across a reload of the page (before, a reload restored the objects but not their joints). They are removed
+automatically if one of their objects is deleted. Hinges can also be motorized programmatically (for example by the
+drivable-car module) to spin under power, or [driven to an angle](https://docs.theprototype.app/module-sdk.md#for-module-authors-joints-and-your-own-physics-world) to steer.
+
+### Tuning a joint
+
+**Properties ▸ Physics ▸ Joints** lists every joint touching the selected object(s), with its kind and both objects:
+
+- **Hinge** and **Slider**: **Axis** (X / Y / Z of the first object) and **Limits** — a minimum and maximum angle in
+  degrees for a hinge, a minimum and maximum distance in metres for a slider, measured from where it was joined.
+- **Spring**: **Rest length** (metres), **Stiffness** (10 is soft, 500 is stiff; default 50) and **Damping** (how fast
+  the bounce dies away; default 2).
+- **Rope**: **Length** — the furthest apart the two points can get.
+- **The two collide**: switch off for parts that sit inside each other (a wheel in its arch).
+- The bin button deletes the joint; the objects stay.
+
+Every change replicates, undoes as one step and reaches a running simulation at once: lengthen a rope mid-run and the
+lamp drops to the new length.
+
+### Seeing joints
+
+Select a jointed object and its joints are drawn in the viewport: a small cross at each anchor, a blue line for a
+hinge's or slider's axis, amber for limits (the arc a hinge may turn through, the travel of a slider between two
+ticks), a green zigzag for a spring, and the rope itself — grey while slack with an amber tick where it would go taut,
+orange when taut. **Show colliders** draws every joint in the scene. The drawings are yours only, never saved or sent,
+and are hidden in Interact and Play.
+
+### Good to know
+
+- Build joints on unrotated objects (as the [Joint node](https://docs.theprototype.app/nodes/joint.md) page warns), then rotate the finished
+  assembly.
+- A hinge's limit arc shows the size of the range, measured from the pose the hinge was made in.
+- A scene with the new joints opened in an app older than 1.74 holds them as welds (an older app only knows weld and
+  hinge). A joint kind from an app newer than yours is left out of the simulation rather than guessed at.
 
 ### Duplicating jointed objects
 

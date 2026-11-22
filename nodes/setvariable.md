@@ -11,9 +11,9 @@ is one number the whole game shares, with no object needed to hold it; with scop
 | Handle | Type | Meaning |
 |---|---|---|
 | trigger | event | each pulse writes once — an [On Click](https://docs.theprototype.app/nodes/onclick.md), a [HUD Button](https://docs.theprototype.app/nodes/hudbutton.md), an [On Hit](https://docs.theprototype.app/nodes/onhit.md), [On Game State](https://docs.theprototype.app/nodes/ongamestate.md) |
-| value | number | the amount to set, add or subtract — wire a [Number](https://docs.theprototype.app/nodes/number.md), a [Counter](https://docs.theprototype.app/nodes/counter.md), a [Math](https://docs.theprototype.app/nodes/math.md) result (unwired: 0) |
+| value | any | the amount to set, add or subtract — wire a [Number](https://docs.theprototype.app/nodes/number.md), a [Counter](https://docs.theprototype.app/nodes/counter.md), a [Math](https://docs.theprototype.app/nodes/math.md) result (unwired: 0); for op `text`, the words |
 
-The card has no field for the value: wire one in. The HUD editor's **Actions ▸ Set a variable**
+The card has no field for a number: wire one in. The HUD editor's **Actions ▸ Set a variable**
 builds a Set Variable that adds 1 to `score`.
 
 ## Parameters
@@ -21,8 +21,17 @@ builds a Set Variable that adds 1 to `score`.
 | Parameter | Default | Options |
 |---|---|---|
 | name | `score` | the variable's name, up to 40 characters |
-| op | set | `set` (replace), `add`, `subtract` |
+| op | set | `set` (replace), `add`, `subtract`, `toggle`, `text` (both *since 1.74*, see below) |
+| text | (empty) | the words op `text` stores when nothing is wired into **value** |
 | scope | shared | `shared` (one number for the game), `player` (this player's own row) |
+
+## Flags and words (since 1.74)
+
+- Op **toggle** flips a flag between 0 and 1, once per event: a door that is open or shut, a switch, a "has the key".
+- Op **text** stores words: wired into **value**, or typed in the **text** field. A player name, the last message,
+  the name of the next level. Read them back with a [Get Variable](https://docs.theprototype.app/nodes/getvariable.md) set to output **text**.
+
+Text is for **shared** variables only. Player variables hold numbers.
 
 ## Shared or per player
 

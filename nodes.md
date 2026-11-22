@@ -57,6 +57,10 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**Get Variable**](https://docs.theprototype.app/nodes/getvariable.md) | Reads a named scene variable as a value - the read side of Set Variable, live on every peer. |
 | [**Store Value**](https://docs.theprototype.app/nodes/storevalue.md) | Saves a value on THIS device when a pulse arrives (set, keep the max or min, or add) - a best score or a level reached that survives a reload; never sent to other players. |
 | [**Stored Value**](https://docs.theprototype.app/nodes/storedvalue.md) | Reads what Store Value saved on this device, as a number or text - the read side of a best score; each player sees their own. |
+| [**Game Value**](https://docs.theprototype.app/nodes/gamevalue.md) | Reads one game value (score, round clock, best, level, stars, lives, a variable, a stored or a published value) and writes it as text - a number, a clock (1:04.2), 3 / 10, a percent or stars - for HUD Text; its value output feeds HUD Bar. |
+| [**Camera Shake**](https://docs.theprototype.app/nodes/camerashake.md) | Shakes the Play camera on a trigger (strength, seconds, frequency) - on this device only, never in VR; who: me = the player who made the pulse, everyone = every player. Reduced motion turns it down. |
+| [**Screen Flash**](https://docs.theprototype.app/nodes/screenflash.md) | Flashes a colour over the screen that fades out (a hit, a pickup) - on this device; who: me or everyone. Reduced motion keeps it faint. |
+| [**Hit Pause**](https://docs.theprototype.app/nodes/hitpause.md) | Holds this device's picture for a few milliseconds on a trigger (a hit-stop). The game, the clock and physics keep running. |
 | [**Announce**](https://docs.theprototype.app/nodes/announce.md) | Shows a big banner - 'Ring 2 reached', 'GOAL!' - on every screen and in VR when a pulse arrives in Play; {v} in the text shows a wired number. In Edit it draws no banner: the line goes to the Debugger's Console with its time and this node. |
 | [**Game Sound**](https://docs.theprototype.app/nodes/gamesound.md) | Plays one of the built-in game sounds (coin, ring, levelup, cheer...) when a pulse arrives, at the wired object if one is wired; no sound files needed. |
 | [**Effect Burst**](https://docs.theprototype.app/nodes/effectburst.md) | Fires a short sparkle, confetti, smoke or sparks burst at the wired object (or in front of the player) when a pulse arrives; pooled and local to each device. |
@@ -88,6 +92,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**HUD Text**](https://docs.theprototype.app/nodes/hudtext.md) | Writes a number into a HUD text element through a format such as 'Gems: {v}' - a score, a count, a readout. |
 | [**HUD Bar**](https://docs.theprototype.app/nodes/hudbar.md) | Drives a HUD bar element's fill from a number - health, fuel, progress. |
 | [**HUD Button**](https://docs.theprototype.app/nodes/hudbutton.md) | Fires a pulse when a HUD button is pressed - the on-screen counterpart of On Click. |
+| [**Show / Hide Element**](https://docs.theprototype.app/nodes/hudvisible.md) | Shows, hides or toggles ONE HUD element on a trigger, or follows a wired visible value (above 0 = shown) - per player, like a screen. |
 | [**HUD Timer**](https://docs.theprototype.app/nodes/hudtimer.md) | Counts down in a HUD Timer element from its duration, formatted like '{v}s' - by itself (Autostart) or from a pulse into start. |
 | [**HUD List**](https://docs.theprototype.app/nodes/hudlist.md) | Names a HUD List element and sets its title and how many rows it shows; HUD Rows and Leaderboard fill it. |
 | [**HUD Rows**](https://docs.theprototype.app/nodes/hudrows.md) | Sets, appends or clears the rows of a HUD List element on each pulse - a log, a chat, a scoreboard feed. |
@@ -119,7 +124,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**Look At**](https://docs.theprototype.app/nodes/lookat.md) | Keeps the connected object facing a target - another object or a fixed point - every frame. |
 | [**Set Color**](https://docs.theprototype.app/nodes/setcolor.md) | Paints the connected object's material with a color, re-applied every frame. |
 | [**Visibility**](https://docs.theprototype.app/nodes/visibility.md) | Shows or hides the connected object based on a boolean. |
-| [**Set Shader Uniform**](https://docs.theprototype.app/nodes/setuniform.md) | Writes one number inside an object's shader graph, so a trigger, a |
+| [**Set Shader Uniform**](https://docs.theprototype.app/nodes/setuniform.md) | Writes a number, a colour or a vector inside an object's shader graph, so a trigger, a timer or a counter can drive how the material looks. |
 
 ## Triggers
 
@@ -189,7 +194,7 @@ object) and an **other** output (the body it touched) — see [Contact filters](
 | [**Motor**](https://docs.theprototype.app/nodes/motor.md) | Drives every hinge joint attached to the connected object - the flow way to make wheels turn, turntables spin and doors swing under power. |
 | [**Impulse**](https://docs.theprototype.app/nodes/impulse.md) | Pushes or spins a physics body when an event fires - a jump, a kick, a cannon, a nudge. |
 | [**Set Velocity**](https://docs.theprototype.app/nodes/setvelocity.md) | Sets a physics body's speed outright - to launch it at an exact velocity, to hold it at a constant one, or to stop it dead. |
-| [**Joint**](https://docs.theprototype.app/nodes/joint.md) | Attaches two objects to each other when an event fires - a hinge, or a rigid weld. |
+| [**Joint**](https://docs.theprototype.app/nodes/joint.md) | Attaches two objects to each other when an event fires - a hinge, a rigid weld, a ball joint, a slider along an axis, a spring or a rope. |
 
 ## Effects
 

@@ -57,6 +57,24 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.74 — games and play.**
+
+- **Game values and game feel**: a [Game Value](https://docs.theprototype.app/nodes/gamevalue.md) node shows the score, a clock, stars or lives in the
+  HUD with no code; HUD buttons get a sound and a value, [Show / Hide Element](https://docs.theprototype.app/nodes/hudvisible.md) and text or flag
+  variables join them, and [Camera Shake, Screen Flash and Hit Pause](https://docs.theprototype.app/hud-editor.md#game-feel-shake-flash-and-hit-pause)
+  make hits feel strong.
+- **Physics per object and new joints**: each body can have its own [gravity scale and drag](https://docs.theprototype.app/colliders.md#gravity-and-damping),
+  and [ball, slider, spring and rope joints](https://docs.theprototype.app/physics.md#joints) join weld and hinge, tuned in a Joints panel and kept
+  across a reload.
+- **Arrange big scenes**: live [arrays](https://docs.theprototype.app/arrange.md#repeat-an-object-arrays), [corner to corner](https://docs.theprototype.app/snapping.md#corner-to-corner-hold-b)
+  snapping with <kbd>B</kbd>, [layers](https://docs.theprototype.app/arrange.md#layers), and Select similar, Rename and Randomise.
+- **Play**: a [touch layout saved with the scene](https://docs.theprototype.app/touch-controls.md#a-layout-that-travels-with-your-game),
+  [info points](https://docs.theprototype.app/notifications.md#info-points-for-visitors) for visitors, a screen that
+  [stays awake](https://docs.theprototype.app/physics.md#the-screen-stays-awake) while you play, and a [colour dropper](https://docs.theprototype.app/controls.md#pick-a-colour-from-the-screen).
+- **Paper cuts**: [rounded boxes](https://docs.theprototype.app/controls.md#rounded-boxes), repeated meshes saved once
+  ([Saving](https://docs.theprototype.app/saving.md#scene-tpscene-recommended)), [fog kinds](https://docs.theprototype.app/camera.md#fog-kinds), [cube-map skies](https://docs.theprototype.app/camera.md#cube-map-skies)
+  and [Script events](https://docs.theprototype.app/nodes/script.md#firing-an-event).
+
 **1.71 — [the Code tab](https://docs.theprototype.app/node-editor.md#the-code-tab-since-171) and [convert to code](https://docs.theprototype.app/node-editor.md#convert-a-node-to-code).** The Nodes editor shows the graph as code, read-only (press a line to select its node). Right-click a Math, Compare, Gate, Select, Map
 Range, Random or HUD Text node ▸ **Convert to code**: it becomes a Script node that does the same thing, every wire
 kept, and **Convert back** returns it while the code is unchanged. Custom nodes keep their definitions in saved scenes,
@@ -1057,6 +1075,22 @@ type (the panel says which) — click the one object for those. Transform rows o
 the **set** about its [pivot](#the-pivot-of-a-multi-selection) rather than each object's own numbers: typing a value
 moves the set as a whole instead of collapsing it onto one plane.
 
+### Rounded boxes
+
+*New in 1.74.* A **Box** has two more Geometry rows: **Corner radius** rounds every edge and corner (0 = square,
+the default; it stops at half the shortest side), and **Corner segs** (1 – 6, shown once the radius is above 0) sets
+how smooth the rounding is. While a box is rounded, the Width / Height / Depth segment rows are hidden: the rounding
+builds its own grid.
+
+- The file keeps the box as its size plus these two numbers, not as every vertex — a rounded crate is a few hundred
+  bytes instead of about 270 KB, and you can still change its size or radius later.
+- **Convert to a rounded Box**: select a mesh that is *exactly* a rounded box made elsewhere (a baked one, as older
+  templates and some imports carry) and its Geometry section offers the button. It looks the same afterwards, saves
+  small and gets its Geometry rows back. Nothing is converted unless you press it, and one
+  <kbd>Ctrl</kbd>+<kbd>Z</kbd> puts the mesh back.
+- Agents: `set_geometry` with `{radius, radiusSegments}` on a Box; `list_scene` shows both under `geometry`.
+- An app older than 1.74 (a peer, or the file opened there) shows a rounded box as a square box of the same size.
+
 ## Transform gizmo
 
 | Key | Mode |
@@ -1207,6 +1241,12 @@ degrees.
 *Reset to default* is greyed out where a row has no known default. The first **Paste** from a menu may ask the browser
 for clipboard permission; <kbd>Ctrl</kbd>+<kbd>V</kbd> over a field never asks. Text boxes (names, banner text) keep the
 browser's own text menu.
+
+### Pick a colour from the screen
+
+*New in 1.74.* Beside a colour field, a dropper button (*Pick a colour from the screen*) takes a colour from anywhere on
+the screen: the 3D view, a reference image, another panel. With a colour field focused, <kbd>I</kbd> does the same, and
+<kbd>Esc</kbd> cancels. It works in Chrome and Edge on a computer; where the browser cannot do it, there is no button.
 
 ### Text selection
 
@@ -1584,6 +1624,7 @@ The keys in the table are the **3D view's**: they fire while the 3D view has foc
 | <kbd>Tab</kbd> | Enter [mesh edit](https://docs.theprototype.app/mesh-editing.md) mode — inside it <kbd>Tab</kbd> cycles Vertices / Edges / Faces; <kbd>Esc</kbd> exits |
 | <kbd>I</kbd> | [Edit / Interact](#edit-and-interact) mode — in Interact, clicks play with the scene instead of selecting |
 | <kbd>M</kbd> | Toggle element [snapping](https://docs.theprototype.app/snapping.md) |
+| <kbd>B</kbd> (hold) | While moving: snap the nearest corner onto a corner or edge middle — see [Corner to corner](https://docs.theprototype.app/snapping.md#corner-to-corner-hold-b) |
 | <kbd>O</kbd> | Toggle the object list |
 | <kbd>N</kbd> | Toggle the node editor |
 | <kbd>T</kbd> | Show / hide the tool dock (with nothing docked it opens [empty](https://docs.theprototype.app/interface.md#docked-windows), ready for a drop) |
@@ -2603,9 +2644,23 @@ Open the layout editor from **Settings ▸ Touch controls ▸ Edit layout**, or 
 - **Drag** any control to move it. **Select** it to change its **Size** and **Opacity** or **Hide** it — resize also with
   the round corner grip, or by pinching it with a second finger. **Default place** puts it back.
 - **This game / All games** chooses where **Save** stores the layout; a game's own layout wins over the all-games one.
+- **For players** (*since 1.74*) saves the layout **in the scene**, for everyone who plays it. It shows only to people who
+  can edit the scene, never in the play view or for a viewer. See below.
 - **Reset** returns to the default arrangement; **Cancel** (or <kbd>Esc</kbd>) discards your changes.
 
-Layouts are saved **on this device** — they never travel to other players or into the scene.
+**This game** and **All games** layouts are saved **on this device**.
+
+### A layout that travels with your game
+
+*Since 1.74.* Arrange the stick and buttons, pick **For players** and press **Save**. The layout is saved **in the
+scene**, so everyone who opens it — in the editor, in a shared play link, in an exported game — starts from your
+arrangement. **Reset** with **For players** picked removes it from the scene.
+
+A player's own layout still wins: anything they arranged on their device (**This game** or **All games**) replaces your
+placement for that control, and controls they never moved keep yours.
+
+A scene holds one such layout. It stores where each control sits (as a part of the screen), its size and its opacity —
+not the [button looks](#button-looks), which stay on each device.
 
 ## Button looks
 
@@ -2999,7 +3054,9 @@ both, and while you drag a wire a socket that cannot take it becomes a red cross
   (<kbd>F</kbd>, saved views, note jumps) and pulsing indicators — even when your device setting is off.
 - *Full* keeps every animation, even when your device asks for reduced motion.
 
-Games play normally either way: this covers the editor's own interface and camera moves. For VR comfort see the
+Games play normally either way: this covers the editor's own interface and camera moves. The one exception (since
+1.74): with *Reduce*, a game's [Camera Shake](https://docs.theprototype.app/nodes/camerashake.md) is a quarter as strong and its
+[Screen Flash](https://docs.theprototype.app/nodes/screenflash.md) a third. For VR comfort see the
 [VR Guide](https://docs.theprototype.app/vr.md#comfort-for-everyone).
 
 ## Keyboard navigation
@@ -3725,7 +3782,7 @@ another app, keeps its link for up to a minute.
 
 ### A link in a tab that is already open
 
-You do not have to reload to follow an invite. Paste the link into the **address bar** of the tab that is already running the app and press <kbd>Enter</kbd>: the app dials that session on the spot, with your scene and your session id intact. (The Connect field takes a bare ID, not a link.)
+You do not have to reload to follow an invite. Paste the link into the **address bar** of the tab that is already running the app and press <kbd>Enter</kbd>: the app dials that session on the spot, with your scene and your session id intact. (Since 1.65 you can also paste it into **Connect bar ▸ Join…**, which takes a peer ID or an invite link.)
 
 A few cases ask first, or refuse with a message:
 
@@ -4772,7 +4829,9 @@ keeps your original next to it.
 
 ## What happens on import
 
-When you import a model with **more than 50,000 triangles** or a **texture larger than 2048 px**:
+When you import a model with **more than 50,000 triangles** or a **texture larger than 2048 px**
+(a texture you set on an object by hand is a different path: it is stored at up to 1024 px, see
+[Image editor](https://docs.theprototype.app/image-editor.md#in-the-dock)):
 
 - **Textures** are resized to at most 2048 px and given a **GPU-compressed copy (KTX2 / Basis)**. Your scene, saves and
   peers still get an ordinary picture; the graphics card holds the compressed copy — about a sixth to an eighth of the
@@ -5537,8 +5596,9 @@ material, so saving on a headset and opening on a desktop shows the full look ag
 - Applying a preset keeps the object's **Side** (front / back / double) and **Wireframe** setting.
 - **Glass** is a see-through, clear-coated surface rather than true refraction, so it stays cheap on a Quest. Raise
   **Transmission** on a Physical material for real refraction on a desktop.
-- Very metallic surfaces look darker than in other tools, because the scene has no image-based lighting yet; the
-  **Metal** preset is tuned for that.
+- Very metallic surfaces look dark under a colour sky, because a colour sky gives them nothing to reflect; the
+  **Metal** preset is tuned for that. A [sky image](https://docs.theprototype.app/camera.md#sky-images-hdri) (the Clear sky, Meadow, Sunrise,
+  Starlight and Photo studio presets, or your own) lights the scene and shows in every reflection.
 - [Water](https://docs.theprototype.app/water.md) objects draw their own water surface: a preset changes only the material they show before the water
   is ready. Use the **Water** section's look presets for water.
 
@@ -6489,6 +6549,19 @@ By default an object snaps by its own origin. Often that is the wrong point: you
 
 With exactly one object selected, choose **Pick snap origin**, then click a point on it. That point becomes the anchor for your drags — snapping now moves *it* onto the target. The anchor is temporary and purely local: it is not part of the object, it is never replicated or saved, and it does not touch the object's real [origin](https://docs.theprototype.app/controls.md#each-objects-origin).
 
+## Corner to corner (hold B)
+
+*New in 1.74.* While you drag an object with the move gizmo, **hold** <kbd>B</kbd>. The corner of your object nearest to
+the spot under the pointer snaps onto a corner, or the middle of an edge, of the object under the pointer: a shelf
+lands flush in the corner of a wall, a tile meets the next tile.
+
+- Release <kbd>B</kbd> and the drag goes back to your usual snapping.
+- The grid snap still applies to the axes the corner does not set.
+- Your saved snap settings are not changed.
+- <kbd>B</kbd> in a text field types a B.
+
+**Settings ▸ Shortcuts** lists the key as *Hold while moving*.
+
 ## Inside mesh edit
 
 Element snapping applies to the mesh tools' gizmo drags too, so a vertex can be dropped precisely onto another vertex — which is what you want when closing a seam by hand.
@@ -6589,6 +6662,109 @@ not drawn. The Measure window and the Properties section still show every number
 
 Every button is **one undo step** for the whole selection, and everyone in the session sees the result. Objects
 another person is editing are left where they are. (*Drop to ground* replaces the old *Align to ground* row.)
+
+
+---
+
+Source: https://docs.theprototype.app/arrange/ (Markdown: https://docs.theprototype.app/arrange.md)
+
+# Arrays, Layers & Tidy
+
+Tools for scenes with many objects: repeat one object as a live **array**, sort objects onto **layers**, and tidy a
+selection with **Select similar**, **Rename** and **Randomise**. All of them are new in 1.74.
+
+To snap one object's corner onto another's, see [Corner to corner](https://docs.theprototype.app/snapping.md#corner-to-corner-hold-b) on the
+Snapping page.
+
+## Repeat an object: arrays
+
+Select one object and open **Properties ▸ Array**, then press **Make an array**. You get five copies in a line, spaced
+by the object's own width.
+
+| Shape | Settings |
+|---|---|
+| **Line** | a step per copy on X, Y and Z |
+| **Grid** | a count and a step per axis (X fills first, then Z, then Y) |
+| **Circle** | a radius and an arc (360° = a full ring). **Face out** turns each copy to face away from the centre |
+| **Path** | choose a Path object. The copies follow its shape starting at the object, **Spacing** metres apart (0 = spread evenly). **Turn with the path** (the **Follow** row) turns each copy along the path. An open path ends the row at its end |
+
+**Turn X / Y / Z** (degrees per copy) and **Grow** (0.1 = each copy 10 % bigger than the one before; negative shrinks)
+apply to every shape.
+
+Every drag of a field is one undo step, and the people in the session see the copies change as you drag. An array has
+at most 500 copies.
+
+### What the copies are
+
+The copies are a live array on the object. They are not separate objects yet: the object holds the recipe, and every
+screen draws the copies from it. Change the object (its shape, colour or material) and every copy follows. While the
+array is live, the copies:
+
+- have no physics and no logic, and a click passes through them;
+- are not in a glTF export of the object (a scene save keeps the array);
+- are not drawn for a skinned (rigged) mesh.
+
+Press **Make real objects** to turn the copies into ordinary objects you can move, script and export one by one. That
+is one undo step, and the people in the session get every copy at once. **Remove array** takes the copies away and
+leaves the object.
+
+!!! tip "Arrays, scatter or copies?"
+    An array places copies in a pattern you set. To spread many objects over a surface, use [Scatter](https://docs.theprototype.app/scatter.md).
+
+## Layers
+
+**Configure Scene ▸ Layers ▸ Add layer** makes a layer. Each layer has a name and a colour, plus four buttons:
+
+| Button | Does |
+|---|---|
+| **Hide** (eye) | hides the layer **on your screen only**. Nobody else is affected, and saves and Play always show every object |
+| **Lock** (padlock) | locks the layer **for everyone**. Clicks and box selection in the viewport pass through its objects. You can still pick them in the object list |
+| **Select** | selects every object on the layer |
+| **Remove** | deletes the layer. Its objects stay, on no layer (one undo step) |
+
+To put objects on a layer, select them and open **Properties ▸ Tidy ▸ Layer** (or choose **New layer…** there). In the
+object list, a coloured dot marks an object's layer.
+
+## Tidy a selection
+
+The **Tidy** section of **Properties** holds three tools.
+
+### Select similar
+
+**Properties ▸ Tidy ▸ Select similar** selects every object like the selected one, by:
+
+| By | Matches |
+|---|---|
+| **Shape** | the same primitive, or the same mesh |
+| **Material** | the same shared material, or the same type, colour and texture |
+| **Prefab** | instances of the same prefab |
+| **Tag** | any tag in common |
+| **Layer** | the same layer |
+
+### Rename
+
+With two or more objects selected, **Tidy ▸ Rename** takes a pattern: `{n}` is a counter and `{name}` is the old name.
+For example, `Post {n}` with **Digits** 2 gives Post 01, Post 02, and so on, in the order you picked the objects.
+**Start at** sets the first number. A preview shows the first names. One undo step.
+
+### Randomise
+
+With two or more objects selected, **Tidy ▸ Randomise** turns, resizes and moves each object within the ranges you set:
+
+- **Turn X / Y / Z ±** in degrees (default: up to 180° about Y);
+- **Size from** / **Size to** as a factor (1 = unchanged);
+- **Move X / Y / Z ±** in metres.
+
+The same **Seed** always gives the same result, and **New seed** tries another. One undo step.
+
+## With an agent
+
+- `update_objects` takes `array: {mode, count, step, …}` (`null` removes it) and `makeReal: true`. `list_scene`
+  reports an object's array.
+- `update_objects` takes `layer: "<name>"`: it makes the layer when the name is new, and `null` takes the object off its
+  layer. `list_scene` reports each object's layer by name.
+
+See [Build with an AI agent](https://docs.theprototype.app/ai/build-with-an-agent.md).
 
 
 ---
@@ -6953,7 +7129,9 @@ them, and pick **Edit** or **Versions** at the top of the page; it stays open ne
   not its history.
 - PNG, JPEG and WebP save in their own format. GIF and BMP save as PNG.
 - The largest side the editor produces is 8192 px.
-- A texture is stored at up to 1024 px, whatever the size of the image.
+- A texture you set on an object (Set texture…, a drop, or the editor's Apply) is stored at up to 1024 px,
+  whatever the size of the image. Textures inside an imported model follow the
+  [import optimizer](https://docs.theprototype.app/import-optimize.md) instead (2048 px by default).
 
 
 ---
@@ -7594,7 +7772,7 @@ Press **+ Add effect** and pick one from its family:
 | Colour grading | Tone mapping, Hue / saturation, Brightness / contrast, LUT |
 | Stylize | Dot screen |
 | Shader graph | a post effect you built as a node graph — see [below](#a-post-effect-you-build-yourself) |
-| Camera FX | Bloom, Vignette, Film grain, Chromatic aberration, Pixelation, Scanlines, Lens flare, God rays, Volumetric fog |
+| Camera FX | Bloom, Depth of field, Vignette, Film grain, Chromatic aberration, Pixelation, Scanlines, Lens flare, God rays, Volumetric fog |
 | Anti-aliasing | Anti-aliasing (TRAA or SMAA) |
 
 Each row has a grip to **drag it up or down**, a checkbox to switch it off without losing
@@ -8715,7 +8893,8 @@ The rest of the section — the **collider** shape, the **material** (bounciness
 axes** and **Show collider** — is described on its own page: **[Colliders](https://docs.theprototype.app/colliders.md)**. In short: the collider shape
 is inferred from the object (a sphere rolls, a ramp is a ramp), a *Sensor* stops colliding and fires
 [On Enter](https://docs.theprototype.app/nodes/onenter.md) / [On Exit](https://docs.theprototype.app/nodes/onexit.md) instead, and every one of these settings can be changed while
-the simulation runs. A dynamic object can also [float](#things-float) in water.
+the simulation runs. A dynamic object can also [float](#things-float) in water, and since 1.74 it can have its own
+[gravity scale and drag](https://docs.theprototype.app/colliders.md#gravity-and-damping): a feather, a balloon, a parachute.
 
 To give a whole selection physics at once, **Configure Scene ▸ Physics** lists every object that will get a body
 (*dynamic · 1 kg*, *static*, *collider only*; click a row to select it) and has an **Enable physics on selection** button
@@ -8863,6 +9042,15 @@ Only dynamic objects can be picked up, objects another peer has locked are refus
 
 A module can override these for its own world by publishing them on its scene group.
 
+### The screen stays awake
+
+*Since 1.74.* While you play, film ([Film mode](https://docs.theprototype.app/film.md)), [record a video](https://docs.theprototype.app/recording.md), or watch another player (for
+example while someone else wears the headset), the screen does not dim or lock. A paused game and leaving Play let it
+sleep again. There is no setting.
+
+It needs a browser with Screen Wake Lock: Chrome, Edge, Safari 16.4 (iOS 18.4), Firefox 126 or the Quest Browser.
+Elsewhere nothing changes.
+
 ### Flying
 
 Since 1.26 players **walk** in Play unless the game allows flying. (Before, every scene without *Keep players on the
@@ -8972,15 +9160,57 @@ fall **into** them instead of landing on top. For a tank of particle fluid you c
 
 ## Joints
 
-Joints tie two objects together so they move as one, or hinge around an axis. Select **exactly two objects**, then use their right-click menu ▸ **Physics**:
+Joints tie two objects together. Select **exactly two objects**, then use their right-click menu ▸ **Physics**, or
+**Properties ▸ Physics ▸ Joints ▸ Add joint**. The **first** object you selected is the base (*a*), the second is the
+attached one (*b*).
 
-| Entry | Joint |
-|---|---|
-| **Weld together** | A fixed joint — the two move as one rigid body during simulations. |
-| **Hinge (X / Y / Z axis)** | A revolute joint about the first object's local axis, anchored at the second object — a door, a lever, a wheel. |
-| **Detach joints (N)** | Removes joints touching the selection. |
+| Entry | Joint | Use it for |
+|---|---|---|
+| **Weld together** | Fixed: the two move as one rigid body | a handle on a crate, a statue on its plinth |
+| **Hinge (X / Y / Z axis)** | Turns about the first object's local axis, at the second object's origin | a door, a lever, a wheel |
+| **Ball joint** | Swings and twists every way about the second object's origin | a wrecking ball on a rod, a ragdoll shoulder |
+| **Slider ▸ X / Y / Z axis** | Moves only along the first object's local axis | a piston, a drawer, a lift |
+| **Spring** | Pulls the two origins back to the distance they had when joined | a bouncy seat, a car's suspension |
+| **Rope** | The two origins can get no further apart than they were when joined; closer is free | a hanging lamp, a swinging sign |
+| **Detach joints (N)** | Removes joints touching the selection | |
 
-Joints replicate to everyone, undo as a single step, persist in saved scenes and `.tpscene` files, and are removed automatically if one of their objects is deleted. Hinges can also be motorized programmatically (for example by the drivable-car module) to spin under power, or [driven to an angle](https://docs.theprototype.app/module-sdk.md#for-module-authors-joints-and-your-own-physics-world) to steer.
+Ball joint, Slider, Spring and Rope are new in 1.74.
+
+Joints replicate to everyone, undo as a single step, persist in saved scenes and `.tpscene` files and, since 1.74,
+across a reload of the page (before, a reload restored the objects but not their joints). They are removed
+automatically if one of their objects is deleted. Hinges can also be motorized programmatically (for example by the
+drivable-car module) to spin under power, or [driven to an angle](https://docs.theprototype.app/module-sdk.md#for-module-authors-joints-and-your-own-physics-world) to steer.
+
+### Tuning a joint
+
+**Properties ▸ Physics ▸ Joints** lists every joint touching the selected object(s), with its kind and both objects:
+
+- **Hinge** and **Slider**: **Axis** (X / Y / Z of the first object) and **Limits** — a minimum and maximum angle in
+  degrees for a hinge, a minimum and maximum distance in metres for a slider, measured from where it was joined.
+- **Spring**: **Rest length** (metres), **Stiffness** (10 is soft, 500 is stiff; default 50) and **Damping** (how fast
+  the bounce dies away; default 2).
+- **Rope**: **Length** — the furthest apart the two points can get.
+- **The two collide**: switch off for parts that sit inside each other (a wheel in its arch).
+- The bin button deletes the joint; the objects stay.
+
+Every change replicates, undoes as one step and reaches a running simulation at once: lengthen a rope mid-run and the
+lamp drops to the new length.
+
+### Seeing joints
+
+Select a jointed object and its joints are drawn in the viewport: a small cross at each anchor, a blue line for a
+hinge's or slider's axis, amber for limits (the arc a hinge may turn through, the travel of a slider between two
+ticks), a green zigzag for a spring, and the rope itself — grey while slack with an amber tick where it would go taut,
+orange when taut. **Show colliders** draws every joint in the scene. The drawings are yours only, never saved or sent,
+and are hidden in Interact and Play.
+
+### Good to know
+
+- Build joints on unrotated objects (as the [Joint node](https://docs.theprototype.app/nodes/joint.md) page warns), then rotate the finished
+  assembly.
+- A hinge's limit arc shows the size of the range, measured from the pose the hinge was made in.
+- A scene with the new joints opened in an app older than 1.74 holds them as welds (an older app only knows weld and
+  hinge). A joint kind from an app newer than yours is left out of the simulation rather than guessed at.
 
 ### Duplicating jointed objects
 
@@ -9054,6 +9284,9 @@ Select an object and open **Properties ▸ Physics**:
 | **Sensor** | no collision, fires On Enter / On Exit | off |
 | **Lock rotation** (Dynamic only) | X · Y · Z | off |
 | **Lock position** (Dynamic only) | X · Y · Z | off |
+| **Gravity scale** (Dynamic only) | −5 – 5 | 1 — how strongly gravity pulls this body: 0 floats in place, below 0 rises |
+| **Drag** (Dynamic only) | 0 – 5 | the scene's drag — slows its movement over time |
+| **Spin drag** (Dynamic only) | 0 – 5 | the scene's spin drag — slows its spinning over time |
 | **Floats** (Dynamic only) | Auto · Foam · Cork · Wood · Ice · Rubber · Stone · Metal · From mass ÷ volume · Off | Auto — see [Things float](https://docs.theprototype.app/physics.md#things-float) |
 | **Show collider — this device** | draws the collider as a wireframe | off |
 
@@ -9189,13 +9422,23 @@ A **Dynamic** body can be pinned per axis:
 
 ## Gravity and damping
 
-Gravity is a **scene** setting: **Configure Scene ▸ Physics ▸ World ▸ Gravity**, from −20 to 5 (positive falls *up*),
-shared by every object. There is no per-object gravity scale; to make one object float, put it in [water](https://docs.theprototype.app/physics.md#things-float), lock its Y
-position, or push it with an [Impulse](https://docs.theprototype.app/nodes/impulse.md) or [Set Velocity](https://docs.theprototype.app/nodes/setvelocity.md) node.
+Gravity is a **scene** setting: **Configure Scene ▸ Physics ▸ World ▸ Gravity**, from −20 to 5 (positive falls *up*).
+Since 1.74 each **Dynamic** body can change how much of it it feels: **Properties ▸ Physics ▸ Gravity scale**
+(−5 to 5). 1 is normal, 0 makes the object hang in the air where it is when the simulation starts, 0.2 makes it drift
+down like a feather, and a value below 0 makes it rise like a balloon. A jump pad that feels floaty, a moon section in
+one corner of a level, a lantern that rises: each is one number on one object, no water and no nodes.
 
-**Drag** and **spin drag** (linear and angular damping) and **Continuous collision** are scene-wide too, under
-**Defaults (advanced)**. A body thrown or knocked faster than about 5 m/s switches continuous collision on for itself until it settles, so a hard
-throw does not pass through a thin wall.
+**Drag** and **spin drag** (linear and angular damping) slow a body's movement and spinning over time. The scene's
+values are under **Configure Scene ▸ Physics ▸ Defaults (advanced)**; **Properties ▸ Physics ▸ Drag / Spin drag**
+override them for one Dynamic body (a parachute: Drag 3; a coin that stops spinning quickly: Spin drag 2). The small
+mark beside a row means the object has its own value; press it to go back to the scene's.
+
+**Continuous collision** is scene-wide too, with a [per-object pick](https://docs.theprototype.app/physics.md#continuous-collision-per-object). A body thrown or knocked faster than about 5 m/s
+switches continuous collision on for itself until it settles, so a hard throw does not pass through a thin wall.
+
+All three values replicate to everyone, undo, save with the object and take effect at once during a running
+simulation. A scene that never sets them behaves exactly as before. The agent tool `set_physics` takes
+`gravityScale`, `linearDamping` and `angularDamping`.
 
 ## Seeing the collider
 
@@ -10046,8 +10289,9 @@ Sculpting is its own mode, separate from the vertex/edge/face **mesh edit** mode
 
 They never overlap — entering one doesn't affect the other. Sculpting never changes the number of vertices, so shape a mesh first and sculpt it after.
 
-!!! warning "Desktop only"
-    Terrain sculpting is a desktop feature. It isn't available in VR yet.
+!!! note "In a headset"
+    Terrain sculpting works in VR too (since 1.28): see [Sculpting terrain in VR](https://docs.theprototype.app/vr.md#sculpting-terrain-in-vr).
+    Sculpting any other mesh is a desktop feature.
 
 
 ---
@@ -10284,6 +10528,12 @@ A `.tpscene` file is a zip bundle containing everything a scene needs:
 | Imported packs | off |
 | Flow graph (nodes + edges) | on |
 | Project (.tp) includes: Scene version history | on — off exports each scene's current version only |
+
+**Repeated meshes are saved once** *(since 1.74)*: ten crates of one mesh store that mesh one time and point at it
+nine times, so a scene full of copies is much smaller. Nothing changes in the scene itself — each object still owns
+its own mesh once loaded. A file written by 1.74 still opens in 1.73: there, every copy of a repeated mesh is
+drawn as a plain box of its size (the file says so with `formatMinor` 4), so open it in 1.74 or newer to see it whole.
+Rounded boxes are stored as numbers too (see [Rounded boxes](https://docs.theprototype.app/controls.md#rounded-boxes)).
 
 **Animated models** are carried as their **original file bytes** rather than as exported geometry: an animation clip lives beside the scene, not on the object, and no exporter can carry it. That means an imported rig comes back animated instead of as a dead static mesh, and animations you authored in the Animation window are stored too. There's a size cap per model, with a toast if one is skipped.
 
@@ -10848,7 +11098,22 @@ An **Exposure** slider tunes overall brightness. The lit presets add a sun that 
 
 Environment is a **shared, latest-wins** setting — the most recent change wins for everyone. You can also **save**, **export** and **import** custom presets (stored locally), and adopt presets other peers have shared.
 
-Below Environment, **Background** sets the clear color and **Fog** adds distance fog (color + near/far), both shared. A fog you set by hand keeps exactly the near and far you typed; a preset's fog still grows with a big scene.
+Below Environment, **Background** sets the clear color and **Fog** adds fog, both shared. A fog you set by hand keeps exactly the near and far you typed; a preset's fog still grows with a big scene.
+
+### Fog kinds
+
+*New in 1.74.* The Fog rows start with **Kind**:
+
+| Kind | Rows | What it looks like |
+|---|---|---|
+| **Linear (near to far)** (the default) | Near, Far | no fog up to Near, full fog colour from Far |
+| **Distance** | Density | fog that thickens the further you look, with no hard edge — a hazy valley, a dusty hall |
+| **Height (ground fog)** | Density, Ground height, Thickness | fog lying on the ground: thickest at **Ground height**, thinning out over **Thickness** metres above it. Looking down into it fogs more than looking across above it, and a tower top stands clear |
+
+- Density 0.01 is a light haze, 0.1 is thick; Thickness 2-6 m reads as ground fog, 20 m and more as a low cloud.
+- Peers on an app older than 1.74 see a linear fog from Near to Far instead.
+- The [Cinematic view](https://docs.theprototype.app/cinematic-view.md) draws Distance fog; Height fog is listed in its *Not shown* chip.
+- Agents set it with `set_sky` fog `{kind, density, base, thickness}`.
 
 ## Sky images (HDRI)
 
@@ -10884,7 +11149,7 @@ images from [Poly Haven](https://polyhaven.com).
 *Figure: Configure Scene ▸ Environment, with its Sky image section.*
 | Row | What it does |
 |---|---|
-| **Upload HDRI…** | use your own equirectangular `.hdr` or `.exr` file (up to 25 MB; 1k–2k is plenty). It is added to the [Explorer](https://docs.theprototype.app/explorer.md), your peers download it from you automatically, and it is saved inside `.tpscene` files and exports |
+| **Upload HDRI…** | use your own sky (up to 25 MB; 1k–2k is plenty): an equirectangular `.hdr` or `.exr`, a [cube map](#cube-map-skies), or an equirectangular `.png` / `.jpg` / `.webp`. It is added to the [Explorer](https://docs.theprototype.app/explorer.md), your peers download it from you automatically, and it is saved inside `.tpscene` files and exports |
 | **Rotation** | turns the sky; the sun and its shadows turn with it |
 | **Image light** | how strongly the image lights objects (the sky itself is unchanged) |
 | **Show as sky** | off keeps the image's light and reflections but shows the colour sky instead |
@@ -10898,6 +11163,20 @@ preset** keeps it.
 
 A short tour points at the cards the first time you see them (**Settings ▸ Interface ▸ Tours ▸ Reset all** shows it
 again).
+
+### Cube-map skies
+
+*New in 1.74.* **Upload HDRI…** also takes a sky made of six square faces, and turns it into an equirectangular
+`.hdr` (at most 2048 × 1024) that is stored and shared like any uploaded sky:
+
+- **one image** laid out as a **cross** (4:3 or 3:4) or a **strip** of six faces (6:1 or 1:6, in the order +X −X +Y −Y
+  +Z −Z), in `.hdr`, `.exr`, `.png`, `.jpg` or `.webp`;
+- **six files** picked together, named by face: `px nx py ny pz nz` (also `posx`… `negz`, or `right left top bottom
+  front back`).
+
+The cross centre is the front (+Z) face, as in three.js and most skybox tools; nothing is mirrored. A `.png` or `.jpg`
+sky has no light brighter than white, so it lights the scene more flatly than an `.hdr`. A toast names the converted
+file; the original faces are not kept. Agents can upload a cube-map cross or strip with `assets upload` the same way.
 
 ### How sharp the sky is
 
@@ -10955,8 +11234,7 @@ unaffected:
 
 ### Limits
 
-- Only equirectangular images (twice as wide as they are tall); cube-map files are not supported. An `.exr` must be RGB
-  or RGBA.
+- An `.exr` must be RGB or RGBA.
 - Files over 25 MB are refused — your peers could not receive them.
 - Someone on an app older than 1.27 in the same session sees the preset's flat colours instead of the image.
 - A [scene look](https://docs.theprototype.app/post-processing.md) with its own [Tone mapping](https://docs.theprototype.app/post-processing.md#tone-mapping) effect keeps its own curve.
@@ -11334,6 +11612,8 @@ moves. The card that opens has:
 | **Label** | a group name such as *mechanics* or *art* — suggestions come from the labels already in the scene; the drawer groups notes by it |
 | **Camera ▸ Save camera view** | stores your current view with the note; **Update saved view** replaces it, **✕** forgets it |
 | **Follow the pin when opened** | opening the note flies the camera to it and keeps following the pin as its object moves; <kbd>Esc</kbd> stops following |
+| **Show to visitors in Play** | *since 1.74*: makes the note an [info point](#info-points-for-visitors) for people who play the scene |
+| **Add picture** | *since 1.74*: one picture shown with the note (PNG, JPEG or WebP); **Replace picture** swaps it |
 
 **Save** keeps it, **Delete** removes it. Notes replicate to every peer with your name attached.
 
@@ -11381,6 +11661,29 @@ camera to the note, with the card opening on a double click: handy for walking t
 card in the way.
 
 If there are no notes yet, the drawer tells you to select an object and add one from its context menu.
+
+### Info points for visitors
+
+*New in 1.74.* A note can be an **info point**: a short text, with a picture if you like, for people who visit your
+scene in Play — a museum label, a stop on a tour, a hint in a level.
+
+1. Write a note on any object as usual: name, text and, if you like, **Save camera view**.
+2. Switch on **Show to visitors in Play**.
+3. Press **Add picture** to add one picture.
+
+In the play view (a shared play link, an embed, an exported game) an **Info points** button with the count sits in the
+bottom-left player bar. It lists the points, and each one opens a card with the name, text, picture and **Show the
+view**, which flies to the view you saved (not while a game is being played). The pins of info points stay clickable in
+the view; other notes are not shown in Play.
+
+- **Keyboard**: <kbd>Tab</kbd> to **Info points**, <kbd>Enter</kbd> opens the list (focus on the first point),
+  <kbd>Enter</kbd> opens a point, the previous and next buttons step between points, and <kbd>Esc</kbd> closes and
+  returns to the button.
+- **Screen readers** hear a named button with the count, a labelled list and a labelled card.
+- It works with no live session: the notes travel inside the scene file.
+
+A note still needs an object to sit on; put it on the ground or on an empty object to place it freely. A note holds one
+picture, made smaller to fit (longest side 960 px).
 
 ## Chat
 
@@ -12095,7 +12398,7 @@ sources (Input) → logic → effect nodes → Object Selector
 - **Source nodes** (Slider, Number, Time, Random, Toggle…) produce values.
 - **Logic nodes** (Math, Compare, Map Range, Select…) transform them; unwired inputs fall back to the value typed on the card.
 - **Effect nodes** (Spin, Bounce, Pulse, Set Color, Visibility, Sound, Script…) turn values into scene behavior — but they act on nothing by themselves.
-- The **[Object Selector](https://docs.theprototype.app/nodes/objectselector.md)** is the sink: an effect only touches the scene when its output is wired into an Object Selector that has a scene object picked. Anything not ending in an Object Selector is silently inert.
+- The **[Object Selector](https://docs.theprototype.app/nodes/objectselector.md)** is the sink: an effect only touches the scene when its output is wired into an Object Selector that has a scene object picked (or the effect sits in an object's own graph). *Since 1.74* an effect in the scene graph that reaches no object says so under its card — **acts on nothing: add an Object Selector** — and **Check scene** for agents (`validate_scene`) lists it.
 
 Cards show live value readouts, updated several times a second.
 
@@ -12987,6 +13290,10 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**Get Variable**](https://docs.theprototype.app/nodes/getvariable.md) | Reads a named scene variable as a value - the read side of Set Variable, live on every peer. |
 | [**Store Value**](https://docs.theprototype.app/nodes/storevalue.md) | Saves a value on THIS device when a pulse arrives (set, keep the max or min, or add) - a best score or a level reached that survives a reload; never sent to other players. |
 | [**Stored Value**](https://docs.theprototype.app/nodes/storedvalue.md) | Reads what Store Value saved on this device, as a number or text - the read side of a best score; each player sees their own. |
+| [**Game Value**](https://docs.theprototype.app/nodes/gamevalue.md) | Reads one game value (score, round clock, best, level, stars, lives, a variable, a stored or a published value) and writes it as text - a number, a clock (1:04.2), 3 / 10, a percent or stars - for HUD Text; its value output feeds HUD Bar. |
+| [**Camera Shake**](https://docs.theprototype.app/nodes/camerashake.md) | Shakes the Play camera on a trigger (strength, seconds, frequency) - on this device only, never in VR; who: me = the player who made the pulse, everyone = every player. Reduced motion turns it down. |
+| [**Screen Flash**](https://docs.theprototype.app/nodes/screenflash.md) | Flashes a colour over the screen that fades out (a hit, a pickup) - on this device; who: me or everyone. Reduced motion keeps it faint. |
+| [**Hit Pause**](https://docs.theprototype.app/nodes/hitpause.md) | Holds this device's picture for a few milliseconds on a trigger (a hit-stop). The game, the clock and physics keep running. |
 | [**Announce**](https://docs.theprototype.app/nodes/announce.md) | Shows a big banner - 'Ring 2 reached', 'GOAL!' - on every screen and in VR when a pulse arrives in Play; {v} in the text shows a wired number. In Edit it draws no banner: the line goes to the Debugger's Console with its time and this node. |
 | [**Game Sound**](https://docs.theprototype.app/nodes/gamesound.md) | Plays one of the built-in game sounds (coin, ring, levelup, cheer...) when a pulse arrives, at the wired object if one is wired; no sound files needed. |
 | [**Effect Burst**](https://docs.theprototype.app/nodes/effectburst.md) | Fires a short sparkle, confetti, smoke or sparks burst at the wired object (or in front of the player) when a pulse arrives; pooled and local to each device. |
@@ -13018,6 +13325,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**HUD Text**](https://docs.theprototype.app/nodes/hudtext.md) | Writes a number into a HUD text element through a format such as 'Gems: {v}' - a score, a count, a readout. |
 | [**HUD Bar**](https://docs.theprototype.app/nodes/hudbar.md) | Drives a HUD bar element's fill from a number - health, fuel, progress. |
 | [**HUD Button**](https://docs.theprototype.app/nodes/hudbutton.md) | Fires a pulse when a HUD button is pressed - the on-screen counterpart of On Click. |
+| [**Show / Hide Element**](https://docs.theprototype.app/nodes/hudvisible.md) | Shows, hides or toggles ONE HUD element on a trigger, or follows a wired visible value (above 0 = shown) - per player, like a screen. |
 | [**HUD Timer**](https://docs.theprototype.app/nodes/hudtimer.md) | Counts down in a HUD Timer element from its duration, formatted like '{v}s' - by itself (Autostart) or from a pulse into start. |
 | [**HUD List**](https://docs.theprototype.app/nodes/hudlist.md) | Names a HUD List element and sets its title and how many rows it shows; HUD Rows and Leaderboard fill it. |
 | [**HUD Rows**](https://docs.theprototype.app/nodes/hudrows.md) | Sets, appends or clears the rows of a HUD List element on each pulse - a log, a chat, a scoreboard feed. |
@@ -13049,7 +13357,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**Look At**](https://docs.theprototype.app/nodes/lookat.md) | Keeps the connected object facing a target - another object or a fixed point - every frame. |
 | [**Set Color**](https://docs.theprototype.app/nodes/setcolor.md) | Paints the connected object's material with a color, re-applied every frame. |
 | [**Visibility**](https://docs.theprototype.app/nodes/visibility.md) | Shows or hides the connected object based on a boolean. |
-| [**Set Shader Uniform**](https://docs.theprototype.app/nodes/setuniform.md) | Writes one number inside an object's shader graph, so a trigger, a |
+| [**Set Shader Uniform**](https://docs.theprototype.app/nodes/setuniform.md) | Writes a number, a colour or a vector inside an object's shader graph, so a trigger, a timer or a counter can drive how the material looks. |
 
 ## Triggers
 
@@ -13119,7 +13427,7 @@ object) and an **other** output (the body it touched) — see [Contact filters](
 | [**Motor**](https://docs.theprototype.app/nodes/motor.md) | Drives every hinge joint attached to the connected object - the flow way to make wheels turn, turntables spin and doors swing under power. |
 | [**Impulse**](https://docs.theprototype.app/nodes/impulse.md) | Pushes or spins a physics body when an event fires - a jump, a kick, a cannon, a nudge. |
 | [**Set Velocity**](https://docs.theprototype.app/nodes/setvelocity.md) | Sets a physics body's speed outright - to launch it at an exact velocity, to hold it at a constant one, or to stop it dead. |
-| [**Joint**](https://docs.theprototype.app/nodes/joint.md) | Attaches two objects to each other when an event fires - a hinge, or a rigid weld. |
+| [**Joint**](https://docs.theprototype.app/nodes/joint.md) | Attaches two objects to each other when an event fires - a hinge, a rigid weld, a ball joint, a slider along an axis, a spring or a rope. |
 
 ## Effects
 
@@ -14279,9 +14587,9 @@ is one number the whole game shares, with no object needed to hold it; with scop
 | Handle | Type | Meaning |
 |---|---|---|
 | trigger | event | each pulse writes once — an [On Click](https://docs.theprototype.app/nodes/onclick.md), a [HUD Button](https://docs.theprototype.app/nodes/hudbutton.md), an [On Hit](https://docs.theprototype.app/nodes/onhit.md), [On Game State](https://docs.theprototype.app/nodes/ongamestate.md) |
-| value | number | the amount to set, add or subtract — wire a [Number](https://docs.theprototype.app/nodes/number.md), a [Counter](https://docs.theprototype.app/nodes/counter.md), a [Math](https://docs.theprototype.app/nodes/math.md) result (unwired: 0) |
+| value | any | the amount to set, add or subtract — wire a [Number](https://docs.theprototype.app/nodes/number.md), a [Counter](https://docs.theprototype.app/nodes/counter.md), a [Math](https://docs.theprototype.app/nodes/math.md) result (unwired: 0); for op `text`, the words |
 
-The card has no field for the value: wire one in. The HUD editor's **Actions ▸ Set a variable**
+The card has no field for a number: wire one in. The HUD editor's **Actions ▸ Set a variable**
 builds a Set Variable that adds 1 to `score`.
 
 ## Parameters
@@ -14289,8 +14597,17 @@ builds a Set Variable that adds 1 to `score`.
 | Parameter | Default | Options |
 |---|---|---|
 | name | `score` | the variable's name, up to 40 characters |
-| op | set | `set` (replace), `add`, `subtract` |
+| op | set | `set` (replace), `add`, `subtract`, `toggle`, `text` (both *since 1.74*, see below) |
+| text | (empty) | the words op `text` stores when nothing is wired into **value** |
 | scope | shared | `shared` (one number for the game), `player` (this player's own row) |
+
+## Flags and words (since 1.74)
+
+- Op **toggle** flips a flag between 0 and 1, once per event: a door that is open or shut, a switch, a "has the key".
+- Op **text** stores words: wired into **value**, or typed in the **text** field. A player name, the last message,
+  the name of the next level. Read them back with a [Get Variable](https://docs.theprototype.app/nodes/getvariable.md) set to output **text**.
+
+Text is for **shared** variables only. Player variables hold numbers.
 
 ## Shared or per player
 
@@ -14339,18 +14656,22 @@ Source: https://docs.theprototype.app/nodes/getvariable/ (Markdown: https://docs
 
 # Get Variable
 
-Reads a named shared variable as a number — the read side of [Set Variable](https://docs.theprototype.app/nodes/setvariable.md),
+Reads a named shared variable as a number, or as text — the read side of [Set Variable](https://docs.theprototype.app/nodes/setvariable.md),
 live on every player's screen.
 
-**Output:** number (shown live on the card)
+**Output:** number, or text (shown live on the card)
 
 ## Parameters
 
 | Parameter | Default | Options |
 |---|---|---|
 | name | `score` | the variable to read — the same name the Set Variable writes |
+| output | number | `number`, or `text` (*since 1.74*) for a variable that holds words |
 
-A name nothing has written yet reads as 0.
+A name nothing has written yet reads as 0 (as text: empty).
+
+With output **text** it reads a variable a Set Variable with op `text` wrote. Wire it into a
+[HUD Text](https://docs.theprototype.app/nodes/hudtext.md)'s **format** socket to show the words, or use a [Game Value](https://docs.theprototype.app/nodes/gamevalue.md).
 
 ## What it reads
 
@@ -14902,6 +15223,237 @@ Count each player's own bell rings on their own HUD:
 
 ---
 
+Source: https://docs.theprototype.app/nodes/gamevalue/ (Markdown: https://docs.theprototype.app/nodes/gamevalue.md)
+
+# Game Value
+
+Reads one game value and writes it as words, ready for a [HUD Text](https://docs.theprototype.app/nodes/hudtext.md): the score, the round clock, the best,
+the level, its stars, lives. A HUD needs no code to show them. *Since 1.74.*
+
+**Output:** the value as text · `value` (the raw number) · `max` (the max it was written against)
+
+## Inputs
+
+| Handle | Type | Meaning |
+|---|---|---|
+| value | any | what to show when **read** is *wired* |
+| max | number | the max for *fraction*, *percent* and *stars*; wired, it replaces the card's **max** |
+
+## Parameters
+
+| Parameter | Default | Options |
+|---|---|---|
+| read | score | what to read — see the table below |
+| name | (empty) | the variable, key, level or value name, for the reads that take one |
+| format | number | `number`, `time`, `fraction`, `percent`, `stars`, `text` |
+| decimals | 0 | 0 to 4 |
+| max | 0 | the whole for *fraction*, *percent* and *stars* |
+| prefix | (empty) | written before the value, such as `Coins ` |
+| suffix | (empty) | written after it, such as ` pts` |
+| when empty | (empty) | shown instead while the value is 0 or blank, such as `Best —` or `not cleared yet` |
+
+## What it reads
+
+| read | Value |
+|---|---|
+| **score** | the game's score |
+| **my score** | your own score |
+| **best score** | the best score |
+| **clock** | the round's play time |
+| **time left** | the time left in the round |
+| **countdown** | the countdown before the round starts |
+| **round** | the round number |
+| **level** | the level number |
+| **level name** | the level's name |
+| **stars** | the stars of the current level, or of the level named in **name** |
+| **total stars** | the stars of every level together |
+| **lives** | your player variable `lives`, or the one named in **name** |
+| **variable** | a shared [variable](https://docs.theprototype.app/nodes/getvariable.md) |
+| **player variable** | your own [player variable](https://docs.theprototype.app/nodes/peervariable.md) |
+| **stored** | a [Store Value](https://docs.theprototype.app/nodes/storevalue.md) key, saved on this device |
+| **published** | a value a module publishes (see below) |
+| **wired** | whatever you wire into **value** |
+
+Every read is local and needs no network. Shared values are already the same for every player; "my" values are
+yours.
+
+## Formats
+
+| format | Shows |
+|---|---|
+| **number** | `3`, or `3.5` with 1 decimal |
+| **time** | a clock: `1:04`, or `1:04.2` with 1 decimal |
+| **fraction** | `3 / 10` (needs a **max**) |
+| **percent** | the value as a part of **max**, such as `30 %` |
+| **stars** | filled and empty stars, such as `★★☆` (3 when no max is set) |
+| **text** | the value as it is, such as a level name |
+
+## Wiring it
+
+- Wire the output into a **HUD Text**'s **format** socket. The text shows exactly what Game Value wrote.
+- Wire the **value** output into a [HUD Bar](https://docs.theprototype.app/nodes/hudbar.md) to show the same number as a bar.
+
+## Practical example
+
+A best time that says so when there is none yet:
+
+1. Add a **Game Value**: read *best score*, format *time*, decimals 1, prefix `Best `, when empty `Best —`.
+2. Wire it into the **format** socket of a **HUD Text** on your Playing screen.
+3. Before the first finished round the line reads *Best —*; after it, *Best 1:04.2*.
+
+## For module authors
+
+A module can publish a value for this node to read:
+
+```js
+api.values.set('coins', 3, { max: 10 }); // read "published", name "coins"
+```
+
+The value is local to each player, is never saved, and is cleared when the module is turned off. `api.values.get(name)`
+reads it back and `api.values.clear(name)` removes it.
+
+## See also
+
+- [HUD Editor](https://docs.theprototype.app/hud-editor.md#show-a-game-value) — where the text it fills is placed
+- [HUD Text](https://docs.theprototype.app/nodes/hudtext.md) · [HUD Bar](https://docs.theprototype.app/nodes/hudbar.md)
+
+
+---
+
+Source: https://docs.theprototype.app/nodes/camerashake/ (Markdown: https://docs.theprototype.app/nodes/camerashake.md)
+
+# Camera Shake
+
+Shakes the Play camera for a moment: a hit, a landing, an explosion. *Since 1.74.*
+
+**Output:** none (an action)
+
+## Inputs
+
+| Handle | Type | Meaning |
+|---|---|---|
+| trigger | event | each pulse shakes once |
+
+## Parameters
+
+| Parameter | Default | Options |
+|---|---|---|
+| strength | 0.15 | 0 to 1 — how far the view moves |
+| seconds | 0.35 | 0.05 to 3 — how long it lasts |
+| frequency | 18 | 2 to 40 — how fast it shakes |
+| who | me | `me` = only the player whose press or hit made the pulse; `everyone` = every player |
+
+## Where it shows
+
+It moves the **Play camera** only, on each player's own screen. It never shakes the view in VR, and never the editor
+camera. Nothing is saved or changed in the scene.
+
+With **Settings ▸ Accessibility ▸ Movement ▸ Motion** set to *Reduce*, the shake is a quarter as strong. See
+[Motion](https://docs.theprototype.app/accessibility.md#motion).
+
+!!! note "who: me and Delay"
+    *me* follows the press or the hit itself. A pulse that has gone through a [Delay](https://docs.theprototype.app/nodes/delay.md) no longer knows whose
+    it was, so use *everyone* there.
+
+## Practical example
+
+An [On Hit](https://docs.theprototype.app/nodes/onhit.md) on a crate into **Camera Shake** (strength 0.3, seconds 0.4, who *me*): the player who knocks the
+crate feels it, the others do not.
+
+## See also
+
+- [Screen Flash](https://docs.theprototype.app/nodes/screenflash.md) · [Hit Pause](https://docs.theprototype.app/nodes/hitpause.md) — the other two game feel nodes
+- [Shake](https://docs.theprototype.app/nodes/shake.md) — shakes an object, not the camera
+
+
+---
+
+Source: https://docs.theprototype.app/nodes/screenflash/ (Markdown: https://docs.theprototype.app/nodes/screenflash.md)
+
+# Screen Flash
+
+Flashes a colour over the screen that fades out: red when you are hit, gold for a pickup. *Since 1.74.*
+
+**Output:** none (an action)
+
+## Inputs
+
+| Handle | Type | Meaning |
+|---|---|---|
+| trigger | event | each pulse flashes once |
+
+## Parameters
+
+| Parameter | Default | Options |
+|---|---|---|
+| color | `#ffffff` | the colour of the flash |
+| strength | 0.6 | 0 to 1 — how strong it starts |
+| seconds | 0.25 | 0.05 to 3 — how long it takes to fade out |
+| who | me | `me` = only the player whose press or hit made the pulse; `everyone` = every player |
+
+The flash is drawn on each player's own screen and never blocks clicks. Nothing is saved or changed in the scene.
+
+With **Settings ▸ Accessibility ▸ Movement ▸ Motion** set to *Reduce*, the flash is a third as strong. See
+[Motion](https://docs.theprototype.app/accessibility.md#motion).
+
+!!! note "who: me and Delay"
+    *me* follows the press or the hit itself. A pulse that has gone through a [Delay](https://docs.theprototype.app/nodes/delay.md) no longer knows whose
+    it was, so use *everyone* there.
+
+## Practical example
+
+A [HUD Button](https://docs.theprototype.app/nodes/hudbutton.md) for a Buy button into **Screen Flash** (a gold colour, strength 0.5, seconds 0.3, who *me*):
+the player who buys sees the flash, the others play on.
+
+## See also
+
+- [Camera Shake](https://docs.theprototype.app/nodes/camerashake.md) · [Hit Pause](https://docs.theprototype.app/nodes/hitpause.md) — the other two game feel nodes
+- The HUD's **Damage flash** element — a tint you place in the [HUD editor](https://docs.theprototype.app/hud-editor.md#element-kinds)
+
+
+---
+
+Source: https://docs.theprototype.app/nodes/hitpause/ (Markdown: https://docs.theprototype.app/nodes/hitpause.md)
+
+# Hit Pause
+
+Holds the picture still for a split second when something hits hard, so the hit lands. *Since 1.74.*
+
+**Output:** none (an action)
+
+## Inputs
+
+| Handle | Type | Meaning |
+|---|---|---|
+| trigger | event | each pulse holds the picture once |
+
+## Parameters
+
+| Parameter | Default | Options |
+|---|---|---|
+| ms | 80 | 20 to 500 — how long the picture holds, in milliseconds |
+| who | me | `me` = only the player whose press or hit made the pulse; `everyone` = every player |
+
+Only the picture holds, on each player's own screen. The game, the clock and physics keep running, so nothing gets out
+of step with the other players. It never holds the picture in a VR headset.
+
+!!! note "who: me and Delay"
+    *me* follows the press or the hit itself. A pulse that has gone through a [Delay](https://docs.theprototype.app/nodes/delay.md) no longer knows whose
+    it was, so use *everyone* there.
+
+## Practical example
+
+An [On Impact](https://docs.theprototype.app/nodes/onimpact.md) on a ball (a high **minStrength**, so only hard hits count) into **Hit Pause** (ms 60, who
+*everyone*): every player sees the hit stop for a beat. Use *everyone* here: an impact is found by the device that runs
+the physics, not made by a player's press.
+
+## See also
+
+- [Camera Shake](https://docs.theprototype.app/nodes/camerashake.md) · [Screen Flash](https://docs.theprototype.app/nodes/screenflash.md) — the other two game feel nodes
+
+
+---
+
 Source: https://docs.theprototype.app/nodes/charcontroller/ (Markdown: https://docs.theprototype.app/nodes/charcontroller.md)
 
 # Character Controller
@@ -15449,7 +16001,7 @@ Source: https://docs.theprototype.app/nodes/hudbutton/ (Markdown: https://docs.t
 
 Fires a pulse when a HUD button is pressed - the on-screen counterpart of On Click.
 
-**Output:** event
+**Output:** event · `value` (the pressed button's **value** field, *since 1.74*)
 
 ## Inputs
 
@@ -15460,10 +16012,70 @@ None.
 | Parameter | Default | Where |
 |---|---|---|
 | element | (none) | the HUD button element, picked on the card |
+| or any button on screen | (none) | *since 1.74*: leave **element** empty and pick a screen, and the node answers every button on it |
+
+## One node for a whole screen of buttons
+
+*Since 1.74* each Button element in the [HUD editor](https://docs.theprototype.app/hud-editor.md#element-kinds) has a **value** field: what the
+button passes on when it is pressed. Leave the node's element empty and pick a screen under **or any button on
+screen**: this one node then fires for **every** button on that screen, and its **value** output says which one was
+pressed. A level grid of twenty buttons, each with its level number as its value, needs one HUD Button node.
+
+A button's **sound** field (also in the HUD editor) plays a press sound for the player who pressed it. It is *none*
+by default.
 
 ## Practical example
 
 **HUD Button** into a **Counter** into **HUD Text**: an on-screen button that counts its own presses for everyone.
+
+
+---
+
+Source: https://docs.theprototype.app/nodes/hudvisible/ (Markdown: https://docs.theprototype.app/nodes/hudvisible.md)
+
+# Show / Hide Element
+
+Shows, hides or toggles **one** HUD element: a key icon that appears once the key is found, a hint that goes away.
+*Since 1.74.*
+
+**Output:** none (it writes into its element)
+
+## Inputs
+
+| Handle | Type | Meaning |
+|---|---|---|
+| trigger | event | each pulse does the **action** once |
+| visible | number | wired, the element follows it instead: above 0 = shown, 0 or less = hidden |
+
+## Parameters
+
+| Parameter | Default | Options |
+|---|---|---|
+| element | (none) | the HUD element, picked on the card |
+| action | hide | `show`, `hide`, `toggle` |
+
+## Per player
+
+Like a [HUD Screen](https://docs.theprototype.app/nodes/hudscreen.md), this works on each player's own HUD. A shared pulse (an ordinary On Click) shows or
+hides it for everyone; a pulse only one player makes acts for that player alone.
+
+A hidden element keeps its place on the screen. It draws nothing and takes no press.
+
+## Practical example
+
+A key icon that shows once you pick the key up:
+
+1. In the [HUD editor](https://docs.theprototype.app/hud-editor.md), add an **Icon row** or an **Image** for the key, and leave it on the Playing
+   screen.
+2. Add a **Show / Hide Element** for that element with action *hide*, and drive it from an
+   [On Play start](https://docs.theprototype.app/nodes/onplaystart.md): the icon starts hidden.
+3. Add a second **Show / Hide Element** for the same element with action *show*, driven by an
+   [On Click](https://docs.theprototype.app/nodes/onclick.md) on the key.
+
+## See also
+
+- [HUD Screen](https://docs.theprototype.app/nodes/hudscreen.md) — show or hide a whole screen
+- [HUD Editor](https://docs.theprototype.app/hud-editor.md#driving-the-hud-from-the-graph)
 
 
 ---
@@ -15944,7 +16556,7 @@ Press **Typed sockets…** above the code in the code workspace to declare your 
 | | Types |
 |---|---|
 | Inputs | number, boolean, vector3, color, object, event |
-| Outputs | number, boolean, vector3, color, object, any |
+| Outputs | number, boolean, vector3, color, object, any, event |
 
 - Read an input as **`inputs.<name>`**. Every input arrives in one shape for its type: a number,
   `true`/`false`, `[x, y, z]`, a colour string; an **object** input is `{uuid, name, position}`.
@@ -15968,7 +16580,21 @@ const gap = dist(inputs.hand, inputs.piece.position);
 return { allow: gap <= inputs.reach, gap };
 ```
 
-Outputs carry values only — a script cannot fire an event.
+### Firing an event
+
+*Since 1.74.* Give an output the type **event** and wire it into anything that takes a trigger — a
+[Counter](https://docs.theprototype.app/nodes/counter.md), a Latch, Set Game State, a HUD screen. The event **fires each time the value your code
+returns for it turns true**:
+
+```js
+// fires once each time the ball comes within reach, not every frame it stays there
+return { near: inputs.gap < inputs.reach };
+```
+
+- Return `true` (or a non-zero number) to fire, `false` to wait; leaving the output out of the return means *not now*.
+- Every peer runs the same code, so each fires the event for itself and nothing is sent; a Counter counts it once.
+- When a scene opens, or you join one, an output that is **already** true does not fire — only a change does.
+- Peers on an app older than 1.74 read the output as a number, so a Counter wired to it does not count there.
 
 ### Sockets follow the code
 
@@ -17001,7 +17627,7 @@ Source: https://docs.theprototype.app/nodes/setuniform/ (Markdown: https://docs.
 
 # Set Shader Uniform
 
-Writes one number inside an object's [shader graph](https://docs.theprototype.app/shader-graph.md), so a trigger, a
+Writes a number, a colour or a vector inside an object's [shader graph](https://docs.theprototype.app/shader-graph.md), so a trigger, a
 timer or a counter can drive how the material looks — a panel that heats up when you stand
 near it, a glow that pulses when something is picked up, dissolve that runs on a countdown.
 
@@ -17014,6 +17640,16 @@ near it, a glow that pulses when something is picked up, dissolve that runs on a
 | uniform | *(empty)* | the name of the value to write, as shown in the Shader editor |
 | value | 0 | the number to write (usually wired, not typed) |
 
+## Inputs
+
+| Handle | Type | Drives |
+|---|---|---|
+| value | number | a **float** uniform; on a colour or vector uniform it sets every component (a grey, a uniform scale) |
+| color | color | a **colour** (vec3) uniform — *since 1.74* |
+| vector | vector3 | a **vec2 / vec3 / vec4** uniform: x, y, z in order (a vec2 takes x and y; a vec4 keeps its own fourth value) — *since 1.74* |
+
+On a colour or vector uniform, a wired **vector** wins over a **colour**, and a colour over the number.
+
 ## Finding the uniform name
 
 A shader graph's numbers, colours and vectors each compile to a named value. To find the
@@ -17025,10 +17661,11 @@ name:
    `u_rgh_value`,
 4. paste that into this node's *uniform* field.
 
-Only **numbers** can be driven this way. Colours and vectors are not yet supported, so to
-animate a colour, drive a number and turn it into a colour inside the graph — a
-[Gradient](https://docs.theprototype.app/shader-nodes.md#gradient) or a **Mix** between two colours does this well,
-and is usually nicer to author anyway.
+Numbers, colours and vectors can all be driven. A colour you wire in is converted the same
+way the Shader editor converts a colour you type, so a driven colour and an authored one
+match. To blend between two colours over time you can still drive one number into a
+[Gradient](https://docs.theprototype.app/shader-nodes.md#gradient) or a **Mix** inside the graph. Peers on an app older
+than 1.74 apply only the number.
 
 ## How it behaves
 
@@ -19178,14 +19815,14 @@ Source: https://docs.theprototype.app/nodes/joint/ (Markdown: https://docs.thepr
 
 # Joint
 
-Attaches two objects to each other when an event fires — a hinge, or a rigid weld.
+Attaches two objects to each other when an event fires — a hinge, a rigid weld, a ball joint, a slider, a spring or a rope.
 
 **Inputs:** `trigger` (event) · `a` (object, the anchor) · `b` (object, the attached)
 **Output:** effect (wire into an [Object Selector](https://docs.theprototype.app/nodes/objectselector.md))
 
 ## How it works
 
-On the rising edge of `trigger` the two objects are joined, exactly as if you had used **Physics ▸ Weld** or **Physics ▸ Hinge** from the object menu: the joint becomes part of the scene, replicates to every peer, appears in saves, and can be undone with <kbd>Ctrl</kbd>+<kbd>Z</kbd>.
+On the rising edge of `trigger` the two objects are joined, exactly as if you had used the object menu's **Physics** entries (**Weld together**, **Hinge**, **Ball joint**…): the joint becomes part of the scene, replicates to every peer, appears in saves, and can be undone with <kbd>Ctrl</kbd>+<kbd>Z</kbd>.
 
 That is the difference between this and the rest of the physics nodes — [Impulse](https://docs.theprototype.app/nodes/impulse.md) and [Set Velocity](https://docs.theprototype.app/nodes/setvelocity.md) act on a running simulation and leave nothing behind, while Joint *authors scene data*.
 
@@ -19193,10 +19830,13 @@ That is the difference between this and the rest of the physics nodes — [Impul
 
 | Parameter | Default | Meaning |
 |---|---|---|
-| kind | revolute | `revolute` = a hinge that turns about one axis; `weld` = rigidly fixed together |
-| axis | y | which axis the hinge turns about |
+| kind | revolute | `revolute` = a hinge that turns about one axis; `weld` = rigidly fixed together; `ball` = swings and twists every way; `slider` = moves along one axis; `spring` = pulls back to the distance it was made at; `rope` = can get no further apart than it was made at (the last four *since 1.74*) |
+| axis | y | which axis the hinge turns about or the slider moves along |
 | vel | 0 | motor speed (rad/s) — leave at 0 for a free-swinging hinge |
 | maxForce | 100 | how hard the motor may push to reach that speed |
+
+Spring stiffness, rope length and slider limits are tuned afterwards in **Properties ▸ Physics ▸ Joints** (see
+[Tuning a joint](https://docs.theprototype.app/physics.md#tuning-a-joint)).
 
 ## Choosing the objects
 
@@ -21246,6 +21886,13 @@ the Character Controller's code and modules reading `api.onInput` / `api.input`.
 the pause menu and cannot be moved. On-screen touch buttons send your game's own keys, so they
 keep working whatever the player remaps.
 
+## Shake and flash
+
+[Camera Shake](https://docs.theprototype.app/nodes/camerashake.md) and [Screen Flash](https://docs.theprototype.app/nodes/screenflash.md) (since 1.74) follow each player's own
+**Motion** setting: with *Reduce*, the shake is a quarter as strong and the flash a third. You do not need to add a
+setting for it. Keep flashes short and rare all the same: fast, bright flashes that repeat are hard on players who are
+sensitive to light.
+
 ## VR comfort
 
 These are the player's own headset settings (**Settings ▸ VR**, and repeated on the
@@ -21365,7 +22012,7 @@ A small mark on an element on the stage means something is wired to it — a but
 
 | Kind | What it is |
 |---|---|
-| **Button** | fires an event when pressed. Give it an action, or read it with a [HUD Button](https://docs.theprototype.app/nodes/hudbutton.md) node |
+| **Button** | fires an event when pressed. Give it an action, or read it with a [HUD Button](https://docs.theprototype.app/nodes/hudbutton.md) node. *Since 1.74*: **sound** plays a press sound for the player who pressed (*none* by default), and **value** is what the button passes on to its HUD Button node |
 | **Slider** | drag for a number |
 | **Toggle** | on or off (reads as 1 or 0) |
 | **Dropdown** | one of a list (read its index or its text) |
@@ -21390,6 +22037,25 @@ play an animation, play a sound, fire particles, apply an impulse, toggle an obj
 pane lists them back in plain language. Behind the scenes an action is ordinary flow nodes, so you can open the node
 editor and extend it.
 
+## Show a game value
+
+*Since 1.74* a **Game Value** node (node palette ▸ Game) shows the common game values with no code: the score, your
+score, the best score, the round's clock, the time left, the countdown, the round, the level and its name, stars,
+lives, a variable, a stored value or a value a module publishes. It writes the value as words in the format you pick:
+
+| Format | Example |
+|---|---|
+| number | `3` |
+| time | `1:04`, or `1:04.2` with 1 decimal |
+| fraction | `3 / 10` (needs a max) |
+| percent | `30 %` |
+| stars | `★★☆` |
+| text | a level name as it is |
+
+**prefix** and **suffix** wrap it (`Coins ` … ` pts`), and **when empty** replaces a 0 or a blank value (`Best —`,
+`not cleared yet`). Wire its output into a **HUD Text**'s **format** socket; its **value** output is the raw number, for
+a **HUD Bar**. Every read is local and needs no network. See [Game Value](https://docs.theprototype.app/nodes/gamevalue.md).
+
 ## Driving the HUD from the graph
 
 | Node | Does |
@@ -21398,12 +22064,30 @@ editor and extend it.
 | **HUD Text** | puts a value into a Text element — a live score |
 | **HUD Timer** | runs a Timer element's countdown on the shared clock — duration, display format, start automatically or on a pulse |
 | **HUD Bar** | drives a bar's (or radial's, icon row's, hotbar's) value from a number |
-| **HUD Button** | fires a pulse when a button is pressed |
+| **HUD Button** | fires a pulse when a button is pressed. With no element and a **screen** picked, one node answers every button on that screen, and its **value** output says which one (*since 1.74*) |
+| **Show / Hide Element** | shows, hides or toggles **one** element on a pulse, or follows a wired **visible** (above 0 = shown); per player, like screens (*since 1.74*) |
+| **Game Value** | writes a game value as words for a HUD Text — see [Show a game value](#show-a-game-value) |
 | **HUD List** / **HUD Rows** | fill a list, or append rows to it — a log, a scoreboard feed |
 | **HUD Input** / **HUD Set Input** | read what a player typed, picked or dragged — or set it |
 
 An element's own value in the properties pane is only the preview and the fallback — a node driving it always wins at
 runtime. See the [HUD nodes](https://docs.theprototype.app/nodes.md#hud).
+
+## Game feel: shake, flash and hit pause
+
+*Since 1.74* three Game nodes make hits and pickups feel strong. Each fires on a pulse and works on each player's own
+screen; nothing is saved in the scene.
+
+| Node | Does |
+|---|---|
+| [**Camera Shake**](https://docs.theprototype.app/nodes/camerashake.md) | shakes the Play camera: strength, seconds, frequency. Never in VR, never the editor camera |
+| [**Screen Flash**](https://docs.theprototype.app/nodes/screenflash.md) | a colour over the screen that fades out: colour, strength, seconds. It never blocks clicks |
+| [**Hit Pause**](https://docs.theprototype.app/nodes/hitpause.md) | holds the picture for 20 to 500 ms. The game, the clock and physics keep running |
+
+**who** picks who sees it: *me* (the default) is only the player whose press or hit made the pulse; *everyone* is every
+player. A pulse that went through a Delay no longer knows whose it was, so use *everyone* there.
+
+With [reduced motion](https://docs.theprototype.app/accessibility.md#motion) on, the shake is a quarter as strong and the flash a third.
 
 ## In VR
 
@@ -22389,6 +23073,9 @@ A play link, an embed and an exported game all open the same **player**:
   **Enter VR** — with the hint *Click to look around · Esc to pause*. The click is needed: a browser only locks the
   pointer, goes fullscreen or enters VR after a real click.
 - A **fullscreen** button sits in the bottom-left corner where the page may go fullscreen.
+- An **Info points** button sits beside it when the author left [info points](https://docs.theprototype.app/notifications.md#info-points-for-visitors)
+  for visitors (*1.74*).
+- While the game plays, the screen does not dim or lock ([the screen stays awake](https://docs.theprototype.app/physics.md#the-screen-stays-awake), *1.74*).
 - A play link or embed also has *Open in theprototype.app ↗*, which opens the same scene in the full editor, and
   *Remix*, which opens it as your copy (*1.57*). Since 1.57 play links and embeds open the slim **play view** — see
   [Share a Game](https://docs.theprototype.app/share-a-game.md).
@@ -22452,7 +23139,8 @@ module scripts there); for a quick local look, run `npx serve .` in the folder.
   export.
 - An exported game is **single player** — multiplayer is off.
 - Models the scene loads from absolute web addresses (the Khronos sample models, for example) still load from there.
-- Texture compression is not available yet: textures go into the zip exactly as authored.
+- Textures go into the zip exactly as authored, unless **Optimize for** is **For Quest / web**
+  ([below](#optimize-for-quest-web)): then they are resized and a compressed KTX2 copy of each rides along.
 
 ## Publishing on itch.io
 
@@ -23723,6 +24411,15 @@ before a join, scene tools answer *not connected — join first*. Then call `con
       with +Y kept up. Lights point with `aim` instead. Since 1.61 `front` (`+x`, `-x`, `+z`, `-z`, `+y`, `-y`) says
       which local axis is the model's front, for `lookAt` and `face_user` alike: many models face +X or -Z.
     - `castShadow` / `receiveShadow` on any object; on a group or a model they apply to every mesh inside it.
+- **Physics, joints, arrays and layers** (since 1.74):
+    - `set_physics` takes `gravityScale` (−5 to 5), `linearDamping` and `angularDamping` (0 to 5) — see
+      [Gravity and damping](https://docs.theprototype.app/colliders.md#gravity-and-damping).
+    - `create_joints` takes the kinds `ball`, `slider`, `spring` and `rope`, and the fields `anchors` (two world points
+      for a spring or a rope), `rest`, `stiffness`, `damping` and `length`; `limits` is in metres for a slider. It
+      answers with the values the joint really got. See [Joints](https://docs.theprototype.app/physics.md#joints).
+    - `update_objects` takes `array: {mode, count, step, …}` (`null` removes it), `makeReal: true`, and
+      `layer: "<name>"` (a new name makes the layer, `null` takes the object off it). `list_scene` reports an object's
+      array and its layer by name. See [Arrays, Layers & Tidy](https://docs.theprototype.app/arrange.md).
 - Never fight a person: a locked object is skipped — the reply names the object and who is editing it — and the agent
   waits with `wait_for_edit`.
 
@@ -25813,8 +26510,8 @@ per-provider opt-in** — the *Physics tools (advanced)* checkbox in the provide
 next to *Stream responses*. It gates:
 
 - `set_physics` — body params (dynamic mass / static scenery / bounciness / friction /
-  collider shape),
-- `create_joints` — welds and hinges (with motors),
+  collider shape; since 1.74 gravity scale and drag),
+- `create_joints` — welds and hinges (with motors), and since 1.74 ball joints, sliders, springs and ropes,
 - `control_simulation` — the assistant **may start the simulation on its own** after a
   physics build, so the result comes alive without you pressing Play,
 - the physics *node* types (mass, bounciness, friction, angular velocity, motor) inside
@@ -26776,6 +27473,20 @@ api.registerStateSync({
 	applyState: (state) => state.pressed.forEach(markPressed)
 });
 ```
+
+### Values for the HUD: `api.values` (1.74)
+
+Publish what your game knows and a HUD should show (coins, falls, the best run) and the scene shows it with the core
+[Game Value](https://docs.theprototype.app/nodes/gamevalue.md) node (read *published*), in its own format, with no `info` node of yours:
+
+```js
+api.values.set('coins', 3, { max: 10 });  // a number, or text up to 200 characters
+api.values.get('coins', 0);               // read it back
+api.values.clear('coins');
+```
+
+A value is local to each player (each player's copy of your module publishes its own), is never saved, and is cleared
+when the module is turned off.
 
 ### The flow graph: `api.flow`
 

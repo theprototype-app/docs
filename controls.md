@@ -268,6 +268,22 @@ type (the panel says which) — click the one object for those. Transform rows o
 the **set** about its [pivot](#the-pivot-of-a-multi-selection) rather than each object's own numbers: typing a value
 moves the set as a whole instead of collapsing it onto one plane.
 
+### Rounded boxes
+
+*New in 1.74.* A **Box** has two more Geometry rows: **Corner radius** rounds every edge and corner (0 = square,
+the default; it stops at half the shortest side), and **Corner segs** (1 – 6, shown once the radius is above 0) sets
+how smooth the rounding is. While a box is rounded, the Width / Height / Depth segment rows are hidden: the rounding
+builds its own grid.
+
+- The file keeps the box as its size plus these two numbers, not as every vertex — a rounded crate is a few hundred
+  bytes instead of about 270 KB, and you can still change its size or radius later.
+- **Convert to a rounded Box**: select a mesh that is *exactly* a rounded box made elsewhere (a baked one, as older
+  templates and some imports carry) and its Geometry section offers the button. It looks the same afterwards, saves
+  small and gets its Geometry rows back. Nothing is converted unless you press it, and one
+  <kbd>Ctrl</kbd>+<kbd>Z</kbd> puts the mesh back.
+- Agents: `set_geometry` with `{radius, radiusSegments}` on a Box; `list_scene` shows both under `geometry`.
+- An app older than 1.74 (a peer, or the file opened there) shows a rounded box as a square box of the same size.
+
 ## Transform gizmo
 
 | Key | Mode |
@@ -418,6 +434,12 @@ degrees.
 *Reset to default* is greyed out where a row has no known default. The first **Paste** from a menu may ask the browser
 for clipboard permission; <kbd>Ctrl</kbd>+<kbd>V</kbd> over a field never asks. Text boxes (names, banner text) keep the
 browser's own text menu.
+
+### Pick a colour from the screen
+
+*New in 1.74.* Beside a colour field, a dropper button (*Pick a colour from the screen*) takes a colour from anywhere on
+the screen: the 3D view, a reference image, another panel. With a colour field focused, <kbd>I</kbd> does the same, and
+<kbd>Esc</kbd> cancels. It works in Chrome and Edge on a computer; where the browser cannot do it, there is no button.
 
 ### Text selection
 
@@ -795,6 +817,7 @@ The keys in the table are the **3D view's**: they fire while the 3D view has foc
 | <kbd>Tab</kbd> | Enter [mesh edit](https://docs.theprototype.app/mesh-editing.md) mode — inside it <kbd>Tab</kbd> cycles Vertices / Edges / Faces; <kbd>Esc</kbd> exits |
 | <kbd>I</kbd> | [Edit / Interact](#edit-and-interact) mode — in Interact, clicks play with the scene instead of selecting |
 | <kbd>M</kbd> | Toggle element [snapping](https://docs.theprototype.app/snapping.md) |
+| <kbd>B</kbd> (hold) | While moving: snap the nearest corner onto a corner or edge middle — see [Corner to corner](https://docs.theprototype.app/snapping.md#corner-to-corner-hold-b) |
 | <kbd>O</kbd> | Toggle the object list |
 | <kbd>N</kbd> | Toggle the node editor |
 | <kbd>T</kbd> | Show / hide the tool dock (with nothing docked it opens [empty](https://docs.theprototype.app/interface.md#docked-windows), ready for a drop) |
