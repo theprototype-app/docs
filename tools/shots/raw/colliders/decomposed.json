@@ -2,10 +2,10 @@
  "id": "decomposed",
  "spec": "de8817854ae3",
  "dpr": 2,
- "shotAt": "2026-11-11T13:10:25.809Z",
+ "shotAt": "2026-11-21T16:24:21.028Z",
  "app": {
-  "version": "1.65.0",
-  "sha": "a71c3ad8"
+  "version": "1.71.0",
+  "sha": "57db5fb4"
  },
  "uiHits": [],
  "width": 2000,

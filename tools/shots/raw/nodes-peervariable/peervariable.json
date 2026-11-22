@@ -2,10 +2,10 @@
  "id": "peervariable",
  "spec": "f0106f42a78a",
  "dpr": 2,
- "shotAt": "2026-11-11T13:50:28.443Z",
+ "shotAt": "2026-11-21T17:05:51.257Z",
  "app": {
-  "version": "1.65.0",
-  "sha": "a71c3ad8"
+  "version": "1.71.0",
+  "sha": "57db5fb4"
  },
  "uiHits": [
   "div.svelte-flow__pane",
@@ -18,7 +18,7 @@
   "span",
   "input.nodrag",
   "select.nodrag",
-  "span.overflow-hidden",
+  "span.max-w-[18rem]",
   "input.dn-input"
  ],
  "width": 804,
@@ -29,7 +29,9 @@
   "w": 402,
   "h": 616
  },
- "cut": [],
+ "cut": [
+  "b"
+ ],
  "fade": [],
  "anchors": {},
  "kind": "ui"

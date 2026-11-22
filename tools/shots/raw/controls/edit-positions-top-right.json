@@ -2,22 +2,24 @@
  "id": "edit-positions-top-right",
  "spec": "77918b45d504",
  "dpr": 2,
- "shotAt": "2026-11-10T19:03:30.415Z",
+ "shotAt": "2026-11-21T16:31:47.905Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.71.0",
+  "sha": "57db5fb4"
  },
  "uiHits": [
   "span.hud-edit-grip",
   "button.hud-edit-remove",
-  "div#hud-tr.tp-ui",
-  "svg.lucide",
   "button.hud-edit-grip",
-  "button#cluster-grip-top.cl-grip",
+  "svg.lucide",
+  "div#hud-tr.tp-ui",
+  "path",
+  "button#cinematic-toggle.cine-toggle",
   "button.hud-cell",
-  "div.relative",
+  "span",
+  "div.pm-avatar",
   "svg.h-full",
-  "path"
+  "button#cinematic-quality.cine-more"
  ],
  "width": 1376,
  "height": 260,

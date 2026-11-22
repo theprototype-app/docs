@@ -2,10 +2,10 @@
  "id": "person-card",
  "spec": "aa3564d4df35",
  "dpr": 2,
- "shotAt": "2026-11-11T13:37:34.330Z",
+ "shotAt": "2026-11-21T16:52:39.873Z",
  "app": {
-  "version": "1.65.0",
-  "sha": "a71c3ad8"
+  "version": "1.71.0",
+  "sha": "57db5fb4"
  },
  "uiHits": [
   "div.peers-backdrop",
@@ -24,7 +24,7 @@
  "width": 796,
  "height": 1236,
  "crop": {
-  "x": 968,
+  "x": 984,
   "y": 51,
   "w": 398,
   "h": 618

@@ -2,32 +2,32 @@
  "id": "hudset",
  "spec": "2b0925b6c192",
  "dpr": 2,
- "shotAt": "2026-11-11T13:48:14.398Z",
+ "shotAt": "2026-11-21T17:03:33.937Z",
  "app": {
-  "version": "1.65.0",
-  "sha": "a71c3ad8"
+  "version": "1.71.0",
+  "sha": "57db5fb4"
  },
  "uiHits": [
   "div.svelte-flow__pane",
+  "div.svelte-flow__node",
   "div.flex",
   "div.relative",
+  "div.node-card",
   "span.h-2",
   "span",
   "span.hud-ep-name",
-  "span.overflow-hidden",
+  "span.max-w-[18rem]",
   "span.hud-ep-sub",
   "button.nodrag",
-  "svg.lucide",
-  "div.svelte-flow__handle",
-  "path.svelte-flow__edge-interaction"
+  "svg.lucide"
  ],
  "width": 804,
- "height": 372,
+ "height": 468,
  "crop": {
   "x": 208,
   "y": 284,
   "w": 402,
-  "h": 186
+  "h": 234
  },
  "cut": [],
  "fade": [],

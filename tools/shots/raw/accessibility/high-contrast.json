@@ -2,24 +2,24 @@
  "id": "high-contrast",
  "spec": "871ff2a5a164",
  "dpr": 2,
- "shotAt": "2026-11-11T12:55:16.586Z",
+ "shotAt": "2026-11-21T16:07:35.395Z",
  "app": {
-  "version": "1.65.0",
-  "sha": "a71c3ad8"
+  "version": "1.71.0",
+  "sha": "57db5fb4"
  },
  "uiHits": [
   "button.sb-tab",
   "div.ins-filter",
   "div#inspector.tp-ui",
-  "label.tp-ui",
-  "input#name.ui-input",
+  "p#cinematic-hint.cine-first",
   "p#uuid.truncate",
   "button#select-group.ts-btn",
   "button.sec-panel-head",
   "svg.lucide",
   "button#model-source-blender.tp-ui",
   "span.pr-label",
-  "div.mb-1"
+  "div.mb-1",
+  "button#origin-bottom.tp-ui"
  ],
  "width": 1376,
  "height": 1240,

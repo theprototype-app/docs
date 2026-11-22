@@ -170,6 +170,30 @@ or updating.
 Your games: visits over 30 days.
 ///
 
+### Play statistics
+
+*New in 1.73.* Each published game has a **Play statistics** section under its row in **Your games & stats** (closed
+by default; its summary line shows the plays and the median time), and a **Plays** total sits beside Visits. It shows,
+for 7 days, 30 days or all time:
+
+- **Plays per day**: a play counts when someone presses Play on the game's play link, embed or community page.
+- **Time played**, in ranges (under 30 s, 30 s to 1 min, 1-3, 3-10, 10-30, over 30 min), so the median is a range.
+- **Where players stopped**: the level and game state (won, lost, game over, still playing) when the page was hidden or closed.
+- **Devices**: desktop, phone or tablet, headset.
+
+Each chart has a **Chart / Table** switch; the table shows every number the chart draws.
+
+![Play statistics for one game: plays per day, time played, where players stopped and devices](img/community/play-statistics.webp){ .shot .fade-l .fade-r .fade-t width="688" height="664" loading=lazy }
+/// caption
+Play statistics: sample data.
+///
+
+- No names, accounts, addresses, cookies or ids are collected, and only the game's owner sees the numbers.
+- Players switch counting off with **Settings ▸ Privacy ▸ Count my visits anonymously**; browsers that send Do Not Track
+  or Global Privacy Control are never counted.
+- Plays count for published scenes (public or unlisted) opened from their link, not for exports (they keep counting
+  badge visits) and not in the editor. Counts are kept about 90 days.
+
 ### One game, one count
 
 Every scene gets a permanent **game id** the first time you save, export or publish it. Re-exporting, a new itch.io build

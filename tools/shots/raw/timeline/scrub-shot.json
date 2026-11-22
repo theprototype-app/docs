@@ -2,20 +2,20 @@
  "id": "scrub-shot",
  "spec": "3889c0c5f54c",
  "dpr": 2,
- "shotAt": "2026-11-10T20:05:06.689Z",
+ "shotAt": "2026-11-21T17:24:00.007Z",
  "app": {
-  "version": "1.64.0",
-  "sha": "14f50a80"
+  "version": "1.71.0",
+  "sha": "57db5fb4"
  },
  "uiHits": [
   "svg.svelte-1lv41t3",
   "div.resize-cue",
+  "span.ph-tab",
   "div#timeline-dock.tp-ui",
-  "button.tp-pane-handle",
-  "path",
-  "div.tl-grid",
   "div.tl-corner",
   "div.tl-track-head",
+  "path",
+  "div.tl-grid",
   "span.tl-track-name",
   "button#touch-undo.tt-btn",
   "button#touch-redo.tt-btn",
@@ -33,15 +33,15 @@
  "fade": [],
  "anchors": {
   "1": {
-   "x": 548.125,
+   "x": 545.125,
    "y": 1136,
    "w": 4,
    "h": 46
   },
   "2": {
-   "x": 416,
+   "x": 414.09375,
    "y": 130,
-   "w": 544,
+   "w": 547.8125,
    "h": 82.5
   }
  },

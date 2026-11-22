@@ -50,7 +50,7 @@ If the guess is still wrong on your hardware, pick it yourself: right-click the 
 - **Alt+click** cycles through everything under the cursor, front to back — see [Inside and behind water](#inside-and-behind-water).
 - **Ctrl+A** selects everything in the scene. Inside a mesh editing session it keeps its other meaning — select every face, edge or vertex — so the two never collide.
 - **Ctrl+D** duplicates the selection — see [Duplicating](#duplicating) for what a copy brings with it.
-- Selecting an object **locks it for other peers** (one lock per person); a locked object shows who holds it, and its right-click menu offers **Request control** to ask for a handover.
+- Selecting an object **locks it for other peers**; a locked object shows who holds it, and its right-click menu offers **Request control** to ask for a handover (see [Locks and drafts](locks-and-drafts.md)).
 
 ### Edit and Interact
 
