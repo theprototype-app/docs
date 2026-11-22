@@ -79,6 +79,13 @@ the Character Controller's code and modules reading `api.onInput` / `api.input`.
 the pause menu and cannot be moved. On-screen touch buttons send your game's own keys, so they
 keep working whatever the player remaps.
 
+## Shake and flash
+
+[Camera Shake](nodes/camerashake.md) and [Screen Flash](nodes/screenflash.md) (since 1.74) follow each player's own
+**Motion** setting: with *Reduce*, the shake is a quarter as strong and the flash a third. You do not need to add a
+setting for it. Keep flashes short and rare all the same: fast, bright flashes that repeat are hard on players who are
+sensitive to light.
+
 ## VR comfort
 
 These are the player's own headset settings (**Settings ▸ VR**, and repeated on the

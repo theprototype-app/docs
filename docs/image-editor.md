@@ -146,4 +146,6 @@ The Image editor on a phone.
   not its history.
 - PNG, JPEG and WebP save in their own format. GIF and BMP save as PNG.
 - The largest side the editor produces is 8192 px.
-- A texture is stored at up to 1024 px, whatever the size of the image.
+- A texture you set on an object (Set texture…, a drop, or the editor's Apply) is stored at up to 1024 px,
+  whatever the size of the image. Textures inside an imported model follow the
+  [import optimizer](import-optimize.md) instead (2048 px by default).

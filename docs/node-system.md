@@ -98,7 +98,7 @@ sources (Input) → logic → effect nodes → Object Selector
 - **Source nodes** (Slider, Number, Time, Random, Toggle…) produce values.
 - **Logic nodes** (Math, Compare, Map Range, Select…) transform them; unwired inputs fall back to the value typed on the card.
 - **Effect nodes** (Spin, Bounce, Pulse, Set Color, Visibility, Sound, Script…) turn values into scene behavior — but they act on nothing by themselves.
-- The **[Object Selector](nodes/objectselector.md)** is the sink: an effect only touches the scene when its output is wired into an Object Selector that has a scene object picked. Anything not ending in an Object Selector is silently inert.
+- The **[Object Selector](nodes/objectselector.md)** is the sink: an effect only touches the scene when its output is wired into an Object Selector that has a scene object picked (or the effect sits in an object's own graph). *Since 1.74* an effect in the scene graph that reaches no object says so under its card — **acts on nothing: add an Object Selector** — and **Check scene** for agents (`validate_scene`) lists it.
 
 Cards show live value readouts, updated several times a second.
 

@@ -32,6 +32,9 @@ A play link, an embed and an exported game all open the same **player**:
   **Enter VR** — with the hint *Click to look around · Esc to pause*. The click is needed: a browser only locks the
   pointer, goes fullscreen or enters VR after a real click.
 - A **fullscreen** button sits in the bottom-left corner where the page may go fullscreen.
+- An **Info points** button sits beside it when the author left [info points](notifications.md#info-points-for-visitors)
+  for visitors (*1.74*).
+- While the game plays, the screen does not dim or lock ([the screen stays awake](physics.md#the-screen-stays-awake), *1.74*).
 - A play link or embed also has *Open in theprototype.app ↗*, which opens the same scene in the full editor, and
   *Remix*, which opens it as your copy (*1.57*). Since 1.57 play links and embeds open the slim **play view** — see
   [Share a Game](share-a-game.md).
@@ -102,7 +105,8 @@ module scripts there); for a quick local look, run `npx serve .` in the folder.
   export.
 - An exported game is **single player** — multiplayer is off.
 - Models the scene loads from absolute web addresses (the Khronos sample models, for example) still load from there.
-- Texture compression is not available yet: textures go into the zip exactly as authored.
+- Textures go into the zip exactly as authored, unless **Optimize for** is **For Quest / web**
+  ([below](#optimize-for-quest-web)): then they are resized and a compressed KTX2 copy of each rides along.
 
 ## Publishing on itch.io
 

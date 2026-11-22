@@ -1,6 +1,6 @@
 # Set Shader Uniform
 
-Writes one number inside an object's [shader graph](../shader-graph.md), so a trigger, a
+Writes a number, a colour or a vector inside an object's [shader graph](../shader-graph.md), so a trigger, a
 timer or a counter can drive how the material looks — a panel that heats up when you stand
 near it, a glow that pulses when something is picked up, dissolve that runs on a countdown.
 
@@ -13,6 +13,16 @@ near it, a glow that pulses when something is picked up, dissolve that runs on a
 | uniform | *(empty)* | the name of the value to write, as shown in the Shader editor |
 | value | 0 | the number to write (usually wired, not typed) |
 
+## Inputs
+
+| Handle | Type | Drives |
+|---|---|---|
+| value | number | a **float** uniform; on a colour or vector uniform it sets every component (a grey, a uniform scale) |
+| color | color | a **colour** (vec3) uniform — *since 1.74* |
+| vector | vector3 | a **vec2 / vec3 / vec4** uniform: x, y, z in order (a vec2 takes x and y; a vec4 keeps its own fourth value) — *since 1.74* |
+
+On a colour or vector uniform, a wired **vector** wins over a **colour**, and a colour over the number.
+
 ## Finding the uniform name
 
 A shader graph's numbers, colours and vectors each compile to a named value. To find the
@@ -24,10 +34,11 @@ name:
    `u_rgh_value`,
 4. paste that into this node's *uniform* field.
 
-Only **numbers** can be driven this way. Colours and vectors are not yet supported, so to
-animate a colour, drive a number and turn it into a colour inside the graph — a
-[Gradient](../shader-nodes.md#gradient) or a **Mix** between two colours does this well,
-and is usually nicer to author anyway.
+Numbers, colours and vectors can all be driven. A colour you wire in is converted the same
+way the Shader editor converts a colour you type, so a driven colour and an authored one
+match. To blend between two colours over time you can still drive one number into a
+[Gradient](../shader-nodes.md#gradient) or a **Mix** inside the graph. Peers on an app older
+than 1.74 apply only the number.
 
 ## How it behaves
 
