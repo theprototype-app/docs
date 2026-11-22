@@ -1,10 +1,19 @@
-# Tools & connections
+# Settings ▸ AI
 
-**Settings ▸ Tools & connections** is one page for everything outside the app: the AI models you use, the services that
-generate 3D models, the agents in your session and the desktop tools you edit in. Set up only the ones you use. It used
-to be Settings ▸ AI, and your saved providers and keys carried over as they were.
+**Settings ▸ AI** holds every AI in the app, in two cards, with the desktop tools you edit in under them.
+Set up only the ones you use. Not sure which card you need? See [Use any AI](ai/use-any-ai.md).
 
-![Settings ▸ Tools & connections, starting with chat providers, chat pictures and mesh providers](img/tools-and-connections/tools-connections.webp)
+- **AI inside the app (your key)**: the AI models the app's own assistant uses (chat providers, chat
+  pictures, voice typing) and the services that generate 3D models (mesh providers), with your key.
+- **AI apps that work in your scene**: the agents in your session (Coding agents), **Connect Claude**
+  for this tab, and **Connected apps** — every AI app you allowed (Claude, ChatGPT…), with **Revoke**.
+- **Other tools**: Blender and other desktop 3D tools.
+
+This page used to be called **Tools & connections**, and Connected apps used to be under
+**Settings ▸ Account**. Your saved providers and keys carried over as they were, and old
+links to either place open the right card. Account keeps a **Connected apps** row that leads here.
+
+![Settings ▸ AI, starting with chat providers, chat pictures and mesh providers](img/tools-and-connections/tools-connections.webp)
 
 ## A row
 
@@ -31,7 +40,7 @@ Each tool is one row:
 ## When a tool is missing
 
 Buttons for a feature whose tool is not set up stay where they are. Press one and it says what is missing, then opens the
-right row: *"Generate 3D model needs a Mesh provider: set one up in Settings ▸ Tools & connections."* The quick prompt bar,
+right row: *"Generate 3D model needs a Mesh provider: set one up in Settings ▸ AI."* The quick prompt bar,
 the mic and *Edit in Blender* work the same way.
 
 The AI button is different: it always opens the Chat window on its **Assistant** tab, which offers Connect Claude or your own provider.

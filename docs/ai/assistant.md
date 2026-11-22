@@ -8,7 +8,7 @@ Everything it does is a normal edit: it **replicates live to everyone in the ses
 !!! note "You bring the model"
     The assistant talks to an AI provider you configure (Grok, Gemini, or any
     OpenAI-compatible / self-hosted endpoint). Nothing is sent anywhere until you add a
-    provider and a key in **Settings ▸ Tools & connections**. See [AI Providers](providers.md).
+    provider and a key in **Settings ▸ AI**. See [AI Providers](providers.md).
 
 !!! tip "Pictures"
     Attach a picture with **+** and ask about it, or ask the assistant to make it a 3D model. Which models
@@ -16,7 +16,7 @@ Everything it does is a normal edit: it **replicates live to everyone in the ses
 
 ## Turning it on
 
-1. Open **Settings ▸ Tools & connections** and press **Add chat provider** (Grok, Gemini or a custom endpoint).
+1. Open **Settings ▸ AI** and press **Add chat provider** (Grok, Gemini or a custom endpoint).
 2. Switch its row on with **Enable**, and press **Test** to check it answers.
 
 Once enabled, there are a few ways to reach it.
@@ -53,7 +53,7 @@ and talk — see [The AI assistant in VR](../vr.md#the-ai-assistant-in-vr).
 
 ## Voice typing
 
-Talk to the assistant instead of typing. Set up a speech-to-text provider in **Settings ▸ Tools & connections ▸ Voice typing**
+Talk to the assistant instead of typing. Set up a speech-to-text provider in **Settings ▸ AI ▸ Voice typing**
 (search *voice*, *whisper* or *dictation*):
 
 | Setting | Default | Notes |
@@ -129,7 +129,7 @@ The assistant reads your graphs as the same [compact text](../node-system.md#flo
 which is several times shorter than JSON, and can add nodes by writing that text.
 
 **Physics** (bodies, welds/hinges with motors, and starting the simulation) is a
-per-provider opt-in — the **Physics tools (advanced)** checkbox in the provider's form (**Settings ▸ Tools & connections**, **Set up**).
+per-provider opt-in — the **Physics tools (advanced)** checkbox in the provider's form (**Settings ▸ AI**, **Set up**).
 It's off by default because multi-step physics is hard for small local models; see
 [Local & Small Models](local-models.md) for what the checkbox gates, model-size guidance
 and recommended vLLM flags. With it enabled, the assistant may **start the simulation
@@ -161,6 +161,6 @@ reset it first, then one undo reverts the whole prompt.
 | Symptom | Fix |
 |---|---|
 | <kbd>`</kbd> shows a toast about Settings | Enable the assistant and add a provider first. |
-| "Invalid API key" | Re-check the key in **Settings ▸ Tools & connections**, **Set up**. |
+| "Invalid API key" | Re-check the key in **Settings ▸ AI**, **Set up**. |
 | "Network or CORS error" | A self-hosted endpoint must allow browser origins — see [Providers](providers.md). |
 | Objects look wrong / oversized | Ask a follow-up ("half the size", "move it to the origin") — it edits in place. |

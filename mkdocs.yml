@@ -12,7 +12,7 @@ nav:
     - Themes & Appearance: appearance.md
     - Accessibility: accessibility.md
     - Settings: settings.md
-    - Tools & connections: tools-and-connections.md
+    - Settings ▸ AI: tools-and-connections.md
     - Privacy & Error Reports: privacy.md
     - Security & Self-hosting: security.md
     - Your Character: avatars.md
@@ -285,6 +285,7 @@ nav:
     - "Recipe: Agents + Blender": ai/agents-and-blender.md
     - Shapes and modelling with an agent: ai/agent-geometry.md
     - Worlds with an agent: ai/agent-world.md
+    - Use any AI: ai/use-any-ai.md
     - Use theprototype from claude.ai and voice: ai/claude-connector.md
     - Providers: ai/providers.md
     - Local & Small Models: ai/local-models.md
