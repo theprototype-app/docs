@@ -1,0 +1,57 @@
+{
+ "id": "sheet",
+ "spec": "c318554fb19f",
+ "dpr": 2,
+ "shotAt": "2026-11-21T16:48:44.472Z",
+ "app": {
+  "version": "1.72.0",
+  "sha": "26b995ec"
+ },
+ "uiHits": [
+  "div.toolbox-header",
+  "div.toolbox-body",
+  "span.toolbox-title",
+  "div.mod-tbx-mount",
+  "span",
+  "button#nav-sheet-apply.tbx-primary",
+  "input#nav-sheet-overlay.tbx-check",
+  "div#nav-sheet-status.tbx-row",
+  "label.tbx-row",
+  "select#nav-sheet-path",
+  "input#nav-sheet-sightAngle",
+  "input#nav-sheet-sightRange"
+ ],
+ "width": 672,
+ "height": 1004,
+ "crop": {
+  "x": 1104,
+  "y": 52,
+  "w": 336,
+  "h": 502
+ },
+ "cut": [
+  "r"
+ ],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 144.3125,
+   "y": 164,
+   "w": 473.6875,
+   "h": 68
+  },
+  "2": {
+   "x": 66,
+   "y": 663,
+   "w": 552,
+   "h": 80
+  },
+  "3": {
+   "x": 66,
+   "y": 839,
+   "w": 28,
+   "h": 28
+  }
+ },
+ "kind": "ui"
+}

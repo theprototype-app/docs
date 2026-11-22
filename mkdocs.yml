@@ -237,6 +237,9 @@ nav:
   - Games:
     - The Games Tab: games.md
     - Play Here: play-here.md
+    - Test with Players: test-with-players.md
+    - Make an Enemy: make-an-enemy.md
+    - Navigation: navigation.md
     - Game Rules on the Main Graph: game-rules.md
     - Build a Game Loop: build-a-game.md
     - Levels and Progress: levels-and-progress.md

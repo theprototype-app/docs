@@ -1483,6 +1483,17 @@
    "app": "1.71.0",
    "shotAt": "2026-11-21T16:49:24.295Z"
   },
+  "img/make-an-enemy/sheet.webp": {
+   "page": "make-an-enemy",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 336,
+   "height": 502,
+   "badges": 3,
+   "labels": [],
+   "app": "1.72.0",
+   "shotAt": "2026-11-21T16:48:44.472Z"
+  },
   "img/materials/maps.webp": {
    "page": "materials",
    "kind": "ui",
@@ -2829,6 +2840,17 @@
    ],
    "app": "1.71.0",
    "shotAt": "2026-11-21T17:23:12.923Z"
+  },
+  "img/test-with-players/sheet.webp": {
+   "page": "test-with-players",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 468,
+   "height": 443,
+   "badges": 3,
+   "labels": [],
+   "app": "1.71.0",
+   "shotAt": "2026-11-21T16:25:38.606Z"
   },
   "img/timeline/phone-sheet.webp": {
    "page": "timeline",
