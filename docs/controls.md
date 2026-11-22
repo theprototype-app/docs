@@ -285,7 +285,7 @@ moves the set as a whole instead of collapsing it onto one plane.
 
 ### Rounded boxes
 
-*New in 1.73.* A **Box** has two more Geometry rows: **Corner radius** rounds every edge and corner (0 = square,
+*New in 1.74.* A **Box** has two more Geometry rows: **Corner radius** rounds every edge and corner (0 = square,
 the default; it stops at half the shortest side), and **Corner segs** (1 – 6, shown once the radius is above 0) sets
 how smooth the rounding is. While a box is rounded, the Width / Height / Depth segment rows are hidden: the rounding
 builds its own grid.
@@ -297,7 +297,7 @@ builds its own grid.
   small and gets its Geometry rows back. Nothing is converted unless you press it, and one
   <kbd>Ctrl</kbd>+<kbd>Z</kbd> puts the mesh back.
 - Agents: `set_geometry` with `{radius, radiusSegments}` on a Box; `list_scene` shows both under `geometry`.
-- An app older than 1.73 (a peer, or the file opened there) shows a rounded box as a square box of the same size.
+- An app older than 1.74 (a peer, or the file opened there) shows a rounded box as a square box of the same size.
 
 ## Transform gizmo
 

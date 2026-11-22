@@ -119,7 +119,7 @@ return { allow: gap <= inputs.reach, gap };
 
 ### Firing an event
 
-*Since 1.73.* Give an output the type **event** and wire it into anything that takes a trigger — a
+*Since 1.74.* Give an output the type **event** and wire it into anything that takes a trigger — a
 [Counter](counter.md), a Latch, Set Game State, a HUD screen. The event **fires each time the value your code
 returns for it turns true**:
 
@@ -131,7 +131,7 @@ return { near: inputs.gap < inputs.reach };
 - Return `true` (or a non-zero number) to fire, `false` to wait; leaving the output out of the return means *not now*.
 - Every peer runs the same code, so each fires the event for itself and nothing is sent; a Counter counts it once.
 - When a scene opens, or you join one, an output that is **already** true does not fire — only a change does.
-- Peers on an app older than 1.73 read the output as a number, so a Counter wired to it does not count there.
+- Peers on an app older than 1.74 read the output as a number, so a Counter wired to it does not count there.
 
 ### Sockets follow the code
 

@@ -177,7 +177,7 @@ Below Environment, **Background** sets the clear color and **Fog** adds fog, bot
 
 ### Fog kinds
 
-*New in 1.73.* The Fog rows start with **Kind**:
+*New in 1.74.* The Fog rows start with **Kind**:
 
 | Kind | Rows | What it looks like |
 |---|---|---|
@@ -186,7 +186,7 @@ Below Environment, **Background** sets the clear color and **Fog** adds fog, bot
 | **Height (ground fog)** | Density, Ground height, Thickness | fog lying on the ground: thickest at **Ground height**, thinning out over **Thickness** metres above it. Looking down into it fogs more than looking across above it, and a tower top stands clear |
 
 - Density 0.01 is a light haze, 0.1 is thick; Thickness 2-6 m reads as ground fog, 20 m and more as a low cloud.
-- Peers on an app older than 1.73 see a linear fog from Near to Far instead.
+- Peers on an app older than 1.74 see a linear fog from Near to Far instead.
 - The [Cinematic view](cinematic-view.md) draws Distance fog; Height fog is listed in its *Not shown* chip.
 - Agents set it with `set_sky` fog `{kind, density, base, thickness}`.
 
@@ -248,7 +248,7 @@ again).
 
 ### Cube-map skies
 
-*New in 1.73.* **Upload HDRI…** also takes a sky made of six square faces, and turns it into an equirectangular
+*New in 1.74.* **Upload HDRI…** also takes a sky made of six square faces, and turns it into an equirectangular
 `.hdr` (at most 2048 × 1024) that is stored and shared like any uploaded sky:
 
 - **one image** laid out as a **cross** (4:3 or 3:4) or a **strip** of six faces (6:1 or 1:6, in the order +X −X +Y −Y

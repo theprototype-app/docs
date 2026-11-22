@@ -18,8 +18,8 @@ near it, a glow that pulses when something is picked up, dissolve that runs on a
 | Handle | Type | Drives |
 |---|---|---|
 | value | number | a **float** uniform; on a colour or vector uniform it sets every component (a grey, a uniform scale) |
-| color | color | a **colour** (vec3) uniform — *since 1.73* |
-| vector | vector3 | a **vec2 / vec3 / vec4** uniform: x, y, z in order (a vec2 takes x and y; a vec4 keeps its own fourth value) — *since 1.73* |
+| color | color | a **colour** (vec3) uniform — *since 1.74* |
+| vector | vector3 | a **vec2 / vec3 / vec4** uniform: x, y, z in order (a vec2 takes x and y; a vec4 keeps its own fourth value) — *since 1.74* |
 
 On a colour or vector uniform, a wired **vector** wins over a **colour**, and a colour over the number.
 
@@ -38,7 +38,7 @@ Numbers, colours and vectors can all be driven. A colour you wire in is converte
 way the Shader editor converts a colour you type, so a driven colour and an authored one
 match. To blend between two colours over time you can still drive one number into a
 [Gradient](../shader-nodes.md#gradient) or a **Mix** inside the graph. Peers on an app older
-than 1.73 apply only the number.
+than 1.74 apply only the number.
 
 ## How it behaves
 
