@@ -41,6 +41,12 @@ falling, so nothing fires twice.
 The threshold is a closing speed over 1.2 m/s (raise **minStrength** for harder ones), each body at most every 0.3 s.
 With **From: landing only** it counts only downward speed, so a ball thrown sideways into a wall fires nothing.
 
+## Where it touched: Stamp Decal
+
+*New in 1.7X.* On Impact has no new output, but it carries where the contact happened. Wire it into a
+[Stamp Decal](decalstamp.md) `trigger` and the mark lands at the contact point, facing out of the surface that was
+hit, on the object that was hit (a footprint, a scorch, a splat). A landing on the built-in ground leaves no mark.
+
 ## Practical example
 
 Sparks + a thud when a crate lands:

@@ -52,6 +52,15 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.7X — [decals](decals.md), [paint on meshes](mesh-paint.md), [Gaussian splats](gaussian-splats.md),
+[simplify and export for print or AR](simplify-and-export.md), [constraints and IK](constraints-and-ik.md).**
+Right-click a surface ▸ **Add decal here** to put a sign, an arrow or a crack on it, and the
+[Stamp Decal](nodes/decalstamp.md) node leaves marks where things land while you play. The Paint brush paints
+roughness, metalness and glow as well as colour, straight onto the model, and in a headset. Import a scanned scene
+(`.ply`, `.spz`, `.splat`) and share it like any model. **Mesh ▸ Simplify…** makes a heavy model lighter in one undo
+step, and **Save as…** writes STL and 3MF for a 3D printer and USDZ for AR on an iPhone. **Inspector ▸ Constraints**
+makes an object look at, copy or follow another, and bends an arm, a leg or a tail to reach a target.
+
 **1.71 — [the Code tab](node-editor.md#the-code-tab-since-171) and [convert to code](node-editor.md#convert-a-node-to-code).** The Nodes editor shows the graph as code, read-only (press a line to select its node). Right-click a Math, Compare, Gate, Select, Map
 Range, Random or HUD Text node ▸ **Convert to code**: it becomes a Script node that does the same thing, every wire
 kept, and **Convert back** returns it while the code is unchanged. Custom nodes keep their definitions in saved scenes,
