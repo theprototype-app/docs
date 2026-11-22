@@ -52,6 +52,8 @@ side), or a `point` on its surface; plus `image` (a Library hash or file name), 
 
 - Not on animated characters (skinned meshes) or on scattered copies: you get a message saying so.
 - A very detailed object (more than 400,000 triangles) cannot take a decal.
+- Not on a [Gaussian splat](gaussian-splats.md): a scan has no surface to project onto.
+- A decal is not a mesh of its own: **Paint** and **Simplify** refuse it (paint or simplify the object under it), and a 3D print or AR export leaves it out.
 
 ## See also
 

@@ -65,6 +65,9 @@ space still deselects: the box lets clicks through, so objects inside the room s
 | [Photo mode](photo-mode.md) | A photo cannot trace splats: they are left out, and the panel's note says so. The normal still shows them. |
 | [Cinematic view](cinematic-view.md) | The view cannot draw them: they are hidden while it is on, and the **Not shown** note names Gaussian splats. |
 | Headset and phone | A headset draws up to 1 million splats, a phone 2 million. Past that, whole splat objects are hidden on that device, with one notice. A PC has no splat budget. See [Performance & Budgets](performance.md#the-budget-chip-will-it-fit-on-a-quest). |
+| 3D print and AR export | STL, 3MF and USDZ files leave splats out (a scan is not a mesh). |
+
+A splat is not a mesh, so **Paint**, **Simplify** and decals do not work on it: each one says so.
 
 ## Third-party notices
 
