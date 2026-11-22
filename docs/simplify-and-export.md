@@ -56,6 +56,13 @@ Simplify changes the model itself. For lighter versions that take over only when
   room with AR Quick Look.
 - Materials and textures are kept, with textures capped at 2048 px. Flows and animation are not part of the file.
 
+### What an export leaves out
+
+- **Array copies:** an object with an **Array** exports as the one object, not its copies.
+- **Hidden layers:** hiding a layer on your screen does not keep its objects out of the file. Select the parts you
+  want and export the **Selection** instead.
+- **Decals and Gaussian splats** are not meshes, so they are left out.
+
 ## For agents
 
 `simplify_mesh {uuid, percent | triangles, bake?}` simplifies one object: `percent` is how much to keep (1-100),
