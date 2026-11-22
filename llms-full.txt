@@ -831,7 +831,7 @@ If the guess is still wrong on your hardware, pick it yourself: right-click the 
 - **Alt+click** cycles through everything under the cursor, front to back — see [Inside and behind water](#inside-and-behind-water).
 - **Ctrl+A** selects everything in the scene. Inside a mesh editing session it keeps its other meaning — select every face, edge or vertex — so the two never collide.
 - **Ctrl+D** duplicates the selection — see [Duplicating](#duplicating) for what a copy brings with it.
-- Selecting an object **locks it for other peers** (one lock per person); a locked object shows who holds it, and its right-click menu offers **Request control** to ask for a handover.
+- Selecting an object **locks it for other peers**; a locked object shows who holds it, and its right-click menu offers **Request control** to ask for a handover (see [Locks and drafts](https://docs.theprototype.app/locks-and-drafts.md)).
 
 ### Edit and Interact
 
@@ -1814,8 +1814,9 @@ and, at its far end, the **Full height** button (↕) and the **hide** button.
   side. Hold <kbd>Ctrl</kbd> (<kbd>Cmd</kbd> on a Mac) while you drag to place it floating over the sidebar instead —
   see [Moving a floating window](https://docs.theprototype.app/controls.md#moving-a-floating-window).
 - *New in 1.64.* **The handle**: each column has one handle on its inner edge (the grip icon). Tap or click it to hide
-  or show the column; drag it up or down along the edge to move it — the place is remembered. On a computer the handles
-  show only while a column is hidden; on a tablet they also show while it is open. **Settings ▸ Interface ▸ Show
+  or show the column; drag it up or down along the edge to move it — the place is remembered. On every layout a handle
+  shows only while its column is hidden; to hide an open column, right-click (long-press) its header for **Hide**,
+  **Switch sidebar side** and **Lock**, or press <kbd>Ctrl</kbd>+<kbd>B</kbd>. **Settings ▸ Interface ▸ Show
   viewport sidebar handles** (*Auto* / *On* / *Off*) and **Dim at rest** set how they show. The **Panels** button
   cycles through both columns, the left one, the right one and none.
 - **Resize** by dragging the sidebar's inner edge; a double-click resets it. On a computer, drag the edge well past
@@ -2015,7 +2016,8 @@ hidden, the window's content is full width.
 
 - A window with several right-hand panels shows them as **tabs behind one handle** — in the Explorer, **Properties**,
   **File history** and **Settings**.
-- **Lock** a window's panes from the handle's menu, so a stray tap cannot hide them.
+- A pane's handle shows only while the pane is hidden. To hide an open pane, right-click (long-press) its top band for
+  **Hide**; **Lock** in the same menu keeps a stray tap from hiding it.
 - In a narrow docked window the panes become a header instead — see [The dock on a phone](#the-dock-on-a-phone).
 
 ### Hiding buttons you do not use
@@ -3757,11 +3759,14 @@ Once connected, everything replicates automatically — objects, transforms, mat
 
 Selecting an object **locks it** so two people can't fight over the same thing:
 
-- Your current selection *is* your lock — one lock per person, and picking a new object releases the old one.
-- A locked object shows who holds it, tinted with that peer's color.
-- To take over, open the object's right-click menu and choose **Request control**; the holder gets an Approve/Deny prompt.
+- The person holding an object shows as a small avatar over it, and Properties says **‹name› is editing this**
+  (read-only, with **Request**). The Object list row says **Held by ‹name›**.
+- To take over, press **Request** (or **Request control** in the object's right-click menu); the holder gets an Approve/Deny prompt.
+- The host can switch the room to **Only while editing**: selecting then takes nothing, and an object is held from your
+  first change until about 3 seconds after the last.
 
-If a peer disconnects, their locks are released and their avatar, cursor and hands are cleaned up automatically — only *their* locks; everyone else keeps theirs.
+If a peer disconnects, their locks are released and their avatar, cursor and hands are cleaned up automatically — only
+*their* locks; everyone else keeps theirs. More in [Locks and drafts](https://docs.theprototype.app/locks-and-drafts.md).
 
 ## Rooms: one session, several scenes
 
@@ -3946,6 +3951,79 @@ Most of the app is peer-to-peer and keeps working while a service is down — a 
 cloud saves and the community need the service. An outage opens an issue in
 [github.com/theprototype-app/status](https://github.com/theprototype-app/status) and closes it on recovery. The checks
 never count as visits or errors.
+
+
+---
+
+Source: https://docs.theprototype.app/locks-and-drafts/ (Markdown: https://docs.theprototype.app/locks-and-drafts.md)
+
+# Locks and drafts
+
+*New in 1.73.* When several people edit one scene, an object you are working on is yours until you let go:
+nobody else can change it in the meantime, and everyone can see who has it. Objects you keep in
+**Local objects** are drafts: they stay on your device until you share them.
+
+[Loop: A short loop from one person's screen: another person selects the box, a small avatar appears over it and the Object list row says Held by that person; this person's drag does not move it; after the other person releases it, the drag moves the box.](https://docs.theprototype.app/img/locks-and-drafts/locks.mp4)
+
+*Figure: Loop, 28 s: someone else holds the box, so it does not move; once they release it, it does.*
+
+## What others see
+
+- A small avatar of the person holding an object floats over it in the 3D view.
+- **Properties** says **‹name› is editing this**. The fields stay visible but are read-only. Press **Request** to ask
+  for the object; the holder gets an Approve / Deny prompt.
+- The object's flow opens view-only in the node editor.
+- In the **Object list** the row says **Held by ‹name›**; your own rows say **Held by me**. A screen reader hears
+  "held by ‹name›" with the row's name.
+- On a phone the Properties sheet shows the same line and the same **Request** button.
+
+When two people take the same object at the same moment, everyone agrees on one holder and the other person is told.
+Someone who joins later sees everything each person is holding.
+
+## Letting go
+
+- Deselect the object, or choose **Release** in its row menu (right-click the row in the Object list).
+- If you hold an object for 5 minutes without changing it, you are asked **Still editing ‹name›?**. Choose
+  **Keep holding** or **Release**; with no answer the object is released 30 seconds later. This never happens while
+  you are alone in the session.
+- Your locks survive a short network drop: if your connection to someone drops and comes back, you both still hold
+  what you held, and you can keep editing. If you both took the same object while the connection was down, the one
+  who took it first keeps it and the other is told.
+
+## Lock mode
+
+**Settings ▸ Connection ▸ Editing together ▸ Locks**:
+
+- **While selected** (the default): selecting an object takes it.
+- **Only while editing**: selecting takes nothing. Your first change takes the object, and it is free again about
+  3 seconds after your last change.
+
+Only the host changes the lock mode (and an admin, on the hosted site's rooms, where it is part of the room
+settings). Everyone in the session follows it, including people who join later.
+
+## Drafts (Local objects)
+
+A draft is an object that is only on your device: something you moved to **Local objects** in the Object list, or
+something you made while you only had view access. Nothing about a draft reaches the other people in the session:
+not the object, and not your edits to it (its name, colour, position, flow, animation, or a joint to it). A copy of a
+draft (Duplicate) is a draft too.
+
+- **Where**: Object list ▸ **Local objects** (it shows as soon as you have one). Drag a shared object onto it to make
+  it a draft; press **Share** on a draft, or drag it into the shared list, to give it to everyone.
+- **Files leave drafts out**: a downloaded `.tpscene`, the JSON / glTF / Quest exports, Publish and cloud saves, a
+  scene saved in the Explorer, prefabs and **Save as**. When drafts were left out you see
+  **N drafts not included — share first?** with a **Share them** button: press it, then save again to include them.
+- **Kept on your device**: the autosave, saves in the Sessions manager and checkpoints keep your drafts, so they come
+  back after a reload.
+- **Older scenes**: a scene saved by an older version that still holds drafts opens with them as drafts.
+
+!!! note "One limit"
+    A shared node or group that refers to a draft keeps that reference; it carries nothing else of the draft.
+
+## See also
+
+- [Connection](https://docs.theprototype.app/connection.md) for joining, rooms and roles.
+- [Users & Moderation](https://docs.theprototype.app/people.md) for the people list.
 
 
 ---
@@ -22109,6 +22187,27 @@ or updating.
 
 ![Your games: visits over 30 days, one row per game, with a moderation notice](https://docs.theprototype.app/img/community/your-games.webp)
 *Figure: Your games: visits over 30 days.*
+### Play statistics
+
+*New in 1.73.* Each published game has a **Play statistics** section under its row in **Your games & stats** (closed
+by default; its summary line shows the plays and the median time), and a **Plays** total sits beside Visits. It shows,
+for 7 days, 30 days or all time:
+
+- **Plays per day**: a play counts when someone presses Play on the game's play link, embed or community page.
+- **Time played**, in ranges (under 30 s, 30 s to 1 min, 1-3, 3-10, 10-30, over 30 min), so the median is a range.
+- **Where players stopped**: the level and game state (won, lost, game over, still playing) when the page was hidden or closed.
+- **Devices**: desktop, phone or tablet, headset.
+
+Each chart has a **Chart / Table** switch; the table shows every number the chart draws.
+
+![Play statistics for one game: plays per day, time played, where players stopped and devices](https://docs.theprototype.app/img/community/play-statistics.webp)
+*Figure: Play statistics: sample data.*
+- No names, accounts, addresses, cookies or ids are collected, and only the game's owner sees the numbers.
+- Players switch counting off with **Settings ▸ Privacy ▸ Count my visits anonymously**; browsers that send Do Not Track
+  or Global Privacy Control are never counted.
+- Plays count for published scenes (public or unlisted) opened from their link, not for exports (they keep counting
+  badge visits) and not in the editor. Counts are kept about 90 days.
+
 ### One game, one count
 
 Every scene gets a permanent **game id** the first time you save, export or publish it. Re-exporting, a new itch.io build

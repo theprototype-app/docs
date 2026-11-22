@@ -163,11 +163,14 @@ Once connected, everything replicates automatically — objects, transforms, mat
 
 Selecting an object **locks it** so two people can't fight over the same thing:
 
-- Your current selection *is* your lock — one lock per person, and picking a new object releases the old one.
-- A locked object shows who holds it, tinted with that peer's color.
-- To take over, open the object's right-click menu and choose **Request control**; the holder gets an Approve/Deny prompt.
+- The person holding an object shows as a small avatar over it, and Properties says **‹name› is editing this**
+  (read-only, with **Request**). The Object list row says **Held by ‹name›**.
+- To take over, press **Request** (or **Request control** in the object's right-click menu); the holder gets an Approve/Deny prompt.
+- The host can switch the room to **Only while editing**: selecting then takes nothing, and an object is held from your
+  first change until about 3 seconds after the last.
 
-If a peer disconnects, their locks are released and their avatar, cursor and hands are cleaned up automatically — only *their* locks; everyone else keeps theirs.
+If a peer disconnects, their locks are released and their avatar, cursor and hands are cleaned up automatically — only
+*their* locks; everyone else keeps theirs. More in [Locks and drafts](https://docs.theprototype.app/locks-and-drafts.md).
 
 ## Rooms: one session, several scenes
 
