@@ -25,6 +25,8 @@ nav:
   - Building:
     - Explorer: explorer.md
     - Importing Big Models: import-optimize.md
+    - Simplify and export for print or AR: simplify-and-export.md
+    - Gaussian splats: gaussian-splats.md
     - Edit in Blender: edit-in-blender.md
     - "Free Assets (CC0)": free-assets.md
     - Packs: packs.md
@@ -40,7 +42,9 @@ nav:
     - Measure, Align & Distribute: measure-align.md
     - "Arrays, Layers & Tidy": arrange.md
     - Reference Images: reference-images.md
+    - Decals: decals.md
     - UV & Textures: uv-editor.md
+    - Paint on meshes: mesh-paint.md
     - Image Editor: image-editor.md
     - Shader Graph: shader-graph.md
     - Shader Nodes: shader-nodes.md
@@ -50,6 +54,7 @@ nav:
     - Photo Mode: photo-mode.md
     - Animation: animation.md
     - Characters and motion: characters-and-motion.md
+    - Constraints and IK: constraints-and-ik.md
     - Timeline (Cutscenes): timeline.md
     - Film with your phone: film.md
     - Physics & Simulation: physics.md
@@ -95,6 +100,7 @@ nav:
         - Velocity: nodes/velocity.md
         - Measure: nodes/measure.md
         - Spawn: nodes/spawn.md
+        - Stamp Decal: nodes/decalstamp.md
       - Object Flow:
         - Flow Input: nodes/flowinput.md
         - Flow Output: nodes/flowoutput.md
@@ -171,6 +177,8 @@ nav:
         - Set Color: nodes/setcolor.md
         - Visibility: nodes/visibility.md
         - Set Shader Uniform: nodes/setuniform.md
+        - Set Constraint Weight: nodes/constraintweight.md
+        - Set Constraint Target: nodes/constrainttarget.md
       - Triggers:
         - On Click: nodes/onclick.md
         - On Hover: nodes/onhover.md
