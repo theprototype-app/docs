@@ -43,7 +43,7 @@ With **From: landing only** it counts only downward speed, so a ball thrown side
 
 ## Where it touched: Stamp Decal
 
-*New in 1.7X.* On Impact has no new output, but it carries where the contact happened. Wire it into a
+*New in 1.75.* On Impact has no new output, but it carries where the contact happened. Wire it into a
 [Stamp Decal](decalstamp.md) `trigger` and the mark lands at the contact point, facing out of the surface that was
 hit, on the object that was hit (a footprint, a scorch, a splat). A landing on the built-in ground leaves no mark.
 

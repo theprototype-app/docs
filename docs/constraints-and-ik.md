@@ -1,6 +1,6 @@
 # Constraints and IK
 
-*New in 1.7X.* A **constraint** makes an object, or one bone or part inside it, follow another object while the scene
+*New in 1.75.* A **constraint** makes an object, or one bone or part inside it, follow another object while the scene
 runs: it looks at it, copies it, or reaches for it. Constraints are part of the scene: they save with it, and every
 person in the session sees the same result. Each computer works the pose out itself from the objects' positions, so a
 constraint sends nothing while it runs.

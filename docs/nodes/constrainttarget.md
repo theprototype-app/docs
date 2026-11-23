@@ -1,7 +1,7 @@
 # Set Constraint Target
 
 Points one of the connected object's [constraints](../constraints-and-ik.md) at another object while it runs: the hand
-reaches for whatever the graph picks. *New in 1.7X.*
+reaches for whatever the graph picks. *New in 1.75.*
 
 **Output:** effect (wire into an [Object Selector](objectselector.md))
 

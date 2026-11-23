@@ -1,6 +1,6 @@
 # Decals
 
-*New in 1.7X.* A **decal** is an image projected onto the surface under it: a sign on a wall, an arrow on the
+*New in 1.75.* A **decal** is an image projected onto the surface under it: a sign on a wall, an arrow on the
 floor, dirt, a crack, a logo. It wraps the surface (round a curved pillar, over the steps of a stair) and moves with
 the object it sits on.
 

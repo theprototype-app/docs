@@ -1,7 +1,7 @@
 # Set Constraint Weight
 
 Sets the weight (0-1) of one of the connected object's [constraints](../constraints-and-ik.md) while it runs: fade an
-IK reach or a look-at in and out. *New in 1.7X.*
+IK reach or a look-at in and out. *New in 1.75.*
 
 **Output:** effect (wire into an [Object Selector](objectselector.md))
 

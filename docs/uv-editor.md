@@ -125,9 +125,9 @@ and your peers get the new mapping.
 
 ## Painting
 
-Pick the **Paint** tool and draw — on the UV map or straight on the model in the viewport (since 1.7X; a ring on the surface shows the brush). Set the brush **colour** and **size** in the panel.
+Pick the **Paint** tool and draw — on the UV map or straight on the model in the viewport (since 1.75; a ring on the surface shows the brush). Set the brush **colour** and **size** in the panel.
 
-*New in 1.7X:* the brush paints more than colour. Its **Channel** picks **Colour**, **Rough** (roughness), **Metal**
+*New in 1.75:* the brush paints more than colour. Its **Channel** picks **Colour**, **Rough** (roughness), **Metal**
 (metalness) or **Glow** (emission), each in its own map, and the panel adds hardness, flow, an eraser, **Mirror X**,
 image stamps and painting in a headset. See [Paint on meshes](mesh-paint.md).
 

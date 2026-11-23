@@ -1,6 +1,6 @@
 # Gaussian splats
 
-*New in 1.7X.* A **Gaussian splat** is a captured scene: a room, a statue or a street scanned with a phone or a
+*New in 1.75.* A **Gaussian splat** is a captured scene: a room, a statue or a street scanned with a phone or a
 camera and turned into millions of soft coloured points. Import one (a `.ply`, `.spz` or `.splat` file, for example
 from Polycam, Luma, Scaniverse, Postshot or a 3DGS training run) and it becomes an object in the shared scene. Move,
 rotate, scale, group, undo, save and share it like any model.

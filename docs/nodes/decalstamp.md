@@ -1,7 +1,7 @@
 # Stamp Decal
 
 Presses a mark onto a surface while the game runs: a footprint, a scorch, a paint splat. The mark lands where the wired
-[On Impact](onimpact.md) touched, or at a point you wire. *New in 1.7X.*
+[On Impact](onimpact.md) touched, or at a point you wire. *New in 1.75.*
 
 **Inputs:** `trigger` (event) · `look` (object — a [Decal](../decals.md) to copy the image, tint and opacity from) · `on` (object — the object to mark) · `at` (vector3 — a world point) · `facing` (vector3 — the surface direction at that point)
 **Output:** effect

@@ -84,7 +84,7 @@ LOD chain into a GLTF or a Scene file — see [Publish & Export](publish-export.
 
 ## Simplify one model by hand
 
-*New in 1.7X.* To make one model lighter for good — not just at a distance — select it and press
+*New in 1.75.* To make one model lighter for good — not just at a distance — select it and press
 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>D</kbd> (**Mesh ▸ Simplify…**): pick how much to keep, preview it, apply it in one
 undo step. To take a model to a 3D printer or to AR on an iPhone, use **Save as… ▸ 3D print** or **AR**. See
 [Simplify and export for print or AR](simplify-and-export.md).

@@ -194,7 +194,7 @@ Worlds ([Worlds with an agent](agent-world.md)):
 - `set_look` `material` takes `pattern` (wood, brick, marble …). `create_shape` `mesh` takes `subdivide: 1-2`, and
   `edit_shape` `update` sends a mesh new vertices.
 
-**New in 1.7X** — no new tool names, more in the families:
+**New in 1.75** — no new tool names, more in the families:
 
 - `create_objects` takes `kind: "decal"`: an image on the surface of the object `on`, aimed by `normal` (or at a
   `point`), with `image`, `size`, `depth`, `opacity` and `tint` ([Decals](../decals.md#for-agents)).

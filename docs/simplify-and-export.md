@@ -1,6 +1,6 @@
 # Simplify and export for print or AR
 
-*New in 1.7X.* Make a heavy model lighter in the editor, and save your work for a 3D printer or for AR on an iPhone
+*New in 1.75.* Make a heavy model lighter in the editor, and save your work for a 3D printer or for AR on an iPhone
 or iPad.
 
 ## Simplify a mesh

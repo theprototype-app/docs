@@ -1,6 +1,6 @@
 # Paint on meshes
 
-*New in 1.7X.* The [UV editor](uv-editor.md)'s **Paint** tool paints more than colour. Paint **roughness**,
+*New in 1.75.* The [UV editor](uv-editor.md)'s **Paint** tool paints more than colour. Paint **roughness**,
 **metalness** and **glow** (emission) too: one map each, with soft brushes, an eraser, mirror painting and image
 stamps. Paint in the UV canvas, or straight onto the model in the viewport. In a headset, use a controller.
 

@@ -24,7 +24,7 @@ GLTF and JSON join them once you offer them in Save options.
 - **More formats** — **Offer GLTF** and **Offer JSON** (both off by default) add those formats.
 - **Optimize for** — **Full quality** or **For Quest / web** (1.37): compressed textures and LOD chains in a GLTF or
   Scene export — see [Publish & Export](publish-export.md#optimize-for-quest-web).
-- **Bake constraints** (1.7X) — a GLTF keeps the pose your [constraints and IK](constraints-and-ik.md#exporting-bake-constraints)
+- **Bake constraints** (1.75) — a GLTF keeps the pose your [constraints and IK](constraints-and-ik.md#exporting-bake-constraints)
   make right now, instead of the pose you set by hand.
 
 Its **Save** remembers the options and saves; **Cancel** forgets the changes. On a folded phone the dialog opens full
@@ -123,7 +123,7 @@ Turn it on first with **Save options ▸ Offer GLTF**. Exports the **selected ob
 
 ## 3D print and AR
 
-*New in 1.7X.* Right-click ▸ **Save as…** also offers **3D print (.stl)**, **3D print (.3mf)** and **AR (.usdz)**
+*New in 1.75.* Right-click ▸ **Save as…** also offers **3D print (.stl)**, **3D print (.3mf)** and **AR (.usdz)**
 (or press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>E</kbd>): sized in millimetres for a slicer, or a file for AR Quick
 Look on an iPhone or iPad. See [Simplify and export for print or AR](simplify-and-export.md#export-for-3d-printing-and-ar).
 

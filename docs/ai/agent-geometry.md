@@ -4,7 +4,7 @@ An agent joined to your session ([Build with an AI agent](build-with-an-agent.md
 boxes and spheres. Nine tools let it change an object's shape in place, turn a profile into a vase, sweep a
 rail along a path, cut a sign out of an outline, build a mesh from raw data, copy or mirror an object, bring in a
 glTF / GLB / OBJ file, write [3D text](../3d-text.md) and model a mesh the way
-[Edit Mesh](../mesh-editing.md) does. Since 1.7X, `simplify_mesh` also makes a heavy model lighter
+[Edit Mesh](../mesh-editing.md) does. Since 1.75, `simplify_mesh` also makes a heavy model lighter
 ([below](#simplify_mesh-fewer-triangles)). The in-app [Assistant](assistant.md) has the same tools.
 
 Every call works like the agent's other tools:
@@ -173,7 +173,7 @@ For tens or hundreds of copies spread over the ground, use `scatter` with `sourc
 
 ### simplify_mesh: fewer triangles
 
-*New in 1.7X.* Lowers a mesh or imported model's triangle count, the way **Mesh ▸ Simplify…** does
+*New in 1.75.* Lowers a mesh or imported model's triangle count, the way **Mesh ▸ Simplify…** does
 ([Simplify and export](../simplify-and-export.md#simplify-a-mesh)). UVs, normals, colours, skin weights and material
 slots are kept. One undo step. Over the connector it is `edit_shape {action: "simplify"}`.
 

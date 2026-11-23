@@ -52,7 +52,7 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
-**1.7X — [decals](decals.md), [paint on meshes](mesh-paint.md), [Gaussian splats](gaussian-splats.md),
+**1.75 — [decals](decals.md), [paint on meshes](mesh-paint.md), [Gaussian splats](gaussian-splats.md),
 [simplify and export for print or AR](simplify-and-export.md), [constraints and IK](constraints-and-ik.md).**
 Right-click a surface ▸ **Add decal here** to put a sign, an arrow or a crack on it, and the
 [Stamp Decal](nodes/decalstamp.md) node leaves marks where things land while you play. The Paint brush paints

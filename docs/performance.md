@@ -90,7 +90,7 @@ this editor draws right now, overlays and post included.
 **Limits.** An estimate, not a frame-time measurement: the perf gate measures from the spawn point with culling and LOD,
 so a big level can read red here and pass there. The phone and desktop numbers are starting values.
 
-**Gaussian splats** (1.7X) have their own budget: a headset draws up to 1 million splats, a phone 2 million. Past that,
+**Gaussian splats** (1.75) have their own budget: a headset draws up to 1 million splats, a phone 2 million. Past that,
 whole splat objects are hidden on that device (in scene order), with one notice. A PC has no splat budget. See
 [Gaussian splats](gaussian-splats.md#where-splats-are-not-drawn).
 
