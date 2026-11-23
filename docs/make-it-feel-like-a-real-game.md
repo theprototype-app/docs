@@ -84,7 +84,8 @@ When someone asks to join while you host and play, a small card appears over the
 and pick **Join requests** to let them in or say no, without leaving the game. The game keeps running for everyone.
 
 **Auto-admit while playing** (Game menus) lets people in by itself while you host and play, and says who came in. AI
-agents and people you blocked always ask, even with it on.
+agents and people you blocked always ask, even with it on, and so does everyone while **Require approval to join**
+(Settings ▸ Connection) is on.
 
 ## Controllers and remapping
 
