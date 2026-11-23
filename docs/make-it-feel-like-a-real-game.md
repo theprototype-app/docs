@@ -193,6 +193,9 @@ See the [Dialogue node](nodes/dialogue.md).
 - **Movement is per second.** Walking, flying, the gamepad and touch stick, the VR edit stick, kit enemies and
   possessed objects cover the same distance at 30, 60, 90 or 120 Hz. Scenes made before keep the speed they had at
   60 Hz.
+- **NPCs climb and jump** (the Navigation module). On the scene's **Navmesh** node, **Ledge** is the highest ledge NPCs
+  climb (0-3 m) and **Jump** is the widest gap they jump across (0-4 m). Both are off by default, so a navmesh baked
+  before stays as it was.
 
 ## For agents
 
