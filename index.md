@@ -48,6 +48,16 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.75 — exports work again**: every export in 1.74 failed its own file check; Export, the .zip and the itch.io
+upload work again. Also **[decals](https://docs.theprototype.app/decals.md), [paint on meshes](https://docs.theprototype.app/mesh-paint.md), [Gaussian splats](https://docs.theprototype.app/gaussian-splats.md),
+[simplify and export for print or AR](https://docs.theprototype.app/simplify-and-export.md), [constraints and IK](https://docs.theprototype.app/constraints-and-ik.md).**
+Right-click a surface ▸ **Add decal here** to put a sign, an arrow or a crack on it, and the
+[Stamp Decal](https://docs.theprototype.app/nodes/decalstamp.md) node leaves marks where things land while you play. The Paint brush paints
+roughness, metalness and glow as well as colour, straight onto the model, and in a headset. Import a scanned scene
+(`.ply`, `.spz`, `.splat`) and share it like any model. **Mesh ▸ Simplify…** makes a heavy model lighter in one undo
+step, and **Save as…** writes STL and 3MF for a 3D printer and USDZ for AR on an iPhone. **Inspector ▸ Constraints**
+makes an object look at, copy or follow another, and bends an arm, a leg or a tail to reach a target.
+
 **1.74 — games and play.**
 
 - **Game values and game feel**: a [Game Value](https://docs.theprototype.app/nodes/gamevalue.md) node shows the score, a clock, stars or lives in the

@@ -30,6 +30,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**Velocity**](https://docs.theprototype.app/nodes/velocity.md) | Outputs how fast the connected object is moving right now, in metres per second. |
 | [**Measure**](https://docs.theprototype.app/nodes/measure.md) | Reads a number off an object: how tall it is, where its top is, how fast it is going. |
 | [**Spawn**](https://docs.theprototype.app/nodes/spawn.md) | Makes copies of an object while the simulation runs - crates off a conveyor, targets, debris, ammo, waves of anything. |
+| [**Stamp Decal**](https://docs.theprototype.app/nodes/decalstamp.md) | Presses a mark onto a surface - a footprint, a scorch, a paint splat - where the wired On Impact touched (or at a point you wire). Marks last for the run, the oldest go past the cap. |
 
 ## Object Flow
 
@@ -125,6 +126,8 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**Set Color**](https://docs.theprototype.app/nodes/setcolor.md) | Paints the connected object's material with a color, re-applied every frame. |
 | [**Visibility**](https://docs.theprototype.app/nodes/visibility.md) | Shows or hides the connected object based on a boolean. |
 | [**Set Shader Uniform**](https://docs.theprototype.app/nodes/setuniform.md) | Writes a number, a colour or a vector inside an object's shader graph, so a trigger, a timer or a counter can drive how the material looks. |
+| [**Set Constraint Weight**](https://docs.theprototype.app/nodes/constraintweight.md) | Sets the weight (0-1) of one of the object's constraints (1 = the first in Inspector > Constraints) while it runs: fade an IK reach or a look-at in and out. |
+| [**Set Constraint Target**](https://docs.theprototype.app/nodes/constrainttarget.md) | Points one of the object's constraints (1 = the first in Inspector > Constraints) at another object while it runs. |
 
 ## Triggers
 

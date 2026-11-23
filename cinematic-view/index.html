@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Cinematic View", "url": "https://docs.theprototype.app/cinematic-view/", "description": "The standard view (top) and the Cinematic view at Standard quality (bottom).", "dateModified": "2026-11-21"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Cinematic View", "url": "https://docs.theprototype.app/cinematic-view/", "description": "The standard view (top) and the Cinematic view at Standard quality (bottom).", "dateModified": "2026-11-23"}</script>
 </head>
   
   
@@ -810,6 +810,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../simplify-and-export/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simplify and export for print or AR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gaussian-splats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gaussian splats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../edit-in-blender/" class="md-nav__link">
         
   
@@ -1125,11 +1167,53 @@
   
   
     <li class="md-nav__item">
+      <a href="../decals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Decals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../uv-editor/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     UV &amp; Textures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mesh-paint/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paint on meshes
   </span>
   
 
@@ -1319,6 +1403,27 @@
   
   <span class="md-ellipsis">
     Characters and motion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constraints-and-ik/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Constraints and IK
   </span>
   
 
@@ -2461,6 +2566,27 @@
   
   <span class="md-ellipsis">
     Spawn
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/decalstamp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stamp Decal
   </span>
   
 
@@ -4167,6 +4293,48 @@
   
   <span class="md-ellipsis">
     Set Shader Uniform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/constraintweight/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set Constraint Weight
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/constrainttarget/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set Constraint Target
   </span>
   
 
@@ -7238,6 +7406,8 @@ switch names the ones in your scene:</p>
 <li>painted terrain layers,</li>
 <li>jiggle (the object shows, without the wobble).</li>
 </ul>
+<p><a href="../gaussian-splats/">Gaussian splats</a> (1.75) are not drawn at all while the view is on: they are hidden, and the
+<strong>Not shown in Cinematic view</strong> note names Gaussian splats.</p>
 <p>The grid also fades less with distance than in the standard view.</p>
 <p>Text shows as in the standard view (since 1.71): 3D text, names over people, ping names and path numbers keep their
 font, colour and outline. Raised (extruded) 3D text is real geometry and is lit by the scene; flat text is not.</p>
@@ -7323,7 +7493,7 @@ steps down to Basic by itself, and High steps down in every scene. On a handheld
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-21
+    2026-11-23
   </span>
 
     

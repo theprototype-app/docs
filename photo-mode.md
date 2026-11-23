@@ -53,6 +53,7 @@ this too, under **What photos cannot show**.
 | [Scene look](https://docs.theprototype.app/post-processing.md) effects (bloom, grade, vignette …) | Not applied: the photo is the clean render with the scene's tone mapping and exposure |
 | Water | A still, glassy surface |
 | Hemisphere and ambient light | Replaced by sky light in the same colours |
+| [Gaussian splats](https://docs.theprototype.app/gaussian-splats.md) (scans, 1.75) | Left out of the photo (the note says how many); the normal still shows them |
 
 ## For AI apps
 

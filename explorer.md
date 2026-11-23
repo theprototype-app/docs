@@ -276,7 +276,7 @@ on the window's edge (see [Windows with side panes](https://docs.theprototype.ap
 *Figure: Properties and File history share the right-hand panel as tabs.*
 ## Prefabs that are files
 
-Right-click an object in the viewport ▸ **Save as…** and choose the format. **Prefab** is the classic snapshot; **Prefab (.glb)** and **Prefab (.tpscene)** make a prefab that *is* a file — the `.glb` carries geometry, materials and baked animation, the `.tpscene` also carries animation clips, object flow graphs, shader graphs and joints — so it can be dragged into the Library, shared, and exported as the exact bytes it was saved as (**Export ▸ The original file**). The last two entries, **glTF binary (.glb)** and **glTF (.gltf)**, are plain downloads. See [Prefabs](https://docs.theprototype.app/prefabs.md).
+Right-click an object in the viewport ▸ **Save as…** and choose the format. **Prefab** is the classic snapshot; **Prefab (.glb)** and **Prefab (.tpscene)** make a prefab that *is* a file — the `.glb` carries geometry, materials and baked animation, the `.tpscene` also carries animation clips, object flow graphs, shader graphs and joints — so it can be dragged into the Library, shared, and exported as the exact bytes it was saved as (**Export ▸ The original file**). **glTF binary (.glb)** and **glTF (.gltf)** are plain downloads. See [Prefabs](https://docs.theprototype.app/prefabs.md). *Since 1.75* the list ends with **3D print (.stl)**, **3D print (.3mf)** and **AR (.usdz)**: see [Simplify and export for print or AR](https://docs.theprototype.app/simplify-and-export.md#export-for-3d-printing-and-ar).
 
 ## A session you joined
 

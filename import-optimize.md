@@ -80,6 +80,13 @@ The other half of the pipeline is on the way out: **Optimize for: For Quest / we
 [Save options](https://docs.theprototype.app/saving.md#save-options) and **Settings ▸ Export** writes compressed textures, compressed geometry and the
 LOD chain into a GLTF or a Scene file — see [Publish & Export](https://docs.theprototype.app/publish-export.md#optimize-for-quest-web).
 
+## Simplify one model by hand
+
+*New in 1.75.* To make one model lighter for good — not just at a distance — select it and press
+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>D</kbd> (**Mesh ▸ Simplify…**): pick how much to keep, preview it, apply it in one
+undo step. To take a model to a 3D printer or to AR on an iPhone, use **Save as… ▸ 3D print** or **AR**. See
+[Simplify and export for print or AR](https://docs.theprototype.app/simplify-and-export.md).
+
 ## Replacing a model later
 
 A new version of a model does not have to be a new object: [Replace model…](https://docs.theprototype.app/edit-in-blender.md#replace-a-model-from-any-file) keeps the object, its flows, physics and clips.

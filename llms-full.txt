@@ -57,6 +57,16 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.75 — exports work again**: every export in 1.74 failed its own file check; Export, the .zip and the itch.io
+upload work again. Also **[decals](https://docs.theprototype.app/decals.md), [paint on meshes](https://docs.theprototype.app/mesh-paint.md), [Gaussian splats](https://docs.theprototype.app/gaussian-splats.md),
+[simplify and export for print or AR](https://docs.theprototype.app/simplify-and-export.md), [constraints and IK](https://docs.theprototype.app/constraints-and-ik.md).**
+Right-click a surface ▸ **Add decal here** to put a sign, an arrow or a crack on it, and the
+[Stamp Decal](https://docs.theprototype.app/nodes/decalstamp.md) node leaves marks where things land while you play. The Paint brush paints
+roughness, metalness and glow as well as colour, straight onto the model, and in a headset. Import a scanned scene
+(`.ply`, `.spz`, `.splat`) and share it like any model. **Mesh ▸ Simplify…** makes a heavy model lighter in one undo
+step, and **Save as…** writes STL and 3MF for a 3D printer and USDZ for AR on an iPhone. **Inspector ▸ Constraints**
+makes an object look at, copy or follow another, and bends an arm, a leg or a tail to reach a target.
+
 **1.74 — games and play.**
 
 - **Game values and game feel**: a [Game Value](https://docs.theprototype.app/nodes/gamevalue.md) node shows the score, a clock, stars or lives in the
@@ -4681,7 +4691,7 @@ on the window's edge (see [Windows with side panes](https://docs.theprototype.ap
 *Figure: Properties and File history share the right-hand panel as tabs.*
 ## Prefabs that are files
 
-Right-click an object in the viewport ▸ **Save as…** and choose the format. **Prefab** is the classic snapshot; **Prefab (.glb)** and **Prefab (.tpscene)** make a prefab that *is* a file — the `.glb` carries geometry, materials and baked animation, the `.tpscene` also carries animation clips, object flow graphs, shader graphs and joints — so it can be dragged into the Library, shared, and exported as the exact bytes it was saved as (**Export ▸ The original file**). The last two entries, **glTF binary (.glb)** and **glTF (.gltf)**, are plain downloads. See [Prefabs](https://docs.theprototype.app/prefabs.md).
+Right-click an object in the viewport ▸ **Save as…** and choose the format. **Prefab** is the classic snapshot; **Prefab (.glb)** and **Prefab (.tpscene)** make a prefab that *is* a file — the `.glb` carries geometry, materials and baked animation, the `.tpscene` also carries animation clips, object flow graphs, shader graphs and joints — so it can be dragged into the Library, shared, and exported as the exact bytes it was saved as (**Export ▸ The original file**). **glTF binary (.glb)** and **glTF (.gltf)** are plain downloads. See [Prefabs](https://docs.theprototype.app/prefabs.md). *Since 1.75* the list ends with **3D print (.stl)**, **3D print (.3mf)** and **AR (.usdz)**: see [Simplify and export for print or AR](https://docs.theprototype.app/simplify-and-export.md#export-for-3d-printing-and-ar).
 
 ## A session you joined
 
@@ -4903,6 +4913,13 @@ The other half of the pipeline is on the way out: **Optimize for: For Quest / we
 [Save options](https://docs.theprototype.app/saving.md#save-options) and **Settings ▸ Export** writes compressed textures, compressed geometry and the
 LOD chain into a GLTF or a Scene file — see [Publish & Export](https://docs.theprototype.app/publish-export.md#optimize-for-quest-web).
 
+## Simplify one model by hand
+
+*New in 1.75.* To make one model lighter for good — not just at a distance — select it and press
+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>D</kbd> (**Mesh ▸ Simplify…**): pick how much to keep, preview it, apply it in one
+undo step. To take a model to a 3D printer or to AR on an iPhone, use **Save as… ▸ 3D print** or **AR**. See
+[Simplify and export for print or AR](https://docs.theprototype.app/simplify-and-export.md).
+
 ## Replacing a model later
 
 A new version of a model does not have to be a new object: [Replace model…](https://docs.theprototype.app/edit-in-blender.md#replace-a-model-from-any-file) keeps the object, its flows, physics and clips.
@@ -4913,6 +4930,168 @@ A new version of a model does not have to be a new object: [Replace model…](ht
   the size saving stays; the GPU compression comes back on the next import or a **For Quest / web** save.
 - The original is kept in the Library even when it is larger than the 25 MB sharing limit; it is not shared with peers
   in that case.
+
+
+---
+
+Source: https://docs.theprototype.app/simplify-and-export/ (Markdown: https://docs.theprototype.app/simplify-and-export.md)
+
+# Simplify and export for print or AR
+
+*New in 1.75.* Make a heavy model lighter in the editor, and save your work for a 3D printer or for AR on an iPhone
+or iPad.
+
+## Simplify a mesh
+
+A heavy model (a scan, a sculpt or a download) can be made lighter in the editor.
+
+- **Where:** select the object and press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>D</kbd>, or use the command palette
+  (<kbd>Ctrl</kbd>+<kbd>K</kbd>, "Simplify mesh"). On an imported model or a group, it is also in the right-click menu
+  under **Mesh ▸ Simplify…**.
+- **Target:** drag the **Keep** slider (arrow keys step 1 %, <kbd>Page Up</kbd> / <kbd>Page Down</kbd> step 10 %) or
+  type a **Triangles** count. The line under them shows the count your choice comes to before anything runs.
+- **Preview** (<kbd>P</kbd>): shows the result on the object, only on your screen. Nobody else sees it, nothing is
+  recorded, and a save made meanwhile writes the full model.
+- **Apply** (<kbd>Enter</kbd>): everyone in the session gets the simplified model. It is **one undo step**
+  (<kbd>Ctrl</kbd>+<kbd>Z</kbd> puts the full model back for everyone). <kbd>Esc</kbd> cancels.
+
+**What is kept:** UVs, normals, vertex colours, skin weights (so an animated character still plays its clips), a second
+UV set and material slots. Each slot is simplified on its own with its borders locked, so no seam opens between
+materials. Tangents are rebuilt by the renderer.
+
+**When it says no, it says why:**
+
+- Instanced [scatter](https://docs.theprototype.app/scatter.md): simplify the source object instead.
+- A shape whose Geometry settings still drive it (box, sphere …): the editor offers **Bake and simplify**. Baking locks
+  the Geometry settings, just as a [mesh edit](https://docs.theprototype.app/mesh-editing.md) does.
+- VRM avatars and meshes with morph targets (shape keys).
+- Something another person is editing; a running simulation; an open mesh edit.
+
+Simplify changes the model itself. For lighter versions that take over only when the model is small on screen, see
+[Levels of Detail](https://docs.theprototype.app/lod.md) and [Importing Big Models](https://docs.theprototype.app/import-optimize.md).
+
+## Export for 3D printing and AR
+
+- **Where:** right-click ▸ **Save as… ▸ 3D print (.stl)**, **3D print (.3mf)** or **AR (.usdz)**, or
+  <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>E</kbd>. The shortcut exports the selection when there is one, otherwise the
+  whole scene; you can switch in the dialog.
+- **Format:** STL, 3MF or USDZ (keys <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>). **What:** **Selection** or
+  **Whole scene**.
+
+### 3D print (STL, 3MF)
+
+- Every position, rotation and scale is applied, and the part sits on the print bed (Z up, bottom at 0, centred).
+- **Units are millimetres:** one scene metre is 1000 mm. The dialog shows the size it will print at. Change **Scale**,
+  or type the **Longest side** in mm and the scale follows.
+- **STL** is one mesh, read by every slicer, with no colour. **3MF** keeps each part as its own object with its
+  colour, for multi-colour printers.
+- **Watertight check:** the dialog counts open edges (holes). It is a warning, not a block: most slicers repair small
+  holes. For a clean print, close them first ([Edit Mesh](https://docs.theprototype.app/mesh-editing.md), or a Boolean union).
+
+### AR (USDZ)
+
+- **Build** makes the file and shows its size; **Download** saves it. Open it on an iPhone or iPad to place it in your
+  room with AR Quick Look.
+- Materials and textures are kept, with textures capped at 2048 px. Flows and animation are not part of the file.
+
+### What an export leaves out
+
+- **Array copies:** an object with an **Array** exports as the one object, not its copies.
+- **Hidden layers:** hiding a layer on your screen does not keep its objects out of the file. Select the parts you
+  want and export the **Selection** instead.
+- **Decals and Gaussian splats** are not meshes, so they are left out.
+
+## For agents
+
+`simplify_mesh {uuid, percent | triangles, bake?}` simplifies one object: `percent` is how much to keep (1-100),
+`triangles` a target count, and `bake: true` bakes a primitive first. Over the connector it is
+`edit_shape {action: "simplify"}`. See [Shapes and modelling with an agent](https://docs.theprototype.app/ai/agent-geometry.md#simplify_mesh-fewer-triangles).
+
+## See also
+
+- [Saving & Sessions](https://docs.theprototype.app/saving.md): the scene, project and GLTF formats.
+- [Publish & Export](https://docs.theprototype.app/publish-export.md): sharing a scene or a game.
+
+
+---
+
+Source: https://docs.theprototype.app/gaussian-splats/ (Markdown: https://docs.theprototype.app/gaussian-splats.md)
+
+# Gaussian splats
+
+*New in 1.75.* A **Gaussian splat** is a captured scene: a room, a statue or a street scanned with a phone or a
+camera and turned into millions of soft coloured points. Import one (a `.ply`, `.spz` or `.splat` file, for example
+from Polycam, Luma, Scaniverse, Postshot or a 3DGS training run) and it becomes an object in the shared scene. Move,
+rotate, scale, group, undo, save and share it like any model.
+
+## Import a splat
+
+Drop the file on the viewport or the [Explorer](https://docs.theprototype.app/explorer.md), or use **Import** in the main menu. The scan lands with
+its bottom on the spot you drop it.
+
+A scan often comes in tilted or upside down: the capture tool uses its own axes. Rotate it with the gizmo.
+
+A `.ply` that is a mesh, not a splat, is refused with the way to import it (as `.glb` or `.obj`).
+
+## Big files: Make a smaller copy
+
+Files up to **25 MB** are kept as they are. That is the limit for one file in the Library, and for sharing it with
+the people in your session.
+
+A bigger file is offered **Make a smaller copy**. The dialog says what it will do: the first of these steps that
+brings the file under 25 MB.
+
+1. Convert it to the compact `.spz` format. Every splat and colour is kept.
+2. Convert it to `.spz` and drop the colour that changes with the viewing angle. Every splat is kept; shiny spots look
+   flatter.
+3. As 2, and keep only the most solid splats (the dialog gives the percentage).
+
+The original file on your computer is never changed. A scan that would keep less than 20 % of its splats is refused:
+crop or simplify it in a splat editor first (for example SuperSplat), then import it again. Files over 768 MB cannot be
+read at all.
+
+## Properties ▸ Splat
+
+Select the scan to see its **Splat** section:
+
+- The facts: how many splats, the colour bands, the file size.
+- The status: loading, **Waiting for the file from a peer**, or not drawn here and why.
+- **Opacity**.
+- **Crop...**: trim the scan to a box, to hide the floaters and the background you do not want. The box is in the
+  scan's own axes. Splats outside it are hidden for everyone; the file keeps them, so you can widen the box again.
+  **Reset box** puts the box back round the whole scan, and **Remove crop** shows the whole scan again.
+
+Material and Physics do not apply to a splat. [Mesh editing](https://docs.theprototype.app/mesh-editing.md) refuses one too: use **Crop** in the
+Splat section instead.
+
+## Selecting a scan
+
+Click a scan from outside to pick it by its box, or pick it in the object list. Inside a scanned room, a click on empty
+space still deselects: the box lets clicks through, so objects inside the room stay clickable.
+
+## Sharing and saving
+
+- **People in the session** get the object at once; the file travels like any shared asset. Until it lands, their
+  Splat section says **Waiting for the file**.
+- **A `.tpscene`** bundles the scan (**Explorer ▸ Scene ▸ splats**). See [Saving & Sessions](https://docs.theprototype.app/saving.md).
+- **Older releases** open such a file and keep the object as an invisible box. If they save it again, the scan still
+  draws here.
+
+## Where splats are not drawn
+
+| Where | What happens |
+| --- | --- |
+| [Photo mode](https://docs.theprototype.app/photo-mode.md) | A photo cannot trace splats: they are left out, and the panel's note says so. The normal still shows them. |
+| [Cinematic view](https://docs.theprototype.app/cinematic-view.md) | The view cannot draw them: they are hidden while it is on, and the **Not shown** note names Gaussian splats. |
+| Headset and phone | A headset draws up to 1 million splats, a phone 2 million. Past that, whole splat objects are hidden on that device, with one notice. A PC has no splat budget. See [Performance & Budgets](https://docs.theprototype.app/performance.md#the-budget-chip-will-it-fit-on-a-quest). |
+| 3D print and AR export | STL, 3MF and USDZ files leave splats out (a scan is not a mesh). |
+
+A splat is not a mesh, so **Paint**, **Simplify** and decals do not work on it: each one says so.
+
+## Third-party notices
+
+- **Renderer**: [Spark](https://sparkjs.dev/) (`@sparkjsdev/spark`, MIT). It loads only when a scene
+  holds a splat.
 
 
 ---
@@ -6808,6 +6987,73 @@ the way of the objects you are placing.
 
 ---
 
+Source: https://docs.theprototype.app/decals/ (Markdown: https://docs.theprototype.app/decals.md)
+
+# Decals
+
+*New in 1.75.* A **decal** is an image projected onto the surface under it: a sign on a wall, an arrow on the
+floor, dirt, a crack, a logo. It wraps the surface (round a curved pillar, over the steps of a stair) and moves with
+the object it sits on.
+
+## Put one on a surface
+
+1. Right-click the surface where it should go and choose **Add decal here**. A dashed square shows where it is.
+2. In **Properties ▸ Decal**, pick the **Image**: import a picture, or drag one from the Library. The
+   **Decals Starter** pack (**Explorer ▸ Packs**, right-click ▸ **Install pack**) has 12 free (CC0) ones: arrows,
+   chevrons, a turn arrow, warning and no-entry signs, hazard stripes, a footprint, a dirt splat, a mud smear, two
+   kinds of cracks and a scorch mark.
+3. Move, turn and scale it with the gizmo like any object. It re-wraps the surface when you let go.
+
+![A decal placed on a wall with the move gizmo on it, and Properties ▸ Decal with Image, Width, Height, Depth, Opacity, Roughness, Wrap angle and Tint](https://docs.theprototype.app/img/decals/decal-on-wall.png)
+
+## Settings (Properties ▸ Decal)
+
+| Setting | What it does |
+| --- | --- |
+| **Image** | The picture projected. With none, a dashed square marks the decal. |
+| **Width**, **Height** | The size of the decal (the same as its scale X and Y). |
+| **Depth** | How far into and out of the surface it reaches (scale Z). Keep it small so it does not reach faces behind. |
+| **Opacity** | How solid it looks. |
+| **Roughness** | Shiny (0) to matte (1). |
+| **Wrap angle** | Faces turned further than this from the decal are not covered, so it does not smear round corners. |
+| **Tint** | Multiplies the image's colours; white shows it as it is. |
+
+Undo, redo, saving, sharing with people in the session, [Photo mode](https://docs.theprototype.app/photo-mode.md), [baked light](https://docs.theprototype.app/baked-light.md)
+and the [Cinematic view](https://docs.theprototype.app/cinematic-view.md) all work with decals.
+
+## Marks while playing: Stamp Decal
+
+The [Stamp Decal](https://docs.theprototype.app/nodes/decalstamp.md) flow node (**Scene** group) presses a mark onto a surface while the game
+runs: a footprint, a scorch, a paint splat. Wire an [On Impact](https://docs.theprototype.app/nodes/onimpact.md) into its trigger and it stamps
+where that object touched; wire a Decal object into **look** to copy its image, tint and opacity.
+
+- **size**, **depth**: the mark's size (when no look is wired).
+- **seconds**: how long a mark lasts (0 = for the whole run); it fades in its last second.
+- **most at once**: up to 64; past that the oldest mark goes.
+
+Marks are not saved and not undone; they all go when the run stops. Everyone in the session sees the same marks.
+
+## For agents
+
+`create_objects` takes `{kind: "decal", on: "<object uuid>", normal: [x, y, z]}` (aimed at that object from that
+side), or a `point` on its surface; plus `image` (a Library hash or file name), `size`, `depth`, `opacity` and
+`tint`. See [Build with an AI agent](https://docs.theprototype.app/ai/build-with-an-agent.md#rules-a-good-agent-follows).
+
+## Limits
+
+- Not on animated characters (skinned meshes) or on scattered copies: you get a message saying so.
+- A very detailed object (more than 400,000 triangles) cannot take a decal.
+- Not on a [Gaussian splat](https://docs.theprototype.app/gaussian-splats.md): a scan has no surface to project onto.
+- A decal is not a mesh of its own: **Paint** and **Simplify** refuse it (paint or simplify the object under it), and a 3D print or AR export leaves it out.
+
+## See also
+
+- [UV & Textures](https://docs.theprototype.app/uv-editor.md) and [Paint on meshes](https://docs.theprototype.app/mesh-paint.md): paint into the object's own texture instead.
+- [Packs](https://docs.theprototype.app/packs.md): installing a pack such as Decals Starter.
+
+
+---
+
 Source: https://docs.theprototype.app/uv-editor/ (Markdown: https://docs.theprototype.app/uv-editor.md)
 
 # UV & Textures
@@ -6933,7 +7179,11 @@ and your peers get the new mapping.
 
 ## Painting
 
-Pick the **Paint** tool and draw — on the UV map or straight on the model in the viewport. Set the brush **colour** and **size** in the panel.
+Pick the **Paint** tool and draw — on the UV map or straight on the model in the viewport (since 1.75; a ring on the surface shows the brush). Set the brush **colour** and **size** in the panel.
+
+*New in 1.75:* the brush paints more than colour. Its **Channel** picks **Colour**, **Rough** (roughness), **Metal**
+(metalness) or **Glow** (emission), each in its own map, and the panel adds hardness, flow, an eraser, **Mirror X**,
+image stamps and painting in a headset. See [Paint on meshes](https://docs.theprototype.app/mesh-paint.md).
 
 - Strokes appear live for your peers while you draw.
 - Each stroke is **one undo step**.
@@ -6993,8 +7243,93 @@ Textures that arrive with a `.glb`/`.gltf` keep their sampler settings — tilin
 ## See also
 
 - [Mesh Editing](https://docs.theprototype.app/mesh-editing.md) — selecting the faces the UV tools scope to.
+- [Paint on meshes](https://docs.theprototype.app/mesh-paint.md) — every brush setting, the roughness, metalness and glow channels, and painting in a headset.
 - [Explorer](https://docs.theprototype.app/explorer.md) — where your image assets live.
 - [Saving & Sessions](https://docs.theprototype.app/saving.md) — how textures travel inside a `.tpscene`.
+
+
+---
+
+Source: https://docs.theprototype.app/mesh-paint/ (Markdown: https://docs.theprototype.app/mesh-paint.md)
+
+# Paint on meshes
+
+*New in 1.75.* The [UV editor](https://docs.theprototype.app/uv-editor.md)'s **Paint** tool paints more than colour. Paint **roughness**,
+**metalness** and **glow** (emission) too: one map each, with soft brushes, an eraser, mirror painting and image
+stamps. Paint in the UV canvas, or straight onto the model in the viewport. In a headset, use a controller.
+
+## Start painting
+
+1. Select an object and open the **UV editor** (bottom dock).
+2. Pick the **Paint** tool (the brush in the editor's tool row). The **Tool** panel opens with the brush.
+3. Drag in the UV canvas, or drag over the selected object **in the viewport**. A ring on the surface shows the
+   brush size.
+
+Each stroke is one undo step, and everyone in the session sees it as you paint.
+
+## What the brush paints (Channel)
+
+| Channel | What it paints | Value |
+| --- | --- | --- |
+| **Colour** | The base colour, in the brush colour. | The colour swatch. |
+| **Rough** | Roughness: white is rough, black is shiny. | The **Value** slider (0 to 1). |
+| **Metal** | Metalness: white is metal, black is not. | The **Value** slider (0 to 1). |
+| **Glow** | Where the surface glows, in the brush colour. | The colour swatch. |
+
+The first stroke on a channel with no map makes one, at the **New map** size (**1k** or **2k**). The new map starts
+at the material's own value, so nothing changes until you paint. If the material's Roughness or Metalness slider is
+below 1, the stroke sets it to 1 so the map reads true. A black glow colour turns white the same way. Both changes are
+part of the same undo step.
+
+**Show this channel alone** shows the painted channel by itself on the model. Only you see it.
+
+## Brush settings
+
+| Setting | What it does |
+| --- | --- |
+| **Size** | The brush width in texture pixels (the ring shows it on the model). <kbd>[</kbd> and <kbd>]</kbd> change it. |
+| **Pen pressure** | With a pen, pressure varies the size or the opacity. A mouse stroke is unchanged. |
+| **Hardness** | 100 % is a hard edge; lower fades the edge softly. |
+| **Opacity** | The most one stroke can reach, however often you go over a spot. |
+| **Flow** | How much each dab adds. Low flow builds up as you go over a spot. |
+| **Eraser** | Paints back to the material's own value: white for colour, roughness and metalness, black for glow. |
+| **Mirror X** | A stroke on the model also paints its mirror across the object's own X axis. Not in the 2D UV canvas. |
+| **Stamp** | Use an image as the brush tip. Its transparent parts (or, for an image with no transparency, its light parts) do not paint. Pick a file or drop one from the Library; clear it with the X. |
+
+<kbd>Alt</kbd>+click on the model picks the colour (or value) under the cursor. <kbd>Esc</kbd> cancels the stroke in
+progress.
+
+## Shared materials
+
+If other objects wear the same material, the first stroke asks: **All objects that share it**, or **This object
+only**. **This object only** gives the object its own copy of the material first, for everyone in the session.
+**Unlink material** in the Inspector now reaches everyone too.
+
+## Meshes without clean UVs
+
+A mesh with no UV map, or with faces that share UV space (a default box paints all six sides from one square), cannot
+hold a map that follows the surface. On such a mesh, a viewport stroke paints **vertex colours** instead, and the panel
+says why. Roughness, metalness and glow need a UV map: [unwrap](https://docs.theprototype.app/uv-editor.md#unwrapping) the mesh in the UV editor
+first.
+
+## In a headset
+
+Select an object, open the menu and pick **Selected ▸ Paint** (controllers only).
+
+- Point at the object: the ring shows where the brush is. Hold the **trigger** to paint.
+- The pointer hand's **stick**: left and right change the size, up and down the flow.
+- The menu opens on the **Paint** ring: Colour, Roughness, Metalness, Glow, Eraser, Mirror X and **Done**.
+- A label on the hand shows the channel, the size and the flow.
+
+## Export
+
+A [GLB or glTF export](https://docs.theprototype.app/saving.md#gltf) carries the painted maps. Roughness and metalness go into one metallic-roughness image, as
+glTF expects.
+
+## See also
+
+- [UV & Textures](https://docs.theprototype.app/uv-editor.md#painting): the UV map, unwrapping and pen pressure.
+- [Decals](https://docs.theprototype.app/decals.md): put an image on a surface without painting into its texture.
 
 
 ---
@@ -8054,6 +8389,7 @@ this too, under **What photos cannot show**.
 | [Scene look](https://docs.theprototype.app/post-processing.md) effects (bloom, grade, vignette …) | Not applied: the photo is the clean render with the scene's tone mapping and exposure |
 | Water | A still, glassy surface |
 | Hemisphere and ambient light | Replaced by sky light in the same colours |
+| [Gaussian splats](https://docs.theprototype.app/gaussian-splats.md) (scans, 1.75) | Left out of the photo (the note says how many); the normal still shows them |
 
 ## For AI apps
 
@@ -8527,6 +8863,82 @@ column is pessimistic; a real-headset row is owed.
 - **Motion pack**: Universal Animation Library 1 + 2, Standard tiers, by Quaternius (CC0 1.0).
 - **Runtime**: [three-vrm](https://github.com/pixiv/three-vrm) by pixiv (MIT), loaded only for scenes with a VRM.
 - **Avatars tab**: the [Open Source Avatars](https://github.com/ToxSam/open-source-avatars) registry; each collection has its own licence, shown on its avatars.
+
+
+---
+
+Source: https://docs.theprototype.app/constraints-and-ik/ (Markdown: https://docs.theprototype.app/constraints-and-ik.md)
+
+# Constraints and IK
+
+*New in 1.75.* A **constraint** makes an object, or one bone or part inside it, follow another object while the scene
+runs: it looks at it, copies it, or reaches for it. Constraints are part of the scene: they save with it, and every
+person in the session sees the same result. Each computer works the pose out itself from the objects' positions, so a
+constraint sends nothing while it runs.
+
+## Add a constraint
+
+Select one object and open **Inspector ▸ Constraints**. Pick a kind from **Add a constraint**:
+
+| Kind | What it does |
+| --- | --- |
+| **Look at** | Turns the object (or a bone) so one axis points at the target. Pick the **Aim axis** (cameras and lights look down -Z) and the **Up axis** that stays up. |
+| **Copy transform** | Copies the target's position (per axis), rotation and scale. |
+| **Parent (follow with offset)** | Copy transform that keeps the distance and turn it had when you added it: the object rides along with the target from where it is. **Keep offset** turns this on and off. |
+| **Limit rotation** | Keeps the local rotation inside a range per axis (degrees): tick **Limit X**, **Y** or **Z**, then set its min and max. Put it after an IK to stop an elbow bending backwards. |
+| **Two-bone IK (arm, leg)** | Bends the two parents of the **Tip** (a hand, a foot) so the tip reaches the target. The **Pole** is an object the elbow or knee points at; without one the joint keeps bending the way it bends now. **Tip turns with the target** also copies the target's rotation onto the hand. |
+| **Chain IK (tail, tentacle)** | Bends a chain of **Joints** (2-16) above the tip towards the target. More **Iterations** = closer, slower. |
+
+![Inspector ▸ Constraints with a Two-bone IK (Tip, Target, Pole, On target) above a Limit rotation on Z from -150 to 0, and Add a constraint at the bottom](https://docs.theprototype.app/img/constraints-and-ik/constraints-section.png)
+
+## What every constraint has
+
+- **Weight** (0-1): how much of the effect is applied. 0 = off, 0.5 = half way.
+- **Mute** (eye button): turn it off without losing its settings.
+- **Key weight** (the diamond button): adds a key for the weight on the [Timeline](https://docs.theprototype.app/timeline.md) at the playhead (it
+  makes a sequence if there is none). Key 0 at one moment and 1 at another to blend an IK in and out.
+- **Move up** / **Move down**: constraints run from top to bottom, and an object that is a target is always worked out
+  before the objects that use it.
+- **Select target** / **Select pole** (crosshair): selects that object so you can move it with the gizmo.
+
+On a model with bones, **Moves** / **Tip** picks the bone; **Target bone** aims at a bone of the target. While the
+object is selected, a blue line runs to each target and a dashed orange line runs to each pole (in Edit mode only;
+nobody sees them in Play).
+
+The status line under a constraint says what happened in the last frame: **On target**, **Out of reach by 0.25 m**
+(the chain is fully stretched), **Pick a target**, **Weight 0** or **Muted**.
+
+## Moving a constrained object
+
+While you drag a constrained object with the gizmo, its constraints let go so you move the pose you set by hand; they
+come back when you let go. Saves always keep the pose you set by hand, not the pose the constraints make.
+
+**Keyboard:** <kbd>Tab</kbd> through the section like the rest of the Inspector. Each button has a name and a tooltip,
+and the lists open with <kbd>Enter</kbd> or <kbd>Space</kbd> and take the arrow keys.
+
+## From the flow graph
+
+Two nodes in the **Logic** group change a constraint while the game runs:
+
+- [Set Constraint Weight](https://docs.theprototype.app/nodes/constraintweight.md) sets the weight (0-1) of one of the object's constraints. Wire a
+  number into it, for example from a trigger and a smooth step, to fade a reach in and out.
+- [Set Constraint Target](https://docs.theprototype.app/nodes/constrainttarget.md) points one of the object's constraints at the wired object (the
+  hand reaches for whatever the graph picks).
+
+Both are local to each computer like [Set Color](https://docs.theprototype.app/nodes/setcolor.md): every peer runs the same graph, so every peer gets
+the same weight and target. When the node stops, the constraint goes back to its own settings.
+
+## Exporting: Bake constraints
+
+A GLTF export normally carries the pose you set by hand. Turn on **Bake constraints** in
+[Save options](https://docs.theprototype.app/saving.md#save-options) (under **Scene and GLTF files are made for**) to export the pose your
+constraints and IK make right now instead. Scenes (`.tpscene`) and projects (`.tp`) keep the constraints themselves.
+
+## See also
+
+- [Animation](https://docs.theprototype.app/animation.md): clips and keys.
+- [Characters and motion](https://docs.theprototype.app/characters-and-motion.md): rigged characters and their clips.
+- [Look At](https://docs.theprototype.app/nodes/lookat.md): a flow node that turns an object to face a target while it runs.
 
 
 ---
@@ -10445,6 +10857,8 @@ GLTF and JSON join them once you offer them in Save options.
 - **More formats** — **Offer GLTF** and **Offer JSON** (both off by default) add those formats.
 - **Optimize for** — **Full quality** or **For Quest / web** (1.37): compressed textures and LOD chains in a GLTF or
   Scene export — see [Publish & Export](https://docs.theprototype.app/publish-export.md#optimize-for-quest-web).
+- **Bake constraints** (1.75) — a GLTF keeps the pose your [constraints and IK](https://docs.theprototype.app/constraints-and-ik.md#exporting-bake-constraints)
+  make right now, instead of the pose you set by hand.
 
 Its **Save** remembers the options and saves; **Cancel** forgets the changes. On a folded phone the dialog opens full
 screen.
@@ -10542,6 +10956,12 @@ Rounded boxes are stored as numbers too (see [Rounded boxes](https://docs.thepro
 ## GLTF
 
 Turn it on first with **Save options ▸ Offer GLTF**. Exports the **selected objects** as standard GLTF — use this to take your work into other 3D tools. With nothing selected it asks first and offers **Export all** for the whole scene. Loading accepts `.gltf` back. Animated flow effects are parked at their base pose during export so the file stores clean transforms. Animation clips leave as glTF animation — since 1.59 with their material, visibility, light and field-of-view channels, and camera objects as glTF cameras (see [Animation ▸ Saving and export](https://docs.theprototype.app/animation.md#saving-and-export)).
+
+## 3D print and AR
+
+*New in 1.75.* Right-click ▸ **Save as…** also offers **3D print (.stl)**, **3D print (.3mf)** and **AR (.usdz)**
+(or press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>E</kbd>): sized in millimetres for a slicer, or a file for AR Quick
+Look on an iPhone or iPad. See [Simplify and export for print or AR](https://docs.theprototype.app/simplify-and-export.md#export-for-3d-printing-and-ar).
 
 ## JSON (legacy)
 
@@ -11317,6 +11737,9 @@ switch names the ones in your scene:
 - painted terrain layers,
 - jiggle (the object shows, without the wobble).
 
+[Gaussian splats](https://docs.theprototype.app/gaussian-splats.md) (1.75) are not drawn at all while the view is on: they are hidden, and the
+**Not shown in Cinematic view** note names Gaussian splats.
+
 The grid also fades less with distance than in the standard view.
 
 Text shows as in the standard view (since 1.71): 3D text, names over people, ping names and path numbers keep their
@@ -11812,6 +12235,10 @@ this editor draws right now, overlays and post included.
 
 **Limits.** An estimate, not a frame-time measurement: the perf gate measures from the spawn point with culling and LOD,
 so a big level can read red here and pass there. The phone and desktop numbers are starting values.
+
+**Gaussian splats** (1.75) have their own budget: a headset draws up to 1 million splats, a phone 2 million. Past that,
+whole splat objects are hidden on that device (in scene order), with one notice. A PC has no splat budget. See
+[Gaussian splats](https://docs.theprototype.app/gaussian-splats.md#where-splats-are-not-drawn).
 
 ## What the Statistics window counts
 
@@ -13263,6 +13690,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**Velocity**](https://docs.theprototype.app/nodes/velocity.md) | Outputs how fast the connected object is moving right now, in metres per second. |
 | [**Measure**](https://docs.theprototype.app/nodes/measure.md) | Reads a number off an object: how tall it is, where its top is, how fast it is going. |
 | [**Spawn**](https://docs.theprototype.app/nodes/spawn.md) | Makes copies of an object while the simulation runs - crates off a conveyor, targets, debris, ammo, waves of anything. |
+| [**Stamp Decal**](https://docs.theprototype.app/nodes/decalstamp.md) | Presses a mark onto a surface - a footprint, a scorch, a paint splat - where the wired On Impact touched (or at a point you wire). Marks last for the run, the oldest go past the cap. |
 
 ## Object Flow
 
@@ -13358,6 +13786,8 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**Set Color**](https://docs.theprototype.app/nodes/setcolor.md) | Paints the connected object's material with a color, re-applied every frame. |
 | [**Visibility**](https://docs.theprototype.app/nodes/visibility.md) | Shows or hides the connected object based on a boolean. |
 | [**Set Shader Uniform**](https://docs.theprototype.app/nodes/setuniform.md) | Writes a number, a colour or a vector inside an object's shader graph, so a trigger, a timer or a counter can drive how the material looks. |
+| [**Set Constraint Weight**](https://docs.theprototype.app/nodes/constraintweight.md) | Sets the weight (0-1) of one of the object's constraints (1 = the first in Inspector > Constraints) while it runs: fade an IK reach or a look-at in and out. |
+| [**Set Constraint Target**](https://docs.theprototype.app/nodes/constrainttarget.md) | Points one of the object's constraints (1 = the first in Inspector > Constraints) at another object while it runs. |
 
 ## Triggers
 
@@ -14030,6 +14460,66 @@ The same three ways as every other action node:
 - [On Rest](https://docs.theprototype.app/nodes/onrest.md) — fire when a spawned body has settled
 - [Counter](https://docs.theprototype.app/nodes/counter.md) — count what you have made
 - [Physics](https://docs.theprototype.app/physics.md) — bodies, ground, gravity and the simulation controls
+
+
+---
+
+Source: https://docs.theprototype.app/nodes/decalstamp/ (Markdown: https://docs.theprototype.app/nodes/decalstamp.md)
+
+# Stamp Decal
+
+Presses a mark onto a surface while the game runs: a footprint, a scorch, a paint splat. The mark lands where the wired
+[On Impact](https://docs.theprototype.app/nodes/onimpact.md) touched, or at a point you wire. *New in 1.75.*
+
+**Inputs:** `trigger` (event) · `look` (object — a [Decal](https://docs.theprototype.app/decals.md) to copy the image, tint and opacity from) · `on` (object — the object to mark) · `at` (vector3 — a world point) · `facing` (vector3 — the surface direction at that point)
+**Output:** effect
+
+## How it works
+
+On each new **trigger** the node presses one mark. Where it goes:
+
+- **From an On Impact** wired into `trigger`: at the point where that object touched, facing out of the surface it
+  hit, on the object it hit. The built-in ground is not an object, so a landing on it leaves no mark: put a floor
+  object down.
+- **From `at`**: at that world point, facing `facing` (up when nothing is wired), on the object wired into `on`, or on
+  the object whose flow holds the node.
+
+Wire a Decal object into `look` and every mark copies its image, tint and opacity, and its size. With nothing in
+`look` the mark uses **size** and **depth**.
+
+Marks are runtime only. They are not saved and not undone, and they all go when the run stops. The peer running the
+physics stamps, and everyone in the session sees the same marks.
+
+## Parameters
+
+| Parameter | Default | Meaning |
+|---|---|---|
+| size (m) | 0.4 | the mark's width and height when no `look` is wired |
+| depth (m) | 0.3 | how far into and out of the surface the mark reaches |
+| seconds | 10 | how long a mark lasts (0 = for the whole run); it fades in its last second |
+| most at once | 64 | how many marks are kept at once (1 to 64; the scene never holds more than 64); past that the oldest goes |
+
+## Practical example
+
+Scorch marks where a ball lands:
+
+1. Give the ball a **Dynamic** body (Inspector ▸ Physics), and put a floor object (a flat box) under it.
+2. Right-click a wall ▸ **Add decal here** and pick the scorch mark from the **Decals Starter** pack. This is the
+   look; move it somewhere out of the way.
+3. In the ball's flow: **On Impact → Stamp Decal** (`trigger`), and an **Object Selector** naming the scorch decal →
+   Stamp Decal `look`.
+4. Press <kbd>P</kbd> and drop the ball. A scorch appears where it lands, for every peer.
+
+## Limits
+
+- Not on animated characters (skinned meshes) or on scattered copies.
+- A very detailed object (more than 400,000 triangles) cannot take a mark.
+
+## See also
+
+- [Decals](https://docs.theprototype.app/decals.md) — decals you place by hand
+- [On Impact](https://docs.theprototype.app/nodes/onimpact.md) — where the contact point comes from
+- [Spawn](https://docs.theprototype.app/nodes/spawn.md) — copies of an object while the simulation runs
 
 
 ---
@@ -17697,6 +18187,104 @@ gives you a timed dissolve or a charge-up that steps each time something happens
 
 ---
 
+Source: https://docs.theprototype.app/nodes/constraintweight/ (Markdown: https://docs.theprototype.app/nodes/constraintweight.md)
+
+# Set Constraint Weight
+
+Sets the weight (0-1) of one of the connected object's [constraints](https://docs.theprototype.app/constraints-and-ik.md) while it runs: fade an
+IK reach or a look-at in and out. *New in 1.75.*
+
+**Output:** effect (wire into an [Object Selector](https://docs.theprototype.app/nodes/objectselector.md))
+
+## Inputs
+
+| Handle | Type | Meaning |
+|---|---|---|
+| weight | number | the weight to set: 0 = off, 1 = the full effect |
+
+## Parameters
+
+| Parameter | Default | Where |
+|---|---|---|
+| constraint | `1` | on the card: which constraint, as its number in **Inspector ▸ Constraints** (1 = the first), or its id |
+| weight | 1 | used when nothing is wired |
+
+## How it behaves
+
+Each peer sets the weight **locally**, and no message is sent. Every peer runs the same graph, so every peer gets the
+same weight — the approach [Set Color](https://docs.theprototype.app/nodes/setcolor.md) takes. When the node stops, the constraint goes back to the weight
+set in the Inspector.
+
+If the object has no constraints, or the number does not match one, the node does nothing.
+
+## Practical example
+
+Blend an arm's reach by hand:
+
+1. Give the arm a **Two-bone IK** in Inspector ▸ Constraints, with a cup as its target.
+2. In the node editor add a **Slider** (0 to 1), a **Set Constraint Weight** (`constraint` = `1`) and an
+   **Object Selector** picking the arm.
+3. Wire Slider → Set Constraint Weight's **weight**, and Set Constraint Weight → the Object Selector.
+4. Drag the slider. The arm reaches for the cup as the weight goes up, on every peer's screen.
+
+Swap the Slider for a timer or a counter and a [Map Range](https://docs.theprototype.app/nodes/maprange.md) to fade the reach in on its own.
+
+## See also
+
+- [Set Constraint Target](https://docs.theprototype.app/nodes/constrainttarget.md) — point a constraint at another object
+- [Constraints and IK](https://docs.theprototype.app/constraints-and-ik.md) — the constraint kinds and the Inspector section
+
+
+---
+
+Source: https://docs.theprototype.app/nodes/constrainttarget/ (Markdown: https://docs.theprototype.app/nodes/constrainttarget.md)
+
+# Set Constraint Target
+
+Points one of the connected object's [constraints](https://docs.theprototype.app/constraints-and-ik.md) at another object while it runs: the hand
+reaches for whatever the graph picks. *New in 1.75.*
+
+**Output:** effect (wire into an [Object Selector](https://docs.theprototype.app/nodes/objectselector.md))
+
+## Inputs
+
+| Handle | Type | Meaning |
+|---|---|---|
+| target | object | the object to aim at — usually an [Object Selector](https://docs.theprototype.app/nodes/objectselector.md) |
+
+## Parameters
+
+| Parameter | Default | Where |
+|---|---|---|
+| constraint | `1` | on the card: which constraint, as its number in **Inspector ▸ Constraints** (1 = the first), or its id |
+
+## How it behaves
+
+Each peer sets the target **locally**, and no message is sent. Every peer runs the same graph, so every peer gets the
+same target — the approach [Set Color](https://docs.theprototype.app/nodes/setcolor.md) takes. When the node stops, the constraint goes back to the target
+set in the Inspector.
+
+If the object has no constraints, or the number does not match one, the node does nothing.
+
+## Practical example
+
+Make a hand reach for a different cup:
+
+1. Give the arm a **Two-bone IK** in Inspector ▸ Constraints, with the first cup as its target.
+2. In the node editor add an **Object Selector** picking the second cup, a **Set Constraint Target**
+   (`constraint` = `1`) and a second **Object Selector** picking the arm.
+3. Wire the cup's Object Selector → Set Constraint Target's **target**, and Set Constraint Target → the arm's Object
+   Selector.
+4. The hand now reaches for the second cup. Disconnect the node and it goes back to the first.
+
+## See also
+
+- [Set Constraint Weight](https://docs.theprototype.app/nodes/constraintweight.md) — fade a constraint in and out
+- [Constraints and IK](https://docs.theprototype.app/constraints-and-ik.md) — the constraint kinds and the Inspector section
+
+
+---
+
 Source: https://docs.theprototype.app/nodes/onclick/ (Markdown: https://docs.theprototype.app/nodes/onclick.md)
 
 # On Click
@@ -19340,6 +19928,12 @@ falling, so nothing fires twice.
 
 The threshold is a closing speed over 1.2 m/s (raise **minStrength** for harder ones), each body at most every 0.3 s.
 With **From: landing only** it counts only downward speed, so a ball thrown sideways into a wall fires nothing.
+
+## Where it touched: Stamp Decal
+
+*New in 1.75.* On Impact has no new output, but it carries where the contact happened. Wire it into a
+[Stamp Decal](https://docs.theprototype.app/nodes/decalstamp.md) `trigger` and the mark lands at the contact point, facing out of the surface that was
+hit, on the object that was hit (a footprint, a scorch, a splat). A landing on the built-in ground leaves no mark.
 
 ## Practical example
 
@@ -24420,6 +25014,11 @@ before a join, scene tools answer *not connected — join first*. Then call `con
     - `update_objects` takes `array: {mode, count, step, …}` (`null` removes it), `makeReal: true`, and
       `layer: "<name>"` (a new name makes the layer, `null` takes the object off it). `list_scene` reports an object's
       array and its layer by name. See [Arrays, Layers & Tidy](https://docs.theprototype.app/arrange.md).
+- **Decals** (since 1.75): `create_objects` with `kind: "decal"` puts an image on a surface. `on` is the object's uuid;
+  `normal` (`[x, y, z]`) aims it at that object from that side, or `point` + `normal` place it at a spot on the surface
+  (world). `image` is a Library hash or file name (none = a placeholder frame), `size` is metres (a number, or
+  `[width, height]`), plus `depth` (default 0.25 m), `opacity` (0-1) and `tint` (`#rrggbb`). Not on skinned characters
+  or scattered copies. See [Decals](https://docs.theprototype.app/decals.md).
 - Never fight a person: a locked object is skipped — the reply names the object and who is editing it — and the agent
   waits with `wait_for_edit`.
 
@@ -25480,7 +26079,8 @@ An agent joined to your session ([Build with an AI agent](https://docs.theprotot
 boxes and spheres. Nine tools let it change an object's shape in place, turn a profile into a vase, sweep a
 rail along a path, cut a sign out of an outline, build a mesh from raw data, copy or mirror an object, bring in a
 glTF / GLB / OBJ file, write [3D text](https://docs.theprototype.app/3d-text.md) and model a mesh the way
-[Edit Mesh](https://docs.theprototype.app/mesh-editing.md) does. The in-app [Assistant](https://docs.theprototype.app/ai/assistant.md) has the same tools.
+[Edit Mesh](https://docs.theprototype.app/mesh-editing.md) does. Since 1.75, `simplify_mesh` also makes a heavy model lighter
+([below](#simplify_mesh-fewer-triangles)). The in-app [Assistant](https://docs.theprototype.app/ai/assistant.md) has the same tools.
 
 Every call works like the agent's other tools:
 
@@ -25645,6 +26245,22 @@ Duplicate in the object menu does, so nothing is sent again. One undo step.
 | `name` | the copies' name, numbered when there are several |
 
 For tens or hundreds of copies spread over the ground, use `scatter` with `source` ([Worlds](https://docs.theprototype.app/ai/agent-world.md#scatter-a-forest-rocks-flowers)).
+
+### simplify_mesh: fewer triangles
+
+*New in 1.75.* Lowers a mesh or imported model's triangle count, the way **Mesh ▸ Simplify…** does
+([Simplify and export](https://docs.theprototype.app/simplify-and-export.md#simplify-a-mesh)). UVs, normals, colours, skin weights and material
+slots are kept. One undo step. Over the connector it is `edit_shape {action: "simplify"}`.
+
+| field | what it does |
+|---|---|
+| `uuid` | the object to simplify |
+| `percent` | how much to **keep**, 1 to 100 |
+| `triangles` | a target triangle count (instead of `percent`) |
+| `bake` | `true` bakes a primitive (box, sphere …) to a plain mesh first; without it a primitive is refused |
+
+Scatter, VRM avatars and meshes with morph targets are refused, as are objects someone else is editing, a running
+simulation and an open mesh edit. The refusal says why.
 
 ### import_shape: a glTF, GLB or OBJ file
 
@@ -26228,7 +26844,7 @@ exactly what the agent tools of the same job do, with the same limits:
 | family | actions | the agent tools behind them |
 |---|---|---|
 | `create_shape` | `lathe`, `tube`, `extrude`, `mesh`, `import`, `text`, `path` | `create_lathe`, `create_tube`, `extrude_shape`, `create_mesh`, `import_shape`, `create_text` ([Shapes and modelling](https://docs.theprototype.app/ai/agent-geometry.md)), `create_path` ([Paths](https://docs.theprototype.app/paths.md#for-agents)) |
-| `edit_shape` | `params`, `mesh`, `update`, `duplicate`, `pivot`, `pivot_group` | `set_geometry`, `edit_mesh`, `update_mesh`, `duplicate`, `set_pivot`, `create_pivot` |
+| `edit_shape` | `params`, `mesh`, `update`, `duplicate`, `pivot`, `pivot_group`, `simplify` | `set_geometry`, `edit_mesh`, `update_mesh`, `duplicate`, `set_pivot`, `create_pivot`, `simplify_mesh` |
 | `set_look` | `material`, `list_materials`, `get_material`, `shader`, `edit_shader`, `assign_shader`, `shader_nodes`, `post`, `get_post`, `post_graph`, `unwrap`, `uv`, `quality`, `sky`, `light`, `environment` | `set_material` … `set_uv`, `set_quality` ([Materials and looks](https://docs.theprototype.app/ai/agent-look.md)); `set_sky`, `set_light`, `get_environment` ([HUD, sky and play](https://docs.theprototype.app/ai/agent-scene.md)) |
 | `hud` | `create`, `list`, `update`, `panel` | `create_hud`, `list_hud`, `edit_hud`, `hud_panel` ([HUD, sky and play](https://docs.theprototype.app/ai/agent-scene.md)) |
 | `game_setup` | `spawn`, `play_camera`, `levels`, `portal`, `checkpoint`, `loading` | `place_spawn`, `set_play_camera`, `set_levels`, `set_portal`, `set_checkpoint`, `set_loading` ([HUD, sky and play](https://docs.theprototype.app/ai/agent-scene.md)) |
@@ -26272,6 +26888,13 @@ Worlds ([Worlds with an agent](https://docs.theprototype.app/ai/agent-world.md))
 - `assets` `search` finds models, sounds, images and CC0 materials. `place` and `prefab` put them in the scene.
 - `set_look` `material` takes `pattern` (wood, brick, marble …). `create_shape` `mesh` takes `subdivide: 1-2`, and
   `edit_shape` `update` sends a mesh new vertices.
+
+**New in 1.75** — no new tool names, more in the families:
+
+- `create_objects` takes `kind: "decal"`: an image on the surface of the object `on`, aimed by `normal` (or at a
+  `point`), with `image`, `size`, `depth`, `opacity` and `tint` ([Decals](https://docs.theprototype.app/decals.md#for-agents)).
+- `edit_shape` `simplify` lowers a heavy model's triangle count (`percent` to keep, or `triangles`; `bake: true` for a
+  primitive), in one undo step ([simplify_mesh](https://docs.theprototype.app/ai/agent-geometry.md#simplify_mesh-fewer-triangles)).
 
 **New in 1.64** — no new tool names, more in the families and the nodes:
 

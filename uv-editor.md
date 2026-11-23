@@ -121,7 +121,11 @@ and your peers get the new mapping.
 
 ## Painting
 
-Pick the **Paint** tool and draw — on the UV map or straight on the model in the viewport. Set the brush **colour** and **size** in the panel.
+Pick the **Paint** tool and draw — on the UV map or straight on the model in the viewport (since 1.75; a ring on the surface shows the brush). Set the brush **colour** and **size** in the panel.
+
+*New in 1.75:* the brush paints more than colour. Its **Channel** picks **Colour**, **Rough** (roughness), **Metal**
+(metalness) or **Glow** (emission), each in its own map, and the panel adds hardness, flow, an eraser, **Mirror X**,
+image stamps and painting in a headset. See [Paint on meshes](https://docs.theprototype.app/mesh-paint.md).
 
 - Strokes appear live for your peers while you draw.
 - Each stroke is **one undo step**.
@@ -181,5 +185,6 @@ Textures that arrive with a `.glb`/`.gltf` keep their sampler settings — tilin
 ## See also
 
 - [Mesh Editing](https://docs.theprototype.app/mesh-editing.md) — selecting the faces the UV tools scope to.
+- [Paint on meshes](https://docs.theprototype.app/mesh-paint.md) — every brush setting, the roughness, metalness and glow channels, and painting in a headset.
 - [Explorer](https://docs.theprototype.app/explorer.md) — where your image assets live.
 - [Saving & Sessions](https://docs.theprototype.app/saving.md) — how textures travel inside a `.tpscene`.
