@@ -124,6 +124,11 @@ before a join, scene tools answer *not connected — join first*. Then call `con
     - `update_objects` takes `array: {mode, count, step, …}` (`null` removes it), `makeReal: true`, and
       `layer: "<name>"` (a new name makes the layer, `null` takes the object off it). `list_scene` reports an object's
       array and its layer by name. See [Arrays, Layers & Tidy](../arrange.md).
+- **Decals** (since 1.75): `create_objects` with `kind: "decal"` puts an image on a surface. `on` is the object's uuid;
+  `normal` (`[x, y, z]`) aims it at that object from that side, or `point` + `normal` place it at a spot on the surface
+  (world). `image` is a Library hash or file name (none = a placeholder frame), `size` is metres (a number, or
+  `[width, height]`), plus `depth` (default 0.25 m), `opacity` (0-1) and `tint` (`#rrggbb`). Not on skinned characters
+  or scattered copies. See [Decals](../decals.md).
 - Never fight a person: a locked object is skipped — the reply names the object and who is editing it — and the agent
   waits with `wait_for_edit`.
 
