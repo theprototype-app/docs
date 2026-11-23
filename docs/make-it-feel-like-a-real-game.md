@@ -23,6 +23,15 @@ Your game can open on its own start screen: its name, a subtitle and the buttons
 **· Load game · Settings · Quit to editor**. Behind it is your scene (dimmed), a plain colour or a picture from your
 Library.
 
+![The Beacon's title screen over the dimmed scene: the title, the subtitle A starter game and the buttons Play, Settings and Quit to editor. 1: Play starts the game.](img/make-it-feel-like-a-real-game/title-screen.webp){ .shot width="536" height="417" loading=lazy }
+/// caption
+The title screen, when you press Play.
+///
+
+<div class="shot-key" markdown>
+1. **Play** starts a new game in the first empty slot.
+</div>
+
 - **Turn it on:** Configure Scene ▸ **Game menus** ▸ Title screen. Set the title, the subtitle and the background.
   **Show it when I press Play here** decides whether editor Play opens on it too.
 - **Play links and exported games** always open on the title screen when the game has one. Its Play button starts
@@ -33,6 +42,16 @@ Library.
 - **In a headset** the title screen is skipped for now: VR Play starts the game straight away, as **Play** would (in
   the first empty slot; with all three full it plays without saving over one), and the headset's menu has no *Quit to
   title*. Leave VR and the next Play opens on the title again. On a headset's browser, a play link's title screen offers **Enter VR**.
+
+![Configure Scene's Game menus section with Title screen on (title The Beacon, subtitle A starter game, the scene as the background, Show it when I press Play here), The menu pauses the game, Three save slots and Auto-admit while playing. 1: the title screen settings. 2: the save slots switch.](img/make-it-feel-like-a-real-game/game-menus-section.webp){ .shot width="329" height="648" loading=lazy }
+/// caption
+Configure Scene ▸ Game menus.
+///
+
+<div class="shot-key" markdown>
+1. The **title screen**: its title, subtitle and background.
+2. **Three save slots**: adds Save game and Load game to the pause menu, and Continue to the title.
+</div>
 
 ## Pause menu and player settings
 
@@ -139,6 +158,17 @@ same character at once, each in their own box.
   line is still typing shows the whole line. Pick a choice with **1-9**, the arrow keys or the D-pad, or click it. The
   player stands still while the box is open. In VR, either trigger continues and either stick moves between choices.
   Reduced motion shows each line whole at once, and the HUD text-size setting makes the box bigger.
+
+![A dialogue box at the bottom of the game, in a small window: the speaker Old Man, the line Will you help me find my cat? and two choices, 1 Yes, I will. and 2 Not today. 1: the speaker. 2: the choices.](img/make-it-feel-like-a-real-game/dialogue-choices.webp){ .shot width="684" height="206" loading=lazy }
+/// caption
+A talk with two choices, in a small window.
+///
+
+<div class="shot-key" markdown>
+1. The **speaker**, from `Old Man:` in the lines.
+2. The **choices**: press 1 or 2, or click one.
+</div>
+
 - **What it changes.** **choices set** picks where a choice's `[set ...]` goes: **shared** (the default) is the
   game's variable, the same for everyone; **player** gives each player their own value. The node's output pulses
   when the talk ends: wire it on to open a door, give an item or start the next quest.
