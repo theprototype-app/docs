@@ -58,7 +58,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**Get Variable**](nodes/getvariable.md) | Reads a named scene variable as a value - the read side of Set Variable, live on every peer. |
 | [**Store Value**](nodes/storevalue.md) | Saves a value on THIS device when a pulse arrives (set, keep the max or min, or add) - a best score or a level reached that survives a reload; never sent to other players. |
 | [**Stored Value**](nodes/storedvalue.md) | Reads what Store Value saved on this device, as a number or text - the read side of a best score; each player sees their own. |
-| [**Game Value**](nodes/gamevalue.md) | Reads one game value (score, round clock, best, level, stars, lives, a variable, a stored or a published value) and writes it as text - a number, a clock (1:04.2), 3 / 10, a percent or stars - for HUD Text; its value output feeds HUD Bar. |
+| [**Game Value**](nodes/gamevalue.md) | Reads one game value (score, round clock, best, level, stars, lives, a variable, a stored or a published value) and writes it as text - a number, a clock (1:04.2), 3 / 10, a percent or stars - for HUD Text; its value output feeds HUD Bar. For: me shows each player their own entry of a value kept per player (a map keyed by player, such as a behaviour's team or score). |
 | [**Camera Shake**](nodes/camerashake.md) | Shakes the Play camera on a trigger (strength, seconds, frequency) - on this device only, never in VR; who: me = the player who made the pulse, everyone = every player. Reduced motion turns it down. |
 | [**Screen Flash**](nodes/screenflash.md) | Flashes a colour over the screen that fades out (a hit, a pickup) - on this device; who: me or everyone. Reduced motion keeps it faint. |
 | [**Hit Pause**](nodes/hitpause.md) | Holds this device's picture for a few milliseconds on a trigger (a hit-stop). The game, the clock and physics keep running. |
@@ -79,7 +79,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 
 | Node | What it does |
 |---|---|
-| [**Character Controller**](nodes/charcontroller.md) | Sets how the player moves in Play - fly or walk, speed, jump and eye height, gravity - driving the player's own view rather than an object (the newest one in the scene wins). |
+| [**Character Controller**](nodes/charcontroller.md) | Sets how the player moves in Play - fly or walk, speed, jump and eye height, gravity - driving the player's own view rather than an object (the newest one in the scene wins). Speed 0.1 = 6 m/s, the same at any frame rate. Camera: first person, third person (behind you; walls pull it in), side-scroller (a locked plane, the view ahead) or top-down (a fixed angle); the wheel zooms the last three and your own avatar is drawn. VR stays first person. |
 | [**Move Input**](nodes/moveinput.md) | This player's WASD keys as two numbers, x (A/D) and y (W/S), each -1 to 1 - read on every device for its own player. |
 | [**Possess Object**](nodes/possessnode.md) | Puts the player in control of the connected object when a pulse arrives - a vehicle, a turret, a ball. W/S (or the left stick) drive it, A/D turn it, Space (or gamepad A) jumps (Jump height; 0 = no jump), Esc hands it back. |
 | [**Camera Follow**](nodes/camerafollow.md) | On a pulse, the camera flies behind the target object and follows it until stop is pulsed - for an object something else moves (the sim, a clip). |
@@ -94,12 +94,13 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**HUD Bar**](nodes/hudbar.md) | Drives a HUD bar element's fill from a number - health, fuel, progress. |
 | [**HUD Button**](nodes/hudbutton.md) | Fires a pulse when a HUD button is pressed - the on-screen counterpart of On Click. |
 | [**Show / Hide Element**](nodes/hudvisible.md) | Shows, hides or toggles ONE HUD element on a trigger, or follows a wired visible value (above 0 = shown) - per player, like a screen. |
-| [**HUD Timer**](nodes/hudtimer.md) | Counts down in a HUD Timer element from its duration, formatted like '{v}s' - by itself (Autostart) or from a pulse into start. |
+| [**HUD Timer**](nodes/hudtimer.md) | Counts down in a HUD Timer element from its duration, formatted like '{v}s' - by itself (Autostart: from the round's start, or from Play when the game has no rounds; it waits in the editor) or from a pulse into start. A pause stops it. |
 | [**HUD List**](nodes/hudlist.md) | Names a HUD List element and sets its title and how many rows it shows; HUD Rows and Leaderboard fill it. |
 | [**HUD Rows**](nodes/hudrows.md) | Sets, appends or clears the rows of a HUD List element on each pulse - a log, a chat, a scoreboard feed. |
 | [**Leaderboard**](nodes/leaderboard.md) | Ranks the players by their own per-player variable (laps, score) into a HUD List element, highest or lowest first, top N rows. |
 | [**HUD Input**](nodes/hudinput.md) | Reads a HUD control as a value - a slider's number, a toggle's on/off, a dropdown's or tabs' choice, a text field's text. |
 | [**HUD Set Input**](nodes/hudset.md) | Writes a value into a HUD input element when a pulse arrives - to prefill, clear or correct it. |
+| [**Dialogue**](nodes/dialogue.md) | A conversation in a box at the bottom of the player's screen (a panel in VR): lines as 'Speaker: text', choices as '> text [set name = 1] -> part', parts as '# part'. Only the player who started it sees it; it pulses when the talk ends. |
 
 ## Logic
 
