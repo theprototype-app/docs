@@ -90,8 +90,9 @@ this editor draws right now, overlays and post included.
 **Limits.** An estimate, not a frame-time measurement: the perf gate measures from the spawn point with culling and LOD,
 so a big level can read red here and pass there. The phone and desktop numbers are starting values.
 
-**Gaussian splats** (1.75) have their own budget: a headset draws up to 1 million splats, a phone 2 million. Past that,
-whole splat objects are hidden on that device (in scene order), with one notice. A PC has no splat budget. See
+**Gaussian splats** (1.75) have their own budget. On Meta Quest they are off for now (1.75.1): even a 30,000-splat scan
+took a Quest 3 from 72 to 23 frames a second, so a headset draws none and says why. A phone draws up to 2 million splats;
+past that, whole splat objects are hidden on the phone (in scene order), with one notice. A PC has no splat budget. See
 [Gaussian splats](gaussian-splats.md#where-splats-are-not-drawn).
 
 ## What the Statistics window counts
