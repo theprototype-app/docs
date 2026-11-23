@@ -1,6 +1,6 @@
 # Make it feel like a real game
 
-*New in {{92_VERSION}}.* A scene becomes a game when it starts like one, stops like one and talks to its players. This
+*New in 1.77.0.* A scene becomes a game when it starts like one, stops like one and talks to its players. This
 page covers the pieces players expect. None of them needs code.
 
 | Players expect | Where you make it |
