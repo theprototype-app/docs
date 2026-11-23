@@ -308,6 +308,20 @@ api.registerStateSync({
 });
 ```
 
+### Values for the HUD: `api.values` (1.74)
+
+Publish what your game knows and a HUD should show (coins, falls, the best run) and the scene shows it with the core
+[Game Value](nodes/gamevalue.md) node (read *published*), in its own format, with no `info` node of yours:
+
+```js
+api.values.set('coins', 3, { max: 10 });  // a number, or text up to 200 characters
+api.values.get('coins', 0);               // read it back
+api.values.clear('coins');
+```
+
+A value is local to each player (each player's copy of your module publishes its own), is never saved, and is cleared
+when the module is turned off.
+
 ### The flow graph: `api.flow`
 
 (Node positions, `freeRegion`, `onChange`, `setNodesData` and the undoable `setNodeData` are 1.15 additions.) For modules whose node needs its neighbours — a manager toolbox listing its instances, a count node reading its

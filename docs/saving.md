@@ -113,6 +113,12 @@ A `.tpscene` file is a zip bundle containing everything a scene needs:
 | Flow graph (nodes + edges) | on |
 | Project (.tp) includes: Scene version history | on — off exports each scene's current version only |
 
+**Repeated meshes are saved once** *(since 1.74)*: ten crates of one mesh store that mesh one time and point at it
+nine times, so a scene full of copies is much smaller. Nothing changes in the scene itself — each object still owns
+its own mesh once loaded. A file written by 1.74 still opens in 1.73: there, every copy of a repeated mesh is
+drawn as a plain box of its size (the file says so with `formatMinor` 4), so open it in 1.74 or newer to see it whole.
+Rounded boxes are stored as numbers too (see [Rounded boxes](controls.md#rounded-boxes)).
+
 **Animated models** are carried as their **original file bytes** rather than as exported geometry: an animation clip lives beside the scene, not on the object, and no exporter can carry it. That means an imported rig comes back animated instead of as a dead static mesh, and animations you authored in the Animation window are stored too. There's a size cap per model, with a toast if one is skipped.
 
 **Loading** a `.tpscene` restores the bundle in the right order: assets are put back into your Explorer library first (deduplicated by hash, landing in *Shared*), packs are re-registered, then the scene and flow graph load — sound nodes and textures resolve immediately instead of waiting for a peer to push bytes. One file moves a whole project between machines.

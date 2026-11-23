@@ -61,6 +61,24 @@ roughness, metalness and glow as well as colour, straight onto the model, and in
 step, and **Save as…** writes STL and 3MF for a 3D printer and USDZ for AR on an iPhone. **Inspector ▸ Constraints**
 makes an object look at, copy or follow another, and bends an arm, a leg or a tail to reach a target.
 
+**1.74 — games and play.**
+
+- **Game values and game feel**: a [Game Value](nodes/gamevalue.md) node shows the score, a clock, stars or lives in the
+  HUD with no code; HUD buttons get a sound and a value, [Show / Hide Element](nodes/hudvisible.md) and text or flag
+  variables join them, and [Camera Shake, Screen Flash and Hit Pause](hud-editor.md#game-feel-shake-flash-and-hit-pause)
+  make hits feel strong.
+- **Physics per object and new joints**: each body can have its own [gravity scale and drag](colliders.md#gravity-and-damping),
+  and [ball, slider, spring and rope joints](physics.md#joints) join weld and hinge, tuned in a Joints panel and kept
+  across a reload.
+- **Arrange big scenes**: live [arrays](arrange.md#repeat-an-object-arrays), [corner to corner](snapping.md#corner-to-corner-hold-b)
+  snapping with <kbd>B</kbd>, [layers](arrange.md#layers), and Select similar, Rename and Randomise.
+- **Play**: a [touch layout saved with the scene](touch-controls.md#a-layout-that-travels-with-your-game),
+  [info points](notifications.md#info-points-for-visitors) for visitors, a screen that
+  [stays awake](physics.md#the-screen-stays-awake) while you play, and a [colour dropper](controls.md#pick-a-colour-from-the-screen).
+- **Paper cuts**: [rounded boxes](controls.md#rounded-boxes), repeated meshes saved once
+  ([Saving](saving.md#scene-tpscene-recommended)), [fog kinds](camera.md#fog-kinds), [cube-map skies](camera.md#cube-map-skies)
+  and [Script events](nodes/script.md#firing-an-event).
+
 **1.71 — [the Code tab](node-editor.md#the-code-tab-since-171) and [convert to code](node-editor.md#convert-a-node-to-code).** The Nodes editor shows the graph as code, read-only (press a line to select its node). Right-click a Math, Compare, Gate, Select, Map
 Range, Random or HUD Text node ▸ **Convert to code**: it becomes a Script node that does the same thing, every wire
 kept, and **Convert back** returns it while the code is unchanged. Custom nodes keep their definitions in saved scenes,

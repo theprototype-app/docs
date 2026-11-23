@@ -92,7 +92,9 @@ both, and while you drag a wire a socket that cannot take it becomes a red cross
   (<kbd>F</kbd>, saved views, note jumps) and pulsing indicators — even when your device setting is off.
 - *Full* keeps every animation, even when your device asks for reduced motion.
 
-Games play normally either way: this covers the editor's own interface and camera moves. For VR comfort see the
+Games play normally either way: this covers the editor's own interface and camera moves. The one exception (since
+1.74): with *Reduce*, a game's [Camera Shake](nodes/camerashake.md) is a quarter as strong and its
+[Screen Flash](nodes/screenflash.md) a third. For VR comfort see the
 [VR Guide](vr.md#comfort-for-everyone).
 
 ## Keyboard navigation

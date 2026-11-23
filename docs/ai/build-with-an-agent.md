@@ -115,6 +115,15 @@ before a join, scene tools answer *not connected — join first*. Then call `con
       with +Y kept up. Lights point with `aim` instead. Since 1.61 `front` (`+x`, `-x`, `+z`, `-z`, `+y`, `-y`) says
       which local axis is the model's front, for `lookAt` and `face_user` alike: many models face +X or -Z.
     - `castShadow` / `receiveShadow` on any object; on a group or a model they apply to every mesh inside it.
+- **Physics, joints, arrays and layers** (since 1.74):
+    - `set_physics` takes `gravityScale` (−5 to 5), `linearDamping` and `angularDamping` (0 to 5) — see
+      [Gravity and damping](../colliders.md#gravity-and-damping).
+    - `create_joints` takes the kinds `ball`, `slider`, `spring` and `rope`, and the fields `anchors` (two world points
+      for a spring or a rope), `rest`, `stiffness`, `damping` and `length`; `limits` is in metres for a slider. It
+      answers with the values the joint really got. See [Joints](../physics.md#joints).
+    - `update_objects` takes `array: {mode, count, step, …}` (`null` removes it), `makeReal: true`, and
+      `layer: "<name>"` (a new name makes the layer, `null` takes the object off it). `list_scene` reports an object's
+      array and its layer by name. See [Arrays, Layers & Tidy](../arrange.md).
 - **Decals** (since 1.75): `create_objects` with `kind: "decal"` puts an image on a surface. `on` is the object's uuid;
   `normal` (`[x, y, z]`) aims it at that object from that side, or `point` + `normal` place it at a spot on the surface
   (world). `image` is a Library hash or file name (none = a placeholder frame), `size` is metres (a number, or

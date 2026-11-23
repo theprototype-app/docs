@@ -93,7 +93,7 @@ Press **Typed sockets…** above the code in the code workspace to declare your 
 | | Types |
 |---|---|
 | Inputs | number, boolean, vector3, color, object, event |
-| Outputs | number, boolean, vector3, color, object, any |
+| Outputs | number, boolean, vector3, color, object, any, event |
 
 - Read an input as **`inputs.<name>`**. Every input arrives in one shape for its type: a number,
   `true`/`false`, `[x, y, z]`, a colour string; an **object** input is `{uuid, name, position}`.
@@ -117,7 +117,21 @@ const gap = dist(inputs.hand, inputs.piece.position);
 return { allow: gap <= inputs.reach, gap };
 ```
 
-Outputs carry values only — a script cannot fire an event.
+### Firing an event
+
+*Since 1.74.* Give an output the type **event** and wire it into anything that takes a trigger — a
+[Counter](counter.md), a Latch, Set Game State, a HUD screen. The event **fires each time the value your code
+returns for it turns true**:
+
+```js
+// fires once each time the ball comes within reach, not every frame it stays there
+return { near: inputs.gap < inputs.reach };
+```
+
+- Return `true` (or a non-zero number) to fire, `false` to wait; leaving the output out of the return means *not now*.
+- Every peer runs the same code, so each fires the event for itself and nothing is sent; a Counter counts it once.
+- When a scene opens, or you join one, an output that is **already** true does not fire — only a change does.
+- Peers on an app older than 1.74 read the output as a number, so a Counter wired to it does not count there.
 
 ### Sockets follow the code
 

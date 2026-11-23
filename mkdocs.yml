@@ -40,6 +40,7 @@ nav:
     - 3D Text: 3d-text.md
     - Snapping: snapping.md
     - Measure, Align & Distribute: measure-align.md
+    - "Arrays, Layers & Tidy": arrange.md
     - Reference Images: reference-images.md
     - Decals: decals.md
     - UV & Textures: uv-editor.md
@@ -131,6 +132,10 @@ nav:
         - On Clap: nodes/onclap.md
         - Game Time: nodes/gametime.md
         - Player Variable: nodes/peervariable.md
+        - Game Value: nodes/gamevalue.md
+        - Camera Shake: nodes/camerashake.md
+        - Screen Flash: nodes/screenflash.md
+        - Hit Pause: nodes/hitpause.md
       - Character:
         - Character Controller: nodes/charcontroller.md
         - Move Input: nodes/moveinput.md
@@ -142,6 +147,7 @@ nav:
         - HUD Text: nodes/hudtext.md
         - HUD Bar: nodes/hudbar.md
         - HUD Button: nodes/hudbutton.md
+        - Show / Hide Element: nodes/hudvisible.md
         - HUD Timer: nodes/hudtimer.md
         - HUD List: nodes/hudlist.md
         - HUD Rows: nodes/hudrows.md
