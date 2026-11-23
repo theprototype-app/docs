@@ -232,7 +232,7 @@ Blender** downloads the model, and the file you export comes back with *Update "
 can watch the file and reload on each save. A 100×, Z-up or unapplied export gets a one-click fix. **Settings ▸ Tools &
 connections** replaces Settings ▸ AI: one page for chat and mesh providers, voice typing, agents and desktop tools, each with a
 status and a Test. Skies download the first time you pick one, so the app download is about 6 MB smaller. See
-[Edit in Blender](edit-in-blender.md) and [Tools & connections](tools-and-connections.md).
+[Edit in Blender](edit-in-blender.md) and [Settings ▸ AI](tools-and-connections.md).
 
 **1.52 — sessions in your Explorer.** Joining a session shows the host's files as *"<Host>'s session"* in your Explorer,
 read-only, above your Library: open them, copy them, and **Save on host** if you can edit. Nothing downloads until you
