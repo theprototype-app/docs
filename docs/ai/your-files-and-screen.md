@@ -58,6 +58,9 @@ The first time for each kind (panels, the camera, code) your tab asks, for examp
 - **This time**: allowed until you reload the page.
 - **No**: not until you reload. The AI app then tells you where to look instead.
 
+Your answers are per app: a **No** to one app does not stop another. An app that theprototype cannot name (it shows
+as *an AI app*) is offered only **This time** and **No**, and an earlier **Always** does not count for it.
+
 **Back** on the line undoes what `show` last did: the panel closes again, your view goes back. You can also say
 *"go back"*. It remembers the last 10 steps.
 
@@ -70,6 +73,8 @@ with, and they apply to this device only.
 - It does nothing while you drag an object, draw a selection box or type somewhere else. It tries again a moment
   later.
 - It does not move your view in a VR headset, or while you play (press <kbd>Esc</kbd> first).
+- It does not move your view, or switch scenes, while you record a video, film with your phone (Film) or a sequence
+  plays its shots.
 - At most 6 calls a minute, and one camera move every 2 seconds.
 
 ## Your scenes
@@ -80,7 +85,8 @@ new empty scene and opens it. Opening replaces what is on your screen.
 **Unsaved changes** are yours to decide:
 
 - Say it in your request, *"save this and open the forest"*, and it saves first through your normal save, then
-  opens the scene, and tells you what it saved. It throws your changes away only when you said so.
+  opens the scene, and tells you what it saved. It lets your changes go only when you said so, and even then it
+  first keeps them in **Sessions** as *Backup before "…"*, so you can bring them back.
 - Say nothing, and your tab asks: **Save and open** / **Open without saving** / **Cancel**.
 - When other people are in your session, your tab always asks, whatever the request said.
 
