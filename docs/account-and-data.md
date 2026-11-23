@@ -99,7 +99,8 @@ and the country when it can be told.
 - It is sent once for each new device.
 - It is never sent when a device you already use stays signed in, and not for the very first sign-in of a new account.
 - **Not you?** The email says what to do: open theprototype.app and go to **Settings ▸ Account ▸ Devices ▸ Sign out
-  everywhere**, then check the GitHub or Google account you sign in with.
+  everywhere**, disconnect any app you do not recognise in **Settings ▸ Account ▸ Connected apps**, then check the
+  GitHub or Google account you sign in with.
 
 The emails are on unless you switch off **Settings ▸ Account ▸ Email ▸ New sign-in alerts**.
 
