@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Settings", "url": "https://docs.theprototype.app/settings/", "description": "Since 1.35 Settings opens beside your work: an open sidebar, the docked windows and the Node editor stay where they are on a computer and an unfolded phone. On a folded phone Settings is a…", "dateModified": "2026-11-11", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/settings/interface-desktop.webp", "caption": "Settings on a computer, the grouped menu beside the page."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/settings/home-phone.webp", "caption": "On a phone, Settings opens on the list of categories."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/settings/rows-phone.webp", "caption": "Rows on a narrow screen: long choices wrap under the name, short ones stay beside it."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/settings/notifications.webp", "caption": "The Notifications switches in Settings ▸ Interface."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Settings", "url": "https://docs.theprototype.app/settings/", "description": "Since 1.35 Settings opens beside your work: an open sidebar, the docked windows and the Node editor stay where they are on a computer and an unfolded phone. On a folded phone Settings is a…", "dateModified": "2026-11-23", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/settings/interface-desktop.webp", "caption": "Settings on a computer, the grouped menu beside the page."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/settings/home-phone.webp", "caption": "On a phone, Settings opens on the list of categories."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/settings/rows-phone.webp", "caption": "Rows on a narrow screen: long choices wrap under the name, short ones stay beside it."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/settings/notifications.webp", "caption": "The Notifications switches in Settings ▸ Interface."}]}</script>
 </head>
   
   
@@ -680,6 +680,27 @@
   
   <span class="md-ellipsis">
     Privacy &amp; Error Reports
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../account-and-data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Your Account &amp; Data
   </span>
   
 
@@ -7562,8 +7583,8 @@ device. Each one is on until you switch it off.</p>
 connection request, a take-control or role request, an agent asking permission — and safety notices cannot be switched
 off. Search finds <em>notifications</em> and every switch by name. <strong>Reset Interface</strong> turns them all back on.</p>
 <h2 id="account">Account</h2>
-<p><em>On theprototype.app.</em> <strong>Settings ▸ Account</strong> holds your account: its emails, the ways you sign in, your devices and
-the apps you connected. Since 1.65 it has four groups:</p>
+<p><em>On theprototype.app.</em> <strong>Settings ▸ Account</strong> holds your account: its emails, the ways you sign in, your devices,
+your data and the apps you connected. Since 1.76 it has five groups:</p>
 <table>
 <thead>
 <tr>
@@ -7574,7 +7595,7 @@ the apps you connected. Since 1.65 it has four groups:</p>
 <tbody>
 <tr>
 <td><strong>Email</strong></td>
-<td><strong>Product updates</strong> (below)</td>
+<td><strong>Product updates</strong> (below) and <strong>New sign-in alerts</strong> (<a href="../account-and-data/#new-sign-in-emails">New sign-in emails</a>)</td>
 </tr>
 <tr>
 <td><strong>Sign-in methods</strong></td>
@@ -7582,7 +7603,11 @@ the apps you connected. Since 1.65 it has four groups:</p>
 </tr>
 <tr>
 <td><strong>Devices</strong></td>
-<td>every device signed in to your account, with <strong>Sign out</strong> (<a href="../sign-in-from-another-device/">Sign in from another device</a>)</td>
+<td>every device signed in to your account, with <strong>Sign out</strong> for each and <strong>Sign out everywhere</strong> (<a href="../account-and-data/#where-you-are-signed-in">Where you are signed in</a>)</td>
+</tr>
+<tr>
+<td><strong>Your data</strong></td>
+<td><strong>Download my data</strong> and <strong>Delete account</strong> (<a href="../account-and-data/">Your account and data</a>)</td>
 </tr>
 <tr>
 <td><strong>Connected apps</strong></td>
@@ -7801,6 +7826,26 @@ cache uses the older Cache Storage, and where neither exists everything download
 <td>new in 1.65</td>
 <td><strong>Interface ▸ Show my status</strong> — off by default, this device only: Available, Busy or Away beside your name in People; see <a href="../people/#show-my-status">Show my status</a></td>
 </tr>
+<tr>
+<td>Hide my IP</td>
+<td>new in 1.76</td>
+<td><strong>Privacy ▸ Hide my IP</strong> — off by default, this device only; see <a href="../connection/#hide-my-ip">Hide my IP</a></td>
+</tr>
+<tr>
+<td>Limit floods from peers</td>
+<td>new in 1.76</td>
+<td><strong>Connection ▸ Limit floods from peers</strong> — <strong>Off</strong> / <strong>Normal</strong> / <strong>Strict</strong>, this device only; see <a href="../connection/#limit-floods-from-peers">Limit floods from peers</a></td>
+</tr>
+<tr>
+<td>Require approval to join</td>
+<td>new in 1.76</td>
+<td><strong>Connection ▸ Require approval to join</strong> — this session only, off when you leave; see <a href="../connection/#blocking-a-guest">Blocking a guest</a></td>
+</tr>
+<tr>
+<td>New sign-in alerts · Your data</td>
+<td>new in 1.76</td>
+<td><strong>Account ▸ Email ▸ New sign-in alerts</strong> and <strong>Account ▸ Your data</strong>, on theprototype.app; see <a href="../account-and-data/">Your account and data</a></td>
+</tr>
 </tbody>
 </table>
 
@@ -7823,7 +7868,7 @@ cache uses the older Cache Storage, and where neither exists everything download
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-11
+    2026-11-23
   </span>
 
     

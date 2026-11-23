@@ -86,14 +86,15 @@ off. Search finds *notifications* and every switch by name. **Reset Interface** 
 
 ## Account
 
-*On theprototype.app.* **Settings ▸ Account** holds your account: its emails, the ways you sign in, your devices and
-the apps you connected. Since 1.65 it has four groups:
+*On theprototype.app.* **Settings ▸ Account** holds your account: its emails, the ways you sign in, your devices,
+your data and the apps you connected. Since 1.76 it has five groups:
 
 | Group | What it holds |
 |---|---|
-| **Email** | **Product updates** (below) |
+| **Email** | **Product updates** (below) and **New sign-in alerts** ([New sign-in emails](https://docs.theprototype.app/account-and-data.md#new-sign-in-emails)) |
 | **Sign-in methods** | the providers you sign in with; **Link** a second one ([Sign in from another device](https://docs.theprototype.app/sign-in-from-another-device.md#if-you-lose-your-github-or-google-account)) |
-| **Devices** | every device signed in to your account, with **Sign out** ([Sign in from another device](https://docs.theprototype.app/sign-in-from-another-device.md)) |
+| **Devices** | every device signed in to your account, with **Sign out** for each and **Sign out everywhere** ([Where you are signed in](https://docs.theprototype.app/account-and-data.md#where-you-are-signed-in)) |
+| **Your data** | **Download my data** and **Delete account** ([Your account and data](https://docs.theprototype.app/account-and-data.md)) |
 | **Connected apps** | the AI apps you connected with the [connector](https://docs.theprototype.app/ai/claude-connector.md) (Claude, Claude Code and others), each with its last use and **Revoke**; **Disconnect everything** (**Disconnect all**) ends them all, and this tab's own link |
 
 Sign-in methods and Devices used to be in the profile menu, and Connected apps was a settings page of
@@ -189,3 +190,7 @@ cache uses the older Cache Storage, and where neither exists everything download
 | Sign-in methods · Devices | the profile menu (until 1.64) | **Account ▸ Sign-in methods** and **Account ▸ Devices**, on theprototype.app; see [above](#account) |
 | Connected apps | its own page, **Settings ▸ Connected apps** (until 1.64) | **Account ▸ Connected apps**; see [above](#account) |
 | Show my status | new in 1.65 | **Interface ▸ Show my status** — off by default, this device only: Available, Busy or Away beside your name in People; see [Show my status](https://docs.theprototype.app/people.md#show-my-status) |
+| Hide my IP | new in 1.76 | **Privacy ▸ Hide my IP** — off by default, this device only; see [Hide my IP](https://docs.theprototype.app/connection.md#hide-my-ip) |
+| Limit floods from peers | new in 1.76 | **Connection ▸ Limit floods from peers** — **Off** / **Normal** / **Strict**, this device only; see [Limit floods from peers](https://docs.theprototype.app/connection.md#limit-floods-from-peers) |
+| Require approval to join | new in 1.76 | **Connection ▸ Require approval to join** — this session only, off when you leave; see [Blocking a guest](https://docs.theprototype.app/connection.md#blocking-a-guest) |
+| New sign-in alerts · Your data | new in 1.76 | **Account ▸ Email ▸ New sign-in alerts** and **Account ▸ Your data**, on theprototype.app; see [Your account and data](https://docs.theprototype.app/account-and-data.md) |

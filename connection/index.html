@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Connection", "url": "https://docs.theprototype.app/connection/", "description": "How peers find each other, how to invite someone into your scene, and how to point the app at a signaling server you trust.", "dateModified": "2026-11-22", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.71.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/status-dot-phone.webp", "caption": "A folded phone's top bar: the chip keeps the connection dot."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/peers-panel-desktop.webp", "caption": "The Connected panel on a computer."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/public-rooms-phone.webp", "caption": "Public rooms under their own heading, apart from your session."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/guests-see.webp", "caption": "Connect ▸ ▾ ▸ Info, where the host picks what guests see."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Connection", "url": "https://docs.theprototype.app/connection/", "description": "How peers find each other, how to invite someone into your scene, and how to point the app at a signaling server you trust.", "dateModified": "2026-11-23", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.71.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/status-dot-phone.webp", "caption": "A folded phone's top bar: the chip keeps the connection dot."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/peers-panel-desktop.webp", "caption": "The Connected panel on a computer."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/public-rooms-phone.webp", "caption": "Public rooms under their own heading, apart from your session."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/connection/guests-see.webp", "caption": "Connect ▸ ▾ ▸ Info, where the host picks what guests see."}]}</script>
 </head>
   
   
@@ -560,6 +560,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../account-and-data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Your Account &amp; Data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../security/" class="md-nav__link">
         
   
@@ -685,6 +706,33 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#invite-link-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Invite link limits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failed-invite-joins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Failed invite joins
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blocking-a-guest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blocking a guest
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#what-guests-see" class="md-nav__link">
     <span class="md-ellipsis">
       What guests see
@@ -789,6 +837,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#limit-floods-from-peers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limit floods from peers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joining-a-big-scene" class="md-nav__link">
+    <span class="md-ellipsis">
+      Joining a big scene
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -831,6 +897,15 @@
   <a href="#diagnostics-you-can-copy" class="md-nav__link">
     <span class="md-ellipsis">
       Diagnostics you can copy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hide-my-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hide my IP
     </span>
   </a>
   
@@ -7454,6 +7529,33 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#invite-link-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Invite link limits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failed-invite-joins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Failed invite joins
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blocking-a-guest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blocking a guest
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#what-guests-see" class="md-nav__link">
     <span class="md-ellipsis">
       What guests see
@@ -7558,6 +7660,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#limit-floods-from-peers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limit floods from peers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joining-a-big-scene" class="md-nav__link">
+    <span class="md-ellipsis">
+      Joining a big scene
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -7600,6 +7720,15 @@
   <a href="#diagnostics-you-can-copy" class="md-nav__link">
     <span class="md-ellipsis">
       Diagnostics you can copy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hide-my-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hide my IP
     </span>
   </a>
   
@@ -7756,7 +7885,9 @@ colour with their initial, ringed in the same colour as their cursor and their s
 <p><strong>Your name.</strong> When you join a session you are asked what others should call you; the name is remembered on this
 device (<strong>Not now</strong> skips it for this join). Anyone without a name shows as <strong>Guest 1</strong>, <strong>Guest 2</strong>… instead of
 "Peer". A person who joins no longer appears inside your view: an avatar close to your camera fades out, and a joiner
-whose view would open on top of someone arrives a step to the side.</p>
+whose view would open on top of someone arrives a step to the side. <em>New in 1.76:</em> people who open a play link and
+start playing at the same time arrive apart too: at the spawn or a free spot around it, at least a metre from anyone
+else and never inside a wall. This works on a computer and in VR.</p>
 <p>Right-click a person (long-press on touch, <kbd>Shift</kbd>+<kbd>F10</kbd> from the keyboard) for the <strong>peer menu</strong>:
 their profile, Go to, Watch, Mute, Hide — and, for the host or an admin, <strong>Remove from session</strong> and <strong>Remove and
 block</strong>. See <a href="../people/">Users and moderation</a>. An AI agent shows a robot and "AI" instead of a character.</p>
@@ -7778,6 +7909,44 @@ of your session</em>. The people listed there are not connected to you; <strong>
 <p>Or do it by ID: they press <strong>Join…</strong>, type your ID and press <strong>Connect</strong>; the same approval toast appears on your side.</p>
 <p>To skip the approval card, send an <strong>invite link</strong> instead (<strong>Connect ▸ Invite</strong>, a <em>Person</em> or an <em>AI agent</em>
 tab): the other side opens it, or pastes it into <strong>Join…</strong>, and it joins in one step with the role you chose, for a limited time. See <a href="../invites/">Invite people and agents</a>.</p>
+<h3 id="invite-link-limits">Invite link limits</h3>
+<p><em>New in 1.76.</em> Each device can have at most <strong>20 invite links that still work</strong>, and can make at most <strong>10 in 10
+minutes</strong>. Past either, no link is made and the Invite sheet says why and when you can make another:</p>
+<ul>
+<li><em>You already have 20 invite links that still work. Revoke one in Users ▸ Invites before making another.</em></li>
+<li><em>You made 10 invite links in the last 10 minutes. Try again in 4 minutes.</em></li>
+</ul>
+<p>One invite also lets the same person back in only so often: two quick re-joins (a dropped link, a reload) are fine,
+then one every 30 seconds. They see <em>You rejoined ‹host›'s session several times in a row. Wait half a minute, then
+try again.</em></p>
+<h3 id="failed-invite-joins">Failed invite joins</h3>
+<p><em>New in 1.76.</em> An invite link that does not work (expired, revoked, used up, or one this device cannot confirm) never
+lets anyone in by itself, and it no longer turns into an approval card. Every such join is counted in <strong>one row</strong>,
+<em>3 failed invite joins</em>, in your notices, the Connect drawer and the approval panel in a headset. So real requests
+always keep their place: a pile of failed invite joins never pushes a real request out of view.</p>
+<ul>
+<li><strong>Review</strong> lists the recent ones, each with its short id and why it failed. <strong>Let in</strong> beside one lets that person in,
+  as approving a card would.</li>
+<li><strong>Dismiss</strong> clears the row.</li>
+</ul>
+<p>If more than 10 invite joins fail within a minute, invite joins <strong>pause for 60 seconds</strong>. You get one notice, <em>Invite
+joins are paused for 60 s</em>, with <strong>Resume now</strong>. During the pause, anyone who opens an invite link sees why (<em>‹host›
+has paused invite joins for a minute after too many failed tries. Try again shortly.</em>) and a <strong>Try again</strong> button.
+Approval cards keep working the whole time.</p>
+<h3 id="blocking-a-guest">Blocking a guest</h3>
+<p><strong>Remove and block</strong> keeps that connection out for the rest of the session. A guest who is not signed in can come back
+with a new id, though, so when you, the host, block a guest the notice says so and offers <strong>Require approval to join</strong>.</p>
+<p><strong>Require approval to join</strong> is for this session only. While it is on, nobody joins by themselves: every automatic
+join, a working invite link included, becomes an approval card, and you decide each one.</p>
+<ul>
+<li>The notice confirms it, with <strong>Undo</strong>.</li>
+<li>The same switch is in <strong>Settings ▸ Connection ▸ Require approval to join</strong>, to turn it on or off at any time.</li>
+<li>It turns off again when you leave the session.</li>
+<li>On theprototype.app it also turns on your room's own <a href="#public-rooms-theprototypeapp">Require approval to join</a>
+  switch, so the Rooms list shows <strong>Request to join</strong>.</li>
+</ul>
+<p>Someone who is signed in gets the plain notice instead. To keep an account out of every session you host, use
+<a href="../account-and-data/#blocked-people">Block this account</a> on theprototype.app.</p>
 <h3 id="what-guests-see">What guests see</h3>
 <figure>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/connection/guests-see.webp" data-desc-position="bottom"><img alt="The Connect drawer's Info tab on a computer: the Session rows — State, Your ID, Guests see with its list, Host — and the Signaling server rows under them. 1: Guests see, which of your files a guest sees in the Explorer." class="shot" height="204" loading="lazy" src="../img/connection/guests-see.webp" width="445"></a></p>
@@ -7949,6 +8118,24 @@ device can check it, so a code set on another device of yours has to be set agai
 <h3 id="versions-in-a-session">Versions in a session</h3>
 <p>When someone joins, their app and yours first agree that they speak the same session version, before any scene data is exchanged. Most updates do not change it, so people on different app versions keep working together as before. When an update does change it, the two apps do not connect: the person on the older version sees <em>This session uses a newer version. Reload to update.</em> with a <strong>Reload</strong> button, and people on the newer version see that person in <strong>People</strong> as needing to reload. After reloading, join again as usual.</p>
 <p>Each person's app also accepts a generous, bounded amount of messages and data per second from each other person, well above sharing a large file or moving hundreds of objects at once. Anything far beyond that is skipped with one notice, the connection stays up, and the counts are in <a href="#diagnostics-you-can-copy">Diagnostics</a>.</p>
+<h3 id="limit-floods-from-peers">Limit floods from peers</h3>
+<p><em>New in 1.76.</em> <strong>Settings ▸ Connection ▸ Limit floods from peers</strong> sets how much your device takes from one person:
+<strong>Off</strong>, <strong>Normal</strong> (the default) or <strong>Strict</strong>. It ignores edits and chat from someone sending far more than a person
+would. It applies on this device.</p>
+<ul>
+<li>Movement, voice and the scene a joiner is sent are never limited, and neither is the session host.</li>
+<li>The person sending too fast is told: <em>You are sending edits very fast, so some did not reach everyone. Slow down for a
+  moment.</em></li>
+<li>The host or an admin sees <em>‹name› is sending too many edits, so some were ignored.</em>, with <strong>Remove</strong>.</li>
+</ul>
+<h3 id="joining-a-big-scene">Joining a big scene</h3>
+<p><em>New in 1.76.</em> Someone who joins a session with a big scene already in it gets the whole scene much faster than before:
+the first objects show almost at once, and the rest follows quickly.</p>
+<ul>
+<li>Hidden objects, such as the template a spawner copies, arrive hidden.</li>
+<li>Names arrive exactly as written: <em>Gate zone</em> stays <em>Gate zone</em>.</li>
+<li>A large model with several materials arrives as one object with all its material slots, as it is on your screen.</li>
+</ul>
 <h2 id="smoother-movement-on-a-bad-connection">Smoother movement on a bad connection</h2>
 <p><em>New in 1.44.</em> Avatars, VR hands, objects being dragged or held, possessed rides and physics bodies travel on a
 second, <strong>fast</strong> connection between each pair of players. It never waits for a lost packet to be sent again — the
@@ -8001,6 +8188,21 @@ that person; they rejoin with the invite link.</p>
 <p><strong>Settings ▸ About ▸ Copy diagnostics</strong> puts a bundle on your clipboard: the version, this session's peer and scene counts, the scene's <a href="../performance/">budget numbers</a>, the last uncaught error and the last 300 log lines. A toast confirms <em>Diagnostics copied to the clipboard</em>.</p>
 <p>Since 1.35 a line that repeats back-to-back is written <strong>once with a count</strong> — <code>WARN [console] … (×180, last 10:42:07.311)</code> — so a burst of one warning can no longer push the useful lines out of the log.</p>
 <p>It goes to your clipboard and nowhere else — paste it into a bug report, so a problem arrives with something in it.</p>
+<h2 id="hide-my-ip">Hide my IP</h2>
+<p><em>New in 1.76.</em> A direct connection lets the people in your session see your IP address. To keep it from them, turn on
+<strong>Settings ▸ Privacy ▸ Hide my IP</strong>. New connections then go only through a relay server, so people see the relay's
+address instead of yours.</p>
+<ul>
+<li>The relay and the signaling server still see your address, because they have to reach you.</li>
+<li>Connections can be a little slower.</li>
+<li>It is kept on this device, and resetting your settings does not turn it off.</li>
+<li>A connection that is already open keeps its route. Leave and rejoin to switch it.</li>
+<li>If no relay server is available, you do not connect at all; a direct connection is never tried while it is on. A
+  connection that fails says so: <em>Could not connect through a relay server. Hide my IP is on, so no direct connection
+  was tried.</em></li>
+</ul>
+<p>On theprototype.app the relay is ours. A build with no relay server set up (see the TURN fields
+<a href="#choosing-a-signaling-server">below</a>) cannot connect while Hide my IP is on.</p>
 <h2 id="choosing-a-signaling-server">Choosing a signaling server</h2>
 <p>Which signaling server you use decides <em>which world you can meet people in</em> — two people must be on the same server for their invite links to connect. Set this in <strong>Settings ▸ Connection</strong>.</p>
 <table>
@@ -8082,6 +8284,14 @@ that person; they rejoin with the invite link.</p>
 <td>The link to the signaling server has been down for about a minute; the app keeps retrying on its own and never gives up, and the dot turns green or grey again once it is back. Shorter drops — a tab switch, a moment offline — reconnect silently. Your open session keeps going meanwhile.</td>
 </tr>
 <tr>
+<td><em>‹host› has paused invite joins for a minute after too many failed tries.</em></td>
+<td>Too many invite links failed at that host in a short time, so invite joins are paused for 60 seconds. Press <strong>Try again</strong> after a moment, or ask the host for a fresh link. See <a href="#failed-invite-joins">Failed invite joins</a>.</td>
+</tr>
+<tr>
+<td><em>Could not connect through a relay server. Hide my IP is on, so no direct connection was tried.</em></td>
+<td><a href="#hide-my-ip">Hide my IP</a> is on and no relay could be reached. Try again later, or turn it off in <strong>Settings ▸ Privacy</strong>.</td>
+</tr>
+<tr>
 <td><em>Cannot reach the signaling server - the connection request was not sent.</em></td>
 <td>You pressed <strong>Connect</strong> while the signaling link is down. Wait for the status dot to stop pulsing, or switch servers in Settings ▸ Connection.</td>
 </tr>
@@ -8144,7 +8354,7 @@ never count as visits or errors.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-22
+    2026-11-23
   </span>
 
     

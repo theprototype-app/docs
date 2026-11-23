@@ -4,7 +4,15 @@ In a session your scene goes from your browser straight to the people you connec
 introduce you, relay the encrypted traffic when a direct link is impossible, and serve accounts, cloud saves, assets
 and community pages ([how it works](https://docs.theprototype.app/index.md#how-it-works)). This page covers what the app sends about itself —
 **anonymous error reports** and **first-visit usage counts**, and how to switch them off — and the anonymous counters. For accounts,
-cloud saves and the community, see the site's [privacy page](https://theprototype.app/privacy).
+cloud saves and the community, see the site's [privacy page](https://theprototype.app/privacy). To download your
+data or delete your account, see [Your account and data](https://docs.theprototype.app/account-and-data.md).
+
+## Hide my IP
+
+*New in 1.76.* **Settings ▸ Privacy ▸ Hide my IP** keeps your IP address from the people in your session: new
+connections go only through a relay server, so they see the relay's address instead of yours. The relay and the
+signaling server still see it. It is off by default and kept on this device. More in
+[Connection](https://docs.theprototype.app/connection.md#hide-my-ip).
 
 ## Anonymous error reports
 
