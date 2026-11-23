@@ -30,8 +30,9 @@ Library.
 - **Continue** loads the newest save. **Play** starts a new game in the first empty slot; with all three full, it asks
   which one to replace.
 - The first time you turn a title screen on, a hint offers to try it.
-- **In a headset** the title screen is skipped for now: VR Play starts the game straight away, as **Play** would, and
-  the headset's menu has no *Quit to title*. On a headset's browser, a play link's title screen offers **Enter VR**.
+- **In a headset** the title screen is skipped for now: VR Play starts the game straight away, as **Play** would (in
+  the first empty slot; with all three full it plays without saving over one), and the headset's menu has no *Quit to
+  title*. Leave VR and the next Play opens on the title again. On a headset's browser, a play link's title screen offers **Enter VR**.
 
 ## Pause menu and player settings
 
@@ -42,7 +43,7 @@ Library.
   the pause off in Game menus.
 - **New rows:** Restart level (in a game with a Levels table), Save game, Load game, Join requests, Quit to title.
 - **Settings** has the player's own settings: music and effects volume, **Look speed**, **Invert look**,
-  **Subtitles**, **Reduced motion** (this device), quality, and the vibration rows. They are saved per game on this
+  **Subtitles**, **Reduced motion** (this device), quality, and **Controller vibration** in VR. They are saved per game on this
   device.
 - A game made before this release keeps its old menu (no pause, no title screen) until you turn the game menus on.
 
