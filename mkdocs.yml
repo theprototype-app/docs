@@ -270,6 +270,7 @@ nav:
     - VR Guide: vr.md
     - Building in VR: building-in-vr.md
     - Colocation (shared room): colocation.md
+    - Scan my room (Quest): scan-my-room.md
     - Play on a Table (AR, Android): ar-table.md
   - AI:
     - Assistant: ai/assistant.md
@@ -287,6 +288,7 @@ nav:
     - Worlds with an agent: ai/agent-world.md
     - Use any AI: ai/use-any-ai.md
     - Use theprototype from claude.ai and voice: ai/claude-connector.md
+    - Your files, screen and scenes: ai/your-files-and-screen.md
     - Providers: ai/providers.md
     - Local & Small Models: ai/local-models.md
     - 3D Generation: ai/generation.md

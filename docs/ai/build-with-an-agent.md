@@ -124,6 +124,12 @@ before a join, scene tools answer *not connected — join first*. Then call `con
     - `update_objects` takes `array: {mode, count, step, …}` (`null` removes it), `makeReal: true`, and
       `layer: "<name>"` (a new name makes the layer, `null` takes the object off it). `list_scene` reports an object's
       array and its layer by name. See [Arrays, Layers & Tidy](../arrange.md).
+- **Ground, water and floating** (since 1.7X):
+    - `probe` reads the ground height, slope and surface and any water's surface and depth under up to 64 points, or
+      along a ray. It only reads, so a viewer's agent may use it too. See
+      [Read what is under a point](agent-world.md#read-what-is-under-a-point).
+    - `set_physics` takes `float`, `density`, `buoyancy` and `waterDrag`, and answers where the waterline will sit. See
+      [Make things float or sink](agent-world.md#make-things-float-or-sink).
 - Never fight a person: a locked object is skipped — the reply names the object and who is editing it — and the agent
   waits with `wait_for_edit`.
 

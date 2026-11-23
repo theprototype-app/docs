@@ -81,9 +81,9 @@ trees by the fire"*) — it never reads out ids or numbers. Good things to say:
 
 | Claude can | Claude cannot |
 |---|---|
-| Add shapes, lights and groups; move, resize, recolour, rename, hide and delete them | Open files or import them from your computer, or change your settings |
+| Add shapes, lights and groups; move, resize, recolour, rename, hide and delete them | Open or import files from your computer, or change your settings |
 | Make things move and react with flow nodes (spin, bounce, follow a path, open on click) and look up how each node wires | Install modules, approve people who knock, or answer the app's questions for you |
-| Add physics and run the simulation in your tab at its full frame rate, whether you host or joined (your own assistant's **Physics tools** setting is not changed) | See anything outside the theprototype tab, or move your camera |
+| Add physics and run the simulation in your tab at its full frame rate, whether you host or joined (your own assistant's **Physics tools** setting is not changed), and make things float or sink in water ([Worlds](agent-world.md#make-things-float-or-sink)) | See anything outside the theprototype tab, or move anyone else's view |
 | Animate a model's named parts, and see where everyone stands and looks, so *"put a tree in front of me"* lands in front of you, in VR too (a look-only connection sees only your own position) | |
 | Ask your tab to join a session from a link you give it: nothing happens until you press **Join** on the card in the tab (see below) | |
 | Write small code behaviours | Do more than you can: a **viewer's** Claude can look but not build, and locked objects stay locked |
@@ -91,6 +91,8 @@ trees by the fire"*) — it never reads out ids or numbers. Good things to say:
 | Make shapes the basic objects cannot — a vase on a lathe, a rail along a path, an extruded sign, a mesh from its own points — and reshape or model them ([Shapes and modelling](agent-geometry.md)) | Fetch an image from your computer or your local network |
 | Change materials and textures, node shaders, UV mapping and the scene's post effects; a change to the whole scene's look asks you first with **Allow** / **Deny** in the tab ([Materials and looks](agent-look.md)) | |
 | Set the point a thing turns about, and put an image into your library from an https address or one it draws ([Undo, pivots and images](agent-assist.md)) | |
+| Read the ground and the water under a point (`probe`), and know which camera you look through ([Here, this and you](agent-spatial.md#the-camera-you-look-through)) | |
+| Work with the text files in your Explorer, open your panels, move your own view and open code for you (it asks first), and open your other scenes ([Your files, your screen and your scenes](your-files-and-screen.md)) | |
 
 ### Joining a session from a link
 
@@ -134,8 +136,8 @@ into the tab yourself; then ask Claude to place or change them.
 
 ## See and undo what it did
 
-Every step Claude takes is a line labelled **Claude (connector)** in **Agent activity**, with its
-own **Undo**. Anyone in the session sees the changes as they happen, and anyone with edit access
+Every step Claude takes is a line labelled with the app's name, **Claude (connector)** (or **ChatGPT
+(connector)** and so on), in **Agent activity**, with its own **Undo**. Anyone in the session sees the changes as they happen, and anyone with edit access
 can undo them from their own screen.
 
 Or just say **"undo that"**: Claude takes back its own last step. If someone has changed the same things since,
@@ -144,6 +146,8 @@ it changes nothing and tells you who changed what.
 **Screenshots** have a 4:3 shape whatever your window's shape, except the *current* view, which keeps your canvas. Claude
 can pick the angle (front, back, left, right, top, below, iso, or a yaw and pitch), a camera position and target, the objects to
 frame, a zoom (0.1-10) and a margin (0.5-4). It is told which camera it used, and your own view never moves.
+Since 1.7X, while you look through a scene camera (Preview, a game camera, a sequence shot, Film on your phone, a
+recording), the *current* view is that camera, with its framing ([details](agent-spatial.md#the-camera-you-look-through)).
 
 ### Tool families
 
@@ -164,6 +168,19 @@ exactly what the agent tools of the same job do, with the same limits:
 `undo_last` is a tool of its own. A look-only connection can still use the actions that only read (`list_materials`,
 `get_material`, `shader_nodes`, `get_post`, `environment`, `hud` `list`, `assets` `search` and all of `run`).
 `playtest` (a test player) runs only on an agent's own page, so it is not on claude.ai.
+
+**New in 1.7X** — four new tools, so the connector lists **35**:
+
+- `probe` reads what is under a point without changing anything: the ground height, which way it slopes, what the
+  surface is, and any water's surface and depth. Up to 64 points at once, or a ray. A look-only connection and a
+  viewer may use it ([Worlds with an agent](agent-world.md#read-what-is-under-a-point)).
+- `where_are_users` knows the camera you look through (`through`), and a screenshot of what you see uses that camera's
+  framing ([Here, this and you](agent-spatial.md#the-camera-you-look-through)).
+- `set_physics` takes `float`, `density`, `buoyancy` and `waterDrag`, and answers where the waterline will sit
+  ([Make things float or sink](agent-world.md#make-things-float-or-sink)).
+- `files`, `show` and `scene` work with your own Explorer, your own screen and your scenes, in your own tab only
+  ([Your files, your screen and your scenes](your-files-and-screen.md)). Their lines name the app at work:
+  *ChatGPT opened Explorer · Back*.
 
 **New in 1.59** — the same tools, with more in them:
 

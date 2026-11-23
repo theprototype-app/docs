@@ -148,7 +148,7 @@ The names and icons match the desktop menus:
 | Sector | Does |
 |---|---|
 | **Objects** | opens the scene object list panel |
-| **Add ▸** | the viewport menu's Add: Cube, Wedge, Stairs, Sphere, Cylinder, Torus, **Terrain**, **Architecture ▸**, **Prefabs** and **Assets** (the [Asset Browser on your wrist](building-in-vr.md#the-asset-browser-on-your-wrist)) |
+| **Add ▸** | the viewport menu's Add: Cube, Wedge, Stairs, Sphere, Cylinder, Torus, **Terrain**, **Architecture ▸**, **Prefabs**, **Assets** (the [Asset Browser on your wrist](building-in-vr.md#the-asset-browser-on-your-wrist)) and, on a Quest in passthrough, **Scan my room** ([Scan my room](scan-my-room.md)) |
 | **Scene ▸** | **Environment ▸** (Studio, Daylight, Sunset, Night, Classic), **Colocate ▸** (see [Colocation](colocation.md)), **Grid**, **World 1:1** (undo a scaled or rotated world grab), **Dollhouse** ([below](#dollhouse-teleport)) |
 | **Tools ▸** | Select, Box select, Draw mode, **Measure** ([Building in VR](building-in-vr.md#measure)), Ping, Simulate physics, **Profile ▸**, **Play here** ([Play here](play-here.md)), **AI** ([below](#the-ai-assistant-in-vr)) |
 | **Redo** · **Undo** | step through history |

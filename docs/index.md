@@ -52,6 +52,22 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.7X — AI apps in your scene, and your room in VR.**
+
+- **Use theprototype from ChatGPT and other AI apps**: the same connector works in Claude, ChatGPT, Gemini CLI, VS Code
+  and Cursor. [Settings ▸ AI](tools-and-connections.md) now has two cards, one for AI apps that work in your scene and
+  one for the app's own assistant with your key, and [Use any AI](ai/use-any-ai.md) says which one you need. The chip
+  and every line name the app at work: *ChatGPT connected · this tab*.
+- **Ground, water and cameras**: an AI app can [read what is under a point](ai/agent-world.md#read-what-is-under-a-point)
+  (ground height, slope, water depth), [make things float or sink](ai/agent-world.md#make-things-float-or-sink)
+  and say where the waterline will sit, and it knows [the camera you look through](ai/agent-spatial.md#the-camera-you-look-through).
+  **Inspector ▸ Physics ▸ [Floats](physics.md#things-float)** reads in metres and has a new **Water drag** slider.
+- **Your files, your screen, your scenes**: in your own tab, an AI app or the in-app assistant can work with the text
+  files in your Explorer, open a panel, move your view or open code at a line (it asks first, and **Back** undoes it),
+  and open your other scenes, asking what to do with unsaved changes ([details](ai/your-files-and-screen.md)).
+- **[Scan my room](scan-my-room.md)** on Quest: your headset's room setup becomes named, see-through boxes at real size
+  under **My room**. Scan again and each wall keeps its name and your edits. No camera image is used or stored.
+
 **1.74 — games and play.**
 
 - **Game values and game feel**: a [Game Value](nodes/gamevalue.md) node shows the score, a clock, stars or lives in the
