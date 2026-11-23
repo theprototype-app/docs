@@ -81,7 +81,9 @@ colour with their initial, ringed in the same colour as their cursor and their s
 **Your name.** When you join a session you are asked what others should call you; the name is remembered on this
 device (**Not now** skips it for this join). Anyone without a name shows as **Guest 1**, **Guest 2**… instead of
 "Peer". A person who joins no longer appears inside your view: an avatar close to your camera fades out, and a joiner
-whose view would open on top of someone arrives a step to the side.
+whose view would open on top of someone arrives a step to the side. *New in 1.7X:* people who open a play link and
+start playing at the same time arrive apart too: at the spawn or a free spot around it, at least a metre from anyone
+else and never inside a wall. This works on a computer and in VR.
 
 Right-click a person (long-press on touch, <kbd>Shift</kbd>+<kbd>F10</kbd> from the keyboard) for the **peer menu**:
 their profile, Go to, Watch, Mute, Hide — and, for the host or an admin, **Remove from session** and **Remove and
@@ -106,6 +108,51 @@ Or do it by ID: they press **Join…**, type your ID and press **Connect**; the 
 
 To skip the approval card, send an **invite link** instead (**Connect ▸ Invite**, a *Person* or an *AI agent*
 tab): the other side opens it, or pastes it into **Join…**, and it joins in one step with the role you chose, for a limited time. See [Invite people and agents](invites.md).
+
+### Invite link limits
+
+*New in 1.7X.* Each device can have at most **20 invite links that still work**, and can make at most **10 in 10
+minutes**. Past either, no link is made and the Invite sheet says why and when you can make another:
+
+- *You already have 20 invite links that still work. Revoke one in Users ▸ Invites before making another.*
+- *You made 10 invite links in the last 10 minutes. Try again in 4 minutes.*
+
+One invite also lets the same person back in only so often: two quick re-joins (a dropped link, a reload) are fine,
+then one every 30 seconds. They see *You rejoined ‹host›'s session several times in a row. Wait half a minute, then
+try again.*
+
+### Failed invite joins
+
+*New in 1.7X.* An invite link that does not work (expired, revoked, used up, or one this device cannot confirm) never
+lets anyone in by itself, and it no longer turns into an approval card. Every such join is counted in **one row**,
+*3 failed invite joins*, in your notices, the Connect drawer and the approval panel in a headset. So real requests
+always keep their place: a pile of failed invite joins never pushes a real request out of view.
+
+- **Review** lists the recent ones, each with its short id and why it failed. **Let in** beside one lets that person in,
+  as approving a card would.
+- **Dismiss** clears the row.
+
+If more than 10 invite joins fail within a minute, invite joins **pause for 60 seconds**. You get one notice, *Invite
+joins are paused for 60 s*, with **Resume now**. During the pause, anyone who opens an invite link sees why (*‹host›
+has paused invite joins for a minute after too many failed tries. Try again shortly.*) and a **Try again** button.
+Approval cards keep working the whole time.
+
+### Blocking a guest
+
+**Remove and block** keeps that connection out for the rest of the session. A guest who is not signed in can come back
+with a new id, though, so when you, the host, block a guest the notice says so and offers **Require approval to join**.
+
+**Require approval to join** is for this session only. While it is on, nobody joins by themselves: every automatic
+join, a working invite link included, becomes an approval card, and you decide each one.
+
+- The notice confirms it, with **Undo**.
+- The same switch is in **Settings ▸ Connection ▸ Require approval to join**, to turn it on or off at any time.
+- It turns off again when you leave the session.
+- On theprototype.app it also turns on your room's own [Require approval to join](#public-rooms-theprototypeapp)
+  switch, so the Rooms list shows **Request to join**.
+
+Someone who is signed in gets the plain notice instead. To keep an account out of every session you host, use
+[Block this account](account-and-data.md#blocked-people) on theprototype.app.
 
 ### What guests see
 
@@ -263,6 +310,26 @@ When someone joins, their app and yours first agree that they speak the same ses
 
 Each person's app also accepts a generous, bounded amount of messages and data per second from each other person, well above sharing a large file or moving hundreds of objects at once. Anything far beyond that is skipped with one notice, the connection stays up, and the counts are in [Diagnostics](#diagnostics-you-can-copy).
 
+### Limit floods from peers
+
+*New in 1.7X.* **Settings ▸ Connection ▸ Limit floods from peers** sets how much your device takes from one person:
+**Off**, **Normal** (the default) or **Strict**. It ignores edits and chat from someone sending far more than a person
+would. It applies on this device.
+
+- Movement, voice and the scene a joiner is sent are never limited, and neither is the session host.
+- The person sending too fast is told: *You are sending edits very fast, so some did not reach everyone. Slow down for a
+  moment.*
+- The host or an admin sees *‹name› is sending too many edits, so some were ignored.*, with **Remove**.
+
+### Joining a big scene
+
+*New in 1.7X.* Someone who joins a session with a big scene already in it gets the whole scene much faster than before:
+the first objects show almost at once, and the rest follows quickly.
+
+- Hidden objects, such as the template a spawner copies, arrive hidden.
+- Names arrive exactly as written: *Gate zone* stays *Gate zone*.
+- A large model with several materials arrives as one object with all its material slots, as it is on your screen.
+
 ## Smoother movement on a bad connection
 
 *New in 1.44.* Avatars, VR hands, objects being dragged or held, possessed rides and physics bodies travel on a
@@ -309,6 +376,23 @@ Since 1.35 a line that repeats back-to-back is written **once with a count** —
 
 It goes to your clipboard and nowhere else — paste it into a bug report, so a problem arrives with something in it.
 
+## Hide my IP
+
+*New in 1.7X.* A direct connection lets the people in your session see your IP address. To keep it from them, turn on
+**Settings ▸ Privacy ▸ Hide my IP**. New connections then go only through a relay server, so people see the relay's
+address instead of yours.
+
+- The relay and the signaling server still see your address, because they have to reach you.
+- Connections can be a little slower.
+- It is kept on this device, and resetting your settings does not turn it off.
+- A connection that is already open keeps its route. Leave and rejoin to switch it.
+- If no relay server is available, you do not connect at all; a direct connection is never tried while it is on. A
+  connection that fails says so: *Could not connect through a relay server. Hide my IP is on, so no direct connection
+  was tried.*
+
+On theprototype.app the relay is ours. A build with no relay server set up (see the TURN fields
+[below](#choosing-a-signaling-server)) cannot connect while Hide my IP is on.
+
 ## Choosing a signaling server
 
 Which signaling server you use decides *which world you can meet people in* — two people must be on the same server for their invite links to connect. Set this in **Settings ▸ Connection**.
@@ -351,6 +435,8 @@ It carries an **Open Settings** button that jumps straight to **Settings ▸ Con
 | *AB12's session is full (16 people)* | Everyone connects to everyone, so a session has a ceiling. Someone has to leave before another person can join — **Try again** on the toast re-asks. |
 | *Could not reach … — back on your previous peer server.* | **Apply** (or an invite link that names another server) could not open that server, so nothing changed: you are back online on your previous server with the same session id, and your invite link still works — check the host, port and path. |
 | A **red** status dot, and one *Can't reach the peer server — still retrying.* entry in the notification centre | The link to the signaling server has been down for about a minute; the app keeps retrying on its own and never gives up, and the dot turns green or grey again once it is back. Shorter drops — a tab switch, a moment offline — reconnect silently. Your open session keeps going meanwhile. |
+| *‹host› has paused invite joins for a minute after too many failed tries.* | Too many invite links failed at that host in a short time, so invite joins are paused for 60 seconds. Press **Try again** after a moment, or ask the host for a fresh link. See [Failed invite joins](#failed-invite-joins). |
+| *Could not connect through a relay server. Hide my IP is on, so no direct connection was tried.* | [Hide my IP](#hide-my-ip) is on and no relay could be reached. Try again later, or turn it off in **Settings ▸ Privacy**. |
 | *Cannot reach the signaling server - the connection request was not sent.* | You pressed **Connect** while the signaling link is down. Wait for the status dot to stop pulsing, or switch servers in Settings ▸ Connection. |
 
 ## The status page

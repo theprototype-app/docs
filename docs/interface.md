@@ -56,7 +56,8 @@ With a sidebar pinned at full height, the profile menu opens under its button, b
   button beside it).
 - **Your stuff** — **Cloud saves**, **Your games & stats**, and on theprototype.app the community panels (and
   **Staff** for staff accounts).
-- **Account** — your account card, **Sign out** last, and a **Manage** link to **Settings ▸ Account**, where
+- **Account** — your account card, **Download my data** and **Blocked people…** (since 1.7X, see
+  [Your account and data](account-and-data.md)), **Sign out** last, and a **Manage** link to **Settings ▸ Account**, where
   **Sign-in methods**, **Devices** and **Connected apps** live since 1.65 ([Settings ▸ Account](settings.md#account)).
   The phone sheet has the same group. Signed out, this group is **Sign in**:
   *Keep scenes in the cloud and open them on any device.*

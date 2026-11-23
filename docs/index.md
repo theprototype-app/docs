@@ -52,6 +52,24 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.7X — your account and data, rooms you can trust, faster late joins.**
+
+- **Your account and data** (theprototype.app): [Download my data](account-and-data.md#download-my-data) gives you
+  every save, published scene, comment and like in one zip. [Delete your account](account-and-data.md#delete-your-account)
+  in three steps, with 30 days to change your mind. [Settings ▸ Account ▸ Devices](account-and-data.md#where-you-are-signed-in)
+  shows when each device first signed in and has **Sign out everywhere**, a
+  [new device that signs in](account-and-data.md#new-sign-in-emails) sends you an email, and
+  [Blocked people](account-and-data.md#blocked-people) keeps an account out of the sessions you host.
+- **Rooms you can trust**: [Hide my IP](connection.md#hide-my-ip) connects only through a relay;
+  [Limit floods from peers](connection.md#limit-floods-from-peers) ignores someone sending far too many edits or
+  messages; after you block a guest, [Require approval to join](connection.md#blocking-a-guest) makes every join an
+  approval card for the rest of the session. Invite links that do not work fold into
+  [one row](connection.md#failed-invite-joins) and never push a real request out of view, and each device has
+  [invite link limits](connection.md#invite-link-limits).
+- **Faster late joins**: someone who [joins a big scene](connection.md#joining-a-big-scene) gets it much sooner, with
+  hidden objects still hidden, names as written and large models with all their material slots. People who open a
+  play link together [arrive apart](connection.md#who-is-here-the-peers-panel), not inside each other.
+
 **1.74 — games and play.**
 
 - **Game values and game feel**: a [Game Value](nodes/gamevalue.md) node shows the score, a clock, stars or lives in the
