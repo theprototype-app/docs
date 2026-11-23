@@ -100,7 +100,7 @@ off. Search finds *notifications* and every switch by name. **Reset Interface** 
 ## Account
 
 *On theprototype.app.* **Settings ▸ Account** holds your account: its emails, the ways you sign in, your devices,
-your data and the apps you connected. Since 1.7X it has five groups:
+your data and the apps you connected. Since 1.76 it has five groups:
 
 | Group | What it holds |
 |---|---|
@@ -203,7 +203,7 @@ cache uses the older Cache Storage, and where neither exists everything download
 | Sign-in methods · Devices | the profile menu (until 1.64) | **Account ▸ Sign-in methods** and **Account ▸ Devices**, on theprototype.app; see [above](#account) |
 | Connected apps | its own page, **Settings ▸ Connected apps** (until 1.64) | **Account ▸ Connected apps**; see [above](#account) |
 | Show my status | new in 1.65 | **Interface ▸ Show my status** — off by default, this device only: Available, Busy or Away beside your name in People; see [Show my status](people.md#show-my-status) |
-| Hide my IP | new in 1.7X | **Privacy ▸ Hide my IP** — off by default, this device only; see [Hide my IP](connection.md#hide-my-ip) |
-| Limit floods from peers | new in 1.7X | **Connection ▸ Limit floods from peers** — **Off** / **Normal** / **Strict**, this device only; see [Limit floods from peers](connection.md#limit-floods-from-peers) |
-| Require approval to join | new in 1.7X | **Connection ▸ Require approval to join** — this session only, off when you leave; see [Blocking a guest](connection.md#blocking-a-guest) |
-| New sign-in alerts · Your data | new in 1.7X | **Account ▸ Email ▸ New sign-in alerts** and **Account ▸ Your data**, on theprototype.app; see [Your account and data](account-and-data.md) |
+| Hide my IP | new in 1.76 | **Privacy ▸ Hide my IP** — off by default, this device only; see [Hide my IP](connection.md#hide-my-ip) |
+| Limit floods from peers | new in 1.76 | **Connection ▸ Limit floods from peers** — **Off** / **Normal** / **Strict**, this device only; see [Limit floods from peers](connection.md#limit-floods-from-peers) |
+| Require approval to join | new in 1.76 | **Connection ▸ Require approval to join** — this session only, off when you leave; see [Blocking a guest](connection.md#blocking-a-guest) |
+| New sign-in alerts · Your data | new in 1.76 | **Account ▸ Email ▸ New sign-in alerts** and **Account ▸ Your data**, on theprototype.app; see [Your account and data](account-and-data.md) |

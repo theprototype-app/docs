@@ -81,7 +81,7 @@ colour with their initial, ringed in the same colour as their cursor and their s
 **Your name.** When you join a session you are asked what others should call you; the name is remembered on this
 device (**Not now** skips it for this join). Anyone without a name shows as **Guest 1**, **Guest 2**… instead of
 "Peer". A person who joins no longer appears inside your view: an avatar close to your camera fades out, and a joiner
-whose view would open on top of someone arrives a step to the side. *New in 1.7X:* people who open a play link and
+whose view would open on top of someone arrives a step to the side. *New in 1.76:* people who open a play link and
 start playing at the same time arrive apart too: at the spawn or a free spot around it, at least a metre from anyone
 else and never inside a wall. This works on a computer and in VR.
 
@@ -111,7 +111,7 @@ tab): the other side opens it, or pastes it into **Join…**, and it joins in on
 
 ### Invite link limits
 
-*New in 1.7X.* Each device can have at most **20 invite links that still work**, and can make at most **10 in 10
+*New in 1.76.* Each device can have at most **20 invite links that still work**, and can make at most **10 in 10
 minutes**. Past either, no link is made and the Invite sheet says why and when you can make another:
 
 - *You already have 20 invite links that still work. Revoke one in Users ▸ Invites before making another.*
@@ -123,7 +123,7 @@ try again.*
 
 ### Failed invite joins
 
-*New in 1.7X.* An invite link that does not work (expired, revoked, used up, or one this device cannot confirm) never
+*New in 1.76.* An invite link that does not work (expired, revoked, used up, or one this device cannot confirm) never
 lets anyone in by itself, and it no longer turns into an approval card. Every such join is counted in **one row**,
 *3 failed invite joins*, in your notices, the Connect drawer and the approval panel in a headset. So real requests
 always keep their place: a pile of failed invite joins never pushes a real request out of view.
@@ -312,7 +312,7 @@ Each person's app also accepts a generous, bounded amount of messages and data p
 
 ### Limit floods from peers
 
-*New in 1.7X.* **Settings ▸ Connection ▸ Limit floods from peers** sets how much your device takes from one person:
+*New in 1.76.* **Settings ▸ Connection ▸ Limit floods from peers** sets how much your device takes from one person:
 **Off**, **Normal** (the default) or **Strict**. It ignores edits and chat from someone sending far more than a person
 would. It applies on this device.
 
@@ -323,7 +323,7 @@ would. It applies on this device.
 
 ### Joining a big scene
 
-*New in 1.7X.* Someone who joins a session with a big scene already in it gets the whole scene much faster than before:
+*New in 1.76.* Someone who joins a session with a big scene already in it gets the whole scene much faster than before:
 the first objects show almost at once, and the rest follows quickly.
 
 - Hidden objects, such as the template a spawner copies, arrive hidden.
@@ -378,7 +378,7 @@ It goes to your clipboard and nowhere else — paste it into a bug report, so a 
 
 ## Hide my IP
 
-*New in 1.7X.* A direct connection lets the people in your session see your IP address. To keep it from them, turn on
+*New in 1.76.* A direct connection lets the people in your session see your IP address. To keep it from them, turn on
 **Settings ▸ Privacy ▸ Hide my IP**. New connections then go only through a relay server, so people see the relay's
 address instead of yours.
 

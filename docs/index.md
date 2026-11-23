@@ -52,7 +52,7 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
-**1.7X — your account and data, rooms you can trust, faster late joins.**
+**1.76 — your account and data, rooms you can trust, faster late joins.**
 
 - **Your account and data** (theprototype.app): [Download my data](account-and-data.md#download-my-data) gives you
   every save, published scene, comment and like in one zip. [Delete your account](account-and-data.md#delete-your-account)

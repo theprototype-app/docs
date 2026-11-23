@@ -9,7 +9,7 @@ data or delete your account, see [Your account and data](account-and-data.md).
 
 ## Hide my IP
 
-*New in 1.7X.* **Settings ▸ Privacy ▸ Hide my IP** keeps your IP address from the people in your session: new
+*New in 1.76.* **Settings ▸ Privacy ▸ Hide my IP** keeps your IP address from the people in your session: new
 connections go only through a relay server, so they see the relay's address instead of yours. The relay and the
 signaling server still see it. It is off by default and kept on this device. More in
 [Connection](connection.md#hide-my-ip).

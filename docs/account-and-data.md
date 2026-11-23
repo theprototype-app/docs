@@ -8,7 +8,7 @@ get an email when a new device signs in, block people, and delete the account wh
     no accounts, so it has none of it. The site's [privacy page](https://theprototype.app/privacy) says what is kept
     and for how long.
 
-!!! info "New in 1.7X"
+!!! info "New in 1.76"
     Download my data, deleting your account with 30 days to change your mind, Sign out everywhere, new sign-in
     emails and the Blocked people list.
 
