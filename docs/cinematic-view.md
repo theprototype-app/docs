@@ -47,6 +47,9 @@ switch names the ones in your scene:
 - painted terrain layers,
 - jiggle (the object shows, without the wobble).
 
+[Gaussian splats](gaussian-splats.md) (1.75) are not drawn at all while the view is on: they are hidden, and the
+**Not shown in Cinematic view** note names Gaussian splats.
+
 The grid also fades less with distance than in the standard view.
 
 Text shows as in the standard view (since 1.71): 3D text, names over people, ping names and path numbers keep their

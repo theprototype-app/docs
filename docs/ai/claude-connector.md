@@ -149,7 +149,7 @@ exactly what the agent tools of the same job do, with the same limits:
 | family | actions | the agent tools behind them |
 |---|---|---|
 | `create_shape` | `lathe`, `tube`, `extrude`, `mesh`, `import`, `text`, `path` | `create_lathe`, `create_tube`, `extrude_shape`, `create_mesh`, `import_shape`, `create_text` ([Shapes and modelling](agent-geometry.md)), `create_path` ([Paths](../paths.md#for-agents)) |
-| `edit_shape` | `params`, `mesh`, `update`, `duplicate`, `pivot`, `pivot_group` | `set_geometry`, `edit_mesh`, `update_mesh`, `duplicate`, `set_pivot`, `create_pivot` |
+| `edit_shape` | `params`, `mesh`, `update`, `duplicate`, `pivot`, `pivot_group`, `simplify` | `set_geometry`, `edit_mesh`, `update_mesh`, `duplicate`, `set_pivot`, `create_pivot`, `simplify_mesh` |
 | `set_look` | `material`, `list_materials`, `get_material`, `shader`, `edit_shader`, `assign_shader`, `shader_nodes`, `post`, `get_post`, `post_graph`, `unwrap`, `uv`, `quality`, `sky`, `light`, `environment` | `set_material` … `set_uv`, `set_quality` ([Materials and looks](agent-look.md)); `set_sky`, `set_light`, `get_environment` ([HUD, sky and play](agent-scene.md)) |
 | `hud` | `create`, `list`, `update`, `panel` | `create_hud`, `list_hud`, `edit_hud`, `hud_panel` ([HUD, sky and play](agent-scene.md)) |
 | `game_setup` | `spawn`, `play_camera`, `levels`, `portal`, `checkpoint`, `loading` | `place_spawn`, `set_play_camera`, `set_levels`, `set_portal`, `set_checkpoint`, `set_loading` ([HUD, sky and play](agent-scene.md)) |
@@ -193,6 +193,13 @@ Worlds ([Worlds with an agent](agent-world.md)):
 - `assets` `search` finds models, sounds, images and CC0 materials. `place` and `prefab` put them in the scene.
 - `set_look` `material` takes `pattern` (wood, brick, marble …). `create_shape` `mesh` takes `subdivide: 1-2`, and
   `edit_shape` `update` sends a mesh new vertices.
+
+**New in 1.75** — no new tool names, more in the families:
+
+- `create_objects` takes `kind: "decal"`: an image on the surface of the object `on`, aimed by `normal` (or at a
+  `point`), with `image`, `size`, `depth`, `opacity` and `tint` ([Decals](../decals.md#for-agents)).
+- `edit_shape` `simplify` lowers a heavy model's triangle count (`percent` to keep, or `triangles`; `bake: true` for a
+  primitive), in one undo step ([simplify_mesh](agent-geometry.md#simplify_mesh-fewer-triangles)).
 
 **New in 1.64** — no new tool names, more in the families and the nodes:
 
