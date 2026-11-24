@@ -52,6 +52,13 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.78 — faster mesh editing.** [Edit Mesh](mesh-editing.md) runs on a new mesh core: on a 67,000-triangle mesh,
+entering Edit Mesh and undoing are about three times faster, extruding and bevelling an edge about twice as fast, the
+knife about 1.7 times, and dragging faces, edges or vertices stays smooth. [Undo puts your selection back](mesh-editing.md#selecting) after an operation,
+undo history on big meshes holds less memory, [sculpting](terrain.md) is quicker on big meshes and terrain, and
+[merge by distance](mesh-editing.md#clean-up) no longer leaves close pairs apart. Nothing new to learn: the tools,
+buttons and shortcuts are the same.
+
 **1.77 — games feel complete: title screens, pause menus, save slots, gamepads and characters who talk.**
 
 - **Start, pause and save**: a game can open on its own [title screen](make-it-feel-like-a-real-game.md#title-screen);
