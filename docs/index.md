@@ -52,6 +52,20 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.77 — games feel complete: title screens, pause menus, save slots, gamepads and characters who talk.**
+
+- **Start, pause and save**: a game can open on its own [title screen](make-it-feel-like-a-real-game.md#title-screen);
+  the [pause menu](make-it-feel-like-a-real-game.md#pause-menu-and-player-settings) really pauses a game you play alone
+  and keeps each player's settings; [three save slots](make-it-feel-like-a-real-game.md#save-slots) with a picture each;
+  [join requests](make-it-feel-like-a-real-game.md#joining-while-you-play) answered without leaving the game.
+- **Controllers and cameras**: [gamepads play every built-in action](make-it-feel-like-a-real-game.md#controllers-and-remapping)
+  and keys and buttons can be remapped; the Character Controller plays in
+  [third person, as a side-scroller or top-down](make-it-feel-like-a-real-game.md#cameras).
+- **Characters who talk**: the [Dialogue node](make-it-feel-like-a-real-game.md#characters-who-talk) shows lines with
+  the speaker's name and picture, and choices; the new **Starter game** template has all of it.
+- **Games behave the way you expect**: [timers, spawned copies, per-player teams and movement per second](make-it-feel-like-a-real-game.md#games-behave-the-way-you-expect),
+  and NPCs that climb a ledge and jump a gap with the [Navigation](navigation.md) module 1.1.0.
+
 **1.76 — your account and data, rooms you can trust, faster late joins.**
 
 - **Your account and data** (theprototype.app): [Download my data](account-and-data.md#download-my-data) gives you
