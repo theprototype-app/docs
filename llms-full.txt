@@ -13973,7 +13973,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**Get Variable**](https://docs.theprototype.app/nodes/getvariable.md) | Reads a named scene variable as a value - the read side of Set Variable, live on every peer. |
 | [**Store Value**](https://docs.theprototype.app/nodes/storevalue.md) | Saves a value on THIS device when a pulse arrives (set, keep the max or min, or add) - a best score or a level reached that survives a reload; never sent to other players. |
 | [**Stored Value**](https://docs.theprototype.app/nodes/storedvalue.md) | Reads what Store Value saved on this device, as a number or text - the read side of a best score; each player sees their own. |
-| [**Game Value**](https://docs.theprototype.app/nodes/gamevalue.md) | Reads one game value (score, round clock, best, level, stars, lives, a variable, a stored or a published value) and writes it as text - a number, a clock (1:04.2), 3 / 10, a percent or stars - for HUD Text; its value output feeds HUD Bar. |
+| [**Game Value**](https://docs.theprototype.app/nodes/gamevalue.md) | Reads one game value (score, round clock, best, level, stars, lives, a variable, a stored or a published value) and writes it as text - a number, a clock (1:04.2), 3 / 10, a percent or stars - for HUD Text; its value output feeds HUD Bar. For: me shows each player their own entry of a value kept per player (a map keyed by player, such as a behaviour's team or score). |
 | [**Camera Shake**](https://docs.theprototype.app/nodes/camerashake.md) | Shakes the Play camera on a trigger (strength, seconds, frequency) - on this device only, never in VR; who: me = the player who made the pulse, everyone = every player. Reduced motion turns it down. |
 | [**Screen Flash**](https://docs.theprototype.app/nodes/screenflash.md) | Flashes a colour over the screen that fades out (a hit, a pickup) - on this device; who: me or everyone. Reduced motion keeps it faint. |
 | [**Hit Pause**](https://docs.theprototype.app/nodes/hitpause.md) | Holds this device's picture for a few milliseconds on a trigger (a hit-stop). The game, the clock and physics keep running. |
@@ -13994,7 +13994,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 
 | Node | What it does |
 |---|---|
-| [**Character Controller**](https://docs.theprototype.app/nodes/charcontroller.md) | Sets how the player moves in Play - fly or walk, speed, jump and eye height, gravity - driving the player's own view rather than an object (the newest one in the scene wins). |
+| [**Character Controller**](https://docs.theprototype.app/nodes/charcontroller.md) | Sets how the player moves in Play - fly or walk, speed, jump and eye height, gravity - driving the player's own view rather than an object (the newest one in the scene wins). Speed 0.1 = 6 m/s, the same at any frame rate. Camera: first person, third person (behind you; walls pull it in), side-scroller (a locked plane, the view ahead) or top-down (a fixed angle); the wheel zooms the last three and your own avatar is drawn. VR stays first person. |
 | [**Move Input**](https://docs.theprototype.app/nodes/moveinput.md) | This player's WASD keys as two numbers, x (A/D) and y (W/S), each -1 to 1 - read on every device for its own player. |
 | [**Possess Object**](https://docs.theprototype.app/nodes/possessnode.md) | Puts the player in control of the connected object when a pulse arrives - a vehicle, a turret, a ball. W/S (or the left stick) drive it, A/D turn it, Space (or gamepad A) jumps (Jump height; 0 = no jump), Esc hands it back. |
 | [**Camera Follow**](https://docs.theprototype.app/nodes/camerafollow.md) | On a pulse, the camera flies behind the target object and follows it until stop is pulsed - for an object something else moves (the sim, a clip). |
@@ -14009,12 +14009,13 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**HUD Bar**](https://docs.theprototype.app/nodes/hudbar.md) | Drives a HUD bar element's fill from a number - health, fuel, progress. |
 | [**HUD Button**](https://docs.theprototype.app/nodes/hudbutton.md) | Fires a pulse when a HUD button is pressed - the on-screen counterpart of On Click. |
 | [**Show / Hide Element**](https://docs.theprototype.app/nodes/hudvisible.md) | Shows, hides or toggles ONE HUD element on a trigger, or follows a wired visible value (above 0 = shown) - per player, like a screen. |
-| [**HUD Timer**](https://docs.theprototype.app/nodes/hudtimer.md) | Counts down in a HUD Timer element from its duration, formatted like '{v}s' - by itself (Autostart) or from a pulse into start. |
+| [**HUD Timer**](https://docs.theprototype.app/nodes/hudtimer.md) | Counts down in a HUD Timer element from its duration, formatted like '{v}s' - by itself (Autostart: from the round's start, or from Play when the game has no rounds; it waits in the editor) or from a pulse into start. A pause stops it. |
 | [**HUD List**](https://docs.theprototype.app/nodes/hudlist.md) | Names a HUD List element and sets its title and how many rows it shows; HUD Rows and Leaderboard fill it. |
 | [**HUD Rows**](https://docs.theprototype.app/nodes/hudrows.md) | Sets, appends or clears the rows of a HUD List element on each pulse - a log, a chat, a scoreboard feed. |
 | [**Leaderboard**](https://docs.theprototype.app/nodes/leaderboard.md) | Ranks the players by their own per-player variable (laps, score) into a HUD List element, highest or lowest first, top N rows. |
 | [**HUD Input**](https://docs.theprototype.app/nodes/hudinput.md) | Reads a HUD control as a value - a slider's number, a toggle's on/off, a dropdown's or tabs' choice, a text field's text. |
 | [**HUD Set Input**](https://docs.theprototype.app/nodes/hudset.md) | Writes a value into a HUD input element when a pulse arrives - to prefill, clear or correct it. |
+| [**Dialogue**](https://docs.theprototype.app/nodes/dialogue.md) | A conversation in a box at the bottom of the player's screen (a panel in VR): lines as 'Speaker: text', choices as '> text [set name = 1] -> part', parts as '# part'. Only the player who started it sees it; it pulses when the talk ends. |
 
 ## Logic
 
@@ -16991,6 +16992,51 @@ A press log:
 
 ![A HUD Button wired into the trigger of a HUD Rows node set to append the row "Bell rung" to a list](https://docs.theprototype.app/img/nodes-hudrows/hudrows.webp)
 *Figure: Each press adds a row to the list.*
+
+
+---
+
+Source: https://docs.theprototype.app/nodes/dialogue/ (Markdown: https://docs.theprototype.app/nodes/dialogue.md)
+
+# Dialogue
+
+A conversation in a box at the bottom of the player's screen, or a panel in VR: lines with a speaker,
+choices that set a variable or jump to another part. Only the player who started it sees it.
+
+**Output:** event (pulses when the talk ends)
+
+## Inputs
+
+| Input | Takes |
+|---|---|
+| start | a pulse (On Click, Key Press, HUD Button), or a value turning on (Proximity to the player) |
+| stop | a pulse: closes the open talk without the end pulse |
+
+## Parameters
+
+| Parameter | Default | What it does |
+|---|---|---|
+| script | `Guide: Hello there!` | the lines, one per row (see below) |
+| who | me | me = only the player who started it; everyone = every player gets their own copy |
+| choices set | shared | shared = the game variable; player = each player's own |
+
+## The script
+
+| Row | Means |
+|---|---|
+| `Old Man: Welcome!` | a line said by Old Man |
+| `The wind howls.` | a line with no speaker |
+| `> Yes [set helping = 1] -> yes` | a choice for the line above: sets helping to 1, jumps to `# yes` |
+| `# yes` | a part; the talk starts at the top and a part ends at the next `#` |
+| `[set gold += 5]` | changes a variable when the talk gets here |
+| `-> end` | finishes the talk |
+| `@portrait Old Man = old-man.png` | Old Man's picture (a Library image) |
+| `// note` | a comment |
+
+## Practical example
+
+**Proximity** (to: player, radius 2.5) on a character into **Dialogue** start, and the Dialogue's output
+into **Visibility** on a hidden key: walk up, talk, and the key appears when the talk ends.
 
 
 ---
@@ -22293,6 +22339,212 @@ portal at the end of each one"*. It uses the **game_setup** actions `levels`, `p
 
 **Templates ▸ Two levels and a portal** is a small game with a courtyard, a tower top, a portal each way, a checkpoint
 and a score that carries across.
+
+
+---
+
+Source: https://docs.theprototype.app/make-it-feel-like-a-real-game/ (Markdown: https://docs.theprototype.app/make-it-feel-like-a-real-game.md)
+
+# Make it feel like a real game
+
+*New in 1.77.0.* A scene becomes a game when it starts like one, stops like one and talks to its players. This
+page covers the pieces players expect. None of them needs code.
+
+| Players expect | Where you make it |
+|---|---|
+| A **title screen** with Continue / Play / Settings | Configure Scene ▸ **Game menus** |
+| A **pause menu** that really pauses, and **player settings** | Configure Scene ▸ **Game menus** |
+| **Save slots** they can come back to | Configure Scene ▸ **Game menus** |
+| Letting friends **join while you play** | the pause menu's **Join requests**, or **Auto-admit while playing** |
+| A **gamepad** that just works, and **keys they can remap** | built in; the pause menu ▸ Accessibility ▸ Controls |
+| A **camera** that suits the game: third person, side-scroller, top-down | the **Character Controller** node ▸ camera |
+| Characters who **talk**, with **choices** | the **Dialogue** node |
+
+!!! tip "Start from the template"
+    New scene ▸ Templates ▸ **Starter game** has all of it wired: a title screen, a pause menu, save slots, a
+    gamepad-ready third-person camera and a character who talks. Play it, then change it.
+
+## Title screen
+
+Your game can open on its own start screen: its name, a subtitle and the buttons **Continue · Play** (or **New game**)
+**· Load game · Settings · Quit to editor**. Behind it is your scene (dimmed), a plain colour or a picture from your
+Library.
+
+![The Beacon's title screen over the dimmed scene: the title, the subtitle A starter game and the buttons Play, Settings and Quit to editor. 1: Play starts the game.](https://docs.theprototype.app/img/make-it-feel-like-a-real-game/title-screen.webp)
+*Figure: The title screen, when you press Play.*
+
+1. **Play** starts a new game in the first empty slot.
+
+- **Turn it on:** Configure Scene ▸ **Game menus** ▸ Title screen. Set the title, the subtitle and the background.
+  **Show it when I press Play here** decides whether editor Play opens on it too.
+- **Play links and exported games** always open on the title screen when the game has one. Its Play button starts
+  the game (and full screen, when the export asks for it).
+- **Continue** loads the newest save. **Play** starts a new game in the first empty slot; with all three full, it asks
+  which one to replace.
+- The first time you turn a title screen on, a hint offers to try it.
+- **In a headset** the title screen is skipped for now: VR Play starts the game straight away, as **Play** would (in
+  the first empty slot; with all three full it plays without saving over one), and the headset's menu has no *Quit to
+  title*. Leave VR and the next Play opens on the title again. On a headset's browser, a play link's title screen offers **Enter VR**.
+
+![Configure Scene's Game menus section with Title screen on (title The Beacon, subtitle A starter game, the scene as the background, Show it when I press Play here), The menu pauses the game, Three save slots and Auto-admit while playing. 1: the title screen settings. 2: the save slots switch.](https://docs.theprototype.app/img/make-it-feel-like-a-real-game/game-menus-section.webp)
+*Figure: Configure Scene ▸ Game menus.*
+
+1. The **title screen**: its title, subtitle and background.
+2. **Three save slots**: adds Save game and Load game to the pause menu, and Continue to the title.
+
+## Pause menu and player settings
+
+**Esc**, a gamepad's **Start** or the **Menu** button opens the pause menu.
+
+- **It pauses.** While it is open the game holds still (physics, timers, the round clock) and the sound dips. It only
+  pauses when nobody else is playing: in a shared game the others keep playing, and the menu says so. You can switch
+  the pause off in Game menus.
+- **New rows:** Restart level (in a game with a Levels table), Save game, Load game, Join requests, Quit to title.
+- **Settings** has the player's own settings: music and effects volume, **Look speed**, **Invert look**,
+  **Subtitles**, **Reduced motion** (this device), quality, and **Controller vibration** in VR. They are saved per game on this
+  device.
+- A game made before this release keeps its old menu (no pause, no title screen) until you turn the game menus on.
+
+## Save slots
+
+Turn on **Three save slots** in Game menus. The pause menu gains **Save game** and **Load game**, and the title screen
+gains **Continue**.
+
+- Each slot shows its name, when it was saved, the level and a small picture.
+- Saving over a slot or deleting one asks first.
+- A **Checkpoint** saves into the slot you are playing.
+- A save made by a newer version of the app is shown but cannot be loaded ("Made with a newer version").
+- Saves are kept on the player's device; an exported game keeps them in that browser. Cloud saves are not part of
+  this release.
+
+## Joining while you play
+
+When someone asks to join while you host and play, a small card appears over the game. Press **Esc** (or **Start**)
+and pick **Join requests** to let them in or say no, without leaving the game. The game keeps running for everyone.
+
+**Auto-admit while playing** (Game menus) lets people in by itself while you host and play, and says who came in. AI
+agents and people you blocked always ask, even with it on, and so does everyone while **Require approval to join**
+(Settings ▸ Connection) is on.
+
+## Controllers and remapping
+
+A standard gamepad plays every built-in action:
+
+| Action | Pad |
+|---|---|
+| Move / look | left stick / right stick |
+| Jump | A |
+| Use, click | X |
+| Fire / grab | RT / LT |
+| Crouch / sprint | B / L3 |
+| Reload | Y |
+| Fly up / down | RB / LB |
+| Menu | Start |
+
+A button that a **Gamepad Button** node uses belongs to that game instead. **Move Input** reads the left stick too.
+
+- **Prompts follow the device you used last.** The Playing banner, How to play, HUD key hints and the dialogue box
+  show your pad's own buttons (PlayStation shapes, Xbox letters, Nintendo letters) or your keyboard key.
+- **Remap:** pause menu ▸ **Accessibility ▸ Controls** lists the keys and the pad buttons. Pick a row and press the
+  new key or button; Esc cancels. When the new one belongs to another action, the two swap and the page says so
+  ("Jump took Circle; Crouch moved to Cross"). **Reset controls** puts them back.
+- Quest controllers keep their own mapping.
+
+## Cameras
+
+On the scene's **Character Controller** node (Logic ▸ Character), **camera** picks the view. Agents use
+`game_setup {play_camera}` with `mode: "third" | "side" | "top"`.
+
+- **first** (the default): through the player's eyes.
+- **third**: the camera sits behind you (distance, height) and looks where you look. A wall between you and the camera
+  pulls it in (switch that off with **collide**). Your own avatar is drawn where you stand.
+- **side**: a side-scroller. A / D (or the stick) walk left and right along the plane you started on, Space jumps, and
+  the view leads the way you face by **lookAhead** metres.
+- **top**: top-down at a fixed **angle** (90 = straight down). W walks up the screen, and the player turns to face
+  where it walks.
+- The mouse wheel zooms the third, side and top views between **minZoom** and **maxZoom**. Each view's rows show on
+  the node only when that view is picked.
+- Limits: VR stays first person (comfort). A possessed object or an active scene camera draws instead.
+
+## Characters who talk
+
+Give any object a conversation: a shopkeeper, a sign, a door that answers back. Its lines show in a box at the bottom
+of the screen with the speaker's name, and their picture if you set one. In a headset they show on a panel that stays
+put in the world, above the speaker. **Only the player who started the talk sees it**: two players can talk to the
+same character at once, each in their own box.
+
+- **Make one.** Select the object, open the **Node editor** (it shows that object's own flow) and add **HUD ▸
+  Dialogue**. Wire a **Proximity** (to: player) into its **start** so it opens when someone walks up, or an **On
+  Click** so it opens when they click (tap on a phone, point the laser in VR).
+- **Write the lines** in the node's text box, one per row:
+
+  ```text
+  Old Man: Welcome, traveller!
+  Old Man: Will you find my cat?
+  > Yes, I will. [set helping = 1] -> yes
+  > Not today. -> no
+  # yes
+  Old Man: Thank you! It went north.
+  # no
+  Old Man: Maybe another time.
+  ```
+
+  `Speaker: text` is a line; a line with no `Name:` is narration. `> text` is a choice for the line above it.
+  `[set name = 1]` (also `+= 2`, `-= 1`, `[toggle name]`, `= "text"`) changes a variable when that choice is picked;
+  on a row of its own it runs when the talk reaches it. `-> part` jumps to the part that starts with `# part`, and
+  `-> end` finishes. `{name}` in a line shows a variable's value ("You have {gold} gold."). `@portrait Old Man =
+  old-man.png` gives a speaker a picture from your Library.
+- **Playing it.** **E**, **Enter**, **Space**, a click or tap, or gamepad **A** continues. The first press while a
+  line is still typing shows the whole line. Pick a choice with **1-9**, the arrow keys or the D-pad, or click it. The
+  player stands still while the box is open. In VR, either trigger continues and either stick moves between choices.
+  Reduced motion shows each line whole at once, and the HUD text-size setting makes the box bigger.
+
+![A dialogue box at the bottom of the game, in a small window: the speaker Old Man, the line Will you help me find my cat? and two choices, 1 Yes, I will. and 2 Not today. 1: the speaker. 2: the choices.](https://docs.theprototype.app/img/make-it-feel-like-a-real-game/dialogue-choices.webp)
+*Figure: A talk with two choices, in a small window.*
+
+1. The **speaker**, from `Old Man:` in the lines.
+2. The **choices**: press 1 or 2, or click one.
+
+- **What it changes.** **choices set** picks where a choice's `[set ...]` goes: **shared** (the default) is the
+  game's variable, the same for everyone; **player** gives each player their own value. The node's output pulses
+  when the talk ends: wire it on to open a door, give an item or start the next quest.
+- **Who sees it.** Set **who** to **everyone** to show every player their own copy when a click or key starts it.
+  With a Proximity, it is always whoever walked up.
+- Limits: one talk open at a time on a device (a new one replaces it); up to 200 rows and 6 choices a line, at most
+  4000 characters. Leaving Play closes it. Voice-over comes later.
+
+See the [Dialogue node](https://docs.theprototype.app/nodes/dialogue.md).
+
+## Games behave the way you expect
+
+- **Timers start with the game.** A HUD Timer set to Autostart counts down from the moment the round starts (or, in a
+  game with no rounds, from when you press Play). Pausing the game stops every HUD Timer, and a player who joins late
+  sees the same time as everyone else.
+- **Spawned copies act like the original.** Give the template object its own flow (On Click, On Hover, On Grab, On
+  Enter / On Exit, On Hit) and every copy a Spawn node or a kit spawner makes reacts to its own clicks and touches,
+  with "this object" meaning that copy.
+- **Each player sees their own team and score.** A behaviour hears players arrive and leave
+  (`playerJoined({ by })`, `playerLeft({ by })`, `this.players()`); a **Game Value** node with **For: me** shows each
+  person their own entry.
+- **Movement is per second.** Walking, flying, the gamepad and touch stick, the VR edit stick, kit enemies and
+  possessed objects cover the same distance at 30, 60, 90 or 120 Hz. Scenes made before keep the speed they had at
+  60 Hz.
+- **NPCs climb and jump** (the Navigation module). On the scene's **Navmesh** node, **Ledge** is the highest ledge NPCs
+  climb (0-3 m) and **Jump** is the widest gap they jump across (0-4 m). Both are off by default, so a navmesh baked
+  before stays as it was.
+
+## For agents
+
+`game_setup` gains `title`, `pause`, `saves` and `dialogue`, and `play_camera` gains the `third`, `side` and `top`
+modes:
+
+- `{action: 'title', title: 'My game', subtitle: 'Press Play', background: 'scene' | 'color' | 'image'}`
+  (`clear: true` removes it)
+- `{action: 'pause', pauses: true, autoAdmit: false}`
+- `{action: 'saves', on: true}`
+- `{action: 'dialogue', object: 'Guide', lines: '...'}` (only `object` reads the talk back)
+
+Nothing new is saved for scenes that do not use these.
 
 
 ---

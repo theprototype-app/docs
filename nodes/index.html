@@ -3816,6 +3816,27 @@
   
   
     <li class="md-nav__item">
+      <a href="dialogue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dialogue
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="leaderboard/" class="md-nav__link">
         
   
@@ -6232,6 +6253,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../make-it-feel-like-a-real-game/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Make It Feel Like a Real Game
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../starter-recipes/" class="md-nav__link">
         
   
@@ -7641,7 +7683,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 </tr>
 <tr>
 <td><a href="gamevalue/"><strong>Game Value</strong></a></td>
-<td>Reads one game value (score, round clock, best, level, stars, lives, a variable, a stored or a published value) and writes it as text - a number, a clock (1:04.2), 3 / 10, a percent or stars - for HUD Text; its value output feeds HUD Bar.</td>
+<td>Reads one game value (score, round clock, best, level, stars, lives, a variable, a stored or a published value) and writes it as text - a number, a clock (1:04.2), 3 / 10, a percent or stars - for HUD Text; its value output feeds HUD Bar. For: me shows each player their own entry of a value kept per player (a map keyed by player, such as a behaviour's team or score).</td>
 </tr>
 <tr>
 <td><a href="camerashake/"><strong>Camera Shake</strong></a></td>
@@ -7716,7 +7758,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 <tbody>
 <tr>
 <td><a href="charcontroller/"><strong>Character Controller</strong></a></td>
-<td>Sets how the player moves in Play - fly or walk, speed, jump and eye height, gravity - driving the player's own view rather than an object (the newest one in the scene wins).</td>
+<td>Sets how the player moves in Play - fly or walk, speed, jump and eye height, gravity - driving the player's own view rather than an object (the newest one in the scene wins). Speed 0.1 = 6 m/s, the same at any frame rate. Camera: first person, third person (behind you; walls pull it in), side-scroller (a locked plane, the view ahead) or top-down (a fixed angle); the wheel zooms the last three and your own avatar is drawn. VR stays first person.</td>
 </tr>
 <tr>
 <td><a href="moveinput/"><strong>Move Input</strong></a></td>
@@ -7767,7 +7809,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 </tr>
 <tr>
 <td><a href="hudtimer/"><strong>HUD Timer</strong></a></td>
-<td>Counts down in a HUD Timer element from its duration, formatted like '{v}s' - by itself (Autostart) or from a pulse into start.</td>
+<td>Counts down in a HUD Timer element from its duration, formatted like '{v}s' - by itself (Autostart: from the round's start, or from Play when the game has no rounds; it waits in the editor) or from a pulse into start. A pause stops it.</td>
 </tr>
 <tr>
 <td><a href="hudlist/"><strong>HUD List</strong></a></td>
@@ -7788,6 +7830,10 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 <tr>
 <td><a href="hudset/"><strong>HUD Set Input</strong></a></td>
 <td>Writes a value into a HUD input element when a pulse arrives - to prefill, clear or correct it.</td>
+</tr>
+<tr>
+<td><a href="dialogue/"><strong>Dialogue</strong></a></td>
+<td>A conversation in a box at the bottom of the player's screen (a panel in VR): lines as 'Speaker: text', choices as '&gt; text [set name = 1] -&gt; part', parts as '# part'. Only the player who started it sees it; it pulses when the talk ends.</td>
 </tr>
 </tbody>
 </table>
