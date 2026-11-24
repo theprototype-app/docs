@@ -1494,6 +1494,39 @@
    "app": "1.72.0",
    "shotAt": "2026-11-21T16:48:44.472Z"
   },
+  "img/make-it-feel-like-a-real-game/dialogue-choices.webp": {
+   "page": "make-it-feel-like-a-real-game",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 684,
+   "height": 206,
+   "badges": 2,
+   "labels": [],
+   "app": "1.75.0",
+   "shotAt": "2026-11-23T16:24:19.205Z"
+  },
+  "img/make-it-feel-like-a-real-game/game-menus-section.webp": {
+   "page": "make-it-feel-like-a-real-game",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 329,
+   "height": 648,
+   "badges": 2,
+   "labels": [],
+   "app": "1.75.0",
+   "shotAt": "2026-11-23T16:21:11.265Z"
+  },
+  "img/make-it-feel-like-a-real-game/title-screen.webp": {
+   "page": "make-it-feel-like-a-real-game",
+   "kind": "ui",
+   "dpr": 2,
+   "width": 536,
+   "height": 417,
+   "badges": 1,
+   "labels": [],
+   "app": "1.75.0",
+   "shotAt": "2026-11-23T16:21:30.162Z"
+  },
   "img/materials/maps.webp": {
    "page": "materials",
    "kind": "ui",
