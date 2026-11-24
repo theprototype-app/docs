@@ -59,6 +59,8 @@ Each mode remembers its own selection, so you can hop between them without losin
 
 Selections are **undoable** too — <kbd>Ctrl</kbd>+<kbd>Z</kbd> steps back through your picks without touching the geometry, and a selection step can never push a real edit off the undo stack.
 
+Undoing an **operation** puts back the selection you had just before it, so <kbd>Ctrl</kbd>+<kbd>Z</kbd> after an extrude or a bevel leaves you where you were, ready to try again; redo brings back the operation and its own pick.
+
 ### Pick granularity (faces)
 
 In face mode, a **granularity** switch decides how much one click picks up:
@@ -318,7 +320,7 @@ The *Cleanup* and *Symmetry* sections act on the whole object, not on your selec
 | Command | What it does |
 |---|---|
 | **Recalculate normals** | Rewind every face to point outward — the cure for patches that render dark or inside-out. |
-| **Merge by distance** | Collapse vertices closer than the given distance into one and drop the faces that go degenerate. |
+| **Merge by distance** | Collapse vertices closer than the given distance into one and drop the faces that go degenerate. Each vertex joins the first one within the distance, wherever it sits, so two close points are never left apart. |
 | **Smooth / Flat** | Switch the mesh between smooth and faceted shading. |
 | **Triangulate** | Break every face down into plain triangles. |
 | **Tris to quads** | Pair triangles back up into quads — the loop tools work in quads, so this is how you make an imported triangle soup workable again. |
@@ -444,3 +446,7 @@ Three separate limits, and they are different questions:
 | **Edit Mesh entry** (2500 triangles) | How dense a mesh may be before the session refuses to open, so the interaction stays responsive. Raise it in **Settings ▸ VR** if your machine can take it. |
 
 All three come from measurement rather than caution: the numbers are what the wire, the frame budget and memory actually stood up to.
+
+Big meshes stay quick: since 1.78 the operators run on a mesh core built for it, and dragging faces, edges or vertices
+updates a dense mesh in place, so a 67,000-triangle model follows the pointer. The very first operation after you enter
+Edit Mesh may ask you to try again in a moment while the mesh tools finish loading in the background.
