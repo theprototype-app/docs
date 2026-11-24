@@ -131,7 +131,7 @@ Icons are for tools; commands that act immediately read as words. Whichever tool
 | **Extrude** | *distance*, and **individual** — extrude each face along its own normal instead of the selection's average |
 | **Inset** | *amount*, plus a *depth* that raises or lowers the cap as it goes in |
 | **Bevel** | *width* (in world units), *segments*, *profile* — and the direction, in or out |
-| **Loop cut** | *cuts*, *position* along the ring, and which of the two directions to run — **Along** or **Across** |
+| **Loop cut** | *cuts*, *position* along the ring, and which of the two directions to run — **Along** or **Across**. Drag the value to preview where the cut lands; it cuts when you let go. Typing a value cuts straight away. |
 | **Bridge** | *cuts* across the tunnel, *twist* to rotate one end against the other, and **invert faces** if the walls end up the wrong way round |
 | **Subdivide** | *levels* — each one splits every quad 2×2 again; **smooth** (Catmull-Clark, levels 1-3) |
 | **Bisect** | **clear** none / inner / outer, and **fill** |
