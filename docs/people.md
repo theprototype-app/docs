@@ -61,6 +61,11 @@ character** and **Copy peer id**. On theprototype.app, **Report…** sits at the
 this session — they see "You were removed from this session". Blocked people are listed in the Connected panel with
 **Allow back**.
 
+A guest who is not signed in can come back with a new id. *New in 1.76:* the notice after **Remove and block** then
+offers **Require approval to join** for the rest of the session; see [Blocking a guest](connection.md#blocking-a-guest).
+On theprototype.app, **Block this account…** keeps a signed-in person out of every session you host; see
+[Blocked people](account-and-data.md#blocked-people).
+
 **Who can remove:**
 
 | build | who |

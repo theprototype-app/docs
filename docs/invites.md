@@ -77,8 +77,11 @@ may do: an agent that hides it is just a guest, view-only like any other.
   live check to join.
 - **The real risk is a link forwarded on.** Single use, a short expiry, the "used by" line, **Revoke** and
   View-by-default for people are what limit it.
-- No valid proof means no automatic entry, ever: a wrong, reused, expired or revoked invite lands on the normal
-  approval card, saying why.
+- No valid proof means no automatic entry, ever. Since 1.76 a wrong, reused, expired or revoked invite is counted in
+  one [failed invite joins](connection.md#failed-invite-joins) row, saying why, where you can still **Let in** someone
+  you expected.
+- A device keeps at most 20 invite links that still work and makes at most 10 in 10 minutes; see
+  [Invite link limits](connection.md#invite-link-limits).
 
 A [room code](connection.md#public-rooms-theprototypeapp) stays the long-lived key for a group; invites are per person
 and short-lived.
