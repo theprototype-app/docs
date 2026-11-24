@@ -52,6 +52,33 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.79 — hands-on editing: keymaps, new gizmos, touch feedback, material slots and scene shadows.**
+
+- **Keyboard and gizmo**: [keymap presets](controls.md#keymap-presets) (ThePrototype, Blender style, Unity / Maya
+  style); [Move now, Rotate now, Resize now](controls.md#move-now-rotate-now-resize-now) with axis locks and typed
+  numbers, in the 3D view, the UV editor and Edit Mesh; Fly with WASD and Fly direction; and
+  [new gizmo styles](controls.md#gizmo-styles) — with a mouse you now get **All in one**, on a touch screen the
+  **Touch puck** (Settings ▸ Scene ▸ Gizmo picks **Separate** for the classic one). Press a tool again to step its
+  handles; press a tool button and drag to transform at once.
+- **Painting and the UV editor**: [pen pressure](uv-editor.md#pen-pressure) tints with Opacity and gains Size +
+  opacity, brushes gain [Spacing and Smoothing](uv-editor.md#spacing-and-smoothing), and
+  [fingers](uv-editor.md#touch) pinch, pan and never leave a stray dot. In the UV editor
+  **Shift-drag box-selects** now (it used to pan) and Space-drag pans with any tool.
+- **Touch feedback and vibration**: phones give a light [touch of feedback](touch-controls.md#touch-feedback) on
+  sliders, switches and snaps (it replaces Haptic tick), and games [vibrate gamepads and Android
+  phones](make-it-feel-like-a-real-game.md#vibration) with the new [Vibrate](nodes/vibrate.md) node.
+- **Around the 3D view**: one [Preview pill](cinematic-view.md#the-preview-pill) replaces the Cinematic switch and
+  the budget chip, with new [Draw as](camera.md#draw-as-modes-for-checking-a-model) modes for checking a model and
+  Judge for several devices at once; the [controls line up](interface.md#the-hud-grid) on one grid.
+- **Materials and textures**: [material slots you can manage](materials.md#material-slots), Switch material… with
+  linked materials, a [node shader per slot](shader-graph.md#one-slot-or-all-slots),
+  [textures from the Explorer](materials.md#textures-from-the-explorer) and [noise](image-editor.md#noise) in the
+  Image editor.
+- **Shadows**: [shadow quality per scene](camera.md#shadow-quality) (Off, Basic, Soft, Far), and the Cinematic view's
+  [Reflections and Global light](cinematic-view.md#reflections-and-global-light) switches.
+- **Faster start**: the code-behaviour runtime loads only when a scene has a behaviour or an agent is used, about 52 KB
+  less before the first frame.
+
 **1.78 — faster mesh editing.** [Edit Mesh](mesh-editing.md) runs on a new mesh core: on a 67,000-triangle mesh,
 entering Edit Mesh and undoing are about three times faster, extruding and bevelling an edge about twice as fast, the
 knife about 1.7 times, and dragging faces, edges or vertices stays smooth. [Undo puts your selection back](mesh-editing.md#selecting) after an operation,
@@ -437,7 +464,7 @@ offers **Keep original only**. **Settings ▸ Import** holds the defaults, a fil
 settings** and **Reimport**, and **Configure Scene ▸ Level of detail** sets one [LOD distance](lod.md#the-scenes-lod-distance)
 for the whole scene. Exports get [**Optimize for: For Quest / web**](publish-export.md#optimize-for-quest-web) — a GLTF
 becomes a compact `.glb`, a Scene keeps its format with compressed textures and LOD chains. A
-[budget chip](performance.md#the-budget-chip-will-it-fit-on-a-quest) beside the toolbar says whether the scene fits a
+[budget chip](performance.md#judge-for-will-it-fit-on-a-quest) beside the toolbar says whether the scene fits a
 Quest, a phone or a desktop, and **Statistics ▸ Budget** lists the heaviest objects with what optimizing them would save.
 [HEIC / HEIF photos](explorer.md#heic-heif-photos) import as images and textures, and [Race](race.md#in-vr) keeps its
 shadows in VR — inside the Quest budget.

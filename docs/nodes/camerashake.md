@@ -18,6 +18,7 @@ Shakes the Play camera for a moment: a hit, a landing, an explosion. *Since 1.74
 | seconds | 0.35 | 0.05 to 3 — how long it lasts |
 | frequency | 18 | 2 to 40 — how fast it shakes |
 | who | me | `me` = only the player whose press or hit made the pulse; `everyone` = every player |
+| vibrate | on | *since 1.79*: also gives a short [vibration](vibrate.md) on a gamepad or an Android phone (and the VR controllers), for the same players; switch it off for no buzz |
 
 ## Where it shows
 
