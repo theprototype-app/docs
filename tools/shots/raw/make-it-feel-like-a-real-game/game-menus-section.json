@@ -1,0 +1,51 @@
+{
+ "id": "game-menus-section",
+ "spec": "669c7e79e37c",
+ "dpr": 2,
+ "shotAt": "2026-11-23T16:21:11.265Z",
+ "app": {
+  "version": "1.75.0",
+  "sha": "b32114a3"
+ },
+ "uiHits": [
+  "div#inspector.tp-ui",
+  "svg.lucide",
+  "label#game-menus-title-label.it-label",
+  "div.flex",
+  "label#game-menus-pause-label.it-label",
+  "p.text-[length:var(--fs-desc)]",
+  "label#game-menus-saves-label.it-label",
+  "label#game-menus-auto-admit-label.it-label",
+  "button#game-menus-reset.tp-ui",
+  "button.sec-panel-head",
+  "label.flex",
+  "span.w-20"
+ ],
+ "width": 658,
+ "height": 1296,
+ "crop": {
+  "x": 1111,
+  "y": 173,
+  "w": 329,
+  "h": 648
+ },
+ "cut": [
+  "r"
+ ],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 550,
+   "y": 59.9375,
+   "w": 80,
+   "h": 48
+  },
+  "2": {
+   "x": 550,
+   "y": 791.9375,
+   "w": 80,
+   "h": 48
+  }
+ },
+ "kind": "ui"
+}

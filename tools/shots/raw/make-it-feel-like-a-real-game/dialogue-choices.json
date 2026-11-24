@@ -1,0 +1,44 @@
+{
+ "id": "dialogue-choices",
+ "spec": "6deff6a09277",
+ "dpr": 2,
+ "shotAt": "2026-11-23T16:24:19.205Z",
+ "app": {
+  "version": "1.75.0",
+  "sha": "b32114a3"
+ },
+ "uiHits": [
+  "button.dialogue-body",
+  "div#dialogue-box.dialogue-box",
+  "button.dialogue-choice",
+  "span.dialogue-key",
+  "span.dialogue-speaker",
+  "span.dialogue-words",
+  "span.dialogue-text"
+ ],
+ "width": 1368,
+ "height": 412,
+ "crop": {
+  "x": 2,
+  "y": 384,
+  "w": 684,
+  "h": 206
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 62,
+   "y": 62,
+   "w": 365.59375,
+   "h": 42
+  },
+  "2": {
+   "x": 28,
+   "y": 220,
+   "w": 1312,
+   "h": 164
+  }
+ },
+ "kind": "ui"
+}

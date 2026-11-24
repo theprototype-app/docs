@@ -152,6 +152,7 @@ nav:
         - HUD Timer: nodes/hudtimer.md
         - HUD List: nodes/hudlist.md
         - HUD Rows: nodes/hudrows.md
+        - Dialogue: nodes/dialogue.md
         - Leaderboard: nodes/leaderboard.md
         - HUD Input: nodes/hudinput.md
         - HUD Set Input: nodes/hudset.md
@@ -258,6 +259,7 @@ nav:
     - Game Rules on the Main Graph: game-rules.md
     - Build a Game Loop: build-a-game.md
     - Levels and Progress: levels-and-progress.md
+    - Make It Feel Like a Real Game: make-it-feel-like-a-real-game.md
     - Starter Recipes: starter-recipes.md
     - "Recipe: a door you click": recipe-door.md
     - "Recipe: a walk-up door": recipe-walk-up-door.md

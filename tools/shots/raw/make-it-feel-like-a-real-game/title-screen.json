@@ -1,0 +1,37 @@
+{
+ "id": "title-screen",
+ "spec": "3aa411ffc6f2",
+ "dpr": 2,
+ "shotAt": "2026-11-23T16:21:30.162Z",
+ "app": {
+  "version": "1.75.0",
+  "sha": "b32114a3"
+ },
+ "uiHits": [
+  "div#game-title-screen.ts-screen",
+  "div.ts-card",
+  "button.ts-btn",
+  "div.ts-buttons",
+  "h1.ts-title",
+  "p.ts-sub"
+ ],
+ "width": 1072,
+ "height": 834,
+ "crop": {
+  "x": 452,
+  "y": 242,
+  "w": 536,
+  "h": 417
+ },
+ "cut": [],
+ "fade": [],
+ "anchors": {
+  "1": {
+   "x": 146,
+   "y": 354.6875,
+   "w": 780,
+   "h": 103
+  }
+ },
+ "kind": "ui"
+}
