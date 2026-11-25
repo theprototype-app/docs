@@ -52,7 +52,7 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
-**1.7X — AI apps in your scene, and your room in VR.**
+**1.81 — AI apps in your scene, and your room in VR.**
 
 - **Use theprototype from ChatGPT and other AI apps**: the same connector works in Claude, ChatGPT, Gemini CLI, VS Code
   and Cursor. [Settings ▸ AI](tools-and-connections.md) now has two cards, one for AI apps that work in your scene and

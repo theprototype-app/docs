@@ -2,7 +2,7 @@
 
 On a Quest, **Scan my room** turns your headset's room setup into the scene: your walls, floor, ceiling and furniture
 become named, see-through boxes at their real size, in a group called **My room**. Build on your real table, hang a
-picture on your real wall, or ask an AI app to furnish the room around them. New in 1.7X.
+picture on your real wall, or ask an AI app to furnish the room around them. New in 1.81.
 
 No camera image is used or stored. The room comes only from the shapes you traced in the headset's room setup.
 

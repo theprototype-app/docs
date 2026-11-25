@@ -9,7 +9,7 @@ step (Ctrl+Z, **Undo** on the call's line in **Agent activity**, or *"undo that"
 that change things; it can still search for assets.
 
 !!! note "New in 1.60"
-    Most of this page is new in 1.60. Floating things and `probe` are new in 1.7X.
+    Most of this page is new in 1.60. Floating things and `probe` are new in 1.81.
 
 !!! tip "Try it"
     **Templates ▸ Game plot** opens an empty plot (the ground, a start pad, a finish arch, a fire pit and four gems).
@@ -158,7 +158,7 @@ New water is a static sensor: in Play, things fall in and float. It casts no sha
 
 ### Make things float or sink
 
-*"Make the crates float"*, *"this barrel should sink"*. Since 1.7X `set_physics` takes the same choices as
+*"Make the crates float"*, *"this barrel should sink"*. Since 1.81 `set_physics` takes the same choices as
 **Inspector ▸ Physics ▸ Floats** ([Things float](../physics.md#things-float)), and any of them makes the object dynamic:
 
 | field | what it does |
@@ -181,7 +181,7 @@ floating thing there and it does not drop into the water.
 
 ## Read what is under a point
 
-Since 1.7X, `probe` reads what is straight under a point and changes nothing, so a viewer's agent may use it too.
+Since 1.81, `probe` reads what is straight under a point and changes nothing, so a viewer's agent may use it too.
 Use it before putting things "on the ground", "on the beach" or "on the water", or along a slope.
 
 - `at: [x, z]` reads one point. `points: [[x, z], …]` reads up to **64** at once (a row of fence posts, a path), in

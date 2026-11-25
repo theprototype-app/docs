@@ -101,7 +101,7 @@ The assistant works with the building blocks the app already has:
   seats objects on it.
 - **Modify** existing objects — move, recolor, rescale, change material, rename, hide.
 - **Group** objects together, or clear the scene when you want to start over.
-- **Your files, screen and scenes** (*1.7X*) — read and write the text files in your Explorer, open a panel, move
+- **Your files, screen and scenes** (*1.81*) — read and write the text files in your Explorer, open a panel, move
   your view or open code at a line (it asks first), and open another scene. See
   [Your files, your screen and your scenes](your-files-and-screen.md).
 

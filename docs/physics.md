@@ -292,9 +292,9 @@ Select the object and open **Properties ▸ Physics** (Body: *Dynamic*) ▸ **Fl
 | **From mass ÷ volume** | from the object | works it out from the object's mass and size |
 | **Off** | — | ignores water |
 
-**Density** (kg/m³; water is 1000) and **Buoyancy ×** fine-tune it. **Water drag ×** (since 1.7X) sets how hard the
+**Density** (kg/m³; water is 1000) and **Buoyancy ×** fine-tune it. **Water drag ×** (since 1.81) sets how hard the
 water slows it: lower drifts on, higher holds still. The hint under the sliders says how deep it will sit, in metres
-since 1.7X — *Floats about 60% under: 0.6 m of its 1 m height (600 kg/m³; water is 1000).* How deep something floats
+since 1.81 — *Floats about 60% under: 0.6 m of its 1 m height (600 kg/m³; water is 1000).* How deep something floats
 depends on its density, not its mass, so a light and a heavy crate of the same wood float equally. **From mass ÷
 volume** is the exception: there the mass sets the density.
 

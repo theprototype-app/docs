@@ -1,6 +1,6 @@
 # Your files, your screen and your scenes
 
-*"Fix line 12 of door.js"*, *"show me the crates"*, *"save this and open the forest scene"*. Since 1.7X an AI app
+*"Fix line 12 of door.js"*, *"show me the crates"*, *"save this and open the forest scene"*. Since 1.81 an AI app
 working in your tab ([the connector](use-any-ai.md)) and the in-app [Assistant](assistant.md) can do three more things
 for you, the person whose tab it is:
 

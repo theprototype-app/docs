@@ -129,7 +129,7 @@ before a join, scene tools answer *not connected — join first*. Then call `con
   (world). `image` is a Library hash or file name (none = a placeholder frame), `size` is metres (a number, or
   `[width, height]`), plus `depth` (default 0.25 m), `opacity` (0-1) and `tint` (`#rrggbb`). Not on skinned characters
   or scattered copies. See [Decals](../decals.md).
-- **Ground, water and floating** (since 1.7X):
+- **Ground, water and floating** (since 1.81):
     - `probe` reads the ground height, slope and surface and any water's surface and depth under up to 64 points, or
       along a ray. It only reads, so a viewer's agent may use it too. See
       [Read what is under a point](agent-world.md#read-what-is-under-a-point).

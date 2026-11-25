@@ -146,7 +146,7 @@ it changes nothing and tells you who changed what.
 **Screenshots** have a 4:3 shape whatever your window's shape, except the *current* view, which keeps your canvas. Claude
 can pick the angle (front, back, left, right, top, below, iso, or a yaw and pitch), a camera position and target, the objects to
 frame, a zoom (0.1-10) and a margin (0.5-4). It is told which camera it used, and your own view never moves.
-Since 1.7X, while you look through a scene camera (Preview, a game camera, a sequence shot, Film on your phone, a
+Since 1.81, while you look through a scene camera (Preview, a game camera, a sequence shot, Film on your phone, a
 recording), the *current* view is that camera, with its framing ([details](agent-spatial.md#the-camera-you-look-through)).
 
 ### Tool families
@@ -169,7 +169,7 @@ exactly what the agent tools of the same job do, with the same limits:
 `get_material`, `shader_nodes`, `get_post`, `environment`, `hud` `list`, `assets` `search` and all of `run`).
 `playtest` (a test player) runs only on an agent's own page, so it is not on claude.ai.
 
-**New in 1.7X** — four new tools, so the connector lists **35**:
+**New in 1.81** — four new tools, so the connector lists **35**:
 
 - `probe` reads what is under a point without changing anything: the ground height, which way it slopes, what the
   surface is, and any water's surface and depth. Up to 64 points at once, or a ray. A look-only connection and a

@@ -39,7 +39,7 @@ distance.
 
 ## The camera you look through
 
-Since 1.7X, when you look through a scene camera full-screen, *"where am I"* knows it. Your row in `where_are_users`
+Since 1.81, when you look through a scene camera full-screen, *"where am I"* knows it. Your row in `where_are_users`
 then names the camera (`through`) and how you came to look through it:
 
 | kind | you are looking through |
