@@ -43,7 +43,10 @@ Each mode remembers its own selection, so you can hop between them without losin
 
 ### Selecting
 
-- **Click** an element to select it; **Ctrl+click** adds to the selection.
+- **Click** an element to select it; **Shift+click** adds it to the selection.
+- **Ctrl+click** a second element adds the **shortest path** to it from the last one you picked: a row of faces, an
+  edge chain or a run of vertices, in all three element modes. The element you clicked becomes the new end, so you can
+  keep going. With nothing picked yet, Ctrl+click starts a selection like a plain click. See [Path select](#path-select).
 - **Shift+drag** or **Ctrl+drag** draws a **box** — every vertex, edge or face inside it joins the selection. Works in all three element modes, and a box always takes whole faces (never half a quad). An empty box changes nothing, so a stray drag cannot wipe your work.
 - Selection **commands** appear as words in the *Select* row — they change what is picked, never the geometry:
 
@@ -56,6 +59,18 @@ Each mode remembers its own selection, so you can hop between them without losin
 | **Invert** (<kbd>Ctrl</kbd>+<kbd>I</kbd>) | all | Swap picked and unpicked. |
 | **Linked** | faces | The whole connected island this face belongs to. |
 | **None** | vertices | Deselect everything. |
+
+### Path select
+
+**Ctrl+click** picks the shortest way across the mesh from your last pick to the element you click. On a touch screen,
+or whenever you prefer, switch on **Path** in the toolbox (under the tool options): every click then adds the path from
+the last pick. In VR the edit menu has the same **Path** row.
+
+- The path is the **shortest by length**. Tick **steps** beside the Path button to count the faces, edges or
+  vertices crossed instead, which follows the mesh's grid rather than the straight distance.
+- A face path picks whole faces, so a quad comes with both of its triangles.
+- It is a selection step like any other: <kbd>Ctrl</kbd>+<kbd>Z</kbd> takes it back, and it never changes the geometry
+  or sends anything to your peers.
 
 Selections are **undoable** too — <kbd>Ctrl</kbd>+<kbd>Z</kbd> steps back through your picks without touching the geometry, and a selection step can never push a real edit off the undo stack.
 
@@ -95,10 +110,11 @@ Icons are for tools; commands that act immediately read as words. Whichever tool
 | **Extrude** | <kbd>E</kbd> | Pull the face out along its normal, stitching the walls behind it. |
 | **Inset** | <kbd>I</kbd> | Shrink a copy inside a stitched ring — the cap ends up selected, ready for the next step. |
 | **Move** | <kbd>G</kbd> | Seat the transform gizmo on the selection (the default). |
-| **Subdivide** | <kbd>S</kbd> | Split the selection into a finer grid, 2×2 per quad. |
+| **Subdivide** | <kbd>S</kbd> | Split the selection into a finer grid, 2×2 per quad. Tick **smooth** to round it off as well — see [Smooth subdivide](#smooth-subdivide). |
 | **Bridge** | <kbd>B</kbd> | Build a tunnel between two selected pieces. |
 | **Loop cut** | <kbd>C</kbd> | Insert edge loops across the ring your selection lies on (the **cuts** field sets how many). |
 | **Knife** | <kbd>K</kbd> | Cut across the mesh on screen, in a straight line or a polyline — see [below](#knife). |
+| **Bisect** | | Cut the selection, or the whole mesh, with a flat plane you place and adjust — see [below](#bisect). |
 | **Flip normals** | <kbd>F</kbd> | Reverse the winding, for a face that renders inside-out. |
 | **Duplicate** | | Copy the selected faces in place. They start exactly on top of the originals — drag them off with the gizmo. |
 | **Solidify** | | Give the selected surface thickness — see [below](#solidify). |
@@ -115,9 +131,10 @@ Icons are for tools; commands that act immediately read as words. Whichever tool
 | **Extrude** | *distance*, and **individual** — extrude each face along its own normal instead of the selection's average |
 | **Inset** | *amount*, plus a *depth* that raises or lowers the cap as it goes in |
 | **Bevel** | *width* (in world units), *segments*, *profile* — and the direction, in or out |
-| **Loop cut** | *cuts*, *position* along the ring, and which of the two directions to run — **Along** or **Across** |
+| **Loop cut** | *cuts*, *position* along the ring, and which of the two directions to run — **Along** or **Across**. Drag the value to preview where the cut lands; it cuts when you let go. Typing a value cuts straight away. |
 | **Bridge** | *cuts* across the tunnel, *twist* to rotate one end against the other, and **invert faces** if the walls end up the wrong way round |
-| **Subdivide** | *levels* — each one splits every quad 2×2 again |
+| **Subdivide** | *levels* — each one splits every quad 2×2 again; **smooth** (Catmull-Clark, levels 1-3) |
+| **Bisect** | **clear** none / inner / outer, and **fill** |
 | **Solidify** | *thickness*, in world units |
 
 ### Knife
@@ -156,6 +173,45 @@ your peers see the cut as it is committed.
 !!! note "Changed in 1.28"
     A two-click cut that ends **inside** the mesh now ends exactly where you clicked. Before, it ran on to the far corner
     of that triangle.
+
+### Bisect
+
+**Bisect** cuts the mesh with a flat plane, the way you would slice an apple, and can throw one half away.
+
+1. Pick the faces to cut, or pick nothing to cut the whole mesh.
+2. Arm **Bisect** in the toolbox.
+3. Click two points on screen to draw the cut line. The plane runs through that line, straight away from you, and
+   shows in the viewport with the gizmo on it.
+4. Move or turn the plane with the gizmo until it sits where you want it. Nothing is cut yet.
+5. Press **Apply** in **Bisect options**, or <kbd>Enter</kbd>. **Cancel** or <kbd>Esc</kbd> drops the plane.
+
+Every face the plane crosses is split along it. In **Bisect options**:
+
+| Option | What it does |
+|---|---|
+| **clear: none** | Keep both sides (the default). The mesh just gains the cut. |
+| **clear: inner** | Remove what is behind the plane, away from its tick. |
+| **clear: outer** | Remove the side the plane's tick points at. |
+| **fill** | With a side cleared, close each cut opening with a face, so a closed model stays closed. |
+
+The cut is **one undo step**, and your peers see it when you apply it. The plane is only a helper: placing, moving
+and cancelling it sends nothing and is not saved in the scene.
+
+### Smooth subdivide
+
+Tick **smooth** under Subdivide (or press <kbd>Shift</kbd>+<kbd>S</kbd>) and Subdivide rounds the shape off as it splits
+it, the Catmull-Clark way: a box turns into a pebble, a blocky arm into a smooth one. **levels** (1 to 3) sets how many
+times it runs; each level has four times the faces of the last, so start at 1.
+
+- With faces picked, only those smooth. The border of your pick stays put, so the faces around it do not move.
+- With **nothing picked**, the whole mesh smooths.
+- An open edge (the rim of a cup, a plane's border) keeps its line instead of shrinking inwards, and texture
+  coordinates follow, so a texture does not slide.
+- Like the other operations you can tune it after pressing: change **levels** or untick **smooth** and it re-runs from
+  the original shape, as one undo step.
+
+AI agents smooth with the same code: an agent's `create_shape` with subdivide, and its `edit_mesh` smooth subdivide.
+Agents can bisect too (`edit_mesh` bisect, with a point and a direction).
 
 ### Solidify
 
@@ -438,6 +494,8 @@ The same list lives behind the **?** button in the toolbox.
 | <kbd>Esc</kbd> | Done — leave the session |
 | <kbd>E</kbd> / <kbd>I</kbd> / <kbd>G</kbd> | Faces: arm Extrude / Inset / Move |
 | <kbd>S</kbd> / <kbd>C</kbd> | Faces: Subdivide / Loop cut |
+| <kbd>Shift</kbd>+<kbd>S</kbd> | Faces: smooth Subdivide (nothing picked = the whole mesh) |
+| <kbd>Ctrl</kbd>+click | Add the shortest path from the last pick (all modes) |
 | <kbd>B</kbd> / <kbd>F</kbd> / <kbd>X</kbd> | Faces: Bridge / Flip normals / Delete |
 | <kbd>F</kbd> | Edges: Fill the hole |
 | <kbd>K</kbd> | Faces: Knife |
@@ -453,15 +511,15 @@ picked vertices, edges or faces follow the pointer at once, as in the
 (Global), the gesture is one undo step, and <kbd>Esc</kbd> leaves the geometry and the undo history as they were with
 the session still open. The Blender style [keymap](controls.md#keymap-presets) puts them on <kbd>G</kbd> /
 <kbd>R</kbd> / <kbd>S</kbd>: then <kbd>G</kbd> no longer arms Move (the toolbox button stays) and Subdivide moves to
-<kbd>Shift</kbd>+<kbd>S</kbd>.
+<kbd>Shift</kbd>+<kbd>S</kbd>, so smooth Subdivide has no key there (tick **smooth**, or give it a key in Settings).
 
 These keys can be rebound in the *Mesh edit* group of **Settings ▸ Shortcuts**. Some rows serve two modes, so rebinding
 one moves both: **L** is Loop in every mode, and **F** is Flip normals in Faces *and* Fill in Edges. **J** (Connect) has
-its own row.
+its own row. **Bisect** and the **Path** toggle have rows too, with no key until you give them one.
 
 ## In VR
 
-Mesh editing works in VR too: the radial menu's **Selected ▸ Edit mesh** covers face select, extrude, inset, move and stretch, with the amount adjusted live by moving your controller. See the [VR Guide](vr.md).
+Mesh editing works in VR too: the radial menu's **Selected ▸ Edit mesh** covers face select, extrude, inset, move and stretch, with the amount adjusted live by moving your controller. Its **Path** row makes each trigger pick add the shortest path from your last pick. See the [VR Guide](vr.md).
 
 ## Collaboration
 

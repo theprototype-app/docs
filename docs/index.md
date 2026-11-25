@@ -52,6 +52,13 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.80 — bisect, smooth subdivide and path select.** [Edit Mesh](mesh-editing.md) gains three tools:
+[Bisect](mesh-editing.md#bisect) cuts a mesh with a flat plane you draw with two clicks and can clear one side and fill
+the opening; [Smooth subdivide](mesh-editing.md#smooth-subdivide) (tick **smooth**, or Shift+S) rounds a shape off as
+it splits; and [Path select](mesh-editing.md#path-select) (Ctrl+click) picks the shortest path from your last pick.
+Dragging the loop cut's Position or Cuts now previews the cut and cuts when you let go, and moving faces on a big
+mesh finishes about three times faster. AI agents can bisect and smooth-subdivide through `edit_mesh`.
+
 **1.79 — hands-on editing: keymaps, new gizmos, touch feedback, material slots and scene shadows.**
 
 - **Keyboard and gizmo**: [keymap presets](controls.md#keymap-presets) (ThePrototype, Blender style, Unity / Maya
