@@ -505,6 +505,14 @@ The same list lives behind the **?** button in the toolbox.
 | <kbd>W</kbd> | Vertices: weld the selected vertices |
 | <kbd>J</kbd> | Vertices: connect two corners of a face |
 
+*Since 1.79* the *Mesh edit* group also has **Move now**, **Rotate now** and **Resize now** (no key by default): the
+picked vertices, edges or faces follow the pointer at once, as in the
+[3D view](controls.md#move-now-rotate-now-resize-now). The axis locks use the object's own axes (Local) or the world's
+(Global), the gesture is one undo step, and <kbd>Esc</kbd> leaves the geometry and the undo history as they were with
+the session still open. The Blender style [keymap](controls.md#keymap-presets) puts them on <kbd>G</kbd> /
+<kbd>R</kbd> / <kbd>S</kbd>: then <kbd>G</kbd> no longer arms Move (the toolbox button stays) and Subdivide moves to
+<kbd>Shift</kbd>+<kbd>S</kbd>, so smooth Subdivide has no key there (tick **smooth**, or give it a key in Settings).
+
 These keys can be rebound in the *Mesh edit* group of **Settings ▸ Shortcuts**. Some rows serve two modes, so rebinding
 one moves both: **L** is Loop in every mode, and **F** is Flip normals in Faces *and* Fill in Edges. **J** (Connect) has
 its own row. **Bisect** and the **Path** toggle have rows too, with no key until you give them one.

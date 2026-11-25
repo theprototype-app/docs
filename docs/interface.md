@@ -38,10 +38,30 @@ The light theme and every custom `.theme.json` restyle all of it; see [Themes & 
   sit in one group beside your picture, which opens your [profile menu](#the-profile-menu).
   Since 1.33 that group is arranged with [Edit positions](controls.md#edit-positions) too; emptied, it leaves no box
   behind. Since 1.36 the profile menu opens under the profile button wherever it is, beside a pinned right sidebar too.
+- **The Preview pill** (top right of the 3D view, *since 1.79*) turns the Cinematic view on, shows the budget percent of
+  each device you judge for, and its menu holds Draw as, Quality, Judge for and Statistics. It replaced the Cinematic
+  switch and the budget chip, and it sits beside an open side panel, never over it. See
+  [The Preview pill](cinematic-view.md#the-preview-pill).
 - **Toasts** are calm cards under the Connect bar, at most three at a time; more collect behind **+N more**. See
   [Toasts](notifications.md#toasts).
 - Someone who is **speaking** in voice chat gets a soft green ring on their avatar.
 - Buttons are 36–38 px with a mouse and grow to **44 px on a touch screen**.
+
+### The HUD grid
+
+*New in 1.79.* Every control that stands on the 3D view sits on one grid:
+
+- **One top row.** The logo, the Connect pill, the files / notifications / panels group and your profile button are
+  one height and share one centre line: 44 px with a mouse, 48 px on a touch screen.
+- **One inset.** The logo, the undo / redo / box-select buttons, the Add and AI buttons, mic and chat, the profile
+  button and the Preview pill all keep the same 12 px from the edge of the 3D view, also when a side panel is open
+  (split view on an unfolded phone).
+- **Undo, redo and box select are tiles** of the same shape and size as Add and AI.
+- **A full toolbar** (one with a **»** button) spans the space between the corner buttons exactly.
+- **The profile button holds still** when you tap it: the circle in the open menu is drawn in the same place as the
+  button, with its whole border.
+
+[Edit positions](controls.md#edit-positions) still moves any of them; **Reset position** puts them back on the grid.
 
 ![The right sidebar pinned at full height with Configure Scene open: the profile button has moved left of it and its menu — Customize character, Profile settings, Sign in to cloud — opens right under it, beside the sidebar](img/interface/profile-menu-pinned-sidebar.webp){ .shot .fade-l .fade-b width="688" height="460" loading=lazy }
 /// caption
@@ -641,7 +661,9 @@ More open on a folded phone, with Move being dragged onto the bottom bar.
 **What can go on the bar** — everything in More:
 
 - **Windows**: Add, More, Objects, Statistics, Chat, Explorer, Node editor, Animation, Scene, AI assistant, Notes,
-  Shader editor, UV editor, HUD editor, Profiler, Code;
+  Shader editor, UV editor, HUD editor, Profiler, Code, and *since 1.79* **Preview** (an eye: a drawer with Draw as and
+  Quality, the phone's version of the [Preview pill](cinematic-view.md#the-preview-pill); on an unfolded phone it is in
+  **Customize toolbar**);
 - **Edit**: Inspect, Move, Rotate, Scale, Undo, Redo, Select multiple, Interact mode. Move, Rotate, Scale and Inspect work
   on the selection and look pressed while active;
 - **Tools & View**: snapping, view and camera, and **Focus mode** (see [Focus mode](#focus-mode)).
@@ -746,7 +768,7 @@ with its top edge in the same frame while you resize it:
 
 | Button | What it does |
 |---|---|
-| **Move / Rotate / Scale** | the gizmo mode (keys <kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd>) |
+| **Move / Rotate / Scale** | the gizmo mode (keys <kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd>); tap it again to step its handles, or press and drag to transform at once (*since 1.79*, see [Gizmo styles](controls.md#gizmo-styles)) |
 | **Select multiple** | a toggle: while it is on, every tap adds or removes an object (there is no <kbd>Shift</kbd> on a phone) |
 | **Interact** | a toggle: tap the scene to play with it instead of editing (<kbd>I</kbd>) — see [Edit and Interact](controls.md#edit-and-interact) |
 | **Inspect** (the sliders icon) | opens the object's properties as the dock's **Properties** tab, or brings that tab to the front when another tab is in front; tap it again to close it. It looks pressed only while Properties is the tab on screen |

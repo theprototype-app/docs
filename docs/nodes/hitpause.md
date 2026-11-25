@@ -16,6 +16,7 @@ Holds the picture still for a split second when something hits hard, so the hit 
 |---|---|---|
 | ms | 80 | 20 to 500 — how long the picture holds, in milliseconds |
 | who | me | `me` = only the player whose press or hit made the pulse; `everyone` = every player |
+| vibrate | on | *since 1.79*: also gives a short [vibration](vibrate.md) on a gamepad or an Android phone (and the VR controllers), for the same players; switch it off for no buzz |
 
 Only the picture holds, on each player's own screen. The game, the clock and physics keep running, so nothing gets out
 of step with the other players. It never holds the picture in a VR headset.

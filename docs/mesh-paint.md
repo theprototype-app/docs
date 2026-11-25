@@ -34,7 +34,9 @@ part of the same undo step.
 | Setting | What it does |
 | --- | --- |
 | **Size** | The brush width in texture pixels (the ring shows it on the model). <kbd>[</kbd> and <kbd>]</kbd> change it. |
-| **Pen pressure** | With a pen, pressure varies the size or the opacity. A mouse stroke is unchanged. |
+| **Pen pressure** | With a pen, pressure varies the size, the opacity or (*since 1.79*) both. A mouse stroke is unchanged. See [Pen pressure](uv-editor.md#pen-pressure). |
+| **Spacing** | *New in 1.79.* The gap between dabs, as a share of the brush width: low is a smooth line, high a dotted one. |
+| **Smoothing** | *New in 1.79.* Steadies the stroke: the brush trails the pen on a string, so a shaky hand draws a calm line. 0 is off. Not used by the VR brush. |
 | **Hardness** | 100 % is a hard edge; lower fades the edge softly. |
 | **Opacity** | The most one stroke can reach, however often you go over a spot. |
 | **Flow** | How much each dab adds. Low flow builds up as you go over a spot. |

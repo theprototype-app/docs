@@ -44,7 +44,8 @@ drag only exist in Play. Touch controls are screen controls, so they never show 
   stick appears under your thumb.
 - **A still tap** on the view uses what the crosshair is on; a drag looks around. **Look speed** sets how far a drag turns
   the view.
-- **Haptic tick** gives a short vibration on each press, on phones that support it.
+- **A short tick** on each press, on phones that can vibrate: it follows [Touch feedback](#touch-feedback) (its
+  *Buttons and switches* switch). It is the one touch feedback that plays in Play.
 
 ## Which buttons a game gets
 
@@ -96,8 +97,8 @@ not the [button looks](#button-looks), which stay on each device.
 ## Button looks
 
 **Settings ▸ Touch controls ▸ Button looks** lists every button with a preview of both states. For each button: a
-**Released** and a **Pressed** image (**Upload** a PNG or SVG of up to 160 KB, or pick an image from the
-[Explorer](explorer.md)), a **Tint** for the built-in icon, and the icon **Size**. **Default look** goes back to the themed
+**Released** and a **Pressed** image (**Upload** a PNG or SVG of up to 160 KB, or **From Explorer…**: since 1.79 the
+[Explorer picker](materials.md#textures-from-the-explorer) with thumbnails, search, folders and Recent), a **Tint** for the built-in icon, and the icon **Size**. **Default look** goes back to the themed
 icons. Images are kept in the browser's local storage, which is why they must stay small.
 
 ## Settings
@@ -106,12 +107,37 @@ icons. Images are kept in the browser's local storage, which is why they must st
 |---|---|---|
 | Show touch controls | Auto | Auto / Always / Never |
 | Show in edit | off | action buttons while editing too |
-| Haptic tick | on | a short vibration on each press, where supported |
 | Look speed | 1× (0.25–3) | how far a drag turns the view |
 | Edit layout · Reset | — | the layout editor; Reset clears every saved layout |
 | Button looks | themed icons | per button: released / pressed image, tint, icon size |
 
-Search Settings for *touch*, *joystick*, *buttons* or *haptic* to find this section.
+Search Settings for *touch*, *joystick*, *buttons*, *haptic* or *vibration* to find this section.
+
+### Touch feedback
+
+*New in 1.79*, in **Settings ▸ Touch controls ▸ Touch feedback** (this device). It replaces **Haptic tick**: your
+choice carries over (on becomes Light, off becomes Off).
+
+Phones give a light touch of feedback as you use the editor: a tick as a slider or a dragged number moves, a firmer
+one at its default and at whole numbers, a bump at each end, a different feel for switching on and off, a pulse on a
+long press, and one when a move, a key or a UV point snaps.
+
+| Row | What it does |
+|---|---|
+| **Touch feedback** | **Off**, **Light** (the default), **Medium** or **Strong**. It starts **Off** when your device asks for reduced motion. |
+| **Buttons and switches** | switches, choices, tabs and the on-screen game buttons |
+| **Sliders and values** | a tick per step, a firmer one at the default and at the ends |
+| **Snapping** | when a move, a key or a UV point snaps into place |
+| **Gestures** | a long press, picking up a card or a tab |
+| **Try it** | a slider to feel the level: a tick per step, a firmer one at 5, a bump at each end |
+
+- Only **touch** gives feedback (a pen counts); a mouse, a keyboard or a gamepad never vibrates.
+- It is silent in **Interact** and **Play** (a game's own vibration is the [Vibrate](nodes/vibrate.md) node's) apart
+  from the on-screen game buttons' tick, and while a [film](film.md) take records. Film mode's own countdown and marker
+  ticks stay; Touch feedback **Off** silences them too.
+- It works in **Chrome on Android**. iPhone and iPad browsers cannot vibrate for a web page, so there Settings shows
+  *Not available* and says why.
+- **Reset Touch controls** resets it too.
 
 ## Trackpads
 

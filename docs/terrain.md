@@ -146,8 +146,8 @@ The Scatter brush in the Sculpt toolbox.
 
 Instances follow the ground — sculpting the terrain later moves them with it. Inspector ▸ **Scatter** lists each
 scattered model with its count, an Align toggle and **Remove**, plus the Fill, mix, Tint and Sink rows
-([Scatter](scatter.md)). Scatter is counted by the
-[budget chip](performance.md#the-budget-chip-will-it-fit-on-a-quest) on the terrain's row, and a dense model (300
+([Scatter](scatter.md)). Scatter is counted by
+[Judge for](performance.md#judge-for-will-it-fit-on-a-quest) (the budget percent in the Preview pill) on the terrain's row, and a dense model (300
 triangles or more) switches to lighter [levels of detail](lod.md) with distance — instances far away draw fewer
 triangles.
 

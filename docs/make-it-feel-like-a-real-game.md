@@ -62,7 +62,8 @@ Configure Scene ▸ Game menus.
   the pause off in Game menus.
 - **New rows:** Restart level (in a game with a Levels table), Save game, Load game, Join requests, Quit to title.
 - **Settings** has the player's own settings: music and effects volume, **Look speed**, **Invert look**,
-  **Subtitles**, **Reduced motion** (this device), quality, and **Controller vibration** in VR. They are saved per game on this
+  **Subtitles**, **Reduced motion** (this device), quality, and **Vibration** with **Vibration strength** (*since
+  1.79*: controller, gamepad and phone vibration; see [Vibration](#vibration)). They are saved per game on this
   device.
 - A game made before this release keeps its old menu (no pause, no title screen) until you turn the game menus on.
 
@@ -110,6 +111,31 @@ A button that a **Gamepad Button** node uses belongs to that game instead. **Mov
   new key or button; Esc cancels. When the new one belongs to another action, the two swap and the page says so
   ("Jump took Circle; Crouch moved to Cross"). **Reset controls** puts them back.
 - Quest controllers keep their own mapping.
+
+## Vibration
+
+*New in 1.79.* Games vibrate **gamepads** and **Android phones**, not only Quest controllers.
+
+- The **[Vibrate](nodes/vibrate.md)** node plays a pattern or your own strength and length, on one hand or both, for
+  the player who did it or for everyone.
+- **[Camera Shake](nodes/camerashake.md)**, **[Screen Flash](nodes/screenflash.md)** and
+  **[Hit Pause](nodes/hitpause.md)** now vibrate a little too; switch it off with the *vibrate* switch on the node.
+- The player's settings gain **Vibration** (on / off; it starts off when the device asks for reduced motion) and
+  **Vibration strength** (0 to 100 %).
+- Code: `api.feel.vibrate` in a [module or code node](module-sdk.md#vibration).
+
+What works where:
+
+| Device | Vibration |
+|---|---|
+| Gamepad | Chrome, Edge and Firefox (two motors) |
+| Xbox pad | trigger rumble too, in Chrome and Edge |
+| Android phone | Chrome (the phone's motor) |
+| iPhone, iPad | none: their browsers cannot vibrate |
+| Quest | the controllers, as before |
+
+It vibrates only in Interact and Play, never in the editor, and only on the device of the player it is meant for. A
+player on a version before 1.79 feels nothing from a Vibrate node.
 
 ## Cameras
 
