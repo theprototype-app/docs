@@ -16,17 +16,23 @@ checks:
   camera-render-mode:
     url: https://theprototype.app/
     steps:
-      - {section: View}
+      # 1.79 (103-viewbar): on a computer the render modes moved from Configure scene > View into the Preview menu
+      - {click: '#preview-more'}
+      # the menu loads on its first open (it is not in the boot)
+      - {wait: 2500}
     expect:
-      - {name: Shaded, selector: '#view-mode-shaded'}
-      - {name: Shaded + AO, selector: '#view-mode-shaded-ao'}
-      - {name: Wireframe, selector: '#view-mode-wireframe'}
+      - {name: Preview pill, selector: '#preview-pill'}
+      - {name: Shaded, selector: '#preview-draw-shaded'}
+      - {name: Shaded + AO, selector: '#preview-draw-shaded-ao'}
+      - {name: Wireframe, selector: '#preview-draw-wireframe'}
+      - {name: Wireframe over shaded, selector: '#preview-draw-wire-over'}
+      - {name: UV checker, selector: '#preview-draw-uv-checker'}
   camera-view-section:
     url: https://theprototype.app/
     steps:
       - {section: View}
     expect:
-      - {name: render mode switch, selector: '#view-mode-switch'}
+      - {name: open Preview row, selector: '#view-open-preview'}
       - {name: Show light helpers, text: Show light helpers}
   camera-environment:
     url: https://theprototype.app/
