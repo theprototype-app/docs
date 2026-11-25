@@ -52,6 +52,13 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.80 — bisect, smooth subdivide and path select.** [Edit Mesh](mesh-editing.md) gains three tools:
+[Bisect](mesh-editing.md#bisect) cuts a mesh with a flat plane you draw with two clicks and can clear one side and fill
+the opening; [Smooth subdivide](mesh-editing.md#smooth-subdivide) (tick **smooth**, or Shift+S) rounds a shape off as
+it splits; and [Path select](mesh-editing.md#path-select) (Ctrl+click) picks the shortest path from your last pick.
+Dragging the loop cut's Position or Cuts now previews the cut and cuts when you let go, and moving faces on a big
+mesh finishes about three times faster. AI agents can bisect and smooth-subdivide through `edit_mesh`.
+
 **1.78 — faster mesh editing.** [Edit Mesh](mesh-editing.md) runs on a new mesh core: on a 67,000-triangle mesh,
 entering Edit Mesh and undoing are about three times faster, extruding and bevelling an edge about twice as fast, the
 knife about 1.7 times, and dragging faces, edges or vertices stays smooth. [Undo puts your selection back](mesh-editing.md#selecting) after an operation,
