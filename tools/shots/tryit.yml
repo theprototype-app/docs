@@ -17,7 +17,9 @@ checks:
     url: https://theprototype.app/
     steps:
       # 1.79 (103-viewbar): on a computer the render modes moved from Configure scene > View into the Preview menu
-      - {click: '#preview-more'}
+      # a DOM click: on a slow runner a toast can sit over the pill (the check is that the rows exist), and the pill
+      # itself mounts after the boot, so wait for it first (10 s at most)
+      - {eval: "(async () => { for (let i = 0; i < 40 && !document.querySelector('#preview-more'); i++) await new Promise((r) => setTimeout(r, 250)); document.querySelector('#preview-more')?.click(); })()"}
       # the menu loads on its first open (it is not in the boot)
       - {wait: 2500}
     expect:
