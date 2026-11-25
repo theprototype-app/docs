@@ -48,9 +48,9 @@ buttons step aside and come back when you leave the view.
 | Tool | What it does |
 |---|---|
 | **Select** | Click a sprite or a layer to select it; drag its arrows to move it in the plane. |
-| **Pen**, **Shapes** | Draw vector paths and shapes (when vector shapes are in your version of the app). |
+| **Pen**, **Shapes** | Draw vector paths and shapes on the layer you picked (see [Vector shapes and SVG](vector-shapes.md)). |
 | **Text** | Adds a text object in the middle of the view, on the layer you picked. |
-| **Extrude** | Turns a shape or text into a 3D object (when extrude is in your version of the app). |
+| **Extrude** | Makes the selected shape or text 10 cm deep, or flat again (see [Extrude](vector-shapes.md#extrude)). |
 | **Layers** | Opens the Layers panel. |
 | **Back to 3D** | Leaves the flat view. |
 

@@ -38,6 +38,7 @@ nav:
     - Mesh Editing: mesh-editing.md
     - Splines: splines.md
     - 2D Scenes: 2d-scenes.md
+    - Vector Shapes and SVG: vector-shapes.md
     - Paths: paths.md
     - 3D Text: 3d-text.md
     - Snapping: snapping.md
