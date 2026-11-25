@@ -67,11 +67,22 @@ control**:
 The header always says which. An object with its own graph ignores the scene default,
 so the order is *own graph → scene default → the object's real material*.
 
+### One slot, or all slots
+
+*New in 1.79.* An object with several [material slots](https://docs.theprototype.app/materials.md#material-slots) can take a node shader on **one
+slot**, or **one shader for all its slots**. Pick the slot in **Inspector ▸ Material** and open the Shader editor
+(**Edit shader**): the chip in the header, **All slots | ‹slot›**, says what **Create** makes. On an existing shader,
+**Only this slot** and **All slots** move it between the two in one undo step.
+
+The order is then *the slot's own shader → the all-slots shader → the scene default → the slot's own material*. An
+[off slot](https://docs.theprototype.app/materials.md#material-slots) draws the plain default, shader or not.
+
 ## The Shaders list
 
 The left pane carries a collapsible **Shaders** section above the node palette. It lists
 **Scene** at the root, then every object that actually has a shader graph of its own — it is a way
-to get *to* a graph, not a second object list, so an object with none is not in it.
+to get *to* a graph, not a second object list, so an object with none is not in it. *Since 1.79* slot shaders are
+listed under their object.
 
 Click a row to select that object and switch the editor to its graph; click **Scene** to
 deselect and edit the scene-wide one. Drag the bar under the list to give it more room, and
@@ -153,7 +164,7 @@ error appears in a strip at the top of the tab, naming the node and the problem.
 The [Set Shader Uniform](https://docs.theprototype.app/nodes/setuniform.md) node in the [Node editor](https://docs.theprototype.app/node-system.md)
 writes one of a graph's numbers, so a proximity trigger, a timer or a counter can drive a
 shader parameter. Select the node in the Shader editor and its info pane lists the uniform
-names to paste in.
+names to paste in. *Since 1.79* it can target one [slot](#one-slot-or-all-slots).
 
 ## Saving, sharing and undo
 
@@ -161,13 +172,15 @@ names to paste in.
   the same graph produces the same pixels everywhere.
 - Graphs are stored in `.tpscene` files and sessions, and in the autosave.
 - A **glTF export** cannot carry a node material: the object is exported with the
-  material it had before the graph, and a toast tells you what was dropped.
+  material it had before the graph, and a toast tells you what was dropped (it counts slot shaders too).
+- A peer on a version before 1.79 keeps a slot's shader but draws the slot's own material, and drops the shader if
+  their version saves the file; [People](https://docs.theprototype.app/people.md) tells you they are on an older version.
 - Every change is undoable, and a slider drag is one undo step rather than dozens.
 
 ## When an object cannot take a graph
 
-Objects with **more than one material slot** are declined with an explanation rather than
-half-supported. Convert or split the mesh first if you need per-slot shaders.
+*Since 1.79* an object with several material slots takes a graph per slot or for all slots — see
+[One slot, or all slots](#one-slot-or-all-slots). Before 1.79 such objects were declined.
 
 ## The Material section while a shader is active
 
@@ -176,6 +189,9 @@ colour, material-type and texture rows — they would be editing a result that t
 recompile discards. You get **Open in Shader editor** and **Detach** instead. Cast and
 receive shadow stay editable, because those are properties of the object rather than of
 the material.
+
+On a slot, the notice sits under that slot: **Detach** removes the slot's own shader, and **Detach all slots** shows
+when the all-slots shader draws it.
 
 Detach removes the object's own graph. If the look came from the **scene default** there
 is no per-object graph to remove, and the panel says so — edit or remove the scene graph

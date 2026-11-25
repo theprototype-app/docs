@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Module SDK", "url": "https://docs.theprototype.app/module-sdk/", "description": "Modules plug playable content into theprototype.app: instruments, game prototypes, generators, custom nodes and tools. A module registers itself through one register(api) call and everything it…", "dateModified": "2026-11-22"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Module SDK", "url": "https://docs.theprototype.app/module-sdk/", "description": "Modules plug playable content into theprototype.app: instruments, game prototypes, generators, custom nodes and tools. A module registers itself through one register(api) call and everything it…", "dateModified": "2026-11-24"}</script>
 </head>
   
   
@@ -3282,6 +3282,27 @@
   
   <span class="md-ellipsis">
     Hit Pause
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/vibrate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vibrate
   </span>
   
 
@@ -7355,6 +7376,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#vibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vibration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#the-knock" class="md-nav__link">
     <span class="md-ellipsis">
       The knock
@@ -7787,6 +7817,15 @@
   <a href="#vr-and-control" class="md-nav__link">
     <span class="md-ellipsis">
       VR and control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vibration
     </span>
   </a>
   
@@ -8415,7 +8454,7 @@ respawns the player and runs your hook:</p>
 per-viewer and deliberately local — a peer's module must never yank your camera.</p>
 <h3 id="vr-and-control">VR and control</h3>
 <div class="highlight"><pre><span></span><code><span class="nx">api</span><span class="p">.</span><span class="nx">isVR</span><span class="p">()</span><span class="w">                    </span><span class="c1">// true inside a VR session</span>
-<span class="nx">api</span><span class="p">.</span><span class="nx">haptic</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span><span class="w"> </span><span class="mf">60</span><span class="p">)</span><span class="w">           </span><span class="c1">// buzz the VR controllers — no-op on desktop</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">haptic</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span><span class="w"> </span><span class="mf">60</span><span class="p">)</span><span class="w">           </span><span class="c1">// buzz the VR controllers (since 1.79 also a gamepad or an Android phone)</span>
 <span class="nx">api</span><span class="p">.</span><span class="nx">haptic</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span><span class="w"> </span><span class="mf">60</span><span class="p">,</span><span class="w"> </span><span class="s1">'right'</span><span class="p">)</span><span class="w">  </span><span class="c1">// one hand only</span>
 <span class="nx">api</span><span class="p">.</span><span class="nx">vrHand</span><span class="p">(</span><span class="s1">'left'</span><span class="p">)</span><span class="w">            </span><span class="c1">// {position:[x,y,z], quaternion:[x,y,z,w],</span>
 <span class="w">                              </span><span class="c1">//  trigger, gripped, connected} — null when</span>
@@ -8427,6 +8466,20 @@ per-viewer and deliberately local — a peer's module must never yank your camer
 <span class="w">                              </span><span class="c1">// feature-detect 'first' here; unknown camera</span>
 <span class="w">                              </span><span class="c1">// values degrade silently on older builds</span>
 </code></pre></div>
+<h3 id="vibration">Vibration</h3>
+<p><em>New in 1.79.</em> <code>api.feel</code> vibrates <strong>this device</strong>: the VR controllers in a headset, a gamepad (both motors, and the
+trigger motors on an Xbox pad in Chrome or Edge), or an Android phone. <code>api.haptic</code> and <code>api.hapticPattern</code> go through
+the same layer, so they reach pads and phones too.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">api</span><span class="p">.</span><span class="nx">feel</span><span class="p">.</span><span class="nx">vibrate</span><span class="p">(</span><span class="s1">'hit'</span><span class="p">)</span><span class="w">                          </span><span class="c1">// a named pattern: tap bump hit success fail rumble heartbeat</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">feel</span><span class="p">.</span><span class="nx">vibrate</span><span class="p">({</span><span class="w"> </span><span class="nx">strength</span><span class="o">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="nx">ms</span><span class="o">:</span><span class="w"> </span><span class="mf">200</span><span class="w"> </span><span class="p">})</span><span class="w">     </span><span class="c1">// a custom pulse (strength 0..1, 10..1000 ms)</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">feel</span><span class="p">.</span><span class="nx">vibrate</span><span class="p">(</span><span class="s1">'bump'</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">hand</span><span class="o">:</span><span class="w"> </span><span class="s1">'left'</span><span class="p">,</span><span class="w"> </span><span class="nx">scale</span><span class="o">:</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="p">})</span><span class="w">  </span><span class="c1">// one side, at half strength</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">feel</span><span class="p">.</span><span class="nx">stop</span><span class="p">()</span><span class="w">                                  </span><span class="c1">// stop what this module is playing</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">feel</span><span class="p">.</span><span class="nx">outputs</span><span class="p">()</span><span class="w">                               </span><span class="c1">// {vr, gamepads, triggerRumble, phone}: what this device has</span>
+</code></pre></div>
+<p>It is <strong>local</strong>: buzz only the player it is for (decide that in your module, for example on your own peer's hit). It
+plays in Interact and Play only, never in Edit, and the player's <strong>Vibration</strong> and <strong>Vibration strength</strong> game settings
+apply. Where there is no motor (an iPhone) nothing happens and nothing fails. In a flow graph, the
+<a href="../nodes/vibrate/">Vibrate</a> node does the same.</p>
 <p>WASD / arrows, a gamepad's left stick or the VR left stick drive the object (tank controls);
 <kbd>Space</kbd> or gamepad A hops it <code>jumpHeight</code> metres (default 1.2, <code>0</code> = no jump, since 1.54.3).
 With <code>camera: 'first'</code> the eye sits at the object plus <code>eyeHeight</code>;
@@ -9012,7 +9065,7 @@ examples.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-22
+    2026-11-24
   </span>
 
     

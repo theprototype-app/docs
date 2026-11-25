@@ -293,6 +293,14 @@ A momentary network blip no longer throws you out, either. A peer that drops for
 
 When someone joins, their app and yours first agree that they speak the same session version, before any scene data is exchanged. Most updates do not change it, so people on different app versions keep working together as before. When an update does change it, the two apps do not connect: the person on the older version sees *This session uses a newer version. Reload to update.* with a **Reload** button, and people on the newer version see that person in **People** as needing to reload. After reloading, join again as usual.
 
+**With someone on 1.78** (1.79 keeps the same session version, so you connect as usual): they see material slots,
+their names and list changes, but draw an [off slot](https://docs.theprototype.app/materials.md#material-slots) as normal. They keep a slot's
+[shader](https://docs.theprototype.app/shader-graph.md#one-slot-or-all-slots) but draw the slot's own material, and **People** tells you they are on
+an older version. A [Vibrate](https://docs.theprototype.app/nodes/vibrate.md) node does nothing for them. A *Size + opacity* pen stroke shows as
+*Size* for them until the stroke is done. They drop the scene's [shadow quality](https://docs.theprototype.app/camera.md#shadow-quality): the scene
+reads Basic for them, and after their next sky or light change it reads Basic for everyone. Set it again once everyone
+has updated; the saved file is fine until then.
+
 Each person's app also accepts a generous, bounded amount of messages and data per second from each other person, well above sharing a large file or moving hundreds of objects at once. Anything far beyond that is skipped with one notice, the connection stays up, and the counts are in [Diagnostics](#diagnostics-you-can-copy).
 
 ### Limit floods from peers

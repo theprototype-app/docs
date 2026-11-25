@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Performance & Budgets", "url": "https://docs.theprototype.app/performance/", "description": "How big a scene can get, how to see where it stands, and what the app does on its own when a scene is more than your machine can draw.", "dateModified": "2026-11-23", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.71.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/performance/budget-chip.webp", "caption": "The budget chip sits beside the toolbar."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/performance/statistics-budget.webp", "caption": "Statistics ▸ Budget against the Quest limits."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/performance/configure-scene-quality.webp", "caption": "Configure Scene opens with Quality first."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Performance & Budgets", "url": "https://docs.theprototype.app/performance/", "description": "How big a scene can get, how to see where it stands, and what the app does on its own when a scene is more than your machine can draw.", "dateModified": "2026-11-24", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.71.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/performance/statistics-budget.webp", "caption": "Statistics ▸ Budget against the Quest limits."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/performance/configure-scene-quality.webp", "caption": "Configure Scene opens with Quality first."}]}</script>
 </head>
   
   
@@ -1959,13 +1959,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-budget-chip-will-it-fit-on-a-quest" class="md-nav__link">
+  <a href="#judge-for-will-it-fit-on-a-quest" class="md-nav__link">
     <span class="md-ellipsis">
-      The budget chip: will it fit on a Quest?
+      Judge for: will it fit on a Quest?
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="The budget chip: will it fit on a Quest?">
+    <nav class="md-nav" aria-label="Judge for: will it fit on a Quest?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3483,6 +3483,27 @@
   
   <span class="md-ellipsis">
     Hit Pause
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/vibrate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vibrate
   </span>
   
 
@@ -7423,13 +7444,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-budget-chip-will-it-fit-on-a-quest" class="md-nav__link">
+  <a href="#judge-for-will-it-fit-on-a-quest" class="md-nav__link">
     <span class="md-ellipsis">
-      The budget chip: will it fit on a Quest?
+      Judge for: will it fit on a Quest?
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="The budget chip: will it fit on a Quest?">
+    <nav class="md-nav" aria-label="Judge for: will it fit on a Quest?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -7633,25 +7654,21 @@ frame</em>). Click it and the <strong>Statistics</strong> window opens — the s
 menu ▸ <strong>Statistics</strong>. On a folded phone, <strong>More ▸ Statistics</strong> opens it as a tab of the bottom
 dock (see <a href="../interface/#the-dock-on-a-phone">The dock on a phone</a>), and on a computer it can be
 a <a href="../interface/#any-window-in-a-sidebar">sidebar tab</a> too.</p>
-<h2 id="the-budget-chip-will-it-fit-on-a-quest">The budget chip: will it fit on a Quest?</h2>
-<p><em>New in 1.37.</em> The meter above judges what <em>this</em> device draws right now. The <strong>budget chip</strong> answers a different
-question while you build: <strong>does this scene fit the device you mean to ship to</strong> — <strong>Quest / VR</strong>, <strong>Phone</strong> or
-<strong>Desktop</strong>? The numbers are the ones the <a href="#budgets-in-ci">perf gate</a> holds every Games-tab game and General-tab level
-to (Quest: 150 draw calls, 300k triangles, 2 lights, 64 MB of textures); phone and desktop have starting values beside
-them.</p>
-<p><strong>Where it is.</strong> On a computer and an unfolded phone: right of the toolbar (or left of it, or just above, when the right
-side is taken). It is hidden in Play, and where there is no free spot next to the toolbar. On a folded phone: <strong>More ▸
-Tools &amp; View ▸ Budget</strong> — the tile shows the device, the percentage and a coloured dot; hold and drag it onto the bottom
-bar if you want it there. Since 1.39 you can move the chip anywhere, or hide it, in
-<a href="../controls/#moving-the-clusters">Edit positions</a>; <strong>Customize toolbar… ▸ Budget chip</strong> shows it again. Opening its
-<strong>▾</strong> menu no longer makes it vanish.</p>
-<figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/performance/budget-chip.webp" data-desc-position="bottom"><img alt="The budget chip beside the toolbar, reading Quest over 100 % in red: the scene has four point lights, more than the two a Quest's budget allows." class="shot" height="72" loading="lazy" src="../img/performance/budget-chip.webp" width="646"></a></p>
-<figcaption>
-<p>The budget chip sits beside the toolbar.</p>
-</figcaption>
-</figure>
-<p><strong>Reading it.</strong> The chip shows the device and how much of its tightest budget the scene uses (<em>Quest 87%</em>):</p>
+<h2 id="judge-for-will-it-fit-on-a-quest">Judge for: will it fit on a Quest?</h2>
+<p><em>New in 1.37, in the Preview pill since 1.79.</em> The meter above judges what <em>this</em> device draws right now. <strong>Judge for</strong>
+answers a different question while you build: <strong>does this scene fit the device you mean to ship to</strong> — <strong>Quest</strong>,
+<strong>Phone</strong> or <strong>PC</strong>? The numbers are the ones the <a href="#budgets-in-ci">perf gate</a> holds every Games-tab game and General-tab
+level to (Quest: 150 draw calls, 300k triangles, 2 lights, 64 MB of textures); phone and desktop have starting values
+beside them.</p>
+<p><strong>Where it is.</strong> In the <strong>Preview pill</strong> at the top right of the 3D view (see
+<a href="../cinematic-view/#the-preview-pill">The Preview pill</a>). Its menu's <strong>Judge for</strong> has <strong>This device</strong>, <strong>Phone</strong>,
+<strong>Quest</strong> and <strong>PC</strong>: each one you tick shows as a part of the pill with its icon and percent, so you can judge for
+several devices at once. Nothing is ticked at first; <strong>This device</strong> ticks itself once, the first time the scene goes
+over 100 % of this device's budget, and Quest is never ticked for you. The device you picked on the old <strong>budget chip</strong>
+(1.37 to 1.78) carries over, and so do its place and a hide in <a href="../controls/#moving-the-clusters">Edit positions</a>. On a
+folded phone there is no pill: <strong>More ▸ Tools &amp; View ▸ Budget</strong> shows the device, the percentage and a coloured dot,
+and opens Statistics ▸ Budget (hold and drag it onto the bottom bar if you want it there).</p>
+<p><strong>Reading it.</strong> Each part shows how much of that device's tightest budget the scene uses (<em>87%</em>), in its colour:</p>
 <table>
 <thead>
 <tr>
@@ -7674,11 +7691,10 @@ bar if you want it there. Since 1.39 you can move the chip anywhere, or hide it,
 </tr>
 </tbody>
 </table>
-<p>Lights and shadow-casting lights are small counts: at the budget is fine, over it is red. Pick the device from the
-chip's <strong>▾</strong> (or right-click / long-press the chip), or with the Quest / Phone / Desktop switch at the top of the Budget
-section. The choice is per device and remembered.</p>
+<p>Lights and shadow-casting lights are small counts: at the budget is fine, over it is red. You can also pick the device
+with the Quest / Phone / Desktop switch at the top of the Budget section. The choice is per device and remembered.</p>
 <h3 id="statistics-budget">Statistics ▸ Budget</h3>
-<p>Click the chip and <strong>Statistics</strong> opens on its <strong>Budget</strong> section: draw calls, triangles, texture memory, lights,
+<p>Click a device's part in the Preview pill (or <strong>Statistics…</strong> in its menu) and <strong>Statistics</strong> opens on its <strong>Budget</strong> section for that device: draw calls, triangles, texture memory, lights,
 shadow-casting lights and shadow draws, each against the device, and <strong>Heaviest objects</strong> — the objects taking the
 largest share of a budget, with their triangles, calls and texture memory, and what
 <a href="../import-optimize/">optimizing them on import</a> would save (≈, by your <strong>Settings ▸ Import</strong> numbers). Click a row to
@@ -7816,11 +7832,14 @@ restores itself when the browser hands the context back.</p>
   <a href="#the-quality-governor">the quality governor</a>), <strong>High</strong>, <strong>Medium</strong> (shadows off, 72 % resolution) or <strong>Low</strong>
   (shadows, ambient occlusion and the scene look off, 50 % resolution). These are the same levels a game's own
   <strong>Quality</strong> setting uses; a game's setting wins while you play it.</li>
-<li><strong>Shadows</strong>, <strong>Simplify distant models</strong> and <strong>Draw repeated kit pieces together</strong> — the same switches as
+<li><strong>Shadow detail</strong> (Off / Low / Medium / High; called <em>Shadows</em> before 1.79) — this device's cap on shadow-map size.
+  <em>Since 1.79</em> it caps the scene's own <a href="../camera/#shadow-quality">shadow quality</a> here.</li>
+<li><strong>Shadow detail</strong>, <strong>Simplify distant models</strong> and <strong>Draw repeated kit pieces together</strong> are the same switches as
   <strong>Settings ▸ Scene ▸ Performance</strong>, which has the <strong>Quality preset</strong> row too. <em>Since 1.64</em> <strong>Reduce quality when the
   scene is heavy</strong> is only in Settings; Configure Scene has a line that says what <strong>Auto</strong> does instead.</li>
 </ul>
 <p>The preset is saved on this device only; it is never sent to peers or saved in a scene.</p>
+<p><em>Since 1.79</em> the preset is also in the Preview pill's menu (<strong>Quality</strong>), and in the phone's Preview drawer.</p>
 <figure>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/performance/configure-scene-quality.webp" data-desc-position="bottom"><img alt="Configure Scene with Quality first: Preset Auto / High / Medium / Low, Reduce quality when the scene is heavy, Shadows, Simplify distant models and Draw repeated kit pieces together, above Environment; one Lowered resolution to keep it smooth notice with Keep full quality at the top" class="shot fade-b" height="700" loading="lazy" src="../img/performance/configure-scene-quality.webp" width="340"></a></p>
 <figcaption>
@@ -7968,7 +7987,7 @@ scripts run it, and so does CI.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-23
+    2026-11-24
   </span>
 
     

@@ -15,7 +15,7 @@ How to move the camera, select and transform objects, and find every keyboard sh
 
 - **Orbit** — drag with the left mouse button (right-drag also orbits; a quick right-click *tap* opens the context menu instead).
 - **Zoom** — mouse wheel. A two-finger swipe on a trackpad pans instead; see [The mouse wheel](#the-mouse-wheel) if yours does the wrong thing.
-- **Fly** — hold <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to pan on the camera's horizontal plane, <kbd>Q</kbd>/<kbd>E</kbd> to fly down/up, hold <kbd>Shift</kbd> for 3× speed. These keys fly only while the 3D view has the keyboard — if a panel has it, click the 3D view first (see [Keys follow the panel you are in](#keys-follow-the-panel-you-are-in)).
+- **Fly** — hold <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to pan on the camera's horizontal plane, <kbd>Q</kbd>/<kbd>E</kbd> to fly down/up, hold <kbd>Shift</kbd> for 3× speed. These keys fly only while the 3D view has the keyboard — if a panel has it, click the 3D view first (see [Keys follow the panel you are in](#keys-follow-the-panel-you-are-in)). *Since 1.79* two settings shape it, in **Settings ▸ Shortcuts ▸ Keymap** and in the viewport menu ▸ **View**: **Fly with WASD** — **Always** (the default) or **Only while holding the right mouse button** — and **Fly direction** — **Level** (the default: W / S stay on the horizontal plane) or **Where I look** (W / S follow the view; Q / E still go straight down and up). The fly direction toggle can be given a key in **Settings ▸ Shortcuts**.
 - **Focus** — <kbd>F</kbd> frames the selected object.
 - **Camera bookmarks** — save the current view from the right-click menu (**Camera bookmarks ▸ Save current view**), recall with <kbd>Shift</kbd>+<kbd>1</kbd>…<kbd>5</kbd>.
 
@@ -128,7 +128,7 @@ that content itself.
 
 ### The object list from the keyboard
 
-Click anywhere in the object list (<kbd>O</kbd> opens it) to give it focus, and the tree walks from the keyboard:
+*Since 1.79* the object list takes the keyboard as soon as you bring it forward — opened, its toolbar button, <kbd>O</kbd>, or a press on its header — so the arrow keys work straight away (it never takes the keys from a text field you are typing in). The [Explorer](https://docs.theprototype.app/explorer.md) does the same. Clicking anywhere in the list gives it focus too, and the tree walks from the keyboard:
 
 | Keys | Does |
 |---|---|
@@ -293,12 +293,59 @@ builds its own grid.
 | <kbd>3</kbd> | Scale |
 
 ![The same crate three times: with the Move gizmo (three arrows), the Rotate gizmo (three rings) and the Scale gizmo (three handles with cubes on their ends).](https://docs.theprototype.app/img/controls/gizmo-modes.webp)
-*Figure: <kbd>1</kbd> Move, <kbd>2</kbd> Rotate, <kbd>3</kbd> Scale — the same buttons are on the bottom bar.*
+*Figure: <kbd>1</kbd> Move, <kbd>2</kbd> Rotate, <kbd>3</kbd> Scale in the **Separate** gizmo style — the same buttons are on the bottom bar.*
+### Gizmo styles
+
+*New in 1.79.* The handles come in five styles. **Settings ▸ Scene ▸ Gizmo ▸ Gizmo style**:
+
+| Style | What you get |
+|---|---|
+| **Auto** (the default) | **All in one** with a mouse or a pen, **Touch puck** on a touch screen |
+| **Separate** | the classic gizmo: one tool's handles at a time (the picture above) |
+| **All in one** | arrows, plane squares, rings and resize cubes together, plus a centre knob (<kbd>Shift</kbd> + the knob moves freely) |
+| **Touch puck** | made for a thumb: slide the ground disc to move, the lift arrow raises, the ring turns and the knob resizes evenly; tap the disc for the per-axis handles |
+| **Box** | a box at the object's size: a face arrow pushes or pulls one side (the opposite side stays), a corner resizes evenly about the opposite corner, the arc turns it, and the size (*W × H × D m*) shows while you drag |
+
+So with a mouse you now get **All in one** unless you pick another style; pick **Separate** for the gizmo of earlier
+versions. **Handle size** (Small / Medium / Large) makes every handle smaller or bigger, and **Show** switches off the handle kinds
+you do not want in the style you use. These are settings of **this device**: nobody else sees your style, and a drag
+does exactly what it did before (one undo step, the same live update for everyone in the session). The gizmo is not
+shown in VR.
+
+**Press a tool again to step its handles.** Pressing <kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd> — or the Move, Rotate
+or Scale button — on the tool that is already active steps it: **that tool's handles → all in one → hidden** → that
+tool's handles again. The button shows small corner ticks while it is on all in one and is dimmed while hidden; picking
+another tool always lands on that tool's own handles. In the All in one, Touch puck and Box styles the buttons filter
+the handles by tool, and these styles start on all in one.
+
+**Press a tool button and drag** to transform at once: press on Move, Rotate or Scale, drag away from the button, and
+the selection moves, turns or resizes as you drag; let go to keep it. It works on the bottom bar and on the phone's
+[selection strip](https://docs.theprototype.app/interface.md#the-selection-toolbar).
+
+### Move now, Rotate now, Resize now
+
+*New in 1.79*, for keyboard users: the selection follows the pointer **at once**, with no handle to grab.
+
+- <kbd>X</kbd> / <kbd>Y</kbd> / <kbd>Z</kbd> lock an axis; press two of them to lock a plane; with no lock it moves in
+  the plane of the view.
+- **Type a number** for an exact amount.
+- Hold <kbd>Shift</kbd> for fine steps, or <kbd>Ctrl</kbd> to snap.
+- <kbd>Enter</kbd> or a left click **keeps** it; <kbd>Esc</kbd> or a right click **cancels** it.
+
+The whole gesture is **one undo step**, and everyone in the session sees it move live. A line at the top of the view
+says what is running. The same three work in the [UV editor](https://docs.theprototype.app/uv-editor.md#keys) (<kbd>X</kbd> / <kbd>Y</kbd> lock U /
+V there) and in [Edit Mesh](https://docs.theprototype.app/mesh-editing.md) on the picked vertices, edges or faces.
+
+They have **no key by default**: give them one in **Settings ▸ Shortcuts** (*Move now*, *Rotate now*, *Resize now*),
+or pick the Blender style [keymap](#keymap-presets), which puts them on <kbd>G</kbd> / <kbd>R</kbd> /
+<kbd>Alt</kbd>+<kbd>S</kbd>. The axis locks are <kbd>X</kbd> / <kbd>Y</kbd> / <kbd>Z</kbd> in every keymap and act only
+while one of these runs, so <kbd>Z</kbd> still cycles the view mode the rest of the time.
+
 Snapping is configured from the right-click menu under **Snapping** — grid steps and snap-to-surface, plus snapping onto real geometry: vertices, edges, faces and other objects, optionally turning the object onto the surface it lands on. See [Snapping](https://docs.theprototype.app/snapping.md).
 
 ### Hiding the gizmo, and getting the selection back
 
-Pressing the key of the mode that is **already active** hides the gizmo and the selection, so you can look at the object with nothing in the way. Pressing **any** mode key brings the same selection back in that mode — a multi-selection comes back whole, with the origin you placed by hand, and inside [Edit Mesh](https://docs.theprototype.app/mesh-editing.md) the face, edge or vertex you had picked comes back too. The gizmo button under **Gizmo & pivot** in the Edit Mesh toolbox does the same thing as the key, and <kbd>G</kbd> counts as a mode key, so it recalls as well.
+Pressing the key of the mode that is **already active** steps it to all in one, and pressing it once more hides the gizmo and the selection (see [Gizmo styles](#gizmo-styles)), so you can look at the object with nothing in the way. Pressing **any** mode key brings the same selection back in that mode — a multi-selection comes back whole, with the origin you placed by hand, and inside [Edit Mesh](https://docs.theprototype.app/mesh-editing.md) the face, edge or vertex you had picked comes back too. The gizmo button under **Gizmo & pivot** in the Edit Mesh toolbox does the same thing as the key, and <kbd>G</kbd> counts as a mode key, so it recalls as well.
 
 An object that was deleted, or that a peer locked in the meantime, is left out and a toast says how many were skipped.
 
@@ -676,19 +723,16 @@ logo and your profile picture stay where they are.) In **Edit positions** every 
 - **The buttons beside the logo** are hidden by default on a computer. In **Edit positions** their menu's **Show
   cluster** turns them on (it switches on **Settings ▸ Interface ▸ Touch tools**), and their grip moves them like every
   other cluster.
-- **The budget chip** (*Quest 3%* beside the toolbar) is a cluster too since 1.39. Drag its grip — or the chip itself —
-  anywhere; it snaps like the others and keeps its place in your layouts. Its menu (tap its grip, or right-click it)
-  ▸ **Reset position** puts it back beside the toolbar (or left of it, or above it, when there is no room). Its red
-  **−** hides it — a hidden chip is drawn faint in Edit positions with a green **+** to bring it back — and so does
-  unticking **Budget chip** in *Customize toolbar…* (on by default).
+- **The Preview pill** (top right of the 3D view, *since 1.79*; it replaced the budget chip and the Cinematic switch,
+  see [Cinematic view](https://docs.theprototype.app/cinematic-view.md)) is a cluster too. Drag its grip anywhere; it snaps like the others and keeps
+  its place in your layouts. A place or a hide you gave the old budget chip carries over to the pill. Right-click it —
+  or press and hold it on a touch screen — for **Hide this button**, **Show buttons** and **Customize buttons**.
 - **✓** applies, <kbd>Esc</kbd> cancels. A cluster keeps its *relative* place: on a smaller window, after folding or
   unfolding a phone, beside a pinned sidebar or above the dock. [Workspace layouts](#workspace-layouts) carry the places
   and rotations.
 
 ![Edit positions: every cluster has a small grip under it — the Undo, Redo and Multi-select row beside the logo, the Connect bar, the top-right group, the bottom toolbar and both corner stacks — and every button carries a red −.](https://docs.theprototype.app/img/controls/edit-positions-clusters.webp)
 *Figure: Edit positions, in a small window: every cluster has a grip, every button a red −.*
-![Edit positions: the budget chip has its own grip and red − right of the toolbar](https://docs.theprototype.app/img/controls/budget-chip-edit-positions.webp)
-*Figure: In Edit positions the budget chip has its own grip and red −.*
 ![After Rotate to vertical on the toolbar and Rotate to horizontal on the bottom-left buttons: the toolbar stands on the left edge with Play in its middle, and the bottom-left corner buttons lie in a row.](https://docs.theprototype.app/img/controls/clusters-rotated.webp)
 *Figure: Clusters after Rotate to vertical and Rotate to horizontal.*
 ![Edit positions with a mouse: the buttons beside the logo are drawn faint (hidden by default on a computer) and their grip menu is open — Move, Rotate to vertical, Reset position, Reset all positions, Show cluster and Show all. 1: Show cluster.](https://docs.theprototype.app/img/controls/touch-tools-show-cluster.webp)
@@ -800,7 +844,7 @@ The keys in the table are the **3D view's**: they fire while the 3D view has foc
 
 | Keys | Action |
 |---|---|
-| <kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd> | Gizmo: move / rotate / scale (again on the active mode: hide; any mode key: bring the selection back) |
+| <kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd> | Gizmo: move / rotate / scale (again on the active mode: [all in one, then hidden](#gizmo-styles); any mode key: bring the selection back) |
 | <kbd>G</kbd> | Move (grab) — same as <kbd>1</kbd> |
 | <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> | Fly the camera (horizontal) |
 | <kbd>Q</kbd> / <kbd>E</kbd> | Fly down / up |
@@ -814,6 +858,7 @@ The keys in the table are the **3D view's**: they fire while the 3D view has foc
 | <kbd>Esc</kbd> | Leave isolation; leave [focus mode](https://docs.theprototype.app/interface.md#focus-mode) while it is on |
 | <kbd>Ctrl</kbd>+<kbd>Space</kbd> | [Focus mode](https://docs.theprototype.app/interface.md#focus-mode) — maximize the area under the pointer (the 3D view alone, or a docked window filling the whole window with the [viewport picture-in-picture](https://docs.theprototype.app/interface.md#the-viewport-picture-in-picture)); again to restore |
 | <kbd>Z</kbd> | Cycle the [render mode](https://docs.theprototype.app/camera.md#render-mode-view): Shaded → Shaded + AO → Wireframe |
+| <kbd>X</kbd> / <kbd>Y</kbd> / <kbd>Z</kbd> | While [Move / Rotate / Resize now](#move-now-rotate-now-resize-now) runs: lock that axis (two keys lock a plane) |
 | <kbd>Tab</kbd> | Enter [mesh edit](https://docs.theprototype.app/mesh-editing.md) mode — inside it <kbd>Tab</kbd> cycles Vertices / Edges / Faces; <kbd>Esc</kbd> exits |
 | <kbd>I</kbd> | [Edit / Interact](#edit-and-interact) mode — in Interact, clicks play with the scene instead of selecting |
 | <kbd>M</kbd> | Toggle element [snapping](https://docs.theprototype.app/snapping.md) |
@@ -852,6 +897,32 @@ over it. They have their own *Viewport picture-in-picture* group in **Settings �
 
 **Over a field in Properties or Configure Scene**, <kbd>Ctrl</kbd>+<kbd>C</kbd> / <kbd>Ctrl</kbd>+<kbd>V</kbd> copy and
 paste that value (or a whole section over its header) — see [Copy, paste and reset values](#copy-paste-and-reset-values).
+
+### Keymap presets
+
+*New in 1.79.* **Settings ▸ Shortcuts ▸ Keymap ▸ Keymap preset** swaps the default keys for a set you may know from
+another program:
+
+| Preset | What it does |
+|---|---|
+| **ThePrototype** (the default) | the keys on this page: <kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd> pick the tool, <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> fly, <kbd>G</kbd> picks Move |
+| **Blender style** | <kbd>G</kbd> / <kbd>R</kbd> start [Move now / Rotate now](#move-now-rotate-now-resize-now), <kbd>Alt</kbd>+<kbd>S</kbd> Resize now (a bare <kbd>S</kbd> when **Fly with WASD** waits for the right mouse button); the same in the [UV editor](https://docs.theprototype.app/uv-editor.md#keys) and [Edit Mesh](https://docs.theprototype.app/mesh-editing.md), plus the UV editor's tool keys <kbd>W</kbd> / <kbd>B</kbd> / <kbd>C</kbd> / <kbd>P</kbd> |
+| **Unity / Maya style** | <kbd>W</kbd> / <kbd>E</kbd> / <kbd>R</kbd> pick Move / Rotate / Scale — once **Fly with WASD** is set to *Only while holding the right mouse button*, which frees those letters |
+
+Nothing changes until you pick one, and **your own key changes always win**: a preset key that lands on a key you set
+yourself is left unbound. <kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd> stay the tool keys in every preset.
+
+The keys the Blender preset takes, and where they went:
+
+| Key | Was | Now |
+|---|---|---|
+| <kbd>G</kbd> (3D view) | Move | unbound; <kbd>1</kbd> still picks Move |
+| <kbd>Alt</kbd>+<kbd>S</kbd> | Shader editor | <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd> (only while <kbd>Alt</kbd>+<kbd>S</kbd> resizes) |
+| <kbd>G</kbd> (UV editor) | arm Move | unbound; <kbd>1</kbd> still arms Move |
+| <kbd>G</kbd> (Edit Mesh) | arm Move | unbound; the toolbox button stays |
+| <kbd>S</kbd> (Edit Mesh) | Subdivide | <kbd>Shift</kbd>+<kbd>S</kbd> |
+
+The <kbd>?</kbd> sheet lists the new keys once they are bound.
 
 ### Keys follow the panel you are in
 

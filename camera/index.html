@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Camera & View", "url": "https://docs.theprototype.app/camera/", "description": "Everything about how the scene looks on your screen — the camera lens, render mode, shadows, the grid and the environment — lives in one place: Configure Scene.", "dateModified": "2026-11-22", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/render-modes.webp", "caption": "Shaded, Shaded + AO and Wireframe. AO darkens creases and the ground where objects touch it."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/view-section.webp", "caption": "Configure Scene ▸ View: how the scene is drawn on your screen."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/camera-object.webp", "caption": "A camera's properties, with its preview window at the lower left."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/env-presets.webp", "caption": "Studio, Daylight, Sunset and Night on the same three objects."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/sky-meadow.webp", "caption": "The Meadow sky image lighting a mirror sphere and a box."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/sky-image-section.webp", "caption": "Configure Scene ▸ Environment, with its Sky image section."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/settings/sky-image-quality.webp", "caption": "Sky image quality, for this device only."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/grid-and-lights.webp", "caption": "Light helpers show where each light is and where it shines; they are editor-only."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Camera & View", "url": "https://docs.theprototype.app/camera/", "description": "Everything about how the scene looks on your screen — the camera lens, render mode, shadows, the grid and the environment — lives in one place: Configure Scene.", "dateModified": "2026-11-24", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/render-modes.webp", "caption": "Shaded, Shaded + AO and Wireframe. AO darkens creases and the ground where objects touch it."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/view-section.webp", "caption": "Configure Scene ▸ View: how the scene is drawn on your screen. Since 1.79 the render mode chips show here on a phone; on a computer a row opens the Preview menu instead."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/camera-object.webp", "caption": "A camera's properties, with its preview window at the lower left."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/env-presets.webp", "caption": "Studio, Daylight, Sunset and Night on the same three objects."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/sky-meadow.webp", "caption": "The Meadow sky image lighting a mirror sphere and a box."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/sky-image-section.webp", "caption": "Configure Scene ▸ Environment, with its Sky image section."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/settings/sky-image-quality.webp", "caption": "Sky image quality, for this device only."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/grid-and-lights.webp", "caption": "Light helpers show where each light is and where it shines; they are editor-only."}]}</script>
 </head>
   
   
@@ -1860,6 +1860,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Render mode (View)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#draw-as-modes-for-checking-a-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Draw as: modes for checking a model
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3510,6 +3525,27 @@
   
   <span class="md-ellipsis">
     Hit Pause
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/vibrate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vibrate
   </span>
   
 
@@ -7456,6 +7492,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Render mode (View)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#draw-as-modes-for-checking-a-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Draw as: modes for checking a model
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -7660,7 +7711,9 @@ everyone sees them) and <strong>This device</strong> (only you), and only Enviro
   <a href="../performance/#the-quality-preset">The Quality preset</a>).</li>
 <li><strong>Environment</strong> — lighting preset, exposure, <a href="#sky-images-hdri">sky image</a>, saved presets (shared).</li>
 <li><strong>Music</strong> — the shared background track and your local volume (see <a href="../audio/">Music &amp; Sound</a>).</li>
-<li><strong>View</strong> — render mode, the scene-look overrides and light helpers (your device only).</li>
+<li><strong>Lights</strong> — the scene's <a href="#shadow-quality">shadow quality</a> (shared; <em>since 1.79</em>).</li>
+<li><strong>View</strong> — the render mode (on a computer, a row that opens the Preview menu), the scene-look overrides and light
+  helpers (your device only).</li>
 <li><strong>Camera</strong> — lens presets, field of view and clip planes (your device only).</li>
 <li><strong>Background</strong> and <strong>Fog</strong> (shared).</li>
 </ul>
@@ -7672,7 +7725,11 @@ by name, an AI agent, or <em>Claude (AI)</em> through the connector. Loading a s
 <p>The <strong>Environment</strong>, <strong>Background</strong> and <strong>Fog</strong> settings replicate to everyone. The <strong>View</strong> and <strong>Camera</strong> sections — render mode, lens and clip planes — are <strong>local to your device</strong>, so you can zoom, wireframe or dim shadows without changing what your peers see.</p>
 </div>
 <h2 id="render-mode-view">Render mode (View)</h2>
-<p>Three per-device render modes under <strong>Viewport — this device</strong>:</p>
+<p><em>Since 1.79</em>, on a computer and a tablet, how this device draws the scene lives in the <strong>Preview</strong> menu at the top right
+of the 3D view (the chevron beside <strong>Preview</strong>), under <strong>Draw as</strong>: Configure Scene ▸ View then has one row, <em>How this
+device draws the scene: open Preview</em>, which opens that menu. Phones keep the three chips in View. <kbd>Z</kbd> works
+everywhere. See <a href="../cinematic-view/#the-preview-pill">Cinematic view</a> for the rest of the menu.</p>
+<p>Three per-device render modes:</p>
 <table>
 <thead>
 <tr>
@@ -7706,6 +7763,43 @@ by name, an AI agent, or <em>Claude (AI)</em> through the connector. Loading a s
 look already sets ambient occlusion). Rebind it in <strong>Settings ▸ Shortcuts</strong>.</p>
 <p>On a desktop with Chrome or Edge, <strong>Preview</strong> at the top right (<kbd>Shift</kbd>+<kbd>Z</kbd>) switches to the
 <a href="../cinematic-view/">Cinematic view</a>: bounced light and reflections, on this computer only.</p>
+<h3 id="draw-as-modes-for-checking-a-model">Draw as: modes for checking a model</h3>
+<p><em>New in 1.79.</em> Under the three render modes the Preview menu's <strong>Draw as</strong> has five more, for checking a model rather
+than looking at the scene:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Wireframe over shaded</strong></td>
+<td>the lit scene with every triangle edge drawn on top</td>
+</tr>
+<tr>
+<td><strong>Ambient occlusion only</strong></td>
+<td>white clay with soft contact shadows: shapes without colour or texture</td>
+</tr>
+<tr>
+<td><strong>Normals</strong></td>
+<td>which way each surface faces, as colour</td>
+</tr>
+<tr>
+<td><strong>UV checker</strong></td>
+<td>a checker pattern through each model's texture coordinates: stretching shows as uneven squares</td>
+</tr>
+<tr>
+<td><strong>Weights</strong></td>
+<td>skin weights: the selected bone's influence from blue (none) to red (all); with no bone selected, each bone a colour. Greyed when nothing in the scene is skinned</td>
+</tr>
+</tbody>
+</table>
+<p>They are for <strong>this device only</strong> and go back to the everyday look when you reload or change scene (Shaded, Shaded +
+AO and Wireframe are remembered as before). While one is on, a dot on the Preview chevron says so. Play, a headset and
+the Cinematic view always draw the normal look. On a phone, add the optional <strong>Preview</strong> drawer (<strong>More ▸ Windows</strong>)
+for Draw as and Quality.</p>
 <p>Ambient occlusion and wireframe are <strong>desktop-only</strong> and never shown to peers. AO detail follows your shadow-quality setting (below), so lowering shadow quality also lightens the AO cost.</p>
 <p>These are SHADING modes — they are not how you see the scene's own look. A
 <a href="../post-processing/">scene look</a> renders for everyone in every mode except Wireframe, and
@@ -7715,7 +7809,8 @@ instead of yours.</p>
 <figure>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/camera/view-section.webp" data-desc-position="bottom"><img alt="Configure Scene ▸ View. 1: the render mode switch — Shaded, Shaded + AO, Wireframe. 2: Show light helpers." class="shot" height="615" loading="lazy" src="../img/camera/view-section.webp" width="311"></a></p>
 <figcaption>
-<p>Configure Scene ▸ View: how the scene is drawn on your screen.</p>
+<p>Configure Scene ▸ View: how the scene is drawn on your screen. Since 1.79 the render mode chips show here on a phone;
+on a computer a row opens the Preview menu instead.</p>
 </figcaption>
 </figure>
 <div class="shot-key">
@@ -7844,7 +7939,50 @@ camera, <a href="../nodes/setlook/">Set Look</a> for each camera's own <a href="
 <li><strong>Far clip</strong> (from 10) — the far limit. It <strong>grows automatically to fit the scene</strong>, and the orbit zoom-out limit is paired to it so you can never dolly past the far plane and blank the scene.</li>
 </ul>
 <h2 id="shadow-quality">Shadow quality</h2>
-<p>Shadow quality is a <strong>per-machine</strong> performance knob in the <strong>Settings</strong> dialog: <strong>Off · Low · Medium · High</strong> (default High). It caps every light's shadow-map size on your computer — <em>Off</em> disables shadows entirely. Per-light shadow settings still replicate; this only changes what your machine renders.</p>
+<p><em>New in 1.79.</em> <strong>Configure Scene ▸ Lights ▸ Shadow quality</strong> sets how the scene's shadows are drawn, for <strong>everyone</strong>
+in the scene, and is saved with it:</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>What it draws</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Off</strong></td>
+<td>no shadows</td>
+</tr>
+<tr>
+<td><strong>Basic</strong> (the default)</td>
+<td>one shadow map per light that casts: the look every scene had before 1.79</td>
+</tr>
+<tr>
+<td><strong>Soft</strong></td>
+<td>softer shadow edges. In a scene a few hundred metres across the edges stay as Basic draws them (a wider blur on that big a shadow map would wash small shadows out).</td>
+</tr>
+<tr>
+<td><strong>Far</strong></td>
+<td>Soft, and the sky's sun draws two layers of shadow: sharp near you and present out to 300 m. Past 300 m the sun draws no shadow at Far (Basic's single map covers the whole scene, more blurred). Lamps and suns you placed in the scene draw Soft's edges.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What a device draws.</strong> A computer draws up to <strong>Far</strong>, a phone at most <strong>Soft</strong> and a headset <strong>Basic</strong> (more would
+cost frames there). When this device draws less than the scene asks, the row says so (<em>This device draws Soft</em>). The
+<a href="../cinematic-view/">Cinematic view</a> draws Far as Soft. No device draws contact shadows yet (the thin dark line where an
+object meets what it stands on): they cost frames on laptop graphics and phones.</p>
+<p>Every scene made before 1.79 is <strong>Basic</strong> and looks exactly as it did.</p>
+<p><strong>This device's cap.</strong> <strong>Configure Scene ▸ Quality ▸ Shadow detail</strong> — the same setting as <strong>Settings ▸ Scene ▸
+Performance ▸ Shadow quality</strong>: <strong>Off · Low · Medium · High</strong> (default High) — caps every light's shadow-map size on
+your computer, and so caps what the scene asks for here; <em>Off</em> disables shadows entirely. Per-light shadow settings still
+replicate; this only changes what your machine renders. Settings search finds both rows: <em>Shadow quality</em> (this device)
+and <em>Scene shadow quality</em> (it opens Configure Scene ▸ Lights).</p>
+<div class="admonition note">
+<p class="admonition-title">Someone on 1.78</p>
+<p>A peer still on 1.78 drops the setting from the look it sends back: the scene reads Basic for them, and after their
+next sky or light change it reads Basic for everyone. Set it again once everyone has updated; the saved file is fine
+until then.</p>
+</div>
 <h2 id="the-grid">The grid</h2>
 <p>The floor grid can be toggled from the viewport right-click menu ▸ <strong>View ▸ Show/Hide grid</strong>, or the <strong>Show grid</strong> checkbox in Settings. Its fade distance scales with how far you've zoomed out, so it stays visible when you pull the camera way back. The grid hides itself in wireframe mode.</p>
 <h2 id="environment-presets">Environment presets</h2>
@@ -8173,7 +8311,7 @@ unaffected:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-22
+    2026-11-24
   </span>
 
     

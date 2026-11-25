@@ -14,7 +14,10 @@ The editor follows your **selection**. If you have an Edit Mesh session open it 
 
 The square is UV space: the whole texture, from 0 to 1 on both axes. The mesh's triangles are drawn over it as a wireframe, so you can see which part of the image lands on which part of the model.
 
-- **Scroll** to zoom, **middle-drag** to pan, **Fit** re-centres the square.
+- **Scroll** to zoom (toward the pointer, *since 1.79*), **middle-drag** to pan, **Fit** re-centres the square.
+- **Hold <kbd>Space</kbd> and drag** to pan with any tool (*since 1.79*; the cursor turns into a hand). Before, Box,
+  Lasso and Paint had no way to pan without a middle button.
+- On a touch screen, **two fingers** pinch to zoom and move together to pan — see [Touch](#touch).
 - Toggle **wireframe**, and the texture itself, from the view controls.
 
 !!! note "Big models show, but don't drag"
@@ -29,7 +32,7 @@ Pick a selection tool from the toolbar:
 
 | Tool | What it does |
 |---|---|
-| **Select** | Click a vertex; <kbd>Shift</kbd> (or <kbd>Ctrl</kbd>) adds. Dragging the background pans; clicking it deselects. |
+| **Select** | Click a vertex; <kbd>Shift</kbd> (or <kbd>Ctrl</kbd>) adds. Dragging the background pans; clicking it deselects. **<kbd>Shift</kbd>-drag on empty space box-selects** and adds to the selection (*since 1.79*; it used to pan — middle-drag and <kbd>Space</kbd>-drag still pan). |
 | **Box** | Drag a rectangle; everything inside is selected. |
 | **Lasso** | Draw a shape around the vertices you want. |
 | **Paint** | See [Painting](#painting) below. |
@@ -47,6 +50,20 @@ The topbar arms one of three transform modes — press <kbd>1</kbd>, <kbd>2</kbd
 | **Arrow keys** | Nudge by exactly **one texture pixel**, rotate by one degree, or scale by 1% — <kbd>Ctrl</kbd> ×10, <kbd>Shift</kbd> ×100 |
 
 Scaling with the arrows is **per axis** — left/right scales in U, up/down in V, and <kbd>Alt</kbd> makes it uniform. Shrinking is the exact reciprocal of growing, so a press one way and a press back leaves the map where it started. Every press is its own undo step.
+
+### Keys
+
+*New in 1.79.* The UV editor has its own rows in **Settings ▸ Shortcuts**:
+
+- **Tool keys** for Select, Box, Lasso and Paint: no key by default; the Blender style
+  [keymap](https://docs.theprototype.app/controls.md#keymap-presets) puts them on <kbd>W</kbd> / <kbd>B</kbd> / <kbd>C</kbd> / <kbd>P</kbd>.
+- **Move now, Rotate now, Resize now**: the selected points follow the pointer at once, as in the
+  [3D view](https://docs.theprototype.app/controls.md#move-now-rotate-now-resize-now). <kbd>X</kbd> / <kbd>Y</kbd> lock U / V, <kbd>Shift</kbd> moves
+  fine and <kbd>Ctrl</kbd> snaps; <kbd>Enter</kbd> or a click keeps it, <kbd>Esc</kbd> or a right click cancels it (a
+  right click now cancels a middle-click grab too). No key by default; the Blender preset puts them on <kbd>G</kbd> /
+  <kbd>R</kbd> / <kbd>S</kbd>, and <kbd>1</kbd> still arms Move.
+
+The <kbd>?</kbd> sheet lists them once they have a key, and <kbd>Space</kbd>-drag pan.
 
 ### The transform origin
 
@@ -138,25 +155,72 @@ Painting over a texture ends its link to the library image it was made from, so 
 
 ### Pen pressure
 
-Paint with a **pen** and pressure shapes the stroke. The **Pen pressure** switch in the Brush panel picks what it changes:
+Paint with a **pen** and pressure shapes the stroke. The **Pen pressure** switch in the Brush panel picks what pressing
+harder does:
 
 - **Size** (the default) — a light touch paints thin, a firm one paints the full brush size.
-- **Opacity** — the width stays put and a light touch paints faint.
-- **Off** — every dab is the same.
+- **Opacity** — the width stays put and a light touch **tints** instead of painting the full colour.
+- **Size + opacity** (*new in 1.79*) — both.
+- **Off** — the pen paints like a mouse.
 
-A mouse or finger stroke is unchanged whichever you pick, and peers watching a live pen stroke see the same widths you do. Fast strokes are sampled between frames, so a quick curve comes out smooth rather than as a string of dots.
+![The Paint tool's Brush panel: Pen pressure with Size, Opacity, Size + opacity and Off, the Pen only draws switch and the Channel row.](https://docs.theprototype.app/img/uv-editor/brush-panel-dark.webp#only-dark)
+![The Paint tool's Brush panel in the light theme: Pen pressure with Size, Opacity, Size + opacity and Off, the Pen only draws switch and the Channel row.](https://docs.theprototype.app/img/uv-editor/brush-panel-light.webp#only-light)
+*Figure: The Brush panel: Pen pressure and Pen only draws.*
+*Since 1.79* a stroke never gets stronger than the pressure you used, however often it crosses itself; going over a
+spot again in a **new** stroke builds it up, the way layers do.
+
+![Four red pen strokes on a white texture in the UV editor: light strokes that tint rather than paint the full red, a stroke that tapers with pressure and a full-strength line.](https://docs.theprototype.app/img/uv-editor/pressure-opacity.webp)
+*Figure: With Opacity a light touch tints instead of painting the full colour.*
+A mouse stroke is unchanged whichever you pick, and peers watching a live pen stroke see the same widths you do. Fast
+strokes are sampled between frames, so a quick curve comes out smooth rather than as a string of dots.
+
+### Spacing and smoothing
+
+*New in 1.79*, in the Brush panel beside Hardness, Opacity, Flow and the Eraser:
+
+- **Spacing** — the gap between dabs, as a share of the brush width: low is a smooth line, high a dotted one.
+- **Smoothing** — a stroke stabiliser: the brush trails the pen on a string and only moves when you pull it, so a
+  shaky hand draws a calm line. 0 is off.
+
+Both apply when you [paint on the model](https://docs.theprototype.app/mesh-paint.md) in the viewport too. The VR brush does not use smoothing.
+
+### Touch
+
+*New in 1.79:*
+
+- One finger uses the active tool. **Two fingers** pinch to zoom (toward the point between them) and move together to
+  pan. A second finger landing never leaves a dot: the stroke the first finger started is dropped.
+- **Pen only draws** (on by default): once a pen has touched the screen, fingers stop painting — one finger pans, two
+  pinch-zoom — so your other hand can rest on the screen. A palm under the pen is ignored. Turn it off in the Brush
+  panel or in **Settings ▸ Controls ▸ Pen and touch** to paint with a finger too.
+- The mouse wheel zooms toward the pointer here and in the [image preview](https://docs.theprototype.app/explorer.md); the preview also pinch-zooms
+  about your fingers. On a tablet, fingers on an image in the preview zoom and pan the **image** (they used to move the
+  window); move the preview window by its title bar.
+
+Custom brush tips, pressure curves and symmetry painting are not in this release.
 
 ## Material slots
 
 One mesh can carry several materials. The **Materials** list in the sidebar shows the slots; the canvas shows the slot you have selected.
 
+*Since 1.79* it is the same slot list as **Inspector ▸ Material** (see
+[Material slots](https://docs.theprototype.app/materials.md#material-slots)): rename, switch material, select or assign its faces, make unique,
+duplicate, reorder, switch off or remove a slot from its **⋯** menu, with 44 px rows on a touch screen (long-press a
+row for its menu). The image and assign buttons stay on each row.
+
 | Action | How |
 |---|---|
 | **Add a slot** | **Add material slot** — copies the last one, so you start from something sane. |
-| **Give it an image** | Drop an image on the slot, or use its image button. |
+| **Give it an image** | Drop an image on the slot, use its image button, or its **folder button** to pick one from the [Explorer](https://docs.theprototype.app/explorer.md) (*since 1.79*). |
 | **Assign faces to it** | Select faces in [Edit Mesh](https://docs.theprototype.app/mesh-editing.md), then press that slot's **◎** button. |
 | **Remove an image** | The slot's ✕ button. |
 
+**Drop an Explorer image on the canvas** (*since 1.79*) and it becomes the colour map of the slot you are working on, so
+you can paint over it. If the slot shows pixels that are in no Explorer file (painted here, or picked from disk), you
+are asked first; Undo brings the old image back.
+
+![Replace the painted image? asked over the UV editor after an Explorer image was dropped on the canvas: Replace or Cancel.](https://docs.theprototype.app/img/uv-editor/replace-painted-ask.webp)
+*Figure: Dropping an Explorer image on a slot that holds painted pixels asks first.*
 Slots replicate, save and undo like everything else, and a mesh you made with **Convert to mesh** arrives with one slot per original material already set up.
 
 !!! note

@@ -508,7 +508,7 @@ per-viewer and deliberately local — a peer's module must never yank your camer
 
 ```js
 api.isVR()                    // true inside a VR session
-api.haptic(0.6, 60)           // buzz the VR controllers — no-op on desktop
+api.haptic(0.6, 60)           // buzz the VR controllers (since 1.79 also a gamepad or an Android phone)
 api.haptic(0.6, 60, 'right')  // one hand only
 api.vrHand('left')            // {position:[x,y,z], quaternion:[x,y,z,w],
                               //  trigger, gripped, connected} — null when
@@ -520,6 +520,25 @@ api.possessModes              // e.g. ['chase','orbit','none','first'] —
                               // feature-detect 'first' here; unknown camera
                               // values degrade silently on older builds
 ```
+
+### Vibration
+
+*New in 1.79.* `api.feel` vibrates **this device**: the VR controllers in a headset, a gamepad (both motors, and the
+trigger motors on an Xbox pad in Chrome or Edge), or an Android phone. `api.haptic` and `api.hapticPattern` go through
+the same layer, so they reach pads and phones too.
+
+```js
+api.feel.vibrate('hit')                          // a named pattern: tap bump hit success fail rumble heartbeat
+api.feel.vibrate({ strength: 0.8, ms: 200 })     // a custom pulse (strength 0..1, 10..1000 ms)
+api.feel.vibrate('bump', { hand: 'left', scale: 0.5 })  // one side, at half strength
+api.feel.stop()                                  // stop what this module is playing
+api.feel.outputs()                               // {vr, gamepads, triggerRumble, phone}: what this device has
+```
+
+It is **local**: buzz only the player it is for (decide that in your module, for example on your own peer's hit). It
+plays in Interact and Play only, never in Edit, and the player's **Vibration** and **Vibration strength** game settings
+apply. Where there is no motor (an iPhone) nothing happens and nothing fails. In a flow graph, the
+[Vibrate](https://docs.theprototype.app/nodes/vibrate.md) node does the same.
 
 WASD / arrows, a gamepad's left stick or the VR left stick drive the object (tank controls);
 <kbd>Space</kbd> or gamepad A hops it `jumpHeight` metres (default 1.2, `0` = no jump, since 1.54.3).

@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Cinematic View", "url": "https://docs.theprototype.app/cinematic-view/", "description": "The standard view (top) and the Cinematic view at Standard quality (bottom).", "dateModified": "2026-11-23"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Cinematic View", "url": "https://docs.theprototype.app/cinematic-view/", "description": "The standard view (top) and the Cinematic view at Standard quality (bottom).", "dateModified": "2026-11-24", "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/cinematic-view/preview-menu-dark.webp#only-dark", "caption": "The Preview menu with the Cinematic view on at Standard."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/cinematic-view/preview-menu-light.webp#only-light", "caption": "The Preview menu with the Cinematic view on at Standard."}]}</script>
 </head>
   
   
@@ -1875,9 +1875,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-preview-pill" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Preview pill
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#quality" class="md-nav__link">
     <span class="md-ellipsis">
       Quality
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reflections-and-global-light" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reflections and Global light
     </span>
   </a>
   
@@ -3387,6 +3405,27 @@
   
   <span class="md-ellipsis">
     Hit Pause
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/vibrate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vibrate
   </span>
   
 
@@ -7327,9 +7366,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-preview-pill" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Preview pill
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#quality" class="md-nav__link">
     <span class="md-ellipsis">
       Quality
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reflections-and-global-light" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reflections and Global light
     </span>
   </a>
   
@@ -7432,9 +7489,39 @@ press Play, and the people in your session keep editing with you.</p>
 </table>
 <p>It is a setting of <strong>this computer</strong>. Other people in the session keep their own view, nothing is sent to them, and
 the scene file does not change. If you leave it on, it comes back on by itself a few seconds after the app loads.</p>
+<h2 id="the-preview-pill">The Preview pill</h2>
+<p><em>New in 1.79.</em> <strong>Preview</strong> sits in one pill at the top right of the 3D view, which replaced the Cinematic switch and
+the budget chip of earlier versions. It never covers a side panel: it sits beside it.</p>
+<ul>
+<li><strong>Preview</strong> turns the Cinematic view on and off where it is offered (and is lit while it is on); elsewhere it opens
+  the menu.</li>
+<li><strong>One part per device you judge for</strong>, with its icon and the percent of that device's budget the scene uses, in the
+  verdict colour. Click one to open <a href="../performance/#statistics-budget">Statistics ▸ Budget</a> for that device. When the pill
+  would meet other controls, the parts fold to the worst one and <em>+N</em>.</li>
+<li><strong>The chevron</strong> opens the <strong>Preview menu</strong>: <strong>Cinematic view</strong> (Off and the quality levels, then the
+  <a href="#reflections-and-global-light">Reflections and Global light</a> switches), <strong>Draw as</strong> (the
+  <a href="../camera/#draw-as-modes-for-checking-a-model">render modes and the checking modes</a>), <strong>Quality</strong> (the
+  <a href="../performance/#the-quality-preset">device quality preset</a>), <strong>Judge for</strong> (This device, Phone, Quest, PC: each one
+  you tick gets a part in the pill), <strong>Statistics…</strong> and <strong>Scene look settings…</strong>. A dot on the chevron says Draw as is
+  not the everyday look.</li>
+</ul>
+<p>Everything in the Preview menu changes how <strong>this device</strong> draws the scene: it is never saved and never shared.
+Configure scene is what the scene <strong>is</strong>: saved, and everyone sees it.</p>
+<p><strong>Judge for</strong> starts with nothing ticked. <strong>This device</strong> ticks itself once, the first time the scene goes over 100 % of
+this device's budget; Quest is never ticked for you. A device you picked on the old budget chip carries over. You can
+judge for several devices at once.</p>
+<p>The pill moves and hides like the other controls (right-click it, or <a href="../controls/#moving-the-clusters">Edit positions</a>);
+a place or a hide you gave the budget chip carries over. <strong>Phones</strong> have no pill: add the optional <strong>Preview</strong> item
+(<strong>More ▸ Windows</strong> on a folded phone, <strong>Customize toolbar</strong> on an unfolded one) for a drawer with Draw as and Quality.</p>
 <h2 id="quality">Quality</h2>
-<p>The arrow beside <strong>Preview</strong> opens the quality menu:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/cinematic-view/switch-menu.webp" data-desc-position="bottom"><img alt="The Preview switch with its quality menu open: Basic, Standard, High." class="shot" height="477" loading="lazy" src="../img/cinematic-view/switch-menu.webp" width="336"></a></p>
+<p>The chevron beside <strong>Preview</strong> opens the Preview menu; its <strong>Cinematic view</strong> group has <strong>Off</strong> and the quality levels:</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/cinematic-view/preview-menu-dark.webp#only-dark" data-desc-position="bottom"><img alt="The Preview menu: the Cinematic view group with Off, Basic, Standard and High, the Reflections and Global light switches with their cost, then Draw as, Quality and Judge for with each device's percent." height="884" loading="lazy" src="../img/cinematic-view/preview-menu-dark.webp#only-dark" width="280"></a>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/cinematic-view/preview-menu-light.webp#only-light" data-desc-position="bottom"><img alt="The Preview menu in the light theme: the Cinematic view group with Off, Basic, Standard and High, the Reflections and Global light switches with their cost, then Draw as, Quality and Judge for." height="884" loading="lazy" src="../img/cinematic-view/preview-menu-light.webp#only-light" width="280"></a></p>
+<figcaption>
+<p>The Preview menu with the Cinematic view on at Standard.</p>
+</figcaption>
+</figure>
 <table>
 <thead>
 <tr>
@@ -7457,11 +7544,29 @@ the scene file does not change. If you leave it on, it comes back on by itself a
 </tr>
 </tbody>
 </table>
-<p>When frames get slow (below about 30 frames a second for two seconds), the view <strong>steps down by itself</strong> one step and
-a small note says so. It does not step back up on its own: pick the step in the menu again to try it.</p>
+<p>When frames get slow (below about 30 frames a second for two seconds), the view <strong>steps down by itself</strong>: first the
+quality level, then a <a href="#reflections-and-global-light">switch</a> you set to <strong>On</strong>. The chip under the Preview pill says
+what it turned off (<em>Lowered to Basic, Reflections off to keep it smooth</em>). It does not step back up on its own: pick
+the step in the menu again to try it; changing a switch starts over.</p>
+<h2 id="reflections-and-global-light">Reflections and Global light</h2>
+<p><em>New in 1.79.</em> Two switches under the quality levels, for how <strong>this computer</strong> draws the Cinematic view:</p>
+<ul>
+<li><strong>Reflections</strong> — screen-space reflections on shiny and smooth surfaces.</li>
+<li><strong>Global light</strong> — light bouncing between surfaces.</li>
+</ul>
+<p>Each has <strong>Auto</strong> (what the quality level decides: Basic = off, Standard and High = on), <strong>On</strong> (at every level, half
+resolution at Basic) and <strong>Off</strong>. They work while the Cinematic view is on.</p>
+<p><strong>What it costs here.</strong> Once this computer has drawn the view with and without a switch (flip it once), the row shows
+what it costs, for example <em>On · costs about 3 ms</em>.</p>
+<p>The switches and the measured costs stay on this device: they are never saved with the scene or shared, and other
+people in the session see their own view.</p>
+<p><strong>Baked light is not lit twice.</strong> Objects with <a href="../baked-light/">baked light</a> (Configure scene ▸ Pro look ▸ Bake light)
+keep their own baked light and shadows: at Standard and High they get no bounce light or screen AO on top. Scenes
+without baked light look the same as before.</p>
+<p><strong>Shadows.</strong> The Cinematic view draws a scene's <a href="../camera/#shadow-quality">Far shadows</a> as Soft.</p>
 <h2 id="what-it-does-not-show-yet">What it does not show yet</h2>
 <p>This is the first version. A few things are drawn as <strong>plain stand-ins</strong> while the view is on, and a note under the
-switch names the ones in your scene:</p>
+Preview pill names the ones in your scene:</p>
 <ul>
 <li><a href="../shader-graph/">shader graph</a> materials and hand-written shaders (they show their base colour),</li>
 <li><a href="../water/">water</a> surfaces and fluid tanks,</li>
@@ -7482,12 +7587,12 @@ font, colour and outline. Raised (extruded) 3D text is real geometry and is lit 
 <li><strong>Entering VR</strong> turns the view off first; VR always uses the standard view.</li>
 </ul>
 <h2 id="which-devices-get-it">Which devices get it</h2>
-<p>The switch appears only where it can work:</p>
+<p><strong>Preview</strong> turns the Cinematic view on only where it can work (elsewhere it opens the Preview menu):</p>
 <ul>
 <li>a <strong>desktop or laptop</strong> computer,</li>
 <li><strong>Chrome or Edge</strong> with WebGPU on a hardware graphics card (not a software one).</li>
 </ul>
-<p>Phones, tablets and VR headsets do not get the switch and <strong>download nothing extra</strong> for it. If the graphics card
+<p>Phones, tablets and VR headsets do not get the Cinematic view and <strong>download nothing extra</strong> for it. If the graphics card
 fails while the view is on or while it starts (a shader that does not compile, a lost device, the browser dropping
 the graphics device), it switches back to the standard view by itself and tells you why. <strong>Preview</strong> then stays on
 screen greyed out, with the reason under it (press it to read it again), until you reload the page.</p>
@@ -7532,7 +7637,8 @@ no vsync), median frame time:</p>
 steps down to Basic by itself, and High steps down in every scene. On a handheld, pick <strong>Basic</strong>.</p>
 <h2 id="see-also">See also</h2>
 <ul>
-<li><a href="../camera/#render-mode-view">Camera &amp; View</a>: the Shaded / Shaded + AO / Wireframe render modes</li>
+<li><a href="../camera/#render-mode-view">Camera &amp; View</a>: the Shaded / Shaded + AO / Wireframe render modes and the Draw as modes</li>
+<li><a href="../performance/#judge-for-will-it-fit-on-a-quest">Performance &amp; Budgets</a>: Judge for and Statistics ▸ Budget</li>
 <li><a href="../pro-look/">Pro Look</a> and <a href="../post-processing/">Scene Look</a>: the look every viewer sees, saved with the scene</li>
 <li><a href="../photo-mode/">Photo Mode</a></li>
 </ul>
@@ -7556,7 +7662,7 @@ steps down to Basic by itself, and High steps down in every scene. On a handheld
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-23
+    2026-11-24
   </span>
 
     

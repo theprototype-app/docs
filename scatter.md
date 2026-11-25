@@ -102,7 +102,7 @@ selection; a second <kbd>Esc</kbd> leaves sculpting.
 ## Distant scatter (each device)
 
 Far scattered models fade out so each device stays inside its budget — about half of its triangle line in the
-[budget meter](https://docs.theprototype.app/performance.md#the-budget-chip-will-it-fit-on-a-quest) (Quest 150k, phone 250k, desktop 2M). The layout
+[budget meter](https://docs.theprototype.app/performance.md#judge-for-will-it-fit-on-a-quest) (Quest 150k, phone 250k, desktop 2M). The layout
 is the same everywhere: instances within 30 m of you, and every [collider](https://docs.theprototype.app/terrain.md#scatter-collider), are never
 thinned, so a ball hits the same rock on a phone and on a desktop.
 

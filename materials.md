@@ -55,6 +55,10 @@ Lambert and Toon have Normal, Emission and AO, and Basic has only AO.
 - **Set…** picks an image from your device: PNG, JPEG or WebP (an iPhone HEIC photo is converted to a JPEG first).
   You can also drop an image from the [Explorer](https://docs.theprototype.app/explorer.md) or from your computer onto a row. Large images are
   scaled to 1024 pixels on the long side.
+- The **folder button** beside **Set texture…** and on every map row (*since 1.79*) picks the image from your
+  Explorer instead — see [Textures from the Explorer](#textures-from-the-explorer).
+- The **wand button**, **Fill with noise** (*since 1.79*), on the texture row and on every map row fills that map
+  with generated noise — see [Fill with noise](#fill-with-noise).
 - Once a map is set, its **thumbnail** replaces Set…: click it to choose another image, or press **Remove**. A map
   that came with an imported model says *From the model*.
 - **Normal strength** (0 to 10, default 1) appears under Normal once it has a map, and **AO strength** (0 to 1) under
@@ -92,6 +96,77 @@ is named in a message, so you can set it on its own row. The whole set is one un
 - Removing a map that was loaded **compressed** (KTX2, for example from a [For Quest / web](https://docs.theprototype.app/publish-export.md#optimize-for-quest-web)
   file) cannot be undone: there is no image to put back.
 
+## Material slots
+
+*New in 1.79.* An object can wear several materials, one per **slot** — an imported model with several materials, or
+a mesh you gave slots in the [UV editor](https://docs.theprototype.app/uv-editor.md#material-slots). When it has two or more, **Inspector ▸ Material**
+starts with a **slot list**: a swatch, the slot's name, badges (*Shader*, *Off*, *Shared · used by N*), an eye and a
+**⋯** menu per row.
+
+- **Tap a row** to edit that slot: its faces flash on the model, and every row of the Material section below — type,
+  colour, maps, roughness — edits that slot.
+- **The eye** switches a slot **off**: it draws a plain grey, and its own material is kept (saves, undo, duplicates and
+  exports keep it). The eye again shows it.
+- **⋯** has **Rename**, **Switch material…**, **Select its faces**, **Assign selected faces**, **Make unique**,
+  **Duplicate**, **Move up**, **Move down** and **Remove…** (it asks where the slot's faces go: *Move its N faces to*).
+- **Add material slot** is in the Material section's own **⋯** menu.
+- **On a touch screen** the rows are 44 px high; long-press a row for its menu, and use Move up / Move down instead of
+  dragging.
+- While the list is open in [Edit Mesh](https://docs.theprototype.app/mesh-editing.md), **Remove**, **Move** and **Duplicate** wait until you leave
+  Edit Mesh.
+
+The UV editor's **Materials** pane is the same list, with its image and assign buttons. Slots, their names and every
+change reach everyone in the session, save with the scene and undo like any material edit.
+
+### Switch material…
+
+**⋯ ▸ Switch material…** opens a popover for that slot:
+
+- **Presets** (the starters, yours and your peers') and the [CC0 library](https://docs.theprototype.app/free-assets.md) (*Apply to ‹slot›*)
+  **copy** a look into the slot.
+- **In this scene** **links** the slot to a material another object or slot already wears: editing either changes
+  both, for everyone, and the row says *Shared · used by N*. **Make unique** gives the slot its own copy again.
+
+A duplicated object or slot is a working copy, not a link.
+
+### A node shader per slot
+
+From the [Shader editor](https://docs.theprototype.app/shader-graph.md#one-slot-or-all-slots) a slot can take its own node shader, or every slot of
+the object one shader. A slot that has one shows *Shader* in the list, and its Material section says so, with **Open in
+Shader editor** and **Detach** (*Detach all slots* when the all-slots shader draws it).
+
+## Textures from the Explorer
+
+*New in 1.79.* Any image in your [Explorer](https://docs.theprototype.app/explorer.md) can become a texture without leaving the app.
+
+- **Pick:** press the folder button (*Pick … from the Explorer*) beside **Set texture…** or on a map row (Normal,
+  Roughness, Metalness, Emission, AO). The picker shows every image as a thumbnail; type to search, choose a folder (its
+  subfolders count) or take one from **Recent** (your last picks, kept on this device). <kbd>Esc</kbd> closes it. The
+  same picker is on each slot row of the [UV editor](https://docs.theprototype.app/uv-editor.md#material-slots), in Image to 3D (**From
+  Explorer…**) and in **Settings ▸ Touch controls** for a button's images.
+- **Drag:** drag an image card from the Explorer onto a **map row** (it becomes that map), the **UV editor canvas** (the
+  colour map of the slot you work on), or an **object** in the 3D view (the colour map of the material under the
+  pointer: on an object with several slots, only that slot changes). One **Undo** takes it back.
+- **Touch:** press and hold a card, then drag it to a map row, the UV canvas or an object.
+
+![Pick the colour map: the Explorer picker over the 3D view, with a search box, All folders and two image thumbnails, and the Material rows with their folder buttons behind it.](https://docs.theprototype.app/img/materials/explorer-picker.webp)
+*Figure: The Explorer picker, opened from the colour map's folder button.*
+Images up to 25 MB (the Explorer's own limit) work. They are stored like an uploaded image (scaled to 1024 px), so
+everyone in the session, and older versions, see an ordinary texture. A file a peer shared that has not reached this
+device yet says so instead of applying.
+
+## Fill with noise
+
+*New in 1.79.* Every map row has a wand button, **Fill with noise**. On a row that already has an image it opens the
+[Image editor's Noise panel](https://docs.theprototype.app/image-editor.md#noise) on that image; on an empty row it asks for a size (**1024 px**, the
+default, 512 or 2048), puts a new noise texture on the material at once (one undo step) and opens the editor on it so
+you can tune it. **Save** there writes the row again. On an object with several slots it acts on the active slot.
+
+![Fill the Roughness map with noise: a dialog over the 3D view offering 1024 px (default), 512 px and 2048 px, with the Material section's wand buttons on every map row behind it.](https://docs.theprototype.app/img/materials/fill-with-noise.webp)
+*Figure: Fill with noise on an empty Roughness row asks for the size first.*
+A material draws a texture at most 1024 px; a 2048 image keeps its full size in the Library, and the material shows it
+at 1024 (it still tiles).
+
 ## Fish scales and the look tier
 
 **Fish scales** is an iridescent look: a thin film over the surface shifts its colour with the viewing angle (the
@@ -124,9 +199,10 @@ material, so saving on a headset and opening on a desktop shows the full look ag
 
 ## Limits
 
-- Presets apply to objects with **one material**. An object with several material slots (an imported OBJ with an
-  `.mtl`, a mesh you assigned slots to in the [UV editor](https://docs.theprototype.app/uv-editor.md)) is skipped, and objects driven by a
-  [shader graph](https://docs.theprototype.app/shader-graph.md) are skipped with a note.
+- The Presets row applies to objects with **one material**. On an object with several
+  [material slots](#material-slots), use **⋯ ▸ Switch material…** on the slot (*since 1.79*). Objects driven by a [shader graph](https://docs.theprototype.app/shader-graph.md) are skipped with a note.
+- In a [glTF export](https://docs.theprototype.app/publish-export.md) every slot is a plain material: a slot's node shader is not carried, and an off
+  slot exports its own material.
 - Applying a preset keeps the object's **Side** (front / back / double) and **Wireframe** setting.
 - **Glass** is a see-through, clear-coated surface rather than true refraction, so it stays cheap on a Quest. Raise
   **Transmission** on a Physical material for real refraction on a desktop.

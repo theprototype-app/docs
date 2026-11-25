@@ -52,7 +52,7 @@ Every page in one file: https://docs.theprototype.app/llms-full.txt
 - [Decals](https://docs.theprototype.app/decals.md): Undo, redo, saving, sharing with people in the session, Photo mode, baked light and the Cinematic view all work with decals.
 - [UV & Textures](https://docs.theprototype.app/uv-editor.md): A texture is a flat image wrapped around a 3D model. The UV editor shows you that wrapping — the model's surface unfolded into a square — and lets you rearrange it, generate it from scratch, paint…
 - [Paint on meshes](https://docs.theprototype.app/mesh-paint.md): Each stroke is one undo step, and everyone in the session sees it as you paint.
-- [Image Editor](https://docs.theprototype.app/image-editor.md): New in 1.32: the Image editor crops, rotates, flips, resizes and adjusts a picture in your Explorer library. When you save, every texture made from that picture updates for everyone in the session.
+- [Image Editor](https://docs.theprototype.app/image-editor.md): New in 1.32: the Image editor crops, rotates, flips, resizes and adjusts a picture (and since 1.79 fills it with noise) in your Explorer library. When you save, every texture made from that…
 - [Shader Graph](https://docs.theprototype.app/shader-graph.md): Build a material out of nodes instead of sliders. A shader graph replaces what a material looks like — its colour, glow, roughness, surface detail, transparency, even where its vertices sit — and…
 - [Shader Nodes](https://docs.theprototype.app/shader-nodes.md): Every node the Shader editor offers, grouped exactly as the palette and the right-click menu group them. Each node's one-line description is the same text the editor shows in its info pane when…
 - [Pro Look](https://docs.theprototype.app/pro-look.md): A quick way to try all of it: open Templates ▸ Product shot, press Bake light, then Photo….
@@ -142,6 +142,7 @@ Every page in one file: https://docs.theprototype.app/llms-full.txt
 - [Nodes › Game › Camera Shake](https://docs.theprototype.app/nodes/camerashake.md): Shakes the Play camera for a moment: a hit, a landing, an explosion. Since 1.74.
 - [Nodes › Game › Screen Flash](https://docs.theprototype.app/nodes/screenflash.md): Flashes a colour over the screen that fades out: red when you are hit, gold for a pickup. Since 1.74.
 - [Nodes › Game › Hit Pause](https://docs.theprototype.app/nodes/hitpause.md): Holds the picture still for a split second when something hits hard, so the hit lands. Since 1.74.
+- [Nodes › Game › Vibrate](https://docs.theprototype.app/nodes/vibrate.md): Vibrates the player's gamepad, Android phone or VR controllers when a pulse arrives: a hit, a landing, a pickup. Since 1.79.
 - [Nodes › Character › Character Controller](https://docs.theprototype.app/nodes/charcontroller.md): Sets how the player moves in Play: walking with gravity and a jump, or flying, at the speed you choose. There's nothing to trigger. The node works by being in the scene.
 - [Nodes › Character › Move Input](https://docs.theprototype.app/nodes/moveinput.md): The player's own movement keys as numbers — the W/A/S/D axes — for driving things by hand.
 - [Nodes › Character › Possess Object](https://docs.theprototype.app/nodes/possessnode.md): Puts the player in control of an object when a pulse arrives: a vehicle, a turret, a ball. A second input hands it back.

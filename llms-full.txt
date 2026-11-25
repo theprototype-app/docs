@@ -57,6 +57,33 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.79 — hands-on editing: keymaps, new gizmos, touch feedback, material slots and scene shadows.**
+
+- **Keyboard and gizmo**: [keymap presets](https://docs.theprototype.app/controls.md#keymap-presets) (ThePrototype, Blender style, Unity / Maya
+  style); [Move now, Rotate now, Resize now](https://docs.theprototype.app/controls.md#move-now-rotate-now-resize-now) with axis locks and typed
+  numbers, in the 3D view, the UV editor and Edit Mesh; Fly with WASD and Fly direction; and
+  [new gizmo styles](https://docs.theprototype.app/controls.md#gizmo-styles) — with a mouse you now get **All in one**, on a touch screen the
+  **Touch puck** (Settings ▸ Scene ▸ Gizmo picks **Separate** for the classic one). Press a tool again to step its
+  handles; press a tool button and drag to transform at once.
+- **Painting and the UV editor**: [pen pressure](https://docs.theprototype.app/uv-editor.md#pen-pressure) tints with Opacity and gains Size +
+  opacity, brushes gain [Spacing and Smoothing](https://docs.theprototype.app/uv-editor.md#spacing-and-smoothing), and
+  [fingers](https://docs.theprototype.app/uv-editor.md#touch) pinch, pan and never leave a stray dot. In the UV editor
+  **Shift-drag box-selects** now (it used to pan) and Space-drag pans with any tool.
+- **Touch feedback and vibration**: phones give a light [touch of feedback](https://docs.theprototype.app/touch-controls.md#touch-feedback) on
+  sliders, switches and snaps (it replaces Haptic tick), and games [vibrate gamepads and Android
+  phones](https://docs.theprototype.app/make-it-feel-like-a-real-game.md#vibration) with the new [Vibrate](https://docs.theprototype.app/nodes/vibrate.md) node.
+- **Around the 3D view**: one [Preview pill](https://docs.theprototype.app/cinematic-view.md#the-preview-pill) replaces the Cinematic switch and
+  the budget chip, with new [Draw as](https://docs.theprototype.app/camera.md#draw-as-modes-for-checking-a-model) modes for checking a model and
+  Judge for several devices at once; the [controls line up](https://docs.theprototype.app/interface.md#the-hud-grid) on one grid.
+- **Materials and textures**: [material slots you can manage](https://docs.theprototype.app/materials.md#material-slots), Switch material… with
+  linked materials, a [node shader per slot](https://docs.theprototype.app/shader-graph.md#one-slot-or-all-slots),
+  [textures from the Explorer](https://docs.theprototype.app/materials.md#textures-from-the-explorer) and [noise](https://docs.theprototype.app/image-editor.md#noise) in the
+  Image editor.
+- **Shadows**: [shadow quality per scene](https://docs.theprototype.app/camera.md#shadow-quality) (Off, Basic, Soft, Far), and the Cinematic view's
+  [Reflections and Global light](https://docs.theprototype.app/cinematic-view.md#reflections-and-global-light) switches.
+- **Faster start**: the code-behaviour runtime loads only when a scene has a behaviour or an agent is used, about 52 KB
+  less before the first frame.
+
 **1.78 — faster mesh editing.** [Edit Mesh](https://docs.theprototype.app/mesh-editing.md) runs on a new mesh core: on a 67,000-triangle mesh,
 entering Edit Mesh and undoing are about three times faster, extruding and bevelling an edge about twice as fast, the
 knife about 1.7 times, and dragging faces, edges or vertices stays smooth. [Undo puts your selection back](https://docs.theprototype.app/mesh-editing.md#selecting) after an operation,
@@ -442,7 +469,7 @@ offers **Keep original only**. **Settings ▸ Import** holds the defaults, a fil
 settings** and **Reimport**, and **Configure Scene ▸ Level of detail** sets one [LOD distance](https://docs.theprototype.app/lod.md#the-scenes-lod-distance)
 for the whole scene. Exports get [**Optimize for: For Quest / web**](https://docs.theprototype.app/publish-export.md#optimize-for-quest-web) — a GLTF
 becomes a compact `.glb`, a Scene keeps its format with compressed textures and LOD chains. A
-[budget chip](https://docs.theprototype.app/performance.md#the-budget-chip-will-it-fit-on-a-quest) beside the toolbar says whether the scene fits a
+[budget chip](https://docs.theprototype.app/performance.md#judge-for-will-it-fit-on-a-quest) beside the toolbar says whether the scene fits a
 Quest, a phone or a desktop, and **Statistics ▸ Budget** lists the heaviest objects with what optimizing them would save.
 [HEIC / HEIF photos](https://docs.theprototype.app/explorer.md#heic-heif-photos) import as images and textures, and [Race](https://docs.theprototype.app/race.md#in-vr) keeps its
 shadows in VR — inside the Quest budget.
@@ -871,7 +898,7 @@ How to move the camera, select and transform objects, and find every keyboard sh
 
 - **Orbit** — drag with the left mouse button (right-drag also orbits; a quick right-click *tap* opens the context menu instead).
 - **Zoom** — mouse wheel. A two-finger swipe on a trackpad pans instead; see [The mouse wheel](#the-mouse-wheel) if yours does the wrong thing.
-- **Fly** — hold <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to pan on the camera's horizontal plane, <kbd>Q</kbd>/<kbd>E</kbd> to fly down/up, hold <kbd>Shift</kbd> for 3× speed. These keys fly only while the 3D view has the keyboard — if a panel has it, click the 3D view first (see [Keys follow the panel you are in](#keys-follow-the-panel-you-are-in)).
+- **Fly** — hold <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to pan on the camera's horizontal plane, <kbd>Q</kbd>/<kbd>E</kbd> to fly down/up, hold <kbd>Shift</kbd> for 3× speed. These keys fly only while the 3D view has the keyboard — if a panel has it, click the 3D view first (see [Keys follow the panel you are in](#keys-follow-the-panel-you-are-in)). *Since 1.79* two settings shape it, in **Settings ▸ Shortcuts ▸ Keymap** and in the viewport menu ▸ **View**: **Fly with WASD** — **Always** (the default) or **Only while holding the right mouse button** — and **Fly direction** — **Level** (the default: W / S stay on the horizontal plane) or **Where I look** (W / S follow the view; Q / E still go straight down and up). The fly direction toggle can be given a key in **Settings ▸ Shortcuts**.
 - **Focus** — <kbd>F</kbd> frames the selected object.
 - **Camera bookmarks** — save the current view from the right-click menu (**Camera bookmarks ▸ Save current view**), recall with <kbd>Shift</kbd>+<kbd>1</kbd>…<kbd>5</kbd>.
 
@@ -984,7 +1011,7 @@ that content itself.
 
 ### The object list from the keyboard
 
-Click anywhere in the object list (<kbd>O</kbd> opens it) to give it focus, and the tree walks from the keyboard:
+*Since 1.79* the object list takes the keyboard as soon as you bring it forward — opened, its toolbar button, <kbd>O</kbd>, or a press on its header — so the arrow keys work straight away (it never takes the keys from a text field you are typing in). The [Explorer](https://docs.theprototype.app/explorer.md) does the same. Clicking anywhere in the list gives it focus too, and the tree walks from the keyboard:
 
 | Keys | Does |
 |---|---|
@@ -1149,12 +1176,59 @@ builds its own grid.
 | <kbd>3</kbd> | Scale |
 
 ![The same crate three times: with the Move gizmo (three arrows), the Rotate gizmo (three rings) and the Scale gizmo (three handles with cubes on their ends).](https://docs.theprototype.app/img/controls/gizmo-modes.webp)
-*Figure: <kbd>1</kbd> Move, <kbd>2</kbd> Rotate, <kbd>3</kbd> Scale — the same buttons are on the bottom bar.*
+*Figure: <kbd>1</kbd> Move, <kbd>2</kbd> Rotate, <kbd>3</kbd> Scale in the **Separate** gizmo style — the same buttons are on the bottom bar.*
+### Gizmo styles
+
+*New in 1.79.* The handles come in five styles. **Settings ▸ Scene ▸ Gizmo ▸ Gizmo style**:
+
+| Style | What you get |
+|---|---|
+| **Auto** (the default) | **All in one** with a mouse or a pen, **Touch puck** on a touch screen |
+| **Separate** | the classic gizmo: one tool's handles at a time (the picture above) |
+| **All in one** | arrows, plane squares, rings and resize cubes together, plus a centre knob (<kbd>Shift</kbd> + the knob moves freely) |
+| **Touch puck** | made for a thumb: slide the ground disc to move, the lift arrow raises, the ring turns and the knob resizes evenly; tap the disc for the per-axis handles |
+| **Box** | a box at the object's size: a face arrow pushes or pulls one side (the opposite side stays), a corner resizes evenly about the opposite corner, the arc turns it, and the size (*W × H × D m*) shows while you drag |
+
+So with a mouse you now get **All in one** unless you pick another style; pick **Separate** for the gizmo of earlier
+versions. **Handle size** (Small / Medium / Large) makes every handle smaller or bigger, and **Show** switches off the handle kinds
+you do not want in the style you use. These are settings of **this device**: nobody else sees your style, and a drag
+does exactly what it did before (one undo step, the same live update for everyone in the session). The gizmo is not
+shown in VR.
+
+**Press a tool again to step its handles.** Pressing <kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd> — or the Move, Rotate
+or Scale button — on the tool that is already active steps it: **that tool's handles → all in one → hidden** → that
+tool's handles again. The button shows small corner ticks while it is on all in one and is dimmed while hidden; picking
+another tool always lands on that tool's own handles. In the All in one, Touch puck and Box styles the buttons filter
+the handles by tool, and these styles start on all in one.
+
+**Press a tool button and drag** to transform at once: press on Move, Rotate or Scale, drag away from the button, and
+the selection moves, turns or resizes as you drag; let go to keep it. It works on the bottom bar and on the phone's
+[selection strip](https://docs.theprototype.app/interface.md#the-selection-toolbar).
+
+### Move now, Rotate now, Resize now
+
+*New in 1.79*, for keyboard users: the selection follows the pointer **at once**, with no handle to grab.
+
+- <kbd>X</kbd> / <kbd>Y</kbd> / <kbd>Z</kbd> lock an axis; press two of them to lock a plane; with no lock it moves in
+  the plane of the view.
+- **Type a number** for an exact amount.
+- Hold <kbd>Shift</kbd> for fine steps, or <kbd>Ctrl</kbd> to snap.
+- <kbd>Enter</kbd> or a left click **keeps** it; <kbd>Esc</kbd> or a right click **cancels** it.
+
+The whole gesture is **one undo step**, and everyone in the session sees it move live. A line at the top of the view
+says what is running. The same three work in the [UV editor](https://docs.theprototype.app/uv-editor.md#keys) (<kbd>X</kbd> / <kbd>Y</kbd> lock U /
+V there) and in [Edit Mesh](https://docs.theprototype.app/mesh-editing.md) on the picked vertices, edges or faces.
+
+They have **no key by default**: give them one in **Settings ▸ Shortcuts** (*Move now*, *Rotate now*, *Resize now*),
+or pick the Blender style [keymap](#keymap-presets), which puts them on <kbd>G</kbd> / <kbd>R</kbd> /
+<kbd>Alt</kbd>+<kbd>S</kbd>. The axis locks are <kbd>X</kbd> / <kbd>Y</kbd> / <kbd>Z</kbd> in every keymap and act only
+while one of these runs, so <kbd>Z</kbd> still cycles the view mode the rest of the time.
+
 Snapping is configured from the right-click menu under **Snapping** — grid steps and snap-to-surface, plus snapping onto real geometry: vertices, edges, faces and other objects, optionally turning the object onto the surface it lands on. See [Snapping](https://docs.theprototype.app/snapping.md).
 
 ### Hiding the gizmo, and getting the selection back
 
-Pressing the key of the mode that is **already active** hides the gizmo and the selection, so you can look at the object with nothing in the way. Pressing **any** mode key brings the same selection back in that mode — a multi-selection comes back whole, with the origin you placed by hand, and inside [Edit Mesh](https://docs.theprototype.app/mesh-editing.md) the face, edge or vertex you had picked comes back too. The gizmo button under **Gizmo & pivot** in the Edit Mesh toolbox does the same thing as the key, and <kbd>G</kbd> counts as a mode key, so it recalls as well.
+Pressing the key of the mode that is **already active** steps it to all in one, and pressing it once more hides the gizmo and the selection (see [Gizmo styles](#gizmo-styles)), so you can look at the object with nothing in the way. Pressing **any** mode key brings the same selection back in that mode — a multi-selection comes back whole, with the origin you placed by hand, and inside [Edit Mesh](https://docs.theprototype.app/mesh-editing.md) the face, edge or vertex you had picked comes back too. The gizmo button under **Gizmo & pivot** in the Edit Mesh toolbox does the same thing as the key, and <kbd>G</kbd> counts as a mode key, so it recalls as well.
 
 An object that was deleted, or that a peer locked in the meantime, is left out and a toast says how many were skipped.
 
@@ -1532,19 +1606,16 @@ logo and your profile picture stay where they are.) In **Edit positions** every 
 - **The buttons beside the logo** are hidden by default on a computer. In **Edit positions** their menu's **Show
   cluster** turns them on (it switches on **Settings ▸ Interface ▸ Touch tools**), and their grip moves them like every
   other cluster.
-- **The budget chip** (*Quest 3%* beside the toolbar) is a cluster too since 1.39. Drag its grip — or the chip itself —
-  anywhere; it snaps like the others and keeps its place in your layouts. Its menu (tap its grip, or right-click it)
-  ▸ **Reset position** puts it back beside the toolbar (or left of it, or above it, when there is no room). Its red
-  **−** hides it — a hidden chip is drawn faint in Edit positions with a green **+** to bring it back — and so does
-  unticking **Budget chip** in *Customize toolbar…* (on by default).
+- **The Preview pill** (top right of the 3D view, *since 1.79*; it replaced the budget chip and the Cinematic switch,
+  see [Cinematic view](https://docs.theprototype.app/cinematic-view.md)) is a cluster too. Drag its grip anywhere; it snaps like the others and keeps
+  its place in your layouts. A place or a hide you gave the old budget chip carries over to the pill. Right-click it —
+  or press and hold it on a touch screen — for **Hide this button**, **Show buttons** and **Customize buttons**.
 - **✓** applies, <kbd>Esc</kbd> cancels. A cluster keeps its *relative* place: on a smaller window, after folding or
   unfolding a phone, beside a pinned sidebar or above the dock. [Workspace layouts](#workspace-layouts) carry the places
   and rotations.
 
 ![Edit positions: every cluster has a small grip under it — the Undo, Redo and Multi-select row beside the logo, the Connect bar, the top-right group, the bottom toolbar and both corner stacks — and every button carries a red −.](https://docs.theprototype.app/img/controls/edit-positions-clusters.webp)
 *Figure: Edit positions, in a small window: every cluster has a grip, every button a red −.*
-![Edit positions: the budget chip has its own grip and red − right of the toolbar](https://docs.theprototype.app/img/controls/budget-chip-edit-positions.webp)
-*Figure: In Edit positions the budget chip has its own grip and red −.*
 ![After Rotate to vertical on the toolbar and Rotate to horizontal on the bottom-left buttons: the toolbar stands on the left edge with Play in its middle, and the bottom-left corner buttons lie in a row.](https://docs.theprototype.app/img/controls/clusters-rotated.webp)
 *Figure: Clusters after Rotate to vertical and Rotate to horizontal.*
 ![Edit positions with a mouse: the buttons beside the logo are drawn faint (hidden by default on a computer) and their grip menu is open — Move, Rotate to vertical, Reset position, Reset all positions, Show cluster and Show all. 1: Show cluster.](https://docs.theprototype.app/img/controls/touch-tools-show-cluster.webp)
@@ -1656,7 +1727,7 @@ The keys in the table are the **3D view's**: they fire while the 3D view has foc
 
 | Keys | Action |
 |---|---|
-| <kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd> | Gizmo: move / rotate / scale (again on the active mode: hide; any mode key: bring the selection back) |
+| <kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd> | Gizmo: move / rotate / scale (again on the active mode: [all in one, then hidden](#gizmo-styles); any mode key: bring the selection back) |
 | <kbd>G</kbd> | Move (grab) — same as <kbd>1</kbd> |
 | <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> | Fly the camera (horizontal) |
 | <kbd>Q</kbd> / <kbd>E</kbd> | Fly down / up |
@@ -1670,6 +1741,7 @@ The keys in the table are the **3D view's**: they fire while the 3D view has foc
 | <kbd>Esc</kbd> | Leave isolation; leave [focus mode](https://docs.theprototype.app/interface.md#focus-mode) while it is on |
 | <kbd>Ctrl</kbd>+<kbd>Space</kbd> | [Focus mode](https://docs.theprototype.app/interface.md#focus-mode) — maximize the area under the pointer (the 3D view alone, or a docked window filling the whole window with the [viewport picture-in-picture](https://docs.theprototype.app/interface.md#the-viewport-picture-in-picture)); again to restore |
 | <kbd>Z</kbd> | Cycle the [render mode](https://docs.theprototype.app/camera.md#render-mode-view): Shaded → Shaded + AO → Wireframe |
+| <kbd>X</kbd> / <kbd>Y</kbd> / <kbd>Z</kbd> | While [Move / Rotate / Resize now](#move-now-rotate-now-resize-now) runs: lock that axis (two keys lock a plane) |
 | <kbd>Tab</kbd> | Enter [mesh edit](https://docs.theprototype.app/mesh-editing.md) mode — inside it <kbd>Tab</kbd> cycles Vertices / Edges / Faces; <kbd>Esc</kbd> exits |
 | <kbd>I</kbd> | [Edit / Interact](#edit-and-interact) mode — in Interact, clicks play with the scene instead of selecting |
 | <kbd>M</kbd> | Toggle element [snapping](https://docs.theprototype.app/snapping.md) |
@@ -1708,6 +1780,32 @@ over it. They have their own *Viewport picture-in-picture* group in **Settings �
 
 **Over a field in Properties or Configure Scene**, <kbd>Ctrl</kbd>+<kbd>C</kbd> / <kbd>Ctrl</kbd>+<kbd>V</kbd> copy and
 paste that value (or a whole section over its header) — see [Copy, paste and reset values](#copy-paste-and-reset-values).
+
+### Keymap presets
+
+*New in 1.79.* **Settings ▸ Shortcuts ▸ Keymap ▸ Keymap preset** swaps the default keys for a set you may know from
+another program:
+
+| Preset | What it does |
+|---|---|
+| **ThePrototype** (the default) | the keys on this page: <kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd> pick the tool, <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> fly, <kbd>G</kbd> picks Move |
+| **Blender style** | <kbd>G</kbd> / <kbd>R</kbd> start [Move now / Rotate now](#move-now-rotate-now-resize-now), <kbd>Alt</kbd>+<kbd>S</kbd> Resize now (a bare <kbd>S</kbd> when **Fly with WASD** waits for the right mouse button); the same in the [UV editor](https://docs.theprototype.app/uv-editor.md#keys) and [Edit Mesh](https://docs.theprototype.app/mesh-editing.md), plus the UV editor's tool keys <kbd>W</kbd> / <kbd>B</kbd> / <kbd>C</kbd> / <kbd>P</kbd> |
+| **Unity / Maya style** | <kbd>W</kbd> / <kbd>E</kbd> / <kbd>R</kbd> pick Move / Rotate / Scale — once **Fly with WASD** is set to *Only while holding the right mouse button*, which frees those letters |
+
+Nothing changes until you pick one, and **your own key changes always win**: a preset key that lands on a key you set
+yourself is left unbound. <kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd> stay the tool keys in every preset.
+
+The keys the Blender preset takes, and where they went:
+
+| Key | Was | Now |
+|---|---|---|
+| <kbd>G</kbd> (3D view) | Move | unbound; <kbd>1</kbd> still picks Move |
+| <kbd>Alt</kbd>+<kbd>S</kbd> | Shader editor | <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd> (only while <kbd>Alt</kbd>+<kbd>S</kbd> resizes) |
+| <kbd>G</kbd> (UV editor) | arm Move | unbound; <kbd>1</kbd> still arms Move |
+| <kbd>G</kbd> (Edit Mesh) | arm Move | unbound; the toolbox button stays |
+| <kbd>S</kbd> (Edit Mesh) | Subdivide | <kbd>Shift</kbd>+<kbd>S</kbd> |
+
+The <kbd>?</kbd> sheet lists the new keys once they are bound.
 
 ### Keys follow the panel you are in
 
@@ -1819,10 +1917,30 @@ The light theme and every custom `.theme.json` restyle all of it; see [Themes & 
   sit in one group beside your picture, which opens your [profile menu](#the-profile-menu).
   Since 1.33 that group is arranged with [Edit positions](https://docs.theprototype.app/controls.md#edit-positions) too; emptied, it leaves no box
   behind. Since 1.36 the profile menu opens under the profile button wherever it is, beside a pinned right sidebar too.
+- **The Preview pill** (top right of the 3D view, *since 1.79*) turns the Cinematic view on, shows the budget percent of
+  each device you judge for, and its menu holds Draw as, Quality, Judge for and Statistics. It replaced the Cinematic
+  switch and the budget chip, and it sits beside an open side panel, never over it. See
+  [The Preview pill](https://docs.theprototype.app/cinematic-view.md#the-preview-pill).
 - **Toasts** are calm cards under the Connect bar, at most three at a time; more collect behind **+N more**. See
   [Toasts](https://docs.theprototype.app/notifications.md#toasts).
 - Someone who is **speaking** in voice chat gets a soft green ring on their avatar.
 - Buttons are 36–38 px with a mouse and grow to **44 px on a touch screen**.
+
+### The HUD grid
+
+*New in 1.79.* Every control that stands on the 3D view sits on one grid:
+
+- **One top row.** The logo, the Connect pill, the files / notifications / panels group and your profile button are
+  one height and share one centre line: 44 px with a mouse, 48 px on a touch screen.
+- **One inset.** The logo, the undo / redo / box-select buttons, the Add and AI buttons, mic and chat, the profile
+  button and the Preview pill all keep the same 12 px from the edge of the 3D view, also when a side panel is open
+  (split view on an unfolded phone).
+- **Undo, redo and box select are tiles** of the same shape and size as Add and AI.
+- **A full toolbar** (one with a **»** button) spans the space between the corner buttons exactly.
+- **The profile button holds still** when you tap it: the circle in the open menu is drawn in the same place as the
+  button, with its whole border.
+
+[Edit positions](https://docs.theprototype.app/controls.md#edit-positions) still moves any of them; **Reset position** puts them back on the grid.
 
 ![The right sidebar pinned at full height with Configure Scene open: the profile button has moved left of it and its menu — Customize character, Profile settings, Sign in to cloud — opens right under it, beside the sidebar](https://docs.theprototype.app/img/interface/profile-menu-pinned-sidebar.webp)
 *Figure: With a sidebar pinned at full height, the profile menu opens under its button, beside the sidebar.*
@@ -2370,7 +2488,9 @@ accident: a long press on a bar item opens More and picks that item up in one ge
 **What can go on the bar** — everything in More:
 
 - **Windows**: Add, More, Objects, Statistics, Chat, Explorer, Node editor, Animation, Scene, AI assistant, Notes,
-  Shader editor, UV editor, HUD editor, Profiler, Code;
+  Shader editor, UV editor, HUD editor, Profiler, Code, and *since 1.79* **Preview** (an eye: a drawer with Draw as and
+  Quality, the phone's version of the [Preview pill](https://docs.theprototype.app/cinematic-view.md#the-preview-pill); on an unfolded phone it is in
+  **Customize toolbar**);
 - **Edit**: Inspect, Move, Rotate, Scale, Undo, Redo, Select multiple, Interact mode. Move, Rotate, Scale and Inspect work
   on the selection and look pressed while active;
 - **Tools & View**: snapping, view and camera, and **Focus mode** (see [Focus mode](#focus-mode)).
@@ -2469,7 +2589,7 @@ with its top edge in the same frame while you resize it:
 
 | Button | What it does |
 |---|---|
-| **Move / Rotate / Scale** | the gizmo mode (keys <kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd>) |
+| **Move / Rotate / Scale** | the gizmo mode (keys <kbd>1</kbd> / <kbd>2</kbd> / <kbd>3</kbd>); tap it again to step its handles, or press and drag to transform at once (*since 1.79*, see [Gizmo styles](https://docs.theprototype.app/controls.md#gizmo-styles)) |
 | **Select multiple** | a toggle: while it is on, every tap adds or removes an object (there is no <kbd>Shift</kbd> on a phone) |
 | **Interact** | a toggle: tap the scene to play with it instead of editing (<kbd>I</kbd>) — see [Edit and Interact](https://docs.theprototype.app/controls.md#edit-and-interact) |
 | **Inspect** (the sliders icon) | opens the object's properties as the dock's **Properties** tab, or brings that tab to the front when another tab is in front; tap it again to close it. It looks pressed only while Properties is the tab on screen |
@@ -2663,7 +2783,8 @@ drag only exist in Play. Touch controls are screen controls, so they never show 
   stick appears under your thumb.
 - **A still tap** on the view uses what the crosshair is on; a drag looks around. **Look speed** sets how far a drag turns
   the view.
-- **Haptic tick** gives a short vibration on each press, on phones that support it.
+- **A short tick** on each press, on phones that can vibrate: it follows [Touch feedback](#touch-feedback) (its
+  *Buttons and switches* switch). It is the one touch feedback that plays in Play.
 
 ## Which buttons a game gets
 
@@ -2715,8 +2836,8 @@ not the [button looks](#button-looks), which stay on each device.
 ## Button looks
 
 **Settings ▸ Touch controls ▸ Button looks** lists every button with a preview of both states. For each button: a
-**Released** and a **Pressed** image (**Upload** a PNG or SVG of up to 160 KB, or pick an image from the
-[Explorer](https://docs.theprototype.app/explorer.md)), a **Tint** for the built-in icon, and the icon **Size**. **Default look** goes back to the themed
+**Released** and a **Pressed** image (**Upload** a PNG or SVG of up to 160 KB, or **From Explorer…**: since 1.79 the
+[Explorer picker](https://docs.theprototype.app/materials.md#textures-from-the-explorer) with thumbnails, search, folders and Recent), a **Tint** for the built-in icon, and the icon **Size**. **Default look** goes back to the themed
 icons. Images are kept in the browser's local storage, which is why they must stay small.
 
 ## Settings
@@ -2725,12 +2846,37 @@ icons. Images are kept in the browser's local storage, which is why they must st
 |---|---|---|
 | Show touch controls | Auto | Auto / Always / Never |
 | Show in edit | off | action buttons while editing too |
-| Haptic tick | on | a short vibration on each press, where supported |
 | Look speed | 1× (0.25–3) | how far a drag turns the view |
 | Edit layout · Reset | — | the layout editor; Reset clears every saved layout |
 | Button looks | themed icons | per button: released / pressed image, tint, icon size |
 
-Search Settings for *touch*, *joystick*, *buttons* or *haptic* to find this section.
+Search Settings for *touch*, *joystick*, *buttons*, *haptic* or *vibration* to find this section.
+
+### Touch feedback
+
+*New in 1.79*, in **Settings ▸ Touch controls ▸ Touch feedback** (this device). It replaces **Haptic tick**: your
+choice carries over (on becomes Light, off becomes Off).
+
+Phones give a light touch of feedback as you use the editor: a tick as a slider or a dragged number moves, a firmer
+one at its default and at whole numbers, a bump at each end, a different feel for switching on and off, a pulse on a
+long press, and one when a move, a key or a UV point snaps.
+
+| Row | What it does |
+|---|---|
+| **Touch feedback** | **Off**, **Light** (the default), **Medium** or **Strong**. It starts **Off** when your device asks for reduced motion. |
+| **Buttons and switches** | switches, choices, tabs and the on-screen game buttons |
+| **Sliders and values** | a tick per step, a firmer one at the default and at the ends |
+| **Snapping** | when a move, a key or a UV point snaps into place |
+| **Gestures** | a long press, picking up a card or a tab |
+| **Try it** | a slider to feel the level: a tick per step, a firmer one at 5, a bump at each end |
+
+- Only **touch** gives feedback (a pen counts); a mouse, a keyboard or a gamepad never vibrates.
+- It is silent in **Interact** and **Play** (a game's own vibration is the [Vibrate](https://docs.theprototype.app/nodes/vibrate.md) node's) apart
+  from the on-screen game buttons' tick, and while a [film](https://docs.theprototype.app/film.md) take records. Film mode's own countdown and marker
+  ticks stay; Touch feedback **Off** silences them too.
+- It works in **Chrome on Android**. iPhone and iPad browsers cannot vibrate for a web page, so there Settings shows
+  *Not available* and says why.
+- **Reset Touch controls** resets it too.
 
 ## Trackpads
 
@@ -3003,7 +3149,11 @@ Custom themes are saved in this browser. To use one on another device, copy the 
   outline** (see [Mesh Editing](https://docs.theprototype.app/mesh-editing.md#display)).
 - **Density** — **Settings ▸ Interface ▸ Density**: *Comfortable* (the default) or *Compact*, tighter rows and controls
   on a computer screen; see [Settings](https://docs.theprototype.app/settings.md#density).
-- **Render mode** — Shaded, Shaded + AO or Wireframe, per device (<kbd>Z</kbd> cycles them): see [Camera & View](https://docs.theprototype.app/camera.md#render-mode-view).
+- **Render mode** — Shaded, Shaded + AO or Wireframe, per device (<kbd>Z</kbd> cycles them), and since 1.79 the
+  **Draw as** modes for checking a model, in the Preview menu at the top right of the 3D view: see
+  [Camera & View](https://docs.theprototype.app/camera.md#render-mode-view).
+- **Gizmo** — the style and size of the transform handles: **Settings ▸ Scene ▸ Gizmo** (see
+  [Gizmo styles](https://docs.theprototype.app/controls.md#gizmo-styles)).
 - **Toolbar** — which buttons the bottom bar shows, in what order and where: see [The toolbar](https://docs.theprototype.app/controls.md#the-toolbar).
 - **FPS and draw calls** — a small counter in any mode: **Settings ▸ Interface ▸ Viewport ▸ Show FPS + draw calls**.
 
@@ -3115,7 +3265,7 @@ Everything in the editor can be reached and used from the keyboard.
 
 - <kbd>Tab</kbd> / <kbd>Shift</kbd>+<kbd>Tab</kbd> move through the controls in reading order — the skip link, the main
   menu, the touch tools, the Connect bar, the top-right group and your profile, then the toolbar, the corner buttons,
-  the budget chip and any open panel. Every control shows a **focus ring** in the theme's accent.
+  the Preview pill (the budget chip before 1.79) and any open panel. Every control shows a **focus ring** in the theme's accent.
 - **Toolbars are one stop each.** In the bottom toolbar, the corner stacks, the touch tools and the top-right group,
   <kbd>←</kbd> / <kbd>→</kbd> (or <kbd>↑</kbd> / <kbd>↓</kbd>) move between buttons, <kbd>Home</kbd> / <kbd>End</kbd> go
   to the ends and <kbd>Enter</kbd> / <kbd>Space</kbd> press.
@@ -3378,6 +3528,11 @@ cache uses the older Cache Storage, and where neither exists everything download
 | Limit floods from peers | new in 1.76 | **Connection ▸ Limit floods from peers** — **Off** / **Normal** / **Strict**, this device only; see [Limit floods from peers](https://docs.theprototype.app/connection.md#limit-floods-from-peers) |
 | Require approval to join | new in 1.76 | **Connection ▸ Require approval to join** — this session only, off when you leave; see [Blocking a guest](https://docs.theprototype.app/connection.md#blocking-a-guest) |
 | New sign-in alerts · Your data | new in 1.76 | **Account ▸ Email ▸ New sign-in alerts** and **Account ▸ Your data**, on theprototype.app; see [Your account and data](https://docs.theprototype.app/account-and-data.md) |
+| Keymap preset · Fly with WASD · Fly direction | new in 1.79 | **Shortcuts ▸ Keymap** — **ThePrototype** (the default) / **Blender style** / **Unity / Maya style**, and the two fly rows, this device only; see [Keymap presets](https://docs.theprototype.app/controls.md#keymap-presets) |
+| Gizmo style · Handle size · Show | new in 1.79 | **Scene ▸ Gizmo** — **Auto** (the default: All in one with a mouse, Touch puck on touch) / **Separate** / **All in one** / **Touch puck** / **Box**, this device only; see [Gizmo styles](https://docs.theprototype.app/controls.md#gizmo-styles) |
+| Haptic tick | Touch controls (until 1.78) | **Touch controls ▸ Touch feedback** — **Off** / **Light** / **Medium** / **Strong** and four switches, this device only; your old choice carries over. See [Touch feedback](https://docs.theprototype.app/touch-controls.md#touch-feedback) |
+| Pen only draws | new in 1.79 | **Controls ▸ Pen and touch** — on by default, this device only; also in the UV editor's Brush panel. See [Touch](https://docs.theprototype.app/uv-editor.md#touch) |
+| Shadow quality · Scene shadow quality | the Shadow quality row, now with a second | **Scene ▸ Performance ▸ Shadow quality** caps what this device draws; **Scene shadow quality** opens **Configure Scene ▸ Lights**, where the scene's own level is set for everyone. See [Shadow quality](https://docs.theprototype.app/camera.md#shadow-quality) |
 
 
 ---
@@ -4136,6 +4291,14 @@ A momentary network blip no longer throws you out, either. A peer that drops for
 ### Versions in a session
 
 When someone joins, their app and yours first agree that they speak the same session version, before any scene data is exchanged. Most updates do not change it, so people on different app versions keep working together as before. When an update does change it, the two apps do not connect: the person on the older version sees *This session uses a newer version. Reload to update.* with a **Reload** button, and people on the newer version see that person in **People** as needing to reload. After reloading, join again as usual.
+
+**With someone on 1.78** (1.79 keeps the same session version, so you connect as usual): they see material slots,
+their names and list changes, but draw an [off slot](https://docs.theprototype.app/materials.md#material-slots) as normal. They keep a slot's
+[shader](https://docs.theprototype.app/shader-graph.md#one-slot-or-all-slots) but draw the slot's own material, and **People** tells you they are on
+an older version. A [Vibrate](https://docs.theprototype.app/nodes/vibrate.md) node does nothing for them. A *Size + opacity* pen stroke shows as
+*Size* for them until the stroke is done. They drop the scene's [shadow quality](https://docs.theprototype.app/camera.md#shadow-quality): the scene
+reads Basic for them, and after their next sky or light change it reads Basic for everyone. Set it again once everyone
+has updated; the saved file is fine until then.
 
 Each person's app also accepts a generous, bounded amount of messages and data per second from each other person, well above sharing a large file or moving hundreds of objects at once. Anything far beyond that is skipped with one notice, the connection stays up, and the counts are in [Diagnostics](#diagnostics-you-can-copy).
 
@@ -4933,7 +5096,8 @@ Right-click a file or a folder for **Duplicate** (**Duplicate folder**), **Copy*
 ### The preview window
 
 The preview is one window for any file: an image, a sound, a 3D model, a text file or a folder. Images open zoomable
-(**−** / **＋** / **1:1**, drag to pan), sounds open with a player, and 3D models open on a turntable with an **animation transport** — play, step a frame with <kbd>,</kbd> and <kbd>.</kbd>, scrub, pick a clip — and a mesh-stats line. Text files show read only (the first 256 KB); double-click opens them in the code editor. The **←** / **→** buttons (or keys) page through the folder without closing the window, <kbd>Enter</kbd> goes into a folder, and **⌐** or <kbd>Backspace</kbd> goes up a level. Keys never fire while you type in a field.
+(**−** / **＋** / **1:1**, drag to pan; *since 1.79* the wheel and a pinch zoom toward the pointer or your fingers, and on
+a tablet fingers on an image zoom and pan the image — move the window by its title bar), sounds open with a player, and 3D models open on a turntable with an **animation transport** — play, step a frame with <kbd>,</kbd> and <kbd>.</kbd>, scrub, pick a clip — and a mesh-stats line. Text files show read only (the first 256 KB); double-click opens them in the code editor. The **←** / **→** buttons (or keys) page through the folder without closing the window, <kbd>Enter</kbd> goes into a folder, and **⌐** or <kbd>Backspace</kbd> goes up a level. Keys never fire while you type in a field.
 
 **View | Edit** (*1.65*). On an image in your Library, **Edit** in the header opens the [Image editor](https://docs.theprototype.app/image-editor.md)
 in the same window, with a filmstrip of the folder's images on the left; **View** goes back. Unsaved edits are never
@@ -5094,7 +5258,12 @@ all pack downloads**.
 ### Images, audio and text
 
 - **Images** dropped onto an object become its **texture**. A big photo is scaled down to 1024 px on its longest side
-  instead of being refused — see [Big photos as textures](https://docs.theprototype.app/image-editor.md#big-photos-as-textures).
+  instead of being refused — see [Big photos as textures](https://docs.theprototype.app/image-editor.md#big-photos-as-textures). *Since 1.79* the
+  image becomes the colour map of the material **under the pointer**: on an object with several material slots, only
+  that slot changes, and one **Undo** takes it back. An image card also drops onto a **map row** in Inspector ▸ Material
+  (it becomes that map) and onto the **UV editor canvas** (the colour map of the slot you work on). On a touch screen,
+  press and hold a card, then drag it. The material's folder buttons open the same images in a picker: see
+  [Textures from the Explorer](https://docs.theprototype.app/materials.md#textures-from-the-explorer).
 - **Audio and text** are used where they plug in — sound nodes, scripts, and any module that claims the drop (a sample
   onto a pad).
 
@@ -5358,7 +5527,7 @@ space still deselects: the box lets clicks through, so objects inside the room s
 | --- | --- |
 | [Photo mode](https://docs.theprototype.app/photo-mode.md) | A photo cannot trace splats: they are left out, and the panel's note says so. The normal still shows them. |
 | [Cinematic view](https://docs.theprototype.app/cinematic-view.md) | The view cannot draw them: they are hidden while it is on, and the **Not shown** note names Gaussian splats. |
-| Headset and phone | **Off on Meta Quest for now** (since 1.75.1): a scan in view slowed a Quest 3 from 72 to 23 frames a second at 30,000 splats and to 6 at 150,000, so a headset draws no splats and says why. The scan stays in the scene and everyone else still sees it. A phone draws up to 2 million splats; past that, whole splat objects are hidden on the phone, with one notice. A PC has no splat budget. See [Performance & Budgets](https://docs.theprototype.app/performance.md#the-budget-chip-will-it-fit-on-a-quest). |
+| Headset and phone | **Off on Meta Quest for now** (since 1.75.1): a scan in view slowed a Quest 3 from 72 to 23 frames a second at 30,000 splats and to 6 at 150,000, so a headset draws no splats and says why. The scan stays in the scene and everyone else still sees it. A phone draws up to 2 million splats; past that, whole splat objects are hidden on the phone, with one notice. A PC has no splat budget. See [Performance & Budgets](https://docs.theprototype.app/performance.md#judge-for-will-it-fit-on-a-quest). |
 | 3D print and AR export | STL, 3MF and USDZ files leave splats out (a scan is not a mesh). |
 
 A splat is not a mesh, so **Paint**, **Simplify** and decals do not work on it: each one says so.
@@ -5975,6 +6144,10 @@ Lambert and Toon have Normal, Emission and AO, and Basic has only AO.
 - **Set…** picks an image from your device: PNG, JPEG or WebP (an iPhone HEIC photo is converted to a JPEG first).
   You can also drop an image from the [Explorer](https://docs.theprototype.app/explorer.md) or from your computer onto a row. Large images are
   scaled to 1024 pixels on the long side.
+- The **folder button** beside **Set texture…** and on every map row (*since 1.79*) picks the image from your
+  Explorer instead — see [Textures from the Explorer](#textures-from-the-explorer).
+- The **wand button**, **Fill with noise** (*since 1.79*), on the texture row and on every map row fills that map
+  with generated noise — see [Fill with noise](#fill-with-noise).
 - Once a map is set, its **thumbnail** replaces Set…: click it to choose another image, or press **Remove**. A map
   that came with an imported model says *From the model*.
 - **Normal strength** (0 to 10, default 1) appears under Normal once it has a map, and **AO strength** (0 to 1) under
@@ -6012,6 +6185,77 @@ is named in a message, so you can set it on its own row. The whole set is one un
 - Removing a map that was loaded **compressed** (KTX2, for example from a [For Quest / web](https://docs.theprototype.app/publish-export.md#optimize-for-quest-web)
   file) cannot be undone: there is no image to put back.
 
+## Material slots
+
+*New in 1.79.* An object can wear several materials, one per **slot** — an imported model with several materials, or
+a mesh you gave slots in the [UV editor](https://docs.theprototype.app/uv-editor.md#material-slots). When it has two or more, **Inspector ▸ Material**
+starts with a **slot list**: a swatch, the slot's name, badges (*Shader*, *Off*, *Shared · used by N*), an eye and a
+**⋯** menu per row.
+
+- **Tap a row** to edit that slot: its faces flash on the model, and every row of the Material section below — type,
+  colour, maps, roughness — edits that slot.
+- **The eye** switches a slot **off**: it draws a plain grey, and its own material is kept (saves, undo, duplicates and
+  exports keep it). The eye again shows it.
+- **⋯** has **Rename**, **Switch material…**, **Select its faces**, **Assign selected faces**, **Make unique**,
+  **Duplicate**, **Move up**, **Move down** and **Remove…** (it asks where the slot's faces go: *Move its N faces to*).
+- **Add material slot** is in the Material section's own **⋯** menu.
+- **On a touch screen** the rows are 44 px high; long-press a row for its menu, and use Move up / Move down instead of
+  dragging.
+- While the list is open in [Edit Mesh](https://docs.theprototype.app/mesh-editing.md), **Remove**, **Move** and **Duplicate** wait until you leave
+  Edit Mesh.
+
+The UV editor's **Materials** pane is the same list, with its image and assign buttons. Slots, their names and every
+change reach everyone in the session, save with the scene and undo like any material edit.
+
+### Switch material…
+
+**⋯ ▸ Switch material…** opens a popover for that slot:
+
+- **Presets** (the starters, yours and your peers') and the [CC0 library](https://docs.theprototype.app/free-assets.md) (*Apply to ‹slot›*)
+  **copy** a look into the slot.
+- **In this scene** **links** the slot to a material another object or slot already wears: editing either changes
+  both, for everyone, and the row says *Shared · used by N*. **Make unique** gives the slot its own copy again.
+
+A duplicated object or slot is a working copy, not a link.
+
+### A node shader per slot
+
+From the [Shader editor](https://docs.theprototype.app/shader-graph.md#one-slot-or-all-slots) a slot can take its own node shader, or every slot of
+the object one shader. A slot that has one shows *Shader* in the list, and its Material section says so, with **Open in
+Shader editor** and **Detach** (*Detach all slots* when the all-slots shader draws it).
+
+## Textures from the Explorer
+
+*New in 1.79.* Any image in your [Explorer](https://docs.theprototype.app/explorer.md) can become a texture without leaving the app.
+
+- **Pick:** press the folder button (*Pick … from the Explorer*) beside **Set texture…** or on a map row (Normal,
+  Roughness, Metalness, Emission, AO). The picker shows every image as a thumbnail; type to search, choose a folder (its
+  subfolders count) or take one from **Recent** (your last picks, kept on this device). <kbd>Esc</kbd> closes it. The
+  same picker is on each slot row of the [UV editor](https://docs.theprototype.app/uv-editor.md#material-slots), in Image to 3D (**From
+  Explorer…**) and in **Settings ▸ Touch controls** for a button's images.
+- **Drag:** drag an image card from the Explorer onto a **map row** (it becomes that map), the **UV editor canvas** (the
+  colour map of the slot you work on), or an **object** in the 3D view (the colour map of the material under the
+  pointer: on an object with several slots, only that slot changes). One **Undo** takes it back.
+- **Touch:** press and hold a card, then drag it to a map row, the UV canvas or an object.
+
+![Pick the colour map: the Explorer picker over the 3D view, with a search box, All folders and two image thumbnails, and the Material rows with their folder buttons behind it.](https://docs.theprototype.app/img/materials/explorer-picker.webp)
+*Figure: The Explorer picker, opened from the colour map's folder button.*
+Images up to 25 MB (the Explorer's own limit) work. They are stored like an uploaded image (scaled to 1024 px), so
+everyone in the session, and older versions, see an ordinary texture. A file a peer shared that has not reached this
+device yet says so instead of applying.
+
+## Fill with noise
+
+*New in 1.79.* Every map row has a wand button, **Fill with noise**. On a row that already has an image it opens the
+[Image editor's Noise panel](https://docs.theprototype.app/image-editor.md#noise) on that image; on an empty row it asks for a size (**1024 px**, the
+default, 512 or 2048), puts a new noise texture on the material at once (one undo step) and opens the editor on it so
+you can tune it. **Save** there writes the row again. On an object with several slots it acts on the active slot.
+
+![Fill the Roughness map with noise: a dialog over the 3D view offering 1024 px (default), 512 px and 2048 px, with the Material section's wand buttons on every map row behind it.](https://docs.theprototype.app/img/materials/fill-with-noise.webp)
+*Figure: Fill with noise on an empty Roughness row asks for the size first.*
+A material draws a texture at most 1024 px; a 2048 image keeps its full size in the Library, and the material shows it
+at 1024 (it still tiles).
+
 ## Fish scales and the look tier
 
 **Fish scales** is an iridescent look: a thin film over the surface shifts its colour with the viewing angle (the
@@ -6044,9 +6288,10 @@ material, so saving on a headset and opening on a desktop shows the full look ag
 
 ## Limits
 
-- Presets apply to objects with **one material**. An object with several material slots (an imported OBJ with an
-  `.mtl`, a mesh you assigned slots to in the [UV editor](https://docs.theprototype.app/uv-editor.md)) is skipped, and objects driven by a
-  [shader graph](https://docs.theprototype.app/shader-graph.md) are skipped with a note.
+- The Presets row applies to objects with **one material**. On an object with several
+  [material slots](#material-slots), use **⋯ ▸ Switch material…** on the slot (*since 1.79*). Objects driven by a [shader graph](https://docs.theprototype.app/shader-graph.md) are skipped with a note.
+- In a [glTF export](https://docs.theprototype.app/publish-export.md) every slot is a plain material: a slot's node shader is not carried, and an off
+  slot exports its own material.
 - Applying a preset keeps the object's **Side** (front / back / double) and **Wireframe** setting.
 - **Glass** is a see-through, clear-coated surface rather than true refraction, so it stays cheap on a Quest. Raise
   **Transmission** on a Physical material for real refraction on a desktop.
@@ -6611,6 +6856,14 @@ The same list lives behind the **?** button in the toolbox.
 | <kbd>Ctrl</kbd>+<kbd>+</kbd> / <kbd>-</kbd> | Faces: grow / shrink the selection |
 | <kbd>W</kbd> | Vertices: weld the selected vertices |
 | <kbd>J</kbd> | Vertices: connect two corners of a face |
+
+*Since 1.79* the *Mesh edit* group also has **Move now**, **Rotate now** and **Resize now** (no key by default): the
+picked vertices, edges or faces follow the pointer at once, as in the
+[3D view](https://docs.theprototype.app/controls.md#move-now-rotate-now-resize-now). The axis locks use the object's own axes (Local) or the world's
+(Global), the gesture is one undo step, and <kbd>Esc</kbd> leaves the geometry and the undo history as they were with
+the session still open. The Blender style [keymap](https://docs.theprototype.app/controls.md#keymap-presets) puts them on <kbd>G</kbd> /
+<kbd>R</kbd> / <kbd>S</kbd>: then <kbd>G</kbd> no longer arms Move (the toolbox button stays) and Subdivide moves to
+<kbd>Shift</kbd>+<kbd>S</kbd>.
 
 These keys can be rebound in the *Mesh edit* group of **Settings ▸ Shortcuts**. Some rows serve two modes, so rebinding
 one moves both: **L** is Loop in every mode, and **F** is Flip normals in Faces *and* Fill in Edges. **J** (Connect) has
@@ -7353,7 +7606,10 @@ The editor follows your **selection**. If you have an Edit Mesh session open it 
 
 The square is UV space: the whole texture, from 0 to 1 on both axes. The mesh's triangles are drawn over it as a wireframe, so you can see which part of the image lands on which part of the model.
 
-- **Scroll** to zoom, **middle-drag** to pan, **Fit** re-centres the square.
+- **Scroll** to zoom (toward the pointer, *since 1.79*), **middle-drag** to pan, **Fit** re-centres the square.
+- **Hold <kbd>Space</kbd> and drag** to pan with any tool (*since 1.79*; the cursor turns into a hand). Before, Box,
+  Lasso and Paint had no way to pan without a middle button.
+- On a touch screen, **two fingers** pinch to zoom and move together to pan — see [Touch](#touch).
 - Toggle **wireframe**, and the texture itself, from the view controls.
 
 !!! note "Big models show, but don't drag"
@@ -7368,7 +7624,7 @@ Pick a selection tool from the toolbar:
 
 | Tool | What it does |
 |---|---|
-| **Select** | Click a vertex; <kbd>Shift</kbd> (or <kbd>Ctrl</kbd>) adds. Dragging the background pans; clicking it deselects. |
+| **Select** | Click a vertex; <kbd>Shift</kbd> (or <kbd>Ctrl</kbd>) adds. Dragging the background pans; clicking it deselects. **<kbd>Shift</kbd>-drag on empty space box-selects** and adds to the selection (*since 1.79*; it used to pan — middle-drag and <kbd>Space</kbd>-drag still pan). |
 | **Box** | Drag a rectangle; everything inside is selected. |
 | **Lasso** | Draw a shape around the vertices you want. |
 | **Paint** | See [Painting](#painting) below. |
@@ -7386,6 +7642,20 @@ The topbar arms one of three transform modes — press <kbd>1</kbd>, <kbd>2</kbd
 | **Arrow keys** | Nudge by exactly **one texture pixel**, rotate by one degree, or scale by 1% — <kbd>Ctrl</kbd> ×10, <kbd>Shift</kbd> ×100 |
 
 Scaling with the arrows is **per axis** — left/right scales in U, up/down in V, and <kbd>Alt</kbd> makes it uniform. Shrinking is the exact reciprocal of growing, so a press one way and a press back leaves the map where it started. Every press is its own undo step.
+
+### Keys
+
+*New in 1.79.* The UV editor has its own rows in **Settings ▸ Shortcuts**:
+
+- **Tool keys** for Select, Box, Lasso and Paint: no key by default; the Blender style
+  [keymap](https://docs.theprototype.app/controls.md#keymap-presets) puts them on <kbd>W</kbd> / <kbd>B</kbd> / <kbd>C</kbd> / <kbd>P</kbd>.
+- **Move now, Rotate now, Resize now**: the selected points follow the pointer at once, as in the
+  [3D view](https://docs.theprototype.app/controls.md#move-now-rotate-now-resize-now). <kbd>X</kbd> / <kbd>Y</kbd> lock U / V, <kbd>Shift</kbd> moves
+  fine and <kbd>Ctrl</kbd> snaps; <kbd>Enter</kbd> or a click keeps it, <kbd>Esc</kbd> or a right click cancels it (a
+  right click now cancels a middle-click grab too). No key by default; the Blender preset puts them on <kbd>G</kbd> /
+  <kbd>R</kbd> / <kbd>S</kbd>, and <kbd>1</kbd> still arms Move.
+
+The <kbd>?</kbd> sheet lists them once they have a key, and <kbd>Space</kbd>-drag pan.
 
 ### The transform origin
 
@@ -7477,25 +7747,72 @@ Painting over a texture ends its link to the library image it was made from, so 
 
 ### Pen pressure
 
-Paint with a **pen** and pressure shapes the stroke. The **Pen pressure** switch in the Brush panel picks what it changes:
+Paint with a **pen** and pressure shapes the stroke. The **Pen pressure** switch in the Brush panel picks what pressing
+harder does:
 
 - **Size** (the default) — a light touch paints thin, a firm one paints the full brush size.
-- **Opacity** — the width stays put and a light touch paints faint.
-- **Off** — every dab is the same.
+- **Opacity** — the width stays put and a light touch **tints** instead of painting the full colour.
+- **Size + opacity** (*new in 1.79*) — both.
+- **Off** — the pen paints like a mouse.
 
-A mouse or finger stroke is unchanged whichever you pick, and peers watching a live pen stroke see the same widths you do. Fast strokes are sampled between frames, so a quick curve comes out smooth rather than as a string of dots.
+![The Paint tool's Brush panel: Pen pressure with Size, Opacity, Size + opacity and Off, the Pen only draws switch and the Channel row.](https://docs.theprototype.app/img/uv-editor/brush-panel-dark.webp#only-dark)
+![The Paint tool's Brush panel in the light theme: Pen pressure with Size, Opacity, Size + opacity and Off, the Pen only draws switch and the Channel row.](https://docs.theprototype.app/img/uv-editor/brush-panel-light.webp#only-light)
+*Figure: The Brush panel: Pen pressure and Pen only draws.*
+*Since 1.79* a stroke never gets stronger than the pressure you used, however often it crosses itself; going over a
+spot again in a **new** stroke builds it up, the way layers do.
+
+![Four red pen strokes on a white texture in the UV editor: light strokes that tint rather than paint the full red, a stroke that tapers with pressure and a full-strength line.](https://docs.theprototype.app/img/uv-editor/pressure-opacity.webp)
+*Figure: With Opacity a light touch tints instead of painting the full colour.*
+A mouse stroke is unchanged whichever you pick, and peers watching a live pen stroke see the same widths you do. Fast
+strokes are sampled between frames, so a quick curve comes out smooth rather than as a string of dots.
+
+### Spacing and smoothing
+
+*New in 1.79*, in the Brush panel beside Hardness, Opacity, Flow and the Eraser:
+
+- **Spacing** — the gap between dabs, as a share of the brush width: low is a smooth line, high a dotted one.
+- **Smoothing** — a stroke stabiliser: the brush trails the pen on a string and only moves when you pull it, so a
+  shaky hand draws a calm line. 0 is off.
+
+Both apply when you [paint on the model](https://docs.theprototype.app/mesh-paint.md) in the viewport too. The VR brush does not use smoothing.
+
+### Touch
+
+*New in 1.79:*
+
+- One finger uses the active tool. **Two fingers** pinch to zoom (toward the point between them) and move together to
+  pan. A second finger landing never leaves a dot: the stroke the first finger started is dropped.
+- **Pen only draws** (on by default): once a pen has touched the screen, fingers stop painting — one finger pans, two
+  pinch-zoom — so your other hand can rest on the screen. A palm under the pen is ignored. Turn it off in the Brush
+  panel or in **Settings ▸ Controls ▸ Pen and touch** to paint with a finger too.
+- The mouse wheel zooms toward the pointer here and in the [image preview](https://docs.theprototype.app/explorer.md); the preview also pinch-zooms
+  about your fingers. On a tablet, fingers on an image in the preview zoom and pan the **image** (they used to move the
+  window); move the preview window by its title bar.
+
+Custom brush tips, pressure curves and symmetry painting are not in this release.
 
 ## Material slots
 
 One mesh can carry several materials. The **Materials** list in the sidebar shows the slots; the canvas shows the slot you have selected.
 
+*Since 1.79* it is the same slot list as **Inspector ▸ Material** (see
+[Material slots](https://docs.theprototype.app/materials.md#material-slots)): rename, switch material, select or assign its faces, make unique,
+duplicate, reorder, switch off or remove a slot from its **⋯** menu, with 44 px rows on a touch screen (long-press a
+row for its menu). The image and assign buttons stay on each row.
+
 | Action | How |
 |---|---|
 | **Add a slot** | **Add material slot** — copies the last one, so you start from something sane. |
-| **Give it an image** | Drop an image on the slot, or use its image button. |
+| **Give it an image** | Drop an image on the slot, use its image button, or its **folder button** to pick one from the [Explorer](https://docs.theprototype.app/explorer.md) (*since 1.79*). |
 | **Assign faces to it** | Select faces in [Edit Mesh](https://docs.theprototype.app/mesh-editing.md), then press that slot's **◎** button. |
 | **Remove an image** | The slot's ✕ button. |
 
+**Drop an Explorer image on the canvas** (*since 1.79*) and it becomes the colour map of the slot you are working on, so
+you can paint over it. If the slot shows pixels that are in no Explorer file (painted here, or picked from disk), you
+are asked first; Undo brings the old image back.
+
+![Replace the painted image? asked over the UV editor after an Explorer image was dropped on the canvas: Replace or Cancel.](https://docs.theprototype.app/img/uv-editor/replace-painted-ask.webp)
+*Figure: Dropping an Explorer image on a slot that holds painted pixels asks first.*
 Slots replicate, save and undo like everything else, and a mesh you made with **Convert to mesh** arrives with one slot per original material already set up.
 
 !!! note
@@ -7569,7 +7886,9 @@ part of the same undo step.
 | Setting | What it does |
 | --- | --- |
 | **Size** | The brush width in texture pixels (the ring shows it on the model). <kbd>[</kbd> and <kbd>]</kbd> change it. |
-| **Pen pressure** | With a pen, pressure varies the size or the opacity. A mouse stroke is unchanged. |
+| **Pen pressure** | With a pen, pressure varies the size, the opacity or (*since 1.79*) both. A mouse stroke is unchanged. See [Pen pressure](https://docs.theprototype.app/uv-editor.md#pen-pressure). |
+| **Spacing** | *New in 1.79.* The gap between dabs, as a share of the brush width: low is a smooth line, high a dotted one. |
+| **Smoothing** | *New in 1.79.* Steadies the stroke: the brush trails the pen on a string, so a shaky hand draws a calm line. 0 is off. Not used by the VR brush. |
 | **Hardness** | 100 % is a hard edge; lower fades the edge softly. |
 | **Opacity** | The most one stroke can reach, however often you go over a spot. |
 | **Flow** | How much each dab adds. Low flow builds up as you go over a spot. |
@@ -7619,7 +7938,8 @@ Source: https://docs.theprototype.app/image-editor/ (Markdown: https://docs.thep
 
 # Image Editor
 
-New in 1.32: the **Image editor** crops, rotates, flips, resizes and adjusts a picture in your
+New in 1.32: the **Image editor** crops, rotates, flips, resizes and adjusts a picture (and since 1.79 fills it with
+[noise](#noise)) in your
 [Explorer](https://docs.theprototype.app/explorer.md) library. When you save, every texture made from that picture updates for everyone in the
 session.
 
@@ -7675,6 +7995,43 @@ The sidebar on the right has two pages: **Edit** and **Versions**.
 1. The **crop box**: drag it or its corners; Enter applies, Esc cancels.
 2. **X**, **Y**, **W**, **H**: the box in pixels.
 3. **Apply crop**.
+
+## Noise
+
+*New in 1.79.* **Edit ▸ Noise…** (or <kbd>N</kbd> with the canvas focused) fills or blends the image with generated
+noise: **Perlin**, **Simplex**, **Cells** (Worley) or **Value**, summed over octaves. The canvas shows a live preview;
+nothing changes until you press **Apply noise**, which is one step of the editor's own undo. **Save** then writes the
+image, and every texture made from it updates for everyone, as one scene undo step.
+
+![The Noise panel in the Image editor: a planks image under a live Cells noise preview, and in the sidebar Perlin, Simplex, Cells and Value, the Scale, Octaves, Roughness and Contrast sliders, Seed, Tileable and Invert, Colours or Normal map, the blend modes, Opacity and Apply noise.](https://docs.theprototype.app/img/image-editor/noise-panel-dark.webp#only-dark)
+![The Noise panel in the Image editor in the light theme: the live noise preview on the canvas and the noise controls in the sidebar, ending with Apply noise and Cancel.](https://docs.theprototype.app/img/image-editor/noise-panel-light.webp#only-light)
+*Figure: The Noise panel with its live preview.*
+| Control | What it does | Keyboard |
+|---|---|---|
+| **Kind**: Perlin / Simplex / Cells / Value | Perlin = smooth clouds and stains; Simplex = like Perlin with fewer straight-line artefacts; Cells = distance to scattered points, for stone and scales; Value = soft blurred squares | <kbd>Tab</kbd> to the group, arrow keys |
+| **Scale** | How many cells across the image (1–64). A whole number while Tileable is on | <kbd>Tab</kbd>, arrows / type |
+| **Octaves** | Layers of finer noise (1–8); 1 = smooth | <kbd>Tab</kbd>, arrows / type |
+| **Roughness** | How strong each finer octave is (0–1): low = soft, high = gritty | <kbd>Tab</kbd>, arrows / type |
+| **Contrast** | Stretch the noise apart or flatten it toward grey (−100 to 100) | <kbd>Tab</kbd>, arrows / type |
+| **Seed**, **New seed** | The same seed and settings always give the same picture; New seed picks another | <kbd>Tab</kbd>, type; <kbd>Enter</kbd> on New seed |
+| **Tileable** | On by default: the texture repeats with no seam | <kbd>Tab</kbd>, <kbd>Space</kbd> |
+| **Invert** | Swap dark and light | <kbd>Tab</kbd>, <kbd>Space</kbd> |
+| **Output**: Colours / Normal map | Colours maps the noise through your colours; Normal map treats it as height and makes a normal map (use it on the Normal row) | <kbd>Tab</kbd>, arrows |
+| **Strength** (Normal map) | How steep the bumps are | <kbd>Tab</kbd>, arrows / type |
+| **Colours** | Two colours blend, three to five make a gradient (low to high); add or remove with **+** and **×** | <kbd>Tab</kbd>, <kbd>Enter</kbd> opens the colour picker |
+| **Blend**: Replace / Multiply / Overlay / Add | How the noise meets the image: paint over it, darken it, add contrast, or brighten it | <kbd>Tab</kbd>, arrows |
+| **Opacity** | How much of the result to mix in | <kbd>Tab</kbd>, arrows / type |
+| **Apply noise** / **Cancel** | Write it into the image (one editor undo step) / close and leave the image alone | <kbd>Tab</kbd>, <kbd>Enter</kbd>; <kbd>Esc</kbd> cancels |
+
+The panel starts from sensible values for the map it was opened from (Roughness: mid greys; Normal: a normal map; AO:
+soft cells). Every material map row has a **Fill with noise** button that opens it on that map, or makes a new noise
+texture when the row is empty: see [Fill with noise](https://docs.theprototype.app/materials.md#fill-with-noise). The noise is made off the page (in
+workers), so the app keeps responding while a big image is made.
+
+- The editor has no selection or mask, so noise covers the whole image; use a blend and the opacity to shape it.
+- A normal map replaces the image (blending two normal maps is not colour maths).
+- On a phone, sizes above 1024 px are slow to make and use a lot of memory; the size dialog and the panel say so.
+- The result is an ordinary image: it saves with the scene and reaches everyone like any texture.
 
 ## Saving
 
@@ -7823,11 +8180,22 @@ control**:
 The header always says which. An object with its own graph ignores the scene default,
 so the order is *own graph → scene default → the object's real material*.
 
+### One slot, or all slots
+
+*New in 1.79.* An object with several [material slots](https://docs.theprototype.app/materials.md#material-slots) can take a node shader on **one
+slot**, or **one shader for all its slots**. Pick the slot in **Inspector ▸ Material** and open the Shader editor
+(**Edit shader**): the chip in the header, **All slots | ‹slot›**, says what **Create** makes. On an existing shader,
+**Only this slot** and **All slots** move it between the two in one undo step.
+
+The order is then *the slot's own shader → the all-slots shader → the scene default → the slot's own material*. An
+[off slot](https://docs.theprototype.app/materials.md#material-slots) draws the plain default, shader or not.
+
 ## The Shaders list
 
 The left pane carries a collapsible **Shaders** section above the node palette. It lists
 **Scene** at the root, then every object that actually has a shader graph of its own — it is a way
-to get *to* a graph, not a second object list, so an object with none is not in it.
+to get *to* a graph, not a second object list, so an object with none is not in it. *Since 1.79* slot shaders are
+listed under their object.
 
 Click a row to select that object and switch the editor to its graph; click **Scene** to
 deselect and edit the scene-wide one. Drag the bar under the list to give it more room, and
@@ -7909,7 +8277,7 @@ error appears in a strip at the top of the tab, naming the node and the problem.
 The [Set Shader Uniform](https://docs.theprototype.app/nodes/setuniform.md) node in the [Node editor](https://docs.theprototype.app/node-system.md)
 writes one of a graph's numbers, so a proximity trigger, a timer or a counter can drive a
 shader parameter. Select the node in the Shader editor and its info pane lists the uniform
-names to paste in.
+names to paste in. *Since 1.79* it can target one [slot](#one-slot-or-all-slots).
 
 ## Saving, sharing and undo
 
@@ -7917,13 +8285,15 @@ names to paste in.
   the same graph produces the same pixels everywhere.
 - Graphs are stored in `.tpscene` files and sessions, and in the autosave.
 - A **glTF export** cannot carry a node material: the object is exported with the
-  material it had before the graph, and a toast tells you what was dropped.
+  material it had before the graph, and a toast tells you what was dropped (it counts slot shaders too).
+- A peer on a version before 1.79 keeps a slot's shader but draws the slot's own material, and drops the shader if
+  their version saves the file; [People](https://docs.theprototype.app/people.md) tells you they are on an older version.
 - Every change is undoable, and a slider drag is one undo step rather than dozens.
 
 ## When an object cannot take a graph
 
-Objects with **more than one material slot** are declined with an explanation rather than
-half-supported. Convert or split the mesh first if you need per-slot shaders.
+*Since 1.79* an object with several material slots takes a graph per slot or for all slots — see
+[One slot, or all slots](#one-slot-or-all-slots). Before 1.79 such objects were declined.
 
 ## The Material section while a shader is active
 
@@ -7932,6 +8302,9 @@ colour, material-type and texture rows — they would be editing a result that t
 recompile discards. You get **Open in Shader editor** and **Detach** instead. Cast and
 receive shadow stay editable, because those are properties of the object rather than of
 the material.
+
+On a slot, the notice sits under that slot: **Detach** removes the slot's own shader, and **Detach all slots** shows
+when the all-slots shader draws it.
 
 Detach removes the object's own graph. If the look came from the **scene default** there
 is no per-object graph to remove, and the panel says so — edit or remove the scene graph
@@ -9502,6 +9875,10 @@ shot. Guides are never recorded.
 
 While recording, press **Mark** (or **M**) to drop a marker on the Timeline.
 
+*Since 1.79* the phone's [Touch feedback](https://docs.theprototype.app/touch-controls.md#touch-feedback) stays quiet while a take records, so no
+tick from a slider or a switch lands in your shot. The countdown buzz and the marker tick still play; Touch feedback
+**Off** silences them too.
+
 From the first shot on, a **shots** pill (*1 shot*, *3 shots*) sits beside the record button: see
 [Your shots](#your-shots).
 
@@ -10916,8 +11293,8 @@ covers scatter on any other object.
 
 Instances follow the ground — sculpting the terrain later moves them with it. Inspector ▸ **Scatter** lists each
 scattered model with its count, an Align toggle and **Remove**, plus the Fill, mix, Tint and Sink rows
-([Scatter](https://docs.theprototype.app/scatter.md)). Scatter is counted by the
-[budget chip](https://docs.theprototype.app/performance.md#the-budget-chip-will-it-fit-on-a-quest) on the terrain's row, and a dense model (300
+([Scatter](https://docs.theprototype.app/scatter.md)). Scatter is counted by
+[Judge for](https://docs.theprototype.app/performance.md#judge-for-will-it-fit-on-a-quest) (the budget percent in the Preview pill) on the terrain's row, and a dense model (300
 triangles or more) switches to lighter [levels of detail](https://docs.theprototype.app/lod.md) with distance — instances far away draw fewer
 triangles.
 
@@ -11095,7 +11472,7 @@ selection; a second <kbd>Esc</kbd> leaves sculpting.
 ## Distant scatter (each device)
 
 Far scattered models fade out so each device stays inside its budget — about half of its triangle line in the
-[budget meter](https://docs.theprototype.app/performance.md#the-budget-chip-will-it-fit-on-a-quest) (Quest 150k, phone 250k, desktop 2M). The layout
+[budget meter](https://docs.theprototype.app/performance.md#judge-for-will-it-fit-on-a-quest) (Quest 150k, phone 250k, desktop 2M). The layout
 is the same everywhere: instances within 30 m of you, and every [collider](https://docs.theprototype.app/terrain.md#scatter-collider), are never
 thinned, so a ball hits the same rock on a phone and on a desktop.
 
@@ -11322,7 +11699,7 @@ selection outline, whatever was selected when it was cut.
 
 ### Very large scenes
 
-A very large scene — over the [budget meter](https://docs.theprototype.app/performance.md#the-budget-chip-will-it-fit-on-a-quest)'s **Desktop** line for triangles (4 M) or texture memory
+A very large scene — over the [budget meter](https://docs.theprototype.app/performance.md#judge-for-will-it-fit-on-a-quest)'s **Desktop** line for triangles (4 M) or texture memory
 (512 MB) — skips automatic checkpoints, because each one copies the whole scene. The first time it happens a notice says
 so, with a **Settings** button. Named checkpoints (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>) always work.
 
@@ -11651,7 +12028,9 @@ everyone sees them) and **This device** (only you), and only Environment and Sce
   [The Quality preset](https://docs.theprototype.app/performance.md#the-quality-preset)).
 - **Environment** — lighting preset, exposure, [sky image](#sky-images-hdri), saved presets (shared).
 - **Music** — the shared background track and your local volume (see [Music & Sound](https://docs.theprototype.app/audio.md)).
-- **View** — render mode, the scene-look overrides and light helpers (your device only).
+- **Lights** — the scene's [shadow quality](#shadow-quality) (shared; *since 1.79*).
+- **View** — the render mode (on a computer, a row that opens the Preview menu), the scene-look overrides and light
+  helpers (your device only).
 - **Camera** — lens presets, field of view and clip planes (your device only).
 - **Background** and **Fog** (shared).
 
@@ -11665,7 +12044,12 @@ by name, an AI agent, or *Claude (AI)* through the connector. Loading a scene or
 
 ## Render mode (View)
 
-Three per-device render modes under **Viewport — this device**:
+*Since 1.79*, on a computer and a tablet, how this device draws the scene lives in the **Preview** menu at the top right
+of the 3D view (the chevron beside **Preview**), under **Draw as**: Configure Scene ▸ View then has one row, *How this
+device draws the scene: open Preview*, which opens that menu. Phones keep the three chips in View. <kbd>Z</kbd> works
+everywhere. See [Cinematic view](https://docs.theprototype.app/cinematic-view.md#the-preview-pill) for the rest of the menu.
+
+Three per-device render modes:
 
 | Mode | Look |
 |---|---|
@@ -11683,6 +12067,24 @@ look already sets ambient occlusion). Rebind it in **Settings ▸ Shortcuts**.
 On a desktop with Chrome or Edge, **Preview** at the top right (<kbd>Shift</kbd>+<kbd>Z</kbd>) switches to the
 [Cinematic view](https://docs.theprototype.app/cinematic-view.md): bounced light and reflections, on this computer only.
 
+### Draw as: modes for checking a model
+
+*New in 1.79.* Under the three render modes the Preview menu's **Draw as** has five more, for checking a model rather
+than looking at the scene:
+
+| Mode | Shows |
+|---|---|
+| **Wireframe over shaded** | the lit scene with every triangle edge drawn on top |
+| **Ambient occlusion only** | white clay with soft contact shadows: shapes without colour or texture |
+| **Normals** | which way each surface faces, as colour |
+| **UV checker** | a checker pattern through each model's texture coordinates: stretching shows as uneven squares |
+| **Weights** | skin weights: the selected bone's influence from blue (none) to red (all); with no bone selected, each bone a colour. Greyed when nothing in the scene is skinned |
+
+They are for **this device only** and go back to the everyday look when you reload or change scene (Shaded, Shaded +
+AO and Wireframe are remembered as before). While one is on, a dot on the Preview chevron says so. Play, a headset and
+the Cinematic view always draw the normal look. On a phone, add the optional **Preview** drawer (**More ▸ Windows**)
+for Draw as and Quality.
+
 Ambient occlusion and wireframe are **desktop-only** and never shown to peers. AO detail follows your shadow-quality setting (below), so lowering shadow quality also lightens the AO cost.
 
 These are SHADING modes — they are not how you see the scene's own look. A
@@ -11692,7 +12094,8 @@ ambient occlusion, **Shaded + AO** switches off and says so: the scene's setting
 instead of yours.
 
 ![Configure Scene ▸ View. 1: the render mode switch — Shaded, Shaded + AO, Wireframe. 2: Show light helpers.](https://docs.theprototype.app/img/camera/view-section.webp)
-*Figure: Configure Scene ▸ View: how the scene is drawn on your screen.*
+*Figure: Configure Scene ▸ View: how the scene is drawn on your screen. Since 1.79 the render mode chips show here on a phone;
+on a computer a row opens the Preview menu instead.*
 
 1. The **render mode** switch.
 2. **Show light helpers**.
@@ -11763,7 +12166,33 @@ In the **Camera** section, the near/far clip planes control the depth range the 
 
 ## Shadow quality
 
-Shadow quality is a **per-machine** performance knob in the **Settings** dialog: **Off · Low · Medium · High** (default High). It caps every light's shadow-map size on your computer — *Off* disables shadows entirely. Per-light shadow settings still replicate; this only changes what your machine renders.
+*New in 1.79.* **Configure Scene ▸ Lights ▸ Shadow quality** sets how the scene's shadows are drawn, for **everyone**
+in the scene, and is saved with it:
+
+| Level | What it draws |
+|---|---|
+| **Off** | no shadows |
+| **Basic** (the default) | one shadow map per light that casts: the look every scene had before 1.79 |
+| **Soft** | softer shadow edges. In a scene a few hundred metres across the edges stay as Basic draws them (a wider blur on that big a shadow map would wash small shadows out). |
+| **Far** | Soft, and the sky's sun draws two layers of shadow: sharp near you and present out to 300 m. Past 300 m the sun draws no shadow at Far (Basic's single map covers the whole scene, more blurred). Lamps and suns you placed in the scene draw Soft's edges. |
+
+**What a device draws.** A computer draws up to **Far**, a phone at most **Soft** and a headset **Basic** (more would
+cost frames there). When this device draws less than the scene asks, the row says so (*This device draws Soft*). The
+[Cinematic view](https://docs.theprototype.app/cinematic-view.md) draws Far as Soft. No device draws contact shadows yet (the thin dark line where an
+object meets what it stands on): they cost frames on laptop graphics and phones.
+
+Every scene made before 1.79 is **Basic** and looks exactly as it did.
+
+**This device's cap.** **Configure Scene ▸ Quality ▸ Shadow detail** — the same setting as **Settings ▸ Scene ▸
+Performance ▸ Shadow quality**: **Off · Low · Medium · High** (default High) — caps every light's shadow-map size on
+your computer, and so caps what the scene asks for here; *Off* disables shadows entirely. Per-light shadow settings still
+replicate; this only changes what your machine renders. Settings search finds both rows: *Shadow quality* (this device)
+and *Scene shadow quality* (it opens Configure Scene ▸ Lights).
+
+!!! note "Someone on 1.78"
+    A peer still on 1.78 drops the setting from the look it sends back: the scene reads Basic for them, and after their
+    next sky or light change it reads Basic for everyone. Set it again once everyone has updated; the saved file is fine
+    until then.
 
 ## The grid
 
@@ -11992,25 +12421,78 @@ The standard view (top) and the Cinematic view at Standard quality (bottom).
 It is a setting of **this computer**. Other people in the session keep their own view, nothing is sent to them, and
 the scene file does not change. If you leave it on, it comes back on by itself a few seconds after the app loads.
 
+## The Preview pill
+
+*New in 1.79.* **Preview** sits in one pill at the top right of the 3D view, which replaced the Cinematic switch and
+the budget chip of earlier versions. It never covers a side panel: it sits beside it.
+
+- **Preview** turns the Cinematic view on and off where it is offered (and is lit while it is on); elsewhere it opens
+  the menu.
+- **One part per device you judge for**, with its icon and the percent of that device's budget the scene uses, in the
+  verdict colour. Click one to open [Statistics ▸ Budget](https://docs.theprototype.app/performance.md#statistics-budget) for that device. When the pill
+  would meet other controls, the parts fold to the worst one and *+N*.
+- **The chevron** opens the **Preview menu**: **Cinematic view** (Off and the quality levels, then the
+  [Reflections and Global light](#reflections-and-global-light) switches), **Draw as** (the
+  [render modes and the checking modes](https://docs.theprototype.app/camera.md#draw-as-modes-for-checking-a-model)), **Quality** (the
+  [device quality preset](https://docs.theprototype.app/performance.md#the-quality-preset)), **Judge for** (This device, Phone, Quest, PC: each one
+  you tick gets a part in the pill), **Statistics…** and **Scene look settings…**. A dot on the chevron says Draw as is
+  not the everyday look.
+
+Everything in the Preview menu changes how **this device** draws the scene: it is never saved and never shared.
+Configure scene is what the scene **is**: saved, and everyone sees it.
+
+**Judge for** starts with nothing ticked. **This device** ticks itself once, the first time the scene goes over 100 % of
+this device's budget; Quest is never ticked for you. A device you picked on the old budget chip carries over. You can
+judge for several devices at once.
+
+The pill moves and hides like the other controls (right-click it, or [Edit positions](https://docs.theprototype.app/controls.md#moving-the-clusters));
+a place or a hide you gave the budget chip carries over. **Phones** have no pill: add the optional **Preview** item
+(**More ▸ Windows** on a folded phone, **Customize toolbar** on an unfolded one) for a drawer with Draw as and Quality.
+
 ## Quality
 
-The arrow beside **Preview** opens the quality menu:
+The chevron beside **Preview** opens the Preview menu; its **Cinematic view** group has **Off** and the quality levels:
 
-![The Preview switch with its quality menu open: Basic, Standard, High.](https://docs.theprototype.app/img/cinematic-view/switch-menu.webp)
-
+![The Preview menu: the Cinematic view group with Off, Basic, Standard and High, the Reflections and Global light switches with their cost, then Draw as, Quality and Judge for with each device's percent.](https://docs.theprototype.app/img/cinematic-view/preview-menu-dark.webp#only-dark)
+![The Preview menu in the light theme: the Cinematic view group with Off, Basic, Standard and High, the Reflections and Global light switches with their cost, then Draw as, Quality and Judge for.](https://docs.theprototype.app/img/cinematic-view/preview-menu-light.webp#only-light)
+*Figure: The Preview menu with the Cinematic view on at Standard.*
 | Step | What it adds |
 |---|---|
 | **Basic** | soft contact shadows (ambient occlusion), smoothing and glow, no bounced light |
 | **Standard** (the default) | bounced light and reflections at half resolution, on top of Basic |
 | **High** | bounced light and reflections at full resolution; offered up to a 1440p-sized window |
 
-When frames get slow (below about 30 frames a second for two seconds), the view **steps down by itself** one step and
-a small note says so. It does not step back up on its own: pick the step in the menu again to try it.
+When frames get slow (below about 30 frames a second for two seconds), the view **steps down by itself**: first the
+quality level, then a [switch](#reflections-and-global-light) you set to **On**. The chip under the Preview pill says
+what it turned off (*Lowered to Basic, Reflections off to keep it smooth*). It does not step back up on its own: pick
+the step in the menu again to try it; changing a switch starts over.
+
+## Reflections and Global light
+
+*New in 1.79.* Two switches under the quality levels, for how **this computer** draws the Cinematic view:
+
+- **Reflections** — screen-space reflections on shiny and smooth surfaces.
+- **Global light** — light bouncing between surfaces.
+
+Each has **Auto** (what the quality level decides: Basic = off, Standard and High = on), **On** (at every level, half
+resolution at Basic) and **Off**. They work while the Cinematic view is on.
+
+**What it costs here.** Once this computer has drawn the view with and without a switch (flip it once), the row shows
+what it costs, for example *On · costs about 3 ms*.
+
+The switches and the measured costs stay on this device: they are never saved with the scene or shared, and other
+people in the session see their own view.
+
+**Baked light is not lit twice.** Objects with [baked light](https://docs.theprototype.app/baked-light.md) (Configure scene ▸ Pro look ▸ Bake light)
+keep their own baked light and shadows: at Standard and High they get no bounce light or screen AO on top. Scenes
+without baked light look the same as before.
+
+**Shadows.** The Cinematic view draws a scene's [Far shadows](https://docs.theprototype.app/camera.md#shadow-quality) as Soft.
 
 ## What it does not show yet
 
 This is the first version. A few things are drawn as **plain stand-ins** while the view is on, and a note under the
-switch names the ones in your scene:
+Preview pill names the ones in your scene:
 
 - [shader graph](https://docs.theprototype.app/shader-graph.md) materials and hand-written shaders (they show their base colour),
 - [water](https://docs.theprototype.app/water.md) surfaces and fluid tanks,
@@ -12036,12 +12518,12 @@ Switch the view off to see them as usual. Nothing in the scene is changed.
 
 ## Which devices get it
 
-The switch appears only where it can work:
+**Preview** turns the Cinematic view on only where it can work (elsewhere it opens the Preview menu):
 
 - a **desktop or laptop** computer,
 - **Chrome or Edge** with WebGPU on a hardware graphics card (not a software one).
 
-Phones, tablets and VR headsets do not get the switch and **download nothing extra** for it. If the graphics card
+Phones, tablets and VR headsets do not get the Cinematic view and **download nothing extra** for it. If the graphics card
 fails while the view is on or while it starts (a shader that does not compile, a lost device, the browser dropping
 the graphics device), it switches back to the standard view by itself and tells you why. **Preview** then stays on
 screen greyed out, with the reason under it (press it to read it again), until you reload the page.
@@ -12062,7 +12544,8 @@ steps down to Basic by itself, and High steps down in every scene. On a handheld
 
 ## See also
 
-- [Camera & View](https://docs.theprototype.app/camera.md#render-mode-view): the Shaded / Shaded + AO / Wireframe render modes
+- [Camera & View](https://docs.theprototype.app/camera.md#render-mode-view): the Shaded / Shaded + AO / Wireframe render modes and the Draw as modes
+- [Performance & Budgets](https://docs.theprototype.app/performance.md#judge-for-will-it-fit-on-a-quest): Judge for and Statistics ▸ Budget
 - [Pro Look](https://docs.theprototype.app/pro-look.md) and [Scene Look](https://docs.theprototype.app/post-processing.md): the look every viewer sees, saved with the scene
 - [Photo Mode](https://docs.theprototype.app/photo-mode.md)
 
@@ -12461,24 +12944,24 @@ menu ▸ **Statistics**. On a folded phone, **More ▸ Statistics** opens it as 
 dock (see [The dock on a phone](https://docs.theprototype.app/interface.md#the-dock-on-a-phone)), and on a computer it can be
 a [sidebar tab](https://docs.theprototype.app/interface.md#any-window-in-a-sidebar) too.
 
-## The budget chip: will it fit on a Quest?
+## Judge for: will it fit on a Quest?
 
-*New in 1.37.* The meter above judges what *this* device draws right now. The **budget chip** answers a different
-question while you build: **does this scene fit the device you mean to ship to** — **Quest / VR**, **Phone** or
-**Desktop**? The numbers are the ones the [perf gate](#budgets-in-ci) holds every Games-tab game and General-tab level
-to (Quest: 150 draw calls, 300k triangles, 2 lights, 64 MB of textures); phone and desktop have starting values beside
-them.
+*New in 1.37, in the Preview pill since 1.79.* The meter above judges what *this* device draws right now. **Judge for**
+answers a different question while you build: **does this scene fit the device you mean to ship to** — **Quest**,
+**Phone** or **PC**? The numbers are the ones the [perf gate](#budgets-in-ci) holds every Games-tab game and General-tab
+level to (Quest: 150 draw calls, 300k triangles, 2 lights, 64 MB of textures); phone and desktop have starting values
+beside them.
 
-**Where it is.** On a computer and an unfolded phone: right of the toolbar (or left of it, or just above, when the right
-side is taken). It is hidden in Play, and where there is no free spot next to the toolbar. On a folded phone: **More ▸
-Tools & View ▸ Budget** — the tile shows the device, the percentage and a coloured dot; hold and drag it onto the bottom
-bar if you want it there. Since 1.39 you can move the chip anywhere, or hide it, in
-[Edit positions](https://docs.theprototype.app/controls.md#moving-the-clusters); **Customize toolbar… ▸ Budget chip** shows it again. Opening its
-**▾** menu no longer makes it vanish.
+**Where it is.** In the **Preview pill** at the top right of the 3D view (see
+[The Preview pill](https://docs.theprototype.app/cinematic-view.md#the-preview-pill)). Its menu's **Judge for** has **This device**, **Phone**,
+**Quest** and **PC**: each one you tick shows as a part of the pill with its icon and percent, so you can judge for
+several devices at once. Nothing is ticked at first; **This device** ticks itself once, the first time the scene goes
+over 100 % of this device's budget, and Quest is never ticked for you. The device you picked on the old **budget chip**
+(1.37 to 1.78) carries over, and so do its place and a hide in [Edit positions](https://docs.theprototype.app/controls.md#moving-the-clusters). On a
+folded phone there is no pill: **More ▸ Tools & View ▸ Budget** shows the device, the percentage and a coloured dot,
+and opens Statistics ▸ Budget (hold and drag it onto the bottom bar if you want it there).
 
-![The budget chip beside the toolbar, reading Quest over 100 % in red: the scene has four point lights, more than the two a Quest's budget allows.](https://docs.theprototype.app/img/performance/budget-chip.webp)
-*Figure: The budget chip sits beside the toolbar.*
-**Reading it.** The chip shows the device and how much of its tightest budget the scene uses (*Quest 87%*):
+**Reading it.** Each part shows how much of that device's tightest budget the scene uses (*87%*), in its colour:
 
 | Colour | Meaning |
 |---|---|
@@ -12486,13 +12969,12 @@ bar if you want it there. Since 1.39 you can move the chip anywhere, or hide it,
 | Amber | 80–100 % of at least one |
 | Red | over a budget |
 
-Lights and shadow-casting lights are small counts: at the budget is fine, over it is red. Pick the device from the
-chip's **▾** (or right-click / long-press the chip), or with the Quest / Phone / Desktop switch at the top of the Budget
-section. The choice is per device and remembered.
+Lights and shadow-casting lights are small counts: at the budget is fine, over it is red. You can also pick the device
+with the Quest / Phone / Desktop switch at the top of the Budget section. The choice is per device and remembered.
 
 ### Statistics ▸ Budget
 
-Click the chip and **Statistics** opens on its **Budget** section: draw calls, triangles, texture memory, lights,
+Click a device's part in the Preview pill (or **Statistics…** in its menu) and **Statistics** opens on its **Budget** section for that device: draw calls, triangles, texture memory, lights,
 shadow-casting lights and shadow draws, each against the device, and **Heaviest objects** — the objects taking the
 largest share of a budget, with their triangles, calls and texture memory, and what
 [optimizing them on import](https://docs.theprototype.app/import-optimize.md) would save (≈, by your **Settings ▸ Import** numbers). Click a row to
@@ -12615,11 +13097,15 @@ and a panel explains it rather than leaving you looking at a tab that appears to
   [the quality governor](#the-quality-governor)), **High**, **Medium** (shadows off, 72 % resolution) or **Low**
   (shadows, ambient occlusion and the scene look off, 50 % resolution). These are the same levels a game's own
   **Quality** setting uses; a game's setting wins while you play it.
-- **Shadows**, **Simplify distant models** and **Draw repeated kit pieces together** — the same switches as
+- **Shadow detail** (Off / Low / Medium / High; called *Shadows* before 1.79) — this device's cap on shadow-map size.
+  *Since 1.79* it caps the scene's own [shadow quality](https://docs.theprototype.app/camera.md#shadow-quality) here.
+- **Shadow detail**, **Simplify distant models** and **Draw repeated kit pieces together** are the same switches as
   **Settings ▸ Scene ▸ Performance**, which has the **Quality preset** row too. *Since 1.64* **Reduce quality when the
   scene is heavy** is only in Settings; Configure Scene has a line that says what **Auto** does instead.
 
 The preset is saved on this device only; it is never sent to peers or saved in a scene.
+
+*Since 1.79* the preset is also in the Preview pill's menu (**Quality**), and in the phone's Preview drawer.
 
 ![Configure Scene with Quality first: Preset Auto / High / Medium / Low, Reduce quality when the scene is heavy, Shadows, Simplify distant models and Draw repeated kit pieces together, above Environment; one Lowered resolution to keep it smooth notice with Keep full quality at the top](https://docs.theprototype.app/img/performance/configure-scene-quality.webp)
 *Figure: Configure Scene opens with Quality first.*
@@ -14004,6 +14490,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**Camera Shake**](https://docs.theprototype.app/nodes/camerashake.md) | Shakes the Play camera on a trigger (strength, seconds, frequency) - on this device only, never in VR; who: me = the player who made the pulse, everyone = every player. Reduced motion turns it down. |
 | [**Screen Flash**](https://docs.theprototype.app/nodes/screenflash.md) | Flashes a colour over the screen that fades out (a hit, a pickup) - on this device; who: me or everyone. Reduced motion keeps it faint. |
 | [**Hit Pause**](https://docs.theprototype.app/nodes/hitpause.md) | Holds this device's picture for a few milliseconds on a trigger (a hit-stop). The game, the clock and physics keep running. |
+| [**Vibrate**](https://docs.theprototype.app/nodes/vibrate.md) | Vibrates the player's gamepad, Android phone or VR controllers on a trigger (a pattern, or your own strength and length; one hand or both; who: me or everyone) - only in Interact or Play. *Since 1.79.* |
 | [**Announce**](https://docs.theprototype.app/nodes/announce.md) | Shows a big banner - 'Ring 2 reached', 'GOAL!' - on every screen and in VR when a pulse arrives in Play; {v} in the text shows a wired number. In Edit it draws no banner: the line goes to the Debugger's Console with its time and this node. |
 | [**Game Sound**](https://docs.theprototype.app/nodes/gamesound.md) | Plays one of the built-in game sounds (coin, ring, levelup, cheer...) when a pulse arrives, at the wired object if one is wired; no sound files needed. |
 | [**Effect Burst**](https://docs.theprototype.app/nodes/effectburst.md) | Fires a short sparkle, confetti, smoke or sparks burst at the wired object (or in front of the player) when a pulse arrives; pooled and local to each device. |
@@ -15690,6 +16177,9 @@ Vibration only happens in **Interact** and **Play** — never while editing — 
 device of the player whose graph fired it. The app already buzzes for you when a laser touches
 something clickable, a press lands, a grab starts or a hand knocks a body.
 
+*Since 1.79* the same patterns also reach a gamepad or an Android phone. For a custom strength and length, one player
+or everyone, use [Vibrate](https://docs.theprototype.app/nodes/vibrate.md).
+
 
 ---
 
@@ -16115,6 +16605,7 @@ Shakes the Play camera for a moment: a hit, a landing, an explosion. *Since 1.74
 | seconds | 0.35 | 0.05 to 3 — how long it lasts |
 | frequency | 18 | 2 to 40 — how fast it shakes |
 | who | me | `me` = only the player whose press or hit made the pulse; `everyone` = every player |
+| vibrate | on | *since 1.79*: also gives a short [vibration](https://docs.theprototype.app/nodes/vibrate.md) on a gamepad or an Android phone (and the VR controllers), for the same players; switch it off for no buzz |
 
 ## Where it shows
 
@@ -16163,6 +16654,7 @@ Flashes a colour over the screen that fades out: red when you are hit, gold for 
 | strength | 0.6 | 0 to 1 — how strong it starts |
 | seconds | 0.25 | 0.05 to 3 — how long it takes to fade out |
 | who | me | `me` = only the player whose press or hit made the pulse; `everyone` = every player |
+| vibrate | on | *since 1.79*: also gives a short [vibration](https://docs.theprototype.app/nodes/vibrate.md) on a gamepad or an Android phone (and the VR controllers), for the same players; switch it off for no buzz |
 
 The flash is drawn on each player's own screen and never blocks clicks. Nothing is saved or changed in the scene.
 
@@ -16206,6 +16698,7 @@ Holds the picture still for a split second when something hits hard, so the hit 
 |---|---|---|
 | ms | 80 | 20 to 500 — how long the picture holds, in milliseconds |
 | who | me | `me` = only the player whose press or hit made the pulse; `everyone` = every player |
+| vibrate | on | *since 1.79*: also gives a short [vibration](https://docs.theprototype.app/nodes/vibrate.md) on a gamepad or an Android phone (and the VR controllers), for the same players; switch it off for no buzz |
 
 Only the picture holds, on each player's own screen. The game, the clock and physics keep running, so nothing gets out
 of step with the other players. It never holds the picture in a VR headset.
@@ -16223,6 +16716,80 @@ the physics, not made by a player's press.
 ## See also
 
 - [Camera Shake](https://docs.theprototype.app/nodes/camerashake.md) · [Screen Flash](https://docs.theprototype.app/nodes/screenflash.md) — the other two game feel nodes
+
+
+---
+
+Source: https://docs.theprototype.app/nodes/vibrate/ (Markdown: https://docs.theprototype.app/nodes/vibrate.md)
+
+# Vibrate
+
+Vibrates the player's **gamepad**, **Android phone** or **VR controllers** when a pulse arrives: a hit, a landing, a
+pickup. *Since 1.79.*
+
+**Output:** none (an action)
+
+## Inputs
+
+| Handle | Type | Meaning |
+|---|---|---|
+| trigger | event | each pulse vibrates once |
+| strength | number | 0 to 1; wired, it sizes the vibration (a harder hit, a bigger buzz) |
+
+## Parameters
+
+| Parameter | Default | Options |
+|---|---|---|
+| pattern | `bump` | `tap` `bump` `hit` `success` `fail` `rumble` `heartbeat`, or `custom` |
+| strength | 1 | 0 to 1 |
+| length ms (custom) | 120 | 10 to 1000 — how long a `custom` pulse lasts |
+| hand | `both` | `both`, `left`, `right` |
+| who | me | `me` = only the player whose press or hit made the pulse; `everyone` = every player |
+
+The patterns are the ones [Controller Buzz](https://docs.theprototype.app/nodes/hapticpulse.md) plays. `custom` is one pulse of your own strength and
+length. **hand** picks one side: a controller in VR, or that side's motor on a gamepad (left = the strong motor, right
+= the weak one).
+
+## Where it vibrates
+
+It plays on the device of the player it is aimed at, through whatever that device has:
+
+| Device | What vibrates |
+|---|---|
+| A gamepad in Chrome, Edge or Firefox | its two motors (dual rumble) |
+| An Xbox pad in Chrome or Edge | the trigger motors too, on firm pulses |
+| An Android phone in Chrome | the phone's motor (it has no strength, so a weaker pulse is a shorter one) |
+| A VR headset | the controllers, as before |
+| An iPhone or iPad | nothing: their browsers cannot vibrate |
+
+It vibrates only in **Interact** and **Play**, never while you edit, and stops when the game pauses, the tab is hidden,
+you leave the scene or the game ends. Nothing is sent over the network and nothing is saved in the scene.
+
+**Players choose.** The game's settings have **Vibration** (on / off) and **Vibration strength** (0 to 100 %). Vibration
+starts off when the device asks for reduced motion and the player never set it. See
+[Make it feel like a real game](https://docs.theprototype.app/make-it-feel-like-a-real-game.md#vibration).
+
+!!! note "who: me and Delay"
+    *me* follows the press or the hit itself. A pulse that has gone through a [Delay](https://docs.theprototype.app/nodes/delay.md) no longer knows whose
+    it was, so use *everyone* there.
+
+## Practical example
+
+An [On Hit](https://docs.theprototype.app/nodes/onhit.md) on a crate into **Vibrate** (pattern `hit`, who *me*): the player who knocks the crate feels it in
+their pad or phone, the others do not.
+
+**Camera Shake**, **Screen Flash** and **Hit Pause** already vibrate a little by themselves (their *vibrate* switch, on
+by default), so add **Vibrate** for the moments those do not cover, or for a stronger or longer buzz.
+
+## Older versions
+
+A player on a version before 1.79 keeps the node in the scene but it does nothing for them.
+
+## See also
+
+- [Controller Buzz](https://docs.theprototype.app/nodes/hapticpulse.md) — the named patterns on the VR controllers
+- [Camera Shake](https://docs.theprototype.app/nodes/camerashake.md) · [Screen Flash](https://docs.theprototype.app/nodes/screenflash.md) · [Hit Pause](https://docs.theprototype.app/nodes/hitpause.md) — the game feel nodes
+- [Module SDK](https://docs.theprototype.app/module-sdk.md#vibration): `api.feel.vibrate` from code
 
 
 ---
@@ -18457,6 +19024,7 @@ near it, a glow that pulses when something is picked up, dissolve that runs on a
 |---|---|---|
 | uniform | *(empty)* | the name of the value to write, as shown in the Shader editor |
 | value | 0 | the number to write (usually wired, not typed) |
+| slot | *(empty)* | *since 1.79*: which [material slot](https://docs.theprototype.app/materials.md#material-slots)'s shader to write — its number (0 = the first), id or name. Empty = every slot of the object that has this uniform (on a one-material object, its one shader, as before) |
 
 ## Inputs
 
@@ -22150,7 +22718,8 @@ no jump.
     **Resume · Restart · Levels · Settings · How to play · Main menu**, plus *Back to editor*
     on the desktop. In VR it opens with **X** on the left controller or the **Menu** button
     on the game board and the wrist card. Its **Settings** are per game and per device —
-    music and sound effects on/off with their volumes, controller vibration, **Show FPS**,
+    music and sound effects on/off with their volumes, vibration and its strength (since 1.79 on gamepads and Android
+    phones too; see [Vibration](https://docs.theprototype.app/make-it-feel-like-a-real-game.md#vibration)), **Show FPS**,
     VR turning (snap / smooth / off and the snap angle), a comfort vignette and a quality
     preset (Auto / Low / Medium / High), and since 1.59 a **Sky quality** (Auto / Standard / High / Max) that counts
     while the scene's [sky quality](https://docs.theprototype.app/camera.md#sky-quality-for-the-scene) is Auto. Your own Pause screen keeps working beside it; a
@@ -22428,7 +22997,8 @@ Library.
   the pause off in Game menus.
 - **New rows:** Restart level (in a game with a Levels table), Save game, Load game, Join requests, Quit to title.
 - **Settings** has the player's own settings: music and effects volume, **Look speed**, **Invert look**,
-  **Subtitles**, **Reduced motion** (this device), quality, and **Controller vibration** in VR. They are saved per game on this
+  **Subtitles**, **Reduced motion** (this device), quality, and **Vibration** with **Vibration strength** (*since
+  1.79*: controller, gamepad and phone vibration; see [Vibration](#vibration)). They are saved per game on this
   device.
 - A game made before this release keeps its old menu (no pause, no title screen) until you turn the game menus on.
 
@@ -22476,6 +23046,31 @@ A button that a **Gamepad Button** node uses belongs to that game instead. **Mov
   new key or button; Esc cancels. When the new one belongs to another action, the two swap and the page says so
   ("Jump took Circle; Crouch moved to Cross"). **Reset controls** puts them back.
 - Quest controllers keep their own mapping.
+
+## Vibration
+
+*New in 1.79.* Games vibrate **gamepads** and **Android phones**, not only Quest controllers.
+
+- The **[Vibrate](https://docs.theprototype.app/nodes/vibrate.md)** node plays a pattern or your own strength and length, on one hand or both, for
+  the player who did it or for everyone.
+- **[Camera Shake](https://docs.theprototype.app/nodes/camerashake.md)**, **[Screen Flash](https://docs.theprototype.app/nodes/screenflash.md)** and
+  **[Hit Pause](https://docs.theprototype.app/nodes/hitpause.md)** now vibrate a little too; switch it off with the *vibrate* switch on the node.
+- The player's settings gain **Vibration** (on / off; it starts off when the device asks for reduced motion) and
+  **Vibration strength** (0 to 100 %).
+- Code: `api.feel.vibrate` in a [module or code node](https://docs.theprototype.app/module-sdk.md#vibration).
+
+What works where:
+
+| Device | Vibration |
+|---|---|
+| Gamepad | Chrome, Edge and Firefox (two motors) |
+| Xbox pad | trigger rumble too, in Chrome and Edge |
+| Android phone | Chrome (the phone's motor) |
+| iPhone, iPad | none: their browsers cannot vibrate |
+| Quest | the controllers, as before |
+
+It vibrates only in Interact and Play, never in the editor, and only on the device of the player it is meant for. A
+player on a version before 1.79 feels nothing from a Vibrate node.
 
 ## Cameras
 
@@ -24336,6 +24931,10 @@ characters and a description of at most 300.
 | Use CDN for packs | off | as in the Export tab |
 | Optimize for | Full quality | **For Quest / web** compresses textures and adds LOD chains to the exported scene — [below](#optimize-for-quest-web) |
 
+**Materials in a glTF.** A glTF carries plain materials: an object with several
+[material slots](https://docs.theprototype.app/materials.md#material-slots) exports one material per slot, a node shader (on the object or on one slot)
+is left out, and the export's note counts the slots that lost one (*since 1.79*).
+
 ## Optimize for Quest / web
 
 *New in 1.37.* [Save options](https://docs.theprototype.app/saving.md#save-options) (the cog next to Save) and **Settings ▸ Export** have **Optimize
@@ -25734,7 +26333,11 @@ change by hand.
 | `cc0` | fetches a free CC0 material by name, such as `"Wood051"` or `"brown planks"` |
 | `pattern` | a texture drawn by name, put in the albedo slot (since 1.60): `wood`, `planks`, `brick`, `tiles`, `marble`, `stone`, `concrete`, `metal`, `grass`, `sand`, `fabric`, `checker`, `stripes`, `noise`, or `{name, colors, scale, seed, size}`. A map slot takes one as `{pattern: …}`. ([Textures by name](https://docs.theprototype.app/ai/agent-world.md#textures-by-name)) |
 | `patternScale` | how many times the pattern repeats across the surface |
-| `slot` | which material slot of a multi-material object (default 0) |
+| `slot` | which material slot of a multi-material object (default 0): *since 1.79* its index (0 = the first), or its id or name from `list_materials`. A `preset` or `type` change then goes to that one slot. |
+| `slotName` | *since 1.79*: renames that slot |
+| `slotOff` | *since 1.79*: `true` switches the slot [off](https://docs.theprototype.app/materials.md#material-slots) (it draws the plain default; its own material is kept), `false` shows its material again |
+| `removeSlot` | *since 1.79*: `{to}` removes the slot and moves its faces to slot `to` (index, id or name; default the first other slot). Give nothing else in the call. |
+| `noise` | *since 1.79*: a generated [noise](https://docs.theprototype.app/image-editor.md#noise) colour texture, instead of `pattern`: `{kind, scale, octaves, roughness, seed, contrast, invert, tileable, colors, size}` with `kind` `perlin`, `simplex`, `worley` or `value`, 2 to 5 `colors` and `size` 1024 by default. Another map takes one as `maps.<map>: {noise: {…}}` (`maps.normal` makes a normal map). The answer lists what it wrote. |
 | `faces` | gives just those faces their own new material slot ([how to pick faces](#picking-faces)) |
 
 **Texture URLs** must be https and CORS-enabled, at most 16 MB, and really be a PNG, JPEG, WebP, GIF or AVIF:
@@ -25742,7 +26345,8 @@ the bytes are checked, not the file name. A local or private address is refused.
 item first, the same as an upload, and the result lists it in `assets`. A plain file name such as
 `"wood.png"` is refused, because a guess would give you an empty texture.
 
-An object wearing a shader graph refuses `set_material`. Edit the shader, or take it off first.
+An object wearing a shader graph refuses `set_material`. Edit the shader, or take it off first. *Since 1.79* that
+holds per slot: a slot with its own shader refuses it, the others take it.
 
 The maps are the same ones as the Inspector's [Maps](https://docs.theprototype.app/materials.md#maps) rows. `update_objects` can set them too,
 through `materialParams`: the slots `map`, `normalMap`, `roughnessMap`, `metalnessMap`, `emissiveMap` and `aoMap` (a
@@ -25751,7 +26355,8 @@ for the tiling, offset and rotation of all the material's maps.
 
 ### list_materials and get_material: read what is there
 
-`list_materials` gives each object's slots (type, colour, numbers, which maps), its shader, and the preset
+`list_materials` gives each object's slots (type, colour, numbers, which maps; *since 1.79* each slot's `id`, whether it
+is `off`, and its own shader), its shader, and the preset
 names: the eight starters and any the person saved. `get_material` gives one object in full: each map's tiling, offset, rotation, size and hash, and its
 shader graph as text with the uniforms a flow can drive. Viewers can use both.
 
@@ -25772,6 +26377,7 @@ c -> out.emissive
 | `text` | the graph |
 | `replace` | replaces a graph the object already has. Without it, that object is skipped. |
 | `scene` | `true` makes the default for every object, which asks first |
+| `slot` | *since 1.79*: a shader for one [material slot](https://docs.theprototype.app/shader-graph.md#one-slot-or-all-slots) (index, id or name) instead of the whole object |
 
 Errors come back in the result and nothing is written: an unknown type, a socket that does not exist, a graph
 with nothing connected, or the compiler's own message.
@@ -25790,6 +26396,9 @@ vectors cannot, because flow sockets carry numbers.
 new wires), `removeNodes`, or `text` for the whole graph. A refused edit changes nothing.
 
 `assign_shader` copies a graph onto other objects, or takes a shader off with `"shader": null`.
+
+*Since 1.79* both take `slot` (index, id or name) to edit, copy onto or take off one slot's shader. No tool names
+changed.
 
 ### set_post, get_post and create_post_graph: the scene's look
 
@@ -26047,6 +26656,7 @@ The app's fog is a linear fog, so a `density` becomes a fog that is gone by `2 �
 | `ambient` | `{sky, ground, intensity}`: the soft light from above and below. `null` switches it off. |
 | `add` | `[{kind, color, intensity, position, groundColor}]`, where `kind` is `directional`, `point` or `hemisphere`. Up to 8 environment lights. |
 | `update` / `remove` | change or remove environment lights by id (`get_environment` lists them) |
+| `shadowQuality` | *since 1.79*: the scene's [shadow quality](https://docs.theprototype.app/camera.md#shadow-quality) for everyone: `off`, `basic` (the default), `soft` or `far`. A phone or headset may draw less. |
 
 The result lists each new light's id. Spot lights, area lights and lights you place as objects are made with
 `create_objects` (`kind: light`), which also takes `castShadow` and a `shadowQuality` of `low`, `medium` or `high`.
@@ -26055,7 +26665,8 @@ The result lists each new light's id. Spot lights, area lights and lights you pl
 
 `get_environment` gives the look preset, exposure, background, sky image, fog, sun, ambient light, environment
 lights, the lights placed as objects, where Play starts, the opening view, and the names of the presets and
-skies. Viewers can use it.
+skies. *Since 1.79* it also reports `shadowQuality` (what the scene asks) and `shadowQualityDrawnHere` (what this device
+draws). Viewers can use it.
 
 ### place_spawn: where Play starts
 
@@ -27915,7 +28526,8 @@ Location data (EXIF, GPS) is removed from every picture **on your device, before
    pictures as it is. A ComfyUI workflow takes them when it has a `{{IMAGE}}` placeholder in a
    **LoadImage** node (see [3D Generation](https://docs.theprototype.app/ai/generation.md)).
 2. **Add menu ▸ Generate 3D model…** and pick the picture: **From device…**, **Camera** (on a phone),
-   **Viewport**, or **From Explorer…**. You can also paste or drop a picture onto the window (a dockable
+   **Viewport**, or **From Explorer…** (since 1.79 the [Explorer picker](https://docs.theprototype.app/materials.md#textures-from-the-explorer)
+   with thumbnails, search, folders and Recent). You can also paste or drop a picture onto the window (a dockable
    window since 1.65, see [The Generate window](https://docs.theprototype.app/ai/generation.md#the-generate-window)). In the
    Explorer, a picture's menu has **Make a 3D model…**.
 3. A prompt is optional. With Meshy's *Refine* mode it becomes the texture prompt.
@@ -28831,7 +29443,7 @@ per-viewer and deliberately local — a peer's module must never yank your camer
 
 ```js
 api.isVR()                    // true inside a VR session
-api.haptic(0.6, 60)           // buzz the VR controllers — no-op on desktop
+api.haptic(0.6, 60)           // buzz the VR controllers (since 1.79 also a gamepad or an Android phone)
 api.haptic(0.6, 60, 'right')  // one hand only
 api.vrHand('left')            // {position:[x,y,z], quaternion:[x,y,z,w],
                               //  trigger, gripped, connected} — null when
@@ -28843,6 +29455,25 @@ api.possessModes              // e.g. ['chase','orbit','none','first'] —
                               // feature-detect 'first' here; unknown camera
                               // values degrade silently on older builds
 ```
+
+### Vibration
+
+*New in 1.79.* `api.feel` vibrates **this device**: the VR controllers in a headset, a gamepad (both motors, and the
+trigger motors on an Xbox pad in Chrome or Edge), or an Android phone. `api.haptic` and `api.hapticPattern` go through
+the same layer, so they reach pads and phones too.
+
+```js
+api.feel.vibrate('hit')                          // a named pattern: tap bump hit success fail rumble heartbeat
+api.feel.vibrate({ strength: 0.8, ms: 200 })     // a custom pulse (strength 0..1, 10..1000 ms)
+api.feel.vibrate('bump', { hand: 'left', scale: 0.5 })  // one side, at half strength
+api.feel.stop()                                  // stop what this module is playing
+api.feel.outputs()                               // {vr, gamepads, triggerRumble, phone}: what this device has
+```
+
+It is **local**: buzz only the player it is for (decide that in your module, for example on your own peer's hit). It
+plays in Interact and Play only, never in Edit, and the player's **Vibration** and **Vibration strength** game settings
+apply. Where there is no motor (an iPhone) nothing happens and nothing fails. In a flow graph, the
+[Vibrate](https://docs.theprototype.app/nodes/vibrate.md) node does the same.
 
 WASD / arrows, a gamepad's left stick or the VR left stick drive the object (tank controls);
 <kbd>Space</kbd> or gamepad A hops it `jumpHeight` metres (default 1.2, `0` = no jump, since 1.54.3).

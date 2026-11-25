@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Material Presets", "url": "https://docs.theprototype.app/materials/", "description": "A material preset is a named look for an object's surface — colour, roughness, metalness, glow, transparency and its image maps (a colour texture and the maps below) — that you apply with one…", "dateModified": "2026-11-21", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/materials/presets-wood.webp", "caption": "The Presets row with Wood applied."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/materials/presets-edit.webp", "caption": "Editing your presets."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/materials/maps.webp", "caption": "The Maps rows in the Material section."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Material Presets", "url": "https://docs.theprototype.app/materials/", "description": "A material preset is a named look for an object's surface — colour, roughness, metalness, glow, transparency and its image maps (a colour texture and the maps below) — that you apply with one…", "dateModified": "2026-11-24", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/materials/presets-wood.webp", "caption": "The Presets row with Wood applied."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/materials/presets-edit.webp", "caption": "Editing your presets."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/materials/maps.webp", "caption": "The Maps rows in the Material section."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/materials/explorer-picker.webp", "caption": "The Explorer picker, opened from the colour map's folder button."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/materials/fill-with-noise.webp", "caption": "Fill with noise on an empty Roughness row asks for the size first."}]}</script>
 </head>
   
   
@@ -1064,6 +1064,57 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#material-slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Material slots
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Material slots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#switch-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switch material…
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-node-shader-per-slot" class="md-nav__link">
+    <span class="md-ellipsis">
+      A node shader per slot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textures-from-the-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Textures from the Explorer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fill-with-noise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fill with noise
+    </span>
+  </a>
   
 </li>
       
@@ -3393,6 +3444,27 @@
   
   <span class="md-ellipsis">
     Hit Pause
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/vibrate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vibrate
   </span>
   
 
@@ -7366,6 +7438,57 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#material-slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Material slots
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Material slots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#switch-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switch material…
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-node-shader-per-slot" class="md-nav__link">
+    <span class="md-ellipsis">
+      A node shader per slot
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textures-from-the-explorer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Textures from the Explorer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fill-with-noise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fill with noise
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#fish-scales-and-the-look-tier" class="md-nav__link">
     <span class="md-ellipsis">
       Fish scales and the look tier
@@ -7505,6 +7628,10 @@ Lambert and Toon have Normal, Emission and AO, and Basic has only AO.</p>
 <li><strong>Set…</strong> picks an image from your device: PNG, JPEG or WebP (an iPhone HEIC photo is converted to a JPEG first).
   You can also drop an image from the <a href="../explorer/">Explorer</a> or from your computer onto a row. Large images are
   scaled to 1024 pixels on the long side.</li>
+<li>The <strong>folder button</strong> beside <strong>Set texture…</strong> and on every map row (<em>since 1.79</em>) picks the image from your
+  Explorer instead — see <a href="#textures-from-the-explorer">Textures from the Explorer</a>.</li>
+<li>The <strong>wand button</strong>, <strong>Fill with noise</strong> (<em>since 1.79</em>), on the texture row and on every map row fills that map
+  with generated noise — see <a href="#fill-with-noise">Fill with noise</a>.</li>
 <li>Once a map is set, its <strong>thumbnail</strong> replaces Set…: click it to choose another image, or press <strong>Remove</strong>. A map
   that came with an imported model says <em>From the model</em>.</li>
 <li><strong>Normal strength</strong> (0 to 10, default 1) appears under Normal once it has a map, and <strong>AO strength</strong> (0 to 1) under
@@ -7564,6 +7691,74 @@ is named in a message, so you can set it on its own row. The whole set is one un
 <li>Removing a map that was loaded <strong>compressed</strong> (KTX2, for example from a <a href="../publish-export/#optimize-for-quest-web">For Quest / web</a>
   file) cannot be undone: there is no image to put back.</li>
 </ul>
+<h2 id="material-slots">Material slots</h2>
+<p><em>New in 1.79.</em> An object can wear several materials, one per <strong>slot</strong> — an imported model with several materials, or
+a mesh you gave slots in the <a href="../uv-editor/#material-slots">UV editor</a>. When it has two or more, <strong>Inspector ▸ Material</strong>
+starts with a <strong>slot list</strong>: a swatch, the slot's name, badges (<em>Shader</em>, <em>Off</em>, <em>Shared · used by N</em>), an eye and a
+<strong>⋯</strong> menu per row.</p>
+<ul>
+<li><strong>Tap a row</strong> to edit that slot: its faces flash on the model, and every row of the Material section below — type,
+  colour, maps, roughness — edits that slot.</li>
+<li><strong>The eye</strong> switches a slot <strong>off</strong>: it draws a plain grey, and its own material is kept (saves, undo, duplicates and
+  exports keep it). The eye again shows it.</li>
+<li><strong>⋯</strong> has <strong>Rename</strong>, <strong>Switch material…</strong>, <strong>Select its faces</strong>, <strong>Assign selected faces</strong>, <strong>Make unique</strong>,
+  <strong>Duplicate</strong>, <strong>Move up</strong>, <strong>Move down</strong> and <strong>Remove…</strong> (it asks where the slot's faces go: <em>Move its N faces to</em>).</li>
+<li><strong>Add material slot</strong> is in the Material section's own <strong>⋯</strong> menu.</li>
+<li><strong>On a touch screen</strong> the rows are 44 px high; long-press a row for its menu, and use Move up / Move down instead of
+  dragging.</li>
+<li>While the list is open in <a href="../mesh-editing/">Edit Mesh</a>, <strong>Remove</strong>, <strong>Move</strong> and <strong>Duplicate</strong> wait until you leave
+  Edit Mesh.</li>
+</ul>
+<p>The UV editor's <strong>Materials</strong> pane is the same list, with its image and assign buttons. Slots, their names and every
+change reach everyone in the session, save with the scene and undo like any material edit.</p>
+<h3 id="switch-material">Switch material…</h3>
+<p><strong>⋯ ▸ Switch material…</strong> opens a popover for that slot:</p>
+<ul>
+<li><strong>Presets</strong> (the starters, yours and your peers') and the <a href="../free-assets/">CC0 library</a> (<em>Apply to ‹slot›</em>)
+  <strong>copy</strong> a look into the slot.</li>
+<li><strong>In this scene</strong> <strong>links</strong> the slot to a material another object or slot already wears: editing either changes
+  both, for everyone, and the row says <em>Shared · used by N</em>. <strong>Make unique</strong> gives the slot its own copy again.</li>
+</ul>
+<p>A duplicated object or slot is a working copy, not a link.</p>
+<h3 id="a-node-shader-per-slot">A node shader per slot</h3>
+<p>From the <a href="../shader-graph/#one-slot-or-all-slots">Shader editor</a> a slot can take its own node shader, or every slot of
+the object one shader. A slot that has one shows <em>Shader</em> in the list, and its Material section says so, with <strong>Open in
+Shader editor</strong> and <strong>Detach</strong> (<em>Detach all slots</em> when the all-slots shader draws it).</p>
+<h2 id="textures-from-the-explorer">Textures from the Explorer</h2>
+<p><em>New in 1.79.</em> Any image in your <a href="../explorer/">Explorer</a> can become a texture without leaving the app.</p>
+<ul>
+<li><strong>Pick:</strong> press the folder button (<em>Pick … from the Explorer</em>) beside <strong>Set texture…</strong> or on a map row (Normal,
+  Roughness, Metalness, Emission, AO). The picker shows every image as a thumbnail; type to search, choose a folder (its
+  subfolders count) or take one from <strong>Recent</strong> (your last picks, kept on this device). <kbd>Esc</kbd> closes it. The
+  same picker is on each slot row of the <a href="../uv-editor/#material-slots">UV editor</a>, in Image to 3D (<strong>From
+  Explorer…</strong>) and in <strong>Settings ▸ Touch controls</strong> for a button's images.</li>
+<li><strong>Drag:</strong> drag an image card from the Explorer onto a <strong>map row</strong> (it becomes that map), the <strong>UV editor canvas</strong> (the
+  colour map of the slot you work on), or an <strong>object</strong> in the 3D view (the colour map of the material under the
+  pointer: on an object with several slots, only that slot changes). One <strong>Undo</strong> takes it back.</li>
+<li><strong>Touch:</strong> press and hold a card, then drag it to a map row, the UV canvas or an object.</li>
+</ul>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/materials/explorer-picker.webp" data-desc-position="bottom"><img alt="Pick the colour map: the Explorer picker over the 3D view, with a search box, All folders and two image thumbnails, and the Material rows with their folder buttons behind it." height="720" loading="lazy" src="../img/materials/explorer-picker.webp" width="1280"></a></p>
+<figcaption>
+<p>The Explorer picker, opened from the colour map's folder button.</p>
+</figcaption>
+</figure>
+<p>Images up to 25 MB (the Explorer's own limit) work. They are stored like an uploaded image (scaled to 1024 px), so
+everyone in the session, and older versions, see an ordinary texture. A file a peer shared that has not reached this
+device yet says so instead of applying.</p>
+<h2 id="fill-with-noise">Fill with noise</h2>
+<p><em>New in 1.79.</em> Every map row has a wand button, <strong>Fill with noise</strong>. On a row that already has an image it opens the
+<a href="../image-editor/#noise">Image editor's Noise panel</a> on that image; on an empty row it asks for a size (<strong>1024 px</strong>, the
+default, 512 or 2048), puts a new noise texture on the material at once (one undo step) and opens the editor on it so
+you can tune it. <strong>Save</strong> there writes the row again. On an object with several slots it acts on the active slot.</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/materials/fill-with-noise.webp" data-desc-position="bottom"><img alt="Fill the Roughness map with noise: a dialog over the 3D view offering 1024 px (default), 512 px and 2048 px, with the Material section's wand buttons on every map row behind it." height="900" loading="lazy" src="../img/materials/fill-with-noise.webp" width="1440"></a></p>
+<figcaption>
+<p>Fill with noise on an empty Roughness row asks for the size first.</p>
+</figcaption>
+</figure>
+<p>A material draws a texture at most 1024 px; a 2048 image keeps its full size in the Library, and the material shows it
+at 1024 (it still tiles).</p>
 <h2 id="fish-scales-and-the-look-tier">Fish scales and the look tier</h2>
 <p><strong>Fish scales</strong> is an iridescent look: a thin film over the surface shifts its colour with the viewing angle (the
 silver-blue flash of a turning fish), over a procedural relief of overlapping scales, with a light clear coat and a hint
@@ -7608,9 +7803,10 @@ material, so saving on a headset and opening on a desktop shows the full look ag
 </ul>
 <h2 id="limits">Limits</h2>
 <ul>
-<li>Presets apply to objects with <strong>one material</strong>. An object with several material slots (an imported OBJ with an
-  <code>.mtl</code>, a mesh you assigned slots to in the <a href="../uv-editor/">UV editor</a>) is skipped, and objects driven by a
-  <a href="../shader-graph/">shader graph</a> are skipped with a note.</li>
+<li>The Presets row applies to objects with <strong>one material</strong>. On an object with several
+  <a href="#material-slots">material slots</a>, use <strong>⋯ ▸ Switch material…</strong> on the slot (<em>since 1.79</em>). Objects driven by a <a href="../shader-graph/">shader graph</a> are skipped with a note.</li>
+<li>In a <a href="../publish-export/">glTF export</a> every slot is a plain material: a slot's node shader is not carried, and an off
+  slot exports its own material.</li>
 <li>Applying a preset keeps the object's <strong>Side</strong> (front / back / double) and <strong>Wireframe</strong> setting.</li>
 <li><strong>Glass</strong> is a see-through, clear-coated surface rather than true refraction, so it stays cheap on a Quest. Raise
   <strong>Transmission</strong> on a Physical material for real refraction on a desktop.</li>
@@ -7640,7 +7836,7 @@ material, so saving on a headset and opening on a desktop shows the full look ag
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-21
+    2026-11-24
   </span>
 
     

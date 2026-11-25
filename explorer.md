@@ -243,7 +243,8 @@ Right-click a file or a folder for **Duplicate** (**Duplicate folder**), **Copy*
 ### The preview window
 
 The preview is one window for any file: an image, a sound, a 3D model, a text file or a folder. Images open zoomable
-(**−** / **＋** / **1:1**, drag to pan), sounds open with a player, and 3D models open on a turntable with an **animation transport** — play, step a frame with <kbd>,</kbd> and <kbd>.</kbd>, scrub, pick a clip — and a mesh-stats line. Text files show read only (the first 256 KB); double-click opens them in the code editor. The **←** / **→** buttons (or keys) page through the folder without closing the window, <kbd>Enter</kbd> goes into a folder, and **⌐** or <kbd>Backspace</kbd> goes up a level. Keys never fire while you type in a field.
+(**−** / **＋** / **1:1**, drag to pan; *since 1.79* the wheel and a pinch zoom toward the pointer or your fingers, and on
+a tablet fingers on an image zoom and pan the image — move the window by its title bar), sounds open with a player, and 3D models open on a turntable with an **animation transport** — play, step a frame with <kbd>,</kbd> and <kbd>.</kbd>, scrub, pick a clip — and a mesh-stats line. Text files show read only (the first 256 KB); double-click opens them in the code editor. The **←** / **→** buttons (or keys) page through the folder without closing the window, <kbd>Enter</kbd> goes into a folder, and **⌐** or <kbd>Backspace</kbd> goes up a level. Keys never fire while you type in a field.
 
 **View | Edit** (*1.65*). On an image in your Library, **Edit** in the header opens the [Image editor](https://docs.theprototype.app/image-editor.md)
 in the same window, with a filmstrip of the folder's images on the left; **View** goes back. Unsaved edits are never
@@ -404,7 +405,12 @@ all pack downloads**.
 ### Images, audio and text
 
 - **Images** dropped onto an object become its **texture**. A big photo is scaled down to 1024 px on its longest side
-  instead of being refused — see [Big photos as textures](https://docs.theprototype.app/image-editor.md#big-photos-as-textures).
+  instead of being refused — see [Big photos as textures](https://docs.theprototype.app/image-editor.md#big-photos-as-textures). *Since 1.79* the
+  image becomes the colour map of the material **under the pointer**: on an object with several material slots, only
+  that slot changes, and one **Undo** takes it back. An image card also drops onto a **map row** in Inspector ▸ Material
+  (it becomes that map) and onto the **UV editor canvas** (the colour map of the slot you work on). On a touch screen,
+  press and hold a card, then drag it. The material's folder buttons open the same images in a picker: see
+  [Textures from the Explorer](https://docs.theprototype.app/materials.md#textures-from-the-explorer).
 - **Audio and text** are used where they plug in — sound nodes, scripts, and any module that claims the drop (a sample
   onto a pad).
 

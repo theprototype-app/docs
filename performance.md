@@ -27,24 +27,24 @@ menu ▸ **Statistics**. On a folded phone, **More ▸ Statistics** opens it as 
 dock (see [The dock on a phone](https://docs.theprototype.app/interface.md#the-dock-on-a-phone)), and on a computer it can be
 a [sidebar tab](https://docs.theprototype.app/interface.md#any-window-in-a-sidebar) too.
 
-## The budget chip: will it fit on a Quest?
+## Judge for: will it fit on a Quest?
 
-*New in 1.37.* The meter above judges what *this* device draws right now. The **budget chip** answers a different
-question while you build: **does this scene fit the device you mean to ship to** — **Quest / VR**, **Phone** or
-**Desktop**? The numbers are the ones the [perf gate](#budgets-in-ci) holds every Games-tab game and General-tab level
-to (Quest: 150 draw calls, 300k triangles, 2 lights, 64 MB of textures); phone and desktop have starting values beside
-them.
+*New in 1.37, in the Preview pill since 1.79.* The meter above judges what *this* device draws right now. **Judge for**
+answers a different question while you build: **does this scene fit the device you mean to ship to** — **Quest**,
+**Phone** or **PC**? The numbers are the ones the [perf gate](#budgets-in-ci) holds every Games-tab game and General-tab
+level to (Quest: 150 draw calls, 300k triangles, 2 lights, 64 MB of textures); phone and desktop have starting values
+beside them.
 
-**Where it is.** On a computer and an unfolded phone: right of the toolbar (or left of it, or just above, when the right
-side is taken). It is hidden in Play, and where there is no free spot next to the toolbar. On a folded phone: **More ▸
-Tools & View ▸ Budget** — the tile shows the device, the percentage and a coloured dot; hold and drag it onto the bottom
-bar if you want it there. Since 1.39 you can move the chip anywhere, or hide it, in
-[Edit positions](https://docs.theprototype.app/controls.md#moving-the-clusters); **Customize toolbar… ▸ Budget chip** shows it again. Opening its
-**▾** menu no longer makes it vanish.
+**Where it is.** In the **Preview pill** at the top right of the 3D view (see
+[The Preview pill](https://docs.theprototype.app/cinematic-view.md#the-preview-pill)). Its menu's **Judge for** has **This device**, **Phone**,
+**Quest** and **PC**: each one you tick shows as a part of the pill with its icon and percent, so you can judge for
+several devices at once. Nothing is ticked at first; **This device** ticks itself once, the first time the scene goes
+over 100 % of this device's budget, and Quest is never ticked for you. The device you picked on the old **budget chip**
+(1.37 to 1.78) carries over, and so do its place and a hide in [Edit positions](https://docs.theprototype.app/controls.md#moving-the-clusters). On a
+folded phone there is no pill: **More ▸ Tools & View ▸ Budget** shows the device, the percentage and a coloured dot,
+and opens Statistics ▸ Budget (hold and drag it onto the bottom bar if you want it there).
 
-![The budget chip beside the toolbar, reading Quest over 100 % in red: the scene has four point lights, more than the two a Quest's budget allows.](https://docs.theprototype.app/img/performance/budget-chip.webp)
-*Figure: The budget chip sits beside the toolbar.*
-**Reading it.** The chip shows the device and how much of its tightest budget the scene uses (*Quest 87%*):
+**Reading it.** Each part shows how much of that device's tightest budget the scene uses (*87%*), in its colour:
 
 | Colour | Meaning |
 |---|---|
@@ -52,13 +52,12 @@ bar if you want it there. Since 1.39 you can move the chip anywhere, or hide it,
 | Amber | 80–100 % of at least one |
 | Red | over a budget |
 
-Lights and shadow-casting lights are small counts: at the budget is fine, over it is red. Pick the device from the
-chip's **▾** (or right-click / long-press the chip), or with the Quest / Phone / Desktop switch at the top of the Budget
-section. The choice is per device and remembered.
+Lights and shadow-casting lights are small counts: at the budget is fine, over it is red. You can also pick the device
+with the Quest / Phone / Desktop switch at the top of the Budget section. The choice is per device and remembered.
 
 ### Statistics ▸ Budget
 
-Click the chip and **Statistics** opens on its **Budget** section: draw calls, triangles, texture memory, lights,
+Click a device's part in the Preview pill (or **Statistics…** in its menu) and **Statistics** opens on its **Budget** section for that device: draw calls, triangles, texture memory, lights,
 shadow-casting lights and shadow draws, each against the device, and **Heaviest objects** — the objects taking the
 largest share of a budget, with their triangles, calls and texture memory, and what
 [optimizing them on import](https://docs.theprototype.app/import-optimize.md) would save (≈, by your **Settings ▸ Import** numbers). Click a row to
@@ -181,11 +180,15 @@ and a panel explains it rather than leaving you looking at a tab that appears to
   [the quality governor](#the-quality-governor)), **High**, **Medium** (shadows off, 72 % resolution) or **Low**
   (shadows, ambient occlusion and the scene look off, 50 % resolution). These are the same levels a game's own
   **Quality** setting uses; a game's setting wins while you play it.
-- **Shadows**, **Simplify distant models** and **Draw repeated kit pieces together** — the same switches as
+- **Shadow detail** (Off / Low / Medium / High; called *Shadows* before 1.79) — this device's cap on shadow-map size.
+  *Since 1.79* it caps the scene's own [shadow quality](https://docs.theprototype.app/camera.md#shadow-quality) here.
+- **Shadow detail**, **Simplify distant models** and **Draw repeated kit pieces together** are the same switches as
   **Settings ▸ Scene ▸ Performance**, which has the **Quality preset** row too. *Since 1.64* **Reduce quality when the
   scene is heavy** is only in Settings; Configure Scene has a line that says what **Auto** does instead.
 
 The preset is saved on this device only; it is never sent to peers or saved in a scene.
+
+*Since 1.79* the preset is also in the Preview pill's menu (**Quality**), and in the phone's Preview drawer.
 
 ![Configure Scene with Quality first: Preset Auto / High / Medium / Low, Reduce quality when the scene is heavy, Shadows, Simplify distant models and Draw repeated kit pieces together, above Environment; one Lowered resolution to keep it smooth notice with Keep full quality at the top](https://docs.theprototype.app/img/performance/configure-scene-quality.webp)
 *Figure: Configure Scene opens with Quality first.*

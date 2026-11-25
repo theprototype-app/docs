@@ -3367,6 +3367,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="nodes/vibrate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vibrate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -7396,6 +7417,33 @@ on a phone that gives the scene the whole height of the screen.</p>
 <a href="https://github.com/theprototype-app/core">github.com/theprototype-app/core</a> (also <strong>Settings ▸ About ▸ Source Code</strong>),
 with a contributing guide and an <code>llms.txt</code> for coding agents.</p>
 <h2 id="whats-new">What's new</h2>
+<p><strong>1.79 — hands-on editing: keymaps, new gizmos, touch feedback, material slots and scene shadows.</strong></p>
+<ul>
+<li><strong>Keyboard and gizmo</strong>: <a href="controls/#keymap-presets">keymap presets</a> (ThePrototype, Blender style, Unity / Maya
+  style); <a href="controls/#move-now-rotate-now-resize-now">Move now, Rotate now, Resize now</a> with axis locks and typed
+  numbers, in the 3D view, the UV editor and Edit Mesh; Fly with WASD and Fly direction; and
+  <a href="controls/#gizmo-styles">new gizmo styles</a> — with a mouse you now get <strong>All in one</strong>, on a touch screen the
+  <strong>Touch puck</strong> (Settings ▸ Scene ▸ Gizmo picks <strong>Separate</strong> for the classic one). Press a tool again to step its
+  handles; press a tool button and drag to transform at once.</li>
+<li><strong>Painting and the UV editor</strong>: <a href="uv-editor/#pen-pressure">pen pressure</a> tints with Opacity and gains Size +
+  opacity, brushes gain <a href="uv-editor/#spacing-and-smoothing">Spacing and Smoothing</a>, and
+  <a href="uv-editor/#touch">fingers</a> pinch, pan and never leave a stray dot. In the UV editor
+  <strong>Shift-drag box-selects</strong> now (it used to pan) and Space-drag pans with any tool.</li>
+<li><strong>Touch feedback and vibration</strong>: phones give a light <a href="touch-controls/#touch-feedback">touch of feedback</a> on
+  sliders, switches and snaps (it replaces Haptic tick), and games <a href="make-it-feel-like-a-real-game/#vibration">vibrate gamepads and Android
+  phones</a> with the new <a href="nodes/vibrate/">Vibrate</a> node.</li>
+<li><strong>Around the 3D view</strong>: one <a href="cinematic-view/#the-preview-pill">Preview pill</a> replaces the Cinematic switch and
+  the budget chip, with new <a href="camera/#draw-as-modes-for-checking-a-model">Draw as</a> modes for checking a model and
+  Judge for several devices at once; the <a href="interface/#the-hud-grid">controls line up</a> on one grid.</li>
+<li><strong>Materials and textures</strong>: <a href="materials/#material-slots">material slots you can manage</a>, Switch material… with
+  linked materials, a <a href="shader-graph/#one-slot-or-all-slots">node shader per slot</a>,
+  <a href="materials/#textures-from-the-explorer">textures from the Explorer</a> and <a href="image-editor/#noise">noise</a> in the
+  Image editor.</li>
+<li><strong>Shadows</strong>: <a href="camera/#shadow-quality">shadow quality per scene</a> (Off, Basic, Soft, Far), and the Cinematic view's
+  <a href="cinematic-view/#reflections-and-global-light">Reflections and Global light</a> switches.</li>
+<li><strong>Faster start</strong>: the code-behaviour runtime loads only when a scene has a behaviour or an agent is used, about 52 KB
+  less before the first frame.</li>
+</ul>
 <p><strong>1.78 — faster mesh editing.</strong> <a href="mesh-editing/">Edit Mesh</a> runs on a new mesh core: on a 67,000-triangle mesh,
 entering Edit Mesh and undoing are about three times faster, extruding and bevelling an edge about twice as fast, the
 knife about 1.7 times, and dragging faces, edges or vertices stays smooth. <a href="mesh-editing/#selecting">Undo puts your selection back</a> after an operation,
@@ -7745,7 +7793,7 @@ offers <strong>Keep original only</strong>. <strong>Settings ▸ Import</strong>
 settings</strong> and <strong>Reimport</strong>, and <strong>Configure Scene ▸ Level of detail</strong> sets one <a href="lod/#the-scenes-lod-distance">LOD distance</a>
 for the whole scene. Exports get <a href="publish-export/#optimize-for-quest-web"><strong>Optimize for: For Quest / web</strong></a> — a GLTF
 becomes a compact <code>.glb</code>, a Scene keeps its format with compressed textures and LOD chains. A
-<a href="performance/#the-budget-chip-will-it-fit-on-a-quest">budget chip</a> beside the toolbar says whether the scene fits a
+<a href="performance/#judge-for-will-it-fit-on-a-quest">budget chip</a> beside the toolbar says whether the scene fits a
 Quest, a phone or a desktop, and <strong>Statistics ▸ Budget</strong> lists the heaviest objects with what optimizing them would save.
 <a href="explorer/#heic-heif-photos">HEIC / HEIF photos</a> import as images and textures, and <a href="race/#in-vr">Race</a> keeps its
 shadows in VR — inside the Quest budget.</p>

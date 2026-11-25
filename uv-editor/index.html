@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "UV & Textures", "url": "https://docs.theprototype.app/uv-editor/", "description": "A texture is a flat image wrapped around a 3D model. The UV editor shows you that wrapping — the model's surface unfolded into a square — and lets you rearrange it, generate it from scratch, paint…", "dateModified": "2026-11-23", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/uv-editor/smart-unwrap.webp", "caption": "A sphere unwrapped with Smart (xatlas)."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "UV & Textures", "url": "https://docs.theprototype.app/uv-editor/", "description": "A texture is a flat image wrapped around a 3D model. The UV editor shows you that wrapping — the model's surface unfolded into a square — and lets you rearrange it, generate it from scratch, paint…", "dateModified": "2026-11-24", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/uv-editor/smart-unwrap.webp", "caption": "A sphere unwrapped with Smart (xatlas)."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/uv-editor/brush-panel-dark.webp#only-dark", "caption": "The Brush panel: Pen pressure and Pen only draws."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/uv-editor/brush-panel-light.webp#only-light", "caption": "The Brush panel: Pen pressure and Pen only draws."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/uv-editor/pressure-opacity.webp", "caption": "With Opacity a light touch tints instead of painting the full colour."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/uv-editor/replace-painted-ask.webp", "caption": "Dropping an Explorer image on a slot that holds painted pixels asks first."}]}</script>
 </head>
   
   
@@ -1294,6 +1294,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#the-transform-origin" class="md-nav__link">
     <span class="md-ellipsis">
       The transform origin
@@ -1372,6 +1381,24 @@
   <a href="#pen-pressure" class="md-nav__link">
     <span class="md-ellipsis">
       Pen pressure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spacing-and-smoothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spacing and smoothing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#touch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Touch
     </span>
   </a>
   
@@ -3501,6 +3528,27 @@
   
   <span class="md-ellipsis">
     Hit Pause
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/vibrate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vibrate
   </span>
   
 
@@ -7469,6 +7517,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Keys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#the-transform-origin" class="md-nav__link">
     <span class="md-ellipsis">
       The transform origin
@@ -7547,6 +7604,24 @@
   <a href="#pen-pressure" class="md-nav__link">
     <span class="md-ellipsis">
       Pen pressure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spacing-and-smoothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spacing and smoothing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#touch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Touch
     </span>
   </a>
   
@@ -7640,7 +7715,10 @@
 <h2 id="reading-the-map">Reading the map</h2>
 <p>The square is UV space: the whole texture, from 0 to 1 on both axes. The mesh's triangles are drawn over it as a wireframe, so you can see which part of the image lands on which part of the model.</p>
 <ul>
-<li><strong>Scroll</strong> to zoom, <strong>middle-drag</strong> to pan, <strong>Fit</strong> re-centres the square.</li>
+<li><strong>Scroll</strong> to zoom (toward the pointer, <em>since 1.79</em>), <strong>middle-drag</strong> to pan, <strong>Fit</strong> re-centres the square.</li>
+<li><strong>Hold <kbd>Space</kbd> and drag</strong> to pan with any tool (<em>since 1.79</em>; the cursor turns into a hand). Before, Box,
+  Lasso and Paint had no way to pan without a middle button.</li>
+<li>On a touch screen, <strong>two fingers</strong> pinch to zoom and move together to pan — see <a href="#touch">Touch</a>.</li>
 <li>Toggle <strong>wireframe</strong>, and the texture itself, from the view controls.</li>
 </ul>
 <div class="admonition note">
@@ -7663,7 +7741,7 @@
 <tbody>
 <tr>
 <td><strong>Select</strong></td>
-<td>Click a vertex; <kbd>Shift</kbd> (or <kbd>Ctrl</kbd>) adds. Dragging the background pans; clicking it deselects.</td>
+<td>Click a vertex; <kbd>Shift</kbd> (or <kbd>Ctrl</kbd>) adds. Dragging the background pans; clicking it deselects. <strong><kbd>Shift</kbd>-drag on empty space box-selects</strong> and adds to the selection (<em>since 1.79</em>; it used to pan — middle-drag and <kbd>Space</kbd>-drag still pan).</td>
 </tr>
 <tr>
 <td><strong>Box</strong></td>
@@ -7705,6 +7783,18 @@
 </tbody>
 </table>
 <p>Scaling with the arrows is <strong>per axis</strong> — left/right scales in U, up/down in V, and <kbd>Alt</kbd> makes it uniform. Shrinking is the exact reciprocal of growing, so a press one way and a press back leaves the map where it started. Every press is its own undo step.</p>
+<h3 id="keys">Keys</h3>
+<p><em>New in 1.79.</em> The UV editor has its own rows in <strong>Settings ▸ Shortcuts</strong>:</p>
+<ul>
+<li><strong>Tool keys</strong> for Select, Box, Lasso and Paint: no key by default; the Blender style
+  <a href="../controls/#keymap-presets">keymap</a> puts them on <kbd>W</kbd> / <kbd>B</kbd> / <kbd>C</kbd> / <kbd>P</kbd>.</li>
+<li><strong>Move now, Rotate now, Resize now</strong>: the selected points follow the pointer at once, as in the
+  <a href="../controls/#move-now-rotate-now-resize-now">3D view</a>. <kbd>X</kbd> / <kbd>Y</kbd> lock U / V, <kbd>Shift</kbd> moves
+  fine and <kbd>Ctrl</kbd> snaps; <kbd>Enter</kbd> or a click keeps it, <kbd>Esc</kbd> or a right click cancels it (a
+  right click now cancels a middle-click grab too). No key by default; the Blender preset puts them on <kbd>G</kbd> /
+  <kbd>R</kbd> / <kbd>S</kbd>, and <kbd>1</kbd> still arms Move.</li>
+</ul>
+<p>The <kbd>?</kbd> sheet lists them once they have a key, and <kbd>Space</kbd>-drag pan.</p>
 <h3 id="the-transform-origin">The transform origin</h3>
 <p>Rotation and scaling happen about a <strong>placeable origin</strong>. Press the ⌖ button (or use the right-click menu) and click where you want it; drag it around at any time. It snaps onto the nearest UV point unless you hold <kbd>Alt</kbd>.</p>
 <p>The origin is a local editing aid — it is never replicated and never saved.</p>
@@ -7846,15 +7936,58 @@ image stamps and painting in a headset. See <a href="../mesh-paint/">Paint on me
 <p>Painting over a texture ends its link to the library image it was made from, so a later save in the
 <a href="../image-editor/#textures-and-their-images">Image editor</a> will not paint over your strokes.</p>
 <h3 id="pen-pressure">Pen pressure</h3>
-<p>Paint with a <strong>pen</strong> and pressure shapes the stroke. The <strong>Pen pressure</strong> switch in the Brush panel picks what it changes:</p>
+<p>Paint with a <strong>pen</strong> and pressure shapes the stroke. The <strong>Pen pressure</strong> switch in the Brush panel picks what pressing
+harder does:</p>
 <ul>
 <li><strong>Size</strong> (the default) — a light touch paints thin, a firm one paints the full brush size.</li>
-<li><strong>Opacity</strong> — the width stays put and a light touch paints faint.</li>
-<li><strong>Off</strong> — every dab is the same.</li>
+<li><strong>Opacity</strong> — the width stays put and a light touch <strong>tints</strong> instead of painting the full colour.</li>
+<li><strong>Size + opacity</strong> (<em>new in 1.79</em>) — both.</li>
+<li><strong>Off</strong> — the pen paints like a mouse.</li>
 </ul>
-<p>A mouse or finger stroke is unchanged whichever you pick, and peers watching a live pen stroke see the same widths you do. Fast strokes are sampled between frames, so a quick curve comes out smooth rather than as a string of dots.</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/uv-editor/brush-panel-dark.webp#only-dark" data-desc-position="bottom"><img alt="The Paint tool's Brush panel: Pen pressure with Size, Opacity, Size + opacity and Off, the Pen only draws switch and the Channel row." height="995" loading="lazy" src="../img/uv-editor/brush-panel-dark.webp#only-dark" width="222"></a>
+<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/uv-editor/brush-panel-light.webp#only-light" data-desc-position="bottom"><img alt="The Paint tool's Brush panel in the light theme: Pen pressure with Size, Opacity, Size + opacity and Off, the Pen only draws switch and the Channel row." height="995" loading="lazy" src="../img/uv-editor/brush-panel-light.webp#only-light" width="222"></a></p>
+<figcaption>
+<p>The Brush panel: Pen pressure and Pen only draws.</p>
+</figcaption>
+</figure>
+<p><em>Since 1.79</em> a stroke never gets stronger than the pressure you used, however often it crosses itself; going over a
+spot again in a <strong>new</strong> stroke builds it up, the way layers do.</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/uv-editor/pressure-opacity.webp" data-desc-position="bottom"><img alt="Four red pen strokes on a white texture in the UV editor: light strokes that tint rather than paint the full red, a stroke that tapers with pressure and a full-strength line." height="262" loading="lazy" src="../img/uv-editor/pressure-opacity.webp" width="856"></a></p>
+<figcaption>
+<p>With Opacity a light touch tints instead of painting the full colour.</p>
+</figcaption>
+</figure>
+<p>A mouse stroke is unchanged whichever you pick, and peers watching a live pen stroke see the same widths you do. Fast
+strokes are sampled between frames, so a quick curve comes out smooth rather than as a string of dots.</p>
+<h3 id="spacing-and-smoothing">Spacing and smoothing</h3>
+<p><em>New in 1.79</em>, in the Brush panel beside Hardness, Opacity, Flow and the Eraser:</p>
+<ul>
+<li><strong>Spacing</strong> — the gap between dabs, as a share of the brush width: low is a smooth line, high a dotted one.</li>
+<li><strong>Smoothing</strong> — a stroke stabiliser: the brush trails the pen on a string and only moves when you pull it, so a
+  shaky hand draws a calm line. 0 is off.</li>
+</ul>
+<p>Both apply when you <a href="../mesh-paint/">paint on the model</a> in the viewport too. The VR brush does not use smoothing.</p>
+<h3 id="touch">Touch</h3>
+<p><em>New in 1.79:</em></p>
+<ul>
+<li>One finger uses the active tool. <strong>Two fingers</strong> pinch to zoom (toward the point between them) and move together to
+  pan. A second finger landing never leaves a dot: the stroke the first finger started is dropped.</li>
+<li><strong>Pen only draws</strong> (on by default): once a pen has touched the screen, fingers stop painting — one finger pans, two
+  pinch-zoom — so your other hand can rest on the screen. A palm under the pen is ignored. Turn it off in the Brush
+  panel or in <strong>Settings ▸ Controls ▸ Pen and touch</strong> to paint with a finger too.</li>
+<li>The mouse wheel zooms toward the pointer here and in the <a href="../explorer/">image preview</a>; the preview also pinch-zooms
+  about your fingers. On a tablet, fingers on an image in the preview zoom and pan the <strong>image</strong> (they used to move the
+  window); move the preview window by its title bar.</li>
+</ul>
+<p>Custom brush tips, pressure curves and symmetry painting are not in this release.</p>
 <h2 id="material-slots">Material slots</h2>
 <p>One mesh can carry several materials. The <strong>Materials</strong> list in the sidebar shows the slots; the canvas shows the slot you have selected.</p>
+<p><em>Since 1.79</em> it is the same slot list as <strong>Inspector ▸ Material</strong> (see
+<a href="../materials/#material-slots">Material slots</a>): rename, switch material, select or assign its faces, make unique,
+duplicate, reorder, switch off or remove a slot from its <strong>⋯</strong> menu, with 44 px rows on a touch screen (long-press a
+row for its menu). The image and assign buttons stay on each row.</p>
 <table>
 <thead>
 <tr>
@@ -7869,7 +8002,7 @@ image stamps and painting in a headset. See <a href="../mesh-paint/">Paint on me
 </tr>
 <tr>
 <td><strong>Give it an image</strong></td>
-<td>Drop an image on the slot, or use its image button.</td>
+<td>Drop an image on the slot, use its image button, or its <strong>folder button</strong> to pick one from the <a href="../explorer/">Explorer</a> (<em>since 1.79</em>).</td>
 </tr>
 <tr>
 <td><strong>Assign faces to it</strong></td>
@@ -7881,6 +8014,15 @@ image stamps and painting in a headset. See <a href="../mesh-paint/">Paint on me
 </tr>
 </tbody>
 </table>
+<p><strong>Drop an Explorer image on the canvas</strong> (<em>since 1.79</em>) and it becomes the colour map of the slot you are working on, so
+you can paint over it. If the slot shows pixels that are in no Explorer file (painted here, or picked from disk), you
+are asked first; Undo brings the old image back.</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../img/uv-editor/replace-painted-ask.webp" data-desc-position="bottom"><img alt="Replace the painted image? asked over the UV editor after an Explorer image was dropped on the canvas: Replace or Cancel." height="720" loading="lazy" src="../img/uv-editor/replace-painted-ask.webp" width="1280"></a></p>
+<figcaption>
+<p>Dropping an Explorer image on a slot that holds painted pixels asks first.</p>
+</figcaption>
+</figure>
 <p>Slots replicate, save and undo like everything else, and a mesh you made with <strong>Convert to mesh</strong> arrives with one slot per original material already set up.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -7928,7 +8070,7 @@ image stamps and painting in a headset. See <a href="../mesh-paint/">Paint on me
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-23
+    2026-11-24
   </span>
 
     

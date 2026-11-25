@@ -1,6 +1,7 @@
 # Image Editor
 
-New in 1.32: the **Image editor** crops, rotates, flips, resizes and adjusts a picture in your
+New in 1.32: the **Image editor** crops, rotates, flips, resizes and adjusts a picture (and since 1.79 fills it with
+[noise](#noise)) in your
 [Explorer](https://docs.theprototype.app/explorer.md) library. When you save, every texture made from that picture updates for everyone in the
 session.
 
@@ -56,6 +57,43 @@ The sidebar on the right has two pages: **Edit** and **Versions**.
 1. The **crop box**: drag it or its corners; Enter applies, Esc cancels.
 2. **X**, **Y**, **W**, **H**: the box in pixels.
 3. **Apply crop**.
+
+## Noise
+
+*New in 1.79.* **Edit ▸ Noise…** (or <kbd>N</kbd> with the canvas focused) fills or blends the image with generated
+noise: **Perlin**, **Simplex**, **Cells** (Worley) or **Value**, summed over octaves. The canvas shows a live preview;
+nothing changes until you press **Apply noise**, which is one step of the editor's own undo. **Save** then writes the
+image, and every texture made from it updates for everyone, as one scene undo step.
+
+![The Noise panel in the Image editor: a planks image under a live Cells noise preview, and in the sidebar Perlin, Simplex, Cells and Value, the Scale, Octaves, Roughness and Contrast sliders, Seed, Tileable and Invert, Colours or Normal map, the blend modes, Opacity and Apply noise.](https://docs.theprototype.app/img/image-editor/noise-panel-dark.webp#only-dark)
+![The Noise panel in the Image editor in the light theme: the live noise preview on the canvas and the noise controls in the sidebar, ending with Apply noise and Cancel.](https://docs.theprototype.app/img/image-editor/noise-panel-light.webp#only-light)
+*Figure: The Noise panel with its live preview.*
+| Control | What it does | Keyboard |
+|---|---|---|
+| **Kind**: Perlin / Simplex / Cells / Value | Perlin = smooth clouds and stains; Simplex = like Perlin with fewer straight-line artefacts; Cells = distance to scattered points, for stone and scales; Value = soft blurred squares | <kbd>Tab</kbd> to the group, arrow keys |
+| **Scale** | How many cells across the image (1–64). A whole number while Tileable is on | <kbd>Tab</kbd>, arrows / type |
+| **Octaves** | Layers of finer noise (1–8); 1 = smooth | <kbd>Tab</kbd>, arrows / type |
+| **Roughness** | How strong each finer octave is (0–1): low = soft, high = gritty | <kbd>Tab</kbd>, arrows / type |
+| **Contrast** | Stretch the noise apart or flatten it toward grey (−100 to 100) | <kbd>Tab</kbd>, arrows / type |
+| **Seed**, **New seed** | The same seed and settings always give the same picture; New seed picks another | <kbd>Tab</kbd>, type; <kbd>Enter</kbd> on New seed |
+| **Tileable** | On by default: the texture repeats with no seam | <kbd>Tab</kbd>, <kbd>Space</kbd> |
+| **Invert** | Swap dark and light | <kbd>Tab</kbd>, <kbd>Space</kbd> |
+| **Output**: Colours / Normal map | Colours maps the noise through your colours; Normal map treats it as height and makes a normal map (use it on the Normal row) | <kbd>Tab</kbd>, arrows |
+| **Strength** (Normal map) | How steep the bumps are | <kbd>Tab</kbd>, arrows / type |
+| **Colours** | Two colours blend, three to five make a gradient (low to high); add or remove with **+** and **×** | <kbd>Tab</kbd>, <kbd>Enter</kbd> opens the colour picker |
+| **Blend**: Replace / Multiply / Overlay / Add | How the noise meets the image: paint over it, darken it, add contrast, or brighten it | <kbd>Tab</kbd>, arrows |
+| **Opacity** | How much of the result to mix in | <kbd>Tab</kbd>, arrows / type |
+| **Apply noise** / **Cancel** | Write it into the image (one editor undo step) / close and leave the image alone | <kbd>Tab</kbd>, <kbd>Enter</kbd>; <kbd>Esc</kbd> cancels |
+
+The panel starts from sensible values for the map it was opened from (Roughness: mid greys; Normal: a normal map; AO:
+soft cells). Every material map row has a **Fill with noise** button that opens it on that map, or makes a new noise
+texture when the row is empty: see [Fill with noise](https://docs.theprototype.app/materials.md#fill-with-noise). The noise is made off the page (in
+workers), so the app keeps responding while a big image is made.
+
+- The editor has no selection or mask, so noise covers the whole image; use a blend and the opacity to shape it.
+- A normal map replaces the image (blending two normal maps is not colour maths).
+- On a phone, sizes above 1024 px are slow to make and use a lot of memory; the size dialog and the panel say so.
+- The result is an ordinary image: it saves with the scene and reaches everyone like any texture.
 
 ## Saving
 

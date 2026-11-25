@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Touch Controls", "url": "https://docs.theprototype.app/touch-controls/", "description": "On a phone or tablet, Play shows a move stick on the left, a look drag on the right and the game's own action buttons — Jump, Throw, Grab, Use… — exactly the actions the game needs. Every control…", "dateModified": "2026-11-22", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.71.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/touch-controls/sky-run-phone.webp", "caption": "Sky Run on a folded phone."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/touch-controls/layout-editor.webp", "caption": "The touch controls layout editor, Jump selected."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Touch Controls", "url": "https://docs.theprototype.app/touch-controls/", "description": "On a phone or tablet, Play shows a move stick on the left, a look drag on the right and the game's own action buttons — Jump, Throw, Grab, Use… — exactly the actions the game needs. Every control…", "dateModified": "2026-11-24", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.71.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/touch-controls/sky-run-phone.webp", "caption": "Sky Run on a folded phone."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/touch-controls/layout-editor.webp", "caption": "The touch controls layout editor, Jump selected."}]}</script>
 </head>
   
   
@@ -503,6 +503,21 @@
       Settings
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#touch-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      Touch feedback
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3411,6 +3426,27 @@
   
   <span class="md-ellipsis">
     Hit Pause
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/vibrate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vibrate
   </span>
   
 
@@ -7408,6 +7444,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#touch-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      Touch feedback
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -7494,7 +7545,8 @@ drag only exist in Play. Touch controls are screen controls, so they never show 
   stick appears under your thumb.</li>
 <li><strong>A still tap</strong> on the view uses what the crosshair is on; a drag looks around. <strong>Look speed</strong> sets how far a drag turns
   the view.</li>
-<li><strong>Haptic tick</strong> gives a short vibration on each press, on phones that support it.</li>
+<li><strong>A short tick</strong> on each press, on phones that can vibrate: it follows <a href="#touch-feedback">Touch feedback</a> (its
+  <em>Buttons and switches</em> switch). It is the one touch feedback that plays in Play.</li>
 </ul>
 <h2 id="which-buttons-a-game-gets">Which buttons a game gets</h2>
 <p>Games that declare their actions show exactly those:</p>
@@ -7564,8 +7616,8 @@ placement for that control, and controls they never moved keep yours.</p>
 not the <a href="#button-looks">button looks</a>, which stay on each device.</p>
 <h2 id="button-looks">Button looks</h2>
 <p><strong>Settings ▸ Touch controls ▸ Button looks</strong> lists every button with a preview of both states. For each button: a
-<strong>Released</strong> and a <strong>Pressed</strong> image (<strong>Upload</strong> a PNG or SVG of up to 160 KB, or pick an image from the
-<a href="../explorer/">Explorer</a>), a <strong>Tint</strong> for the built-in icon, and the icon <strong>Size</strong>. <strong>Default look</strong> goes back to the themed
+<strong>Released</strong> and a <strong>Pressed</strong> image (<strong>Upload</strong> a PNG or SVG of up to 160 KB, or <strong>From Explorer…</strong>: since 1.79 the
+<a href="../materials/#textures-from-the-explorer">Explorer picker</a> with thumbnails, search, folders and Recent), a <strong>Tint</strong> for the built-in icon, and the icon <strong>Size</strong>. <strong>Default look</strong> goes back to the themed
 icons. Images are kept in the browser's local storage, which is why they must stay small.</p>
 <h2 id="settings">Settings</h2>
 <table>
@@ -7588,11 +7640,6 @@ icons. Images are kept in the browser's local storage, which is why they must st
 <td>action buttons while editing too</td>
 </tr>
 <tr>
-<td>Haptic tick</td>
-<td>on</td>
-<td>a short vibration on each press, where supported</td>
-</tr>
-<tr>
 <td>Look speed</td>
 <td>1× (0.25–3)</td>
 <td>how far a drag turns the view</td>
@@ -7609,7 +7656,56 @@ icons. Images are kept in the browser's local storage, which is why they must st
 </tr>
 </tbody>
 </table>
-<p>Search Settings for <em>touch</em>, <em>joystick</em>, <em>buttons</em> or <em>haptic</em> to find this section.</p>
+<p>Search Settings for <em>touch</em>, <em>joystick</em>, <em>buttons</em>, <em>haptic</em> or <em>vibration</em> to find this section.</p>
+<h3 id="touch-feedback">Touch feedback</h3>
+<p><em>New in 1.79</em>, in <strong>Settings ▸ Touch controls ▸ Touch feedback</strong> (this device). It replaces <strong>Haptic tick</strong>: your
+choice carries over (on becomes Light, off becomes Off).</p>
+<p>Phones give a light touch of feedback as you use the editor: a tick as a slider or a dragged number moves, a firmer
+one at its default and at whole numbers, a bump at each end, a different feel for switching on and off, a pulse on a
+long press, and one when a move, a key or a UV point snaps.</p>
+<table>
+<thead>
+<tr>
+<th>Row</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Touch feedback</strong></td>
+<td><strong>Off</strong>, <strong>Light</strong> (the default), <strong>Medium</strong> or <strong>Strong</strong>. It starts <strong>Off</strong> when your device asks for reduced motion.</td>
+</tr>
+<tr>
+<td><strong>Buttons and switches</strong></td>
+<td>switches, choices, tabs and the on-screen game buttons</td>
+</tr>
+<tr>
+<td><strong>Sliders and values</strong></td>
+<td>a tick per step, a firmer one at the default and at the ends</td>
+</tr>
+<tr>
+<td><strong>Snapping</strong></td>
+<td>when a move, a key or a UV point snaps into place</td>
+</tr>
+<tr>
+<td><strong>Gestures</strong></td>
+<td>a long press, picking up a card or a tab</td>
+</tr>
+<tr>
+<td><strong>Try it</strong></td>
+<td>a slider to feel the level: a tick per step, a firmer one at 5, a bump at each end</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Only <strong>touch</strong> gives feedback (a pen counts); a mouse, a keyboard or a gamepad never vibrates.</li>
+<li>It is silent in <strong>Interact</strong> and <strong>Play</strong> (a game's own vibration is the <a href="../nodes/vibrate/">Vibrate</a> node's) apart
+  from the on-screen game buttons' tick, and while a <a href="../film/">film</a> take records. Film mode's own countdown and marker
+  ticks stay; Touch feedback <strong>Off</strong> silences them too.</li>
+<li>It works in <strong>Chrome on Android</strong>. iPhone and iPad browsers cannot vibrate for a web page, so there Settings shows
+  <em>Not available</em> and says why.</li>
+<li><strong>Reset Touch controls</strong> resets it too.</li>
+</ul>
 <h2 id="trackpads">Trackpads</h2>
 <p>In the editor viewport a laptop trackpad's <strong>two-finger swipe pans</strong> and a <strong>pinch zooms</strong> — Safari's pinch gesture on a
 Mac included — while a mouse wheel keeps zooming as before. <strong>Settings ▸ Controls</strong> has the pan and pinch switches; see
@@ -7661,7 +7757,7 @@ Mac included — while a mouse wheel keeps zooming as before. <strong>Settings �
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-22
+    2026-11-24
   </span>
 
     

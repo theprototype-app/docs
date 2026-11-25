@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "HUD, sky and play with an agent", "url": "https://docs.theprototype.app/ai/agent-scene/", "description": "An agent joined to your session (Build with an AI agent) can give a game its HUD, set the sky, fog and lights, and say where Play starts. The in-app Assistant has the same tools.", "dateModified": "2026-11-10"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "HUD, sky and play with an agent", "url": "https://docs.theprototype.app/ai/agent-scene/", "description": "An agent joined to your session (Build with an AI agent) can give a game its HUD, set the sky, fog and lights, and say where Play starts. The in-app Assistant has the same tools.", "dateModified": "2026-11-24"}</script>
 </head>
   
   
@@ -3282,6 +3282,27 @@
   
   <span class="md-ellipsis">
     Hit Pause
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nodes/vibrate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vibrate
   </span>
   
 
@@ -7703,6 +7724,10 @@ what each element is wired to in the flow graph.</p>
 <td><code>update</code> / <code>remove</code></td>
 <td>change or remove environment lights by id (<code>get_environment</code> lists them)</td>
 </tr>
+<tr>
+<td><code>shadowQuality</code></td>
+<td><em>since 1.79</em>: the scene's <a href="../../camera/#shadow-quality">shadow quality</a> for everyone: <code>off</code>, <code>basic</code> (the default), <code>soft</code> or <code>far</code>. A phone or headset may draw less.</td>
+</tr>
 </tbody>
 </table>
 <p>The result lists each new light's id. Spot lights, area lights and lights you place as objects are made with
@@ -7710,7 +7735,8 @@ what each element is wired to in the flow graph.</p>
 <h3 id="get_environment-read-it-all">get_environment: read it all</h3>
 <p><code>get_environment</code> gives the look preset, exposure, background, sky image, fog, sun, ambient light, environment
 lights, the lights placed as objects, where Play starts, the opening view, and the names of the presets and
-skies. Viewers can use it.</p>
+skies. <em>Since 1.79</em> it also reports <code>shadowQuality</code> (what the scene asks) and <code>shadowQualityDrawnHere</code> (what this device
+draws). Viewers can use it.</p>
 <h3 id="place_spawn-where-play-starts">place_spawn: where Play starts</h3>
 <div class="highlight"><pre><span></span><code><span class="err">place_spaw</span><span class="kc">n</span><span class="w"> </span><span class="p">{</span><span class="nt">"position"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">],</span><span class="w"> </span><span class="nt">"facing"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">]}</span>
 </code></pre></div>
@@ -7848,7 +7874,7 @@ where they will stand. A camera that follows behind the player in Play is not in
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-10
+    2026-11-24
   </span>
 
     

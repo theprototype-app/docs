@@ -42,7 +42,7 @@ selection outline, whatever was selected when it was cut.
 
 ### Very large scenes
 
-A very large scene — over the [budget meter](https://docs.theprototype.app/performance.md#the-budget-chip-will-it-fit-on-a-quest)'s **Desktop** line for triangles (4 M) or texture memory
+A very large scene — over the [budget meter](https://docs.theprototype.app/performance.md#judge-for-will-it-fit-on-a-quest)'s **Desktop** line for triangles (4 M) or texture memory
 (512 MB) — skips automatic checkpoints, because each one copies the whole scene. The first time it happens a notice says
 so, with a **Settings** button. Named checkpoints (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>) always work.
 

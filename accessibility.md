@@ -94,7 +94,7 @@ Everything in the editor can be reached and used from the keyboard.
 
 - <kbd>Tab</kbd> / <kbd>Shift</kbd>+<kbd>Tab</kbd> move through the controls in reading order — the skip link, the main
   menu, the touch tools, the Connect bar, the top-right group and your profile, then the toolbar, the corner buttons,
-  the budget chip and any open panel. Every control shows a **focus ring** in the theme's accent.
+  the Preview pill (the budget chip before 1.79) and any open panel. Every control shows a **focus ring** in the theme's accent.
 - **Toolbars are one stop each.** In the bottom toolbar, the corner stacks, the touch tools and the top-right group,
   <kbd>←</kbd> / <kbd>→</kbd> (or <kbd>↑</kbd> / <kbd>↓</kbd>) move between buttons, <kbd>Home</kbd> / <kbd>End</kbd> go
   to the ends and <kbd>Enter</kbd> / <kbd>Space</kbd> press.

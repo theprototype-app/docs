@@ -18,6 +18,7 @@ Flashes a colour over the screen that fades out: red when you are hit, gold for 
 | strength | 0.6 | 0 to 1 — how strong it starts |
 | seconds | 0.25 | 0.05 to 3 — how long it takes to fade out |
 | who | me | `me` = only the player whose press or hit made the pulse; `everyone` = every player |
+| vibrate | on | *since 1.79*: also gives a short [vibration](https://docs.theprototype.app/nodes/vibrate.md) on a gamepad or an Android phone (and the VR controllers), for the same players; switch it off for no buzz |
 
 The flash is drawn on each player's own screen and never blocks clicks. Nothing is saved or changed in the scene.
 

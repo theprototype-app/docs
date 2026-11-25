@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Materials and looks with an agent", "url": "https://docs.theprototype.app/ai/agent-look/", "description": "An agent joined to your session (Build with an AI agent) can make a scene look finished: colours and texture maps, node shaders, post effects and UV mapping. The in-app Assistant has the same tools.", "dateModified": "2026-11-07"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Materials and looks with an agent", "url": "https://docs.theprototype.app/ai/agent-look/", "description": "An agent joined to your session (Build with an AI agent) can make a scene look finished: colours and texture maps, node shaders, post effects and UV mapping. The in-app Assistant has the same tools.", "dateModified": "2026-11-24"}</script>
 </head>
   
   
@@ -3282,6 +3282,27 @@
   
   <span class="md-ellipsis">
     Hit Pause
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nodes/vibrate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vibrate
   </span>
   
 
@@ -7729,7 +7750,23 @@ change by hand.</p>
 </tr>
 <tr>
 <td><code>slot</code></td>
-<td>which material slot of a multi-material object (default 0)</td>
+<td>which material slot of a multi-material object (default 0): <em>since 1.79</em> its index (0 = the first), or its id or name from <code>list_materials</code>. A <code>preset</code> or <code>type</code> change then goes to that one slot.</td>
+</tr>
+<tr>
+<td><code>slotName</code></td>
+<td><em>since 1.79</em>: renames that slot</td>
+</tr>
+<tr>
+<td><code>slotOff</code></td>
+<td><em>since 1.79</em>: <code>true</code> switches the slot <a href="../../materials/#material-slots">off</a> (it draws the plain default; its own material is kept), <code>false</code> shows its material again</td>
+</tr>
+<tr>
+<td><code>removeSlot</code></td>
+<td><em>since 1.79</em>: <code>{to}</code> removes the slot and moves its faces to slot <code>to</code> (index, id or name; default the first other slot). Give nothing else in the call.</td>
+</tr>
+<tr>
+<td><code>noise</code></td>
+<td><em>since 1.79</em>: a generated <a href="../../image-editor/#noise">noise</a> colour texture, instead of <code>pattern</code>: <code>{kind, scale, octaves, roughness, seed, contrast, invert, tileable, colors, size}</code> with <code>kind</code> <code>perlin</code>, <code>simplex</code>, <code>worley</code> or <code>value</code>, 2 to 5 <code>colors</code> and <code>size</code> 1024 by default. Another map takes one as <code>maps.&lt;map&gt;: {noise: {…}}</code> (<code>maps.normal</code> makes a normal map). The answer lists what it wrote.</td>
 </tr>
 <tr>
 <td><code>faces</code></td>
@@ -7741,13 +7778,15 @@ change by hand.</p>
 the bytes are checked, not the file name. A local or private address is refused. The image becomes a library
 item first, the same as an upload, and the result lists it in <code>assets</code>. A plain file name such as
 <code>"wood.png"</code> is refused, because a guess would give you an empty texture.</p>
-<p>An object wearing a shader graph refuses <code>set_material</code>. Edit the shader, or take it off first.</p>
+<p>An object wearing a shader graph refuses <code>set_material</code>. Edit the shader, or take it off first. <em>Since 1.79</em> that
+holds per slot: a slot with its own shader refuses it, the others take it.</p>
 <p>The maps are the same ones as the Inspector's <a href="../../materials/#maps">Maps</a> rows. <code>update_objects</code> can set them too,
 through <code>materialParams</code>: the slots <code>map</code>, <code>normalMap</code>, <code>roughnessMap</code>, <code>metalnessMap</code>, <code>emissiveMap</code> and <code>aoMap</code> (a
 library image hash, or <code>null</code> to clear) and <code>texTransform</code> — <code>{repeat: [u, v], offset: [u, v], rotation}</code> (radians)
 for the tiling, offset and rotation of all the material's maps.</p>
 <h3 id="list_materials-and-get_material-read-what-is-there">list_materials and get_material: read what is there</h3>
-<p><code>list_materials</code> gives each object's slots (type, colour, numbers, which maps), its shader, and the preset
+<p><code>list_materials</code> gives each object's slots (type, colour, numbers, which maps; <em>since 1.79</em> each slot's <code>id</code>, whether it
+is <code>off</code>, and its own shader), its shader, and the preset
 names: the eight starters and any the person saved. <code>get_material</code> gives one object in full: each map's tiling, offset, rotation, size and hash, and its
 shader graph as text with the uniforms a flow can drive. Viewers can use both.</p>
 <h3 id="create_shader-a-node-shader-as-text">create_shader: a node shader, as text</h3>
@@ -7781,6 +7820,10 @@ c -&gt; out.emissive
 <td><code>scene</code></td>
 <td><code>true</code> makes the default for every object, which asks first</td>
 </tr>
+<tr>
+<td><code>slot</code></td>
+<td><em>since 1.79</em>: a shader for one <a href="../../shader-graph/#one-slot-or-all-slots">material slot</a> (index, id or name) instead of the whole object</td>
+</tr>
 </tbody>
 </table>
 <p>Errors come back in the result and nothing is written: an unknown type, a socket that does not exist, a graph
@@ -7795,6 +7838,8 @@ vectors cannot, because flow sockets carry numbers.</p>
 <p><code>edit_shader</code> changes a graph: <code>params</code> (<code>[{node, param, value}]</code>), <code>add</code> (text with new or replaced nodes and
 new wires), <code>removeNodes</code>, or <code>text</code> for the whole graph. A refused edit changes nothing.</p>
 <p><code>assign_shader</code> copies a graph onto other objects, or takes a shader off with <code>"shader": null</code>.</p>
+<p><em>Since 1.79</em> both take <code>slot</code> (index, id or name) to edit, copy onto or take off one slot's shader. No tool names
+changed.</p>
 <h3 id="set_post-get_post-and-create_post_graph-the-scenes-look">set_post, get_post and create_post_graph: the scene's look</h3>
 <p><code>set_post</code> edits the <a href="../../post-processing/">post effects</a> with <code>effects: [{kind, params, enabled, at, remove}]</code>.
 An entry matches what is already there by <code>id</code> or <code>kind</code>, so repeating a call adjusts the bloom instead of
@@ -7951,7 +7996,7 @@ fill that face once.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-07
+    2026-11-24
   </span>
 
     

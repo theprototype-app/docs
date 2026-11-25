@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Shader Graph", "url": "https://docs.theprototype.app/shader-graph/", "description": "Build a material out of nodes instead of sliders. A shader graph replaces what a material looks like — its colour, glow, roughness, surface detail, transparency, even where its vertices sit — and…", "dateModified": "2026-11-03"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Shader Graph", "url": "https://docs.theprototype.app/shader-graph/", "description": "Build a material out of nodes instead of sliders. A shader graph replaces what a material looks like — its colour, glow, roughness, surface detail, transparency, even where its vertices sit — and…", "dateModified": "2026-11-24"}</script>
 </head>
   
   
@@ -1352,6 +1352,21 @@
       Scope: this object, or the whole scene
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Scope: this object, or the whole scene">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-slot-or-all-slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      One slot, or all slots
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3465,6 +3480,27 @@
   
   <span class="md-ellipsis">
     Hit Pause
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/vibrate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vibrate
   </span>
   
 
@@ -7429,6 +7465,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Scope: this object, or the whole scene">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-slot-or-all-slots" class="md-nav__link">
+    <span class="md-ellipsis">
+      One slot, or all slots
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -7640,10 +7691,18 @@ control</strong>:</p>
 </table>
 <p>The header always says which. An object with its own graph ignores the scene default,
 so the order is <em>own graph → scene default → the object's real material</em>.</p>
+<h3 id="one-slot-or-all-slots">One slot, or all slots</h3>
+<p><em>New in 1.79.</em> An object with several <a href="../materials/#material-slots">material slots</a> can take a node shader on <strong>one
+slot</strong>, or <strong>one shader for all its slots</strong>. Pick the slot in <strong>Inspector ▸ Material</strong> and open the Shader editor
+(<strong>Edit shader</strong>): the chip in the header, <strong>All slots | ‹slot›</strong>, says what <strong>Create</strong> makes. On an existing shader,
+<strong>Only this slot</strong> and <strong>All slots</strong> move it between the two in one undo step.</p>
+<p>The order is then <em>the slot's own shader → the all-slots shader → the scene default → the slot's own material</em>. An
+<a href="../materials/#material-slots">off slot</a> draws the plain default, shader or not.</p>
 <h2 id="the-shaders-list">The Shaders list</h2>
 <p>The left pane carries a collapsible <strong>Shaders</strong> section above the node palette. It lists
 <strong>Scene</strong> at the root, then every object that actually has a shader graph of its own — it is a way
-to get <em>to</em> a graph, not a second object list, so an object with none is not in it.</p>
+to get <em>to</em> a graph, not a second object list, so an object with none is not in it. <em>Since 1.79</em> slot shaders are
+listed under their object.</p>
 <p>Click a row to select that object and switch the editor to its graph; click <strong>Scene</strong> to
 deselect and edit the scene-wide one. Drag the bar under the list to give it more room, and
 click the section header to collapse it. An entry whose object has been deleted is shown
@@ -7740,25 +7799,29 @@ error appears in a strip at the top of the tab, naming the node and the problem.
 <p>The <a href="../nodes/setuniform/">Set Shader Uniform</a> node in the <a href="../node-system/">Node editor</a>
 writes one of a graph's numbers, so a proximity trigger, a timer or a counter can drive a
 shader parameter. Select the node in the Shader editor and its info pane lists the uniform
-names to paste in.</p>
+names to paste in. <em>Since 1.79</em> it can target one <a href="#one-slot-or-all-slots">slot</a>.</p>
 <h2 id="saving-sharing-and-undo">Saving, sharing and undo</h2>
 <ul>
 <li>The <strong>graph</strong> is what replicates and what gets saved — never the compiled result — so
   the same graph produces the same pixels everywhere.</li>
 <li>Graphs are stored in <code>.tpscene</code> files and sessions, and in the autosave.</li>
 <li>A <strong>glTF export</strong> cannot carry a node material: the object is exported with the
-  material it had before the graph, and a toast tells you what was dropped.</li>
+  material it had before the graph, and a toast tells you what was dropped (it counts slot shaders too).</li>
+<li>A peer on a version before 1.79 keeps a slot's shader but draws the slot's own material, and drops the shader if
+  their version saves the file; <a href="../people/">People</a> tells you they are on an older version.</li>
 <li>Every change is undoable, and a slider drag is one undo step rather than dozens.</li>
 </ul>
 <h2 id="when-an-object-cannot-take-a-graph">When an object cannot take a graph</h2>
-<p>Objects with <strong>more than one material slot</strong> are declined with an explanation rather than
-half-supported. Convert or split the mesh first if you need per-slot shaders.</p>
+<p><em>Since 1.79</em> an object with several material slots takes a graph per slot or for all slots — see
+<a href="#one-slot-or-all-slots">One slot, or all slots</a>. Before 1.79 such objects were declined.</p>
 <h2 id="the-material-section-while-a-shader-is-active">The Material section while a shader is active</h2>
 <p>Once a graph drives an object, its properties panel says so and hides the ordinary
 colour, material-type and texture rows — they would be editing a result that the next
 recompile discards. You get <strong>Open in Shader editor</strong> and <strong>Detach</strong> instead. Cast and
 receive shadow stay editable, because those are properties of the object rather than of
 the material.</p>
+<p>On a slot, the notice sits under that slot: <strong>Detach</strong> removes the slot's own shader, and <strong>Detach all slots</strong> shows
+when the all-slots shader draws it.</p>
 <p>Detach removes the object's own graph. If the look came from the <strong>scene default</strong> there
 is no per-object graph to remove, and the panel says so — edit or remove the scene graph
 instead.</p>
@@ -7790,7 +7853,7 @@ soon as the module is present.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-03
+    2026-11-24
   </span>
 
     

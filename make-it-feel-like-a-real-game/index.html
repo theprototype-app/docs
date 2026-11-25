@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Make It Feel Like a Real Game", "url": "https://docs.theprototype.app/make-it-feel-like-a-real-game/", "description": "Your game can open on its own start screen: its name, a subtitle and the buttons Continue · Play (or New game) · Load game · Settings · Quit to editor. Behind it is your scene (dimmed), a plain…", "dateModified": "2026-11-23", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.75.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/make-it-feel-like-a-real-game/title-screen.webp", "caption": "The title screen, when you press Play."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/make-it-feel-like-a-real-game/game-menus-section.webp", "caption": "Configure Scene ▸ Game menus."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/make-it-feel-like-a-real-game/dialogue-choices.webp", "caption": "A talk with two choices, in a small window."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Make It Feel Like a Real Game", "url": "https://docs.theprototype.app/make-it-feel-like-a-real-game/", "description": "Your game can open on its own start screen: its name, a subtitle and the buttons Continue · Play (or New game) · Load game · Settings · Quit to editor. Behind it is your scene (dimmed), a plain…", "dateModified": "2026-11-24", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.75.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/make-it-feel-like-a-real-game/title-screen.webp", "caption": "The title screen, when you press Play."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/make-it-feel-like-a-real-game/game-menus-section.webp", "caption": "Configure Scene ▸ Game menus."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/make-it-feel-like-a-real-game/dialogue-choices.webp", "caption": "A talk with two choices, in a small window."}]}</script>
 </head>
   
   
@@ -3291,6 +3291,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/vibrate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vibrate
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -6187,6 +6208,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#vibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vibration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cameras" class="md-nav__link">
     <span class="md-ellipsis">
       Cameras
@@ -7381,6 +7411,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#vibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vibration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cameras" class="md-nav__link">
     <span class="md-ellipsis">
       Cameras
@@ -7532,7 +7571,8 @@ Library.</p>
   the pause off in Game menus.</li>
 <li><strong>New rows:</strong> Restart level (in a game with a Levels table), Save game, Load game, Join requests, Quit to title.</li>
 <li><strong>Settings</strong> has the player's own settings: music and effects volume, <strong>Look speed</strong>, <strong>Invert look</strong>,
-  <strong>Subtitles</strong>, <strong>Reduced motion</strong> (this device), quality, and <strong>Controller vibration</strong> in VR. They are saved per game on this
+  <strong>Subtitles</strong>, <strong>Reduced motion</strong> (this device), quality, and <strong>Vibration</strong> with <strong>Vibration strength</strong> (<em>since
+  1.79</em>: controller, gamepad and phone vibration; see <a href="#vibration">Vibration</a>). They are saved per game on this
   device.</li>
 <li>A game made before this release keeps its old menu (no pause, no title screen) until you turn the game menus on.</li>
 </ul>
@@ -7606,6 +7646,50 @@ agents and people you blocked always ask, even with it on, and so does everyone 
   ("Jump took Circle; Crouch moved to Cross"). <strong>Reset controls</strong> puts them back.</li>
 <li>Quest controllers keep their own mapping.</li>
 </ul>
+<h2 id="vibration">Vibration</h2>
+<p><em>New in 1.79.</em> Games vibrate <strong>gamepads</strong> and <strong>Android phones</strong>, not only Quest controllers.</p>
+<ul>
+<li>The <strong><a href="../nodes/vibrate/">Vibrate</a></strong> node plays a pattern or your own strength and length, on one hand or both, for
+  the player who did it or for everyone.</li>
+<li><strong><a href="../nodes/camerashake/">Camera Shake</a></strong>, <strong><a href="../nodes/screenflash/">Screen Flash</a></strong> and
+  <strong><a href="../nodes/hitpause/">Hit Pause</a></strong> now vibrate a little too; switch it off with the <em>vibrate</em> switch on the node.</li>
+<li>The player's settings gain <strong>Vibration</strong> (on / off; it starts off when the device asks for reduced motion) and
+  <strong>Vibration strength</strong> (0 to 100 %).</li>
+<li>Code: <code>api.feel.vibrate</code> in a <a href="../module-sdk/#vibration">module or code node</a>.</li>
+</ul>
+<p>What works where:</p>
+<table>
+<thead>
+<tr>
+<th>Device</th>
+<th>Vibration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gamepad</td>
+<td>Chrome, Edge and Firefox (two motors)</td>
+</tr>
+<tr>
+<td>Xbox pad</td>
+<td>trigger rumble too, in Chrome and Edge</td>
+</tr>
+<tr>
+<td>Android phone</td>
+<td>Chrome (the phone's motor)</td>
+</tr>
+<tr>
+<td>iPhone, iPad</td>
+<td>none: their browsers cannot vibrate</td>
+</tr>
+<tr>
+<td>Quest</td>
+<td>the controllers, as before</td>
+</tr>
+</tbody>
+</table>
+<p>It vibrates only in Interact and Play, never in the editor, and only on the device of the player it is meant for. A
+player on a version before 1.79 feels nothing from a Vibrate node.</p>
 <h2 id="cameras">Cameras</h2>
 <p>On the scene's <strong>Character Controller</strong> node (Logic ▸ Character), <strong>camera</strong> picks the view. Agents use
 <code>game_setup {play_camera}</code> with <code>mode: "third" | "side" | "top"</code>.</p>
@@ -7721,7 +7805,7 @@ modes:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-23
+    2026-11-24
   </span>
 
     

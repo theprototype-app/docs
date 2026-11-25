@@ -50,7 +50,11 @@ change by hand.
 | `cc0` | fetches a free CC0 material by name, such as `"Wood051"` or `"brown planks"` |
 | `pattern` | a texture drawn by name, put in the albedo slot (since 1.60): `wood`, `planks`, `brick`, `tiles`, `marble`, `stone`, `concrete`, `metal`, `grass`, `sand`, `fabric`, `checker`, `stripes`, `noise`, or `{name, colors, scale, seed, size}`. A map slot takes one as `{pattern: …}`. ([Textures by name](https://docs.theprototype.app/ai/agent-world.md#textures-by-name)) |
 | `patternScale` | how many times the pattern repeats across the surface |
-| `slot` | which material slot of a multi-material object (default 0) |
+| `slot` | which material slot of a multi-material object (default 0): *since 1.79* its index (0 = the first), or its id or name from `list_materials`. A `preset` or `type` change then goes to that one slot. |
+| `slotName` | *since 1.79*: renames that slot |
+| `slotOff` | *since 1.79*: `true` switches the slot [off](https://docs.theprototype.app/materials.md#material-slots) (it draws the plain default; its own material is kept), `false` shows its material again |
+| `removeSlot` | *since 1.79*: `{to}` removes the slot and moves its faces to slot `to` (index, id or name; default the first other slot). Give nothing else in the call. |
+| `noise` | *since 1.79*: a generated [noise](https://docs.theprototype.app/image-editor.md#noise) colour texture, instead of `pattern`: `{kind, scale, octaves, roughness, seed, contrast, invert, tileable, colors, size}` with `kind` `perlin`, `simplex`, `worley` or `value`, 2 to 5 `colors` and `size` 1024 by default. Another map takes one as `maps.<map>: {noise: {…}}` (`maps.normal` makes a normal map). The answer lists what it wrote. |
 | `faces` | gives just those faces their own new material slot ([how to pick faces](#picking-faces)) |
 
 **Texture URLs** must be https and CORS-enabled, at most 16 MB, and really be a PNG, JPEG, WebP, GIF or AVIF:
@@ -58,7 +62,8 @@ the bytes are checked, not the file name. A local or private address is refused.
 item first, the same as an upload, and the result lists it in `assets`. A plain file name such as
 `"wood.png"` is refused, because a guess would give you an empty texture.
 
-An object wearing a shader graph refuses `set_material`. Edit the shader, or take it off first.
+An object wearing a shader graph refuses `set_material`. Edit the shader, or take it off first. *Since 1.79* that
+holds per slot: a slot with its own shader refuses it, the others take it.
 
 The maps are the same ones as the Inspector's [Maps](https://docs.theprototype.app/materials.md#maps) rows. `update_objects` can set them too,
 through `materialParams`: the slots `map`, `normalMap`, `roughnessMap`, `metalnessMap`, `emissiveMap` and `aoMap` (a
@@ -67,7 +72,8 @@ for the tiling, offset and rotation of all the material's maps.
 
 ### list_materials and get_material: read what is there
 
-`list_materials` gives each object's slots (type, colour, numbers, which maps), its shader, and the preset
+`list_materials` gives each object's slots (type, colour, numbers, which maps; *since 1.79* each slot's `id`, whether it
+is `off`, and its own shader), its shader, and the preset
 names: the eight starters and any the person saved. `get_material` gives one object in full: each map's tiling, offset, rotation, size and hash, and its
 shader graph as text with the uniforms a flow can drive. Viewers can use both.
 
@@ -88,6 +94,7 @@ c -> out.emissive
 | `text` | the graph |
 | `replace` | replaces a graph the object already has. Without it, that object is skipped. |
 | `scene` | `true` makes the default for every object, which asks first |
+| `slot` | *since 1.79*: a shader for one [material slot](https://docs.theprototype.app/shader-graph.md#one-slot-or-all-slots) (index, id or name) instead of the whole object |
 
 Errors come back in the result and nothing is written: an unknown type, a socket that does not exist, a graph
 with nothing connected, or the compiler's own message.
@@ -106,6 +113,9 @@ vectors cannot, because flow sockets carry numbers.
 new wires), `removeNodes`, or `text` for the whole graph. A refused edit changes nothing.
 
 `assign_shader` copies a graph onto other objects, or takes a shader off with `"shader": null`.
+
+*Since 1.79* both take `slot` (index, id or name) to edit, copy onto or take off one slot's shader. No tool names
+changed.
 
 ### set_post, get_post and create_post_graph: the scene's look
 

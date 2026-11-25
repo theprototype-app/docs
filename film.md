@@ -127,6 +127,10 @@ shot. Guides are never recorded.
 
 While recording, press **Mark** (or **M**) to drop a marker on the Timeline.
 
+*Since 1.79* the phone's [Touch feedback](https://docs.theprototype.app/touch-controls.md#touch-feedback) stays quiet while a take records, so no
+tick from a slider or a switch lands in your shot. The countdown buzz and the marker tick still play; Touch feedback
+**Off** silences them too.
+
 From the first shot on, a **shots** pill (*1 shot*, *3 shots*) sits beside the record button: see
 [Your shots](#your-shots).
 
