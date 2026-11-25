@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Mesh Editing", "url": "https://docs.theprototype.app/mesh-editing/", "description": "Reshape any mesh by hand: drag its vertices, slide its edges, extrude and bevel its faces, fill holes, give a surface thickness, cut it with a knife, mirror one half onto the other — or combine…", "dateModified": "2026-11-24", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.71.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/mesh-editing/knife-polyline.webp", "caption": "A polyline knife cut across a cube."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/mesh-editing/solidify.webp", "caption": "A box made hollow with Solidify."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/mesh-editing/edge-tools-slide.webp", "caption": "The Edges tab with Slide armed and its factor option."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/mesh-editing/mitered-bevel.webp", "caption": "An octahedron edge bevelled in 4 segments."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/mesh-editing/vertex-tools-bevel.webp", "caption": "The Vertices tab with Bevel armed."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/mesh-editing/boolean-subtract.webp", "caption": "A cylinder subtracted from a box."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/mesh-editing/live-symmetry.webp", "caption": "Live symmetry on across X."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Mesh Editing", "url": "https://docs.theprototype.app/mesh-editing/", "description": "Reshape any mesh by hand: drag its vertices, slide its edges, extrude and bevel its faces, fill holes, give a surface thickness, cut it with a knife, mirror one half onto the other — or combine…", "dateModified": "2026-11-25", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.71.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/mesh-editing/knife-polyline.webp", "caption": "A polyline knife cut across a cube."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/mesh-editing/solidify.webp", "caption": "A box made hollow with Solidify."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/mesh-editing/edge-tools-slide.webp", "caption": "The Edges tab with Slide armed and its factor option."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/mesh-editing/mitered-bevel.webp", "caption": "An octahedron edge bevelled in 4 segments."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/mesh-editing/vertex-tools-bevel.webp", "caption": "The Vertices tab with Bevel armed."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/mesh-editing/boolean-subtract.webp", "caption": "A cylinder subtracted from a box."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/mesh-editing/live-symmetry.webp", "caption": "Live symmetry on across X."}]}</script>
 </head>
   
   
@@ -1111,6 +1111,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#path-select" class="md-nav__link">
+    <span class="md-ellipsis">
+      Path select
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pick-granularity-faces" class="md-nav__link">
     <span class="md-ellipsis">
       Pick granularity (faces)
@@ -1173,6 +1182,24 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bisect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bisect
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smooth-subdivide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Smooth subdivide
+    </span>
+  </a>
   
 </li>
         
@@ -7649,6 +7676,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#path-select" class="md-nav__link">
+    <span class="md-ellipsis">
+      Path select
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pick-granularity-faces" class="md-nav__link">
     <span class="md-ellipsis">
       Pick granularity (faces)
@@ -7711,6 +7747,24 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bisect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bisect
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smooth-subdivide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Smooth subdivide
+    </span>
+  </a>
   
 </li>
         
@@ -8034,7 +8088,10 @@
 </div>
 <h3 id="selecting">Selecting</h3>
 <ul>
-<li><strong>Click</strong> an element to select it; <strong>Ctrl+click</strong> adds to the selection.</li>
+<li><strong>Click</strong> an element to select it; <strong>Shift+click</strong> adds it to the selection.</li>
+<li><strong>Ctrl+click</strong> a second element adds the <strong>shortest path</strong> to it from the last one you picked: a row of faces, an
+  edge chain or a run of vertices, in all three element modes. The element you clicked becomes the new end, so you can
+  keep going. With nothing picked yet, Ctrl+click starts a selection like a plain click. See <a href="#path-select">Path select</a>.</li>
 <li><strong>Shift+drag</strong> or <strong>Ctrl+drag</strong> draws a <strong>box</strong> — every vertex, edge or face inside it joins the selection. Works in all three element modes, and a box always takes whole faces (never half a quad). An empty box changes nothing, so a stray drag cannot wipe your work.</li>
 <li>Selection <strong>commands</strong> appear as words in the <em>Select</em> row — they change what is picked, never the geometry:</li>
 </ul>
@@ -8084,6 +8141,17 @@
 </tr>
 </tbody>
 </table>
+<h3 id="path-select">Path select</h3>
+<p><strong>Ctrl+click</strong> picks the shortest way across the mesh from your last pick to the element you click. On a touch screen,
+or whenever you prefer, switch on <strong>Path</strong> in the toolbox (under the tool options): every click then adds the path from
+the last pick. In VR the edit menu has the same <strong>Path</strong> row.</p>
+<ul>
+<li>The path is the <strong>shortest by length</strong>. Tick <strong>steps</strong> beside the Path button to count the faces, edges or
+  vertices crossed instead, which follows the mesh's grid rather than the straight distance.</li>
+<li>A face path picks whole faces, so a quad comes with both of its triangles.</li>
+<li>It is a selection step like any other: <kbd>Ctrl</kbd>+<kbd>Z</kbd> takes it back, and it never changes the geometry
+  or sends anything to your peers.</li>
+</ul>
 <p>Selections are <strong>undoable</strong> too — <kbd>Ctrl</kbd>+<kbd>Z</kbd> steps back through your picks without touching the geometry, and a selection step can never push a real edit off the undo stack.</p>
 <p>Undoing an <strong>operation</strong> puts back the selection you had just before it, so <kbd>Ctrl</kbd>+<kbd>Z</kbd> after an extrude or a bevel leaves you where you were, ready to try again; redo brings back the operation and its own pick.</p>
 <h3 id="pick-granularity-faces">Pick granularity (faces)</h3>
@@ -8159,7 +8227,7 @@
 <tr>
 <td><strong>Subdivide</strong></td>
 <td><kbd>S</kbd></td>
-<td>Split the selection into a finer grid, 2×2 per quad.</td>
+<td>Split the selection into a finer grid, 2×2 per quad. Tick <strong>smooth</strong> to round it off as well — see <a href="#smooth-subdivide">Smooth subdivide</a>.</td>
 </tr>
 <tr>
 <td><strong>Bridge</strong></td>
@@ -8175,6 +8243,11 @@
 <td><strong>Knife</strong></td>
 <td><kbd>K</kbd></td>
 <td>Cut across the mesh on screen, in a straight line or a polyline — see <a href="#knife">below</a>.</td>
+</tr>
+<tr>
+<td><strong>Bisect</strong></td>
+<td></td>
+<td>Cut the selection, or the whole mesh, with a flat plane you place and adjust — see <a href="#bisect">below</a>.</td>
 </tr>
 <tr>
 <td><strong>Flip normals</strong></td>
@@ -8230,7 +8303,7 @@
 </tr>
 <tr>
 <td><strong>Loop cut</strong></td>
-<td><em>cuts</em>, <em>position</em> along the ring, and which of the two directions to run — <strong>Along</strong> or <strong>Across</strong></td>
+<td><em>cuts</em>, <em>position</em> along the ring, and which of the two directions to run — <strong>Along</strong> or <strong>Across</strong>. Drag the value to preview where the cut lands; it cuts when you let go. Typing a value cuts straight away.</td>
 </tr>
 <tr>
 <td><strong>Bridge</strong></td>
@@ -8238,7 +8311,11 @@
 </tr>
 <tr>
 <td><strong>Subdivide</strong></td>
-<td><em>levels</em> — each one splits every quad 2×2 again</td>
+<td><em>levels</em> — each one splits every quad 2×2 again; <strong>smooth</strong> (Catmull-Clark, levels 1-3)</td>
+</tr>
+<tr>
+<td><strong>Bisect</strong></td>
+<td><strong>clear</strong> none / inner / outer, and <strong>fill</strong></td>
 </tr>
 <tr>
 <td><strong>Solidify</strong></td>
@@ -8281,6 +8358,59 @@ your peers see the cut as it is committed.</p>
 <p>A two-click cut that ends <strong>inside</strong> the mesh now ends exactly where you clicked. Before, it ran on to the far corner
 of that triangle.</p>
 </div>
+<h3 id="bisect">Bisect</h3>
+<p><strong>Bisect</strong> cuts the mesh with a flat plane, the way you would slice an apple, and can throw one half away.</p>
+<ol>
+<li>Pick the faces to cut, or pick nothing to cut the whole mesh.</li>
+<li>Arm <strong>Bisect</strong> in the toolbox.</li>
+<li>Click two points on screen to draw the cut line. The plane runs through that line, straight away from you, and
+   shows in the viewport with the gizmo on it.</li>
+<li>Move or turn the plane with the gizmo until it sits where you want it. Nothing is cut yet.</li>
+<li>Press <strong>Apply</strong> in <strong>Bisect options</strong>, or <kbd>Enter</kbd>. <strong>Cancel</strong> or <kbd>Esc</kbd> drops the plane.</li>
+</ol>
+<p>Every face the plane crosses is split along it. In <strong>Bisect options</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>clear: none</strong></td>
+<td>Keep both sides (the default). The mesh just gains the cut.</td>
+</tr>
+<tr>
+<td><strong>clear: inner</strong></td>
+<td>Remove what is behind the plane, away from its tick.</td>
+</tr>
+<tr>
+<td><strong>clear: outer</strong></td>
+<td>Remove the side the plane's tick points at.</td>
+</tr>
+<tr>
+<td><strong>fill</strong></td>
+<td>With a side cleared, close each cut opening with a face, so a closed model stays closed.</td>
+</tr>
+</tbody>
+</table>
+<p>The cut is <strong>one undo step</strong>, and your peers see it when you apply it. The plane is only a helper: placing, moving
+and cancelling it sends nothing and is not saved in the scene.</p>
+<h3 id="smooth-subdivide">Smooth subdivide</h3>
+<p>Tick <strong>smooth</strong> under Subdivide (or press <kbd>Shift</kbd>+<kbd>S</kbd>) and Subdivide rounds the shape off as it splits
+it, the Catmull-Clark way: a box turns into a pebble, a blocky arm into a smooth one. <strong>levels</strong> (1 to 3) sets how many
+times it runs; each level has four times the faces of the last, so start at 1.</p>
+<ul>
+<li>With faces picked, only those smooth. The border of your pick stays put, so the faces around it do not move.</li>
+<li>With <strong>nothing picked</strong>, the whole mesh smooths.</li>
+<li>An open edge (the rim of a cup, a plane's border) keeps its line instead of shrinking inwards, and texture
+  coordinates follow, so a texture does not slide.</li>
+<li>Like the other operations you can tune it after pressing: change <strong>levels</strong> or untick <strong>smooth</strong> and it re-runs from
+  the original shape, as one undo step.</li>
+</ul>
+<p>AI agents smooth with the same code: an agent's <code>create_shape</code> with subdivide, and its <code>edit_mesh</code> smooth subdivide.
+Agents can bisect too (<code>edit_mesh</code> bisect, with a point and a direction).</p>
 <h3 id="solidify">Solidify</h3>
 <p><strong>Solidify</strong> gives the selected surface thickness: a copy behind it plus a rim joining the two. A positive <strong>thickness</strong>
 goes <em>into</em> the surface, a negative one grows outward. It works on an <strong>open</strong> surface or on a whole piece — a closed box
@@ -8746,6 +8876,14 @@ re-tints the moment the object's colour changes, so faces and vertices never dis
 <td>Faces: Subdivide / Loop cut</td>
 </tr>
 <tr>
+<td><kbd>Shift</kbd>+<kbd>S</kbd></td>
+<td>Faces: smooth Subdivide (nothing picked = the whole mesh)</td>
+</tr>
+<tr>
+<td><kbd>Ctrl</kbd>+click</td>
+<td>Add the shortest path from the last pick (all modes)</td>
+</tr>
+<tr>
 <td><kbd>B</kbd> / <kbd>F</kbd> / <kbd>X</kbd></td>
 <td>Faces: Bridge / Flip normals / Delete</td>
 </tr>
@@ -8785,12 +8923,12 @@ picked vertices, edges or faces follow the pointer at once, as in the
 (Global), the gesture is one undo step, and <kbd>Esc</kbd> leaves the geometry and the undo history as they were with
 the session still open. The Blender style <a href="../controls/#keymap-presets">keymap</a> puts them on <kbd>G</kbd> /
 <kbd>R</kbd> / <kbd>S</kbd>: then <kbd>G</kbd> no longer arms Move (the toolbox button stays) and Subdivide moves to
-<kbd>Shift</kbd>+<kbd>S</kbd>.</p>
+<kbd>Shift</kbd>+<kbd>S</kbd>, so smooth Subdivide has no key there (tick <strong>smooth</strong>, or give it a key in Settings).</p>
 <p>These keys can be rebound in the <em>Mesh edit</em> group of <strong>Settings ▸ Shortcuts</strong>. Some rows serve two modes, so rebinding
 one moves both: <strong>L</strong> is Loop in every mode, and <strong>F</strong> is Flip normals in Faces <em>and</em> Fill in Edges. <strong>J</strong> (Connect) has
-its own row.</p>
+its own row. <strong>Bisect</strong> and the <strong>Path</strong> toggle have rows too, with no key until you give them one.</p>
 <h2 id="in-vr">In VR</h2>
-<p>Mesh editing works in VR too: the radial menu's <strong>Selected ▸ Edit mesh</strong> covers face select, extrude, inset, move and stretch, with the amount adjusted live by moving your controller. See the <a href="../vr/">VR Guide</a>.</p>
+<p>Mesh editing works in VR too: the radial menu's <strong>Selected ▸ Edit mesh</strong> covers face select, extrude, inset, move and stretch, with the amount adjusted live by moving your controller. Its <strong>Path</strong> row makes each trigger pick add the shortest path from your last pick. See the <a href="../vr/">VR Guide</a>.</p>
 <h2 id="collaboration">Collaboration</h2>
 <ul>
 <li>Editing an object <strong>locks it</strong> — your peers can see it but not edit it at the same time.</li>
@@ -8847,7 +8985,7 @@ Edit Mesh may ask you to try again in a moment while the mesh tools finish loadi
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-24
+    2026-11-25
   </span>
 
     
