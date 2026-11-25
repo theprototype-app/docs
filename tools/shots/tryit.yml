@@ -20,8 +20,8 @@ checks:
       # a DOM click: on a slow runner a toast can sit over the pill (the check is that the rows exist), and the pill
       # itself mounts after the boot, so wait for it first (10 s at most)
       - {eval: "(async () => { for (let i = 0; i < 40 && !document.querySelector('#preview-more'); i++) await new Promise((r) => setTimeout(r, 250)); document.querySelector('#preview-more')?.click(); })()"}
-      # the menu loads on its first open (it is not in the boot)
-      - {wait: 2500}
+      # the menu loads on its first open (it is not in the boot); a CI runner draws in software and is slow
+      - {wait: 6000}
     expect:
       - {name: Preview pill, selector: '#preview-pill'}
       - {name: Shaded, selector: '#preview-draw-shaded'}
@@ -33,6 +33,8 @@ checks:
     url: https://theprototype.app/
     steps:
       - {section: View}
+      # the View section settles late on a slow CI runner
+      - {wait: 4000}
     expect:
       - {name: open Preview row, selector: '#view-open-preview'}
       - {name: Show light helpers, text: Show light helpers}
