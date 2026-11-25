@@ -95,6 +95,7 @@ The app's fog is a linear fog, so a `density` becomes a fog that is gone by `2 Ã
 | `ambient` | `{sky, ground, intensity}`: the soft light from above and below. `null` switches it off. |
 | `add` | `[{kind, color, intensity, position, groundColor}]`, where `kind` is `directional`, `point` or `hemisphere`. Up to 8 environment lights. |
 | `update` / `remove` | change or remove environment lights by id (`get_environment` lists them) |
+| `shadowQuality` | *since 1.79*: the scene's [shadow quality](../camera.md#shadow-quality) for everyone: `off`, `basic` (the default), `soft` or `far`. A phone or headset may draw less. |
 
 The result lists each new light's id. Spot lights, area lights and lights you place as objects are made with
 `create_objects` (`kind: light`), which also takes `castShadow` and a `shadowQuality` of `low`, `medium` or `high`.
@@ -103,7 +104,8 @@ The result lists each new light's id. Spot lights, area lights and lights you pl
 
 `get_environment` gives the look preset, exposure, background, sky image, fog, sun, ambient light, environment
 lights, the lights placed as objects, where Play starts, the opening view, and the names of the presets and
-skies. Viewers can use it.
+skies. *Since 1.79* it also reports `shadowQuality` (what the scene asks) and `shadowQualityDrawnHere` (what this device
+draws). Viewers can use it.
 
 ### place_spawn: where Play starts
 

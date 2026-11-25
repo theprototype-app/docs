@@ -137,6 +137,7 @@ nav:
         - Camera Shake: nodes/camerashake.md
         - Screen Flash: nodes/screenflash.md
         - Hit Pause: nodes/hitpause.md
+        - Vibrate: nodes/vibrate.md
       - Character:
         - Character Controller: nodes/charcontroller.md
         - Move Input: nodes/moveinput.md

@@ -190,7 +190,8 @@ no jump.
     **Resume · Restart · Levels · Settings · How to play · Main menu**, plus *Back to editor*
     on the desktop. In VR it opens with **X** on the left controller or the **Menu** button
     on the game board and the wrist card. Its **Settings** are per game and per device —
-    music and sound effects on/off with their volumes, controller vibration, **Show FPS**,
+    music and sound effects on/off with their volumes, vibration and its strength (since 1.79 on gamepads and Android
+    phones too; see [Vibration](make-it-feel-like-a-real-game.md#vibration)), **Show FPS**,
     VR turning (snap / smooth / off and the snap angle), a comfort vignette and a quality
     preset (Auto / Low / Medium / High), and since 1.59 a **Sky quality** (Auto / Standard / High / Max) that counts
     while the scene's [sky quality](camera.md#sky-quality-for-the-scene) is Auto. Your own Pause screen keeps working beside it; a

@@ -178,6 +178,10 @@ characters and a description of at most 300.
 | Use CDN for packs | off | as in the Export tab |
 | Optimize for | Full quality | **For Quest / web** compresses textures and adds LOD chains to the exported scene — [below](#optimize-for-quest-web) |
 
+**Materials in a glTF.** A glTF carries plain materials: an object with several
+[material slots](materials.md#material-slots) exports one material per slot, a node shader (on the object or on one slot)
+is left out, and the export's note counts the slots that lost one (*since 1.79*).
+
 ## Optimize for Quest / web
 
 *New in 1.37.* [Save options](saving.md#save-options) (the cog next to Save) and **Settings ▸ Export** have **Optimize

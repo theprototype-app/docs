@@ -20,3 +20,6 @@ Vibrates the VR controllers with a named pattern when a pulse arrives.
 Vibration only happens in **Interact** and **Play** — never while editing — and only on the
 device of the player whose graph fired it. The app already buzzes for you when a laser touches
 something clickable, a press lands, a grab starts or a hand knocks a body.
+
+*Since 1.79* the same patterns also reach a gamepad or an Android phone. For a custom strength and length, one player
+or everyone, use [Vibrate](vibrate.md).
