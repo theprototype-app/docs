@@ -12,7 +12,9 @@ everyone sees them) and **This device** (only you), and only Environment and Sce
   [The Quality preset](performance.md#the-quality-preset)).
 - **Environment** — lighting preset, exposure, [sky image](#sky-images-hdri), saved presets (shared).
 - **Music** — the shared background track and your local volume (see [Music & Sound](audio.md)).
-- **View** — render mode, the scene-look overrides and light helpers (your device only).
+- **Lights** — the scene's [shadow quality](#shadow-quality) (shared; *since 1.79*).
+- **View** — the render mode (on a computer, a row that opens the Preview menu), the scene-look overrides and light
+  helpers (your device only).
 - **Camera** — lens presets, field of view and clip planes (your device only).
 - **Background** and **Fog** (shared).
 
@@ -26,7 +28,12 @@ by name, an AI agent, or *Claude (AI)* through the connector. Loading a scene or
 
 ## Render mode (View)
 
-Three per-device render modes under **Viewport — this device**:
+*Since 1.79*, on a computer and a tablet, how this device draws the scene lives in the **Preview** menu at the top right
+of the 3D view (the chevron beside **Preview**), under **Draw as**: Configure Scene ▸ View then has one row, *How this
+device draws the scene: open Preview*, which opens that menu. Phones keep the three chips in View. <kbd>Z</kbd> works
+everywhere. See [Cinematic view](cinematic-view.md#the-preview-pill) for the rest of the menu.
+
+Three per-device render modes:
 
 | Mode | Look |
 |---|---|
@@ -47,6 +54,24 @@ look already sets ambient occlusion). Rebind it in **Settings ▸ Shortcuts**.
 On a desktop with Chrome or Edge, **Preview** at the top right (<kbd>Shift</kbd>+<kbd>Z</kbd>) switches to the
 [Cinematic view](cinematic-view.md): bounced light and reflections, on this computer only.
 
+### Draw as: modes for checking a model
+
+*New in 1.79.* Under the three render modes the Preview menu's **Draw as** has five more, for checking a model rather
+than looking at the scene:
+
+| Mode | Shows |
+|---|---|
+| **Wireframe over shaded** | the lit scene with every triangle edge drawn on top |
+| **Ambient occlusion only** | white clay with soft contact shadows: shapes without colour or texture |
+| **Normals** | which way each surface faces, as colour |
+| **UV checker** | a checker pattern through each model's texture coordinates: stretching shows as uneven squares |
+| **Weights** | skin weights: the selected bone's influence from blue (none) to red (all); with no bone selected, each bone a colour. Greyed when nothing in the scene is skinned |
+
+They are for **this device only** and go back to the everyday look when you reload or change scene (Shaded, Shaded +
+AO and Wireframe are remembered as before). While one is on, a dot on the Preview chevron says so. Play, a headset and
+the Cinematic view always draw the normal look. On a phone, add the optional **Preview** drawer (**More ▸ Windows**)
+for Draw as and Quality.
+
 Ambient occlusion and wireframe are **desktop-only** and never shown to peers. AO detail follows your shadow-quality setting (below), so lowering shadow quality also lightens the AO cost.
 
 These are SHADING modes — they are not how you see the scene's own look. A
@@ -57,7 +82,8 @@ instead of yours.
 
 ![Configure Scene ▸ View. 1: the render mode switch — Shaded, Shaded + AO, Wireframe. 2: Show light helpers.](img/camera/view-section.webp){ .shot width="311" height="615" loading=lazy }
 /// caption
-Configure Scene ▸ View: how the scene is drawn on your screen.
+Configure Scene ▸ View: how the scene is drawn on your screen. Since 1.79 the render mode chips show here on a phone;
+on a computer a row opens the Preview menu instead.
 ///
 
 <div class="shot-key" markdown>
@@ -134,7 +160,33 @@ In the **Camera** section, the near/far clip planes control the depth range the 
 
 ## Shadow quality
 
-Shadow quality is a **per-machine** performance knob in the **Settings** dialog: **Off · Low · Medium · High** (default High). It caps every light's shadow-map size on your computer — *Off* disables shadows entirely. Per-light shadow settings still replicate; this only changes what your machine renders.
+*New in 1.79.* **Configure Scene ▸ Lights ▸ Shadow quality** sets how the scene's shadows are drawn, for **everyone**
+in the scene, and is saved with it:
+
+| Level | What it draws |
+|---|---|
+| **Off** | no shadows |
+| **Basic** (the default) | one shadow map per light that casts: the look every scene had before 1.79 |
+| **Soft** | softer shadow edges. In a scene a few hundred metres across the edges stay as Basic draws them (a wider blur on that big a shadow map would wash small shadows out). |
+| **Far** | Soft, and the sky's sun draws two layers of shadow: sharp near you and present out to 300 m. Past 300 m the sun draws no shadow at Far (Basic's single map covers the whole scene, more blurred). Lamps and suns you placed in the scene draw Soft's edges. |
+
+**What a device draws.** A computer draws up to **Far**, a phone at most **Soft** and a headset **Basic** (more would
+cost frames there). When this device draws less than the scene asks, the row says so (*This device draws Soft*). The
+[Cinematic view](cinematic-view.md) draws Far as Soft. No device draws contact shadows yet (the thin dark line where an
+object meets what it stands on): they cost frames on laptop graphics and phones.
+
+Every scene made before 1.79 is **Basic** and looks exactly as it did.
+
+**This device's cap.** **Configure Scene ▸ Quality ▸ Shadow detail** — the same setting as **Settings ▸ Scene ▸
+Performance ▸ Shadow quality**: **Off · Low · Medium · High** (default High) — caps every light's shadow-map size on
+your computer, and so caps what the scene asks for here; *Off* disables shadows entirely. Per-light shadow settings still
+replicate; this only changes what your machine renders. Settings search finds both rows: *Shadow quality* (this device)
+and *Scene shadow quality* (it opens Configure Scene ▸ Lights).
+
+!!! note "Someone on 1.78"
+    A peer still on 1.78 drops the setting from the look it sends back: the scene reads Basic for them, and after their
+    next sky or light change it reads Basic for everyone. Set it again once everyone has updated; the saved file is fine
+    until then.
 
 ## The grid
 

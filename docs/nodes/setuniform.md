@@ -12,6 +12,7 @@ near it, a glow that pulses when something is picked up, dissolve that runs on a
 |---|---|---|
 | uniform | *(empty)* | the name of the value to write, as shown in the Shader editor |
 | value | 0 | the number to write (usually wired, not typed) |
+| slot | *(empty)* | *since 1.79*: which [material slot](../materials.md#material-slots)'s shader to write — its number (0 = the first), id or name. Empty = every slot of the object that has this uniform (on a one-material object, its one shader, as before) |
 
 ## Inputs
 
