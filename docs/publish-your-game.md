@@ -13,8 +13,8 @@ does what and links this page; it goes once you close the window (**Settings ▸
 The same link sits under the preset notes on the **Export** tab. *1.XX*
 
 !!! tip "No game yet?"
-    **Starter Dash** (**Templates ▸ Games**) is the smallest complete game: a run, a goal, a win screen and touch
-    controls. Export it once before your own game, to see the whole path end to end.
+    **Starter Dash** (**Templates ▸ Games**) is the smallest complete game: Start, five gold coins to walk onto, a win screen with
+    Play again, and touch controls on phones. Export it once before your own game, to see the whole path end to end.
 
 ## Before you publish
 
