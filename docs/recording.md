@@ -42,6 +42,17 @@ A flythrough needs at least two saved views: right-click the viewport ▸ **Came
 **Hide editor helpers** (on by default) hides the grid, gizmo, outlines and helpers. The dialog shows the frame count
 and about how big the file will be before you start.
 
+## Sound
+
+*New in 1.82.* MP4 and WebM videos carry the **scene's own sound**: music, sound effects and instrument sounds, never
+voices or a microphone. **Scene sound** in the dialog is on by default; turn it off for a silent video. GIF, WebP and
+PNG files have no sound.
+
+The video gets the Timeline's audio clips where each frame shows them, and the scene music from where it was when you
+pressed Start. Sounds a flow or a module plays on its own clock are not in it, the same rule as for motion on its own
+clock (a [moment](share-a-moment.md) and the live recording do carry them). A [trimmed sound](audio.md#trim-fade-and-normalise)
+is heard trimmed. If the browser has no audio encoder, the file is silent and the result says so.
+
 ## While it renders
 
 The dialog closes and a bar at the bottom shows the progress: the percent, the frame, about how long is left, and
@@ -87,7 +98,7 @@ Keep the phone plugged in and the app in front while it renders.
   shots and clips, and the turntable / flythrough camera are frame-exact.
 - An imported model's own clips do not move in a timeline export (the same as scrubbing the Timeline); clips made in
   the [Animation](animation.md) editor do.
-- No sound in exported videos yet.
+- Sounds a flow or a module plays on its own clock are not in the file (see [Sound](#sound)).
 - Browsers without WebCodecs record the video **live** as WebM instead (keep the tab in front); the dialog says so.
 - GIF, WebP and PNG exports hold at most 1800 frames.
 

@@ -172,8 +172,8 @@ in the scene, and is saved with it:
 
 **What a device draws.** A computer draws up to **Far**, a phone at most **Soft** and a headset **Basic** (more would
 cost frames there). When this device draws less than the scene asks, the row says so (*This device draws Soft*). The
-[Cinematic view](cinematic-view.md) draws Far as Soft. No device draws contact shadows yet (the thin dark line where an
-object meets what it stands on): they cost frames on laptop graphics and phones.
+[Cinematic view](cinematic-view.md) draws Far as Soft. Contact shadows (the thin dark line where an object meets what
+it stands on) are a separate switch for this device, see [Contact shadows](#contact-shadows-this-device).
 
 Every scene made before 1.79 is **Basic** and looks exactly as it did.
 
@@ -187,6 +187,25 @@ and *Scene shadow quality* (it opens Configure Scene ▸ Lights).
     A peer still on 1.78 drops the setting from the look it sends back: the scene reads Basic for them, and after their
     next sky or light change it reads Basic for everyone. Set it again once everyone has updated; the saved file is fine
     until then.
+
+### Contact shadows (this device)
+
+*New in 1.82.* **Contact shadows** add a small, sharp shadow where an object meets what it stands on, which a shadow
+map can blur away. The switch is in the [Preview menu](cinematic-view.md#the-preview-pill) ▸ **Look** ▸ **Contact
+shadows**. It is a setting for this device: never saved in the scene and never shared with other people.
+
+- **Auto** — what this kind of device draws. Today that is off on every device.
+- **On** — drawn whenever this device draws the scene's shadows (Basic, Soft or Far). On is for computers: on a phone
+  or a headset, On is disabled and says why, and only Auto and Off are offered.
+- **Off** — never drawn on this device.
+
+Next to the switch the menu shows what contact shadows cost on this computer (*costs about 2 ms*), measured while you
+use them and kept for the next visit. The cost needs the browser's GPU timer (Chrome on a desktop has it); without it
+the row shows only On or Off.
+
+When frames run late, contact shadows are the first thing the [automatic quality](performance.md#the-quality-governor)
+turns off (*Off for now to keep it smooth*), before the shadows themselves; restoring full quality gives them back.
+The [Cinematic view](cinematic-view.md) does not draw contact shadows.
 
 ## The grid
 
