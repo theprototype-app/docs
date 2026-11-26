@@ -48,6 +48,18 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.83 — Publish your game.** A new page, [Publish your game](https://docs.theprototype.app/publish-your-game.md), walks through it step by step.
+
+- **[Before you publish](https://docs.theprototype.app/publish-your-game.md#before-you-publish)**: the Publish tab lists what a visitor would trip
+  over (too big, huge textures, no spawn point, keys phones cannot press, modules visitors cannot get), each with a fix.
+  It never stops you.
+- **[Exported games play offline](https://docs.theprototype.app/publish-your-game.md#the-offline-zip)**: the zip boots the slim player and carries
+  every pack piece, module and sky it needs. Its checks run before the download, and the result lists what weighs what.
+- **[CrazyGames](https://docs.theprototype.app/publish-your-game.md#crazygames-step-by-step)** joins itch.io as an export preset, with their size
+  limits checked first. An exported game keeps its name and export id, so an upload replaces the old build.
+- **[Unpublish](https://docs.theprototype.app/publish-your-game.md#take-a-game-down)**: take a published game down and put it back on the same link.
+  Remixes keep their credit.
+
 **1.82 — curves, sound and many objects.**
 
 - **Curves on the Timeline**: a property track opens as a [curve](https://docs.theprototype.app/timeline.md#curves) under the track. Drag keys and

@@ -57,6 +57,18 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.83 — Publish your game.** A new page, [Publish your game](https://docs.theprototype.app/publish-your-game.md), walks through it step by step.
+
+- **[Before you publish](https://docs.theprototype.app/publish-your-game.md#before-you-publish)**: the Publish tab lists what a visitor would trip
+  over (too big, huge textures, no spawn point, keys phones cannot press, modules visitors cannot get), each with a fix.
+  It never stops you.
+- **[Exported games play offline](https://docs.theprototype.app/publish-your-game.md#the-offline-zip)**: the zip boots the slim player and carries
+  every pack piece, module and sky it needs. Its checks run before the download, and the result lists what weighs what.
+- **[CrazyGames](https://docs.theprototype.app/publish-your-game.md#crazygames-step-by-step)** joins itch.io as an export preset, with their size
+  limits checked first. An exported game keeps its name and export id, so an upload replaces the old build.
+- **[Unpublish](https://docs.theprototype.app/publish-your-game.md#take-a-game-down)**: take a published game down and put it back on the same link.
+  Remixes keep their credit.
+
 **1.82 — curves, sound and many objects.**
 
 - **Curves on the Timeline**: a property track opens as a [curve](https://docs.theprototype.app/timeline.md#curves) under the track. Drag keys and
@@ -24748,7 +24760,13 @@ When the upload finishes the dialog shows **Published** with the link — `https
 
 Publish again from the same scene and the dialog offers **Update "‹title›" — same link, likes and comments stay** or **Publish as new**. Update replaces the file, the hero shot and the card facts on the same page. Publish as new makes a second scene; if the original was somebody else's, the new one is recorded as a remix of it.
 
-There is no unpublish button in the app yet.
+### Unpublish and Republish
+
+You can take a scene or game you published down: **Unpublish** on its row in [Your games & stats](#your-games-stats),
+in the Publish dialog right after publishing, or on its own scene page while you are signed in as its owner. It asks
+twice. Its links then show a plain *No longer published* page (a cached page can take up to a minute to change);
+remixes made earlier stay, with their credit line. **Republish** (in Your games, or the Publish dialog when you update it)
+puts it back on the same link. See [Publish your game](https://docs.theprototype.app/publish-your-game.md#take-a-game-down). *1.83*
 
 When you publish or update a game, the dialog also shows a **This game: …** line with its visits — see
 [Your games & stats](#your-games-stats).
@@ -25038,7 +25056,9 @@ Source: https://docs.theprototype.app/publish-export/ (Markdown: https://docs.th
 
 # Publish & Export
 
-**Menu ▸ Publish / Export** (**Export…** in the main menu's Compact layout) puts a scene somewhere other people can play it. The window has four tabs:
+**Menu ▸ Publish / Export** (**Export…** in the main menu's Compact layout) puts a scene somewhere other people can play it.
+New to it? [Publish your game](https://docs.theprototype.app/publish-your-game.md) walks through publishing here, itch.io and CrazyGames step by step,
+what the check rows mean, updating an upload and taking a game down. The window has four tabs:
 
 | Tab | What it does |
 |---|---|
@@ -25100,6 +25120,7 @@ yours in [Your games & stats](https://docs.theprototype.app/community.md#your-ga
     | Preset | Use it for |
     |---|---|
     | **itch.io** | an HTML5 game page on itch.io: a zip with `index.html` at the root (guide below) |
+    | **CrazyGames** | the CrazyGames portal: their SDK, told when the game loads, plays and pauses; their size limits checked ([step by step](https://docs.theprototype.app/publish-your-game.md#crazygames-step-by-step), *1.83*) |
     | **Static host** | the same zip plus a `.nojekyll` file — Netlify, Cloudflare Pages, GitHub Pages, any web server |
     | **Embed** | an `<iframe>` snippet for a game that is already online (below) |
 
@@ -25108,13 +25129,19 @@ yours in [Your games & stats](https://docs.theprototype.app/community.md#your-ga
 4. Options: **Cover image** (a `thumbnail.png`, 630 × 500, taken from your current view) and **Use CDN for packs**
    (a smaller zip: kit pieces load from the packs CDN when the game starts, so it needs internet; off, every pack file the
    scene uses is copied into the zip).
-5. The panel shows how big the engine is and estimates the zip. Press **Build & download zip**.
+5. **Made for phones too** (*1.83*): for a game meant for phones; the checks then look for touch controls.
+6. The panel shows how big the engine is and estimates the zip, and **Checks** lists what would trip a player or the
+   preset's limits — the same scene rows as [Before you publish](https://docs.theprototype.app/publish-your-game.md#before-you-publish), plus the
+   preset's size rows. A red row stops the download; a yellow one is a warning. Press **Build & download zip**.
 
 The build is **checked before it downloads** (relative paths only, the file limits of the preset); the result line names
 the file, its size and its file count, and says *checked OK*. The zip holds `index.html`, the engine (the same build the
 app runs), your scene, the installed modules it uses, the pack files it uses and a README. All paths are relative, there
 is no service worker, and nothing loads from another site unless you chose the packs CDN. The game starts in Play on its
-own. A typical game export is about 5 MB in about 365 files.
+own. Since *1.83* the zip boots the slim player (not the editor), carries every pack piece with its LOD files and every
+sky size the game offers, and sends no error reports: it plays with no internet at all. A small game's zip is about
+13 MB, almost all of it the engine. After the build, the result lists the **15 biggest files and what uses them**;
+exporting the same scene again keeps the zip's **name and export id**, so an upload replaces the old build.
 
 Some web hosts add their own scripts to the pages they serve. The exporter copies the app from the site you are on, so
 it removes any script or link that points at another site before the check — an exported game loads nothing from the
@@ -25242,6 +25269,135 @@ Measured on a 65,024-triangle model with a 4096 px texture:
 | Texture memory after loading | 85.3 MB | 5.6 MB on a desktop GPU; ≈ 2.8 MB on a Quest |
 
 Imports get the same treatment on the way in: see [Importing Big Models](https://docs.theprototype.app/import-optimize.md).
+
+
+---
+
+Source: https://docs.theprototype.app/publish-your-game/ (Markdown: https://docs.theprototype.app/publish-your-game.md)
+
+# Publish your game
+
+A game you made here can go three places, and this page walks through each one:
+
+| Where | What you get | Needs |
+|---|---|---|
+| **theprototype.app** ([Publish](#before-you-publish)) | a play link, a scene page with likes and comments, remixes | signing in on theprototype.app |
+| **itch.io** ([step by step](#itchio-step-by-step)) | an HTML game page on itch.io | an itch.io account |
+| **CrazyGames** ([step by step](#crazygames-step-by-step)) | a game on the CrazyGames portal | a CrazyGames developer account |
+
+Everything starts at **Menu ▸ Publish / Export**. The first time you open it, a short note above the tabs says which tab
+does what and links this page; it goes once you close the window (**Settings ▸ Interface ▸ Reset tips** brings it back).
+The same link sits under the preset notes on the **Export** tab. *1.83*
+
+!!! tip "No game yet?"
+    **Starter Dash** (**Templates ▸ Games**) is the smallest complete game: Start, five gold coins to walk onto, a win screen with
+    Play again, and touch controls on phones. Export it once before your own game, to see the whole path end to end.
+
+## Before you publish
+
+The **Publish** tab opens with **Before you publish**: a short list of what a visitor would trip over, each with a
+button that fixes it where one exists. **Warnings never block** — the Publish button below the list works whatever it
+says. **Check again** runs the list again after you change something. *1.83*
+
+The **Export** tab shows the same scene rows, plus the rows of the preset you picked.
+
+### What the check rows mean
+
+| Row | What it means | The button |
+|---|---|---|
+| *The scene is … MB; publishing takes up to 25 MB* (red) | the upload would be refused; the biggest parts are listed under the row — press one to select it | **Shrink large textures** when textures are the reason |
+| *A texture is larger than 2048 px* | big textures are slow to download and can run out of memory on a phone or a headset | **Shrink to 2048 px** (one undo puts it back) |
+| *This game has no spawn point* | players start where your editor camera was at the last save | **Start players here** (the centre of your view) |
+| *The spawn point is outside the play area* | players would start where they cannot move | **Start players here** |
+| *Phone players cannot press every control* | a key the game listens to has no on-screen button | **Edit touch controls** |
+| *Visitors will not have the module …* | the module was installed from a file or a private link, so its nodes do nothing for visitors | **Open Modules** |
+| *A file the scene uses is not on this device* | it is left out of what you publish: visitors get silence or a blank | **Ask connected people for them** |
+| *A Script node reads random / the clock / storage* | every player gets a different answer; use the node's seeded random or the session clock | **Show the node** |
+| *… will not show for players* | the object sits on an editor-only layer, or is drawn in one eye only in a headset | — select it and add it again, or delete it |
+
+Each fix is one step you can undo with <kbd>Ctrl</kbd>+<kbd>Z</kbd>. An AI app connected to your scene sees the same list
+(in `save_scene`'s answer) and can tell you about it, but publishing and every fix stay your press.
+
+## The offline zip
+
+**Export** builds a zip that is the whole game: the player (the slim one, not the editor), your scene, every pack piece
+it places, the modules it uses, the sky in every size its options offer, and the fonts. **Nothing is fetched from the
+internet while it plays** — only a portal's own SDK, in that portal's preset. *1.83*
+
+![Starter Dash played from its exported zip: the You win! screen with Play again, the fullscreen button bottom left and the badge bottom right.](https://docs.theprototype.app/img/publish-your-game/starter-won.webp)
+*Figure: Starter Dash from an itch.io zip: it plays with no internet.*
+1. Open the game, then **Menu ▸ Publish / Export ▸ Export**.
+2. Pick a preset: **itch.io**, **CrazyGames** or **Static host** (any web host: Netlify, Cloudflare Pages, GitHub Pages).
+3. Set the **Title** (the page title and the zip's name) and, for itch.io, the **Viewport size**.
+4. For a game meant for phones, turn on **Made for phones too**: the checks then look for touch controls.
+5. Look at **Checks**. A **red** row stops the download and says why; a **yellow** row is a warning.
+6. Press **Build & download zip**.
+
+The checks run twice: once on the plan, before anything is fetched, and once on the finished zip, before it downloads.
+After a build, the result lists the **15 biggest files and what uses them** (an object, a pack piece, the sky, a
+module); press a row to select that object in the editor. A refused build lists them too, so you can see what to shrink.
+
+![The Export tab with the CrazyGames preset: the CrazyGames notes, and a red check row "About 61 MB loads before the game starts — CrazyGames allows 50 MB" listing Huge statue first.](https://docs.theprototype.app/img/publish-your-game/crazygames-refused.webp)
+*Figure: Too big for CrazyGames: the check names the limit and lists what weighs what.*
+**Use CDN for packs** makes a smaller zip, but then the game needs the internet to start, and the checks say so.
+
+## itch.io step by step
+
+1. Export with the **itch.io** preset and download the zip.
+2. On [itch.io](https://itch.io), open **Upload new project** (the menu under your name, or *Dashboard*).
+3. Give it a title and set **Kind of project** to **HTML**.
+4. Under **Uploads**, upload the zip **as it is** and tick **This file will be played in the browser**.
+5. Under **Embed options**: **Embed in page** with the Export tab's viewport size in *Viewport dimensions* (or *Click to
+   launch in fullscreen*), tick **Fullscreen button**, and tick **Mobile friendly** for a game with
+   [touch controls](https://docs.theprototype.app/touch-controls.md). Leave **SharedArrayBuffer support** off; the engine does not use it.
+6. Save as a **Draft**, open the page and play it once, then set **Visibility** to *Public*.
+
+itch.io's limits, checked before anything downloads: at most 1,000 files, 500 MB unzipped, 200 MB per file, and paths
+of at most 240 characters. A typical game is well inside them: the engine is about 13 MB of every zip.
+
+## CrazyGames step by step
+
+1. Export with the **CrazyGames** preset. The zip loads the CrazyGames SDK from their site and tells it when the game
+   loads, starts, pauses (menus, the pause screen, game over) and moves to the next level. Nothing about the player is
+   sent.
+2. In the CrazyGames developer portal, add a new game and upload the zip as an **HTML5** game.
+3. Try it in their **preview tool** before you submit it.
+
+CrazyGames adds its own fullscreen button, so the game shows none, and the *Made with ThePrototype* badge is drawn
+without a link. Their limits, checked before the download: at most **50 MB loaded before the game starts** (the Export
+tab shows an upper estimate; 20 MB for their mobile homepage), 250 MB in all, and 1,500 files.
+
+## Updating a game you already uploaded
+
+- **itch.io / CrazyGames / a web host**: export the same scene again with the same preset. The zip keeps its **name and
+  export id**, so uploading it over the old build replaces it — the result line says *Same name and export id as your
+  last export*. Nothing is uploaded for you.
+- **theprototype.app**: publish again from the Publish tab; the play link and the scene page stay the same.
+
+## Take a game down
+
+You can take a game you published on theprototype.app down, and put it back later: *1.83*
+
+- **Your games** (Menu ▸ Your games & stats): **Unpublish** on the game's row,
+- the **Publish** window, right after publishing,
+- or the game's own scene page, while you are signed in as its owner.
+
+Unpublish asks twice. Its links (`/s/…`, `/p/…`, embeds) then show a plain *No longer published* page; a cached copy can
+take up to a minute to change. Remixes made earlier stay, and keep their credit line (*Remix of … (no longer
+published)*). **Republish** (in Your games, or the Publish window when you update it) puts it back **on the same link**.
+
+If staff hid a game for a rule, its owner cannot republish it.
+
+A game on itch.io or CrazyGames is taken down on that site: delete or unpublish the upload there.
+
+## Phones and iPhone
+
+- The zip plays in phone browsers; turn on **Made for phones too** and add [touch controls](https://docs.theprototype.app/touch-controls.md).
+- On **iPhone Safari** there is no fullscreen button and no VR. Keep the sky at **Auto** for phones (a Max sky decodes
+  an 8K image).
+
+See also: [Publish & Export](https://docs.theprototype.app/publish-export.md) for every Export option, and [Community](https://docs.theprototype.app/community.md) for play links,
+likes and remixes.
 
 
 ---

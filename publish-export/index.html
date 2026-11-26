@@ -11,7 +11,7 @@
         <link rel="prev" href="../community/">
       
       
-        <link rel="next" href="../share-a-game/">
+        <link rel="next" href="../publish-your-game/">
       
       
       <link rel="icon" href="../logo.svg">
@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Publish & Export", "url": "https://docs.theprototype.app/publish-export/", "description": "Publishing works as before — sign in, title, tags, license, visibility, contest (see Community). When it is done you get two links:", "dateModified": "2026-11-24", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/publish-export/itch-mini-golf.webp", "caption": "Mini Golf exported for itch.io."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/publish-export/export-tab.webp", "caption": "The Export tab with the itch.io preset selected."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/publish-export/gallery-tab.webp", "caption": "The Community gallery tab after Build submission zip."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/publish-export/save-options-optimize-for.webp", "caption": "Save options with Optimize for."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Publish & Export", "url": "https://docs.theprototype.app/publish-export/", "description": "Publishing works as before — sign in, title, tags, license, visibility, contest (see Community). When it is done you get two links:", "dateModified": "2026-11-26", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/publish-export/itch-mini-golf.webp", "caption": "Mini Golf exported for itch.io."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/publish-export/export-tab.webp", "caption": "The Export tab with the itch.io preset selected."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/publish-export/gallery-tab.webp", "caption": "The Community gallery tab after Build submission zip."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/publish-export/save-options-optimize-for.webp", "caption": "Save options with Optimize for."}]}</script>
 </head>
   
   
@@ -6631,6 +6631,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../publish-your-game/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish your game
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../share-a-game/" class="md-nav__link">
         
   
@@ -7554,7 +7575,9 @@
 
 
 <h1 id="publish-export">Publish &amp; Export</h1>
-<p><strong>Menu ▸ Publish / Export</strong> (<strong>Export…</strong> in the main menu's Compact layout) puts a scene somewhere other people can play it. The window has four tabs:</p>
+<p><strong>Menu ▸ Publish / Export</strong> (<strong>Export…</strong> in the main menu's Compact layout) puts a scene somewhere other people can play it.
+New to it? <a href="../publish-your-game/">Publish your game</a> walks through publishing here, itch.io and CrazyGames step by step,
+what the check rows mean, updating an upload and taking a game down. The window has four tabs:</p>
 <table>
 <thead>
 <tr>
@@ -7650,6 +7673,10 @@ yours in <a href="../community/#your-games-stats">Your games &amp; stats</a>.</p
 <td>an HTML5 game page on itch.io: a zip with <code>index.html</code> at the root (guide below)</td>
 </tr>
 <tr>
+<td><strong>CrazyGames</strong></td>
+<td>the CrazyGames portal: their SDK, told when the game loads, plays and pauses; their size limits checked (<a href="../publish-your-game/#crazygames-step-by-step">step by step</a>, <em>1.83</em>)</td>
+</tr>
+<tr>
 <td><strong>Static host</strong></td>
 <td>the same zip plus a <code>.nojekyll</code> file — Netlify, Cloudflare Pages, GitHub Pages, any web server</td>
 </tr>
@@ -7667,13 +7694,19 @@ yours in <a href="../community/#your-games-stats">Your games &amp; stats</a>.</p
 <li>Options: <strong>Cover image</strong> (a <code>thumbnail.png</code>, 630 × 500, taken from your current view) and <strong>Use CDN for packs</strong>
    (a smaller zip: kit pieces load from the packs CDN when the game starts, so it needs internet; off, every pack file the
    scene uses is copied into the zip).</li>
-<li>The panel shows how big the engine is and estimates the zip. Press <strong>Build &amp; download zip</strong>.</li>
+<li><strong>Made for phones too</strong> (<em>1.83</em>): for a game meant for phones; the checks then look for touch controls.</li>
+<li>The panel shows how big the engine is and estimates the zip, and <strong>Checks</strong> lists what would trip a player or the
+   preset's limits — the same scene rows as <a href="../publish-your-game/#before-you-publish">Before you publish</a>, plus the
+   preset's size rows. A red row stops the download; a yellow one is a warning. Press <strong>Build &amp; download zip</strong>.</li>
 </ol>
 <p>The build is <strong>checked before it downloads</strong> (relative paths only, the file limits of the preset); the result line names
 the file, its size and its file count, and says <em>checked OK</em>. The zip holds <code>index.html</code>, the engine (the same build the
 app runs), your scene, the installed modules it uses, the pack files it uses and a README. All paths are relative, there
 is no service worker, and nothing loads from another site unless you chose the packs CDN. The game starts in Play on its
-own. A typical game export is about 5 MB in about 365 files.</p>
+own. Since <em>1.83</em> the zip boots the slim player (not the editor), carries every pack piece with its LOD files and every
+sky size the game offers, and sends no error reports: it plays with no internet at all. A small game's zip is about
+13 MB, almost all of it the engine. After the build, the result lists the <strong>15 biggest files and what uses them</strong>;
+exporting the same scene again keeps the zip's <strong>name and export id</strong>, so an upload replaces the old build.</p>
 <p>Some web hosts add their own scripts to the pages they serve. The exporter copies the app from the site you are on, so
 it removes any script or link that points at another site before the check — an exported game loads nothing from the
 internet:</p>
@@ -7877,7 +7910,7 @@ for: Full quality / For Quest / web</strong>. Your last choice is remembered on 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-24
+    2026-11-26
   </span>
 
     

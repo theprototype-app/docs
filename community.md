@@ -39,7 +39,13 @@ When the upload finishes the dialog shows **Published** with the link — `https
 
 Publish again from the same scene and the dialog offers **Update "‹title›" — same link, likes and comments stay** or **Publish as new**. Update replaces the file, the hero shot and the card facts on the same page. Publish as new makes a second scene; if the original was somebody else's, the new one is recorded as a remix of it.
 
-There is no unpublish button in the app yet.
+### Unpublish and Republish
+
+You can take a scene or game you published down: **Unpublish** on its row in [Your games & stats](#your-games-stats),
+in the Publish dialog right after publishing, or on its own scene page while you are signed in as its owner. It asks
+twice. Its links then show a plain *No longer published* page (a cached page can take up to a minute to change);
+remixes made earlier stay, with their credit line. **Republish** (in Your games, or the Publish dialog when you update it)
+puts it back on the same link. See [Publish your game](https://docs.theprototype.app/publish-your-game.md#take-a-game-down). *1.83*
 
 When you publish or update a game, the dialog also shows a **This game: …** line with its visits — see
 [Your games & stats](#your-games-stats).
