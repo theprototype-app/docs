@@ -34,7 +34,7 @@ replicated to everyone and undoable, exactly like a person's edits.
 
 What an agent never does: move your camera, read anything outside the scene, or use API keys of
 its own inside the app. If it generates a 3D model (*generate_mesh*), that runs on **your** mesh
-provider (Settings ▸ Tools & connections ▸ Mesh providers) — you see who asked on the progress card and can
+provider (Settings ▸ AI ▸ Mesh providers) — you see who asked on the progress card and can
 cancel it there.
 
 ## For the agent (setup)
@@ -124,11 +124,20 @@ before a join, scene tools answer *not connected — join first*. Then call `con
     - `update_objects` takes `array: {mode, count, step, …}` (`null` removes it), `makeReal: true`, and
       `layer: "<name>"` (a new name makes the layer, `null` takes the object off it). `list_scene` reports an object's
       array and its layer by name. See [Arrays, Layers & Tidy](../arrange.md).
+- **Tags** (since 1.82): `update_objects` takes `tags: ["coin", "pickup"]` (it replaces the object's tags; `[]` clears
+  them). One flow then drives every object with a tag: an `objectselector` with `{pick: "tag", match: "coin"}`. See
+  [One flow, many objects](../object-flows.md#one-flow-many-objects).
 - **Decals** (since 1.75): `create_objects` with `kind: "decal"` puts an image on a surface. `on` is the object's uuid;
   `normal` (`[x, y, z]`) aims it at that object from that side, or `point` + `normal` place it at a spot on the surface
   (world). `image` is a Library hash or file name (none = a placeholder frame), `size` is metres (a number, or
   `[width, height]`), plus `depth` (default 0.25 m), `opacity` (0-1) and `tint` (`#rrggbb`). Not on skinned characters
   or scattered copies. See [Decals](../decals.md).
+- **Ground, water and floating** (since 1.81):
+    - `probe` reads the ground height, slope and surface and any water's surface and depth under up to 64 points, or
+      along a ray. It only reads, so a viewer's agent may use it too. See
+      [Read what is under a point](agent-world.md#read-what-is-under-a-point).
+    - `set_physics` takes `float`, `density`, `buoyancy` and `waterDrag`, and answers where the waterline will sit. See
+      [Make things float or sink](agent-world.md#make-things-float-or-sink).
 - Never fight a person: a locked object is skipped — the reply names the object and who is editing it — and the agent
   waits with `wait_for_edit`.
 

@@ -27,6 +27,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | Node | What it does |
 |---|---|
 | [**Object Selector**](nodes/objectselector.md) | Binds the graph to a scene object - the sink every effect must reach, and an object reference for sensor nodes. |
+| **Fired Object** | *New in 1.82.* Wire a trigger in: it outputs the object the trigger fired for last, so one flow over many objects knows which one was clicked or touched. See [One flow, many objects](object-flows.md#one-flow-many-objects). |
 | [**Velocity**](nodes/velocity.md) | Outputs how fast the connected object is moving right now, in metres per second. |
 | [**Measure**](nodes/measure.md) | Reads a number off an object: how tall it is, where its top is, how fast it is going. |
 | [**Spawn**](nodes/spawn.md) | Makes copies of an object while the simulation runs - crates off a conveyor, targets, debris, ammo, waves of anything. |
@@ -63,6 +64,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**Camera Shake**](nodes/camerashake.md) | Shakes the Play camera on a trigger (strength, seconds, frequency) - on this device only, never in VR; who: me = the player who made the pulse, everyone = every player. Reduced motion turns it down. |
 | [**Screen Flash**](nodes/screenflash.md) | Flashes a colour over the screen that fades out (a hit, a pickup) - on this device; who: me or everyone. Reduced motion keeps it faint. |
 | [**Hit Pause**](nodes/hitpause.md) | Holds this device's picture for a few milliseconds on a trigger (a hit-stop). The game, the clock and physics keep running. |
+| [**Vibrate**](nodes/vibrate.md) | Vibrates the player's gamepad, Android phone or VR controllers on a trigger (a pattern, or your own strength and length; one hand or both; who: me or everyone) - only in Interact or Play. *Since 1.79.* |
 | [**Announce**](nodes/announce.md) | Shows a big banner - 'Ring 2 reached', 'GOAL!' - on every screen and in VR when a pulse arrives in Play; {v} in the text shows a wired number. In Edit it draws no banner: the line goes to the Debugger's Console with its time and this node. |
 | [**Game Sound**](nodes/gamesound.md) | Plays one of the built-in game sounds (coin, ring, levelup, cheer...) when a pulse arrives, at the wired object if one is wired; no sound files needed. |
 | [**Effect Burst**](nodes/effectburst.md) | Fires a short sparkle, confetti, smoke or sparks burst at the wired object (or in front of the player) when a pulse arrives; pooled and local to each device. |

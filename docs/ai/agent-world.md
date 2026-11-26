@@ -9,7 +9,7 @@ step (Ctrl+Z, **Undo** on the call's line in **Agent activity**, or *"undo that"
 that change things; it can still search for assets.
 
 !!! note "New in 1.60"
-    Everything on this page is new in 1.60.
+    Most of this page is new in 1.60. Floating things and `probe` are new in 1.81.
 
 !!! tip "Try it"
     **Templates ▸ Game plot** opens an empty plot (the ground, a start pad, a finish arch, a fire pit and four gems).
@@ -156,6 +156,46 @@ a `preset` is given.
 
 New water is a static sensor: in Play, things fall in and float. It casts no shadow.
 
+### Make things float or sink
+
+*"Make the crates float"*, *"this barrel should sink"*. Since 1.81 `set_physics` takes the same choices as
+**Inspector ▸ Physics ▸ Floats** ([Things float](../physics.md#things-float)), and any of them makes the object dynamic:
+
+| field | what it does |
+|---|---|
+| `float` | `auto` (half under), `foam`, `cork`, `wood`, `ice`, `rubber`, `stone`, `metal`, `sink`, `mass` or `off` (ignores water) |
+| `density` | kg/m³, 10 to 20000, instead of `float`. Water is 1000: below floats, above sinks |
+| `float: "mass"` | the density is the object's mass ÷ its volume, so a heavier crate of the same size sits lower, and past 1000 kg per m³ it sinks |
+| `buoyancy` | how strong the lift is, 0 to 10 (1 = as the density says, 2 = rides higher) |
+| `waterDrag` | how hard the water slows it, 0 to 10 (1 = the water's own drag, 0.3 drifts, 3 holds still) |
+
+How deep something floats comes from its density, not its mass. The answer says where the waterline will sit
+(`water`): the density, the share under the surface, the draft in metres, and whether it sinks. With water under the
+object it also names the water, its surface height and `restingBottomY`, the height its bottom will rest at. Put a
+floating thing there and it does not drop into the water.
+
+!!! note "A cube can tip onto an edge"
+    A cube between about 21 % and 79 % of water's density is not stable lying flat. It tips onto an edge, as a real
+    one does, so its lowest corner sits deeper than the draft says. The answer then says `upright: false` with a
+    note. Lighter or heavier than that, or a flatter box, floats flat.
+
+## Read what is under a point
+
+Since 1.81, `probe` reads what is straight under a point and changes nothing, so a viewer's agent may use it too.
+Use it before putting things "on the ground", "on the beach" or "on the water", or along a slope.
+
+- `at: [x, z]` reads one point. `points: [[x, z], …]` reads up to **64** at once (a row of fence posts, a path), in
+  the same order.
+- For each point it gives the **height** of the ground (a terrain, a floor, a table top or the ground plane), which way
+  the surface faces (its slope), what kind of surface it is and which object. Stand a thing's base at that height.
+- With water there it also gives the water's still **surface** and how **deep** it is. Put a floating thing at the
+  surface. Over open sea with no floor, it says so: something that sinks there falls out of the world.
+- `ray: {from, dir, max}` gives the first thing a ray meets instead: what is in front of a door, what is under a lamp.
+- Water and trigger volumes are looked through, so the answer is the ground. `include: "all"` counts them too and
+  lists every surface at each point, top first.
+
+`probe` answers *what is under this point*; `list_scene` `near` answers *which objects are around here*.
+
 ## Effects and sound
 
 ### create_particles: fire, smoke, sparkles, fireflies
@@ -179,6 +219,7 @@ New water is a static sensor: in Play, things fall in and float. It casts no sha
 | `radius`, `volume` | how far it carries at full volume (metres), and how loud (0 to 1) |
 | `on` | play it once on `click`, `enter`, `exit`, `grab` or `hit` on the object. Without `on` it loops all the time, like a crackle or a river. |
 | `loop` | loop or not |
+| `trim` | *since 1.82*: how this scene plays the file, without changing it: `start` / `end` (seconds into the file; `end` 0 = its end), `fadeIn` / `fadeOut` (seconds) and `normalize` (true = the loudest moment just under full volume). Every player of the file in the scene uses it. `null` = the original. See [Trim, fade and normalise](../audio.md#trim-fade-and-normalise). |
 
 The sound is a [Sound node](../audio.md) in the object's flow, so you can open it in the node editor and change it.
 
@@ -186,7 +227,7 @@ The sound is a [Sound node](../audio.md) in the object's flow, so you can open i
 
 `asset` is a library sound, a pack sound (`pack:<name>/<file>`), the hash of music the agent sent with `assets upload`,
 or an https URL (`null` clears it). It also takes `volume` (0 to 1), `play: true` and
-`stop: true`. Everyone hears the track in sync. Each person can still turn it down for themselves in
+`stop: true`, and since 1.82 the same `trim` as `place_sound`. Everyone hears the track in sync. Each person can still turn it down for themselves in
 [Music](../music.md).
 
 ### Sounds and pictures from a URL
@@ -249,8 +290,10 @@ See [Materials and looks](agent-look.md).
 
 ## On claude.ai
 
-On claude.ai these tools are reached through the connector's [tool families](claude-connector.md#tool-families):
+In claude.ai and the other AI apps these tools are reached through the connector's
+[tool families](claude-connector.md#tool-families):
 
 - `assets` has `search`, `place`, `prefab` and `image`.
 - `effects` has `terrain`, `scatter`, `water`, `particles`, `sound` and `music`.
 - `set_look` `material` takes `pattern`.
+- `probe` and `set_physics` are tools of their own.

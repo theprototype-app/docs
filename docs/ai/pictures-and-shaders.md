@@ -17,11 +17,12 @@ Location data (EXIF, GPS) is removed from every picture **on your device, before
 
 ## Picture → 3D model
 
-1. Set up a mesh provider: **Settings ▸ Tools & connections ▸ Mesh providers**. Meshy (hosted) takes
+1. Set up a mesh provider: **Settings ▸ AI ▸ Mesh providers**. Meshy (hosted) takes
    pictures as it is. A ComfyUI workflow takes them when it has a `{{IMAGE}}` placeholder in a
    **LoadImage** node (see [3D Generation](generation.md)).
 2. **Add menu ▸ Generate 3D model…** and pick the picture: **From device…**, **Camera** (on a phone),
-   **Viewport**, or **From Explorer…**. You can also paste or drop a picture onto the window (a dockable
+   **Viewport**, or **From Explorer…** (since 1.79 the [Explorer picker](../materials.md#textures-from-the-explorer)
+   with thumbnails, search, folders and Recent). You can also paste or drop a picture onto the window (a dockable
    window since 1.65, see [The Generate window](generation.md#the-generate-window)). In the
    Explorer, a picture's menu has **Make a 3D model…**.
 3. A prompt is optional. With Meshy's *Refine* mode it becomes the texture prompt.
@@ -55,9 +56,9 @@ plain name, never your file's.
 
 | You see | What to do |
 |---|---|
-| *No mesh provider set up yet* | Press **Set one up in Tools & connections**. |
+| *No mesh provider set up yet* | Press **Set one up in Settings ▸ AI**. |
 | *… can't start from a picture* | Use Meshy, or add `{{IMAGE}}` to a LoadImage node in your ComfyUI workflow. |
-| *Meshy rejected the API key* | Check the key in **Settings ▸ Tools & connections ▸ Mesh providers**. |
+| *Meshy rejected the API key* | Check the key in **Settings ▸ AI ▸ Mesh providers**. |
 | *Meshy: out of credits* | Add credits on meshy.ai, or switch the provider to *Preview*, which uses fewer. |
 | *… did not finish within 10 minutes* | Try again, or try *Preview* mode, which is quicker. |
 | *… could not be reached* | Check the connection and the provider's address. |

@@ -1,6 +1,8 @@
 # Publish & Export
 
-**Menu ▸ Publish / Export** (**Export…** in the main menu's Compact layout) puts a scene somewhere other people can play it. The window has four tabs:
+**Menu ▸ Publish / Export** (**Export…** in the main menu's Compact layout) puts a scene somewhere other people can play it.
+New to it? [Publish your game](publish-your-game.md) walks through publishing here, itch.io and CrazyGames step by step,
+what the check rows mean, updating an upload and taking a game down. The window has four tabs:
 
 | Tab | What it does |
 |---|---|
@@ -69,6 +71,7 @@ The Export tab with the itch.io preset selected.
     | Preset | Use it for |
     |---|---|
     | **itch.io** | an HTML5 game page on itch.io: a zip with `index.html` at the root (guide below) |
+    | **CrazyGames** | the CrazyGames portal: their SDK, told when the game loads, plays and pauses; their size limits checked ([step by step](publish-your-game.md#crazygames-step-by-step), *1.83*) |
     | **Static host** | the same zip plus a `.nojekyll` file — Netlify, Cloudflare Pages, GitHub Pages, any web server |
     | **Embed** | an `<iframe>` snippet for a game that is already online (below) |
 
@@ -77,13 +80,19 @@ The Export tab with the itch.io preset selected.
 4. Options: **Cover image** (a `thumbnail.png`, 630 × 500, taken from your current view) and **Use CDN for packs**
    (a smaller zip: kit pieces load from the packs CDN when the game starts, so it needs internet; off, every pack file the
    scene uses is copied into the zip).
-5. The panel shows how big the engine is and estimates the zip. Press **Build & download zip**.
+5. **Made for phones too** (*1.83*): for a game meant for phones; the checks then look for touch controls.
+6. The panel shows how big the engine is and estimates the zip, and **Checks** lists what would trip a player or the
+   preset's limits — the same scene rows as [Before you publish](publish-your-game.md#before-you-publish), plus the
+   preset's size rows. A red row stops the download; a yellow one is a warning. Press **Build & download zip**.
 
 The build is **checked before it downloads** (relative paths only, the file limits of the preset); the result line names
 the file, its size and its file count, and says *checked OK*. The zip holds `index.html`, the engine (the same build the
 app runs), your scene, the installed modules it uses, the pack files it uses and a README. All paths are relative, there
 is no service worker, and nothing loads from another site unless you chose the packs CDN. The game starts in Play on its
-own. A typical game export is about 5 MB in about 365 files.
+own. Since *1.83* the zip boots the slim player (not the editor), carries every pack piece with its LOD files and every
+sky size the game offers, and sends no error reports: it plays with no internet at all. A small game's zip is about
+13 MB, almost all of it the engine. After the build, the result lists the **15 biggest files and what uses them**;
+exporting the same scene again keeps the zip's **name and export id**, so an upload replaces the old build.
 
 Some web hosts add their own scripts to the pages they serve. The exporter copies the app from the site you are on, so
 it removes any script or link that points at another site before the check — an exported game loads nothing from the
@@ -177,6 +186,10 @@ characters and a description of at most 300.
 | Include VR button | on | on a headset browser the start card offers **Enter VR**; off, the game always plays on the screen |
 | Use CDN for packs | off | as in the Export tab |
 | Optimize for | Full quality | **For Quest / web** compresses textures and adds LOD chains to the exported scene — [below](#optimize-for-quest-web) |
+
+**Materials in a glTF.** A glTF carries plain materials: an object with several
+[material slots](materials.md#material-slots) exports one material per slot, a node shader (on the object or on one slot)
+is left out, and the export's note counts the slots that lost one (*since 1.79*).
 
 ## Optimize for Quest / web
 

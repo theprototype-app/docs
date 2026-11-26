@@ -55,7 +55,11 @@ Custom themes are saved in this browser. To use one on another device, copy the 
   outline** (see [Mesh Editing](mesh-editing.md#display)).
 - **Density** — **Settings ▸ Interface ▸ Density**: *Comfortable* (the default) or *Compact*, tighter rows and controls
   on a computer screen; see [Settings](settings.md#density).
-- **Render mode** — Shaded, Shaded + AO or Wireframe, per device (<kbd>Z</kbd> cycles them): see [Camera & View](camera.md#render-mode-view).
+- **Render mode** — Shaded, Shaded + AO or Wireframe, per device (<kbd>Z</kbd> cycles them), and since 1.79 the
+  **Draw as** modes for checking a model, in the Preview menu at the top right of the 3D view: see
+  [Camera & View](camera.md#render-mode-view).
+- **Gizmo** — the style and size of the transform handles: **Settings ▸ Scene ▸ Gizmo** (see
+  [Gizmo styles](controls.md#gizmo-styles)).
 - **Toolbar** — which buttons the bottom bar shows, in what order and where: see [The toolbar](controls.md#the-toolbar).
 - **FPS and draw calls** — a small counter in any mode: **Settings ▸ Interface ▸ Viewport ▸ Show FPS + draw calls**.
 

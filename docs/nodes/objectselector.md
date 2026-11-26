@@ -14,7 +14,16 @@ Binds the graph to a scene object — the **sink** every effect must reach, and 
 
 | Parameter | Default | Where |
 |---|---|---|
-| object | `-None-` | dropdown of scene objects on the card |
+| pick | One object | *since 1.82*: **One object**, **By tag**, **By group** or **By name** |
+| object | `-None-` | dropdown of scene objects on the card (One object) |
+| Tag / Group / Name pattern | — | the tag, the group, or a name pattern: case-insensitive, `*` matches any run of characters and `?` one character (`Star*`, `*coin*`, `enemy ?`); a pattern with no wildcard matches names that contain it |
+
+## One selector, many objects
+
+*New in 1.82.* With **By tag**, **By group** or **By name**, the selector stands for a set of objects, and the card shows
+how many it finds. An effect wired into it acts on every one of them; a trigger wired to it fires when any of them does,
+and the **Fired Object** node says which one it was. See
+[One flow, many objects](../object-flows.md#one-flow-many-objects).
 
 ## Practical example
 

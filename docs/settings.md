@@ -23,7 +23,7 @@ Settings on a computer, the grouped menu beside the page.
     |---|---|
     | **General** | Interface, Accessibility, Controls, Input, Touch controls, Shortcuts |
     | **Workspace** | Scene, Explorer, Node types, Export |
-    | **Devices & services** | VR, Tools & connections, Connection, Privacy |
+    | **Devices & services** | VR, AI, Connection, Privacy |
     | **Account** | Account (on theprototype.app) |
 
     A dot on **About & what's new** means there is an update you have not read. <kbd>↑</kbd> / <kbd>↓</kbd> walk the menu.
@@ -124,7 +124,7 @@ greyed out with a hint to sign in.
 Changes save as you make them — there is no Save button; **Done** closes the window.
 
 - **Reset ‹Category› to defaults** — bottom left on a computer, at the end of the page on a phone — puts every setting
-  on that page back, after asking. There is no undo for it. It never touches your work: the Tools & connections page keeps your saved
+  on that page back, after asking. There is no undo for it. It never touches your work: the AI page keeps your saved
   providers and keys, the Interface page keeps the themes you loaded.
 - **About ▸ Danger zone** holds the two big ones, each asking first:
     - **Clear saved session** — the autosaved copy of your work (see [Autosave](saving.md#autosave)).
@@ -201,9 +201,15 @@ cache uses the older Cache Storage, and where neither exists everything download
 | Customize buttons | new in 1.64 | **Interface ▸ Customize buttons** — every hideable chrome button as a switch; see [Hiding buttons you do not use](interface.md#hiding-buttons-you-do-not-use) |
 | Product updates by email | new in 1.64 (was a box on the sign-in sheet) | **Account ▸ Email ▸ Product updates**, on theprototype.app; see [above](#account) |
 | Sign-in methods · Devices | the profile menu (until 1.64) | **Account ▸ Sign-in methods** and **Account ▸ Devices**, on theprototype.app; see [above](#account) |
-| Connected apps | its own page, **Settings ▸ Connected apps** (until 1.64) | **Account ▸ Connected apps**; see [above](#account) |
+| Connected apps | its own page, **Settings ▸ Connected apps** (until 1.64); then **Account ▸ Connected apps** | **AI ▸ AI apps that work in your scene ▸ Connected apps**; Account keeps a link row. See [Use any AI](ai/use-any-ai.md#revoke-an-app) |
+| Tools & connections | the page's earlier name | **AI**, in two cards; see [Settings ▸ AI](tools-and-connections.md) |
 | Show my status | new in 1.65 | **Interface ▸ Show my status** — off by default, this device only: Available, Busy or Away beside your name in People; see [Show my status](people.md#show-my-status) |
 | Hide my IP | new in 1.76 | **Privacy ▸ Hide my IP** — off by default, this device only; see [Hide my IP](connection.md#hide-my-ip) |
 | Limit floods from peers | new in 1.76 | **Connection ▸ Limit floods from peers** — **Off** / **Normal** / **Strict**, this device only; see [Limit floods from peers](connection.md#limit-floods-from-peers) |
 | Require approval to join | new in 1.76 | **Connection ▸ Require approval to join** — this session only, off when you leave; see [Blocking a guest](connection.md#blocking-a-guest) |
 | New sign-in alerts · Your data | new in 1.76 | **Account ▸ Email ▸ New sign-in alerts** and **Account ▸ Your data**, on theprototype.app; see [Your account and data](account-and-data.md) |
+| Keymap preset · Fly with WASD · Fly direction | new in 1.79 | **Shortcuts ▸ Keymap** — **ThePrototype** (the default) / **Blender style** / **Unity / Maya style**, and the two fly rows, this device only; see [Keymap presets](controls.md#keymap-presets) |
+| Gizmo style · Handle size · Show | new in 1.79 | **Scene ▸ Gizmo** — **Auto** (the default: All in one with a mouse, Touch puck on touch) / **Separate** / **All in one** / **Touch puck** / **Box**, this device only; see [Gizmo styles](controls.md#gizmo-styles) |
+| Haptic tick | Touch controls (until 1.78) | **Touch controls ▸ Touch feedback** — **Off** / **Light** / **Medium** / **Strong** and four switches, this device only; your old choice carries over. See [Touch feedback](touch-controls.md#touch-feedback) |
+| Pen only draws | new in 1.79 | **Controls ▸ Pen and touch** — on by default, this device only; also in the UV editor's Brush panel. See [Touch](uv-editor.md#touch) |
+| Shadow quality · Scene shadow quality | the Shadow quality row, now with a second | **Scene ▸ Performance ▸ Shadow quality** caps what this device draws; **Scene shadow quality** opens **Configure Scene ▸ Lights**, where the scene's own level is set for everyone. See [Shadow quality](camera.md#shadow-quality) |

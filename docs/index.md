@@ -52,6 +52,84 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.83 — Publish your game.** A new page, [Publish your game](publish-your-game.md), walks through it step by step.
+
+- **[Before you publish](publish-your-game.md#before-you-publish)**: the Publish tab lists what a visitor would trip
+  over (too big, huge textures, no spawn point, keys phones cannot press, modules visitors cannot get), each with a fix.
+  It never stops you.
+- **[Exported games play offline](publish-your-game.md#the-offline-zip)**: the zip boots the slim player and carries
+  every pack piece, module and sky it needs. Its checks run before the download, and the result lists what weighs what.
+- **[CrazyGames](publish-your-game.md#crazygames-step-by-step)** joins itch.io as an export preset, with their size
+  limits checked first. An exported game keeps its name and export id, so an upload replaces the old build.
+- **[Unpublish](publish-your-game.md#take-a-game-down)**: take a published game down and put it back on the same link.
+  Remixes keep their credit.
+
+**1.82 — curves, sound and many objects.**
+
+- **Curves on the Timeline**: a property track opens as a [curve](timeline.md#curves) under the track. Drag keys and
+  handles, type exact values, copy and paste keys, and pick a key mode or an ease (overshoot, anticipate, bounce and
+  more). **+ Track ▸ Animate a property** keys any property of the selected object.
+- **Sound in videos and moments**: [video exports](recording.md#sound) and [moments](share-a-moment.md) carry the
+  scene's own sound (music, sound effects, instruments), never voices or a microphone. [Trim, fade and
+  normalise a sound](audio.md#trim-fade-and-normalise) in its player window without changing the file.
+- **One flow, many objects**: [tag objects](object-flows.md#one-flow-many-objects) and point one Object Selector at
+  every object with a tag, in a group or matching a name. A new **Fired Object** node says which one was clicked, and
+  **Give this flow to the selection** copies a flow onto other objects.
+- **Look**: [water in the Cinematic view](cinematic-view.md#water), and a
+  [Contact shadows](camera.md#contact-shadows-this-device) switch for this device in the Preview menu.
+- **Faster start**: the editor loads about 265 KB less before it starts and the play page about 140 KB less: a few
+  tools now load the first time you use them ([details](performance.md#faster-start)).
+
+**1.81 — AI apps in your scene, and your room in VR.**
+
+- **Use theprototype from ChatGPT and other AI apps**: the same connector works in Claude, ChatGPT, Gemini CLI, VS Code
+  and Cursor. [Settings ▸ AI](tools-and-connections.md) now has two cards, one for AI apps that work in your scene and
+  one for the app's own assistant with your key, and [Use any AI](ai/use-any-ai.md) says which one you need. The chip
+  and every line name the app at work: *ChatGPT connected · this tab*.
+- **Ground, water and cameras**: an AI app can [read what is under a point](ai/agent-world.md#read-what-is-under-a-point)
+  (ground height, slope, water depth), [make things float or sink](ai/agent-world.md#make-things-float-or-sink)
+  and say where the waterline will sit, and it knows [the camera you look through](ai/agent-spatial.md#the-camera-you-look-through).
+  **Inspector ▸ Physics ▸ [Floats](physics.md#things-float)** reads in metres and has a new **Water drag** slider.
+- **Your files, your screen, your scenes**: in your own tab, an AI app or the in-app assistant can work with the text
+  files in your Explorer, open a panel, move your view or open code at a line (it asks first, and **Back** undoes it),
+  and open your other scenes, asking what to do with unsaved changes ([details](ai/your-files-and-screen.md)).
+- **[Scan my room](scan-my-room.md)** on Quest: your headset's room setup becomes named, see-through boxes at real size
+  under **My room**. Scan again and each wall keeps its name and your edits. No camera image is used or stored.
+
+**1.80 — bisect, smooth subdivide and path select.** [Edit Mesh](mesh-editing.md) gains three tools:
+[Bisect](mesh-editing.md#bisect) cuts a mesh with a flat plane you draw with two clicks and can clear one side and fill
+the opening; [Smooth subdivide](mesh-editing.md#smooth-subdivide) (tick **smooth**, or Shift+S) rounds a shape off as
+it splits; and [Path select](mesh-editing.md#path-select) (Ctrl+click) picks the shortest path from your last pick.
+Dragging the loop cut's Position or Cuts now previews the cut and cuts when you let go, and moving faces on a big
+mesh finishes about three times faster. AI agents can bisect and smooth-subdivide through `edit_mesh`.
+
+**1.79 — hands-on editing: keymaps, new gizmos, touch feedback, material slots and scene shadows.**
+
+- **Keyboard and gizmo**: [keymap presets](controls.md#keymap-presets) (ThePrototype, Blender style, Unity / Maya
+  style); [Move now, Rotate now, Resize now](controls.md#move-now-rotate-now-resize-now) with axis locks and typed
+  numbers, in the 3D view, the UV editor and Edit Mesh; Fly with WASD and Fly direction; and
+  [new gizmo styles](controls.md#gizmo-styles) — with a mouse you now get **All in one**, on a touch screen the
+  **Touch puck** (Settings ▸ Scene ▸ Gizmo picks **Separate** for the classic one). Press a tool again to step its
+  handles; press a tool button and drag to transform at once.
+- **Painting and the UV editor**: [pen pressure](uv-editor.md#pen-pressure) tints with Opacity and gains Size +
+  opacity, brushes gain [Spacing and Smoothing](uv-editor.md#spacing-and-smoothing), and
+  [fingers](uv-editor.md#touch) pinch, pan and never leave a stray dot. In the UV editor
+  **Shift-drag box-selects** now (it used to pan) and Space-drag pans with any tool.
+- **Touch feedback and vibration**: phones give a light [touch of feedback](touch-controls.md#touch-feedback) on
+  sliders, switches and snaps (it replaces Haptic tick), and games [vibrate gamepads and Android
+  phones](make-it-feel-like-a-real-game.md#vibration) with the new [Vibrate](nodes/vibrate.md) node.
+- **Around the 3D view**: one [Preview pill](cinematic-view.md#the-preview-pill) replaces the Cinematic switch and
+  the budget chip, with new [Draw as](camera.md#draw-as-modes-for-checking-a-model) modes for checking a model and
+  Judge for several devices at once; the [controls line up](interface.md#the-hud-grid) on one grid.
+- **Materials and textures**: [material slots you can manage](materials.md#material-slots), Switch material… with
+  linked materials, a [node shader per slot](shader-graph.md#one-slot-or-all-slots),
+  [textures from the Explorer](materials.md#textures-from-the-explorer) and [noise](image-editor.md#noise) in the
+  Image editor.
+- **Shadows**: [shadow quality per scene](camera.md#shadow-quality) (Off, Basic, Soft, Far), and the Cinematic view's
+  [Reflections and Global light](cinematic-view.md#reflections-and-global-light) switches.
+- **Faster start**: the code-behaviour runtime loads only when a scene has a behaviour or an agent is used, about 52 KB
+  less before the first frame.
+
 **1.78 — faster mesh editing.** [Edit Mesh](mesh-editing.md) runs on a new mesh core: on a 67,000-triangle mesh,
 entering Edit Mesh and undoing are about three times faster, extruding and bevelling an edge about twice as fast, the
 knife about 1.7 times, and dragging faces, edges or vertices stays smooth. [Undo puts your selection back](mesh-editing.md#selecting) after an operation,
@@ -281,7 +359,7 @@ Blender** downloads the model, and the file you export comes back with *Update "
 can watch the file and reload on each save. A 100×, Z-up or unapplied export gets a one-click fix. **Settings ▸ Tools &
 connections** replaces Settings ▸ AI: one page for chat and mesh providers, voice typing, agents and desktop tools, each with a
 status and a Test. Skies download the first time you pick one, so the app download is about 6 MB smaller. See
-[Edit in Blender](edit-in-blender.md) and [Tools & connections](tools-and-connections.md).
+[Edit in Blender](edit-in-blender.md) and [Settings ▸ AI](tools-and-connections.md).
 
 **1.52 — sessions in your Explorer.** Joining a session shows the host's files as *"<Host>'s session"* in your Explorer,
 read-only, above your Library: open them, copy them, and **Save on host** if you can edit. Nothing downloads until you
@@ -437,7 +515,7 @@ offers **Keep original only**. **Settings ▸ Import** holds the defaults, a fil
 settings** and **Reimport**, and **Configure Scene ▸ Level of detail** sets one [LOD distance](lod.md#the-scenes-lod-distance)
 for the whole scene. Exports get [**Optimize for: For Quest / web**](publish-export.md#optimize-for-quest-web) — a GLTF
 becomes a compact `.glb`, a Scene keeps its format with compressed textures and LOD chains. A
-[budget chip](performance.md#the-budget-chip-will-it-fit-on-a-quest) beside the toolbar says whether the scene fits a
+[budget chip](performance.md#judge-for-will-it-fit-on-a-quest) beside the toolbar says whether the scene fits a
 Quest, a phone or a desktop, and **Statistics ▸ Budget** lists the heaviest objects with what optimizing them would save.
 [HEIC / HEIF photos](explorer.md#heic-heif-photos) import as images and textures, and [Race](race.md#in-vr) keeps its
 shadows in VR — inside the Quest budget.
