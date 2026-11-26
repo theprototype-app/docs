@@ -27,6 +27,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | Node | What it does |
 |---|---|
 | [**Object Selector**](https://docs.theprototype.app/nodes/objectselector.md) | Binds the graph to a scene object - the sink every effect must reach, and an object reference for sensor nodes. |
+| **Fired Object** | *New in 1.82.* Wire a trigger in: it outputs the object the trigger fired for last, so one flow over many objects knows which one was clicked or touched. See [One flow, many objects](https://docs.theprototype.app/object-flows.md#one-flow-many-objects). |
 | [**Velocity**](https://docs.theprototype.app/nodes/velocity.md) | Outputs how fast the connected object is moving right now, in metres per second. |
 | [**Measure**](https://docs.theprototype.app/nodes/measure.md) | Reads a number off an object: how tall it is, where its top is, how fast it is going. |
 | [**Spawn**](https://docs.theprototype.app/nodes/spawn.md) | Makes copies of an object while the simulation runs - crates off a conveyor, targets, debris, ammo, waves of anything. |

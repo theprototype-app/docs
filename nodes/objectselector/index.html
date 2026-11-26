@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Object Selector", "url": "https://docs.theprototype.app/nodes/objectselector/", "description": "Binds the graph to a scene object — the sink every effect must reach, and an object reference for sensor nodes.", "dateModified": "2026-07-16"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Object Selector", "url": "https://docs.theprototype.app/nodes/objectselector/", "description": "Binds the graph to a scene object — the sink every effect must reach, and an object reference for sensor nodes.", "dateModified": "2026-11-26"}</script>
 </head>
   
   
@@ -2478,6 +2478,15 @@
   <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
       Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-selector-many-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      One selector, many objects
     </span>
   </a>
   
@@ -7388,6 +7397,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#one-selector-many-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      One selector, many objects
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#practical-example" class="md-nav__link">
     <span class="md-ellipsis">
       Practical example
@@ -7450,12 +7468,27 @@
 </thead>
 <tbody>
 <tr>
+<td>pick</td>
+<td>One object</td>
+<td><em>since 1.82</em>: <strong>One object</strong>, <strong>By tag</strong>, <strong>By group</strong> or <strong>By name</strong></td>
+</tr>
+<tr>
 <td>object</td>
 <td><code>-None-</code></td>
-<td>dropdown of scene objects on the card</td>
+<td>dropdown of scene objects on the card (One object)</td>
+</tr>
+<tr>
+<td>Tag / Group / Name pattern</td>
+<td>—</td>
+<td>the tag, the group, or a name pattern: case-insensitive, <code>*</code> matches any run of characters and <code>?</code> one character (<code>Star*</code>, <code>*coin*</code>, <code>enemy ?</code>); a pattern with no wildcard matches names that contain it</td>
 </tr>
 </tbody>
 </table>
+<h2 id="one-selector-many-objects">One selector, many objects</h2>
+<p><em>New in 1.82.</em> With <strong>By tag</strong>, <strong>By group</strong> or <strong>By name</strong>, the selector stands for a set of objects, and the card shows
+how many it finds. An effect wired into it acts on every one of them; a trigger wired to it fires when any of them does,
+and the <strong>Fired Object</strong> node says which one it was. See
+<a href="../../object-flows/#one-flow-many-objects">One flow, many objects</a>.</p>
 <h2 id="practical-example">Practical example</h2>
 <ol>
 <li>Add a <strong>Spin</strong> node and an <strong>Object Selector</strong>.</li>
@@ -7487,7 +7520,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-07-16
+    2026-11-26
   </span>
 
     

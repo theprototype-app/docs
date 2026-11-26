@@ -182,3 +182,5 @@ disturb the surface with ripples, burst bubbles, and listen for changes. See [Mo
 - Pour drops settle on the ground and on the tops of objects' bounding boxes, not on slopes.
 - One planar mirror at a time: the nearest water that asks for it gets it, and the others use the sky reflection.
 - An imported model made into water keeps its own look; the water draws inside its bounds.
+- *Since 1.82* water draws in the [Cinematic view](https://docs.theprototype.app/cinematic-view.md#water) with the same look; in water-heavy scenes
+  the Cinematic view may step its quality down on integrated GPUs.

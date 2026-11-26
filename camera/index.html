@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Camera & View", "url": "https://docs.theprototype.app/camera/", "description": "Everything about how the scene looks on your screen — the camera lens, render mode, shadows, the grid and the environment — lives in one place: Configure Scene.", "dateModified": "2026-11-24", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/render-modes.webp", "caption": "Shaded, Shaded + AO and Wireframe. AO darkens creases and the ground where objects touch it."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/view-section.webp", "caption": "Configure Scene ▸ View: how the scene is drawn on your screen. Since 1.79 the render mode chips show here on a phone; on a computer a row opens the Preview menu instead."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/camera-object.webp", "caption": "A camera's properties, with its preview window at the lower left."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/env-presets.webp", "caption": "Studio, Daylight, Sunset and Night on the same three objects."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/sky-meadow.webp", "caption": "The Meadow sky image lighting a mirror sphere and a box."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/sky-image-section.webp", "caption": "Configure Scene ▸ Environment, with its Sky image section."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/settings/sky-image-quality.webp", "caption": "Sky image quality, for this device only."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/grid-and-lights.webp", "caption": "Light helpers show where each light is and where it shines; they are editor-only."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Camera & View", "url": "https://docs.theprototype.app/camera/", "description": "Everything about how the scene looks on your screen — the camera lens, render mode, shadows, the grid and the environment — lives in one place: Configure Scene.", "dateModified": "2026-11-26", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/render-modes.webp", "caption": "Shaded, Shaded + AO and Wireframe. AO darkens creases and the ground where objects touch it."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/view-section.webp", "caption": "Configure Scene ▸ View: how the scene is drawn on your screen. Since 1.79 the render mode chips show here on a phone; on a computer a row opens the Preview menu instead."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/camera-object.webp", "caption": "A camera's properties, with its preview window at the lower left."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/env-presets.webp", "caption": "Studio, Daylight, Sunset and Night on the same three objects."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/sky-meadow.webp", "caption": "The Meadow sky image lighting a mirror sphere and a box."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/sky-image-section.webp", "caption": "Configure Scene ▸ Environment, with its Sky image section."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/settings/sky-image-quality.webp", "caption": "Sky image quality, for this device only."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/camera/grid-and-lights.webp", "caption": "Light helpers show where each light is and where it shines; they are editor-only."}]}</script>
 </head>
   
   
@@ -1910,6 +1910,21 @@
       Shadow quality
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Shadow quality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contact-shadows-this-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contact shadows (this device)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -7606,6 +7621,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Shadow quality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contact-shadows-this-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contact shadows (this device)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -8032,8 +8062,8 @@ in the scene, and is saved with it:</p>
 </table>
 <p><strong>What a device draws.</strong> A computer draws up to <strong>Far</strong>, a phone at most <strong>Soft</strong> and a headset <strong>Basic</strong> (more would
 cost frames there). When this device draws less than the scene asks, the row says so (<em>This device draws Soft</em>). The
-<a href="../cinematic-view/">Cinematic view</a> draws Far as Soft. No device draws contact shadows yet (the thin dark line where an
-object meets what it stands on): they cost frames on laptop graphics and phones.</p>
+<a href="../cinematic-view/">Cinematic view</a> draws Far as Soft. Contact shadows (the thin dark line where an object meets what
+it stands on) are a separate switch for this device, see <a href="#contact-shadows-this-device">Contact shadows</a>.</p>
 <p>Every scene made before 1.79 is <strong>Basic</strong> and looks exactly as it did.</p>
 <p><strong>This device's cap.</strong> <strong>Configure Scene ▸ Quality ▸ Shadow detail</strong> — the same setting as <strong>Settings ▸ Scene ▸
 Performance ▸ Shadow quality</strong>: <strong>Off · Low · Medium · High</strong> (default High) — caps every light's shadow-map size on
@@ -8046,6 +8076,22 @@ and <em>Scene shadow quality</em> (it opens Configure Scene ▸ Lights).</p>
 next sky or light change it reads Basic for everyone. Set it again once everyone has updated; the saved file is fine
 until then.</p>
 </div>
+<h3 id="contact-shadows-this-device">Contact shadows (this device)</h3>
+<p><em>New in 1.82.</em> <strong>Contact shadows</strong> add a small, sharp shadow where an object meets what it stands on, which a shadow
+map can blur away. The switch is in the <a href="../cinematic-view/#the-preview-pill">Preview menu</a> ▸ <strong>Look</strong> ▸ <strong>Contact
+shadows</strong>. It is a setting for this device: never saved in the scene and never shared with other people.</p>
+<ul>
+<li><strong>Auto</strong> — what this kind of device draws. Today that is off on every device.</li>
+<li><strong>On</strong> — drawn whenever this device draws the scene's shadows (Basic, Soft or Far). On is for computers: on a phone
+  or a headset, On is disabled and says why, and only Auto and Off are offered.</li>
+<li><strong>Off</strong> — never drawn on this device.</li>
+</ul>
+<p>Next to the switch the menu shows what contact shadows cost on this computer (<em>costs about 2 ms</em>), measured while you
+use them and kept for the next visit. The cost needs the browser's GPU timer (Chrome on a desktop has it); without it
+the row shows only On or Off.</p>
+<p>When frames run late, contact shadows are the first thing the <a href="../performance/#the-quality-governor">automatic quality</a>
+turns off (<em>Off for now to keep it smooth</em>), before the shadows themselves; restoring full quality gives them back.
+The <a href="../cinematic-view/">Cinematic view</a> does not draw contact shadows.</p>
 <h2 id="the-grid">The grid</h2>
 <p>The floor grid can be toggled from the viewport right-click menu ▸ <strong>View ▸ Show/Hide grid</strong>, or the <strong>Show grid</strong> checkbox in Settings. Its fade distance scales with how far you've zoomed out, so it stays visible when you pull the camera way back. The grid hides itself in wireframe mode.</p>
 <h2 id="environment-presets">Environment presets</h2>
@@ -8374,7 +8420,7 @@ unaffected:</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-24
+    2026-11-26
   </span>
 
     

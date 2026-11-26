@@ -17,6 +17,34 @@ Select an object that has no flow yet — the editor shows **"<name> has no flow
 
 Inside an object flow, effect nodes (Spin, Bounce, Script, module nodes, Sound, physics params, On Click…) target **the owner object implicitly** — just drop a Spin node in a box's flow and the box spins. Wiring into an Object Selector still works and always wins, so an object's flow may also drive *other* objects.
 
+## One flow, many objects
+
+*New in 1.82.* One flow can drive a whole set of objects: every coin, every enemy, every lamp in a group.
+
+**Tag objects.** Select one or more objects and add tags in **Inspector ▸ Tags**. With several objects selected, a tag
+shows how many of them carry it (*2/5*). Tags are saved with the scene, shared with everyone, and each change is one
+undo step.
+
+**Point an Object Selector at a set.** The [Object Selector](https://docs.theprototype.app/nodes/objectselector.md) card's first field picks what it
+selects: **One object** (the default, and what every older scene uses), **By tag**, **By group** or **By name**. The
+card shows how many objects it finds right now (*12 objects*, or *matches no objects*).
+
+- An effect wired into a set selector acts on **every** object in the set.
+- A trigger wired to one (On Click, Hover, Hit, Enter, Grab and the others) fires when **any** of them does.
+- The new **Fired Object** node (Scene group) says which one: wire a trigger in, and it gives the object the trigger
+  fired for last. The selector's own object output gives the same for a set (or its first object).
+- An empty set gets a *Matches no objects* note on the first wire into it, and the [Debugger](https://docs.theprototype.app/debugger.md) shows what a
+  set holds and which object fired last.
+
+**Give this flow to the selection.** Select the object with the flow and the objects that should get it, then the
+object menu ▸ **Physics & effects** ▸ **Give this flow to the selection**. Each one gets its own copy, and inside the
+copy, references to the first object point at the new owner, so *click me, hide me* stays *click me, hide me*. An
+object that already has a flow asks first. After editing one copy, **Update all copies from this one** sends it to the
+rest. Each is one undo step.
+
+Everyone in the session should be on 1.82 or later: an older version ignores tags, so a selector by tag finds nothing
+on its screen.
+
 ## Public sockets: Flow Input / Flow Output
 
 An object flow can declare an interface, like a function signature:

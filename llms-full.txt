@@ -57,6 +57,22 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.82 — curves, sound and many objects.**
+
+- **Curves on the Timeline**: a property track opens as a [curve](https://docs.theprototype.app/timeline.md#curves) under the track. Drag keys and
+  handles, type exact values, copy and paste keys, and pick a key mode or an ease (overshoot, anticipate, bounce and
+  more). **+ Track ▸ Animate a property** keys any property of the selected object.
+- **Sound in videos and moments**: [video exports](https://docs.theprototype.app/recording.md#sound) and [moments](https://docs.theprototype.app/share-a-moment.md) carry the
+  scene's own sound (music, sound effects, instruments), never voices or a microphone. [Trim, fade and
+  normalise a sound](https://docs.theprototype.app/audio.md#trim-fade-and-normalise) in its player window without changing the file.
+- **One flow, many objects**: [tag objects](https://docs.theprototype.app/object-flows.md#one-flow-many-objects) and point one Object Selector at
+  every object with a tag, in a group or matching a name. A new **Fired Object** node says which one was clicked, and
+  **Give this flow to the selection** copies a flow onto other objects.
+- **Look**: [water in the Cinematic view](https://docs.theprototype.app/cinematic-view.md#water), and a
+  [Contact shadows](https://docs.theprototype.app/camera.md#contact-shadows-this-device) switch for this device in the Preview menu.
+- **Faster start**: the editor loads about 265 KB less before it starts and the play page about 140 KB less: a few
+  tools now load the first time you use them ([details](https://docs.theprototype.app/performance.md#faster-start)).
+
 **1.81 — AI apps in your scene, and your room in VR.**
 
 - **Use theprototype from ChatGPT and other AI apps**: the same connector works in Claude, ChatGPT, Gemini CLI, VS Code
@@ -9741,7 +9757,7 @@ it.
 | **Animation** | Starts one of an object's clips — one you authored in the [Animation](https://docs.theprototype.app/animation.md) editor, or one the model was imported with. |
 | **Audio** | Plays a sound from the Explorer, cut at the item's end. |
 | **Event** | Fires a named event into the node graph — the [On Sequence Event](https://docs.theprototype.app/nodes/onseqevent.md) node pulses. |
-| **Property** | *New in 1.58.* Keys one value over time — a camera's zoom, roll, focus or aperture. A [Film](https://docs.theprototype.app/film.md) take records these; each key shows as a diamond. |
+| **Property** | *New in 1.58.* Keys one value over time — a camera's zoom, roll, focus or aperture. A [Film](https://docs.theprototype.app/film.md) take records these; each key shows as a diamond. *Since 1.82* it can key an object's position, rotation, scale or visibility too, and opens as a [curve](#curves). |
 
 ## Building a sequence
 
@@ -9793,6 +9809,40 @@ every key at its time, so cuts and markers stay where they were. It is one undo 
 From 1.58, a track made by a newer version of the app says *Made with a newer version of the app* and is kept as it
 is: it is shared and saved back unchanged, but this version cannot play or edit it.
 
+## Curves
+
+*New in 1.82.* A property track opens as a **curve**, so you can shape how a value moves between its keys right on the
+Timeline. Press the curve button (the spline icon) in the track's header, or the track's **…** menu ▸ **Show curve**.
+The curve opens under the track and shares the Timeline's time axis, zoom and playhead.
+
+**Make a property track.** Select an object, then **+ Track** ▸ **Animate a property of** *its name* ▸ pick a
+property: Position X / Y / Z, Rotation X / Y / Z, Scale, Visible, and a camera's lens values. The first key is the
+object's value at the playhead. [Film](https://docs.theprototype.app/film.md) takes make property tracks too (camera position, rotation, lens).
+
+| Do this | How |
+|---|---|
+| Add a key | Double-click the graph (the time snaps to a frame; hold <kbd>Alt</kbd> to place it freely). Or press <kbd>K</kbd>: it keys the object's value now at the playhead (move it with the gizmo first). |
+| Move keys | Drag a key (time and value). The arrow keys nudge: left / right one frame (<kbd>Shift</kbd>: ten), up / down a step of the value. |
+| Select | Click, <kbd>Shift</kbd>+click to add, drag on the background to box-select, <kbd>Ctrl</kbd>+<kbd>A</kbd> for all. |
+| Shape | Select a key and its handles show. Drag a handle: the key's handles become **Broken** (each side on its own). |
+| Mode | Pick a mode for the selected keys: Auto (no overshoot), Auto (smooth through), Aligned handles, Broken handles, Linear, Stepped. |
+| Ease | Pick a preset for the stretch after each selected key: Linear, Stepped, Smooth, Ease in, Ease out, Ease in and out, Overshoot, Anticipate, Bounce. |
+| Exact numbers | Type the selected key's **Time** and **Value** in the fields beside the graph. |
+| Copy / paste | <kbd>Ctrl</kbd>+<kbd>C</kbd> copies the selected keys; <kbd>Ctrl</kbd>+<kbd>V</kbd> pastes them at the playhead, keeping their spacing and shape. |
+| Delete | <kbd>Delete</kbd> or <kbd>Backspace</kbd>. |
+| Frame | <kbd>F</kbd> frames every key, <kbd>Shift</kbd>+<kbd>F</kbd> the selected ones. |
+
+Every edit is one undo step (a whole drag included), and everyone in the session sees it at once.
+
+- **Rotations** show in degrees and can spin past 360. A pasted rotation lands on the nearest whole turn, so it never
+  spins the long way round. A recorded camera rotation (a Film take) shows as three read-only angle curves; you can
+  move its keys in time.
+- **Position, scale and colour**: a track with three values shows the X, Y and Z curves together; the **X / Y / Z**
+  buttons pick which one you edit.
+- On a screen under 600 px wide the curve is view-only.
+- Clip files (.tpanim) keep the curves of imported animations (cubic glTF clips); the
+  [Animation](https://docs.theprototype.app/animation.md) window's own clips still export as samples at 30 frames per second.
+
 ## Playing it in the game
 
 - **[Play Sequence](https://docs.theprototype.app/nodes/playseq.md)** node (Animation group): wire a trigger in — On Click, On Enter, Key Press.
@@ -9826,6 +9876,8 @@ and the top bar keeps a sequence picker.
   them mid-clip.
 - A preview never fires graph events, so it cannot change the game state for one player only.
 - Scenes with sequences need 1.39 or later to show them; older versions open the scene without its sequences.
+- Everyone in a session should be on 1.82 or later to edit curves: an older version reads curve keys without their
+  handles.
 - Property tracks need 1.58 or later. 1.57 and older show one as an empty Event track, and saving the scene there loses
   its keys.
 
@@ -11008,6 +11060,8 @@ disturb the surface with ripples, burst bubbles, and listen for changes. See [Mo
 - Pour drops settle on the ground and on the tops of objects' bounding boxes, not on slopes.
 - One planar mirror at a time: the nearest water that asks for it gets it, and the others use the sky reflection.
 - An imported model made into water keeps its own look; the water draws inside its bounds.
+- *Since 1.82* water draws in the [Cinematic view](https://docs.theprototype.app/cinematic-view.md#water) with the same look; in water-heavy scenes
+  the Cinematic view may step its quality down on integrated GPUs.
 
 
 ---
@@ -12279,8 +12333,8 @@ in the scene, and is saved with it:
 
 **What a device draws.** A computer draws up to **Far**, a phone at most **Soft** and a headset **Basic** (more would
 cost frames there). When this device draws less than the scene asks, the row says so (*This device draws Soft*). The
-[Cinematic view](https://docs.theprototype.app/cinematic-view.md) draws Far as Soft. No device draws contact shadows yet (the thin dark line where an
-object meets what it stands on): they cost frames on laptop graphics and phones.
+[Cinematic view](https://docs.theprototype.app/cinematic-view.md) draws Far as Soft. Contact shadows (the thin dark line where an object meets what
+it stands on) are a separate switch for this device, see [Contact shadows](#contact-shadows-this-device).
 
 Every scene made before 1.79 is **Basic** and looks exactly as it did.
 
@@ -12294,6 +12348,25 @@ and *Scene shadow quality* (it opens Configure Scene ▸ Lights).
     A peer still on 1.78 drops the setting from the look it sends back: the scene reads Basic for them, and after their
     next sky or light change it reads Basic for everyone. Set it again once everyone has updated; the saved file is fine
     until then.
+
+### Contact shadows (this device)
+
+*New in 1.82.* **Contact shadows** add a small, sharp shadow where an object meets what it stands on, which a shadow
+map can blur away. The switch is in the [Preview menu](https://docs.theprototype.app/cinematic-view.md#the-preview-pill) ▸ **Look** ▸ **Contact
+shadows**. It is a setting for this device: never saved in the scene and never shared with other people.
+
+- **Auto** — what this kind of device draws. Today that is off on every device.
+- **On** — drawn whenever this device draws the scene's shadows (Basic, Soft or Far). On is for computers: on a phone
+  or a headset, On is disabled and says why, and only Auto and Off are offered.
+- **Off** — never drawn on this device.
+
+Next to the switch the menu shows what contact shadows cost on this computer (*costs about 2 ms*), measured while you
+use them and kept for the next visit. The cost needs the browser's GPU timer (Chrome on a desktop has it); without it
+the row shows only On or Off.
+
+When frames run late, contact shadows are the first thing the [automatic quality](https://docs.theprototype.app/performance.md#the-quality-governor)
+turns off (*Off for now to keep it smooth*), before the shadows themselves; restoring full quality gives them back.
+The [Cinematic view](https://docs.theprototype.app/cinematic-view.md) does not draw contact shadows.
 
 ## The grid
 
@@ -12533,7 +12606,8 @@ the budget chip of earlier versions. It never covers a side panel: it sits besid
   verdict colour. Click one to open [Statistics ▸ Budget](https://docs.theprototype.app/performance.md#statistics-budget) for that device. When the pill
   would meet other controls, the parts fold to the worst one and *+N*.
 - **The chevron** opens the **Preview menu**: **Cinematic view** (Off and the quality levels, then the
-  [Reflections and Global light](#reflections-and-global-light) switches), **Draw as** (the
+  [Reflections and Global light](#reflections-and-global-light) switches), **Look** (*since 1.82*: the
+  [Contact shadows](https://docs.theprototype.app/camera.md#contact-shadows-this-device) switch for this device), **Draw as** (the
   [render modes and the checking modes](https://docs.theprototype.app/camera.md#draw-as-modes-for-checking-a-model)), **Quality** (the
   [device quality preset](https://docs.theprototype.app/performance.md#the-quality-preset)), **Judge for** (This device, Phone, Quest, PC: each one
   you tick gets a part in the pill), **Statistics…** and **Scene look settings…**. A dot on the chevron says Draw as is
@@ -12588,7 +12662,26 @@ people in the session see their own view.
 keep their own baked light and shadows: at Standard and High they get no bounce light or screen AO on top. Scenes
 without baked light look the same as before.
 
-**Shadows.** The Cinematic view draws a scene's [Far shadows](https://docs.theprototype.app/camera.md#shadow-quality) as Soft.
+**Shadows.** The Cinematic view draws a scene's [Far shadows](https://docs.theprototype.app/camera.md#shadow-quality) as Soft, and it does not draw
+[contact shadows](https://docs.theprototype.app/camera.md#contact-shadows-this-device).
+
+## Water
+
+*New in 1.82.* [Water](https://docs.theprototype.app/water.md) surfaces and tank bodies draw in the Cinematic view with the same look as the editor
+view: the waves and ripples, refraction, depth colour, foam, caustics, the sky or HDRI reflection and **Reflection:
+Planar**. Every water setting in the Inspector drives the Cinematic view as it drives the editor view. With the camera
+under the surface, the view shows the water's fog, tint and caustics.
+
+The view adds its own bounced light and reflections around the water, so the picture is not pixel-identical to the
+editor view; the water matches about as closely as the rest of the scene does. Other differences:
+
+- Under water neither view wobbles or distorts the picture; both draw the same fog, tint and caustics.
+- Bubbles that rise under a water surface are drawn on top of it rather than bent by it.
+- A selected object under the water is not shown un-bent (the editor view un-bends it under its outline).
+- Sun glints on the waves glow (the view's bloom), so open sea reads a little brighter than in the editor view.
+- In water-heavy scenes the Cinematic view may step its quality down on integrated GPUs.
+
+Physics, floating and flow run as before, whichever view you look through. Fluid tanks still draw as their stand-in.
 
 ## What it does not show yet
 
@@ -12596,7 +12689,7 @@ This is the first version. A few things are drawn as **plain stand-ins** while t
 Preview pill names the ones in your scene:
 
 - [shader graph](https://docs.theprototype.app/shader-graph.md) materials and hand-written shaders (they show their base colour),
-- [water](https://docs.theprototype.app/water.md) surfaces and fluid tanks,
+- [fluid tanks](https://docs.theprototype.app/simulation.md#fluid-tank) (water itself is drawn since 1.82, see [Water](#water)),
 - particle effects,
 - painted terrain layers,
 - jiggle (the object shows, without the wobble).
@@ -12695,6 +12788,17 @@ A flythrough needs at least two saved views: right-click the viewport ▸ **Came
 **Hide editor helpers** (on by default) hides the grid, gizmo, outlines and helpers. The dialog shows the frame count
 and about how big the file will be before you start.
 
+## Sound
+
+*New in 1.82.* MP4 and WebM videos carry the **scene's own sound**: music, sound effects and instrument sounds, never
+voices or a microphone. **Scene sound** in the dialog is on by default; turn it off for a silent video. GIF, WebP and
+PNG files have no sound.
+
+The video gets the Timeline's audio clips where each frame shows them, and the scene music from where it was when you
+pressed Start. Sounds a flow or a module plays on its own clock are not in it, the same rule as for motion on its own
+clock (a [moment](https://docs.theprototype.app/share-a-moment.md) and the live recording do carry them). A [trimmed sound](https://docs.theprototype.app/audio.md#trim-fade-and-normalise)
+is heard trimmed. If the browser has no audio encoder, the file is silent and the result says so.
+
 ## While it renders
 
 The dialog closes and a bar at the bottom shows the progress: the percent, the frame, about how long is left, and
@@ -12733,7 +12837,7 @@ Keep the phone plugged in and the app in front while it renders.
   shots and clips, and the turntable / flythrough camera are frame-exact.
 - An imported model's own clips do not move in a timeline export (the same as scrubbing the Timeline); clips made in
   the [Animation](https://docs.theprototype.app/animation.md) editor do.
-- No sound in exported videos yet.
+- Sounds a flow or a module plays on its own clock are not in the file (see [Sound](#sound)).
 - Browsers without WebCodecs record the video **live** as WebM instead (keep the tab in front); the dialog says so.
 - GIF, WebP and PNG exports hold at most 1800 frames.
 
@@ -12798,7 +12902,10 @@ exactly as long as the part you picked. Moments use the same encoders as
 ## What is recorded, and when
 
 - **Only the game view**: the 3D picture. Not the editor, the chat, the HUD, other people's voices or your
-  microphone (there is no sound in a moment).
+  microphone.
+- **The scene's own sound** (*since 1.82*): an MP4 moment carries the game's music, sound effects and instrument
+  sounds, never voices or a microphone. **Scene sound** in the preview is on by default; untick it for a silent file.
+  A GIF has no sound.
 - **Only while you play.** Leaving Play forgets everything. Opening the preview pauses the recording, so the moment
   does not roll away while you trim it.
 - **Not in VR**, and not on a device with little memory (under 4 GB). If keeping the last 10 seconds would slow a
@@ -13220,6 +13327,8 @@ soon as frames recover.
 **Shadows go first**, then resolution, then effects — measured rather than guessed, because the
 shadow pass draws every mesh a second time and so is where the cost actually is:
 
+*Since 1.82*, if you turned [contact shadows](https://docs.theprototype.app/camera.md#contact-shadows-this-device) on, they go before anything else.
+
 1. Shadows off
 2. Resolution 85%
 3. Resolution 72%
@@ -13273,6 +13382,16 @@ say what is lowered now, instead of a second card stacking under it.
 **No switching back and forth.** Since 1.32, if a step came back once and the frames dropped again, it stays lowered for
 the rest of the scene instead of switching off and on. The chip's tooltip says so. Opening another scene, **Keep full
 quality**, or turning automatic quality off and on gives it a fresh start.
+
+## Faster start
+
+*Since 1.82* the editor loads about 265 KB less before it starts and the play page about 140 KB less (compressed).
+Nothing to switch on: the mesh editor's face and edge tools, ambient occlusion, the *What's new* text, the file preview
+window, the KTX2 texture reader and the FBX importer now arrive the first time you use them. The editor fetches the mesh
+tools quietly in the background right after it opens, so the first double-click into Edit Mesh is not a wait.
+
+On a slow connection, the very first use of one of these (before the background fetch has finished) can take a moment
+longer, once. A phone in plain **Shaded** view never downloads the ambient occlusion effect at all.
 
 ## 3D view does not start
 
@@ -14556,6 +14675,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | Node | What it does |
 |---|---|
 | [**Object Selector**](https://docs.theprototype.app/nodes/objectselector.md) | Binds the graph to a scene object - the sink every effect must reach, and an object reference for sensor nodes. |
+| **Fired Object** | *New in 1.82.* Wire a trigger in: it outputs the object the trigger fired for last, so one flow over many objects knows which one was clicked or touched. See [One flow, many objects](https://docs.theprototype.app/object-flows.md#one-flow-many-objects). |
 | [**Velocity**](https://docs.theprototype.app/nodes/velocity.md) | Outputs how fast the connected object is moving right now, in metres per second. |
 | [**Measure**](https://docs.theprototype.app/nodes/measure.md) | Reads a number off an object: how tall it is, where its top is, how fast it is going. |
 | [**Spawn**](https://docs.theprototype.app/nodes/spawn.md) | Makes copies of an object while the simulation runs - crates off a conveyor, targets, debris, ammo, waves of anything. |
@@ -14794,6 +14914,34 @@ Select an object that has no flow yet — the editor shows **"<name> has no flow
 ## No Object Selector needed
 
 Inside an object flow, effect nodes (Spin, Bounce, Script, module nodes, Sound, physics params, On Click…) target **the owner object implicitly** — just drop a Spin node in a box's flow and the box spins. Wiring into an Object Selector still works and always wins, so an object's flow may also drive *other* objects.
+
+## One flow, many objects
+
+*New in 1.82.* One flow can drive a whole set of objects: every coin, every enemy, every lamp in a group.
+
+**Tag objects.** Select one or more objects and add tags in **Inspector ▸ Tags**. With several objects selected, a tag
+shows how many of them carry it (*2/5*). Tags are saved with the scene, shared with everyone, and each change is one
+undo step.
+
+**Point an Object Selector at a set.** The [Object Selector](https://docs.theprototype.app/nodes/objectselector.md) card's first field picks what it
+selects: **One object** (the default, and what every older scene uses), **By tag**, **By group** or **By name**. The
+card shows how many objects it finds right now (*12 objects*, or *matches no objects*).
+
+- An effect wired into a set selector acts on **every** object in the set.
+- A trigger wired to one (On Click, Hover, Hit, Enter, Grab and the others) fires when **any** of them does.
+- The new **Fired Object** node (Scene group) says which one: wire a trigger in, and it gives the object the trigger
+  fired for last. The selector's own object output gives the same for a set (or its first object).
+- An empty set gets a *Matches no objects* note on the first wire into it, and the [Debugger](https://docs.theprototype.app/debugger.md) shows what a
+  set holds and which object fired last.
+
+**Give this flow to the selection.** Select the object with the flow and the objects that should get it, then the
+object menu ▸ **Physics & effects** ▸ **Give this flow to the selection**. Each one gets its own copy, and inside the
+copy, references to the first object point at the new owner, so *click me, hide me* stays *click me, hide me*. An
+object that already has a flow asks first. After editing one copy, **Update all copies from this one** sends it to the
+rest. Each is one undo step.
+
+Everyone in the session should be on 1.82 or later: an older version ignores tags, so a selector by tag finds nothing
+on its screen.
 
 ## Public sockets: Flow Input / Flow Output
 
@@ -15155,7 +15303,16 @@ Binds the graph to a scene object — the **sink** every effect must reach, and 
 
 | Parameter | Default | Where |
 |---|---|---|
-| object | `-None-` | dropdown of scene objects on the card |
+| pick | One object | *since 1.82*: **One object**, **By tag**, **By group** or **By name** |
+| object | `-None-` | dropdown of scene objects on the card (One object) |
+| Tag / Group / Name pattern | — | the tag, the group, or a name pattern: case-insensitive, `*` matches any run of characters and `?` one character (`Star*`, `*coin*`, `enemy ?`); a pattern with no wildcard matches names that contain it |
+
+## One selector, many objects
+
+*New in 1.82.* With **By tag**, **By group** or **By name**, the selector stands for a set of objects, and the card shows
+how many it finds. An effect wired into it acts on every one of them; a trigger wired to it fires when any of them does,
+and the **Fired Object** node says which one it was. See
+[One flow, many objects](https://docs.theprototype.app/object-flows.md#one-flow-many-objects).
 
 ## Practical example
 
@@ -22017,6 +22174,22 @@ For sound tied to a *place or object* — a fire crackle, a machine hum, a click
 
 Walk (or fly) around and the sound pans and fades with the object's position.
 
+## Trim, fade and normalise
+
+*New in 1.82.* Open a sound from the [Explorer](https://docs.theprototype.app/explorer.md#the-preview-window) (double-click it) and press
+<kbd>E</kbd>, or the scissors button, in its player window for **Trim and fade**:
+
+- a waveform with **start** and **end** handles to drag, or type **Start** and **End**; <kbd>I</kbd> and <kbd>O</kbd>
+  set them at the playhead,
+- **Fade in** and **Fade out**,
+- **Normalise**, which brings the loudest point up to just under full volume,
+- **Hear the edit** plays the result, and **Reset** brings the original back.
+
+The file itself never changes: the setting belongs to the sound **in this scene**. It is shared with everyone in the
+room, saved with the scene, and used everywhere the scene plays that sound: [Sound](https://docs.theprototype.app/nodes/sound.md) nodes (a playing
+loop restarts with the edit), [Timeline](https://docs.theprototype.app/timeline.md) audio clips, the scene music and video exports. Each change is one
+undo step.
+
 ## Audio packs
 
 Audio files can be bundled and shared as [Packs](https://docs.theprototype.app/packs.md), just like models. An audio pack is a `.zip` containing sound items; import one from the Explorer's **Packs** section (right-click ▸ **Install pack**, or **＋ Import pack** for a local zip). Its sounds land in your library as ordinary audio items, ready to assign as scene music or wire into Sound nodes. Prefer CC0 loops and one-shots small enough to share with peers.
@@ -26331,6 +26504,9 @@ before a join, scene tools answer *not connected — join first*. Then call `con
     - `update_objects` takes `array: {mode, count, step, …}` (`null` removes it), `makeReal: true`, and
       `layer: "<name>"` (a new name makes the layer, `null` takes the object off it). `list_scene` reports an object's
       array and its layer by name. See [Arrays, Layers & Tidy](https://docs.theprototype.app/arrange.md).
+- **Tags** (since 1.82): `update_objects` takes `tags: ["coin", "pickup"]` (it replaces the object's tags; `[]` clears
+  them). One flow then drives every object with a tag: an `objectselector` with `{pick: "tag", match: "coin"}`. See
+  [One flow, many objects](https://docs.theprototype.app/object-flows.md#one-flow-many-objects).
 - **Decals** (since 1.75): `create_objects` with `kind: "decal"` puts an image on a surface. `on` is the object's uuid;
   `normal` (`[x, y, z]`) aims it at that object from that side, or `point` + `normal` place it at a spot on the surface
   (world). `image` is a Library hash or file name (none = a placeholder frame), `size` is metres (a number, or
@@ -28010,6 +28186,7 @@ Use it before putting things "on the ground", "on the beach" or "on the water", 
 | `radius`, `volume` | how far it carries at full volume (metres), and how loud (0 to 1) |
 | `on` | play it once on `click`, `enter`, `exit`, `grab` or `hit` on the object. Without `on` it loops all the time, like a crackle or a river. |
 | `loop` | loop or not |
+| `trim` | *since 1.82*: how this scene plays the file, without changing it: `start` / `end` (seconds into the file; `end` 0 = its end), `fadeIn` / `fadeOut` (seconds) and `normalize` (true = the loudest moment just under full volume). Every player of the file in the scene uses it. `null` = the original. See [Trim, fade and normalise](https://docs.theprototype.app/audio.md#trim-fade-and-normalise). |
 
 The sound is a [Sound node](https://docs.theprototype.app/audio.md) in the object's flow, so you can open it in the node editor and change it.
 
@@ -28017,7 +28194,7 @@ The sound is a [Sound node](https://docs.theprototype.app/audio.md) in the objec
 
 `asset` is a library sound, a pack sound (`pack:<name>/<file>`), the hash of music the agent sent with `assets upload`,
 or an https URL (`null` clears it). It also takes `volume` (0 to 1), `play: true` and
-`stop: true`. Everyone hears the track in sync. Each person can still turn it down for themselves in
+`stop: true`, and since 1.82 the same `trim` as `place_sound`. Everyone hears the track in sync. Each person can still turn it down for themselves in
 [Music](https://docs.theprototype.app/music.md).
 
 ### Sounds and pictures from a URL

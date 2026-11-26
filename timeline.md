@@ -49,7 +49,7 @@ it.
 | **Animation** | Starts one of an object's clips — one you authored in the [Animation](https://docs.theprototype.app/animation.md) editor, or one the model was imported with. |
 | **Audio** | Plays a sound from the Explorer, cut at the item's end. |
 | **Event** | Fires a named event into the node graph — the [On Sequence Event](https://docs.theprototype.app/nodes/onseqevent.md) node pulses. |
-| **Property** | *New in 1.58.* Keys one value over time — a camera's zoom, roll, focus or aperture. A [Film](https://docs.theprototype.app/film.md) take records these; each key shows as a diamond. |
+| **Property** | *New in 1.58.* Keys one value over time — a camera's zoom, roll, focus or aperture. A [Film](https://docs.theprototype.app/film.md) take records these; each key shows as a diamond. *Since 1.82* it can key an object's position, rotation, scale or visibility too, and opens as a [curve](#curves). |
 
 ## Building a sequence
 
@@ -101,6 +101,40 @@ every key at its time, so cuts and markers stay where they were. It is one undo 
 From 1.58, a track made by a newer version of the app says *Made with a newer version of the app* and is kept as it
 is: it is shared and saved back unchanged, but this version cannot play or edit it.
 
+## Curves
+
+*New in 1.82.* A property track opens as a **curve**, so you can shape how a value moves between its keys right on the
+Timeline. Press the curve button (the spline icon) in the track's header, or the track's **…** menu ▸ **Show curve**.
+The curve opens under the track and shares the Timeline's time axis, zoom and playhead.
+
+**Make a property track.** Select an object, then **+ Track** ▸ **Animate a property of** *its name* ▸ pick a
+property: Position X / Y / Z, Rotation X / Y / Z, Scale, Visible, and a camera's lens values. The first key is the
+object's value at the playhead. [Film](https://docs.theprototype.app/film.md) takes make property tracks too (camera position, rotation, lens).
+
+| Do this | How |
+|---|---|
+| Add a key | Double-click the graph (the time snaps to a frame; hold <kbd>Alt</kbd> to place it freely). Or press <kbd>K</kbd>: it keys the object's value now at the playhead (move it with the gizmo first). |
+| Move keys | Drag a key (time and value). The arrow keys nudge: left / right one frame (<kbd>Shift</kbd>: ten), up / down a step of the value. |
+| Select | Click, <kbd>Shift</kbd>+click to add, drag on the background to box-select, <kbd>Ctrl</kbd>+<kbd>A</kbd> for all. |
+| Shape | Select a key and its handles show. Drag a handle: the key's handles become **Broken** (each side on its own). |
+| Mode | Pick a mode for the selected keys: Auto (no overshoot), Auto (smooth through), Aligned handles, Broken handles, Linear, Stepped. |
+| Ease | Pick a preset for the stretch after each selected key: Linear, Stepped, Smooth, Ease in, Ease out, Ease in and out, Overshoot, Anticipate, Bounce. |
+| Exact numbers | Type the selected key's **Time** and **Value** in the fields beside the graph. |
+| Copy / paste | <kbd>Ctrl</kbd>+<kbd>C</kbd> copies the selected keys; <kbd>Ctrl</kbd>+<kbd>V</kbd> pastes them at the playhead, keeping their spacing and shape. |
+| Delete | <kbd>Delete</kbd> or <kbd>Backspace</kbd>. |
+| Frame | <kbd>F</kbd> frames every key, <kbd>Shift</kbd>+<kbd>F</kbd> the selected ones. |
+
+Every edit is one undo step (a whole drag included), and everyone in the session sees it at once.
+
+- **Rotations** show in degrees and can spin past 360. A pasted rotation lands on the nearest whole turn, so it never
+  spins the long way round. A recorded camera rotation (a Film take) shows as three read-only angle curves; you can
+  move its keys in time.
+- **Position, scale and colour**: a track with three values shows the X, Y and Z curves together; the **X / Y / Z**
+  buttons pick which one you edit.
+- On a screen under 600 px wide the curve is view-only.
+- Clip files (.tpanim) keep the curves of imported animations (cubic glTF clips); the
+  [Animation](https://docs.theprototype.app/animation.md) window's own clips still export as samples at 30 frames per second.
+
 ## Playing it in the game
 
 - **[Play Sequence](https://docs.theprototype.app/nodes/playseq.md)** node (Animation group): wire a trigger in — On Click, On Enter, Key Press.
@@ -134,6 +168,8 @@ and the top bar keeps a sequence picker.
   them mid-clip.
 - A preview never fires graph events, so it cannot change the game state for one player only.
 - Scenes with sequences need 1.39 or later to show them; older versions open the scene without its sequences.
+- Everyone in a session should be on 1.82 or later to edit curves: an older version reads curve keys without their
+  handles.
 - Property tracks need 1.58 or later. 1.57 and older show one as an empty Event track, and saving the scene there loses
   its keys.
 

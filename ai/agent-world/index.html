@@ -8251,13 +8251,17 @@ Use it before putting things "on the ground", "on the beach" or "on the water", 
 <td><code>loop</code></td>
 <td>loop or not</td>
 </tr>
+<tr>
+<td><code>trim</code></td>
+<td><em>since 1.82</em>: how this scene plays the file, without changing it: <code>start</code> / <code>end</code> (seconds into the file; <code>end</code> 0 = its end), <code>fadeIn</code> / <code>fadeOut</code> (seconds) and <code>normalize</code> (true = the loudest moment just under full volume). Every player of the file in the scene uses it. <code>null</code> = the original. See <a href="../../audio/#trim-fade-and-normalise">Trim, fade and normalise</a>.</td>
+</tr>
 </tbody>
 </table>
 <p>The sound is a <a href="../../audio/">Sound node</a> in the object's flow, so you can open it in the node editor and change it.</p>
 <h3 id="set_music-the-scenes-background-music">set_music: the scene's background music</h3>
 <p><code>asset</code> is a library sound, a pack sound (<code>pack:&lt;name&gt;/&lt;file&gt;</code>), the hash of music the agent sent with <code>assets upload</code>,
 or an https URL (<code>null</code> clears it). It also takes <code>volume</code> (0 to 1), <code>play: true</code> and
-<code>stop: true</code>. Everyone hears the track in sync. Each person can still turn it down for themselves in
+<code>stop: true</code>, and since 1.82 the same <code>trim</code> as <code>place_sound</code>. Everyone hears the track in sync. Each person can still turn it down for themselves in
 <a href="../../music/">Music</a>.</p>
 <h3 id="sounds-and-pictures-from-a-url">Sounds and pictures from a URL</h3>
 <p>A sound or texture given as a URL becomes a file in the library <strong>first</strong>, the same as an upload:</p>

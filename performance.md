@@ -202,6 +202,8 @@ soon as frames recover.
 **Shadows go first**, then resolution, then effects — measured rather than guessed, because the
 shadow pass draws every mesh a second time and so is where the cost actually is:
 
+*Since 1.82*, if you turned [contact shadows](https://docs.theprototype.app/camera.md#contact-shadows-this-device) on, they go before anything else.
+
 1. Shadows off
 2. Resolution 85%
 3. Resolution 72%
@@ -255,6 +257,16 @@ say what is lowered now, instead of a second card stacking under it.
 **No switching back and forth.** Since 1.32, if a step came back once and the frames dropped again, it stays lowered for
 the rest of the scene instead of switching off and on. The chip's tooltip says so. Opening another scene, **Keep full
 quality**, or turning automatic quality off and on gives it a fresh start.
+
+## Faster start
+
+*Since 1.82* the editor loads about 265 KB less before it starts and the play page about 140 KB less (compressed).
+Nothing to switch on: the mesh editor's face and edge tools, ambient occlusion, the *What's new* text, the file preview
+window, the KTX2 texture reader and the FBX importer now arrive the first time you use them. The editor fetches the mesh
+tools quietly in the background right after it opens, so the first double-click into Edit Mesh is not a wait.
+
+On a slow connection, the very first use of one of these (before the background fetch has finished) can take a moment
+longer, once. A phone in plain **Shaded** view never downloads the ambient occlusion effect at all.
 
 ## 3D view does not start
 

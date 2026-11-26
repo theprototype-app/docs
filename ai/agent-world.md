@@ -219,6 +219,7 @@ Use it before putting things "on the ground", "on the beach" or "on the water", 
 | `radius`, `volume` | how far it carries at full volume (metres), and how loud (0 to 1) |
 | `on` | play it once on `click`, `enter`, `exit`, `grab` or `hit` on the object. Without `on` it loops all the time, like a crackle or a river. |
 | `loop` | loop or not |
+| `trim` | *since 1.82*: how this scene plays the file, without changing it: `start` / `end` (seconds into the file; `end` 0 = its end), `fadeIn` / `fadeOut` (seconds) and `normalize` (true = the loudest moment just under full volume). Every player of the file in the scene uses it. `null` = the original. See [Trim, fade and normalise](https://docs.theprototype.app/audio.md#trim-fade-and-normalise). |
 
 The sound is a [Sound node](https://docs.theprototype.app/audio.md) in the object's flow, so you can open it in the node editor and change it.
 
@@ -226,7 +227,7 @@ The sound is a [Sound node](https://docs.theprototype.app/audio.md) in the objec
 
 `asset` is a library sound, a pack sound (`pack:<name>/<file>`), the hash of music the agent sent with `assets upload`,
 or an https URL (`null` clears it). It also takes `volume` (0 to 1), `play: true` and
-`stop: true`. Everyone hears the track in sync. Each person can still turn it down for themselves in
+`stop: true`, and since 1.82 the same `trim` as `place_sound`. Everyone hears the track in sync. Each person can still turn it down for themselves in
 [Music](https://docs.theprototype.app/music.md).
 
 ### Sounds and pictures from a URL

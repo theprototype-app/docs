@@ -124,6 +124,9 @@ before a join, scene tools answer *not connected — join first*. Then call `con
     - `update_objects` takes `array: {mode, count, step, …}` (`null` removes it), `makeReal: true`, and
       `layer: "<name>"` (a new name makes the layer, `null` takes the object off it). `list_scene` reports an object's
       array and its layer by name. See [Arrays, Layers & Tidy](https://docs.theprototype.app/arrange.md).
+- **Tags** (since 1.82): `update_objects` takes `tags: ["coin", "pickup"]` (it replaces the object's tags; `[]` clears
+  them). One flow then drives every object with a tag: an `objectselector` with `{pick: "tag", match: "coin"}`. See
+  [One flow, many objects](https://docs.theprototype.app/object-flows.md#one-flow-many-objects).
 - **Decals** (since 1.75): `create_objects` with `kind: "decal"` puts an image on a surface. `on` is the object's uuid;
   `normal` (`[x, y, z]`) aims it at that object from that side, or `point` + `normal` place it at a spot on the surface
   (world). `image` is a Library hash or file name (none = a placeholder frame), `size` is metres (a number, or

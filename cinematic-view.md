@@ -32,7 +32,8 @@ the budget chip of earlier versions. It never covers a side panel: it sits besid
   verdict colour. Click one to open [Statistics ▸ Budget](https://docs.theprototype.app/performance.md#statistics-budget) for that device. When the pill
   would meet other controls, the parts fold to the worst one and *+N*.
 - **The chevron** opens the **Preview menu**: **Cinematic view** (Off and the quality levels, then the
-  [Reflections and Global light](#reflections-and-global-light) switches), **Draw as** (the
+  [Reflections and Global light](#reflections-and-global-light) switches), **Look** (*since 1.82*: the
+  [Contact shadows](https://docs.theprototype.app/camera.md#contact-shadows-this-device) switch for this device), **Draw as** (the
   [render modes and the checking modes](https://docs.theprototype.app/camera.md#draw-as-modes-for-checking-a-model)), **Quality** (the
   [device quality preset](https://docs.theprototype.app/performance.md#the-quality-preset)), **Judge for** (This device, Phone, Quest, PC: each one
   you tick gets a part in the pill), **Statistics…** and **Scene look settings…**. A dot on the chevron says Draw as is
@@ -87,7 +88,26 @@ people in the session see their own view.
 keep their own baked light and shadows: at Standard and High they get no bounce light or screen AO on top. Scenes
 without baked light look the same as before.
 
-**Shadows.** The Cinematic view draws a scene's [Far shadows](https://docs.theprototype.app/camera.md#shadow-quality) as Soft.
+**Shadows.** The Cinematic view draws a scene's [Far shadows](https://docs.theprototype.app/camera.md#shadow-quality) as Soft, and it does not draw
+[contact shadows](https://docs.theprototype.app/camera.md#contact-shadows-this-device).
+
+## Water
+
+*New in 1.82.* [Water](https://docs.theprototype.app/water.md) surfaces and tank bodies draw in the Cinematic view with the same look as the editor
+view: the waves and ripples, refraction, depth colour, foam, caustics, the sky or HDRI reflection and **Reflection:
+Planar**. Every water setting in the Inspector drives the Cinematic view as it drives the editor view. With the camera
+under the surface, the view shows the water's fog, tint and caustics.
+
+The view adds its own bounced light and reflections around the water, so the picture is not pixel-identical to the
+editor view; the water matches about as closely as the rest of the scene does. Other differences:
+
+- Under water neither view wobbles or distorts the picture; both draw the same fog, tint and caustics.
+- Bubbles that rise under a water surface are drawn on top of it rather than bent by it.
+- A selected object under the water is not shown un-bent (the editor view un-bends it under its outline).
+- Sun glints on the waves glow (the view's bloom), so open sea reads a little brighter than in the editor view.
+- In water-heavy scenes the Cinematic view may step its quality down on integrated GPUs.
+
+Physics, floating and flow run as before, whichever view you look through. Fluid tanks still draw as their stand-in.
 
 ## What it does not show yet
 
@@ -95,7 +115,7 @@ This is the first version. A few things are drawn as **plain stand-ins** while t
 Preview pill names the ones in your scene:
 
 - [shader graph](https://docs.theprototype.app/shader-graph.md) materials and hand-written shaders (they show their base colour),
-- [water](https://docs.theprototype.app/water.md) surfaces and fluid tanks,
+- [fluid tanks](https://docs.theprototype.app/simulation.md#fluid-tank) (water itself is drawn since 1.82, see [Water](#water)),
 - particle effects,
 - painted terrain layers,
 - jiggle (the object shows, without the wobble).

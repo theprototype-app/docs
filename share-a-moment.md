@@ -46,7 +46,10 @@ exactly as long as the part you picked. Moments use the same encoders as
 ## What is recorded, and when
 
 - **Only the game view**: the 3D picture. Not the editor, the chat, the HUD, other people's voices or your
-  microphone (there is no sound in a moment).
+  microphone.
+- **The scene's own sound** (*since 1.82*): an MP4 moment carries the game's music, sound effects and instrument
+  sounds, never voices or a microphone. **Scene sound** in the preview is on by default; untick it for a silent file.
+  A GIF has no sound.
 - **Only while you play.** Leaving Play forgets everything. Opening the preview pauses the recording, so the moment
   does not roll away while you trim it.
 - **Not in VR**, and not on a device with little memory (under 4 GB). If keeping the last 10 seconds would slow a

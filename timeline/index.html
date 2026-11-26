@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Timeline (Cutscenes)", "url": "https://docs.theprototype.app/timeline/", "description": "Sequences are part of the scene: they are saved with it, shared live with everyone in the session (late joiners too), undoable, and they play in exported and published games.", "dateModified": "2026-11-10", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.71.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/timeline/tracks.webp", "caption": "The Timeline docked under the viewport."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/timeline/scrub-shot.webp", "caption": "Scrubbing at 1.15 s."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/timeline/property-track.webp", "caption": "A Film take on the Timeline: the field of view and the roll, keyed."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/timeline/phone-sheet.webp", "caption": "The Timeline as a tab of the bottom sheet on a folded phone."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/timeline/tracks-light.webp", "caption": "The Timeline in the light theme."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Timeline (Cutscenes)", "url": "https://docs.theprototype.app/timeline/", "description": "Sequences are part of the scene: they are saved with it, shared live with everyone in the session (late joiners too), undoable, and they play in exported and published games.", "dateModified": "2026-11-26", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.71.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/timeline/tracks.webp", "caption": "The Timeline docked under the viewport."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/timeline/scrub-shot.webp", "caption": "Scrubbing at 1.15 s."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/timeline/property-track.webp", "caption": "A Film take on the Timeline: the field of view and the roll, keyed."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/timeline/phone-sheet.webp", "caption": "The Timeline as a tab of the bottom sheet on a folded phone."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/timeline/tracks-light.webp", "caption": "The Timeline in the light theme."}]}</script>
 </head>
   
   
@@ -1556,6 +1556,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      Curves
+    </span>
+  </a>
   
 </li>
       
@@ -7468,6 +7477,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      Curves
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#playing-it-in-the-game" class="md-nav__link">
     <span class="md-ellipsis">
       Playing it in the game
@@ -7591,7 +7609,7 @@ it.</p>
 </tr>
 <tr>
 <td><strong>Property</strong></td>
-<td><em>New in 1.58.</em> Keys one value over time — a camera's zoom, roll, focus or aperture. A <a href="../film/">Film</a> take records these; each key shows as a diamond.</td>
+<td><em>New in 1.58.</em> Keys one value over time — a camera's zoom, roll, focus or aperture. A <a href="../film/">Film</a> take records these; each key shows as a diamond. <em>Since 1.82</em> it can key an object's position, rotation, scale or visibility too, and opens as a <a href="#curves">curve</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -7684,6 +7702,74 @@ every key at its time, so cuts and markers stay where they were. It is one undo 
 </div>
 <p>From 1.58, a track made by a newer version of the app says <em>Made with a newer version of the app</em> and is kept as it
 is: it is shared and saved back unchanged, but this version cannot play or edit it.</p>
+<h2 id="curves">Curves</h2>
+<p><em>New in 1.82.</em> A property track opens as a <strong>curve</strong>, so you can shape how a value moves between its keys right on the
+Timeline. Press the curve button (the spline icon) in the track's header, or the track's <strong>…</strong> menu ▸ <strong>Show curve</strong>.
+The curve opens under the track and shares the Timeline's time axis, zoom and playhead.</p>
+<p><strong>Make a property track.</strong> Select an object, then <strong>+ Track</strong> ▸ <strong>Animate a property of</strong> <em>its name</em> ▸ pick a
+property: Position X / Y / Z, Rotation X / Y / Z, Scale, Visible, and a camera's lens values. The first key is the
+object's value at the playhead. <a href="../film/">Film</a> takes make property tracks too (camera position, rotation, lens).</p>
+<table>
+<thead>
+<tr>
+<th>Do this</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add a key</td>
+<td>Double-click the graph (the time snaps to a frame; hold <kbd>Alt</kbd> to place it freely). Or press <kbd>K</kbd>: it keys the object's value now at the playhead (move it with the gizmo first).</td>
+</tr>
+<tr>
+<td>Move keys</td>
+<td>Drag a key (time and value). The arrow keys nudge: left / right one frame (<kbd>Shift</kbd>: ten), up / down a step of the value.</td>
+</tr>
+<tr>
+<td>Select</td>
+<td>Click, <kbd>Shift</kbd>+click to add, drag on the background to box-select, <kbd>Ctrl</kbd>+<kbd>A</kbd> for all.</td>
+</tr>
+<tr>
+<td>Shape</td>
+<td>Select a key and its handles show. Drag a handle: the key's handles become <strong>Broken</strong> (each side on its own).</td>
+</tr>
+<tr>
+<td>Mode</td>
+<td>Pick a mode for the selected keys: Auto (no overshoot), Auto (smooth through), Aligned handles, Broken handles, Linear, Stepped.</td>
+</tr>
+<tr>
+<td>Ease</td>
+<td>Pick a preset for the stretch after each selected key: Linear, Stepped, Smooth, Ease in, Ease out, Ease in and out, Overshoot, Anticipate, Bounce.</td>
+</tr>
+<tr>
+<td>Exact numbers</td>
+<td>Type the selected key's <strong>Time</strong> and <strong>Value</strong> in the fields beside the graph.</td>
+</tr>
+<tr>
+<td>Copy / paste</td>
+<td><kbd>Ctrl</kbd>+<kbd>C</kbd> copies the selected keys; <kbd>Ctrl</kbd>+<kbd>V</kbd> pastes them at the playhead, keeping their spacing and shape.</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td><kbd>Delete</kbd> or <kbd>Backspace</kbd>.</td>
+</tr>
+<tr>
+<td>Frame</td>
+<td><kbd>F</kbd> frames every key, <kbd>Shift</kbd>+<kbd>F</kbd> the selected ones.</td>
+</tr>
+</tbody>
+</table>
+<p>Every edit is one undo step (a whole drag included), and everyone in the session sees it at once.</p>
+<ul>
+<li><strong>Rotations</strong> show in degrees and can spin past 360. A pasted rotation lands on the nearest whole turn, so it never
+  spins the long way round. A recorded camera rotation (a Film take) shows as three read-only angle curves; you can
+  move its keys in time.</li>
+<li><strong>Position, scale and colour</strong>: a track with three values shows the X, Y and Z curves together; the <strong>X / Y / Z</strong>
+  buttons pick which one you edit.</li>
+<li>On a screen under 600 px wide the curve is view-only.</li>
+<li>Clip files (.tpanim) keep the curves of imported animations (cubic glTF clips); the
+  <a href="../animation/">Animation</a> window's own clips still export as samples at 30 frames per second.</li>
+</ul>
 <h2 id="playing-it-in-the-game">Playing it in the game</h2>
 <ul>
 <li><strong><a href="../nodes/playseq/">Play Sequence</a></strong> node (Animation group): wire a trigger in — On Click, On Enter, Key Press.
@@ -7722,6 +7808,8 @@ and the top bar keeps a sequence picker.</p>
   them mid-clip.</li>
 <li>A preview never fires graph events, so it cannot change the game state for one player only.</li>
 <li>Scenes with sequences need 1.39 or later to show them; older versions open the scene without its sequences.</li>
+<li>Everyone in a session should be on 1.82 or later to edit curves: an older version reads curve keys without their
+  handles.</li>
 <li>Property tracks need 1.58 or later. 1.57 and older show one as an empty Event track, and saving the scene there loses
   its keys.</li>
 </ul>
@@ -7751,7 +7839,7 @@ and the top bar keeps a sequence picker.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-10
+    2026-11-26
   </span>
 
     

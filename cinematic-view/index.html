@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Cinematic View", "url": "https://docs.theprototype.app/cinematic-view/", "description": "The standard view (top) and the Cinematic view at Standard quality (bottom).", "dateModified": "2026-11-24", "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/cinematic-view/preview-menu-dark.webp#only-dark", "caption": "The Preview menu with the Cinematic view on at Standard."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/cinematic-view/preview-menu-light.webp#only-light", "caption": "The Preview menu with the Cinematic view on at Standard."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Cinematic View", "url": "https://docs.theprototype.app/cinematic-view/", "description": "The standard view (top) and the Cinematic view at Standard quality (bottom).", "dateModified": "2026-11-26", "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/cinematic-view/preview-menu-dark.webp#only-dark", "caption": "The Preview menu with the Cinematic view on at Standard."}, {"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/cinematic-view/preview-menu-light.webp#only-light", "caption": "The Preview menu with the Cinematic view on at Standard."}]}</script>
 </head>
   
   
@@ -1896,6 +1896,15 @@
   <a href="#reflections-and-global-light" class="md-nav__link">
     <span class="md-ellipsis">
       Reflections and Global light
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#water" class="md-nav__link">
+    <span class="md-ellipsis">
+      Water
     </span>
   </a>
   
@@ -7456,6 +7465,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#water" class="md-nav__link">
+    <span class="md-ellipsis">
+      Water
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#what-it-does-not-show-yet" class="md-nav__link">
     <span class="md-ellipsis">
       What it does not show yet
@@ -7562,7 +7580,8 @@ the budget chip of earlier versions. It never covers a side panel: it sits besid
   verdict colour. Click one to open <a href="../performance/#statistics-budget">Statistics ▸ Budget</a> for that device. When the pill
   would meet other controls, the parts fold to the worst one and <em>+N</em>.</li>
 <li><strong>The chevron</strong> opens the <strong>Preview menu</strong>: <strong>Cinematic view</strong> (Off and the quality levels, then the
-  <a href="#reflections-and-global-light">Reflections and Global light</a> switches), <strong>Draw as</strong> (the
+  <a href="#reflections-and-global-light">Reflections and Global light</a> switches), <strong>Look</strong> (<em>since 1.82</em>: the
+  <a href="../camera/#contact-shadows-this-device">Contact shadows</a> switch for this device), <strong>Draw as</strong> (the
   <a href="../camera/#draw-as-modes-for-checking-a-model">render modes and the checking modes</a>), <strong>Quality</strong> (the
   <a href="../performance/#the-quality-preset">device quality preset</a>), <strong>Judge for</strong> (This device, Phone, Quest, PC: each one
   you tick gets a part in the pill), <strong>Statistics…</strong> and <strong>Scene look settings…</strong>. A dot on the chevron says Draw as is
@@ -7626,13 +7645,29 @@ people in the session see their own view.</p>
 <p><strong>Baked light is not lit twice.</strong> Objects with <a href="../baked-light/">baked light</a> (Configure scene ▸ Pro look ▸ Bake light)
 keep their own baked light and shadows: at Standard and High they get no bounce light or screen AO on top. Scenes
 without baked light look the same as before.</p>
-<p><strong>Shadows.</strong> The Cinematic view draws a scene's <a href="../camera/#shadow-quality">Far shadows</a> as Soft.</p>
+<p><strong>Shadows.</strong> The Cinematic view draws a scene's <a href="../camera/#shadow-quality">Far shadows</a> as Soft, and it does not draw
+<a href="../camera/#contact-shadows-this-device">contact shadows</a>.</p>
+<h2 id="water">Water</h2>
+<p><em>New in 1.82.</em> <a href="../water/">Water</a> surfaces and tank bodies draw in the Cinematic view with the same look as the editor
+view: the waves and ripples, refraction, depth colour, foam, caustics, the sky or HDRI reflection and <strong>Reflection:
+Planar</strong>. Every water setting in the Inspector drives the Cinematic view as it drives the editor view. With the camera
+under the surface, the view shows the water's fog, tint and caustics.</p>
+<p>The view adds its own bounced light and reflections around the water, so the picture is not pixel-identical to the
+editor view; the water matches about as closely as the rest of the scene does. Other differences:</p>
+<ul>
+<li>Under water neither view wobbles or distorts the picture; both draw the same fog, tint and caustics.</li>
+<li>Bubbles that rise under a water surface are drawn on top of it rather than bent by it.</li>
+<li>A selected object under the water is not shown un-bent (the editor view un-bends it under its outline).</li>
+<li>Sun glints on the waves glow (the view's bloom), so open sea reads a little brighter than in the editor view.</li>
+<li>In water-heavy scenes the Cinematic view may step its quality down on integrated GPUs.</li>
+</ul>
+<p>Physics, floating and flow run as before, whichever view you look through. Fluid tanks still draw as their stand-in.</p>
 <h2 id="what-it-does-not-show-yet">What it does not show yet</h2>
 <p>This is the first version. A few things are drawn as <strong>plain stand-ins</strong> while the view is on, and a note under the
 Preview pill names the ones in your scene:</p>
 <ul>
 <li><a href="../shader-graph/">shader graph</a> materials and hand-written shaders (they show their base colour),</li>
-<li><a href="../water/">water</a> surfaces and fluid tanks,</li>
+<li><a href="../simulation/#fluid-tank">fluid tanks</a> (water itself is drawn since 1.82, see <a href="#water">Water</a>),</li>
 <li>particle effects,</li>
 <li>painted terrain layers,</li>
 <li>jiggle (the object shows, without the wobble).</li>
@@ -7725,7 +7760,7 @@ steps down to Basic by itself, and High steps down in every scene. On a handheld
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-24
+    2026-11-26
   </span>
 
     

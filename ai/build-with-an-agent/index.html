@@ -7699,6 +7699,9 @@ before a join, scene tools answer <em>not connected — join first</em>. Then ca
   array and its layer by name. See <a href="../../arrange/">Arrays, Layers &amp; Tidy</a>.</li>
 </ul>
 </li>
+<li><strong>Tags</strong> (since 1.82): <code>update_objects</code> takes <code>tags: ["coin", "pickup"]</code> (it replaces the object's tags; <code>[]</code> clears
+  them). One flow then drives every object with a tag: an <code>objectselector</code> with <code>{pick: "tag", match: "coin"}</code>. See
+  <a href="../../object-flows/#one-flow-many-objects">One flow, many objects</a>.</li>
 <li><strong>Decals</strong> (since 1.75): <code>create_objects</code> with <code>kind: "decal"</code> puts an image on a surface. <code>on</code> is the object's uuid;
   <code>normal</code> (<code>[x, y, z]</code>) aims it at that object from that side, or <code>point</code> + <code>normal</code> place it at a spot on the surface
   (world). <code>image</code> is a Library hash or file name (none = a placeholder frame), <code>size</code> is metres (a number, or

@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Object Flows", "url": "https://docs.theprototype.app/object-flows/", "description": "Every object can now carry its own node graph, alongside the shared Scene flow. Object flows keep behavior with the thing it belongs to — a door knows how to open, a lamp knows how to flicker —…", "dateModified": "2026-11-10"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Object Flows", "url": "https://docs.theprototype.app/object-flows/", "description": "Every object can now carry its own node graph, alongside the shared Scene flow. Object flows keep behavior with the thing it belongs to — a door knows how to open, a lamp knows how to flicker —…", "dateModified": "2026-11-26"}</script>
 </head>
   
   
@@ -2181,6 +2181,15 @@
   <a href="#no-object-selector-needed" class="md-nav__link">
     <span class="md-ellipsis">
       No Object Selector needed
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-flow-many-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      One flow, many objects
     </span>
   </a>
   
@@ -7420,6 +7429,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#one-flow-many-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      One flow, many objects
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#public-sockets-flow-input-flow-output" class="md-nav__link">
     <span class="md-ellipsis">
       Public sockets: Flow Input / Flow Output
@@ -7481,6 +7499,29 @@
 <p>Select an object that has no flow yet — the editor shows <strong>"<name> has no flow yet"</name></strong> with a one-click <strong>Create flow</strong> button (adding a node from the palette creates it too). To remove one, open the object's flow and press the bin (<strong>Delete</strong>) at the right end of the breadcrumb bar; a <strong>Delete this flow?</strong> dialog says how many nodes will be removed for everyone. Deleting a flow is undoable — <kbd>Ctrl+Z</kbd> restores the whole graph.</p>
 <h2 id="no-object-selector-needed">No Object Selector needed</h2>
 <p>Inside an object flow, effect nodes (Spin, Bounce, Script, module nodes, Sound, physics params, On Click…) target <strong>the owner object implicitly</strong> — just drop a Spin node in a box's flow and the box spins. Wiring into an Object Selector still works and always wins, so an object's flow may also drive <em>other</em> objects.</p>
+<h2 id="one-flow-many-objects">One flow, many objects</h2>
+<p><em>New in 1.82.</em> One flow can drive a whole set of objects: every coin, every enemy, every lamp in a group.</p>
+<p><strong>Tag objects.</strong> Select one or more objects and add tags in <strong>Inspector ▸ Tags</strong>. With several objects selected, a tag
+shows how many of them carry it (<em>2/5</em>). Tags are saved with the scene, shared with everyone, and each change is one
+undo step.</p>
+<p><strong>Point an Object Selector at a set.</strong> The <a href="../nodes/objectselector/">Object Selector</a> card's first field picks what it
+selects: <strong>One object</strong> (the default, and what every older scene uses), <strong>By tag</strong>, <strong>By group</strong> or <strong>By name</strong>. The
+card shows how many objects it finds right now (<em>12 objects</em>, or <em>matches no objects</em>).</p>
+<ul>
+<li>An effect wired into a set selector acts on <strong>every</strong> object in the set.</li>
+<li>A trigger wired to one (On Click, Hover, Hit, Enter, Grab and the others) fires when <strong>any</strong> of them does.</li>
+<li>The new <strong>Fired Object</strong> node (Scene group) says which one: wire a trigger in, and it gives the object the trigger
+  fired for last. The selector's own object output gives the same for a set (or its first object).</li>
+<li>An empty set gets a <em>Matches no objects</em> note on the first wire into it, and the <a href="../debugger/">Debugger</a> shows what a
+  set holds and which object fired last.</li>
+</ul>
+<p><strong>Give this flow to the selection.</strong> Select the object with the flow and the objects that should get it, then the
+object menu ▸ <strong>Physics &amp; effects</strong> ▸ <strong>Give this flow to the selection</strong>. Each one gets its own copy, and inside the
+copy, references to the first object point at the new owner, so <em>click me, hide me</em> stays <em>click me, hide me</em>. An
+object that already has a flow asks first. After editing one copy, <strong>Update all copies from this one</strong> sends it to the
+rest. Each is one undo step.</p>
+<p>Everyone in the session should be on 1.82 or later: an older version ignores tags, so a selector by tag finds nothing
+on its screen.</p>
 <h2 id="public-sockets-flow-input-flow-output">Public sockets: Flow Input / Flow Output</h2>
 <p>An object flow can declare an interface, like a function signature:</p>
 <ul>
@@ -7531,7 +7572,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-10
+    2026-11-26
   </span>
 
     

@@ -48,6 +48,22 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.82 — curves, sound and many objects.**
+
+- **Curves on the Timeline**: a property track opens as a [curve](https://docs.theprototype.app/timeline.md#curves) under the track. Drag keys and
+  handles, type exact values, copy and paste keys, and pick a key mode or an ease (overshoot, anticipate, bounce and
+  more). **+ Track ▸ Animate a property** keys any property of the selected object.
+- **Sound in videos and moments**: [video exports](https://docs.theprototype.app/recording.md#sound) and [moments](https://docs.theprototype.app/share-a-moment.md) carry the
+  scene's own sound (music, sound effects, instruments), never voices or a microphone. [Trim, fade and
+  normalise a sound](https://docs.theprototype.app/audio.md#trim-fade-and-normalise) in its player window without changing the file.
+- **One flow, many objects**: [tag objects](https://docs.theprototype.app/object-flows.md#one-flow-many-objects) and point one Object Selector at
+  every object with a tag, in a group or matching a name. A new **Fired Object** node says which one was clicked, and
+  **Give this flow to the selection** copies a flow onto other objects.
+- **Look**: [water in the Cinematic view](https://docs.theprototype.app/cinematic-view.md#water), and a
+  [Contact shadows](https://docs.theprototype.app/camera.md#contact-shadows-this-device) switch for this device in the Preview menu.
+- **Faster start**: the editor loads about 265 KB less before it starts and the play page about 140 KB less: a few
+  tools now load the first time you use them ([details](https://docs.theprototype.app/performance.md#faster-start)).
+
 **1.81 — AI apps in your scene, and your room in VR.**
 
 - **Use theprototype from ChatGPT and other AI apps**: the same connector works in Claude, ChatGPT, Gemini CLI, VS Code
