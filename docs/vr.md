@@ -148,7 +148,7 @@ The names and icons match the desktop menus:
 | Sector | Does |
 |---|---|
 | **Objects** | opens the scene object list panel |
-| **Add ▸** | the viewport menu's Add: Cube, Wedge, Stairs, Sphere, Cylinder, Torus, **Terrain**, **Architecture ▸**, **Prefabs** and **Assets** (the [Asset Browser on your wrist](building-in-vr.md#the-asset-browser-on-your-wrist)) |
+| **Add ▸** | the viewport menu's Add: Cube, Wedge, Stairs, Sphere, Cylinder, Torus, **Terrain**, **Architecture ▸**, **Prefabs**, **Assets** (the [Asset Browser on your wrist](building-in-vr.md#the-asset-browser-on-your-wrist)) and, on a Quest in passthrough, **Scan my room** ([Scan my room](scan-my-room.md)) |
 | **Scene ▸** | **Environment ▸** (Studio, Daylight, Sunset, Night, Classic), **Colocate ▸** (see [Colocation](colocation.md)), **Grid**, **World 1:1** (undo a scaled or rotated world grab), **Dollhouse** ([below](#dollhouse-teleport)) |
 | **Tools ▸** | Select, Box select, Draw mode, **Measure** ([Building in VR](building-in-vr.md#measure)), Ping, Simulate physics, **Profile ▸**, **Play here** ([Play here](play-here.md)), **AI** ([below](#the-ai-assistant-in-vr)) |
 | **Redo** · **Undo** | step through history |
@@ -326,7 +326,7 @@ The AI Assistant panel in the headset.
 - Grip the panel and drag to move it (it remembers where you put it); ✕ closes it.
 
 There are **no AI settings in VR**: the provider and [voice typing](ai/assistant.md#voice-typing) are set up in desktop
-**Settings ▸ Tools & connections**. Until a provider is set up, the panel says so and the input row stays shut.
+**Settings ▸ AI**. Until a provider is set up, the panel says so and the input row stays shut.
 
 !!! note "Limits"
     - The panel shows the last 7 turns, two lines each; long answers are shortened — read them in full in the desktop

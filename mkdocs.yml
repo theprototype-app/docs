@@ -12,7 +12,7 @@ nav:
     - Themes & Appearance: appearance.md
     - Accessibility: accessibility.md
     - Settings: settings.md
-    - Tools & connections: tools-and-connections.md
+    - Settings ▸ AI: tools-and-connections.md
     - Privacy & Error Reports: privacy.md
     - Your Account & Data: account-and-data.md
     - Security & Self-hosting: security.md
@@ -282,6 +282,7 @@ nav:
     - VR Guide: vr.md
     - Building in VR: building-in-vr.md
     - Colocation (shared room): colocation.md
+    - Scan my room (Quest): scan-my-room.md
     - Play on a Table (AR, Android): ar-table.md
   - AI:
     - Assistant: ai/assistant.md
@@ -297,7 +298,9 @@ nav:
     - "Recipe: Agents + Blender": ai/agents-and-blender.md
     - Shapes and modelling with an agent: ai/agent-geometry.md
     - Worlds with an agent: ai/agent-world.md
+    - Use any AI: ai/use-any-ai.md
     - Use theprototype from claude.ai and voice: ai/claude-connector.md
+    - Your files, screen and scenes: ai/your-files-and-screen.md
     - Providers: ai/providers.md
     - Local & Small Models: ai/local-models.md
     - 3D Generation: ai/generation.md
