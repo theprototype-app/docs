@@ -37,12 +37,31 @@ most four a second per person; a viewer may ping too.
 positions take these as units: `"hip"`, `"0.5 reach"`, `"2 eye"`, `"room"`. *"As wide as my hands"* uses the hands'
 distance.
 
+## The camera you look through
+
+Since 1.81, when you look through a scene camera full-screen, *"where am I"* knows it. Your row in `where_are_users`
+then names the camera (`through`) and how you came to look through it:
+
+| kind | you are looking through |
+|---|---|
+| `preview` | a camera you pressed **Preview** on ([Camera objects](https://docs.theprototype.app/camera.md#camera-objects)) |
+| `play` | the game's camera while you play |
+| `sequence` | a shot of a running [sequence](https://docs.theprototype.app/timeline.md) |
+| `phone` | [Film with your phone](https://docs.theprototype.app/film.md), the phone as a virtual camera |
+| `recording` | a [video being recorded](https://docs.theprototype.app/recording.md) |
+
+Your position and facing are then that camera's, so *"put it in the middle of the shot"* lands where you see it. A
+screenshot of what you see (`view: "current"`) uses that camera and its framing, and says which camera it was. Back in
+your own view, everything is as before.
+
 ## In a headset
 
 - Nothing an agent makes can appear inside a person in VR: 0.45 m around the head and through the body. The call is
   refused and says why, so the agent places it in front of you instead.
 - What an agent makes fades in instead of popping.
 - Each thing the agent did shows as a small line under your view for a few seconds.
+- After [Scan my room](https://docs.theprototype.app/scan-my-room.md) on a Quest, your real walls, floor and furniture are boxes in the
+  **My room** group. Ask *"furnish my room"* or *"put a shelf on Wall 2"* and the agent builds around them.
 
 ## Cookbook
 

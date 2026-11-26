@@ -48,6 +48,22 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.81 — AI apps in your scene, and your room in VR.**
+
+- **Use theprototype from ChatGPT and other AI apps**: the same connector works in Claude, ChatGPT, Gemini CLI, VS Code
+  and Cursor. [Settings ▸ AI](https://docs.theprototype.app/tools-and-connections.md) now has two cards, one for AI apps that work in your scene and
+  one for the app's own assistant with your key, and [Use any AI](https://docs.theprototype.app/ai/use-any-ai.md) says which one you need. The chip
+  and every line name the app at work: *ChatGPT connected · this tab*.
+- **Ground, water and cameras**: an AI app can [read what is under a point](https://docs.theprototype.app/ai/agent-world.md#read-what-is-under-a-point)
+  (ground height, slope, water depth), [make things float or sink](https://docs.theprototype.app/ai/agent-world.md#make-things-float-or-sink)
+  and say where the waterline will sit, and it knows [the camera you look through](https://docs.theprototype.app/ai/agent-spatial.md#the-camera-you-look-through).
+  **Inspector ▸ Physics ▸ [Floats](https://docs.theprototype.app/physics.md#things-float)** reads in metres and has a new **Water drag** slider.
+- **Your files, your screen, your scenes**: in your own tab, an AI app or the in-app assistant can work with the text
+  files in your Explorer, open a panel, move your view or open code at a line (it asks first, and **Back** undoes it),
+  and open your other scenes, asking what to do with unsaved changes ([details](https://docs.theprototype.app/ai/your-files-and-screen.md)).
+- **[Scan my room](https://docs.theprototype.app/scan-my-room.md)** on Quest: your headset's room setup becomes named, see-through boxes at real size
+  under **My room**. Scan again and each wall keeps its name and your edits. No camera image is used or stored.
+
 **1.80 — bisect, smooth subdivide and path select.** [Edit Mesh](https://docs.theprototype.app/mesh-editing.md) gains three tools:
 [Bisect](https://docs.theprototype.app/mesh-editing.md#bisect) cuts a mesh with a flat plane you draw with two clicks and can clear one side and fill
 the opening; [Smooth subdivide](https://docs.theprototype.app/mesh-editing.md#smooth-subdivide) (tick **smooth**, or Shift+S) rounds a shape off as
@@ -311,7 +327,7 @@ Blender** downloads the model, and the file you export comes back with *Update "
 can watch the file and reload on each save. A 100×, Z-up or unapplied export gets a one-click fix. **Settings ▸ Tools &
 connections** replaces Settings ▸ AI: one page for chat and mesh providers, voice typing, agents and desktop tools, each with a
 status and a Test. Skies download the first time you pick one, so the app download is about 6 MB smaller. See
-[Edit in Blender](https://docs.theprototype.app/edit-in-blender.md) and [Tools & connections](https://docs.theprototype.app/tools-and-connections.md).
+[Edit in Blender](https://docs.theprototype.app/edit-in-blender.md) and [Settings ▸ AI](https://docs.theprototype.app/tools-and-connections.md).
 
 **1.52 — sessions in your Explorer.** Joining a session shows the host's files as *"<Host>'s session"* in your Explorer,
 read-only, above your Library: open them, copy them, and **Save on host** if you can edit. Nothing downloads until you

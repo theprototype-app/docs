@@ -57,6 +57,22 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.81 — AI apps in your scene, and your room in VR.**
+
+- **Use theprototype from ChatGPT and other AI apps**: the same connector works in Claude, ChatGPT, Gemini CLI, VS Code
+  and Cursor. [Settings ▸ AI](https://docs.theprototype.app/tools-and-connections.md) now has two cards, one for AI apps that work in your scene and
+  one for the app's own assistant with your key, and [Use any AI](https://docs.theprototype.app/ai/use-any-ai.md) says which one you need. The chip
+  and every line name the app at work: *ChatGPT connected · this tab*.
+- **Ground, water and cameras**: an AI app can [read what is under a point](https://docs.theprototype.app/ai/agent-world.md#read-what-is-under-a-point)
+  (ground height, slope, water depth), [make things float or sink](https://docs.theprototype.app/ai/agent-world.md#make-things-float-or-sink)
+  and say where the waterline will sit, and it knows [the camera you look through](https://docs.theprototype.app/ai/agent-spatial.md#the-camera-you-look-through).
+  **Inspector ▸ Physics ▸ [Floats](https://docs.theprototype.app/physics.md#things-float)** reads in metres and has a new **Water drag** slider.
+- **Your files, your screen, your scenes**: in your own tab, an AI app or the in-app assistant can work with the text
+  files in your Explorer, open a panel, move your view or open code at a line (it asks first, and **Back** undoes it),
+  and open your other scenes, asking what to do with unsaved changes ([details](https://docs.theprototype.app/ai/your-files-and-screen.md)).
+- **[Scan my room](https://docs.theprototype.app/scan-my-room.md)** on Quest: your headset's room setup becomes named, see-through boxes at real size
+  under **My room**. Scan again and each wall keeps its name and your edits. No camera image is used or stored.
+
 **1.80 — bisect, smooth subdivide and path select.** [Edit Mesh](https://docs.theprototype.app/mesh-editing.md) gains three tools:
 [Bisect](https://docs.theprototype.app/mesh-editing.md#bisect) cuts a mesh with a flat plane you draw with two clicks and can clear one side and fill
 the opening; [Smooth subdivide](https://docs.theprototype.app/mesh-editing.md#smooth-subdivide) (tick **smooth**, or Shift+S) rounds a shape off as
@@ -320,7 +336,7 @@ Blender** downloads the model, and the file you export comes back with *Update "
 can watch the file and reload on each save. A 100×, Z-up or unapplied export gets a one-click fix. **Settings ▸ Tools &
 connections** replaces Settings ▸ AI: one page for chat and mesh providers, voice typing, agents and desktop tools, each with a
 status and a Test. Skies download the first time you pick one, so the app download is about 6 MB smaller. See
-[Edit in Blender](https://docs.theprototype.app/edit-in-blender.md) and [Tools & connections](https://docs.theprototype.app/tools-and-connections.md).
+[Edit in Blender](https://docs.theprototype.app/edit-in-blender.md) and [Settings ▸ AI](https://docs.theprototype.app/tools-and-connections.md).
 
 **1.52 — sessions in your Explorer.** Joining a session shows the host's files as *"<Host>'s session"* in your Explorer,
 read-only, above your Library: open them, copy them, and **Save on host** if you can edit. Nothing downloads until you
@@ -3361,7 +3377,7 @@ Since 1.26 Settings has a new layout. No setting was lost or changed meaning: ev
     |---|---|
     | **General** | Interface, Accessibility, Controls, Input, Touch controls, Shortcuts |
     | **Workspace** | Scene, Explorer, Node types, Export |
-    | **Devices & services** | VR, Tools & connections, Connection, Privacy |
+    | **Devices & services** | VR, AI, Connection, Privacy |
     | **Account** | Account (on theprototype.app) |
 
     A dot on **About & what's new** means there is an update you have not read. <kbd>↑</kbd> / <kbd>↓</kbd> walk the menu.
@@ -3452,7 +3468,7 @@ greyed out with a hint to sign in.
 Changes save as you make them — there is no Save button; **Done** closes the window.
 
 - **Reset ‹Category› to defaults** — bottom left on a computer, at the end of the page on a phone — puts every setting
-  on that page back, after asking. There is no undo for it. It never touches your work: the Tools & connections page keeps your saved
+  on that page back, after asking. There is no undo for it. It never touches your work: the AI page keeps your saved
   providers and keys, the Interface page keeps the themes you loaded.
 - **About ▸ Danger zone** holds the two big ones, each asking first:
     - **Clear saved session** — the autosaved copy of your work (see [Autosave](https://docs.theprototype.app/saving.md#autosave)).
@@ -3529,7 +3545,8 @@ cache uses the older Cache Storage, and where neither exists everything download
 | Customize buttons | new in 1.64 | **Interface ▸ Customize buttons** — every hideable chrome button as a switch; see [Hiding buttons you do not use](https://docs.theprototype.app/interface.md#hiding-buttons-you-do-not-use) |
 | Product updates by email | new in 1.64 (was a box on the sign-in sheet) | **Account ▸ Email ▸ Product updates**, on theprototype.app; see [above](#account) |
 | Sign-in methods · Devices | the profile menu (until 1.64) | **Account ▸ Sign-in methods** and **Account ▸ Devices**, on theprototype.app; see [above](#account) |
-| Connected apps | its own page, **Settings ▸ Connected apps** (until 1.64) | **Account ▸ Connected apps**; see [above](#account) |
+| Connected apps | its own page, **Settings ▸ Connected apps** (until 1.64); then **Account ▸ Connected apps** | **AI ▸ AI apps that work in your scene ▸ Connected apps**; Account keeps a link row. See [Use any AI](https://docs.theprototype.app/ai/use-any-ai.md#revoke-an-app) |
+| Tools & connections | the page's earlier name | **AI**, in two cards; see [Settings ▸ AI](https://docs.theprototype.app/tools-and-connections.md) |
 | Show my status | new in 1.65 | **Interface ▸ Show my status** — off by default, this device only: Available, Busy or Away beside your name in People; see [Show my status](https://docs.theprototype.app/people.md#show-my-status) |
 | Hide my IP | new in 1.76 | **Privacy ▸ Hide my IP** — off by default, this device only; see [Hide my IP](https://docs.theprototype.app/connection.md#hide-my-ip) |
 | Limit floods from peers | new in 1.76 | **Connection ▸ Limit floods from peers** — **Off** / **Normal** / **Strict**, this device only; see [Limit floods from peers](https://docs.theprototype.app/connection.md#limit-floods-from-peers) |
@@ -3546,13 +3563,22 @@ cache uses the older Cache Storage, and where neither exists everything download
 
 Source: https://docs.theprototype.app/tools-and-connections/ (Markdown: https://docs.theprototype.app/tools-and-connections.md)
 
-# Tools & connections
+# Settings ▸ AI
 
-**Settings ▸ Tools & connections** is one page for everything outside the app: the AI models you use, the services that
-generate 3D models, the agents in your session and the desktop tools you edit in. Set up only the ones you use. It used
-to be Settings ▸ AI, and your saved providers and keys carried over as they were.
+**Settings ▸ AI** holds every AI in the app, in two cards, with the desktop tools you edit in under them.
+Set up only the ones you use. Not sure which card you need? See [Use any AI](https://docs.theprototype.app/ai/use-any-ai.md).
 
-![Settings ▸ Tools & connections, starting with chat providers, chat pictures and mesh providers](https://docs.theprototype.app/img/tools-and-connections/tools-connections.webp)
+- **AI inside the app (your key)**: the AI models the app's own assistant uses (chat providers, chat
+  pictures, voice typing) and the services that generate 3D models (mesh providers), with your key.
+- **AI apps that work in your scene**: the agents in your session (Coding agents), **Connect Claude**
+  for this tab, and **Connected apps** — every AI app you allowed (Claude, ChatGPT…), with **Revoke**.
+- **Other tools**: Blender and other desktop 3D tools.
+
+This page used to be called **Tools & connections**, and Connected apps used to be under
+**Settings ▸ Account**. Your saved providers and keys carried over as they were, and old
+links to either place open the right card. Account keeps a **Connected apps** row that leads here.
+
+![Settings ▸ AI, starting with chat providers, chat pictures and mesh providers](https://docs.theprototype.app/img/tools-and-connections/tools-connections.webp)
 
 ## A row
 
@@ -3579,7 +3605,7 @@ Each tool is one row:
 ## When a tool is missing
 
 Buttons for a feature whose tool is not set up stay where they are. Press one and it says what is missing, then opens the
-right row: *"Generate 3D model needs a Mesh provider: set one up in Settings ▸ Tools & connections."* The quick prompt bar,
+right row: *"Generate 3D model needs a Mesh provider: set one up in Settings ▸ AI."* The quick prompt bar,
 the mic and *Edit in Blender* work the same way.
 
 The AI button is different: it always opens the Chat window on its **Assistant** tab, which offers Connect Claude or your own provider.
@@ -10284,9 +10310,19 @@ Select the object and open **Properties ▸ Physics** (Body: *Dynamic*) ▸ **Fl
 | **From mass ÷ volume** | from the object | works it out from the object's mass and size |
 | **Off** | — | ignores water |
 
-**Density** (kg/m³; water is 1000) and **Buoyancy ×** fine-tune it, and the hint under the sliders says how deep it will
-sit — *Floats about 60% under the surface*. How deep something floats depends on its density, not its mass, so a light and
-a heavy crate of the same wood float equally.
+**Density** (kg/m³; water is 1000) and **Buoyancy ×** fine-tune it. **Water drag ×** (since 1.81) sets how hard the
+water slows it: lower drifts on, higher holds still. The hint under the sliders says how deep it will sit, in metres
+since 1.81 — *Floats about 60% under: 0.6 m of its 1 m height (600 kg/m³; water is 1000).* How deep something floats
+depends on its density, not its mass, so a light and a heavy crate of the same wood float equally. **From mass ÷
+volume** is the exception: there the mass sets the density.
+
+!!! note "A cube can tip onto an edge"
+    A cube between about 21 % and 79 % of water's density is not stable lying flat: it tips onto an edge and floats
+    that way, as a real one does. The hint then adds *At this density it tips over and floats on an edge.* A lighter
+    or heavier cube, or a flatter box, floats flat.
+
+An [AI app or agent](https://docs.theprototype.app/ai/agent-world.md#make-things-float-or-sink) sets the same choices with `set_physics`
+and is told where the waterline will sit.
 
 The peer running the simulation computes the floating, and everyone sees the same motion; each player draws the ripples
 for themselves. Water volumes are in the *Water* [collision group](https://docs.theprototype.app/colliders.md#collision-groups), which is why things
@@ -25291,7 +25327,7 @@ The names and icons match the desktop menus:
 | Sector | Does |
 |---|---|
 | **Objects** | opens the scene object list panel |
-| **Add ▸** | the viewport menu's Add: Cube, Wedge, Stairs, Sphere, Cylinder, Torus, **Terrain**, **Architecture ▸**, **Prefabs** and **Assets** (the [Asset Browser on your wrist](https://docs.theprototype.app/building-in-vr.md#the-asset-browser-on-your-wrist)) |
+| **Add ▸** | the viewport menu's Add: Cube, Wedge, Stairs, Sphere, Cylinder, Torus, **Terrain**, **Architecture ▸**, **Prefabs**, **Assets** (the [Asset Browser on your wrist](https://docs.theprototype.app/building-in-vr.md#the-asset-browser-on-your-wrist)) and, on a Quest in passthrough, **Scan my room** ([Scan my room](https://docs.theprototype.app/scan-my-room.md)) |
 | **Scene ▸** | **Environment ▸** (Studio, Daylight, Sunset, Night, Classic), **Colocate ▸** (see [Colocation](https://docs.theprototype.app/colocation.md)), **Grid**, **World 1:1** (undo a scaled or rotated world grab), **Dollhouse** ([below](#dollhouse-teleport)) |
 | **Tools ▸** | Select, Box select, Draw mode, **Measure** ([Building in VR](https://docs.theprototype.app/building-in-vr.md#measure)), Ping, Simulate physics, **Profile ▸**, **Play here** ([Play here](https://docs.theprototype.app/play-here.md)), **AI** ([below](#the-ai-assistant-in-vr)) |
 | **Redo** · **Undo** | step through history |
@@ -25457,7 +25493,7 @@ doing (*Creating 3 object(s)*).
 - Grip the panel and drag to move it (it remembers where you put it); ✕ closes it.
 
 There are **no AI settings in VR**: the provider and [voice typing](https://docs.theprototype.app/ai/assistant.md#voice-typing) are set up in desktop
-**Settings ▸ Tools & connections**. Until a provider is set up, the panel says so and the input row stays shut.
+**Settings ▸ AI**. Until a provider is set up, the panel says so and the input row stays shut.
 
 !!! note "Limits"
     - The panel shows the last 7 turns, two lines each; long answers are shortened — read them in full in the desktop
@@ -25871,6 +25907,86 @@ they hide each other's, and a remote peer sees it where the phone is.
 
 ---
 
+Source: https://docs.theprototype.app/scan-my-room/ (Markdown: https://docs.theprototype.app/scan-my-room.md)
+
+# Scan my room (Quest)
+
+On a Quest, **Scan my room** turns your headset's room setup into the scene: your walls, floor, ceiling and furniture
+become named, see-through boxes at their real size, in a group called **My room**. Build on your real table, hang a
+picture on your real wall, or ask an AI app to furnish the room around them. New in 1.81.
+
+No camera image is used or stored. The room comes only from the shapes you traced in the headset's room setup.
+
+## Start it
+
+- **From the Play button:** right-click or long-press **Play** and choose **Scan my room (passthrough)**. The headset
+  goes into passthrough and the scan starts by itself.
+- **In the headset**, already in passthrough: radial menu ▸ **Add ▸ Scan my room**.
+
+If you are in VR without passthrough, the scan tells you so: leave VR, then use **Scan my room (passthrough)** from
+the Play button menu.
+
+A few seconds later a line confirms what it made, for example *My room: 4 walls, floor, ceiling, shelf, 2 tables. From
+your headset's room setup; no camera image used or stored.*
+
+## What you get
+
+- One box per piece, named after what the room setup calls it: **Floor**, **Ceiling**, **Wall 1** to **Wall 4**,
+  **Table**, **Table 2**, **Couch**, **Shelf** and so on. Doors, windows, screens and wall art are thin boxes on their
+  wall.
+- Each kind has its own plain colour, and every box is see-through, so you can check the fit against the real room in
+  passthrough.
+- They are ordinary objects: everyone in the session sees them, they save with the scene, and you can move, recolour
+  or delete them. The whole scan is **one undo step**.
+
+!!! tip "Furnish it with an AI app"
+    With the room in the scene, an [AI app](https://docs.theprototype.app/ai/use-any-ai.md) or the in-app [Assistant](https://docs.theprototype.app/ai/assistant.md) can build
+    around the **My room** group: *"furnish my room"*, *"put a lamp on the table"*, *"a shelf on Wall 2"*.
+
+## How it works and what it reads
+
+Your Quest keeps a room setup (Space Setup): the outline of your walls and floor, and boxes for your furniture, that you
+traced once. Scan my room asks the browser for those shapes, in a passthrough session, and builds a box for each one.
+The big scanned mesh of the whole room is left out.
+
+It reads no camera image, and none is stored or sent. What is stored is what you see: the boxes, saved in your scene
+like any other objects.
+
+## Run it again
+
+Scan again, in the same session or a new one, and it **updates the same room** instead of adding a second one. The line
+then reads *My room (updated): …*
+
+- **Each wall keeps its name.** A new session can face another way, so walls are matched by their shape: a wall's
+  length (within 3 cm) and its neighbours. So **Wall 2** stays the same real wall, with the colour or material you gave
+  it, and only its size and place are brought up to date.
+- **A new wall** gets the next free number.
+- **A wall missing from this scan is never deleted.** It keeps its name and the line tells you, for example
+  *Wall 3 not found in this scan.* If you really removed that wall from your room setup, delete the box yourself.
+- **Furniture** that is no longer in your room setup is removed; new furniture is added.
+- **Things you added yourself** to the My room group, by hand or with an AI app, are left alone. So is a piece you
+  renamed: **renaming a wall stops it being matched**, and the next scan adds that real wall again as a new Wall with
+  the next number.
+
+## No room setup yet
+
+If your headset has no room setup, nothing is built. The first time, the page opens the headset's Space Setup for you:
+trace your walls and furniture, then choose **Scan my room** again. If it cannot open it, the line tells you where it
+is: on the Quest, **Settings ▸ Physical space ▸ Space setup**.
+
+## Limits
+
+- **The first time, Quest Browser asks to allow the site.** Press **Allow** and the scan starts.
+- It is offered only in a headset browser that can do passthrough. Phones do not show it; to put a scene on a real
+  table with a phone, see [Play on a Table](https://docs.theprototype.app/ar-table.md).
+- A **viewer** cannot scan: ask the host for editor access first.
+- The boxes are as exact as your room setup. If a wall looks off, fix it in the headset's Space Setup and scan again.
+
+See also: [VR Guide](https://docs.theprototype.app/vr.md) · [Building in VR](https://docs.theprototype.app/building-in-vr.md) · [Colocation](https://docs.theprototype.app/colocation.md)
+
+
+---
+
 Source: https://docs.theprototype.app/ar-table/ (Markdown: https://docs.theprototype.app/ar-table.md)
 
 # Play on a Table (AR)
@@ -25932,7 +26048,7 @@ Everything it does is a normal edit: it **replicates live to everyone in the ses
 !!! note "You bring the model"
     The assistant talks to an AI provider you configure (Grok, Gemini, or any
     OpenAI-compatible / self-hosted endpoint). Nothing is sent anywhere until you add a
-    provider and a key in **Settings ▸ Tools & connections**. See [AI Providers](https://docs.theprototype.app/ai/providers.md).
+    provider and a key in **Settings ▸ AI**. See [AI Providers](https://docs.theprototype.app/ai/providers.md).
 
 !!! tip "Pictures"
     Attach a picture with **+** and ask about it, or ask the assistant to make it a 3D model. Which models
@@ -25940,7 +26056,7 @@ Everything it does is a normal edit: it **replicates live to everyone in the ses
 
 ## Turning it on
 
-1. Open **Settings ▸ Tools & connections** and press **Add chat provider** (Grok, Gemini or a custom endpoint).
+1. Open **Settings ▸ AI** and press **Add chat provider** (Grok, Gemini or a custom endpoint).
 2. Switch its row on with **Enable**, and press **Test** to check it answers.
 
 Once enabled, there are a few ways to reach it.
@@ -25977,7 +26093,7 @@ and talk — see [The AI assistant in VR](https://docs.theprototype.app/vr.md#th
 
 ## Voice typing
 
-Talk to the assistant instead of typing. Set up a speech-to-text provider in **Settings ▸ Tools & connections ▸ Voice typing**
+Talk to the assistant instead of typing. Set up a speech-to-text provider in **Settings ▸ AI ▸ Voice typing**
 (search *voice*, *whisper* or *dictation*):
 
 | Setting | Default | Notes |
@@ -26017,6 +26133,9 @@ The assistant works with the building blocks the app already has:
   seats objects on it.
 - **Modify** existing objects — move, recolor, rescale, change material, rename, hide.
 - **Group** objects together, or clear the scene when you want to start over.
+- **Your files, screen and scenes** (*1.81*) — read and write the text files in your Explorer, open a panel, move
+  your view or open code at a line (it asks first), and open another scene. See
+  [Your files, your screen and your scenes](https://docs.theprototype.app/ai/your-files-and-screen.md).
 
 Good prompts are concrete: *"a small campfire — a ring of 6 grey rocks around an orange
 cone flame"* works better than *"make something cozy"*.
@@ -26045,7 +26164,7 @@ The assistant reads your graphs as the same [compact text](https://docs.theproto
 which is several times shorter than JSON, and can add nodes by writing that text.
 
 **Physics** (bodies, welds/hinges with motors, and starting the simulation) is a
-per-provider opt-in — the **Physics tools (advanced)** checkbox in the provider's form (**Settings ▸ Tools & connections**, **Set up**).
+per-provider opt-in — the **Physics tools (advanced)** checkbox in the provider's form (**Settings ▸ AI**, **Set up**).
 It's off by default because multi-step physics is hard for small local models; see
 [Local & Small Models](https://docs.theprototype.app/ai/local-models.md) for what the checkbox gates, model-size guidance
 and recommended vLLM flags. With it enabled, the assistant may **start the simulation
@@ -26077,7 +26196,7 @@ reset it first, then one undo reverts the whole prompt.
 | Symptom | Fix |
 |---|---|
 | <kbd>`</kbd> shows a toast about Settings | Enable the assistant and add a provider first. |
-| "Invalid API key" | Re-check the key in **Settings ▸ Tools & connections**, **Set up**. |
+| "Invalid API key" | Re-check the key in **Settings ▸ AI**, **Set up**. |
 | "Network or CORS error" | A self-hosted endpoint must allow browser origins — see [Providers](https://docs.theprototype.app/ai/providers.md). |
 | Objects look wrong / oversized | Ask a follow-up ("half the size", "move it to the origin") — it edits in place. |
 
@@ -26122,7 +26241,7 @@ replicated to everyone and undoable, exactly like a person's edits.
 
 What an agent never does: move your camera, read anything outside the scene, or use API keys of
 its own inside the app. If it generates a 3D model (*generate_mesh*), that runs on **your** mesh
-provider (Settings ▸ Tools & connections ▸ Mesh providers) — you see who asked on the progress card and can
+provider (Settings ▸ AI ▸ Mesh providers) — you see who asked on the progress card and can
 cancel it there.
 
 ## For the agent (setup)
@@ -26217,6 +26336,12 @@ before a join, scene tools answer *not connected — join first*. Then call `con
   (world). `image` is a Library hash or file name (none = a placeholder frame), `size` is metres (a number, or
   `[width, height]`), plus `depth` (default 0.25 m), `opacity` (0-1) and `tint` (`#rrggbb`). Not on skinned characters
   or scattered copies. See [Decals](https://docs.theprototype.app/decals.md).
+- **Ground, water and floating** (since 1.81):
+    - `probe` reads the ground height, slope and surface and any water's surface and depth under up to 64 points, or
+      along a ray. It only reads, so a viewer's agent may use it too. See
+      [Read what is under a point](https://docs.theprototype.app/ai/agent-world.md#read-what-is-under-a-point).
+    - `set_physics` takes `float`, `density`, `buoyancy` and `waterDrag`, and answers where the waterline will sit. See
+      [Make things float or sink](https://docs.theprototype.app/ai/agent-world.md#make-things-float-or-sink).
 - Never fight a person: a locked object is skipped — the reply names the object and who is editing it — and the agent
   waits with `wait_for_edit`.
 
@@ -27028,12 +27153,31 @@ most four a second per person; a viewer may ping too.
 positions take these as units: `"hip"`, `"0.5 reach"`, `"2 eye"`, `"room"`. *"As wide as my hands"* uses the hands'
 distance.
 
+## The camera you look through
+
+Since 1.81, when you look through a scene camera full-screen, *"where am I"* knows it. Your row in `where_are_users`
+then names the camera (`through`) and how you came to look through it:
+
+| kind | you are looking through |
+|---|---|
+| `preview` | a camera you pressed **Preview** on ([Camera objects](https://docs.theprototype.app/camera.md#camera-objects)) |
+| `play` | the game's camera while you play |
+| `sequence` | a shot of a running [sequence](https://docs.theprototype.app/timeline.md) |
+| `phone` | [Film with your phone](https://docs.theprototype.app/film.md), the phone as a virtual camera |
+| `recording` | a [video being recorded](https://docs.theprototype.app/recording.md) |
+
+Your position and facing are then that camera's, so *"put it in the middle of the shot"* lands where you see it. A
+screenshot of what you see (`view: "current"`) uses that camera and its framing, and says which camera it was. Back in
+your own view, everything is as before.
+
 ## In a headset
 
 - Nothing an agent makes can appear inside a person in VR: 0.45 m around the head and through the body. The call is
   refused and says why, so the agent places it in front of you instead.
 - What an agent makes fades in instead of popping.
 - Each thing the agent did shows as a small line under your view for a few seconds.
+- After [Scan my room](https://docs.theprototype.app/scan-my-room.md) on a Quest, your real walls, floor and furniture are boxes in the
+  **My room** group. Ask *"furnish my room"* or *"put a shelf on Wall 2"* and the agent builds around them.
 
 ## Cookbook
 
@@ -27101,7 +27245,7 @@ picture, drop files on the window, or drag a picture from the Explorer onto it. 
 - The agent sees the picture, and its bridge also saves it to a private temporary file (removed when the bridge exits)
   whose path comes with your message — for a skill such as [img2threejs](https://docs.theprototype.app/ai/img2threejs.md) that wants a file.
 - **Keep in Explorer** (the bookmark on a picture) turns it into an image in **Library ▸ References**, shared with the
-  session and listed under **Scene ▸ references**, so it saves with the scene. *Settings ▸ Tools & connections ▸ Chat pictures ▸ Keep
+  session and listed under **Scene ▸ references**, so it saves with the scene. *Settings ▸ AI ▸ Chat pictures ▸ Keep
   sent pictures in Explorer* keeps every picture you send (off by default).
 - Editors and admins attach pictures; viewers see them.
 
@@ -27253,7 +27397,7 @@ You need Blender on the same computer as Claude Code, with the blender-mcp add-o
     claude mcp add blender -- uvx blender-mcp
     ```
 
-3. In theprototype: **Settings ▸ Tools & connections ▸ Agents ▸ Coding agents ▸ Set up**, or Connect ▸ Invite ▸ AI agent. Create an
+3. In theprototype: **Settings ▸ AI ▸ Coding agents ▸ Set up**, or Connect ▸ Invite ▸ AI agent. Create an
    invite with **Edit** and paste the MCP command it gives you:
 
     ```bash
@@ -27656,7 +27800,7 @@ step (Ctrl+Z, **Undo** on the call's line in **Agent activity**, or *"undo that"
 that change things; it can still search for assets.
 
 !!! note "New in 1.60"
-    Everything on this page is new in 1.60.
+    Most of this page is new in 1.60. Floating things and `probe` are new in 1.81.
 
 !!! tip "Try it"
     **Templates ▸ Game plot** opens an empty plot (the ground, a start pad, a finish arch, a fire pit and four gems).
@@ -27803,6 +27947,46 @@ a `preset` is given.
 
 New water is a static sensor: in Play, things fall in and float. It casts no shadow.
 
+### Make things float or sink
+
+*"Make the crates float"*, *"this barrel should sink"*. Since 1.81 `set_physics` takes the same choices as
+**Inspector ▸ Physics ▸ Floats** ([Things float](https://docs.theprototype.app/physics.md#things-float)), and any of them makes the object dynamic:
+
+| field | what it does |
+|---|---|
+| `float` | `auto` (half under), `foam`, `cork`, `wood`, `ice`, `rubber`, `stone`, `metal`, `sink`, `mass` or `off` (ignores water) |
+| `density` | kg/m³, 10 to 20000, instead of `float`. Water is 1000: below floats, above sinks |
+| `float: "mass"` | the density is the object's mass ÷ its volume, so a heavier crate of the same size sits lower, and past 1000 kg per m³ it sinks |
+| `buoyancy` | how strong the lift is, 0 to 10 (1 = as the density says, 2 = rides higher) |
+| `waterDrag` | how hard the water slows it, 0 to 10 (1 = the water's own drag, 0.3 drifts, 3 holds still) |
+
+How deep something floats comes from its density, not its mass. The answer says where the waterline will sit
+(`water`): the density, the share under the surface, the draft in metres, and whether it sinks. With water under the
+object it also names the water, its surface height and `restingBottomY`, the height its bottom will rest at. Put a
+floating thing there and it does not drop into the water.
+
+!!! note "A cube can tip onto an edge"
+    A cube between about 21 % and 79 % of water's density is not stable lying flat. It tips onto an edge, as a real
+    one does, so its lowest corner sits deeper than the draft says. The answer then says `upright: false` with a
+    note. Lighter or heavier than that, or a flatter box, floats flat.
+
+## Read what is under a point
+
+Since 1.81, `probe` reads what is straight under a point and changes nothing, so a viewer's agent may use it too.
+Use it before putting things "on the ground", "on the beach" or "on the water", or along a slope.
+
+- `at: [x, z]` reads one point. `points: [[x, z], …]` reads up to **64** at once (a row of fence posts, a path), in
+  the same order.
+- For each point it gives the **height** of the ground (a terrain, a floor, a table top or the ground plane), which way
+  the surface faces (its slope), what kind of surface it is and which object. Stand a thing's base at that height.
+- With water there it also gives the water's still **surface** and how **deep** it is. Put a floating thing at the
+  surface. Over open sea with no floor, it says so: something that sinks there falls out of the world.
+- `ray: {from, dir, max}` gives the first thing a ray meets instead: what is in front of a door, what is under a lamp.
+- Water and trigger volumes are looked through, so the answer is the ground. `include: "all"` counts them too and
+  lists every surface at each point, top first.
+
+`probe` answers *what is under this point*; `list_scene` `near` answers *which objects are around here*.
+
 ## Effects and sound
 
 ### create_particles: fire, smoke, sparkles, fireflies
@@ -27896,11 +28080,169 @@ See [Materials and looks](https://docs.theprototype.app/ai/agent-look.md).
 
 ## On claude.ai
 
-On claude.ai these tools are reached through the connector's [tool families](https://docs.theprototype.app/ai/claude-connector.md#tool-families):
+In claude.ai and the other AI apps these tools are reached through the connector's
+[tool families](https://docs.theprototype.app/ai/claude-connector.md#tool-families):
 
 - `assets` has `search`, `place`, `prefab` and `image`.
 - `effects` has `terrain`, `scatter`, `water`, `particles`, `sound` and `music`.
 - `set_look` `material` takes `pattern`.
+- `probe` and `set_physics` are tools of their own.
+
+
+---
+
+Source: https://docs.theprototype.app/ai/use-any-ai/ (Markdown: https://docs.theprototype.app/ai/use-any-ai.md)
+
+# Use any AI
+
+theprototype works with AI in two different ways, and both live in one place: **Settings ▸ AI**.
+This page tells you which one you need, then how to set each one up.
+
+## Which one do I need?
+
+| I want… | You need | Where |
+|---|---|---|
+| an AI app I already use (Claude, ChatGPT, Gemini CLI, VS Code, Cursor) to **build in my scene** | the **connector**: no key, you sign in with your theprototype account | **Settings ▸ AI ▸ AI apps that work in your scene** |
+| the app's **own assistant** (the AI window, the quick prompt bar, voice typing, Generate 3D model) to use **my key** | a **provider**: your API key for Grok, Gemini, an OpenAI-compatible server, Meshy or ComfyUI | **Settings ▸ AI ▸ AI inside the app (your key)** |
+| an agent in **my session** from the open-source app or Claude Code | the **agent bridge** (an invite link) | **Settings ▸ AI ▸ Coding agents**, see [Build with an agent](https://docs.theprototype.app/ai/build-with-an-agent.md) |
+
+You can use both at once: the connector does not need a key, and a key does not need the connector.
+
+## AI apps that work in your scene (the connector)
+
+One server for every app: **`https://theprototype.app/mcp`**. The app signs in to your theprototype
+account, and its tools run **in your own open tab, with your access**. Everything it does shows up
+for everyone in your session and can be undone, like your own edits.
+
+What every app needs:
+
+- a theprototype account, signed in on theprototype.app;
+- a theprototype tab that **stays open and in front** while the app works — the tools run there;
+- **Connect Claude** pressed in that tab once (in the AI window, or **Settings ▸ AI ▸ AI apps that
+  work in your scene**). The button is called Connect Claude, and it connects every app you allowed:
+  the chip then names the app that is working, for example **ChatGPT connected · this tab**.
+
+When an app signs in, theprototype's approval page names **where it returns**. A badge (Claude,
+ChatGPT) appears only for that app's own exact address. Any other app shows the name it gave itself
+with *"theprototype has not checked it"*, and an app on your computer (Claude Code, Gemini CLI) gets a
+warning to allow it only if you started it yourself. Untick **Allow changes** for a look-only connection.
+
+### Claude (claude.ai, the desktop and phone apps, voice)
+
+The full guide is [Use theprototype from claude.ai and voice](https://docs.theprototype.app/ai/claude-connector.md). In short: press
+**Add to Claude** in the AI window, or in claude.ai open **Settings ▸ Connectors ▸ Add custom
+connector** and enter `https://theprototype.app/mcp`; approve it; switch it on for your chat.
+
+### ChatGPT (developer mode)
+
+1. In ChatGPT open **Settings ▸ Apps** (called Connectors on some plans) **▸ Advanced settings** and
+   turn on **Developer mode**. ChatGPT warns that custom apps are not checked by OpenAI.
+2. Press **Create**, name it **theprototype**, enter `https://theprototype.app/mcp`, choose
+   **OAuth**, tick the trust box and press **Create**.
+3. ChatGPT sends you to theprototype's approval page, which shows the **ChatGPT** badge. Press **Allow**.
+4. In a chat, add theprototype from the **+** menu (Developer mode), then ask: *"What can you do here?"*
+
+Which ChatGPT plans may use write tools in developer mode changes over time; with a plan that only
+allows reading, ChatGPT can look at your scene and take screenshots but not build.
+
+### Gemini CLI
+
+Add the server to `~/.gemini/settings.json`:
+
+```json
+{
+  "mcpServers": {
+    "theprototype": { "httpUrl": "https://theprototype.app/mcp" }
+  }
+}
+```
+
+Start `gemini`, run `/mcp auth theprototype`, and approve in the browser page that opens (it is an
+app on your computer, so the page warns you; allow it if you just started it). `/mcp` lists the tools.
+
+### VS Code (Copilot agent mode)
+
+Run **MCP: Add Server** from the Command Palette, pick **HTTP**, enter `https://theprototype.app/mcp`
+and the name **theprototype**. Or add it to `.vscode/mcp.json`:
+
+```json
+{
+  "servers": {
+    "theprototype": { "type": "http", "url": "https://theprototype.app/mcp" }
+  }
+}
+```
+
+VS Code opens the approval page when the server first starts. Use the tools from the Chat view in
+**Agent** mode.
+
+### Cursor
+
+Add it to `~/.cursor/mcp.json` (or **Settings ▸ MCP ▸ Add new MCP server**):
+
+```json
+{
+  "mcpServers": {
+    "theprototype": { "url": "https://theprototype.app/mcp" }
+  }
+}
+```
+
+Cursor opens the approval page the first time you use it. **Tool limit:** Cursor has limited the
+tools across **all** your servers to about 40. theprototype lists 35; with several other servers
+switched on, turn some of their tools off so theprototype's fit.
+
+### LM Studio, Open WebUI and other local apps
+
+These need an app version that can add a **remote** MCP server with **OAuth sign-in**. If yours only
+runs local (stdio) servers or takes an API key, it cannot use the connector yet; use a
+[provider](https://docs.theprototype.app/ai/providers.md) for the app's own assistant instead.
+
+### What works where
+
+| App | Add the server | Sign in | Build (edit tools) | Screenshots come through | Follows theprototype's instructions | Checked |
+|---|---|---|---|---|---|---|
+| Claude (claude.ai, apps, voice) | Settings ▸ Connectors | yes | yes | as images | yes | 2026-11-01, in the directory |
+| ChatGPT (developer mode) | Settings ▸ Apps ▸ Developer mode | OAuth | per plan | as images | not yet checked | steps from OpenAI's docs, 2026-11-23 |
+| Gemini CLI | `settings.json` | `/mcp auth` | yes | not yet checked; `screenshot` also returns a `frame` text | not yet checked | steps from the Gemini CLI docs, 2026-11-23 |
+| VS Code (Copilot agent) | `mcp.json` | on start | yes | not yet checked | not yet checked | steps from the VS Code docs, 2026-11-23 |
+| Cursor | `mcp.json` | on first use | yes | not yet checked | not yet checked | steps from the Cursor docs, 2026-11-23; ~40-tool limit |
+| LM Studio / Open WebUI | — | — | — | — | — | needs remote MCP + OAuth |
+
+"Checked" is the date someone last tried that app end to end, or where the steps come from until
+then. Apps change their menus often: if a step does not match, the app's own MCP help is right.
+
+An app that cannot show pictures still gets something useful from `screenshot`: its result carries a
+short **`frame`** text describing what the camera sees.
+
+### Revoke an app
+
+**Settings ▸ AI ▸ AI apps that work in your scene ▸ Connected apps** lists every app you allowed,
+named by the app it belongs to, with what it may do (*can build* or *can look*), where it returns
+and when it was last used. **Revoke** on a row removes that app only; **Disconnect all** removes every
+one and ends this tab's link. **Settings ▸ Account ▸ Connected apps** leads to the same list.
+**Disconnect** beside the chip stops whichever app is working right now without revoking anything.
+
+## AI inside the app (your key)
+
+The app's own assistant, voice typing and Generate 3D model run with **your** key or server, set up in
+**Settings ▸ AI ▸ AI inside the app (your key)**:
+
+- **Chat providers**: Grok, Gemini or any OpenAI-compatible server — see [Providers](https://docs.theprototype.app/ai/providers.md)
+  and [Local & small models](https://docs.theprototype.app/ai/local-models.md);
+- **Voice typing**: a speech-to-text server for the assistant's mic;
+- **Mesh providers**: Meshy or a self-hosted ComfyUI — see [3D generation](https://docs.theprototype.app/ai/generation.md).
+
+Keys are stored in this browser only and sent only to the provider you set up.
+
+<!-- roadmap 84 (connect any AI) adds its presets and "Test connection" here, in this section and in the
+     same Settings card. Nothing of it is described yet. -->
+
+## Related
+
+- [Settings ▸ AI](https://docs.theprototype.app/tools-and-connections.md): every row on the page
+- [Use theprototype from claude.ai and voice](https://docs.theprototype.app/ai/claude-connector.md)
+- [Build with an AI agent](https://docs.theprototype.app/ai/build-with-an-agent.md)
 
 
 ---
@@ -27914,6 +28256,10 @@ theprototype tab, and talk Claude through building — in a chat on the web or d
 Claude phone app, or out loud in voice mode. Claude works **in your own tab, with your own
 access**: everything it does shows up for everyone in your session and can be undone, exactly
 like your own edits.
+
+!!! tip "ChatGPT, Gemini CLI, VS Code, Cursor"
+    The same connector works with other AI apps: see [Use any AI](https://docs.theprototype.app/ai/use-any-ai.md) for their steps and
+    which one you need.
 
 !!! info "New"
     The Claude connector needs a theprototype account and works on theprototype.app (the hosted
@@ -27942,7 +28288,7 @@ like your own edits.
 ## Connect your tab (each time you build)
 
 1. Open theprototype.app, sign in, and open or join the scene you want to work on.
-2. Press the **AI** button and press **Connect Claude** (also in **Settings ▸ Account ▸ Connected apps**).
+2. Press the **AI** button and press **Connect Claude** (also in **Settings ▸ AI ▸ Connected apps**).
    A chip reads **Claude connected · this tab**. The AI button always opens the Chat window on its **Assistant** tab
    (since 1.65 the AI assistant is a tab of the one Chat window); signed out,
    the same card offers **Sign in to connect**, which opens your profile menu at the top right, the one place to
@@ -27982,9 +28328,9 @@ trees by the fire"*) — it never reads out ids or numbers. Good things to say:
 
 | Claude can | Claude cannot |
 |---|---|
-| Add shapes, lights and groups; move, resize, recolour, rename, hide and delete them | Open files or import them from your computer, or change your settings |
+| Add shapes, lights and groups; move, resize, recolour, rename, hide and delete them | Open or import files from your computer, or change your settings |
 | Make things move and react with flow nodes (spin, bounce, follow a path, open on click) and look up how each node wires | Install modules, approve people who knock, or answer the app's questions for you |
-| Add physics and run the simulation in your tab at its full frame rate, whether you host or joined (your own assistant's **Physics tools** setting is not changed) | See anything outside the theprototype tab, or move your camera |
+| Add physics and run the simulation in your tab at its full frame rate, whether you host or joined (your own assistant's **Physics tools** setting is not changed), and make things float or sink in water ([Worlds](https://docs.theprototype.app/ai/agent-world.md#make-things-float-or-sink)) | See anything outside the theprototype tab, or move anyone else's view |
 | Animate a model's named parts, and see where everyone stands and looks, so *"put a tree in front of me"* lands in front of you, in VR too (a look-only connection sees only your own position) | |
 | Ask your tab to join a session from a link you give it: nothing happens until you press **Join** on the card in the tab (see below) | |
 | Write small code behaviours | Do more than you can: a **viewer's** Claude can look but not build, and locked objects stay locked |
@@ -27992,6 +28338,8 @@ trees by the fire"*) — it never reads out ids or numbers. Good things to say:
 | Make shapes the basic objects cannot — a vase on a lathe, a rail along a path, an extruded sign, a mesh from its own points — and reshape or model them ([Shapes and modelling](https://docs.theprototype.app/ai/agent-geometry.md)) | Fetch an image from your computer or your local network |
 | Change materials and textures, node shaders, UV mapping and the scene's post effects; a change to the whole scene's look asks you first with **Allow** / **Deny** in the tab ([Materials and looks](https://docs.theprototype.app/ai/agent-look.md)) | |
 | Set the point a thing turns about, and put an image into your library from an https address or one it draws ([Undo, pivots and images](https://docs.theprototype.app/ai/agent-assist.md)) | |
+| Read the ground and the water under a point (`probe`), and know which camera you look through ([Here, this and you](https://docs.theprototype.app/ai/agent-spatial.md#the-camera-you-look-through)) | |
+| Work with the text files in your Explorer, open your panels, move your own view and open code for you (it asks first), and open your other scenes ([Your files, your screen and your scenes](https://docs.theprototype.app/ai/your-files-and-screen.md)) | |
 
 ### Joining a session from a link
 
@@ -28035,8 +28383,8 @@ into the tab yourself; then ask Claude to place or change them.
 
 ## See and undo what it did
 
-Every step Claude takes is a line labelled **Claude (connector)** in **Agent activity**, with its
-own **Undo**. Anyone in the session sees the changes as they happen, and anyone with edit access
+Every step Claude takes is a line labelled with the app's name, **Claude (connector)** (or **ChatGPT
+(connector)** and so on), in **Agent activity**, with its own **Undo**. Anyone in the session sees the changes as they happen, and anyone with edit access
 can undo them from their own screen.
 
 Or just say **"undo that"**: Claude takes back its own last step. If someone has changed the same things since,
@@ -28045,6 +28393,8 @@ it changes nothing and tells you who changed what.
 **Screenshots** have a 4:3 shape whatever your window's shape, except the *current* view, which keeps your canvas. Claude
 can pick the angle (front, back, left, right, top, below, iso, or a yaw and pitch), a camera position and target, the objects to
 frame, a zoom (0.1-10) and a margin (0.5-4). It is told which camera it used, and your own view never moves.
+Since 1.81, while you look through a scene camera (Preview, a game camera, a sequence shot, Film on your phone, a
+recording), the *current* view is that camera, with its framing ([details](https://docs.theprototype.app/ai/agent-spatial.md#the-camera-you-look-through)).
 
 ### Tool families
 
@@ -28065,6 +28415,19 @@ exactly what the agent tools of the same job do, with the same limits:
 `undo_last` is a tool of its own. A look-only connection can still use the actions that only read (`list_materials`,
 `get_material`, `shader_nodes`, `get_post`, `environment`, `hud` `list`, `assets` `search` and all of `run`).
 `playtest` (a test player) runs only on an agent's own page, so it is not on claude.ai.
+
+**New in 1.81** — four new tools, so the connector lists **35**:
+
+- `probe` reads what is under a point without changing anything: the ground height, which way it slopes, what the
+  surface is, and any water's surface and depth. Up to 64 points at once, or a ray. A look-only connection and a
+  viewer may use it ([Worlds with an agent](https://docs.theprototype.app/ai/agent-world.md#read-what-is-under-a-point)).
+- `where_are_users` knows the camera you look through (`through`), and a screenshot of what you see uses that camera's
+  framing ([Here, this and you](https://docs.theprototype.app/ai/agent-spatial.md#the-camera-you-look-through)).
+- `set_physics` takes `float`, `density`, `buoyancy` and `waterDrag`, and answers where the waterline will sit
+  ([Make things float or sink](https://docs.theprototype.app/ai/agent-world.md#make-things-float-or-sink)).
+- `files`, `show` and `scene` work with your own Explorer, your own screen and your scenes, in your own tab only
+  ([Your files, your screen and your scenes](https://docs.theprototype.app/ai/your-files-and-screen.md)). Their lines name the app at work:
+  *ChatGPT opened Explorer · Back*.
 
 **New in 1.59** — the same tools, with more in them:
 
@@ -28157,9 +28520,9 @@ Claude reads its tool list when it connects, so it sees these after the connecto
 
 ## Stop it
 
-- **Disconnect** (next to the chip, or in **Settings ▸ Account ▸ Connected apps**) stops Claude at once, including
+- **Disconnect** (next to the chip, or in **Settings ▸ AI ▸ Connected apps**) stops Claude at once, including
   a step it is in the middle of. Press Connect Claude again to continue.
-- **Revoke** in **Settings ▸ Account ▸ Connected apps** removes the connector's access to your account
+- **Revoke** in **Settings ▸ AI ▸ Connected apps** removes the connector's access to your account
   completely; the AI app (claude.ai) has to be approved again before it can work in any tab. **Disconnect
   everything** there does it for every connected app at once. You can also remove the connector in claude.ai's
   settings.
@@ -28182,19 +28545,132 @@ See also: [Build with an AI agent](https://docs.theprototype.app/ai/build-with-a
 
 ---
 
+Source: https://docs.theprototype.app/ai/your-files-and-screen/ (Markdown: https://docs.theprototype.app/ai/your-files-and-screen.md)
+
+# Your files, your screen and your scenes
+
+*"Fix line 12 of door.js"*, *"show me the crates"*, *"save this and open the forest scene"*. Since 1.81 an AI app
+working in your tab ([the connector](https://docs.theprototype.app/ai/use-any-ai.md)) and the in-app [Assistant](https://docs.theprototype.app/ai/assistant.md) can do three more things
+for you, the person whose tab it is:
+
+- **`files`** works with the files in your [Explorer](https://docs.theprototype.app/explorer.md).
+- **`show`** opens your panels, moves your view and opens code for you.
+- **`scene`** lists your scenes and opens another one.
+
+These act for you, on your own screen, so only an assistant in **your own tab** gets them: an AI app through the
+connector, or the in-app assistant. An agent that joined your session with an [invite link](https://docs.theprototype.app/ai/build-with-an-agent.md)
+does not.
+
+Every step leaves a line that names the app at work, the same name the chip shows (*ChatGPT connected · this tab*):
+*ChatGPT opened Explorer · Back*, *Claude changed "door.js" · Undo*. The in-app assistant's lines start with
+*The assistant*.
+
+## Files in your Explorer
+
+`files` can:
+
+- **list** your folders and files (100 at a time), and what the **Deleted** bin holds;
+- **read** a text file, with numbered lines;
+- **create** a text file or a folder, **write** a file (all of it, or only some lines), **rename** and **move**;
+- **delete** and **restore**.
+
+It works with text files only: `.txt`, `.json`, `.md`, `.cfg` and `.js`. Images, sounds and models are listed, but
+stay with the asset tools. A file can be up to 256 KB.
+
+- **Undo.** Each change leaves a line with **Undo**, as your own edits do: *Claude changed "door.js" · Undo*.
+- **Delete goes to Deleted.** A deleted file goes to the Explorer's [Deleted](https://docs.theprototype.app/explorer.md#deleted) bin, exactly as
+  your own delete, and can come back. Before it deletes a folder with files in it, the app asks you on your screen
+  (**Delete** / **Keep**). It also asks when your recycle bin is switched off, because then the file is gone for good.
+  Emptying Deleted is always yours to do.
+- **New files are private.** It never shares anything with the session, and it cannot put new files in a folder you
+  share. A file someone else shared with you is read-only to it.
+- **A viewer** in someone else's session can list and read files, but not change them.
+
+## Your screen
+
+`show` changes only **your own screen**, never anyone else's:
+
+- **panel** opens, closes or brings forward one of your panels: Explorer, Objects, Inspector, Flow editor, Code,
+  Timeline, Assets, Preview, Chat or Assistant. A panel opens where you keep it (docked, in the sidebar or floating).
+- **camera** moves your editor view to frame some objects (and can select them), goes to a spot, or lets you look
+  through a scene camera.
+- **code** opens a file, or a Script or Behaviour node's code, in your Code tab at a line, and can select some lines
+  or a word. It never changes the text.
+
+It never opens sign-in, your account, Settings, a consent page, publishing, connected apps or payment.
+
+### It asks first
+
+The first time for each kind (panels, the camera, code) your tab asks, for example *Let ChatGPT move your view?*:
+
+- **Always**: this kind is allowed from now on, on this device.
+- **This time**: allowed until you reload the page.
+- **No**: not until you reload. The AI app then tells you where to look instead.
+
+Your answers are per app: a **No** to one app does not stop another. An app that theprototype cannot name (it shows
+as *an AI app*) is offered only **This time** and **No**, and an earlier **Always** does not count for it.
+
+**Back** on the line undoes what `show` last did: the panel closes again, your view goes back. You can also say
+*"go back"*. It remembers the last 10 steps.
+
+**Settings ▸ Privacy ▸ Assistant on your screen** has one switch per kind: **Open and close my panels**, **Move my
+view** and **Open code for me**. On is the same as **Always**; off asks again next time. All three are off to start
+with, and they apply to this device only.
+
+### When it waits
+
+- It does nothing while you drag an object, draw a selection box or type somewhere else. It tries again a moment
+  later.
+- It does not move your view in a VR headset, or while you play (press <kbd>Esc</kbd> first).
+- It does not move your view, or switch scenes, while you record a video, film with your phone (Film) or a sequence
+  plays its shots.
+- At most 6 calls a minute, and one camera move every 2 seconds.
+
+## Your scenes
+
+`scene` lists the scenes in your Library (which one is open, and whether it has unsaved changes), opens one, or makes a
+new empty scene and opens it. Opening replaces what is on your screen.
+
+**Unsaved changes** are yours to decide:
+
+- Say it in your request, *"save this and open the forest"*, and it saves first through your normal save, then
+  opens the scene, and tells you what it saved. It lets your changes go only when you said so, and even then it
+  first keeps them in **Sessions** as *Backup before "…"*, so you can bring them back.
+- Say nothing, and your tab asks: **Save and open** / **Open without saving** / **Cancel**.
+- When other people are in your session, your tab always asks, whatever the request said.
+
+Only the host changes the scene of a session: as a guest in someone else's session you are told so, and a viewer
+cannot change it either. After a switch the AI app cannot undo its steps from before it. At most
+4 switches a minute.
+
+## Safe by design
+
+- **Text in your files is data, not instructions.** An AI app reads what is written in your files as text to work
+  with. It does not follow requests written inside a file.
+- **Nothing written by `files` runs by itself.** A new `.js` file is attached to nothing. The code a Script node runs
+  cannot be changed with `files`: that is the behaviour tools' job, and `show` can open it for you to read.
+- **A look-only connection** (an AI app approved without **Allow changes**) cannot use `files`, `show` or `scene`.
+- `files` works only with what is in your own Explorer: not the files on your computer, and not a web address.
+
+See also: [Use any AI](https://docs.theprototype.app/ai/use-any-ai.md) · [Use theprototype from claude.ai and voice](https://docs.theprototype.app/ai/claude-connector.md) ·
+[Explorer](https://docs.theprototype.app/explorer.md) · [Code Workspace](https://docs.theprototype.app/code-workspace.md)
+
+
+---
+
 Source: https://docs.theprototype.app/ai/providers/ (Markdown: https://docs.theprototype.app/ai/providers.md)
 
 # AI Providers
 
 The assistant needs a model to talk to. You supply one — a hosted provider like Grok or
-Gemini, or your own self-hosted endpoint. Configure it once in **Settings ▸ Tools & connections**.
+Gemini, or your own self-hosted endpoint. Configure it once in **Settings ▸ AI**.
 
 Every supported provider speaks the same **OpenAI chat-completions** dialect, so the app
 uses one client for all of them.
 
 ## Adding a provider
 
-1. Open **Settings ▸ Tools & connections** and click **Add chat provider**.
+1. Open **Settings ▸ AI** and click **Add chat provider**.
 2. Pick a preset — it fills in the base URL and a default model:
 
     | Preset | Base URL | Notes |
@@ -28309,7 +28785,7 @@ suggested value at startup).
 !!! tip "The app defends itself either way"
     The client detects an unusable streamed turn, retries it **unstreamed**, and stops
     streaming for the rest of the session. You can also turn **Stream responses** off
-    permanently for a provider in **Settings ▸ Tools & connections** — recommended for any server whose
+    permanently for a provider in **Settings ▸ AI** — recommended for any server whose
     tool calls only work unstreamed. Fixing the parser is still better: streaming feels
     much more responsive.
 
@@ -28377,7 +28853,7 @@ replicated to everyone, undoable like any other object. You bring the generator:
 **self-hosted ComfyUI** running a TRELLIS workflow, or a **hosted API** (Meshy).
 
 !!! note "This is opt-in"
-    Nothing is generated until you add a **Mesh provider** in **Settings ▸ Tools & connections** and
+    Nothing is generated until you add a **Mesh provider** in **Settings ▸ AI** and
     a provider. Turning it on reveals **“Generate 3D model…”** in the Add menu and lets
     the AI assistant call a `generate_mesh` tool.
 
@@ -28473,7 +28949,7 @@ localhost) TLS + auth.
 
 ### 5. Configure it in the app
 
-**Settings ▸ Tools & connections ▸ Mesh providers ▸ Add mesh provider:**
+**Settings ▸ AI ▸ Mesh providers ▸ Add mesh provider:**
 
 | Field | Value |
 |---|---|
@@ -28504,7 +28980,7 @@ actually writes to the output and (if you have multiple outputs) set the output 
 
 No GPU required. Uses your provider account credits per generation.
 
-**Settings ▸ Tools & connections ▸ Mesh providers ▸ Add mesh provider:**
+**Settings ▸ AI ▸ Mesh providers ▸ Add mesh provider:**
 
 | Field | Value |
 |---|---|
@@ -28587,7 +29063,7 @@ Location data (EXIF, GPS) is removed from every picture **on your device, before
 
 ## Picture → 3D model
 
-1. Set up a mesh provider: **Settings ▸ Tools & connections ▸ Mesh providers**. Meshy (hosted) takes
+1. Set up a mesh provider: **Settings ▸ AI ▸ Mesh providers**. Meshy (hosted) takes
    pictures as it is. A ComfyUI workflow takes them when it has a `{{IMAGE}}` placeholder in a
    **LoadImage** node (see [3D Generation](https://docs.theprototype.app/ai/generation.md)).
 2. **Add menu ▸ Generate 3D model…** and pick the picture: **From device…**, **Camera** (on a phone),
@@ -28626,9 +29102,9 @@ plain name, never your file's.
 
 | You see | What to do |
 |---|---|
-| *No mesh provider set up yet* | Press **Set one up in Tools & connections**. |
+| *No mesh provider set up yet* | Press **Set one up in Settings ▸ AI**. |
 | *… can't start from a picture* | Use Meshy, or add `{{IMAGE}}` to a LoadImage node in your ComfyUI workflow. |
-| *Meshy rejected the API key* | Check the key in **Settings ▸ Tools & connections ▸ Mesh providers**. |
+| *Meshy rejected the API key* | Check the key in **Settings ▸ AI ▸ Mesh providers**. |
 | *Meshy: out of credits* | Add credits on meshy.ai, or switch the provider to *Preview*, which uses fewer. |
 | *… did not finish within 10 minutes* | Try again, or try *Preview* mode, which is quicker. |
 | *… could not be reached* | Check the connection and the provider's address. |

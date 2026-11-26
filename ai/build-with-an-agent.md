@@ -34,7 +34,7 @@ replicated to everyone and undoable, exactly like a person's edits.
 
 What an agent never does: move your camera, read anything outside the scene, or use API keys of
 its own inside the app. If it generates a 3D model (*generate_mesh*), that runs on **your** mesh
-provider (Settings ▸ Tools & connections ▸ Mesh providers) — you see who asked on the progress card and can
+provider (Settings ▸ AI ▸ Mesh providers) — you see who asked on the progress card and can
 cancel it there.
 
 ## For the agent (setup)
@@ -129,6 +129,12 @@ before a join, scene tools answer *not connected — join first*. Then call `con
   (world). `image` is a Library hash or file name (none = a placeholder frame), `size` is metres (a number, or
   `[width, height]`), plus `depth` (default 0.25 m), `opacity` (0-1) and `tint` (`#rrggbb`). Not on skinned characters
   or scattered copies. See [Decals](https://docs.theprototype.app/decals.md).
+- **Ground, water and floating** (since 1.81):
+    - `probe` reads the ground height, slope and surface and any water's surface and depth under up to 64 points, or
+      along a ray. It only reads, so a viewer's agent may use it too. See
+      [Read what is under a point](https://docs.theprototype.app/ai/agent-world.md#read-what-is-under-a-point).
+    - `set_physics` takes `float`, `density`, `buoyancy` and `waterDrag`, and answers where the waterline will sit. See
+      [Make things float or sink](https://docs.theprototype.app/ai/agent-world.md#make-things-float-or-sink).
 - Never fight a person: a locked object is skipped — the reply names the object and who is editing it — and the agent
   waits with `wait_for_edit`.
 

@@ -11,7 +11,7 @@
         <link rel="prev" href="../agent-geometry/">
       
       
-        <link rel="next" href="../claude-connector/">
+        <link rel="next" href="../use-any-ai/">
       
       
       <link rel="icon" href="../../logo.svg">
@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Worlds with an agent", "url": "https://docs.theprototype.app/ai/agent-world/", "description": "An agent joined to your session (Build with an AI agent), Claude on claude.ai (Use theprototype from claude.ai and voice) and the in-app Assistant can build whole places: hills and a forest, a…", "dateModified": "2026-11-04"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Worlds with an agent", "url": "https://docs.theprototype.app/ai/agent-world/", "description": "An agent joined to your session (Build with an AI agent), Claude on claude.ai (Use theprototype from claude.ai and voice) and the in-app Assistant can build whole places: hills and a forest, a…", "dateModified": "2026-11-26"}</script>
 </head>
   
   
@@ -520,7 +520,7 @@
         
   
   <span class="md-ellipsis">
-    Tools &amp; connections
+    Settings ▸ AI
   </span>
   
 
@@ -6619,6 +6619,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../scan-my-room/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scan my room (Quest)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../ar-table/" class="md-nav__link">
         
   
@@ -7084,8 +7105,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#make-things-float-or-sink" class="md-nav__link">
+    <span class="md-ellipsis">
+      Make things float or sink
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-what-is-under-a-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read what is under a point
+    </span>
+  </a>
   
 </li>
       
@@ -7216,11 +7255,53 @@
   
   
     <li class="md-nav__item">
+      <a href="../use-any-ai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use any AI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../claude-connector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Use theprototype from claude.ai and voice
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../your-files-and-screen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Your files, screen and scenes
   </span>
   
 
@@ -7597,8 +7678,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#make-things-float-or-sink" class="md-nav__link">
+    <span class="md-ellipsis">
+      Make things float or sink
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-what-is-under-a-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read what is under a point
+    </span>
+  </a>
   
 </li>
       
@@ -7745,7 +7844,7 @@ step (Ctrl+Z, <strong>Undo</strong> on the call's line in <strong>Agent activity
 that change things; it can still search for assets.</p>
 <div class="admonition note">
 <p class="admonition-title">New in 1.60</p>
-<p>Everything on this page is new in 1.60.</p>
+<p>Most of this page is new in 1.60. Floating things and <code>probe</code> are new in 1.81.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Try it</p>
@@ -8053,6 +8152,64 @@ a <code>preset</code> is given.</p>
 </tbody>
 </table>
 <p>New water is a static sensor: in Play, things fall in and float. It casts no shadow.</p>
+<h3 id="make-things-float-or-sink">Make things float or sink</h3>
+<p><em>"Make the crates float"</em>, <em>"this barrel should sink"</em>. Since 1.81 <code>set_physics</code> takes the same choices as
+<strong>Inspector ▸ Physics ▸ Floats</strong> (<a href="../../physics/#things-float">Things float</a>), and any of them makes the object dynamic:</p>
+<table>
+<thead>
+<tr>
+<th>field</th>
+<th>what it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>float</code></td>
+<td><code>auto</code> (half under), <code>foam</code>, <code>cork</code>, <code>wood</code>, <code>ice</code>, <code>rubber</code>, <code>stone</code>, <code>metal</code>, <code>sink</code>, <code>mass</code> or <code>off</code> (ignores water)</td>
+</tr>
+<tr>
+<td><code>density</code></td>
+<td>kg/m³, 10 to 20000, instead of <code>float</code>. Water is 1000: below floats, above sinks</td>
+</tr>
+<tr>
+<td><code>float: "mass"</code></td>
+<td>the density is the object's mass ÷ its volume, so a heavier crate of the same size sits lower, and past 1000 kg per m³ it sinks</td>
+</tr>
+<tr>
+<td><code>buoyancy</code></td>
+<td>how strong the lift is, 0 to 10 (1 = as the density says, 2 = rides higher)</td>
+</tr>
+<tr>
+<td><code>waterDrag</code></td>
+<td>how hard the water slows it, 0 to 10 (1 = the water's own drag, 0.3 drifts, 3 holds still)</td>
+</tr>
+</tbody>
+</table>
+<p>How deep something floats comes from its density, not its mass. The answer says where the waterline will sit
+(<code>water</code>): the density, the share under the surface, the draft in metres, and whether it sinks. With water under the
+object it also names the water, its surface height and <code>restingBottomY</code>, the height its bottom will rest at. Put a
+floating thing there and it does not drop into the water.</p>
+<div class="admonition note">
+<p class="admonition-title">A cube can tip onto an edge</p>
+<p>A cube between about 21 % and 79 % of water's density is not stable lying flat. It tips onto an edge, as a real
+one does, so its lowest corner sits deeper than the draft says. The answer then says <code>upright: false</code> with a
+note. Lighter or heavier than that, or a flatter box, floats flat.</p>
+</div>
+<h2 id="read-what-is-under-a-point">Read what is under a point</h2>
+<p>Since 1.81, <code>probe</code> reads what is straight under a point and changes nothing, so a viewer's agent may use it too.
+Use it before putting things "on the ground", "on the beach" or "on the water", or along a slope.</p>
+<ul>
+<li><code>at: [x, z]</code> reads one point. <code>points: [[x, z], …]</code> reads up to <strong>64</strong> at once (a row of fence posts, a path), in
+  the same order.</li>
+<li>For each point it gives the <strong>height</strong> of the ground (a terrain, a floor, a table top or the ground plane), which way
+  the surface faces (its slope), what kind of surface it is and which object. Stand a thing's base at that height.</li>
+<li>With water there it also gives the water's still <strong>surface</strong> and how <strong>deep</strong> it is. Put a floating thing at the
+  surface. Over open sea with no floor, it says so: something that sinks there falls out of the world.</li>
+<li><code>ray: {from, dir, max}</code> gives the first thing a ray meets instead: what is in front of a door, what is under a lamp.</li>
+<li>Water and trigger volumes are looked through, so the answer is the ground. <code>include: "all"</code> counts them too and
+  lists every surface at each point, top first.</li>
+</ul>
+<p><code>probe</code> answers <em>what is under this point</em>; <code>list_scene</code> <code>near</code> answers <em>which objects are around here</em>.</p>
 <h2 id="effects-and-sound">Effects and sound</h2>
 <h3 id="create_particles-fire-smoke-sparkles-fireflies">create_particles: fire, smoke, sparkles, fireflies</h3>
 <p><code>preset</code> is one of <code>sparkles</code>, <code>fire</code>, <code>smoke</code>, <code>dust</code>, <code>confetti</code>, <code>sparks</code>, <code>trail</code>, <code>wisps</code>, <code>fireflies</code>, <code>rain</code> or
@@ -8157,11 +8314,13 @@ reaches everyone like any other picture.</p>
 <li><code>place_sound</code> with a water-lapping loop near the jetty.</li>
 </ol>
 <h2 id="on-claudeai">On claude.ai</h2>
-<p>On claude.ai these tools are reached through the connector's <a href="../claude-connector/#tool-families">tool families</a>:</p>
+<p>In claude.ai and the other AI apps these tools are reached through the connector's
+<a href="../claude-connector/#tool-families">tool families</a>:</p>
 <ul>
 <li><code>assets</code> has <code>search</code>, <code>place</code>, <code>prefab</code> and <code>image</code>.</li>
 <li><code>effects</code> has <code>terrain</code>, <code>scatter</code>, <code>water</code>, <code>particles</code>, <code>sound</code> and <code>music</code>.</li>
 <li><code>set_look</code> <code>material</code> takes <code>pattern</code>.</li>
+<li><code>probe</code> and <code>set_physics</code> are tools of their own.</li>
 </ul>
 
 
@@ -8183,7 +8342,7 @@ reaches everyone like any other picture.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-04
+    2026-11-26
   </span>
 
     

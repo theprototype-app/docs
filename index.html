@@ -62,7 +62,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Welcome", "url": "https://docs.theprototype.app/", "description": "ThePrototype is a collaborative 3D prototyping app that runs in your browser — sessions are peer-to-peer, and you need no account.", "dateModified": "2026-11-25", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/index/quick-start-add.webp", "caption": "Quick start, step 2 — right-click the empty view, then Add ▸ Mesh ▸ Cube."}]}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Welcome", "url": "https://docs.theprototype.app/", "description": "ThePrototype is a collaborative 3D prototyping app that runs in your browser — sessions are peer-to-peer, and you need no account.", "dateModified": "2026-11-26", "about": {"@type": "SoftwareApplication", "name": "ThePrototype", "softwareVersion": "1.65.0"}, "image": [{"@type": "ImageObject", "contentUrl": "https://docs.theprototype.app/img/index/quick-start-add.webp", "caption": "Quick start, step 2 — right-click the empty view, then Add ▸ Mesh ▸ Cube."}]}</script>
 </head>
   
   
@@ -596,7 +596,7 @@
         
   
   <span class="md-ellipsis">
-    Tools &amp; connections
+    Settings ▸ AI
   </span>
   
 
@@ -6695,6 +6695,27 @@
   
   
     <li class="md-nav__item">
+      <a href="scan-my-room/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scan my room (Quest)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ar-table/" class="md-nav__link">
         
   
@@ -7031,11 +7052,53 @@
   
   
     <li class="md-nav__item">
+      <a href="ai/use-any-ai/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use any AI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="ai/claude-connector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Use theprototype from claude.ai and voice
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ai/your-files-and-screen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Your files, screen and scenes
   </span>
   
 
@@ -7417,6 +7480,22 @@ on a phone that gives the scene the whole height of the screen.</p>
 <a href="https://github.com/theprototype-app/core">github.com/theprototype-app/core</a> (also <strong>Settings ▸ About ▸ Source Code</strong>),
 with a contributing guide and an <code>llms.txt</code> for coding agents.</p>
 <h2 id="whats-new">What's new</h2>
+<p><strong>1.81 — AI apps in your scene, and your room in VR.</strong></p>
+<ul>
+<li><strong>Use theprototype from ChatGPT and other AI apps</strong>: the same connector works in Claude, ChatGPT, Gemini CLI, VS Code
+  and Cursor. <a href="tools-and-connections/">Settings ▸ AI</a> now has two cards, one for AI apps that work in your scene and
+  one for the app's own assistant with your key, and <a href="ai/use-any-ai/">Use any AI</a> says which one you need. The chip
+  and every line name the app at work: <em>ChatGPT connected · this tab</em>.</li>
+<li><strong>Ground, water and cameras</strong>: an AI app can <a href="ai/agent-world/#read-what-is-under-a-point">read what is under a point</a>
+  (ground height, slope, water depth), <a href="ai/agent-world/#make-things-float-or-sink">make things float or sink</a>
+  and say where the waterline will sit, and it knows <a href="ai/agent-spatial/#the-camera-you-look-through">the camera you look through</a>.
+  <strong>Inspector ▸ Physics ▸ <a href="physics/#things-float">Floats</a></strong> reads in metres and has a new <strong>Water drag</strong> slider.</li>
+<li><strong>Your files, your screen, your scenes</strong>: in your own tab, an AI app or the in-app assistant can work with the text
+  files in your Explorer, open a panel, move your view or open code at a line (it asks first, and <strong>Back</strong> undoes it),
+  and open your other scenes, asking what to do with unsaved changes (<a href="ai/your-files-and-screen/">details</a>).</li>
+<li><strong><a href="scan-my-room/">Scan my room</a></strong> on Quest: your headset's room setup becomes named, see-through boxes at real size
+  under <strong>My room</strong>. Scan again and each wall keeps its name and your edits. No camera image is used or stored.</li>
+</ul>
 <p><strong>1.80 — bisect, smooth subdivide and path select.</strong> <a href="mesh-editing/">Edit Mesh</a> gains three tools:
 <a href="mesh-editing/#bisect">Bisect</a> cuts a mesh with a flat plane you draw with two clicks and can clear one side and fill
 the opening; <a href="mesh-editing/#smooth-subdivide">Smooth subdivide</a> (tick <strong>smooth</strong>, or Shift+S) rounds a shape off as
@@ -7660,7 +7739,7 @@ Blender</strong> downloads the model, and the file you export comes back with <e
 can watch the file and reload on each save. A 100×, Z-up or unapplied export gets a one-click fix. <strong>Settings ▸ Tools &amp;
 connections</strong> replaces Settings ▸ AI: one page for chat and mesh providers, voice typing, agents and desktop tools, each with a
 status and a Test. Skies download the first time you pick one, so the app download is about 6 MB smaller. See
-<a href="edit-in-blender/">Edit in Blender</a> and <a href="tools-and-connections/">Tools &amp; connections</a>.</p>
+<a href="edit-in-blender/">Edit in Blender</a> and <a href="tools-and-connections/">Settings ▸ AI</a>.</p>
 <p><strong>1.52 — sessions in your Explorer.</strong> Joining a session shows the host's files as <em>"<host>'s session"</host></em> in your Explorer,
 read-only, above your Library: open them, copy them, and <strong>Save on host</strong> if you can edit. Nothing downloads until you
 open or copy it, and hosts choose what guests see. Save project now asks about unsaved changes and opens where you left
@@ -8199,7 +8278,7 @@ for your machine <a href="performance/">reduces quality or pauses instead of fre
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-25
+    2026-11-26
   </span>
 
     

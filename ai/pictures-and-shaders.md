@@ -17,7 +17,7 @@ Location data (EXIF, GPS) is removed from every picture **on your device, before
 
 ## Picture → 3D model
 
-1. Set up a mesh provider: **Settings ▸ Tools & connections ▸ Mesh providers**. Meshy (hosted) takes
+1. Set up a mesh provider: **Settings ▸ AI ▸ Mesh providers**. Meshy (hosted) takes
    pictures as it is. A ComfyUI workflow takes them when it has a `{{IMAGE}}` placeholder in a
    **LoadImage** node (see [3D Generation](https://docs.theprototype.app/ai/generation.md)).
 2. **Add menu ▸ Generate 3D model…** and pick the picture: **From device…**, **Camera** (on a phone),
@@ -56,9 +56,9 @@ plain name, never your file's.
 
 | You see | What to do |
 |---|---|
-| *No mesh provider set up yet* | Press **Set one up in Tools & connections**. |
+| *No mesh provider set up yet* | Press **Set one up in Settings ▸ AI**. |
 | *… can't start from a picture* | Use Meshy, or add `{{IMAGE}}` to a LoadImage node in your ComfyUI workflow. |
-| *Meshy rejected the API key* | Check the key in **Settings ▸ Tools & connections ▸ Mesh providers**. |
+| *Meshy rejected the API key* | Check the key in **Settings ▸ AI ▸ Mesh providers**. |
 | *Meshy: out of credits* | Add credits on meshy.ai, or switch the provider to *Preview*, which uses fewer. |
 | *… did not finish within 10 minutes* | Try again, or try *Preview* mode, which is quicker. |
 | *… could not be reached* | Check the connection and the provider's address. |

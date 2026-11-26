@@ -276,9 +276,19 @@ Select the object and open **Properties ▸ Physics** (Body: *Dynamic*) ▸ **Fl
 | **From mass ÷ volume** | from the object | works it out from the object's mass and size |
 | **Off** | — | ignores water |
 
-**Density** (kg/m³; water is 1000) and **Buoyancy ×** fine-tune it, and the hint under the sliders says how deep it will
-sit — *Floats about 60% under the surface*. How deep something floats depends on its density, not its mass, so a light and
-a heavy crate of the same wood float equally.
+**Density** (kg/m³; water is 1000) and **Buoyancy ×** fine-tune it. **Water drag ×** (since 1.81) sets how hard the
+water slows it: lower drifts on, higher holds still. The hint under the sliders says how deep it will sit, in metres
+since 1.81 — *Floats about 60% under: 0.6 m of its 1 m height (600 kg/m³; water is 1000).* How deep something floats
+depends on its density, not its mass, so a light and a heavy crate of the same wood float equally. **From mass ÷
+volume** is the exception: there the mass sets the density.
+
+!!! note "A cube can tip onto an edge"
+    A cube between about 21 % and 79 % of water's density is not stable lying flat: it tips onto an edge and floats
+    that way, as a real one does. The hint then adds *At this density it tips over and floats on an edge.* A lighter
+    or heavier cube, or a flatter box, floats flat.
+
+An [AI app or agent](https://docs.theprototype.app/ai/agent-world.md#make-things-float-or-sink) sets the same choices with `set_physics`
+and is told where the waterline will sit.
 
 The peer running the simulation computes the floating, and everyone sees the same motion; each player draws the ripples
 for themselves. Water volumes are in the *Water* [collision group](https://docs.theprototype.app/colliders.md#collision-groups), which is why things
