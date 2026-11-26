@@ -50,6 +50,8 @@ Switch to **Solid** and these rows appear:
 | **Glow** | Makes the letters glow in their own colour |
 | **Bake to mesh…** | See below |
 
+Since 1.84, solid letters are built the same way as [extruded shapes](https://docs.theprototype.app/vector-shapes.md#extrude): their sides are smooth instead of faceted. You can also drag the extrude arrow on a selected text to set its depth.
+
 A solid text is built on every screen from these settings. The mesh itself is never sent or saved, so a sign costs the same few hundred bytes whatever its size.
 
 ### Bake to mesh

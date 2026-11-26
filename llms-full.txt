@@ -57,6 +57,18 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.84 — Vector shapes and 2D scenes.** A new page, [Vector shapes and SVG](https://docs.theprototype.app/vector-shapes.md), covers all of it.
+
+- **[Draw vector shapes](https://docs.theprototype.app/vector-shapes.md#drawing-shapes)**: rectangles, ellipses, stars, polygons and pen paths with
+  fills, gradients and strokes. [Combine](https://docs.theprototype.app/vector-shapes.md#combining-shapes) them, [edit their points](https://docs.theprototype.app/vector-shapes.md#editing-points)
+  with snapping and smart guides, and set their [layer order](https://docs.theprototype.app/vector-shapes.md#layer-order).
+- **[Extrude with one drag](https://docs.theprototype.app/vector-shapes.md#extrude)**: drag the arrow on a shape or a text to make it a 3D solid.
+- **[SVG in and out](https://docs.theprototype.app/vector-shapes.md#svg-files)**: drop an .svg on the viewport, or export shapes as SVG.
+- **[2D scenes](https://docs.theprototype.app/2d-scenes.md)**: a template with a flat 2D view and its own toolbar, sprites and flipbooks, 2D layers
+  with parallax and a Camera Follow 2D node.
+- **The pen by finger and in VR**: [on a phone](https://docs.theprototype.app/vector-shapes.md#on-a-phone-or-tablet) tap and drag;
+  [in VR](https://docs.theprototype.app/vector-shapes.md#in-vr) draw on a sheet in front of you.
+
 **1.83 — Publish your game.** A new page, [Publish your game](https://docs.theprototype.app/publish-your-game.md), walks through it step by step.
 
 - **[Before you publish](https://docs.theprototype.app/publish-your-game.md#before-you-publish)**: the Publish tab lists what a visitor would trip
@@ -7142,6 +7154,280 @@ The two Flatten directions ride channels that already exist: carving a terrain s
 
 ---
 
+Source: https://docs.theprototype.app/2d-scenes/ (Markdown: https://docs.theprototype.app/2d-scenes.md)
+
+# 2D Scenes
+
+Make a side-scrolling 2D game, or put flat pixel art into a 3D world: **sprites** (an image or a sprite sheet on a flat
+plane), **flipbook animations** from a sheet, **2D layers** that scroll at different speeds (parallax), and a
+**2D camera** that follows the player. Everything you make here is an ordinary scene object: it syncs to everyone in the
+session, undoes one step at a time, saves in the `.tpscene` and exports with your game.
+
+## Walk-through: the 2D scene template
+
+1. Open **Templates** (or **New scene**) and pick **2D scene**, next to *Blank scene*.
+   It replaces the scene for everyone in the session, so with others connected they are asked first.
+2. The scene opens in the **flat 2D view**: an orthographic camera looking straight at the scene, with the
+   **2D toolbar** on the left. Nothing rotates here — drag to pan, use the wheel to zoom. On a phone or tablet, drag
+   with one finger to pan and pinch with two to zoom.
+3. Press **Play**. The camera switches to the template's *2D camera*, which follows the walking player past three
+   background layers. Watch the far hills move slower than the trees: that is parallax.
+4. Press **Esc** to stop playing, then **Back to 3D** at the bottom of the 2D toolbar. The same scene in the
+   perspective view shows how it is built: the layers are flat groups standing one behind the other.
+
+What the template holds:
+
+| Object | What it is |
+|---|---|
+| **Sky** | A 2D layer with parallax 0: it stays with the camera. |
+| **Far hills** | A 2D layer with parallax 0.3: it scrolls at a third of the camera's speed. |
+| **Trees** | A 2D layer with parallax 0.6. |
+| **Gameplay** | The layer the game happens on (parallax 1): the ground and the **Player**. |
+| **Player** | A sprite with a 4-frame sheet; its *walk* clip plays by itself. |
+| **2D camera** | An orthographic camera object. Its node graph has a **Camera Follow 2D** node aimed at the player. |
+
+## The flat 2D view
+
+Turn it on and off with **View ▸ 2D view** in the viewport menu, or with **Back to 3D** on the 2D toolbar. It changes
+only *your* view: your peers keep their own.
+
+- The camera is orthographic and looks straight down the scene's depth (-Z). Things further back are not smaller —
+  depth only decides what is drawn in front.
+- **Pan**: drag (any mouse button), or one finger on a touch screen. **Zoom**: the wheel, or pinch.
+- The move gizmo loses its depth arrow, so dragging an object keeps it in its layer.
+- Ambient occlusion is switched off through an orthographic camera (flat layers would get dark halos around every sprite).
+- The **Preview** pill at the top right keeps working here.
+
+## The 2D toolbar
+
+While the flat view is on, the 2D toolbar stands in for the 3D tools: the bottom bar's Move, Rotate, Scale and Pivot
+buttons step aside and come back when you leave the view.
+
+| Tool | What it does |
+|---|---|
+| **Select** | Click a sprite or a layer to select it; drag its arrows to move it in the plane. |
+| **Pen**, **Shapes** | Draw vector paths and shapes on the layer you picked (see [Vector shapes and SVG](https://docs.theprototype.app/vector-shapes.md)). |
+| **Text** | Adds a text object in the middle of the view, on the layer you picked. |
+| **Extrude** | Makes the selected shape or text 10 cm deep, or flat again (see [Extrude](https://docs.theprototype.app/vector-shapes.md#extrude)). |
+| **Layers** | Opens the Layers panel. |
+| **Back to 3D** | Leaves the flat view. |
+
+Tools that your version of the app does not have are not shown at all.
+
+### Layers panel
+
+The panel lists the scene's 2D layers **front to back**.
+
+- Click a layer to pick it: new text and shapes land on the picked layer.
+- The arrows bring a layer forward or send it back (they swap the depth of two layers; one undo step).
+- **New layer** adds an empty 2D layer in front of the others.
+- A layer's parallax is shown in its row and set in the Inspector (see below).
+
+## Sprites
+
+Add one from the viewport menu: **Add ▸ 2D ▸ Sprite**. It starts as a 1 m white square. Select it and use the
+Inspector's **Sprite** section:
+
+- **Image** — *Choose image…* uploads a picture; *From Explorer…* uses an image from your library (you can also drag
+  an Explorer image onto the Image row). Sprite images are kept **lossless** (PNG, up to 2048 px a side), so pixel art
+  stays sharp.
+- **Filter** — *Pixel (nearest)* keeps pixel art crisp; *Smooth (linear)* suits painted art.
+- **Pixels / m** — how many image pixels make one metre. A 16 px frame at 16 pixels per metre is 1 m tall.
+- **Pixel snap** — moves the sprite only in whole pixels, so it never shimmers.
+- **Columns**, **Rows**, **Frames**, **Margin**, **Spacing** — the grid of the sprite sheet.
+- **Frame** — the frame shown when no clip plays. **Flip horizontally / vertically** mirror it.
+
+### Flipbook clips
+
+A clip is a run of frames from the sheet:
+
+- **Frames**: `0-3` is a range (`3-0` plays it backwards); `0,1,2,1` lists frames one by one.
+- **fps**: frames per second. **Loop**: loop, ping-pong or play once — a once clip can name the clip that follows it.
+- **Events**: name a frame (for example *step* on frame 2) and an **Animation Marker** node fires when the clip passes it.
+- **Autoplay**: the clip that plays by itself.
+
+Start clips from the node editor with **Play Animation**: its *clip* field lists the sprite's clips (left empty, it plays
+the autoplay or first clip). **Animation Finished** fires when a *once* clip ends. Clips run on the session's shared
+clock, so everyone sees the same frame — late joiners included — without anything extra being sent.
+
+## 2D layers and parallax
+
+Any group can become a 2D layer: select the group and switch on **2D layer** in the Inspector (the section appears on
+groups that hold a sprite).
+
+- **Parallax** — 1 moves with the world, 0.5 at half speed (far hills), 0 stays with the camera (a sky). Values above
+  1 are for foreground layers that pass faster than the gameplay.
+- **Parallax Y** — the same for up and down (the template keeps it at 1, so heights stay as you placed them).
+- The layer's depth (its z position) decides which layer is in front.
+
+Parallax shows through an orthographic camera — the flat view and a 2D game camera. In the perspective view and in VR
+the layers stay where you placed them, so you can always see and edit the real layout.
+
+## Camera Follow 2D node
+
+Moves a camera object in x and y after a target, keeping its depth:
+
+- **dead zone width / height** — the target moves freely inside this box before the camera follows.
+- **damping** — seconds of lag (0 = locked on).
+- **offset x / y** — keep the target off-centre (look ahead).
+- **follow x / follow y** — follow on one axis only (a side-scroller often follows x only).
+- **keep inside bounds** + **minX … maxY** — the view never shows past the edges of your level.
+- **pixel snap** — pixels per metre to snap the camera to (0 = off).
+
+Wire it into an **Object Selector** that picks the camera (or put it in the camera's own graph), and look through that
+camera with **Set Active Camera** or a **Start camera** node. Each player's view follows on its own.
+
+## Sharing, saving and older versions
+
+- Sprites, clips and layers are part of the scene: peers see every change, and **Undo** takes back one step.
+- A late joiner sees running flipbooks at the right frame.
+- Someone on an older version of the app sees sprites as plain pictures on flat planes (no animation, no parallax),
+  never an error.
+
+## Limits
+
+- A sprite image is at most 2048 px on its longest side; a bigger one is scaled down by whole steps, keeping its pixels square.
+- Each sprite is one draw call; hundreds of animated sprites are fine on a desktop, while a headset is happier with fewer.
+- Tile maps, LDtk / Tiled import and 2D physics are planned for a later release.
+
+
+---
+
+Source: https://docs.theprototype.app/vector-shapes/ (Markdown: https://docs.theprototype.app/vector-shapes.md)
+
+# Vector shapes and SVG
+
+Logos, signs, icons, floor plans, a star over a door: vector shapes are flat outlines with a fill and a stroke that
+stay sharp at any size. You can combine them, edit their points, import and export SVG files, and pull them out into
+3D solids. Every change is one undo step and shows for everyone in the session.
+
+## Drawing shapes
+
+**Tools ▸ Draw shapes** (<kbd>Alt</kbd>+<kbd>V</kbd>) opens the shapes toolbar:
+
+| Tool | How to draw |
+|---|---|
+| **Rectangle**, **Ellipse** | Drag from one corner to the other |
+| **Star**, **Polygon** | Drag from the centre outwards |
+| **Pen** | Click for a corner, click and drag for a curve. Click the first point to close the path, or press <kbd>Enter</kbd> to finish it open. <kbd>Backspace</kbd> removes the last point |
+
+A shape is drawn on the surface you start on, or on the ground. A shape drawn on another flat shape lands on top of it
+(see [Layer order](#layer-order)).
+
+Select a shape and open Properties ▸ **Shape**:
+
+| Row | What it does |
+|---|---|
+| **Corner radius** | Rounds the corners of rectangles, stars and polygons, live |
+| **Points** | How many points a star or polygon has |
+| **Fill** | Solid colour, linear or radial gradient, or none |
+| **Stroke** | Colour and width of the outline, with **Join**, **Cap** and **Dash** / **Gap** |
+| **Extrude** / **Bevel** / **Bevel steps** | Makes the shape a 3D solid (see [Extrude](#extrude)) |
+
+## Combining shapes
+
+Select two or more shapes that lie in the same plane and open **Shape** in the object menu (the commands that need one shape work on one):
+
+| Command | Result |
+|---|---|
+| **Union** | One shape covering all of them |
+| **Subtract** | The first shape with the others cut out of it |
+| **Intersect** | Only where they overlap |
+| **Exclude** | Everything except where they overlap |
+| **Outline stroke** | The stroke becomes a filled shape of its own |
+| **Inset 5 cm** / **Outset 5 cm** | The outline moves in or out by 5 cm |
+
+The first shape you selected keeps its look. Shapes tilted out of its plane are left alone.
+
+## Editing points
+
+**Shape ▸ Edit points** (or the button in Properties) shows the shape's points.
+
+- Drag a point or one of its handles. A smooth point keeps its two handles in line; hold <kbd>Alt</kbd> to break them.
+- <kbd>Shift</kbd>-click picks several points; drag one to move them all. <kbd>Ctrl</kbd>+<kbd>A</kbd> picks every point.
+- The arrow keys nudge the picked points (<kbd>Shift</kbd> = 10 times as far; the grid step when grid snap is on).
+- Click the outline to add a point. Double-click a point to switch it between corner and smooth.
+- <kbd>Delete</kbd> removes the picked points. <kbd>C</kbd> closes an open path, <kbd>K</kbd> splits a path at the picked point.
+- <kbd>Esc</kbd> leaves Edit points.
+
+A rectangle, ellipse, star or polygon becomes a pen path the first time you edit its points. The keys can be changed in
+Settings ▸ Shortcuts. On a phone or tablet the toolbar has a button for each of these.
+
+### Snapping and smart guides
+
+Points, the pen and shape drags snap to the grid when the scene's grid snap is on, and to other shapes' points and
+edges when **Snap targets ▸ Vertex / Edge** are on. When a point lines up with a point of another shape, a guide line
+shows it.
+
+### Align in plane
+
+**Shape ▸ Align in plane** lines shapes up in their own plane: left, centre, right, top, middle, bottom, or
+distribute across / up. It works for shapes standing on a wall as well as on the floor.
+
+## Layer order
+
+Flat shapes in the same plane are stacked in layers, so the one on top is always drawn on top.
+
+| Command | Keys |
+|---|---|
+| **Shape ▸ Order ▸ Bring forward** | <kbd>Ctrl</kbd>+<kbd>]</kbd> |
+| **Send backward** | <kbd>Ctrl</kbd>+<kbd>[</kbd> |
+| **Bring to front** | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>]</kbd> |
+| **Send to back** | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>[</kbd> |
+
+## Extrude
+
+Select a shape or a text and drag the **arrow** on its front corner: it becomes a 3D solid, live for everyone, as one
+undo step (<kbd>Esc</kbd> during the drag cancels). **Extrude**, **Bevel** and **Bevel steps** are also in Properties.
+
+The solid is a clean mesh with flat faces and four-sided walls, so [Mesh Editing](https://docs.theprototype.app/mesh-editing.md) works on it. Once
+you edit its mesh, its points and depth lock, like any edited shape.
+
+**Shape ▸ Bake to mesh…** (or the button in Properties) turns a shape into an ordinary mesh. One undo brings the
+shape back.
+
+In the [2D view](https://docs.theprototype.app/2d-scenes.md), the toolbar's **Extrude** makes the selection 10 cm deep, or flat again.
+
+## SVG files
+
+- **Import**: drop an `.svg` file on the viewport. Scripts, embedded web pages and links to other sites are taken
+  out first; files up to 2 MB, 500 shapes and 40 000 points are read. One shape holds up to 4 000 points: a longer
+  path is simplified to fit, and a message says from how many points to how many.
+- **Export**: **Shape ▸ Export SVG** saves the selected shapes as an `.svg` file. Importing it again gives the same
+  shapes.
+
+## Shapes and Paths
+
+A [Path](https://docs.theprototype.app/paths.md) object (for motion, cameras and tubes) and a pen path are different things, but you can turn one
+into the other: **Shape ▸ Make Path object** makes a Path from a shape's outline (curves are simplified to at most 200 points; the shape stays), and a Path's **Make vector shape**
+draws it as a pen path.
+
+## On a phone or tablet
+
+Tap for a corner, drag for a curve. Two fingers move the camera and never place a point. Edit points works the same
+way, with toolbar buttons instead of keys.
+
+## In VR
+
+- **Add ▸ Shapes** places a rectangle, ellipse, star or polygon in front of you.
+- **Add ▸ Shapes ▸ Pen** puts a drawing sheet in front of you. The trigger places points (hold and pull for a curve;
+  the first point closes the path), the grip carries the sheet, and the radial menu has **Finish path**, **Undo point**
+  and **Pen off**.
+- **Selected ▸ Extrude** makes the selected shape a solid. Grab it like any object.
+
+## With an agent
+
+An agent can draw shapes too: `create_shape` with `action: 'vector'` makes rectangles, ellipses, stars, polygons and
+paths, or reads an SVG. See [Shapes and modelling with an agent](https://docs.theprototype.app/ai/agent-geometry.md).
+
+## Sharing, saving and older versions
+
+Shapes are saved in the scene and replicate like every object. A peer on an older version of the app sees a shape
+as a plain mesh in the right place, and a solid as a plain solid; it cannot edit the shape's points.
+
+
+---
+
 Source: https://docs.theprototype.app/paths/ (Markdown: https://docs.theprototype.app/paths.md)
 
 # Paths
@@ -7265,6 +7551,8 @@ Switch to **Solid** and these rows appear:
 | **Metal** / **Roughness** | The material of face and sides |
 | **Glow** | Makes the letters glow in their own colour |
 | **Bake to mesh…** | See below |
+
+Since 1.84, solid letters are built the same way as [extruded shapes](https://docs.theprototype.app/vector-shapes.md#extrude): their sides are smooth instead of faceted. You can also drag the extrude arrow on a selected text to set its depth.
 
 A solid text is built on every screen from these settings. The mesh itself is never sent or saved, so a sign costs the same few hundred bytes whatever its size.
 
@@ -14709,6 +14997,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**On Game State**](https://docs.theprototype.app/nodes/ongamestate.md) | Fires a pulse when the shared game state becomes the one you pick - the hook for "when the round starts". |
 | [**Set Active Camera**](https://docs.theprototype.app/nodes/setcamera.md) | Makes a camera object the active view for every player when a pulse arrives. |
 | [**Camera Rig**](https://docs.theprototype.app/nodes/camerarig.md) | Moves a camera object: it follows the target at an offset and/or turns to look at it, with damping (seconds of lag). Wire it into an Object Selector that picks a camera. It never moves the editor view or another player's view - look through the camera (Set Active Camera) to see it. |
+| **Camera Follow 2D** | The 2D camera: moves a camera object in x and y after the target, with a dead zone (the target moves freely inside it), damping (seconds of lag), an offset and optional bounds that keep the view inside the level; its depth (z) never changes. Wire it into an Object Selector that picks a camera, and look through that camera (Set Active Camera). Each player's view follows on its own. |
 | [**Set Look**](https://docs.theprototype.app/nodes/setlook.md) | Switches a camera's look (its post-processing) on or off when a pulse arrives, and by default looks through that camera too. |
 | [**Start camera**](https://docs.theprototype.app/nodes/gamestart.md) | Start camera: the camera every player looks through when the game state becomes playing (a late joiner too). A setting, not an event - it never pulses; use On Play start or On Game State to react. |
 | [**On Play start**](https://docs.theprototype.app/nodes/onplaystart.md) | Fires once when Play begins - by default when the first player presses Play (every peer pulses), or with who: me when you press Play. The place to reset the score, spawn the gems and arm timers. |
@@ -14833,7 +15122,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**Animation Finished**](https://docs.theprototype.app/nodes/animfinished.md) | Fires a pulse when the connected object's animation clip reaches its end. |
 | [**Animation Marker**](https://docs.theprototype.app/nodes/animmarker.md) | Fires a pulse when the connected object's animation passes a named marker. |
 | [**Animation State**](https://docs.theprototype.app/nodes/animstate.md) | Reads the connected object's animation transport as a number - playing, position or progress. |
-| [**Play Animation**](https://docs.theprototype.app/nodes/playanim.md) | Starts, stops or restarts an animation clip on the connected object when a pulse arrives. Crossfade blends from the clip already playing instead of snapping. |
+| [**Play Animation**](https://docs.theprototype.app/nodes/playanim.md) | Starts, stops or restarts an animation clip on the connected object when a pulse arrives - an authored clip, an imported one, or a sprite's flipbook clip (an empty clip on a sprite plays its autoplay or first clip). Crossfade blends from the clip already playing instead of snapping. |
 | **Set Expression** | Sets a VRM character's facial expression (happy, angry, blink, aa or one of its own) to a weight when a pulse arrives. |
 | **Blend by Speed** | Blends a character's idle, walk and run clips by a speed (its own speed when nothing is wired), so it never snaps between poses. |
 | **Set Animation Parameter** | Sets a parameter of the object's Animation states (on a pulse, or all the time when nothing is wired to trigger), or fires a trigger such as jump. |

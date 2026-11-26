@@ -1062,6 +1062,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../2d-scenes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2D Scenes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vector-shapes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vector Shapes and SVG
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../paths/" class="md-nav__link">
         
   
@@ -7751,6 +7793,10 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 <td>Moves a camera object: it follows the target at an offset and/or turns to look at it, with damping (seconds of lag). Wire it into an Object Selector that picks a camera. It never moves the editor view or another player's view - look through the camera (Set Active Camera) to see it.</td>
 </tr>
 <tr>
+<td><strong>Camera Follow 2D</strong></td>
+<td>The 2D camera: moves a camera object in x and y after the target, with a dead zone (the target moves freely inside it), damping (seconds of lag), an offset and optional bounds that keep the view inside the level; its depth (z) never changes. Wire it into an Object Selector that picks a camera, and look through that camera (Set Active Camera). Each player's view follows on its own.</td>
+</tr>
+<tr>
 <td><a href="setlook/"><strong>Set Look</strong></a></td>
 <td>Switches a camera's look (its post-processing) on or off when a pulse arrives, and by default looks through that camera too.</td>
 </tr>
@@ -8203,7 +8249,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 </tr>
 <tr>
 <td><a href="playanim/"><strong>Play Animation</strong></a></td>
-<td>Starts, stops or restarts an animation clip on the connected object when a pulse arrives. Crossfade blends from the clip already playing instead of snapping.</td>
+<td>Starts, stops or restarts an animation clip on the connected object when a pulse arrives - an authored clip, an imported one, or a sprite's flipbook clip (an empty clip on a sprite plays its autoplay or first clip). Crossfade blends from the clip already playing instead of snapping.</td>
 </tr>
 <tr>
 <td><strong>Set Expression</strong></td>
