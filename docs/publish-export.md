@@ -71,7 +71,7 @@ The Export tab with the itch.io preset selected.
     | Preset | Use it for |
     |---|---|
     | **itch.io** | an HTML5 game page on itch.io: a zip with `index.html` at the root (guide below) |
-    | **CrazyGames** | the CrazyGames portal: their SDK, told when the game loads, plays and pauses; their size limits checked ([step by step](publish-your-game.md#crazygames-step-by-step), *1.XX*) |
+    | **CrazyGames** | the CrazyGames portal: their SDK, told when the game loads, plays and pauses; their size limits checked ([step by step](publish-your-game.md#crazygames-step-by-step), *1.83*) |
     | **Static host** | the same zip plus a `.nojekyll` file — Netlify, Cloudflare Pages, GitHub Pages, any web server |
     | **Embed** | an `<iframe>` snippet for a game that is already online (below) |
 
@@ -80,7 +80,7 @@ The Export tab with the itch.io preset selected.
 4. Options: **Cover image** (a `thumbnail.png`, 630 × 500, taken from your current view) and **Use CDN for packs**
    (a smaller zip: kit pieces load from the packs CDN when the game starts, so it needs internet; off, every pack file the
    scene uses is copied into the zip).
-5. **Made for phones too** (*1.XX*): for a game meant for phones; the checks then look for touch controls.
+5. **Made for phones too** (*1.83*): for a game meant for phones; the checks then look for touch controls.
 6. The panel shows how big the engine is and estimates the zip, and **Checks** lists what would trip a player or the
    preset's limits — the same scene rows as [Before you publish](publish-your-game.md#before-you-publish), plus the
    preset's size rows. A red row stops the download; a yellow one is a warning. Press **Build & download zip**.
@@ -89,7 +89,7 @@ The build is **checked before it downloads** (relative paths only, the file limi
 the file, its size and its file count, and says *checked OK*. The zip holds `index.html`, the engine (the same build the
 app runs), your scene, the installed modules it uses, the pack files it uses and a README. All paths are relative, there
 is no service worker, and nothing loads from another site unless you chose the packs CDN. The game starts in Play on its
-own. Since *1.XX* the zip boots the slim player (not the editor), carries every pack piece with its LOD files and every
+own. Since *1.83* the zip boots the slim player (not the editor), carries every pack piece with its LOD files and every
 sky size the game offers, and sends no error reports: it plays with no internet at all. A small game's zip is about
 13 MB, almost all of it the engine. After the build, the result lists the **15 biggest files and what uses them**;
 exporting the same scene again keeps the zip's **name and export id**, so an upload replaces the old build.

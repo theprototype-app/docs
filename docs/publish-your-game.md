@@ -10,7 +10,7 @@ A game you made here can go three places, and this page walks through each one:
 
 Everything starts at **Menu ▸ Publish / Export**. The first time you open it, a short note above the tabs says which tab
 does what and links this page; it goes once you close the window (**Settings ▸ Interface ▸ Reset tips** brings it back).
-The same link sits under the preset notes on the **Export** tab. *1.XX*
+The same link sits under the preset notes on the **Export** tab. *1.83*
 
 !!! tip "No game yet?"
     **Starter Dash** (**Templates ▸ Games**) is the smallest complete game: Start, five gold coins to walk onto, a win screen with
@@ -20,7 +20,7 @@ The same link sits under the preset notes on the **Export** tab. *1.XX*
 
 The **Publish** tab opens with **Before you publish**: a short list of what a visitor would trip over, each with a
 button that fixes it where one exists. **Warnings never block** — the Publish button below the list works whatever it
-says. **Check again** runs the list again after you change something. *1.XX*
+says. **Check again** runs the list again after you change something. *1.83*
 
 The **Export** tab shows the same scene rows, plus the rows of the preset you picked.
 
@@ -45,7 +45,7 @@ Each fix is one step you can undo with <kbd>Ctrl</kbd>+<kbd>Z</kbd>. An AI app c
 
 **Export** builds a zip that is the whole game: the player (the slim one, not the editor), your scene, every pack piece
 it places, the modules it uses, the sky in every size its options offer, and the fonts. **Nothing is fetched from the
-internet while it plays** — only a portal's own SDK, in that portal's preset. *1.XX*
+internet while it plays** — only a portal's own SDK, in that portal's preset. *1.83*
 
 ![Starter Dash played from its exported zip: the You win! screen with Play again, the fullscreen button bottom left and the badge bottom right.](img/publish-your-game/starter-won.webp){ .shot width="688" height="387" loading=lazy }
 /// caption
@@ -105,7 +105,7 @@ tab shows an upper estimate; 20 MB for their mobile homepage), 250 MB in all, an
 
 ## Take a game down
 
-You can take a game you published on theprototype.app down, and put it back later: *1.XX*
+You can take a game you published on theprototype.app down, and put it back later: *1.83*
 
 - **Your games** (Menu ▸ Your games & stats): **Unpublish** on the game's row,
 - the **Publish** window, right after publishing,

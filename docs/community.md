@@ -45,7 +45,7 @@ You can take a scene or game you published down: **Unpublish** on its row in [Yo
 in the Publish dialog right after publishing, or on its own scene page while you are signed in as its owner. It asks
 twice. Its links then show a plain *No longer published* page (a cached page can take up to a minute to change);
 remixes made earlier stay, with their credit line. **Republish** (in Your games, or the Publish dialog when you update it)
-puts it back on the same link. See [Publish your game](publish-your-game.md#take-a-game-down). *1.XX*
+puts it back on the same link. See [Publish your game](publish-your-game.md#take-a-game-down). *1.83*
 
 When you publish or update a game, the dialog also shows a **This game: …** line with its visits — see
 [Your games & stats](#your-games-stats).
