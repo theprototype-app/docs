@@ -13,7 +13,7 @@ does what and links this page; it goes once you close the window (**Settings ▸
 The same link sits under the preset notes on the **Export** tab. *1.XX*
 
 !!! tip "No game yet?"
-    **Starter Dash** (in Templates, *Games*) is the smallest complete game: a run, a goal, a win screen and touch
+    **Starter Dash** (**Templates ▸ Games**) is the smallest complete game: a run, a goal, a win screen and touch
     controls. Export it once before your own game, to see the whole path end to end.
 
 ## Before you publish
@@ -82,7 +82,7 @@ Too big for CrazyGames: the check names the limit and lists what weighs what.
 6. Save as a **Draft**, open the page and play it once, then set **Visibility** to *Public*.
 
 itch.io's limits, checked before anything downloads: at most 1,000 files, 500 MB unzipped, 200 MB per file, and paths
-of at most 240 characters. A typical game is well inside them: the engine is about 11 MB of every zip.
+of at most 240 characters. A typical game is well inside them: the engine is about 13 MB of every zip.
 
 ## CrazyGames step by step
 

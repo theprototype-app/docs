@@ -91,7 +91,7 @@ app runs), your scene, the installed modules it uses, the pack files it uses and
 is no service worker, and nothing loads from another site unless you chose the packs CDN. The game starts in Play on its
 own. Since *1.XX* the zip boots the slim player (not the editor), carries every pack piece with its LOD files and every
 sky size the game offers, and sends no error reports: it plays with no internet at all. A small game's zip is about
-11 MB, almost all of it the engine. After the build, the result lists the **15 biggest files and what uses them**;
+13 MB, almost all of it the engine. After the build, the result lists the **15 biggest files and what uses them**;
 exporting the same scene again keeps the zip's **name and export id**, so an upload replaces the old build.
 
 Some web hosts add their own scripts to the pages they serve. The exporter copies the app from the site you are on, so
