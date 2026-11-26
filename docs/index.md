@@ -52,6 +52,18 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.84 — Vector shapes and 2D scenes.** A new page, [Vector shapes and SVG](vector-shapes.md), covers all of it.
+
+- **[Draw vector shapes](vector-shapes.md#drawing-shapes)**: rectangles, ellipses, stars, polygons and pen paths with
+  fills, gradients and strokes. [Combine](vector-shapes.md#combining-shapes) them, [edit their points](vector-shapes.md#editing-points)
+  with snapping and smart guides, and set their [layer order](vector-shapes.md#layer-order).
+- **[Extrude with one drag](vector-shapes.md#extrude)**: drag the arrow on a shape or a text to make it a 3D solid.
+- **[SVG in and out](vector-shapes.md#svg-files)**: drop an .svg on the viewport, or export shapes as SVG.
+- **[2D scenes](2d-scenes.md)**: a template with a flat 2D view and its own toolbar, sprites and flipbooks, 2D layers
+  with parallax and a Camera Follow 2D node.
+- **The pen by finger and in VR**: [on a phone](vector-shapes.md#on-a-phone-or-tablet) tap and drag;
+  [in VR](vector-shapes.md#in-vr) draw on a sheet in front of you.
+
 **1.83 — Publish your game.** A new page, [Publish your game](publish-your-game.md), walks through it step by step.
 
 - **[Before you publish](publish-your-game.md#before-you-publish)**: the Publish tab lists what a visitor would trip
