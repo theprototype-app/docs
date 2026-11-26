@@ -49,6 +49,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**On Game State**](nodes/ongamestate.md) | Fires a pulse when the shared game state becomes the one you pick - the hook for "when the round starts". |
 | [**Set Active Camera**](nodes/setcamera.md) | Makes a camera object the active view for every player when a pulse arrives. |
 | [**Camera Rig**](nodes/camerarig.md) | Moves a camera object: it follows the target at an offset and/or turns to look at it, with damping (seconds of lag). Wire it into an Object Selector that picks a camera. It never moves the editor view or another player's view - look through the camera (Set Active Camera) to see it. |
+| **Camera Follow 2D** | The 2D camera: moves a camera object in x and y after the target, with a dead zone (the target moves freely inside it), damping (seconds of lag), an offset and optional bounds that keep the view inside the level; its depth (z) never changes. Wire it into an Object Selector that picks a camera, and look through that camera (Set Active Camera). Each player's view follows on its own. |
 | [**Set Look**](nodes/setlook.md) | Switches a camera's look (its post-processing) on or off when a pulse arrives, and by default looks through that camera too. |
 | [**Start camera**](nodes/gamestart.md) | Start camera: the camera every player looks through when the game state becomes playing (a late joiner too). A setting, not an event - it never pulses; use On Play start or On Game State to react. |
 | [**On Play start**](nodes/onplaystart.md) | Fires once when Play begins - by default when the first player presses Play (every peer pulses), or with who: me when you press Play. The place to reset the score, spawn the gems and arm timers. |
@@ -173,7 +174,7 @@ node with code (Script, Behaviour, a module's node) opens that code — see
 | [**Animation Finished**](nodes/animfinished.md) | Fires a pulse when the connected object's animation clip reaches its end. |
 | [**Animation Marker**](nodes/animmarker.md) | Fires a pulse when the connected object's animation passes a named marker. |
 | [**Animation State**](nodes/animstate.md) | Reads the connected object's animation transport as a number - playing, position or progress. |
-| [**Play Animation**](nodes/playanim.md) | Starts, stops or restarts an animation clip on the connected object when a pulse arrives. Crossfade blends from the clip already playing instead of snapping. |
+| [**Play Animation**](nodes/playanim.md) | Starts, stops or restarts an animation clip on the connected object when a pulse arrives - an authored clip, an imported one, or a sprite's flipbook clip (an empty clip on a sprite plays its autoplay or first clip). Crossfade blends from the clip already playing instead of snapping. |
 | **Set Expression** | Sets a VRM character's facial expression (happy, angry, blink, aa or one of its own) to a weight when a pulse arrives. |
 | **Blend by Speed** | Blends a character's idle, walk and run clips by a speed (its own speed when nothing is wired), so it never snaps between poses. |
 | **Set Animation Parameter** | Sets a parameter of the object's Animation states (on a pulse, or all the time when nothing is wired to trigger), or fires a trigger such as jump. |
