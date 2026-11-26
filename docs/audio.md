@@ -33,6 +33,22 @@ For sound tied to a *place or object* — a fire crackle, a machine hum, a click
 
 Walk (or fly) around and the sound pans and fades with the object's position.
 
+## Trim, fade and normalise
+
+*New in 1.82.* Open a sound from the [Explorer](explorer.md#the-preview-window) (double-click it) and press
+<kbd>E</kbd>, or the scissors button, in its player window for **Trim and fade**:
+
+- a waveform with **start** and **end** handles to drag, or type **Start** and **End**; <kbd>I</kbd> and <kbd>O</kbd>
+  set them at the playhead,
+- **Fade in** and **Fade out**,
+- **Normalise**, which brings the loudest point up to just under full volume,
+- **Hear the edit** plays the result, and **Reset** brings the original back.
+
+The file itself never changes: the setting belongs to the sound **in this scene**. It is shared with everyone in the
+room, saved with the scene, and used everywhere the scene plays that sound: [Sound](nodes/sound.md) nodes (a playing
+loop restarts with the edit), [Timeline](timeline.md) audio clips, the scene music and video exports. Each change is one
+undo step.
+
 ## Audio packs
 
 Audio files can be bundled and shared as [Packs](packs.md), just like models. An audio pack is a `.zip` containing sound items; import one from the Explorer's **Packs** section (right-click ▸ **Install pack**, or **＋ Import pack** for a local zip). Its sounds land in your library as ordinary audio items, ready to assign as scene music or wire into Sound nodes. Prefer CC0 loops and one-shots small enough to share with peers.
