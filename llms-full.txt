@@ -57,6 +57,17 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.85 — AI apps that know your screen.** An AI app working in your tab ([the connector](https://docs.theprototype.app/ai/claude-connector.md)) can now:
+
+- **[Read your screen](https://docs.theprototype.app/ai/your-files-and-screen.md#what-claude-can-read-from-your-screen)**: your selection, the open
+  panels, the Inspector, the Flow editor, the camera, and your Statistics and Profiler numbers, without changing anything.
+- **[Arrange your panels](https://docs.theprototype.app/ai/your-files-and-screen.md#your-screen)**: open, move, maximize and collapse them, apply a
+  named layout, show a file in the Explorer, select objects and open the Flow editor.
+- **[Ask you once](https://docs.theprototype.app/ai/your-files-and-screen.md#it-asks-first)**: one question for everything it has not asked yet, kept
+  per app, with **Revoke** in Settings ▸ Privacy.
+- **[Rename and move any file](https://docs.theprototype.app/ai/your-files-and-screen.md#files-in-your-explorer)**, scenes included.
+- Tiling per material slot, modelling steps that chain, and clearer answers from shaders and the simulation.
+
 **1.84 — Vector shapes and 2D scenes.** A new page, [Vector shapes and SVG](https://docs.theprototype.app/vector-shapes.md), covers all of it.
 
 - **[Draw vector shapes](https://docs.theprototype.app/vector-shapes.md#drawing-shapes)**: rectangles, ellipses, stars, polygons and pen paths with
@@ -28961,7 +28972,8 @@ trees by the fire"*) — it never reads out ids or numbers. Good things to say:
 | Change materials and textures, node shaders, UV mapping and the scene's post effects; a change to the whole scene's look asks you first with **Allow** / **Deny** in the tab ([Materials and looks](https://docs.theprototype.app/ai/agent-look.md)) | |
 | Set the point a thing turns about, and put an image into your library from an https address or one it draws ([Undo, pivots and images](https://docs.theprototype.app/ai/agent-assist.md)) | |
 | Read the ground and the water under a point (`probe`), and know which camera you look through ([Here, this and you](https://docs.theprototype.app/ai/agent-spatial.md#the-camera-you-look-through)) | |
-| Work with the text files in your Explorer, open your panels, move your own view and open code for you (it asks first), and open your other scenes ([Your files, your screen and your scenes](https://docs.theprototype.app/ai/your-files-and-screen.md)) | |
+| Work with the text files in your Explorer, rename and move any file, open, move and arrange your panels, select things, move your own view and open code for you (it asks first), and open your other scenes ([Your files, your screen and your scenes](https://docs.theprototype.app/ai/your-files-and-screen.md)) | |
+| Read what your screen shows (your selection, the open panels, the Inspector, the Flow editor, the camera) and your Statistics and Profiler numbers, without changing anything | |
 
 ### Joining a session from a link
 
@@ -29032,11 +29044,41 @@ exactly what the agent tools of the same job do, with the same limits:
 | `game_setup` | `spawn`, `play_camera`, `levels`, `portal`, `checkpoint`, `loading` | `place_spawn`, `set_play_camera`, `set_levels`, `set_portal`, `set_checkpoint`, `set_loading` ([HUD, sky and play](https://docs.theprototype.app/ai/agent-scene.md)) |
 | `assets` | `search`, `place`, `prefab`, `image` | `search_assets`, `place_asset`, `prefab` ([Worlds](https://docs.theprototype.app/ai/agent-world.md)), `add_image` ([Undo, pivots and images](https://docs.theprototype.app/ai/agent-assist.md)) |
 | `effects` | `terrain`, `scatter`, `water`, `particles`, `sound`, `music` | `terrain`, `scatter`, `water`, `create_particles`, `place_sound`, `set_music` ([Worlds with an agent](https://docs.theprototype.app/ai/agent-world.md)) |
-| `run` | `inspect`, `validate`, `logs` | `inspect_runtime`, `validate_scene`, `logs` ([Test and fix a game](https://docs.theprototype.app/ai/agent-runtime.md)) |
+| `run` | `inspect`, `validate`, `logs`, `photo`, `ui`, `stats` | `inspect_runtime`, `validate_scene`, `logs` ([Test and fix a game](https://docs.theprototype.app/ai/agent-runtime.md)), `take_photo`, `ui_state`, `scene_stats` ([Your screen](https://docs.theprototype.app/ai/your-files-and-screen.md#what-claude-can-read-from-your-screen)) |
 
 `undo_last` is a tool of its own. A look-only connection can still use the actions that only read (`list_materials`,
-`get_material`, `shader_nodes`, `get_post`, `environment`, `hud` `list`, `assets` `search` and all of `run`).
+`get_material`, `shader_nodes`, `get_post`, `environment`, `hud` `list`, `assets` `search`, and `run` `inspect`,
+`validate`, `logs` and `ui`). `run` `stats` needs a connection that may make changes, because it can also switch which
+device your Statistics judges for.
 `playtest` (a test player) runs only on an agent's own page, so it is not on claude.ai.
+
+**New in 1.85** — two new actions in `run`, more in `show`, `files` and the look tools; still **35** tools:
+
+- `run` `ui` reads what your tab shows, without changing anything: your selection, the Inspector's object, the Flow
+  editor's graph, the Shader editor's target, the open Timeline sequence, the camera, the device (phone, desktop or
+  Quest), Quality and what it lowered by itself, your open panels, and what you allowed it to do on your screen.
+- `run` `stats` reads the Statistics and Profiler numbers by the panels' own names (triangles, draw calls, textures,
+  lights, frame time and its p95, memory, the heaviest objects). `compare` judges the scene for Quest, phone and
+  desktop in one table; `snapshot` and `diff` compare two named readings; `target` switches which device your
+  Statistics judges for, and you get a line with **Back**.
+- `show` `panels` lists every panel, where it is and whether it is open; `panel` can also focus, move, maximize and
+  collapse them; `layout` applies or saves your named layouts. `reveal`, `select` and `flow` show a file in your
+  Explorer, set your selection and open the Flow editor ([Your screen](https://docs.theprototype.app/ai/your-files-and-screen.md#your-screen)).
+- `files` `rename` and `move` work for every file, scenes included ([Files](https://docs.theprototype.app/ai/your-files-and-screen.md#files-in-your-explorer)).
+- The first time an app wants your screen, it asks **one** question for everything it has not asked yet
+  ([It asks first](https://docs.theprototype.app/ai/your-files-and-screen.md#it-asks-first)).
+- `set_look` `uv` tiling is per material slot, and `shared: true` retiles every copy of a shared material. `material`
+  with `faces` gives those faces their own slot, copied from the one they wore (look and tiling).
+- `edit_shape` `mesh` chains its steps (extrude, inset, extrude), and a step that fails takes the whole call back, so
+  the mesh is as it was; the answer says so.
+- `set_look` `shader` / `edit_shader` answer per node: invalid code and the GPU compiler's refusal are errors (nothing
+  changes), nodes not wired to the output are warnings. Editing the scene's default shader or a post graph asks the
+  host first, like the other scene-wide look tools.
+- `control_simulation` says which objects became physics bodies; flow motion (Spin, Orbit, paths) runs without it.
+- `hud` `create`: each screen says where it shows (`shows.play`, `shows.editor`); an open HUD editor turns to a new
+  screen.
+- An error comes with its reasons (`errors`, `skipped`, `note`). It never carries a file path, or another person's
+  name or id: someone else's lock reads *locked by another person*.
 
 **New in 1.81** — four new tools, so the connector lists **35**:
 
@@ -29196,8 +29238,15 @@ Every step leaves a line that names the app at work, the same name the chip show
 - **create** a text file or a folder, **write** a file (all of it, or only some lines), **rename** and **move**;
 - **delete** and **restore**.
 
-It works with text files only: `.txt`, `.json`, `.md`, `.cfg` and `.js`. Images, sounds and models are listed, but
-stay with the asset tools. A file can be up to 256 KB.
+Reading, writing and making files works with text files only: `.txt`, `.json`, `.md`, `.cfg` and `.js` (new images,
+sounds and models come in with the asset tools). A file can be up to 256 KB.
+
+**Rename** and **move** work for every file: scenes, animations, sounds, videos, pictures and models. A scene renames
+as a scene, the way **Rename scene…** does: its saved versions follow, and so does every Travel node that goes there.
+Anything else that uses the file (a sound node, a texture) finds it by its content, so it keeps working. A node that
+names the file only by its name would lose it, so then the rename is refused and the answer lists those nodes. It never
+renames or moves onto a name that is already taken, and the answer says the old and the new place
+(*Sounds/boom.ogg → Sounds/bang.ogg*). **Undo** on the line puts it back.
 
 - **Undo.** Each change leaves a line with **Undo**, as your own edits do: *Claude changed "door.js" · Undo*.
 - **Delete goes to Deleted.** A deleted file goes to the Explorer's [Deleted](https://docs.theprototype.app/explorer.md#deleted) bin, exactly as
@@ -29212,32 +29261,53 @@ stay with the asset tools. A file can be up to 256 KB.
 
 `show` changes only **your own screen**, never anyone else's:
 
-- **panel** opens, closes or brings forward one of your panels: Explorer, Objects, Inspector, Flow editor, Code,
-  Timeline, Assets, Preview, Chat or Assistant. A panel opens where you keep it (docked, in the sidebar or floating).
+- **panels** lists every panel by its title, with a line on what it holds, and where each one is: open or closed,
+  docked, in a sidebar, floating or in its own window, visible, in front. It only reads and never asks.
+- **panel** opens, closes or brings forward one of your panels, by its title: Explorer, Objects, Inspector, Configure
+  Scene, Flow editor, Animation, Timeline, UV editor, Shader editor, HUD editor, Code, Profiler, Statistics, Free
+  assets, Preview, Debugger, Chat or Assistant, or the Dock and the two sidebars. It can also focus a panel, move it
+  (to the dock, a sidebar or floating), maximize and restore it (<kbd>Esc</kbd> restores), and collapse or expand one
+  of its own side panes. A panel opens where you keep it. Closing the dock or a sidebar hides it: every tab in it stays
+  open.
+- **layout** applies one of your named layouts (**Windows ▸ Layouts**), or saves the current one under a new name. It
+  never overwrites a layout, and a file open in Code keeps its unsaved changes.
 - **camera** moves your editor view to frame some objects (and can select them), goes to a spot, or lets you look
   through a scene camera.
 - **code** opens a file, or a Script or Behaviour node's code, in your Code tab at a line, and can select some lines
-  or a word. It never changes the text.
+  or a word. It *highlights* the lines without putting the cursor in your editor, so no on-screen keyboard comes up
+  on a phone (an app can still ask to put the cursor there). It never changes the text.
+- **reveal** shows a file or folder in your Explorer: the folders open down to it, it is selected and scrolled into
+  view. It can also open a folder.
+- **select** selects objects, adds to or takes from your selection, or clears it, without moving your view. When it
+  clears, the Inspector and the Flow editor show the scene.
+- **flow** opens the Flow editor on the scene flow, on an object's flow, or on one node (selected and framed).
 
-It never opens sign-in, your account, Settings, a consent page, publishing, connected apps or payment.
+It never opens sign-in, your account, Settings, a consent page, publishing or export, connected apps (Generate 3D
+too), payment, or who may join your session. The Profiler and Statistics only show numbers, so they do open.
 
 ### It asks first
 
-The first time for each kind (panels, the camera, code) your tab asks, for example *Let ChatGPT move your view?*:
+The first time an app wants to change your screen, your tab asks **one** question for everything it has not asked yet,
+for example *Let ChatGPT open and close your panels and select things in them, move your view and open code for you?*
+Reveal, select, flow and layouts count as panels. The question says what it never includes (sign-in, account,
+settings, consent, publishing, connected apps or payment):
 
-- **Always**: this kind is allowed from now on, on this device.
+- **Always**: allowed from now on, on this device.
 - **This time**: allowed until you reload the page.
+- **Only this**: allows just the one thing it asked for (shown when the question covers more than one).
 - **No**: not until you reload. The AI app then tells you where to look instead.
 
-Your answers are per app: a **No** to one app does not stop another. An app that theprototype cannot name (it shows
-as *an AI app*) is offered only **This time** and **No**, and an earlier **Always** does not count for it.
+Only your press answers: nothing an app sends can answer the question for you. Your answers are per app: each app is
+asked for itself, and a **No** to one does not stop another. An app that theprototype cannot name (it shows as *an AI
+app*) is offered no **Always**, and an earlier **Always** does not count for it.
 
 **Back** on the line undoes what `show` last did: the panel closes again, your view goes back. You can also say
 *"go back"*. It remembers the last 10 steps.
 
-**Settings ▸ Privacy ▸ Assistant on your screen** has one switch per kind: **Open and close my panels**, **Move my
-view** and **Open code for me**. On is the same as **Always**; off asks again next time. All three are off to start
-with, and they apply to this device only.
+**Settings ▸ Privacy ▸ Assistant on your screen** has one switch per kind for Claude: **Open and close my panels**,
+**Move my view** and **Open code for me**. On is the same as **Always**; off asks again next time. All three are off to
+start with, and they apply to this device only. Below them, every other permission you gave (another app's, or a
+**This time**) has its own line with **Revoke**, and **Revoke all** takes everything back: every app asks again.
 
 ### When it waits
 
@@ -29247,6 +29317,14 @@ with, and they apply to this device only.
 - It does not move your view, or switch scenes, while you record a video, film with your phone (Film) or a sequence
   plays its shots.
 - At most 6 calls a minute, and one camera move every 2 seconds.
+
+## What Claude can read from your screen
+
+`run` `ui` reads what your tab shows and changes nothing (no question, no line): your selection, the object in the
+Inspector, the graph in the Flow editor, what the Shader editor shows, the open Timeline sequence, your camera, which
+device you are on, Quality and what it lowered by itself, which panels are open and where, and what you allowed it to
+do on your screen. `run` `stats` reads the Statistics and Profiler numbers. Its `target` switches which device your
+Statistics judges for (Quest, phone or desktop) on this device only, and you get a line with **Back**.
 
 ## Your scenes
 
@@ -29271,7 +29349,8 @@ cannot change it either. After a switch the AI app cannot undo its steps from be
   with. It does not follow requests written inside a file.
 - **Nothing written by `files` runs by itself.** A new `.js` file is attached to nothing. The code a Script node runs
   cannot be changed with `files`: that is the behaviour tools' job, and `show` can open it for you to read.
-- **A look-only connection** (an AI app approved without **Allow changes**) cannot use `files`, `show` or `scene`.
+- **A look-only connection** (an AI app approved without **Allow changes**) cannot use `files`, `show`, `scene` or
+  `run` `stats`. It can use `run` `ui`, which only reads.
 - `files` works only with what is in your own Explorer: not the files on your computer, and not a web address.
 
 See also: [Use any AI](https://docs.theprototype.app/ai/use-any-ai.md) · [Use theprototype from claude.ai and voice](https://docs.theprototype.app/ai/claude-connector.md) ·

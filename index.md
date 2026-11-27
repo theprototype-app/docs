@@ -48,6 +48,17 @@ with a contributing guide and an `llms.txt` for coding agents.
 
 ## What's new
 
+**1.85 — AI apps that know your screen.** An AI app working in your tab ([the connector](https://docs.theprototype.app/ai/claude-connector.md)) can now:
+
+- **[Read your screen](https://docs.theprototype.app/ai/your-files-and-screen.md#what-claude-can-read-from-your-screen)**: your selection, the open
+  panels, the Inspector, the Flow editor, the camera, and your Statistics and Profiler numbers, without changing anything.
+- **[Arrange your panels](https://docs.theprototype.app/ai/your-files-and-screen.md#your-screen)**: open, move, maximize and collapse them, apply a
+  named layout, show a file in the Explorer, select objects and open the Flow editor.
+- **[Ask you once](https://docs.theprototype.app/ai/your-files-and-screen.md#it-asks-first)**: one question for everything it has not asked yet, kept
+  per app, with **Revoke** in Settings ▸ Privacy.
+- **[Rename and move any file](https://docs.theprototype.app/ai/your-files-and-screen.md#files-in-your-explorer)**, scenes included.
+- Tiling per material slot, modelling steps that chain, and clearer answers from shaders and the simulation.
+
 **1.84 — Vector shapes and 2D scenes.** A new page, [Vector shapes and SVG](https://docs.theprototype.app/vector-shapes.md), covers all of it.
 
 - **[Draw vector shapes](https://docs.theprototype.app/vector-shapes.md#drawing-shapes)**: rectangles, ellipses, stars, polygons and pen paths with

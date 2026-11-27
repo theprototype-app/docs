@@ -64,7 +64,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
-        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Your files, screen and scenes", "url": "https://docs.theprototype.app/ai/your-files-and-screen/", "description": "These act for you, on your own screen, so only an assistant in your own tab gets them: an AI app through the connector, or the in-app assistant. An agent that joined your session with an invite…", "dateModified": "2026-11-26"}</script>
+        </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Your files, screen and scenes", "url": "https://docs.theprototype.app/ai/your-files-and-screen/", "description": "These act for you, on your own screen, so only an assistant in your own tab gets them: an AI app through the connector, or the in-app assistant. An agent that joined your session with an invite…", "dateModified": "2026-11-27"}</script>
 </head>
   
   
@@ -7171,6 +7171,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#what-claude-can-read-from-your-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Claude can read from your screen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#your-scenes" class="md-nav__link">
     <span class="md-ellipsis">
       Your scenes
@@ -7504,6 +7513,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#what-claude-can-read-from-your-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Claude can read from your screen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#your-scenes" class="md-nav__link">
     <span class="md-ellipsis">
       Your scenes
@@ -7567,8 +7585,14 @@ does not.</p>
 <li><strong>create</strong> a text file or a folder, <strong>write</strong> a file (all of it, or only some lines), <strong>rename</strong> and <strong>move</strong>;</li>
 <li><strong>delete</strong> and <strong>restore</strong>.</li>
 </ul>
-<p>It works with text files only: <code>.txt</code>, <code>.json</code>, <code>.md</code>, <code>.cfg</code> and <code>.js</code>. Images, sounds and models are listed, but
-stay with the asset tools. A file can be up to 256 KB.</p>
+<p>Reading, writing and making files works with text files only: <code>.txt</code>, <code>.json</code>, <code>.md</code>, <code>.cfg</code> and <code>.js</code> (new images,
+sounds and models come in with the asset tools). A file can be up to 256 KB.</p>
+<p><strong>Rename</strong> and <strong>move</strong> work for every file: scenes, animations, sounds, videos, pictures and models. A scene renames
+as a scene, the way <strong>Rename scene…</strong> does: its saved versions follow, and so does every Travel node that goes there.
+Anything else that uses the file (a sound node, a texture) finds it by its content, so it keeps working. A node that
+names the file only by its name would lose it, so then the rename is refused and the answer lists those nodes. It never
+renames or moves onto a name that is already taken, and the answer says the old and the new place
+(<em>Sounds/boom.ogg → Sounds/bang.ogg</em>). <strong>Undo</strong> on the line puts it back.</p>
 <ul>
 <li><strong>Undo.</strong> Each change leaves a line with <strong>Undo</strong>, as your own edits do: <em>Claude changed "door.js" · Undo</em>.</li>
 <li><strong>Delete goes to Deleted.</strong> A deleted file goes to the Explorer's <a href="../../explorer/#deleted">Deleted</a> bin, exactly as
@@ -7582,28 +7606,49 @@ stay with the asset tools. A file can be up to 256 KB.</p>
 <h2 id="your-screen">Your screen</h2>
 <p><code>show</code> changes only <strong>your own screen</strong>, never anyone else's:</p>
 <ul>
-<li><strong>panel</strong> opens, closes or brings forward one of your panels: Explorer, Objects, Inspector, Flow editor, Code,
-  Timeline, Assets, Preview, Chat or Assistant. A panel opens where you keep it (docked, in the sidebar or floating).</li>
+<li><strong>panels</strong> lists every panel by its title, with a line on what it holds, and where each one is: open or closed,
+  docked, in a sidebar, floating or in its own window, visible, in front. It only reads and never asks.</li>
+<li><strong>panel</strong> opens, closes or brings forward one of your panels, by its title: Explorer, Objects, Inspector, Configure
+  Scene, Flow editor, Animation, Timeline, UV editor, Shader editor, HUD editor, Code, Profiler, Statistics, Free
+  assets, Preview, Debugger, Chat or Assistant, or the Dock and the two sidebars. It can also focus a panel, move it
+  (to the dock, a sidebar or floating), maximize and restore it (<kbd>Esc</kbd> restores), and collapse or expand one
+  of its own side panes. A panel opens where you keep it. Closing the dock or a sidebar hides it: every tab in it stays
+  open.</li>
+<li><strong>layout</strong> applies one of your named layouts (<strong>Windows ▸ Layouts</strong>), or saves the current one under a new name. It
+  never overwrites a layout, and a file open in Code keeps its unsaved changes.</li>
 <li><strong>camera</strong> moves your editor view to frame some objects (and can select them), goes to a spot, or lets you look
   through a scene camera.</li>
 <li><strong>code</strong> opens a file, or a Script or Behaviour node's code, in your Code tab at a line, and can select some lines
-  or a word. It never changes the text.</li>
+  or a word. It <em>highlights</em> the lines without putting the cursor in your editor, so no on-screen keyboard comes up
+  on a phone (an app can still ask to put the cursor there). It never changes the text.</li>
+<li><strong>reveal</strong> shows a file or folder in your Explorer: the folders open down to it, it is selected and scrolled into
+  view. It can also open a folder.</li>
+<li><strong>select</strong> selects objects, adds to or takes from your selection, or clears it, without moving your view. When it
+  clears, the Inspector and the Flow editor show the scene.</li>
+<li><strong>flow</strong> opens the Flow editor on the scene flow, on an object's flow, or on one node (selected and framed).</li>
 </ul>
-<p>It never opens sign-in, your account, Settings, a consent page, publishing, connected apps or payment.</p>
+<p>It never opens sign-in, your account, Settings, a consent page, publishing or export, connected apps (Generate 3D
+too), payment, or who may join your session. The Profiler and Statistics only show numbers, so they do open.</p>
 <h3 id="it-asks-first">It asks first</h3>
-<p>The first time for each kind (panels, the camera, code) your tab asks, for example <em>Let ChatGPT move your view?</em>:</p>
+<p>The first time an app wants to change your screen, your tab asks <strong>one</strong> question for everything it has not asked yet,
+for example <em>Let ChatGPT open and close your panels and select things in them, move your view and open code for you?</em>
+Reveal, select, flow and layouts count as panels. The question says what it never includes (sign-in, account,
+settings, consent, publishing, connected apps or payment):</p>
 <ul>
-<li><strong>Always</strong>: this kind is allowed from now on, on this device.</li>
+<li><strong>Always</strong>: allowed from now on, on this device.</li>
 <li><strong>This time</strong>: allowed until you reload the page.</li>
+<li><strong>Only this</strong>: allows just the one thing it asked for (shown when the question covers more than one).</li>
 <li><strong>No</strong>: not until you reload. The AI app then tells you where to look instead.</li>
 </ul>
-<p>Your answers are per app: a <strong>No</strong> to one app does not stop another. An app that theprototype cannot name (it shows
-as <em>an AI app</em>) is offered only <strong>This time</strong> and <strong>No</strong>, and an earlier <strong>Always</strong> does not count for it.</p>
+<p>Only your press answers: nothing an app sends can answer the question for you. Your answers are per app: each app is
+asked for itself, and a <strong>No</strong> to one does not stop another. An app that theprototype cannot name (it shows as <em>an AI
+app</em>) is offered no <strong>Always</strong>, and an earlier <strong>Always</strong> does not count for it.</p>
 <p><strong>Back</strong> on the line undoes what <code>show</code> last did: the panel closes again, your view goes back. You can also say
 <em>"go back"</em>. It remembers the last 10 steps.</p>
-<p><strong>Settings ▸ Privacy ▸ Assistant on your screen</strong> has one switch per kind: <strong>Open and close my panels</strong>, <strong>Move my
-view</strong> and <strong>Open code for me</strong>. On is the same as <strong>Always</strong>; off asks again next time. All three are off to start
-with, and they apply to this device only.</p>
+<p><strong>Settings ▸ Privacy ▸ Assistant on your screen</strong> has one switch per kind for Claude: <strong>Open and close my panels</strong>,
+<strong>Move my view</strong> and <strong>Open code for me</strong>. On is the same as <strong>Always</strong>; off asks again next time. All three are off to
+start with, and they apply to this device only. Below them, every other permission you gave (another app's, or a
+<strong>This time</strong>) has its own line with <strong>Revoke</strong>, and <strong>Revoke all</strong> takes everything back: every app asks again.</p>
 <h3 id="when-it-waits">When it waits</h3>
 <ul>
 <li>It does nothing while you drag an object, draw a selection box or type somewhere else. It tries again a moment
@@ -7613,6 +7658,12 @@ with, and they apply to this device only.</p>
   plays its shots.</li>
 <li>At most 6 calls a minute, and one camera move every 2 seconds.</li>
 </ul>
+<h2 id="what-claude-can-read-from-your-screen">What Claude can read from your screen</h2>
+<p><code>run</code> <code>ui</code> reads what your tab shows and changes nothing (no question, no line): your selection, the object in the
+Inspector, the graph in the Flow editor, what the Shader editor shows, the open Timeline sequence, your camera, which
+device you are on, Quality and what it lowered by itself, which panels are open and where, and what you allowed it to
+do on your screen. <code>run</code> <code>stats</code> reads the Statistics and Profiler numbers. Its <code>target</code> switches which device your
+Statistics judges for (Quest, phone or desktop) on this device only, and you get a line with <strong>Back</strong>.</p>
 <h2 id="your-scenes">Your scenes</h2>
 <p><code>scene</code> lists the scenes in your Library (which one is open, and whether it has unsaved changes), opens one, or makes a
 new empty scene and opens it. Opening replaces what is on your screen.</p>
@@ -7633,7 +7684,8 @@ cannot change it either. After a switch the AI app cannot undo its steps from be
   with. It does not follow requests written inside a file.</li>
 <li><strong>Nothing written by <code>files</code> runs by itself.</strong> A new <code>.js</code> file is attached to nothing. The code a Script node runs
   cannot be changed with <code>files</code>: that is the behaviour tools' job, and <code>show</code> can open it for you to read.</li>
-<li><strong>A look-only connection</strong> (an AI app approved without <strong>Allow changes</strong>) cannot use <code>files</code>, <code>show</code> or <code>scene</code>.</li>
+<li><strong>A look-only connection</strong> (an AI app approved without <strong>Allow changes</strong>) cannot use <code>files</code>, <code>show</code>, <code>scene</code> or
+  <code>run</code> <code>stats</code>. It can use <code>run</code> <code>ui</code>, which only reads.</li>
 <li><code>files</code> works only with what is in your own Explorer: not the files on your computer, and not a web address.</li>
 </ul>
 <p>See also: <a href="../use-any-ai/">Use any AI</a> · <a href="../claude-connector/">Use theprototype from claude.ai and voice</a> ·
@@ -7658,7 +7710,7 @@ cannot change it either. After a switch the AI app cannot undo its steps from be
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    2026-11-26
+    2026-11-27
   </span>
 
     

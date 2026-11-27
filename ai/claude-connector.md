@@ -88,7 +88,8 @@ trees by the fire"*) — it never reads out ids or numbers. Good things to say:
 | Change materials and textures, node shaders, UV mapping and the scene's post effects; a change to the whole scene's look asks you first with **Allow** / **Deny** in the tab ([Materials and looks](https://docs.theprototype.app/ai/agent-look.md)) | |
 | Set the point a thing turns about, and put an image into your library from an https address or one it draws ([Undo, pivots and images](https://docs.theprototype.app/ai/agent-assist.md)) | |
 | Read the ground and the water under a point (`probe`), and know which camera you look through ([Here, this and you](https://docs.theprototype.app/ai/agent-spatial.md#the-camera-you-look-through)) | |
-| Work with the text files in your Explorer, open your panels, move your own view and open code for you (it asks first), and open your other scenes ([Your files, your screen and your scenes](https://docs.theprototype.app/ai/your-files-and-screen.md)) | |
+| Work with the text files in your Explorer, rename and move any file, open, move and arrange your panels, select things, move your own view and open code for you (it asks first), and open your other scenes ([Your files, your screen and your scenes](https://docs.theprototype.app/ai/your-files-and-screen.md)) | |
+| Read what your screen shows (your selection, the open panels, the Inspector, the Flow editor, the camera) and your Statistics and Profiler numbers, without changing anything | |
 
 ### Joining a session from a link
 
@@ -159,11 +160,41 @@ exactly what the agent tools of the same job do, with the same limits:
 | `game_setup` | `spawn`, `play_camera`, `levels`, `portal`, `checkpoint`, `loading` | `place_spawn`, `set_play_camera`, `set_levels`, `set_portal`, `set_checkpoint`, `set_loading` ([HUD, sky and play](https://docs.theprototype.app/ai/agent-scene.md)) |
 | `assets` | `search`, `place`, `prefab`, `image` | `search_assets`, `place_asset`, `prefab` ([Worlds](https://docs.theprototype.app/ai/agent-world.md)), `add_image` ([Undo, pivots and images](https://docs.theprototype.app/ai/agent-assist.md)) |
 | `effects` | `terrain`, `scatter`, `water`, `particles`, `sound`, `music` | `terrain`, `scatter`, `water`, `create_particles`, `place_sound`, `set_music` ([Worlds with an agent](https://docs.theprototype.app/ai/agent-world.md)) |
-| `run` | `inspect`, `validate`, `logs` | `inspect_runtime`, `validate_scene`, `logs` ([Test and fix a game](https://docs.theprototype.app/ai/agent-runtime.md)) |
+| `run` | `inspect`, `validate`, `logs`, `photo`, `ui`, `stats` | `inspect_runtime`, `validate_scene`, `logs` ([Test and fix a game](https://docs.theprototype.app/ai/agent-runtime.md)), `take_photo`, `ui_state`, `scene_stats` ([Your screen](https://docs.theprototype.app/ai/your-files-and-screen.md#what-claude-can-read-from-your-screen)) |
 
 `undo_last` is a tool of its own. A look-only connection can still use the actions that only read (`list_materials`,
-`get_material`, `shader_nodes`, `get_post`, `environment`, `hud` `list`, `assets` `search` and all of `run`).
+`get_material`, `shader_nodes`, `get_post`, `environment`, `hud` `list`, `assets` `search`, and `run` `inspect`,
+`validate`, `logs` and `ui`). `run` `stats` needs a connection that may make changes, because it can also switch which
+device your Statistics judges for.
 `playtest` (a test player) runs only on an agent's own page, so it is not on claude.ai.
+
+**New in 1.85** — two new actions in `run`, more in `show`, `files` and the look tools; still **35** tools:
+
+- `run` `ui` reads what your tab shows, without changing anything: your selection, the Inspector's object, the Flow
+  editor's graph, the Shader editor's target, the open Timeline sequence, the camera, the device (phone, desktop or
+  Quest), Quality and what it lowered by itself, your open panels, and what you allowed it to do on your screen.
+- `run` `stats` reads the Statistics and Profiler numbers by the panels' own names (triangles, draw calls, textures,
+  lights, frame time and its p95, memory, the heaviest objects). `compare` judges the scene for Quest, phone and
+  desktop in one table; `snapshot` and `diff` compare two named readings; `target` switches which device your
+  Statistics judges for, and you get a line with **Back**.
+- `show` `panels` lists every panel, where it is and whether it is open; `panel` can also focus, move, maximize and
+  collapse them; `layout` applies or saves your named layouts. `reveal`, `select` and `flow` show a file in your
+  Explorer, set your selection and open the Flow editor ([Your screen](https://docs.theprototype.app/ai/your-files-and-screen.md#your-screen)).
+- `files` `rename` and `move` work for every file, scenes included ([Files](https://docs.theprototype.app/ai/your-files-and-screen.md#files-in-your-explorer)).
+- The first time an app wants your screen, it asks **one** question for everything it has not asked yet
+  ([It asks first](https://docs.theprototype.app/ai/your-files-and-screen.md#it-asks-first)).
+- `set_look` `uv` tiling is per material slot, and `shared: true` retiles every copy of a shared material. `material`
+  with `faces` gives those faces their own slot, copied from the one they wore (look and tiling).
+- `edit_shape` `mesh` chains its steps (extrude, inset, extrude), and a step that fails takes the whole call back, so
+  the mesh is as it was; the answer says so.
+- `set_look` `shader` / `edit_shader` answer per node: invalid code and the GPU compiler's refusal are errors (nothing
+  changes), nodes not wired to the output are warnings. Editing the scene's default shader or a post graph asks the
+  host first, like the other scene-wide look tools.
+- `control_simulation` says which objects became physics bodies; flow motion (Spin, Orbit, paths) runs without it.
+- `hud` `create`: each screen says where it shows (`shows.play`, `shows.editor`); an open HUD editor turns to a new
+  screen.
+- An error comes with its reasons (`errors`, `skipped`, `note`). It never carries a file path, or another person's
+  name or id: someone else's lock reads *locked by another person*.
 
 **New in 1.81** — four new tools, so the connector lists **35**:
 
